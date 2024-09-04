@@ -356,6 +356,7 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 #define SRB_FUNCTION_DUMP_POINTERS          0x26
 #define SRB_FUNCTION_FREE_DUMP_POINTERS     0x27
 
+
 //
 // Define extended SRB function that will be used to identify a new
 // type of SRB that is not a SCSI_REQUEST_BLOCK. A
@@ -364,6 +365,8 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 //
 #define SRB_FUNCTION_STORAGE_REQUEST_BLOCK  0x28
 
+
+#define SRB_FUNCTION_NVMEOF_OPERATION       0x2c
 
 //
 // SRB Status
@@ -391,6 +394,8 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 #define SRB_STATUS_PHASE_SEQUENCE_FAILURE   0x14
 #define SRB_STATUS_BAD_SRB_BLOCK_LENGTH     0x15
 #define SRB_STATUS_REQUEST_FLUSHED          0x16
+#define SRB_STATUS_ACCESS_DENIED            0x17
+#define SRB_STATUS_OPERATION_IN_PROGRESS    0x18
 #define SRB_STATUS_INVALID_LUN              0x20
 #define SRB_STATUS_INVALID_TARGET_ID        0x21
 #define SRB_STATUS_BAD_FUNCTION             0x22
@@ -499,9 +504,11 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 //
 #if defined(_WIN64) || defined(_M_ALPHA)
 #define SRB_ALIGN           DECLSPEC_ALIGN(8)
+#define STOR_ADDRESS_ALIGN  DECLSPEC_ALIGN(8)
 #define POINTER_ALIGN       DECLSPEC_ALIGN(8)
 #else
 #define SRB_ALIGN
+#define STOR_ADDRESS_ALIGN
 #define POINTER_ALIGN
 #endif
 
@@ -515,6 +522,7 @@ typedef enum _SRBEXDATATYPE {
     SrbExDataTypeScsiCdb32,
     SrbExDataTypeScsiCdbVar,
     SrbExDataTypeNvmeCommand,
+    SrbExDataTypeNvmeofOperation,
     SrbExDataTypeWmi = 0x60,
     SrbExDataTypePower,
     SrbExDataTypePnP,
@@ -693,63 +701,189 @@ typedef struct SRB_ALIGN _SRBEX_DATA_IO_INFO {
     ULONG Reserved1[2];
 } SRBEX_DATA_IO_INFO, *PSRBEX_DATA_IO_INFO;
 
-// Use in NVMe command requests to provide additional info about the IO.
-#define SRBEX_DATA_NVME_COMMAND_LENGTH ((13 * sizeof(ULONG)) + (3 * sizeof(ULONGLONG)) + (2 * sizeof(USHORT)))
+//
+// Used by SRB_FUNCTION_EXECUTE_NVME
+//
+
+#define SRBEX_DATA_NVME_COMMAND_LENGTH ((4 * sizeof(ULONGLONG)) + (14 * sizeof(ULONG)) + (5 * sizeof(USHORT)) + (2 * sizeof(UCHAR)))
 
 typedef enum {
     SRBEX_DATA_NVME_COMMAND_TYPE_NVM     = 0,
     SRBEX_DATA_NVME_COMMAND_TYPE_ADMIN,
+    SRBEX_DATA_NVME_COMMAND_TYPE_FABRICS
 } SRBEX_DATA_NVME_COMMAND_TYPE, *PSRBEX_DATA_NVME_COMMAND_TYPE;
 
 typedef enum {
-    SRBEX_DATA_NVME_COMMAND_FLAG_REQUIRE_DATA_TRANSFER_IN  = 0x1,
-    SRBEX_DATA_NVME_COMMAND_FLAG_REQUIRE_DATA_TRANSFER_OUT = 0x2,
+    SRBEX_DATA_NVME_COMMAND_FLAG_REQUIRE_DATA_TRANSFER_IN  = 0x1,  // Data is being read in from the device.
+    SRBEX_DATA_NVME_COMMAND_FLAG_REQUIRE_DATA_TRANSFER_OUT = 0x2,  // Data is being written out to the device.
     SRBEX_DATA_NVME_COMMAND_FLAG_PRP_SET_ALREADY           = 0x4,
     SRBEX_DATA_NVME_COMMAND_FLAG_SIGNATURE_ENABLED         = 0x8,
+    SRBEX_DATA_NVME_COMMAND_FLAG_NO_POLLING                = 0x10  // Indicate to send the command with interrupt mode.
 } SRBEX_DATA_NVME_COMMAND_FLAG, *PSRBEX_DATA_NVME_COMMAND_FLAG;
 
+typedef enum {
+    SRBEX_DATA_NVME_RESPONSE_FLAG_SQHD_VALID               = 0x1
+} SRBEX_DATA_NVME_RESPONSE_FLAG, *PSRBEX_DATA_NVME_RESPONSE_FLAG;
+
 typedef struct SRB_ALIGN _SRBEX_DATA_NVME_COMMAND {
+
     _Field_range_(SrbExDataTypeNvmeCommand, SrbExDataTypeNvmeCommand)
     SRBEXDATATYPE Type;
+
     _Field_range_(SRBEX_DATA_NVME_COMMAND_LENGTH, SRBEX_DATA_NVME_COMMAND_LENGTH)
     ULONG Length;
-    ULONG CommandDWORD0;
-    ULONG CommandNSID;
-    ULONG Reserved0[2];
-    ULONGLONG CommandMPTR;
-    ULONGLONG CommandPRP1;
-    ULONGLONG CommandPRP2;
 
-    ULONG CommandCDW10;
-    ULONG CommandCDW11;
-    ULONG CommandCDW12;
-    ULONG CommandCDW13;
-    ULONG CommandCDW14;
-    ULONG CommandCDW15;
-    UCHAR CommandType;          // Defined in SRBEX_DATA_NVME_COMMAND_TYPE
-    UCHAR CommandFlags;         // Defined in SRBEX_DATA_NVME_COMMAND_FLAG
-        
+    union {
+
+        //
+        // Miniport's handle for the NVMe controller
+        //
+        PVOID ControllerHandle;
+        ULONGLONG Reserved0;
+    };
+
+    //
+    // NVMe command fields (Directly maps to Common Command Format in NVMe spec)
+    //
+    union {
+
+        struct {
+
+            ULONG CommandDWORD0;   // NVME_COMMAND_DWORD0 in nvme.h
+            ULONG CommandNSID;
+            ULONG Reserved1[2];
+
+            ULONGLONG CommandMPTR;
+
+            union {
+
+                struct {
+                    ULONGLONG CommandPRP1;
+                    ULONGLONG CommandPRP2;
+                };
+
+                ULONGLONG CommandSGL1[2];
+            };
+
+            ULONG CommandCDW10;
+            ULONG CommandCDW11;
+            ULONG CommandCDW12;
+            ULONG CommandCDW13;
+            ULONG CommandCDW14;
+            ULONG CommandCDW15;
+        };                         // NVME_COMMAND in nvme.h
+
+        struct {
+
+            UCHAR OPC;
+            UCHAR PSDT;
+            USHORT CID;
+            UCHAR FCTYPE;
+            UCHAR Reserved[35];
+            UCHAR Specific[24];
+
+        } FabricsCommand;          // NVMEOF_FABRICS_COMMAND in nvme.h
+
+        struct {
+
+            ULONG OPC       : 8;        // Opcode (OPC)
+            ULONG FUSE      : 2;        // Fused Operation (FUSE)
+            ULONG Reserved  : 4;
+            ULONG PSDT      : 2;        // PRP or SGL for Data Transfer (PSDT)
+            ULONG CID       : 16;       // Command Identifier (CID)
+            UCHAR TypeSpecific[60];
+
+        } Command;                 // To reference command DW0
+
+    };
+
+    //
+    // Additional command and response information
+    //
+    UCHAR CommandType;             // Defined in SRBEX_DATA_NVME_COMMAND_TYPE
+    UCHAR Reserved2;
+    USHORT CommandFlags;           // Defined in SRBEX_DATA_NVME_COMMAND_FLAG
+    USHORT ResponseFlags;          // Defined in SRBEX_DATA_NVME_RESPONSE_FLAG
+
+    //
+    // Command status
+    //
     union {
         struct {
-            USHORT  P           : 1;        // Phase Tag (P)
-    
-            USHORT  SC          : 8;        // Status Code (SC)
-            USHORT  SCT         : 3;        // Status Code Type (SCT)
-            USHORT  Reserved    : 2;
-            USHORT  M           : 1;        // More (M)
-            USHORT  DNR         : 1;        // Do Not Retry (DNR)
+            USHORT  P   : 1;       // Phase Tag (P)
+            USHORT  SC  : 8;       // Status Code (SC)
+            USHORT  SCT : 3;       // Status Code Type (SCT)
+            USHORT  CRD : 2;       // Command Retry Delay (CRD)
+            USHORT  M   : 1;       // More (M)
+            USHORT  DNR : 1;       // Do Not Retry (DNR)
         } DUMMYSTRUCTNAME;
-    
+
         USHORT AsUshort;
 
-    } CommandStatus; // Status field from Completion Queue Entry (NVME_COMMAND_STATUS defined in nvme.h)
-    
-    ULONG QID;                  // User choice of Queue ID, if unspecified it should be 0xFFFFFFFF
-    ULONG CommandTag;           // Unique identifier for the command
+    } CommandStatus;               // NVME_COMMAND_STATUS in nvme.h
 
-    ULONG CQEntryDW0;           // Completion queue entry DW0.
+    ULONG QID;                     // Choice of Queue ID, if unspecified it should be 0xFFFFFFFF
+    ULONG CommandTag;              // Unique identifier for the command
+
+    //
+    // NVMe response fields
+    //
+    union {
+
+        struct {
+
+            ULONG CQEntryDW0;      // Completion queue entry DW0
+            ULONG CQEntryDW1;      // Completion queue entry DW1
+        };
+
+        UCHAR Specific[8];         // Fabrics command specific response
+    };
+
+    USHORT SQHD;                   // SQ Head Pointer in completion queue entry
+
+    //
+    // NVMe command and response fields
+    //
+    USHORT SQID;                   // SQ Identifier
 
 } SRBEX_DATA_NVME_COMMAND, *PSRBEX_DATA_NVME_COMMAND;
+
+
+//
+// Used by SRB_FUNCTION_NVMEOF_OPERATION
+//
+
+#define STOR_NVMEOF_OPERATION_V1             0x0001
+#define SRBEX_DATA_NVMEOF_OPERATION_LENGTH   ((2 * sizeof(USHORT)) + (2 * sizeof(ULONG)))
+
+typedef struct SRB_ALIGN _SRBEX_DATA_NVMEOF_OPERATION {
+
+    _Field_range_(SrbExDataTypeNvmeofOperation, SrbExDataTypeNvmeofOperation)
+    SRBEXDATATYPE Type;
+
+    _Field_range_(SRBEX_DATA_NVMEOF_OPERATION_LENGTH, SRBEX_DATA_NVMEOF_OPERATION_LENGTH)
+    ULONG Length;
+
+    //
+    // Version of this structure
+    //
+    _Field_range_(STOR_NVMEOF_OPERATION_V1, STOR_NVMEOF_OPERATION_V1)
+    USHORT Version;
+
+    USHORT Reserved1;
+
+    //
+    // Operation specific flags
+    //
+    ULONG Flags;
+
+    //
+    // STOR_NVMEOF_FUNCTION_TYPE (defined in storport.w)
+    // Payload if applicable is in data buffer
+    //
+    ULONG FunctionType;
+
+} SRBEX_DATA_NVMEOF_OPERATION, *PSRBEX_DATA_NVMEOF_OPERATION;
 
 
 // SRB signature - "SRBX" in ASCII
@@ -761,8 +895,10 @@ typedef struct SRB_ALIGN _SRBEX_DATA_NVME_COMMAND {
 
 typedef struct SRB_ALIGN _STORAGE_REQUEST_BLOCK_HEADER {
     USHORT Length;
+
     _Field_range_(SRB_FUNCTION_STORAGE_REQUEST_BLOCK, SRB_FUNCTION_STORAGE_REQUEST_BLOCK)
     UCHAR Function;
+
     UCHAR SrbStatus;
 } STORAGE_REQUEST_BLOCK_HEADER, *PSTORAGE_REQUEST_BLOCK_HEADER;
 
@@ -779,8 +915,10 @@ typedef _Struct_size_bytes_(SrbLength) struct SRB_ALIGN _STORAGE_REQUEST_BLOCK {
     // (e.g. SCSI_REQUEST_BLOCK, SCSI_WMI_REQUEST_BLOCK, etc).
     //
     USHORT Length;
+
     _Field_range_(SRB_FUNCTION_STORAGE_REQUEST_BLOCK, SRB_FUNCTION_STORAGE_REQUEST_BLOCK)
     UCHAR Function;
+
     UCHAR SrbStatus;
 
     // Reserved for internal use
@@ -803,6 +941,7 @@ typedef _Struct_size_bytes_(SrbLength) struct SRB_ALIGN _STORAGE_REQUEST_BLOCK {
     ULONG SrbLength;
 
     ULONG SrbFunction;
+
     ULONG SrbFlags;
 
     // Reserved for future use to expand SrbStatus to 32-bit
@@ -820,11 +959,31 @@ typedef _Struct_size_bytes_(SrbLength) struct SRB_ALIGN _STORAGE_REQUEST_BLOCK {
     // Request timeout value
     ULONG TimeOutValue;
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+
+    union {
+        //
+        // Used to store system failure status information in
+        // SrbStatus failure conditions (e.g. SRB_STATUS_INTERNAL_ERROR).
+        //
+        ULONG SystemStatus;
+
+        //
+        // Used to store high 4 bytes of unique tag if unique tag feature is enabled.
+        //
+        ULONG RequestTagHigh4Bytes;
+
+    } DUMMYUNIONNAME;
+
+#else
+
     //
     // Used to store system failure status information in
     // SrbStatus failure conditions (e.g. SRB_STATUS_INTERNAL_ERROR).
     //
     ULONG SystemStatus;
+
+#endif
 
     //
     // Guard page that should always be zero. Use to guard against misbehaving
@@ -3578,6 +3737,7 @@ typedef struct _SCSI_EXTENDED_MESSAGE {
 #define SCSISTAT_RESERVATION_CONFLICT  0x18
 #define SCSISTAT_COMMAND_TERMINATED    0x22
 #define SCSISTAT_QUEUE_FULL            0x28
+#define SCSISTAT_TASK_ABORTED          0x40
 
 //
 // Enable Vital Product Data Flag (EVPD)
@@ -3614,6 +3774,13 @@ typedef struct _SCSI_EXTENDED_MESSAGE {
 
 typedef USHORT VERSION_DESCRIPTOR, *PVERSION_DESCRIPTOR;
 
+#define HOT_PLUGGABLE_NO_INFORMATION_PROVIDED      0x0
+#define HOT_PLUGGABLE_REMOVE_AS_SINGLE_OBJECT      0x1 
+#define HOT_PLUGGABLE_NOT_REMOVE_FROM_SCSI_DOMAIN  0x2
+#define HOT_PLUGGABLE_RESERVED                     0x3
+
+#define HOT_PLUGGABLE_FIELD_SHIFT  0x4
+
 #if (NTDDI_VERSION < NTDDI_WINXP)
 typedef struct _INQUIRYDATA {
     UCHAR DeviceType : 5;
@@ -3649,8 +3816,18 @@ typedef struct _INQUIRYDATA {
 typedef struct _INQUIRYDATA {
     UCHAR DeviceType : 5;
     UCHAR DeviceTypeQualifier : 3;
-    UCHAR DeviceTypeModifier : 7;
-    UCHAR RemovableMedia : 1;
+    union {
+        struct {
+            UCHAR DeviceTypeModifier : 7;
+            UCHAR ReservedField1 : 1;
+        };
+        struct {
+            UCHAR ReservedField2 : 4;
+            UCHAR HotPluggable : 2;
+            UCHAR LU_CONG: 1;
+            UCHAR RemovableMedia : 1;
+        };
+    };
     union {
         UCHAR Versions;
         struct {
@@ -4922,6 +5099,7 @@ typedef union _SENSE_DATA_EX {
 #define SCSI_ADSENSE_WARNING                               0x0B
 #define SCSI_ADSENSE_WRITE_ERROR                           0x0C
 #define SCSI_ADSENSE_COPY_TARGET_DEVICE_ERROR              0x0D
+#define SCSI_ADSENSE_CRC_OR_ECC_ERROR                      0x10
 #define SCSI_ADSENSE_UNRECOVERED_ERROR                     0x11
 #define SCSI_ADSENSE_TRACK_ERROR                           0x14
 #define SCSI_ADSENSE_SEEK_ERROR                            0x15
@@ -4941,8 +5119,10 @@ typedef union _SENSE_DATA_EX {
 #define SCSI_ADSENSE_MEDIUM_CHANGED                        0x28
 #define SCSI_ADSENSE_BUS_RESET                             0x29
 #define SCSI_ADSENSE_PARAMETERS_CHANGED                    0x2A
+#define SCSI_ADSENSE_COMMAND_SEQUENCE_ERROR                0x2C
 #define SCSI_ADSENSE_INSUFFICIENT_TIME_FOR_OPERATION       0x2E
 #define SCSI_ADSENSE_INVALID_MEDIA                         0x30
+#define SCSI_ADSENSE_MEDIUM_FORMAT_CORRUPTED               0x31
 #define SCSI_ADSENSE_DEFECT_LIST                           0x32
 #define SCSI_ADSENSE_LB_PROVISIONING                       0x38
 #define SCSI_ADSENSE_NO_MEDIA_IN_DEVICE                    0x3a
@@ -5036,10 +5216,19 @@ typedef union _SENSE_DATA_EX {
 #define SCSI_SENSEQ_DATA_UNDERRUN                0x04
 
 //
+// SCSI_ADSENSE_CRC_OR_ECC_ERROR (0x10) qualifiers
+//
+
+#define SCSI_SENSEQ_LOGICAL_BLOCK_GUARD_CHECK_FAILED     0x01
+#define SCSI_SENSEQ_LOGICAL_BLOCK_TAG_CHECK_FAILED       0x02
+#define SCSI_SENSEQ_LOGICAL_BLOCK_REF_TAG_CHECK_FAILED   0x03
+
+//
 // SCSI_ADSENSE_UNRECOVERED_ERROR (0x11) qualifiers
 //
 
 #define SCSI_SENSEQ_UNRECOVERED_READ_ERROR       0x00
+#define SCSI_SENSEQ_ERROR_TOO_LONG_TO_CORRECT    0x02
 
 //
 // SCSI_ADSENSE_SEEK_ERROR (0x15) qualifiers
@@ -5070,6 +5259,7 @@ typedef union _SENSE_DATA_EX {
 //
 
 #define SCSI_SENSEQ_NO_ACCESS_RIGHTS             0x02
+#define SCSI_SENSEQ_INVALID_LU_ID                0x09
 
 //
 // SCSI_ADSENSE_ILLEGAL_BLOCK (0x21) qualifiers
@@ -5105,6 +5295,12 @@ typedef union _SENSE_DATA_EX {
 #define SCSI_SENSEQ_CAPACITY_DATA_CHANGED        0x09
 
 //
+// SCSI_ADSENSE_COMMAND_SEQUENCE_ERROR (0x2C) qualifiers
+//
+
+#define SCSI_SENSEQ_PREVIOUS_RESERVATION_CONFLICT    0x09
+
+//
 // SCSI_ADSENSE_POSITION_ERROR (0x3b) qualifiers
 //
 
@@ -5119,6 +5315,12 @@ typedef union _SENSE_DATA_EX {
 #define SCSI_SENSEQ_UNKNOWN_FORMAT 0x01
 #define SCSI_SENSEQ_INCOMPATIBLE_FORMAT 0x02
 #define SCSI_SENSEQ_CLEANING_CARTRIDGE_INSTALLED 0x03
+
+//
+// SCSI_ADSENSE_MEDIUM_FORMAT_CORRUPTED (0x31) qualifiers
+//
+
+#define SCSI_SENSEQ_FORMAT_COMMAND_FAILED        0x01
 
 //
 // SCSI_ADSENSE_DEFECT_LIST (0x32) qualifiers
@@ -8211,7 +8413,8 @@ StorPortGetMessageInterruptInformation(
 
 // ExtendedFlags1 flags
 
-#define EXTENDED_FLAG_POWER 0x00000001
+#define EXTENDED_FLAG_POWER                     0x00000001
+#define EXTENDED_FLAG_NATIVE_PCIE_NVME_ENGAGED  0x00000002
 
 //
 // Configuration information structure.  Contains the information necessary
@@ -8537,7 +8740,6 @@ typedef struct _PORT_CONFIGURATION_INFORMATION {
 
     ULONG MaxNumberOfIO;
 
-
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
     ULONG MaxIOsPerLun;
@@ -8557,6 +8759,13 @@ typedef struct _PORT_CONFIGURATION_INFORMATION {
 #define STOR_ADAPTER_FEATURE_ABORT_COMMAND                  0x00000010  // Indicating the miniport driver supports the ability to abort an outstanding command via SRB_FUNCTION_ABORT_COMMAND.
 #define STOR_ADAPTER_FEATURE_RICH_TEMPERATURE_THRESHOLD     0x00000020  // Indicating the adapter supports richer temperature threshold information than defined in SCSI SPC4 spec.
 #define STOR_ADAPTER_DMA_ADDRESS_WIDTH_SPECIFIED            0x00000040  // Indicating that miniport driver specified DMA address width for the adapter.
+//
+// N.B. Miniport shall support SRB_TYPE_FLAG_STORAGE_REQUEST_BLOCK if indicate support unique tag feature.
+// If the unique tag feature is enabled, Storport passes an 8 bytes tag to miniport for each request through STORAGE_REQUEST_BLOCK.
+// i.e., RequestTag field carries the low 4 bytes of unique tag, RequestTagHigh4Bytes field carries the high 4 bytes of the unique tag.
+//
+#define STOR_ADAPTER_FEATURE_UNIQUE_QUEUEING_TAG            0x00000080  // Indicating that the adapter supports IO unique queueing tag.
+
 
 // DumpMode values
 #define DUMP_MODE_CRASH             0x01    // crashdump
@@ -8694,6 +8903,9 @@ typedef enum _SCSI_ADAPTER_CONTROL_TYPE {
     ScsiAdapterPostHwInitialize,
     ScsiAdapterPrepareEarlyDumpData,
     ScsiAdapterRestoreEarlyDumpData,
+    ScsiAdapterKsrPowerDown,
+    ScsiAdapterPreparePLDR,
+    ScsiNvmeofAdapterOperation,
     ScsiAdapterControlMax,
     MakeAdapterControlTypeSizeOfUlong = 0xffffffff
 } SCSI_ADAPTER_CONTROL_TYPE, *PSCSI_ADAPTER_CONTROL_TYPE;
@@ -8883,6 +9095,7 @@ typedef enum _SCSI_UNIT_CONTROL_TYPE {
     ScsiUnitQueryBusType,
     ScsiUnitQueryFruId,
     ScsiUnitReportInternalData,
+    ScsiUnitKsrPowerDown,
     ScsiUnitControlMax,
     MakeUnitControlTypeSizeOfUlong = 0xffffffff
 } SCSI_UNIT_CONTROL_TYPE, *PSCSI_UNIT_CONTROL_TYPE;
@@ -9230,6 +9443,7 @@ typedef struct _STOR_RESET_BUS_SYNCHRONOUS_PARAMETER {
 
 } STOR_RESET_BUS_SYNCHRONOUS_PARAMETER, *PSTOR_RESET_BUS_SYNCHRONOUS_PARAMETER;
 
+
 //
 // DPC Data Structure
 //
@@ -9257,6 +9471,7 @@ typedef struct _STOR_DPC {
 } STOR_DPC, *PSTOR_DPC;
 
 typedef enum _STOR_SPINLOCK {
+    InvalidLock = 0, // Should never use
     DpcLock = 1,
     StartIoLock,
     InterruptLock,
@@ -9324,6 +9539,7 @@ typedef struct _STOR_EXT_DELETE_PARAMETERS {
 // Optimizations supported in STOR_PERF_VERSION_7
 #define STOR_PERF_HETEROGENEOUS_CPU 0x00000100
 
+
 //
 // STOR_PERF_VERSION supported and current STOR_PERF_VERSION
 //
@@ -9333,8 +9549,9 @@ typedef struct _STOR_EXT_DELETE_PARAMETERS {
 #define STOR_PERF_VERSION_5 0x00000005
 #define STOR_PERF_VERSION_6 0x00000006
 #define STOR_PERF_VERSION_7 0x00000007
+#define STOR_PERF_VERSION_8 0x00000008
 
-#define STOR_PERF_VERSION STOR_PERF_VERSION_7
+#define STOR_PERF_VERSION STOR_PERF_VERSION_8
 
 typedef struct _PERF_CONFIGURATION_DATA {
     ULONG Version;
@@ -9495,6 +9712,7 @@ typedef enum _STOR_CRYPTO_KEY_SIZE {
 #define STOR_CRYPTO_ALGORITHM_ID_OFFSET                  StorCryptoAlgorithmXTSAES
 
 #define STOR_CRYPTO_CAPABILITY_VERSION_1              1
+#define STOR_CRYPTO_CAPABILITY_VERSION_2              2
 
 typedef struct _STOR_CRYPTO_CAPABILITY {
     ULONG Version;
@@ -9503,6 +9721,31 @@ typedef struct _STOR_CRYPTO_CAPABILITY {
     USHORT DataUnitSizeBitmask;
     STOR_CRYPTO_ALGORITHM_ID AlgorithmId;
     STOR_CRYPTO_KEY_SIZE KeySize;
+
+    //
+    // Start of STOR_CRYPTO_CAPABILITY_VERSION_2 fields
+    //
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+    //
+    // Maximum supported initialization vector bit size. This can be 0 if
+    // this concept does not apply to the algorithm.
+    //
+    USHORT MaxIVBitSize;
+    USHORT Reserved;
+
+    //
+    // Bitmask of compliant security standards at the algorithm level. Multiple bits may be set.
+    //
+    union {
+        struct  {
+            UCHAR FIPS : 1;
+            UCHAR Reserved : 7;
+        };
+        UCHAR AsUchar;
+    } SecurityComplianceBitmask;
+#endif
+
 } STOR_CRYPTO_CAPABILITY, *PSTOR_CRYPTO_CAPABILITY;
 
 #define STOR_CRYPTO_CAPABILITIES_DATA_VERSION_1       1
@@ -10044,7 +10287,17 @@ typedef enum _STORPORT_FUNCTION_CODE {
     ExtFunctionGetMessageInterruptIDFromProcessorIndex,
     ExtFunctionGetNodeAffinity2,
     ExtFunctionEnableRegistryKeyNotification,
-    ExtFunctionPoFxRegisterPerfStatesEx
+    ExtFunctionPoFxRegisterPerfStatesEx,
+    ExtFunctionReadRegistryKey,
+    ExtFunctionGetDeviceBase2,
+    ExtFunctionIsDriverHotSwapEnabled,
+    ExtFunctionRegisterDriverProxy,
+    ExtFunctionRegisterDriverProxyEndpoints,
+    ExtFunctionGetDriverProxyEndpointWrapper,
+    ExtFunctionNvmeIceIoStart,
+    ExtFunctionNvmeIceIoComplete,
+    ExtFunctionNvmeMiniportEvent,
+    ExtFunctionNvmeMiniportTelemetry
 
 } STORPORT_FUNCTION_CODE, *PSTORPORT_FUNCTION_CODE;
 
@@ -10100,6 +10353,7 @@ typedef enum _STORPORT_FUNCTION_CODE {
 #define SP_RETURN_FOUND         1
 #define SP_RETURN_ERROR         2
 #define SP_RETURN_BAD_CONFIG    3
+#define SP_RETURN_ENGAGED       4
 
 //
 // Notification Event Types
@@ -10137,8 +10391,13 @@ typedef enum _SCSI_NOTIFICATION_TYPE {
     SetTargetProcessorDpc,
     MarkDeviceFailed,
     MarkDeviceFailedEx,
-    TerminateSystemThread
+    TerminateSystemThread,
+    NvmeofNotification,
 
+
+    //
+    // Do not use values above/equal to 0x8000.
+    //
 } SCSI_NOTIFICATION_TYPE, *PSCSI_NOTIFICATION_TYPE;
 
 //
@@ -10612,9 +10871,11 @@ typedef struct _HW_INITIALIZATION_DATA {
 #define STOR_FEATURE_SET_ADAPTER_INTERFACE_TYPE             0x00000800  // Indicating that the miniport driver wants storport to set the adapter interface type.
 #define STOR_FEATURE_DUMP_INFO                              0x00001000  // Indicating that the miniport driver supports the dump info SRBs
 #define STOR_FEATURE_DMA_ALLOCATION_NO_BOUNDARY             0x00002000  // Indicating that the miniport driver supports to allocate DMA to physical memory without boundaries.
-#define STOR_FEATURE_NVME                                   0x00004000  // Indicating that the miniport driver supports NVMe SRBEX and NVMe workflow
+#define STOR_FEATURE_SUPPORTS_NVME_ADAPTER                  0x00004000  // Indicating that the miniport driver supports NVMe based Storage Adapters
 #define STOR_FEATURE_REPORT_INTERNAL_DATA                   0x00008000  // Indicating that the miniport driver supports reporting internal data
 #define STOR_FEATURE_EARLY_DUMP                             0x00010000  // Indicating that the miniport driver supports early crash dump generation
+#define STOR_FEATURE_NVME_ICE                               0x00020000  // Indicating that the miniport driver supports NVMe ICE.
+
 
 
 // Flags for denoting the SRB type(s) supported by miniport
@@ -10622,7 +10883,8 @@ typedef struct _HW_INITIALIZATION_DATA {
 #define SRB_TYPE_FLAG_STORAGE_REQUEST_BLOCK     0x2
 
 // Flags for denoting the address format(s) supported by miniport
-#define ADDRESS_TYPE_FLAG_BTL8     0x1
+#define ADDRESS_TYPE_FLAG_BTL8                  0x1
+
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
 
@@ -11345,6 +11607,17 @@ StorPortRegistryWrite(
     _In_ ULONG BufferLength
     );
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+STORPORT_API
+BOOLEAN
+StorPortReadDriverRegistry(
+    _In_ PVOID DriverObject,
+    _In_ PUCHAR ValueName,
+    _Inout_ PULONG ValueDataLength,
+    _Inout_updates_(*ValueDataLength) PVOID ValueData
+    );
+#endif
+
 __drv_preferredFunction("(see documentation)", "Obsolete")
 STORPORT_API
 BOOLEAN
@@ -11511,6 +11784,7 @@ StorPortReleaseSpinLock(
                           DeviceExtension,
                           LockHandle);
 }
+
 
 STORPORT_API
 ULONG
@@ -12200,6 +12474,46 @@ StorPortFlushDataBufferMdl(
 
 ULONG
 FORCEINLINE
+StorPortReadRegistryKey(
+    _In_ PVOID HwDeviceExtension,
+    _In_ PWSTR AbsolutePath,
+    _In_ PWSTR KeyName,
+    _In_ ULONG ValueType,
+    _Inout_ PVOID *ValueData,
+    _Inout_ PULONG ValueDataLength
+    )
+/*++
+
+Routine Description:
+
+    This routine is used by the miniport to read the registry data.
+    The caller has to provide an absolute path to the key to be read.
+
+Arguments:
+
+    AbsolutePath - The absolute path to the key to be read.
+    KeyName - The key path under the absolute path.
+    ValueType - REG_XXXX
+    ValueData - Pointer to the data buffer
+    ValueDataLength - Pointer to the data length
+
+Return Value:
+
+    A STOR_STATUS code.
+
+--*/
+{
+    return StorPortExtendedFunction(ExtFunctionReadRegistryKey,
+                                    HwDeviceExtension,
+                                    AbsolutePath,
+                                    KeyName,
+                                    ValueType,
+                                    ValueData,
+                                    ValueDataLength);
+}
+
+ULONG
+FORCEINLINE
 StorPortRegistryReadAdapterKey(
     _In_ PVOID HwDeviceExtension,
     _In_opt_ PUCHAR SubKeyName,
@@ -12816,6 +13130,87 @@ StorPortInterlockedPopEntrySList(
     return Status;
 }
 
+
+//
+// Define bit flags for the Flags parameter of StorPortGetDeviceBase2
+//
+#define STORPORT_MAP_WRITECOMBINE 0x00000001UL // Indicates BaseAddress should be a mapped with PAGE_WRITECOMBINE protect flag
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortGetDeviceBase2(
+    _In_ PVOID HwDeviceExtension,
+    _In_ INTERFACE_TYPE BusType,
+    _In_ ULONG SystemIoBusNumber,
+    _In_ STOR_PHYSICAL_ADDRESS Address,
+    _In_ ULONG NumberOfBytes,
+    _In_ BOOLEAN InIoSpace,
+    _In_ ULONG Flags,
+    _Out_ PVOID *BaseAddress
+    )
+/*++
+
+Routine Description:
+
+    Like StorPortGetDeviceBase, but the Flags parameter allows for additional
+    optional behavior. Rather than returning a mapped base address, a status is
+    returned and the caller provides a pointer to store the mapping.
+
+Arguments:
+
+    HwDeviceExtension - used to find port device extension.
+
+    BusType - what type of bus - eisa, mca, isa
+
+    SystemIoBusNumber - which IO bus (for machines with multiple buses).
+
+    Address - base device address to be mapped.
+
+    NumberOfBytes - number of bytes for which address is valid.
+
+    IoSpace - indicates an IO address.
+
+    Flags - Used to request different attributes when mapping BaseAddress. If
+    Flags is 0, the mapping is noncached read/write
+
+
+    BaseAddress - a pointer to store the base address mapping in.
+
+Return Value:
+
+    A STOR_STATUS code.
+
+--*/
+{
+    ULONG Status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+
+    Status = StorPortExtendedFunction(ExtFunctionGetDeviceBase2,
+                                      HwDeviceExtension,
+                                      BusType,
+                                      SystemIoBusNumber,
+                                      Address,
+                                      NumberOfBytes,
+                                      InIoSpace,
+                                      Flags,
+                                      BaseAddress);
+
+#else
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(BusType);
+    UNREFERENCED_PARAMETER(SystemIoBusNumber);
+    UNREFERENCED_PARAMETER(Address);
+    UNREFERENCED_PARAMETER(NumberOfBytes);
+    UNREFERENCED_PARAMETER(InIoSpace);
+    UNREFERENCED_PARAMETER(Flags);
+    UNREFERENCED_PARAMETER(BaseAddress);
+#endif
+
+    return Status;
+}
+
 // StorPortExtendedFunction is a polymorphic function that handles many different types of requests,
 // making it difficult to annotate in a manner that would cover all possible uses.
 // The scanning engine does not recognize the StorPortExtendedFunction wrapper as aliasing memmory.
@@ -13001,6 +13396,142 @@ StorPortFreeHostMemoryBuffer(
                                     HwDeviceExtension,
                                     PhysicalAddressRanges,
                                     PhysicalAddressRangeCount);
+}
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortIsDriverHotSwapEnabled (
+    _In_opt_ _Null_ PVOID HwDeviceExtension,
+    _In_ PVOID DriverObject
+    )
+{
+    ULONG Status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+
+    Status = StorPortExtendedFunction(ExtFunctionIsDriverHotSwapEnabled,
+                                      HwDeviceExtension,
+                                      DriverObject);
+
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(DriverObject);
+
+#endif
+
+    return Status;
+}
+
+//
+// Opaque pointer for DRIVER_PROXY_EXTENSION.
+//
+
+typedef PVOID PSTOR_DRIVER_PROXY_EXTENSION;
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortRegisterDriverProxy (
+    _In_opt_ _Null_ PVOID HwDeviceExtension,
+    _In_ PVOID DriverObject,
+    _Out_ PSTOR_DRIVER_PROXY_EXTENSION *ProxyExtension
+    )
+{
+    ULONG Status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+
+    Status = StorPortExtendedFunction(ExtFunctionRegisterDriverProxy,
+                                      HwDeviceExtension,
+                                      DriverObject,
+                                      ProxyExtension);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(DriverObject);
+    UNREFERENCED_PARAMETER(ProxyExtension);
+
+#endif
+
+    return Status;
+
+}
+
+//
+// Mirrors DRIVER_PROXY_ENDPOINT_INFORMATION defined in io_x.h.
+//
+
+typedef ULONG STOR_DRIVER_PROXY_ENDPOINT_FUNCTION_ID,*PSTOR_DRIVER_PROXY_ENDPOINT_FUNCTION_ID;
+
+typedef struct _STOR_DRIVER_PROXY_ENDPOINT_INFORMATION {
+    STOR_DRIVER_PROXY_ENDPOINT_FUNCTION_ID Id;
+    PVOID EndpointFunction;
+    ULONG ParameterCount;
+} STOR_DRIVER_PROXY_ENDPOINT_INFORMATION, *PSTOR_DRIVER_PROXY_ENDPOINT_INFORMATION;
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortRegisterDriverProxyEndpoints (
+    _In_opt_ _Null_ PVOID HwDeviceExtension,
+    _In_ PSTOR_DRIVER_PROXY_EXTENSION ProxyExtension,
+    _Inout_count_(Count) PSTOR_DRIVER_PROXY_ENDPOINT_INFORMATION EndpointInfo,
+    _In_ ULONG Count
+    )
+{
+    ULONG Status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+
+    Status = StorPortExtendedFunction(ExtFunctionRegisterDriverProxyEndpoints,
+                                    HwDeviceExtension,
+                                    ProxyExtension,
+                                    EndpointInfo,
+                                    Count);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(ProxyExtension);
+    UNREFERENCED_PARAMETER(EndpointInfo);
+    UNREFERENCED_PARAMETER(Count);
+
+#endif
+
+    return Status;
+}
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortGetDriverProxyEndpointWrapper (
+    _In_opt_ _Null_ PVOID HwDeviceExtension,
+    _In_ PSTOR_DRIVER_PROXY_EXTENSION ProxyExtension,
+    _In_ STOR_DRIVER_PROXY_ENDPOINT_FUNCTION_ID Id,
+    _Out_ PVOID *Wrapper
+    )
+{
+    ULONG Status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+
+    Status = StorPortExtendedFunction(ExtFunctionGetDriverProxyEndpointWrapper,
+                                    HwDeviceExtension,
+                                    ProxyExtension,
+                                    Id,
+                                    Wrapper);
+
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(ProxyExtension);
+    UNREFERENCED_PARAMETER(Id);
+    UNREFERENCED_PARAMETER(Wrapper);
+
+#endif
+
+    return Status;
 }
 
 //
@@ -14171,6 +14702,65 @@ StorPortGetRequestCryptoInfo(
                                     CryptoKeyInfo);
 }
 
+ULONG
+FORCEINLINE
+StorPortNvmeIceIoStart(
+    _In_ PVOID HwDeviceExtension,
+    _In_ PSCSI_REQUEST_BLOCK Srb,
+    _In_ ULONG LbaCount,
+    _In_ ULONG PrpCount,
+    _Inout_ PULONGLONG Prp1,
+    _Inout_ PULONGLONG Prp2,
+    _Inout_ PULONGLONG PrpList
+    )
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+    status = StorPortExtendedFunction(ExtFunctionNvmeIceIoStart,
+                                      HwDeviceExtension,
+                                      Srb,
+                                      LbaCount,
+                                      PrpCount,
+                                      Prp1,
+                                      Prp2,
+                                      PrpList);
+#else
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Srb);
+    UNREFERENCED_PARAMETER(LbaCount);
+    UNREFERENCED_PARAMETER(PrpCount);
+    UNREFERENCED_PARAMETER(Prp1);
+    UNREFERENCED_PARAMETER(Prp2);
+    UNREFERENCED_PARAMETER(PrpList);
+#endif
+
+    return status;
+}
+
+ULONG
+FORCEINLINE
+StorPortNvmeIceIoComplete(
+    _In_ PVOID HwDeviceExtension,
+    _In_ PSCSI_REQUEST_BLOCK Srb
+    )
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+    status = StorPortExtendedFunction(ExtFunctionNvmeIceIoComplete,
+                                      HwDeviceExtension,
+                                      Srb);
+#else
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Srb);
+#endif
+
+    return status;
+}
+
 //
 // Storport interfaces to allow miniports to log ETW events.
 //
@@ -14181,10 +14771,11 @@ typedef enum _STORPORT_ETW_LEVEL {
     StorportEtwLevelLogAlways = 0,
     StorportEtwLevelCritical = 1,
 
-    // The following event levels are throttled
-    // at the adapter or unit level. There is an
-    // upper limit on the count of events for each
-    // level per hour per adapter/unit.
+    // The following event levels are throttled at the
+    // specific device instance at which the miniport
+    // event is targeted. There is an upper limit on the
+    // count of events for each level per hour at the
+    // device instance.
     StorportEtwLevelError = 2,
     StorportEtwLevelWarning = 3,
     StorportEtwLevelInformational = 4,
@@ -14199,15 +14790,16 @@ typedef enum _STORPORT_ETW_LEVEL {
 //
 // These keyword bits can be OR'd together to specify more than one keyword.
 //
-#define STORPORT_ETW_EVENT_KEYWORD_IO                    0x01
-#define STORPORT_ETW_EVENT_KEYWORD_PERFORMANCE           0x02
-#define STORPORT_ETW_EVENT_KEYWORD_POWER                 0x04
-#define STORPORT_ETW_EVENT_KEYWORD_ENUMERATION           0x08
-#define STORPORT_ETW_EVENT_KEYWORD_COMMAND_TRACE         0x10
-#define STORPORT_ETW_EVENT_KEYWORD_ASYNC_EVENT           0x20
-#define STORPORT_ETW_EVENT_KEYWORD_NON_IO                0x40
-#define STORPORT_ETW_EVENT_KEYWORD_COMMAND_TRACE_IO      0x80
-#define STORPORT_ETW_EVENT_KEYWORD_COMMAND_TRACE_NON_IO  0x100
+#define STORPORT_ETW_EVENT_KEYWORD_IO                    0x0000000000000001
+#define STORPORT_ETW_EVENT_KEYWORD_PERFORMANCE           0x0000000000000002
+#define STORPORT_ETW_EVENT_KEYWORD_POWER                 0x0000000000000004
+#define STORPORT_ETW_EVENT_KEYWORD_ENUMERATION           0x0000000000000008
+#define STORPORT_ETW_EVENT_KEYWORD_COMMAND_TRACE         0x0000000000000010
+#define STORPORT_ETW_EVENT_KEYWORD_ASYNC_EVENT           0x0000000000000020
+#define STORPORT_ETW_EVENT_KEYWORD_NON_IO                0x0000000000000040
+#define STORPORT_ETW_EVENT_KEYWORD_COMMAND_TRACE_IO      0x0000000000000080
+#define STORPORT_ETW_EVENT_KEYWORD_COMMAND_TRACE_NON_IO  0x0000000000000100
+#define STORPORT_ETW_EVENT_KEYWORD_NVME_FABRIC           0x0000000000000200
 
 typedef enum _STORPORT_ETW_EVENT_OPCODE {
     StorportEtwEventOpcodeInfo = 0,
@@ -14229,7 +14821,8 @@ typedef enum _STORPORT_ETW_EVENT_OPCODE {
 typedef enum _STORPORT_ETW_EVENT_CHANNEL{
     StorportEtwEventDiagnostic = 0,
     StorportEtwEventOperational = 1,
-    StorportEtwEventHealth = 2
+    StorportEtwEventHealth = 2,
+    StorportEtwEventIoPerformance = 3
 } STORPORT_ETW_EVENT_CHANNEL, *PSTORPORT_ETW_EVENT_CHANNEL;
 
 //
@@ -14949,6 +15542,143 @@ Returns:
     return status;
 }
 
+ULONG
+FORCEINLINE
+StorPortNvmeMiniportEvent(
+    _In_ PVOID HwDeviceExtension,
+    _In_opt_ PVOID ControllerHandle,
+    _In_ ULONG NamespaceId,
+    _In_ STORPORT_ETW_EVENT_CHANNEL EventChannel,
+    _In_ ULONG EventId,
+    _In_reads_or_z_(STORPORT_ETW_MAX_DESCRIPTION_LENGTH) PWSTR EventDescription,
+    _In_ ULONGLONG EventKeywords,
+    _In_ STORPORT_ETW_LEVEL EventLevel,
+    _In_ STORPORT_ETW_EVENT_OPCODE EventOpcode,
+    _In_reads_or_z_opt_(STORPORT_ETW_MAX_PARAM_NAME_LENGTH) PWSTR Parameter1Name,
+    _In_ ULONGLONG Parameter1Value,
+    _In_reads_or_z_opt_(STORPORT_ETW_MAX_PARAM_NAME_LENGTH) PWSTR Parameter2Name,
+    _In_ ULONGLONG Parameter2Value,
+    _In_reads_or_z_opt_(STORPORT_ETW_MAX_PARAM_NAME_LENGTH) PWSTR Parameter3Name,
+    _In_ ULONGLONG Parameter3Value,
+    _In_reads_or_z_opt_(STORPORT_ETW_MAX_PARAM_NAME_LENGTH) PWSTR Parameter4Name,
+    _In_ ULONGLONG Parameter4Value,
+    _In_reads_or_z_opt_(STORPORT_ETW_MAX_PARAM_NAME_LENGTH) PWSTR Parameter5Name,
+    _In_ ULONGLONG Parameter5Value,
+    _In_reads_or_z_opt_(STORPORT_ETW_MAX_PARAM_NAME_LENGTH) PWSTR Parameter6Name,
+    _In_ ULONGLONG Parameter6Value,
+    _In_reads_or_z_opt_(STORPORT_ETW_MAX_PARAM_NAME_LENGTH) PWSTR Parameter7Name,
+    _In_ ULONGLONG Parameter7Value,
+    _In_reads_or_z_opt_(STORPORT_ETW_MAX_PARAM_NAME_LENGTH) PWSTR Parameter8Name,
+    _In_ ULONGLONG Parameter8Value
+)
+/*
+Description:
+    A NVMe miniport can call this function to log an ETW event to a specific channel
+    with eight extra general purpose parameters (expressed as name-value pairs).
+
+Parameters:
+    HwDeviceExtension - The miniport's device extension.
+
+    ControllerHandle - For a fabric NVMe miniport, if the event is controller specific
+        it is Storport's handle for the NVMe controller. Else it should be NULL.
+
+    NamespaceId - If the event is namespace specific, then it is the specific namespace id.
+        Else it should be 0.
+
+    EventChannel - ETW channel where event is logged
+
+    EventId - A miniport-specific event ID to uniquely identify the type of event.
+
+    EventDescription - Required.  A short string describing the event.  Must
+        not be longer than STORPORT_ETW_MAX_DESCRIPTION_LENGTH characters,
+        not including the NULL terminator.
+
+    EventKeywords - Bitmask of STORPORT_ETW_EVENT_KEYWORD_* values to further
+        characterize the event.  Can be 0 if no keywords are desired.
+
+    EventLevel - The level of the event (e.g. Informational, Error, etc.).
+
+    EventOpcode - The opcode of the event (e.g. Info, Start, Stop, etc.).
+
+    Parameter<N>Name - A short string that gives meaning to parameter N's value.
+        If NULL or an empty string, parameter N will be ignored.  Must not be
+        longer than STORPORT_ETW_MAX_PARAM_NAME_LENGTH characters, not including
+        the NULL terminator.
+
+    Parameter<N>Value - Value of parameter N.  If the associated parameter N
+        name is NULL or empty, the value will be logged as 0.
+
+Returns:
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
+
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter. This is
+        typically returned if a passed-in string has too many characters.
+
+    STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+
+    status = StorPortExtendedFunction(ExtFunctionNvmeMiniportEvent,
+                                      HwDeviceExtension,
+                                      ControllerHandle,
+                                      NamespaceId,
+                                      EventChannel,
+                                      EventId,
+                                      EventDescription,
+                                      EventKeywords,
+                                      EventLevel,
+                                      EventOpcode,
+                                      Parameter1Name,
+                                      Parameter1Value,
+                                      Parameter2Name,
+                                      Parameter2Value,
+                                      Parameter3Name,
+                                      Parameter3Value,
+                                      Parameter4Name,
+                                      Parameter4Value,
+                                      Parameter5Name,
+                                      Parameter5Value,
+                                      Parameter6Name,
+                                      Parameter6Value,
+                                      Parameter7Name,
+                                      Parameter7Value,
+                                      Parameter8Name,
+                                      Parameter8Value);
+#else
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(ControllerHandle);
+    UNREFERENCED_PARAMETER(NamespaceId);
+    UNREFERENCED_PARAMETER(EventChannel);
+    UNREFERENCED_PARAMETER(EventId);
+    UNREFERENCED_PARAMETER(EventDescription);
+    UNREFERENCED_PARAMETER(EventKeywords);
+    UNREFERENCED_PARAMETER(EventLevel);
+    UNREFERENCED_PARAMETER(EventOpcode);
+    UNREFERENCED_PARAMETER(Parameter1Name);
+    UNREFERENCED_PARAMETER(Parameter1Value);
+    UNREFERENCED_PARAMETER(Parameter2Name);
+    UNREFERENCED_PARAMETER(Parameter2Value);
+    UNREFERENCED_PARAMETER(Parameter3Name);
+    UNREFERENCED_PARAMETER(Parameter3Value);
+    UNREFERENCED_PARAMETER(Parameter4Name);
+    UNREFERENCED_PARAMETER(Parameter4Value);
+    UNREFERENCED_PARAMETER(Parameter5Name);
+    UNREFERENCED_PARAMETER(Parameter5Value);
+    UNREFERENCED_PARAMETER(Parameter6Name);
+    UNREFERENCED_PARAMETER(Parameter6Value);
+    UNREFERENCED_PARAMETER(Parameter7Name);
+    UNREFERENCED_PARAMETER(Parameter7Value);
+    UNREFERENCED_PARAMETER(Parameter8Name);
+    UNREFERENCED_PARAMETER(Parameter8Value);
+#endif
+
+    return status;
+}
+
 #define EVENT_BUFFER_MAX_LENGTH     4096
 #define EVENT_NAME_MAX_LENGTH       32
 #define EVENT_MAX_PARAM_NAME_LEN    32
@@ -15086,6 +15816,71 @@ Returns:
 
     UNREFERENCED_PARAMETER(HwDeviceExtension);
     UNREFERENCED_PARAMETER(StorAddress);
+    UNREFERENCED_PARAMETER(Event);
+    UNREFERENCED_PARAMETER(Category);
+
+#endif
+
+    return status;
+}
+
+ULONG
+FORCEINLINE
+StorPortNvmeLogTelemetry(
+    _In_ PVOID HwDeviceExtension,
+    _In_opt_ PVOID ControllerHandle,
+    _In_ ULONG NamespaceId,
+    _In_ PSTORPORT_TELEMETRY_EVENT Event,
+    _In_ STOR_TELEMETRY_CATEGORY Category
+)
+/*
+Description:
+
+    A NVMe miniport can call this function to log a tracelogging measures event with
+    miniport customized data, which encapsulated in the EventBuffer structure.
+    This API additionally provide user to specify telemtry catergory type.
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    ControllerHandle - For a fabric NVMe miniport, if the event is controller specific
+        it is Storport's handle for the NVMe controller. Else it should be NULL.
+
+    NamespaceId - If the event is namespace specific, then it is the specific namespace id.
+        Else it should be 0.
+
+    Event - Telemetry data that includes standard event fields and miniport
+            payload, which both general buffer and name/value pairs.
+
+    Category - Category of telemetry to be logged (STOR_TELEMETRY_CATEGORY)
+
+Returns:
+
+    STOR_STATUS_SUCCESS if the telemetry event was successfully logged.
+
+    STOR_STATUS_NOT_IMPLEMENTED if the API is called on the OS that not support it.
+
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+
+    status = StorPortExtendedFunction(ExtFunctionNvmeMiniportTelemetry,
+                                      HwDeviceExtension,
+                                      ControllerHandle,
+                                      NamespaceId,
+                                      Event,
+                                      Category);
+
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(ControllerHandle);
+    UNREFERENCED_PARAMETER(NamespaceId);
     UNREFERENCED_PARAMETER(Event);
     UNREFERENCED_PARAMETER(Category);
 
@@ -15403,6 +16198,7 @@ Return Value:
 //
 typedef enum _STORPORT_QUERY_CONFIGURATION_TYPE {
     StorportQueryConfigurationD3 = 0,
+    StorportQueryConfigurationNvmeIce,
     StorportQueryConfigurationMax
 } STORPORT_QUERY_CONFIGURATION_TYPE, *PSTORPORT_QUERY_CONFIGURATION_TYPE;
 
@@ -15894,6 +16690,11 @@ Returns:
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
     STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
 
+Note:
+
+    PnP will always invoke resource rebalance and device re-start after
+    triggers reset and it succeeds.
+
 */
 {
     ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
@@ -15941,6 +16742,13 @@ Returns:
     STOR_STATUS_SUCCESS if the ETW event was successfully logged.
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
     STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
+
+Note:
+
+    If the reset request is initiated with keep driver stack option,
+    i.e., user does not specify flag STOR_RESET_FLAG_TEAR_DOWN_DRIVER_STACK,
+    PnP will always invoke resource rebalance and device re-start after
+    triggers reset and it succeeds.
 
 */
 {
@@ -16012,14 +16820,41 @@ typedef enum _STORPORT_FEATURE_TYPE
     StorportFeaturePostHwInitialize,
 
     //
-    // Wheter ScsiAdapterPrepareEarlyDumpData is supported
+    // Whether ScsiAdapterPrepareEarlyDumpData is supported
     //
     StorportFeaturePrepareEarlyDumpData,
 
     //
-    // Wheter ScsiAdapterRestoreEarlyDumpData is supported
+    // Whether ScsiAdapterRestoreEarlyDumpData is supported
     //
     StorportFeatureRestoreEarlyDumpData,
+
+    //
+    // Whether ScsiAdapterKsrPowerDown is supported
+    //
+    StorportFeatureKsrAdapterPowerDownOptimization,
+
+    //
+    // Whether ScsiUnitKsrPowerDown is supported
+    //
+    StorportFeatureKsrUnitPowerDownOptimization,
+
+    //
+    // Whether ScsiAdapterPreparePLDR is supported
+    //
+    StorportFeaturePreparePLDR,
+
+    //
+    // Whether ScsiNvmeofAdapterOperation is supported
+    //
+    StorportFeatureNvmeofAdapterOperation,
+
+
+
+    //
+    // Reserved feature control
+    //
+    StorportFeatureReserved1,
 
     StorportFeatureMax
 
@@ -17175,6 +18010,9 @@ Return Value:
 typedef PHYSICAL_ADDRESS SCSI_PHYSICAL_ADDRESS, *PSCSI_PHYSICAL_ADDRESS;
 
 #endif // STOR_USE_SCSI_ALIASES
+
+
+
 
 
 #if _MSC_VER >= 1200

@@ -342,6 +342,29 @@ Revision History:
 #endif
 
 
+// begin_ntoshvp
+
+//
+// When DECLSPEC_NOSANITIZEADDRESS is set, the compiler may not inline
+// functions marked with __forceinline. This may result in warning 4714:
+//
+//     function 'xxx' marked as __forceinline not inlined
+//
+// Provide a way to disable this warning.
+//
+
+#ifndef DECLSPEC_NOSANITIZEADDRESS
+#if defined(__SANITIZE_ADDRESS__)
+#define DECLSPEC_NOSANITIZEADDRESS      __declspec(no_sanitize_address)
+#define ASAN_WARNING_DISABLE_4714_PUSH  __pragma(warning(push)) __pragma(warning(disable:4714))
+#define ASAN_WARNING_DISABLE_4714_POP   __pragma(warning(pop))
+#else
+#define DECLSPEC_NOSANITIZEADDRESS
+#define ASAN_WARNING_DISABLE_4714_PUSH
+#define ASAN_WARNING_DISABLE_4714_POP
+#endif
+#endif
+
 #ifndef DECLSPEC_GUARDNOCF
 #if (_MSC_FULL_VER >= 170065501) || defined(_D1VERSIONLKG171_)
 #define DECLSPEC_GUARDNOCF  __declspec(guard(nocf))
@@ -374,7 +397,6 @@ Revision History:
 #endif
 #endif
 
-// begin_ntoshvp
 
 #ifndef FORCEINLINE
 #if (_MSC_VER >= 1200)
@@ -716,6 +738,8 @@ typedef struct _PROCESSOR_NUMBER {
     UCHAR Reserved;
 } PROCESSOR_NUMBER, *PPROCESSOR_NUMBER;
 
+// begin_ntoshvp
+
 //
 // Structure to represent a group-specific affinity, such as that of a
 // thread.  Specifies the group number and the affinity within that group.
@@ -726,6 +750,20 @@ typedef struct _GROUP_AFFINITY {
     USHORT Group;
     USHORT Reserved[3];
 } GROUP_AFFINITY, *PGROUP_AFFINITY;
+
+typedef struct _GROUP_AFFINITY32 {
+    ULONG Mask;
+    USHORT Group;
+    USHORT Reserved[3];
+} GROUP_AFFINITY32, *PGROUP_AFFINITY32;
+
+typedef struct _GROUP_AFFINITY64 {
+    unsigned __int64 Mask;
+    USHORT Group;
+    USHORT Reserved[3];
+} GROUP_AFFINITY64, *PGROUP_AFFINITY64;
+
+// end_ntoshvp
 
 #if defined(_WIN64)
 
@@ -835,6 +873,10 @@ typedef _Return_type_success_(return >= 0) long HRESULT;
 
 #define STDAPI                  EXTERN_C HRESULT STDAPICALLTYPE
 #define STDAPI_(type)           EXTERN_C type STDAPICALLTYPE
+#define DEPRECATED_STDAPI(message) EXTERN_C __declspec(deprecated(message)) HRESULT STDAPICALLTYPE
+#define DEPRECATED_NO_MESSAGE_STDAPI EXTERN_C __declspec(deprecated) HRESULT STDAPICALLTYPE
+#define DEPRECATED_STDAPI_(type, message) EXTERN_C __declspec(deprecated(message)) type STDAPICALLTYPE
+#define DEPRECATED_NO_MESSAGE_STDAPI_(type) EXTERN_C __declspec(deprecated) type STDAPICALLTYPE
 
 #define STDMETHODIMP            HRESULT STDMETHODCALLTYPE
 #define STDMETHODIMP_(type)     type STDMETHODCALLTYPE
@@ -849,6 +891,11 @@ typedef _Return_type_success_(return >= 0) long HRESULT;
 
 #define STDAPIV                 EXTERN_C HRESULT STDAPIVCALLTYPE
 #define STDAPIV_(type)          EXTERN_C type STDAPIVCALLTYPE
+
+#define DEPRECATED_STDAPIV(message) EXTERN_C __declspec(deprecated(message)) HRESULT STDAPIVCALLTYPE
+#define DEPRECATED_NO_MESSAGE_STDAPIV EXTERN_C __declspec(deprecated) HRESULT STDAPIVCALLTYPE
+#define DEPRECATED_STDAPIV_(type, message) EXTERN_C __declspec(deprecated(message)) type STDAPIVCALLTYPE
+#define DEPRECATED_NO_MESSAGE_STDAPIV_(type) EXTERN_C __declspec(deprecated) type STDAPIVCALLTYPE
 
 #define STDMETHODIMPV           HRESULT STDMETHODVCALLTYPE
 #define STDMETHODIMPV_(type)    type STDMETHODVCALLTYPE
@@ -1205,8 +1252,8 @@ char (*RtlpNumberOf( UNALIGNED T (&)[N] ))[N];
 #ifdef __cplusplus
 extern "C++"
 {
-char _RTL_CONSTANT_STRING_type_check(const char *s);
-char _RTL_CONSTANT_STRING_type_check(const WCHAR *s);
+template <size_t N> char _RTL_CONSTANT_STRING_type_check(const char  (&s)[N]);
+template <size_t N> char _RTL_CONSTANT_STRING_type_check(const WCHAR (&s)[N]);
 // __typeof would be desirable here instead of sizeof.
 template <size_t N> class _RTL_CONSTANT_STRING_remove_const_template_class;
 template <> class _RTL_CONSTANT_STRING_remove_const_template_class<sizeof(char)>  {public: typedef  char T; };
@@ -1984,9 +2031,12 @@ InterlockedExchangePointer(
 #if (_MSC_VER >= 1600)
 
 #define InterlockedExchange8 _InterlockedExchange8
-#define InterlockedExchange16 _InterlockedExchange16
 #define InterlockedExchangeNoFence8 InterlockedExchange8
 #define InterlockedExchangeAcquire8 InterlockedExchange8
+
+#define InterlockedExchange16 _InterlockedExchange16
+#define InterlockedExchangeNoFence16 InterlockedExchange16
+#define InterlockedExchangeAcquire16 InterlockedExchange16
 
 CHAR
 InterlockedExchange8 (
@@ -2022,9 +2072,19 @@ InterlockedExchange16 (
 #define InterlockedXorAcquire8 _InterlockedXor8
 #define InterlockedXorRelease8 _InterlockedXor8
 #define InterlockedXorNoFence8 _InterlockedXor8
+#define InterlockedExchangeAdd16 _InterlockedExchangeAdd16
 #define InterlockedAnd16 _InterlockedAnd16
+#define InterlockedAndAcquire16 InterlockedAnd16
+#define InterlockedAndRelease16 InterlockedAnd16
+#define InterlockedAndNoFence16 InterlockedAnd16
 #define InterlockedOr16 _InterlockedOr16
+#define InterlockedOrAcquire16 InterlockedOr16
+#define InterlockedOrRelease16 InterlockedOr16
+#define InterlockedOrNoFence16 InterlockedOr16
 #define InterlockedXor16 _InterlockedXor16
+#define InterlockedXorAcquire16 InterlockedXor16
+#define InterlockedXorRelease16 InterlockedXor16
+#define InterlockedXorNoFence16 InterlockedXor16
 
 char
 InterlockedExchangeAdd8 (
@@ -2854,6 +2914,8 @@ extern "C" {
 #pragma intrinsic(_ReadWriteBarrier)
 #pragma intrinsic(_WriteBarrier)
 
+#define SpeculationFence() NOP_FUNCTION
+
 FORCEINLINE
 VOID
 YieldProcessor (
@@ -2937,6 +2999,7 @@ _InlineBitScanReverse64 (
 #define InterlockedXor16 _InterlockedXor16
 #define InterlockedIncrement16 _InterlockedIncrement16
 #define InterlockedDecrement16 _InterlockedDecrement16
+#define InterlockedExchangeAdd16 _InterlockedExchangeAdd16
 #define InterlockedCompareExchange16 _InterlockedCompareExchange16
 
 #define InterlockedAnd _InterlockedAnd
@@ -3352,6 +3415,8 @@ BarrierAfterRead (
 // ARM doesn't have.
 //
 
+// end_ntoshvp
+
 ULONG64
 ReadTimeStampCounter(
     VOID
@@ -3365,8 +3430,11 @@ ReadPMC (
 {
 
     _MoveToCoprocessor(Counter, CP15_PMSELR);
+    _DataSynchronizationBarrier();
     return (ULONG64)_MoveFromCoprocessor(CP15_PMXEVCNTR);
 }
+
+// begin_ntoshvp
 
 #ifdef __cplusplus
 }
@@ -3544,6 +3612,7 @@ _BitTestAndSet64(__int64 *Base, __int64 Index)
 #define InterlockedXor16 _InterlockedXor16
 #define InterlockedIncrement16 _InterlockedIncrement16
 #define InterlockedDecrement16 _InterlockedDecrement16
+#define InterlockedExchangeAdd16 _InterlockedExchangeAdd16
 #define InterlockedCompareExchange16 _InterlockedCompareExchange16
 
 #define InterlockedAnd _InterlockedAnd
@@ -3729,7 +3798,17 @@ _BitTestAndSet64(__int64 *Base, __int64 Index)
 #pragma intrinsic(_ReadWriteBarrier)
 #pragma intrinsic(_WriteBarrier)
 
-#define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
+#define SpeculationFence() NOP_FUNCTION
+
+FORCEINLINE
+VOID
+MemoryBarrier (
+    VOID
+    )
+{
+    __dmb(_ARM64_BARRIER_SY);
+}
+
 #define PreFetchCacheLine(l,a)      __prefetch2((const void *) (a), ARM64_PREFETCH(PLD, L1, KEEP))
 #define PrefetchForWrite(p)         __prefetch2((const void *) (p), ARM64_PREFETCH(PST, L1, KEEP))
 #define ReadForWriteAccess(p)       (__prefetch2((const void *) (p), ARM64_PREFETCH(PST, L1, KEEP)), *(p))
@@ -3759,9 +3838,29 @@ YieldProcessor (
 #pragma intrinsic(__iso_volatile_store16)
 #pragma intrinsic(__iso_volatile_store32)
 #pragma intrinsic(__iso_volatile_store64)
+#pragma intrinsic(__ldar8)
+#pragma intrinsic(__ldar16)
+#pragma intrinsic(__ldar32)
+#pragma intrinsic(__ldar64)
+#pragma intrinsic(__stlr8)
+#pragma intrinsic(__stlr16)
+#pragma intrinsic(__stlr32)
+#pragma intrinsic(__stlr64)
+
+#if _MSC_FULL_VER >= 193632407
+#pragma intrinsic(__load_acquire8)
+#pragma intrinsic(__load_acquire16)
+#pragma intrinsic(__load_acquire32)
+#pragma intrinsic(__load_acquire64)
+#endif // _MSC_FULL_VER >= 193632407
 
 //
 //
+
+// TODO: Remove when clang-cl supports __ldar/__stlr/__loadacquire intrinsics
+#if !defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && defined(__clang__)
+#define __USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ 1
+#endif
 
 FORCEINLINE
 CHAR
@@ -3773,8 +3872,21 @@ ReadAcquire8 (
 
     CHAR Value;
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     Value = __iso_volatile_load8(Source);
     __dmb(_ARM64_BARRIER_ISH);
+
+#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
+#if _MSC_FULL_VER >= 193632407
+    Value = (CHAR)__load_acquire8((unsigned __int8 volatile*)Source);
+#else
+    Value = (CHAR)__ldar8((unsigned __int8 volatile*)Source);
+#endif
+
+#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     return Value;
 }
 
@@ -3801,8 +3913,13 @@ WriteRelease8 (
 
 {
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
     __dmb(_ARM64_BARRIER_ISH);
     __iso_volatile_store8(Destination, Value);
+#else
+    __stlr8((unsigned __int8 volatile*)Destination, (unsigned __int8)Value);
+#endif
+
     return;
 }
 
@@ -3829,8 +3946,21 @@ ReadAcquire16 (
 
     SHORT Value;
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     Value = __iso_volatile_load16(Source);
     __dmb(_ARM64_BARRIER_ISH);
+
+#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
+#if _MSC_FULL_VER >= 193632407
+    Value = (SHORT)__load_acquire16((unsigned __int16 volatile*)Source);
+#else
+    Value = (SHORT)__ldar16((unsigned __int16 volatile*)Source);
+#endif
+
+#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     return Value;
 }
 
@@ -3857,8 +3987,13 @@ WriteRelease16 (
 
 {
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
     __dmb(_ARM64_BARRIER_ISH);
     __iso_volatile_store16(Destination, Value);
+#else
+    __stlr16((unsigned __int16 volatile*)Destination, (unsigned __int16)Value);
+#endif
+
     return;
 }
 
@@ -3885,8 +4020,21 @@ ReadAcquire (
 
     LONG Value;
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     Value = __iso_volatile_load32((int *)Source);
     __dmb(_ARM64_BARRIER_ISH);
+
+#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
+#if _MSC_FULL_VER >= 193632407
+    Value = (LONG)__load_acquire32((unsigned __int32 volatile*)Source);
+#else
+    Value = (LONG)__ldar32((unsigned __int32 volatile*)Source);
+#endif
+
+#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     return Value;
 }
 
@@ -3913,8 +4061,13 @@ WriteRelease (
 
 {
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
     __dmb(_ARM64_BARRIER_ISH);
     __iso_volatile_store32((int *)Destination, Value);
+#else
+    __stlr32((unsigned __int32 volatile*)Destination, (unsigned __int32)Value);
+#endif
+
     return;
 }
 
@@ -3941,8 +4094,21 @@ ReadAcquire64 (
 
     LONG64 Value;
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     Value = __iso_volatile_load64(Source);
     __dmb(_ARM64_BARRIER_ISH);
+
+#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
+#if _MSC_FULL_VER >= 193632407
+    Value = (LONG64)__load_acquire64((unsigned __int64 volatile*)Source);
+#else
+    Value = (LONG64)__ldar64((unsigned __int64 volatile*)Source);
+#endif
+
+#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     return Value;
 }
 
@@ -3969,8 +4135,13 @@ WriteRelease64 (
 
 {
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
     __dmb(_ARM64_BARRIER_ISH);
     __iso_volatile_store64(Destination, Value);
+#else
+    __stlr64((unsigned __int64 volatile*)Destination, (unsigned __int64)Value);
+#endif
+
     return;
 }
 
@@ -3997,6 +4168,10 @@ BarrierAfterRead (
     __dmb(_ARM64_BARRIER_ISH);
     return;
 }
+
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__)
+#undef __USE_MS_ARM64_DMB_ACQUIRE_RELEASE__
+#endif
 
 //
 //
@@ -4028,6 +4203,8 @@ BarrierAfterRead (
 #define ARM64_SYSREG_OP2(_Reg_) ((_Reg_) & 7)
 
 #define ARM64_CNTVCT            ARM64_SYSREG(3,3,14, 0,2)  // Generic Timer counter register
+#define ARM64_CNTVCT_EL0        ARM64_SYSREG(3,3,14, 0,2)  // Generic Timer counter register
+#define ARM64_CNTFRQ_EL0        ARM64_SYSREG(3,3,14, 0,0)  // Counter-timer Frequency register
 #define ARM64_PMCCNTR_EL0       ARM64_SYSREG(3,3, 9,13,0)  // Cycle Count Register [CP15_PMCCNTR]
 #define ARM64_PMSELR_EL0        ARM64_SYSREG(3,3, 9,12,5)  // Event Counter Selection Register [CP15_PMSELR]
 #define ARM64_PMXEVCNTR_EL0     ARM64_SYSREG(3,3, 9,13,2)  // Event Count Register [CP15_PMXEVCNTR]
@@ -4035,8 +4212,6 @@ BarrierAfterRead (
 #define ARM64_TPIDR_EL0         ARM64_SYSREG(3,3,13, 0,2)  // Thread ID Register, User Read/Write [CP15_TPIDRURW]
 #define ARM64_TPIDRRO_EL0       ARM64_SYSREG(3,3,13, 0,3)  // Thread ID Register, User Read Only [CP15_TPIDRURO]
 #define ARM64_TPIDR_EL1         ARM64_SYSREG(3,0,13, 0,4)  // Thread ID Register, Privileged Only [CP15_TPIDRPRW]
-
-
 
 #pragma intrinsic(_WriteStatusReg)
 #pragma intrinsic(_ReadStatusReg)
@@ -4065,6 +4240,9 @@ extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
 DECLSPEC_GUARDNOCF
 
 #endif // defined(_M_HYBRID_X86_ARM64)
+
+//
+// hextract end_ntoshvp
 
 FORCEINLINE
 ULONG64
@@ -4096,14 +4274,45 @@ ReadPMC (
     _In_ ULONG Counter
     )
 {
-    // ARM64_WORKITEM: These can be directly accessed, but
-    // given our usage, it that any benefit? We need to know
-    // the register index at compile time, though atomicity
-    // benefits would still be good if needed, even if we
-    // went with a big switch statement.
-    _WriteStatusReg(ARM64_PMSELR_EL0, Counter);
-    return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTR_EL0);
+
+    switch (Counter) {
+    case  0: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(0));
+    case  1: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(1));
+    case  2: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(2));
+    case  3: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(3));
+    case  4: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(4));
+    case  5: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(5));
+    case  6: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(6));
+    case  7: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(7));
+    case  8: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(8));
+    case  9: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(9));
+    case 10: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(10));
+    case 11: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(11));
+    case 12: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(12));
+    case 13: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(13));
+    case 14: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(14));
+    case 15: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(15));
+    case 16: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(16));
+    case 17: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(17));
+    case 18: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(18));
+    case 19: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(19));
+    case 20: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(20));
+    case 21: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(21));
+    case 22: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(22));
+    case 23: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(23));
+    case 24: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(24));
+    case 25: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(25));
+    case 26: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(26));
+    case 27: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(27));
+    case 28: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(28));
+    case 29: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(29));
+    case 30: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(30));
+    default: return 0;
+    }
 }
+
+// hextract begin_ntoshvp
+//
 
 //
 // Define functions to capture the high 64-bits of a 128-bit multiply.
@@ -4210,15 +4419,13 @@ ShiftRight128 (
 // Define functions to perform 128-bit multiplies.
 //
 
-// Most ARM64/AArch64 intrinsics available in MSVC are not currently available in other compilers.
-// clang-cl defines _M_ARM64, so we need a better escape hatch to avoid using these intrinsics,
-// as well as allow us to re-enable them in the event clang-cl starts supporting the msvc intrinsics.
-#if !defined(ARM64_MULT_INTRINSICS_SUPPORTED)
-    #if defined(_MSC_VER) && !defined(__clang__)
-    #define ARM64_MULT_INTRINSICS_SUPPORTED 1
-    #else
-    #define ARM64_MULT_INTRINSICS_SUPPORTED 0
-    #endif
+#if !defined(_ARM64_MULT_INTRINS_SUPPORTED)
+#if (defined(_M_ARM64) || defined(_M_ARM64EC)) && \
+    defined(_MSC_VER) && (!defined(__clang__) || (defined(__clang_major__) && __clang_major__ >= 13))
+#define _ARM64_MULT_INTRINS_SUPPORTED 1
+#else
+#define _ARM64_MULT_INTRINS_SUPPORTED 0
+#endif
 #endif
 
 #if !defined(UnsignedMultiply128)
@@ -4253,7 +4460,7 @@ Return Value:
 
 {
 
-#if (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)) && ARM64_MULT_INTRINSICS_SUPPORTED
+#if (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)) && _ARM64_MULT_INTRINS_SUPPORTED
 
     *HighProduct = UnsignedMultiplyHigh(Multiplier, Multiplicand);
     return Multiplier * Multiplicand;
@@ -4286,6 +4493,10 @@ Return Value:
 
 }
 
+#endif // !defined(UnsignedMultiply128)
+
+#if !defined(Multiply128)
+
 __forceinline
 LONG64
 Multiply128 (
@@ -4294,15 +4505,24 @@ Multiply128 (
     _Out_ LONG64 *HighProduct
     )
 {
+#if (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)) && _ARM64_MULT_INTRINS_SUPPORTED
+
+    *HighProduct = MultiplyHigh(Multiplier, Multiplicand);
+    return Multiplier * Multiplicand;
+
+#else
+
     LONG64 Result = (LONG64)UnsignedMultiply128((ULONG64)Multiplier, (ULONG64)Multiplicand, (ULONG64 *)HighProduct);
 
     *HighProduct += (Multiplier >> 63) * Multiplicand;
     *HighProduct += Multiplier * (Multiplicand >> 63);
 
     return Result;
+
+#endif
 }
 
-#endif // !defined(UnsignedMultiply128)
+#endif // !defined(Multiply128)
 
 #if !defined(_M_ARM64EC)
 
@@ -4821,9 +5041,12 @@ _InlineInterlockedCompareExchangePointer (
 #if (_MSC_VER >= 1600)
 
 #define InterlockedExchange8 _InterlockedExchange8
-#define InterlockedExchange16 _InterlockedExchange16
 #define InterlockedExchangeNoFence8 InterlockedExchange8
 #define InterlockedExchangeAcquire8 InterlockedExchange8
+
+#define InterlockedExchange16 _InterlockedExchange16
+#define InterlockedExchangeNoFence16 InterlockedExchange16
+#define InterlockedExchangeAcquire16 InterlockedExchange16
 
 CHAR
 InterlockedExchange8 (
@@ -4857,12 +5080,19 @@ InterlockedExchange16 (
 #define InterlockedXorAcquire8 _InterlockedXor8
 #define InterlockedXorRelease8 _InterlockedXor8
 #define InterlockedXorNoFence8 _InterlockedXor8
+#define InterlockedExchangeAdd16 _InterlockedExchangeAdd16
 #define InterlockedAnd16 _InterlockedAnd16
+#define InterlockedAndAcquire16 InterlockedAnd16
+#define InterlockedAndRelease16 InterlockedAnd16
+#define InterlockedAndNoFence16 InterlockedAnd16
 #define InterlockedOr16 _InterlockedOr16
+#define InterlockedOrAcquire16 InterlockedOr16
+#define InterlockedOrRelease16 InterlockedOr16
+#define InterlockedOrNoFence16 InterlockedOr16
 #define InterlockedXor16 _InterlockedXor16
-#define InterlockedCompareExchange16 _InterlockedCompareExchange16
-#define InterlockedIncrement16 _InterlockedIncrement16
-#define InterlockedDecrement16 _InterlockedDecrement16
+#define InterlockedXorAcquire16 InterlockedXor16
+#define InterlockedXorRelease16 InterlockedXor16
+#define InterlockedXorNoFence16 InterlockedXor16
 
 char
 InterlockedExchangeAdd8 (
@@ -5259,6 +5489,19 @@ __writefsdword (
 #pragma intrinsic(__writefsword)
 #pragma intrinsic(__writefsdword)
 
+#if !defined(_M_HYBRID_X86_ARM64)
+
+VOID
+_mm_lfence (
+    VOID
+    );
+
+#pragma intrinsic(_mm_lfence)
+
+#define SpeculationFence _mm_lfence
+
+#endif // !defined(_M_HYBRID_x86_ARM64)
+
 VOID
 _ReadWriteBarrier (
     VOID
@@ -5539,6 +5782,67 @@ BarrierAfterRead (
 // Define "raw" operations which have no ordering or atomicity semantics.
 //
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#if defined(_KERNEL_MODE) && defined(__SANITIZE_ADDRESS__) && defined(CSAN_ON_ASAN)
+
+#define ReadRaw8        CsanRead8NoCheck
+#define WriteRaw8       CsanWrite8NoCheck
+#define ReadRaw16       CsanRead16NoCheck
+#define WriteRaw16      CsanWrite16NoCheck
+#define ReadRaw         CsanReadNoCheck
+#define WriteRaw        CsanWriteNoCheck
+#define ReadRaw64       CsanRead64NoCheck
+#define WriteRaw64      CsanWrite64NoCheck
+
+CHAR
+ReadRaw8 (
+    _In_ _Interlocked_operand_ CHAR const volatile *Source
+    );
+
+VOID
+WriteRaw8 (
+    _Out_ _Interlocked_operand_ CHAR volatile *Destination,
+    _In_ CHAR Value
+    );
+
+SHORT
+ReadRaw16 (
+    _In_ _Interlocked_operand_ SHORT const volatile *Source
+    );
+
+VOID
+WriteRaw16 (
+    _Out_ _Interlocked_operand_ SHORT volatile *Destination,
+    _In_ SHORT Value
+    );
+
+LONG
+ReadRaw (
+    _In_ _Interlocked_operand_ LONG const volatile *Source
+    );
+
+VOID
+WriteRaw (
+    _Out_ _Interlocked_operand_ LONG volatile *Destination,
+    _In_ LONG Value
+    );
+
+LONG64
+ReadRaw64 (
+    _In_ _Interlocked_operand_ LONG64 const volatile *Source
+    );
+
+VOID
+WriteRaw64 (
+    _Out_ _Interlocked_operand_ LONG64 volatile *Destination,
+    _In_ LONG64 Value
+    );
+
+#else
+
 FORCEINLINE
 CHAR
 ReadRaw8 (
@@ -5645,6 +5949,60 @@ WriteRaw64 (
 
     *(LONG64 *)Destination = Value;
     return;
+}
+
+#endif // _KERNEL_MODE && __SANITIZE_ADDRESS__ && CSAN_ON_ASAN
+
+#ifdef __cplusplus
+}
+#endif
+
+FORCEINLINE
+LONG
+AddRaw (
+    _Inout_ _Interlocked_operand_ LONG volatile *Destination,
+    _In_ LONG Value
+    )
+
+{
+    LONG NewValue;
+
+    NewValue = ReadRaw(Destination);
+    NewValue += Value;
+    WriteRaw(Destination, NewValue);
+
+    return NewValue;
+}
+
+FORCEINLINE
+ULONG
+AddULongRaw (
+    _Inout_ _Interlocked_operand_ ULONG volatile *Destination,
+    _In_ ULONG Value
+    )
+
+{
+    return (ULONG)AddRaw((PLONG)Destination, (LONG)Value);
+}
+
+FORCEINLINE
+LONG
+IncrementRaw (
+    _Inout_ _Interlocked_operand_ LONG volatile *Destination
+    )
+
+{
+    return AddRaw(Destination, 1);
+}
+
+FORCEINLINE
+ULONG
+IncrementULongRaw (
+    _Inout_ _Interlocked_operand_ ULONG volatile *Destination
+    )
+
+{
+    return (ULONG)IncrementRaw((PLONG)Destination);
 }
 
 //
@@ -6141,6 +6499,54 @@ WriteULong64Raw (
     return;
 }
 
+FORCEINLINE
+LONG64
+AddRaw64 (
+    _Inout_ _Interlocked_operand_ LONG64 volatile *Destination,
+    _In_ LONG64 Value
+    )
+
+{
+    LONG64 NewValue;
+
+    NewValue = ReadRaw64(Destination);
+    NewValue += Value;
+    WriteRaw64(Destination, NewValue);
+
+    return NewValue;
+}
+
+FORCEINLINE
+ULONG64
+AddULong64Raw (
+    _Inout_ _Interlocked_operand_ ULONG64 volatile *Destination,
+    _In_ ULONG64 Value
+    )
+
+{
+    return (ULONG64)AddRaw64((PLONG64)Destination, (LONG64)Value);
+}
+
+FORCEINLINE
+LONG64
+IncrementRaw64 (
+    _Inout_ _Interlocked_operand_ LONG64 volatile *Destination
+    )
+
+{
+    return AddRaw64(Destination, 1);
+}
+
+FORCEINLINE
+ULONG64
+IncrementULong64Raw (
+    _Inout_ _Interlocked_operand_ ULONG64 volatile *Destination
+    )
+
+{
+    return (ULONG64)IncrementRaw64((PLONG64)Destination);
+}
+
 #define ReadSizeTAcquire ReadULongPtrAcquire
 
 #define ReadSizeTNoFence ReadULongPtrNoFence
@@ -6369,12 +6775,19 @@ typedef enum _LOGICAL_PROCESSOR_RELATIONSHIP {
 
 #define LTP_PC_SMT 0x1
 
+//
+//
+
 typedef enum _PROCESSOR_CACHE_TYPE {
     CacheUnified,
     CacheInstruction,
     CacheData,
-    CacheTrace
-} PROCESSOR_CACHE_TYPE;
+    CacheTrace,
+    CacheUnknown
+} PROCESSOR_CACHE_TYPE, *PPROCESSOR_CACHE_TYPE;
+
+//
+//
 
 #define CACHE_FULLY_ASSOCIATIVE 0xFF
 
@@ -8669,7 +9082,9 @@ typedef struct _PCI_ROOT_BUS_OSC_SUPPORT_FIELD {
             ULONG MessageSignaledInterrupts:1;
             ULONG OptimizedBufferFlushAndFill:1;
             ULONG AspmOptionality:1;
-            ULONG Reserved:25;
+            ULONG ErrorDisconnectRecovery:1;
+            ULONG HpxDescriptorRecord:1;
+            ULONG Reserved:23;
         } DUMMYSTRUCTNAME;
         ULONG AsULONG;
     } u;
@@ -8684,11 +9099,28 @@ typedef struct _PCI_ROOT_BUS_OSC_CONTROL_FIELD {
             ULONG ExpressAdvancedErrorReporting:1;
             ULONG ExpressCapabilityStructure:1;
             ULONG LatencyToleranceReporting:1;
-            ULONG Reserved:26;
+            ULONG AllOnesMmioInvalidToDrivers:1;
+            ULONG DownstreamPortContainment:1;
+            ULONG CompletionTimeout:1;
+            ULONG FirmwareIntermediaryConfig:1;
+            ULONG Reserved:22;
         } DUMMYSTRUCTNAME;
         ULONG AsULONG;
     } u;
-} PCI_ROOT_BUS_OSC_CONTROL_FIELD, *PPCI_ROOT_BUS_OSC_CONTROL_FIELD;
+} PCI_ROOT_BUS_OSC_CONTROL_FIELD, * PPCI_ROOT_BUS_OSC_CONTROL_FIELD;
+
+typedef enum _PCI_OSC_CONTROL_BITS {
+    PciOscControlBitExpressNativeHotPlug = 1,
+    PciOscControlBitShpcNativeHotPlug = 1<<1,
+    PciOscControlBitExpressNativePME = 1<<2,
+    PciOscControlBitExpressAdvancedErrorReporting = 1<<3,
+    PciOscControlBitExpressCapabilityStructure = 1<<4,
+    PciOscControlBitLatencyToleranceReporting = 1<<5,
+    PciOscControlBitAllOnesMmioInvalidToDrivers = 1<<6,
+    PciOscControlBitDownstreamPortContainment = 1<<7,
+    PciOscControlBitCompletionTimeout = 1<<8,
+    PciOscControlBitFirmwareIntermediaryConfig = 1<<9
+}PCI_OSC_CONTROL_BITS, *PPCI_OSC_CONTROL_BITS ;
 
 //
 // The following comes from the PCI Firmware Specification, version 3.1.  It
@@ -9258,7 +9690,10 @@ typedef union _PCI_EXPRESS_DEVICE_CAPABILITIES_2_REGISTER {
         ULONG ExtendedFmtFieldSuported:1;
         ULONG EndEndTLPPrefixSupported:1;
         ULONG MaxEndEndTLPPrefixes:2;
-        ULONG Rsvd2:8;
+        ULONG Rsvd2:4;
+        ULONG DmwrCompleterSupported:1;
+        ULONG DmwrLengthsSupported:2;
+        ULONG Rsvd3:1;
     } DUMMYSTRUCTNAME;
 
     ULONG AsULONG;
@@ -9560,7 +9995,7 @@ typedef union _PCI_EXPRESS_PME_REQUESTOR_ID {
 #define PCI_EXPRESS_READINESS_TIME_REPORTING_CAP_ID                     0x0022
 #define PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_CAP_ID                   0x0023
 #define PCI_EXPRESS_NPEM_CAP_ID                                         0x0029
-
+#define PCI_EXPRESS_DEVICE_3_CAP_ID                                     0x002F
 
 //
 // All Enhanced capabilities have the following header.
@@ -9719,6 +10154,7 @@ typedef struct _VIRTUAL_RESOURCE {
     VIRTUAL_RESOURCE_STATUS         Status;
 } VIRTUAL_RESOURCE, *PVIRTUAL_RESOURCE;
 
+#define PCI_VIRTUAL_RESOURCE_COUNT 0x8
 typedef struct _PCI_EXPRESS_VIRTUAL_CHANNEL_CAPABILITY {
 
     PCI_EXPRESS_ENHANCED_CAPABILITY_HEADER Header;
@@ -9727,7 +10163,7 @@ typedef struct _PCI_EXPRESS_VIRTUAL_CHANNEL_CAPABILITY {
     VIRTUAL_CHANNEL_CAPABILITIES2   Capabilities2;
     VIRTUAL_CHANNEL_CONTROL         Control;
     VIRTUAL_CHANNEL_STATUS          Status;
-    VIRTUAL_RESOURCE                Resource[8];
+    VIRTUAL_RESOURCE                Resource[PCI_VIRTUAL_RESOURCE_COUNT];
 
 } PCI_EXPRESS_VIRTUAL_CHANNEL_CAPABILITY, *PPCI_EXPRESS_VIRTUAL_CHANNEL_CAPABILITY;
 
@@ -9835,6 +10271,36 @@ typedef struct _PCI_EXPRESS_PRI_CAPABILITY {
 } PCI_EXPRESS_PRI_CAPABILITY, *PPCI_EXPRESS_PRI_CAPABILITY;
 
 //
+// Device 3 Extended Capability Structure
+//
+
+typedef union _PCI_EXPRESS_DEVICE_CAPABILITIES_3_REGISTER {
+    struct {
+        ULONG DmwrRequestRoutingSupported:1;
+        ULONG Rsvd:31;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_EXPRESS_DEVICE_CAPABILITIES_3_REGISTER, *PPCI_EXPRESS_DEVICE_CAPABILITIES_3_REGISTER;
+
+typedef union _PCI_EXPRESS_DEVICE_CONTROL_3_REGISTER {
+    struct {
+        ULONG DmwrRequesterEnable:1;
+        ULONG Rsvd:31;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_EXPRESS_DEVICE_CONTROL_3_REGISTER, *PPCI_EXPRESS_DEVICE_CONTROL_3_REGISTER;
+
+typedef struct _PCI_EXPRESS_DEVICE_3_EXTENDED_CAPABILITY {
+    PCI_EXPRESS_ENHANCED_CAPABILITY_HEADER Header;
+    PCI_EXPRESS_DEVICE_CAPABILITIES_3_REGISTER Capability;
+    PCI_EXPRESS_DEVICE_CONTROL_3_REGISTER Control;
+} PCI_EXPRESS_DEVICE_3_EXTENDED_CAPABILITY, *PPCI_EXPRESS_DEVICE_3_EXTENDED_CAPABILITY;
+
+//
 // PTM Extended Capability structures.
 //
 
@@ -9901,7 +10367,8 @@ typedef union _PCI_EXPRESS_UNCORRECTABLE_ERROR_STATUS {
         ULONG MCBlockedTlp:1;
         ULONG AtomicOpEgressBlocked:1;
         ULONG TlpPrefixBlocked:1;
-        ULONG Reserved3:6;
+        ULONG PoisonedTlpEgressBlocked:1;
+        ULONG Reserved3:5;
     } DUMMYSTRUCTNAME;
 
     ULONG AsULONG;
@@ -9930,7 +10397,8 @@ typedef union _PCI_EXPRESS_UNCORRECTABLE_ERROR_MASK {
         ULONG MCBlockedTlp:1;
         ULONG AtomicOpEgressBlocked:1;
         ULONG TlpPrefixBlocked:1;
-        ULONG Reserved3:6;
+        ULONG PoisonedTlpEgressBlocked:1;
+        ULONG Reserved3:5;
     } DUMMYSTRUCTNAME;
 
     ULONG AsULONG;
@@ -9959,7 +10427,8 @@ typedef union _PCI_EXPRESS_UNCORRECTABLE_ERROR_SEVERITY {
         ULONG MCBlockedTlp:1;
         ULONG AtomicOpEgressBlocked:1;
         ULONG TlpPrefixBlocked:1;
-        ULONG Reserved3:6;
+        ULONG PoisonedTlpEgressBlocked:1;
+        ULONG Reserved3:5;
     } DUMMYSTRUCTNAME;
 
     ULONG AsULONG;

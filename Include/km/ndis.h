@@ -40,6 +40,8 @@ Notes:
 
         Version     First available in
         ------------------------------------------------------------------
+        689         Windows 11, gallium release
+        688         Windows 11, copper release
         687         Windows 11, nickel release
         686         Windows 11, cobalt release
         685         Windows 10, iron release / Windows Server 2022
@@ -153,6 +155,8 @@ EXTERN_C_START
 #ifdef NETCX_ADAPTER_2
 
 #if ( \
+    defined(NDIS689_MINIPORT) || \
+    defined(NDIS688_MINIPORT) || \
     defined(NDIS687_MINIPORT) || \
     defined(NDIS686_MINIPORT) || \
     defined(NDIS685_MINIPORT) || \
@@ -175,8 +179,16 @@ EXTERN_C_START
 #error NDISXXX_MINIPORT macros are reserved
 #endif
 
-// NDIS version that NetAdapterCx.sys targets
+// NDIS version that NetAdapterCx.sys targets, dynamically defined based on NetAdapterCx version
+#if ((defined(NET_VERSION_MAJOR) && defined(NET_VERSION_MINOR)) && \
+    (NET_VERSION_MAJOR == 2 && NET_VERSION_MINOR >= 5))
+#define NDIS689_MINIPORT 1
+#elif ((defined(NET_VERSION_MAJOR) && defined(NET_VERSION_MINOR)) && \
+      (NET_VERSION_MAJOR == 2 && NET_VERSION_MINOR == 4))
+#define NDIS688_MINIPORT 1
+#else
 #define NDIS685_MINIPORT 1
+#endif
 
 #ifdef NDIS_MINIPORT_DRIVER
 #error NDIS_MINIPORT_DRIVER macro is reserved
@@ -278,7 +290,8 @@ __drv_Mode_impl(NDIS_INCLUDED)
 #else
 #  define NDIS_MIN_API 0x630
 #endif
-#define NDIS_API_VERSION_AVAILABLE(major,minor) ((((0x ## major) << 8) + (0x ## minor)) >= NDIS_MIN_API)
+#define NDIS_DETAIL_NDIS_API_VERSION_AVAILABLE_(major,minor) ((((0x ## major) << 8) + (0x ## minor)) >= NDIS_MIN_API)
+#define NDIS_API_VERSION_AVAILABLE(major,minor) NDIS_DETAIL_NDIS_API_VERSION_AVAILABLE_(major, minor)
 
 //
 //
@@ -299,7 +312,13 @@ __drv_Mode_impl(NDIS_INCLUDED)
 // for Miniports versions 5.0 and up, provide a consistent way to match
 // Ndis version in their characteristics with their makefile defines
 //
-#if (defined(NDIS687_MINIPORT))
+#if (defined(NDIS689_MINIPORT))
+#define NDIS_MINIPORT_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINOR_VERSION 89
+#elif (defined(NDIS688_MINIPORT))
+#define NDIS_MINIPORT_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINOR_VERSION 88
+#elif (defined(NDIS687_MINIPORT))
 #define NDIS_MINIPORT_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINOR_VERSION 87
 #elif (defined(NDIS686_MINIPORT))
@@ -429,12 +448,20 @@ __drv_Mode_impl(NDIS_INCLUDED)
 #elif (defined(NDIS687_MINIPORT))
 #define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 87
+#elif (defined(NDIS688_MINIPORT))
+#define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 88
+#elif (defined(NDIS689_MINIPORT))
+#define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 89
 #endif
 
 //
 // Disallow invalid major/minor combination
 //
 #if ((NDIS_MINIPORT_MAJOR_VERSION == 6) && \
+       (NDIS_MINIPORT_MINOR_VERSION != 89) && \
+       (NDIS_MINIPORT_MINOR_VERSION != 88) && \
        (NDIS_MINIPORT_MINOR_VERSION != 87) && \
        (NDIS_MINIPORT_MINOR_VERSION != 86) && \
        (NDIS_MINIPORT_MINOR_VERSION != 85) && \
@@ -463,12 +490,14 @@ __drv_Mode_impl(NDIS_INCLUDED)
 //
 // Make sure the target platform is consistent with miniport version
 //
-#ifndef NTDDI_WIN10_NI
-#define DEFINED_NTDDI_WIN10_NI
-#define NTDDI_WIN10_NI WDK_NTDDI_VERSION
-#endif // NTDDI_WIN10_NI
+#ifndef NTDDI_WIN11_GA
+#define DEFINED_NTDDI_WIN11_GA
+#define NTDDI_WIN11_GA WDK_NTDDI_VERSION
+#endif // NTDDI_WIN11_GA
 
 #if  (NDIS_MINIPORT_MINIMUM_MAJOR_VERSION == 6) && (\
+      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 89 && NTDDI_VERSION < NTDDI_WIN11_GA) || \
+      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 88 && NTDDI_VERSION < NTDDI_WIN10_CU) || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 87 && NTDDI_VERSION < NTDDI_WIN10_NI) || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 86 && NTDDI_VERSION < NTDDI_WIN10_CO) || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 85 && NTDDI_VERSION < NTDDI_WIN10_FE) || \
@@ -493,10 +522,10 @@ __drv_Mode_impl(NDIS_INCLUDED)
 #error NDIS: Wrong NDIS or DDI version specified
 #endif
 
-#ifdef DEFINED_NTDDI_WIN10_NI
-#undef DEFINED_NTDDI_WIN10_NI
-#undef NTDDI_WIN10_NI
-#endif // DEFINED_NTDDI_WIN10_NI
+#ifdef DEFINED_NTDDI_WIN11_GA
+#undef DEFINED_NTDDI_WIN11_GA
+#undef NTDDI_WIN11_GA
+#endif // DEFINED_NTDDI_WIN11_GA
 
 #endif // NDIS_MINIPORT_DRIVER
 
@@ -514,7 +543,17 @@ __drv_Mode_impl(NDIS_INCLUDED)
 // a protocol only or filter driver
 //
 
-#if (defined(NDIS687))
+#if (defined(NDIS689))
+#define NDIS_PROTOCOL_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINOR_VERSION 89
+#define NDIS_FILTER_MAJOR_VERSION 6
+#define NDIS_FILTER_MINOR_VERSION 89
+#elif (defined(NDIS688))
+#define NDIS_PROTOCOL_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINOR_VERSION 88
+#define NDIS_FILTER_MAJOR_VERSION 6
+#define NDIS_FILTER_MINOR_VERSION 88
+#elif (defined(NDIS687))
 #define NDIS_PROTOCOL_MAJOR_VERSION 6
 #define NDIS_PROTOCOL_MINOR_VERSION 87
 #define NDIS_FILTER_MAJOR_VERSION 6
@@ -712,6 +751,16 @@ __drv_Mode_impl(NDIS_INCLUDED)
 #define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 87
 #define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
 #define NDIS_FILTER_MINIMUM_MINOR_VERSION 87
+#elif (defined(NDIS688))
+#define NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 88
+#define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
+#define NDIS_FILTER_MINIMUM_MINOR_VERSION 88
+#elif (defined(NDIS689))
+#define NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 89
+#define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
+#define NDIS_FILTER_MINIMUM_MINOR_VERSION 89
 #endif
 
 
@@ -743,6 +792,8 @@ __drv_Mode_impl(NDIS_INCLUDED)
 // disallow invalid major/minor combination
 //
 #if ((NDIS_FILTER_MAJOR_VERSION == 6) && \
+     (NDIS_FILTER_MINOR_VERSION != 89) && \
+     (NDIS_FILTER_MINOR_VERSION != 88) && \
      (NDIS_FILTER_MINOR_VERSION != 87) && \
      (NDIS_FILTER_MINOR_VERSION != 86) && \
      (NDIS_FILTER_MINOR_VERSION != 85) && \
@@ -775,6 +826,8 @@ __drv_Mode_impl(NDIS_INCLUDED)
 // disallow invalid major/minor combination
 //
 #if ((NDIS_PROTOCOL_MAJOR_VERSION == 6) && \
+     (NDIS_PROTOCOL_MINOR_VERSION != 89) && \
+     (NDIS_PROTOCOL_MINOR_VERSION != 88) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 87) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 86) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 85) && \
@@ -808,12 +861,14 @@ __drv_Mode_impl(NDIS_INCLUDED)
 //
 // Make sure the target platform is consistent with miniport version
 //
-#ifndef NTDDI_WIN10_NI
-#define DEFINED_NTDDI_WIN10_NI
-#define NTDDI_WIN10_NI WDK_NTDDI_VERSION
-#endif // NTDDI_WIN10_NI
+#ifndef NTDDI_WIN11_GA
+#define DEFINED_NTDDI_WIN11_GA
+#define NTDDI_WIN11_GA WDK_NTDDI_VERSION
+#endif // NTDDI_WIN11_GA
 
 #if  (NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION == 6) && ( \
+      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 89 && NTDDI_VERSION < NTDDI_WIN11_GA) || \
+      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 88 && NTDDI_VERSION < NTDDI_WIN10_CU) || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 87 && NTDDI_VERSION < NTDDI_WIN10_NI) || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 86 && NTDDI_VERSION < NTDDI_WIN10_CO) || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 85 && NTDDI_VERSION < NTDDI_WIN10_FE) || \
@@ -838,10 +893,10 @@ __drv_Mode_impl(NDIS_INCLUDED)
 #error NDIS: Wrong NDIS or DDI version specified
 #endif
 
-#ifdef DEFINED_NTDDI_WIN10_NI
-#undef DEFINED_NTDDI_WIN10_NI
-#undef NTDDI_WIN10_NI
-#endif // DEFINED_NTDDI_WIN10_NI
+#ifdef DEFINED_NTDDI_WIN11_GA
+#undef DEFINED_NTDDI_WIN11_GA
+#undef NTDDI_WIN11_GA
+#endif // DEFINED_NTDDI_WIN11_GA
 
 #endif // defined (NDIS_PROTOCOL_MAJOR_VERSION)
 
@@ -935,7 +990,8 @@ __drv_Mode_impl(NDIS_INCLUDED)
 #define NDIS_RUNTIME_VERSION_685    ((6 << 16) | 85)
 #define NDIS_RUNTIME_VERSION_686    ((6 << 16) | 86)
 #define NDIS_RUNTIME_VERSION_687    ((6 << 16) | 87)
-
+#define NDIS_RUNTIME_VERSION_688    ((6 << 16) | 88)
+#define NDIS_RUNTIME_VERSION_689    ((6 << 16) | 89)
 
 #define NDIS_DECLARE_CONTEXT_INNER(datatype,purpose) \
     (sizeof(datatype), __annotation(L"ms-contexttype", purpose, L ## #datatype))
@@ -1952,6 +2008,7 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE            ((NDIS_STATUS)0x400200A1L)
 #endif // (NDIS_SUPPORT_NDIS630)
 
+
 #if (NDIS_SUPPORT_NDIS640)
 #define NDIS_STATUS_ISOLATION_PARAMETERS_CHANGE             ((NDIS_STATUS)0x40020080L)
 #endif // (NDIS_SUPPORT_NDIS640)
@@ -1962,7 +2019,7 @@ typedef struct _REFERENCE
 
 
 #if (NDIS_SUPPORT_NDIS650)
-#define NDIS_STATUS_PD_CURRENT_CONFIG                   ((NDIS_STATUS)0x40020200L) 
+#define NDIS_STATUS_PD_CURRENT_CONFIG                   ((NDIS_STATUS)0x40020200L)
 
 #define NDIS_STATUS_GFT_OFFLOAD_CURRENT_CAPABILITIES    ((NDIS_STATUS)0x40020300L)
 #define NDIS_STATUS_GFT_OFFLOAD_HARDWARE_CAPABILITIES   ((NDIS_STATUS)0x40020301L)
@@ -2041,7 +2098,8 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_DOT11_WDI_RESERVED_10                               ((NDIS_STATUS)0x40030033L)
 #define NDIS_STATUS_DOT11_WDI_RESERVED_11                               ((NDIS_STATUS)0x40030034L)
 #define NDIS_STATUS_DOT11_WDI_RESERVED_12                               ((NDIS_STATUS)0x40030035L)
-
+#define NDIS_STATUS_DOT11_WDI_RESERVED_13                               ((NDIS_STATUS)0x40030036L)
+#define NDIS_STATUS_DOT11_WDI_RESERVED_14                               ((NDIS_STATUS)0x40030037L)
 
 //
 // Add WWAN specific status indication codes
@@ -2249,6 +2307,13 @@ typedef struct _REFERENCE
 #endif
 
 //
+// status codes used in NDIS 6.89
+//
+#if NDIS_SUPPORT_NDIS689
+#define NDIS_STATUS_DOT11_AP_RADIO_RESTRICTION               ((NDIS_STATUS)STATUS_NDIS_DOT11_AP_RADIO_RESTRICTION)
+#endif
+
+//
 // status codes for offload operations
 //
 #define NDIS_STATUS_UPLOAD_IN_PROGRESS                  ((NDIS_STATUS)0xC0231001L)
@@ -2452,7 +2517,7 @@ NdisDprAcquireReadWriteLock(
     );
 
 _IRQL_requires_(DISPATCH_LEVEL)
-EXPORT    
+EXPORT
 VOID
 NdisDprReleaseReadWriteLock(
     _Inout_ _Releases_lock_(_Curr_) PNDIS_RW_LOCK Lock,
@@ -2515,7 +2580,7 @@ NdisAcquireRWLockWrite(
     );
 
 _Releases_lock_(Lock)
-_IRQL_requires_(DISPATCH_LEVEL)    
+_IRQL_requires_(DISPATCH_LEVEL)
 EXPORT
 VOID
 NdisReleaseRWLock(
@@ -3448,6 +3513,8 @@ NdisScheduleWorkItem(
 
 #if defined(_M_IX86) || defined(_M_AMD64) || defined(_M_ARM)
 
+#if !defined(NDIS_COMPAT_REPLACE_LEGACY_ROUTINES) || NDIS_COMPAT_REPLACE_LEGACY_ROUTINES == 0
+
 //
 // Simple I/O support
 //
@@ -3485,6 +3552,8 @@ VOID
 NdisUnmapFile(
     _In_  NDIS_HANDLE             FileHandle
     );
+
+#endif // !defined(NDIS_COMPAT_REPLACE_LEGACY_ROUTINES) || NDIS_COMPAT_REPLACE_LEGACY_ROUTINES == 0
 
 #endif // defined(_M_IX86) || defined(_M_AMD64) || defined(_M_ARM)
 
@@ -4296,7 +4365,7 @@ NdisProcessorNumberToIndex(
     );
 
 _IRQL_requires_max_(HIGH_LEVEL)
-EXPORT    
+EXPORT
 NTSTATUS
 NdisProcessorIndexToNumber(
     _In_  ULONG             ProcIndex,
@@ -4351,7 +4420,7 @@ typedef struct _NDIS_DRIVER_OPTIONAL_HANDLERS
 } NDIS_DRIVER_OPTIONAL_HANDLERS, *PNDIS_DRIVER_OPTIONAL_HANDLERS;
 
 _IRQL_requires_(PASSIVE_LEVEL)
-EXPORT    
+EXPORT
 NDIS_STATUS
 NdisSetOptionalHandlers(
     _In_  NDIS_HANDLE                     NdisHandle,
@@ -4404,7 +4473,7 @@ typedef struct _NET_PNP_EVENT_NOTIFICATION
 #endif // NDIS_SUPPORT_NDIS650
 
 #include <ndis/oidrequest.h>
-        
+
 //
 // Macros to set, clear and test NDIS_STATUS_INDICATION Flags
 //
@@ -4572,7 +4641,7 @@ NdisFreeCloneOidRequest(
     );
 
 _IRQL_requires_max_(HIGH_LEVEL)
-EXPORT    
+EXPORT
 VOID
 NdisGetSystemUpTimeEx(
     _Out_ PLARGE_INTEGER                  pSystemUpTime
@@ -4630,7 +4699,7 @@ NdisGetRssProcessorInformation(
 
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT    
+EXPORT
 NDIS_STATUS
 NdisGetProcessorInformationEx(
     _In_opt_                NDIS_HANDLE                                    NdisHandle,
@@ -4759,14 +4828,14 @@ NdisRegisterDeviceEx(
     );
 
 _IRQL_requires_(PASSIVE_LEVEL)
-EXPORT    
+EXPORT
 VOID
 NdisDeregisterDeviceEx(
     _In_  NDIS_HANDLE                    NdisDeviceHandle
     );
 
 _IRQL_requires_max_(HIGH_LEVEL)
-EXPORT    
+EXPORT
 PVOID
 NdisGetDeviceReservedExtension(
     _In_  PDEVICE_OBJECT                    DeviceObject
@@ -5283,7 +5352,7 @@ typedef struct _PD_BUFFER {
                 //
                 ULONG64 GftFlowEntryId;
             };
-            
+
             //
             // The hash value computed for the incoming packet
             // that is steered to the receve queue via RSS.
@@ -5313,7 +5382,7 @@ typedef struct _PD_BUFFER {
                 };
                 ULONG RxOffloads[2];
             };
-            
+
             //
             // Commonly used TX offload fields
             //
@@ -5345,7 +5414,7 @@ typedef struct _PD_BUFFER {
             USHORT GftSourceVPortId;
 
             ULONG Reserved;
-            
+
             //
             // A scratch field which the PD provider can use for its own
             // purposes while the PD_BUFFER is sitting in the provider
@@ -5488,10 +5557,10 @@ typedef NDIS_PD_POST_AND_DRAIN_BUFFER_LIST
 // depth (as explained in the NDIS_PD_QUERY_QUEUE_DEPTH function) is below
 // the threshold value set by the client for a receive queue or is above
 // the threshold value set by the client for a transmit queue; otherwise,
-// PD provider sets it to FALSE. 
+// PD provider sets it to FALSE.
 // *DrainCount is set to the number of PD_BUFFERs that the provider has
 // appended to the DrainBufferList. A set of partial PD_BUFFERs that
-// make up a single L2 packet is counted as 1. 
+// make up a single L2 packet is counted as 1.
 // *DrainCount is always <= MaxDrainCount.
 // *PostCount is set to the number of PD_BUFFERs that the provider has
 // removed from the PostbufferList. A set of partial PD_BUFFERs that
@@ -5567,7 +5636,7 @@ typedef NDIS_PD_FLUSH_QUEUE *NDIS_PD_FLUSH_QUEUE_HANDLER;
 // depth has reached a certain level during each Post-And-Operation). Such PD
 // clients use the PostAndDrainEx call. PD clients may also need to query the
 // actual queue depth (in contrast to whether the queue depth is above or below
-// a certain level) as well, which the NDIS_PD_QUERY_QUEUE_DEPTH function is 
+// a certain level) as well, which the NDIS_PD_QUERY_QUEUE_DEPTH function is
 // for. Performance of PostAndDrainEx implementation is very critical for PD
 // clients. NDIS_PD_QUERY_QUEUE_DEPTH, while also very important, is not
 // expected to be used by the PD clients with the same frequency as the
@@ -5683,7 +5752,7 @@ typedef enum {
 
 //
 // A PD provider sets this value in the NDIS_PD_QUEUE_PARAMETERS TrafficClassId
-// field when returning a PD Rx queue via NdisPDAcquireReceiveQueues if the 
+// field when returning a PD Rx queue via NdisPDAcquireReceiveQueues if the
 // PD provider can handle multiple traffic classes via a single Rx queue for
 // a given RSS target processor.
 //
@@ -6094,7 +6163,7 @@ typedef enum {
     //
     // INPUT to the PD provider and OUTPUT from the PD provider
     //
-    NdisPDCTL_INOUT, 
+    NdisPDCTL_INOUT,
 } NDIS_PD_CONTROL_TYPE;
 
 typedef enum {
@@ -6126,7 +6195,7 @@ typedef enum {
     // Type: NdisPDCTL_IN
     // InBuffer: ULONG (ModerationInterval)
     // InBufferSize: sizeof(ULONG)
-    // 
+    //
     // Used for setting a notification ModerationInterval value on a given PD
     // queue. ModerationInterval is the maximum number of nanoseconds that a
     // provider can defer interrupting the host CPU after an armed PD queue
@@ -6139,8 +6208,8 @@ typedef enum {
     // the maximum values as well as the granularity of the intermediate values
     // it can support for ModerationInterval via the NDIS_PD_CAPABILITIES
     // structure. If NDIS_PD_CAPS_NOTIFICATION_MODERATION_INTERVAL_SUPPORTED is
-    // NOT advertised by the PD provider, PD client will not set any 
-    // ModerationInterval value. 
+    // NOT advertised by the PD provider, PD client will not set any
+    // ModerationInterval value.
     //
     NdisPDQCTLModerationInterval,
 
@@ -6148,7 +6217,7 @@ typedef enum {
     // Type: NdisPDCTL_IN
     // InBuffer: ULONG (ModerationCount)
     // InBufferSize: sizeof(ULONG)
-    // 
+    //
     // Used for setting a notification ModerationCount value on a given PD
     // queue. ModerationCount is the maximum number of drainable PD_BUFFERs
     // that a provider can accumulate in an armed PD queue before interrupting
@@ -6159,7 +6228,7 @@ typedef enum {
     // ModerationInterval alone controls the interrupt moderation on the PD queue.
     // If NDIS_PD_CAPS_NOTIFICATION_MODERATION_COUNT_SUPPORTED is NOT
     // advertised by the PD provider, PD client will not set any ModerationCount
-    // value. The default value for ModerationCount is MAXULONG. 
+    // value. The default value for ModerationCount is MAXULONG.
     //
     NdisPDQCTLModerationCount,
 
@@ -6173,7 +6242,7 @@ typedef enum {
     // or NDIS_PD_ACQUIRE_RECEIVE_QUEUES) has NO notification group id. PD
     // clients can set a notification group id on an arm-able PD queue
     // before calling NDIS_PD_REQUEST_DRAIN_NOTIFICATION for the first
-    // time. Once NDIS_PD_REQUEST_DRAIN_NOTIFICATION is called, the 
+    // time. Once NDIS_PD_REQUEST_DRAIN_NOTIFICATION is called, the
     // notification group id for a  PD queue cannot be changed.
     // See NdisMTriggerPDDrainNotification for how PD providers can use
     // notification group information for optimizing drain notifications.
@@ -6182,7 +6251,7 @@ typedef enum {
 
     //
     // Type: NdisPDCTL_IN
-    // InBuffer: NDIS_QOS_SQ_ID 
+    // InBuffer: NDIS_QOS_SQ_ID
     // InBufferSize: sizeof(NDIS_QOS_SQ_ID)
     //
     // Used for setting a QoS scheduler queue Id on a given PD queue.
@@ -6222,14 +6291,14 @@ typedef enum {
 
     //
     // Type: NdisPDCTL_OUT
-    // OutBuffer: A variable length flat buffer which the provider stores a 
+    // OutBuffer: A variable length flat buffer which the provider stores a
     //            NDIS_PD_CAPABILITIES structure followed by a variable
     //            number of elements pointed by certain offset fields in the
     //            returned NDIS_PD_CAPABILITIES structure.
     // OutBufferSize: length of the buffer passed via OutBuffer parameter
-    // *BytesReturned: Upon an NT_SUCCESS() return, this reflects the 
-    //                 actual number of bytes written into OutBuffer. 
-    //                 If OutBufferSize is not large enough to hold all the 
+    // *BytesReturned: Upon an NT_SUCCESS() return, this reflects the
+    //                 actual number of bytes written into OutBuffer.
+    //                 If OutBufferSize is not large enough to hold all the
     //                 bytes that the PD provider needs to write, then the
     //                 provider stores the actual size needed in *BytesReturned
     //                 and returns STATUS_BUFFER_TOO_SMALL.
@@ -6242,7 +6311,7 @@ typedef enum {
 //
 // PD providers must return STATUS_NOT_SUPPORTED for provider control codes
 // that they do not recognize or support. NdisPDPCTLCapabilities is the only
-// defined control code currently, and support for it is optional. 
+// defined control code currently, and support for it is optional.
 //
 typedef
 _IRQL_requires_(PASSIVE_LEVEL)
@@ -7802,7 +7871,7 @@ typedef struct _NDIS50_PROTOCOL_CHARACTERISTICS
              TRANSFER_DATA_COMPLETE_HANDLER TransferDataCompleteHandler;
              WAN_TRANSFER_DATA_COMPLETE_HANDLER WanTransferDataCompleteHandler;
             };
-            
+
             RESET_COMPLETE_HANDLER          ResetCompleteHandler;
             REQUEST_COMPLETE_HANDLER        RequestCompleteHandler;
             union
@@ -7814,12 +7883,12 @@ typedef struct _NDIS50_PROTOCOL_CHARACTERISTICS
             STATUS_HANDLER                  StatusHandler;
             STATUS_COMPLETE_HANDLER         StatusCompleteHandler;
             NDIS_STRING                     Name;
-            
+
             //
             // Start of NDIS 4.0 extensions.
             //
             RECEIVE_PACKET_HANDLER          ReceivePacketHandler;
-            
+
             //
             // PnP protocol entry-points
             //
@@ -8614,10 +8683,17 @@ typedef struct _NDIS_PROTOCOL_CO_CHARACTERISTICS
 #define NDIS_SIZEOF_PROTOCOL_CO_CHARACTERISTICS_REVISION_1    \
         RTL_SIZEOF_THROUGH_FIELD(NDIS_PROTOCOL_CO_CHARACTERISTICS, CoSendNetBufferListsCompleteHandler)
 
+//
+// Protocol driver flags
+//
 #if NDIS_SUPPORT_NDIS650
 #define NDIS_PROTOCOL_DRIVER_SUPPORTS_CURRENT_MAC_ADDRESS_CHANGE    0x0000002
 #define NDIS_PROTOCOL_DRIVER_SUPPORTS_L2_MTU_SIZE_CHANGE            0x0000004
 #endif // NDIS_SUPPORT_NDIS650
+#if NDIS_SUPPORT_NDIS689
+#define NDIS_PROTOCOL_DRIVER_UDP_RSC_NOT_SUPPORTED                  0x0000008
+#endif // NDIS_SUPPORT_NDIS689
+
 
 #define NDIS_PROTOCOL_DRIVER_CHARACTERISTICS_REVISION_1     1
 #if (NDIS_SUPPORT_NDIS61)
@@ -14688,6 +14764,10 @@ typedef struct _NDIS_FILTER_PARTIAL_CHARACTERISTICS
 #define NDIS_FILTER_DRIVER_SUPPORTS_CURRENT_MAC_ADDRESS_CHANGE      0x00000002
 #define NDIS_FILTER_DRIVER_SUPPORTS_L2_MTU_SIZE_CHANGE              0x00000004
 #endif // NDIS_SUPPORT_NDIS650
+#if NDIS_SUPPORT_NDIS689
+#define NDIS_FILTER_DRIVER_UDP_RSC_NOT_SUPPORTED                    0x00000008
+#endif //NDIS_SUPPORT_NDIS689
+
 
 #define NDIS_FILTER_CHARACTERISTICS_REVISION_1      1
 

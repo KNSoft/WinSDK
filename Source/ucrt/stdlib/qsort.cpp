@@ -7,6 +7,7 @@
 //
 #include <corecrt_internal.h>
 #include <search.h>
+#include <cfguard.h>
 
 
 /* Temporarily define optimization macros (to be removed by the build team: RsmqblCompiler alias) */
@@ -71,6 +72,7 @@ static void __fileDECL swap(_Inout_updates_(width) char* a, _Inout_updates_(widt
 // point one-past-the-end).  The comp is a comparer with the same behavior as
 // specified for qsort.
 _CRT_SECURITYSAFECRITICAL_ATTRIBUTE
+DECLSPEC_GUARDNOCF
 #ifdef __USE_CONTEXT
 static void __fileDECL shortsort_s(
     _Inout_updates_(hi - lo + 1) char*        lo,
@@ -150,6 +152,7 @@ static void __fileDECL shortsort(
 //           zero if 1 == 2, and positive if 1 > 2.
 #ifndef _M_CEE
 extern "C"
+DECLSPEC_GUARDNOCF
 #endif
 _CRT_SECURITYSAFECRITICAL_ATTRIBUTE
 #ifdef __USE_CONTEXT
@@ -172,6 +175,8 @@ void __fileDECL qsort(
     _VALIDATE_RETURN_VOID(base != nullptr || num == 0, EINVAL);
     _VALIDATE_RETURN_VOID(width > 0, EINVAL);
     _VALIDATE_RETURN_VOID(comp != nullptr, EINVAL);
+
+    _GUARD_CHECK_ICALL(comp);
 
     // A stack for saving the sub-arrays yet to be processed:
     char* lostk[STKSIZ];

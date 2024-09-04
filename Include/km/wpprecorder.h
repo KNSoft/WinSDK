@@ -14,7 +14,7 @@ Abstract:
 
 Environment:
 
-        Kernel Mode
+        Kernel/User Mode
 
 ****************************************************************************/
 
@@ -25,13 +25,15 @@ Environment:
 #pragma once
 #endif  // _MSC_VER
 
-#if (NTDDI_VERSION >= NTDDI_WIN8) || defined (__WPP_RECORDER_DOWNLEVEL__)
-
-#include <ntstrsafe.h>
-
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#ifdef _KERNEL_MODE
+
+#if (NTDDI_VERSION >= NTDDI_WIN8) || defined (__WPP_RECORDER_DOWNLEVEL__)
+
+#include <ntstrsafe.h>
 
 //
 // WppRecorder API
@@ -77,7 +79,7 @@ typedef struct _WPP_TRIAGE_INFO {
     //
     // Size of Header size field
     //
-    
+
     ULONG WppSizeOfAutoLogHeaderSizeField;
 
     //
@@ -144,7 +146,7 @@ RECORDER_CONFIGURE_PARAMS_INIT(
 }
 
 //
-// Note: the WPP_CB used by the macros below is a pointer to the 
+// Note: the WPP_CB used by the macros below is a pointer to the
 // WPP's global trace control block. This control block is defined and
 // declared by the WPP's *.tmh header files.
 //
@@ -154,12 +156,12 @@ VOID
 imp_WppRecorderConfigure(
     _In_
         PVOID                       WppCb,
-    _In_ 
-        PRECORDER_CONFIGURE_PARAMS  ConfigureParams
+    _In_
+        CONST RECORDER_CONFIGURE_PARAMS* ConfigureParams
     );
 
 #define WppRecorderConfigure(ConfigureParams) \
-    imp_WppRecorderConfigure(WPP_CB, ConfigureParams) 
+    imp_WppRecorderConfigure(WPP_CB, ConfigureParams)
 
 
 //
@@ -245,7 +247,7 @@ RECORDER_LOG_CREATE_PARAMS_INIT(
     _Out_
         PRECORDER_LOG_CREATE_PARAMS Params,
     _In_opt_
-        PSTR                        LogIdentifier
+        PCSTR                       LogIdentifier
     )
 {
     Params->Size = sizeof(*Params);
@@ -276,9 +278,9 @@ RECORDER_LOG_CREATE_PARAMS_INIT_APPEND_POINTER(
     _Out_
         PRECORDER_LOG_CREATE_PARAMS Params,
     _In_opt_
-        PSTR                        LogIdentifier,
+        PCSTR                       LogIdentifier,
     _In_
-        PVOID                       LogIdentifierAppendPointer
+        CONST VOID*                 LogIdentifierAppendPointer
     )
 {
     RECORDER_LOG_CREATE_PARAMS_INIT(Params, LogIdentifier);
@@ -293,7 +295,7 @@ imp_WppRecorderLogCreate(
     _In_
         PVOID                       WppCb,
     _In_
-        PRECORDER_LOG_CREATE_PARAMS CreateParams,
+        CONST RECORDER_LOG_CREATE_PARAMS* CreateParams,
     _Out_
         RECORDER_LOG *              RecorderLog
     );
@@ -321,7 +323,7 @@ imp_WppRecorderLogSetIdentifier(
     _In_
         RECORDER_LOG                RecorderLog,
     _In_
-        PSTR                        LogIdentifier
+        PCSTR                       LogIdentifier
     );
 
 #define WppRecorderLogSetIdentifier(RecorderLog, LogIdentifier) \
@@ -335,7 +337,7 @@ imp_WppRecorderLogGetDefault(
     );
 
 #define WppRecorderLogGetDefault() \
-    imp_WppRecorderLogGetDefault(WPP_CB) 
+    imp_WppRecorderLogGetDefault(WPP_CB)
 
 __drv_maxIRQL(DISPATCH_LEVEL)
 BOOLEAN
@@ -355,7 +357,7 @@ imp_WppRecorderGetCounterHandle(
     );
 
 #define WppRecorderGetCounterHandle() \
-    imp_WppRecorderGetCounterHandle(WPP_CB) 
+    imp_WppRecorderGetCounterHandle(WPP_CB)
 
 __drv_maxIRQL(DISPATCH_LEVEL)
 NTSTATUS
@@ -452,10 +454,6 @@ TraceDefault(
 
 // -- End of interface. Mechanisms follow -------------------------
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 //
 // WPP magic
 //
@@ -484,5 +482,39 @@ TraceDefault(
     WPP_RECORDER_IFRLOG_LEVEL_FLAGS_FILTER    (ifr, lvl, flags)
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8) || defined (__WPP_RECORDER_DOWNLEVEL__)
-#endif // #ifndef __WPPRECORDER_H__
 
+#else // _KERNEL_MODE
+
+#if (NTDDI_VERSION >= NTDDI_WIN8)
+DECLARE_HANDLE(RECORDER_LOG);
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+
+__drv_maxIRQL(HIGH_LEVEL)
+NTSTATUS
+imp_WppRecorderLogDumpLiveData(
+    _In_
+        PVOID                WppCb,
+    _In_opt_
+        RECORDER_LOG         RecorderLog,   // Reserved, must be NULL
+    _Out_ __deref_ecount(*OutBufferLength)
+        PVOID              * OutBuffer,
+    _Out_
+        PULONG               OutBufferLength,
+    _Out_
+        LPGUID               Guid           // Reserved, not used
+    );
+
+#define WppRecorderLogDumpLiveData(RecorderLog, OutBuffer, OutBufferLength, Guid) \
+    imp_WppRecorderLogDumpLiveData(WPP_CB, RecorderLog, OutBuffer, OutBufferLength, Guid)
+
+#endif
+
+#endif // _KERNEL_MODE
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
+
+#endif // #ifndef __WPPRECORDER_H__

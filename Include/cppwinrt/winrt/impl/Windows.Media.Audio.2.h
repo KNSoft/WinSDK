@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -25,6 +25,13 @@ WINRT_EXPORT namespace winrt::Windows::Media::Audio
     {
         AudioDeviceOutputNode(std::nullptr_t) noexcept {}
         AudioDeviceOutputNode(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Media::Audio::IAudioDeviceOutputNode(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) AudioEffectsPackConfiguration : winrt::Windows::Media::Audio::IAudioEffectsPackConfiguration
+    {
+        AudioEffectsPackConfiguration(std::nullptr_t) noexcept {}
+        AudioEffectsPackConfiguration(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Media::Audio::IAudioEffectsPackConfiguration(ptr, take_ownership_from_abi) {}
+        static auto GetForDeviceId(param::hstring const& effectsPackId, param::hstring const& deviceId);
+        static auto IsDeviceIdSupported(param::hstring const& effectsPackId, param::hstring const& deviceId);
     };
     struct __declspec(empty_bases) AudioFileInputNode : winrt::Windows::Media::Audio::IAudioFileInputNode,
         impl::require<AudioFileInputNode, winrt::Windows::Media::Audio::IAudioInputNode2>

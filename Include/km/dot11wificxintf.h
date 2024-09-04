@@ -17,7 +17,7 @@
     */
 #ifndef __DOT11_WIFICX_INTF_H__
 #define __DOT11_WIFICX_INTF_H__
-    
+
 #pragma once
 #include <winapifamily.h>
 
@@ -28,7 +28,7 @@
 
 #ifdef __cplusplus
 extern "C" {
-#endif 
+#endif
 
 //
 // Message IDs
@@ -161,6 +161,7 @@ extern "C" {
 #define WDI_TASK_REQUEST_FTM                                        136
 #define WDI_INDICATION_REQUEST_FTM_COMPLETE                         137
 #define WDI_SET_LOCATION_PRIVACY                                    138
+#define WDI_SET_OWE_DH_IE                                           139
 
 // WiFiCx codes
 #define WDI_INDICATION_SECONDARY_STA_CONNECTIVITY                   200
@@ -548,7 +549,7 @@ typedef MINIPORT_WDI_TX_SUSPECT_FRAME_LIST_ABORT (*MINIPORT_WDI_TX_SUSPECT_FRAME
 *
 *************************************************************************/
 typedef
-PWDI_FRAME_METADATA 
+PWDI_FRAME_METADATA
 (NDIS_WDI_ALLOCATE_WDI_FRAME_METADATA)(
     _In_  NDIS_HANDLE NdisMiniportDataPathHandle
     );
@@ -556,7 +557,7 @@ typedef NDIS_WDI_ALLOCATE_WDI_FRAME_METADATA (*NDIS_WDI_ALLOCATE_WDI_FRAME_METAD
 
 typedef
 void
-(NDIS_WDI_FREE_WDI_FRAME_METADATA)( 
+(NDIS_WDI_FREE_WDI_FRAME_METADATA)(
     _In_  NDIS_HANDLE NdisMiniportDataPathHandle,
     _In_ PWDI_FRAME_METADATA pWiFiFrameMetaData);
 typedef NDIS_WDI_FREE_WDI_FRAME_METADATA (*NDIS_WDI_FREE_WDI_FRAME_METADATA_HANDLER);
@@ -1006,7 +1007,7 @@ RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_WDI_DATA_HANDLERS, TalTxRxPeerDeleteConfi
 #define NDIS_SIZEOF_MINIPORT_WDI_DATA_HANDLERS_REVISION_2      \
 RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_WDI_DATA_HANDLERS, TxSuspectFrameAbortHandler)
 
-typedef 
+typedef
 NDIS_STATUS
 (MINIPORT_WDI_TAL_TXRX_INITIALIZE)(
     _In_ NDIS_HANDLE MiniportAdapterContext,
@@ -1019,7 +1020,7 @@ NDIS_STATUS
 typedef MINIPORT_WDI_TAL_TXRX_INITIALIZE (*MINIPORT_WDI_TAL_TXRX_INITIALIZE_HANDLER);
 
 
-typedef 
+typedef
 VOID
 (MINIPORT_WDI_TAL_TXRX_DEINITIALIZE)(
     _In_ TAL_TXRX_HANDLE MiniportTalTxRxContext
@@ -1109,7 +1110,7 @@ typedef MINIPORT_WDI_OPEN_ADAPTER (*MINIPORT_WDI_OPEN_ADAPTER_HANDLER);
 
 
 
-typedef 
+typedef
 NDIS_STATUS
 (MINIPORT_WDI_START_ADAPTER_OPERATION)(
     _In_  NDIS_HANDLE                         MiniportAdapterContext
@@ -1194,7 +1195,7 @@ typedef MINIPORT_WDI_ADAPTER_HANG_DIAGNOSE (*MINIPORT_WDI_HANG_DIAGNOSE_HANDLER)
 // LE exposes two handlers for USB Selective Suspend
 //
 typedef
-NDIS_STATUS 
+NDIS_STATUS
 (MINIPORT_WDI_IDLE_NOTIFICATION)(
     _In_ NDIS_HANDLE MiniportAdapterContext,
     _In_ BOOLEAN ForceIdle );
@@ -1202,7 +1203,7 @@ NDIS_STATUS
 typedef MINIPORT_WDI_IDLE_NOTIFICATION (*MINIPORT_WDI_IDLE_NOTIFICATION_HANDLER);
 
 typedef
-VOID 
+VOID
 (MINIPORT_WDI_CANCEL_IDLE_NOTIFICATION)(
     _In_ NDIS_HANDLE MiniportAdapterContext );
 
@@ -1298,7 +1299,34 @@ RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_DRIVER_WDI_CHARACTERISTICS, LeCancelIdleN
 // For 2.0.3 compliant drivers
 #define WDI_VERSION_2_0_3                   ((2 << 16) | (0 << 8) | 0x3)
 
-#define WDI_VERSION_LATEST                  WDI_VERSION_2_0_3
+// For 2.0.4 compliant drivers
+#define WDI_VERSION_2_0_4                   ((2 << 16) | (0 << 8) | 0x4)
+
+// For 2.0.5 compliant drivers
+#define WDI_VERSION_2_0_5                   ((2 << 16) | (0 << 8) | 0x5)
+
+// For 2.0.6 compliant drivers
+#define WDI_VERSION_2_0_6                   ((2 << 16) | (0 << 8) | 0x6)
+
+// For 2.0.7 compliant drivers
+#define WDI_VERSION_2_0_7                   ((2 << 16) | (0 << 8) | 0x7)
+
+// For 2.0.8 compliant drivers
+#define WDI_VERSION_2_0_8                   ((2 << 16) | (0 << 8) | 0x8)
+
+// For 2.0.9 compliant drivers
+#define WDI_VERSION_2_0_9                   ((2 << 16) | (0 << 8) | 0x9)
+
+// For 2.0.10 compliant drivers
+#define WDI_VERSION_2_0_10                  ((2 << 16) | (0 << 8) | 0xa)
+
+// For 2.0.11 compliant drivers
+#define WDI_VERSION_2_0_11                   ((2 << 16) | (0 << 8) | 0xb)
+
+// For 2.0.12 compliant drivers
+#define WDI_VERSION_2_0_12                   ((2 << 16) | (0 << 8) | 0xc)
+
+#define WDI_VERSION_LATEST                  WDI_VERSION_2_0_12
 
 #ifndef NDIS_EXPORTED_ROUTINE
 #  define NDIS_EXPORTED_ROUTINE
@@ -1336,7 +1364,7 @@ NdisMDeregisterWdiMiniportDriver(
     ((WDI_OID_PREFIX) | ((_messageId)))
 
 #define WDI_DEFINE_INDICATION(_messageId) \
-    ((WDI_INDICATION_PREFIX) | ((_messageId)))   
+    ((WDI_INDICATION_PREFIX) | ((_messageId)))
 
 /*
     Task IOCTL codes
@@ -1517,7 +1545,7 @@ NdisMDeregisterWdiMiniportDriver(
 
 #define OID_WDI_SET_END_DWELL_TIME \
     WDI_DEFINE_OID(WDI_SET_END_DWELL_TIME)
- 
+
 #define OID_WDI_SET_FAST_BSS_TRANSITION_PARAMETERS \
     WDI_DEFINE_OID(WDI_SET_FAST_BSS_TRANSITION_PARAMETERS)
 
@@ -1535,6 +1563,9 @@ NdisMDeregisterWdiMiniportDriver(
 
 #define OID_WDI_TASK_REQUEST_FTM \
     WDI_DEFINE_OID(WDI_TASK_REQUEST_FTM)
+
+
+// Status indications
 
 #define NDIS_STATUS_WDI_INDICATION_DISCONNECT_COMPLETE    \
     WDI_DEFINE_INDICATION(WDI_INDICATION_DISCONNECT_COMPLETE)
@@ -1736,7 +1767,7 @@ Wdi_NdisMIndicateStatusEx(
 
 #ifdef __cplusplus
 }
-#endif 
+#endif
 
 #include <poppack.h>
 

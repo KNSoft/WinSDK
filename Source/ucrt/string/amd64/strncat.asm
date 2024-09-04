@@ -53,7 +53,15 @@ include ksamd64.inc
 ;Exceptions:
 ;
 ;*******************************************************************************
-LEAF_ENTRY_ARG3 strncat, _TEXT, front:ptr byte, back:ptr byte, count:dword
+
+ifdef _CRT_FFS_BUILD
+fname      TEXTEQU <strncat_ffs>
+else
+fname      TEXTEQU <strncat>
+endif
+
+LEAF_ENTRY_ARG3 fname, _TEXT$21, front:ptr byte, back:ptr byte, count:dword
+
     OPTION PROLOGUE:NONE, EPILOGUE:NONE
 
     mov     r11, rcx
@@ -222,6 +230,6 @@ strncat_exit:
     mov     rax, r11
     ret
 
-LEAF_END strncat, _TEXT
+LEAF_END fname, _TEXT$21
 
     end

@@ -232,6 +232,11 @@ typedef struct _ACPI_SRAT {
     ULONG               Reserved[2];
 } ACPI_SRAT, *PACPI_SRAT;
 
+typedef enum _ACPI_SRAT_DEVICE_HANDLE_TYPE {
+    AcpiSrat_ACPIDeviceHandle,
+    AcpiSrat_PCIDeviceHandle
+} ACPI_SRAT_DEVICE_HANDLE_TYPE, *PACI_SRAT_DEVICE_HANDLE_TYPE;
+
 #if _MSC_VER >= 1200
 #pragma warning(push)
 #endif
@@ -263,7 +268,9 @@ typedef struct _ACPI_SRAT_ENTRY {
             struct {
                 ULONG           Enabled:1;
                 ULONG           HotPlug:1;
-                ULONG           Reserved:30;
+                ULONG           NonVolatile:1;
+                ULONG           SpecificPurpose:1;
+                ULONG           Reserved:28;
             }                   Flags;
             UCHAR               Reserved3[8];
         } MemoryAffinity;
@@ -287,6 +294,57 @@ typedef struct _ACPI_SRAT_ENTRY {
             }                   Flags;
             ULONG               ClockDomain;
         } GiccAffinity;
+        struct {
+            ULONG               ProximityDomain;
+            UCHAR               Reserved[2];
+            ULONG               ITSID;
+        } GicItsAffinity;
+        struct {
+            UCHAR               Reserved;
+            UCHAR               DeviceHandleType;   // ACPI_SRAT_DEVICE_HANDLE_TYPE
+            ULONG               ProximityDomain;
+            union {
+                struct {
+                    UCHAR       ACPI_HID[8];
+                    ULONG       ACPI_UID;
+                    ULONG       Reserved;
+                } ACPI;
+                struct {
+                    USHORT      PCISegment;
+                    USHORT      PCIBDFNumber;
+                    UCHAR       Reserved[12];
+                } PCI;
+            } DeviceHandle;
+            struct {
+                ULONG           Enabled:1;
+                ULONG           ArchitecturalTransactions:1;
+                ULONG           Reserved:30;
+            } Flags;
+            ULONG               Reserved2;
+        } GenericInitiatorAffinity;
+        struct {
+            UCHAR               Reserved;
+            UCHAR               DeviceHandleType;   // ACPI_SRAT_DEVICE_HANDLE_TYPE
+            ULONG               ProximityDomain;
+            union {
+                struct {
+                    UCHAR       ACPI_HID[8];
+                    ULONG       ACPI_UID;
+                    ULONG       Reserved;
+                } ACPI;
+                struct {
+                    USHORT      PCISegment;
+                    USHORT      PCIBDFNumber;
+                    UCHAR       Reserved[12];
+                } PCI;
+            } DeviceHandle;
+            struct {
+                ULONG           Enabled:1;
+                ULONG           ArchitecturalTransactions:1;
+                ULONG           Reserved:30;
+            } Flags;
+            ULONG               Reserved2;
+        } GenericPortAffinity;
     } DUMMYUNIONNAME;
 } ACPI_SRAT_ENTRY, *PACPI_SRAT_ENTRY;
 
@@ -305,6 +363,10 @@ typedef struct _ACPI_SRAT_ENTRY {
 #define SRAT_GICC_ENTRY_LENGTH                     \
     (FIELD_OFFSET(ACPI_SRAT_ENTRY, GiccAffinity) + \
      RTL_FIELD_SIZE(ACPI_SRAT_ENTRY, GiccAffinity))
+
+#define SRAT_GENERIC_PORT_ENTRY_LENGTH              \
+    (FIELD_OFFSET(ACPI_SRAT_ENTRY, GenericPortAffinity) + \
+    RTL_FIELD_SIZE(ACPI_SRAT_ENTRY, GenericPortAffinity))
 
 #define PROXIMITY_DOMAIN(SratTable, SratEntry) \
     (((SratTable)->Header.Revision == 1) ? \
@@ -333,7 +395,10 @@ typedef enum {
     SratProcessorLocalAPIC,
     SratMemory,
     SratProcessorLocalX2APIC,
-    SratGicc
+    SratGicc,
+    SratGicIts,
+    SratGenericInitiator,
+    SratGenericPort
 } SRAT_ENTRY_TYPE;
 
 #define ACPI_MPST_SIGNATURE 0x5453504D // "MPST"
@@ -926,7 +991,8 @@ typedef struct _PROCLOCALGIC   {
     ULONGLONG GicrBaseAddress;          // +60
     ULONGLONG Mpidr;                    // +68
     UCHAR ProcessorPowerEfficiencyClass; // +76
-    UCHAR Reserved2[3];                 // +77
+    UCHAR Reserved77;                   // +77
+    USHORT SpeInterruptGsi;             // +78
 } PROCLOCALGIC;
 
 typedef PROCLOCALGIC UNALIGNED *PPROCLOCALGIC;
@@ -940,8 +1006,11 @@ typedef PROCLOCALGIC UNALIGNED *PPROCLOCALGIC;
 #define PROCESSOR_LOCAL_GIC_LENGTH_THROUGH_EFFICIENCY_CLASS \
     (RTL_SIZEOF_THROUGH_FIELD(PROCLOCALGIC, ProcessorPowerEfficiencyClass))
 
-#define PROCESSOR_LOCAL_GIC_LENGTH_THROUGH_RESERVED2 \
-    (RTL_SIZEOF_THROUGH_FIELD(PROCLOCALGIC, Reserved2))
+#define PROCESSOR_LOCAL_GIC_LENGTH_THROUGH_RESERVED77 \
+    (RTL_SIZEOF_THROUGH_FIELD(PROCLOCALGIC, Reserved77))
+
+#define PROCESSOR_LOCAL_GIC_LENGTH_THROUGH_SPE_GSI \
+    (RTL_SIZEOF_THROUGH_FIELD(PROCLOCALGIC, SpeInterruptGsi))
 
 //
 // Processor Local GIC flags.
@@ -1784,19 +1853,22 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 #define IORT_MIN_SIZE           0x30
 #define IORT_TABLE_REVISION_V0  0
 #define IORT_TABLE_REVISION_V1  1
+#define IORT_TABLE_REVISION_V3  3
+#define IORT_TABLE_REVISION_V6  6
 #define IORT_TABLE_REVISION_MIN IORT_TABLE_REVISION_V0
-#define IORT_TABLE_REVISION_MAX IORT_TABLE_REVISION_V1
+#define IORT_TABLE_REVISION_MAX IORT_TABLE_REVISION_V6
 
 //
 // Node types.
 //
 
-#define IORT_NODE_TYPE_ITS_GROUP 0
-#define IORT_NODE_TYPE_NAMED_COMPONENT 1
-#define IORT_NODE_TYPE_ROOT_COMPLEX 2
-#define IORT_NODE_TYPE_SMMUV1V2 3
-#define IORT_NODE_TYPE_SMMUV3 4
-#define IORT_NODE_TYPE_PMCG 5
+#define IORT_NODE_TYPE_ITS_GROUP        0
+#define IORT_NODE_TYPE_NAMED_COMPONENT  1
+#define IORT_NODE_TYPE_ROOT_COMPLEX     2
+#define IORT_NODE_TYPE_SMMUV1V2         3
+#define IORT_NODE_TYPE_SMMUV3           4
+#define IORT_NODE_TYPE_PMCG             5
+#define IORT_NODE_TYPE_RMR              6
 
 //
 // SMMUv2 node revisions.
@@ -1804,8 +1876,9 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 
 #define IORT_SMMUV2_NODE_REVISION_V0 0
 #define IORT_SMMUV2_NODE_REVISION_V2 2
+#define IORT_SMMUV2_NODE_REVISION_V3 3
 #define IORT_SMMUV2_NODE_REVISION_MIN IORT_SMMUV2_NODE_REVISION_V0
-#define IORT_SMMUV2_NODE_REVISION_MAX IORT_SMMUV2_NODE_REVISION_V2
+#define IORT_SMMUV2_NODE_REVISION_MAX IORT_SMMUV2_NODE_REVISION_V3
 
 //
 // SMMUv2 model types.
@@ -1824,8 +1897,10 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 
 #define IORT_SMMUV3_NODE_REVISION_V0 0
 #define IORT_SMMUV3_NODE_REVISION_V3 3
+#define IORT_SMMUV3_NODE_REVISION_V4 4
+#define IORT_SMMUV3_NODE_REVISION_V5 5
 #define IORT_SMMUV3_NODE_REVISION_MIN IORT_SMMUV3_NODE_REVISION_V0
-#define IORT_SMMUV3_NODE_REVISION_MAX IORT_SMMUV3_NODE_REVISION_V3
+#define IORT_SMMUV3_NODE_REVISION_MAX IORT_SMMUV3_NODE_REVISION_V5
 
 //
 // SMMUv3 model types.
@@ -1843,11 +1918,12 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 #define IORT_NAMED_COMPONENT_NODE_REVISION_V1 1
 #define IORT_NAMED_COMPONENT_NODE_REVISION_V2 2
 #define IORT_NAMED_COMPONENT_NODE_REVISION_V3 3
+#define IORT_NAMED_COMPONENT_NODE_REVISION_V4 4
 #define IORT_NAMED_COMPONENT_NODE_REVISION_MIN \
     IORT_NAMED_COMPONENT_NODE_REVISION_V0
 
 #define IORT_NAMED_COMPONENT_NODE_REVISION_MAX \
-    IORT_NAMED_COMPONENT_NODE_REVISION_V3
+    IORT_NAMED_COMPONENT_NODE_REVISION_V4
 
 //
 // IORT PCI root-complex node revisions.
@@ -1856,8 +1932,18 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 #define IORT_ROOT_COMPLEX_NODE_REVISION_V0 0
 #define IORT_ROOT_COMPLEX_NODE_REVISION_V1 1
 #define IORT_ROOT_COMPLEX_NODE_REVISION_V2 2
+#define IORT_ROOT_COMPLEX_NODE_REVISION_V4 4
 #define IORT_ROOT_COMPLEX_NODE_REVISION_MIN IORT_ROOT_COMPLEX_NODE_REVISION_V0
-#define IORT_ROOT_COMPLEX_NODE_REVISION_MAX IORT_ROOT_COMPLEX_NODE_REVISION_V2
+#define IORT_ROOT_COMPLEX_NODE_REVISION_MAX IORT_ROOT_COMPLEX_NODE_REVISION_V4
+
+//
+//  IORT Reserved Memory Range node revisions.
+//
+
+#define IORT_RMR_NODE_REVISION_V0 0
+#define IORT_RMR_NODE_REVISION_V3 3
+#define IORT_RMR_NODE_REVISION_MIN IORT_RMR_NODE_REVISION_V0
+#define IORT_RMR_NODE_REVISION_MAX IORT_RMR_NODE_REVISION_V3
 
 #if _MSC_VER >= 1200
 #pragma warning(push)
@@ -1895,7 +1981,7 @@ typedef struct _IORT_NODE_HEADER {
     UCHAR Type;
     USHORT Length;
     UCHAR Revision;
-    UCHAR Reserved[4];
+    ULONG Identifier;
     ULONG IdMappingCount;
     ULONG IdMappingArrayOffset;
 } IORT_NODE_HEADER, *PIORT_NODE_HEADER;
@@ -1998,7 +2084,8 @@ typedef struct _IORT_SMMUV3_NODE {
             ULONG CohaccOverride : 1;
             ULONG HttuOverride : 2;
             ULONG ProximityDomainValid : 1;
-            ULONG Reserved : 28;
+            ULONG DeviceIDMappingIndexValid : 1;
+            ULONG Reserved : 27;
         } DUMMYSTRUCTNAME;
 
     } Flags;
@@ -2030,6 +2117,7 @@ typedef union _IORT_NODE_MEMORY_ATTRIBUTES {
         ULONG Cca;
 
         union {
+
             UCHAR AsUCHAR;
 
             struct {
@@ -2045,6 +2133,7 @@ typedef union _IORT_NODE_MEMORY_ATTRIBUTES {
         UCHAR Reserved[2];
 
         union {
+
             UCHAR AsUCHAR;
 
             struct {
@@ -2079,9 +2168,10 @@ typedef struct _IORT_NAMED_COMPONENT_NODE {
     //
     // Array of ID mappings
     //
+
 } IORT_NAMED_COMPONENT_NODE, *PIORT_NAMED_COMPONENT_NODE;
 
-typedef struct _IORT_ROOT_COMPLEX_NODE {
+typedef struct _IORT_ROOT_COMPLEX_NODE_V2 {
 
     IORT_NODE_HEADER Header;
     IORT_NODE_MEMORY_ATTRIBUTES MemoryProperties;
@@ -2092,7 +2182,84 @@ typedef struct _IORT_ROOT_COMPLEX_NODE {
     // Id mappings
     //
 
-} IORT_ROOT_COMPLEX_NODE, *PIORT_ROOT_COMPLEX_NODE;
+} IORT_ROOT_COMPLEX_NODE_V2, *PIORT_ROOT_COMPLEX_NODE_V2;
+
+typedef struct _IORT_ROOT_COMPLEX_NODE_V4 {
+    IORT_NODE_HEADER Header;
+    IORT_NODE_MEMORY_ATTRIBUTES MemoryProperties;
+    ULONG AtsAttribute;
+    ULONG PciSegmentNumber;
+    UCHAR MemoryAddressWidthLimit;
+    USHORT PasidCapabilities;
+    UCHAR Reserved;
+
+    union {
+
+        ULONG AsULONG;
+
+        struct {
+            ULONG PasidSupported : 1;
+            ULONG Reserved : 31;
+        } DUMMYSTRUCTNAME;
+
+    } Flags;
+
+
+    //
+    // Id mappings
+    //
+
+} IORT_ROOT_COMPLEX_NODE_V4, *PIORT_ROOT_COMPLEX_NODE_V4;
+
+typedef IORT_ROOT_COMPLEX_NODE_V4 \
+    IORT_ROOT_COMPLEX_NODE, *PIORT_ROOT_COMPLEX_NODE;
+
+typedef struct _IORT_MEMORY_RANGE_DESCRIPTOR {
+    ULONG PhysicalRangeOffset;
+    ULONG PhysicalRangeLength;
+    UCHAR Reserved[4];
+} IORT_MEMORY_RANGE_DESCRIPTOR, *PIORT_MEMORY_RANGE_DESCRIPTOR;
+
+typedef struct _IORT_RMR_NODE {
+    IORT_NODE_HEADER Header;
+
+    union {
+
+        ULONG AsULONG;
+
+        struct {
+            ULONG RemappingPermited : 1;
+            ULONG AccessPrivileged : 1;
+
+            union {
+
+                UCHAR AsUCHAR;
+
+                struct {
+                    UCHAR DevicenGnRnE : 1;
+                    UCHAR DevicenGnRE : 1;
+                    UCHAR DevicenGRE : 1;
+                    UCHAR DeviceGRE : 1;
+                    UCHAR InnerCacheOuterNoncache : 1;
+                    UCHAR InnerWriteBackOuterWriteBack : 1;
+                    UCHAR Reserved : 2;
+                } DUMMYSTRUCTNAME;
+
+            } AccessAttributes;
+
+            ULONG Reserved : 22;
+        } DUMMYSTRUCTNAME;
+
+    } Flags;
+
+    ULONG MemoryRangeDescriptorsCount;
+    ULONG MemoryRangeArrayOffset;
+
+    //
+    // Array of Memory Range Descriptors
+    //
+
+} IORT_RMR_NODE, *PIORT_RMR_NODE;
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)
@@ -2194,7 +2361,7 @@ typedef struct _DMARTABLE
         RMRR Rmrr;
         ATSR Atsr;
         RHSA Rhsa;
-		SATC Satc;
+        SATC Satc;
     } DUMMYUNIONNAME;
 } DMARTABLE, *PDMARTABLE;
 
@@ -2679,6 +2846,9 @@ typedef struct _CSRT_RESOURCE_GROUP_HEADER {
 #define CSRT_RD_TYPE_CACHE 4
 #define CSRT_RD_SUBTYPE_CACHE 0
 
+#define CSRT_RD_TYPE_POWER 5
+#define CSRT_RD_SUBTYPE_POWER_TELEMETRY 1
+
 #define CSRT_RD_UID_ANY 0xFFFF
 
 //
@@ -2705,6 +2875,8 @@ typedef struct _PCC_SUBSPACE_HEADER {
 #define PCC_SUBSPACE_TYPE_GENERIC       0
 #define PCC_SUBSPACE_TYPE_REDUCED_1     1
 #define PCC_SUBSPACE_TYPE_REDUCED_2     2
+#define PCC_SUBSPACE_TYPE_EXTENDED_3    3
+#define PCC_SUBSPACE_TYPE_EXTENDED_4    4
 
 typedef struct _PCC_GENERIC_SUBSPACE {
     PCC_SUBSPACE_HEADER Header;
@@ -2805,6 +2977,76 @@ typedef struct _PCC_GENREIC_SHARED_REGION {
 
     UCHAR CommunicationSpace[ANYSIZE_ARRAY];
 } PCC_GENERIC_SHARED_REGION, *PPCC_GENERIC_SHARED_REGION;
+
+//
+// PCC Subspace Type 3 & 4 share the same subspace structure.
+//
+
+typedef struct _PCC_EXTENDED_3_4_SUBSPACE {
+    PCC_SUBSPACE_HEADER Header;
+    ULONG PlatformInterruptGsiv;
+    union {
+        struct {
+            UCHAR PlatformInterruptPolarity : 1;    // PCC_PLATFORM_INTERRUPT_POLARITY_XXX
+            UCHAR PlatformInterruptMode : 1;        // PCC_PLATFORM_INTERRUPT_MODE_XXX
+            UCHAR Reserved1 : 6;
+        };
+
+        UCHAR PlatformInterruptFlags;
+    };
+
+    UCHAR Reserved2;
+
+    //
+    // Physical address of the shared memory region, described by PCC_EXTENDED_SHARED_REGION
+    // for type 3 & 4.
+    //
+
+    PHYSICAL_ADDRESS BaseAddress;
+    ULONG Length;
+    GEN_ADDR DoorbellRegister;
+    ULONG64 DoorbellPreserve;
+    ULONG64 DoorbellWrite;
+    ULONG NominalLatency;
+    ULONG MaximumPeriodicAccessRate;
+    ULONG MinimumRequestTurnaroundTime;
+    GEN_ADDR PlatformInterruptAckRegister;
+    ULONG64 PlatformInterruptAckPreserve;
+    ULONG64 PlatformInterruptAckWrite;
+    ULONG64 Reserved3;
+    GEN_ADDR CommandCompleteCheckRegister;
+    ULONG64 CommandCompleteCheckMask;
+    GEN_ADDR CommandCompleteUpdateRegister;
+    ULONG64 CommandCompleteUpdatePreserve;
+    ULONG64 CommandCompleteUpdateWrite;
+    GEN_ADDR ErrorStatusRegister;
+    ULONG64 ErrorStatusMask;
+} PCC_EXTENDED_3_4_SUBSPACE, *PPCC_EXTENDED_3_4_SUBSPACE;
+
+#define PCC_EXTENDED_3_4_SUBSPACE_SIZE                        164
+
+C_ASSERT(sizeof(PCC_EXTENDED_3_4_SUBSPACE) == PCC_EXTENDED_3_4_SUBSPACE_SIZE);
+
+typedef struct _PCC_EXTENDED_SHARED_REGION {
+    ULONG Signature;
+    union {
+        struct {
+            ULONG NotifyOnComplete : 1;         // 0 - Notify on completion
+            ULONG Reserved : 31;
+        };
+
+        ULONG AsUlong;
+    } Flags;
+
+    ULONG Length;
+    ULONG CommandCode;
+    UCHAR CommunicationSpace[ANYSIZE_ARRAY];
+} PCC_EXTENDED_SHARED_REGION, *PPCC_EXTENDED_SHARED_REGION;
+
+#define PCC_EXTENDED_SHARED_REGION_COMM_SPACE_OFFSET         16
+
+C_ASSERT(FIELD_OFFSET(PCC_EXTENDED_SHARED_REGION, CommunicationSpace) ==
+         PCC_EXTENDED_SHARED_REGION_COMM_SPACE_OFFSET);
 
 #define PCCT_SIGNATURE 0x54434350      // "PCCT"
 
@@ -3915,7 +4157,10 @@ typedef union _PROC_TOPOLOGY_NODE_FLAGS {
     struct {
         ULONG PhysicalPackage:1;
         ULONG ACPIProcessorIdValid:1;
-        ULONG Reserved:30;
+        ULONG ProcessorIsThread:1;
+        ULONG IsLeaf:1;
+        ULONG IdenticalImplementation:1;
+        ULONG Reserved:27;
     };
 
     ULONG AsULONG;
@@ -3930,11 +4175,16 @@ typedef union _PROC_TOPOLOGY_CACHE_FLAGS {
         ULONG CacheTypeValid:1;
         ULONG WritePolicyValid:1;
         ULONG LineSizeValid:1;
-        ULONG Reserved:25;
+        ULONG CacheIdValid:1;
+        ULONG Reserved:24;
     };
 
     ULONG AsULONG;
 } PROC_TOPOLOGY_CACHE_FLAGS, *PPROC_TOPOLOGY_CACHE_FLAGS;
+
+#define PROC_TOPOLOGY_CACHE_TYPE_DATA 0
+#define PROC_TOPOLOGY_CACHE_TYPE_INSTRUCTION 1
+#define PROC_TOPOLOGY_CACHE_TYPE_UNIFIED 2
 
 #define PROC_TOPOLOGY_NODE_CACHE_TYPE_DATA(CacheType) \
     (CacheType == 0)
@@ -3988,6 +4238,7 @@ struct _PROC_TOPOLOGY_NODE {
             UCHAR Associativity;
             PROC_TOPOLOGY_CACHE_ATTRIBUTES Attributes;
             USHORT LineSize;
+            ULONG CacheId;
         } CacheNode;
 
         struct {
@@ -4074,6 +4325,11 @@ typedef struct _ACPI_PDTT {
 #define HMAT_SLLBI_DATA_TYPE_READ_BANDWIDTH     4
 #define HMAT_SLLBI_DATA_TYPE_WRITE_BANDWIDTH    5
 
+#define HMAT_SLLBI_HIERARHCY_MEMORY             0
+#define HMAT_SLLBI_HIERARCHY_CACHE_LEVEL_ONE    1
+#define HMAT_SLLBI_HIERARCHY_CACHE_LEVEL_TWO    2
+#define HMAT_SLLBI_HIERARCHY_CACHE_LEVEL_THREE  3
+
 #define HMAT_MSCI_CACHEATTRIBUTES_LEVELS_NONE                   0
 #define HMAT_MSCI_CACHEATTRIBUTES_LEVELS_ONE                    1
 #define HMAT_MSCI_CACHEATTRIBUTES_LEVELS_TWO                    2
@@ -4096,14 +4352,15 @@ typedef struct _HMAT_ENTRY {
 
         //
         // Memory Subsystem Address Range structure
+        // This structure is renamed to Memory Proximity Domain Attributes structure since ACPI 6.3
         //
 
         struct {
             union {
                 struct {
                     USHORT ProcessorProximityDomainValid : 1;
-                    USHORT MemoryProximityDomainValid : 1;
-                    USHORT ReservationHint : 1;
+                    USHORT Reserved0 : 1;    // Deprecated since ACPI 6.3, previously as MemoryProximityDomainValid
+                    USHORT Reserved1 : 1;    // Deprecated since ACPI 6.3, previously as ReservationHint
                     USHORT Reserved : 13;
                 } DUMMYSTRUCTNAME;
 
@@ -4114,8 +4371,8 @@ typedef struct _HMAT_ENTRY {
             ULONG ProcessorProximityDomain;
             ULONG MemoryProximityDomain;
             ULONG Reserved2;
-            PHYSICAL_ADDRESS SystemPhysicalAddressRangeBase;
-            ULONGLONG SystemPhysicalAddressRangeLength;
+            ULONGLONG Reserved3;    // Deprecated since ACPI 6.3, previously as SystemPhysicalAddressRangeBase
+            ULONGLONG Reserved4;    // Deprecated since ACPI 6.3, previously as SystemPhysicalAddressRangeLength
         } Msar;
 
         //
@@ -4125,19 +4382,18 @@ typedef struct _HMAT_ENTRY {
         struct {
             union {
                 struct {
-                    UCHAR Memory : 1;
-                    UCHAR LastLevelMemory : 1;
-                    UCHAR FirstLevelMemorySideCache : 1;
-                    UCHAR SecondLevelMemorySideCache : 1;
-                    UCHAR ThirdLevelMemorySideCache : 1;
-                    UCHAR Reserved : 3;
+                    UCHAR MemoryHierarchy : 4;  // Updated and deprecated last level memory since ACPI 6.3
+                    UCHAR MinTransferSizeToAchieveValues : 1;
+                    UCHAR NonSequentialTransfers : 1;
+                    UCHAR Reserved : 2;
                 } DUMMYSTRUCTNAME;
 
                 UCHAR AsUChar;
             } Flags;
 
             UCHAR DataType;
-            USHORT Reserved1;
+            UCHAR MinTransferSize;
+            UCHAR Reserved1;
             ULONG NumberOfInitiatorProximityDomains;
             ULONG NumberOfTargetProximityDomains;
             ULONG Reserved2;
@@ -4226,7 +4482,8 @@ typedef struct _SPMI_DESCRIPTION_TABLE {
 //
 
 #define ASPT_SIGNATURE 0x54505341 // 'TPSA'
-#define ASPT_REVISION 0x01
+#define ASPT_REVISION_V1 0x01
+#define ASPT_REVISION_V2 0x02
 
 #define ASPT_ENTRY_TYPE_ASP_GLOBAL_REGISTERS    0
 #define ASPT_ENTRY_TYPE_SEV_MAILBOX_REGISTERS   1
@@ -4240,16 +4497,16 @@ typedef struct _ASPT_ENTRY_HEADER
     UINT16 Length;
 } ASPT_ENTRY_HEADER, *PASPT_ENTRY_HEADER;
 
-typedef struct _ASPT_ENTRY_ASP_GLOBAL_REGISTERS
+typedef struct _ASPT_ENTRY_ASP_GLOBAL_REGISTERS_V1
 {
     ASPT_ENTRY_HEADER Header;
     UINT32 Reserved;
     UINT64 FeatureRegisterAddress;
     UINT64 InterruptEnableRegisterAddress;
     UINT64 InterruptStatusRegisterAddress;
-} ASPT_ENTRY_ASP_GLOBAL_REGISTERS, *PASPT_ENTRY_ASP_GLOBAL_REGISTERS;
+} ASPT_ENTRY_ASP_GLOBAL_REGISTERS_V1, *PASPT_ENTRY_ASP_GLOBAL_REGISTERS_V1;
 
-typedef struct _ASPT_ENTRY_SEV_MAILBOX_REGISTERS
+typedef struct _ASPT_ENTRY_SEV_MAILBOX_REGISTERS_V1
 {
     ASPT_ENTRY_HEADER Header;
     UINT8  MailboxInterruptId;
@@ -4257,30 +4514,269 @@ typedef struct _ASPT_ENTRY_SEV_MAILBOX_REGISTERS
     UINT64 CmdRespRegisterAddress;
     UINT64 CmdBufAddrLoRegisterAddress;
     UINT64 CmdBufAddrHiRegisterAddress;
-} ASPT_ENTRY_SEV_MAILBOX_REGISTERS, *PASPT_ENTRY_SEV_MAILBOX_REGISTERS;
+} ASPT_ENTRY_SEV_MAILBOX_REGISTERS_V1, *PASPT_ENTRY_SEV_MAILBOX_REGISTERS_V1;
 
-typedef struct _ASPT_ENTRY_ACPI_MAILBOX_REGISTERS
+typedef struct _ASPT_ENTRY_ACPI_MAILBOX_REGISTERS_V1
 {
     ASPT_ENTRY_HEADER Header;
     UINT32 Reserved1;
     UINT64 CmdRespRegisterAddress;
     UINT64 Reserved2[2];
-} ASPT_ENTRY_ACPI_MAILBOX_REGISTERS, *PASPT_ENTRY_ACPI_MAILBOX_REGISTERS;
+} ASPT_ENTRY_ACPI_MAILBOX_REGISTERS_V1, *PASPT_ENTRY_ACPI_MAILBOX_REGISTERS_V1;
+
+typedef struct _ASPT_ENTRY_ASP_GLOBAL_REGISTERS_V2
+{
+    ASPT_ENTRY_HEADER Header;
+    UINT32 Reserved;
+    UINT32 FeatureRegisterOffset;
+    UINT32 InterruptEnableRegisterOffset;
+    UINT32 InterruptStatusRegisterOffset;
+} ASPT_ENTRY_ASP_GLOBAL_REGISTERS_V2, *PASPT_ENTRY_ASP_GLOBAL_REGISTERS_V2;
+
+typedef struct _ASPT_ENTRY_SEV_MAILBOX_REGISTERS_V2
+{
+    ASPT_ENTRY_HEADER Header;
+    UINT8  MailboxInterruptId;
+    UINT8  Reserved[3];
+    UINT32 CmdRespRegisterOffset;
+    UINT32 CmdBufAddrLoRegisterOffset;
+    UINT32 CmdBufAddrHiRegisterOffset;
+} ASPT_ENTRY_SEV_MAILBOX_REGISTERS_V2, *PASPT_ENTRY_SEV_MAILBOX_REGISTERS_V2;
+
+typedef struct _ASPT_ENTRY_ACPI_MAILBOX_REGISTERS_V2
+{
+    ASPT_ENTRY_HEADER Header;
+    UINT32 Reserved1;
+    UINT32 CmdRespRegisterOffset;
+    UINT64 Reserved2;
+} ASPT_ENTRY_ACPI_MAILBOX_REGISTERS_V2, *PASPT_ENTRY_ACPI_MAILBOX_REGISTERS_V2;
 
 typedef union _ASPT_ENTRY
 {
     ASPT_ENTRY_HEADER Header;
-    ASPT_ENTRY_ASP_GLOBAL_REGISTERS AspGlobalRegisters;
-    ASPT_ENTRY_SEV_MAILBOX_REGISTERS SevMailboxRegisters;
-    ASPT_ENTRY_ACPI_MAILBOX_REGISTERS AcpiMailboxRegisters;
+
+    ASPT_ENTRY_ASP_GLOBAL_REGISTERS_V1 AspGlobalRegistersV1;
+    ASPT_ENTRY_SEV_MAILBOX_REGISTERS_V1 SevMailboxRegistersV1;
+    ASPT_ENTRY_ACPI_MAILBOX_REGISTERS_V1 AcpiMailboxRegistersV1;
+
+    ASPT_ENTRY_ASP_GLOBAL_REGISTERS_V2 AspGlobalRegistersV2;
+    ASPT_ENTRY_SEV_MAILBOX_REGISTERS_V2 SevMailboxRegistersV2;
+    ASPT_ENTRY_ACPI_MAILBOX_REGISTERS_V2 AcpiMailboxRegistersV2;
 } ASPT_ENTRY, *PASPT_ENTRY;
 
-typedef struct _ASPT_TABLE
+typedef struct _ASPT_TABLE_V1
 {
     DESCRIPTION_HEADER Header;
     UINT32 NumberOfAsptEntries;
 //ASPT_ENTRY AsptEntries[NumberOfAsptEntries];
-} ASPT_TABLE, *PASPT_TABLE;
+} ASPT_TABLE_V1, *PASPT_TABLE_V1;
+
+typedef struct _ASPT_TABLE_V2
+{
+    DESCRIPTION_HEADER Header;
+    UINT64 AspRegisterBaseAddress;
+    UINT32 AspRegisterSpacePages;
+    UINT32 NumberOfAsptEntries;
+//ASPT_ENTRY AsptEntries[NumberOfAsptEntries];
+} ASPT_TABLE_V2, *PASPT_TABLE_V2;
+
+//
+// Memory Partitioning And Monitoring (MPAM) Table
+//   Page 9 of "ACPI for Memory System Resource Partitioning and Monitoring 1.0"
+//
+
+#define MPAM_SIGNATURE 0x4D41504D // 'MAPM'
+#define MPAM_MSC_NODE_SIZE 72
+#define MPAM_LOCATOR_SIZE 12
+#define MPAM_FUNCTIONAL_DEPENDENCY_SIZE 8
+#define MPAM_INTERCONNECT_DESCRIPTOR_SIZE 12
+
+#define MPAM_LOCATION_TYPE_PROCESSOR_CACHE             0
+#define MPAM_LOCATION_TYPE_MEMORY                      1
+#define MPAM_LOCATION_TYPE_SMMU                        2
+#define MPAM_LOCATION_TYPE_MEMORY_SIDE_CACHE           3
+#define MPAM_LOCATION_TYPE_ACPI_DEVICE                 4
+#define MPAM_LOCATION_TYPE_INTERCONNECT                5
+#define MPAM_LOCATION_TYPE_KNOWN_COUNT                 6
+#define MPAM_LOCATION_TYPE_UNKNOWN                     255
+
+typedef struct _MPAM_FUNCTIONAL_DEPENDENCY_DESCRIPTOR {
+    UINT32 Producer;
+    UINT32 Reserved0;
+} MPAM_FUNCTIONAL_DEPENDENCY_DESCRIPTOR;
+
+typedef MPAM_FUNCTIONAL_DEPENDENCY_DESCRIPTOR UNALIGNED *PMPAM_FUNCTIONAL_DEPENDENCY_DESCRIPTOR;
+
+C_ASSERT(sizeof(MPAM_FUNCTIONAL_DEPENDENCY_DESCRIPTOR) == MPAM_FUNCTIONAL_DEPENDENCY_SIZE);
+
+#if _MSC_VER >= 1200
+#pragma warning(push)
+#endif
+
+#pragma warning(disable: 4201) // nonstandard extension used : nameless struct/union
+
+typedef struct _MPAM_RESOURCE_LOCATOR {
+    UINT8 Type;
+
+    union {
+        struct {
+            UINT64 CacheReference;
+            UINT32 Reserved0;
+        } ProcessorCache;
+
+        struct {
+            UINT64 ProximityDomain;
+            UINT32 Reserved0;
+        } Memory;
+
+        struct {
+            UINT64 SmmuInterface;
+            UINT32 Reserved0;
+        } Smmu;
+
+        struct {
+            UINT64 Reserved0;
+            UINT32 Reference;
+        } MemorySideCache;
+
+        struct {
+            UINT64 AcpiHardwareId;
+            UINT32 AcpiUniqueId;
+        } Acpi;
+
+        struct {
+            UINT64 DescriptorTableOffset;
+        } Interconnect;
+
+        UINT8 Locator[MPAM_LOCATOR_SIZE];
+    };
+} MPAM_RESOURCE_LOCATOR;
+
+#if _MSC_VER >= 1200
+#pragma warning(pop)
+#endif
+
+typedef MPAM_RESOURCE_LOCATOR UNALIGNED *PMPAM_RESOURCE_LOCATOR;
+
+C_ASSERT(sizeof(MPAM_RESOURCE_LOCATOR) == MPAM_LOCATOR_SIZE + sizeof(UINT8));
+
+typedef struct _MPAM_RESOURCE_NODE {
+    UINT32 Identifier;
+    UINT8 RisIndex;
+    UINT8 Reserved0[2];
+    MPAM_RESOURCE_LOCATOR Locator;
+    UINT32 FunctionalDependencyCount;
+    // MPAM_FUNCTIONAL_DEPENDENCY_DESCRIPTOR
+    //     FunctionalDependencyDescriptors[FunctionalDependencyCount];
+} MPAM_RESOURCE_NODE;
+
+typedef MPAM_RESOURCE_NODE UNALIGNED *PMPAM_RESOURCE_NODE;
+
+#define MPAM_INTERCONNECT_LINK_TYPE_NUMA 0
+#define MPAM_INTERCONNECT_LINK_TYPE_PROC 1
+
+typedef struct _MPAM_INTERCONNECT_DESCRIPTOR {
+    UINT32 SourceId;
+    UINT32 DestinationId;
+    UINT8 LinkType;
+    UINT8 Reserved[3];
+} MPAM_INTERCONNECT_DESCRIPTOR;
+
+C_ASSERT(sizeof(MPAM_INTERCONNECT_DESCRIPTOR) == MPAM_INTERCONNECT_DESCRIPTOR_SIZE);
+
+typedef MPAM_INTERCONNECT_DESCRIPTOR UNALIGNED *PMPAM_INTERCONNECT_DESCRIPTOR;
+
+typedef struct _MPAM_INTERCONNECT_DESCRIPTOR_TABLE {
+    UINT8 Signature[16];
+    UINT32 DescriptorCount;
+    MPAM_INTERCONNECT_DESCRIPTOR Descriptors[ANYSIZE_ARRAY];
+} MPAM_INTERCONNECT_DESCRIPTOR_TABLE;
+
+typedef MPAM_INTERCONNECT_DESCRIPTOR_TABLE UNALIGNED *PMPAM_INTERCONNECT_DESCRIPTOR_TABLE;
+
+typedef struct _MPAM_MSC_NODE {
+    UINT16 Length;
+    UINT16 Reserved0;
+    UINT32 Identifier;
+    UINT64 BaseAddress;
+    UINT32 MmioSize;
+    UINT32 OverflowInterrupt;
+    UINT32 OverflowInterruptFlags;
+    UINT32 Reserved1;
+    UINT32 OverflowInterruptAffinity;
+    UINT32 ErrorInterrupt;
+    UINT32 ErrorInterruptFlags;
+    UINT32 Reserved2;
+    UINT32 ErrorInterruptAffinity;
+    UINT32 MaxNrdyUsec;
+    UINT64 LinkedHardwareId;
+    UINT32 LinkedInstanceId;
+    UINT32 ResourceNodeCount;
+    MPAM_RESOURCE_NODE ResourceNodes[ANYSIZE_ARRAY];
+} MPAM_MSC_NODE, *PMPAM_MSC_NODE;
+
+C_ASSERT((sizeof(MPAM_MSC_NODE) - sizeof(MPAM_RESOURCE_NODE)) == MPAM_MSC_NODE_SIZE);
+
+typedef struct _MPAM_TABLE {
+    DESCRIPTION_HEADER  Header;
+    MPAM_MSC_NODE Nodes[ANYSIZE_ARRAY];
+} MPAM_TABLE, *PMPAM_TABLE;
+
+//
+// DMA TXT Protected Range (DTPR) Table
+//  "Intel Trusted Execution Technology (Intel TXT) DMA Protection Ranges"
+//  Revision 0.73
+//
+
+#define DTPR_TABLE_SIGNATURE  0x52505444 // 'DTPR'
+
+typedef struct _TPR_REGISTERS
+{
+
+    //
+    // Physical adresss of TPRn_BASE register.
+    //
+
+    UINT64  BaseAddress;
+
+    //
+    // Physical adresss of TPRn_LIMIT register.
+    //
+    // N.B. According to the spec, these registers constitute a tuple of
+    //      16 consecutive bytes, so TPRn_LIMIT register can be accessed
+    //      via the physical address of just the base register.
+    //
+
+    UINT64	Limit;
+} TPR_REGISTERS, *PTPR_REGISTERS;
+
+typedef struct _TPR_INSTANCE
+{
+	UINT32	            Flags;
+    UINT32	            TprCount;
+
+    //
+    // Data at these physical addresses is of type TPR_REGISTERS.
+    //
+
+    PHYSICAL_ADDRESS	TprArray[ANYSIZE_ARRAY];
+} TPR_INSTANCE, *PTPR_INSTANCE;
+
+typedef struct _DTPR_TABLE
+{
+	UINT32	        Signature;
+	UINT32	        Length;
+	UINT8	        Revision;
+	UINT8 	        Checksum;
+	UINT8	        OEMID[6];
+	UINT8	        OEMTableID[8];
+	UINT32	        OEMRevision;
+	UINT32	        CreatorID;
+	UINT32	        CreatorRevision;
+	UINT32	        Flags;
+	UINT32	        TprInstanceCount;
+	TPR_INSTANCE	TprInstanceArray[ANYSIZE_ARRAY];
+} DTPR, *PDTPR;
 
 //
 // Resume normal structure packing

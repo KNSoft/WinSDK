@@ -30,7 +30,7 @@
 
 #endif
 
-        SET_COMDAT_ALIGNMENT 6
+        AREA |.text$mn$21|, CODE, READONLY, ALIGN=6
 
         ; With wcslen we will usually read some chars past the end of the string. To avoid getting an AV
         ; when a char-by-char implementation would not, we have to ensure that we never cross a page boundary with a
@@ -55,8 +55,8 @@
 
 __wcsnlen_forceAlignThreshold  EQU 216                      ; code logic below assumes >= 16
 
-        ARM64EC_ENTRY_THUNK A64NAME(wcslen),1,0
-        LEAF_ENTRY_COMDAT A64NAME(wcslen)
+        ARM64EC_ENTRY_THUNK A64NAME(wcslen),1,0,|.text$$mn$$21|
+        LEAF_ENTRY A64NAME(wcslen),|.text$$mn$$21|,6
 
         ; check for empty string to avoid huge perf degradation in this case.
         ldrh    w2, [x0], #0
@@ -105,13 +105,12 @@ WcslenMainLoop                                              ; test 8 wchar_t's a
         sub     x5, x5, #16                                 ; undo the last #16 post-increment of x5
 
 FindWideNullInVector
-        ldr     q1, ReverseBytePos                          ; load the position indicator mask
-
-        cmeq    v0.8h, v0.8h, #0                            ; +----
-        and     v0.16b, v0.16b, v1.16b                      ; |
-        umaxv   h0, v0.8h                                   ; | see big comment below
-        fmov    w2, s0                                      ; |
-        eor     w2, w2, #7                                  ; +----
+        cmeq    v0.8h, v0.8h, #0                            ; compute a 128-bit mask of 0xFFFF or 0x0000
+        shrn    v0.8b, v0.8h, #4                            ; narrow the 128-bit mask to a 64-bit mask of 0xFF or 0x00
+        fmov    x2, d0                                      ;
+        rbit    x2, x2                                      ; reverse the bit order for clz
+        clz     x2, x2                                      ; count the leading number of zeroes until the first bit set
+        lsr     x2, x2, #3                                  ; right-shift x2 by 3 to calculate the byte position for zero wchar_t
 
         sub     x0, x5, x0                                  ; subtract ptr to null char from ptr to first char to get the string length in bytes
         add     x0, x2, x0, ASR #1                          ; divide x0 by 2 to get the number of wide chars and then add in the final vector char pos
@@ -142,25 +141,10 @@ EmptyStr
         mov     x0, 0
         ret
 
-        ; The challenge is to find a way to efficiently determine which of the 8 wchar_t's we loaded is the end of the string.
-        ; The trick is to load a position indicator mask and generate the position of the rightmost null from that.
-        ; Little-endian order means when we load the mask below v1.8h[0] has 7, and v0.8h[0] is the wchar_t of the string
-        ; that comes first of the 8 we loaded. We do a cmeq, mapping all the wchar_t's we loaded to either 0xFFFF (for nulls)
-        ; or 0x0000 for non-nulls. Then we and with the mask below. SIMD lanes corresponding to a non-null wchar_t will be 0x0000,
-        ; and SIMD lanes corresponding to a null wchar_t will have a halfword from the mask. We take the max across the halfwords
-        ; of the vector to find the highest position that corresponds to a null wchar_t. The numbering order means we find the
-        ; rightmost null in the vector, which is the null that occurred first in memory due to little endian loading.
-        ; Exclusive oring the position indicator byte with 7 inverts the order, which gives us the character position of the null
-        ; counting from the first wchar_t we loaded into the v0 SIMD reg.
-
-ReverseBytePos \
-        dcw      7, 6, 5, 4, 3, 2, 1, 0                     ; vector of halfwords
-
         LEAF_END
 
-
-        ARM64EC_ENTRY_THUNK A64NAME(wcsnlen),1,0
-        LEAF_ENTRY_COMDAT A64NAME(wcsnlen)
+        ARM64EC_ENTRY_THUNK A64NAME(wcsnlen),1,0,|.text$$mn$$21|
+        LEAF_ENTRY A64NAME(wcsnlen),|.text$$mn$$21|,5
 
         mov     x5, x0                                      ; keep original x0 value for the final 'sub'
 
@@ -266,31 +250,16 @@ UndoPI_FindNullInVector
         sub     x5, x5, #16                                 ; undo the last #16 post-increment of x5
 
 FindWideNullInVector_Wcsnlen
-        ldr     q1, ReverseBytePos_Wcsnlen                  ; load the position indicator mask
-
-        cmeq    v0.8h, v0.8h, #0                            ; +----
-        and     v0.16b, v0.16b, v1.16b                      ; |
-        umaxv   h0, v0.8h                                   ; | see big comment below
-        fmov    w2, s0                                      ; |
-        eor     w2, w2, #7                                  ; +----
+        cmeq    v0.8h, v0.8h, #0                            ; compute a 128-bit mask of 0xFFFF or 0x0000
+        shrn    v0.8b, v0.8h, #4                            ; narrow the 128-bit mask to a 64-bit mask of 0xFF or 0x00
+        fmov    x2, d0                                      ;
+        rbit    x2, x2                                      ; reverse the bit order for clz
+        clz     x2, x2                                      ; count the leading number of zeroes until the first bit set
+        lsr     x2, x2, #3                                  ; right-shift x2 by 3 to calculate the byte position for zero wchar_t
 
         sub     x0, x5, x0                                  ; subtract ptr to null char from ptr to first char to get the string length in bytes
         add     x0, x2, x0, ASR #1                          ; divide x0 by 2 to get the number of wide chars and then add in the final vector char pos
         ret
-
-        ; The challenge is to find a way to efficiently determine which of the 8 wchar_t's we loaded is the end of the string.
-        ; The trick is to load a position indicator mask and generate the position of the rightmost null from that.
-        ; Little-endian order means when we load the mask below v1.8h[0] has 7, and v0.8h[0] is the wchar_t of the string
-        ; that comes first of the 8 we loaded. We do a cmeq, mapping all the wchar_t's we loaded to either 0xFFFF (for nulls)
-        ; or 0x0000 for non-nulls. Then we and with the mask below. SIMD lanes corresponding to a non-null wchar_t will be 0x0000,
-        ; and SIMD lanes corresponding to a null wchar_t will have a halfword from the mask. We take the max across the halfwords
-        ; of the vector to find the highest position that corresponds to a null wchar_t. The numbering order means we find the
-        ; rightmost null in the vector, which is the null that occurred first in memory due to little endian loading.
-        ; Exclusive oring the position indicator byte with 7 inverts the order, which gives us the character position of the null
-        ; counting from the first wchar_t we loaded into the v0 SIMD reg.
-
-ReverseBytePos_Wcsnlen \
-        dcw      7, 6, 5, 4, 3, 2, 1, 0                     ; vector of halfwords
 
         LEAF_END 
 

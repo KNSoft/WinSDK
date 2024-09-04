@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -23,12 +23,26 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::AppExtensions
         IAppExtension2(std::nullptr_t = nullptr) noexcept {}
         IAppExtension2(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
+    struct __declspec(empty_bases) IAppExtension3 :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IAppExtension3>
+    {
+        IAppExtension3(std::nullptr_t = nullptr) noexcept {}
+        IAppExtension3(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
     struct __declspec(empty_bases) IAppExtensionCatalog :
         winrt::Windows::Foundation::IInspectable,
         impl::consume_t<IAppExtensionCatalog>
     {
         IAppExtensionCatalog(std::nullptr_t = nullptr) noexcept {}
         IAppExtensionCatalog(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IAppExtensionCatalog2 :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IAppExtensionCatalog2>
+    {
+        IAppExtensionCatalog2(std::nullptr_t = nullptr) noexcept {}
+        IAppExtensionCatalog2(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) IAppExtensionCatalogStatics :
         winrt::Windows::Foundation::IInspectable,

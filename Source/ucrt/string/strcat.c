@@ -10,12 +10,12 @@
 *       end of the destination string, returning the destination string.
 *
 *******************************************************************************/
-
+#define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 
-#ifndef _MBSCAT
-    #pragma function(strcat, strcpy)
-#endif
+#pragma function(strcat)
+#pragma function(strlen)
+#pragma function(strcpy)
 
 /***
 *char *strcat(dst, src) - concatenate (append) one string to another
@@ -40,41 +40,7 @@ char * __cdecl strcat (
         const char * src
         )
 {
-        char * cp = dst;
+        strcpy(dst + strlen(dst), src);
 
-        while( *cp )
-                cp++;                   /* find end of dst */
-
-        while((*cp++ = *src++) != '\0') ;       /* Copy src to end of dst */
-
-        return( dst );                  /* return dst */
-
-}
-
-
-/***
-*char *strcpy(dst, src) - copy one string over another
-*
-*Purpose:
-*       Copies the string src into the spot specified by
-*       dest; assumes enough room.
-*
-*Entry:
-*       char * dst - string over which "src" is to be copied
-*       const char * src - string to be copied over "dst"
-*
-*Exit:
-*       The address of "dst"
-*
-*Exceptions:
-*******************************************************************************/
-
-char * __cdecl strcpy(char * dst, const char * src)
-{
-        char * cp = dst;
-
-        while((*cp++ = *src++) != '\0')
-                ;               /* Copy src over dst */
-
-        return( dst );
+        return dst;
 }

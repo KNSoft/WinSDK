@@ -52,7 +52,13 @@ include ksamd64.inc
 ;
 ;*******************************************************************************
 
-LEAF_ENTRY_ARG3 strncmp, _TEXT, str1:ptr byte, str2:ptr byte, count:dword
+ifdef _CRT_FFS_BUILD
+fname      TEXTEQU <strncmp_ffs>
+else
+fname      TEXTEQU <strncmp>
+endif
+
+LEAF_ENTRY_ARG3 fname, _TEXT$21, str1:ptr byte, str2:ptr byte, count:dword
 
     OPTION PROLOGUE:NONE, EPILOGUE:NONE
 
@@ -121,5 +127,5 @@ return_not_equal:
     or        rax, 1
     ret
 
-LEAF_END strncmp, _TEXT
+LEAF_END fname, _TEXT$21
         end

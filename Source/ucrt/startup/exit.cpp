@@ -36,10 +36,12 @@ static bool __cdecl is_managed_app() throw() { return false; }
 static void __cdecl try_cor_exit_process(UINT const) throw() { }
 
 // This function never returns.  It causes the process to exit.
-static void __cdecl exit_or_terminate_process(UINT const return_code) throw()
+static void __cdecl exit_or_terminate_process(UINT const return_code, bool) throw()
 {
     TerminateProcess(GetCurrentProcess(), return_code);
 }
+
+static bool __cdecl should_call_terminate_process() throw() { return true; }
 
 #else /* ^^^ _UCRT_ENCLAVE_BUILD ^^^ // vvv !_UCRT_ENCLAVE_BUILD vvv */
 
@@ -123,9 +125,11 @@ static bool __cdecl should_call_terminate_process() throw()
 
 
 // This function never returns.  It causes the process to exit.
-static void __cdecl exit_or_terminate_process(UINT const return_code) throw()
+static void __cdecl exit_or_terminate_process(
+    UINT const return_code,
+    bool should_call_terminate_proc) throw()
 {
-    if (should_call_terminate_process())
+    if (should_call_terminate_proc)
     {
         TerminateProcess(GetCurrentProcess(), return_code);
     }
@@ -249,7 +253,17 @@ static void __cdecl common_exit(
         }
     });
 
-    // Do NOT try to uninitialize the CRT while holding one of its locks.
+    // should_call_terminate_process ends up calling winapi thunks, which may
+    // grab a CRT lock, so call it before __scrt_uninitialize_crt that uninitializes
+    // all the locks.
+    bool should_call_terminate_proc = false;
+    if (return_mode == _crt_exit_terminate_process)
+    {
+        should_call_terminate_proc = should_call_terminate_process();
+    }
+
+    // Do NOT try to uninitialize the CRT while holding one of its locks (e.g.,
+    // call any functions that may end up calling winapi thunks).
     if (crt_uninitialization_required)
     {
         // If we are about to terminate the process, if the debug CRT is linked
@@ -271,7 +285,7 @@ static void __cdecl common_exit(
 
     if (return_mode == _crt_exit_terminate_process)
     {
-        exit_or_terminate_process(return_code);
+        exit_or_terminate_process(return_code, should_call_terminate_proc);
     }
 }
 

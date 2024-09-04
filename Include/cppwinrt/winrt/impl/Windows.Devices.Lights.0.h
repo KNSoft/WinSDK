@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -10,8 +10,6 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     struct EventRegistrationToken;
     struct IAsyncAction;
-    template <typename TResult> struct __declspec(empty_bases) IAsyncOperation;
-    template <typename T> struct __declspec(empty_bases) IReference;
     template <typename TSender, typename TResult> struct __declspec(empty_bases) TypedEventHandler;
 }
 WINRT_EXPORT namespace winrt::Windows::Foundation::Numerics
@@ -45,6 +43,8 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Lights
         Furniture = 9,
         Art = 10,
         Headset = 11,
+        Microphone = 12,
+        Speaker = 13,
     };
     enum class LampPurposes : uint32_t
     {
@@ -207,18 +207,18 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Lights_ILamp
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) DeviceId() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(bool) IsEnabled() const;
-        WINRT_IMPL_AUTO(void) IsEnabled(bool value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(float) BrightnessLevel() const;
-        WINRT_IMPL_AUTO(void) BrightnessLevel(float value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(bool) IsColorSettable() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::UI::Color) Color() const;
-        WINRT_IMPL_AUTO(void) Color(winrt::Windows::UI::Color const& value) const;
-        WINRT_IMPL_AUTO(winrt::event_token) AvailabilityChanged(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::Devices::Lights::Lamp, winrt::Windows::Devices::Lights::LampAvailabilityChangedEventArgs> const& handler) const;
+        [[nodiscard]] auto DeviceId() const;
+        [[nodiscard]] auto IsEnabled() const;
+        auto IsEnabled(bool value) const;
+        [[nodiscard]] auto BrightnessLevel() const;
+        auto BrightnessLevel(float value) const;
+        [[nodiscard]] auto IsColorSettable() const;
+        [[nodiscard]] auto Color() const;
+        auto Color(winrt::Windows::UI::Color const& value) const;
+        auto AvailabilityChanged(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::Devices::Lights::Lamp, winrt::Windows::Devices::Lights::LampAvailabilityChangedEventArgs> const& handler) const;
         using AvailabilityChanged_revoker = impl::event_revoker<winrt::Windows::Devices::Lights::ILamp, &impl::abi_t<winrt::Windows::Devices::Lights::ILamp>::remove_AvailabilityChanged>;
         [[nodiscard]] AvailabilityChanged_revoker AvailabilityChanged(auto_revoke_t, winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::Devices::Lights::Lamp, winrt::Windows::Devices::Lights::LampAvailabilityChangedEventArgs> const& handler) const;
-        WINRT_IMPL_AUTO(void) AvailabilityChanged(winrt::event_token const& token) const noexcept;
+        auto AvailabilityChanged(winrt::event_token const& token) const noexcept;
     };
     template <> struct consume<winrt::Windows::Devices::Lights::ILamp>
     {
@@ -227,32 +227,32 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Lights_ILampArray
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) DeviceId() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint16_t) HardwareVendorId() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint16_t) HardwareProductId() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint16_t) HardwareVersion() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Devices::Lights::LampArrayKind) LampArrayKind() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) LampCount() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Foundation::TimeSpan) MinUpdateInterval() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Foundation::Numerics::float3) BoundingBox() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(bool) IsEnabled() const;
-        WINRT_IMPL_AUTO(void) IsEnabled(bool value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(double) BrightnessLevel() const;
-        WINRT_IMPL_AUTO(void) BrightnessLevel(double value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(bool) IsConnected() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(bool) SupportsVirtualKeys() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Lights::LampInfo) GetLampInfo(int32_t lampIndex) const;
-        WINRT_IMPL_AUTO(com_array<int32_t>) GetIndicesForKey(winrt::Windows::System::VirtualKey const& key) const;
-        WINRT_IMPL_AUTO(com_array<int32_t>) GetIndicesForPurposes(winrt::Windows::Devices::Lights::LampPurposes const& purposes) const;
-        WINRT_IMPL_AUTO(void) SetColor(winrt::Windows::UI::Color const& desiredColor) const;
-        WINRT_IMPL_AUTO(void) SetColorForIndex(int32_t lampIndex, winrt::Windows::UI::Color const& desiredColor) const;
-        WINRT_IMPL_AUTO(void) SetSingleColorForIndices(winrt::Windows::UI::Color const& desiredColor, array_view<int32_t const> lampIndexes) const;
-        WINRT_IMPL_AUTO(void) SetColorsForIndices(array_view<winrt::Windows::UI::Color const> desiredColors, array_view<int32_t const> lampIndexes) const;
-        WINRT_IMPL_AUTO(void) SetColorsForKey(winrt::Windows::UI::Color const& desiredColor, winrt::Windows::System::VirtualKey const& key) const;
-        WINRT_IMPL_AUTO(void) SetColorsForKeys(array_view<winrt::Windows::UI::Color const> desiredColors, array_view<winrt::Windows::System::VirtualKey const> keys) const;
-        WINRT_IMPL_AUTO(void) SetColorsForPurposes(winrt::Windows::UI::Color const& desiredColor, winrt::Windows::Devices::Lights::LampPurposes const& purposes) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncAction) SendMessageAsync(int32_t messageId, winrt::Windows::Storage::Streams::IBuffer const& message) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Streams::IBuffer>) RequestMessageAsync(int32_t messageId) const;
+        [[nodiscard]] auto DeviceId() const;
+        [[nodiscard]] auto HardwareVendorId() const;
+        [[nodiscard]] auto HardwareProductId() const;
+        [[nodiscard]] auto HardwareVersion() const;
+        [[nodiscard]] auto LampArrayKind() const;
+        [[nodiscard]] auto LampCount() const;
+        [[nodiscard]] auto MinUpdateInterval() const;
+        [[nodiscard]] auto BoundingBox() const;
+        [[nodiscard]] auto IsEnabled() const;
+        auto IsEnabled(bool value) const;
+        [[nodiscard]] auto BrightnessLevel() const;
+        auto BrightnessLevel(double value) const;
+        [[nodiscard]] auto IsConnected() const;
+        [[nodiscard]] auto SupportsVirtualKeys() const;
+        auto GetLampInfo(int32_t lampIndex) const;
+        auto GetIndicesForKey(winrt::Windows::System::VirtualKey const& key) const;
+        auto GetIndicesForPurposes(winrt::Windows::Devices::Lights::LampPurposes const& purposes) const;
+        auto SetColor(winrt::Windows::UI::Color const& desiredColor) const;
+        auto SetColorForIndex(int32_t lampIndex, winrt::Windows::UI::Color const& desiredColor) const;
+        auto SetSingleColorForIndices(winrt::Windows::UI::Color const& desiredColor, array_view<int32_t const> lampIndexes) const;
+        auto SetColorsForIndices(array_view<winrt::Windows::UI::Color const> desiredColors, array_view<int32_t const> lampIndexes) const;
+        auto SetColorsForKey(winrt::Windows::UI::Color const& desiredColor, winrt::Windows::System::VirtualKey const& key) const;
+        auto SetColorsForKeys(array_view<winrt::Windows::UI::Color const> desiredColors, array_view<winrt::Windows::System::VirtualKey const> keys) const;
+        auto SetColorsForPurposes(winrt::Windows::UI::Color const& desiredColor, winrt::Windows::Devices::Lights::LampPurposes const& purposes) const;
+        auto SendMessageAsync(int32_t messageId, winrt::Windows::Storage::Streams::IBuffer const& message) const;
+        auto RequestMessageAsync(int32_t messageId) const;
     };
     template <> struct consume<winrt::Windows::Devices::Lights::ILampArray>
     {
@@ -261,11 +261,11 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Lights_ILampArray2
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(bool) IsAvailable() const;
-        WINRT_IMPL_AUTO(winrt::event_token) AvailabilityChanged(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::Devices::Lights::LampArray, winrt::Windows::Foundation::IInspectable> const& handler) const;
+        [[nodiscard]] auto IsAvailable() const;
+        auto AvailabilityChanged(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::Devices::Lights::LampArray, winrt::Windows::Foundation::IInspectable> const& handler) const;
         using AvailabilityChanged_revoker = impl::event_revoker<winrt::Windows::Devices::Lights::ILampArray2, &impl::abi_t<winrt::Windows::Devices::Lights::ILampArray2>::remove_AvailabilityChanged>;
         [[nodiscard]] AvailabilityChanged_revoker AvailabilityChanged(auto_revoke_t, winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::Devices::Lights::LampArray, winrt::Windows::Foundation::IInspectable> const& handler) const;
-        WINRT_IMPL_AUTO(void) AvailabilityChanged(winrt::event_token const& token) const noexcept;
+        auto AvailabilityChanged(winrt::event_token const& token) const noexcept;
     };
     template <> struct consume<winrt::Windows::Devices::Lights::ILampArray2>
     {
@@ -274,8 +274,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Lights_ILampArrayStatics
     {
-        WINRT_IMPL_AUTO(hstring) GetDeviceSelector() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Lights::LampArray>) FromIdAsync(param::hstring const& deviceId) const;
+        auto GetDeviceSelector() const;
+        auto FromIdAsync(param::hstring const& deviceId) const;
     };
     template <> struct consume<winrt::Windows::Devices::Lights::ILampArrayStatics>
     {
@@ -284,7 +284,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Lights_ILampAvailabilityChangedEventArgs
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(bool) IsAvailable() const;
+        [[nodiscard]] auto IsAvailable() const;
     };
     template <> struct consume<winrt::Windows::Devices::Lights::ILampAvailabilityChangedEventArgs>
     {
@@ -293,16 +293,16 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Lights_ILampInfo
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Index() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Devices::Lights::LampPurposes) Purposes() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Foundation::Numerics::float3) Position() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) RedLevelCount() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) GreenLevelCount() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) BlueLevelCount() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) GainLevelCount() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Foundation::IReference<winrt::Windows::UI::Color>) FixedColor() const;
-        WINRT_IMPL_AUTO(winrt::Windows::UI::Color) GetNearestSupportedColor(winrt::Windows::UI::Color const& desiredColor) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Foundation::TimeSpan) UpdateLatency() const;
+        [[nodiscard]] auto Index() const;
+        [[nodiscard]] auto Purposes() const;
+        [[nodiscard]] auto Position() const;
+        [[nodiscard]] auto RedLevelCount() const;
+        [[nodiscard]] auto GreenLevelCount() const;
+        [[nodiscard]] auto BlueLevelCount() const;
+        [[nodiscard]] auto GainLevelCount() const;
+        [[nodiscard]] auto FixedColor() const;
+        auto GetNearestSupportedColor(winrt::Windows::UI::Color const& desiredColor) const;
+        [[nodiscard]] auto UpdateLatency() const;
     };
     template <> struct consume<winrt::Windows::Devices::Lights::ILampInfo>
     {
@@ -311,9 +311,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Lights_ILampStatics
     {
-        WINRT_IMPL_AUTO(hstring) GetDeviceSelector() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Lights::Lamp>) FromIdAsync(param::hstring const& deviceId) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Lights::Lamp>) GetDefaultAsync() const;
+        auto GetDeviceSelector() const;
+        auto FromIdAsync(param::hstring const& deviceId) const;
+        auto GetDefaultAsync() const;
     };
     template <> struct consume<winrt::Windows::Devices::Lights::ILampStatics>
     {

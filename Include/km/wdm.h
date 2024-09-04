@@ -313,8 +313,9 @@ typedef KSPIN_LOCK *PKSPIN_LOCK;
 //
 //      The halted bit is set when the processor is invoking halt-on-address
 //      instead of spinning. This is only performed on 64-bit systems, because
-//      on 32-bit systems there is no space for this bit in the lower spare
-//      bits of the LockQueue->Lock pointer.
+//      halt-on-address is only supported on 64-bit systems, plus on 32-bit
+//      systems there is no space for this bit in the lower spare bits of the
+//      LockQueue->Lock pointer.
 //
 //      The next field of the spin lock queue structure is used to line the
 //      queued lock structures together in fifo order. It also can set set and
@@ -502,6 +503,23 @@ typedef struct _XSAVE_CET_U_FORMAT {
     ULONG64 Ia32Pl3SspMsr;
 } XSAVE_CET_U_FORMAT, *PXSAVE_CET_U_FORMAT;
 
+//
+// Header for ARM64 SVE component.
+//
+
+typedef struct _XSAVE_ARM64_SVE_HEADER {
+    ULONG VectorLength;
+    ULONG VectorRegisterOffset;
+    ULONG PredicateRegisterOffset;
+    ULONG Reserved[5];
+} XSAVE_ARM64_SVE_HEADER, *PXSAVE_ARM64_SVE_HEADER;
+
+#if !defined(__midl) && !defined(MIDL_PASS)
+
+C_ASSERT(sizeof(XSAVE_ARM64_SVE_HEADER) == (4 * sizeof(ULONG64)));
+
+#endif
+
 typedef struct DECLSPEC_ALIGN(8) _XSAVE_AREA_HEADER {
     ULONG64 Mask;
     ULONG64 CompactionMask;
@@ -513,10 +531,13 @@ typedef struct DECLSPEC_ALIGN(16) _XSAVE_AREA {
     XSAVE_AREA_HEADER Header;
 } XSAVE_AREA, *PXSAVE_AREA;
 
+#define XSTATE_CONTEXT_FLAG_LOOKASIDE    0x1
+
 typedef struct _XSTATE_CONTEXT {
     ULONG64 Mask;
     ULONG Length;
-    ULONG Reserved1;
+    UCHAR Flags;
+    UCHAR Reserved0[3];
     _Field_size_bytes_opt_(Length) PXSAVE_AREA Area;
 
 #if defined(_X86_)
@@ -968,9 +989,12 @@ _InlineInterlockedCompareExchangePointer (
 #if (_MSC_VER >= 1600)
 
 #define InterlockedExchange8 _InterlockedExchange8
-#define InterlockedExchange16 _InterlockedExchange16
 #define InterlockedExchangeNoFence8 InterlockedExchange8
 #define InterlockedExchangeAcquire8 InterlockedExchange8
+
+#define InterlockedExchange16 _InterlockedExchange16
+#define InterlockedExchangeNoFence16 InterlockedExchange16
+#define InterlockedExchangeAcquire16 InterlockedExchange16
 
 CHAR
 InterlockedExchange8 (
@@ -1004,12 +1028,19 @@ InterlockedExchange16 (
 #define InterlockedXorAcquire8 _InterlockedXor8
 #define InterlockedXorRelease8 _InterlockedXor8
 #define InterlockedXorNoFence8 _InterlockedXor8
+#define InterlockedExchangeAdd16 _InterlockedExchangeAdd16
 #define InterlockedAnd16 _InterlockedAnd16
+#define InterlockedAndAcquire16 InterlockedAnd16
+#define InterlockedAndRelease16 InterlockedAnd16
+#define InterlockedAndNoFence16 InterlockedAnd16
 #define InterlockedOr16 _InterlockedOr16
+#define InterlockedOrAcquire16 InterlockedOr16
+#define InterlockedOrRelease16 InterlockedOr16
+#define InterlockedOrNoFence16 InterlockedOr16
 #define InterlockedXor16 _InterlockedXor16
-#define InterlockedCompareExchange16 _InterlockedCompareExchange16
-#define InterlockedIncrement16 _InterlockedIncrement16
-#define InterlockedDecrement16 _InterlockedDecrement16
+#define InterlockedXorAcquire16 InterlockedXor16
+#define InterlockedXorRelease16 InterlockedXor16
+#define InterlockedXorNoFence16 InterlockedXor16
 
 char
 InterlockedExchangeAdd8 (
@@ -1405,6 +1436,19 @@ __writefsdword (
 #pragma intrinsic(__writefsbyte)
 #pragma intrinsic(__writefsword)
 #pragma intrinsic(__writefsdword)
+
+#if !defined(_M_HYBRID_X86_ARM64)
+
+VOID
+_mm_lfence (
+    VOID
+    );
+
+#pragma intrinsic(_mm_lfence)
+
+#define SpeculationFence _mm_lfence
+
+#endif // !defined(_M_HYBRID_x86_ARM64)
 
 VOID
 _ReadWriteBarrier (
@@ -1974,9 +2018,12 @@ InterlockedExchangePointer(
 #if (_MSC_VER >= 1600)
 
 #define InterlockedExchange8 _InterlockedExchange8
-#define InterlockedExchange16 _InterlockedExchange16
 #define InterlockedExchangeNoFence8 InterlockedExchange8
 #define InterlockedExchangeAcquire8 InterlockedExchange8
+
+#define InterlockedExchange16 _InterlockedExchange16
+#define InterlockedExchangeNoFence16 InterlockedExchange16
+#define InterlockedExchangeAcquire16 InterlockedExchange16
 
 CHAR
 InterlockedExchange8 (
@@ -2012,9 +2059,19 @@ InterlockedExchange16 (
 #define InterlockedXorAcquire8 _InterlockedXor8
 #define InterlockedXorRelease8 _InterlockedXor8
 #define InterlockedXorNoFence8 _InterlockedXor8
+#define InterlockedExchangeAdd16 _InterlockedExchangeAdd16
 #define InterlockedAnd16 _InterlockedAnd16
+#define InterlockedAndAcquire16 InterlockedAnd16
+#define InterlockedAndRelease16 InterlockedAnd16
+#define InterlockedAndNoFence16 InterlockedAnd16
 #define InterlockedOr16 _InterlockedOr16
+#define InterlockedOrAcquire16 InterlockedOr16
+#define InterlockedOrRelease16 InterlockedOr16
+#define InterlockedOrNoFence16 InterlockedOr16
 #define InterlockedXor16 _InterlockedXor16
+#define InterlockedXorAcquire16 InterlockedXor16
+#define InterlockedXorRelease16 InterlockedXor16
+#define InterlockedXorNoFence16 InterlockedXor16
 
 char
 InterlockedExchangeAdd8 (
@@ -2889,6 +2946,8 @@ extern "C" {
 #pragma intrinsic(_ReadWriteBarrier)
 #pragma intrinsic(_WriteBarrier)
 
+#define SpeculationFence() NOP_FUNCTION
+
 FORCEINLINE
 VOID
 YieldProcessor (
@@ -2972,6 +3031,7 @@ _InlineBitScanReverse64 (
 #define InterlockedXor16 _InterlockedXor16
 #define InterlockedIncrement16 _InterlockedIncrement16
 #define InterlockedDecrement16 _InterlockedDecrement16
+#define InterlockedExchangeAdd16 _InterlockedExchangeAdd16
 #define InterlockedCompareExchange16 _InterlockedCompareExchange16
 
 #define InterlockedAnd _InterlockedAnd
@@ -3387,6 +3447,8 @@ BarrierAfterRead (
 // ARM doesn't have.
 //
 
+
+
 ULONG64
 ReadTimeStampCounter(
     VOID
@@ -3400,8 +3462,11 @@ ReadPMC (
 {
 
     _MoveToCoprocessor(Counter, CP15_PMSELR);
+    _DataSynchronizationBarrier();
     return (ULONG64)_MoveFromCoprocessor(CP15_PMXEVCNTR);
 }
+
+
 
 #ifdef __cplusplus
 }
@@ -3588,6 +3653,7 @@ _BitTestAndSet64(__int64 *Base, __int64 Index)
 #define InterlockedXor16 _InterlockedXor16
 #define InterlockedIncrement16 _InterlockedIncrement16
 #define InterlockedDecrement16 _InterlockedDecrement16
+#define InterlockedExchangeAdd16 _InterlockedExchangeAdd16
 #define InterlockedCompareExchange16 _InterlockedCompareExchange16
 
 #define InterlockedAnd _InterlockedAnd
@@ -3773,7 +3839,17 @@ _BitTestAndSet64(__int64 *Base, __int64 Index)
 #pragma intrinsic(_ReadWriteBarrier)
 #pragma intrinsic(_WriteBarrier)
 
-#define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
+#define SpeculationFence() NOP_FUNCTION
+
+FORCEINLINE
+VOID
+MemoryBarrier (
+    VOID
+    )
+{
+    __dmb(_ARM64_BARRIER_SY);
+}
+
 #define PreFetchCacheLine(l,a)      __prefetch2((const void *) (a), ARM64_PREFETCH(PLD, L1, KEEP))
 #define PrefetchForWrite(p)         __prefetch2((const void *) (p), ARM64_PREFETCH(PST, L1, KEEP))
 #define ReadForWriteAccess(p)       (__prefetch2((const void *) (p), ARM64_PREFETCH(PST, L1, KEEP)), *(p))
@@ -3803,9 +3879,29 @@ YieldProcessor (
 #pragma intrinsic(__iso_volatile_store16)
 #pragma intrinsic(__iso_volatile_store32)
 #pragma intrinsic(__iso_volatile_store64)
+#pragma intrinsic(__ldar8)
+#pragma intrinsic(__ldar16)
+#pragma intrinsic(__ldar32)
+#pragma intrinsic(__ldar64)
+#pragma intrinsic(__stlr8)
+#pragma intrinsic(__stlr16)
+#pragma intrinsic(__stlr32)
+#pragma intrinsic(__stlr64)
+
+#if _MSC_FULL_VER >= 193632407
+#pragma intrinsic(__load_acquire8)
+#pragma intrinsic(__load_acquire16)
+#pragma intrinsic(__load_acquire32)
+#pragma intrinsic(__load_acquire64)
+#endif // _MSC_FULL_VER >= 193632407
 
 //
 //
+
+// TODO: Remove when clang-cl supports __ldar/__stlr/__loadacquire intrinsics
+#if !defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && defined(__clang__)
+#define __USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ 1
+#endif
 
 FORCEINLINE
 CHAR
@@ -3817,8 +3913,21 @@ ReadAcquire8 (
 
     CHAR Value;
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     Value = __iso_volatile_load8(Source);
     __dmb(_ARM64_BARRIER_ISH);
+
+#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
+#if _MSC_FULL_VER >= 193632407
+    Value = (CHAR)__load_acquire8((unsigned __int8 volatile*)Source);
+#else
+    Value = (CHAR)__ldar8((unsigned __int8 volatile*)Source);
+#endif
+
+#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     return Value;
 }
 
@@ -3845,8 +3954,13 @@ WriteRelease8 (
 
 {
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
     __dmb(_ARM64_BARRIER_ISH);
     __iso_volatile_store8(Destination, Value);
+#else
+    __stlr8((unsigned __int8 volatile*)Destination, (unsigned __int8)Value);
+#endif
+
     return;
 }
 
@@ -3873,8 +3987,21 @@ ReadAcquire16 (
 
     SHORT Value;
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     Value = __iso_volatile_load16(Source);
     __dmb(_ARM64_BARRIER_ISH);
+
+#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
+#if _MSC_FULL_VER >= 193632407
+    Value = (SHORT)__load_acquire16((unsigned __int16 volatile*)Source);
+#else
+    Value = (SHORT)__ldar16((unsigned __int16 volatile*)Source);
+#endif
+
+#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     return Value;
 }
 
@@ -3901,8 +4028,13 @@ WriteRelease16 (
 
 {
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
     __dmb(_ARM64_BARRIER_ISH);
     __iso_volatile_store16(Destination, Value);
+#else
+    __stlr16((unsigned __int16 volatile*)Destination, (unsigned __int16)Value);
+#endif
+
     return;
 }
 
@@ -3929,8 +4061,21 @@ ReadAcquire (
 
     LONG Value;
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     Value = __iso_volatile_load32((int *)Source);
     __dmb(_ARM64_BARRIER_ISH);
+
+#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
+#if _MSC_FULL_VER >= 193632407
+    Value = (LONG)__load_acquire32((unsigned __int32 volatile*)Source);
+#else
+    Value = (LONG)__ldar32((unsigned __int32 volatile*)Source);
+#endif
+
+#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     return Value;
 }
 
@@ -3957,8 +4102,13 @@ WriteRelease (
 
 {
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
     __dmb(_ARM64_BARRIER_ISH);
     __iso_volatile_store32((int *)Destination, Value);
+#else
+    __stlr32((unsigned __int32 volatile*)Destination, (unsigned __int32)Value);
+#endif
+
     return;
 }
 
@@ -3985,8 +4135,21 @@ ReadAcquire64 (
 
     LONG64 Value;
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     Value = __iso_volatile_load64(Source);
     __dmb(_ARM64_BARRIER_ISH);
+
+#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
+#if _MSC_FULL_VER >= 193632407
+    Value = (LONG64)__load_acquire64((unsigned __int64 volatile*)Source);
+#else
+    Value = (LONG64)__ldar64((unsigned __int64 volatile*)Source);
+#endif
+
+#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+
     return Value;
 }
 
@@ -4013,8 +4176,13 @@ WriteRelease64 (
 
 {
 
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
     __dmb(_ARM64_BARRIER_ISH);
     __iso_volatile_store64(Destination, Value);
+#else
+    __stlr64((unsigned __int64 volatile*)Destination, (unsigned __int64)Value);
+#endif
+
     return;
 }
 
@@ -4041,6 +4209,10 @@ BarrierAfterRead (
     __dmb(_ARM64_BARRIER_ISH);
     return;
 }
+
+#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__)
+#undef __USE_MS_ARM64_DMB_ACQUIRE_RELEASE__
+#endif
 
 //
 //
@@ -4072,6 +4244,8 @@ BarrierAfterRead (
 #define ARM64_SYSREG_OP2(_Reg_) ((_Reg_) & 7)
 
 #define ARM64_CNTVCT            ARM64_SYSREG(3,3,14, 0,2)  // Generic Timer counter register
+#define ARM64_CNTVCT_EL0        ARM64_SYSREG(3,3,14, 0,2)  // Generic Timer counter register
+#define ARM64_CNTFRQ_EL0        ARM64_SYSREG(3,3,14, 0,0)  // Counter-timer Frequency register
 #define ARM64_PMCCNTR_EL0       ARM64_SYSREG(3,3, 9,13,0)  // Cycle Count Register [CP15_PMCCNTR]
 #define ARM64_PMSELR_EL0        ARM64_SYSREG(3,3, 9,12,5)  // Event Counter Selection Register [CP15_PMSELR]
 #define ARM64_PMXEVCNTR_EL0     ARM64_SYSREG(3,3, 9,13,2)  // Event Count Register [CP15_PMXEVCNTR]
@@ -4079,8 +4253,6 @@ BarrierAfterRead (
 #define ARM64_TPIDR_EL0         ARM64_SYSREG(3,3,13, 0,2)  // Thread ID Register, User Read/Write [CP15_TPIDRURW]
 #define ARM64_TPIDRRO_EL0       ARM64_SYSREG(3,3,13, 0,3)  // Thread ID Register, User Read Only [CP15_TPIDRURO]
 #define ARM64_TPIDR_EL1         ARM64_SYSREG(3,0,13, 0,4)  // Thread ID Register, Privileged Only [CP15_TPIDRPRW]
-
-
 
 #pragma intrinsic(_WriteStatusReg)
 #pragma intrinsic(_ReadStatusReg)
@@ -4109,6 +4281,9 @@ extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
 DECLSPEC_GUARDNOCF
 
 #endif // defined(_M_HYBRID_X86_ARM64)
+
+//
+// hextract end_ntoshvp
 
 FORCEINLINE
 ULONG64
@@ -4140,14 +4315,45 @@ ReadPMC (
     _In_ ULONG Counter
     )
 {
-    // ARM64_WORKITEM: These can be directly accessed, but
-    // given our usage, it that any benefit? We need to know
-    // the register index at compile time, though atomicity
-    // benefits would still be good if needed, even if we
-    // went with a big switch statement.
-    _WriteStatusReg(ARM64_PMSELR_EL0, Counter);
-    return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTR_EL0);
+
+    switch (Counter) {
+    case  0: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(0));
+    case  1: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(1));
+    case  2: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(2));
+    case  3: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(3));
+    case  4: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(4));
+    case  5: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(5));
+    case  6: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(6));
+    case  7: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(7));
+    case  8: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(8));
+    case  9: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(9));
+    case 10: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(10));
+    case 11: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(11));
+    case 12: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(12));
+    case 13: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(13));
+    case 14: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(14));
+    case 15: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(15));
+    case 16: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(16));
+    case 17: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(17));
+    case 18: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(18));
+    case 19: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(19));
+    case 20: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(20));
+    case 21: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(21));
+    case 22: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(22));
+    case 23: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(23));
+    case 24: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(24));
+    case 25: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(25));
+    case 26: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(26));
+    case 27: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(27));
+    case 28: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(28));
+    case 29: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(29));
+    case 30: return (ULONG64)_ReadStatusReg(ARM64_PMXEVCNTRn_EL0(30));
+    default: return 0;
+    }
 }
+
+// hextract begin_ntoshvp
+//
 
 //
 // Define functions to capture the high 64-bits of a 128-bit multiply.
@@ -4254,15 +4460,13 @@ ShiftRight128 (
 // Define functions to perform 128-bit multiplies.
 //
 
-// Most ARM64/AArch64 intrinsics available in MSVC are not currently available in other compilers.
-// clang-cl defines _M_ARM64, so we need a better escape hatch to avoid using these intrinsics,
-// as well as allow us to re-enable them in the event clang-cl starts supporting the msvc intrinsics.
-#if !defined(ARM64_MULT_INTRINSICS_SUPPORTED)
-    #if defined(_MSC_VER) && !defined(__clang__)
-    #define ARM64_MULT_INTRINSICS_SUPPORTED 1
-    #else
-    #define ARM64_MULT_INTRINSICS_SUPPORTED 0
-    #endif
+#if !defined(_ARM64_MULT_INTRINS_SUPPORTED)
+#if (defined(_M_ARM64) || defined(_M_ARM64EC)) && \
+    defined(_MSC_VER) && (!defined(__clang__) || (defined(__clang_major__) && __clang_major__ >= 13))
+#define _ARM64_MULT_INTRINS_SUPPORTED 1
+#else
+#define _ARM64_MULT_INTRINS_SUPPORTED 0
+#endif
 #endif
 
 #if !defined(UnsignedMultiply128)
@@ -4297,7 +4501,7 @@ Return Value:
 
 {
 
-#if (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)) && ARM64_MULT_INTRINSICS_SUPPORTED
+#if (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)) && _ARM64_MULT_INTRINS_SUPPORTED
 
     *HighProduct = UnsignedMultiplyHigh(Multiplier, Multiplicand);
     return Multiplier * Multiplicand;
@@ -4330,6 +4534,10 @@ Return Value:
 
 }
 
+#endif // !defined(UnsignedMultiply128)
+
+#if !defined(Multiply128)
+
 __forceinline
 LONG64
 Multiply128 (
@@ -4338,15 +4546,24 @@ Multiply128 (
     _Out_ LONG64 *HighProduct
     )
 {
+#if (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)) && _ARM64_MULT_INTRINS_SUPPORTED
+
+    *HighProduct = MultiplyHigh(Multiplier, Multiplicand);
+    return Multiplier * Multiplicand;
+
+#else
+
     LONG64 Result = (LONG64)UnsignedMultiply128((ULONG64)Multiplier, (ULONG64)Multiplicand, (ULONG64 *)HighProduct);
 
     *HighProduct += (Multiplier >> 63) * Multiplicand;
     *HighProduct += Multiplier * (Multiplicand >> 63);
 
     return Result;
+
+#endif
 }
 
-#endif // !defined(UnsignedMultiply128)
+#endif // !defined(Multiply128)
 
 #if !defined(_M_ARM64EC)
 
@@ -4741,6 +4958,67 @@ BarrierAfterRead (
 // Define "raw" operations which have no ordering or atomicity semantics.
 //
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#if defined(_KERNEL_MODE) && defined(__SANITIZE_ADDRESS__) && defined(CSAN_ON_ASAN)
+
+#define ReadRaw8        CsanRead8NoCheck
+#define WriteRaw8       CsanWrite8NoCheck
+#define ReadRaw16       CsanRead16NoCheck
+#define WriteRaw16      CsanWrite16NoCheck
+#define ReadRaw         CsanReadNoCheck
+#define WriteRaw        CsanWriteNoCheck
+#define ReadRaw64       CsanRead64NoCheck
+#define WriteRaw64      CsanWrite64NoCheck
+
+CHAR
+ReadRaw8 (
+    _In_ _Interlocked_operand_ CHAR const volatile *Source
+    );
+
+VOID
+WriteRaw8 (
+    _Out_ _Interlocked_operand_ CHAR volatile *Destination,
+    _In_ CHAR Value
+    );
+
+SHORT
+ReadRaw16 (
+    _In_ _Interlocked_operand_ SHORT const volatile *Source
+    );
+
+VOID
+WriteRaw16 (
+    _Out_ _Interlocked_operand_ SHORT volatile *Destination,
+    _In_ SHORT Value
+    );
+
+LONG
+ReadRaw (
+    _In_ _Interlocked_operand_ LONG const volatile *Source
+    );
+
+VOID
+WriteRaw (
+    _Out_ _Interlocked_operand_ LONG volatile *Destination,
+    _In_ LONG Value
+    );
+
+LONG64
+ReadRaw64 (
+    _In_ _Interlocked_operand_ LONG64 const volatile *Source
+    );
+
+VOID
+WriteRaw64 (
+    _Out_ _Interlocked_operand_ LONG64 volatile *Destination,
+    _In_ LONG64 Value
+    );
+
+#else
+
 FORCEINLINE
 CHAR
 ReadRaw8 (
@@ -4847,6 +5125,60 @@ WriteRaw64 (
 
     *(LONG64 *)Destination = Value;
     return;
+}
+
+#endif // _KERNEL_MODE && __SANITIZE_ADDRESS__ && CSAN_ON_ASAN
+
+#ifdef __cplusplus
+}
+#endif
+
+FORCEINLINE
+LONG
+AddRaw (
+    _Inout_ _Interlocked_operand_ LONG volatile *Destination,
+    _In_ LONG Value
+    )
+
+{
+    LONG NewValue;
+
+    NewValue = ReadRaw(Destination);
+    NewValue += Value;
+    WriteRaw(Destination, NewValue);
+
+    return NewValue;
+}
+
+FORCEINLINE
+ULONG
+AddULongRaw (
+    _Inout_ _Interlocked_operand_ ULONG volatile *Destination,
+    _In_ ULONG Value
+    )
+
+{
+    return (ULONG)AddRaw((PLONG)Destination, (LONG)Value);
+}
+
+FORCEINLINE
+LONG
+IncrementRaw (
+    _Inout_ _Interlocked_operand_ LONG volatile *Destination
+    )
+
+{
+    return AddRaw(Destination, 1);
+}
+
+FORCEINLINE
+ULONG
+IncrementULongRaw (
+    _Inout_ _Interlocked_operand_ ULONG volatile *Destination
+    )
+
+{
+    return (ULONG)IncrementRaw((PLONG)Destination);
 }
 
 //
@@ -5341,6 +5673,54 @@ WriteULong64Raw (
 
     WriteRaw64((PLONG64)Destination, (LONG64)Value);
     return;
+}
+
+FORCEINLINE
+LONG64
+AddRaw64 (
+    _Inout_ _Interlocked_operand_ LONG64 volatile *Destination,
+    _In_ LONG64 Value
+    )
+
+{
+    LONG64 NewValue;
+
+    NewValue = ReadRaw64(Destination);
+    NewValue += Value;
+    WriteRaw64(Destination, NewValue);
+
+    return NewValue;
+}
+
+FORCEINLINE
+ULONG64
+AddULong64Raw (
+    _Inout_ _Interlocked_operand_ ULONG64 volatile *Destination,
+    _In_ ULONG64 Value
+    )
+
+{
+    return (ULONG64)AddRaw64((PLONG64)Destination, (LONG64)Value);
+}
+
+FORCEINLINE
+LONG64
+IncrementRaw64 (
+    _Inout_ _Interlocked_operand_ LONG64 volatile *Destination
+    )
+
+{
+    return AddRaw64(Destination, 1);
+}
+
+FORCEINLINE
+ULONG64
+IncrementULong64Raw (
+    _Inout_ _Interlocked_operand_ ULONG64 volatile *Destination
+    )
+
+{
+    return (ULONG64)IncrementRaw64((PLONG64)Destination);
 }
 
 #define ReadSizeTAcquire ReadULongPtrAcquire
@@ -6807,6 +7187,10 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_DEVICE_EVENT_COLLECTOR     0x0000005f
 #define FILE_DEVICE_USB4                0x00000060
 #define FILE_DEVICE_SOUNDWIRE           0x00000061
+#define FILE_DEVICE_FABRIC_NVME         0x00000062
+#define FILE_DEVICE_SVM                 0x00000063
+#define FILE_DEVICE_HARDWARE_ACCELERATOR 0x00000064
+#define FILE_DEVICE_I3C                 0x00000065
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -7134,7 +7518,7 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
 //
 // Create options that go with FILE_CREATE_TREE_CONNECTION.
@@ -7142,7 +7526,7 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 #define TREE_CONNECT_NO_CLIENT_BUFFERING          0x00000008  // matches with FILE_NO_INTERMEDIATE_BUFFERING
 #define TREE_CONNECT_WRITE_THROUGH                0x00000002  // matches with FILE_WRITE_THROUGH
-#endif  // _WIN32_WINNT_WIN10_RS5
+#endif  // NTDDI_WIN10_RS5
 
 //
 //  The FILE_VALID_OPTION_FLAGS mask cannot be expanded to include the
@@ -7154,6 +7538,8 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_VALID_PIPE_OPTION_FLAGS            0x00000032
 #define FILE_VALID_MAILSLOT_OPTION_FLAGS        0x00000032
 #define FILE_VALID_SET_FLAGS                    0x00000036
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
 
 //
 // While the highest 8 bits of the create options are reserved for the
@@ -7168,11 +7554,31 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_CONTAINS_EXTENDED_CREATE_INFORMATION   0x10000000
 #define FILE_VALID_EXTENDED_OPTION_FLAGS            0x10000000
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_NI)
-
 //
 //================= Extended Create Information ====================
 //
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_GE)
+
+typedef struct _EXTENDED_CREATE_DUAL_OPLOCK_KEYS {
+
+    //
+    //  Parent oplock key.
+    //  All-zero if not set.
+    //
+
+    GUID ParentOplockKey;
+
+    //
+    //  Target oplock key.
+    //  All-zero if not set.
+    //
+
+    GUID TargetOplockKey;
+
+} EXTENDED_CREATE_DUAL_OPLOCK_KEYS, *PEXTENDED_CREATE_DUAL_OPLOCK_KEYS;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_GE)
 
 //
 // This struct can be extended and new fields may be added to the end
@@ -7182,6 +7588,9 @@ typedef struct _EXTENDED_CREATE_INFORMATION {
     LONGLONG ExtendedCreateFlags;   // extended create flags
     PVOID EaBuffer;                 // EA buffer
     ULONG EaLength;                 // EA buffer length
+#if (NTDDI_VERSION >= NTDDI_WIN10_GE)
+    PEXTENDED_CREATE_DUAL_OPLOCK_KEYS DualOplockKeys;       // if not NULL, dual oplock keys
+#endif
 } EXTENDED_CREATE_INFORMATION, *PEXTENDED_CREATE_INFORMATION;
 
 //
@@ -7191,6 +7600,9 @@ typedef struct _EXTENDED_CREATE_INFORMATION_32 {
     LONGLONG ExtendedCreateFlags;   // extended create flags
     void* POINTER_32 EaBuffer;      // EA buffer
     ULONG EaLength;                 // EA buffer length
+#if (NTDDI_VERSION >= NTDDI_WIN10_GE)
+    PEXTENDED_CREATE_DUAL_OPLOCK_KEYS POINTER_32 DualOplockKeys;       // if not NULL, dual oplock keys
+#endif
 } EXTENDED_CREATE_INFORMATION_32, *PEXTENDED_CREATE_INFORMATION_32;
 
 //
@@ -7200,7 +7612,7 @@ typedef struct _EXTENDED_CREATE_INFORMATION_32 {
 #define EX_CREATE_FLAG_FILE_SOURCE_OPEN_FOR_COPY        0x00000001
 #define EX_CREATE_FLAG_FILE_DEST_OPEN_FOR_COPY          0x00000002
 
-#endif // (NTDDI_VERSION >= NTDDI_WIN10_NI)
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_VB)
 
 //
 // Define the I/O status information return values for NtCreateFile/NtOpenFile
@@ -7515,6 +7927,20 @@ typedef enum _FILE_INFORMATION_CLASS {
     FileId64ExtdBothDirectoryInformation,           // 79
     FileIdAllExtdDirectoryInformation,              // 80
     FileIdAllExtdBothDirectoryInformation,          // 81
+    FileStreamReservationInformation,               // 82
+
+        //
+        //  It is an internal special request.
+        //  This operation should only be issued to the IOManager
+        //  through the Filter Manager. NtSetInformationFile/NtQueryInformationFile
+        //  and a file system should never receive this.
+        //
+
+    FileMupProviderInfo,                            // 83
+
+        //
+        // End of special information classes reserved for filterMgr.
+        //
 
     FileMaximumInformation
 } FILE_INFORMATION_CLASS, *PFILE_INFORMATION_CLASS;
@@ -7802,6 +8228,19 @@ typedef union _FILE_SEGMENT_ELEMENT {
 #define FLUSH_FLAGS_FILE_DATA_SYNC_ONLY                 0x00000004
 
 #endif  // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+//
+//  If set, this operation will write the data for the given file from the
+//  Windows in-memory cache.  It will also try to skip updating the timestamp
+//  as much as possible.  This will send a SYNC to the storage device to flush its
+//  cache.  Not supported on volume or directory handles.
+//
+
+#define FLUSH_FLAGS_FLUSH_AND_PURGE                     0x00000008
+
+#endif  // (NTDDI_VERSION >= NTDDI_WIN11_GA)
 
 
 //
@@ -8398,33 +8837,14 @@ typedef enum _SECTION_INHERIT {
 #define MEM_DECOMMIT                    0x00004000  
 #define MEM_RELEASE                     0x00008000  
 #define MEM_FREE                        0x00010000  
-
-typedef struct _MEM_ADDRESS_REQUIREMENTS {
-    PVOID LowestStartingAddress;
-    PVOID HighestEndingAddress;
-    SIZE_T Alignment;
-} MEM_ADDRESS_REQUIREMENTS, *PMEM_ADDRESS_REQUIREMENTS;
-
-#define MEM_EXTENDED_PARAMETER_GRAPHICS                 0x00000001
-#define MEM_EXTENDED_PARAMETER_NONPAGED                 0x00000002
-#define MEM_EXTENDED_PARAMETER_ZERO_PAGES_OPTIONAL      0x00000004
-#define MEM_EXTENDED_PARAMETER_NONPAGED_LARGE           0x00000008
-#define MEM_EXTENDED_PARAMETER_NONPAGED_HUGE            0x00000010
-#define MEM_EXTENDED_PARAMETER_SOFT_FAULT_PAGES         0x00000020
-#define MEM_EXTENDED_PARAMETER_EC_CODE                  0x00000040
-#define MEM_EXTENDED_PARAMETER_IMAGE_NO_HPAT            0x00000080
-
-//
-// Use the high ULONG64 bit of the MEM_EXTENDED_PARAMETER to indicate
-// that the supplied NUMA node in the low bits is mandatory.  Note this
-// is different from the MEM_EXTENDED_PARAMETER_XXX fields above because
-// those are encoded in the Type field; this is encoded in the ULong64 field.
-//
-// This can only be used nonpaged allocations since we don't want page
-// faults to fail due to transient memory shortages on arbitrary nodes.
-//
-
-#define MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY      MINLONG64
+#define MEM_EXTENDED_PARAMETER_GRAPHICS                 0x00000001  
+#define MEM_EXTENDED_PARAMETER_NONPAGED                 0x00000002  
+#define MEM_EXTENDED_PARAMETER_ZERO_PAGES_OPTIONAL      0x00000004  
+#define MEM_EXTENDED_PARAMETER_NONPAGED_LARGE           0x00000008  
+#define MEM_EXTENDED_PARAMETER_NONPAGED_HUGE            0x00000010  
+#define MEM_EXTENDED_PARAMETER_SOFT_FAULT_PAGES         0x00000020  
+#define MEM_EXTENDED_PARAMETER_EC_CODE                  0x00000040  
+#define MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY      MINLONG64	  
 
 typedef enum MEM_EXTENDED_PARAMETER_TYPE {
     MemExtendedParameterInvalidType = 0,
@@ -8455,6 +8875,12 @@ typedef struct DECLSPEC_ALIGN(8) MEM_EXTENDED_PARAMETER {
     } DUMMYUNIONNAME;
 
 } MEM_EXTENDED_PARAMETER, *PMEM_EXTENDED_PARAMETER;
+
+typedef struct _MEM_ADDRESS_REQUIREMENTS {
+    PVOID LowestStartingAddress;
+    PVOID HighestEndingAddress;
+    SIZE_T Alignment;
+} MEM_ADDRESS_REQUIREMENTS, *PMEM_ADDRESS_REQUIREMENTS;
 
 #define MEMORY_CURRENT_PARTITION_HANDLE         ((HANDLE) (LONG_PTR) -1)
 #define MEMORY_SYSTEM_PARTITION_HANDLE          ((HANDLE) (LONG_PTR) -2)
@@ -8521,6 +8947,7 @@ typedef enum MEM_SECTION_EXTENDED_PARAMETER_TYPE {
 
 #define MEM_PRIVATE                 0x00020000  
 #define MEM_MAPPED                  0x00040000  
+#define VM_PREFETCH_TO_WORKING_SET        0x1  
 
 
 
@@ -8705,6 +9132,44 @@ DEFINE_GUID( GUID_POWERSCHEME_PERSONALITY, 0x245D8541, 0x3943, 0x4422, 0xB0, 0x2
 // ( 31F9F286-5084-42FE-B720-2B0264993763 }
 //
 DEFINE_GUID( GUID_ACTIVE_POWERSCHEME, 0x31F9F286, 0x5084, 0x42FE, 0xB7, 0x20, 0x2B, 0x02, 0x64, 0x99, 0x37, 0x63 );
+
+//
+// =========================================
+// Define GUIDs which represent Power Modes (Overlays)
+// =========================================
+//
+
+//
+// Efficiency Power Mode
+//
+// {961cc777-2547-4f9d-8174-7d86181b8a7a}
+//
+
+DEFINE_GUID( GUID_POWER_MODE_BEST_EFFICIENCY, 0x961cc777, 0x2547, 0x4f9d, 0x81, 0x74, 0x7d, 0x86, 0x18, 0x1b, 0x8a, 0x7a );
+
+//
+// Default Power Mode
+//
+// {00000000-0000-0000-0000-000000000000}
+//
+
+DEFINE_GUID( GUID_POWER_MODE_NONE, 0L, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+
+//
+// Deprecated Performance Power Mode
+//
+// {3af9B8d9-7c97-431d-ad78-34a8bfea439f}
+//
+
+DEFINE_GUID( GUID_POWER_MODE_PERFORMANCE, 0x3af9b8d9, 0x7c97, 0x431d, 0xad, 0x78, 0x34, 0xa8, 0xbf, 0xea, 0x43, 0x9f );
+
+//
+// Best Performance Power Mode
+//
+// {ded574b5-45a0-4f42-8737-46345c09c238}
+//
+
+DEFINE_GUID( GUID_POWER_MODE_BEST_PERFORMANCE, 0xded574b5, 0x45a0, 0x4f42, 0x87, 0x37, 0x46, 0x34, 0x5c, 0x9, 0xc2, 0x38 );
 
 //
 // =========================================
@@ -9041,6 +9506,21 @@ DEFINE_GUID( GUID_STANDBY_BUDGET_GRACE_PERIOD, 0x60c07fe1, 0x0556, 0x45cf, 0x99,
 DEFINE_GUID( GUID_STANDBY_BUDGET_PERCENT, 0x9fe527be, 0x1b70, 0x48da, 0x93, 0x0d, 0x7b, 0xcf, 0x17, 0xb4, 0x49, 0x90 );
 
 //
+// Defines a guid the control the number of standby budget refreshes.
+//
+// {ACA8648E-C4B1-4BAA-8CCE-9390AD647F8C}
+//
+DEFINE_GUID( GUID_STANDBY_BUDGET_REFRESH_COUNT, 0xACA8648E, 0xC4B1, 0x4BAA, 0x8C, 0xCE, 0x93, 0x90, 0xAD, 0x64, 0x7F, 0x8C );
+
+//
+// Defines a guid the control the interval between standby budget refreshes.
+//
+// {61F45DFE-1919-4180-BB46-8CC70E0B38F1}
+//
+DEFINE_GUID( GUID_STANDBY_BUDGET_REFRESH_INTERVAL, 0x61F45DFE, 0x1919, 0x4180, 0xBB, 0x46, 0x8C, 0xC7, 0x0E, 0x0B, 0x38, 0xF1 );
+
+//
+//
 // Defines a guid to control Standby Reserve Grace Period.
 //
 // {C763EE92-71E8-4127-84EB-F6ED043A3E3D}
@@ -9125,14 +9605,31 @@ DEFINE_GUID( GUID_LEGACY_RTC_MITIGATION, 0x1A34BDC3, 0x7E6B, 0x442E, 0xA9, 0xD0,
 //
 DEFINE_GUID( GUID_ALLOW_SYSTEM_REQUIRED, 0xA4B195F5, 0x8225, 0x47D8, 0x80, 0x12, 0x9D, 0x41, 0x36, 0x97, 0x86, 0xE2 );
 
-// Energy Saver settings
+// Energy Saver Settings (deprecated in Germanium)
 // ---------------------
 //
-// Indicates if Enegry Saver is ON or OFF.
+// ***Use GUID_ENERGY_SAVER_STATUS instead*** This power setting represents the 
+// state for battery saver and remains here for backwards compatibility.
+// 
+// Indicates if Energy Saver is ON or OFF. 
 //
 // {E00958C0-C213-4ACE-AC77-FECCED2EEEA5}
 //
 DEFINE_GUID( GUID_POWER_SAVING_STATUS, 0xe00958c0, 0xc213, 0x4ace, 0xac, 0x77, 0xfe, 0xcc, 0xed, 0x2e, 0xee, 0xa5);
+
+//
+// Energy Saver Settings
+// ---------------------
+// 
+// Defines a guid to indicate energy saver status (Off, Standard, or High Savings)
+// from the ENERGY_SAVER_STATUS structure.
+//
+// This power setting is used instead of GUID_POWER_SAVING_STATUS starting
+// in Germanium.
+//
+// {550E8400-E29B-41D4-A716-446655440000}
+//
+DEFINE_GUID( GUID_ENERGY_SAVER_STATUS, 0x550e8400, 0xe29b, 0x41d4, 0xa7, 0x16, 0x44, 0x66, 0x55, 0x44, 0x00, 0x00);
 
 //
 // Specifies the subgroup which will contain all of the Energy Saver settings
@@ -9852,6 +10349,22 @@ DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_PERF, 0x619b7505, 0x3b, 0x4e82, 0x
 DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_PERF_1, 0x619b7505, 0x3b, 0x4e82, 0xb7, 0xa6, 0x4d, 0xd2, 0x9c, 0x30, 0x9, 0x72);
 
 //
+// Specifies the energy/performance preference to use in response to latency
+// sensitivity hints.
+//
+// {4B70F900-CDD9-4e66-AA26-AE8417F98173}
+//
+DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_EPP, 0x4b70f900, 0xcdd9, 0x4e66, 0xaa, 0x26, 0xae, 0x84, 0x17, 0xf9, 0x81, 0x73);
+
+//
+// Specifies the energy/performance preference to use in response to latency
+// sensitivity hintsfor Processor Power Efficiency Class 1.
+//
+// {4B70F900-CDD9-4e66-AA26-AE8417F98174}
+//
+DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_EPP_1, 0x4b70f900, 0xcdd9, 0x4e66, 0xaa, 0x26, 0xae, 0x84, 0x17, 0xf9, 0x81, 0x74);
+
+//
 // Specifies the minimum unparked processors when a latency hint is active
 // (in a percentage).
 //
@@ -9903,12 +10416,34 @@ DEFINE_GUID(GUID_PROCESSOR_SMT_UNPARKING_POLICY, 0xb28a6829, 0xc5f7, 0x444e, 0x8
 #define SMT_UNPARKING_POLICY_LP_SEQUENTIAL 3
 
 //
+// Specifies the maximum processor count for corresponding QoS threads.
+//
+// {1a98ad09-af22-42ca-8e61-f0a5802c270a}
+//
+
+DEFINE_GUID(GUID_PROCESSOR_RESTRICTION_COUNT, 0x1a98ad09, 0xaf22, 0x42ca, 0x8e, 0x61, 0xf0, 0xa5, 0x80, 0x2c, 0x27, 0x0a);
+
+//
 // Specifies whether the core parking engine should distribute processor
 // utility.
 //
 // {e0007330-f589-42ed-a401-5ddb10e785d3}
 //
 DEFINE_GUID( GUID_PROCESSOR_DISTRIBUTE_UTILITY, 0xe0007330, 0xf589, 0x42ed, 0xa4, 0x01, 0x5d, 0xdb, 0x10, 0xe7, 0x85, 0xd3);
+
+//
+// Specifies the processor resource priority.
+//
+// {603fe9ce-8d01-4b48-a968-1d706c28df5c}
+//
+DEFINE_GUID( GUID_PROCESSOR_RESOURCE_PRIORITY, 0x603fe9ce, 0x8d01, 0x4b48, 0xa9, 0x68, 0x1d, 0x70, 0x6c, 0x28, 0xfd, 0x5c);
+
+//
+// Specifies the processor resource riority for Processor Power Efficiency Class 1.
+//
+// {603fe9ce-8d01-4b48-a968-1d706c28df5d}
+//
+DEFINE_GUID( GUID_PROCESSOR_RESOURCE_PRIORITY_1, 0x603fe9ce, 0x8d01, 0x4b48, 0xa9, 0x68, 0x1d, 0x70, 0x6c, 0x28, 0xfd, 0x5d);
 
 //
 // GUIDS to control PPM settings on computer system with more than one
@@ -9936,6 +10471,44 @@ DEFINE_GUID( GUID_PROCESSOR_HETERO_DECREASE_TIME, 0x7f2492b6, 0x60b1, 0x45e5, 0x
 // {4009efa7-e72d-4cba-9edf-91084ea8cbc3}
 //
 DEFINE_GUID( GUID_PROCESSOR_HETERO_INCREASE_TIME, 0x4009efa7, 0xe72d, 0x4cba, 0x9e, 0xdf, 0x91, 0x08, 0x4e, 0xa8, 0xcb, 0xc3);
+
+//
+// Specify the minimum number of perf check intervals since the last
+// performance state change before the one containment zone may be decreased for
+// picking cores from another containment zone.
+//
+// {6FF13AEB-7897-4356-9999-DD9930AF065F}
+//
+DEFINE_GUID( GUID_PROCESSOR_HETERO_CONTAINMENT_DECREASE_TIME, 0x6FF13AEB, 0x7897, 0x4356, 0x99, 0x99, 0xDD, 0x99, 0x30, 0xAF, 0x06, 0x5F);
+
+//
+// Specify the minimum number of perf check intervals since the last
+// performance state change before the one containment zone may be increase for
+// picking cores from another containment.
+//
+// {64FCEE6B-5B1F-45A4-A76A-19B2C36EE290}
+//
+DEFINE_GUID( GUID_PROCESSOR_HETERO_CONTAINMENT_INCREASE_TIME, 0x64FCEE6B, 0x5B1F, 0x45A4, 0xA7, 0x6A, 0x19, 0xB2, 0xC3, 0x6E, 0xE2, 0x90);
+
+//
+// Specify the busy threshold that must be met when calculating the containment
+// crossover from efficiency to hybrid.
+//
+// {69439B22-221B-4830-BD34-F7BCECE24583}
+DEFINE_GUID(GUID_PROCESSOR_HETERO_CONTAINMENT_EFFICIENCY_THRESHOLD, 0x69439b22, 0x221b, 0x4830, 0xbd, 0x34, 0xf7, 0xbc, 0xec, 0xe2, 0x45, 0x83);
+
+//
+// Specify the busy threshold that must be met when calculating the containment
+// crossover from hybrid to no containment.
+//
+// {6788488B-1B90-4D11-8FA7-973E470DFF47}
+DEFINE_GUID(GUID_PROCESSOR_HETERO_CONTAINMENT_HYBRID_THRESHOLD, 0x6788488b, 0x1b90, 0x4d11, 0x8f, 0xa7, 0x97, 0x3e, 0x47, 0xd, 0xff, 0x47);
+
+//
+// Specify whether containment policy should be enable or disable.
+//
+// {60FBE21B-EFD9-49F2-B066-8674D8E9F423}
+DEFINE_GUID(GUID_PROCESSOR_HETERO_CONTAINMENT_POLICY, 0x60fbe21b, 0xefd9, 0x49f2, 0xb0, 0x66, 0x86, 0x74, 0xd8, 0xe9, 0xf4, 0x23);
 
 //
 // Specifies the performance level (in units of Processor Power Efficiency
@@ -10467,6 +11040,11 @@ typedef enum _USER_ACTIVITY_PRESENCE {
     PowerUserInvalid = PowerUserMaximum
 } USER_ACTIVITY_PRESENCE, *PUSER_ACTIVITY_PRESENCE;
 
+typedef enum _ENERGY_SAVER_STATUS {
+    ENERGY_SAVER_OFF = 0,
+    ENERGY_SAVER_STANDARD,
+    ENERGY_SAVER_HIGH_SAVINGS
+} ENERGY_SAVER_STATUS, *PENERGY_SAVER_STATUS;
 
 
 
@@ -10670,7 +11248,7 @@ typedef enum {
     ProcessorPerfCapHv,
     ProcessorSetIdle,
     LogicalProcessorIdling,
-    UserPresence,
+    UserPresence,                                   // Deprecated
     PowerSettingNotificationName,
     GetPowerSettingValue,
     IdleResiliency,
@@ -10836,6 +11414,9 @@ typedef enum {
     MonitorRequestReasonPdcSignalSensorsHumanPresence,          // PDC_SIGNAL_PROVIDER_SENSORS_HUMAN_PRESENCE_MONITOR
     MonitorRequestReasonBatteryPreCritical,
     MonitorRequestReasonUserInputTouch,
+    MonitorRequestReasonAusterityBatteryDrain,
+    MonitorRequestReasonDozeRestrictedStandby,
+    MonitorRequestReasonSmartRestrictedStandby,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -10852,6 +11433,62 @@ typedef struct _POWER_MONITOR_INVOCATION {
     BOOLEAN Console;
     POWER_MONITOR_REQUEST_REASON RequestReason;
 } POWER_MONITOR_INVOCATION, *PPOWER_MONITOR_INVOCATION;
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+//
+// Power Limit Interfaces
+//
+
+typedef enum _POWER_LIMIT_TYPES {
+    PowerLimitContinuous = 0,
+    PowerLimitBurst,
+    PowerLimitRapid,
+    PowerLimitPreemptive,
+    PowerLimitPreemptiveOffset,
+    PowerLimitTypeMax
+} POWER_LIMIT_TYPES, *PPOWER_LIMIT_TYPES;
+
+typedef struct _POWER_LIMIT_ATTRIBUTES {
+
+    //
+    // IDs of this power limit.
+    //
+
+    POWER_LIMIT_TYPES   Type;
+    ULONG               DomainId;
+
+    //
+    // Attributes of this power limit.
+    //
+
+    ULONG               MaxValue;
+    ULONG               MinValue;
+    ULONG               MinTimeParameter;
+    ULONG               MaxTimeParameter;
+    ULONG               DefaultACValue;
+    ULONG               DefaultDCValue;
+
+    union {
+        struct {
+            ULONG       SupportTimeParameter : 1;
+            ULONG       Reserved : 31;
+        };
+
+        ULONG           AsUlong;
+    } Flags;
+} POWER_LIMIT_ATTRIBUTES, *PPOWER_LIMIT_ATTRIBUTES;
+
+typedef struct _POWER_LIMIT_VALUE {
+    POWER_LIMIT_TYPES Type;
+    ULONG DomainId;
+    ULONG TargetValue;
+    ULONG TimeParameter;
+} POWER_LIMIT_VALUE, *PPOWER_LIMIT_VALUE;
+
+#define POWER_LIMIT_VALUE_NO_CONTROL            ULONG_MAX
+
+#endif // NTDDI_VERSION >= NTDDI_WIN11_GA
 
 //
 // Last resume performance structure
@@ -12359,7 +12996,7 @@ RtlAssert(
 
 #define ASSERTMSG( msg, exp ) \
     ((!(exp)) ? \
-        (RtlAssert( (PVOID)#exp, (PVOID)__FILE__, __LINE__, msg ),FALSE) : \
+        (RtlAssert( (PVOID)#exp, (PVOID)__FILE__, __LINE__, (PSTR)msg ),FALSE) : \
         TRUE)
 
 #define RTL_SOFT_ASSERT(_exp) \
@@ -12408,15 +13045,16 @@ RtlAssert(
 #include <specstrings.h>
 
 //
-// Fast fail failure codes.
+// Fast Fail (Fail Fast) Failure Codes (Parameter 0)
 //
-// N.B.  Failure code zero should not be used, but is required to be reserved
-//       for compatibility with previous handling of the
-//       STATUS_STACK_BUFFER_OVERRUN exception status code.
+// N.B.  Failure Codes should never be changed after the initial definition
+// N.B.  Failure Code zero (0) should not be used
+//       It is reserved for compatibility with previous handling of the STATUS_STACK_BUFFER_OVERRUN exception status code
 //
 
-// When updating failure codes here, please also update references in
-// the debugger codebase (currently onecore\sdktools\debuggers\ntsd64\util.cpp)
+// When adding failure codes, please also update:
+// - Debugger (onecore\sdktools\debuggers\ntsd64\util.cpp)
+// - !analyze (onecore\sdktools\debuggers\exts\badev\extdll\uacommon.h & uexcep.cpp)
 
 #define FAST_FAIL_LEGACY_GS_VIOLATION               0
 #define FAST_FAIL_VTGUARD_CHECK_FAILURE             1
@@ -12486,6 +13124,12 @@ RtlAssert(
 #define FAST_FAIL_PATCH_CALLBACK_FAILED             68
 #define FAST_FAIL_NTDLL_PATCH_FAILED                69
 #define FAST_FAIL_INVALID_FLS_DATA                  70
+#define FAST_FAIL_ASAN_ERROR                        71         // Known to Asan, must retain value 71
+#define FAST_FAIL_CLR_EXCEPTION_AOT                 72
+#define FAST_FAIL_POINTER_AUTH_INVALID_RETURN_ADDRESS 73
+#define FAST_FAIL_INVALID_THREAD_STATE              74
+#define FAST_FAIL_CORRUPT_WOW64_STATE               75
+#define FAST_FAIL_INVALID_EXTENDED_STATE            76
 #define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
@@ -12927,6 +13571,7 @@ InsertHeadList(
 #if DBG
 
     RtlpCheckListEntry(ListHead);
+
 
 #endif
 
@@ -13931,6 +14576,130 @@ memcpy_inline (
 #define RtlFillMemory(Destination,Length,Fill) memset((Destination),(Fill),(Length))
 #define RtlZeroMemory(Destination,Length) memset((Destination),0,(Length))
 
+
+
+#if !defined(MIDL_PASS) && !defined(SORTPP_PASS) && !defined(RC_INVOKED)
+
+#ifndef _RTL_VOL_MEM_ACCESSORS_
+#define _RTL_VOL_MEM_ACCESSORS_
+
+volatile void*
+__cdecl
+RtlCopyDeviceMemory (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_reads_bytes_(Length) volatile const void* Source,
+    _In_ size_t Length
+    );
+
+volatile void*
+__cdecl
+RtlCopyVolatileMemory (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_reads_bytes_(Length) volatile const void* Source,
+    _In_ size_t Length
+    );
+
+volatile void*
+__cdecl
+RtlMoveVolatileMemory (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_reads_bytes_(Length) volatile const void* Source,
+    _In_ size_t Length
+    );
+
+volatile void*
+__cdecl
+RtlSetVolatileMemory (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_ int Fill,
+    _In_ size_t Length
+    );
+
+FORCEINLINE
+volatile void*
+RtlFillVolatileMemory (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_ size_t Length,
+    _In_ int Fill
+    )
+{
+    return RtlSetVolatileMemory(Destination, Fill, Length);
+}
+
+FORCEINLINE
+volatile void*
+RtlZeroVolatileMemory (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_ size_t Length
+    )
+{
+    return RtlFillVolatileMemory(Destination, Length, 0);
+}
+
+FORCEINLINE
+volatile void*
+RtlSecureZeroMemory2 (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_ size_t Length
+    )
+{
+    return RtlZeroVolatileMemory(Destination, Length);
+}
+
+#if defined(_ARM_) || defined(_ARM64_)
+
+volatile void*
+RtlFillDeviceMemory (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_ size_t Length,
+    _In_ int Fill
+    );
+
+#define RtlEqualDeviceMemory(Source1,Source2,Length) (!_memcmp_strict_align((Source1),(Source2),(Length)))
+
+SIZE_T
+NTAPI
+RtlCompareDeviceMemory (
+    _In_reads_bytes_(Length) const VOID *Source1,
+    _In_reads_bytes_(Length) const VOID *Source2,
+    _In_ SIZE_T Length
+    );
+
+#else
+
+FORCEINLINE
+volatile void*
+RtlFillDeviceMemory (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_ size_t Length,
+    _In_ int Fill
+    )
+{
+    return RtlSetVolatileMemory(Destination, Fill, Length);
+}
+
+#define RtlEqualDeviceMemory RtlEqualMemory
+
+#define RtlCompareDeviceMemory RtlCompareMemory
+
+#endif
+
+FORCEINLINE
+volatile void*
+RtlZeroDeviceMemory (
+    _Out_writes_bytes_all_(Length) volatile void* Destination,
+    _In_ size_t Length
+    )
+{
+    return RtlFillDeviceMemory(Destination, Length, 0);
+}
+
+#endif // _RTL_VOL_MEM_ACCESSORS_
+
+#endif // !defined(MIDL_PASS) && !defined(SORTPP_PASS) && !defined(RC_INVOKED)
+
+
+
 #if !defined(MIDL_PASS)
 
 _Check_return_
@@ -13953,6 +14722,13 @@ RtlConstantTimeEqualMemory(
 
 #if !defined(_M_CEE) && (defined(_M_ARM) || defined(_M_ARM64) || defined(_M_ARM64EC))
 
+        // Faster is better even when constant time is required.  Optimize performance
+        // by avoiding memory barrier generation for ARM.  The parameters to this
+        // function are NOT volatile, so the caller must not expect the generation
+        // of non-ISO volatile memory barriers regardless of the compiler flags used.
+        // Instead, if the caller shares this memory with other threads, it is
+        // responsible for synchronizing access with the associated acquire barrier.
+
         x |= __iso_volatile_load8(&p1[i]) ^ __iso_volatile_load8(&p2[i]);
 
 #else
@@ -13968,7 +14744,13 @@ RtlConstantTimeEqualMemory(
 
 #endif
 
-#if !defined(MIDL_PASS)
+#if !defined(MIDL_PASS) && !defined(SORTPP_PASS) && !defined(RC_INVOKED)
+
+#if defined(VOLATILE_ACCESSOR_LIB)
+
+#define RtlSecureZeroMemory(Ptr, cnt) RtlSecureZeroMemory2((Ptr), (cnt));
+
+#else // defined(VOLATILE_ACCESSOR_LIB)
 
 FORCEINLINE
 PVOID
@@ -14008,14 +14790,15 @@ RtlSecureZeroMemory(
 
 #endif
 
+#endif //!defined(MIDL_PASS)
+
 
 
 #define RtlCopyBytes RtlCopyMemory
 #define RtlZeroBytes RtlZeroMemory
 #define RtlFillBytes RtlFillMemory
 
-// TODO-ARM64X: These are ASM functions on amd64. Not sure if we care about their cache non-pollution property if native ARM64 didn't...
-#if defined(_M_AMD64) && !defined(_M_ARM64EC)
+#if defined(_M_AMD64) || defined(_M_ARM64)
 
 NTSYSAPI
 VOID
@@ -16128,6 +16911,8 @@ typedef enum _IMAGE_POLICY_ID {
     ImagePolicyIdDeviceId,
     ImagePolicyIdCapability,
     ImagePolicyIdScenarioId,
+    ImagePolicyIdCapabilityOverridable,
+    ImagePolicyIdTrustletIdOverridable,
     ImagePolicyIdMaximum
 } IMAGE_POLICY_ID;
 
@@ -19711,7 +20496,7 @@ Return Value:
 #endif // defined(_M_ARM) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 
-#if defined(_ARM_) // ntddk nthal irqls
+#if defined(_ARM_) // ntddk nthal irqls ntoshvp
 
 //
 // Types to use to contain PFNs and their counts.
@@ -20398,14 +21183,6 @@ Return Value:
 //--
 
 #define KeMemoryBarrierWithoutFence() _ReadWriteBarrier()
-
-//
-// Define function to read the value of the time stamp counter.
-//
-// N.B. On some platforms (e.g., any non-Intel platform like ARM)
-// the "timestamp counter" may be backed by QueryPerformanceCounter
-// or the like, and may not be as low-latency as one might expect.
-//
 
 ULONG64
 ReadTimeStampCounter (
@@ -21238,6 +22015,13 @@ KeFlushIoBuffers(
 
 typedef union _ARM64_IDCODE {
     ULONG64 Ulong;
+
+    //
+    // For historical reasons, Microsoft has labeled these fields
+    // differently than Arm. The following are the definitions as
+    // they have existed since the original port.
+    //
+
     struct {
         ULONG64 MinorRevision :  4;
         ULONG64 Model         : 12;
@@ -21246,6 +22030,26 @@ typedef union _ARM64_IDCODE {
         ULONG64 Implementer   :  8;
         ULONG64 Reserved      : 32;
     };
+
+    //
+    // The following are the field names as they are named in
+    // the Arm ARM. They are provided here for convenience, so
+    // developers can easily transpose or compare these values
+    // with those from micro-architecture documentation, errata
+    // documents, etc. To avoid conflict and confusion, especially
+    // with the Revision field which shows up in both sets of names
+    // but referring to distinct things, to select the Arm ARM
+    // ones, the Arm.<field> prefix must be used.
+    //
+
+    struct {
+        ULONG64 Revision      :  4;
+        ULONG64 PartNum       : 12;
+        ULONG64 Architecture  :  4;
+        ULONG64 Variant       :  4;
+        ULONG64 Implementer   :  8;
+        ULONG64 Reserved      : 32;
+    } Arm;
 } ARM64_IDCODE, *PARM64_IDCODE;
 
 C_ASSERT(sizeof(ARM64_IDCODE) == 8);
@@ -21337,14 +22141,6 @@ Return Value:
 //--
 
 #define KeMemoryBarrierWithoutFence() _ReadWriteBarrier()
-
-//
-// Define function to read the value of the time stamp counter.
-//
-// N.B. On some platforms (e.g., any non-Intel platform like ARM)
-// the "timestamp counter" may be backed by QueryPerformanceCounter
-// or the like, and may not be as low-latency as one might expect.
-//
 
 ULONG64
 ReadTimeStampCounter (
@@ -21492,12 +22288,19 @@ typedef enum _LOGICAL_PROCESSOR_RELATIONSHIP {
 
 #define LTP_PC_SMT 0x1
 
+//
+//
+
 typedef enum _PROCESSOR_CACHE_TYPE {
     CacheUnified,
     CacheInstruction,
     CacheData,
-    CacheTrace
-} PROCESSOR_CACHE_TYPE;
+    CacheTrace,
+    CacheUnknown
+} PROCESSOR_CACHE_TYPE, *PPROCESSOR_CACHE_TYPE;
+
+//
+//
 
 #define CACHE_FULLY_ASSOCIATIVE 0xFF
 
@@ -21690,6 +22493,21 @@ typedef struct _SYSTEM_POOL_ZEROING_INFORMATION {
 #define PF_ARM_V82_DP_INSTRUCTIONS_AVAILABLE        43   
 #define PF_ARM_V83_JSCVT_INSTRUCTIONS_AVAILABLE     44   
 #define PF_ARM_V83_LRCPC_INSTRUCTIONS_AVAILABLE     45   
+#define PF_ARM_SVE_INSTRUCTIONS_AVAILABLE           46   
+#define PF_ARM_SVE2_INSTRUCTIONS_AVAILABLE          47   
+#define PF_ARM_SVE2_1_INSTRUCTIONS_AVAILABLE        48   
+#define PF_ARM_SVE_AES_INSTRUCTIONS_AVAILABLE       49   
+#define PF_ARM_SVE_PMULL128_INSTRUCTIONS_AVAILABLE  50   
+#define PF_ARM_SVE_BITPERM_INSTRUCTIONS_AVAILABLE   51   
+#define PF_ARM_SVE_BF16_INSTRUCTIONS_AVAILABLE      52   
+#define PF_ARM_SVE_EBF16_INSTRUCTIONS_AVAILABLE     53   
+#define PF_ARM_SVE_B16B16_INSTRUCTIONS_AVAILABLE    54   
+#define PF_ARM_SVE_SHA3_INSTRUCTIONS_AVAILABLE      55   
+#define PF_ARM_SVE_SM4_INSTRUCTIONS_AVAILABLE       56   
+#define PF_ARM_SVE_I8MM_INSTRUCTIONS_AVAILABLE      57   
+#define PF_ARM_SVE_F32MM_INSTRUCTIONS_AVAILABLE     58   
+#define PF_ARM_SVE_F64MM_INSTRUCTIONS_AVAILABLE     59   
+#define PF_BMI2_INSTRUCTIONS_AVAILABLE              60   
 
 typedef enum _ALTERNATIVE_ARCHITECTURE_TYPE {
     StandardDesign,                 // None == 0 == standard design
@@ -21905,6 +22723,7 @@ typedef enum _KWAIT_REASON {
     WrPhysicalFault,
     WrIoRing,
     WrMdlCache,
+    WrRcu,
     MaximumWaitReason
 } KWAIT_REASON;
 
@@ -23044,6 +23863,84 @@ KeReleaseInStackQueuedSpinLockForDpc (
     );
 #endif
 
+#if (NTDDI_VERSION > NTDDI_WIN10_NI)
+
+//
+// Core RCU API group.
+//
+
+NTKERNELAPI
+VOID
+FASTCALL
+KeRcuReadLock (
+    VOID
+    );
+
+NTKERNELAPI
+VOID
+FASTCALL
+KeRcuReadUnlock (
+    VOID
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+VOID
+KeRcuSynchronize (
+    VOID
+    );
+
+//
+// Preemptable (aka sleepable) RCU API
+//
+
+typedef struct _KE_SRCU         *PKE_SRCU;
+typedef struct _KE_SRCU_LOCK    *PKE_SRCU_LOCK;
+
+typedef struct _KE_SRCU_LOCK {
+    ULONG_PTR Placeholder[2];
+} KE_SRCU_LOCK;
+
+_Must_inspect_result_
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+PKE_SRCU
+KeSrcuAllocate (
+    _In_ ULONG Tag
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+VOID
+KeSrcuFree (
+    _In_ _Post_invalid_ PKE_SRCU Rcu
+    );
+
+NTKERNELAPI
+VOID
+FASTCALL
+KeSrcuReadLock (
+    _In_ PKE_SRCU Rcu,
+    _Out_ PKE_SRCU_LOCK Lock
+    );
+
+NTKERNELAPI
+VOID
+FASTCALL
+KeSrcuReadUnlock (
+    _In_ PKE_SRCU Rcu,
+    _In_ _Post_invalid_ PKE_SRCU_LOCK Lock
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+VOID
+KeSrcuSynchronize (
+    _In_ PKE_SRCU Rcu
+    );
+
+#endif
+
 //
 // Miscellaneous kernel functions
 //
@@ -23137,6 +24034,7 @@ typedef enum _KBUGCHECK_CALLBACK_REASON {
     KbCallbackRemovePages,
     KbCallbackTriageDumpData,
     KbCallbackReserved2,
+    KbCallbackReserved3,
 } KBUGCHECK_CALLBACK_REASON;
 
 typedef
@@ -23880,6 +24778,7 @@ typedef struct _XSTATE_SAVE {
 #endif
 } XSTATE_SAVE, *PXSTATE_SAVE;
 
+
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 
 _Must_inspect_result_
@@ -24129,7 +25028,8 @@ typedef _Enum_is_bitflag_ enum _POOL_TYPE {
 #define POOL_FLAG_PAGED                   0x0000000000000100UI64     // Paged pool
 #define POOL_FLAG_RESERVED2               0x0000000000000200UI64     // Reserved for system use
 #define POOL_FLAG_RESERVED3               0x0000000000000400UI64     // Reserved for system use
-#define POOL_FLAG_LAST_KNOWN_REQUIRED     POOL_FLAG_RESERVED3         // Must be set to the last known required entry.
+#define POOL_FLAG_RESERVED4               0x0000000000000800UI64     // Reserved for system use
+#define POOL_FLAG_LAST_KNOWN_REQUIRED     POOL_FLAG_RESERVED4         // Must be set to the last known required entry.
 #define POOL_FLAG_REQUIRED_END            0x0000000080000000UI64
 
 #define POOL_FLAG_OPTIONAL_START          0x0000000100000000UI64
@@ -24137,6 +25037,12 @@ typedef _Enum_is_bitflag_ enum _POOL_TYPE {
 #define POOL_FLAG_OPTIONAL_END            0x8000000000000000UI64
 
 #define POOL_FLAG_REQUIRED_MASK           0x00000000FFFFFFFFUI64
+
+//
+// Required pool flags must fit within 12 bits (big pool tracking table)
+//
+
+C_ASSERT(POOL_FLAG_LAST_KNOWN_REQUIRED < 0x1000);
 
 //
 // Bits from the "required" flags that are currently not used.
@@ -24458,18 +25364,44 @@ ExFreePool2 (
     _In_ ULONG ExtendedParametersCount
     );
 
-#define POOL_CREATE_FLG_SECURE_POOL     0x1
-#define POOL_CREATE_FLG_USE_GLOBAL_POOL 0x2
-#define POOL_CREATE_FLG_VALID_FLAGS (POOL_CREATE_FLG_SECURE_POOL | \
-                                     POOL_CREATE_FLG_USE_GLOBAL_POOL)
+#define POOL_CREATE_FLG_SECURE_POOL     0x00000001
+#define POOL_CREATE_FLG_USE_GLOBAL_POOL 0x00000002
+#define POOL_CREATE_FLG_PAGED_POOL      0x00000004
+#define POOL_CREATE_FLG_NONPAGED_POOL   0x00000008
+#define POOL_CREATE_FLG_NUMA_AWARE      0x00000010
+
+#define POOL_CREATE_FLG_POOL_TYPES (POOL_CREATE_FLG_SECURE_POOL | \
+                                    POOL_CREATE_FLG_PAGED_POOL | \
+                                    POOL_CREATE_FLG_NONPAGED_POOL)
+
+typedef enum _POOL_CREATE_EXTENDED_PARAMETER_TYPE {
+    PoolCreateExtendedParameterInvalidType,
+    PoolCreateExtendedParameterName
+} POOL_CREATE_EXTENDED_PARAMETER_TYPE, *PPOOL_CREATE_EXTENDED_PARAMETER_TYPE;
+
+typedef struct _POOL_CREATE_EXTENDED_PARAMETER {
+    POOL_CREATE_EXTENDED_PARAMETER_TYPE Type;
+
+    union {
+        UNICODE_STRING PoolName;
+    } DUMMYUNIONNAME;
+} POOL_CREATE_EXTENDED_PARAMETER, *PPOOL_CREATE_EXTENDED_PARAMETER;
+
+typedef const POOL_CREATE_EXTENDED_PARAMETER* PCPOOL_CREATE_EXTENDED_PARAMETER;
 
 #define POOL_CREATE_PARAMS_VERSION 1
 
 typedef struct _POOL_CREATE_EXTENDED_PARAMS {
     ULONG Version;
+    ULONG ParameterCount;
+    PPOOL_CREATE_EXTENDED_PARAMETER Parameters;
 } POOL_CREATE_EXTENDED_PARAMS, *PPOOL_CREATE_EXTENDED_PARAMS;
 
+typedef const POOL_CREATE_EXTENDED_PARAMS* PCPOOL_CREATE_EXTENDED_PARAMS;
+
+NTKERNELAPI
 NTSTATUS
+NTAPI
 ExCreatePool (
     _In_ ULONG Flags,
     _In_ ULONG_PTR Tag,
@@ -24477,12 +25409,16 @@ ExCreatePool (
     _Out_ HANDLE* PoolHandle
     );
 
+NTKERNELAPI
 VOID
+NTAPI
 ExDestroyPool (
     _In_ HANDLE PoolHandle
     );
 
+NTKERNELAPI
 NTSTATUS
+NTAPI
 ExSecurePoolUpdate (
     _In_ HANDLE SecurePoolHandle,
     _In_ ULONG Tag,
@@ -24493,7 +25429,9 @@ ExSecurePoolUpdate (
     _In_ PVOID Buffer
     );
 
+NTKERNELAPI
 LOGICAL
+NTAPI
 ExSecurePoolValidate (
     _In_ HANDLE SecurePoolHandle,
     _In_ ULONG Tag,
@@ -24770,6 +25708,22 @@ VOID
 NTAPI
 ExFreePool (
     _Pre_notnull_ __drv_freesMem(Mem) PVOID P
+    );
+
+#endif
+
+#if (NTDDI_VERSION > NTDDI_WIN10_NI)
+
+typedef struct _EX_RCU_FREE_POOL_CONTEXT {
+    ULONG_PTR Placeholder[6];
+} EX_RCU_FREE_POOL_CONTEXT, *PEX_RCU_FREE_POOL_CONTEXT;
+
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+VOID
+ExRcuFreePool (
+    _In_ PEX_RCU_FREE_POOL_CONTEXT Context,
+    _In_ _Pre_notnull_ _Post_invalid_ __drv_freesMem(Mem) PVOID Ptr
     );
 
 #endif
@@ -25927,7 +26881,7 @@ NTKERNELAPI
 VOID
 NTAPI
 ProbeForWrite (
-    __in_data_source(USER_MODE) _Inout_updates_bytes_(Length) volatile VOID *Address,
+    __in_data_source (USER_MODE) _Inout_updates_bytes_(Length) volatile VOID *Address,
     _In_ SIZE_T Length,
     _In_ ULONG Alignment
     );
@@ -26084,7 +27038,9 @@ typedef struct _ERESOURCE {
 
 #if defined(_WIN64)
 
-    PVOID Reserved2;
+    volatile CHAR MiscFlags;
+    UCHAR Reserved1[3];
+    ULONG ResourceTimeoutCount;
 
 #endif
 
@@ -27078,6 +28034,32 @@ ExAcquirePushLockSharedEx (
     _In_ ULONG Flags
     );
 
+_Must_inspect_result_
+_IRQL_requires_max_(APC_LEVEL)
+_Requires_lock_held_(_Global_critical_region_)
+_Post_satisfies_(return == 0 || return == 1)
+NTKERNELAPI
+BOOLEAN
+FASTCALL
+ExTryAcquirePushLockExclusiveEx (
+    _When_(return!=0, _Requires_lock_not_held_(*_Curr_) _Acquires_lock_(*_Curr_))
+    _Inout_ PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    );
+
+_Must_inspect_result_
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_Requires_lock_held_(_Global_critical_region_)
+_Post_satisfies_(return == 0 || return == 1)
+NTKERNELAPI
+BOOLEAN
+FASTCALL
+ExTryAcquirePushLockSharedEx (
+    _When_(return!=0, _Requires_lock_not_held_(*_Curr_) _Acquires_lock_(*_Curr_))
+    _Inout_ PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    );
+
 //@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 _Requires_lock_held_(_Global_critical_region_)
@@ -27108,6 +28090,12 @@ ExReleasePushLockSharedEx (
 
 #define ExAcquirePushLockShared(Lock)   \
         ExAcquirePushLockSharedEx(Lock, EX_DEFAULT_PUSH_LOCK_FLAGS)
+
+#define ExTryAcquirePushLockExclusive(Lock) \
+        ExTryAcquirePushLockExclusiveEx(Lock, EX_DEFAULT_PUSH_LOCK_FLAGS)
+
+#define ExTryAcquirePushLockShared(Lock) \
+        ExTryAcquirePushLockSharedEx(Lock, EX_DEFAULT_PUSH_LOCK_FLAGS)
 
 #define ExReleasePushLockExclusive(Lock) \
         ExReleasePushLockExclusiveEx(Lock, EX_DEFAULT_PUSH_LOCK_FLAGS)
@@ -28278,39 +29266,6 @@ MmQuerySystemSize (
 #endif
 
 
-#if (NTDDI_VERSION >= NTDDI_WINXP)
-//@[public, SystemReserved]
-_IRQL_requires_max_ (APC_LEVEL)
-NTKERNELAPI
-NTSTATUS
-MmIsVerifierEnabled (
-    _Out_ PULONG VerifierFlags
-    );
-#endif
-
-#if (NTDDI_VERSION >= NTDDI_WINXP)
-//@[public, SystemReserved]
-_IRQL_requires_max_ (APC_LEVEL)
-NTKERNELAPI
-NTSTATUS
-MmAddVerifierThunks (
-    _In_reads_bytes_ (ThunkBufferSize) PVOID ThunkBuffer,
-    _In_ ULONG ThunkBufferSize
-    );
-#endif
-
-#if (NTDDI_VERSION >= NTDDI_WINXP)
-_IRQL_requires_max_(APC_LEVEL)
-NTKERNELAPI
-NTSTATUS
-MmAddVerifierSpecialThunks(
-    _In_ ULONG_PTR EntryRoutine,
-    _In_reads_bytes_(ThunkBufferSize) PVOID ThunkBuffer,
-    _In_ ULONG ThunkBufferSize
-    );
-#endif
-
-
 //
 // I/O support routines.
 //
@@ -29219,6 +30174,20 @@ typedef NTSTATUS (*PMM_DLL_UNLOAD) (
 //
 struct _DRIVER_OBJECT;
 
+#define MM_PROTECT_DRIVER_SECTION_ALLOW_UNLOAD          (0x1)
+
+#define MM_PROTECT_DRIVER_SECTION_VALID_FLAGS \
+    (MM_PROTECT_DRIVER_SECTION_ALLOW_UNLOAD)
+
+_IRQL_requires_max_ (APC_LEVEL)
+NTSTATUS
+MmProtectDriverSection (
+    _In_ PVOID AddressWithinSection,
+    _In_ SIZE_T Size,
+    _In_ ULONG Flags
+    );
+
+
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 NTKERNELAPI
 LOGICAL
@@ -29244,18 +30213,37 @@ MmIsDriverVerifyingByAddress (
     );
 #endif
 
-#define MM_PROTECT_DRIVER_SECTION_ALLOW_UNLOAD          (0x1)
-
-#define MM_PROTECT_DRIVER_SECTION_VALID_FLAGS \
-    (MM_PROTECT_DRIVER_SECTION_ALLOW_UNLOAD)
-
+#if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[public, SystemReserved]
 _IRQL_requires_max_ (APC_LEVEL)
+NTKERNELAPI
 NTSTATUS
-MmProtectDriverSection (
-    _In_ PVOID AddressWithinSection,
-    _In_ SIZE_T Size,
-    _In_ ULONG Flags
+MmIsVerifierEnabled (
+    _Out_ PULONG VerifierFlags
     );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[public, SystemReserved]
+_IRQL_requires_max_ (APC_LEVEL)
+NTKERNELAPI
+NTSTATUS
+MmAddVerifierThunks (
+    _In_reads_bytes_ (ThunkBufferSize) PVOID ThunkBuffer,
+    _In_ ULONG ThunkBufferSize
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WINXP)
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+NTSTATUS
+MmAddVerifierSpecialThunks (
+    _In_ ULONG_PTR EntryRoutine,
+    _In_reads_bytes_(ThunkBufferSize) PVOID ThunkBuffer,
+    _In_ ULONG ThunkBufferSize
+    );
+#endif
 
 //
 //  Security operation codes
@@ -29509,6 +30497,7 @@ typedef enum _SE_IMAGE_TYPE
   SeImageTypeDriver,
   SeImageTypePlatformSecureFile,
   SeImageTypeDynamicCodeFile,
+  SeImageTypeAll,
   SeImageTypeMax
 } SE_IMAGE_TYPE, *PSE_IMAGE_TYPE;
 
@@ -29527,7 +30516,8 @@ SE_IMAGE_VERIFICATION_CALLBACK_FUNCTION (
 typedef SE_IMAGE_VERIFICATION_CALLBACK_FUNCTION *PSE_IMAGE_VERIFICATION_CALLBACK_FUNCTION;
 
 typedef enum _SE_IMAGE_VERIFICATION_CALLBACK_TYPE {
-    SeImageVerificationCallbackInformational = 0
+    SeImageVerificationCallbackInformational = 0,
+    SeImageVerificationCallbackBlock = 1
 } SE_IMAGE_VERIFICATION_CALLBACK_TYPE, *PSE_IMAGE_VERIFICATION_CALLBACK_TYPE;
 
 typedef PVOID SE_IMAGE_VERIFICATION_CALLBACK_TOKEN, *PSE_IMAGE_VERIFICATION_CALLBACK_TOKEN;
@@ -29682,6 +30672,90 @@ NTKERNELAPI
 VOID
 PsRevertToUserMultipleGroupAffinityThread (
     _In_ PAFFINITY_TOKEN AffinityToken
+    );
+
+#endif
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_GA)
+
+typedef struct _KAFFINITY_EX *PKAFFINITY_EX;
+
+_IRQL_requires_min_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_IRQL_requires_same_
+NTSTATUS
+PsQueryProcessAvailableCpus (
+    _In_ PEPROCESS Process,
+    _Inout_ PKAFFINITY_EX Affinity,
+    _In_opt_ PULONG64 ObservedSequenceNumber,
+    _Out_ PULONG64 SequenceNumber
+    );
+
+_IRQL_requires_min_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_IRQL_requires_same_
+NTSTATUS
+PsQueryProcessAvailableCpusCount (
+    _In_ PEPROCESS Process,
+    _Out_ PULONG AvailableCpuCount,
+    _Out_ PULONG64 SequenceNumber
+    );
+
+_IRQL_requires_min_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_IRQL_requires_same_
+NTSTATUS
+PsQuerySystemAvailableCpus (
+    _Inout_ PKAFFINITY_EX Affinity,
+    _In_opt_ PULONG64 ObservedSequenceNumber,
+    _Out_ PULONG64 SequenceNumber
+    );
+
+_IRQL_requires_min_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_IRQL_requires_same_
+NTSTATUS
+PsQuerySystemAvailableCpusCount (
+    _Out_ PULONG AvailableCpuCount,
+    _Out_ PULONG64 SequenceNumber
+    );
+
+typedef
+_Function_class_(PS_AVAILABLE_CPUS_CHANGE_CALLBACK)
+VOID
+PS_AVAILABLE_CPUS_CHANGE_CALLBACK (
+    _In_ PVOID Parameter
+    );
+
+typedef PVOID PS_AVAILABLE_CPUS_CHANGE_REGISTRATION;
+
+_IRQL_requires_(PASSIVE_LEVEL)
+_IRQL_requires_same_
+NTSTATUS
+PsRegisterProcessAvailableCpusChangeNotification (
+    _In_ PEPROCESS Process,
+    _In_ PS_AVAILABLE_CPUS_CHANGE_CALLBACK* Callback,
+    _In_opt_ PVOID Context,
+    _In_opt_ PULONG64 ObservedSequenceNumber,
+    _Out_ PS_AVAILABLE_CPUS_CHANGE_REGISTRATION* RegistrationHandle
+    );
+
+_IRQL_requires_(PASSIVE_LEVEL)
+_IRQL_requires_same_
+NTSTATUS
+PsRegisterSystemAvailableCpusChangeNotification (
+    _In_ PS_AVAILABLE_CPUS_CHANGE_CALLBACK* Callback,
+    _In_opt_ PVOID Context,
+    _In_opt_ PULONG64 ObservedSequenceNumber,
+    _Out_ PS_AVAILABLE_CPUS_CHANGE_REGISTRATION* RegistrationHandle
+    );
+
+_IRQL_requires_(PASSIVE_LEVEL)
+_IRQL_requires_same_
+VOID
+PsUnregisterAvailableCpusChangeNotification (
+    _In_ PS_AVAILABLE_CPUS_CHANGE_REGISTRATION RegistrationHandle
     );
 
 #endif
@@ -30832,6 +31906,8 @@ typedef struct _DEVOBJ_EXTENSION {
 #define DRVO_LEGACY_DRIVER              0x00000002
 #define DRVO_BUILTIN_DRIVER             0x00000004    // Driver objects for Hal, PnP Mgr
 
+typedef struct _DRIVER_PROXY_EXTENSION *PDRIVER_PROXY_EXTENSION;
+
 typedef struct _DRIVER_EXTENSION {
 
     //
@@ -31051,7 +32127,7 @@ typedef struct _FILE_OBJECT {
     __volatile PIO_COMPLETION_CONTEXT CompletionContext;
     KSPIN_LOCK IrpListLock;
     LIST_ENTRY IrpList;
-    __volatile PVOID FileObjectExtension;
+    __volatile struct _IOP_FILE_OBJECT_EXTENSION *FileObjectExtension;
 } FILE_OBJECT;
 typedef struct _FILE_OBJECT *PFILE_OBJECT; 
 
@@ -31115,6 +32191,7 @@ typedef struct DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT) _IRP {
     //
 
     ULONG Flags;
+
 
     //
     // The following union is used for one of three purposes:
@@ -35544,6 +36621,190 @@ IoAcquireKsrPersistentMemoryEx (
 
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoGetKsrPersistentMemoryBuffer (
+    _In_ PVOID DataHandle,
+    _Out_ PVOID *BufferPtr,
+    _Out_ PSIZE_T BufferSize
+    );
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoMapKsrPersistentMemoryEx (
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_opt_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_opt_ PUNICODE_STRING PhysicalDeviceId,
+    _In_opt_ PUSHORT DataTag,
+    _Out_opt_ PULONG DataVersion,
+    _Out_ PVOID * DataHandle
+    );
+
+#endif
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+
+typedef union _DRIVER_PROXY_FEATURE_FLAGS {
+    ULONG AsUlong;
+    struct {
+        ULONG Enabled : 1;
+        ULONG Reserved : 31;
+    };
+} DRIVER_PROXY_FEATURE_FLAGS, *PDRIVER_PROXY_FEATURE_FLAGS;
+
+C_ASSERT(sizeof(DRIVER_PROXY_FEATURE_FLAGS) == sizeof(ULONG));
+
+typedef union _DRIVER_PROXY_EXTENSION_CREATION_FLAGS {
+    ULONG AsUlong;
+    struct {
+        ULONG ReservedZero : 32;
+    };
+} DRIVER_PROXY_EXTENSION_CREATION_FLAGS,
+  *PDRIVER_PROXY_EXTENSION_CREATION_FLAGS;
+
+typedef
+_Function_class_(DRIVER_PROXY_ENDPOINT_FUNCTION)
+VOID
+DRIVER_PROXY_ENDPOINT_FUNCTION (
+    VOID
+    );
+
+typedef DRIVER_PROXY_ENDPOINT_FUNCTION *PDRIVER_PROXY_ENDPOINT_FUNCTION,
+                                       *PDRIVER_PROXY_WRAPPED_ENDPOINT_FUNCTION;
+
+typedef ULONG DRIVER_PROXY_ENDPOINT_FUNCTION_ID,
+               *PDRIVER_PROXY_ENDPOINT_FUNCTION_ID;
+
+#define DRIVER_PROXY_ENDPOINT_FUNCTION_ID_INVALID MAXULONG
+
+typedef struct _DRIVER_PROXY_ENDPOINT_INFORMATION {
+    DRIVER_PROXY_ENDPOINT_FUNCTION_ID Id;
+    PDRIVER_PROXY_ENDPOINT_FUNCTION EndpointFunction;
+    ULONG ParameterCount;
+} DRIVER_PROXY_ENDPOINT_INFORMATION, *PDRIVER_PROXY_ENDPOINT_INFORMATION;
+
+typedef enum _DRIVER_PROXY_REGISTER_CALLBACK_PHASE {
+    DriverProxyRegisterCallbackPreProcess,
+    DriverProxyRegisterCallbackProxyStalled,
+    DriverProxyRegisterCallbackPostProcess,
+    DriverProxyRegisterCallbackMax
+} DRIVER_PROXY_REGISTER_CALLBACK_PHASE, *PDRIVER_PROXY_REGISTER_CALLBACK_PHASE;
+
+typedef
+_Function_class_(DRIVER_PROXY_REGISTER_CALLBACK)
+NTSTATUS
+DRIVER_PROXY_REGISTER_CALLBACK (
+    _In_ DRIVER_PROXY_REGISTER_CALLBACK_PHASE Phase,
+    _In_opt_ PVOID Context
+    );
+
+typedef DRIVER_PROXY_REGISTER_CALLBACK *PDRIVER_PROXY_REGISTER_CALLBACK;
+
+typedef
+_IRQL_requires_same_
+_Function_class_(DRIVER_PROXY_HOTSWAP_WORKER_ROUTINE)
+BOOLEAN
+DRIVER_PROXY_HOTSWAP_WORKER_ROUTINE (
+    _In_ PVOID WorkerContext,
+    _In_ NTSTATUS WaitStatus
+    );
+
+typedef DRIVER_PROXY_HOTSWAP_WORKER_ROUTINE *PDRIVER_PROXY_HOTSWAP_WORKER_ROUTINE;
+
+typedef struct _DRIVER_PROXY_HOTSWAP_WORKER_ROUTINE_START_CONTEXT {
+    PDRIVER_PROXY_HOTSWAP_WORKER_ROUTINE WorkerRoutine;
+    PVOID Context;
+    WAIT_TYPE WaitType;
+    KWAIT_REASON WaitReason;
+    KPROCESSOR_MODE WaitMode;
+    BOOLEAN Altertable;
+    BOOLEAN HasTimeout;
+    LARGE_INTEGER Timeout;
+    ULONG EventCount;
+    PKEVENT Events[ANYSIZE_ARRAY];
+} DRIVER_PROXY_HOTSWAP_WORKER_ROUTINE_START_CONTEXT, *PDRIVER_PROXY_HOTSWAP_WORKER_ROUTINE_START_CONTEXT;
+
+NTKERNELAPI
+VOID
+IoGetDriverProxyFeatures (
+    _In_opt_ PDRIVER_OBJECT DriverObject,
+    _Out_ PDRIVER_PROXY_FEATURE_FLAGS Flags
+    );
+
+NTKERNELAPI
+NTSTATUS
+IoCreateDriverProxyExtension (
+    _In_opt_ PDRIVER_OBJECT OwningDriverObject,
+    _In_ DRIVER_PROXY_EXTENSION_CREATION_FLAGS Flags,
+    _Out_ PDRIVER_PROXY_EXTENSION *DriverProxyExtension
+    );
+
+NTKERNELAPI
+PDRIVER_PROXY_EXTENSION
+IoGetDriverProxyExtensionFromDriverObject (
+    _In_ PDRIVER_OBJECT DriverObject
+    );
+
+NTKERNELAPI
+NTSTATUS
+IoRegisterDriverProxyEndpoints (
+    _In_ PDRIVER_PROXY_EXTENSION DriverProxyExtension,
+    _Inout_count_(Count) PDRIVER_PROXY_ENDPOINT_INFORMATION EndpointInfo,
+    _In_ ULONG Count,
+    _In_opt_ PDRIVER_PROXY_REGISTER_CALLBACK PhasedCallback,
+    _In_opt_ PVOID Context
+    );
+
+DECLSPEC_DEPRECATED_DDK
+__drv_preferredFunction("IoGetDriverProxyWrapperFromEndpoint",
+                        "Function ID is deprecated.")
+NTKERNELAPI
+PDRIVER_PROXY_WRAPPED_ENDPOINT_FUNCTION
+IoGetDriverProxyEndpointWrapper (
+    _In_ PDRIVER_PROXY_EXTENSION DriverProxyExtension,
+    _In_ DRIVER_PROXY_ENDPOINT_FUNCTION_ID FunctionId
+    );
+
+NTKERNELAPI
+NTSTATUS
+IofGetDriverProxyWrapperFromEndpoint (
+    _In_ PDRIVER_PROXY_EXTENSION DriverProxyExtension,
+    _In_ PDRIVER_PROXY_ENDPOINT_FUNCTION Endpoint,
+    _Out_ PDRIVER_PROXY_WRAPPED_ENDPOINT_FUNCTION *Wrapper
+    );
+
+#define IoGetDriverProxyWrapperFromEndpoint(DriverProxyExtension, Endpoint, Wrapper) \
+    __pragma(warning(push)) \
+    __pragma(warning(disable:28024)) \
+    do { \
+        IofGetDriverProxyWrapperFromEndpoint(\
+            (DriverProxyExtension), \
+            (PDRIVER_PROXY_ENDPOINT_FUNCTION)(Endpoint), \
+            (PDRIVER_PROXY_WRAPPED_ENDPOINT_FUNCTION *)(Wrapper)); \
+    } while(0) \
+    __pragma(warning(pop))
+
+NTKERNELAPI
+NTSTATUS
+IoDriverProxyCreateHotSwappableWorkerThread(
+    _In_ PDRIVER_PROXY_EXTENSION DriverProxyExtension,
+    _Out_ PHANDLE ThreadHandle,
+    _In_ ULONG DesiredAccess,
+    _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
+    _In_opt_  HANDLE ProcessHandle,
+    _Out_opt_ PCLIENT_ID ClientId,
+    _In_ PDRIVER_PROXY_HOTSWAP_WORKER_ROUTINE_START_CONTEXT WorkerStartContext
+    );
+
+#endif
+
 
 #ifdef RUN_WPP
 
@@ -35553,9 +36814,9 @@ IoAcquireKsrPersistentMemoryEx (
 #endif // #ifdef RUN_WPP
 
 
-
 #ifndef _TRACEHANDLE_DEFINED
 #define _TRACEHANDLE_DEFINED
+// Obsolete - prefer PROCESSTRACE_HANDLE or CONTROLTRACE_ID.
 typedef ULONG64 TRACEHANDLE, *PTRACEHANDLE;
 #endif
 
@@ -35570,7 +36831,7 @@ NTKERNELAPI
 _IRQL_requires_max_(HIGH_LEVEL)
 NTSTATUS
 WmiTraceMessage (
-    _In_ TRACEHANDLE LoggerHandle,
+    _In_ TRACELOGGER_HANDLE LoggerHandle,
     _In_ ULONG MessageFlags,
     _In_ LPCGUID MessageGuid,
     _In_ USHORT MessageNumber,
@@ -35583,7 +36844,7 @@ NTKERNELAPI
 _IRQL_requires_max_(HIGH_LEVEL)
 NTSTATUS
 WmiTraceMessageVa (
-    _In_ TRACEHANDLE LoggerHandle,
+    _In_ TRACELOGGER_HANDLE LoggerHandle,
     _In_ ULONG MessageFlags,
     _In_ LPCGUID MessageGuid,
     _In_ USHORT MessageNumber,
@@ -37652,7 +38913,9 @@ typedef union _DEVICE_BUS_SPECIFIC_RESET_TYPE {
         ULONGLONG FunctionLevelDeviceReset:1;
         ULONGLONG PlatformLevelDeviceReset:1;
         ULONGLONG SecondaryBusReset:1;
-        ULONGLONG Reserved:61;
+        ULONGLONG PowerControllerReset:1;
+        ULONGLONG NoOpReset:1;
+        ULONGLONG Reserved:59;
     } Pci;
 
     struct {
@@ -37926,13 +39189,31 @@ typedef struct _DMA_ADAPTER_INFO_CRASHDUMP {
     PVOID DeviceId;
 } DMA_ADAPTER_INFO_CRASHDUMP, *PDMA_ADAPTER_INFO_CRASHDUMP;
 
-typedef struct _DMA_ADAPTER_INFO {
-    ULONG Version;
-    union {
+typedef union _DMA_ADAPTER_INFO {
+    struct {
+        ULONG Version;
         DMA_ADAPTER_INFO_V1 V1;
-        DMA_ADAPTER_INFO_CRASHDUMP Crashdump;
+    };
+
+    struct {
+        ULONGLONG Reserved;
+        union {
+            DMA_ADAPTER_INFO_CRASHDUMP Crashdump;
+        };
     };
 } DMA_ADAPTER_INFO, *PDMA_ADAPTER_INFO;
+
+//
+// V1 Struct must maintain its 4-byte alignment to be compatible with drivers
+// using old versions of the WDK.
+//
+// Similarly, Crashdump struct must also maintain its 8-byte alignment to be
+// compatible with drivers that are using versions of the WDK after the field
+// was added.
+//
+
+C_ASSERT(FIELD_OFFSET(DMA_ADAPTER_INFO, V1) == 0x4);
+C_ASSERT(FIELD_OFFSET(DMA_ADAPTER_INFO, Crashdump) == 0x8);
 
 //
 // Define the bits in the adapter info flags.
@@ -37940,6 +39221,7 @@ typedef struct _DMA_ADAPTER_INFO {
 
 #define ADAPTER_INFO_SYNCHRONOUS_CALLBACK             0x0001
 #define ADAPTER_INFO_API_BYPASS                       0x0002
+#define ADAPTER_INFO_HYBRID_PASSTHROUGH               0x0004
 
 //
 //  Define the supported version numbers for the DMA transfer info structure.
@@ -41195,8 +42477,9 @@ typedef struct _PO_FX_DEVICE_V1 {
     _Field_size_full_(ComponentCount) PO_FX_COMPONENT_V1 Components[ANYSIZE_ARRAY];
 } PO_FX_DEVICE_V1, *PPO_FX_DEVICE_V1;
 
-#define PO_FX_COMPONENT_FLAG_F0_ON_DX 0x0000000000000001
-#define PO_FX_COMPONENT_FLAG_NO_DEBOUNCE 0x0000000000000002
+#define PO_FX_COMPONENT_FLAG_F0_ON_DX       0x0000000000000001
+#define PO_FX_COMPONENT_FLAG_NO_DEBOUNCE    0x0000000000000002
+#define PO_FX_COMPONENT_FLAG_F0_ON_CHILD_D0 0x0000000000000004
 
 typedef struct _PO_FX_COMPONENT_V2 {
     GUID Id;
@@ -41259,6 +42542,7 @@ typedef struct _PO_FX_DEVICE_V2 {
 #define PO_FX_DEVICE_FLAG_DISABLE_FAST_RESUME          (0x0000000000000008ull)
 #define PO_FX_DEVICE_FLAG_ENABLE_FAST_RESUME           (0x0000000000000010ull)
 #define PO_FX_DEVICE_FLAG_NO_FAULT_CALLBACKS           (0x0000000000000020ull)
+#define PO_FX_DEVICE_FLAG_RESERVED_2                   (0x0000000000000040ull)
 
 #define PO_FX_DIRECTED_FX_DEFAULT_IDLE_TIMEOUT    (0ul)
 #define PO_FX_DIRECTED_FX_IMMEDIATE_IDLE_TIMEOUT  ((ULONG)-1)
@@ -41577,8 +42861,10 @@ PoFxRegisterComponentPerfStates (
     _In_ ULONG Component,
     _In_ ULONGLONG Flags,
     _In_ PPO_FX_COMPONENT_PERF_STATE_CALLBACK ComponentPerfStateCallback,
-    _In_ PPO_FX_COMPONENT_PERF_INFO InputStateInfo,
-    _Out_ PPO_FX_COMPONENT_PERF_INFO* OutputStateInfo
+    _In_opt_ PPO_FX_COMPONENT_PERF_INFO InputStateInfo,
+    _When_(InputStateInfo == NULL, _Outptr_)
+    _When_(InputStateInfo != NULL, _Pre_equal_to_(NULL))
+    PPO_FX_COMPONENT_PERF_INFO* OutputStateInfo
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
@@ -41715,6 +43001,102 @@ PoFxRegisterDripsWatchdogCallback (
     _In_opt_ PDRIVER_OBJECT MatchingDriverObject
     );
 #endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PoCreatePowerLimitRequest (
+    _Outptr_ PVOID *PowerLimitRequest,
+    _In_ PDEVICE_OBJECT TargetDeviceObject,
+    _In_ PDEVICE_OBJECT PolicyDeviceObject,
+    _In_ PCOUNTED_REASON_CONTEXT Context
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PoQueryPowerLimitAttributes (
+    _Inout_ PVOID PowerLimitRequest,
+    _In_ ULONG BufferCount,
+    _Inout_updates_opt_(BufferCount) PPOWER_LIMIT_ATTRIBUTES Buffer,
+    _Out_ PULONG AttributeCount
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PoSetPowerLimitValue (
+    _Inout_ PVOID PowerLimitRequest,
+    _In_opt_ PCOUNTED_REASON_CONTEXT Reason,
+    _In_ ULONG ValueCount,
+    _In_reads_(ValueCount) PPOWER_LIMIT_VALUE Values
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PoQueryPowerLimitValue (
+    _Inout_ PVOID PowerLimitRequest,
+    _In_ ULONG ValueCount,
+    _Inout_updates_(ValueCount) PPOWER_LIMIT_VALUE Values
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PoDeletePowerLimitRequest (
+    _Inout_ PVOID PowerLimitRequest
+    );
+
+typedef enum _PO_EFFECTIVE_POWER_MODE {
+    PoEffectivePowerModeBatterySaver,
+    PoEffectivePowerModeEnergySaverHighSavings = PoEffectivePowerModeBatterySaver,
+    PoEffectivePowerModeBetterBattery,
+    PoEffectivePowerModeEnergySaverStandard = PoEffectivePowerModeBetterBattery,
+    PoEffectivePowerModeBalanced,
+    PoEffectivePowerModeHighPerformance,
+    PoEffectivePowerModeMaxPerformance,   // v1 last supported
+    PoEffectivePowerModeGameMode,
+    PoEffectivePowerModeMixedReality,     // v2 last supported
+} PO_EFFECTIVE_POWER_MODE, *PPO_EFFECTIVE_POWER_MODE;
+
+#define PO_EFFECTIVE_POWER_MODE_V1 (0x00000001)
+#define PO_EFFECTIVE_POWER_MODE_V2 (0x00000002)
+#define PO_EFFECTIVE_POWER_MODE_VMAX PO_EFFECTIVE_POWER_MODE_V2
+
+DECLARE_HANDLE(PO_EPM_HANDLE);
+
+typedef
+_Function_class_(PO_EFFECTIVE_POWER_MODE_CALLBACK)
+VOID
+PO_EFFECTIVE_POWER_MODE_CALLBACK (
+    _In_ PO_EFFECTIVE_POWER_MODE Mode,
+    _In_opt_ VOID *Context
+    );
+
+typedef PO_EFFECTIVE_POWER_MODE_CALLBACK *PPO_EFFECTIVE_POWER_MODE_CALLBACK;
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PoRegisterForEffectivePowerModeNotifications (
+    _In_ ULONG Version,
+    _In_ PPO_EFFECTIVE_POWER_MODE_CALLBACK Callback,
+    _In_opt_ PVOID Context,
+    _Outptr_ PO_EPM_HANDLE *RegistrationHandle,
+    _In_opt_ PDEVICE_OBJECT DeviceObject
+    );
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PoUnregisterFromEffectivePowerModeNotifications (
+    _In_ PO_EPM_HANDLE RegistrationHandle
+    );
+
+#endif // NTDDI_VERSION >= NTDDI_WIN11_GA
 
 
 //
@@ -42487,7 +43869,7 @@ typedef struct {
 #define PCI_EXPRESS_READINESS_TIME_REPORTING_CAP_ID                     0x0022
 #define PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_CAP_ID                   0x0023
 #define PCI_EXPRESS_NPEM_CAP_ID                                         0x0029
-
+#define PCI_EXPRESS_DEVICE_3_CAP_ID                                     0x002F
 
 //
 // All Enhanced capabilities have the following header.
@@ -42646,6 +44028,7 @@ typedef struct _VIRTUAL_RESOURCE {
     VIRTUAL_RESOURCE_STATUS         Status;
 } VIRTUAL_RESOURCE, *PVIRTUAL_RESOURCE;
 
+#define PCI_VIRTUAL_RESOURCE_COUNT 0x8
 typedef struct _PCI_EXPRESS_VIRTUAL_CHANNEL_CAPABILITY {
 
     PCI_EXPRESS_ENHANCED_CAPABILITY_HEADER Header;
@@ -42654,7 +44037,7 @@ typedef struct _PCI_EXPRESS_VIRTUAL_CHANNEL_CAPABILITY {
     VIRTUAL_CHANNEL_CAPABILITIES2   Capabilities2;
     VIRTUAL_CHANNEL_CONTROL         Control;
     VIRTUAL_CHANNEL_STATUS          Status;
-    VIRTUAL_RESOURCE                Resource[8];
+    VIRTUAL_RESOURCE                Resource[PCI_VIRTUAL_RESOURCE_COUNT];
 
 } PCI_EXPRESS_VIRTUAL_CHANNEL_CAPABILITY, *PPCI_EXPRESS_VIRTUAL_CHANNEL_CAPABILITY;
 
@@ -42762,6 +44145,36 @@ typedef struct _PCI_EXPRESS_PRI_CAPABILITY {
 } PCI_EXPRESS_PRI_CAPABILITY, *PPCI_EXPRESS_PRI_CAPABILITY;
 
 //
+// Device 3 Extended Capability Structure
+//
+
+typedef union _PCI_EXPRESS_DEVICE_CAPABILITIES_3_REGISTER {
+    struct {
+        ULONG DmwrRequestRoutingSupported:1;
+        ULONG Rsvd:31;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_EXPRESS_DEVICE_CAPABILITIES_3_REGISTER, *PPCI_EXPRESS_DEVICE_CAPABILITIES_3_REGISTER;
+
+typedef union _PCI_EXPRESS_DEVICE_CONTROL_3_REGISTER {
+    struct {
+        ULONG DmwrRequesterEnable:1;
+        ULONG Rsvd:31;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_EXPRESS_DEVICE_CONTROL_3_REGISTER, *PPCI_EXPRESS_DEVICE_CONTROL_3_REGISTER;
+
+typedef struct _PCI_EXPRESS_DEVICE_3_EXTENDED_CAPABILITY {
+    PCI_EXPRESS_ENHANCED_CAPABILITY_HEADER Header;
+    PCI_EXPRESS_DEVICE_CAPABILITIES_3_REGISTER Capability;
+    PCI_EXPRESS_DEVICE_CONTROL_3_REGISTER Control;
+} PCI_EXPRESS_DEVICE_3_EXTENDED_CAPABILITY, *PPCI_EXPRESS_DEVICE_3_EXTENDED_CAPABILITY;
+
+//
 // PTM Extended Capability structures.
 //
 
@@ -42828,7 +44241,8 @@ typedef union _PCI_EXPRESS_UNCORRECTABLE_ERROR_STATUS {
         ULONG MCBlockedTlp:1;
         ULONG AtomicOpEgressBlocked:1;
         ULONG TlpPrefixBlocked:1;
-        ULONG Reserved3:6;
+        ULONG PoisonedTlpEgressBlocked:1;
+        ULONG Reserved3:5;
     } DUMMYSTRUCTNAME;
 
     ULONG AsULONG;
@@ -42857,7 +44271,8 @@ typedef union _PCI_EXPRESS_UNCORRECTABLE_ERROR_MASK {
         ULONG MCBlockedTlp:1;
         ULONG AtomicOpEgressBlocked:1;
         ULONG TlpPrefixBlocked:1;
-        ULONG Reserved3:6;
+        ULONG PoisonedTlpEgressBlocked:1;
+        ULONG Reserved3:5;
     } DUMMYSTRUCTNAME;
 
     ULONG AsULONG;
@@ -42886,7 +44301,8 @@ typedef union _PCI_EXPRESS_UNCORRECTABLE_ERROR_SEVERITY {
         ULONG MCBlockedTlp:1;
         ULONG AtomicOpEgressBlocked:1;
         ULONG TlpPrefixBlocked:1;
-        ULONG Reserved3:6;
+        ULONG PoisonedTlpEgressBlocked:1;
+        ULONG Reserved3:5;
     } DUMMYSTRUCTNAME;
 
     ULONG AsULONG;
@@ -43951,6 +45367,26 @@ ZwMapViewOfSection(
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+_Must_inspect_result_
+_Post_satisfies_(*ViewSize >= _Old_(*ViewSize))
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+ZwMapViewOfSectionEx (
+    _In_ HANDLE SectionHandle,
+    _In_ HANDLE ProcessHandle,
+    _Inout_ _At_ (*BaseAddress, _Readable_bytes_ (*ViewSize) _Writable_bytes_ (*ViewSize) _Post_readable_byte_size_ (*ViewSize)) PVOID *BaseAddress,
+    _Inout_opt_ PLARGE_INTEGER SectionOffset,
+    _Inout_ PSIZE_T ViewSize,
+    _In_ ULONG AllocationType,
+    _In_ ULONG PageProtection,
+    _Inout_updates_opt_(ExtendedParameterCount) PMEM_EXTENDED_PARAMETER ExtendedParameters,
+    _In_ ULONG ExtendedParameterCount
+    );
+#endif
+
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 //@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -44781,6 +46217,25 @@ ZwQueryFullAttributesFile(
 #endif
 
 
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+NTSYSAPI
+NTSTATUS
+NTAPI
+ZwCopyFileChunk (
+    _In_ HANDLE SourceHandle,
+    _In_ HANDLE DestHandle,
+    _In_opt_ HANDLE Event,
+    _Out_ PIO_STATUS_BLOCK IoStatusBlock,
+    _In_ ULONG Length,
+    _In_ PLARGE_INTEGER SourceOffset,
+    _In_ PLARGE_INTEGER DestOffset,
+    _In_opt_ PULONG SourceKey,
+    _In_opt_ PULONG DestKey,
+    _In_ ULONG Flags
+    );
+#endif
+
 #ifndef _CLFS_PUBLIC_H_
 #define _CLFS_PUBLIC_H_
 #if !defined(CLFSUSER_API)
@@ -44829,7 +46284,8 @@ ZwQueryFullAttributesFile(
 #define CLFS_FLAG_READ_IN_PROGRESS      0x00000080      // Flag indicating read in progress and not completed.
 #define CLFS_FLAG_MINIFILTER_LEVEL      0x00000100      // Kernel mode create flag indicating mini-filter target.
 #define CLFS_FLAG_HIDDEN_SYSTEM_LOG     0x00000200      // Kernel mode create flag indicating the log and containers should be marked hidden & system.
-
+//      CLFS_FLAG_MAX_VALUE             0x00800000      // Highest value allowed for public flags.
+/* NOTE that the uppper 8 bits of CLFS_FLAG values are reserved for internal use. */
 // 
 // Marshalling Context Flag
 //
@@ -46388,7 +47844,7 @@ CLFSUSER_API
 NTSTATUS
 ClfsMgmtSetLogFileSizeAsClient(
     _In_ PLOG_FILE_OBJECT LogFile,
-    _In_opt_ PCLFS_MGMT_CLIENT ClientCookie,
+    _In_opt_ CLFS_MGMT_CLIENT ClientCookie,
     _In_ PULONGLONG NewSizeInContainers,
     _Out_opt_ PULONGLONG ResultingSizeInContainers,
     _In_opt_ PCLFS_SET_LOG_SIZE_COMPLETE_CALLBACK CompletionRoutine,
@@ -47663,7 +49119,6 @@ VslDeleteSecureSection (
 #define REFTAG_ALEPROCTBL 'PelA'
 #define REFTAG_ALESIDTOKEN 'SelA'
 #define REFTAG_CFSFILTER 'FsfC'
-#define REFTAG_DWMKERNEL 'KmwD'
 #define REFTAG_HTTP 'pttH'
 #define REFTAG_MAILSLOT 'sFsM'
 #define REFTAG_NFSVOLUME 'VsfN'
@@ -47677,14 +49132,8 @@ VslDeleteSecureSection (
 #define REFTAG_TCPLISTENER 'LpcT'
 #define REFTAG_TCPTCB 'TpcT'
 #define REFTAG_UDPENDPOINT 'EpdU'
-#define REFTAG_USRKDESKTOP 'DrsU'
 #define REFTAG_VIDEO_PORT_I386 'idiV'
 #define REFTAG_VIDEO_PORT 'PdiV'
-#define REFTAG_WIN32K 'k23W'
-#define REFTAG_WIN32KQUEUE 'q23W'
-#define REFTAG_WIN32KRESTRICT 'r23W'
-#define REFTAG_WIN32KSERVER 'S23W'
-#define REFTAG_WIN32KSTUBS 's23W'
 #define REFTAG_WS2IFSL 'i2sW'
 #define REFTAG_WSKNAMERES 'NksW'
 #define REFTAG_WSKPROV 'PksW'

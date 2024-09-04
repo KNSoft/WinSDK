@@ -28,6 +28,11 @@ DEFINE_GUID(SDCAXU_INTERFACE,
 #define SDCAXU_INTERFACE_VERSION_0100   (0x0100)
 
 //
+// Version 1.1
+//
+#define SDCAXU_INTERFACE_VERSION_0101   (0x0101)
+
+//
 // EvtSetXUEntities
 // Set all the XU Entities which should be enabled
 // params:
@@ -119,6 +124,11 @@ typedef enum _SDCAXU_NOTIFICATION_TYPE
     // synchronized
     SdcaXuNotificationTypeCommitGroup,
 
+    // Notification when system posture (orientation or lid state) has changed
+    // Class driver will notify SdcaXu driver of the posture changes.
+    // SdcaXu driver can decide to handle or ignore the changes accordingly.
+    SdcaXuNotificationTypePosture,
+
     SdcaXuNotificationTypeCount
 } SDCAXU_NOTIFICATION_TYPE;
 
@@ -166,6 +176,22 @@ typedef struct _SDCAXU_NOTIFICATION_COMMIT_GROUP
     // (or 0 if the commit group has been destroyed)
     ULONG                   CommitGroupHandle;
 } SDCAXU_NOTIFICATION_COMMIT_GROUP, *PSDCAXU_NOTIFICATION_COMMIT_GROUP;
+
+typedef enum _SDCAXU_POSTURE
+{
+    SdcaXuPostureOrientationNotRotated = 0,
+    SdcaXuPostureOrientationRotated90DegreesCounterClockwise,
+    SdcaXuPostureOrientationRotated180DegreesCounterClockwise,
+    SdcaXuPostureOrientationRotated270DegreesCounterClockwise,
+    SdcaXuPostureLidClosed,
+
+    SdcaXuPostureCount
+} SDCAXU_POSTURE, *PSDCAXU_POSTURE;
+
+typedef struct _SDCAXU_NOTIFICATION_POSTURE
+{
+    SDCAXU_POSTURE          Posture;
+} SDCAXU_NOTIFICATION_POSTURE, *PSDCAXU_NOTIFICATION_POSTURE;
 
 //
 // EvtChangeNotification
@@ -381,6 +407,38 @@ typedef NTSTATUS EVT_SDCAXU_PDE_POWER_REFERENCE_RELEASE
 );
 typedef EVT_SDCAXU_PDE_POWER_REFERENCE_RELEASE *PFN_SDCAXU_PDE_POWER_REFERENCE_RELEASE;
 
+//
+// EvtReadDeferredAudioControls
+// SdcaXu driver will call this method to read deferred audio controls.
+//
+//
+// params:
+//   * Context              - SDCA Driver supplied context
+//   * Controls             - Array of SDCA Audio Controls
+//
+typedef NTSTATUS EVT_SDCAXU_READ_DEFERRED_AUDIO_CONTROLS
+(
+    _In_ PVOID                          Context,
+    _Inout_ PSDCA_AUDIO_CONTROLS        Controls
+);
+typedef EVT_SDCAXU_READ_DEFERRED_AUDIO_CONTROLS *PFN_SDCAXU_READ_DEFERRED_AUDIO_CONTROLS;
+
+//
+// EvtWriteDeferredAudioControls
+// SdcaXu driver will call this method to write deferred audio controls.
+//
+//
+// params:
+//   * Context              - SDCA Driver supplied context
+//   * Controls             - Array of SDCA Audio Controls
+//
+typedef NTSTATUS EVT_SDCAXU_WRITE_DEFERRED_AUDIO_CONTROLS
+(
+    _In_ PVOID                          Context,
+    _Inout_ PSDCA_AUDIO_CONTROLS        Controls
+);
+typedef EVT_SDCAXU_WRITE_DEFERRED_AUDIO_CONTROLS *PFN_SDCAXU_WRITE_DEFERRED_AUDIO_CONTROLS;
+
 typedef struct _SDCAXU_INTERFACE_V0100
 {
     //
@@ -404,3 +462,27 @@ typedef struct _SDCAXU_INTERFACE_V0100
     PFN_SDCAXU_PDE_POWER_REFERENCE_RELEASE  EvtPDEPowerReferenceRelease;
 } SDCAXU_INTERFACE_V0100, *PSDCAXU_INTERFACE_V0100;
 
+typedef struct _SDCAXU_INTERFACE_V0101
+{
+    //
+    // SDCA To SdcaXu Interface
+    //
+    INTERFACE InterfaceHeader;
+    PFN_SDCAXU_SET_HW_CONFIG                        EvtSetHwConfig;
+    PFN_SDCAXU_SET_ENDPOINT_CONFIG                  EvtSetEndpointConfig;
+    PFN_SDCAXU_REMOVE_ENDPOINT_CONFIG               EvtRemoveEndpointConfig;
+    PFN_SDCAXU_INTERRUPT_HANDLER                    EvtInterruptHandler;
+    PFN_SDCAXU_CHANGE_NOTIFICATION                  EvtChangeNotification;
+
+    //
+    // SdcaXu to SDCA Interface
+    //
+    PFN_SDCAXU_SET_XU_ENTITIES                      EvtSetXUEntities;
+    PFN_SDCAXU_REGISTER_FOR_INTERRUPTS              EvtRegisterForInterrupts;
+    PFN_SDCAXU_SET_JACK_OVERRIDE                    EvtSetJackOverride;
+    PFN_SDCAXU_SET_JACK_SELECTED_MODE               EvtSetJackSelectedMode;
+    PFN_SDCAXU_PDE_POWER_REFERENCE_ACQUIRE          EvtPDEPowerReferenceAcquire;
+    PFN_SDCAXU_PDE_POWER_REFERENCE_RELEASE          EvtPDEPowerReferenceRelease;
+    PFN_SDCAXU_READ_DEFERRED_AUDIO_CONTROLS         EvtReadDeferredAudioControls;
+    PFN_SDCAXU_WRITE_DEFERRED_AUDIO_CONTROLS        EvtWriteDeferredAudioControls;
+} SDCAXU_INTERFACE_V0101, *PSDCAXU_INTERFACE_V0101;

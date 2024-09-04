@@ -102,7 +102,6 @@ typedef struct _PRM_DRIVER_INTERFACE_STANDARD {
 
 } PRM_DRIVER_INTERFACE_STANDARD, *PPRM_DRIVER_INTERFACE_STANDARD;
 
-
 // {d37ca3d8-07cd-450d-8893-1d292112405e}
 DEFINE_GUID(
     GUID_PRM_DEVICE,
@@ -115,5 +114,25 @@ DEFINE_GUID(
     GUID_PRM_DRIVER_INTERFACE_STANDARD,
     0x0d8ac963, 0x4e72, 0x4889, 0x80, 0xc1, 0xab, 0xc8, 0x6d, 0x90, 0x9a, 0xf0);
 
+
+typedef struct _PRM_INTERFACE {
+    ULONG Version;
+    PPRM_UNLOCK_MODULE UnlockModule;
+    PPRM_LOCK_MODULE LockModule;
+    PPRM_INVOKE_HANDLER InvokeHandler;
+    PPRM_QUERY_HANDLER  QueryHandler;
+} PRM_INTERFACE, *PPRM_INTERFACE;
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_IRQL_requires_same_
+NTKERNELAPI
+NTSTATUS
+ExGetPrmInterface (
+    _In_ ULONG Version,
+    _Out_ PPRM_INTERFACE InterfaceOut
+    );
+
+#define PRM_INTERFACE_V1 1
 
 #pragma warning( pop )

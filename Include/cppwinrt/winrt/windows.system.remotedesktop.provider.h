@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -7,8 +7,8 @@
 #ifndef WINRT_Windows_System_RemoteDesktop_Provider_H
 #define WINRT_Windows_System_RemoteDesktop_Provider_H
 #include "winrt/base.h"
-static_assert(winrt::check_version(CPPWINRT_VERSION, "2.0.220110.5"), "Mismatched C++/WinRT headers.");
-#define CPPWINRT_VERSION "2.0.220110.5"
+static_assert(winrt::check_version(CPPWINRT_VERSION, "2.0.230511.6"), "Mismatched C++/WinRT headers.");
+#define CPPWINRT_VERSION "2.0.230511.6"
 #include "winrt/Windows.System.RemoteDesktop.h"
 #include "winrt/impl/Windows.Foundation.2.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -16,35 +16,35 @@ static_assert(winrt::check_version(CPPWINRT_VERSION, "2.0.220110.5"), "Mismatche
 #include "winrt/impl/Windows.System.RemoteDesktop.Provider.2.h"
 namespace winrt::impl
 {
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopLocalAction) consume_Windows_System_RemoteDesktop_Provider_IPerformLocalActionRequestedEventArgs<D>::Action() const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IPerformLocalActionRequestedEventArgs<D>::Action() const
     {
         winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopLocalAction value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IPerformLocalActionRequestedEventArgs)->get_Action(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionInfo<D>::SetConnectionStatus(winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionStatus const& value) const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionInfo<D>::SetConnectionStatus(winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionStatus const& value) const
     {
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionInfo)->SetConnectionStatus(static_cast<int32_t>(value)));
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionInfo<D>::SwitchToLocalSession() const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionInfo<D>::SwitchToLocalSession() const
     {
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionInfo)->SwitchToLocalSession());
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionInfo2<D>::PerformLocalActionFromRemote(winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopLocalAction const& action) const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionInfo2<D>::PerformLocalActionFromRemote(winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopLocalAction const& action) const
     {
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionInfo2)->PerformLocalActionFromRemote(static_cast<int32_t>(action)));
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionInfo) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionInfoStatics<D>::GetForLaunchUri(winrt::Windows::Foundation::Uri const& launchUri, winrt::Windows::UI::WindowId const& windowId) const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionInfoStatics<D>::GetForLaunchUri(winrt::Windows::Foundation::Uri const& launchUri, winrt::Windows::UI::WindowId const& windowId) const
     {
         void* result{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionInfoStatics)->GetForLaunchUri(*(void**)(&launchUri), impl::bind_in(windowId), &result));
         return winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionInfo{ result, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::ReportSwitched() const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::ReportSwitched() const
     {
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionRemoteInfo)->ReportSwitched());
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::event_token) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::SwitchToLocalSessionRequested(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionRemoteInfo, winrt::Windows::Foundation::IInspectable> const& handler) const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::SwitchToLocalSessionRequested(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionRemoteInfo, winrt::Windows::Foundation::IInspectable> const& handler) const
     {
         winrt::event_token token{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionRemoteInfo)->add_SwitchToLocalSessionRequested(*(void**)(&handler), put_abi(token)));
@@ -54,11 +54,11 @@ namespace winrt::impl
     {
         return impl::make_event_revoker<D, SwitchToLocalSessionRequested_revoker>(this, SwitchToLocalSessionRequested(handler));
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::SwitchToLocalSessionRequested(winrt::event_token const& token) const noexcept
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::SwitchToLocalSessionRequested(winrt::event_token const& token) const noexcept
     {
         WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionRemoteInfo)->remove_SwitchToLocalSessionRequested(impl::bind_in(token));
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::event_token) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::PerformLocalActionRequested(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionRemoteInfo, winrt::Windows::System::RemoteDesktop::Provider::PerformLocalActionRequestedEventArgs> const& handler) const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::PerformLocalActionRequested(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionRemoteInfo, winrt::Windows::System::RemoteDesktop::Provider::PerformLocalActionRequestedEventArgs> const& handler) const
     {
         winrt::event_token token{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionRemoteInfo)->add_PerformLocalActionRequested(*(void**)(&handler), put_abi(token)));
@@ -68,47 +68,47 @@ namespace winrt::impl
     {
         return impl::make_event_revoker<D, PerformLocalActionRequested_revoker>(this, PerformLocalActionRequested(handler));
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::PerformLocalActionRequested(winrt::event_token const& token) const noexcept
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfo<D>::PerformLocalActionRequested(winrt::event_token const& token) const noexcept
     {
         WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionRemoteInfo)->remove_PerformLocalActionRequested(impl::bind_in(token));
     }
-    template <typename D> WINRT_IMPL_AUTO(bool) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfoStatics<D>::IsSwitchSupported() const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfoStatics<D>::IsSwitchSupported() const
     {
         bool result{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionRemoteInfoStatics)->IsSwitchSupported(&result));
         return result;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionRemoteInfo) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfoStatics<D>::GetForLaunchUri(winrt::Windows::Foundation::Uri const& launchUri) const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopConnectionRemoteInfoStatics<D>::GetForLaunchUri(winrt::Windows::Foundation::Uri const& launchUri) const
     {
         void* result{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopConnectionRemoteInfoStatics)->GetForLaunchUri(*(void**)(&launchUri), &result));
         return winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopConnectionRemoteInfo{ result, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopInfo<D>::DisplayName() const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopInfo<D>::DisplayName() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopInfo)->get_DisplayName(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopInfo<D>::Id() const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopInfo<D>::Id() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopInfo)->get_Id(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopInfo) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopInfoFactory<D>::CreateInstance(param::hstring const& id, param::hstring const& displayName) const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopInfoFactory<D>::CreateInstance(param::hstring const& id, param::hstring const& displayName) const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopInfoFactory)->CreateInstance(*(void**)(&id), *(void**)(&displayName), &value));
         return winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopInfo{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopInfo>) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopRegistrarStatics<D>::DesktopInfos() const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopRegistrarStatics<D>::DesktopInfos() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopRegistrarStatics)->get_DesktopInfos(&value));
         return winrt::Windows::Foundation::Collections::IVector<winrt::Windows::System::RemoteDesktop::Provider::RemoteDesktopInfo>{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(bool) consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopRegistrarStatics<D>::IsSwitchToLocalSessionEnabled() const
+    template <typename D> auto consume_Windows_System_RemoteDesktop_Provider_IRemoteDesktopRegistrarStatics<D>::IsSwitchToLocalSessionEnabled() const
     {
         bool result{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::System::RemoteDesktop::Provider::IRemoteDesktopRegistrarStatics)->IsSwitchToLocalSessionEnabled(&result));

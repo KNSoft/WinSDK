@@ -2356,6 +2356,30 @@ private:
     int type_case_s_compute_narrow_string_length(int const maximum_length, wchar_t) throw()
     {
         _locale_t locale = _ptd.get_locale();
+
+        if (locale->locinfo->_public._locale_lc_codepage == CP_UTF8)
+        {
+            int string_length{0};
+
+            for (char const* p{_narrow_string}; string_length < maximum_length && *p; ++string_length)
+            {
+                int const len = __crt_mbstring::__mblen_utf8(p);
+
+                if (len >= 1 && len <= 4) {
+                    p += len;
+                } else {
+                    ++p; // on illegal sequence, treat as ascii. We will return EILSEQ during write
+                }
+
+                if (len == 4)
+                {
+                    ++string_length; // utf-16 surrogate pair
+                }
+            }
+
+            return string_length;
+        }
+
         int string_length{0};
 
         for (char const* p{_narrow_string}; string_length < maximum_length && *p; ++string_length)
@@ -2717,9 +2741,27 @@ private:
         {
             _output_adapter.write_string(_narrow_string, _string_length, &_characters_written, _ptd);
         }
+        else if (_ptd.get_locale()->locinfo->_public._locale_lc_codepage == CP_UTF8)
+        {   // Use resumable character translator to handle UTF-16 surrogate pairs.
+            wchar_t const* p{_wide_string};
+            mbstate_t state{};
+
+            for (int i = 0; i != _string_length; ++i)
+            {
+                char local_buffer[MB_LEN_MAX + 1];
+                size_t const mbc_length = __crt_mbstring::__c16rtomb_utf8(local_buffer, static_cast<char16_t>(*p++), &state, _ptd);
+                if (mbc_length == __crt_mbstring::INVALID)
+                {
+                    _characters_written = -1;
+                    return true;
+                }
+
+                _output_adapter.write_string(local_buffer, static_cast<int>(mbc_length), &_characters_written, _ptd);
+            }
+        }
         else
         {
-            wchar_t* p{_wide_string};
+            wchar_t const* p{_wide_string};
             for (int i{0}; i != _string_length; ++i)
             {
                 char local_buffer[MB_LEN_MAX + 1];
@@ -2739,16 +2781,42 @@ private:
         return true;
     }
 
+
     __forceinline bool write_stored_string_tchar(wchar_t) throw()
     {
         if (_string_is_wide || _string_length <= 0)
         {
             _output_adapter.write_string(_wide_string, _string_length, &_characters_written, _ptd);
         }
+        else if (_ptd.get_locale()->locinfo->_public._locale_lc_codepage == CP_UTF8)
+        {
+            char const* p{_narrow_string};
+            mbstate_t state{};
+            for (int i = 0; i != _string_length; ++i)
+            {
+                wchar_t local_buffer[2]{}; // Two wchar_ts to support UTF-16 surrogate pairs
+                size_t const mbc_length = __crt_mbstring::__mbsrtowcs_utf8(local_buffer, &p, 2, &state, _ptd);
+                // Unlike other per-character functions used nearby, __mbsrtowcs_utf8 will advance the string pointer.
+                if (mbc_length == __crt_mbstring::INVALID)
+                {
+                    _characters_written = -1;
+                    return true;
+                }
+
+                _output_adapter.write_character(local_buffer[0], &_characters_written, _ptd);
+
+                if (mbc_length == 2)
+                {
+                    _output_adapter.write_character(local_buffer[1], &_characters_written, _ptd);
+                    ++i;
+                }
+            }
+        }
         else
         {
             _locale_t locale_ptr = _ptd.get_locale();
-            char* p{_narrow_string};
+
+            char const* p{_narrow_string};
             for (int i{0}; i != _string_length; ++i)
             {
                 wchar_t wide_character{};

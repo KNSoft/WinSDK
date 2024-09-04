@@ -16,7 +16,7 @@
 
 
 //
-// Structure definition for starting an AP (v1.0.10).
+// Structure definition for starting an AP (v2.0.12).
 //
 typedef struct _WDI_START_AP_PARAMETERS
 {
@@ -26,12 +26,32 @@ typedef struct _WDI_START_AP_PARAMETERS
     BOOLEAN DataRateSupport802_11b; // Whether the device supports 802.11b speeds or not. When this is set the AP should allow clients using 11b rates to connect to it.
     BOOLEAN AcceptNonP2PClients; // Whether to allow legacy SoftAP clients to connect.
     BOOLEAN MustUseSpecifiedChannels; // Whether the AP can only be started on the specified channels.
+    BOOLEAN PreferOverStation; // Whether the driver should favor the SoftAp and roam the STA connection if needed to improve SoftAp performances
 #ifdef __cplusplus
-    _WDI_START_AP_PARAMETERS() : BeaconPeriod( 0 ), DTIMPeriod( 0 ), ExcludeUnencrypted( FALSE ), DataRateSupport802_11b( FALSE ), AcceptNonP2PClients( FALSE ), MustUseSpecifiedChannels( FALSE )
+    _WDI_START_AP_PARAMETERS() : BeaconPeriod( 0 ), DTIMPeriod( 0 ), ExcludeUnencrypted( FALSE ), DataRateSupport802_11b( FALSE ), AcceptNonP2PClients( FALSE ), MustUseSpecifiedChannels( FALSE ), PreferOverStation( FALSE )
     {
     };
 #endif // __cplusplus
 } WDI_START_AP_PARAMETERS, *PWDI_START_AP_PARAMETERS;
+
+
+//
+// Structure definition for starting an AP (v1.0.10).
+//
+typedef struct _WDI_START_AP_PARAMETERS_V1_0_10
+{
+    UINT32 BeaconPeriod; // If non-zero, this parameter specifies the beacon interval
+    UINT32 DTIMPeriod; // If non-zero, this parameter specifies the  number of beacon intervals between transmissions of beacon frames that contain a TIM element with a DTIM Count field that equals zero. This value is transmitted in the DTIM Period field of beacon frames.
+    BOOLEAN ExcludeUnencrypted; // Specifies exclude unencrypted bit.
+    BOOLEAN DataRateSupport802_11b; // Whether the device supports 802.11b speeds or not. When this is set the AP should allow clients using 11b rates to connect to it.
+    BOOLEAN AcceptNonP2PClients; // Whether to allow legacy SoftAP clients to connect.
+    BOOLEAN MustUseSpecifiedChannels; // Whether the AP can only be started on the specified channels.
+#ifdef __cplusplus
+    _WDI_START_AP_PARAMETERS_V1_0_10() : BeaconPeriod( 0 ), DTIMPeriod( 0 ), ExcludeUnencrypted( FALSE ), DataRateSupport802_11b( FALSE ), AcceptNonP2PClients( FALSE ), MustUseSpecifiedChannels( FALSE )
+    {
+    };
+#endif // __cplusplus
+} WDI_START_AP_PARAMETERS_V1_0_10, *PWDI_START_AP_PARAMETERS_V1_0_10;
 
 
 //
@@ -159,27 +179,32 @@ typedef struct _WDI_LINK_STATE_CHANGE_PARAMETERS_STRUCT
 
 
 //
-// Structure definition for link state change parameters.
+// Structure definition for link information parameters.
 //
-typedef struct _WDI_LINK_STATE_CHANGE_PARAMETERS_STRUCT_V1
+typedef struct _WDI_LINK_INFO_PARAMETERS_STRUCT
 {
-    WDI_MAC_ADDRESS PeerMACAddress; // MAC address of remote peer
-    UINT32 TxLinkSpeed; // Current Tx Link Speed
-    UINT32 RxLinkSpeed; // Current Rx Link Speed
-    UINT8 LinkQuality; // Current Link Quality
+    UINT32 LinkID; // AP Link Id
+    WDI_MAC_ADDRESS LocalLinkMACAddress; // Local Link MAC address
+    WDI_MAC_ADDRESS PeerLinkMACAddress; // Link MAC address of remote peer
+    WDI_CHANNEL_NUMBER ChannelNumber; // The logical channel number on which the peer was discovered
+    WDI_BAND_ID BandId; // Band ID for the given BSS entry.
+    INT32 RSSI; // The received signal strength indicator (RSSI) value of the beacon or probe response from the peer. This is in units of decibels referenced to 1.0 milliwatts (dBm).
+    UINT32 Bandwidth; // Current Bandwidth in MHz
+    UINT32 TxMCS; // Current Tx MCS
+    UINT32 RxMCS; // Current Rx MCS
 #ifdef __cplusplus
-    _WDI_LINK_STATE_CHANGE_PARAMETERS_STRUCT_V1()
+    _WDI_LINK_INFO_PARAMETERS_STRUCT()
     {
-        memset( this, 0, sizeof( _WDI_LINK_STATE_CHANGE_PARAMETERS_STRUCT_V1 ) );
+        memset( this, 0, sizeof( _WDI_LINK_INFO_PARAMETERS_STRUCT ) );
     };
 #endif // __cplusplus
-} WDI_LINK_STATE_CHANGE_PARAMETERS_STRUCT_V1, *PWDI_LINK_STATE_CHANGE_PARAMETERS_STRUCT_V1;
+} WDI_LINK_INFO_PARAMETERS_STRUCT, *PWDI_LINK_INFO_PARAMETERS_STRUCT;
 
 
 //
 // Structure definition for link information parameters.
 //
-typedef struct _WDI_LINK_INFO_PARAMETERS_STRUCT
+typedef struct _WDI_LINK_INFO_PARAMETERS_STRUCT_V2_0_3
 {
     UINT32 LocalLinkID; // Current Link Id
     UINT32 PeerLinkID; // Current Link Id
@@ -191,12 +216,12 @@ typedef struct _WDI_LINK_INFO_PARAMETERS_STRUCT
     UINT32 Bandwidth; // Current Bandwidth in MHz
     UINT32 MCS; // Current MCS
 #ifdef __cplusplus
-    _WDI_LINK_INFO_PARAMETERS_STRUCT()
+    _WDI_LINK_INFO_PARAMETERS_STRUCT_V2_0_3()
     {
-        memset( this, 0, sizeof( _WDI_LINK_INFO_PARAMETERS_STRUCT ) );
+        memset( this, 0, sizeof( _WDI_LINK_INFO_PARAMETERS_STRUCT_V2_0_3 ) );
     };
 #endif // __cplusplus
-} WDI_LINK_INFO_PARAMETERS_STRUCT, *PWDI_LINK_INFO_PARAMETERS_STRUCT;
+} WDI_LINK_INFO_PARAMETERS_STRUCT_V2_0_3, *PWDI_LINK_INFO_PARAMETERS_STRUCT_V2_0_3;
 
 
 //
@@ -1778,6 +1803,10 @@ typedef struct _WDI_CONNECTION_SETTINGS
     UINT32 RoamNeededReason; // Roaming needed reason
     WDI_ROAM_TRIGGER RoamTrigger; // Whether this roam is a critical roam because the AP has set the DisassociationImminent bit set in its BSS Transition Request action frame
     BOOLEAN BSSTransitionSupported; // Whether or not 11v BSS transition is supported. The Station must set the BSS Transition field of the Extended capabilities element (Bit 19) to 1 in the association request if this field is non-zero.
+    BOOLEAN MloConnectionSupported; // Whether or not MLO Connection is supported.
+    BOOLEAN IsFIPSConnection; // Whether this is a FIPS mode connection.  The station must use only certified cipher algorithms if HostFIPSModeEnabled is false (i.e. when hardware FIPS support is used).
+    BOOLEAN MSCSSupported; // Whether MSCS is supported by the OS for this connection. If set to true, IHV driver must set the Mirrored SCS field of the Extended Capabilities element to 1.
+    BOOLEAN DSCPToUPMappingSupported; // Whether DSCP to UP Mapping is supported by the OS for this connection. If set to true, IHV driver must set the QoS Map field of the Extended Capabilities element to 1.
 #ifdef __cplusplus
     _WDI_CONNECTION_SETTINGS()
     {
@@ -1785,6 +1814,75 @@ typedef struct _WDI_CONNECTION_SETTINGS
     };
 #endif // __cplusplus
 } WDI_CONNECTION_SETTINGS, *PWDI_CONNECTION_SETTINGS;
+
+
+//
+// Structure definition for connection settings.
+//
+typedef struct _WDI_CONNECTION_SETTINGSV2_0_8
+{
+    BOOLEAN RoamRequest; // Specifies if this is a first time connection or a roam request
+    BOOLEAN HiddenNetwork; // Specifies if this is a hidden network or not
+    BOOLEAN ExcludeUnencrypted; // Sets the dot11ExcludeUnencrypted MIB
+    BOOLEAN MFPEnabled; // 802.11w capabilities must be advertised only if this is TRUE
+    BOOLEAN HostFIPSModeEnabled; // Host-FIPS mode is enabled or not
+    UINT32 RoamNeededReason; // Roaming needed reason
+    WDI_ROAM_TRIGGER RoamTrigger; // Whether this roam is a critical roam because the AP has set the DisassociationImminent bit set in its BSS Transition Request action frame
+    BOOLEAN BSSTransitionSupported; // Whether or not 11v BSS transition is supported. The Station must set the BSS Transition field of the Extended capabilities element (Bit 19) to 1 in the association request if this field is non-zero.
+    BOOLEAN MloConnectionSupported; // Whether or not MLO Connection is supported.
+    BOOLEAN IsFIPSConnection; // Whether this is a FIPS mode connection.  The station must use only certified cipher algorithms if HostFIPSModeEnabled is false (i.e. when hardware FIPS support is used).
+#ifdef __cplusplus
+    _WDI_CONNECTION_SETTINGSV2_0_8()
+    {
+        memset( this, 0, sizeof( _WDI_CONNECTION_SETTINGSV2_0_8 ) );
+    };
+#endif // __cplusplus
+} WDI_CONNECTION_SETTINGSV2_0_8, *PWDI_CONNECTION_SETTINGSV2_0_8;
+
+
+//
+// Structure definition for connection settings.
+//
+typedef struct _WDI_CONNECTION_SETTINGSV2_0_7
+{
+    BOOLEAN RoamRequest; // Specifies if this is a first time connection or a roam request
+    BOOLEAN HiddenNetwork; // Specifies if this is a hidden network or not
+    BOOLEAN ExcludeUnencrypted; // Sets the dot11ExcludeUnencrypted MIB
+    BOOLEAN MFPEnabled; // 802.11w capabilities must be advertised only if this is TRUE
+    BOOLEAN HostFIPSModeEnabled; // Host-FIPS mode is enabled or not
+    UINT32 RoamNeededReason; // Roaming needed reason
+    WDI_ROAM_TRIGGER RoamTrigger; // Whether this roam is a critical roam because the AP has set the DisassociationImminent bit set in its BSS Transition Request action frame
+    BOOLEAN BSSTransitionSupported; // Whether or not 11v BSS transition is supported. The Station must set the BSS Transition field of the Extended capabilities element (Bit 19) to 1 in the association request if this field is non-zero.
+    BOOLEAN MloConnectionSupported; // Whether or not MLO Connection is supported.
+#ifdef __cplusplus
+    _WDI_CONNECTION_SETTINGSV2_0_7()
+    {
+        memset( this, 0, sizeof( _WDI_CONNECTION_SETTINGSV2_0_7 ) );
+    };
+#endif // __cplusplus
+} WDI_CONNECTION_SETTINGSV2_0_7, *PWDI_CONNECTION_SETTINGSV2_0_7;
+
+
+//
+// Structure definition for connection settings.
+//
+typedef struct _WDI_CONNECTION_SETTINGSV1_0_1
+{
+    BOOLEAN RoamRequest; // Specifies if this is a first time connection or a roam request
+    BOOLEAN HiddenNetwork; // Specifies if this is a hidden network or not
+    BOOLEAN ExcludeUnencrypted; // Sets the dot11ExcludeUnencrypted MIB
+    BOOLEAN MFPEnabled; // 802.11w capabilities must be advertised only if this is TRUE
+    BOOLEAN HostFIPSModeEnabled; // Host-FIPS mode is enabled or not
+    UINT32 RoamNeededReason; // Roaming needed reason
+    WDI_ROAM_TRIGGER RoamTrigger; // Whether this roam is a critical roam because the AP has set the DisassociationImminent bit set in its BSS Transition Request action frame
+    BOOLEAN BSSTransitionSupported; // Whether or not 11v BSS transition is supported. The Station must set the BSS Transition field of the Extended capabilities element (Bit 19) to 1 in the association request if this field is non-zero.
+#ifdef __cplusplus
+    _WDI_CONNECTION_SETTINGSV1_0_1()
+    {
+        memset( this, 0, sizeof( _WDI_CONNECTION_SETTINGSV1_0_1 ) );
+    };
+#endif // __cplusplus
+} WDI_CONNECTION_SETTINGSV1_0_1, *PWDI_CONNECTION_SETTINGSV1_0_1;
 
 
 //
@@ -2164,6 +2262,8 @@ typedef NDIS_STATUS WDI_STATUS_CONTAINER;
 
 typedef WDI_START_AP_PARAMETERS WDI_START_AP_PARAMETERS_CONTAINER;
 
+typedef WDI_START_AP_PARAMETERS_V1_0_10 WDI_START_AP_PARAMETERS_CONTAINER_V1_0_10;
+
 typedef WDI_START_AP_PARAMETERS_V1_0_1 WDI_START_AP_PARAMETERS_CONTAINER_V1_0_1;
 
 typedef WDI_BSSID_INFO_STRUCT WDI_BSSID_INFO_CONTAINER;
@@ -2196,6 +2296,38 @@ C_ASSERT( sizeof( ArrayOfElements<WDI_CIPHER_ALGORITHM> ) == sizeof( struct Arra
 typedef ArrayOfElements<WDI_CIPHER_ALGORITHM> WDI_CIPHER_ALGORITHM_LIST_CONTAINER;
 #else // __cplusplus
 typedef struct ArrayOfElementsOfWDI_CIPHER_ALGORITHM WDI_CIPHER_ALGORITHM_LIST_CONTAINER;
+#endif // __cplusplus
+
+struct ArrayOfElementsOfRSNA_AKM_SUITE
+{
+    UINT32 ElementCount;
+    RSNA_AKM_SUITE* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<RSNA_AKM_SUITE> ) == sizeof( struct ArrayOfElementsOfRSNA_AKM_SUITE ) );
+#endif // __cplusplus
+#ifdef __cplusplus
+typedef ArrayOfElements<RSNA_AKM_SUITE> RSNA_AKM_SUITE_CONTAINER;
+#else // __cplusplus
+typedef struct ArrayOfElementsOfRSNA_AKM_SUITE RSNA_AKM_SUITE_CONTAINER;
+#endif // __cplusplus
+
+typedef RSNA_AKM_SUITE RSNA_AKM_SUITE_CONTAINERV2_0_4;
+
+struct ArrayOfElementsOfRSNA_AKM_CIPHER_PAIR
+{
+    UINT32 ElementCount;
+    RSNA_AKM_CIPHER_PAIR* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<RSNA_AKM_CIPHER_PAIR> ) == sizeof( struct ArrayOfElementsOfRSNA_AKM_CIPHER_PAIR ) );
+#endif // __cplusplus
+#ifdef __cplusplus
+typedef ArrayOfElements<RSNA_AKM_CIPHER_PAIR> RSNA_AKM_CIPHER_PAIR_CONTAINER;
+#else // __cplusplus
+typedef struct ArrayOfElementsOfRSNA_AKM_CIPHER_PAIR RSNA_AKM_CIPHER_PAIR_CONTAINER;
 #endif // __cplusplus
 
 typedef WDI_PHY_TYPE WDI_PHY_TYPE_CONTAINER;
@@ -3600,11 +3732,19 @@ typedef WDI_GET_AUTO_POWER_SAVE_STRUCT WDI_GET_AUTO_POWER_SAVE_CONTAINER;
 
 typedef WDI_CONNECTION_SETTINGS WDI_CONNECTION_SETTINGS_CONTAINER;
 
+typedef WDI_CONNECTION_SETTINGSV2_0_8 WDI_CONNECTION_SETTINGS_CONTAINER_V2_0_8;
+
+typedef WDI_CONNECTION_SETTINGSV2_0_7 WDI_CONNECTION_SETTINGS_CONTAINER_V2_0_7;
+
+typedef WDI_CONNECTION_SETTINGSV1_0_1 WDI_CONNECTION_SETTINGS_CONTAINER_V1_0_1;
+
 typedef WDI_CONNECTION_SETTINGSV1_0 WDI_CONNECTION_SETTINGS_CONTAINER_V1_0;
 
 typedef WDI_ASSOCIATION_RESULT_PARAMETERS WDI_ASSOCIATION_RESULT_PARAMETERS_CONTAINER;
 
 typedef WDI_ASSOCIATION_RESULT_PARAMETERSV1_1_10 WDI_ASSOCIATION_RESULT_PARAMETERS_CONTAINERV1_1_10;
+
+typedef WDI_CIPHER_ALGORITHM WDI_CIPHER_ALGORITHM_CONTAINER;
 
 struct ArrayOfElementsOfWDI_ETHERTYPE_ENCAPSULATION_ENTRY
 {
@@ -3659,16 +3799,105 @@ namespace WDI_TLV
 #endif // __cplusplus
 
 //
+// Container for SAE Commit Params
+//
+typedef struct _WDI_SAE_COMMIT_PARAMS
+{
+    struct _WDI_SAE_COMMIT_PARAMS_Optional
+    {
+        UINT32 Scalar_IsPresent : 1;
+        UINT32 Element_IsPresent : 1;
+        UINT32 AntiCloggingToken_IsPresent : 1;
+        UINT32 RejectedGroups_IsPresent : 1;
+        UINT32 RsnaAkmSuite_IsPresent : 1;
+        UINT32 CipherAlgorithm_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_SAE_COMMIT_PARAMS_Optional() : Scalar_IsPresent( FALSE ), Element_IsPresent( FALSE ), AntiCloggingToken_IsPresent( FALSE ), RejectedGroups_IsPresent( FALSE ), RsnaAkmSuite_IsPresent( FALSE ), CipherAlgorithm_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    UINT16_CONTAINER FiniteCyclicGroup;
+    WDI_BYTE_BLOB Scalar;
+    WDI_BYTE_BLOB Element;
+    WDI_BYTE_BLOB AntiCloggingToken;
+    WDI_BYTE_BLOB RejectedGroups;
+    RSNA_AKM_SUITE_CONTAINER RsnaAkmSuite;
+    WDI_CIPHER_ALGORITHM_CONTAINER CipherAlgorithm;
+    UINT16_CONTAINER StatusCode;
+#ifdef __cplusplus
+    _WDI_SAE_COMMIT_PARAMS() : FiniteCyclicGroup( (UINT16_CONTAINER)0 ), CipherAlgorithm( (WDI_CIPHER_ALGORITHM_CONTAINER)0 ), StatusCode( (UINT16_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_SAE_COMMIT_PARAMS, *PWDI_SAE_COMMIT_PARAMS;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SAE_COMMIT_PARAMS * pField );
+    }
+}
+#endif // __cplusplus
+
+//
+// Container for SAE Commit Params
+//
+typedef struct _WDI_SAE_COMMIT_PARAMS_2_0_4
+{
+    struct _WDI_SAE_COMMIT_PARAMS_2_0_4_Optional
+    {
+        UINT32 Scalar_IsPresent : 1;
+        UINT32 Element_IsPresent : 1;
+        UINT32 AntiCloggingToken_IsPresent : 1;
+        UINT32 RejectedGroups_IsPresent : 1;
+        UINT32 RsnaAkmSuite_IsPresent : 1;
+        UINT32 CipherAlgorithm_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_SAE_COMMIT_PARAMS_2_0_4_Optional() : Scalar_IsPresent( FALSE ), Element_IsPresent( FALSE ), AntiCloggingToken_IsPresent( FALSE ), RejectedGroups_IsPresent( FALSE ), RsnaAkmSuite_IsPresent( FALSE ), CipherAlgorithm_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    UINT16_CONTAINER FiniteCyclicGroup;
+    WDI_BYTE_BLOB Scalar;
+    WDI_BYTE_BLOB Element;
+    WDI_BYTE_BLOB AntiCloggingToken;
+    WDI_BYTE_BLOB RejectedGroups;
+    RSNA_AKM_SUITE_CONTAINER RsnaAkmSuite;
+    WDI_CIPHER_ALGORITHM_CONTAINER CipherAlgorithm;
+#ifdef __cplusplus
+    _WDI_SAE_COMMIT_PARAMS_2_0_4() : FiniteCyclicGroup( (UINT16_CONTAINER)0 ), CipherAlgorithm( (WDI_CIPHER_ALGORITHM_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_SAE_COMMIT_PARAMS_2_0_4, *PWDI_SAE_COMMIT_PARAMS_2_0_4;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SAE_COMMIT_PARAMS_2_0_4 * pField );
+    }
+}
+#endif // __cplusplus
+
+//
 // Container for SAE commit request
 //
-typedef struct _WDI_SAE_COMMIT_REQUEST
+typedef struct _WDI_SAE_COMMIT_PARAMS_1_1_10
 {
-    struct _WDI_SAE_COMMIT_REQUEST_Optional
+    struct _WDI_SAE_COMMIT_PARAMS_1_1_10_Optional
     {
+        UINT32 Scalar_IsPresent : 1;
+        UINT32 Element_IsPresent : 1;
         UINT32 AntiCloggingToken_IsPresent : 1;
         UINT32 RejectedGroups_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_SAE_COMMIT_REQUEST_Optional() : AntiCloggingToken_IsPresent( FALSE ), RejectedGroups_IsPresent( FALSE )
+        _WDI_SAE_COMMIT_PARAMS_1_1_10_Optional() : Scalar_IsPresent( FALSE ), Element_IsPresent( FALSE ), AntiCloggingToken_IsPresent( FALSE ), RejectedGroups_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3680,40 +3909,40 @@ typedef struct _WDI_SAE_COMMIT_REQUEST
     WDI_BYTE_BLOB AntiCloggingToken;
     WDI_BYTE_BLOB RejectedGroups;
 #ifdef __cplusplus
-    _WDI_SAE_COMMIT_REQUEST() : FiniteCyclicGroup( (UINT16_CONTAINER)0 )
+    _WDI_SAE_COMMIT_PARAMS_1_1_10() : FiniteCyclicGroup( (UINT16_CONTAINER)0 )
     {
     };
 #endif // __cplusplus
-} WDI_SAE_COMMIT_REQUEST, *PWDI_SAE_COMMIT_REQUEST;
+} WDI_SAE_COMMIT_PARAMS_1_1_10, *PWDI_SAE_COMMIT_PARAMS_1_1_10;
 #ifdef __cplusplus
 namespace WDI_TLV
 {
     namespace PARSER
     {
-        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SAE_COMMIT_REQUEST * pField );
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SAE_COMMIT_PARAMS_1_1_10 * pField );
     }
 }
 #endif // __cplusplus
 
 //
-// Container for SAE confirm request
+// Container for SAE Confirm params
 //
-typedef struct _WDI_SAE_CONFIRM_REQUEST
+typedef struct _WDI_SAE_CONFIRM_FRAME
 {
     UINT16_CONTAINER SendConfirm;
     WDI_BYTE_BLOB Confirm;
 #ifdef __cplusplus
-    _WDI_SAE_CONFIRM_REQUEST() : SendConfirm( (UINT16_CONTAINER)0 )
+    _WDI_SAE_CONFIRM_FRAME() : SendConfirm( (UINT16_CONTAINER)0 )
     {
     };
 #endif // __cplusplus
-} WDI_SAE_CONFIRM_REQUEST, *PWDI_SAE_CONFIRM_REQUEST;
+} WDI_SAE_CONFIRM_FRAME, *PWDI_SAE_CONFIRM_FRAME;
 #ifdef __cplusplus
 namespace WDI_TLV
 {
     namespace PARSER
     {
-        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SAE_CONFIRM_REQUEST * pField );
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SAE_CONFIRM_FRAME * pField );
     }
 }
 #endif // __cplusplus
@@ -3750,6 +3979,15 @@ struct ArrayOfElementsOfWDI_SSID
 #ifdef __cplusplus
 C_ASSERT( sizeof( ArrayOfElements<WDI_SSID> ) == sizeof( struct ArrayOfElementsOfWDI_SSID ) );
 #endif // __cplusplus
+struct ArrayOfElementsOfRSNA_AKM_SUITE_CONTAINERV2_0_4
+{
+    UINT32 ElementCount;
+    RSNA_AKM_SUITE_CONTAINERV2_0_4* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<RSNA_AKM_SUITE_CONTAINERV2_0_4> ) == sizeof( struct ArrayOfElementsOfRSNA_AKM_SUITE_CONTAINERV2_0_4 ) );
+#endif // __cplusplus
 
 //
 // Container for connect parameters.
@@ -3765,8 +4003,10 @@ typedef struct _WDI_CONNECT_PARAMETERS_CONTAINER
         UINT32 AllowedBSSIDs_IsPresent : 1;
         UINT32 OWEDHIE_IsPresent : 1;
         UINT32 UnavailableBandList_IsPresent : 1;
+        UINT32 RsnaAkmCipherSuites_IsPresent : 1;
+        UINT32 RsnaAkmSuites_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_CONNECT_PARAMETERS_CONTAINER_Optional() : HESSIDInfo_IsPresent( FALSE ), AssociationRequestVendorIE_IsPresent( FALSE ), ActivePhyTypeList_IsPresent( FALSE ), DisallowedBSSIDs_IsPresent( FALSE ), AllowedBSSIDs_IsPresent( FALSE ), OWEDHIE_IsPresent( FALSE ), UnavailableBandList_IsPresent( FALSE )
+        _WDI_CONNECT_PARAMETERS_CONTAINER_Optional() : HESSIDInfo_IsPresent( FALSE ), AssociationRequestVendorIE_IsPresent( FALSE ), ActivePhyTypeList_IsPresent( FALSE ), DisallowedBSSIDs_IsPresent( FALSE ), AllowedBSSIDs_IsPresent( FALSE ), OWEDHIE_IsPresent( FALSE ), UnavailableBandList_IsPresent( FALSE ), RsnaAkmCipherSuites_IsPresent( FALSE ), RsnaAkmSuites_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3788,6 +4028,8 @@ typedef struct _WDI_CONNECT_PARAMETERS_CONTAINER
     WDI_ADDRESS_LIST_CONTAINER AllowedBSSIDs;
     WDI_BYTE_BLOB OWEDHIE;
     WDI_BAND_ID_LIST_CONTAINER UnavailableBandList;
+    RSNA_AKM_CIPHER_PAIR_CONTAINER RsnaAkmCipherSuites;
+    RSNA_AKM_SUITE_CONTAINER RsnaAkmSuites;
 } WDI_CONNECT_PARAMETERS_CONTAINER, *PWDI_CONNECT_PARAMETERS_CONTAINER;
 #ifdef __cplusplus
 namespace WDI_TLV
@@ -3863,8 +4105,9 @@ typedef struct _WDI_ASSOCIATION_RESULT_CONTAINER
         UINT32 AuthenticationResponseFrame_IsPresent : 1;
         UINT32 BeaconProbeResponse_IsPresent : 1;
         UINT32 EthertypeEncapTable_IsPresent : 1;
+        UINT32 LocalMloLinkBssId_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_ASSOCIATION_RESULT_CONTAINER_Optional() : AssociationRequestFrame_IsPresent( FALSE ), AssociationResponseFrame_IsPresent( FALSE ), AuthenticationResponseFrame_IsPresent( FALSE ), BeaconProbeResponse_IsPresent( FALSE ), EthertypeEncapTable_IsPresent( FALSE )
+        _WDI_ASSOCIATION_RESULT_CONTAINER_Optional() : AssociationRequestFrame_IsPresent( FALSE ), AssociationResponseFrame_IsPresent( FALSE ), AuthenticationResponseFrame_IsPresent( FALSE ), BeaconProbeResponse_IsPresent( FALSE ), EthertypeEncapTable_IsPresent( FALSE ), LocalMloLinkBssId_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3878,10 +4121,12 @@ typedef struct _WDI_ASSOCIATION_RESULT_CONTAINER
     WDI_BYTE_BLOB BeaconProbeResponse;
     WDI_ETHERTYPE_ENCAPSULATION_LIST_CONTAINER EthertypeEncapTable;
     WDI_PHY_TYPE_LIST_CONTAINER ActivePhyTypeList;
+    WDI_MAC_ADDRESS_CONTAINER LocalMloLinkBssId;
 #ifdef __cplusplus
     _WDI_ASSOCIATION_RESULT_CONTAINER()
     {
         memset( &BSSID, 0, sizeof( BSSID ) );
+        memset( &LocalMloLinkBssId, 0, sizeof( LocalMloLinkBssId ) );
     };
 #endif // __cplusplus
 } WDI_ASSOCIATION_RESULT_CONTAINER, *PWDI_ASSOCIATION_RESULT_CONTAINER;
@@ -3902,17 +4147,15 @@ typedef WDI_SET_DEFAULT_KEY_ID_STRUCT WDI_SET_DEFAULT_KEY_ID_CONTAINER;
 
 typedef WDI_CIPHER_KEY_TYPE WDI_CIPHER_KEY_TYPE_CONTAINER;
 
-typedef WDI_CIPHER_ALGORITHM WDI_CIPHER_ALGORITHM_CONTAINER;
-
 typedef WDI_CIPHER_KEY_TYPE_STRUCT WDI_CIPHER_KEY_TYPE_INFO_CONTAINER;
 
 typedef WDI_RECEIVE_SEQUENCE_COUNT_STRUCT WDI_RECEIVE_SEQUENCE_COUNT_CONTAINER;
 
 typedef WDI_LINK_STATE_CHANGE_PARAMETERS_STRUCT WDI_LINK_STATE_CHANGE_PARAMETERS_CONTAINER;
 
-typedef WDI_LINK_STATE_CHANGE_PARAMETERS_STRUCT_V1 WDI_LINK_STATE_CHANGE_PARAMETERS_CONTAINER_V1;
-
 typedef WDI_LINK_INFO_PARAMETERS_STRUCT WDI_LINK_INFO_CONTAINER;
+
+typedef WDI_LINK_INFO_PARAMETERS_STRUCT_V2_0_3 WDI_LINK_INFO_CONTAINER_V2_0_3;
 
 
 //
@@ -3948,8 +4191,59 @@ typedef struct _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER
         UINT32 IHVKey_IsPresent : 1;
         UINT32 GCMP_256Key_IsPresent : 1;
         UINT32 BIP_GMAC_256Key_IsPresent : 1;
+        UINT32 LinkId_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_Optional() : CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE ), GCMP_256Key_IsPresent( FALSE ), BIP_GMAC_256Key_IsPresent( FALSE )
+        _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_Optional() : CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE ), GCMP_256Key_IsPresent( FALSE ), BIP_GMAC_256Key_IsPresent( FALSE ), LinkId_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_CIPHER_KEY_TYPE_CONTAINER CipherKeyType;
+    WDI_CIPHER_ALGORITHM_CONTAINER CipherAlgorithm;
+    WDI_RECEIVE_SEQUENCE_COUNT_CONTAINER ReceiveSequenceCount;
+    WDI_PRIVATE_BYTE_BLOB CCMPKey;
+    WDI_PRIVATE_BYTE_BLOB GCMPKey;
+    WDI_CIPHER_KEY_TKIP_INFO_CONTAINER TKIPInfo;
+    WDI_PRIVATE_BYTE_BLOB BIPKey;
+    WDI_PRIVATE_BYTE_BLOB WEPKey;
+    WDI_PRIVATE_BYTE_BLOB IHVKey;
+    WDI_PRIVATE_BYTE_BLOB GCMP_256Key;
+    WDI_PRIVATE_BYTE_BLOB BIP_GMAC_256Key;
+    UINT32_CONTAINER LinkId;
+#ifdef __cplusplus
+    _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER() : CipherKeyType( (WDI_CIPHER_KEY_TYPE_CONTAINER)0 ), CipherAlgorithm( (WDI_CIPHER_ALGORITHM_CONTAINER)0 ), LinkId( (UINT32_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER, *PWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER * pField );
+    }
+}
+#endif // __cplusplus
+
+//
+// Container for Specifying a Cipher Key entry.
+//
+typedef struct _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1
+{
+    struct _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1_Optional
+    {
+        UINT32 CCMPKey_IsPresent : 1;
+        UINT32 GCMPKey_IsPresent : 1;
+        UINT32 TKIPInfo_IsPresent : 1;
+        UINT32 BIPKey_IsPresent : 1;
+        UINT32 WEPKey_IsPresent : 1;
+        UINT32 IHVKey_IsPresent : 1;
+        UINT32 GCMP_256Key_IsPresent : 1;
+        UINT32 BIP_GMAC_256Key_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1_Optional() : CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE ), GCMP_256Key_IsPresent( FALSE ), BIP_GMAC_256Key_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3967,17 +4261,17 @@ typedef struct _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER
     WDI_PRIVATE_BYTE_BLOB GCMP_256Key;
     WDI_PRIVATE_BYTE_BLOB BIP_GMAC_256Key;
 #ifdef __cplusplus
-    _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER() : CipherKeyType( (WDI_CIPHER_KEY_TYPE_CONTAINER)0 ), CipherAlgorithm( (WDI_CIPHER_ALGORITHM_CONTAINER)0 )
+    _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1() : CipherKeyType( (WDI_CIPHER_KEY_TYPE_CONTAINER)0 ), CipherAlgorithm( (WDI_CIPHER_ALGORITHM_CONTAINER)0 )
     {
     };
 #endif // __cplusplus
-} WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER, *PWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER;
+} WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1, *PWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1;
 #ifdef __cplusplus
 namespace WDI_TLV
 {
     namespace PARSER
     {
-        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER * pField );
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1 * pField );
     }
 }
 #endif // __cplusplus
@@ -4016,6 +4310,15 @@ struct ArrayOfElementsOfWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER
 };
 #ifdef __cplusplus
 C_ASSERT( sizeof( ArrayOfElements<WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER ) );
+#endif // __cplusplus
+struct ArrayOfElementsOfWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1
+{
+    UINT32 ElementCount;
+    WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1> ) == sizeof( struct ArrayOfElementsOfWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_V1 ) );
 #endif // __cplusplus
 
 //
@@ -4109,9 +4412,9 @@ namespace WDI_TLV
 //
 // Container for Specifying a Cipher Key Mapping Key entry.
 //
-typedef struct _WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1
+typedef struct _WDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1
 {
-    struct _WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1_Optional
+    struct _WDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1_Optional
     {
         UINT32 PeerMacAddress_IsPresent : 1;
         UINT32 CipherKeyID_IsPresent : 1;
@@ -4125,7 +4428,7 @@ typedef struct _WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1
         UINT32 GCMP_256Key_IsPresent : 1;
         UINT32 BIP_GMAC_256Key_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1_Optional() : PeerMacAddress_IsPresent( FALSE ), CipherKeyID_IsPresent( FALSE ), ReceiveSequenceCount_IsPresent( FALSE ), CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE ), GCMP_256Key_IsPresent( FALSE ), BIP_GMAC_256Key_IsPresent( FALSE )
+        _WDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1_Optional() : PeerMacAddress_IsPresent( FALSE ), CipherKeyID_IsPresent( FALSE ), ReceiveSequenceCount_IsPresent( FALSE ), CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE ), GCMP_256Key_IsPresent( FALSE ), BIP_GMAC_256Key_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -4144,18 +4447,18 @@ typedef struct _WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1
     WDI_PRIVATE_BYTE_BLOB GCMP_256Key;
     WDI_PRIVATE_BYTE_BLOB BIP_GMAC_256Key;
 #ifdef __cplusplus
-    _WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1()
+    _WDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1()
     {
         memset( &PeerMacAddress, 0, sizeof( PeerMacAddress ) );
     };
 #endif // __cplusplus
-} WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1, *PWDI_SET_ADD_CIPHER_KEYS_CONTAINERV1;
+} WDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1, *PWDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1;
 #ifdef __cplusplus
 namespace WDI_TLV
 {
     namespace PARSER
     {
-        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1 * pField );
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1 * pField );
     }
 }
 #endif // __cplusplus
@@ -4169,8 +4472,37 @@ typedef struct _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER
     {
         UINT32 PeerMacAddress_IsPresent : 1;
         UINT32 CipherKeyID_IsPresent : 1;
+        UINT32 LinkId_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER_Optional() : PeerMacAddress_IsPresent( FALSE ), CipherKeyID_IsPresent( FALSE )
+        _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER_Optional() : PeerMacAddress_IsPresent( FALSE ), CipherKeyID_IsPresent( FALSE ), LinkId_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_MAC_ADDRESS_CONTAINER PeerMacAddress;
+    WDI_CIPHER_KEY_ID_CONTAINER CipherKeyID;
+    WDI_CIPHER_KEY_TYPE_INFO_CONTAINER CipherKeyTypeInfo;
+    UINT32_CONTAINER LinkId;
+#ifdef __cplusplus
+    _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER() : LinkId( (UINT32_CONTAINER)0 )
+    {
+        memset( &PeerMacAddress, 0, sizeof( PeerMacAddress ) );
+    };
+#endif // __cplusplus
+} WDI_SET_DELETE_CIPHER_KEYS_CONTAINER, *PWDI_SET_DELETE_CIPHER_KEYS_CONTAINER;
+
+//
+// Container for Specifying a Cipher Key Mapping Key entry.
+//
+typedef struct _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1
+{
+    struct _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1_Optional
+    {
+        UINT32 PeerMacAddress_IsPresent : 1;
+        UINT32 CipherKeyID_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1_Optional() : PeerMacAddress_IsPresent( FALSE ), CipherKeyID_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -4180,12 +4512,12 @@ typedef struct _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER
     WDI_CIPHER_KEY_ID_CONTAINER CipherKeyID;
     WDI_CIPHER_KEY_TYPE_INFO_CONTAINER CipherKeyTypeInfo;
 #ifdef __cplusplus
-    _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER()
+    _WDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1()
     {
         memset( &PeerMacAddress, 0, sizeof( PeerMacAddress ) );
     };
 #endif // __cplusplus
-} WDI_SET_DELETE_CIPHER_KEYS_CONTAINER, *PWDI_SET_DELETE_CIPHER_KEYS_CONTAINER;
+} WDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1, *PWDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1;
 typedef WDI_NETWORK_LIST_OFFLOAD_CONFIG WDI_NETWORK_LIST_OFFLOAD_CONFIG_CONTAINER;
 
 
@@ -4842,8 +5174,9 @@ typedef struct _WDI_TASK_DOT11_RESET_PARAMETERS
     struct _WDI_TASK_DOT11_RESET_PARAMETERS_Optional
     {
         UINT32 ResetMACAddress_IsPresent : 1;
+        UINT32 ResetMloLinkMACAddresses_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_TASK_DOT11_RESET_PARAMETERS_Optional() : ResetMACAddress_IsPresent( FALSE )
+        _WDI_TASK_DOT11_RESET_PARAMETERS_Optional() : ResetMACAddress_IsPresent( FALSE ), ResetMloLinkMACAddresses_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -4851,6 +5184,7 @@ typedef struct _WDI_TASK_DOT11_RESET_PARAMETERS
 
     WDI_DOT11_RESET_PARAMETERS_CONTAINER Dot11ResetParameters;
     WDI_MAC_ADDRESS_CONTAINER ResetMACAddress;
+    WDI_ADDRESS_LIST_CONTAINER ResetMloLinkMACAddresses;
 #ifdef __cplusplus
     _WDI_TASK_DOT11_RESET_PARAMETERS()
     {
@@ -5266,14 +5600,14 @@ struct ArrayOfElementsOfWDI_SET_ADD_CIPHER_KEYS_CONTAINER
 #ifdef __cplusplus
 C_ASSERT( sizeof( ArrayOfElements<WDI_SET_ADD_CIPHER_KEYS_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_SET_ADD_CIPHER_KEYS_CONTAINER ) );
 #endif // __cplusplus
-struct ArrayOfElementsOfWDI_SET_ADD_CIPHER_KEYS_CONTAINERV1
+struct ArrayOfElementsOfWDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1
 {
     UINT32 ElementCount;
-    WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1* pElements;
+    WDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1* pElements;
     BOOLEAN MemoryInternallyAllocated;
 };
 #ifdef __cplusplus
-C_ASSERT( sizeof( ArrayOfElements<WDI_SET_ADD_CIPHER_KEYS_CONTAINERV1> ) == sizeof( struct ArrayOfElementsOfWDI_SET_ADD_CIPHER_KEYS_CONTAINERV1 ) );
+C_ASSERT( sizeof( ArrayOfElements<WDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1> ) == sizeof( struct ArrayOfElementsOfWDI_SET_ADD_CIPHER_KEYS_CONTAINER_V1 ) );
 #endif // __cplusplus
 
 //
@@ -5302,6 +5636,15 @@ struct ArrayOfElementsOfWDI_SET_DELETE_CIPHER_KEYS_CONTAINER
 };
 #ifdef __cplusplus
 C_ASSERT( sizeof( ArrayOfElements<WDI_SET_DELETE_CIPHER_KEYS_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_SET_DELETE_CIPHER_KEYS_CONTAINER ) );
+#endif // __cplusplus
+struct ArrayOfElementsOfWDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1
+{
+    UINT32 ElementCount;
+    WDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1> ) == sizeof( struct ArrayOfElementsOfWDI_SET_DELETE_CIPHER_KEYS_CONTAINER_V1 ) );
 #endif // __cplusplus
 
 //
@@ -5567,6 +5910,21 @@ typedef EmptyMessageStructureType WDI_GET_BSS_ENTRY_LIST_UPDATE_RESULTS, *PWDI_G
 
 
 //
+// Parameters for WDI_SET_OWE_DH_IE
+//
+typedef struct _WDI_SET_OWE_DH_IE_PARAMETERS
+{
+    WDI_BYTE_BLOB OWEDHIE;
+} WDI_SET_OWE_DH_IE_PARAMETERS, *PWDI_SET_OWE_DH_IE_PARAMETERS;
+
+
+//
+// No TLV data needed, header is sufficient
+//
+typedef EmptyMessageStructureType WDI_SET_OWE_DH_IE_RESULTS, *PWDI_SET_OWE_DH_IE_RESULTS;
+
+
+//
 // 
 //
 typedef struct _WDI_INDICATION_DISASSOCIATION_PARAMETERS
@@ -5616,6 +5974,15 @@ struct ArrayOfElementsOfWDI_LINK_INFO_CONTAINER
 };
 #ifdef __cplusplus
 C_ASSERT( sizeof( ArrayOfElements<WDI_LINK_INFO_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_LINK_INFO_CONTAINER ) );
+#endif // __cplusplus
+struct ArrayOfElementsOfWDI_LINK_INFO_CONTAINER_V2_0_3
+{
+    UINT32 ElementCount;
+    WDI_LINK_INFO_CONTAINER_V2_0_3* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_LINK_INFO_CONTAINER_V2_0_3> ) == sizeof( struct ArrayOfElementsOfWDI_LINK_INFO_CONTAINER_V2_0_3 ) );
 #endif // __cplusplus
 
 //
@@ -6762,11 +7129,12 @@ typedef struct _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS
 {
     struct _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS_Optional
     {
-        UINT32 SAECommitResponse_IsPresent : 1;
-        UINT32 SAEConfirmResponse_IsPresent : 1;
+        UINT32 SAECommitFrame_IsPresent : 1;
+        UINT32 SAEConfirmFrame_IsPresent : 1;
         UINT32 SAEStatus_IsPresent : 1;
+        UINT32 LocalMloLinkBssId_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS_Optional() : SAECommitResponse_IsPresent( FALSE ), SAEConfirmResponse_IsPresent( FALSE ), SAEStatus_IsPresent( FALSE )
+        _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS_Optional() : SAECommitFrame_IsPresent( FALSE ), SAEConfirmFrame_IsPresent( FALSE ), SAEStatus_IsPresent( FALSE ), LocalMloLinkBssId_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -6774,13 +7142,15 @@ typedef struct _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS
 
     WDI_MAC_ADDRESS_CONTAINER BssId;
     WDI_SAE_INDICATION_TYPE_CONTAINER SAEIndicationType;
-    WDI_BYTE_BLOB SAECommitResponse;
-    WDI_BYTE_BLOB SAEConfirmResponse;
+    WDI_BYTE_BLOB SAECommitFrame;
+    WDI_BYTE_BLOB SAEConfirmFrame;
     WDI_SAE_STATUS_CONTAINER SAEStatus;
+    WDI_MAC_ADDRESS_CONTAINER LocalMloLinkBssId;
 #ifdef __cplusplus
     _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS() : SAEIndicationType( (WDI_SAE_INDICATION_TYPE_CONTAINER)0 ), SAEStatus( (WDI_SAE_STATUS_CONTAINER)0 )
     {
         memset( &BssId, 0, sizeof( BssId ) );
+        memset( &LocalMloLinkBssId, 0, sizeof( LocalMloLinkBssId ) );
     };
 #endif // __cplusplus
 } WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS, *PWDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS;
@@ -6793,11 +7163,11 @@ typedef struct _WDI_SET_SAE_AUTH_PARAMS_COMMAND
 {
     struct _WDI_SET_SAE_AUTH_PARAMS_COMMAND_Optional
     {
-        UINT32 SAECommitRequest_IsPresent : 1;
-        UINT32 SAEConfirmRequest_IsPresent : 1;
+        UINT32 SAECommitParams_IsPresent : 1;
+        UINT32 SAEConfirmParams_IsPresent : 1;
         UINT32 SAEStatus_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_SET_SAE_AUTH_PARAMS_COMMAND_Optional() : SAECommitRequest_IsPresent( FALSE ), SAEConfirmRequest_IsPresent( FALSE ), SAEStatus_IsPresent( FALSE )
+        _WDI_SET_SAE_AUTH_PARAMS_COMMAND_Optional() : SAECommitParams_IsPresent( FALSE ), SAEConfirmParams_IsPresent( FALSE ), SAEStatus_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -6805,8 +7175,8 @@ typedef struct _WDI_SET_SAE_AUTH_PARAMS_COMMAND
 
     WDI_MAC_ADDRESS_CONTAINER BssId;
     WDI_SAE_REQUEST_TYPE_CONTAINER SAERequestType;
-    WDI_SAE_COMMIT_REQUEST SAECommitRequest;
-    WDI_SAE_CONFIRM_REQUEST SAEConfirmRequest;
+    WDI_SAE_COMMIT_PARAMS SAECommitParams;
+    WDI_SAE_CONFIRM_FRAME SAEConfirmParams;
     WDI_SAE_STATUS_CONTAINER SAEStatus;
 #ifdef __cplusplus
     _WDI_SET_SAE_AUTH_PARAMS_COMMAND() : SAERequestType( (WDI_SAE_REQUEST_TYPE_CONTAINER)0 ), SAEStatus( (WDI_SAE_STATUS_CONTAINER)0 )
@@ -8157,6 +8527,40 @@ extern "C" {
         _In_ PCTLV_CONTEXT Context,
         _Out_opt_ WDI_GET_BSS_ENTRY_LIST_UPDATE_RESULTS* pParsedMessage );
     void __stdcall CleanupParsedWdiGetBssEntryListFromIhv( _In_ WDI_GET_BSS_ENTRY_LIST_UPDATE_RESULTS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiSetOweDhIeToIhv(
+        _In_ WDI_SET_OWE_DH_IE_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_SET_OWE_DH_IE_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiSetOweDhIeToIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiSetOweDhIeToIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_SET_OWE_DH_IE_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiSetOweDhIeToIhv( _In_ WDI_SET_OWE_DH_IE_PARAMETERS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiSetOweDhIeFromIhv(
+        _In_opt_ WDI_SET_OWE_DH_IE_RESULTS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+
+    NDIS_STATUS __stdcall ParseWdiSetOweDhIeFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_opt_ WDI_SET_OWE_DH_IE_RESULTS* pParsedMessage );
+    void __stdcall CleanupParsedWdiSetOweDhIeFromIhv( _In_ WDI_SET_OWE_DH_IE_RESULTS* pParsedMessage );
 
     NDIS_STATUS __stdcall GenerateWdiIndicationDisassociationFromIhv(
         _In_ WDI_INDICATION_DISASSOCIATION_PARAMETERS const * pInput,
@@ -10153,6 +10557,9 @@ extern "C" {
 #define GenerateWdiGetBssEntryList GenerateWdiGetBssEntryListToIhv
 #define ParseWdiGetBssEntryList ParseWdiGetBssEntryListFromIhv
 #define CleanupParsedWdiGetBssEntryList CleanupParsedWdiGetBssEntryListFromIhv
+#define GenerateWdiSetOweDhIe GenerateWdiSetOweDhIeToIhv
+#define ParseWdiSetOweDhIe ParseWdiSetOweDhIeFromIhv
+#define CleanupParsedWdiSetOweDhIe CleanupParsedWdiSetOweDhIeFromIhv
 #define ParseWdiIndicationDisassociation ParseWdiIndicationDisassociationFromIhv
 #define CleanupParsedWdiIndicationDisassociation CleanupParsedWdiIndicationDisassociationFromIhv
 #define ParseWdiIndicationRoamingNeeded ParseWdiIndicationRoamingNeededFromIhv
@@ -10417,6 +10824,9 @@ extern "C" {
 #define ParseWdiGetBssEntryList ParseWdiGetBssEntryListToIhv
 #define CleanupParsedWdiGetBssEntryList CleanupParsedWdiGetBssEntryListToIhv
 #define GenerateWdiGetBssEntryList GenerateWdiGetBssEntryListFromIhv
+#define ParseWdiSetOweDhIe ParseWdiSetOweDhIeToIhv
+#define CleanupParsedWdiSetOweDhIe CleanupParsedWdiSetOweDhIeToIhv
+#define GenerateWdiSetOweDhIe GenerateWdiSetOweDhIeFromIhv
 #define GenerateWdiIndicationDisassociation GenerateWdiIndicationDisassociationFromIhv
 #define GenerateWdiIndicationRoamingNeeded GenerateWdiIndicationRoamingNeededFromIhv
 #define GenerateWdiIndicationLinkStateChange GenerateWdiIndicationLinkStateChangeFromIhv

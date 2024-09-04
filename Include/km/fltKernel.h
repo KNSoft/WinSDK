@@ -127,6 +127,12 @@ extern "C" {
 
 #define FLT_MGR_WIN10_NI (NTDDI_VERSION >= NTDDI_WIN10_NI)
 
+//
+//  This defines items that only exist in Windows Gallium or later.
+//
+
+#define FLT_MGR_WIN11_GA (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 //  Standard includes
@@ -3686,6 +3692,22 @@ FltCreateSystemVolumeInformationFolder (
     _In_ PFLT_INSTANCE Instance
     );
 
+#if FLT_MGR_WIN11_GA
+
+_Must_inspect_result_
+__drv_maxIRQL(APC_LEVEL)
+NTSTATUS
+FLTAPI
+FltMupGetProviderInfoFromFileObject(
+    _In_ PFLT_INSTANCE Instance,
+    _In_ PFILE_OBJECT FileObject,
+    _In_ ULONG Level,
+    _Out_writes_(*BufferSize) PVOID Buffer,
+    _Inout_ PULONG BufferSize
+    );
+
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 //                  CONTEXT routines
@@ -5902,6 +5924,19 @@ FltRetrieveFileInfoOnCreateCompletionEx (
 
 #endif
 
+#if FLT_MGR_WIN11_GA
+
+_IRQL_requires_max_(APC_LEVEL)
+NTSTATUS
+FLTAPI
+FltRequestSecurityInfoOnCreateCompletion (
+    _In_ PFLT_FILTER Filter,
+    _In_ PFLT_CALLBACK_DATA Data,
+    _In_ SECURITY_INFORMATION SecurityInformation
+    );
+
+#endif
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -6110,7 +6145,7 @@ FltPropagateIrpExtension (
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-#if FLT_MGR_WIN10_NI
+#if FLT_MGR_WIN10_VB
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTSTATUS

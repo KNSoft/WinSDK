@@ -12,6 +12,32 @@
 
 using namespace __crt_mbstring;
 
+int __cdecl __crt_mbstring::__mblen_utf8(const char *s)
+{
+    // Optimize for ASCII if in initial state
+    const uint8_t first_byte = *s;
+    if ((first_byte & 0x80) == 0)
+    {
+        return first_byte == '\0' ? 0 : 1;
+    }
+    else if ((first_byte & 0xe0) == 0xc0)
+    {
+        return 2;
+    }
+    else if ((first_byte & 0xf0) == 0xe0)
+    {
+        return 3;
+    }
+    else if ((first_byte & 0xf8) == 0xf0)
+    {
+        return 4;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
 extern "C" size_t __cdecl mbrtoc32(char32_t* pc32, const char* s, size_t n, mbstate_t* ps)
 {
     // TODO: Bug 13307590 says this is always assuming UTF-8.
@@ -47,34 +73,27 @@ size_t __cdecl __crt_mbstring::__mbrtoc32_utf8(char32_t* pc32, const char* s, si
     const bool init_state = (ps->_State == 0);
     if (init_state)
     {
+        const int code_point_length = __mblen_utf8(s);
         const uint8_t first_byte = static_cast<uint8_t>(*s++);
 
-        // Optimize for ASCII if in initial state
-        if ((first_byte & 0x80) == 0)
+        if (code_point_length == 0 || code_point_length == 1)
         {
             if (pc32 != nullptr)
             {
                 *pc32 = first_byte;
             }
-            return first_byte != '\0' ? 1 : 0;
+            return code_point_length;
         }
 
-        if ((first_byte & 0xe0) == 0xc0)
+        if (code_point_length >= 2 && code_point_length <= 4)
         {
-            length = 2;
-        }
-        else if ((first_byte & 0xf0) == 0xe0)
-        {
-            length = 3;
-        }
-        else if ((first_byte & 0xf8) == 0xf0)
-        {
-            length = 4;
+            length = static_cast<uint8_t>(code_point_length);
         }
         else
         {
             return return_illegal_sequence(ps, ptd);
         }
+
         bytes_needed = length;
         // Mask out the length bits
         c32 = first_byte & ((1 << (7 - length)) - 1);

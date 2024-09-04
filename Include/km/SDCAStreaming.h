@@ -4,6 +4,13 @@
 
 #pragma once
 
+#ifndef ANYSIZE_ARRAY
+#define ANYSIZE_ARRAY 1
+#endif
+
+#define MAX_PATH_DESCRIPTORS 16
+#define MAX_DATAPORT_PER_TERMINAL 16
+
 //
 // KSPROPERTYSETID_Sdca
 //
@@ -14,20 +21,73 @@ DEFINE_GUIDSTRUCT("55EFF601-40D2-4FC9-B41D-09B18C6BFB1F", KSPROPERTYSETID_Sdca);
 
 typedef enum {
     KSPROPERTY_SDCA_FUNCTION_INFORMATION    = 1,   // get
+    KSPROPERTY_SDCA_VENDOR_SPECIFIC         = 2,   // get/set. Vendor defined data may follow KSPROPERTY header
+    KSPROPERTY_SDCA_FUNCTION_CAPABILITY     = 3,
+    KSPROPERTY_SDCA_PATH_DESCRIPTORS        = 4,
+    KSPROPERTY_SDCA_CREATE_PATH             = 5,
+    KSPROPERTY_SDCA_DESTROY_PATH            = 6,
+    KSPROPERTY_SDCA_START_PATH              = 7,
+    KSPROPERTY_SDCA_STOP_PATH               = 8,
+    KSPROPERTY_SDCA_ACCESS_EVENTS           = 9,    // set
 } KSPROPERTY_SDCA;
 
-typedef struct _SDCA_FUNCTION_INFORMATION
+typedef enum _SDCA_PATH {
+    SdcaPathUltrasoundRender                = 0x1,
+    SdcaPathUltrasoundCapture               = 0x2, 
+    SdcaPathReferenceStream                 = 0x4,
+    SdcaPathIvSense                         = 0x8,
+} SDCA_PATH, *PSDCA_PATH;
+
+typedef enum _SDCA_STREAMING_FUNCTION_INFORMATION_FLAGS
 {
-    ULONG Size;                     // initialized to size of this version of the structure
+    SdcaFunctionInformationFlagSubSystemIdPresent  = 0x00000001,
+    SdcaFunctionInformationFlagControllerIdPresent = 0x00000002,
+    SdcaFunctionInformationFlagLinkIdPresent       = 0x00000004,
+    SdcaFunctionInformationFlagPeripheralIdPresent = 0x00000008,
+} SDCA_STREAMING_FUNCTION_INFORMATION_FLAGS;
+
+typedef struct _SDCA_STREAMING_FUNCTION_INFORMATION
+{
+    ULONG Size;
+    ULONG Flags;
+    ULONG FunctionInformationId;
+    UINT8 FunctionNumber;
     UINT8 FunctionSdcaVersion;
+    UINT8 FunctionSdcaRevision;
     UINT8 FunctionType;
     UINT16 FunctionManufacturerId;
     UINT16 FunctionId;
     UINT8 FunctionVersion;
+    ULONG SubSystemId;
     UINT8 ControllerId;
     UINT8 LinkId;
-    UINT8 PerhiperalId;
-} SDCA_FUNCTION_INFORMATION, * PSDCA_FUNCTION_INFORMATION;
+    UINT8 PeripheralId;
+    UINT8 UniqueId;
+} SDCA_STREAMING_FUNCTION_INFORMATION, *PSDCA_STREAMING_FUNCTION_INFORMATION;
+
+typedef struct 
+{ 
+    ULONG FunctionCount; 
+    SDCA_STREAMING_FUNCTION_INFORMATION FunctionInfoList[ANYSIZE_ARRAY]; 
+} SDCA_FUNCTION_INFORMATION_LIST, * PSDCA_FUNCTION_INFORMATION_LIST;
+
+typedef struct 
+{ 
+    ULONG Size;
+    ULONG FunctionInformationId; 
+    ULONG DataPortCount;
+    UINT8 DataPorts[MAX_DATAPORT_PER_TERMINAL];
+    ULONG FormatCount;
+    WAVEFORMATEXTENSIBLE Formats[ANYSIZE_ARRAY];
+} SDCA_PATH_DESCRIPTOR, * PSDCA_PATH_DESCRIPTOR;
+
+typedef struct 
+{
+    ULONG Size;
+    SDCA_PATH SdcaPath;
+    ULONG EndpointId;
+    ULONG DescriptorCount;
+} SDCA_PATH_DESCRIPTORS, * PSDCA_PATH_DESCRIPTORS;
 
 //
 // KSPROPERTYSETID_SdcaKws
@@ -36,10 +96,6 @@ typedef struct _SDCA_FUNCTION_INFORMATION
     0x947d5153, 0x1286, 0x468c, 0xa6, 0x8d, 0xf8, 0x39, 0x56, 0x3, 0x7f, 0xfd
 DEFINE_GUIDSTRUCT("947D5153-1286-468C-A68D-F83956037FFD", KSPROPERTYSETID_SdcaKws);
 #define KSPROPERTYSETID_SdcaKws DEFINE_GUIDNAMED(KSPROPERTYSETID_SdcaKws)
-
-#ifndef ANYSIZE_ARRAY
-#define ANYSIZE_ARRAY 1
-#endif
 
 #define MAX_SDCA_ENTITY_LABEL_LENGTH 12
 
@@ -114,7 +170,7 @@ typedef struct _SDCA_KWS_NOTIFICATIONS
 {
     KEVENT Suspend;                                         // event indicating that KWS has been suspended
     KEVENT Resume;                                          // event indicating KWS suspention has concluded
-} SDCA_KWS_NOTIFICATIONS, *PSDCA_KWS_NOTIFICATIONS;
+} SDCA_KWS_NOTIFICATIONS, *PSDCA_KWS_NOTIFICATIONS, SDCA_ACCESS_EVENTS, *PSDCA_ACCESS_EVENTS;
 
 typedef enum
 {

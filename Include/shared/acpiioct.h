@@ -83,6 +83,11 @@ Environment:
 
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+
+#endif
+
 //
 // -----------------------------V1 Data Structures------------------------------
 //
@@ -191,6 +196,11 @@ typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1_EX {
     _Field_size_(ArgumentCount)
     ACPI_METHOD_ARGUMENT_V1    Argument[ANYSIZE_ARRAY];
 } ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1_EX, *PACPI_EVAL_INPUT_BUFFER_COMPLEX_V1_EX;
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+
+#endif
 
 //
 // Define ACPI_METHOD_ARGUMENT structure as V1 for DDKVERSION < NTDDI_WIN10_RS2
@@ -492,6 +502,11 @@ typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX_V2_EX {
 #define ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE_V2_EX  'QieA'
 #define ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE_V2_EX        'RieA'
 #define ACPI_EVAL_OUTPUT_BUFFER_SIGNATURE_V2                  'KoeA'
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+
 #endif
 
 #define ACPI_METHOD_ARGUMENT_INTEGER                      0x0

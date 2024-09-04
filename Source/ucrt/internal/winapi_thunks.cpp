@@ -15,11 +15,6 @@
 #include <appmodel.h>
 #include <roapi.h>
 
-// This is simlar to msvcrt.
-#if _M_AMD64 || _M_ARM || _M_ARM64 || _M_HYBRID
-#define FLS_ALWAYS_AVAILABLE 1
-#endif
-
  WINBASEAPI
  _Success_(return > 0 && return < BufferLength)
  DWORD
@@ -48,10 +43,20 @@ extern "C" WINBASEAPI PVOID WINAPI LocateXStateFeature(
     _Out_opt_ PDWORD   length
     );
 
+_Must_inspect_result_
+extern "C" WINBASEAPI BOOL WINAPI GetFileInformationByName(
+    _In_ PCWSTR FileName,
+    _In_ DWORD /* FILE_INFO_BY_NAME_CLASS */ FileInformationClass,
+    _Out_writes_bytes_(FileInfoBufferSize) PVOID FileInfoBuffer,
+    _In_ ULONG FileInfoBufferSize
+    );
+
 #define _ACRT_APPLY_TO_LATE_BOUND_MODULES_0                                                              \
     _APPLY(api_ms_win_core_datetime_l1_1_1,              "api-ms-win-core-datetime-l1-1-1"             ) \
+    _APPLY(api_ms_win_core_fibers_l1_1_2,                "api-ms-win-core-fibers-l1-1-2"               ) \
     _APPLY(api_ms_win_core_file_l1_2_4,                  "api-ms-win-core-file-l1-2-4"                 ) \
     _APPLY(api_ms_win_core_file_l1_2_2,                  "api-ms-win-core-file-l1-2-2"                 ) \
+    _APPLY(api_ms_win_core_file_l2_1_4,                  "api-ms-win-core-file-l2-1-4"                 ) \
     _APPLY(api_ms_win_core_localization_l1_2_1,          "api-ms-win-core-localization-l1-2-1"         ) \
     _APPLY(api_ms_win_core_localization_obsolete_l1_2_0, "api-ms-win-core-localization-obsolete-l1-2-0") \
     _APPLY(api_ms_win_core_processthreads_l1_1_2,        "api-ms-win-core-processthreads-l1-1-2"       ) \
@@ -71,28 +76,18 @@ extern "C" WINBASEAPI PVOID WINAPI LocateXStateFeature(
     _APPLY(api_ms_win_appmodel_runtime_l1_1_2,           "api-ms-win-appmodel-runtime-l1-1-2"          ) \
     _APPLY(user32,                                       "user32"                                      )
 
-#if FLS_ALWAYS_AVAILABLE
-
-#define _ACRT_APPLY_TO_LATE_BOUND_MODULES_1 /* nothing */
-
-#else
-
-#define _ACRT_APPLY_TO_LATE_BOUND_MODULES_1                                                              \
-    _APPLY(api_ms_win_core_fibers_l1_1_0,                "api-ms-win-core-fibers-l1-1-0"               )
-
-#endif
-
 #define _ACRT_APPLY_TO_LATE_BOUND_MODULES  \
     _ACRT_APPLY_TO_LATE_BOUND_MODULES_0 \
-    _ACRT_APPLY_TO_LATE_BOUND_MODULES_1 \
 
 #define _ACRT_APPLY_TO_LATE_BOUND_FUNCTIONS_0                                                                                                           \
     _APPLY(AreFileApisANSI,                             ({ /* api_ms_win_core_file_l1_2_2, */            kernel32                                   })) \
     _APPLY(CompareStringEx,                             ({ api_ms_win_core_string_l1_1_0,                kernel32                                   })) \
     _APPLY(EnumSystemLocalesEx,                         ({ api_ms_win_core_localization_l1_2_1,          kernel32                                   })) \
+    _APPLY(FlsGetValue2,                                ({ api_ms_win_core_fibers_l1_1_2,                kernelbase                                 })) \
     _APPLY(GetActiveWindow,                             ({ api_ms_win_rtcore_ntuser_window_l1_1_0,       user32                                     })) \
     _APPLY(GetDateFormatEx,                             ({ api_ms_win_core_datetime_l1_1_1,              kernel32                                   })) \
     _APPLY(GetTempPath2W,                               ({ api_ms_win_core_file_l1_2_4,                  kernelbase                                 })) \
+    _APPLY(GetFileInformationByName,                    ({ api_ms_win_core_file_l2_1_4,                  kernelbase                                 })) \
     _APPLY(GetEnabledXStateFeatures,                    ({ api_ms_win_core_xstate_l2_1_0,                kernel32                                   })) \
     _APPLY(GetLastActivePopup,                          ({ ext_ms_win_ntuser_dialogbox_l1_1_0,           user32                                     })) \
     _APPLY(GetLocaleInfoEx,                             ({ api_ms_win_core_localization_l1_2_1,          kernel32                                   })) \
@@ -102,7 +97,6 @@ extern "C" WINBASEAPI PVOID WINAPI LocateXStateFeature(
     _APPLY(GetUserDefaultLocaleName,                    ({ api_ms_win_core_localization_l1_2_1,          kernel32                                   })) \
     _APPLY(GetUserObjectInformationW,                   ({ ext_ms_win_ntuser_windowstation_l1_1_0,       user32                                     })) \
     _APPLY(GetXStateFeaturesMask,                       ({ api_ms_win_core_xstate_l2_1_0,                kernel32                                   })) \
-    _APPLY(InitializeCriticalSectionEx,                 ({ api_ms_win_core_synch_l1_2_0,                 kernel32                                   })) \
     _APPLY(IsValidLocaleName,                           ({ api_ms_win_core_localization_l1_2_1,          kernel32                                   })) \
     _APPLY(LCMapStringEx,                               ({ api_ms_win_core_localization_l1_2_1,          kernel32                                   })) \
     _APPLY(LCIDToLocaleName,                            ({ api_ms_win_core_localization_obsolete_l1_2_0, kernel32                                   })) \
@@ -119,23 +113,8 @@ extern "C" WINBASEAPI PVOID WINAPI LocateXStateFeature(
     _APPLY(SetThreadStackGuarantee,                     ({ api_ms_win_core_processthreads_l1_1_2,        kernel32                                   })) \
     _APPLY(SystemFunction036,                           ({ api_ms_win_security_systemfunctions_l1_1_0,   advapi32                                   }))
 
-#if FLS_ALWAYS_AVAILABLE
-
-#define _ACRT_APPLY_TO_LATE_BOUND_FUNCTIONS_1 /* nothing */
-
-#else
-
-#define _ACRT_APPLY_TO_LATE_BOUND_FUNCTIONS_1                                                                                                           \
-    _APPLY(FlsAlloc,                                    ({ api_ms_win_core_fibers_l1_1_0,                kernel32                                   })) \
-    _APPLY(FlsFree,                                     ({ api_ms_win_core_fibers_l1_1_0,                kernel32                                   })) \
-    _APPLY(FlsGetValue,                                 ({ api_ms_win_core_fibers_l1_1_0,                kernel32                                   })) \
-    _APPLY(FlsSetValue,                                 ({ api_ms_win_core_fibers_l1_1_0,                kernel32                                   }))
-
-#endif
-
 #define _ACRT_APPLY_TO_LATE_BOUND_FUNCTIONS \
     _ACRT_APPLY_TO_LATE_BOUND_FUNCTIONS_0 \
-    _ACRT_APPLY_TO_LATE_BOUND_FUNCTIONS_1 \
 
 namespace
 {
@@ -181,23 +160,20 @@ namespace
 // but the attempt failed.
 static HMODULE module_handles[module_id_count];
 
-// This table stores the function pointers that we have loaded dynamically.  The
-// function pointers are stored in encoded form via __crt_fast_encode_ponter.  If
-// a function pointer is an encoded null pointer, we have not yet attempted to
-// get that function pointer.  If a function pointer is an encoded -1, we have
+// This table stores the function pointers that we have loaded dynamically. 
+// If a function pointer is a null pointer, we have not yet attempted to
+// get that function pointer.  If a function pointer is an -1, we have
 // attempted to get that function pointer but the attempt failed.
-static void* encoded_function_pointers[function_id_count];
+#pragma data_seg(push, almostro, ".fptable")
+#pragma bss_seg(push, almostro, ".fptable")
+static void* function_pointers[function_id_count];
+#pragma bss_seg(pop, almostro)
+#pragma data_seg(pop, almostro)
 
 extern "C" bool __cdecl __acrt_initialize_winapi_thunks()
 {
-    void* const encoded_nullptr = __crt_fast_encode_pointer(nullptr);
-
-    for (void*& p : encoded_function_pointers)
-    {
-        p = encoded_nullptr;
-    }
-
-    return true;
+    DWORD old_prot;
+    return VirtualProtect(function_pointers, sizeof(function_pointers), PAGE_READONLY, &old_prot) ? true : false;
 }
 
 extern "C" bool __cdecl __acrt_uninitialize_winapi_thunks(bool const terminating)
@@ -324,7 +300,72 @@ static __forceinline void* __cdecl try_get_proc_address_from_first_available_mod
     return reinterpret_cast<void*>(GetProcAddress(module_handle, name));
 }
 
-static void* __cdecl try_get_function(
+DECLSPEC_NOINLINE
+static void* __cdecl try_get_function_slow(
+    function_id      const id,
+    char      const* const name,
+    module_id const* const first_module_id,
+    module_id const* const last_module_id
+    ) throw()
+{
+    // If we haven't yet cached the function pointer, try to import it from any
+    // of the modules in which it might be defined.  If this fails, cache the
+    // sentinel pointer so that we don't attempt to load this function again:
+    void* const new_fp = try_get_proc_address_from_first_available_module(name, first_module_id, last_module_id);
+
+    __acrt_lock(__acrt_function_pointer_table_lock);
+
+    DWORD old_prot;
+    BOOL vp_result = VirtualProtect(function_pointers, sizeof(function_pointers), PAGE_READWRITE, &old_prot);
+    if (vp_result == FALSE)
+    {
+        abort();
+    }
+
+    if (!new_fp)
+    {
+        void* const cached_fp =
+            __crt_interlocked_exchange_pointer(
+                function_pointers + id,
+                invalid_function_sentinel());
+
+        if (cached_fp)
+        {
+            _ASSERTE(cached_fp == invalid_function_sentinel());
+        }
+
+        goto end;
+    }
+
+    // Swap the newly obtained function pointer into the cache.  The cache may
+    // no longer contain a null pointer if another thread obtained the
+    // function address while we were doing the same (both threads should have
+    // gotten the same function pointer):
+    {
+        void* const cached_fp =
+            __crt_interlocked_exchange_pointer(
+                function_pointers + id,
+                new_fp);
+
+        if (cached_fp)
+        {
+            _ASSERTE(cached_fp == new_fp);
+        }
+    }
+
+end:
+    vp_result = VirtualProtect(function_pointers, sizeof(function_pointers), PAGE_READONLY, &old_prot);
+    if (vp_result == FALSE)
+    {
+        abort();
+    }
+
+    __acrt_unlock(__acrt_function_pointer_table_lock);
+
+    return new_fp;
+}
+
+static __forceinline void* __cdecl try_get_function(
     function_id      const id,
     char      const* const name,
     module_id const* const first_module_id,
@@ -333,8 +374,8 @@ static void* __cdecl try_get_function(
 {
     // First check to see if we've cached the function pointer:
     {
-        void* const cached_fp = __crt_fast_decode_pointer(
-            __crt_interlocked_read_pointer(encoded_function_pointers + id));
+        void* const cached_fp =
+            ReadPointerNoFence(function_pointers + id);
 
         if (cached_fp == invalid_function_sentinel())
         {
@@ -347,42 +388,7 @@ static void* __cdecl try_get_function(
         }
     }
 
-    // If we haven't yet cached the function pointer, try to import it from any
-    // of the modules in which it might be defined.  If this fails, cache the
-    // sentinel pointer so that we don't attempt to load this function again:
-    void* const new_fp = try_get_proc_address_from_first_available_module(name, first_module_id, last_module_id);
-    if (!new_fp)
-    {
-        void* const cached_fp = __crt_fast_decode_pointer(
-            __crt_interlocked_exchange_pointer(
-                encoded_function_pointers + id,
-                __crt_fast_encode_pointer(invalid_function_sentinel())));
-
-        if (cached_fp)
-        {
-            _ASSERTE(cached_fp == invalid_function_sentinel());
-        }
-
-        return nullptr;
-    }
-
-    // Swap the newly obtained function pointer into the cache.  The cache may
-    // no longer contain an encoded null pointer if another thread obtained the
-    // function address while we were doing the same (both threads should have
-    // gotten the same function pointer):
-    {
-        void* const cached_fp = __crt_fast_decode_pointer(
-            __crt_interlocked_exchange_pointer(
-                encoded_function_pointers + id,
-                __crt_fast_encode_pointer(new_fp)));
-
-        if (cached_fp)
-        {
-            _ASSERTE(cached_fp == new_fp);
-        }
-    }
-
-    return new_fp;
+    return try_get_function_slow(id, name, first_module_id, last_module_id);
 }
 
 // Generate accessors that wrap the general try_get_function for each function,
@@ -401,6 +407,45 @@ static void* __cdecl try_get_function(
     }
 _ACRT_APPLY_TO_LATE_BOUND_FUNCTIONS
 #undef _APPLY
+
+static __forceinline void* __cdecl get_function(
+    function_id      const id,
+    char      const* const name,
+    module_id const* const first_module_id,
+    module_id const* const last_module_id
+    ) throw()
+{
+    UNREFERENCED_PARAMETER(name);
+    UNREFERENCED_PARAMETER(first_module_id);
+    UNREFERENCED_PARAMETER(last_module_id);
+
+    // This function assumes the cached function pointer is always valid
+    void* const cached_fp =
+        ReadPointerNoFence(function_pointers + id);
+
+    return cached_fp;
+
+}
+
+#pragma warning(push)
+#pragma warning(disable: 4505) // unreferenced local function has been removed
+// Generate accessors that wrap the general try_get_function for each function,
+// passing the correct set of candidate modules and returning a function pointer
+// of the correct type:
+#define _APPLY(_FUNCTION, _MODULES)                                                                   \
+    static __forceinline _CRT_CONCATENATE(_FUNCTION, _pft) __cdecl _CRT_CONCATENATE(get_, _FUNCTION)() throw()  \
+    {                                                                                                 \
+        static module_id const candidate_modules[] = _CRT_UNPARENTHESIZE(_MODULES);                   \
+                                                                                                      \
+        return reinterpret_cast<_CRT_CONCATENATE(_FUNCTION, _pft)>(get_function(                      \
+            _CRT_CONCATENATE(_FUNCTION, _id),                                                         \
+            _CRT_STRINGIZE(_FUNCTION),                                                                \
+            candidate_modules,                                                                        \
+            candidate_modules + _countof(candidate_modules)));                                        \
+    }
+_ACRT_APPLY_TO_LATE_BOUND_FUNCTIONS
+#undef _APPLY
+#pragma warning(pop)
 
 extern "C" BOOL WINAPI __acrt_AreFileApisANSI()
 {
@@ -447,11 +492,11 @@ static BOOL enum_system_locales_ex_nolock(
 {
     static LOCALE_ENUMPROCEX static_enum_proc;
 
-    static_enum_proc = __crt_fast_encode_pointer(enum_proc);
+    static_enum_proc = enum_proc;
     BOOL const result = EnumSystemLocalesW(
-        [](LPWSTR locale_string) { return __crt_fast_decode_pointer(static_enum_proc)(locale_string, 0, 0); },
+        [](LPWSTR locale_string) { return (static_enum_proc)(locale_string, 0, 0); },
         LCID_INSTALLED);
-    static_enum_proc = __crt_fast_encode_pointer(nullptr);
+    static_enum_proc = nullptr;
 
     return result;
 }
@@ -474,60 +519,47 @@ extern "C" BOOL WINAPI __acrt_EnumSystemLocalesEx(
     });
 }
 
+// Historically, we needed to conditionally call FLS functions for x86 since the UCRT needed to be consumable down to XP.
+// This is no longer the case as XP is no longer supported, however the enclave implementations of these functions
+// unconditionally call the TLS equivalent APIs (TlsAlloc, etc), hence why these are still kept around
 extern "C" DWORD WINAPI __acrt_FlsAlloc(PFLS_CALLBACK_FUNCTION const callback)
 {
-#if FLS_ALWAYS_AVAILABLE
     return FlsAlloc(callback);
-#else
-    if (auto const fls_alloc = try_get_FlsAlloc())
-    {
-        return fls_alloc(callback);
-    }
-
-    return TlsAlloc();
-#endif
 }
 
 extern "C" BOOL WINAPI __acrt_FlsFree(DWORD const fls_index)
 {
-#if FLS_ALWAYS_AVAILABLE
     return FlsFree(fls_index);
-#else
-    if (auto const fls_free = try_get_FlsFree())
-    {
-        return fls_free(fls_index);
-    }
-
-    return TlsFree(fls_index);
-#endif
 }
 
 extern "C" PVOID WINAPI __acrt_FlsGetValue(DWORD const fls_index)
 {
-#if FLS_ALWAYS_AVAILABLE
     return FlsGetValue(fls_index);
-#else
-    if (auto const fls_get_value = try_get_FlsGetValue())
-    {
-        return fls_get_value(fls_index);
-    }
+}
 
-    return TlsGetValue(fls_index);
+extern "C"
+DECLSPEC_GUARDNOCF
+PVOID WINAPI __acrt_FlsGetValue2(DWORD const fls_index)
+{
+#if (defined(_M_ARM64_) || defined(_M_ARM64EC)) && _UCRT_DLL
+    return FlsGetValue2(fls_index);
+#else
+    /*
+    * N.B.: This function must be called after checking __acrt_use_tls2_apis.
+    */
+    auto const flsgetvalue2 = get_FlsGetValue2();
+    return flsgetvalue2(fls_index);
 #endif
 }
 
 extern "C" BOOL WINAPI __acrt_FlsSetValue(DWORD const fls_index, PVOID const fls_data)
 {
-#if FLS_ALWAYS_AVAILABLE
     return FlsSetValue(fls_index, fls_data);
-#else
-    if (auto const fls_set_value = try_get_FlsSetValue())
-    {
-        return fls_set_value(fls_index, fls_data);
-    }
+}
 
-    return TlsSetValue(fls_index, fls_data);
-#endif
+extern "C" BOOL WINAPI __acrt_IsThreadAFiber()
+{
+    return IsThreadAFiber();
 }
 
 extern "C" int WINAPI __acrt_GetDateFormatEx(
@@ -558,6 +590,20 @@ extern "C" int WINAPI __acrt_GetTempPath2W(
         return get_temp_path2w(nBufferLength, lpBuffer);
     }
     return GetTempPathW(nBufferLength, lpBuffer);
+}
+
+extern "C" BOOL WINAPI __acrt_GetFileInformationByName(
+    LPCWSTR FileName,
+    DWORD FileInformationClass,                // FILE_INFO_BY_NAME_CLASS
+    PVOID FileInfoBuffer,
+    ULONG FileInfoBufferSize
+)
+{
+    if (auto const get_file_info = try_get_GetFileInformationByName())
+    {
+        return get_file_info(FileName, FileInformationClass, FileInfoBuffer, FileInfoBufferSize);
+    }
+    return FALSE;
 }
 
 extern "C" DWORD64 WINAPI __acrt_GetEnabledXStateFeatures()
@@ -644,12 +690,7 @@ extern "C" BOOL WINAPI __acrt_InitializeCriticalSectionEx(
     DWORD              const flags
     )
 {
-    if (auto const initialize_critical_section_ex = try_get_InitializeCriticalSectionEx())
-    {
-        return initialize_critical_section_ex(critical_section, spin_count, flags);
-    }
-
-    return InitializeCriticalSectionAndSpinCount(critical_section, spin_count);
+    return InitializeCriticalSectionEx(critical_section, spin_count, flags);
 }
 
 extern "C" BOOL WINAPI __acrt_IsValidLocaleName(LPCWSTR const locale_name)
@@ -871,6 +912,11 @@ extern "C" void __cdecl __acrt_eagerly_load_locale_apis()
     try_get_LCMapStringEx();
     try_get_LCIDToLocaleName();
     try_get_LocaleNameToLCID();
+}
+
+extern "C" bool __cdecl __acrt_tls2_supported()
+{
+    return (try_get_FlsGetValue2() != nullptr);
 }
 
 extern "C" bool __cdecl __acrt_can_use_xstate_apis()

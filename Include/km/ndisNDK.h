@@ -23,6 +23,8 @@ Environment:
 #pragma once
 #endif
 
+EXTERN_C_START
+
 #if NDIS_SUPPORT_NDIS630
 
 #include <ndkpi.h>
@@ -77,6 +79,8 @@ typedef struct _NDIS_NDK_PROVIDER_CHARACTERISTICS
 
 
 #endif // NDIS_SUPPORT_NDIS630
+
+EXTERN_C_END
 
 #endif // _NDISNDK_H_
 

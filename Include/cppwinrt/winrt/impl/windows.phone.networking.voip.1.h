@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -15,6 +15,14 @@ WINRT_EXPORT namespace winrt::Windows::Phone::Networking::Voip
     {
         ICallAnswerEventArgs(std::nullptr_t = nullptr) noexcept {}
         ICallAnswerEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) ICallAnswerEventArgs2 :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<ICallAnswerEventArgs2>,
+        impl::require<winrt::Windows::Phone::Networking::Voip::ICallAnswerEventArgs2, winrt::Windows::Phone::Networking::Voip::ICallAnswerEventArgs>
+    {
+        ICallAnswerEventArgs2(std::nullptr_t = nullptr) noexcept {}
+        ICallAnswerEventArgs2(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) ICallRejectEventArgs :
         winrt::Windows::Foundation::IInspectable,
@@ -127,6 +135,13 @@ WINRT_EXPORT namespace winrt::Windows::Phone::Networking::Voip
     {
         IVoipPhoneCall3(std::nullptr_t = nullptr) noexcept {}
         IVoipPhoneCall3(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IVoipPhoneCall4 :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IVoipPhoneCall4>
+    {
+        IVoipPhoneCall4(std::nullptr_t = nullptr) noexcept {}
+        IVoipPhoneCall4(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) IVoipPhoneCallReady :
         winrt::Windows::Foundation::IInspectable,

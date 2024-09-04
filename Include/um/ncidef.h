@@ -203,6 +203,7 @@ Abstract:
 #define NFC_A_ACTIVE_LISTEN_MODE        (0x83)
 #define NFC_F_ACTIVE_LISTEN_MODE        (0x85)
 #define NFC_15693_PASSIVE_LISTEN_MODE   (0x86)
+#define NFC_A_KOVIO_POLL_MODE           (0x70)
 
 //
 // Bit Rates

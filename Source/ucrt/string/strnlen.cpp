@@ -193,7 +193,7 @@ static __forceinline size_t __cdecl common_strnlen(
     return common_strnlen_c<Mode>(string, maximum_count);
 }
 
-#if !defined(_M_ARM64) && !defined(_M_ARM64EC)
+#if !defined(_M_ARM64) && !defined(_M_ARM64EC) && !defined(_M_HYBRID_X86_ARM64)
 
 extern "C" size_t __cdecl strnlen(
     char const* const string,
@@ -220,4 +220,4 @@ extern "C" size_t __cdecl wcslen(
     return common_strnlen<unbounded>(reinterpret_cast<uint16_t const*>(string), _CRT_UNBOUNDED_BUFFER_SIZE);
 }
 
-#endif // _M_ARM64
+#endif // !defined(_M_ARM64) && !defined(_M_ARM64EC) && !defined(_M_HYBRID_X86_ARM64)

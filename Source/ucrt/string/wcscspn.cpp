@@ -23,12 +23,10 @@ extern "C" size_t __cdecl wcscspn(
     wchar_t const* string_it = string;
     for (; *string_it; ++string_it)
     {
-        for (wchar_t const* control_it = control; *control_it; ++control_it)
+        wchar_t const* control_it = wcschr(control, *string_it);
+        if (control_it != nullptr)
         {
-            if (*string_it == *control_it)
-            {
-                return static_cast<size_t>(string_it - string);
-            }
+            return static_cast<size_t>(string_it - string);
         }
     }
 

@@ -41,16 +41,9 @@ char * __cdecl strncat (
         size_t count
         )
 {
-        char *start = front;
-
-        while (*front++)
-                ;
-        front--;
-
-        while (count--)
-                if ((*front++ = *back++) == 0)
-                        return(start);
-
-        *front = '\0';
-        return(start);
+        char *start = front + strlen(front);
+        size_t backlen = strnlen(back, count);
+        memcpy(start, back, backlen);
+        start[backlen] = '\0';
+        return(front);
 }

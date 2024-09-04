@@ -7,6 +7,7 @@
 //
 #include <corecrt_internal.h>
 #include <search.h>
+#include <cfguard.h>
 
 #ifdef _M_CEE
     #define __fileDECL __clrcall
@@ -49,6 +50,7 @@
 
 #ifndef _M_CEE
 extern "C"
+DECLSPEC_GUARDNOCF
 #endif
 
 _CRT_SECURITYSAFECRITICAL_ATTRIBUTE
@@ -74,6 +76,8 @@ void* __fileDECL bsearch(
     _VALIDATE_RETURN(base != nullptr || num == 0, EINVAL, nullptr);
     _VALIDATE_RETURN(width > 0, EINVAL, nullptr);
     _VALIDATE_RETURN(compare != nullptr, EINVAL, nullptr);
+
+    _GUARD_CHECK_ICALL(compare);
 
     char const* lo = reinterpret_cast<char const*>(base);
     char const* hi = reinterpret_cast<char const*>(base) + (num - 1) * width;

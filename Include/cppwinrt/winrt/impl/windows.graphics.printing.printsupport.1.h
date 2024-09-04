@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -9,6 +9,13 @@
 #include "winrt/impl/Windows.Graphics.Printing.PrintSupport.0.h"
 WINRT_EXPORT namespace winrt::Windows::Graphics::Printing::PrintSupport
 {
+    struct __declspec(empty_bases) IPrintSupportCommunicationErrorDetectedEventArgs :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPrintSupportCommunicationErrorDetectedEventArgs>
+    {
+        IPrintSupportCommunicationErrorDetectedEventArgs(std::nullptr_t = nullptr) noexcept {}
+        IPrintSupportCommunicationErrorDetectedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
     struct __declspec(empty_bases) IPrintSupportExtensionSession :
         winrt::Windows::Foundation::IInspectable,
         impl::consume_t<IPrintSupportExtensionSession>
@@ -23,12 +30,40 @@ WINRT_EXPORT namespace winrt::Windows::Graphics::Printing::PrintSupport
         IPrintSupportExtensionSession2(std::nullptr_t = nullptr) noexcept {}
         IPrintSupportExtensionSession2(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
+    struct __declspec(empty_bases) IPrintSupportExtensionSession3 :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPrintSupportExtensionSession3>
+    {
+        IPrintSupportExtensionSession3(std::nullptr_t = nullptr) noexcept {}
+        IPrintSupportExtensionSession3(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
     struct __declspec(empty_bases) IPrintSupportExtensionTriggerDetails :
         winrt::Windows::Foundation::IInspectable,
         impl::consume_t<IPrintSupportExtensionTriggerDetails>
     {
         IPrintSupportExtensionTriggerDetails(std::nullptr_t = nullptr) noexcept {}
         IPrintSupportExtensionTriggerDetails(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IPrintSupportIppCommunicationConfiguration :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPrintSupportIppCommunicationConfiguration>
+    {
+        IPrintSupportIppCommunicationConfiguration(std::nullptr_t = nullptr) noexcept {}
+        IPrintSupportIppCommunicationConfiguration(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IPrintSupportIppCommunicationTimeouts :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPrintSupportIppCommunicationTimeouts>
+    {
+        IPrintSupportIppCommunicationTimeouts(std::nullptr_t = nullptr) noexcept {}
+        IPrintSupportIppCommunicationTimeouts(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IPrintSupportMxdcImageQualityConfiguration :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPrintSupportMxdcImageQualityConfiguration>
+    {
+        IPrintSupportMxdcImageQualityConfiguration(std::nullptr_t = nullptr) noexcept {}
+        IPrintSupportMxdcImageQualityConfiguration(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) IPrintSupportPrintDeviceCapabilitiesChangedEventArgs :
         winrt::Windows::Foundation::IInspectable,
@@ -43,6 +78,20 @@ WINRT_EXPORT namespace winrt::Windows::Graphics::Printing::PrintSupport
     {
         IPrintSupportPrintDeviceCapabilitiesChangedEventArgs2(std::nullptr_t = nullptr) noexcept {}
         IPrintSupportPrintDeviceCapabilitiesChangedEventArgs2(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IPrintSupportPrintDeviceCapabilitiesChangedEventArgs3 :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPrintSupportPrintDeviceCapabilitiesChangedEventArgs3>
+    {
+        IPrintSupportPrintDeviceCapabilitiesChangedEventArgs3(std::nullptr_t = nullptr) noexcept {}
+        IPrintSupportPrintDeviceCapabilitiesChangedEventArgs3(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IPrintSupportPrintDeviceCapabilitiesChangedEventArgs4 :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPrintSupportPrintDeviceCapabilitiesChangedEventArgs4>
+    {
+        IPrintSupportPrintDeviceCapabilitiesChangedEventArgs4(std::nullptr_t = nullptr) noexcept {}
+        IPrintSupportPrintDeviceCapabilitiesChangedEventArgs4(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) IPrintSupportPrintDeviceCapabilitiesUpdatePolicy :
         winrt::Windows::Foundation::IInspectable,
@@ -92,6 +141,13 @@ WINRT_EXPORT namespace winrt::Windows::Graphics::Printing::PrintSupport
     {
         IPrintSupportSettingsActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
         IPrintSupportSettingsActivatedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IPrintSupportSettingsActivatedEventArgs2 :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPrintSupportSettingsActivatedEventArgs2>
+    {
+        IPrintSupportSettingsActivatedEventArgs2(std::nullptr_t = nullptr) noexcept {}
+        IPrintSupportSettingsActivatedEventArgs2(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) IPrintSupportSettingsUISession :
         winrt::Windows::Foundation::IInspectable,

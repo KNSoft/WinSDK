@@ -75,7 +75,14 @@ include ksamd64.inc
 ;*******************************************************************************
 
 public ___entry_from_strcat_in_strcpy
-LEAF_ENTRY_ARG2 strcat, _TEXT, dst:ptr byte, src:ptr byte
+
+ifdef _CRT_FFS_BUILD
+strcat_name     TEXTEQU <strcat_ffs>
+else
+strcat_name     TEXTEQU <strcat>
+endif
+
+LEAF_ENTRY_ARG2 strcat_name, _TEXT$21, dst:ptr byte, src:ptr byte
 
     OPTION PROLOGUE:NONE, EPILOGUE:NONE
 
@@ -134,9 +141,15 @@ strcat_loop_end:
     inc     rcx
     jmp     strcat_loop_begin
 
-LEAF_END strcat, _TEXT
+LEAF_END strcat_name, _TEXT$21
 
-LEAF_ENTRY_ARG2 strcpy, _TEXT, dst:ptr byte, src:ptr byte
+ifdef _CRT_FFS_BUILD
+strcpy_name      TEXTEQU <strcpy_ffs>
+else
+strcpy_name      TEXTEQU <strcpy>
+endif
+
+LEAF_ENTRY_ARG2 strcpy_name, _TEXT$21, dst:ptr byte, src:ptr byte
 
     OPTION PROLOGUE:NONE, EPILOGUE:NONE
 
@@ -219,6 +232,6 @@ strcat_exit:
     mov     rax, r11
     ret
 
-LEAF_END strcpy, _TEXT
+LEAF_END strcpy_name, _TEXT$21
 
     end

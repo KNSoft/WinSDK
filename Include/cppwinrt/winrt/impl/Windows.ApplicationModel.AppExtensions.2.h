@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -10,12 +10,13 @@
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::AppExtensions
 {
     struct __declspec(empty_bases) AppExtension : winrt::Windows::ApplicationModel::AppExtensions::IAppExtension,
-        impl::require<AppExtension, winrt::Windows::ApplicationModel::AppExtensions::IAppExtension2>
+        impl::require<AppExtension, winrt::Windows::ApplicationModel::AppExtensions::IAppExtension2, winrt::Windows::ApplicationModel::AppExtensions::IAppExtension3>
     {
         AppExtension(std::nullptr_t) noexcept {}
         AppExtension(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::ApplicationModel::AppExtensions::IAppExtension(ptr, take_ownership_from_abi) {}
     };
-    struct __declspec(empty_bases) AppExtensionCatalog : winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
+    struct __declspec(empty_bases) AppExtensionCatalog : winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog,
+        impl::require<AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog2>
     {
         AppExtensionCatalog(std::nullptr_t) noexcept {}
         AppExtensionCatalog(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog(ptr, take_ownership_from_abi) {}

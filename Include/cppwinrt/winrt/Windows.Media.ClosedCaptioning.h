@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -7,87 +7,87 @@
 #ifndef WINRT_Windows_Media_ClosedCaptioning_H
 #define WINRT_Windows_Media_ClosedCaptioning_H
 #include "winrt/base.h"
-static_assert(winrt::check_version(CPPWINRT_VERSION, "2.0.220110.5"), "Mismatched C++/WinRT headers.");
-#define CPPWINRT_VERSION "2.0.220110.5"
+static_assert(winrt::check_version(CPPWINRT_VERSION, "2.0.230511.6"), "Mismatched C++/WinRT headers.");
+#define CPPWINRT_VERSION "2.0.230511.6"
 #include "winrt/Windows.Media.h"
 #include "winrt/impl/Windows.Foundation.2.h"
 #include "winrt/impl/Windows.UI.2.h"
 #include "winrt/impl/Windows.Media.ClosedCaptioning.2.h"
 namespace winrt::impl
 {
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontColor() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontColor() const
     {
         winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_FontColor(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::UI::Color) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::ComputedFontColor() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::ComputedFontColor() const
     {
         winrt::Windows::UI::Color value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_ComputedFontColor(put_abi(value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionOpacity) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontOpacity() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontOpacity() const
     {
         winrt::Windows::Media::ClosedCaptioning::ClosedCaptionOpacity value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_FontOpacity(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionSize) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontSize() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontSize() const
     {
         winrt::Windows::Media::ClosedCaptioning::ClosedCaptionSize value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_FontSize(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionStyle) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontStyle() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontStyle() const
     {
         winrt::Windows::Media::ClosedCaptioning::ClosedCaptionStyle value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_FontStyle(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffect) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontEffect() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::FontEffect() const
     {
         winrt::Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffect value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_FontEffect(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::BackgroundColor() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::BackgroundColor() const
     {
         winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_BackgroundColor(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::UI::Color) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::ComputedBackgroundColor() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::ComputedBackgroundColor() const
     {
         winrt::Windows::UI::Color value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_ComputedBackgroundColor(put_abi(value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionOpacity) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::BackgroundOpacity() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::BackgroundOpacity() const
     {
         winrt::Windows::Media::ClosedCaptioning::ClosedCaptionOpacity value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_BackgroundOpacity(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::RegionColor() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::RegionColor() const
     {
         winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_RegionColor(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::UI::Color) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::ComputedRegionColor() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::ComputedRegionColor() const
     {
         winrt::Windows::UI::Color value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_ComputedRegionColor(put_abi(value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionOpacity) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::RegionOpacity() const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>::RegionOpacity() const
     {
         winrt::Windows::Media::ClosedCaptioning::ClosedCaptionOpacity value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics)->get_RegionOpacity(reinterpret_cast<int32_t*>(&value)));
         return value;
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::event_token) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics2<D>::PropertiesChanged(winrt::Windows::Foundation::EventHandler<winrt::Windows::Foundation::IInspectable> const& handler) const
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics2<D>::PropertiesChanged(winrt::Windows::Foundation::EventHandler<winrt::Windows::Foundation::IInspectable> const& handler) const
     {
         winrt::event_token token{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics2)->add_PropertiesChanged(*(void**)(&handler), put_abi(token)));
@@ -97,7 +97,7 @@ namespace winrt::impl
     {
         return impl::make_event_revoker<D, PropertiesChanged_revoker>(this, PropertiesChanged(handler));
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics2<D>::PropertiesChanged(winrt::event_token const& token) const noexcept
+    template <typename D> auto consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics2<D>::PropertiesChanged(winrt::event_token const& token) const noexcept
     {
         WINRT_IMPL_SHIM(winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics2)->remove_PropertiesChanged(impl::bind_in(token));
     }

@@ -70,6 +70,12 @@ typedef enum _NDK_OPERATION_TYPE
     NdkOperationTypeWrite = 64
 } NDK_OPERATION_TYPE;
 
+// The new ProviderErrorCode in NDK_RESULT_EX uses padding only available on 64-bit systems. On 32-bit systems,
+// this padding is not available, and when ProviderErrorCode returns 0, it can cause null pointers. Specifically,
+// this happens when memory is cast incorrectly as the value for TypeSpecificCompletionOutput pointer. 
+// It's important to note that the interface contract is broken if the Provider uses an NDK 2.1 memory layout
+// that includes ProviderErrorCode, while the Consumer still uses an NDK 2.0 memory layout without this new field.
+// Therefore, this structure is no longer backwards compatible for 32-bit systems between 2.1 and pre-2.1 versions.
 typedef struct _NDK_RESULT_EX {
     NTSTATUS Status;
     ULONG BytesTransferred;

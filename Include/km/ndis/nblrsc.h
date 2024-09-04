@@ -37,7 +37,7 @@ C_ASSERT(sizeof(NDIS_RSC_NBL_INFO) == sizeof(PVOID));
 #define NET_BUFFER_LIST_DUP_ACK_COUNT(_NBL) \
     (((NDIS_RSC_NBL_INFO*)&NET_BUFFER_LIST_INFO((_NBL), TcpRecvSegCoalesceInfo))->Info.DupAckCount)
 
-#else // NDIS_INCLUDE_LEGACY_NAMES || !__cplusplus
+#else // defined(NDIS_INCLUDE_LEGACY_NAMES) || !defined(__cplusplus)
 
 inline
 USHORT &
@@ -81,6 +81,8 @@ NET_BUFFER_LIST_DUP_ACK_COUNT(
 
 #endif // NDIS_INCLUDE_LEGACY_NAMES || !__cplusplus
 
+#if NDIS_SUPPORT_NDIS688
+
 inline
 BOOLEAN
 NET_BUFFER_LIST_IS_TCP_RSC_SET(
@@ -91,6 +93,8 @@ NET_BUFFER_LIST_IS_TCP_RSC_SET(
         &Nbl->NetBufferListInfo[TcpRecvSegCoalesceInfo];
     return ((UINT_PTR)Info->Value & 0xFFFFFFFF) != 0;
 }
+
+#endif // NDIS_SUPPORT_NDIS688
 
 #endif // NDIS_SUPPORT_NDIS630
 

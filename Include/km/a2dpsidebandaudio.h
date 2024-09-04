@@ -37,6 +37,23 @@ DEFINE_GUID(GUID_SIDEBANDAUDIO_A2DP_SUPPORT_INTERFACE, 0x2bc51ee4, 0x7af, 0x49cf
 DEFINE_GUID(SIDEBANDAUDIO_PARAMS_SET_A2DP,
     0x8fe0297f, 0x3ae6, 0x4384, 0xac, 0xe3, 0x87, 0x58, 0x9e, 0x57, 0x1b, 0x9c);
 
+//
+// SIDEBANDAUDIO_CODEC_LATENCY_MODES
+//
+//  Identifies the SIDEBANDAUDIO_CODEC_LATENCY_MODES parameters
+//
+#if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+typedef enum _SIDEBANDAUDIO_CODEC_LATENCY_MODES
+{
+    // Configured codec Mode - High Quality
+    //
+    SIDEBANDAUDIO_CODEC_MODE_HIGH_QUALITY = 1, 
+
+    // Configured codec Mode - Low Latency/Gaming
+    //
+    SIDEBANDAUDIO_CODEC_MODE_LOW_LATENCY = 2,
+} SIDEBANDAUDIO_CODEC_LATENCY_MODES;
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_NI)
 
 //
 // SIDEBANDAUDIO_PARAMS_A2DP
@@ -58,6 +75,19 @@ typedef enum _SIDEBANDAUDIO_PARAMS_A2DP
     // 8.21.5 of AVDTP 1.3. Also, see A2DP 1.3.1 section 4.2.5 and section 4.7.2 for additional
     //information.
     SIDEANDAUDIO_PARAM_A2DP_CONFIGURED_CODEC = 2,
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+    // Configured codec information - Latency mode
+    //
+    // The size of the SIOP is 1 byte. The value signifies the latency mode to be configured
+    // as stated in enum SIDEBANDAUDIO_CODEC_LATENCY_MODES.
+    SIDEBANDAUDIO_PARAM_A2DP_CODEC_LATENCY_MODE = 3,
+
+    // Configured codec information - MTU Size
+    //
+    // The size of the SIOP is 2 bytes. The value is MTU size in bytes.
+    SIDEBANDAUDIO_PARAM_A2DP_CODEC_MTU_SIZE = 4,
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_NI)
 
 } SIDEBANDAUDIO_PARAMS_A2DP;
 

@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -13,12 +13,13 @@
 WINRT_EXPORT namespace winrt::Windows::Devices::Enumeration
 {
     struct __declspec(empty_bases) DeviceAccessChangedEventArgs : winrt::Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs,
-        impl::require<DeviceAccessChangedEventArgs, winrt::Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2>
+        impl::require<DeviceAccessChangedEventArgs, winrt::Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2, winrt::Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs3>
     {
         DeviceAccessChangedEventArgs(std::nullptr_t) noexcept {}
         DeviceAccessChangedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs(ptr, take_ownership_from_abi) {}
     };
-    struct __declspec(empty_bases) DeviceAccessInformation : winrt::Windows::Devices::Enumeration::IDeviceAccessInformation
+    struct __declspec(empty_bases) DeviceAccessInformation : winrt::Windows::Devices::Enumeration::IDeviceAccessInformation,
+        impl::require<DeviceAccessInformation, winrt::Windows::Devices::Enumeration::IDeviceAccessInformation2>
     {
         DeviceAccessInformation(std::nullptr_t) noexcept {}
         DeviceAccessInformation(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Enumeration::IDeviceAccessInformation(ptr, take_ownership_from_abi) {}
@@ -55,13 +56,17 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Enumeration
         static auto CreateFromIdAsync(param::hstring const& deviceId, param::async_iterable<hstring> const& additionalProperties, winrt::Windows::Devices::Enumeration::DeviceInformationKind const& kind);
         static auto FindAllAsync(param::hstring const& aqsFilter, param::async_iterable<hstring> const& additionalProperties, winrt::Windows::Devices::Enumeration::DeviceInformationKind const& kind);
         static auto CreateWatcher(param::hstring const& aqsFilter, param::iterable<hstring> const& additionalProperties, winrt::Windows::Devices::Enumeration::DeviceInformationKind const& kind);
+        static auto CreateFromIdAsync(param::hstring const& deviceId, param::async_iterable<hstring> const& additionalProperties, winrt::Windows::Devices::Enumeration::DeviceInformationKind const& kind, winrt::Windows::Devices::Enumeration::IDeviceEnumerationSettings const& settings);
+        static auto FindAllAsync(param::hstring const& aqsFilter, param::async_iterable<hstring> const& additionalProperties, winrt::Windows::Devices::Enumeration::DeviceInformationKind const& kind, winrt::Windows::Devices::Enumeration::IDeviceEnumerationSettings const& settings);
+        static auto CreateWatcher(param::hstring const& aqsFilter, param::iterable<hstring> const& additionalProperties, winrt::Windows::Devices::Enumeration::DeviceInformationKind const& kind, winrt::Windows::Devices::Enumeration::IDeviceEnumerationSettings const& settings);
     };
     struct __declspec(empty_bases) DeviceInformationCollection : winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Enumeration::DeviceInformation>
     {
         DeviceInformationCollection(std::nullptr_t) noexcept {}
         DeviceInformationCollection(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Enumeration::DeviceInformation>(ptr, take_ownership_from_abi) {}
     };
-    struct __declspec(empty_bases) DeviceInformationCustomPairing : winrt::Windows::Devices::Enumeration::IDeviceInformationCustomPairing
+    struct __declspec(empty_bases) DeviceInformationCustomPairing : winrt::Windows::Devices::Enumeration::IDeviceInformationCustomPairing,
+        impl::require<DeviceInformationCustomPairing, winrt::Windows::Devices::Enumeration::IDeviceInformationCustomPairing2>
     {
         DeviceInformationCustomPairing(std::nullptr_t) noexcept {}
         DeviceInformationCustomPairing(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Enumeration::IDeviceInformationCustomPairing(ptr, take_ownership_from_abi) {}
@@ -83,7 +88,7 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Enumeration
         DeviceInformationUpdate(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Enumeration::IDeviceInformationUpdate(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) DevicePairingRequestedEventArgs : winrt::Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs,
-        impl::require<DevicePairingRequestedEventArgs, winrt::Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs2>
+        impl::require<DevicePairingRequestedEventArgs, winrt::Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs2, winrt::Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs3>
     {
         DevicePairingRequestedEventArgs(std::nullptr_t) noexcept {}
         DevicePairingRequestedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs(ptr, take_ownership_from_abi) {}
@@ -92,6 +97,11 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Enumeration
     {
         DevicePairingResult(std::nullptr_t) noexcept {}
         DevicePairingResult(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Enumeration::IDevicePairingResult(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) DevicePairingSetMembersRequestedEventArgs : winrt::Windows::Devices::Enumeration::IDevicePairingSetMembersRequestedEventArgs
+    {
+        DevicePairingSetMembersRequestedEventArgs(std::nullptr_t) noexcept {}
+        DevicePairingSetMembersRequestedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Enumeration::IDevicePairingSetMembersRequestedEventArgs(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) DevicePicker : winrt::Windows::Devices::Enumeration::IDevicePicker
     {

@@ -11,6 +11,7 @@
 #include <corecrt_startup.h>
 #include <corecrt_terminate.h>
 #include <corecrt_wctype.h>
+#include <corecrt_internal_ffs.h>
 #include <crtdbg.h>
 #include <ctype.h>
 #include <errno.h>
@@ -30,6 +31,12 @@
 #endif
 
 _CRT_BEGIN_C_HEADER
+
+#if defined(_DLL) && !defined(_DEBUG)
+#define _UCRT_DLL 1
+#else
+#define _UCRT_DLL 0
+#endif
 
 #define _DEFINE_SET_FUNCTION(function_name, type, variable_name) \
     __inline void function_name(type value)                      \
@@ -920,6 +927,7 @@ typedef struct __acrt_ptd
 __acrt_ptd* __cdecl __acrt_getptd(void);
 __acrt_ptd* __cdecl __acrt_getptd_head(void);
 __acrt_ptd* __cdecl __acrt_getptd_noexit(void);
+__acrt_ptd* __cdecl __acrt_getptd_noexit2(void);
 void        __cdecl __acrt_freeptd(void);
 
 
@@ -949,6 +957,7 @@ typedef enum __acrt_lock_id
     __acrt_environment_lock,
     __acrt_tempnam_lock,
     __acrt_os_exit_lock,
+    __acrt_function_pointer_table_lock,
     __acrt_lock_count
 } __acrt_lock_id;
 
@@ -1231,6 +1240,12 @@ BOOL WINAPI __acrt_FlsSetValue(
     _In_opt_ PVOID lpFlsData
     );
 
+PVOID WINAPI __acrt_FlsGetValue2(
+    _In_ DWORD dwFlsIndex
+    );
+
+BOOL WINAPI __acrt_IsThreadAFiber();
+
 int WINAPI __acrt_GetDateFormatEx(
     _In_opt_                       LPCWSTR           locale_name,
     _In_                           DWORD             flags,
@@ -1244,6 +1259,13 @@ int WINAPI __acrt_GetDateFormatEx(
 int WINAPI __acrt_GetTempPath2W(
     _In_ DWORD nBufferLength,
     _Out_writes_to_opt_(BufferLength, return +1) LPWSTR lpBuffer
+    );
+
+BOOL WINAPI __acrt_GetFileInformationByName(
+    _In_ LPCWSTR FileName,
+    _In_ DWORD FileInformationClass,                // FILE_INFO_BY_NAME_CLASS
+    _Out_writes_bytes_(FileInfoBufferSize) PVOID FileInfoBuffer,
+    _In_ ULONG FileInfoBufferSize
     );
 
 DWORD64 WINAPI __acrt_GetEnabledXStateFeatures(void);
@@ -1371,6 +1393,8 @@ bool __cdecl __acrt_is_interactive(void);
 
 bool __cdecl __acrt_app_verifier_enabled(void);
 bool __cdecl __acrt_is_secure_process(void);
+
+bool __cdecl __acrt_tls2_supported(void);
 
 LCID __cdecl __acrt_DownlevelLocaleNameToLCID(
     _In_opt_ LPCWSTR localeName
@@ -2038,6 +2062,8 @@ extern "C++"
         errno_t* _errno_address;
         errno_t  _stored_errno;
     };
+
+    extern bool __acrt_use_tls2_apis;
 
     // Resets the operating system last error (GetLastError) to its original
     // value on scope exit.

@@ -20861,6 +20861,228 @@ class HV_Hypercall:PerfInfo_V2
      uint8 IsNested;
 };
 
+[Dynamic,
+Description("Context Registers AMD64") : amended,
+EventType(122),
+EventTypeName("ContextRegistersAMD64") : amended
+]
+class ContextRegistersAMD64:PerfInfo_V2
+{
+    [WmiDataId(1),
+     Description("Rip") : amended,
+     read]
+     uint64 Rip;
+    [WmiDataId(2),
+     Description("Rax") : amended,
+     read]
+     uint64 Rax;
+    [WmiDataId(3),
+     Description("Rcx") : amended,
+     read]
+     uint64 Rcx;
+    [WmiDataId(4),
+     Description("Rdx") : amended,
+     read]
+     uint64 Rdx;
+    [WmiDataId(5),
+     Description("Rbx") : amended,
+     read]
+     uint64 Rbx;
+    [WmiDataId(6),
+     Description("Rsp") : amended,
+     read]
+     uint64 Rsp;
+    [WmiDataId(7),
+     Description("Rbp") : amended,
+     read]
+     uint64 Rbp;
+    [WmiDataId(7),
+     Description("Rsi") : amended,
+     read]
+     uint64 Rsi;
+    [WmiDataId(8),
+     Description("Rdi") : amended,
+     read]
+     uint64 Rdi;
+    [WmiDataId(9),
+     Description("R8") : amended,
+     read]
+     uint64 R8;
+    [WmiDataId(10),
+     Description("R9") : amended,
+     read]
+     uint64 R9;
+    [WmiDataId(11),
+     Description("R10") : amended,
+     read]
+     uint64 R10;
+    [WmiDataId(12),
+     Description("R11") : amended,
+     read]
+     uint64 R11;
+    [WmiDataId(13),
+     Description("R12") : amended,
+     read]
+     uint64 R12;
+    [WmiDataId(14),
+     Description("R13") : amended,
+     read]
+     uint64 R13;
+    [WmiDataId(15),
+     Description("R14") : amended,
+     read]
+     uint64 R14;
+    [WmiDataId(16),
+     Description("R15") : amended,
+     read]
+     uint64 R15;
+};
+
+[Dynamic,
+Description("Context Registers ARM64") : amended,
+EventType(123),
+EventTypeName("ContextRegistersARM64") : amended
+]
+class ContextRegistersARM64:PerfInfo_V2
+{
+    [WmiDataId(1),
+     Description("Cpsr") : amended,
+     read]
+     uint32 Cpsr;
+    [WmiDataId(2),
+     Description("X0") : amended,
+     read]
+     uint64 X0;
+    [WmiDataId(3),
+     Description("X1") : amended,
+     read]
+     uint64 X1;
+    [WmiDataId(4),
+     Description("X2") : amended,
+     read]
+     uint64 X2;
+    [WmiDataId(5),
+     Description("X3") : amended,
+     read]
+     uint64 X3;
+    [WmiDataId(6),
+     Description("X4") : amended,
+     read]
+     uint64 X4;
+    [WmiDataId(7),
+     Description("X5") : amended,
+     read]
+     uint64 X5;
+    [WmiDataId(8),
+     Description("X6") : amended,
+     read]
+     uint64 X6;
+    [WmiDataId(9),
+     Description("X7") : amended,
+     read]
+     uint64 X7;
+    [WmiDataId(10),
+     Description("X8") : amended,
+     read]
+     uint64 X8;
+    [WmiDataId(11),
+     Description("X9") : amended,
+     read]
+     uint64 X9;
+    [WmiDataId(12),
+     Description("X10") : amended,
+     read]
+     uint64 X10;
+    [WmiDataId(13),
+     Description("X11") : amended,
+     read]
+     uint64 X11;
+    [WmiDataId(14),
+     Description("X12") : amended,
+     read]
+     uint64 X12;
+    [WmiDataId(15),
+     Description("X13") : amended,
+     read]
+     uint64 X13;
+    [WmiDataId(16),
+     Description("X14") : amended,
+     read]
+     uint64 X14;
+    [WmiDataId(17),
+     Description("X15") : amended,
+     read]
+     uint64 X15;
+    [WmiDataId(18),
+     Description("X16") : amended,
+     read]
+     uint64 X16;
+    [WmiDataId(19),
+     Description("X17") : amended,
+     read]
+     uint64 X17;
+    [WmiDataId(20),
+     Description("X18") : amended,
+     read]
+     uint64 X18;
+    [WmiDataId(21),
+     Description("X19") : amended,
+     read]
+     uint64 X19;
+    [WmiDataId(22),
+     Description("X20") : amended,
+     read]
+     uint64 X20;
+    [WmiDataId(23),
+     Description("X21") : amended,
+     read]
+     uint64 X21;
+    [WmiDataId(24),
+     Description("X22") : amended,
+     read]
+     uint64 X22;
+    [WmiDataId(25),
+     Description("X23") : amended,
+     read]
+     uint64 X23;
+    [WmiDataId(26),
+     Description("X24") : amended,
+     read]
+     uint64 X24;
+    [WmiDataId(27),
+     Description("X25") : amended,
+     read]
+     uint64 X25;
+    [WmiDataId(28),
+     Description("X26") : amended,
+     read]
+     uint64 X26;
+    [WmiDataId(29),
+     Description("X27") : amended,
+     read]
+     uint64 X27;
+    [WmiDataId(30),
+     Description("X28") : amended,
+     read]
+     uint64 X28;
+    [WmiDataId(31),
+     Description("Fp") : amended,
+     read]
+     uint64 Fp;
+    [WmiDataId(32),
+     Description("Lr") : amended,
+     read]
+     uint64 Lr;
+    [WmiDataId(33),
+     Description("Sp") : amended,
+     read]
+     uint64 Sp;
+    [WmiDataId(34),
+     Description("Pc") : amended,
+     read]
+     uint64 Pc;
+};
+
 //
 // UMS events.
 //

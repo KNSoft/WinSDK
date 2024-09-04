@@ -23,6 +23,8 @@ namespace
     };
 }
 
+// errtable's oscode must be sorted in ascending order regarding oscode for
+// a binary search to work.
 static errentry const errtable[]
 {
     { ERROR_INVALID_FUNCTION,       EINVAL    },  //    1
@@ -85,8 +87,6 @@ static errentry const errtable[]
 #define MIN_EACCES_RANGE ERROR_WRITE_PROTECT
 #define MAX_EACCES_RANGE ERROR_SHARING_BUFFER_EXCEEDED
 
-
-
 // These map Windows error codes into errno error codes
 extern "C" void __cdecl __acrt_errno_map_os_error(unsigned long const oserrno)
 {
@@ -100,13 +100,67 @@ extern "C" void __cdecl __acrt_errno_map_os_error_ptd(unsigned long const oserrn
     ptd.get_errno().set(__acrt_errno_from_os_error(oserrno));
 }
 
+inline const errentry* bsearch_errentry(
+    unsigned long const oserrno,
+    errentry const* const errtable,
+    size_t num
+    )
+{
+    size_t lo = 0;
+    size_t hi = num - 1;
+
+    while (lo <= hi)
+    {
+        size_t const half = num / 2;
+        if (half != 0)
+        {
+            size_t mid = lo + (num & 1 ? half : (half - 1));
+
+            if (oserrno == errtable[mid].oscode)
+            {
+                return &errtable[mid];
+            }
+            else if (oserrno < errtable[mid].oscode)
+            {
+                hi = mid - 1;
+                num = num & 1 ? half : half - 1;
+            }
+            else
+            {
+                lo = mid + 1;
+                num = half;
+            }
+        }
+        else if (num != 0)
+        {
+            return (oserrno != errtable[lo].oscode) ? nullptr : &errtable[lo];
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    return nullptr;
+}
+
 extern "C" int __cdecl __acrt_errno_from_os_error(unsigned long const oserrno)
 {
     // Check the table for the OS error code
-    for (unsigned i{0}; i < ERRTABLECOUNT; ++i)
+    if (oserrno >= errtable[0].oscode)
     {
-        if (oserrno == errtable[i].oscode)
-            return errtable[i].errnocode;
+        if (oserrno <= ERROR_INVALID_DATA)
+        {
+            return errtable[oserrno-1].errnocode;
+        }
+        else if (oserrno <= errtable[ERRTABLECOUNT - 1].oscode)
+        {
+            const errentry* result = bsearch_errentry(oserrno, errtable, ERRTABLECOUNT);
+            if (result != nullptr)
+            {
+                return result->errnocode;
+            }
+        }
     }
 
     // The error code wasn't in the table.  We check for a range of

@@ -14,14 +14,12 @@
     #pragma function(wcscpy)
 #endif
 
-
+#pragma function(memcpy, wcslen)
 
 extern "C" wchar_t* __cdecl wcscpy(
     wchar_t*       const destination,
     wchar_t const*       source)
 {
-    wchar_t* destination_it = destination;
-    while ((*destination_it++ = *source++) != '\0') { }
-
+    memcpy(destination, source, (wcslen(source) + 1) * sizeof(wchar_t));
     return destination;
 }

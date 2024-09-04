@@ -97,7 +97,6 @@
 *******************************************************************************/
 
 
-
 /* Routine prototype */
 #if ROUTINE == _STRSPN
 size_t __cdecl strspn (
@@ -114,16 +113,13 @@ char * __cdecl strpbrk (
         const unsigned char *ctrl = (unsigned char const*)control;
 
         unsigned char map[32];
-        int count;
-
         /* Clear out bit map */
-        for (count=0; count<32; count++)
-                map[count] = 0;
+        memset(map, 0, sizeof(map));
 
         /* Set bits in control map */
         while (*ctrl)
         {
-                map[*ctrl >> 3] |= (1 << (*ctrl & 7));
+                _bittestandset64(map, *ctrl);
                 ctrl++;
         }
 
@@ -132,8 +128,8 @@ char * __cdecl strpbrk (
         /* 1st char NOT in control map stops search */
         if (*str)
         {
-                count=0;
-                while (map[*str >> 3] & (1 << (*str & 7)))
+                int count=0;
+                while (_bittest64(map, *str))
                 {
                         count++;
                         str++;
@@ -145,9 +141,9 @@ char * __cdecl strpbrk (
 #elif ROUTINE == _STRCSPN
 
         /* 1st char in control map stops search */
-        count=0;
+        int count=0;
         map[0] |= 1;    /* null chars not considered */
-        while (!(map[*str >> 3] & (1 << (*str & 7))))
+        while (!_bittest64(map, *str))
         {
                 count++;
                 str++;
@@ -159,7 +155,7 @@ char * __cdecl strpbrk (
         /* 1st char in control map stops search */
         while (*str)
         {
-                if (map[*str >> 3] & (1 << (*str & 7)))
+                if (_bittest64(map, *str))
                         return((char *)str);
                 str++;
         }

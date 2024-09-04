@@ -67,7 +67,13 @@ BLK_SIZE = sizeof BLK_TYPE
 PAGE_MASK = PAGE_SIZE - 1       ; mask for offset in MM page
 PAGE_SAFE_BLK = PAGE_SIZE - BLK_SIZE ; maximum offset for safe block compare
 
-LEAF_ENTRY_ARG2 strcmp, _TEXT, str1:ptr byte, str2:ptr byte
+ifdef _CRT_FFS_BUILD
+fname      TEXTEQU <strcmp_ffs>
+else
+fname      TEXTEQU <strcmp>
+endif
+
+LEAF_ENTRY_ARG2 fname, _TEXT$21, str1:ptr byte, str2:ptr byte
 
     OPTION PROLOGUE:NONE, EPILOGUE:NONE
 
@@ -126,5 +132,5 @@ return_not_equal:
     or      rax, 1
     ret
 
-LEAF_END strcmp, _TEXT
+LEAF_END fname, _TEXT$21
 end

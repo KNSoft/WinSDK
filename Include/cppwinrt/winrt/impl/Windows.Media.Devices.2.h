@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -65,7 +65,8 @@ WINRT_EXPORT namespace winrt::Windows::Media::Devices
         AdvancedPhotoControl(std::nullptr_t) noexcept {}
         AdvancedPhotoControl(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Media::Devices::IAdvancedPhotoControl(ptr, take_ownership_from_abi) {}
     };
-    struct __declspec(empty_bases) AudioDeviceController : winrt::Windows::Media::Devices::IAudioDeviceController
+    struct __declspec(empty_bases) AudioDeviceController : winrt::Windows::Media::Devices::IAudioDeviceController,
+        impl::require<AudioDeviceController, winrt::Windows::Media::Devices::IAudioDeviceController2>
     {
         AudioDeviceController(std::nullptr_t) noexcept {}
         AudioDeviceController(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Media::Devices::IAudioDeviceController(ptr, take_ownership_from_abi) {}

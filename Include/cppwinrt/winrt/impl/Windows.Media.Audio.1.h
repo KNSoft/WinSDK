@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -26,6 +26,20 @@ WINRT_EXPORT namespace winrt::Windows::Media::Audio
     {
         IAudioDeviceOutputNode(std::nullptr_t = nullptr) noexcept {}
         IAudioDeviceOutputNode(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IAudioEffectsPackConfiguration :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IAudioEffectsPackConfiguration>
+    {
+        IAudioEffectsPackConfiguration(std::nullptr_t = nullptr) noexcept {}
+        IAudioEffectsPackConfiguration(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IAudioEffectsPackConfigurationStatics :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IAudioEffectsPackConfigurationStatics>
+    {
+        IAudioEffectsPackConfigurationStatics(std::nullptr_t = nullptr) noexcept {}
+        IAudioEffectsPackConfigurationStatics(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) IAudioFileInputNode :
         winrt::Windows::Foundation::IInspectable,

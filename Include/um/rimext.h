@@ -29,21 +29,28 @@
 extern "C" {
 #endif
 
-#define RIM_INPUT_TYPE_MOUSE    0x00000001
-#define RIM_INPUT_TYPE_KEYBOARD 0x00000002
-#define RIM_INPUT_TYPE_HID_PEN  0x00000004
-#define RIM_INPUT_TYPE_HID_PTP  0x00000008
-#define RIM_INPUT_TYPE_HID_TCH  0x00000010
-#define RIM_INPUT_TYPE_HID_GEN  0x00000020
+#if defined(__cplusplus) && !defined(SORTPP_PASS)
+enum RIM_INPUT_TYPE : DWORD
+{
+    RIM_INPUT_TYPE_INVALID  = 0,
+    RIM_INPUT_TYPE_MOUSE    = 0x00000001,
+    RIM_INPUT_TYPE_KEYBOARD = 0x00000002,
+    RIM_INPUT_TYPE_HID_PEN  = 0x00000004,
+    RIM_INPUT_TYPE_HID_PTP  = 0x00000008,
+    RIM_INPUT_TYPE_HID_TCH  = 0x00000010,
+    RIM_INPUT_TYPE_HID_GEN  = 0x00000020,
 
-#define RIM_INPUT_TYPE_HID (RIM_INPUT_TYPE_HID_PEN |\
-                            RIM_INPUT_TYPE_HID_PTP |\
-                            RIM_INPUT_TYPE_HID_TCH)
+    RIM_INPUT_TYPE_HID = (RIM_INPUT_TYPE_HID_PEN |
+                          RIM_INPUT_TYPE_HID_PTP |
+                          RIM_INPUT_TYPE_HID_TCH),
 
-#define RIM_INPUT_TYPE_ALL (RIM_INPUT_TYPE_MOUSE |\
-                            RIM_INPUT_TYPE_KEYBOARD |\
-                            RIM_INPUT_TYPE_HID |\
-                            RIM_INPUT_TYPE_HID_GEN)
+    RIM_INPUT_TYPE_ALL = (RIM_INPUT_TYPE_MOUSE |
+                          RIM_INPUT_TYPE_KEYBOARD |
+                          RIM_INPUT_TYPE_HID |
+                          RIM_INPUT_TYPE_HID_GEN),
+};
+DEFINE_ENUM_FLAG_OPERATORS(RIM_INPUT_TYPE);
+#endif // __cplusplus
 
 typedef struct _RIM_USAGE_ANDPAGE
 {
@@ -51,19 +58,24 @@ typedef struct _RIM_USAGE_ANDPAGE
     USHORT UsagePage;
 } RIM_USAGE_AND_PAGE, *PRIM_USAGE_AND_PAGE;
 
-#define RIM_DEVICE_CREATED          1
-#define RIM_DEVICE_OPENED           2
-#define RIM_DEVICE_CLOSED           3
-#define RIM_DEVICE_DESTROYED        4
-#define RIM_DEVICE_RESET            5
+#if defined(__cplusplus) && !defined(SORTPP_PASS)
+enum RIM_DEVICE_CHANGE : DWORD
+{
+    RIM_DEVICE_CREATED    = 1,
+    RIM_DEVICE_OPENED     = 2,
+    RIM_DEVICE_CLOSED     = 3,
+    RIM_DEVICE_DESTROYED  = 4,
+    RIM_DEVICE_RESET      = 5,
+};
+#endif // __cplusplus
 
 typedef BOOL (CALLBACK* RIMDEVCHANGECALLBACKPROC)(
     HANDLE hRim,
     HANDLE hRimDev,
     DWORD dwDeviceIdentity,
-    DWORD dwCode,
-    DWORD dwDeviceType,
-    DWORD dwRimInputType,
+    DWORD dwCode,           // RIM_DEVICE_CHANGE
+    DWORD dwDeviceType,     // RIM_DEVICE_TYPE
+    DWORD dwRimInputType,   // RIM_INPUT_TYPE
     USHORT usage,
     USHORT usagePage,
     PVOID pvContext);
@@ -72,9 +84,9 @@ typedef struct tagRIMDEVCHANGECALLBACK
 {
     HANDLE hRim;
     HANDLE hRimDev;
-    DWORD dwCode;
-    DWORD dwDeviceType;
-    DWORD dwRimInputType;
+    DWORD dwCode;           // RIM_DEVICE_CHANGE
+    DWORD dwDeviceType;     // RIM_DEVICE_TYPE
+    DWORD dwRimInputType;   // RIM_INPUT_TYPE
     USHORT usage;
     USHORT usagePage;
     PVOID pContext;
@@ -437,7 +449,7 @@ typedef struct _RIMIDE_GENERIC_HID_DEVICE_PROPERTIES {
 
 } RIMIDE_GENERIC_HID_DEVICE_PROPERTIES, *PRIMIDE_GENERIC_HID_DEVICE_PROPERTIES;
 
-#if !defined(_BUILD_RIM_) && !defined(_CONVERGED_BASE_SYS_DRIVER_) && !defined(_CONVERGED_WINDOWS_SYS_DRIVER_) && !defined(_CONVERGED_MIN_SYS_DRIVER_)
+#if !defined(_BUILD_RIM_) && !defined(_CONVERGED_BASE_SYS_DRIVER_) && !defined(_CONVERGED_WINDOWS_SYS_DRIVER_) && !defined(_CONVERGED_MIN_SYS_DRIVER_) && !defined(_SGD_SYS_DRIVER_)
 
 WINUSERAPI
 NTSTATUS

@@ -37,20 +37,19 @@
 *
 *******************************************************************************/
 
+#pragma function(memcpy, memset)
+
 char * __cdecl strncpy (
         char * dest,
         const char * source,
         size_t count
         )
 {
-        char *start = dest;
-
-        while (count && (*dest++ = *source++) != '\0')    /* copy string */
-                count--;
-
-        if (count)                              /* pad out with zeroes */
-                while (--count)
-                        *dest++ = '\0';
-
-        return(start);
+        size_t srclen = strnlen(source, count);
+        memcpy(dest, source, srclen);
+        if (srclen < count)
+        {
+                memset(dest + srclen, 0, count - srclen);
+        }
+        return(dest);
 }

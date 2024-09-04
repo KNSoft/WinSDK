@@ -431,9 +431,15 @@ DECLARE_HANDLE(VMBPACKETCOMPLETION);
 ///
 /// - VMBUS_CHANNEL_INIT_FLAG_IS_PIPE
 /// This flag indicates that the channel operates in the mode described by \ref pipe_mode.
+///
+/// - VMBUS_CHANNEL_INIT_DISALLOW_HIBERNATE_REMOVAL
+/// This flag indicates that the channel should not be removed when the VM is
+/// hibernated. If it is, the VM will bugcheck on resume.
 #define VMBUS_CHANNEL_INIT_FLAG_IS_PIPE 0x1
+#define VMBUS_CHANNEL_INIT_DISALLOW_HIBERNATE_REMOVAL 0x2
 #define VMBUS_CHANNEL_INIT_FLAGS (\
-    VMBUS_CHANNEL_INIT_FLAG_IS_PIPE)
+    VMBUS_CHANNEL_INIT_FLAG_IS_PIPE | \
+    VMBUS_CHANNEL_INIT_DISALLOW_HIBERNATE_REMOVAL)
 
 ///\page server_init_flags VMBus Channel Initialization Flags - Server Endpoint
 /// These flags define how a channel operates.  VMBUS_SERVER_CHANNEL_INIT_FLAGS
@@ -1837,7 +1843,11 @@ FN_VMB_CHANNEL_SAVE_END VmbChannelSaveEnd;
 /// This routine restores the client state from previously saved state.
 ///
 /// The caller is expected to call this function with buffers that contain whole
-/// "chunks" of stored data.
+/// "chunks" of stored data. The channel should also be returned to the open/closed
+/// state it was saved in prior to calling this routine. Restoring to an open
+/// channel without closing the channel between save and restore calls is not
+/// supported. Similarly, restoring twice to an open channel without closing
+/// between calls is unsupported.
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param Buffer Pointer to buffer that contains previously saved state

@@ -276,7 +276,7 @@ NdisAdjustNetBufferCurrentMdl(
 //
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-_When_(return==0,_At_(NetBufferList->Context, __drv_allocatesMem(mem)))
+__drv_when(return==0, __out __drv_at(NetBufferList->Buffer, __drv_allocatesMem(Mem)))
 NDIS_EXPORTED_ROUTINE
 NDIS_STATUS
 NdisAllocateNetBufferListContext(
@@ -449,4 +449,3 @@ EXTERN_C_END
 
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_DESKTOP)
 #pragma endregion
-

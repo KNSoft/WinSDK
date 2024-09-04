@@ -141,6 +141,16 @@ typedef struct _WIFI_DEVICE_CAPABILITIES
     BOOLEAN BeaconReportsImplemented; // True if the device handles beacon report measurement
 } WIFI_DEVICE_CAPABILITIES;
 
+inline
+void
+WIFI_DEVICE_CAPABILITIES_INIT(
+    _Out_ WIFI_DEVICE_CAPABILITIES * Capabilities
+)
+{
+    RtlZeroMemory(Capabilities, sizeof(*Capabilities));
+    Capabilities->Size = sizeof(*Capabilities);
+}
+
 #define MAX_SIMULTANEOUS_BAND_CONNECTIONS_ALLOWED 4
 
 typedef struct
@@ -170,7 +180,7 @@ typedef struct _WIFI_STATION_CAPABILITIES
     BOOLEAN HESSIDConnectionSupported; // {0,1} If ability to connect to HESSIDs is supported. Yes = 1.
     BOOLEAN FTMAsInitiatorSupport; // {0,1} If FTM procedures as Initiator are supported. Yes = 1.
     UINT32 FTMNumberOfSupportedTargets; // Number of target STAs supported per FTM request task.
-    BOOLEAN HostWPA3FIPSModeEnabled; // Host-FIPS mode for WPA3 is enabled or not
+    BOOLEAN HostWPA3FIPSModeEnabled_Deprecated; // Deprecated: Host-FIPS mode for WPA3 is enabled or not
     ULONG NumSupportedUnicastAlgorithms;
     PDOT11_AUTH_CIPHER_PAIR UnicastAlgorithmsList;
     ULONG NumSupportedMulticastDataAlgorithms;
@@ -183,6 +193,16 @@ typedef struct _WIFI_STATION_CAPABILITIES
     BOOLEAN MultiLinkConnectionsEnabled;        // Multi-Link connectivity is enabled or not
     WDI_MAC_ADDRESS * MultiLinkAddressesList;   // Array of MultiLink MAC Addresses with MaxMultiLinkConnectionsSupported elements
 } WIFI_STATION_CAPABILITIES;
+
+inline
+void
+WIFI_STATION_CAPABILITIES_INIT(
+    _Out_ WIFI_STATION_CAPABILITIES * Capabilities
+)
+{
+    RtlZeroMemory(Capabilities, sizeof(*Capabilities));
+    Capabilities->Size = sizeof(*Capabilities);
+}
 
 typedef struct _WIFI_WIFIDIRECT_CAPABILITIES
 {
@@ -219,6 +239,16 @@ typedef struct _WIFI_WIFIDIRECT_CAPABILITIES
     UINT32 NumInterfaceAddresses;
     WDI_MAC_ADDRESS * InterfaceAddressList;
 } WIFI_WIFIDIRECT_CAPABILITIES;
+
+inline
+void
+WIFI_WIFIDIRECT_CAPABILITIES_INIT(
+    _Out_ WIFI_WIFIDIRECT_CAPABILITIES * Capabilities
+)
+{
+    RtlZeroMemory(Capabilities, sizeof(*Capabilities));
+    Capabilities->Size = sizeof(*Capabilities);
+}
 
 typedef struct _WIFI_BAND_INFO
 {

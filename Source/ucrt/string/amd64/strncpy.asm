@@ -13,7 +13,14 @@
 include ksamd64.inc
         subttl  "strncpy"
 
-LEAF_ENTRY_ARG3 strncpy, _TEXT, dst:ptr byte, src:ptr byte, count:dword
+ifdef _CRT_FFS_BUILD
+fname      TEXTEQU <strncpy_ffs>
+else
+fname      TEXTEQU <strncpy>
+endif
+
+LEAF_ENTRY_ARG3 fname, _TEXT$21, dst:ptr byte, src:ptr byte, count:dword
+
 OPTION PROLOGUE:NONE, EPILOGUE:NONE
 
 ; align the SOURCE so we never page fault
@@ -164,6 +171,6 @@ tail_finish:
     mov     rax, r11
     ret
 
-LEAF_END strncpy, _TEXT
+LEAF_END fname, _TEXT$21
 
     end

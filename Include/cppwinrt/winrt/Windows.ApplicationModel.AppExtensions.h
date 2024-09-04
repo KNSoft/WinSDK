@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -7,8 +7,8 @@
 #ifndef WINRT_Windows_ApplicationModel_AppExtensions_H
 #define WINRT_Windows_ApplicationModel_AppExtensions_H
 #include "winrt/base.h"
-static_assert(winrt::check_version(CPPWINRT_VERSION, "2.0.220110.5"), "Mismatched C++/WinRT headers.");
-#define CPPWINRT_VERSION "2.0.220110.5"
+static_assert(winrt::check_version(CPPWINRT_VERSION, "2.0.230511.6"), "Mismatched C++/WinRT headers.");
+#define CPPWINRT_VERSION "2.0.230511.6"
 #include "winrt/Windows.ApplicationModel.h"
 #include "winrt/impl/Windows.ApplicationModel.2.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -17,67 +17,85 @@ static_assert(winrt::check_version(CPPWINRT_VERSION, "2.0.220110.5"), "Mismatche
 #include "winrt/impl/Windows.ApplicationModel.AppExtensions.2.h"
 namespace winrt::impl
 {
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::Id() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::Id() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension)->get_Id(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::DisplayName() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::DisplayName() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension)->get_DisplayName(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::Description() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::Description() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension)->get_Description(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::ApplicationModel::Package) consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::Package() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::Package() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension)->get_Package(&value));
         return winrt::Windows::ApplicationModel::Package{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::ApplicationModel::AppInfo) consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::AppInfo() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::AppInfo() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension)->get_AppInfo(&value));
         return winrt::Windows::ApplicationModel::AppInfo{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Foundation::Collections::IPropertySet>) consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::GetExtensionPropertiesAsync() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::GetExtensionPropertiesAsync() const
     {
         void* operation{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension)->GetExtensionPropertiesAsync(&operation));
         return winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Foundation::Collections::IPropertySet>{ operation, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::StorageFolder>) consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::GetPublicFolderAsync() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension<D>::GetPublicFolderAsync() const
     {
         void* operation{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension)->GetPublicFolderAsync(&operation));
         return winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::StorageFolder>{ operation, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_ApplicationModel_AppExtensions_IAppExtension2<D>::AppUserModelId() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension2<D>::AppUserModelId() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension2)->get_AppUserModelId(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::AppExtensions::AppExtension>>) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::FindAllAsync() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension3<D>::GetExtensionProperties() const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension3)->GetExtensionProperties(&result));
+        return winrt::Windows::Foundation::Collections::IPropertySet{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension3<D>::GetPublicPath() const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension3)->GetPublicPath(&result));
+        return hstring{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtension3<D>::GetPublicFolder() const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtension3)->GetPublicFolder(&result));
+        return winrt::Windows::Storage::StorageFolder{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::FindAllAsync() const
     {
         void* operation{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->FindAllAsync(&operation));
         return winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::AppExtensions::AppExtension>>{ operation, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<bool>) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::RequestRemovePackageAsync(param::hstring const& packageFullName) const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::RequestRemovePackageAsync(param::hstring const& packageFullName) const
     {
         void* operation{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->RequestRemovePackageAsync(*(void**)(&packageFullName), &operation));
         return winrt::Windows::Foundation::IAsyncOperation<bool>{ operation, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::event_token) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageInstalled(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs> const& handler) const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageInstalled(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs> const& handler) const
     {
         winrt::event_token token{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->add_PackageInstalled(*(void**)(&handler), put_abi(token)));
@@ -87,11 +105,11 @@ namespace winrt::impl
     {
         return impl::make_event_revoker<D, PackageInstalled_revoker>(this, PackageInstalled(handler));
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageInstalled(winrt::event_token const& token) const noexcept
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageInstalled(winrt::event_token const& token) const noexcept
     {
         WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->remove_PackageInstalled(impl::bind_in(token));
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::event_token) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUpdating(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs> const& handler) const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUpdating(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs> const& handler) const
     {
         winrt::event_token token{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->add_PackageUpdating(*(void**)(&handler), put_abi(token)));
@@ -101,11 +119,11 @@ namespace winrt::impl
     {
         return impl::make_event_revoker<D, PackageUpdating_revoker>(this, PackageUpdating(handler));
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUpdating(winrt::event_token const& token) const noexcept
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUpdating(winrt::event_token const& token) const noexcept
     {
         WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->remove_PackageUpdating(impl::bind_in(token));
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::event_token) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUpdated(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs> const& handler) const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUpdated(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs> const& handler) const
     {
         winrt::event_token token{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->add_PackageUpdated(*(void**)(&handler), put_abi(token)));
@@ -115,11 +133,11 @@ namespace winrt::impl
     {
         return impl::make_event_revoker<D, PackageUpdated_revoker>(this, PackageUpdated(handler));
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUpdated(winrt::event_token const& token) const noexcept
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUpdated(winrt::event_token const& token) const noexcept
     {
         WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->remove_PackageUpdated(impl::bind_in(token));
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::event_token) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUninstalling(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs> const& handler) const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUninstalling(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs> const& handler) const
     {
         winrt::event_token token{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->add_PackageUninstalling(*(void**)(&handler), put_abi(token)));
@@ -129,11 +147,11 @@ namespace winrt::impl
     {
         return impl::make_event_revoker<D, PackageUninstalling_revoker>(this, PackageUninstalling(handler));
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUninstalling(winrt::event_token const& token) const noexcept
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageUninstalling(winrt::event_token const& token) const noexcept
     {
         WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->remove_PackageUninstalling(impl::bind_in(token));
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::event_token) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageStatusChanged(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs> const& handler) const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageStatusChanged(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs> const& handler) const
     {
         winrt::event_token token{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->add_PackageStatusChanged(*(void**)(&handler), put_abi(token)));
@@ -143,83 +161,89 @@ namespace winrt::impl
     {
         return impl::make_event_revoker<D, PackageStatusChanged_revoker>(this, PackageStatusChanged(handler));
     }
-    template <typename D> WINRT_IMPL_AUTO(void) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageStatusChanged(winrt::event_token const& token) const noexcept
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog<D>::PackageStatusChanged(winrt::event_token const& token) const noexcept
     {
         WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog)->remove_PackageStatusChanged(impl::bind_in(token));
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalogStatics<D>::Open(param::hstring const& appExtensionName) const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalog2<D>::FindAll() const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog2)->FindAll(&result));
+        return winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::AppExtensions::AppExtension>{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionCatalogStatics<D>::Open(param::hstring const& appExtensionName) const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalogStatics)->Open(*(void**)(&appExtensionName), &value));
         return winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageInstalledEventArgs<D>::AppExtensionName() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageInstalledEventArgs<D>::AppExtensionName() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageInstalledEventArgs)->get_AppExtensionName(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::ApplicationModel::Package) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageInstalledEventArgs<D>::Package() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageInstalledEventArgs<D>::Package() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageInstalledEventArgs)->get_Package(&value));
         return winrt::Windows::ApplicationModel::Package{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::AppExtensions::AppExtension>) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageInstalledEventArgs<D>::Extensions() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageInstalledEventArgs<D>::Extensions() const
     {
         void* values{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageInstalledEventArgs)->get_Extensions(&values));
         return winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::AppExtensions::AppExtension>{ values, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageStatusChangedEventArgs<D>::AppExtensionName() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageStatusChangedEventArgs<D>::AppExtensionName() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageStatusChangedEventArgs)->get_AppExtensionName(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::ApplicationModel::Package) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageStatusChangedEventArgs<D>::Package() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageStatusChangedEventArgs<D>::Package() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageStatusChangedEventArgs)->get_Package(&value));
         return winrt::Windows::ApplicationModel::Package{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUninstallingEventArgs<D>::AppExtensionName() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUninstallingEventArgs<D>::AppExtensionName() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUninstallingEventArgs)->get_AppExtensionName(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::ApplicationModel::Package) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUninstallingEventArgs<D>::Package() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUninstallingEventArgs<D>::Package() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUninstallingEventArgs)->get_Package(&value));
         return winrt::Windows::ApplicationModel::Package{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatedEventArgs<D>::AppExtensionName() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatedEventArgs<D>::AppExtensionName() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatedEventArgs)->get_AppExtensionName(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::ApplicationModel::Package) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatedEventArgs<D>::Package() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatedEventArgs<D>::Package() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatedEventArgs)->get_Package(&value));
         return winrt::Windows::ApplicationModel::Package{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::AppExtensions::AppExtension>) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatedEventArgs<D>::Extensions() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatedEventArgs<D>::Extensions() const
     {
         void* values{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatedEventArgs)->get_Extensions(&values));
         return winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::AppExtensions::AppExtension>{ values, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(hstring) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatingEventArgs<D>::AppExtensionName() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatingEventArgs<D>::AppExtensionName() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatingEventArgs)->get_AppExtensionName(&value));
         return hstring{ value, take_ownership_from_abi };
     }
-    template <typename D> WINRT_IMPL_AUTO(winrt::Windows::ApplicationModel::Package) consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatingEventArgs<D>::Package() const
+    template <typename D> auto consume_Windows_ApplicationModel_AppExtensions_IAppExtensionPackageUpdatingEventArgs<D>::Package() const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatingEventArgs)->get_Package(&value));
@@ -296,6 +320,36 @@ namespace winrt::impl
             clear_abi(value);
             typename D::abi_guard guard(this->shim());
             *value = detach_from<hstring>(this->shim().AppUserModelId());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::ApplicationModel::AppExtensions::IAppExtension3> : produce_base<D, winrt::Windows::ApplicationModel::AppExtensions::IAppExtension3>
+    {
+        int32_t __stdcall GetExtensionProperties(void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Foundation::Collections::IPropertySet>(this->shim().GetExtensionProperties());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall GetPublicPath(void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<hstring>(this->shim().GetPublicPath());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall GetPublicFolder(void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Storage::StorageFolder>(this->shim().GetPublicFolder());
             return 0;
         }
         catch (...) { return to_hresult(); }
@@ -391,6 +445,20 @@ namespace winrt::impl
             this->shim().PackageStatusChanged(*reinterpret_cast<winrt::event_token const*>(&token));
             return 0;
         }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog2> : produce_base<D, winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog2>
+    {
+        int32_t __stdcall FindAll(void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::AppExtensions::AppExtension>>(this->shim().FindAll());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     };
 #endif
 #ifndef WINRT_LEAN_AND_MEAN
@@ -546,7 +614,9 @@ namespace std
 #ifndef WINRT_LEAN_AND_MEAN
     template<> struct hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtension> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtension2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtension3> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog2> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalogStatics> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageInstalledEventArgs> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageStatusChangedEventArgs> : winrt::impl::hash_base {};

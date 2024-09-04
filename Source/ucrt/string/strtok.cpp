@@ -25,7 +25,7 @@ extern "C" char* __cdecl __acrt_strtok_s_novalidation(
     _Inout_ _Deref_prepost_opt_z_ char**      context
     );
 
-    
+
 
 extern "C" char* __cdecl strtok(char* const string, char const* const control)
 {

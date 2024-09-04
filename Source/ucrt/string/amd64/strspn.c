@@ -17,6 +17,21 @@
 
 #include <string.h>
 
+/*
+ * This function is 3-4 times faster than the _bittest intrinsic on x86/x64, and generates
+ * similar code on Arm64 to the _bittest intrinsic.  The reason why _bittest is slow on x86/x64
+ * is that the bt instruction variant that loads memory is slow.  Once the _bittest intrinsic
+ * is fixed, we could remove this function.
+ */
+static __forceinline
+unsigned char _crt_bittest(
+    unsigned char * bitmap,
+    unsigned int bit
+    )
+{
+    return (unsigned char)((bitmap[bit >> 3] >> (bit & 7)) & 1);
+}
+
 #pragma warning(disable:__WARNING_POTENTIAL_BUFFER_OVERFLOW_NULLTERMINATED) // 26018 Prefast doesn't understand reading past buffer but staying on same page.
 #pragma warning(disable:__WARNING_RETURNING_BAD_RESULT) // 28196
 
@@ -105,21 +120,36 @@
 __declspec(noinline)
 static size_t __cdecl fallbackMethod(
 #else
-size_t __cdecl strspn (
+size_t __cdecl
+#ifdef _CRT_FFS_BUILD
+strspn_ffs (
+#else
+strspn (
+#endif
 #endif
 #elif ROUTINE == _STRCSPN
 #if defined(STRSPN_USE_SSE2)
 __declspec(noinline)
 static size_t __cdecl fallbackMethod(
 #else
-size_t __cdecl strcspn (
+size_t __cdecl
+#ifdef _CRT_FFS_BUILD
+strcspn_ffs (
+#else
+strcspn (
+#endif
 #endif
 #else  /* ROUTINE == _STRCSPN */
 #if defined(STRSPN_USE_SSE2)
 __declspec(noinline)
 static char * __cdecl fallbackMethod(
 #else
-char * __cdecl strpbrk (
+char * __cdecl
+#ifdef _CRT_FFS_BUILD
+strpbrk_ffs (
+#else
+strpbrk (
+#endif
 #endif
 #endif  /* ROUTINE == _STRCSPN */
         const char * string,
@@ -130,16 +160,13 @@ char * __cdecl strpbrk (
         const unsigned char *ctrl = (unsigned char const*)control;
 
         unsigned char map[32];
-        int count;
-
         /* Clear out bit map */
-        for (count=0; count<32; count++)
-                map[count] = 0;
+        memset(map, 0, sizeof(map));
 
         /* Set bits in control map */
         while (*ctrl)
         {
-                map[*ctrl >> 3] |= (1 << (*ctrl & 7));
+                _bittestandset(map, *ctrl);
                 ctrl++;
         }
 
@@ -148,8 +175,8 @@ char * __cdecl strpbrk (
         /* 1st char NOT in control map stops search */
         if (*str)
         {
-                count=0;
-                while (map[*str >> 3] & (1 << (*str & 7)))
+                int count=0;
+                while (_crt_bittest(map, *str))
                 {
                         count++;
                         str++;
@@ -161,9 +188,9 @@ char * __cdecl strpbrk (
 #elif ROUTINE == _STRCSPN
 
         /* 1st char in control map stops search */
-        count=0;
+        int count=0;
         map[0] |= 1;    /* null chars not considered */
-        while (!(map[*str >> 3] & (1 << (*str & 7))))
+        while (!_crt_bittest(map, *str))
         {
                 count++;
                 str++;
@@ -175,7 +202,7 @@ char * __cdecl strpbrk (
         /* 1st char in control map stops search */
         while (*str)
         {
-                if (map[*str >> 3] & (1 << (*str & 7)))
+                if (_crt_bittest(map, *str))
                         return((char *)str);
                 str++;
         }
@@ -193,12 +220,26 @@ char * __cdecl strpbrk (
 
 /* Routine prototype */
 #if ROUTINE == _STRSPN
-size_t __cdecl strspn (
+size_t __cdecl
+#ifdef _CRT_FFS_BUILD
+strspn_ffs (
+#else
+strspn (
+#endif
 #elif ROUTINE == _STRCSPN
-size_t __cdecl strcspn (
+size_t __cdecl
+#ifdef _CRT_FFS_BUILD
+strcspn_ffs (
+#else
+strcspn (
+#endif
 #else  /* ROUTINE == _STRCSPN */
-char * __cdecl strpbrk (
-
+char * __cdecl
+#ifdef _CRT_FFS_BUILD
+strpbrk_ffs (
+#else
+strpbrk (
+#endif
 #endif  /* ROUTINE == _STRCSPN */
 const char * string, const char * control)
 {

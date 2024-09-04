@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -166,6 +166,7 @@ WINRT_EXPORT namespace winrt::Windows::Graphics::DirectX
         V408 = 132,
         SamplerFeedbackMinMipOpaque = 189,
         SamplerFeedbackMipRegionUsedOpaque = 190,
+        A4B4G4R4 = 191,
     };
     enum class DirectXPrimitiveTopology : int32_t
     {

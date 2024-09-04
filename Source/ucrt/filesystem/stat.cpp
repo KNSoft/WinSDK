@@ -12,17 +12,28 @@
 #include <direct.h>
 #include <errno.h>
 #include <fcntl.h>
-#include <corecrt_internal_lowio.h>
-#include <corecrt_internal_time.h>
-#include <corecrt_internal_win32_buffer.h>
 #include <io.h>
 #include <share.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <corecrt_internal_time.h>
+#include <corecrt_internal_lowio.h>
+#include <corecrt_internal_win32_buffer.h>
 
+#include "faststat.h"
 
+#ifdef ENABLE_FAST_STAT
+
+#include <winnt.h>
+#include <winioctl.h>
+
+#ifndef MAXUSHORT
+#define MAXUSHORT           0xffff
+#endif
+
+#endif // ENABLE_FAST_STAT
 
 namespace
 {
@@ -87,6 +98,30 @@ static bool __cdecl compute_size(BY_HANDLE_FILE_INFORMATION const& file_info, __
         static_cast<unsigned __int64>(file_info.nFileSizeLow));
     return true;
 }
+
+#ifdef ENABLE_FAST_STAT
+
+static bool __cdecl compute_size(LARGE_INTEGER const& file_size, long& size) throw()
+{
+    size = 0;
+    _VALIDATE_RETURN_NOEXC(file_size.HighPart == 0 && file_size.LowPart <= LONG_MAX, EOVERFLOW, false);
+
+    size = static_cast<long>(file_size.LowPart);
+    return true;
+}
+
+static bool __cdecl compute_size(LARGE_INTEGER const& file_size, __int64& size) throw()
+{
+    size = 0;
+    _VALIDATE_RETURN_NOEXC(file_size.HighPart <= LONG_MAX, EOVERFLOW, false);
+
+    size = static_cast<__int64>(
+        static_cast<unsigned __int64>(file_size.HighPart) * 0x100000000i64 +
+        static_cast<unsigned __int64>(file_size.LowPart));
+    return true;
+}
+
+#endif // ENABLE_FAST_STAT
 
 _Success_(return != 0)
 static wchar_t* __cdecl call_wfullpath(
@@ -323,6 +358,22 @@ static TimeType __cdecl convert_filetime_to_time_t(
         -1);
 }
 
+#ifdef ENABLE_FAST_STAT
+
+template <typename TimeType>
+static TimeType __cdecl convert_filetime_to_time_t(
+    const LARGE_INTEGER& file_time_int,
+    const TimeType& fallback_time
+    ) throw()
+{
+    FILETIME file_time;
+    file_time.dwHighDateTime = file_time_int.HighPart;
+    file_time.dwLowDateTime = file_time_int.LowPart;
+    return convert_filetime_to_time_t(file_time, fallback_time);
+}
+
+#endif // ENABLE_FAST_STAT
+
 template <typename StatStruct>
 static bool __cdecl common_stat_handle_file_not_opened(
     wchar_t const* const path,
@@ -449,6 +500,86 @@ static bool __cdecl common_stat_handle_file_opened(
     return true;
 }
 
+#ifdef ENABLE_FAST_STAT
+
+template <typename StatStruct>
+static bool __cdecl common_stat_by_path(
+    wchar_t const* const path,
+    StatStruct&          result
+    ) throw()
+{
+    using time_type = decltype(result.st_mtime);
+
+    LARGE_INTEGER file_size;
+    LARGE_INTEGER creation_time;
+    LARGE_INTEGER last_access_time;
+    LARGE_INTEGER last_write_time;
+    unsigned long device_type;
+    unsigned long number_of_links;
+    unsigned long file_attributes;
+    bool status = false;
+
+    if ((path != nullptr) &&
+        GetFileInfoByName(path,
+                          device_type,
+                          number_of_links,
+                          file_attributes,
+                          creation_time.QuadPart,
+                          last_access_time.QuadPart,
+                          last_write_time.QuadPart,
+                          file_size.QuadPart))
+    {
+        do
+        {
+            // Verify that the device type is one of the supported set.
+            bool use_file_info;
+            switch (device_type)
+            {
+            case FILE_DEVICE_DISK:
+            case FILE_DEVICE_DISK_FILE_SYSTEM:
+            case FILE_DEVICE_VIRTUAL_DISK:
+                use_file_info = true;
+                break;
+
+            default:
+                use_file_info = false;
+                break;
+            }
+            if (!use_file_info)
+            {
+                break;
+            }
+
+            if (!compute_size(file_size, result.st_size))
+            {
+                break;
+            }
+
+            // Try to get the disk from the path.
+            int drive_number{};
+            if (!get_drive_number_from_path(path, drive_number))
+            {
+                break;
+            }
+
+            result.st_nlink = number_of_links > MAXUSHORT ? MAXUSHORT : (USHORT) number_of_links;
+            result.st_rdev = static_cast<_dev_t>(drive_number - 1);
+            result.st_dev  = static_cast<_dev_t>(drive_number - 1); // A=0, B=1, etc.
+            result.st_mode  = convert_to_stat_mode(file_attributes, path);
+            result.st_mtime = convert_filetime_to_time_t(last_write_time, static_cast<time_type>(0));
+            result.st_atime = convert_filetime_to_time_t(last_access_time, result.st_mtime);
+            result.st_ctime = convert_filetime_to_time_t(creation_time, result.st_mtime);
+
+            status = true;
+
+        } while (false);
+    }
+
+    return status;
+}
+
+#endif // ENABLE_FAST_STAT
+
 template <typename StatStruct>
 static int __cdecl common_stat(
     wchar_t const* const path,
@@ -459,6 +590,17 @@ static int __cdecl common_stat(
     *result = StatStruct{};
 
     _VALIDATE_CLEAR_OSSERR_RETURN(path   != nullptr, EINVAL, -1);
+
+#ifdef ENABLE_FAST_STAT
+
+    // Try to do a fast stat by path; if that fails,
+    // fall back to the older (slower) implementation.
+    if (common_stat_by_path(path, *result))
+    {
+        return 0;
+    }
+
+#endif // ENABLE_FAST_STAT
 
     __crt_unique_handle const file_handle(CreateFileW(
         path,

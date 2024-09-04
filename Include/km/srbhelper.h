@@ -86,20 +86,19 @@ SrbGetSrbExDataByType(
     _In_ PSTORAGE_REQUEST_BLOCK Srb,
     _In_ SRBEXDATATYPE Type
     )
-{   
+{
     if ((Srb->Function == SRB_FUNCTION_STORAGE_REQUEST_BLOCK) &&
-        (Srb->NumSrbExData > 0)) 
+        (Srb->NumSrbExData > 0))
     {
         PSRBEX_DATA srbExData = NULL;
-        UCHAR i = 0;
-        
-        for (i = 0; i < Srb->NumSrbExData; i++) 
+
+        for (ULONG i = 0; i < Srb->NumSrbExData; i++)
         {
-            if (Srb->SrbExDataOffset[i] >= sizeof(STORAGE_REQUEST_BLOCK) &&
-                Srb->SrbExDataOffset[i] < Srb->SrbLength) 
-            {                
+            if (Srb->SrbExDataOffset[i] >= (ULONG)sizeof(STORAGE_REQUEST_BLOCK) &&
+                Srb->SrbExDataOffset[i] < Srb->SrbLength)
+            {
                 srbExData = (PSRBEX_DATA)((PUCHAR)Srb + Srb->SrbExDataOffset[i]);
-                if (srbExData->Type == Type) 
+                if (srbExData->Type == Type)
                 {
                     return srbExData;
                 }
@@ -108,6 +107,35 @@ SrbGetSrbExDataByType(
     }
 
     return NULL;
+}
+
+FORCEINLINE BOOLEAN
+SrbContainsScsiCdb(
+    _In_ PSTORAGE_REQUEST_BLOCK Srb
+    )
+{
+    if ((Srb->Function == SRB_FUNCTION_STORAGE_REQUEST_BLOCK) &&
+        (Srb->NumSrbExData > 0))
+    {
+        for (ULONG i = 0; i < Srb->NumSrbExData; i++)
+        {
+            PSRBEX_DATA srbExData = NULL;
+
+            if (Srb->SrbExDataOffset[i] >= (ULONG)sizeof(STORAGE_REQUEST_BLOCK) &&
+                Srb->SrbExDataOffset[i] < Srb->SrbLength)
+            {
+                srbExData = (PSRBEX_DATA)((PUCHAR)Srb + Srb->SrbExDataOffset[i]);
+                if ((srbExData->Type == SrbExDataTypeScsiCdb16) ||
+                    (srbExData->Type == SrbExDataTypeScsiCdb32) ||
+                    (srbExData->Type == SrbExDataTypeScsiCdbVar))
+                {
+                    return TRUE;
+                }
+            }
+        }
+    }
+
+    return FALSE;
 }
 
 FORCEINLINE PSRBEX_DATA
@@ -128,20 +156,19 @@ SrbGetPrimarySrbExData(
             case SRB_FUNCTION_WMI:
                 return SrbGetSrbExDataByType(Srb, SrbExDataTypeWmi);
 
-            case SRB_FUNCTION_EXECUTE_SCSI: 
+            case SRB_FUNCTION_EXECUTE_SCSI:
             {
                 PSRBEX_DATA srbExData = NULL;
-                UCHAR i = 0;
 
-                for (i = 0; i < Srb->NumSrbExData; i++) 
+                for (ULONG i = 0; i < Srb->NumSrbExData; i++)
                 {                    
-                    if (Srb->SrbExDataOffset[i] >= sizeof(STORAGE_REQUEST_BLOCK) &&
-                        Srb->SrbExDataOffset[i] < Srb->SrbLength) 
+                    if (Srb->SrbExDataOffset[i] >= (ULONG)sizeof(STORAGE_REQUEST_BLOCK) &&
+                        Srb->SrbExDataOffset[i] < Srb->SrbLength)
                     {
-                        srbExData = (PSRBEX_DATA)((PUCHAR)Srb + Srb->SrbExDataOffset[i]);                        
+                        srbExData = (PSRBEX_DATA)((PUCHAR)Srb + Srb->SrbExDataOffset[i]);
                         if (srbExData->Type == SrbExDataTypeScsiCdb16 ||
                             srbExData->Type == SrbExDataTypeScsiCdb32 ||
-                            srbExData->Type == SrbExDataTypeScsiCdbVar) 
+                            srbExData->Type == SrbExDataTypeScsiCdbVar)
                         {
                             return srbExData;
                         }
@@ -149,6 +176,12 @@ SrbGetPrimarySrbExData(
                 }
                 return NULL;
             }
+
+            case SRB_FUNCTION_EXECUTE_NVME:
+                return SrbGetSrbExDataByType(Srb, SrbExDataTypeNvmeCommand);
+
+            case SRB_FUNCTION_NVMEOF_OPERATION:
+                return SrbGetSrbExDataByType(Srb, SrbExDataTypeNvmeofOperation);
 
             default:
                 return NULL;
@@ -316,24 +349,31 @@ SrbGetDefaultSrbLengthFromFunction(
     switch(SrbFunction) 
     {
         case SRB_FUNCTION_PNP:
-            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK) 
+            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK)
                             + SRB_ALIGN_SIZEOF(STOR_ADDR_BTL8)
                             + SRB_ALIGN_SIZEOF(SRBEX_DATA_PNP);
         case SRB_FUNCTION_POWER:
-            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK) 
-                            + SRB_ALIGN_SIZEOF(STOR_ADDR_BTL8) 
+            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK)
+                            + SRB_ALIGN_SIZEOF(STOR_ADDR_BTL8)
                             + SRB_ALIGN_SIZEOF(SRBEX_DATA_POWER);
         case SRB_FUNCTION_WMI:
-            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK) 
-                            + SRB_ALIGN_SIZEOF(STOR_ADDR_BTL8) 
+            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK)
+                            + SRB_ALIGN_SIZEOF(STOR_ADDR_BTL8)
                             + SRB_ALIGN_SIZEOF(SRBEX_DATA_WMI);
         case SRB_FUNCTION_EXECUTE_SCSI:
-            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK) 
-                            + SRB_ALIGN_SIZEOF(STOR_ADDR_BTL8) 
+            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK)
+                            + SRB_ALIGN_SIZEOF(STOR_ADDR_BTL8)
                             + SRB_ALIGN_SIZEOF(SRBEX_DATA_SCSI_CDB16);
         case SRB_FUNCTION_IO_CONTROL:
-            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK) 
+            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK)
                             + SRB_ALIGN_SIZEOF(STOR_ADDR_BTL8);
+        case SRB_FUNCTION_EXECUTE_NVME:
+            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK)
+                            + SRB_ALIGN_SIZEOF(SRBEX_DATA_NVME_COMMAND);
+        case SRB_FUNCTION_NVMEOF_OPERATION:
+            return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK)
+                            + SRB_ALIGN_SIZEOF(SRBEX_DATA_NVMEOF_OPERATION);
+
         default:
             return SRB_ALIGN_SIZEOF(STORAGE_REQUEST_BLOCK) 
                             + SRB_ALIGN_SIZEOF(STOR_ADDR_BTL8);
@@ -858,6 +898,16 @@ SrbGetDataBuffer(
         DataBuffer = ((PSCSI_REQUEST_BLOCK)srb)->DataBuffer;
     }
     return DataBuffer;
+}
+
+FORCEINLINE PVOID
+SrbGetDataBufferEx(
+    _In_ PSTORAGE_REQUEST_BLOCK SrbEx,
+    _Out_ PULONG DataTransferLength
+    )
+{
+    *DataTransferLength = SrbEx->DataTransferLength;
+    return SrbEx->DataBuffer;
 }
 
 FORCEINLINE VOID
@@ -1552,5 +1602,81 @@ SrbSetPortContext(
 }
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
+#ifdef _NVME_SRB_
+
+FORCEINLINE PNVME_COMMAND
+SrbGetNvmeCommandData(
+    _In_ PSTORAGE_REQUEST_BLOCK SrbEx
+    )
+/*++
+
+Routine Description:
+
+    Helper function to retrieve NVMe command from an extended SRB.
+
+Arguments:
+
+    SrbEx - Pointer to extended SRB.
+
+Return Value:
+
+    Pointer to NVMe command or NULL if SRB is not a SRB_FUNCTION_EXECUTE_NVME.
+
+--*/
+{
+    PNVME_COMMAND NvmeCommand = NULL;
+    PSRBEX_DATA_NVME_COMMAND SrbNvmeCommand = NULL;
+
+    if (SrbEx->SrbFunction == SRB_FUNCTION_EXECUTE_NVME) {
+
+        SrbNvmeCommand = (PSRBEX_DATA_NVME_COMMAND)SrbGetSrbExDataByType(SrbEx, SrbExDataTypeNvmeCommand);
+
+        if (SrbNvmeCommand) {
+            NvmeCommand = (PNVME_COMMAND)&SrbNvmeCommand->CommandDWORD0;
+        }
+    }
+
+    return NvmeCommand;
+}
+
+FORCEINLINE PNVME_COMMAND_STATUS
+SrbGetNvmeCommandStatus(
+    _In_ PSTORAGE_REQUEST_BLOCK SrbEx
+    )
+/*++
+
+Routine Description:
+
+    Helper function to retrieve NVMe command status from an extended SRB.
+
+Arguments:
+
+    SrbEx - Pointer to extended SRB.
+
+Return Value:
+
+    Pointer to NVMe command status or NULL if SRB is not a SRB_FUNCTION_EXECUTE_NVME.
+
+--*/
+{
+    PNVME_COMMAND_STATUS NvmeCommandStatus = NULL;
+    PSRBEX_DATA_NVME_COMMAND SrbNvmeCommand = NULL;
+
+    if (SrbEx->SrbFunction == SRB_FUNCTION_EXECUTE_NVME) {
+
+        SrbNvmeCommand = (PSRBEX_DATA_NVME_COMMAND)SrbGetSrbExDataByType(SrbEx, SrbExDataTypeNvmeCommand);
+
+        if (SrbNvmeCommand) {
+            NvmeCommandStatus = (PNVME_COMMAND_STATUS)&SrbNvmeCommand->CommandStatus;
+        }
+    }
+
+    return NvmeCommandStatus;
+}
+
+#endif //_NVME_SRB_
+#endif // (NTDDI_VERSION >= NTDDI_WIN11_ZN)
 
 #endif // _NTSRBHELPER_

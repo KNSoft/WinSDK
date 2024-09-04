@@ -75,6 +75,13 @@ typedef interface IVmGPUPGuestMsiAccess IVmGPUPGuestMsiAccess;
 #endif 	/* __IVmGPUPGuestMsiAccess_FWD_DEFINED__ */
 
 
+#ifndef __IGPUPMigration_FWD_DEFINED__
+#define __IGPUPMigration_FWD_DEFINED__
+typedef interface IGPUPMigration IGPUPMigration;
+
+#endif 	/* __IGPUPMigration_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
@@ -655,6 +662,109 @@ EXTERN_C const IID IID_IVmGPUPGuestMsiAccess;
 
 
 #endif 	/* __IVmGPUPGuestMsiAccess_INTERFACE_DEFINED__ */
+
+
+#ifndef __IGPUPMigration_INTERFACE_DEFINED__
+#define __IGPUPMigration_INTERFACE_DEFINED__
+
+/* interface IGPUPMigration */
+/* [local][unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IGPUPMigration;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("e0429a46-18a5-46b4-a57c-997fe2d48a31")
+    IGPUPMigration : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE SaveImmutableGpup( 
+            /* [in] */ PLUID DeviceLuid,
+            /* [out][in] */ UINT64 *Length,
+            /* [out][in] */ BYTE SaveBuffer[  ]) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RestoreImmutableGpup( 
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ UINT64 Length,
+            /* [size_is][in] */ BYTE RestoreBuffer[  ]) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IGPUPMigrationVtbl
+    {
+        BEGIN_INTERFACE
+        
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IGPUPMigration * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IGPUPMigration * This);
+        
+        DECLSPEC_XFGVIRT(IUnknown, Release)
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IGPUPMigration * This);
+        
+        DECLSPEC_XFGVIRT(IGPUPMigration, SaveImmutableGpup)
+        HRESULT ( STDMETHODCALLTYPE *SaveImmutableGpup )( 
+            IGPUPMigration * This,
+            /* [in] */ PLUID DeviceLuid,
+            /* [out][in] */ UINT64 *Length,
+            /* [out][in] */ BYTE SaveBuffer[  ]);
+        
+        DECLSPEC_XFGVIRT(IGPUPMigration, RestoreImmutableGpup)
+        HRESULT ( STDMETHODCALLTYPE *RestoreImmutableGpup )( 
+            IGPUPMigration * This,
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ UINT64 Length,
+            /* [size_is][in] */ BYTE RestoreBuffer[  ]);
+        
+        END_INTERFACE
+    } IGPUPMigrationVtbl;
+
+    interface IGPUPMigration
+    {
+        CONST_VTBL struct IGPUPMigrationVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IGPUPMigration_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IGPUPMigration_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IGPUPMigration_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IGPUPMigration_SaveImmutableGpup(This,DeviceLuid,Length,SaveBuffer)	\
+    ( (This)->lpVtbl -> SaveImmutableGpup(This,DeviceLuid,Length,SaveBuffer) ) 
+
+#define IGPUPMigration_RestoreImmutableGpup(This,DeviceLuid,Length,RestoreBuffer)	\
+    ( (This)->lpVtbl -> RestoreImmutableGpup(This,DeviceLuid,Length,RestoreBuffer) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IGPUPMigration_INTERFACE_DEFINED__ */
 
 
 /* Additional Prototypes for ALL interfaces */

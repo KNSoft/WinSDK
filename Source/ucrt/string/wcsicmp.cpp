@@ -63,8 +63,17 @@ extern "C" int __cdecl _wcsicmp_l (
     int rhs_value;
     do
     {
-        lhs_value = _towlower_internal(*lhs_ptr++, _loc_update.GetLocaleT());
-        rhs_value = _towlower_internal(*rhs_ptr++, _loc_update.GetLocaleT());
+        lhs_value = *lhs_ptr++;
+        rhs_value = *rhs_ptr++;
+        if (lhs_value != rhs_value)
+        {
+            lhs_value = _towlower_internal(static_cast<unsigned short>(lhs_value), _loc_update.GetLocaleT());
+            if (lhs_value != rhs_value)
+            {
+                rhs_value = _towlower_internal(static_cast<unsigned short>(rhs_value), _loc_update.GetLocaleT());
+            }
+        }
+
         result = lhs_value - rhs_value;
     }
     while (result == 0 && lhs_value != 0);
@@ -85,8 +94,15 @@ extern "C" int __cdecl __ascii_wcsicmp(
     int rhs_value;
     do
     {
-        lhs_value = __ascii_towlower(*lhs_ptr++);
-        rhs_value = __ascii_towlower(*rhs_ptr++);
+        lhs_value = *lhs_ptr++;
+        rhs_value = *rhs_ptr++;
+
+        if (lhs_value != rhs_value)
+        {
+            lhs_value = __ascii_towlower(lhs_value);
+            rhs_value = __ascii_towlower(rhs_value);
+        }
+
         result = lhs_value - rhs_value;
     }
     while (result == 0 && lhs_value != 0);

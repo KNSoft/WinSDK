@@ -58,7 +58,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xf0000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x130000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -1791,7 +1791,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsAddress=_uuidof(IRcsAddress);
+                        MIDL_CONST_ID IID & IID_IRcsAddress=__uuidof(IRcsAddress);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -1840,7 +1840,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsCapabilitiesReceivedArgs=_uuidof(IRcsCapabilitiesReceivedArgs);
+                        MIDL_CONST_ID IID & IID_IRcsCapabilitiesReceivedArgs=__uuidof(IRcsCapabilitiesReceivedArgs);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -1923,7 +1923,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsPresenceService=_uuidof(IRcsPresenceService);
+                        MIDL_CONST_ID IID & IID_IRcsPresenceService=__uuidof(IRcsPresenceService);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -1978,7 +1978,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsPresenceSettings=_uuidof(IRcsPresenceSettings);
+                        MIDL_CONST_ID IID & IID_IRcsPresenceSettings=__uuidof(IRcsPresenceSettings);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2075,7 +2075,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsPresenceSettings2=_uuidof(IRcsPresenceSettings2);
+                        MIDL_CONST_ID IID & IID_IRcsPresenceSettings2=__uuidof(IRcsPresenceSettings2);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2124,7 +2124,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsPublishCapabilitiesRequestedArgs=_uuidof(IRcsPublishCapabilitiesRequestedArgs);
+                        MIDL_CONST_ID IID & IID_IRcsPublishCapabilitiesRequestedArgs=__uuidof(IRcsPublishCapabilitiesRequestedArgs);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2176,7 +2176,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsResource=_uuidof(IRcsResource);
+                        MIDL_CONST_ID IID & IID_IRcsResource=__uuidof(IRcsResource);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2234,7 +2234,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsResourceInstance=_uuidof(IRcsResourceInstance);
+                        MIDL_CONST_ID IID & IID_IRcsResourceInstance=__uuidof(IRcsResourceInstance);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2289,7 +2289,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsResourceList=_uuidof(IRcsResourceList);
+                        MIDL_CONST_ID IID & IID_IRcsResourceList=__uuidof(IRcsResourceList);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2338,7 +2338,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsResponse=_uuidof(IRcsResponse);
+                        MIDL_CONST_ID IID & IID_IRcsResponse=__uuidof(IRcsResponse);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2407,7 +2407,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsService=_uuidof(IRcsService);
+                        MIDL_CONST_ID IID & IID_IRcsService=__uuidof(IRcsService);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2453,7 +2453,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsServiceAvailabilityChangedArgs=_uuidof(IRcsServiceAvailabilityChangedArgs);
+                        MIDL_CONST_ID IID & IID_IRcsServiceAvailabilityChangedArgs=__uuidof(IRcsServiceAvailabilityChangedArgs);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2517,7 +2517,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsServiceDescription=_uuidof(IRcsServiceDescription);
+                        MIDL_CONST_ID IID & IID_IRcsServiceDescription=__uuidof(IRcsServiceDescription);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2563,7 +2563,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsServiceStatusChangedArgs=_uuidof(IRcsServiceStatusChangedArgs);
+                        MIDL_CONST_ID IID & IID_IRcsServiceStatusChangedArgs=__uuidof(IRcsServiceStatusChangedArgs);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2615,7 +2615,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsServiceTuple=_uuidof(IRcsServiceTuple);
+                        MIDL_CONST_ID IID & IID_IRcsServiceTuple=__uuidof(IRcsServiceTuple);
                         
                     } /* RcsPresence */
                 } /* Cellular */
@@ -2661,7 +2661,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRcsSubscriptionReceivedArgs=_uuidof(IRcsSubscriptionReceivedArgs);
+                        MIDL_CONST_ID IID & IID_IRcsSubscriptionReceivedArgs=__uuidof(IRcsSubscriptionReceivedArgs);
                         
                     } /* RcsPresence */
                 } /* Cellular */

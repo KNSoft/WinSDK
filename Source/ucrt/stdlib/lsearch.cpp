@@ -9,6 +9,7 @@
 #include <corecrt_internal.h>
 #include <memory.h>
 #include <search.h>
+#include <cfguard.h>
 
 #ifdef _M_CEE
     #define __fileDECL __clrcall
@@ -43,6 +44,7 @@
 //           zero if 1 == 2, and positive if 1 > 2.
 #ifndef _M_CEE
 extern "C"
+DECLSPEC_GUARDNOCF
 #endif
 #ifdef __USE_CONTEXT
 void* __fileDECL _lsearch_s(
@@ -68,6 +70,8 @@ void* __fileDECL _lsearch(
     _VALIDATE_RETURN(base != nullptr, EINVAL, nullptr);
     _VALIDATE_RETURN(width > 0, EINVAL, nullptr);
     _VALIDATE_RETURN(compare != nullptr, EINVAL, nullptr);
+
+    _GUARD_CHECK_ICALL(compare);
 
     char* const first = static_cast<char*>(base);
     char* const last  = first + *num * width;

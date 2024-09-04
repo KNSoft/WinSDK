@@ -113,6 +113,44 @@ DEFINE_GUID( GUID_ACTIVE_POWERSCHEME, 0x31F9F286, 0x5084, 0x42FE, 0xB7, 0x20, 0x
 
 //
 // =========================================
+// Define GUIDs which represent Power Modes (Overlays)
+// =========================================
+//
+
+//
+// Efficiency Power Mode
+//
+// {961cc777-2547-4f9d-8174-7d86181b8a7a}
+//
+
+DEFINE_GUID( GUID_POWER_MODE_BEST_EFFICIENCY, 0x961cc777, 0x2547, 0x4f9d, 0x81, 0x74, 0x7d, 0x86, 0x18, 0x1b, 0x8a, 0x7a );
+
+//
+// Default Power Mode
+//
+// {00000000-0000-0000-0000-000000000000}
+//
+
+DEFINE_GUID( GUID_POWER_MODE_NONE, 0L, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+
+//
+// Deprecated Performance Power Mode
+//
+// {3af9B8d9-7c97-431d-ad78-34a8bfea439f}
+//
+
+DEFINE_GUID( GUID_POWER_MODE_PERFORMANCE, 0x3af9b8d9, 0x7c97, 0x431d, 0xad, 0x78, 0x34, 0xa8, 0xbf, 0xea, 0x43, 0x9f );
+
+//
+// Best Performance Power Mode
+//
+// {ded574b5-45a0-4f42-8737-46345c09c238}
+//
+
+DEFINE_GUID( GUID_POWER_MODE_BEST_PERFORMANCE, 0xded574b5, 0x45a0, 0x4f42, 0x87, 0x37, 0x46, 0x34, 0x5c, 0x9, 0xc2, 0x38 );
+
+//
+// =========================================
 // Define GUIDs which represent well-known power settings
 // =========================================
 //
@@ -446,6 +484,21 @@ DEFINE_GUID( GUID_STANDBY_BUDGET_GRACE_PERIOD, 0x60c07fe1, 0x0556, 0x45cf, 0x99,
 DEFINE_GUID( GUID_STANDBY_BUDGET_PERCENT, 0x9fe527be, 0x1b70, 0x48da, 0x93, 0x0d, 0x7b, 0xcf, 0x17, 0xb4, 0x49, 0x90 );
 
 //
+// Defines a guid the control the number of standby budget refreshes.
+//
+// {ACA8648E-C4B1-4BAA-8CCE-9390AD647F8C}
+//
+DEFINE_GUID( GUID_STANDBY_BUDGET_REFRESH_COUNT, 0xACA8648E, 0xC4B1, 0x4BAA, 0x8C, 0xCE, 0x93, 0x90, 0xAD, 0x64, 0x7F, 0x8C );
+
+//
+// Defines a guid the control the interval between standby budget refreshes.
+//
+// {61F45DFE-1919-4180-BB46-8CC70E0B38F1}
+//
+DEFINE_GUID( GUID_STANDBY_BUDGET_REFRESH_INTERVAL, 0x61F45DFE, 0x1919, 0x4180, 0xBB, 0x46, 0x8C, 0xC7, 0x0E, 0x0B, 0x38, 0xF1 );
+
+//
+//
 // Defines a guid to control Standby Reserve Grace Period.
 //
 // {C763EE92-71E8-4127-84EB-F6ED043A3E3D}
@@ -530,14 +583,31 @@ DEFINE_GUID( GUID_LEGACY_RTC_MITIGATION, 0x1A34BDC3, 0x7E6B, 0x442E, 0xA9, 0xD0,
 //
 DEFINE_GUID( GUID_ALLOW_SYSTEM_REQUIRED, 0xA4B195F5, 0x8225, 0x47D8, 0x80, 0x12, 0x9D, 0x41, 0x36, 0x97, 0x86, 0xE2 );
 
-// Energy Saver settings
+// Energy Saver Settings (deprecated in Germanium)
 // ---------------------
 //
-// Indicates if Enegry Saver is ON or OFF.
+// ***Use GUID_ENERGY_SAVER_STATUS instead*** This power setting represents the 
+// state for battery saver and remains here for backwards compatibility.
+// 
+// Indicates if Energy Saver is ON or OFF. 
 //
 // {E00958C0-C213-4ACE-AC77-FECCED2EEEA5}
 //
 DEFINE_GUID( GUID_POWER_SAVING_STATUS, 0xe00958c0, 0xc213, 0x4ace, 0xac, 0x77, 0xfe, 0xcc, 0xed, 0x2e, 0xee, 0xa5);
+
+//
+// Energy Saver Settings
+// ---------------------
+// 
+// Defines a guid to indicate energy saver status (Off, Standard, or High Savings)
+// from the ENERGY_SAVER_STATUS structure.
+//
+// This power setting is used instead of GUID_POWER_SAVING_STATUS starting
+// in Germanium.
+//
+// {550E8400-E29B-41D4-A716-446655440000}
+//
+DEFINE_GUID( GUID_ENERGY_SAVER_STATUS, 0x550e8400, 0xe29b, 0x41d4, 0xa7, 0x16, 0x44, 0x66, 0x55, 0x44, 0x00, 0x00);
 
 //
 // Specifies the subgroup which will contain all of the Energy Saver settings
@@ -1257,6 +1327,22 @@ DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_PERF, 0x619b7505, 0x3b, 0x4e82, 0x
 DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_PERF_1, 0x619b7505, 0x3b, 0x4e82, 0xb7, 0xa6, 0x4d, 0xd2, 0x9c, 0x30, 0x9, 0x72);
 
 //
+// Specifies the energy/performance preference to use in response to latency
+// sensitivity hints.
+//
+// {4B70F900-CDD9-4e66-AA26-AE8417F98173}
+//
+DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_EPP, 0x4b70f900, 0xcdd9, 0x4e66, 0xaa, 0x26, 0xae, 0x84, 0x17, 0xf9, 0x81, 0x73);
+
+//
+// Specifies the energy/performance preference to use in response to latency
+// sensitivity hintsfor Processor Power Efficiency Class 1.
+//
+// {4B70F900-CDD9-4e66-AA26-AE8417F98174}
+//
+DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_EPP_1, 0x4b70f900, 0xcdd9, 0x4e66, 0xaa, 0x26, 0xae, 0x84, 0x17, 0xf9, 0x81, 0x74);
+
+//
 // Specifies the minimum unparked processors when a latency hint is active
 // (in a percentage).
 //
@@ -1308,12 +1394,34 @@ DEFINE_GUID(GUID_PROCESSOR_SMT_UNPARKING_POLICY, 0xb28a6829, 0xc5f7, 0x444e, 0x8
 #define SMT_UNPARKING_POLICY_LP_SEQUENTIAL 3
 
 //
+// Specifies the maximum processor count for corresponding QoS threads.
+//
+// {1a98ad09-af22-42ca-8e61-f0a5802c270a}
+//
+
+DEFINE_GUID(GUID_PROCESSOR_RESTRICTION_COUNT, 0x1a98ad09, 0xaf22, 0x42ca, 0x8e, 0x61, 0xf0, 0xa5, 0x80, 0x2c, 0x27, 0x0a);
+
+//
 // Specifies whether the core parking engine should distribute processor
 // utility.
 //
 // {e0007330-f589-42ed-a401-5ddb10e785d3}
 //
 DEFINE_GUID( GUID_PROCESSOR_DISTRIBUTE_UTILITY, 0xe0007330, 0xf589, 0x42ed, 0xa4, 0x01, 0x5d, 0xdb, 0x10, 0xe7, 0x85, 0xd3);
+
+//
+// Specifies the processor resource priority.
+//
+// {603fe9ce-8d01-4b48-a968-1d706c28df5c}
+//
+DEFINE_GUID( GUID_PROCESSOR_RESOURCE_PRIORITY, 0x603fe9ce, 0x8d01, 0x4b48, 0xa9, 0x68, 0x1d, 0x70, 0x6c, 0x28, 0xfd, 0x5c);
+
+//
+// Specifies the processor resource riority for Processor Power Efficiency Class 1.
+//
+// {603fe9ce-8d01-4b48-a968-1d706c28df5d}
+//
+DEFINE_GUID( GUID_PROCESSOR_RESOURCE_PRIORITY_1, 0x603fe9ce, 0x8d01, 0x4b48, 0xa9, 0x68, 0x1d, 0x70, 0x6c, 0x28, 0xfd, 0x5d);
 
 //
 // GUIDS to control PPM settings on computer system with more than one
@@ -1341,6 +1449,44 @@ DEFINE_GUID( GUID_PROCESSOR_HETERO_DECREASE_TIME, 0x7f2492b6, 0x60b1, 0x45e5, 0x
 // {4009efa7-e72d-4cba-9edf-91084ea8cbc3}
 //
 DEFINE_GUID( GUID_PROCESSOR_HETERO_INCREASE_TIME, 0x4009efa7, 0xe72d, 0x4cba, 0x9e, 0xdf, 0x91, 0x08, 0x4e, 0xa8, 0xcb, 0xc3);
+
+//
+// Specify the minimum number of perf check intervals since the last
+// performance state change before the one containment zone may be decreased for
+// picking cores from another containment zone.
+//
+// {6FF13AEB-7897-4356-9999-DD9930AF065F}
+//
+DEFINE_GUID( GUID_PROCESSOR_HETERO_CONTAINMENT_DECREASE_TIME, 0x6FF13AEB, 0x7897, 0x4356, 0x99, 0x99, 0xDD, 0x99, 0x30, 0xAF, 0x06, 0x5F);
+
+//
+// Specify the minimum number of perf check intervals since the last
+// performance state change before the one containment zone may be increase for
+// picking cores from another containment.
+//
+// {64FCEE6B-5B1F-45A4-A76A-19B2C36EE290}
+//
+DEFINE_GUID( GUID_PROCESSOR_HETERO_CONTAINMENT_INCREASE_TIME, 0x64FCEE6B, 0x5B1F, 0x45A4, 0xA7, 0x6A, 0x19, 0xB2, 0xC3, 0x6E, 0xE2, 0x90);
+
+//
+// Specify the busy threshold that must be met when calculating the containment
+// crossover from efficiency to hybrid.
+//
+// {69439B22-221B-4830-BD34-F7BCECE24583}
+DEFINE_GUID(GUID_PROCESSOR_HETERO_CONTAINMENT_EFFICIENCY_THRESHOLD, 0x69439b22, 0x221b, 0x4830, 0xbd, 0x34, 0xf7, 0xbc, 0xec, 0xe2, 0x45, 0x83);
+
+//
+// Specify the busy threshold that must be met when calculating the containment
+// crossover from hybrid to no containment.
+//
+// {6788488B-1B90-4D11-8FA7-973E470DFF47}
+DEFINE_GUID(GUID_PROCESSOR_HETERO_CONTAINMENT_HYBRID_THRESHOLD, 0x6788488b, 0x1b90, 0x4d11, 0x8f, 0xa7, 0x97, 0x3e, 0x47, 0xd, 0xff, 0x47);
+
+//
+// Specify whether containment policy should be enable or disable.
+//
+// {60FBE21B-EFD9-49F2-B066-8674D8E9F423}
+DEFINE_GUID(GUID_PROCESSOR_HETERO_CONTAINMENT_POLICY, 0x60fbe21b, 0xefd9, 0x49f2, 0xb0, 0x66, 0x86, 0x74, 0xd8, 0xe9, 0xf4, 0x23);
 
 //
 // Specifies the performance level (in units of Processor Power Efficiency
@@ -1896,6 +2042,11 @@ typedef enum _USER_ACTIVITY_PRESENCE {
     PowerUserInvalid = PowerUserMaximum
 } USER_ACTIVITY_PRESENCE, *PUSER_ACTIVITY_PRESENCE;
 
+typedef enum _ENERGY_SAVER_STATUS {
+    ENERGY_SAVER_OFF = 0,
+    ENERGY_SAVER_STANDARD,
+    ENERGY_SAVER_HIGH_SAVINGS
+} ENERGY_SAVER_STATUS, *PENERGY_SAVER_STATUS;
 
 // end_winnt
 // begin_wudfpwdm
@@ -2104,7 +2255,7 @@ typedef enum {
     ProcessorPerfCapHv,
     ProcessorSetIdle,
     LogicalProcessorIdling,
-    UserPresence,
+    UserPresence,                                   // Deprecated
     PowerSettingNotificationName,
     GetPowerSettingValue,
     IdleResiliency,
@@ -2270,6 +2421,9 @@ typedef enum {
     MonitorRequestReasonPdcSignalSensorsHumanPresence,          // PDC_SIGNAL_PROVIDER_SENSORS_HUMAN_PRESENCE_MONITOR
     MonitorRequestReasonBatteryPreCritical,
     MonitorRequestReasonUserInputTouch,
+    MonitorRequestReasonAusterityBatteryDrain,
+    MonitorRequestReasonDozeRestrictedStandby,
+    MonitorRequestReasonSmartRestrictedStandby,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -2286,6 +2440,62 @@ typedef struct _POWER_MONITOR_INVOCATION {
     BOOLEAN Console;
     POWER_MONITOR_REQUEST_REASON RequestReason;
 } POWER_MONITOR_INVOCATION, *PPOWER_MONITOR_INVOCATION;
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+//
+// Power Limit Interfaces
+//
+
+typedef enum _POWER_LIMIT_TYPES {
+    PowerLimitContinuous = 0,
+    PowerLimitBurst,
+    PowerLimitRapid,
+    PowerLimitPreemptive,
+    PowerLimitPreemptiveOffset,
+    PowerLimitTypeMax
+} POWER_LIMIT_TYPES, *PPOWER_LIMIT_TYPES;
+
+typedef struct _POWER_LIMIT_ATTRIBUTES {
+
+    //
+    // IDs of this power limit.
+    //
+
+    POWER_LIMIT_TYPES   Type;
+    ULONG               DomainId;
+
+    //
+    // Attributes of this power limit.
+    //
+
+    ULONG               MaxValue;
+    ULONG               MinValue;
+    ULONG               MinTimeParameter;
+    ULONG               MaxTimeParameter;
+    ULONG               DefaultACValue;
+    ULONG               DefaultDCValue;
+
+    union {
+        struct {
+            ULONG       SupportTimeParameter : 1;
+            ULONG       Reserved : 31;
+        };
+
+        ULONG           AsUlong;
+    } Flags;
+} POWER_LIMIT_ATTRIBUTES, *PPOWER_LIMIT_ATTRIBUTES;
+
+typedef struct _POWER_LIMIT_VALUE {
+    POWER_LIMIT_TYPES Type;
+    ULONG DomainId;
+    ULONG TargetValue;
+    ULONG TimeParameter;
+} POWER_LIMIT_VALUE, *PPOWER_LIMIT_VALUE;
+
+#define POWER_LIMIT_VALUE_NO_CONTROL            ULONG_MAX
+
+#endif // NTDDI_VERSION >= NTDDI_WIN11_GA
 
 //
 // Last resume performance structure
@@ -3330,6 +3540,7 @@ typedef struct {
 #define SPSD_REASON_BOOTVA_RESOURCE             0x00000017
 #define SPSD_REASON_HIBERNATE_CONTEXT_RESOURCE  0x00000018
 #define SPSD_REASON_HIBERNATE_MEM_PREALLOCATE   0x00000019
+#define SPSD_REASON_MAX                         SPSD_REASON_HIBERNATE_MEM_PREALLOCATE
 
 // begin_nthal
 

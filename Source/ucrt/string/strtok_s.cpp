@@ -22,18 +22,15 @@ extern "C" char* __cdecl __acrt_strtok_s_novalidation(
     // Clear control map.  The control characters are stored in a bitmap, one
     // bit per character.  The null character is always a control character.
     unsigned char map[32];
-    for (int count = 0; count < 32; count++)
-    {
-        map[count] = 0;
-    }
+    memset(map, 0, sizeof(map));
 
     // Set bits in delimiter table
     unsigned char const* unsigned_control = reinterpret_cast<unsigned char const*>(control);
-    do
+    while (*unsigned_control)
     {
-        map[*unsigned_control >> 3] |= (1 << (*unsigned_control & 7));
+        _bittestandset((long *)map, *unsigned_control);
+        unsigned_control++;
     }
-    while (*unsigned_control++);
 
     // If string is null, set the iterator to the saved pointer (i.e., continue
     // breaking tokens out of the string from the last strtok call):
@@ -46,7 +43,7 @@ extern "C" char* __cdecl __acrt_strtok_s_novalidation(
     // Find beginning of token (skip over leading delimiters). Note that
     // there is no token iff this loop sets it to point to the terminal
     // null (*it == '\0')
-    while ((map[*unsigned_it >> 3] & (1 << (*unsigned_it & 7))) && *it)
+    while (*it && _bittest((long *)map, *unsigned_it))
     {
         ++it;
     }
@@ -57,7 +54,7 @@ extern "C" char* __cdecl __acrt_strtok_s_novalidation(
     // put a null there.
     for (; *it; ++it)
     {
-        if (map[*unsigned_it >> 3] & (1 << (*unsigned_it & 7)))
+        if (_bittest((long *)map, *unsigned_it))
         {
             *it++ = '\0';
             break;

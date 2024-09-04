@@ -43,7 +43,13 @@ include ksamd64.inc
 ;
 ;*******************************************************************************
 
-LEAF_ENTRY_ARG1 strlen, _TEXT, buf:ptr byte
+ifdef _CRT_FFS_BUILD
+fname      TEXTEQU <strlen_ffs>
+else
+fname      TEXTEQU <strlen>
+endif
+
+LEAF_ENTRY_ARG1 fname, _TEXT$21, buf:ptr byte
 
     OPTION PROLOGUE:NONE, EPILOGUE:NONE
 
@@ -126,5 +132,5 @@ return_byte_0:
     lea   rax, [rax+rcx-8]
     ret
 
-LEAF_END strlen, _TEXT
+LEAF_END fname, _TEXT$21
     end

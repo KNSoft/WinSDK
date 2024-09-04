@@ -135,6 +135,7 @@ _CRT_END_C_HEADER
 
 namespace __crt_mbstring
 {
+    int __cdecl __mblen_utf8(const char* s);
     size_t __cdecl __c16rtomb_utf8(char* s, char16_t c16, mbstate_t* ps, __crt_cached_ptd_host& ptd);
     size_t __cdecl __c32rtomb_utf8(char* s, char32_t c32, mbstate_t* ps, __crt_cached_ptd_host& ptd);
     size_t __cdecl __mbrtoc16_utf8(char16_t* pc32, const char* s, size_t n, mbstate_t* ps, __crt_cached_ptd_host& ptd);

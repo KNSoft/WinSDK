@@ -11,6 +11,9 @@ Abstract:
     Header file containing the HAL Extensions API. This file should be included
     by each HAL Extension.
 
+    N.B. Avoid making breaking changes to the structures and enumerations in
+         this file, as HAL Extensions may have been compiled with an old header.
+
 Author:
 
     Andy Raffman (andyraf) 20-Sep-2010
@@ -349,6 +352,7 @@ typedef enum _KNOWN_TIMER_TYPE {
     TimerHpet,
     Timer8254,
     TimerProcessor,
+    TimerSfi,
     TimerApic,
     TimerHypervisor,
     TimerBrokenAcpi,

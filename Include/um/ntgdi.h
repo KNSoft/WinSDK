@@ -13,7 +13,7 @@
 #ifdef _WIN64
 #define ENTRY_SIZE 24
 #else
-#define ENTRY_SIZE 16
+#define ENTRY_SIZE 20
 #endif
 
 #pragma region Desktop Family
@@ -61,6 +61,10 @@ typedef struct _HLSURF_INFORMATION_PROBE {
 __kernel_entry W32KAPI BOOL APIENTRY
 NtGdiInit(
     );
+
+__kernel_entry W32KAPI ULONG_PTR APIENTRY
+NtGdiInit2(
+);
 
 __kernel_entry W32KAPI int APIENTRY
 NtGdiSetDIBitsToDeviceInternal(
@@ -2557,15 +2561,6 @@ NtGdiScaleValues(
     _In_reads_(cl) LPLONG pl,
     _In_ UINT cl);
 
-BOOL GreScaleValues(
-    _In_ HDC hdc,
-    __in_ecount(cl) LPLONG pl,
-    _In_ UINT cl);
-
-BOOL GreScaleRgn(
-    _In_ HDC hdc,
-    _In_ HRGN hrgn);
-
 __kernel_entry W32KAPI LONG 
 NtGdiGetDCDpiScaleValue(
     _In_ HDC hdc);
@@ -2574,29 +2569,16 @@ __kernel_entry W32KAPI LONG
 NtGdiGetBitmapDpiScaleValue(
     _In_ HBITMAP hbm);
 
-LONG GreGetDCDpiScaleValue(
-    _In_ HDC hdc);
-
-// WARNING: To be used only for TESTING.
-// It won't create a "real" GDI scaled DC. If used, clipping issues are expected
-// since clipping region set by user code won't be scaled-up by GDI scaling factor.
-
-VOID GreSetDCDpiScaleValue(
-    _In_ HDC hdc,
-    _In_ LONG scaleValue);
-
-LONG GreGetBitmapDpiScaleValue(
-    _In_ HSURF hsurf);
-
 __kernel_entry W32KAPI NTSTATUS
 NtGdiEnsureDpiDepDefaultGuiFontForPlateau(
     _In_ int iDpi);
 
-VOID GreEnsureDpiDepDefaultGuiFontForPlateau(
-    _In_ int iDpi);
-
 __kernel_entry W32KAPI BOOL
 NtGdiWaitForTextReady(
+    );
+
+__kernel_entry W32KAPI BOOL
+NtGdiDisableUMPDSandboxing(
     );
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */

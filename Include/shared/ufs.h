@@ -253,12 +253,12 @@ typedef struct {
     UCHAR dEnhanced4MaxNAllocU[4];                              // Offset 0x3E
     UCHAR wEnhanced4CapAdjFac[2];                               // Offset 0x42
     UCHAR dOptimalLogicalBlockSize[4];                          // Offset 0x44
-    UCHAR bHPBNumberLU;                                         // Offset 0x48
-    UCHAR bHPBSubRegionSize;                                    // Offset 0x49
-    UCHAR bHPBRegionSize;                                       // Offset 0x4A
+    UCHAR bHPBRegionSize;                                       // Offset 0x48
+    UCHAR bHPBNumberLU;                                         // Offset 0x49
+    UCHAR bHPBSubRegionSize;                                    // Offset 0x4A
     USHORT wDeviceMaxActiveHPBRegions;                          // Offset 0x4B
     UCHAR Reserved2[2];                                         // Offset 0x4D
-    ULONG dWriteBoosterBufferMaxNAllocUnits;                    // Offset 0x4F
+    UCHAR dWriteBoosterBufferMaxNAllocUnits[4];                 // Offset 0x4F
     UCHAR bDeviceMaxWriteBoosterLUs;                            // Offset 0x53
     UCHAR bWriteBoosterBufferCapAdjFac;                         // Offset 0x54
     UCHAR bSupportedWriteBoosterBufferUserSpaceReductionTypes;  // Offset 0x55

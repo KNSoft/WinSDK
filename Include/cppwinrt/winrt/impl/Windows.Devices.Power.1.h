@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -29,6 +29,27 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Power
     {
         IBatteryStatics(std::nullptr_t = nullptr) noexcept {}
         IBatteryStatics(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IPowerGridData :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPowerGridData>
+    {
+        IPowerGridData(std::nullptr_t = nullptr) noexcept {}
+        IPowerGridData(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IPowerGridForecast :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPowerGridForecast>
+    {
+        IPowerGridForecast(std::nullptr_t = nullptr) noexcept {}
+        IPowerGridForecast(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) IPowerGridForecastStatics :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IPowerGridForecastStatics>
+    {
+        IPowerGridForecastStatics(std::nullptr_t = nullptr) noexcept {}
+        IPowerGridForecastStatics(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
 }
 #endif

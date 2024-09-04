@@ -268,7 +268,7 @@ typedef struct _DXGK_CHILD_CAPABILITIES {
     DXGK_CHILD_DEVICE_HPD_AWARENESS HpdAwareness;
 } DXGK_CHILD_CAPABILITIES, *PDXGK_CHILD_CAPABILITIES;
 
-// We don't want to add anything in the Type union which would increase the 
+// We don't want to add anything in the Type union which would increase the
 // size beyond the original DXGK_VIDEO_OUTPUT_CAPABILITIES unexpectedly so assert it.
 static_assert( FIELD_OFFSET( DXGK_CHILD_CAPABILITIES, HpdAwareness ) == 12, "Type field has changed size" );
 
@@ -276,7 +276,8 @@ typedef enum _DXGK_CHILD_DEVICE_TYPE {
    TypeUninitialized,
    TypeVideoOutput,
    TypeOther,
-   TypeIntegratedDisplay
+   TypeIntegratedDisplay,
+   TypeLogicalGpu,
 } DXGK_CHILD_DEVICE_TYPE, *PDXGK_CHILD_DEVICE_TYPE;
 
 //
@@ -421,6 +422,32 @@ DEFINE_GUID(GUID_DEVINTERFACE_MIRACAST_DISPLAY, 0xaf03f190, 0x22af, 0x48cb, 0x94
 //
 
 DEFINE_GUID(GUID_DEVINTERFACE_BRIGHTNESS_3, 0x197a4a6e, 0x391, 0x4322, 0x96, 0xea, 0xc2, 0x76, 0xf, 0x88, 0x1d, 0x3a);
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM3_2)
+
+//
+// GUID_WDDM_INTERFACE_DISPLAYMUX {086467FB-DDDF-4C19-97D5-C41D767221C7}
+//
+
+DEFINE_GUID(GUID_WDDM_INTERFACE_DISPLAYMUX, 0x086467FB, 0xDDDF, 0x4C19, 0x97, 0xD5, 0xC4, 0x1D, 0x76, 0x72, 0x21, 0xC7);
+
+//
+// GUID_WDDM_INTERFACE_DISPLAYMUX_2 {086467FB-DDDF-4C19-97D5-C41D767221C8}
+//
+DEFINE_GUID(GUID_WDDM_INTERFACE_DISPLAYMUX_2, 0x086467FB, 0xDDDF, 0x4C19, 0x97, 0xD5, 0xC4, 0x1D, 0x76, 0x72, 0x21, 0xC8);
+
+//
+// GUID_WDDM_INTERFACE_FEATURE {94BB3993-C6C3-4DA7-8949-A1138232E759}
+//
+DEFINE_GUID(GUID_WDDM_INTERFACE_FEATURE, 0x94bb3993, 0xc6c3, 0x4da7, 0x89, 0x49, 0xa1, 0x13, 0x82, 0x32, 0xe7, 0x59);
+
+//
+// GUID_WDDM_INTERFACE_WAITWAKE {D3A8EC81-BDEF-43D6-9471-223814605E38}
+//
+//
+DEFINE_GUID(GUID_WDDM_INTERFACE_WAITWAKE, 0xd3a8ec81, 0xbdef, 0x43d6, 0x94, 0x71, 0x22, 0x38, 0x14, 0x60, 0x5e, 0x38);
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM3_2)
 
 //
 // I2C Interface queried from the miniport.
@@ -1041,6 +1068,7 @@ typedef enum
     DxgkServicesBDD,
     DxgkServicesFirmwareTable,
     DxgkServicesIDD,
+    DxgkServicesFeature,
 } DXGK_SERVICES;
 
 //
@@ -1312,6 +1340,245 @@ typedef struct _DXGK_FIRMWARE_TABLE_INTERFACE
         );
 
 } DXGK_FIRMWARE_TABLE_INTERFACE, *PDXGK_FIRMWARE_TABLE_INTERFACE;
+
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM3_2)
+
+//
+// Display Mux interface v1
+//
+
+#define DXGK_DISPLAYMUX_INTERFACE_VERSION_1 0x01
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_GET_DRIVER_SUPPORT_LEVEL)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_GET_DRIVER_SUPPORT_LEVEL)(
+    _In_ PVOID DriverContext,
+    _Out_ PDXGK_DISPLAYMUX_SUPPORT_LEVEL pDriverSupportLevel
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_GET_RUNTIME_STATUS)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_GET_RUNTIME_STATUS)(
+    _In_ PVOID DriverContext,
+    _Out_ PDXGK_DISPLAYMUX_RUNTIME_STATUS pRuntimeStatus
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_PRE_SWITCH_AWAY)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_PRE_SWITCH_AWAY)(
+    _In_ PVOID DriverContext,
+    _In_ ULONG VidPnTargetId,
+    _Out_ PULONG pSwitchPrivateDataSize
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_PRE_SWITCH_AWAY_GET_PRIVATE_DATA)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_PRE_SWITCH_AWAY_GET_PRIVATE_DATA)(
+    _In_ PVOID DriverContext,
+    _In_ ULONG VidPnTargetId,
+    _In_ ULONG SwitchPrivateDataSize,
+    _Out_writes_bytes_(SwitchPrivateDataSize) PVOID pSwitchPrivateDataBuffer,
+    _Out_ GUID* pSwitchPrivateDataGUID
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_PRE_SWITCH_TO)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_PRE_SWITCH_TO)(
+    _In_ PVOID DriverContext,
+    _In_ ULONG VidPnTargetId,
+    _In_ ULONG CurrentBrightnessLevel
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_SWITCH_CANCELED)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_SWITCH_CANCELED)(
+    _In_ PVOID DriverContext,
+    _In_ ULONG VidPnTargetId,
+    _In_ BOOLEAN MuxSwitchedToTarget
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_POST_SWITCH_AWAY)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_POST_SWITCH_AWAY)(
+    _In_ PVOID DriverContext,
+    _In_ ULONG VidPnTargetId
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_POST_SWITCH_TO_PHASE1)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_POST_SWITCH_TO_PHASE1)(
+    _In_ PVOID DriverContext,
+    _In_ ULONG VidPnTargetId,
+    _In_ ULONG SwitchPrivateDataSize,
+    _In_reads_bytes_(SwitchPrivateDataSize) PVOID pSwitchPrivateDataBuffer,
+    _In_ GUID* pSwitchPrivateDataGUID
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_POST_SWITCH_TO_PHASE2)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_POST_SWITCH_TO_PHASE2)(
+    _In_ PVOID DriverContext,
+    _In_ ULONG VidPnTargetId,
+    _Out_ BOOLEAN* pWasPanelInPSR
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_UPDATE_STATE)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+void
+(*DXGKDDI_DISPLAYMUX_UPDATE_STATE)(
+    _In_ PVOID DriverContext,
+    _In_ ULONG VidPnTargetId,
+    _In_ BOOLEAN MuxSwitchedToTarget
+    );
+
+typedef
+_Function_class_DXGK_( DXGKDDI_DISPLAYMUX_REPORT_PRESENCE)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+void
+(*DXGKDDI_DISPLAYMUX_REPORT_PRESENCE)(
+    _In_ PVOID DriverContext,
+    _In_ BOOLEAN SystemHasMux
+    );
+
+#define DISPLAYMUX_SWITCH_PRIVATE_DATA_MAX (1024*1024)
+
+typedef struct _DXGK_DISPLAYMUX_INTERFACE
+{
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    DXGKDDI_DISPLAYMUX_GET_DRIVER_SUPPORT_LEVEL            DxgkDdiDisplayMuxGetDriverSupportLevel;
+    DXGKDDI_DISPLAYMUX_GET_RUNTIME_STATUS                  DxgkDdiDisplayMuxGetRuntimeStatus;
+    DXGKDDI_DISPLAYMUX_PRE_SWITCH_AWAY                     DxgkDdiDisplayMuxPreSwitchAway;
+    DXGKDDI_DISPLAYMUX_PRE_SWITCH_AWAY_GET_PRIVATE_DATA    DxgkDdiDisplayMuxPreSwitchAwayGetPrivateData;
+    DXGKDDI_DISPLAYMUX_PRE_SWITCH_TO                       DxgkDdiDisplayMuxPreSwitchTo;
+    DXGKDDI_DISPLAYMUX_SWITCH_CANCELED                     DxgkDdiDisplayMuxSwitchCanceled;
+    DXGKDDI_DISPLAYMUX_POST_SWITCH_AWAY                    DxgkDdiDisplayMuxPostSwitchAway;
+    DXGKDDI_DISPLAYMUX_POST_SWITCH_TO_PHASE1               DxgkDdiDisplayMuxPostSwitchToPhase1;
+    DXGKDDI_DISPLAYMUX_POST_SWITCH_TO_PHASE2               DxgkDdiDisplayMuxPostSwitchToPhase2;
+    DXGKDDI_DISPLAYMUX_UPDATE_STATE                        DxgkDdiDisplayMuxUpdateState;
+    DXGKDDI_DISPLAYMUX_REPORT_PRESENCE                     DxgkDdiDisplayMuxReportPresence;
+} DXGK_DISPLAYMUX_INTERFACE, *PDXGK_DISPLAYMUX_INTERFACE;
+
+
+//
+// Display Mux interface v2
+//
+
+#define DXGK_DISPLAYMUX_INTERFACE_VERSION_2 0x02
+
+typedef
+_Function_class_DXGK_(DXGKDDI_DISPLAYMUX_SET_INTERNAL_PANEL_INFO)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_DISPLAYMUX_SET_INTERNAL_PANEL_INFO)(
+    _In_ PVOID DriverContext,
+    _In_ ULONG VidPnTargetId,
+    _In_ PDXGK_DISPLAYMUX_SET_INTERNAL_PANEL_INFO pInternalPanelInfo
+    );
+
+typedef struct _DXGK_DISPLAYMUX_INTERFACE_2
+{
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    // V1 DDI's
+    DXGKDDI_DISPLAYMUX_GET_DRIVER_SUPPORT_LEVEL            DxgkDdiDisplayMuxGetDriverSupportLevel;
+    DXGKDDI_DISPLAYMUX_GET_RUNTIME_STATUS                  DxgkDdiDisplayMuxGetRuntimeStatus;
+    DXGKDDI_DISPLAYMUX_PRE_SWITCH_AWAY                     DxgkDdiDisplayMuxPreSwitchAway;
+    DXGKDDI_DISPLAYMUX_PRE_SWITCH_AWAY_GET_PRIVATE_DATA    DxgkDdiDisplayMuxPreSwitchAwayGetPrivateData;
+    DXGKDDI_DISPLAYMUX_PRE_SWITCH_TO                       DxgkDdiDisplayMuxPreSwitchTo;
+    DXGKDDI_DISPLAYMUX_SWITCH_CANCELED                     DxgkDdiDisplayMuxSwitchCanceled;
+    DXGKDDI_DISPLAYMUX_POST_SWITCH_AWAY                    DxgkDdiDisplayMuxPostSwitchAway;
+    DXGKDDI_DISPLAYMUX_POST_SWITCH_TO_PHASE1               DxgkDdiDisplayMuxPostSwitchToPhase1;
+    DXGKDDI_DISPLAYMUX_POST_SWITCH_TO_PHASE2               DxgkDdiDisplayMuxPostSwitchToPhase2;
+    DXGKDDI_DISPLAYMUX_UPDATE_STATE                        DxgkDdiDisplayMuxUpdateState;
+    DXGKDDI_DISPLAYMUX_REPORT_PRESENCE                     DxgkDdiDisplayMuxReportPresence;
+
+    // V2 DDI's
+    DXGKDDI_DISPLAYMUX_SET_INTERNAL_PANEL_INFO             DxgkDdiDisplayMuxSetInternalPanelInfo;
+} DXGK_DISPLAYMUX_INTERFACE_2, *PDXGK_DISPLAYMUX_INTERFACE_2;
+
+#define DXGK_FEATURE_INTERFACE_VERSION_1 0x1
+
+typedef struct _DXGK_FEATURE_INTERFACE
+{
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    DXGKCB_ISFEATUREENABLED2 IsFeatureEnabled;
+    DXGKCB_QUERYFEATUREINTERFACE QueryFeatureInterface;
+} DXGK_FEATURE_INTERFACE, *PDXGK_FEATURE_INTERFACE;
+
+typedef struct _DXGKDDI_FEATURE_INTERFACE
+{
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    PDXGKDDI_QUERYFEATURESUPPORT QueryFeatureSupport;
+    PDXGKDDI_QUERYFEATUREINTERFACE QueryFeatureInterface;
+} DXGKDDI_FEATURE_INTERFACE, *PDXGKDDI_FEATURE_INTERFACE;
+
+
+#define DXGK_WAITWAKE_INTERFACE_VERSION_1 0x01
+
+typedef
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_WAITWAKE_ARMING)(
+    _In_ PVOID DriverContext);
+
+typedef
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+VOID
+(*DXGKDDI_WAITWAKE_DISARMING)(
+    _In_ PVOID DriverContext);
+
+typedef struct _DXGK_WAITWAKE_INTERFACE
+{
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    DXGKDDI_WAITWAKE_ARMING            DxgkDdiWaitWakeArming;
+    DXGKDDI_WAITWAKE_DISARMING         DxgkDdiWaitWakeDisarming;
+} DXGK_WAITWAKE_INTERFACE, *PDXGK_WAITWAKE_INTERFACE;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM3_2)
 
 
 typedef enum {
@@ -1769,7 +2036,7 @@ typedef struct _DXGKRNL_INTERFACE {
     DXGKCB_ACQUIREHANDLEDATA                DxgkCbAcquireHandleData;
     DXGKCB_RELEASEHANDLEDATA                DxgkCbReleaseHandleData;
     DXGKCB_HARDWARECONTENTPROTECTIONTEARDOWN DxgkCbHardwareContentProtectionTeardown;
- 
+
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
@@ -1837,7 +2104,6 @@ typedef struct _DXGKRNL_INTERFACE {
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM3_1)
     DXGKCB_DISCONNECTDOORBELL               DxgkCbDisconnectDoorbell;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM3_1)
-
 } DXGKRNL_INTERFACE, *PDXGKRNL_INTERFACE;
 
 //
@@ -2092,8 +2358,8 @@ DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY(
 typedef struct _DXGKARG_QUERYDIAGNOSTICTYPESSUPPORT
 {
     _In_  DXGK_DIAGNOSTIC_CATEGORIES    DiagnosticCategory;
-    _Out_ DXGK_DIAGNOSTIC_TYPES         NoninvasiveTypes; 
-    _Out_ DXGK_DIAGNOSTIC_TYPES         InvasiveTypes; 
+    _Out_ DXGK_DIAGNOSTIC_TYPES         NoninvasiveTypes;
+    _Out_ DXGK_DIAGNOSTIC_TYPES         InvasiveTypes;
 } DXGKARG_QUERYDIAGNOSTICTYPESSUPPORT, *PDXGKARG_QUERYDIAGNOSTICTYPESSUPPORT;
 typedef _Inout_ PDXGKARG_QUERYDIAGNOSTICTYPESSUPPORT    INOUT_PDXGKARG_QUERYDIAGNOSTICTYPESSUPPORT;
 
@@ -2111,7 +2377,7 @@ DXGKDDI_QUERYDIAGNOSTICTYPESSUPPORT(
 typedef struct _DXGKARG_CONTROLDIAGNOSTICREPORTING
 {
     _In_  DXGK_DIAGNOSTIC_CATEGORIES    DiagnosticCategory;
-    _In_  DXGK_DIAGNOSTIC_TYPES         RequestedDiagnostics; 
+    _In_  DXGK_DIAGNOSTIC_TYPES         RequestedDiagnostics;
 } DXGKARG_CONTROLDIAGNOSTICREPORTING, *PDXGKARG_CONTROLDIAGNOSTICREPORTING;
 typedef _In_    PDXGKARG_CONTROLDIAGNOSTICREPORTING  IN_PDXGKARG_CONTROLDIAGNOSTICREPORTING;
 
@@ -2322,7 +2588,7 @@ typedef struct _DXGKARG_COLLECTDIAGNOSTICINFO
     };
     UINT                      BufferSizeIn;
     UINT                      BufferSizeOut;
-    PVOID                     pBuffer; 
+    PVOID                     pBuffer;
 } DXGKARG_COLLECTDIAGNOSTICINFO;
 
 typedef _Inout_ DXGKARG_COLLECTDIAGNOSTICINFO* INOUT_PDXGKARG_COLLECTDIAGNOSTICINFO;
@@ -2529,12 +2795,12 @@ typedef struct _DRIVER_INITIALIZATION_DATA {
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
 
-    PDXGKDDI_RENDERGDI                      DxgkDdiRenderGdi; 
-    PDXGKDDI_SUBMITCOMMANDVIRTUAL           DxgkDdiSubmitCommandVirtual; 
-    PDXGKDDI_SETROOTPAGETABLE               DxgkDdiSetRootPageTable; 
-    PDXGKDDI_GETROOTPAGETABLESIZE           DxgkDdiGetRootPageTableSize; 
-    PDXGKDDI_MAPCPUHOSTAPERTURE             DxgkDdiMapCpuHostAperture; 
-    PDXGKDDI_UNMAPCPUHOSTAPERTURE           DxgkDdiUnmapCpuHostAperture; 
+    PDXGKDDI_RENDERGDI                      DxgkDdiRenderGdi;
+    PDXGKDDI_SUBMITCOMMANDVIRTUAL           DxgkDdiSubmitCommandVirtual;
+    PDXGKDDI_SETROOTPAGETABLE               DxgkDdiSetRootPageTable;
+    PDXGKDDI_GETROOTPAGETABLESIZE           DxgkDdiGetRootPageTableSize;
+    PDXGKDDI_MAPCPUHOSTAPERTURE             DxgkDdiMapCpuHostAperture;
+    PDXGKDDI_UNMAPCPUHOSTAPERTURE           DxgkDdiUnmapCpuHostAperture;
     PDXGKDDI_CHECKMULTIPLANEOVERLAYSUPPORT2 DxgkDdiCheckMultiPlaneOverlaySupport2;
     PDXGKDDI_CREATEPROCESS                  DxgkDdiCreateProcess;
     PDXGKDDI_DESTROYPROCESS                 DxgkDdiDestroyProcess;
@@ -2664,15 +2930,41 @@ typedef struct _DRIVER_INITIALIZATION_DATA {
     PDXGKDDI_CREATENATIVEFENCE              DxgkDdiCreateNativeFence;
     PDXGKDDI_DESTROYNATIVEFENCE             DxgkDdiDestroyNativeFence;
     PDXGKDDI_UPDATEMONITOREDVALUES          DxgkDdiUpdateMonitoredValues;
-    PDXGKDDI_NOTIFYCURRENTVALUEUPDATES      DxgkDdiNotifyCurrentValueUpdates;
+    PDXGKDDI_UPDATECURRENTVALUESFROMCPU     DxgkDdiUpdateCurrentValuesFromCpu;
     PDXGKDDI_CREATEDOORBELL                 DxgkDdiCreateDoorbell;
     PDXGKDDI_CONNECTDOORBELL                DxgkDdiConnectDoorbell;
     PDXGKDDI_DISCONNECTDOORBELL             DxgkDdiDisconnectDoorbell;
     PDXGKDDI_DESTROYDOORBELL                DxgkDdiDestroyDoorbell;
     PDXGKDDI_NOTIFYWORKSUBMISSION           DxgkDdiNotifyWorkSubmission;
-    PDXGKDDI_FLUSHHWQUEUE                   DxgkDdiFlushHwQueue;
+    void*                                   Reserved4;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM3_1)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM3_2)
+
+    PDXGKDDI_CREATEMEMORYBASIS              DxgkDdiCreateMemoryBasis;
+    PDXGKDDI_DESTROYMEMORYBASIS             DxgkDdiDestroyMemoryBasis;
+    PDXGKDDI_STARTDIRTYTRACKING             DxgkDdiStartDirtyTracking;
+    PDXGKDDI_STOPDIRTYTRACKING              DxgkDdiStopDirtyTracking;
+    PDXGKDDI_QUERYDIRTYBITDATA              DxgkDdiQueryDirtyBitData;
+    PDXGKDDI_PREPARELIVEMIGRATION           DxgkDdiPrepareLiveMigration;
+    PDXGKDDI_SAVEIMMUTABLEMIGRATIONDATA     DxgkDdiSaveImmutableMigrationData;
+    PDXGKDDI_SAVEMUTABLEMIGRATIONDATA       DxgkDdiSaveMutableMigrationData;
+    PDXGKDDI_ENDLIVEMIGRATION               DxgkDdiEndLiveMigration;
+    PDXGKDDI_RESTOREIMMUTABLEMIGRATIONDATA  DxgkDdiRestoreImmutableMigrationData;
+    PDXGKDDI_RESTOREMUTABLEMIGRATIONDATA    DxgkDdiRestoreMutableMigrationData;
+    PDXGKDDI_WRITEVIRTUALIZEDINTERRUPT      DxgkDdiWriteVirtualizedInterrupt;
+    PDXGKDDI_SETVIRTUALGPURESOURCES2        DxgkDdiSetVirtualGpuResources2;
+    PDXGKDDI_SETVIRTUALFUNCTIONPAUSESTATE   DxgkDdiSetVirtualFunctionPauseState;
+    PDXGKDDI_OPENNATIVEFENCE                DxgkDdiOpenNativeFence;
+    PDXGKDDI_CLOSENATIVEFENCE               DxgkDdiCloseNativeFence;
+    PDXGKDDI_SETNATIVEFENCELOGBUFFER        DxgkDdiSetNativeFenceLogBuffer;
+    PDXGKDDI_UPDATENATIVEFENCELOGS          DxgkDdiUpdateNativeFenceLogs;
+
+    PDXGKDDI_COLLECTDBGINFO2                DxgkDdiCollectDbgInfo2;
+    PDXGKDDI_NOTIFYCONTEXTPRIORITYCHANGE    DxgkDdiNotifyContextPriorityChange;
+    PDXGKDDI_RESETDISPLAYENGINE             DxgkDdiResetDisplayEngine;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM3_2)
 } DRIVER_INITIALIZATION_DATA, *PDRIVER_INITIALIZATION_DATA;
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
@@ -3122,15 +3414,15 @@ DlUnmapMemory(
 DEFINE_GUID(GUID_DXGKDDI_GPU_PARTITION_INTERFACE, 0x462bc153, 0x40eb, 0x484a, 0x81, 0x68, 0x99, 0x72, 0xe3, 0xcd, 0x5a, 0xef);
 
 // must be the same as flexiov.h #define FIOV_FLAG_ACS_CAPABLE 0x080
-#define DXGK_VIRTUALIZED_ACS_CAPABLE 0x80 
+#define DXGK_VIRTUALIZED_ACS_CAPABLE 0x80
 // must be the same as flexiov.h #define FIOV_FLAG_UNIQUE_RID_PER_VF 0x100
-#define DXGK_VIRTUALIZED_UNIQUE_RID 0x100 
+#define DXGK_VIRTUALIZED_UNIQUE_RID 0x100
 // must be the same as flexiov.h #define FIOV_FLAG_PARAVIRTUALIZED 0x400
 // This implies the host device is shared and virtualization is accomplished by software
 #define DXGK_VIRTUALIZED_PARAVIRTUALIZED 0x400
 // must be the same as flexiov.h #define FIOV_FLAG_HOST_VIRTUAL_DEVICE 0x800
 // This implies the host device is a fully virtual device and no hardware is present
-#define DXGK_VIRTUALIZED_HOST_VIRTUAL_DEVICE 0x800 
+#define DXGK_VIRTUALIZED_HOST_VIRTUAL_DEVICE 0x800
 
 
 typedef struct _DXGKARG_GETGPUPARTITIONINFO
@@ -3562,7 +3854,7 @@ DXGKDDI_QUERYVIRTUALFUNCTIONLUID(
     );
 
 typedef DXGKDDI_QUERYVIRTUALFUNCTIONLUID *PDXGKDDI_QUERYVIRTUALFUNCTIONLUID;
-    
+
 typedef struct _DXGKARG_GETVENDORANDDEVICE
 {
     _In_  ULONG          VirtualFunctionIndex;
@@ -3782,7 +4074,7 @@ DXGKDDI_GETMMIORANGECOUNT(
 typedef DXGKDDI_GETMMIORANGECOUNT *PDXGKDDI_GETMMIORANGECOUNT;
 
 //
-// if a range is fully mitigated (InterceptReads and InterceptWrites are TRUE), use this define 
+// if a range is fully mitigated (InterceptReads and InterceptWrites are TRUE), use this define
 // for BasePhysicalPageNumber and set BasePhysicalResourceNumber to 0.
 //
 #define DXGK_MMIO_RANGES_EMULATED_PAGE 0xFFFFFFFFFFFFFFFF
@@ -3857,17 +4149,17 @@ typedef struct _DXGK_DSI_CAPS
     BYTE    ResultCodeStatus;
     BYTE    Revision;
     BYTE    Level;
-    
+
     BYTE    DeviceClassHi;
     BYTE    DeviceClassLo;
     BYTE    ManufacturerHi;
     BYTE    ManufacturerLo;
-    
+
     BYTE    ProductHi;
     BYTE    ProductLo;
     BYTE    LengthHi;
     BYTE    LengthLo;
-} DXGK_DSI_CAPS, *PDXGK_DSI_CAPS; 
+} DXGK_DSI_CAPS, *PDXGK_DSI_CAPS;
 
 typedef
 _Function_class_(DXGKDDI_DSICAPS)

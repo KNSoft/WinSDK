@@ -203,6 +203,11 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
     SID_HASH_ENTRY Hash[SID_HASH_SIZE];
 } SID_AND_ATTRIBUTES_HASH, *PSID_AND_ATTRIBUTES_HASH;
 
+typedef struct _ATTRIBUTES_AND_SID {
+    UINT32 Attributes;
+    ULONG SidStart;
+} ATTRIBUTES_AND_SID, *PATTRIBUTES_AND_SID;
+
 
 /////////////////////////////////////////////////////////////////////////////
 //                                                                         //
@@ -374,8 +379,14 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 
 #define SECURITY_CCG_ID_BASE_RID        (0x0000005FL)
 #define SECURITY_UMFD_BASE_RID          (0x00000060L)
+#define SECURITY_UNIQUIFIED_SERVICE_BASE_RID (0x00000061L)
 
 #define SECURITY_VIRTUALACCOUNT_ID_RID_COUNT   (6L)
+
+#define SECURITY_EDGE_CLOUD_INFRASTRUCTURE_SERVICE_ID_BASE_RID (0x00000062L)
+
+#define SECURITY_RESTRICTED_SERVICES_BASE_RID  (0x00000063L)
+#define SECURITY_RESTRICTED_SERVICES_RID_COUNT (6L)
 
 //
 // Virtual account logon is not limited to inbox callers.  Reserve base RID 0x6F for application usage.
@@ -450,6 +461,8 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 #define DOMAIN_GROUP_RID_PROTECTED_USERS (0x0000020DL)
 #define DOMAIN_GROUP_RID_KEY_ADMINS      (0x0000020EL)
 #define DOMAIN_GROUP_RID_ENTERPRISE_KEY_ADMINS (0x0000020FL)
+#define DOMAIN_GROUP_RID_FOREST_TRUSTS   (0x00000210L)
+#define DOMAIN_GROUP_RID_EXTERNAL_TRUSTS (0x00000211L)
 
 // well-known aliases ...
 
@@ -490,6 +503,8 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 #define DOMAIN_ALIAS_RID_DEFAULT_ACCOUNT                (0x00000245L)
 #define DOMAIN_ALIAS_RID_STORAGE_REPLICA_ADMINS         (0x00000246L)
 #define DOMAIN_ALIAS_RID_DEVICE_OWNERS                  (0x00000247L)
+#define DOMAIN_ALIAS_RID_USER_MODE_HARDWARE_OPERATORS   (0x00000248L)
+#define DOMAIN_ALIAS_RID_OPENSSH_USERS                  (0x00000249L)
 
 //
 // Application Package Authority.
@@ -1356,6 +1371,7 @@ typedef enum _TOKEN_INFORMATION_CLASS {
     TokenIsLessPrivilegedAppContainer,
     TokenIsSandboxed,
     TokenIsAppSilo,
+    TokenLoggingInformation,
     MaxTokenInfoClass  // MaxTokenInfoClass should always be the last enum
 } TOKEN_INFORMATION_CLASS, *PTOKEN_INFORMATION_CLASS;
 
@@ -1484,6 +1500,22 @@ typedef struct _TOKEN_ACCESS_INFORMATION {
     PSID TrustLevelSid;
     PSECURITY_ATTRIBUTES_OPAQUE SecurityAttributes;
 } TOKEN_ACCESS_INFORMATION, *PTOKEN_ACCESS_INFORMATION;
+
+typedef struct _TOKEN_LOGGING_INFORMATION {
+    TOKEN_TYPE TokenType;
+    TOKEN_ELEVATION TokenElevation;
+    TOKEN_ELEVATION_TYPE TokenElevationType;
+    SECURITY_IMPERSONATION_LEVEL ImpersonationLevel;
+    ULONG IntegrityLevel;
+    SID_AND_ATTRIBUTES User;
+    PSID TrustLevelSid;
+    ULONG SessionId;
+    ULONG AppContainerNumber;
+    LUID AuthenticationId;
+    ULONG GroupCount;
+    ULONG GroupsLength;
+    PSID_AND_ATTRIBUTES Groups;
+} TOKEN_LOGGING_INFORMATION, *PTOKEN_LOGGING_INFORMATION;
 
 //
 // Valid bits for each TOKEN_AUDIT_POLICY policy mask field.
@@ -2264,7 +2296,8 @@ typedef struct _RTL_SEGMENT_HEAP_MEMORY_SOURCE {
 
 #define SEGMENT_HEAP_PARAMETERS_VERSION         3
 #define SEGMENT_HEAP_FLG_USE_PAGE_HEAP          0x1
-#define SEGMENT_HEAP_PARAMS_VALID_FLAGS         SEGMENT_HEAP_FLG_USE_PAGE_HEAP
+#define SEGMENT_HEAP_FLG_NO_LFH                 0x2
+#define SEGMENT_HEAP_PARAMS_VALID_FLAGS         0x3
 
 typedef struct _RTL_SEGMENT_HEAP_PARAMETERS {
     USHORT Version;
@@ -2358,6 +2391,10 @@ RtlCreateHeap(
 // Only applies to segment heap.  Applies pointer obfuscation which is
 // generally excessive and unnecessary but is necessary for certain insecure
 // heaps in win32k.
+//
+// Specifying HEAP_CREATE_HARDENED prevents the heap from using locks as
+// pointers would potentially be exposed in heap metadata lock variables.
+// Callers are therefore responsible for synchronizing access to hardened heaps.
 //
 
 #define HEAP_CREATE_HARDENED            0x00000200      // winnt Only applies to segment heap.
@@ -3314,7 +3351,10 @@ RtlNextUnicodePrefix (
 #define COMPRESSION_FORMAT_XPRESS        (0x0003)   // winnt
 #define COMPRESSION_FORMAT_XPRESS_HUFF   (0x0004)   // winnt
 #define COMPRESSION_FORMAT_XP10          (0x0005)   // winnt
-#define COMPRESSION_FORMAT_MAX           (0x0005)
+#define COMPRESSION_FORMAT_LZ4           (0x0006)   // winnt
+#define COMPRESSION_FORMAT_DEFLATE       (0x0007)   // winnt
+#define COMPRESSION_FORMAT_ZLIB          (0x0008)   // winnt
+#define COMPRESSION_FORMAT_MAX           (0x0008)
 
 #define COMPRESSION_ENGINE_STANDARD      (0x0000)   // winnt
 #define COMPRESSION_ENGINE_MAXIMUM       (0x0100)   // winnt
@@ -4052,6 +4092,17 @@ RtlCreateAcl (
 
 // end_wudfpwdm
 
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+_IRQL_requires_max_(APC_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlGetAcesBufferSize (
+    _In_ PACL Acl,
+    _Out_ PULONG AcesBufferSize
+    );
+#endif
+
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _IRQL_requires_max_(APC_LEVEL)
 NTSYSAPI
@@ -4657,6 +4708,10 @@ RtlCaptureContext2(
 #define FILE_DEVICE_EVENT_COLLECTOR     0x0000005f
 #define FILE_DEVICE_USB4                0x00000060
 #define FILE_DEVICE_SOUNDWIRE           0x00000061
+#define FILE_DEVICE_FABRIC_NVME         0x00000062
+#define FILE_DEVICE_SVM                 0x00000063
+#define FILE_DEVICE_HARDWARE_ACCELERATOR 0x00000064
+#define FILE_DEVICE_I3C                 0x00000065
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -4747,9 +4802,11 @@ NTAPI
 NtSetInformationThread (
     _In_ HANDLE ThreadHandle,
     _In_ THREADINFOCLASS ThreadInformationClass,
-    _When_((ThreadInformationClass != ThreadManageWritesToExecutableMemory),
+    _When_(((ThreadInformationClass != ThreadManageWritesToExecutableMemory) &&
+            (ThreadInformationClass != ThreadSchedulerSharedDataSlot)),
            _In_reads_bytes_(ThreadInformationLength))
-    _When_((ThreadInformationClass == ThreadManageWritesToExecutableMemory),
+    _When_(((ThreadInformationClass == ThreadManageWritesToExecutableMemory) ||
+            (ThreadInformationClass == ThreadSchedulerSharedDataSlot)),
            _Inout_updates_(ThreadInformationLength))
     PVOID ThreadInformation,
     _In_ ULONG ThreadInformationLength
@@ -6120,7 +6177,7 @@ typedef struct _MSV1_0_GETUSERINFO_RESPONSE {
 } MSV1_0_GETUSERINFO_RESPONSE, *PMSV1_0_GETUSERINFO_RESPONSE;
 
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 //
 // Define the I/O status information return values from IRP_MJ_CLEANUP.  For
 // some values it is valid for them to be combined with others, such as
@@ -6446,8 +6503,8 @@ typedef struct _FILE_NOTIFY_FULL_INFORMATION {
 typedef struct _FILE_INFORMATION_DEFINITION {
     FILE_INFORMATION_CLASS Class;
     ULONG NextEntryOffset;
-    ULONG FileNameLengthOffset;
     ULONG FileNameOffset;       // Minimum size of the returned structure
+    ULONG FileNameLengthOffset;
 } FILE_INFORMATION_DEFINITION, *PFILE_INFORMATION_DEFINITION;
 
 //@[comment("MVI_tracked")]
@@ -6890,8 +6947,15 @@ typedef struct _FILE_ALL_INFORMATION {
     FILE_NAME_INFORMATION NameInformation;
 } FILE_ALL_INFORMATION, *PFILE_ALL_INFORMATION;
 
+// begin_winnt
 
 //================ FileStatInformation ========================================
+
+//
+// Note: Fields up through EffectiveAccess are the same as in
+// FILE_STAT_LX_INFORMATION, and up through NumberOfLinks are the same
+// as in FILE_STAT_BASIC_INFORMATION.
+//
 
 typedef struct _FILE_STAT_INFORMATION {
     LARGE_INTEGER FileId;
@@ -6907,6 +6971,8 @@ typedef struct _FILE_STAT_INFORMATION {
     ACCESS_MASK EffectiveAccess;
 } FILE_STAT_INFORMATION, *PFILE_STAT_INFORMATION;
 
+//================ FileStatLxInformation ========================================
+
 //
 // LxFlags for FILE_STAT_LX_INFORMATION that specify which metadata fields
 // were present for the file.
@@ -6917,6 +6983,12 @@ typedef struct _FILE_STAT_INFORMATION {
 #define LX_FILE_METADATA_HAS_MODE 0x4
 #define LX_FILE_METADATA_HAS_DEVICE_ID 0x8
 #define LX_FILE_CASE_SENSITIVE_DIR 0x10
+
+//
+// Note: Fields up through EffectiveAccess are the same as in
+// FILE_STAT_INFORMATION, and up through NumberOfLinks are the same
+// as in FILE_STAT_BASIC_INFORMATION.
+//
 
 typedef struct _FILE_STAT_LX_INFORMATION {
     LARGE_INTEGER FileId;
@@ -6938,6 +7010,53 @@ typedef struct _FILE_STAT_LX_INFORMATION {
     ULONG LxDeviceIdMinor;
 } FILE_STAT_LX_INFORMATION, *PFILE_STAT_LX_INFORMATION;
 
+//================ FileStatBasicInformation ========================================
+
+//
+// Note: Fields up through NumberOfLinks are the same
+// as in FILE_STAT_INFORMATION and FILE_STAT_LX_INFORMATION
+// (associated with file info classes FileStatInformation and
+// FileStatLxInformation, respectively).
+//
+// Fields DeviceType and DeviceCharacteristics are the same as
+// fields DeviceType and Characteristics in FILE_FS_DEVICE_INFORMATION,
+// respectively (assocated with file info class FileFsDeviceInformation).
+//
+// Field VolumeSerialNumber is the same as in FILE_ID_INFORMATION
+// (associated with file info class FileIdInformation).
+//
+// For FileId and FileId128 fields: the distinction here is the same as
+// for FILE_ID_ALL_EXTD_BOTH_DIR_INFORMATION; i.e., filesystems can
+// represent file IDs in both a 64-bit form (FileId) and a 128-bit
+// form (FileId128). Both fields are opaque and dependent on the
+// type of filesystem; and both represent a valid way to uniquely
+// identify a particular file.
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
+
+typedef struct _FILE_STAT_BASIC_INFORMATION {
+    LARGE_INTEGER FileId;
+    LARGE_INTEGER CreationTime;
+    LARGE_INTEGER LastAccessTime;
+    LARGE_INTEGER LastWriteTime;
+    LARGE_INTEGER ChangeTime;
+    LARGE_INTEGER AllocationSize;
+    LARGE_INTEGER EndOfFile;
+    ULONG FileAttributes;
+    ULONG ReparseTag;
+    ULONG NumberOfLinks;
+    ULONG DeviceType;
+    ULONG DeviceCharacteristics;
+    ULONG Reserved;
+    LARGE_INTEGER VolumeSerialNumber;
+    FILE_ID_128 FileId128;
+} FILE_STAT_BASIC_INFORMATION, *PFILE_STAT_BASIC_INFORMATION;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN11_ZN)
+
+// end_winnt
+
 //================ FileCaseSensitiveInformation ===============================
 
 //
@@ -6954,11 +7073,11 @@ typedef struct _FILE_STAT_LX_INFORMATION {
 
 #define FILE_CS_FLAG_CASE_SENSITIVE_DIR     0x00000001
 
-// end_winnt
-
 typedef struct _FILE_CASE_SENSITIVE_INFORMATION {
     ULONG Flags;
 } FILE_CASE_SENSITIVE_INFORMATION, *PFILE_CASE_SENSITIVE_INFORMATION;
+
+// end_winnt
 
 //================ FileKnownFolderInformation ===============================
 
@@ -7007,14 +7126,14 @@ typedef struct _FILE_COMPRESSION_INFORMATION {
 #pragma warning( disable : 4121)
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 #define FILE_LINK_REPLACE_IF_EXISTS                     0x00000001
 #define FILE_LINK_POSIX_SEMANTICS                       0x00000002
 #endif
 
 //  available                                           0x00000004
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 #define FILE_LINK_SUPPRESS_STORAGE_RESERVE_INHERITANCE  0x00000008
 #define FILE_LINK_NO_INCREASE_AVAILABLE_SPACE           0x00000010
 #define FILE_LINK_NO_DECREASE_AVAILABLE_SPACE           0x00000020
@@ -7022,14 +7141,14 @@ typedef struct _FILE_COMPRESSION_INFORMATION {
 #define FILE_LINK_IGNORE_READONLY_ATTRIBUTE             0x00000040
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_19H1)
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
 #define FILE_LINK_FORCE_RESIZE_TARGET_SR                0x00000080
 #define FILE_LINK_FORCE_RESIZE_SOURCE_SR                0x00000100
 #define FILE_LINK_FORCE_RESIZE_SR                       0x00000180  // combination
 #endif
 
 typedef struct _FILE_LINK_INFORMATION {
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
     union {
         BOOLEAN ReplaceIfExists;  // FileLinkInformation
         ULONG Flags;              // FileLinkInformationEx
@@ -7063,16 +7182,16 @@ typedef struct _FILE_MOVE_CLUSTER_INFORMATION {
 #pragma warning( disable : 4121)
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 #define FILE_RENAME_REPLACE_IF_EXISTS                     0x00000001
 #define FILE_RENAME_POSIX_SEMANTICS                       0x00000002
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 #define FILE_RENAME_SUPPRESS_PIN_STATE_INHERITANCE        0x00000004
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 #define FILE_RENAME_SUPPRESS_STORAGE_RESERVE_INHERITANCE  0x00000008
 #define FILE_RENAME_NO_INCREASE_AVAILABLE_SPACE           0x00000010
 #define FILE_RENAME_NO_DECREASE_AVAILABLE_SPACE           0x00000020
@@ -7080,14 +7199,14 @@ typedef struct _FILE_MOVE_CLUSTER_INFORMATION {
 #define FILE_RENAME_IGNORE_READONLY_ATTRIBUTE             0x00000040
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_19H1)
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
 #define FILE_RENAME_FORCE_RESIZE_TARGET_SR                0x00000080
 #define FILE_RENAME_FORCE_RESIZE_SOURCE_SR                0x00000100
 #define FILE_RENAME_FORCE_RESIZE_SR                       0x00000180  // combination
 #endif
 
 typedef struct _FILE_RENAME_INFORMATION {
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
     union {
         BOOLEAN ReplaceIfExists;  // FileRenameInformation
         ULONG Flags;              // FileRenameInformationEx
@@ -7227,6 +7346,21 @@ typedef struct _FILE_STANDARD_LINK_INFORMATION {
     BOOLEAN Directory;
 } FILE_STANDARD_LINK_INFORMATION, *PFILE_STANDARD_LINK_INFORMATION;
 
+//================ FileStreamReservationInformation ===========================
+
+typedef struct _FILE_STREAM_RESERVATION_INFORMATION {
+    LONGLONG TrackedReservation;
+    LONGLONG EnforcedReservation;
+} FILE_STREAM_RESERVATION_INFORMATION, *PFILE_STREAM_RESERVATION_INFORMATION;
+
+//================ FileMupProviderInfo ===========================
+
+typedef struct _MUP_PROVIDER_INFORMATION {
+    ULONG Level;
+    PVOID Buffer;
+    PULONG BufferSize;
+} MUP_PROVIDER_INFORMATION, *PMUP_PROVIDER_INFORMATION;
+
 //
 // NtQuery(Set)EaFile
 //
@@ -7285,7 +7419,7 @@ typedef struct _FILE_GET_EA_INFORMATION {
 #define RPI_SMB2_SHARECAP_IDENTITY_REMOTING  0x00000200
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
 #define RPI_SMB2_SHARECAP_ASYMMETRIC_SCALEOUT  0x00000400
 
@@ -7318,6 +7452,7 @@ typedef struct _FILE_GET_EA_INFORMATION {
 #define RPI_SMB2_SERVERCAP_PERSISTENT_HANDLES     0x00000010
 #define RPI_SMB2_SERVERCAP_DIRECTORY_LEASING      0x00000020
 #define RPI_SMB2_SERVERCAP_ENCRYPTION_AWARE       0x00000040
+#define RPI_SMB2_SERVERCAP_NOTIFICATIONS_AWARE    0x00000080
 #endif
 
 //
@@ -7370,7 +7505,7 @@ typedef struct _FILE_REMOTE_PROTOCOL_INFORMATION
 #else
                 ULONG CachingFlags;
 #endif
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
                 UCHAR ShareType;
                 UCHAR Reserved0[3];
                 ULONG Reserved1;
@@ -7468,16 +7603,16 @@ typedef struct _FILE_FS_DATA_COPY_INFORMATION {
     ULONG NumberOfCopies;
 } FILE_FS_DATA_COPY_INFORMATION, *PFILE_FS_DATA_COPY_INFORMATION;
 
-#if defined(NTDDI_WIN10_NI) && (NTDDI_VERSION >= NTDDI_WIN10_NI)
+#if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
 
 typedef struct _FILE_FS_GUID_INFORMATION {
     GUID FsGuid;
 } FILE_FS_GUID_INFORMATION, *PFILE_FS_GUID_INFORMATION;
 
-#endif // #if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
 
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
 #define FLAGS_END_OF_FILE_INFO_EX_EXTEND_PAGING             0x00000001
 #define FLAGS_END_OF_FILE_INFO_EX_NO_EXTRA_PAGING_EXTEND    0x00000002
@@ -7838,6 +7973,19 @@ NtUnlockFile (
 
 #endif  // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+//
+//  If set, this operation will write the data for the given file from the
+//  Windows in-memory cache.  It will also try to skip updating the timestamp
+//  as much as possible.  This will send a SYNC to the storage device to flush its
+//  cache.  Not supported on volume or directory handles.
+//
+
+#define FLUSH_FLAGS_FLUSH_AND_PURGE                     0x00000008
+
+#endif  // (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
 // end_winnt end_wdm
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
@@ -8197,7 +8345,7 @@ NtFlushBuffersFileEx (
 #define FSCTL_GET_FILTER_FILE_IDENTIFIER        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 241, METHOD_BUFFERED, FILE_ANY_ACCESS) // GET_FILTER_FILE_IDENTIFIER_INPUT, GET_FILTER_FILE_IDENTIFIER_OUTPUT
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1) */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 #define FSCTL_STREAMS_QUERY_PARAMETERS          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 241, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_STREAMS_ASSOCIATE_ID              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 242, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_STREAMS_QUERY_ID                  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 243, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -8208,7 +8356,7 @@ NtFlushBuffersFileEx (
 
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 #define FSCTL_REFS_DEALLOCATE_RANGES            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 246, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
@@ -8243,14 +8391,14 @@ NtFlushBuffersFileEx (
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
 #define FSCTL_SET_REPARSE_POINT_EX              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 259, METHOD_BUFFERED, FILE_SPECIAL_ACCESS) // REPARSE_DATA_BUFFER_EX
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1) */
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) || (NTDDI_VERSION >= NTDDI_WIN8) //Win8 check is for backward compatibility.
 #define FSCTL_REARRANGE_FILE                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 264, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS) // REARRANGE_FILE_DATA
 #define FSCTL_VIRTUAL_STORAGE_PASSTHROUGH       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 265, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_GET_RETRIEVAL_POINTER_COUNT       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 266, METHOD_NEITHER,  FILE_ANY_ACCESS) // STARTING_VCN_INPUT_BUFFER, RETRIEVAL_POINTER_COUNT
 #if defined(_WIN64)
 #define FSCTL_ENABLE_PER_IO_FLAGS               CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 267, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif /* _WIN64 */
-#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS5) */
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 #define FSCTL_QUERY_ASYNC_DUPLICATE_EXTENTS_STATUS  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 268, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
@@ -8295,10 +8443,19 @@ NtFlushBuffersFileEx (
 #if (NTDDI_VERSION >= NTDDI_WIN10_CU)
 #define FSCTL_UPGRADE_VOLUME                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 289, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
-/* ABRACADABRA_WIN10_ZN?  ABRACADABRA_WIN10_ZN? */
-#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+#if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
 #define FSCTL_REFS_SET_VOLUME_IO_METRICS_INFO       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 290, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_REFS_QUERY_VOLUME_IO_METRICS_INFO     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 291, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+#define FSCTL_REFS_SET_ROLLBACK_PROTECTION_INFO     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 292, METHOD_BUFFERED, FILE_ANY_ACCESS) // REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER
+#define FSCTL_REFS_QUERY_ROLLBACK_PROTECTION_INFO   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 293, METHOD_BUFFERED, FILE_ANY_ACCESS) // REFS_QUERY_ROLLBACK_PROTECTION_INFO_OUTPUT_BUFFER
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+#define FSCTL_FILE_SOV_CHECK_RANGE                  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 294, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+#define FSCTL_CASCADES_REFS_SET_FILE_REMOTE         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 295, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
 
 //
@@ -8418,9 +8575,16 @@ typedef struct {
     USHORT MetadataChecksumType;
 
     UCHAR Reserved0[6];
-    LARGE_INTEGER Reserved[8];
+
+    ULONG DriverMajorVersion;
+    ULONG DriverMinorVersion;
+
+    LARGE_INTEGER Reserved[7];
 
 } REFS_VOLUME_DATA_BUFFER, *PREFS_VOLUME_DATA_BUFFER;
+
+#define REFS_VOLUME_DATA_BUFFER_CONTAINS_DRIVER_VERSION(VOLUME_DATA_BUFFER) \
+    ((VOLUME_DATA_BUFFER)->ByteCount >= RTL_SIZEOF_THROUGH_FIELD( REFS_VOLUME_DATA_BUFFER, DriverMinorVersion ))
 
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN8 */
 
@@ -8485,7 +8649,7 @@ typedef struct RETRIEVAL_POINTERS_BUFFER {
 } RETRIEVAL_POINTERS_BUFFER, *PRETRIEVAL_POINTERS_BUFFER;
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_NT4 */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 //
 //==================== FSCTL_GET_RETRIEVAL_POINTERS_AND_REFCOUNT ======================
 //
@@ -8507,9 +8671,9 @@ typedef struct RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER {
     } Extents[1];
 
 } RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER, *PRETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER;
-#endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2 */
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS2) */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) || (NTDDI_VERSION >= NTDDI_WIN8) //Win8 check is for backward compatibility.
 //
 //==================== FSCTL_GET_RETRIEVAL_POINTER_COUNT ======================
 //
@@ -8525,7 +8689,8 @@ typedef struct RETRIEVAL_POINTER_COUNT {
     ULONG ExtentCount;
 
 } RETRIEVAL_POINTER_COUNT, *PRETRIEVAL_POINTER_COUNT;
-#endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5 */
+#endif /* #if (NTDDI_VERSION >= NTDDI_WIN10_RS5) */
+
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_NT4)
 //
@@ -9879,7 +10044,23 @@ typedef struct _ENCRYPTED_DATA_INFO {
 //  Flag to indicate the encrypted file is sparse
 //
 
-#define ENCRYPTED_DATA_INFO_SPARSE_FILE    1
+#define ENCRYPTED_DATA_INFO_SPARSE_FILE        0x00000001
+
+//
+//  This encrypted file data is from a filesystem which has support
+//  for sparse data ranges (e.g. ReFS) for non-sparse files.
+//
+
+#define ENCRYPTED_DATA_INFO_SPARSE_DATA        0x00000002
+
+//
+//  This encrypted file data is for a sparse file from a filesystem
+//  which has a 4k sparse data unit size.  It cannot be restored to
+//  a filesystem with larger sparse unit size.
+//
+
+#define ENCRYPTED_DATA_INFO_4K_SPARSE_UNIT     0x00000004
+
 
 typedef struct _EXTENDED_ENCRYPTED_DATA_INFO {
 
@@ -9899,7 +10080,7 @@ typedef struct _EXTENDED_ENCRYPTED_DATA_INFO {
     ULONG Length;
 
     //
-    //  Encrypted data flags (currently only sparse is defined)
+    //  Encrypted data flags
     //
 
     ULONG Flags;
@@ -11165,7 +11346,7 @@ typedef struct _FILE_FS_PERSISTENT_VOLUME_INFORMATION {
 
 #endif // #if (NTDDI_VERSION >= NTDDI_WIN10_MN)
 
-#if defined(NTDDI_WIN10_NI) && (NTDDI_VERSION >= NTDDI_WIN10_NI)
+#if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
 
 //
 //  The volume was formatted as a developer volume.  This can be used by the
@@ -11193,7 +11374,7 @@ typedef struct _FILE_FS_PERSISTENT_VOLUME_INFORMATION {
 
 #define PERSISTENT_VOLUME_STATE_TRUSTED_VOLUME                      (0x00004000)
 
-#endif // #if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
 
 
 //
@@ -11251,7 +11432,7 @@ typedef struct _REQUEST_OPLOCK_INPUT_BUFFER {
 #define REQUEST_OPLOCK_OUTPUT_FLAG_ACK_REQUIRED                 (0x00000001)
 #define REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED               (0x00000002)
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
 // If the oplock request fails with STATUS_OPLOCK_NOT_GRANTED, this flag indicates that the oplock
 // could not be granted due to the presence of a writable user-mapped section.
 #define REQUEST_OPLOCK_OUTPUT_FLAG_WRITABLE_SECTION_PRESENT     (0x00000004)
@@ -12086,7 +12267,7 @@ typedef struct _CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT {
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN7 */
 
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) || (NTDDI_VERSION >= NTDDI_WIN8) //Win8 check is for backward compatibility.
 //
 // Storage Reserve common definitions
 //
@@ -12101,7 +12282,7 @@ typedef enum _STORAGE_RESERVE_ID {
     StorageReserveIdMax
 
 } STORAGE_RESERVE_ID, *PSTORAGE_RESERVE_ID;
-#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS5) */
 
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
@@ -12289,9 +12470,9 @@ typedef enum _QUERY_FILE_LAYOUT_FILTER_TYPE {
     QUERY_FILE_LAYOUT_FILTER_TYPE_NONE = 0,
     QUERY_FILE_LAYOUT_FILTER_TYPE_CLUSTERS = 1,
     QUERY_FILE_LAYOUT_FILTER_TYPE_FILEID = 2,
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
     QUERY_FILE_LAYOUT_FILTER_TYPE_STORAGE_RESERVE_ID = 3,
-#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS5) */
 
     QUERY_FILE_LAYOUT_NUM_FILTER_TYPES
 
@@ -12392,11 +12573,11 @@ typedef struct _QUERY_FILE_LAYOUT_INPUT {
         //  on a set of storage reserve IDs.
         //
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
         _When_((FilterType == QUERY_FILE_LAYOUT_FILTER_TYPE_STORAGE_RESERVE_ID),
                 _Field_size_(FilterEntryCount))
         STORAGE_RESERVE_ID StorageReserveIds[1];
-#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS5) */
 
     } Filter;
 
@@ -12488,7 +12669,8 @@ typedef struct _FILE_LAYOUT_ENTRY {
     //
     ULONG         ExtraInfoOffset;
 
-#if (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION < NTDDI_WIN10_RS5) && (NTDDI_VERSION < NTDDI_WIN10_RS1) //RS1  check is for backward compatibility.
+
     //
     // For alignment/future use.
     //
@@ -12509,7 +12691,7 @@ typedef struct _FILE_LAYOUT_ENTRY {
     // determine which fields are safe to access.
     //
     ULONG         ExtraInfoLength;
-#endif /* (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS5) */
+#endif /* (NTDDI_VERSION < NTDDI_WIN10_RS5) */
 
     //
     // The structure may be extended here to support
@@ -12592,12 +12774,12 @@ typedef struct _FILE_LAYOUT_INFO_ENTRY {
     //
     USN                         Usn;
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) || (NTDDI_VERSION >= NTDDI_WIN10_RS1) //RS1 check is for backward compatibility.
     //
     // Storage Reserve ID assigned to the file (0 for none).
     //
     STORAGE_RESERVE_ID  StorageReserveId;
-#endif /* (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS5) */
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS5) */
 
 } FILE_LAYOUT_INFO_ENTRY, *PFILE_LAYOUT_INFO_ENTRY;
 
@@ -12738,7 +12920,8 @@ typedef struct _STREAM_EXTENT_ENTRY {
 #define CHECKSUM_TYPE_CRC64             (2)
 #define CHECKSUM_TYPE_ECC               (3)
 #define CHECKSUM_TYPE_SHA256            (4)
-#define CHECKSUM_TYPE_FIRST_UNUSED_TYPE (5)
+#define CHECKSUM_TYPE_XXH64             (5)
+#define CHECKSUM_TYPE_FIRST_UNUSED_TYPE (6)
 
 #define FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF        (1)
 
@@ -13344,7 +13527,7 @@ typedef struct _DUPLICATE_EXTENTS_DATA {
     LARGE_INTEGER ByteCount;
 } DUPLICATE_EXTENTS_DATA, *PDUPLICATE_EXTENTS_DATA;
 
-#if ((_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2) && defined(_WIN64))
+#if ((NTDDI_VERSION >= NTDDI_WIN10_RS2) && defined(_WIN64))
 
 //
 //  32/64 Bit thunking support structure
@@ -13357,7 +13540,7 @@ typedef struct _DUPLICATE_EXTENTS_DATA32 {
     LARGE_INTEGER ByteCount;
 } DUPLICATE_EXTENTS_DATA32, *PDUPLICATE_EXTENTS_DATA32;
 
-#endif /* ((_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2) && defined(_WIN64)) */
+#endif /* ((NTDDI_VERSION >= NTDDI_WIN10_RS2) && defined(_WIN64)) */
 
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE) */
 
@@ -13432,7 +13615,7 @@ typedef struct _ASYNC_DUPLICATE_EXTENTS_STATUS {
 
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 //
 //==================== FSCTL_QUERY_REFS_SMR_VOLUME_INFO =======================
@@ -13556,7 +13739,7 @@ typedef struct _STREAMS_QUERY_ID_OUTPUT_BUFFER {
 
 } STREAMS_QUERY_ID_OUTPUT_BUFFER, *PSTREAMS_QUERY_ID_OUTPUT_BUFFER;
 
-#endif // #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
 
@@ -15185,6 +15368,21 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 
 #define IO_REPARSE_TAG_EASEFILTER_HSM           (0x00000057L)
 
+//
+//  Tag allocated to Peer Software Inc. Limited for HSM
+//  GUID: A9DFF133-08B0-4005-9E6B-D9C8876942F4
+//
+
+#define IO_REPARSE_TAG_PEER_GFS                 (0x00000058L)
+
+//
+//  Tag allocated to Amazon Web Services Inc. This is for use
+//  in the AWS AppStream Product.
+//  GUID: 0485DEC0-0A06-4352-892A-FDEFA63BFDD8
+//
+
+#define IO_REPARSE_TAG_AMZN_APPSTREAM           (0x00000059L)
+
 
 //
 //  Tag allocated to Acronis for HSM
@@ -15438,7 +15636,7 @@ typedef struct _REPARSE_DATA_BUFFER_EX {
 #define SUPPORTED_FS_FEATURES_OFFLOAD_READ    0x00000001
 #define SUPPORTED_FS_FEATURES_OFFLOAD_WRITE   0x00000002
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 #define SUPPORTED_FS_FEATURES_QUERY_OPEN      0x00000004
 
@@ -15460,12 +15658,12 @@ typedef struct _REPARSE_DATA_BUFFER_EX {
 
 #endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN10_CO*/
 
-#else  /*_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2 */
+#else  /*(NTDDI_VERSION >= NTDDI_WIN10_RS2)*/
 
 #define SUPPORTED_FS_FEATURES_VALID_MASK      (SUPPORTED_FS_FEATURES_OFFLOAD_READ |\
                                                SUPPORTED_FS_FEATURES_OFFLOAD_WRITE)
 
-#endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2 */
+#endif /*(NTDDI_VERSION >= NTDDI_WIN10_RS2) */
 #endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN8 */
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
@@ -15523,11 +15721,27 @@ typedef struct _SCRUB_DATA_INPUT {
 
     ULONG ObjectId[4];
 
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_FE)
+    //
+    // Start scrubbing at byte offset for byte count
+    // Both must be cluster aligned
+    //
+
+    ULONGLONG StartingByteOffset;
+
+    ULONGLONG ByteCount;
+
     //
     // Reserved
     //
 
+    ULONG Reserved[36];
+
+#else
+
     ULONG Reserved[41];
+
+#endif
 
     //
     // Opaque data returned from the previous call to restart the
@@ -15660,11 +15874,26 @@ typedef struct _SCRUB_DATA_OUTPUT {
 
     USHORT ParityExtentDataOffset;
 
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_FE)
+
+    //
+    //  Next scrub starting offset in bytes
+    //
+
+    ULONGLONG NextStartingByteOffset;
+
+    ULONGLONG ValidDataLength;
+
+    ULONG Reserved[4];
+
+#else
+
     //
     // Reserved
     //
 
     ULONG Reserved[9];
+#endif
 
 #else /* (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE) */
 
@@ -15676,7 +15905,7 @@ typedef struct _SCRUB_DATA_OUTPUT {
 
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE) */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
     //
     // Number of bytes of metadata processed
@@ -15862,7 +16091,7 @@ typedef struct _SHARED_VIRTUAL_DISK_SUPPORT {
 
 #endif // (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE)
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) || (NTDDI_VERSION >= NTDDI_WIN8) //Win8 check is for backward compatibility.
 
 //
 //=============== FSCTL_REARRANGE_FILE ====================
@@ -15919,7 +16148,7 @@ typedef struct _REARRANGE_FILE_DATA32 {
 } REARRANGE_FILE_DATA32, *PREARRANGE_FILE_DATA32;
 #endif // defined(_WIN64)
 
-#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS5) */
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
 //
@@ -16454,7 +16683,7 @@ typedef struct _FSCTL_UNMAP_SPACE_OUTPUT {
 
 #endif // #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_TH2)
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 //
 //==================== FSCTL_QUERY_VOLUME_NUMA_INFO =======================
 //
@@ -16465,9 +16694,9 @@ typedef struct _FSCTL_QUERY_VOLUME_NUMA_INFO_OUTPUT {
 
 } FSCTL_QUERY_VOLUME_NUMA_INFO_OUTPUT, *PFSCTL_QUERY_VOLUME_NUMA_INFO_OUTPUT;
 
-#endif // #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 //
 //================== FSCTL_REFS_DEALLOCATE_RANGES ====================
@@ -16487,7 +16716,7 @@ typedef struct _REFS_DEALLOCATE_RANGES_INPUT_BUFFER {
 
 } REFS_DEALLOCATE_RANGES_INPUT_BUFFER, *PREFS_DEALLOCATE_RANGES_INPUT_BUFFER;
 
-#endif // #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_FE)
 
@@ -16726,7 +16955,8 @@ typedef struct _LCN_WEAK_REFERENCE_CLEAR_INPUT_BUFFER {
 //===================== FSCTL_REFS_SET_VOLUME_DEDUP_INFO =======================
 //
 
-#define REFS_VOLUME_DEDUP_INFO_INPUT_BUFFER_VERSION 1
+#define REFS_VOLUME_DEDUP_INFO_INPUT_BUFFER_VERSION_V1 1
+#define REFS_VOLUME_DEDUP_INFO_INPUT_BUFFER_VERSION    2
 
 typedef struct _REFS_VOLUME_DEDUP_INFO_INPUT_BUFFER {
 
@@ -16741,13 +16971,16 @@ typedef struct _REFS_VOLUME_DEDUP_INFO_INPUT_BUFFER {
     BOOLEAN SetDirtyRangeTrackingState;
     BOOLEAN EnableDirtyRangeTracking;
 
+    BOOLEAN SetWeakRefInconsistentState;
+    BOOLEAN SetWeakRefInconsistent;
 } REFS_VOLUME_DEDUP_INFO_INPUT_BUFFER, *PREFS_VOLUME_DEDUP_INFO_INPUT_BUFFER;
 
 //
 //==================== FSCTL_REFS_QUERY_VOLUME_DEDUP_INFO ======================
 //
 
-#define REFS_VOLUME_DEDUP_INFO_OUTPUT_BUFFER_VERSION 1
+#define REFS_VOLUME_DEDUP_INFO_OUTPUT_BUFFER_VERSION_V1 1
+#define REFS_VOLUME_DEDUP_INFO_OUTPUT_BUFFER_VERSION    2
 
 typedef struct _REFS_VOLUME_DEDUP_INFO_OUTPUT_BUFFER {
 
@@ -16755,6 +16988,7 @@ typedef struct _REFS_VOLUME_DEDUP_INFO_OUTPUT_BUFFER {
     BOOLEAN Enabled;
     BOOLEAN EnabledWeakRef;
     BOOLEAN EnabledDirtyRangeTracking;
+    BOOLEAN WeakRefInconsistent;
     BOOLEAN IsClustered;
     ULONG VolumeIdHash;
     GUID VolumeGuid;
@@ -16808,8 +17042,12 @@ typedef enum _REFS_SET_VOLUME_COMPRESSION_INFO_FLAGS {
     REFS_SET_VOLUME_COMPRESSION_INFO_FLAG_START_COMPRESSION   = 0x00000001,
     REFS_SET_VOLUME_COMPRESSION_INFO_FLAG_STOP_COMPRESSION    = 0x00000002,
     REFS_SET_VOLUME_COMPRESSION_INFO_FLAG_GC_ONLY             = 0x00000004,
+#if (NTDDI_VERSION >= NTDDI_WIN10_GE)
+    REFS_SET_VOLUME_COMPRESSION_INFO_FLAG_ENABLE_COMPRESSION  = 0x00000008,
+    REFS_SET_VOLUME_COMPRESSION_INFO_FLAG_DISABLE_COMPRESSION = 0x00000010,
+#endif
 
-    REFS_SET_VOLUME_COMPRESSION_INFO_FLAG_MAX                 = REFS_SET_VOLUME_COMPRESSION_INFO_FLAG_STOP_COMPRESSION,
+    REFS_SET_VOLUME_COMPRESSION_INFO_FLAG_MAX                 = 0x00000010,
 
 } REFS_SET_VOLUME_COMPRESSION_INFO_FLAGS, *PREFS_SET_VOLUME_COMPRESSION_INFO_FLAGS;
 
@@ -16954,17 +17192,22 @@ typedef struct _REFS_QUERY_VOLUME_COMPRESSION_INFO_OUTPUT_BUFFER {
     ULONG DecompressionTuning;
 
     //
+    //  The last status code reported by volume compression.
+    //
+
+    NTSTATUS LastCompressionStatus;
+
+    //
     //  Reserved for future implementations. Filled with zeroes.
     //
 
-    ULONG Reserved[9];
+    ULONG Reserved[8];
 
 } REFS_QUERY_VOLUME_COMPRESSION_INFO_OUTPUT_BUFFER, *PREFS_QUERY_VOLUME_COMPRESSION_INFO_OUTPUT_BUFFER;
 
 #endif // #if (NTDDI_VERSION >= NTDDI_WIN10_NI)
 
-/* ABRACADABRA_WIN10_ZN?  ABRACADABRA_WIN10_ZN? */
-#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+#if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
 
 //
 //========== FSCTL_REFS_SET_VOLUME_IO_METRICS_INFO ==========
@@ -17061,12 +17304,56 @@ typedef struct _REFS_QUERY_VOLUME_IO_METRICS_INFO_OUTPUT_BUFFER {
 
 } REFS_QUERY_VOLUME_IO_METRICS_INFO_OUTPUT_BUFFER, *PREFS_QUERY_VOLUME_IO_METRICS_INFO_OUTPUT_BUFFER;
 
-#endif // #if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN11_ZN)
 
+//
+//========== FSCTL_REFS_SET_ROLLBACK_PROTECTION_INFO ==========
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+
+#define REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER_VERSION 1
+
+typedef struct _REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER {
+
+    ULONG Version;
+    BOOLEAN FailMountOnMismatch;
+    ULONG CustomPayloadLength;
+    ULONG CustomPayloadOffset;
+
+} REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER, *PREFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER;
+
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+
+//
+//========== FSCTL_REFS_QUERY_ROLLBACK_PROTECTION_INFO ==========
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+
+#define REFS_QUERY_ROLLBACK_PROTECTION_INFO_OUTPUT_BUFFER_VERSION 1
+
+typedef struct _REFS_QUERY_ROLLBACK_PROTECTION_INFO_OUTPUT_BUFFER {
+
+    ULONG Version;
+    GUID VolumeGuid;
+    GUID RollbackProtectionGuid;
+    BOOLEAN FailMountOnMismatch;
+    ULONGLONG FrozenVirtualClock;
+    ULONGLONG CurrentVirtualClock;
+    USHORT ChecksumType;
+    ULONG ChecksumLength;
+    ULONG ChecksumOffset;
+    ULONG CustomPayloadLength;
+    ULONG CustomPayloadOffset;
+
+} REFS_QUERY_ROLLBACK_PROTECTION_INFO_OUTPUT_BUFFER, *PREFS_QUERY_ROLLBACK_PROTECTION_INFO_OUTPUT_BUFFER;
+
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN11_GE)
 
     
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) || (NTDDI_VERSION >= NTDDI_WIN8) //Win8 check is for backward compatibility.
 
 
 //
@@ -17084,7 +17371,7 @@ typedef struct _FILE_STORAGE_RESERVE_ID_INFORMATION {
 } FILE_STORAGE_RESERVE_ID_INFORMATION, *PFILE_STORAGE_RESERVE_ID_INFORMATION;
 
 
-#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS5) */
 
 
 #define IO_QOS_MAX_RESERVATION 1000000000ULL
@@ -17177,8 +17464,6 @@ typedef struct _SMB_SHARE_FLUSH_AND_PURGE_OUTPUT const *PCSMB_SHARE_FLUSH_AND_PU
 //======================= NtCopyFileChunk ==========================
 //
 
-#define VALID_COPY_FILE_CHUNK_FLAGS     0x00000000L
-
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -17195,7 +17480,32 @@ NtCopyFileChunk (
     _In_ ULONG Flags
     );
 
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+#define COPY_FILE_CHUNK_DUPLICATE_EXTENTS    0x00000001L
+#define VALID_COPY_FILE_CHUNK_FLAGS          (COPY_FILE_CHUNK_DUPLICATE_EXTENTS)
+
+#else // (NTDDI_VERSION < NTDDI_WIN11_GA)
+
+#define VALID_COPY_FILE_CHUNK_FLAGS          0x00000000L
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+
+typedef struct _SOV_RANGE_CHECK_DATA {
+
+    BOOLEAN RemoveZone;
+    ULONGLONG InRange[2];
+    GUID ZidForRemoval;
+    ULONGLONG Reserved1;
+    ULONGLONG Reserved2;
+
+} SOV_RANGE_CHECK_DATA, *PSOV_RANGE_CHECK_DATA;
+
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN11_GE)
 
 //
 // Object Information Classes
@@ -17413,6 +17723,14 @@ NtSetInformationVirtualMemory (
 #endif
 
 //
+// Flags for VmPrefetchInformation info class of NtSetInformationVirtualMemory.
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+#define VM_PREFETCH_TO_WORKING_SET        0x1  // winnt wdm
+#endif
+
+//
 // Data structure used to represent client security context for a thread.
 // This data structure is used to support impersonation.
 //
@@ -17567,7 +17885,6 @@ typedef struct _SECURITY_CLIENT_CONTEXT {
 #define REFTAG_ALEPROCTBL 'PelA'
 #define REFTAG_ALESIDTOKEN 'SelA'
 #define REFTAG_CFSFILTER 'FsfC'
-#define REFTAG_DWMKERNEL 'KmwD'
 #define REFTAG_HTTP 'pttH'
 #define REFTAG_MAILSLOT 'sFsM'
 #define REFTAG_NFSVOLUME 'VsfN'
@@ -17581,14 +17898,8 @@ typedef struct _SECURITY_CLIENT_CONTEXT {
 #define REFTAG_TCPLISTENER 'LpcT'
 #define REFTAG_TCPTCB 'TpcT'
 #define REFTAG_UDPENDPOINT 'EpdU'
-#define REFTAG_USRKDESKTOP 'DrsU'
 #define REFTAG_VIDEO_PORT_I386 'idiV'
 #define REFTAG_VIDEO_PORT 'PdiV'
-#define REFTAG_WIN32K 'k23W'
-#define REFTAG_WIN32KQUEUE 'q23W'
-#define REFTAG_WIN32KRESTRICT 'r23W'
-#define REFTAG_WIN32KSERVER 'S23W'
-#define REFTAG_WIN32KSTUBS 's23W'
 #define REFTAG_WS2IFSL 'i2sW'
 #define REFTAG_WSKNAMERES 'NksW'
 #define REFTAG_WSKPROV 'PksW'
@@ -17829,8 +18140,11 @@ KeUnstackDetachProcess (
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 _Must_inspect_result_
 _IRQL_requires_min_(PASSIVE_LEVEL)
+#if (NTDDI_VERSION < NTDDI_WIN7)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+#else
 _IRQL_requires_max_(DISPATCH_LEVEL)
-__drv_reportError("DISPATCH_LEVEL is only supported on Windows 7 or later.")
+#endif // (NTDDI)VERSION < NTDDI_WIN7)
 NTKERNELAPI
 NTSTATUS
 KeExpandKernelStackAndCalloutEx (
@@ -18260,6 +18574,18 @@ typedef struct _SE_EXPORTS {
     //
 
     PSID SeAppSiloProfilesRootMinimalCapabilitySid;
+
+    //
+    // App Silo Prompt Access Capability SID
+    //
+
+    PSID SeAppSiloPromptForAccessCapabilitySid;
+
+    //
+    // App Silo Access To Publisher Directory Capability SID
+    //
+
+    PSID SeAppSiloAccessToPublisherDirectoryCapabilitySid;
 
 } SE_EXPORTS, *PSE_EXPORTS;
 
@@ -19683,6 +20009,14 @@ FsRtlRegisterFileSystemFilterCallbacks (
     );
 #endif // NTDDI_VERSION >= NTDDI_WINXP
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
+NTKERNELAPI
+BOOLEAN
+FsRtlCheckFileSystemFilterCallbacksRegistered (
+    _In_ struct _DRIVER_OBJECT *FilterDriverObject
+    );
+#endif // NTDDI_VERSION >= NTDDI_WIN10_CU
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 NTKERNELAPI
 NTSTATUS
@@ -19785,7 +20119,7 @@ IoCheckEaBufferValidity(
     );
 #endif
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
 NTKERNELAPI
 BOOLEAN
 IoCheckFileObjectOpenedAsCopyDestination(
@@ -20573,7 +20907,7 @@ IoIrpHasFsTrackOffsetExtensionType(
     _In_ PIRP Irp );
 #endif
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
 
 //
 // Copy Information is used to correlate read and write
@@ -20598,9 +20932,10 @@ typedef struct _COPY_INFORMATION {
 } COPY_INFORMATION, *PCOPY_INFORMATION;
 
 NTSTATUS
-IoGetCopyInformationExtension(
+IoGetCopyInformationExtension (
     _In_ PIRP Irp,
-    _Out_ PCOPY_INFORMATION CopyInformation );
+    _Out_ PCOPY_INFORMATION CopyInformation
+    );
 
 #endif
 
@@ -21332,7 +21667,7 @@ typedef struct _FSRTL_ADVANCED_FCB_HEADER {
 #endif
 
     //
-    //  The ReservedContext field was used from Windows Blue through RS4.
+    //  The ReservedContextLegacy field was used from Windows Blue through RS4.
     //  Starting in RS5 it is no longer used, so in Manganese we replace it with
     //  AePushLock.
     //
@@ -21356,14 +21691,11 @@ typedef struct _FSRTL_ADVANCED_FCB_HEADER {
 #elif (NTDDI_VERSION >= NTDDI_WINBLUE)
 
     //
-    //  The following field is valid only if the Version field in the
-    //  FSRTL_COMMON_FCB_HEADER is >= to FSRTL_FCB_HEADER_V3. This field is
-    //  used in Windows Blue through Windows 10 RS4.
-    //
-    //  This field is used internally by the FSRTL to assist in context lookup.
+    //  This field was used in FCB_HEADER_V3 to hold a reserved context.
     //
 
-    PVOID ReservedContext;
+    PVOID ReservedContextLegacy;
+
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_CO)
@@ -21380,6 +21712,18 @@ typedef struct _FSRTL_ADVANCED_FCB_HEADER {
 
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+
+    //
+    //  The following field is valid only if the Version field in the
+    //  FSRTL_COMMON_FCB_HEADER is >= to FSRTL_FCB_HEADER_V5.
+    //
+    //  This field is used internally by the FSRTL to assist in context lookup.
+    //
+
+    struct _FSRTL_PER_STREAM_CONTEXT *ReservedContext;
+#endif
+
 } FSRTL_ADVANCED_FCB_HEADER;
 typedef FSRTL_ADVANCED_FCB_HEADER *PFSRTL_ADVANCED_FCB_HEADER;
 
@@ -21392,6 +21736,7 @@ typedef FSRTL_ADVANCED_FCB_HEADER *PFSRTL_ADVANCED_FCB_HEADER;
 #define FSRTL_FCB_HEADER_V2             (0x02)
 #define FSRTL_FCB_HEADER_V3             (0x03)
 #define FSRTL_FCB_HEADER_V4             (0x04)
+#define FSRTL_FCB_HEADER_V5             (0x05)
 
 //
 //  Define FsRtl common header flags
@@ -21497,6 +21842,7 @@ typedef FSRTL_ADVANCED_FCB_HEADER *PFSRTL_ADVANCED_FCB_HEADER;
 #define FSRTL_NETWORK1_TOP_LEVEL_IRP            ((LONG_PTR)0x05)
 #define FSRTL_NETWORK2_TOP_LEVEL_IRP            ((LONG_PTR)0x06)
 #define FSRTL_ASYNC_CACHED_READ_TOP_LEVEL_IRP   ((LONG_PTR)0x07)
+#define FSRTL_VOLSNAP_TOP_LEVEL_IRP             ((LONG_PTR)0x08)
 #define FSRTL_MAX_TOP_LEVEL_IRP_FLAG            ((LONG_PTR)0xFFFF)
 
 // end_ntosp
@@ -22373,9 +22719,9 @@ extern PUSHORT NLS_OEM_LEAD_BYTE_INFO;  // Lead byte info. for ACP
 
 #define FsRtlTestAnsiCharacter(C, DEFAULT_RET, WILD_OK, FLAGS) (            \
         ((SCHAR)(C) < 0) ? DEFAULT_RET :                                    \
-                           FlagOn( LEGAL_ANSI_CHARACTER_ARRAY[(C)],         \
-                                   (FLAGS) |                                \
-                                   ((WILD_OK) ? FSRTL_WILD_CHARACTER : 0) ) \
+                           !!(LEGAL_ANSI_CHARACTER_ARRAY[(C)] &        \
+                              ((FLAGS) |                                \
+                               ((WILD_OK) ? FSRTL_WILD_CHARACTER : 0))) \
 )
 
 
@@ -23532,8 +23878,8 @@ FsRtlNotifyCleanupAll (
 //
 
 #define FsRtlIsUnicodeCharacterWild(C) (                                \
-      (((C) >= 0x40) ? FALSE : FlagOn( LEGAL_ANSI_CHARACTER_ARRAY[(C)], \
-                                       FSRTL_WILD_CHARACTER ) )         \
+      (((C) >= 0x40) ? FALSE : !!(LEGAL_ANSI_CHARACTER_ARRAY[(C)] &     \
+                                  FSRTL_WILD_CHARACTER) )               \
 )
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
@@ -24175,8 +24521,7 @@ typedef struct _FSRTL_PER_STREAM_CONTEXT {
 
 #define FsRtlSupportsPerStreamContexts(_fo)                     \
     ((NULL != FsRtlGetPerStreamContextPointer(_fo)) &&          \
-     FlagOn(FsRtlGetPerStreamContextPointer(_fo)->Flags2,       \
-                    FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS))
+     (FsRtlGetPerStreamContextPointer(_fo)->Flags2 & FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS))
 
 //
 //  Associate the context at Ptr with the given stream.  The Ptr structure
@@ -24219,7 +24564,7 @@ FsRtlLookupPerStreamContextInternal (
 
 #define FsRtlLookupPerStreamContext(_sc, _oid, _iid)                          \
  (((NULL != (_sc)) &&                                                         \
-   FlagOn((_sc)->Flags2,FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS) &&              \
+   ((_sc)->Flags2 & FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS) &&                  \
    !IsListEmpty(&(_sc)->FilterContexts)) ?                                    \
         FsRtlLookupPerStreamContextInternal((_sc), (_oid), (_iid)) :          \
         NULL)
@@ -24319,7 +24664,9 @@ FsRtlSetupAdvancedHeader(
     localAdvHdr->Flags |= FSRTL_FLAG_ADVANCED_HEADER;
     localAdvHdr->Flags2 |= FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS;
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_CO)
+#if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+    localAdvHdr->Version = FSRTL_FCB_HEADER_V5;
+#elif (NTDDI_VERSION >= NTDDI_WIN10_CO)
     localAdvHdr->Version = FSRTL_FCB_HEADER_V4;
 #elif (NTDDI_VERSION >= NTDDI_WINBLUE)
     localAdvHdr->Version = FSRTL_FCB_HEADER_V3;
@@ -24363,7 +24710,7 @@ FsRtlSetupAdvancedHeader(
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_MN)
     //
-    //  ReservedContext is unused as of RS5 and AePushLock takes its place in
+    //  ReservedContextLegacy is unused as of RS5 and AePushLock takes its place in
     //  Manganese.  It must be initialized by calling FsRtlSetupAdvancedHeaderEx2.
     //
 
@@ -24371,11 +24718,15 @@ FsRtlSetupAdvancedHeader(
 
 #elif (NTDDI_VERSION >= NTDDI_WINBLUE)
 
-    localAdvHdr->ReservedContext = NULL;
+    localAdvHdr->ReservedContextLegacy = NULL;
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_CO)
     localAdvHdr->BypassIoOpenCount = 0;
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_NI)
+    localAdvHdr->ReservedContext = NULL;
 #endif
 }
 
@@ -26386,6 +26737,12 @@ DEFINE_GUID( GUID_ECP_ATOMIC_CREATE,
 //  the open without interfering with existing handles and/or oplocks
 //  on the file.
 //
+//  The ECP_OPEN_PARAMETERS_FLAG_OPEN_FOR_READ and
+//  ECP_OPEN_PARAMETERS_FLAG_OPEN_FOR_WRITE flags allow read/write access
+//  to encrypted files without having to actually open such files for
+//  read/write access.
+//
+
 
 #define ECP_OPEN_PARAMETERS_FLAG_OPEN_FOR_READ                  0x00000001
 #define ECP_OPEN_PARAMETERS_FLAG_OPEN_FOR_WRITE                 0x00000002
@@ -26536,7 +26893,7 @@ FsRtlCheckOplockEx2 (
 
 #endif //(NTDDI_VERSION >= NTDDI_WIN10_VB)
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+#if (NTDDI_VERSION >= NTDDI_WIN10_CU)
 
 #define OPLOCK_FS_FILTER_FLAGS_MASK (OPLOCK_FLAG_IGNORE_OPLOCK_KEYS)
 
@@ -26587,6 +26944,8 @@ FsRtlIs32BitProcess(
 #define QoCFileStatInformation      0x00000001
 #define QoCFileLxInformation        0x00000002
 #define QoCFileEaInformation        0x00000004
+#define QoCFileUsnInformation       0x00000008
+#define QoCFileSecurityInformation  0x00000010
 
 //
 //  Returns basic file metadata
@@ -26630,16 +26989,60 @@ typedef struct _QUERY_ON_CREATE_FILE_LX_INFORMATION {
 typedef struct _QUERY_ON_CREATE_EA_INFORMATION {
 
     //
-    //  - The EaBuffer is allocated by the file system
+    //  The EaBuffer is allocated by the file system.
     //    - It will contain a list of FILE_FULL_EA_INFORMATION entries
-    //    - The allocataed EaBuffer is freed by FLTMGR when the ECP is freed
-    //  - The EaBufferSize field is set by the file system
+    //    - The EaBuffer can use the memory region pointed by the CommonBuffer
+    //      in the QUERY_ON_CREATE_ECP_CONTEXT which is allocated by the file
+    //      system and valid till the ECP is freed.  This is to avoid allocating
+    //      multiple buffers for each information class like EaInformation and
+    //      SecurityInformation.
+    //    - If EaBuffer is within the memory region pointed by CommonBuffer and
+    //      CommonBufferSize then FLTMGR will not free the EaBuffer explicitly.
+    //      Otherwise FLTMGR will free the EaBuffer when the ECP is freed.
+    //      NOTE: This is useful when using new FLTMGR with old file systems
+    //      which do not support CommonBuffer and vice versa.
+    //
+    //  The EaBufferSize field is set by the file system
     //
 
     ULONG EaBufferSize;
     PFILE_FULL_EA_INFORMATION EaBuffer;
 
 } QUERY_ON_CREATE_EA_INFORMATION, *PQUERY_ON_CREATE_EA_INFORMATION;
+
+//
+//  Returns USN information
+//
+
+typedef struct _QUERY_ON_CREATE_USN_INFORMATION {
+
+    USN Usn;
+    FILE_ID_128 FileReferenceNumber;
+
+} QUERY_ON_CREATE_USN_INFORMATION, *PQUERY_ON_CREATE_USN_INFORMATION;
+
+//
+//  Returns the security information
+//
+
+typedef struct _QUERY_ON_CREATE_SECURITY_INFORMATION {
+
+    //
+    //  The SecurityDescriptor can use the memory region pointed by CommonBuffer
+    //  in the QUERY_ON_CREATE_ECP_CONTEXT, which is allocated by the file system
+    //  and is valid till the ECP is freed.
+    //
+    //  If SecurityDescriptor is within the memory region pointed by CommonBuffer
+    //  and CommonBufferSize then FLTMGR will not free the SecurityDescriptor
+    //  explicitly.  Otherwise FLTMGR will free the SecurityDescriptor when the
+    //  ECP is freed.
+    //
+
+    ULONG Reserved;
+    ULONG SecurityDescriptorSize;
+    PSECURITY_DESCRIPTOR SecurityDescriptor;
+
+} QUERY_ON_CREATE_SECURITY_INFORMATION, *PQUERY_ON_CREATE_SECURITY_INFORMATION;
 
 //
 //  The QOC ecp structure that is allocated by FLTMGR and passed to
@@ -26663,7 +27066,62 @@ typedef struct _QUERY_ON_CREATE_ECP_CONTEXT {
     QUERY_ON_CREATE_FILE_LX_INFORMATION LxInformation;
     QUERY_ON_CREATE_EA_INFORMATION EaInformation;
 
+    //
+    //  Common buffer used by various information classes in this ECP.  This is
+    //  to avoid allocating multiple buffers for each information class like
+    //  EaInformation and SecurityInformation.
+    //
+    //  This is allocated by the file system and freed by FLTMGR when the ECP is
+    //  freed.  The size represents the size of the CommonBuffer in bytes.
+    //
+
+    ULONG Reserved;
+    ULONG CommonBufferSize;
+    PVOID CommonBuffer;
+
+    QUERY_ON_CREATE_USN_INFORMATION UsnInformation;
+
+    //
+    //  The SecurityInformationRequested field is set by the filter manager
+    //  based on the SECURITY_INFORMATION flags requested by the mini-filters.
+    //  This is an input to the file system and it returns the appropriate
+    //  info in the SecurityInformation field.
+    //
+
+    SECURITY_INFORMATION SecurityInformationRequested;
+    QUERY_ON_CREATE_SECURITY_INFORMATION SecurityInformation;
+
 } QUERY_ON_CREATE_ECP_CONTEXT, *PQUERY_ON_CREATE_ECP_CONTEXT;
+
+#define QUERY_ON_CREATE_ECP_CONTEXT_STAT_INFO_END ((ULONG)(             \
+    FIELD_OFFSET(QUERY_ON_CREATE_ECP_CONTEXT, StatInformation) +        \
+    FIELD_SIZE(QUERY_ON_CREATE_ECP_CONTEXT, StatInformation)            \
+))
+
+#define QUERY_ON_CREATE_ECP_CONTEXT_LX_INFO_END ((ULONG)(               \
+    FIELD_OFFSET(QUERY_ON_CREATE_ECP_CONTEXT, LxInformation) +          \
+    FIELD_SIZE(QUERY_ON_CREATE_ECP_CONTEXT, LxInformation)              \
+))
+
+#define QUERY_ON_CREATE_ECP_CONTEXT_EA_INFO_END ((ULONG)(               \
+    FIELD_OFFSET(QUERY_ON_CREATE_ECP_CONTEXT, EaInformation) +          \
+    FIELD_SIZE(QUERY_ON_CREATE_ECP_CONTEXT, EaInformation)              \
+))
+
+#define QUERY_ON_CREATE_ECP_CONTEXT_COMMON_BUFFER_END ((ULONG)(         \
+    FIELD_OFFSET(QUERY_ON_CREATE_ECP_CONTEXT, CommonBuffer) +           \
+    FIELD_SIZE(QUERY_ON_CREATE_ECP_CONTEXT, CommonBuffer)               \
+))
+
+#define QUERY_ON_CREATE_ECP_CONTEXT_USN_INFO_END ((ULONG)(              \
+    FIELD_OFFSET(QUERY_ON_CREATE_ECP_CONTEXT, UsnInformation) +         \
+    FIELD_SIZE(QUERY_ON_CREATE_ECP_CONTEXT, UsnInformation)             \
+))
+
+#define QUERY_ON_CREATE_ECP_CONTEXT_SECURITY_INFO_END ((ULONG)(         \
+    FIELD_OFFSET(QUERY_ON_CREATE_ECP_CONTEXT, SecurityInformation) +    \
+    FIELD_SIZE(QUERY_ON_CREATE_ECP_CONTEXT, SecurityInformation)        \
+))
 
 //
 // Extra Create Parameter GUID for query file info on create.
@@ -26692,6 +27150,23 @@ DEFINE_GUID( GUID_ECP_CLOUDFILES_ATTRIBUTION,
              0x8e, 0xdb, 0x6b, 0xdc, 0x8f, 0x60, 0x27, 0x09 );
 
 #endif //(NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+typedef struct _VETO_BINDING_ECP_CONTEXT {
+
+    BOOLEAN ShouldVetoBinding;
+
+} VETO_BINDING_ECP_CONTEXT, *PVETO_BINDING_ECP_CONTEXT;
+
+// {41778682-63FC-4956-86C5-2A4B79D251AF}
+DEFINE_GUID( GUID_ECP_TYPE_VETO_BINDING,
+             0x41778682,
+             0x63fc,
+             0x4956,
+             0x86, 0xc5, 0x2a, 0x4b, 0x79, 0xd2, 0x51, 0xaf );
+
+#endif //(NTDDI_VERSION >= NTDDI_WIN11_GA)
 
 //
 //  This routine allows the caller to change the referenced file object that
@@ -28310,6 +28785,71 @@ CcErrorCallbackRoutine (
 
 #endif
 
+//
+//  Enhanced handshake between Cc and external caches, for better coordination of lazywriting
+//  with ReFS.
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN11_GA)
+
+#define CC_DIRTY_PAGES_INFO_V1      (1)
+
+typedef struct _CC_DIRTY_PAGES_INFO {
+
+    ULONG Version;
+
+    //
+    //  These values are provided by Cc to External Cache client through callback.
+    //  Must be zeroes when passed from external cache client to Cc.
+    //  Targets are for defining the upper limits, wherein the client must strive to keep the
+    //  metric at/under Target value;  past which they must get aggressive in brining down the
+    //  corresponding metric.
+    //  Thresholds define the hard upper limit, which client must not cross and therefore pause
+    //  all the activities that could cause blowing past it.
+    //
+
+    LONGLONG DirtyPageThreshold;
+    LONGLONG DirtyPageTarget;
+    LONGLONG CleanLockedCachedPagesThreshold;
+    LONGLONG CleanLockedCachedPagesTarget;
+
+    //
+    //  These values would be reported back by External Cache client to Cc.
+    //  Must be zeroes when passed from Cc to the external cache client.
+    //
+
+    LONGLONG CurrentDirtyPages;
+    LONGLONG CurrentCleanLockedCachedPages;
+    LONGLONG CurrentPagesQueuedForWriting;
+
+} CC_DIRTY_PAGES_INFO, *PCC_DIRTY_PAGES_INFO;
+
+typedef
+VOID (*PEXTERNAL_CACHE_CALLBACK_EX) (
+    _In_ PVOID ExternalCacheContext,
+    _In_ PCC_DIRTY_PAGES_INFO DirtyPagesInfo
+    );
+
+NTSTATUS
+CcRegisterExternalCacheEx (
+    _In_ PFILE_OBJECT FileObject,
+    _In_ PEXTERNAL_CACHE_CALLBACK_EX Callback,
+    _Out_ PVOID *ExternalCacheContext
+    );
+
+VOID
+CcUnregisterExternalCacheEx (
+    _In_ PVOID ExternalCacheContext
+    );
+
+NTSTATUS
+CcUpdateExternalCacheInfoEx (
+    _In_ PVOID ExternalCacheContext,
+    _In_ PCC_DIRTY_PAGES_INFO DirtyPagesInfo
+    );
+
+#endif  // NTDDI_WIN11_GA
+
 #ifndef __SSPI_H__
 #define __SSPI_H__
 #define ISSP_LEVEL  32          
@@ -28508,6 +29048,8 @@ typedef struct _SecBufferDesc {
 #define SECBUFFER_TRAFFIC_SECRETS               28  // Message sequence lengths and corresponding traffic secrets.
 #define SECBUFFER_CERTIFICATE_REQUEST_CONTEXT   29  // TLS 1.3 certificate request context.
 #define SECBUFFER_CHANNEL_BINDINGS_RESULT       30  // Output buffer for Channel Bindings Audit
+#define SECBUFFER_APP_SESSION_STATE             31  // Application state associated with the TLS 1.3+ session ticket. Server only.
+#define SECBUFFER_SESSION_TICKET                32  // TLS 1.3+ session ticket. Client only.
 
 #define SECBUFFER_ATTRMASK                      0xF0000000
 #define SECBUFFER_READONLY                      0x80000000  // Buffer is read-only, no checksum
@@ -28631,6 +29173,16 @@ typedef struct _SEC_CERTIFICATE_REQUEST_CONTEXT {
     unsigned char rgCertificateRequestContext[ANYSIZE_ARRAY]; // The TLS 1.3 certificate request context.
 } SEC_CERTIFICATE_REQUEST_CONTEXT, *PSEC_CERTIFICATE_REQUEST_CONTEXT;
 
+typedef struct _SEC_APP_SESSION_STATE {
+    unsigned short AppSessionStateSize; // Size in bytes of the application state, up to 2048 bytes.
+    unsigned char  AppSessionState[ANYSIZE_ARRAY]; // Application state to be associated with the session ticket.
+} SEC_APP_SESSION_STATE, *PSEC_APP_SESSION_STATE;
+
+typedef struct _SEC_SESSION_TICKET {
+    unsigned short SessionTicketSize; // Size in bytes of the session ticket.
+    unsigned char  SessionTicket[ANYSIZE_ARRAY]; // TLS 1.3+ session ticket.
+} SEC_SESSION_TICKET, *PSEC_SESSION_TICKET;
+
 
 //
 //  Traffic secret types:
@@ -28729,6 +29281,11 @@ typedef struct _SEC_TRAFFIC_SECRETS {
 #define ISC_REQ_DEFERRED_CRED_VALIDATION 0x0000000200000000
 // Prevents the client sending the post_handshake_auth extension in the TLS 1.3 Client Hello.
 #define ISC_REQ_NO_POST_HANDSHAKE_AUTH   0x0000000400000000
+// Request TLS 1.3+ session ticket reuse. Passive observers may be able to track the TLS client across networks.
+#define ISC_REQ_REUSE_SESSION_TICKETS    0x0000000800000000
+// Request explicit TLS 1.3+ session management. Received TLS 1.3+ session tickets will be returned to the SSPI caller.
+// The SSPI caller will specify the session ticket to send in each resumption attempt.
+#define ISC_REQ_EXPLICIT_SESSION         0x0000001000000000
 
 #define ISC_RET_DELEGATE                0x00000001
 #define ISC_RET_MUTUAL_AUTH             0x00000002
@@ -28762,6 +29319,8 @@ typedef struct _SEC_TRAFFIC_SECRETS {
 #define ISC_RET_MESSAGES                 0x0000000100000000 // Indicates that the TLS 1.3+ record layer is disabled, and the security context consumes and produces cleartext TLS messages, rather than records.
 #define ISC_RET_DEFERRED_CRED_VALIDATION 0x0000000200000000 // Indicates that SCH_CRED_DEFERRED_CRED_VALIDATION/ISC_REQ_DEFERRED_CRED_VALIDATION request will be honored.
 #define ISC_RET_NO_POST_HANDSHAKE_AUTH   0x0000000400000000 // Indicates that the TLS 1.3 Client Hello will not contain the post_handshake_auth extension.
+#define ISC_RET_REUSE_SESSION_TICKETS    0x0000000800000000 // Indicates that the TLS 1.3+ client may reuse session tickets.
+#define ISC_RET_EXPLICIT_SESSION         0x0000001000000000 // Indicates that explicit TLS 1.3+ session management is enabled.
 
 #define ASC_REQ_DELEGATE                0x00000001
 #define ASC_REQ_MUTUAL_AUTH             0x00000002
@@ -28791,6 +29350,8 @@ typedef struct _SEC_TRAFFIC_SECRETS {
 //      SSP_RET_REAUTHENTICATION        0x08000000  // *INTERNAL*
 #define ASC_REQ_ALLOW_MISSING_BINDINGS  0x10000000
 #define ASC_REQ_MESSAGES                0x0000000100000000 // Disables the TLS 1.3+ record layer and causes the security context to consume and produce cleartext TLS messages, rather than records.
+// Request explicit TLS 1.3+ session management. TLS 1.3+ session ticket will only be generated when requested by the SSPI caller.
+#define ASC_REQ_EXPLICIT_SESSION        0x0000001000000000
 
 #define ASC_RET_DELEGATE                0x00000001
 #define ASC_RET_MUTUAL_AUTH             0x00000002
@@ -28818,6 +29379,8 @@ typedef struct _SEC_TRAFFIC_SECRETS {
 #define ASC_RET_NO_ADDITIONAL_TOKEN     0x02000000  // *INTERNAL*
 //      SSP_RET_REAUTHENTICATION        0x08000000  // *INTERNAL*
 #define ASC_RET_MESSAGES                0x0000000100000000 // Indicates that the TLS 1.3+ record layer is disabled, and the security context consumes and produces cleartext TLS messages, rather than records.
+#define ASC_RET_REUSE_SESSION_TICKETS   0x0000000800000000 // Indicates that the TLS 1.3+ server will allow session ticket reuse.
+#define ASC_RET_EXPLICIT_SESSION        0x0000001000000000 // Indicates that explicit TLS 1.3+ session management is enabled.
 
 //
 //  Security Credentials Attributes:
@@ -29749,6 +30312,29 @@ FreeContextBuffer(
 typedef SECURITY_STATUS
 (SEC_ENTRY * FREE_CONTEXT_BUFFER_FN)(
     _Inout_ PVOID
+    );
+    
+SECURITY_STATUS
+SEC_ENTRY
+SecAllocateAndSetIPAddress(
+    _In_reads_bytes_(cchIpAddress)  PUCHAR lpIpAddress,
+    _In_  ULONG  cchIpAddress,
+    _Out_ int* FreeCallContext // Avoid creating a dependence on minwindef.h by replacing PBOOL with its definition int*
+    );
+
+SECURITY_STATUS
+SEC_ENTRY
+SecAllocateAndSetCallTarget(
+    _In_reads_bytes_opt_(cchIpAddress)  PUCHAR lpIpAddress,
+    _In_  ULONG  cchIpAddress,
+    _In_opt_ LPWSTR TargetName,
+    _Out_ int* FreeCallContext // Avoid creating a dependence on minwindef.h by replacing PBOOL with its definition int*
+    );
+
+VOID
+SEC_ENTRY
+SecFreeCallContext(
+    VOID
     );
 
 ///////////////////////////////////////////////////////////////////

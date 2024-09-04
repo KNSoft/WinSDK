@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -9,21 +9,20 @@
 WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     struct HResult;
-    template <typename TResult> struct __declspec(empty_bases) IAsyncOperation;
     struct Uri;
 }
 WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
 {
     template <typename T> struct __declspec(empty_bases) IIterable;
     template <typename K, typename V> struct __declspec(empty_bases) IKeyValuePair;
-    template <typename K, typename V> struct __declspec(empty_bases) IMapView;
-    template <typename K, typename V> struct __declspec(empty_bases) IMap;
-    template <typename T> struct __declspec(empty_bases) IVectorView;
-    template <typename T> struct __declspec(empty_bases) IVector;
 }
 WINRT_EXPORT namespace winrt::Windows::Graphics::Printing
 {
     struct PrintTaskOptions;
+}
+WINRT_EXPORT namespace winrt::Windows::Graphics::Printing::PrintTicket
+{
+    struct WorkflowPrintTicket;
 }
 WINRT_EXPORT namespace winrt::Windows::Storage::Streams
 {
@@ -66,6 +65,12 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Printers
         NaturalLanguage = 19,
         MimeMediaType = 20,
     };
+    enum class IppPrintDeviceKind : int32_t
+    {
+        Printer = 0,
+        FaxOut = 1,
+        VirtualPrinter = 2,
+    };
     enum class IppResolutionUnit : int32_t
     {
         DotsPerInch = 0,
@@ -83,6 +88,8 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Printers
     struct IIppIntegerRangeFactory;
     struct IIppPrintDevice;
     struct IIppPrintDevice2;
+    struct IIppPrintDevice3;
+    struct IIppPrintDevice4;
     struct IIppPrintDeviceStatics;
     struct IIppResolution;
     struct IIppResolutionFactory;
@@ -117,6 +124,8 @@ namespace winrt::impl
     template <> struct category<winrt::Windows::Devices::Printers::IIppIntegerRangeFactory>{ using type = interface_category; };
     template <> struct category<winrt::Windows::Devices::Printers::IIppPrintDevice>{ using type = interface_category; };
     template <> struct category<winrt::Windows::Devices::Printers::IIppPrintDevice2>{ using type = interface_category; };
+    template <> struct category<winrt::Windows::Devices::Printers::IIppPrintDevice3>{ using type = interface_category; };
+    template <> struct category<winrt::Windows::Devices::Printers::IIppPrintDevice4>{ using type = interface_category; };
     template <> struct category<winrt::Windows::Devices::Printers::IIppPrintDeviceStatics>{ using type = interface_category; };
     template <> struct category<winrt::Windows::Devices::Printers::IIppResolution>{ using type = interface_category; };
     template <> struct category<winrt::Windows::Devices::Printers::IIppResolutionFactory>{ using type = interface_category; };
@@ -143,6 +152,7 @@ namespace winrt::impl
     template <> struct category<winrt::Windows::Devices::Printers::PrintSchema>{ using type = class_category; };
     template <> struct category<winrt::Windows::Devices::Printers::IppAttributeErrorReason>{ using type = enum_category; };
     template <> struct category<winrt::Windows::Devices::Printers::IppAttributeValueKind>{ using type = enum_category; };
+    template <> struct category<winrt::Windows::Devices::Printers::IppPrintDeviceKind>{ using type = enum_category; };
     template <> struct category<winrt::Windows::Devices::Printers::IppResolutionUnit>{ using type = enum_category; };
     template <> struct category<winrt::Windows::Devices::Printers::PageConfigurationSource>{ using type = enum_category; };
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IppAttributeError> = L"Windows.Devices.Printers.IppAttributeError";
@@ -159,6 +169,7 @@ namespace winrt::impl
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::PrintSchema> = L"Windows.Devices.Printers.PrintSchema";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IppAttributeErrorReason> = L"Windows.Devices.Printers.IppAttributeErrorReason";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IppAttributeValueKind> = L"Windows.Devices.Printers.IppAttributeValueKind";
+    template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IppPrintDeviceKind> = L"Windows.Devices.Printers.IppPrintDeviceKind";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IppResolutionUnit> = L"Windows.Devices.Printers.IppResolutionUnit";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::PageConfigurationSource> = L"Windows.Devices.Printers.PageConfigurationSource";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IIppAttributeError> = L"Windows.Devices.Printers.IIppAttributeError";
@@ -168,6 +179,8 @@ namespace winrt::impl
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IIppIntegerRangeFactory> = L"Windows.Devices.Printers.IIppIntegerRangeFactory";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IIppPrintDevice> = L"Windows.Devices.Printers.IIppPrintDevice";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IIppPrintDevice2> = L"Windows.Devices.Printers.IIppPrintDevice2";
+    template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IIppPrintDevice3> = L"Windows.Devices.Printers.IIppPrintDevice3";
+    template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IIppPrintDevice4> = L"Windows.Devices.Printers.IIppPrintDevice4";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IIppPrintDeviceStatics> = L"Windows.Devices.Printers.IIppPrintDeviceStatics";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IIppResolution> = L"Windows.Devices.Printers.IIppResolution";
     template <> inline constexpr auto& name_v<winrt::Windows::Devices::Printers::IIppResolutionFactory> = L"Windows.Devices.Printers.IIppResolutionFactory";
@@ -187,6 +200,8 @@ namespace winrt::impl
     template <> inline constexpr guid guid_v<winrt::Windows::Devices::Printers::IIppIntegerRangeFactory>{ 0x75D4ECAE,0xF87E,0x54AD,{ 0xB5,0xD0,0x46,0x52,0x04,0xDB,0x75,0x53 } }; // 75D4ECAE-F87E-54AD-B5D0-465204DB7553
     template <> inline constexpr guid guid_v<winrt::Windows::Devices::Printers::IIppPrintDevice>{ 0xD748AC56,0x76F3,0x5DC6,{ 0xAF,0xD4,0xC2,0xA8,0x68,0x6B,0x93,0x59 } }; // D748AC56-76F3-5DC6-AFD4-C2A8686B9359
     template <> inline constexpr guid guid_v<winrt::Windows::Devices::Printers::IIppPrintDevice2>{ 0xF7C844C9,0x9D21,0x5C63,{ 0xAC,0x20,0x36,0x76,0x91,0x5B,0xE2,0xD7 } }; // F7C844C9-9D21-5C63-AC20-3676915BE2D7
+    template <> inline constexpr guid guid_v<winrt::Windows::Devices::Printers::IIppPrintDevice3>{ 0xB6258F6D,0xA46D,0x5E37,{ 0x80,0xCE,0x5F,0x69,0xD5,0x54,0x47,0x12 } }; // B6258F6D-A46D-5E37-80CE-5F69D5544712
+    template <> inline constexpr guid guid_v<winrt::Windows::Devices::Printers::IIppPrintDevice4>{ 0x8C48247E,0xE869,0x59FB,{ 0xBC,0x6D,0xDA,0xEA,0x06,0x14,0xF9,0x3E } }; // 8C48247E-E869-59FB-BC6D-DAEA0614F93E
     template <> inline constexpr guid guid_v<winrt::Windows::Devices::Printers::IIppPrintDeviceStatics>{ 0x7DC19F08,0x7F20,0x52AB,{ 0x94,0xA7,0x89,0x4B,0x83,0xB2,0xA1,0x7E } }; // 7DC19F08-7F20-52AB-94A7-894B83B2A17E
     template <> inline constexpr guid guid_v<winrt::Windows::Devices::Printers::IIppResolution>{ 0xCB493F86,0x6BF3,0x56F5,{ 0x86,0xCE,0x26,0x3D,0x08,0xAE,0xAD,0x63 } }; // CB493F86-6BF3-56F5-86CE-263D08AEAD63
     template <> inline constexpr guid guid_v<winrt::Windows::Devices::Printers::IIppResolutionFactory>{ 0xE481C2AE,0x251A,0x5326,{ 0xB1,0x73,0x95,0x54,0x3E,0xD9,0x9A,0x35 } }; // E481C2AE-251A-5326-B173-95543ED99A35
@@ -327,6 +342,25 @@ namespace winrt::impl
             virtual int32_t __stdcall GetPdlPassthroughProvider(void**) noexcept = 0;
         };
     };
+    template <> struct abi<winrt::Windows::Devices::Printers::IIppPrintDevice3>
+    {
+        struct __declspec(novtable) type : inspectable_abi
+        {
+            virtual int32_t __stdcall get_IsIppFaxOutPrinter(bool*) noexcept = 0;
+        };
+    };
+    template <> struct abi<winrt::Windows::Devices::Printers::IIppPrintDevice4>
+    {
+        struct __declspec(novtable) type : inspectable_abi
+        {
+            virtual int32_t __stdcall get_DeviceKind(int32_t*) noexcept = 0;
+            virtual int32_t __stdcall get_CanModifyUserDefaultPrintTicket(bool*) noexcept = 0;
+            virtual int32_t __stdcall get_UserDefaultPrintTicket(void**) noexcept = 0;
+            virtual int32_t __stdcall put_UserDefaultPrintTicket(void*) noexcept = 0;
+            virtual int32_t __stdcall RefreshPrintDeviceCapabilities() noexcept = 0;
+            virtual int32_t __stdcall GetMaxSupportedPdlVersion(void*, void**) noexcept = 0;
+        };
+    };
     template <> struct abi<winrt::Windows::Devices::Printers::IIppPrintDeviceStatics>
     {
         struct __declspec(novtable) type : inspectable_abi
@@ -431,9 +465,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppAttributeError
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeErrorReason) Reason() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::hresult) ExtendedError() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Printers::IppAttributeValue>) GetUnsupportedValues() const;
+        [[nodiscard]] auto Reason() const;
+        [[nodiscard]] auto ExtendedError() const;
+        auto GetUnsupportedValues() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppAttributeError>
     {
@@ -442,25 +476,25 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppAttributeValue
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValueKind) Kind() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<int32_t>) GetIntegerArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<bool>) GetBooleanArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<int32_t>) GetEnumArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Storage::Streams::IBuffer>) GetOctetStringArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::DateTime>) GetDateTimeArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Printers::IppResolution>) GetResolutionArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Printers::IppIntegerRange>) GetRangeOfIntegerArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Collections::IMapView<hstring, winrt::Windows::Devices::Printers::IppAttributeValue>>) GetCollectionArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Printers::IppTextWithLanguage>) GetTextWithLanguageArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Printers::IppTextWithLanguage>) GetNameWithLanguageArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<hstring>) GetTextWithoutLanguageArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<hstring>) GetNameWithoutLanguageArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<hstring>) GetKeywordArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Uri>) GetUriArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<hstring>) GetUriSchemaArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<hstring>) GetCharsetArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<hstring>) GetNaturalLanguageArray() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<hstring>) GetMimeMediaTypeArray() const;
+        [[nodiscard]] auto Kind() const;
+        auto GetIntegerArray() const;
+        auto GetBooleanArray() const;
+        auto GetEnumArray() const;
+        auto GetOctetStringArray() const;
+        auto GetDateTimeArray() const;
+        auto GetResolutionArray() const;
+        auto GetRangeOfIntegerArray() const;
+        auto GetCollectionArray() const;
+        auto GetTextWithLanguageArray() const;
+        auto GetNameWithLanguageArray() const;
+        auto GetTextWithoutLanguageArray() const;
+        auto GetNameWithoutLanguageArray() const;
+        auto GetKeywordArray() const;
+        auto GetUriArray() const;
+        auto GetUriSchemaArray() const;
+        auto GetCharsetArray() const;
+        auto GetNaturalLanguageArray() const;
+        auto GetMimeMediaTypeArray() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppAttributeValue>
     {
@@ -469,45 +503,45 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppAttributeValueStatics
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateUnsupported() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateUnknown() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateNoValue() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateInteger(int32_t value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateIntegerArray(param::iterable<int32_t> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateBoolean(bool value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateBooleanArray(param::iterable<bool> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateEnum(int32_t value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateEnumArray(param::iterable<int32_t> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateOctetString(winrt::Windows::Storage::Streams::IBuffer const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateOctetStringArray(param::iterable<winrt::Windows::Storage::Streams::IBuffer> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateDateTime(winrt::Windows::Foundation::DateTime const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateDateTimeArray(param::iterable<winrt::Windows::Foundation::DateTime> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateResolution(winrt::Windows::Devices::Printers::IppResolution const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateResolutionArray(param::iterable<winrt::Windows::Devices::Printers::IppResolution> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateRangeOfInteger(winrt::Windows::Devices::Printers::IppIntegerRange const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateRangeOfIntegerArray(param::iterable<winrt::Windows::Devices::Printers::IppIntegerRange> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateCollection(param::iterable<winrt::Windows::Foundation::Collections::IKeyValuePair<hstring, winrt::Windows::Devices::Printers::IppAttributeValue>> const& memberAttributes) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateCollectionArray(param::iterable<winrt::Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Collections::IKeyValuePair<hstring, winrt::Windows::Devices::Printers::IppAttributeValue>>> const& memberAttributesArray) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateTextWithLanguage(winrt::Windows::Devices::Printers::IppTextWithLanguage const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateTextWithLanguageArray(param::iterable<winrt::Windows::Devices::Printers::IppTextWithLanguage> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateNameWithLanguage(winrt::Windows::Devices::Printers::IppTextWithLanguage const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateNameWithLanguageArray(param::iterable<winrt::Windows::Devices::Printers::IppTextWithLanguage> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateTextWithoutLanguage(param::hstring const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateTextWithoutLanguageArray(param::iterable<hstring> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateNameWithoutLanguage(param::hstring const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateNameWithoutLanguageArray(param::iterable<hstring> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateKeyword(param::hstring const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateKeywordArray(param::iterable<hstring> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateUri(winrt::Windows::Foundation::Uri const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateUriArray(param::iterable<winrt::Windows::Foundation::Uri> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateUriSchema(param::hstring const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateUriSchemaArray(param::iterable<hstring> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateCharset(param::hstring const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateCharsetArray(param::iterable<hstring> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateNaturalLanguage(param::hstring const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateNaturalLanguageArray(param::iterable<hstring> const& values) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateMimeMedia(param::hstring const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppAttributeValue) CreateMimeMediaArray(param::iterable<hstring> const& values) const;
+        auto CreateUnsupported() const;
+        auto CreateUnknown() const;
+        auto CreateNoValue() const;
+        auto CreateInteger(int32_t value) const;
+        auto CreateIntegerArray(param::iterable<int32_t> const& values) const;
+        auto CreateBoolean(bool value) const;
+        auto CreateBooleanArray(param::iterable<bool> const& values) const;
+        auto CreateEnum(int32_t value) const;
+        auto CreateEnumArray(param::iterable<int32_t> const& values) const;
+        auto CreateOctetString(winrt::Windows::Storage::Streams::IBuffer const& value) const;
+        auto CreateOctetStringArray(param::iterable<winrt::Windows::Storage::Streams::IBuffer> const& values) const;
+        auto CreateDateTime(winrt::Windows::Foundation::DateTime const& value) const;
+        auto CreateDateTimeArray(param::iterable<winrt::Windows::Foundation::DateTime> const& values) const;
+        auto CreateResolution(winrt::Windows::Devices::Printers::IppResolution const& value) const;
+        auto CreateResolutionArray(param::iterable<winrt::Windows::Devices::Printers::IppResolution> const& values) const;
+        auto CreateRangeOfInteger(winrt::Windows::Devices::Printers::IppIntegerRange const& value) const;
+        auto CreateRangeOfIntegerArray(param::iterable<winrt::Windows::Devices::Printers::IppIntegerRange> const& values) const;
+        auto CreateCollection(param::iterable<winrt::Windows::Foundation::Collections::IKeyValuePair<hstring, winrt::Windows::Devices::Printers::IppAttributeValue>> const& memberAttributes) const;
+        auto CreateCollectionArray(param::iterable<winrt::Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Collections::IKeyValuePair<hstring, winrt::Windows::Devices::Printers::IppAttributeValue>>> const& memberAttributesArray) const;
+        auto CreateTextWithLanguage(winrt::Windows::Devices::Printers::IppTextWithLanguage const& value) const;
+        auto CreateTextWithLanguageArray(param::iterable<winrt::Windows::Devices::Printers::IppTextWithLanguage> const& values) const;
+        auto CreateNameWithLanguage(winrt::Windows::Devices::Printers::IppTextWithLanguage const& value) const;
+        auto CreateNameWithLanguageArray(param::iterable<winrt::Windows::Devices::Printers::IppTextWithLanguage> const& values) const;
+        auto CreateTextWithoutLanguage(param::hstring const& value) const;
+        auto CreateTextWithoutLanguageArray(param::iterable<hstring> const& values) const;
+        auto CreateNameWithoutLanguage(param::hstring const& value) const;
+        auto CreateNameWithoutLanguageArray(param::iterable<hstring> const& values) const;
+        auto CreateKeyword(param::hstring const& value) const;
+        auto CreateKeywordArray(param::iterable<hstring> const& values) const;
+        auto CreateUri(winrt::Windows::Foundation::Uri const& value) const;
+        auto CreateUriArray(param::iterable<winrt::Windows::Foundation::Uri> const& values) const;
+        auto CreateUriSchema(param::hstring const& value) const;
+        auto CreateUriSchemaArray(param::iterable<hstring> const& values) const;
+        auto CreateCharset(param::hstring const& value) const;
+        auto CreateCharsetArray(param::iterable<hstring> const& values) const;
+        auto CreateNaturalLanguage(param::hstring const& value) const;
+        auto CreateNaturalLanguageArray(param::iterable<hstring> const& values) const;
+        auto CreateMimeMedia(param::hstring const& value) const;
+        auto CreateMimeMediaArray(param::iterable<hstring> const& values) const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppAttributeValueStatics>
     {
@@ -516,8 +550,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppIntegerRange
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Start() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) End() const;
+        [[nodiscard]] auto Start() const;
+        [[nodiscard]] auto End() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppIntegerRange>
     {
@@ -526,7 +560,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppIntegerRangeFactory
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppIntegerRange) CreateInstance(int32_t start, int32_t end) const;
+        auto CreateInstance(int32_t start, int32_t end) const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppIntegerRangeFactory>
     {
@@ -535,12 +569,12 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppPrintDevice
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) PrinterName() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Foundation::Uri) PrinterUri() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Storage::Streams::IBuffer) GetPrinterAttributesAsBuffer(param::iterable<hstring> const& attributeNames) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IMap<hstring, winrt::Windows::Devices::Printers::IppAttributeValue>) GetPrinterAttributes(param::iterable<hstring> const& attributeNames) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppSetAttributesResult) SetPrinterAttributesFromBuffer(winrt::Windows::Storage::Streams::IBuffer const& printerAttributesBuffer) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppSetAttributesResult) SetPrinterAttributes(param::iterable<winrt::Windows::Foundation::Collections::IKeyValuePair<hstring, winrt::Windows::Devices::Printers::IppAttributeValue>> const& printerAttributes) const;
+        [[nodiscard]] auto PrinterName() const;
+        [[nodiscard]] auto PrinterUri() const;
+        auto GetPrinterAttributesAsBuffer(param::iterable<hstring> const& attributeNames) const;
+        auto GetPrinterAttributes(param::iterable<hstring> const& attributeNames) const;
+        auto SetPrinterAttributesFromBuffer(winrt::Windows::Storage::Streams::IBuffer const& printerAttributesBuffer) const;
+        auto SetPrinterAttributes(param::iterable<winrt::Windows::Foundation::Collections::IKeyValuePair<hstring, winrt::Windows::Devices::Printers::IppAttributeValue>> const& printerAttributes) const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppPrintDevice>
     {
@@ -549,22 +583,45 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppPrintDevice2
     {
-        WINRT_IMPL_AUTO(uint64_t) GetMaxSupportedPdfSize() const;
-        WINRT_IMPL_AUTO(hstring) GetMaxSupportedPdfVersion() const;
-        WINRT_IMPL_AUTO(bool) IsPdlPassthroughSupported(param::hstring const& pdlContentType) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::PdlPassthroughProvider) GetPdlPassthroughProvider() const;
+        auto GetMaxSupportedPdfSize() const;
+        auto GetMaxSupportedPdfVersion() const;
+        auto IsPdlPassthroughSupported(param::hstring const& pdlContentType) const;
+        auto GetPdlPassthroughProvider() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppPrintDevice2>
     {
         template <typename D> using type = consume_Windows_Devices_Printers_IIppPrintDevice2<D>;
     };
     template <typename D>
+    struct consume_Windows_Devices_Printers_IIppPrintDevice3
+    {
+        [[nodiscard]] auto IsIppFaxOutPrinter() const;
+    };
+    template <> struct consume<winrt::Windows::Devices::Printers::IIppPrintDevice3>
+    {
+        template <typename D> using type = consume_Windows_Devices_Printers_IIppPrintDevice3<D>;
+    };
+    template <typename D>
+    struct consume_Windows_Devices_Printers_IIppPrintDevice4
+    {
+        [[nodiscard]] auto DeviceKind() const;
+        [[nodiscard]] auto CanModifyUserDefaultPrintTicket() const;
+        [[nodiscard]] auto UserDefaultPrintTicket() const;
+        auto UserDefaultPrintTicket(winrt::Windows::Graphics::Printing::PrintTicket::WorkflowPrintTicket const& value) const;
+        auto RefreshPrintDeviceCapabilities() const;
+        auto GetMaxSupportedPdlVersion(param::hstring const& pdlContentType) const;
+    };
+    template <> struct consume<winrt::Windows::Devices::Printers::IIppPrintDevice4>
+    {
+        template <typename D> using type = consume_Windows_Devices_Printers_IIppPrintDevice4<D>;
+    };
+    template <typename D>
     struct consume_Windows_Devices_Printers_IIppPrintDeviceStatics
     {
-        WINRT_IMPL_AUTO(hstring) GetDeviceSelector() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppPrintDevice) FromId(param::hstring const& deviceId) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppPrintDevice) FromPrinterName(param::hstring const& printerName) const;
-        WINRT_IMPL_AUTO(bool) IsIppPrinter(param::hstring const& printerName) const;
+        auto GetDeviceSelector() const;
+        auto FromId(param::hstring const& deviceId) const;
+        auto FromPrinterName(param::hstring const& printerName) const;
+        auto IsIppPrinter(param::hstring const& printerName) const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppPrintDeviceStatics>
     {
@@ -573,9 +630,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppResolution
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Width() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Height() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppResolutionUnit) Unit() const;
+        [[nodiscard]] auto Width() const;
+        [[nodiscard]] auto Height() const;
+        [[nodiscard]] auto Unit() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppResolution>
     {
@@ -584,7 +641,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppResolutionFactory
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppResolution) CreateInstance(int32_t width, int32_t height, winrt::Windows::Devices::Printers::IppResolutionUnit const& unit) const;
+        auto CreateInstance(int32_t width, int32_t height, winrt::Windows::Devices::Printers::IppResolutionUnit const& unit) const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppResolutionFactory>
     {
@@ -593,8 +650,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppSetAttributesResult
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(bool) Succeeded() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IMapView<hstring, winrt::Windows::Devices::Printers::IppAttributeError>) AttributeErrors() const;
+        [[nodiscard]] auto Succeeded() const;
+        [[nodiscard]] auto AttributeErrors() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppSetAttributesResult>
     {
@@ -603,8 +660,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppTextWithLanguage
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Language() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Value() const;
+        [[nodiscard]] auto Language() const;
+        [[nodiscard]] auto Value() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppTextWithLanguage>
     {
@@ -613,7 +670,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IIppTextWithLanguageFactory
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::IppTextWithLanguage) CreateInstance(param::hstring const& language, param::hstring const& text) const;
+        auto CreateInstance(param::hstring const& language, param::hstring const& text) const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IIppTextWithLanguageFactory>
     {
@@ -622,10 +679,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IPageConfigurationSettings
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::PageConfigurationSource) OrientationSource() const;
-        WINRT_IMPL_AUTO(void) OrientationSource(winrt::Windows::Devices::Printers::PageConfigurationSource const& value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::PageConfigurationSource) SizeSource() const;
-        WINRT_IMPL_AUTO(void) SizeSource(winrt::Windows::Devices::Printers::PageConfigurationSource const& value) const;
+        [[nodiscard]] auto OrientationSource() const;
+        auto OrientationSource(winrt::Windows::Devices::Printers::PageConfigurationSource const& value) const;
+        [[nodiscard]] auto SizeSource() const;
+        auto SizeSource(winrt::Windows::Devices::Printers::PageConfigurationSource const& value) const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IPageConfigurationSettings>
     {
@@ -634,9 +691,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IPdlPassthroughProvider
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVectorView<hstring>) SupportedPdlContentTypes() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::PdlPassthroughTarget) StartPrintJobWithTaskOptions(param::hstring const& jobName, param::hstring const& pdlContentType, winrt::Windows::Graphics::Printing::PrintTaskOptions const& taskOptions, winrt::Windows::Devices::Printers::PageConfigurationSettings const& pageConfigurationSettings) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::PdlPassthroughTarget) StartPrintJobWithPrintTicket(param::hstring const& jobName, param::hstring const& pdlContentType, winrt::Windows::Storage::Streams::IInputStream const& printTicket, winrt::Windows::Devices::Printers::PageConfigurationSettings const& pageConfigurationSettings) const;
+        [[nodiscard]] auto SupportedPdlContentTypes() const;
+        auto StartPrintJobWithTaskOptions(param::hstring const& jobName, param::hstring const& pdlContentType, winrt::Windows::Graphics::Printing::PrintTaskOptions const& taskOptions, winrt::Windows::Devices::Printers::PageConfigurationSettings const& pageConfigurationSettings) const;
+        auto StartPrintJobWithPrintTicket(param::hstring const& jobName, param::hstring const& pdlContentType, winrt::Windows::Storage::Streams::IInputStream const& printTicket, winrt::Windows::Devices::Printers::PageConfigurationSettings const& pageConfigurationSettings) const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IPdlPassthroughProvider>
     {
@@ -645,9 +702,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IPdlPassthroughTarget
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) PrintJobId() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Storage::Streams::IOutputStream) GetOutputStream() const;
-        WINRT_IMPL_AUTO(void) Submit() const;
+        [[nodiscard]] auto PrintJobId() const;
+        auto GetOutputStream() const;
+        auto Submit() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IPdlPassthroughTarget>
     {
@@ -656,7 +713,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IPrint3DDevice
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Devices::Printers::PrintSchema) PrintSchema() const;
+        [[nodiscard]] auto PrintSchema() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IPrint3DDevice>
     {
@@ -665,8 +722,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IPrint3DDeviceStatics
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Printers::Print3DDevice>) FromIdAsync(param::hstring const& deviceId) const;
-        WINRT_IMPL_AUTO(hstring) GetDeviceSelector() const;
+        auto FromIdAsync(param::hstring const& deviceId) const;
+        auto GetDeviceSelector() const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IPrint3DDeviceStatics>
     {
@@ -675,9 +732,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Devices_Printers_IPrintSchema
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Streams::IRandomAccessStreamWithContentType>) GetDefaultPrintTicketAsync() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Streams::IRandomAccessStreamWithContentType>) GetCapabilitiesAsync(winrt::Windows::Storage::Streams::IRandomAccessStreamWithContentType const& constrainTicket) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Streams::IRandomAccessStreamWithContentType>) MergeAndValidateWithDefaultPrintTicketAsync(winrt::Windows::Storage::Streams::IRandomAccessStreamWithContentType const& deltaTicket) const;
+        auto GetDefaultPrintTicketAsync() const;
+        auto GetCapabilitiesAsync(winrt::Windows::Storage::Streams::IRandomAccessStreamWithContentType const& constrainTicket) const;
+        auto MergeAndValidateWithDefaultPrintTicketAsync(winrt::Windows::Storage::Streams::IRandomAccessStreamWithContentType const& deltaTicket) const;
     };
     template <> struct consume<winrt::Windows::Devices::Printers::IPrintSchema>
     {

@@ -74,7 +74,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -101,6 +101,10 @@
 #define WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
 
+#if !defined(WINDOWS_DEVICES_POWER_POWERGRIDAPICONTRACT_VERSION)
+#define WINDOWS_DEVICES_POWER_POWERGRIDAPICONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_DEVICES_POWER_POWERGRIDAPICONTRACT_VERSION)
+
 #if !defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
 #define WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
@@ -122,11 +126,11 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xf0000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x130000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
-#define WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION 0x10000
+#define WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
 
 #if !defined(WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION)
@@ -162,7 +166,7 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -1019,7 +1023,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_ILocalVideoStream=_uuidof(ILocalVideoStream);
+                        MIDL_CONST_ID IID & IID_ILocalVideoStream=__uuidof(ILocalVideoStream);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1086,7 +1090,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRemoteVideoStream=_uuidof(IRemoteVideoStream);
+                        MIDL_CONST_ID IID & IID_IRemoteVideoStream=__uuidof(IRemoteVideoStream);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1132,7 +1136,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IResolutionChangeEventArgs=_uuidof(IResolutionChangeEventArgs);
+                        MIDL_CONST_ID IID & IID_IResolutionChangeEventArgs=__uuidof(IResolutionChangeEventArgs);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1178,7 +1182,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IRotationChangeEventArgs=_uuidof(IRotationChangeEventArgs);
+                        MIDL_CONST_ID IID & IID_IRotationChangeEventArgs=__uuidof(IRotationChangeEventArgs);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1248,7 +1252,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IVideoCall=_uuidof(IVideoCall);
+                        MIDL_CONST_ID IID & IID_IVideoCall=__uuidof(IVideoCall);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1295,7 +1299,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IVideoCallFactory=_uuidof(IVideoCallFactory);
+                        MIDL_CONST_ID IID & IID_IVideoCallFactory=__uuidof(IVideoCallFactory);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1368,7 +1372,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IVideoCallInitializationParameters=_uuidof(IVideoCallInitializationParameters);
+                        MIDL_CONST_ID IID & IID_IVideoCallInitializationParameters=__uuidof(IVideoCallInitializationParameters);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1414,7 +1418,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IVideoQualityChangeEventArgs=_uuidof(IVideoQualityChangeEventArgs);
+                        MIDL_CONST_ID IID & IID_IVideoQualityChangeEventArgs=__uuidof(IVideoQualityChangeEventArgs);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1460,7 +1464,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IVideoStateChangeEventArgs=_uuidof(IVideoStateChangeEventArgs);
+                        MIDL_CONST_ID IID & IID_IVideoStateChangeEventArgs=__uuidof(IVideoStateChangeEventArgs);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1529,7 +1533,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IVideoStream=_uuidof(IVideoStream);
+                        MIDL_CONST_ID IID & IID_IVideoStream=__uuidof(IVideoStream);
                         
                     } /* VideoTelephony */
                 } /* Cellular */
@@ -1576,7 +1580,7 @@ namespace ABI {
                             
                         };
 
-                        MIDL_CONST_ID IID & IID_IVideoStreamExt=_uuidof(IVideoStreamExt);
+                        MIDL_CONST_ID IID & IID_IVideoStreamExt=__uuidof(IVideoStreamExt);
                         
                     } /* VideoTelephony */
                 } /* Cellular */

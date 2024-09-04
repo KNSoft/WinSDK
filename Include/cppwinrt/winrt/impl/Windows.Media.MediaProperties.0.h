@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -6,15 +6,10 @@
 #pragma once
 #ifndef WINRT_Windows_Media_MediaProperties_0_H
 #define WINRT_Windows_Media_MediaProperties_0_H
-WINRT_EXPORT namespace winrt::Windows::Foundation
-{
-    template <typename TResult> struct __declspec(empty_bases) IAsyncOperation;
-}
 WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
 {
     template <typename T> struct __declspec(empty_bases) IIterable;
     template <typename K, typename V> struct __declspec(empty_bases) IMap;
-    template <typename T> struct __declspec(empty_bases) IVector;
 }
 WINRT_EXPORT namespace winrt::Windows::Media::Core
 {
@@ -798,14 +793,14 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IAudioEncodingProperties
     {
-        WINRT_IMPL_AUTO(void) Bitrate(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) Bitrate() const;
-        WINRT_IMPL_AUTO(void) ChannelCount(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) ChannelCount() const;
-        WINRT_IMPL_AUTO(void) SampleRate(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) SampleRate() const;
-        WINRT_IMPL_AUTO(void) BitsPerSample(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) BitsPerSample() const;
+        auto Bitrate(uint32_t value) const;
+        [[nodiscard]] auto Bitrate() const;
+        auto ChannelCount(uint32_t value) const;
+        [[nodiscard]] auto ChannelCount() const;
+        auto SampleRate(uint32_t value) const;
+        [[nodiscard]] auto SampleRate() const;
+        auto BitsPerSample(uint32_t value) const;
+        [[nodiscard]] auto BitsPerSample() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IAudioEncodingProperties>
     {
@@ -814,7 +809,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IAudioEncodingProperties2
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(bool) IsSpatial() const;
+        [[nodiscard]] auto IsSpatial() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IAudioEncodingProperties2>
     {
@@ -823,7 +818,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IAudioEncodingProperties3
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::AudioEncodingProperties) Copy() const;
+        auto Copy() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IAudioEncodingProperties3>
     {
@@ -832,11 +827,11 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IAudioEncodingPropertiesStatics
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::AudioEncodingProperties) CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::AudioEncodingProperties) CreateAacAdts(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::AudioEncodingProperties) CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::AudioEncodingProperties) CreatePcm(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::AudioEncodingProperties) CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
+        auto CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
+        auto CreateAacAdts(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
+        auto CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
+        auto CreatePcm(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const;
+        auto CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>
     {
@@ -845,8 +840,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IAudioEncodingPropertiesStatics2
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::AudioEncodingProperties) CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::AudioEncodingProperties) CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const;
+        auto CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const;
+        auto CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2>
     {
@@ -855,8 +850,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IAudioEncodingPropertiesWithFormatUserData
     {
-        WINRT_IMPL_AUTO(void) SetFormatUserData(array_view<uint8_t const> value) const;
-        WINRT_IMPL_AUTO(void) GetFormatUserData(com_array<uint8_t>& value) const;
+        auto SetFormatUserData(array_view<uint8_t const> value) const;
+        auto GetFormatUserData(com_array<uint8_t>& value) const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesWithFormatUserData>
     {
@@ -865,18 +860,18 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IAv1ProfileIdsStatics
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling420BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling420BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling400BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling400BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) HighChromaSubsampling444BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) HighChromaSubsampling444BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) ProfessionalChromaSubsampling420BitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) ProfessionalChromaSubsampling400BitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) ProfessionalChromaSubsampling444BitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) ProfessionalChromaSubsampling422BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) ProfessionalChromaSubsampling422BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) ProfessionalChromaSubsampling422BitDepth12() const;
+        [[nodiscard]] auto MainChromaSubsampling420BitDepth8() const;
+        [[nodiscard]] auto MainChromaSubsampling420BitDepth10() const;
+        [[nodiscard]] auto MainChromaSubsampling400BitDepth8() const;
+        [[nodiscard]] auto MainChromaSubsampling400BitDepth10() const;
+        [[nodiscard]] auto HighChromaSubsampling444BitDepth8() const;
+        [[nodiscard]] auto HighChromaSubsampling444BitDepth10() const;
+        [[nodiscard]] auto ProfessionalChromaSubsampling420BitDepth12() const;
+        [[nodiscard]] auto ProfessionalChromaSubsampling400BitDepth12() const;
+        [[nodiscard]] auto ProfessionalChromaSubsampling444BitDepth12() const;
+        [[nodiscard]] auto ProfessionalChromaSubsampling422BitDepth8() const;
+        [[nodiscard]] auto ProfessionalChromaSubsampling422BitDepth10() const;
+        [[nodiscard]] auto ProfessionalChromaSubsampling422BitDepth12() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IAv1ProfileIdsStatics>
     {
@@ -893,7 +888,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IContainerEncodingProperties2
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::ContainerEncodingProperties) Copy() const;
+        auto Copy() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IContainerEncodingProperties2>
     {
@@ -902,16 +897,16 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IH264ProfileIdsStatics
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) ConstrainedBaseline() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Baseline() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Extended() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Main() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) High() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) High10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) High422() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) High444() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) StereoHigh() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MultiviewHigh() const;
+        [[nodiscard]] auto ConstrainedBaseline() const;
+        [[nodiscard]] auto Baseline() const;
+        [[nodiscard]] auto Extended() const;
+        [[nodiscard]] auto Main() const;
+        [[nodiscard]] auto High() const;
+        [[nodiscard]] auto High10() const;
+        [[nodiscard]] auto High422() const;
+        [[nodiscard]] auto High444() const;
+        [[nodiscard]] auto StereoHigh() const;
+        [[nodiscard]] auto MultiviewHigh() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IH264ProfileIdsStatics>
     {
@@ -920,28 +915,28 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IHevcProfileIdsStatics
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling420BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling420BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling420BitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling422BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling422BitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling444BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling444BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainChromaSubsampling444BitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MonochromeBitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MonochromeBitDepth16() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainIntraChromaSubsampling420BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainIntraChromaSubsampling420BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainIntraChromaSubsampling420BitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainIntraChromaSubsampling422BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainIntraChromaSubsampling422BitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainIntraChromaSubsampling444BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainIntraChromaSubsampling444BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainIntraChromaSubsampling444BitDepth12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainIntraChromaSubsampling444BitDepth16() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainStillChromaSubsampling420BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainStillChromaSubsampling444BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) MainStillChromaSubsampling444BitDepth16() const;
+        [[nodiscard]] auto MainChromaSubsampling420BitDepth8() const;
+        [[nodiscard]] auto MainChromaSubsampling420BitDepth10() const;
+        [[nodiscard]] auto MainChromaSubsampling420BitDepth12() const;
+        [[nodiscard]] auto MainChromaSubsampling422BitDepth10() const;
+        [[nodiscard]] auto MainChromaSubsampling422BitDepth12() const;
+        [[nodiscard]] auto MainChromaSubsampling444BitDepth8() const;
+        [[nodiscard]] auto MainChromaSubsampling444BitDepth10() const;
+        [[nodiscard]] auto MainChromaSubsampling444BitDepth12() const;
+        [[nodiscard]] auto MonochromeBitDepth12() const;
+        [[nodiscard]] auto MonochromeBitDepth16() const;
+        [[nodiscard]] auto MainIntraChromaSubsampling420BitDepth8() const;
+        [[nodiscard]] auto MainIntraChromaSubsampling420BitDepth10() const;
+        [[nodiscard]] auto MainIntraChromaSubsampling420BitDepth12() const;
+        [[nodiscard]] auto MainIntraChromaSubsampling422BitDepth10() const;
+        [[nodiscard]] auto MainIntraChromaSubsampling422BitDepth12() const;
+        [[nodiscard]] auto MainIntraChromaSubsampling444BitDepth8() const;
+        [[nodiscard]] auto MainIntraChromaSubsampling444BitDepth10() const;
+        [[nodiscard]] auto MainIntraChromaSubsampling444BitDepth12() const;
+        [[nodiscard]] auto MainIntraChromaSubsampling444BitDepth16() const;
+        [[nodiscard]] auto MainStillChromaSubsampling420BitDepth8() const;
+        [[nodiscard]] auto MainStillChromaSubsampling444BitDepth8() const;
+        [[nodiscard]] auto MainStillChromaSubsampling444BitDepth16() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IHevcProfileIdsStatics>
     {
@@ -950,10 +945,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IImageEncodingProperties
     {
-        WINRT_IMPL_AUTO(void) Width(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) Width() const;
-        WINRT_IMPL_AUTO(void) Height(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) Height() const;
+        auto Width(uint32_t value) const;
+        [[nodiscard]] auto Width() const;
+        auto Height(uint32_t value) const;
+        [[nodiscard]] auto Height() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IImageEncodingProperties>
     {
@@ -962,7 +957,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IImageEncodingProperties2
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::ImageEncodingProperties) Copy() const;
+        auto Copy() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IImageEncodingProperties2>
     {
@@ -971,9 +966,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IImageEncodingPropertiesStatics
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::ImageEncodingProperties) CreateJpeg() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::ImageEncodingProperties) CreatePng() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::ImageEncodingProperties) CreateJpegXR() const;
+        auto CreateJpeg() const;
+        auto CreatePng() const;
+        auto CreateJpegXR() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics>
     {
@@ -982,8 +977,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IImageEncodingPropertiesStatics2
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::ImageEncodingProperties) CreateUncompressed(winrt::Windows::Media::MediaProperties::MediaPixelFormat const& format) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::ImageEncodingProperties) CreateBmp() const;
+        auto CreateUncompressed(winrt::Windows::Media::MediaProperties::MediaPixelFormat const& format) const;
+        auto CreateBmp() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2>
     {
@@ -992,7 +987,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IImageEncodingPropertiesStatics3
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::ImageEncodingProperties) CreateHeif() const;
+        auto CreateHeif() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics3>
     {
@@ -1001,12 +996,12 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingProfile
     {
-        WINRT_IMPL_AUTO(void) Audio(winrt::Windows::Media::MediaProperties::AudioEncodingProperties const& value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::AudioEncodingProperties) Audio() const;
-        WINRT_IMPL_AUTO(void) Video(winrt::Windows::Media::MediaProperties::VideoEncodingProperties const& value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::VideoEncodingProperties) Video() const;
-        WINRT_IMPL_AUTO(void) Container(winrt::Windows::Media::MediaProperties::ContainerEncodingProperties const& value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::ContainerEncodingProperties) Container() const;
+        auto Audio(winrt::Windows::Media::MediaProperties::AudioEncodingProperties const& value) const;
+        [[nodiscard]] auto Audio() const;
+        auto Video(winrt::Windows::Media::MediaProperties::VideoEncodingProperties const& value) const;
+        [[nodiscard]] auto Video() const;
+        auto Container(winrt::Windows::Media::MediaProperties::ContainerEncodingProperties const& value) const;
+        [[nodiscard]] auto Container() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile>
     {
@@ -1015,10 +1010,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingProfile2
     {
-        WINRT_IMPL_AUTO(void) SetAudioTracks(param::iterable<winrt::Windows::Media::Core::AudioStreamDescriptor> const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Media::Core::AudioStreamDescriptor>) GetAudioTracks() const;
-        WINRT_IMPL_AUTO(void) SetVideoTracks(param::iterable<winrt::Windows::Media::Core::VideoStreamDescriptor> const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Media::Core::VideoStreamDescriptor>) GetVideoTracks() const;
+        auto SetAudioTracks(param::iterable<winrt::Windows::Media::Core::AudioStreamDescriptor> const& value) const;
+        auto GetAudioTracks() const;
+        auto SetVideoTracks(param::iterable<winrt::Windows::Media::Core::VideoStreamDescriptor> const& value) const;
+        auto GetVideoTracks() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile2>
     {
@@ -1027,8 +1022,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingProfile3
     {
-        WINRT_IMPL_AUTO(void) SetTimedMetadataTracks(param::iterable<winrt::Windows::Media::Core::TimedMetadataStreamDescriptor> const& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::Collections::IVector<winrt::Windows::Media::Core::TimedMetadataStreamDescriptor>) GetTimedMetadataTracks() const;
+        auto SetTimedMetadataTracks(param::iterable<winrt::Windows::Media::Core::TimedMetadataStreamDescriptor> const& value) const;
+        auto GetTimedMetadataTracks() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile3>
     {
@@ -1037,13 +1032,13 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingProfileStatics
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateM4a(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateMp3(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateWma(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateMp4(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateWmv(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Media::MediaProperties::MediaEncodingProfile>) CreateFromFileAsync(winrt::Windows::Storage::IStorageFile const& file) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Media::MediaProperties::MediaEncodingProfile>) CreateFromStreamAsync(winrt::Windows::Storage::Streams::IRandomAccessStream const& stream) const;
+        auto CreateM4a(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
+        auto CreateMp3(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
+        auto CreateWma(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
+        auto CreateMp4(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
+        auto CreateWmv(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
+        auto CreateFromFileAsync(winrt::Windows::Storage::IStorageFile const& file) const;
+        auto CreateFromStreamAsync(winrt::Windows::Storage::Streams::IRandomAccessStream const& stream) const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
     {
@@ -1052,8 +1047,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingProfileStatics2
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateWav(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateAvi(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
+        auto CreateWav(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
+        auto CreateAvi(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics2>
     {
@@ -1062,9 +1057,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingProfileStatics3
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateAlac(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateFlac(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateHevc(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
+        auto CreateAlac(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
+        auto CreateFlac(winrt::Windows::Media::MediaProperties::AudioEncodingQuality const& quality) const;
+        auto CreateHevc(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>
     {
@@ -1073,8 +1068,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingProfileStatics4
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateVp9(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaEncodingProfile) CreateAv1(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
+        auto CreateVp9(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
+        auto CreateAv1(winrt::Windows::Media::MediaProperties::VideoEncodingQuality const& quality) const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics4>
     {
@@ -1083,10 +1078,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingProperties
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaPropertySet) Properties() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Type() const;
-        WINRT_IMPL_AUTO(void) Subtype(param::hstring const& value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Subtype() const;
+        [[nodiscard]] auto Properties() const;
+        [[nodiscard]] auto Type() const;
+        auto Subtype(param::hstring const& value) const;
+        [[nodiscard]] auto Subtype() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingProperties>
     {
@@ -1095,46 +1090,46 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Aac() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) AacAdts() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Ac3() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) AmrNb() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) AmrWb() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Argb32() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Asf() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Avi() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Bgra8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Bmp() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Eac3() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Float() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Gif() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) H263() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) H264() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) H264Es() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Hevc() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) HevcEs() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Iyuv() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Jpeg() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) JpegXr() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Mjpg() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Mpeg() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Mpeg1() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Mpeg2() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Mp3() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Mpeg4() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Nv12() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Pcm() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Png() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Rgb24() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Rgb32() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Tiff() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Wave() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Wma8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Wma9() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Wmv3() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Wvc1() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Yuy2() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Yv12() const;
+        [[nodiscard]] auto Aac() const;
+        [[nodiscard]] auto AacAdts() const;
+        [[nodiscard]] auto Ac3() const;
+        [[nodiscard]] auto AmrNb() const;
+        [[nodiscard]] auto AmrWb() const;
+        [[nodiscard]] auto Argb32() const;
+        [[nodiscard]] auto Asf() const;
+        [[nodiscard]] auto Avi() const;
+        [[nodiscard]] auto Bgra8() const;
+        [[nodiscard]] auto Bmp() const;
+        [[nodiscard]] auto Eac3() const;
+        [[nodiscard]] auto Float() const;
+        [[nodiscard]] auto Gif() const;
+        [[nodiscard]] auto H263() const;
+        [[nodiscard]] auto H264() const;
+        [[nodiscard]] auto H264Es() const;
+        [[nodiscard]] auto Hevc() const;
+        [[nodiscard]] auto HevcEs() const;
+        [[nodiscard]] auto Iyuv() const;
+        [[nodiscard]] auto Jpeg() const;
+        [[nodiscard]] auto JpegXr() const;
+        [[nodiscard]] auto Mjpg() const;
+        [[nodiscard]] auto Mpeg() const;
+        [[nodiscard]] auto Mpeg1() const;
+        [[nodiscard]] auto Mpeg2() const;
+        [[nodiscard]] auto Mp3() const;
+        [[nodiscard]] auto Mpeg4() const;
+        [[nodiscard]] auto Nv12() const;
+        [[nodiscard]] auto Pcm() const;
+        [[nodiscard]] auto Png() const;
+        [[nodiscard]] auto Rgb24() const;
+        [[nodiscard]] auto Rgb32() const;
+        [[nodiscard]] auto Tiff() const;
+        [[nodiscard]] auto Wave() const;
+        [[nodiscard]] auto Wma8() const;
+        [[nodiscard]] auto Wma9() const;
+        [[nodiscard]] auto Wmv3() const;
+        [[nodiscard]] auto Wvc1() const;
+        [[nodiscard]] auto Yuy2() const;
+        [[nodiscard]] auto Yv12() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>
     {
@@ -1143,10 +1138,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics2
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Vp9() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) L8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) L16() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) D16() const;
+        [[nodiscard]] auto Vp9() const;
+        [[nodiscard]] auto L8() const;
+        [[nodiscard]] auto L16() const;
+        [[nodiscard]] auto D16() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>
     {
@@ -1155,8 +1150,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics3
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Alac() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Flac() const;
+        [[nodiscard]] auto Alac() const;
+        [[nodiscard]] auto Flac() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3>
     {
@@ -1165,7 +1160,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics4
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) P010() const;
+        [[nodiscard]] auto P010() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics4>
     {
@@ -1174,7 +1169,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics5
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Heif() const;
+        [[nodiscard]] auto Heif() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics5>
     {
@@ -1183,10 +1178,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics6
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Pgs() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Srt() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Ssa() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) VobSub() const;
+        [[nodiscard]] auto Pgs() const;
+        [[nodiscard]] auto Srt() const;
+        [[nodiscard]] auto Ssa() const;
+        [[nodiscard]] auto VobSub() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics6>
     {
@@ -1195,7 +1190,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics7
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(hstring) Av1() const;
+        [[nodiscard]] auto Av1() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics7>
     {
@@ -1204,10 +1199,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMediaRatio
     {
-        WINRT_IMPL_AUTO(void) Numerator(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) Numerator() const;
-        WINRT_IMPL_AUTO(void) Denominator(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) Denominator() const;
+        auto Numerator(uint32_t value) const;
+        [[nodiscard]] auto Numerator() const;
+        auto Denominator(uint32_t value) const;
+        [[nodiscard]] auto Denominator() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMediaRatio>
     {
@@ -1216,11 +1211,11 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IMpeg2ProfileIdsStatics
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Simple() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Main() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) SignalNoiseRatioScalable() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) SpatiallyScalable() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) High() const;
+        [[nodiscard]] auto Simple() const;
+        [[nodiscard]] auto Main() const;
+        [[nodiscard]] auto SignalNoiseRatioScalable() const;
+        [[nodiscard]] auto SpatiallyScalable() const;
+        [[nodiscard]] auto High() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>
     {
@@ -1229,9 +1224,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_ITimedMetadataEncodingProperties
     {
-        WINRT_IMPL_AUTO(void) SetFormatUserData(array_view<uint8_t const> value) const;
-        WINRT_IMPL_AUTO(void) GetFormatUserData(com_array<uint8_t>& value) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::TimedMetadataEncodingProperties) Copy() const;
+        auto SetFormatUserData(array_view<uint8_t const> value) const;
+        auto GetFormatUserData(com_array<uint8_t>& value) const;
+        auto Copy() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::ITimedMetadataEncodingProperties>
     {
@@ -1240,10 +1235,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_ITimedMetadataEncodingPropertiesStatics
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::TimedMetadataEncodingProperties) CreatePgs() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::TimedMetadataEncodingProperties) CreateSrt() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::TimedMetadataEncodingProperties) CreateSsa(array_view<uint8_t const> formatUserData) const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::TimedMetadataEncodingProperties) CreateVobSub(array_view<uint8_t const> formatUserData) const;
+        auto CreatePgs() const;
+        auto CreateSrt() const;
+        auto CreateSsa(array_view<uint8_t const> formatUserData) const;
+        auto CreateVobSub(array_view<uint8_t const> formatUserData) const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::ITimedMetadataEncodingPropertiesStatics>
     {
@@ -1252,14 +1247,14 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IVideoEncodingProperties
     {
-        WINRT_IMPL_AUTO(void) Bitrate(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) Bitrate() const;
-        WINRT_IMPL_AUTO(void) Width(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) Width() const;
-        WINRT_IMPL_AUTO(void) Height(uint32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(uint32_t) Height() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaRatio) FrameRate() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::MediaRatio) PixelAspectRatio() const;
+        auto Bitrate(uint32_t value) const;
+        [[nodiscard]] auto Bitrate() const;
+        auto Width(uint32_t value) const;
+        [[nodiscard]] auto Width() const;
+        auto Height(uint32_t value) const;
+        [[nodiscard]] auto Height() const;
+        [[nodiscard]] auto FrameRate() const;
+        [[nodiscard]] auto PixelAspectRatio() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IVideoEncodingProperties>
     {
@@ -1268,10 +1263,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IVideoEncodingProperties2
     {
-        WINRT_IMPL_AUTO(void) SetFormatUserData(array_view<uint8_t const> value) const;
-        WINRT_IMPL_AUTO(void) GetFormatUserData(com_array<uint8_t>& value) const;
-        WINRT_IMPL_AUTO(void) ProfileId(int32_t value) const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) ProfileId() const;
+        auto SetFormatUserData(array_view<uint8_t const> value) const;
+        auto GetFormatUserData(com_array<uint8_t>& value) const;
+        auto ProfileId(int32_t value) const;
+        [[nodiscard]] auto ProfileId() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IVideoEncodingProperties2>
     {
@@ -1280,7 +1275,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IVideoEncodingProperties3
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::StereoscopicVideoPackingMode) StereoscopicVideoPackingMode() const;
+        [[nodiscard]] auto StereoscopicVideoPackingMode() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IVideoEncodingProperties3>
     {
@@ -1289,7 +1284,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IVideoEncodingProperties4
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::SphericalVideoFrameFormat) SphericalVideoFrameFormat() const;
+        [[nodiscard]] auto SphericalVideoFrameFormat() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IVideoEncodingProperties4>
     {
@@ -1298,7 +1293,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IVideoEncodingProperties5
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::VideoEncodingProperties) Copy() const;
+        auto Copy() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IVideoEncodingProperties5>
     {
@@ -1307,9 +1302,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IVideoEncodingPropertiesStatics
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::VideoEncodingProperties) CreateH264() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::VideoEncodingProperties) CreateMpeg2() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::VideoEncodingProperties) CreateUncompressed(param::hstring const& subtype, uint32_t width, uint32_t height) const;
+        auto CreateH264() const;
+        auto CreateMpeg2() const;
+        auto CreateUncompressed(param::hstring const& subtype, uint32_t width, uint32_t height) const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>
     {
@@ -1318,7 +1313,7 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IVideoEncodingPropertiesStatics2
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::VideoEncodingProperties) CreateHevc() const;
+        auto CreateHevc() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2>
     {
@@ -1327,8 +1322,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IVideoEncodingPropertiesStatics3
     {
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::VideoEncodingProperties) CreateVp9() const;
-        WINRT_IMPL_AUTO(winrt::Windows::Media::MediaProperties::VideoEncodingProperties) CreateAv1() const;
+        auto CreateVp9() const;
+        auto CreateAv1() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics3>
     {
@@ -1337,9 +1332,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_MediaProperties_IVp9ProfileIdsStatics
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Profile0ChromaSubsampling420BitDepth8() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Profile2ChromaSubsampling420BitDepth10() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(int32_t) Profile2ChromaSubsampling420BitDepth12() const;
+        [[nodiscard]] auto Profile0ChromaSubsampling420BitDepth8() const;
+        [[nodiscard]] auto Profile2ChromaSubsampling420BitDepth10() const;
+        [[nodiscard]] auto Profile2ChromaSubsampling420BitDepth12() const;
     };
     template <> struct consume<winrt::Windows::Media::MediaProperties::IVp9ProfileIdsStatics>
     {

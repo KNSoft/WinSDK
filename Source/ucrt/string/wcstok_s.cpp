@@ -31,12 +31,8 @@ extern "C" wchar_t* __cdecl __acrt_wcstok_s_novalidation(
     // null (*string == '\0')
     while (*string_it)
     {
-        wchar_t const* control_it = control;
-        for (; *control_it && *control_it != *string_it; ++control_it)
-        {
-        }
-
-        if (!*control_it)
+        wchar_t const* control_it = wcschr(control, *string_it);
+        if (!control_it)
             break;
 
         ++string_it;
@@ -48,12 +44,8 @@ extern "C" wchar_t* __cdecl __acrt_wcstok_s_novalidation(
     // null character there:
     for (; *string_it; ++string_it)
     {
-        wchar_t const* control_it = control;
-        for (; *control_it && *control_it != *string_it; ++control_it)
-        {
-        }
-
-        if (*control_it)
+        wchar_t const* control_it = wcschr(control, *string_it);
+        if (control_it)
         {
             *string_it++ = '\0';
             break;

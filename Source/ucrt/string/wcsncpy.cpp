@@ -16,7 +16,7 @@
     #pragma function(wcsncpy)
 #endif
 
-
+#pragma function(memcpy, memset)
 
 extern "C" wchar_t * __cdecl wcsncpy(
     wchar_t*       const destination,
@@ -24,22 +24,11 @@ extern "C" wchar_t * __cdecl wcsncpy(
     size_t         const count
     )
 {
-    size_t remaining = count;
-
-    wchar_t*       destination_it = destination;
-    wchar_t const* source_it      = source;
-    while (remaining != 0 && (*destination_it++ = *source_it++) != 0)
+    size_t srclen = wcsnlen(source, count);
+    memcpy(destination, source, srclen * sizeof(wchar_t));
+    if (srclen < count)
     {
-        --remaining;
+        memset(destination + srclen, 0, (count - srclen) * sizeof(wchar_t));
     }
-
-    if (remaining != 0)
-    {
-        while (--remaining != 0)
-        {
-            *destination_it++ = L'\0';
-        }
-    }
-
-    return destination;
+    return(destination);
 }

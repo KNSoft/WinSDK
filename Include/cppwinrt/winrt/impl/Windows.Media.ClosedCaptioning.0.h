@@ -1,4 +1,4 @@
-// C++/WinRT v2.0.220110.5
+// C++/WinRT v2.0.230511.6
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -118,18 +118,18 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics
     {
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor) FontColor() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::UI::Color) ComputedFontColor() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionOpacity) FontOpacity() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionSize) FontSize() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionStyle) FontStyle() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffect) FontEffect() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor) BackgroundColor() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::UI::Color) ComputedBackgroundColor() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionOpacity) BackgroundOpacity() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor) RegionColor() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::UI::Color) ComputedRegionColor() const;
-        [[nodiscard]] WINRT_IMPL_AUTO(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionOpacity) RegionOpacity() const;
+        [[nodiscard]] auto FontColor() const;
+        [[nodiscard]] auto ComputedFontColor() const;
+        [[nodiscard]] auto FontOpacity() const;
+        [[nodiscard]] auto FontSize() const;
+        [[nodiscard]] auto FontStyle() const;
+        [[nodiscard]] auto FontEffect() const;
+        [[nodiscard]] auto BackgroundColor() const;
+        [[nodiscard]] auto ComputedBackgroundColor() const;
+        [[nodiscard]] auto BackgroundOpacity() const;
+        [[nodiscard]] auto RegionColor() const;
+        [[nodiscard]] auto ComputedRegionColor() const;
+        [[nodiscard]] auto RegionOpacity() const;
     };
     template <> struct consume<winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics>
     {
@@ -138,10 +138,10 @@ namespace winrt::impl
     template <typename D>
     struct consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics2
     {
-        WINRT_IMPL_AUTO(winrt::event_token) PropertiesChanged(winrt::Windows::Foundation::EventHandler<winrt::Windows::Foundation::IInspectable> const& handler) const;
+        auto PropertiesChanged(winrt::Windows::Foundation::EventHandler<winrt::Windows::Foundation::IInspectable> const& handler) const;
         using PropertiesChanged_revoker = impl::event_revoker<winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics2, &impl::abi_t<winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics2>::remove_PropertiesChanged>;
         [[nodiscard]] PropertiesChanged_revoker PropertiesChanged(auto_revoke_t, winrt::Windows::Foundation::EventHandler<winrt::Windows::Foundation::IInspectable> const& handler) const;
-        WINRT_IMPL_AUTO(void) PropertiesChanged(winrt::event_token const& token) const noexcept;
+        auto PropertiesChanged(winrt::event_token const& token) const noexcept;
     };
     template <> struct consume<winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics2>
     {
