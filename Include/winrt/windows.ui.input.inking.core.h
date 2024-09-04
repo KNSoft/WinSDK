@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.input.inking.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -435,6 +437,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateSource_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateSource_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateEventArgs_USE
@@ -463,6 +466,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::Inking::Core::CoreWetStrokeU
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateSource_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 namespace ABI {
@@ -595,6 +599,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreInkIndependentInputSource_Windows__CUI__CCore__CPointerEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreInkIndependentInputSource_Windows__CUI__CCore__CPointerEventArgs_USE
@@ -623,6 +628,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::Inking::Core::CoreInkIndepen
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreInkIndependentInputSource_Windows__CUI__CCore__CPointerEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -958,8 +964,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("FDA015D3-9D66-4F7D-A57F-CC70B9CFAA76"), exclusiveto, contract] */
                         MIDL_INTERFACE("FDA015D3-9D66-4F7D-A57F-CC70B9CFAA76")
-                        ICoreIncrementalInkStroke : IInspectable
+                        ICoreIncrementalInkStroke : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE AppendInkPoints(
                                 /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint * inkPoints,
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * result
@@ -1015,8 +1022,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("D7C59F46-8DA8-4F70-9751-E53BB6DF4596"), exclusiveto, contract] */
                         MIDL_INTERFACE("D7C59F46-8DA8-4F70-9751-E53BB6DF4596")
-                        ICoreIncrementalInkStrokeFactory : IInspectable
+                        ICoreIncrementalInkStrokeFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Create(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Input::Inking::IInkDrawingAttributes * drawingAttributes,
                                 /* [in] */ABI::Windows::Foundation::Numerics::Matrix3x2 pointTransform,
@@ -1061,8 +1069,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("39B38DA9-7639-4499-A5B5-191D00E35B16"), exclusiveto, contract] */
                         MIDL_INTERFACE("39B38DA9-7639-4499-A5B5-191D00E35B16")
-                        ICoreInkIndependentInputSource : IInspectable
+                        ICoreInkIndependentInputSource : public IInspectable
                         {
+                        public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PointerEntering(
                                 /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreInkIndependentInputSource_Windows__CUI__CCore__CPointerEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -1154,8 +1163,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("73E6011B-80C0-4DFB-9B66-10BA7F3F9C84"), exclusiveto, contract] */
                         MIDL_INTERFACE("73E6011B-80C0-4DFB-9B66-10BA7F3F9C84")
-                        ICoreInkIndependentInputSourceStatics : IInspectable
+                        ICoreInkIndependentInputSourceStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Create(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Input::Inking::IInkPresenter * inkPresenter,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSource * * inkIndependentInputSource
@@ -1199,8 +1209,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("396E89E6-7D55-4617-9E58-68C70C9169B9"), exclusiveto, contract] */
                         MIDL_INTERFACE("396E89E6-7D55-4617-9E58-68C70C9169B9")
-                        ICoreInkPresenterHost : IInspectable
+                        ICoreInkPresenterHost : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InkPresenter(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkPresenter * * value
                                 ) = 0;
@@ -1249,8 +1260,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("FB07D14C-3380-457A-A987-991357896C1B"), exclusiveto, contract] */
                         MIDL_INTERFACE("FB07D14C-3380-457A-A987-991357896C1B")
-                        ICoreWetStrokeUpdateEventArgs : IInspectable
+                        ICoreWetStrokeUpdateEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NewInkPoints(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CInput__CInking__CInkPoint * * value
                                 ) = 0;
@@ -1302,8 +1314,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("1F718E22-EE52-4E00-8209-4C3E5B21A3CC"), exclusiveto, contract] */
                         MIDL_INTERFACE("1F718E22-EE52-4E00-8209-4C3E5B21A3CC")
-                        ICoreWetStrokeUpdateSource : IInspectable
+                        ICoreWetStrokeUpdateSource : public IInspectable
                         {
+                        public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_WetStrokeStarting(
                                 /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateSource_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -1381,8 +1394,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("3DAD9CBA-1D3D-46AE-AB9D-8647486C6F90"), exclusiveto, contract] */
                         MIDL_INTERFACE("3DAD9CBA-1D3D-46AE-AB9D-8647486C6F90")
-                        ICoreWetStrokeUpdateSourceStatics : IInspectable
+                        ICoreWetStrokeUpdateSourceStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Create(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Input::Inking::IInkPresenter * inkPresenter,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource * * WetStrokeUpdateSource
@@ -1585,6 +1599,7 @@ typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CCore_CICoreWetStrokeUpdat
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateSource_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateSource_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateEventArgs_INTERFACE_DEFINED__
 
@@ -1631,6 +1646,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreWet
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateSource_Windows__CUI__CInput__CInking__CCore__CCoreWetStrokeUpdateEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_FWD_DEFINED__
@@ -1810,6 +1826,7 @@ typedef interface __x_ABI_CWindows_CUI_CCore_CIPointerEventArgs __x_ABI_CWindows
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreInkIndependentInputSource_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreInkIndependentInputSource_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__
 
@@ -1856,6 +1873,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreInk
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CCore__CCoreInkIndependentInputSource_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.storage.compression.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -520,8 +522,9 @@ namespace ABI {
             namespace Compression {
                 /* [object, uuid("0AC3645A-57AC-4EE1-B702-84D39D5424E0"), exclusiveto, contract] */
                 MIDL_INTERFACE("0AC3645A-57AC-4EE1-B702-84D39D5424E0")
-                ICompressor : IInspectable
+                ICompressor : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FinishAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                         ) = 0;
@@ -563,8 +566,9 @@ namespace ABI {
             namespace Compression {
                 /* [object, uuid("5F3D96A4-2CFB-442C-A8BA-D7D11B039DA0"), exclusiveto, contract] */
                 MIDL_INTERFACE("5F3D96A4-2CFB-442C-A8BA-D7D11B039DA0")
-                ICompressorFactory : IInspectable
+                ICompressorFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateCompressor(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IOutputStream * underlyingStream,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Compression::ICompressor * * createdCompressor
@@ -615,8 +619,9 @@ namespace ABI {
             namespace Compression {
                 /* [object, uuid("B883FE46-D68A-4C8B-ADA0-4EE813FC5283"), exclusiveto, contract] */
                 MIDL_INTERFACE("B883FE46-D68A-4C8B-ADA0-4EE813FC5283")
-                IDecompressor : IInspectable
+                IDecompressor : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE DetachStream(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IInputStream * * stream
                         ) = 0;
@@ -655,8 +660,9 @@ namespace ABI {
             namespace Compression {
                 /* [object, uuid("5337E252-1DA2-42E1-8834-0379D28D742F"), exclusiveto, contract] */
                 MIDL_INTERFACE("5337E252-1DA2-42E1-8834-0379D28D742F")
-                IDecompressorFactory : IInspectable
+                IDecompressorFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateDecompressor(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IInputStream * underlyingStream,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Compression::IDecompressor * * createdDecompressor

@@ -600,7 +600,9 @@ cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
             [helpstring("Ready State Device Locked type")]
         MBN_READY_STATE_DEVICE_LOCKED,
             [helpstring("Ready State Device Blocked type")]
-        MBN_READY_STATE_DEVICE_BLOCKED
+        MBN_READY_STATE_DEVICE_BLOCKED,
+            [helpstring("Ready State ESIM With No Profiles")]
+        MBN_READY_STATE_NO_ESIM_PROFILE
     } MBN_READY_STATE;
 
     typedef 

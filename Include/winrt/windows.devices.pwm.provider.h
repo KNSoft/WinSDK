@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.pwm.provider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
@@ -98,8 +96,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -295,8 +297,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("1300593B-E2E3-40A4-B7D9-48DFF0377A52"), contract] */
                     MIDL_INTERFACE("1300593B-E2E3-40A4-B7D9-48DFF0377A52")
-                    IPwmControllerProvider : IInspectable
+                    IPwmControllerProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PinCount(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -364,8 +367,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("A3301228-52F1-47B0-9349-66BA43D25902"), contract] */
                     MIDL_INTERFACE("A3301228-52F1-47B0-9349-66BA43D25902")
-                    IPwmProvider : IInspectable
+                    IPwmProvider : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetControllers(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CPwm__CProvider__CIPwmControllerProvider * * result
                             ) = 0;

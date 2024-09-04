@@ -953,9 +953,16 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 #define CONTEXT_ARM64_INTEGER (CONTEXT_ARM64 | 0x2L)
 #define CONTEXT_ARM64_FLOATING_POINT  (CONTEXT_ARM64 | 0x4L)
 #define CONTEXT_ARM64_DEBUG_REGISTERS (CONTEXT_ARM64 | 0x8L)
+#define CONTEXT_ARM64_X18 (CONTEXT_ARM64 | 0x10L)
+
+//
+// CONTEXT_ARM64_X18 is not part of CONTEXT_ARM64_FULL because in NT user-mode
+// threads, x18 contains a pointer to the TEB and should generally not be set
+// without intending to.
+//
 
 #define CONTEXT_ARM64_FULL (CONTEXT_ARM64_CONTROL | CONTEXT_ARM64_INTEGER | CONTEXT_ARM64_FLOATING_POINT)
-#define CONTEXT_ARM64_ALL  (CONTEXT_ARM64_CONTROL | CONTEXT_ARM64_INTEGER | CONTEXT_ARM64_FLOATING_POINT | CONTEXT_ARM64_DEBUG_REGISTERS)
+#define CONTEXT_ARM64_ALL  (CONTEXT_ARM64_CONTROL | CONTEXT_ARM64_INTEGER | CONTEXT_ARM64_FLOATING_POINT | CONTEXT_ARM64_DEBUG_REGISTERS | CONTEXT_ARM64_X18)
 
 #if defined(_ARM64_)
 
@@ -1023,11 +1030,11 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 // context of a thread, then only those portions of the thread's context
 // corresponding to set flags will be returned.
 //
-// CONTEXT_CONTROL specifies Sp, Lr, Pc, and Cpsr
+// CONTEXT_CONTROL specifies FP, LR, SP, PC, and CPSR
 //
-// CONTEXT_INTEGER specifies R0-R12
+// CONTEXT_INTEGER specifies X0-X28
 //
-// CONTEXT_FLOATING_POINT specifies Q0-Q15 / D0-D31 / S0-S31
+// CONTEXT_FLOATING_POINT specifies Fpcr, Fpsr and Q0-Q31 / D0-D31 / S0-S31
 //
 // CONTEXT_DEBUG_REGISTERS specifies up to 16 of DBGBVR, DBGBCR, DBGWVR,
 //      DBGWCR.
@@ -1275,6 +1282,7 @@ typedef enum {
     WinAuthenticationKeyPropertyMFASid          = 116,
     WinAuthenticationKeyPropertyAttestationSid  = 117,
     WinAuthenticationFreshKeyAuthSid            = 118,
+    WinBuiltinDeviceOwnersSid                   = 119,
 } WELL_KNOWN_SID_TYPE;
 
 //
@@ -3686,6 +3694,33 @@ RtlGetEnabledExtendedFeatures(
 #endif
 #endif
 
+#if !defined(MIDL_PASS)
+//
+// TODO: Replace this with NTDDI_WIN10_RS4 when it gets defined.
+//
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSYSAPI
+ULONG64
+NTAPI
+RtlGetEnabledExtendedAndSupervisorFeatures(
+    _In_ ULONG64 FeatureMask
+    );
+
+_IRQL_requires_same_
+_Ret_maybenull_
+_Success_(return != NULL)
+NTSYSAPI
+PVOID
+NTAPI
+RtlLocateSupervisorFeature(
+    _In_ PXSAVE_AREA_HEADER XStateHeader,
+    _In_range_(XSTATE_AVX, MAXIMUM_XSTATE_FEATURES - 1) ULONG FeatureId,
+    _Out_opt_ PULONG Length
+    );
+#endif
+#endif
+
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
@@ -4015,7 +4050,7 @@ RtlIsMultiSessionSku (
     );
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS1
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _Must_inspect_result_
 NTSYSAPI
@@ -4024,7 +4059,30 @@ NTAPI
 RtlIsStateSeparationEnabled (
     VOID
     );
-#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
+
+typedef enum _STATE_LOCATION_TYPE {
+    LocationTypeRegistry = 0,
+    LocationTypeFileSystem = 1,
+    LocationTypeMaximum = 2
+} STATE_LOCATION_TYPE;
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_Must_inspect_result_
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlGetPersistedStateLocation (
+    _In_                        PCWSTR    SourceID,
+    _In_opt_                    PCWSTR    CustomValue,
+    _In_opt_                    PCWSTR    DefaultPath,
+    _In_                        STATE_LOCATION_TYPE StateLocationType,
+    _Out_writes_bytes_to_opt_(BufferLengthIn, *BufferLengthOut)
+                                PWCHAR   TargetPath,
+    _In_                        ULONG    BufferLengthIn,
+    _Out_opt_                   PULONG   BufferLengthOut
+    );
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -4203,6 +4261,47 @@ RtlValidateCorrelationVector(
     );
 
 #endif // NTDDI_VERSION >= NTDDI_RS2
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+typedef struct _CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG {
+    //
+    // Size of the structure in bytes
+    //
+    ULONG Size;
+
+    //
+    // Guid used to identify background task to trigger
+    //
+    PCWSTR TriggerId;
+
+} CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG, *PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG;
+
+#if !defined(MIDL_PASS)
+FORCEINLINE
+VOID
+CUSTOM_SYSTEM_EVENT_TRIGGER_INIT(
+    _Out_    PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG Config,
+    _In_opt_ PCWSTR TriggerId
+    )
+{
+    RtlZeroMemory(Config, sizeof(CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG));
+
+    Config->Size = sizeof(CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG);
+    Config->TriggerId = TriggerId;
+}
+#endif // !defined(MIDL_PASS)
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+NTAPI
+RtlRaiseCustomSystemEventTrigger(
+    _In_ PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG TriggerConfig
+    );
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS4
 
 //
 // Define the various device type values.  Note that values used by Microsoft
@@ -4710,6 +4809,7 @@ typedef struct _NT_TIB64 {
 // Process Information Classes
 //
 
+//@[comment("MVI_tracked")]
 typedef enum _PROCESSINFOCLASS {
     ProcessBasicInformation                      = 0,
     ProcessQuotaLimits                           = 1,
@@ -4785,13 +4885,14 @@ typedef enum _PROCESSINFOCLASS {
     ProcessSubsystemInformation                  = 75,
     ProcessWin32kSyscallFilterInformation        = 79,
     ProcessEnergyTrackingState                   = 82,
-    MaxProcessInfoClass                             // MaxProcessInfoClass should always be the last enum
+    MaxProcessInfoClass                                // MaxProcessInfoClass should always be the last enum
 } PROCESSINFOCLASS;
 
 //
 // Thread Information Classes
 //
 
+//@[comment("MVI_tracked")]
 typedef enum _THREADINFOCLASS {
     ThreadBasicInformation          = 0,
     ThreadTimes                     = 1,
@@ -5479,6 +5580,7 @@ typedef struct _POWER_THROTTLING_THREAD_STATE {
     ULONG StateMask;
 } POWER_THROTTLING_THREAD_STATE, *PPOWER_THROTTLING_THREAD_STATE;
 
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -5488,9 +5590,6 @@ NtOpenProcess (
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_opt_ PCLIENT_ID ClientId
     );
-
-
-#define NtCurrentSilo() ( (HANDLE)(LONG_PTR) -1 )
 
 #define NTKERNELAPI DECLSPEC_IMPORT     
 
@@ -5954,7 +6053,7 @@ typedef struct _KTRAP_FRAME {
 // Page fault load/store indicator.
 //
 
-    UCHAR FaultIndicator;
+        UCHAR FaultIndicator;
 
 //
 // Exception active indicator.
@@ -7757,11 +7856,13 @@ typedef struct _XSTATE_CONFIGURATION {
 //
 
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_ENABLED (0x01)
+#define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_HV_PAGE (0x02)
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_MFENCE (0x10)
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_LFENCE (0x20)
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_A73_ERRATA (0x40)
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_RDTSCP (0x80)
 
+//@[comment("MVI_tracked")]
 typedef struct _KUSER_SHARED_DATA {
 
     //
@@ -9663,6 +9764,7 @@ MmMapViewInSystemSpaceEx (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
@@ -9675,6 +9777,7 @@ MmMapViewInSystemSpace (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9807,6 +9910,7 @@ VOID
     );
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9825,6 +9929,7 @@ VOID
     );
 
 #if (NTDDI_VERSION >= NTDDI_VISTASP1)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9858,6 +9963,7 @@ VOID
     );
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -10020,6 +10126,7 @@ PsGetProcessStartKey(
     );
 #endif
 
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -10042,6 +10149,7 @@ PsGetProcessId(
     _In_ PEPROCESS Process
     );
 
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 HANDLE
@@ -10060,6 +10168,7 @@ PsGetThreadProperty(
     );
 
 #if (NTDDI_VERSION >= NTDDI_WS03)
+//@[comment("MVI_tracked")]
 NTKERNELAPI
 HANDLE
 PsGetThreadProcessId(
@@ -10877,6 +10986,7 @@ IoReportResourceUsage(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WS03SP1)
+//@[comment("MVI_tracked")]
 BOOLEAN
 IoTranslateBusAddress(
     _In_  INTERFACE_TYPE InterfaceType,
@@ -12184,6 +12294,8 @@ HalTranslateBusAddress (
 //                      0x7 - 0x1F - reserved
 //
 
+#if !defined(XBOX_SYSTEMOS)
+
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 NTHALAPI
 PVOID
@@ -12192,6 +12304,10 @@ HalAllocateCrashDumpRegisters (
     _Inout_ PULONG NumberOfMapRegisters
     );
 #endif
+
+#endif
+
+#if !defined(XBOX_SYSTEMOS)
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
@@ -12211,11 +12327,14 @@ HalDmaAllocateCrashDumpRegistersEx (
     _Out_ PULONG MapRegistersAvailable
     );
 
+
 NTSTATUS
 HalDmaFreeCrashDumpRegistersEx (
     _In_ PADAPTER_OBJECT Adapter,
     _In_ HAL_DMA_CRASH_DUMP_REGISTER_TYPE Type
     );
+#endif
+
 #endif
 
 #if !defined(NO_LEGACY_DRIVERS)
@@ -12377,7 +12496,8 @@ typedef enum _HAL_SET_INFORMATION_CLASS {
     HalSetPsciSuspendMode,
     HalSetHvciEnabled,
     HalSetProcessorTraceInterruptHandler, // Register performance monitor interrupt callback for Intel Processor Trace
-//    HalRegisterPlatformServicesInterface,
+    HalProfileSourceAdd,
+    HalProfileSourceRemove
 } HAL_SET_INFORMATION_CLASS, *PHAL_SET_INFORMATION_CLASS;
 
 
@@ -13339,6 +13459,8 @@ HalPutDmaAdapter(
     );
 #endif
 
+#if !defined(XBOX_SYSTEMOS)
+
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 
 typedef struct _WHEA_ERROR_SOURCE_DESCRIPTOR *PWHEA_ERROR_SOURCE_DESCRIPTOR;
@@ -13360,6 +13482,8 @@ VOID
 HalBugCheckSystem (
     _In_ PWHEA_ERROR_RECORD ErrorRecord
     );
+
+#endif
 
 #endif
 
@@ -13451,9 +13575,9 @@ Fields:
 NTHALAPI
 NTSTATUS
 HalAllocateHardwareCounters (
-    _In_reads_(GroupCount) PGROUP_AFFINITY GroupAffinty,
+    _In_reads_opt_(GroupCount) PGROUP_AFFINITY GroupAffinty,
     _In_ ULONG GroupCount,
-    _In_ PPHYSICAL_COUNTER_RESOURCE_LIST ResourceList,
+    _In_opt_ PPHYSICAL_COUNTER_RESOURCE_LIST ResourceList,
     _Out_ PHANDLE CounterSetHandle
     );
 #endif
@@ -14649,6 +14773,40 @@ typedef struct _PCI_EXPRESS_RESIZABLE_BAR_CAPABILITY {
 
 } PCI_EXPRESS_RESIZABLE_BAR_CAPABILITY, *PPCI_EXPRESS_RESIZABLE_BAR_CAPABILITY;
 
+//
+// PCI Express Designated Vendor Specific Capability
+//
+
+typedef union _PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_HEADER_1 {
+    struct {
+        ULONG DvsecVendorId:16;
+        ULONG DvsecVersion:4;
+        ULONG DvsecLength:12;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_HEADER_1, *PPCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_HEADER_1;
+
+typedef union _PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_HEADER_2 {
+    struct {
+        USHORT DvsecId:16;
+    } DUMMYSTRUCTNAME;
+
+    USHORT AsUSHORT;
+
+} PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_HEADER_2, *PPCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_HEADER_2;
+
+typedef struct _PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_CAPABILITY {
+    PCI_EXPRESS_ENHANCED_CAPABILITY_HEADER Header;
+    PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_HEADER_1 DvsecHeader1;
+    PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_HEADER_2 DvsecHeader2;
+    USHORT DvsecRegisters[1];
+
+} PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_CAPABILITY, *PPCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_CAPABILITY;
+
+#define PCI_INVALID_ALTERNATE_FUNCTION_NUMBER 0xFF
+
 
 #ifndef _PCIINTRF_X_
 #define _PCIINTRF_X_
@@ -14762,6 +14920,7 @@ typedef struct _PCI_BUS_INTERFACE_STANDARD {
 //
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -14897,6 +15056,7 @@ ZwAllocateLocallyUniqueId(
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
+//@[comment("MVI_tracked")]
 NTSYSAPI
 NTSTATUS
 NTAPI
@@ -14990,6 +15150,7 @@ typedef enum _WHEA_ERROR_SOURCE_STATE {
 #define WHEA_NOTIFICATION_TYPE_ARMV8_SEA                 8
 #define WHEA_NOTIFICATION_TYPE_ARMV8_SEI                 9
 #define WHEA_NOTIFICATION_TYPE_EXTERNALINTERRUPT_GSIV    10
+#define WHEA_NOTIFICATION_TYPE_SDEI                      11
 
 #include <pshpack1.h>
 
@@ -16391,7 +16552,14 @@ typedef union _WHEA_MEMORY_ERROR_SECTION_VALIDBITS {
         ULONGLONG ResponderId:1;
         ULONGLONG TargetId:1;
         ULONGLONG ErrorType:1;
-        ULONGLONG Reserved:49;
+        ULONGLONG RankNumber:1;
+        ULONGLONG CardHandle:1;
+        ULONGLONG ModuleHandle:1;
+        ULONGLONG ExtendedRow:1;
+        ULONGLONG BankGroup:1;
+        ULONGLONG BankAddress:1;
+        ULONGLONG ChipIdentification:1;
+        ULONGLONG Reserved:42;
     } DUMMYSTRUCTNAME;
     ULONGLONG ValidBits;
 } WHEA_MEMORY_ERROR_SECTION_VALIDBITS,
@@ -16428,6 +16596,10 @@ typedef struct _WHEA_MEMORY_ERROR_SECTION {
     ULONGLONG ResponderId;
     ULONGLONG TargetId;
     UCHAR ErrorType;
+    UCHAR Extended;
+    USHORT RankNumber;
+    USHORT CardHandle;
+    USHORT ModuleHandle;
 } WHEA_MEMORY_ERROR_SECTION, *PWHEA_MEMORY_ERROR_SECTION;
 
 //
@@ -16781,7 +16953,8 @@ typedef enum _WHEA_CPU_VENDOR {
 } WHEA_CPU_VENDOR, *PWHEA_CPU_VENDOR;
 
 #define WHEA_XPF_MCA_EXTREG_MAX_COUNT            24
-#define WHEA_XPF_MCA_SECTION_VERSION             1
+#define WHEA_XPF_MCA_SECTION_VERSION_2           2
+#define WHEA_XPF_MCA_SECTION_VERSION             WHEA_XPF_MCA_SECTION_VERSION_2
 
 typedef struct _WHEA_XPF_MCA_SECTION {
     ULONG               VersionNumber;
@@ -16795,7 +16968,7 @@ typedef struct _WHEA_XPF_MCA_SECTION {
     ULONGLONG           Address;
     ULONGLONG           Misc;
     ULONG               ExtendedRegisterCount;
-    ULONG               Reserved2;
+    ULONG               ApicId;
     ULONGLONG           ExtendedRegisters[WHEA_XPF_MCA_EXTREG_MAX_COUNT];
 } WHEA_XPF_MCA_SECTION, *PWHEA_XPF_MCA_SECTION;
 
@@ -18296,6 +18469,7 @@ typedef enum _SOC_SUBSYSTEM_TYPE {
     SOC_SUBSYS_AUDIO_DSP = 1,
     SOC_SUBSYS_WIRELSS_CONNECTIVITY = 2,
     SOC_SUBSYS_SENSORS = 3,
+    SOC_SUBSYS_COMPUTE_DSP = 4,
 
 
     //

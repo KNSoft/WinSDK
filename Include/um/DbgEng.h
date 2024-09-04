@@ -242,6 +242,7 @@ typedef interface DECLSPEC_UUID("bc0d583f-126d-43a1-9cc4-a860ab1d537b")
     IDebugControl6* PDEBUG_CONTROL6;
 typedef interface DECLSPEC_UUID("b86fb3b1-80d4-475b-aea3-cf06539cf63a")
     IDebugControl7* PDEBUG_CONTROL7;
+
 typedef interface DECLSPEC_UUID("88f7dfab-3ea7-4c3a-aefb-c4e8106173aa")
     IDebugDataSpaces* PDEBUG_DATA_SPACES;
 typedef interface DECLSPEC_UUID("7a5e852f-96e9-468f-ac1b-0b3addc4a049")
@@ -6572,7 +6573,11 @@ DECLARE_INTERFACE_(IDebugOutputStream, IUnknown)
 #define DEBUG_ENGOPT_DISABLESQM                  0x00080000
 // This is used to disable the source stepping (step over/step in) into CFG code.
 #define DEBUG_ENGOPT_DISABLE_STEPLINES_OPTIONS   0x00200000
-#define DEBUG_ENGOPT_ALL                         0x002FFFFF
+// This is used when debugging target with sensitive data.
+// It will disable saving dumps during debugging
+// Can be set only (no reset once it is set)
+#define DEBUG_ENGOPT_DEBUGGING_SENSITIVE_DATA    0x00400000
+#define DEBUG_ENGOPT_ALL                         0x004FFFFF
 
 // General unspecified ID constant.
 #define DEBUG_ANY_ID 0xffffffff
@@ -6730,6 +6735,7 @@ typedef struct _STACK_SYM_FRAME_INFO
 #define DEBUG_USER_WINDOWS_PROCESS         0
 #define DEBUG_USER_WINDOWS_PROCESS_SERVER  1
 #define DEBUG_USER_WINDOWS_IDNA            2
+#define DEBUG_USER_WINDOWS_REPT            3
 #define DEBUG_USER_WINDOWS_SMALL_DUMP      DEBUG_DUMP_SMALL
 #define DEBUG_USER_WINDOWS_DUMP            DEBUG_DUMP_DEFAULT
 #define DEBUG_USER_WINDOWS_DUMP_WINDOWS_CE DEBUG_DUMP_WINDOWS_CE

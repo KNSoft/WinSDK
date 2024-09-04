@@ -142,7 +142,7 @@ struct sqlite3_api_routines {
   int  (SQLITE_APICALL *set_authorizer)(sqlite3*,int(SQLITE_CALLBACK *)(void*,int,const char*,const char*,
                          const char*,const char*),void*);
   void  (SQLITE_APICALL *set_auxdata)(sqlite3_context*,int,void*,void (SQLITE_CALLBACK *)(void*));
-  char * (SQLITE_APICALL *snprintf)(int,char*,const char*,...);
+  char * (SQLITE_APICALL *xsnprintf)(int,char*,const char*,...);
   int  (SQLITE_APICALL *step)(sqlite3_stmt*);
   int  (SQLITE_APICALL *table_column_metadata)(sqlite3*,const char*,const char*,const char*,
                                 char const**,char const**,int*,int*,int*);
@@ -254,7 +254,7 @@ struct sqlite3_api_routines {
   int (SQLITE_APICALL *uri_boolean)(const char*,const char*,int);
   sqlite3_int64 (SQLITE_APICALL *uri_int64)(const char*,const char*,sqlite3_int64);
   const char *(SQLITE_APICALL *uri_parameter)(const char*,const char*);
-  char *(SQLITE_APICALL *vsnprintf)(int,char*,const char*,va_list);
+  char *(SQLITE_APICALL *xvsnprintf)(int,char*,const char*,va_list);
   int (SQLITE_APICALL *wal_checkpoint_v2)(sqlite3*,const char*,int,int*,int*);
   /* Version 3.8.7 and later */
   int (SQLITE_APICALL *auto_extension)(void(SQLITE_CALLBACK *)(void));
@@ -294,10 +294,19 @@ struct sqlite3_api_routines {
   int (SQLITE_APICALL *trace_v2)(sqlite3*,unsigned,int(SQLITE_CALLBACK *)(unsigned,void*,void*,void*),void*);
   char *(SQLITE_APICALL *expanded_sql)(sqlite3_stmt*);
 #endif /* NTDDI_VERSION >= NTDDI_WIN10_RS2 */
-// NOTE: This will be updated to RS3 prior to RS3's release.
-#if NTDDI_VERSION >= NTDDI_WIN10_RS2
+#if NTDDI_VERSION >= NTDDI_WIN10_RS3
   void (SQLITE_APICALL *set_last_insert_rowid)(sqlite3*,sqlite3_int64);
-#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS2 */
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS3 */
+#if NTDDI_VERSION >= NTDDI_WIN10_RS4
+  /* Version 3.20.0 and later */
+  int (SQLITE_APICALL *prepare_v3)(sqlite3*,const char*,int,unsigned int,
+                    sqlite3_stmt**,const char**);
+  int (SQLITE_APICALL *prepare16_v3)(sqlite3*,const void*,int,unsigned int,
+                      sqlite3_stmt**,const void**);
+  int (SQLITE_APICALL *bind_pointer)(sqlite3_stmt*,int,void*,const char*,void(SQLITE_CALLBACK *)(void*));
+  void (SQLITE_APICALL *result_pointer)(sqlite3_context*,void*,const char*,void(SQLITE_CALLBACK *)(void*));
+  void *(SQLITE_APICALL *value_pointer)(sqlite3_value*,const char*);
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS4 */
 };
 
 #if NTDDI_VERSION >= NTDDI_WIN10_RS2
@@ -426,7 +435,7 @@ typedef int (SQLITE_APICALL *sqlite3_loadext_entry)(
 #define sqlite3_rollback_hook          sqlite3_api->rollback_hook
 #define sqlite3_set_authorizer         sqlite3_api->set_authorizer
 #define sqlite3_set_auxdata            sqlite3_api->set_auxdata
-#define sqlite3_snprintf               sqlite3_api->snprintf
+#define sqlite3_snprintf               sqlite3_api->xsnprintf
 #define sqlite3_step                   sqlite3_api->step
 #define sqlite3_table_column_metadata  sqlite3_api->table_column_metadata
 #define sqlite3_thread_cleanup         sqlite3_api->thread_cleanup
@@ -451,7 +460,7 @@ typedef int (SQLITE_APICALL *sqlite3_loadext_entry)(
 #define sqlite3_value_type             sqlite3_api->value_type
 #define sqlite3_vmprintf               sqlite3_api->vmprintf
 #if NTDDI_VERSION >= NTDDI_WIN10_RS1
-#define sqlite3_vsnprintf              sqlite3_api->vsnprintf
+#define sqlite3_vsnprintf              sqlite3_api->xvsnprintf
 #endif /* NTDDI_VERSION >= NTDDI_WIN10_RS1 */
 #define sqlite3_overload_function      sqlite3_api->overload_function
 #define sqlite3_prepare_v2             sqlite3_api->prepare_v2
@@ -528,7 +537,7 @@ typedef int (SQLITE_APICALL *sqlite3_loadext_entry)(
 #define sqlite3_uri_boolean            sqlite3_api->uri_boolean
 #define sqlite3_uri_int64              sqlite3_api->uri_int64
 #define sqlite3_uri_parameter          sqlite3_api->uri_parameter
-#define sqlite3_uri_vsnprintf          sqlite3_api->vsnprintf
+#define sqlite3_uri_vsnprintf          sqlite3_api->xvsnprintf
 #define sqlite3_wal_checkpoint_v2      sqlite3_api->wal_checkpoint_v2
 /* Version 3.8.7 and later */
 #define sqlite3_auto_extension         sqlite3_api->auto_extension
@@ -564,10 +573,17 @@ typedef int (SQLITE_APICALL *sqlite3_loadext_entry)(
 #define sqlite3_trace_v2               sqlite3_api->trace_v2
 #define sqlite3_expanded_sql           sqlite3_api->expanded_sql
 #endif /* NTDDI_VERSION >= NTDDI_WIN10_RS2 */
-// NOTE: This will be updated to RS3 prior to RS3's release.
-#if NTDDI_VERSION >= NTDDI_WIN10_RS2
+#if NTDDI_VERSION >= NTDDI_WIN10_RS3
 #define sqlite3_set_last_insert_rowid  sqlite3_api->set_last_insert_rowid
-#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS2 */
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS3 */
+#if NTDDI_VERSION >= NTDDI_WIN10_RS4
+/* Version 3.20.0 and later */
+#define sqlite3_prepare_v3             sqlite3_api->prepare_v3
+#define sqlite3_prepare16_v3           sqlite3_api->prepare16_v3
+#define sqlite3_bind_pointer           sqlite3_api->bind_pointer
+#define sqlite3_result_pointer         sqlite3_api->result_pointer
+#define sqlite3_value_pointer          sqlite3_api->value_pointer
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS4 */
 #endif /* !defined(SQLITE_CORE) && !defined(SQLITE_OMIT_LOAD_EXTENSION) */
 
 #if !defined(SQLITE_CORE) && !defined(SQLITE_OMIT_LOAD_EXTENSION)

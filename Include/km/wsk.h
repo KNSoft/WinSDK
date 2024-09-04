@@ -403,6 +403,31 @@ NTSTATUS
  *     request and it gets completed.
  */
 
+typedef
+_Must_inspect_result_
+NTSTATUS
+(WSKAPI * PFN_WSK_RECEIVE_EX_EVENT) (
+    _In_opt_ PVOID  SocketContext,
+    _In_ ULONG      Flags,
+    _In_opt_ PWSK_DATA_INDICATION DataIndication,
+    _In_reads_bytes_opt_(ControlInfoLength) PCMSGHDR ControlInfo,
+    _In_ ULONG      ControlInfoLength,
+    _In_ SIZE_T     BytesIndicated,
+    _Inout_ SIZE_T *BytesAccepted
+    );
+/*
+ * This is like PFN_WSK_RECEIVE_EVENT, but differs in the following ways:
+ *
+ * - Optional control info may be passed via ControlInfo and ControlInfoLength.
+ * - In order to enable this event, use the SIO_WSK_SET_RECEIVE_EX_CALLBACK
+ *   IOCTL and supply a PFN_WSK_RECEIVE_EX_EVENT callback. In order to disable
+ *   this event, use the SIO_WSK_SET_RECEIVE_EX_CALLBACK IOCTL and supply NULL.
+ *
+ * Parameters:
+ *  ControlInfo - Additional information associated with the received data.
+ *  ControlInfoLength - Length of control info.
+ */
+
 //
 // Flags for indicating abortive/graceful connection teardown
 //
@@ -884,6 +909,13 @@ typedef struct _WSK_EVENT_CALLBACK_CONTROL {
 #define SIO_WSK_QUERY_INSPECT_ID          _WSAIOR(IOC_WSK,0x5)
 #define SIO_WSK_SET_SENDTO_ADDRESS        _WSAIOW(IOC_WSK,0x6)
 #define SIO_WSK_SET_TCP_SILENT_MODE       _WSAIO(IOC_WSK,0x7)
+//
+// Allows setting a callback to receive data and control info on
+// connected/stream sockets. Supply PFN_WSK_RECEIVE_EX_EVENT to enable, NULL to
+// disable. If enabled, all receives will be indicated through the supplied
+// callback regardless of any WSK_EVENT_RECEIVE setting.
+//
+#define SIO_WSK_SET_RECEIVE_EX_CALLBACK   _WSAIOW(IOC_WSK,0x8)
 
 
 //
@@ -1304,6 +1336,27 @@ NTSTATUS
  *  FAILURES - request failed
  */
 
+typedef
+NTSTATUS
+(WSKAPI * PFN_WSK_SEND_EX) (
+    _In_ PWSK_SOCKET Socket,
+    _In_ PWSK_BUF    Buffer,
+    _In_ ULONG       Flags,
+    _In_ ULONG       ControlInfoLength,
+    _In_reads_bytes_opt_(ControlInfoLength) PCMSGHDR ControlInfo,
+    _Inout_ PIRP     Irp
+    );
+/*
+ * This is like PFN_WSK_SEND, but differs in the following ways:
+ *
+ * - You may supply control info via ControlInfo and ControlInfoLength.
+ *
+ * Parameters:
+ *  ControlInfoLength - length of control info
+ *  ControlInfo - additional information to pass to the remote party.
+ *                Might not be supported by all transports.
+ */
+
 #define WSK_FLAG_WAITALL 0x00000002
 #define WSK_FLAG_DRAIN   0x00000004
 
@@ -1331,6 +1384,36 @@ NTSTATUS
  *  SUCCESS - request succeeded
  *  PENDING - request will be completed later
  *  FAILURES - request failed
+ */
+
+typedef
+NTSTATUS
+(WSKAPI * PFN_WSK_RECEIVE_EX) (
+    _In_ PWSK_SOCKET   Socket,
+    _In_ PWSK_BUF      Buffer,
+    _In_ ULONG         Flags,
+    _Inout_opt_ PULONG ControlInfoLength,
+    _Out_writes_bytes_opt_(*ControlInfoLength) PCMSGHDR ControlInfo,
+    _Reserved_ PULONG  ControlFlags,
+    _Inout_ PIRP       Irp
+    );
+/*
+ * This is like PFN_WSK_RECEIVE, but differs in the following ways:
+ *
+ * - You may retrieve control info via ControlInfo and ControlInfoLength.
+ *
+ * Parameters:
+ *  ControlInfoLength - Pointer to a ULONG that specifies the length of buffer
+ *     pointed by ControlInfo on input, and the length of actual control data
+ *     copied into ControlInfoLength buffer on output. If ControlInfoLength is
+ *     NULL then ControlInfo and ControlFlags parameters are ignored.
+ *     If ControlLength is non-NULL then ControlLength should be pointing to
+ *     valid memory until the request completes.
+ *  ControlInfo - Pointer to a buffer into which WSK copies the control data
+ *     received with the datagram. This parameter is ignored if
+ *     ControlInfoLength parameter is NULL. Otherwise, if ControlInfo should
+ *     be pointing to valid memory until the request completes.
+ *  ControlFlags - Reserved. (Must be NULL)
  */
 
 typedef
@@ -1526,6 +1609,8 @@ typedef struct _WSK_PROVIDER_CONNECTION_DISPATCH {
     PFN_WSK_DISCONNECT          WskDisconnect;
     PFN_WSK_RELEASE_DATA_INDICATION_LIST WskRelease;
     PFN_WSK_CONNECT_EX          WskConnectEx;
+    PFN_WSK_SEND_EX             WskSendEx;
+    PFN_WSK_RECEIVE_EX          WskReceiveEx;
 } WSK_PROVIDER_CONNECTION_DISPATCH, *PWSK_PROVIDER_CONNECTION_DISPATCH;
 
 //
@@ -1550,6 +1635,8 @@ typedef struct _WSK_PROVIDER_STREAM_DISPATCH {
     PFN_WSK_GET_LOCAL_ADDRESS   WskGetLocalAddress;
     PFN_WSK_GET_REMOTE_ADDRESS  WskGetRemoteAddress;
     PFN_WSK_CONNECT_EX          WskConnectEx;
+    PFN_WSK_SEND_EX             WskSendEx;
+    PFN_WSK_RECEIVE_EX          WskReceiveEx;
 } WSK_PROVIDER_STREAM_DISPATCH, *PWSK_PROVIDER_STREAM_DISPATCH;
 #endif // if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 

@@ -241,6 +241,17 @@
 // that will be explicitly trusted for TPM attestation
 #define wszREGEKPUBLISTDIRECTORIES  TEXT("EndorsementKeyListDirectories")
 
+// This configures the CA to accept Certificate Transparency requests
+#define wszCERTIFICATETRANSPARENCYFLAGS  TEXT("CertificateTransparencyFlags")
+
+// This customizes the maximum size of the CT SCTList accepted by the CA
+#define wszREGMAXSCTLISTSIZE  TEXT("MaxSCTListSize")
+
+// This sets an OID to replace szOID_CT_CERT_SCTLIST in the issued certificate
+#define wszREGCERTIFICATETRANSPARENCYINFOOID TEXT("CTInformationExtensionOid")
+
+// This extends optional CA behavior with simple processing flags
+#define wszREGPROCESSINGFLAGS TEXT("ProcessingFlags")
 
 // This REG_DWORD value determines if the CA accepts OCSP Signing certificate 
 // enrollment and renewal requests for replaced CA keys. 
@@ -450,6 +461,12 @@ typedef struct _CAINFO
                                          IF_LOCKICERTREQUEST | \
                                          IF_ENFORCEENCRYPTICERTREQUEST | \
                                          IF_ENFORCEENCRYPTICERTADMIN)
+
+
+// =================================
+// Values for wszREGPROCESSINGFLAGS:
+#define PROCFLG_NONE                0x00
+#define PROCFLG_ENFORCEGOODKEYS     0x01
 
 //==================================
 // Values for numeric prefixes for
@@ -1017,6 +1034,7 @@ typedef struct _CAINFO
 #define wszPROPATTESTATIONCHALLENGE             TEXT("AttestationChallenge")
 #define wszPROPENDORSEMENTKEYHASH               TEXT("EndorsementKeyHash")
 #define wszPROPENDORSEMENTCERTIFICATEHASH       TEXT("EndorsementCertificateHash")
+#define wszPROPRAWPRECERTIFICATE                TEXT("RawPrecertificate")
 
 //+--------------------------------------------------------------------------
 // Request attribute properties:

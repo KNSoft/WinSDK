@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.documents.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -250,8 +252,10 @@
 #include "EventToken.h"
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
+#include "Windows.UI.Core.h"
 #include "Windows.UI.Text.h"
 #include "Windows.UI.Xaml.h"
+#include "Windows.UI.Xaml.Controls.h"
 #include "Windows.UI.Xaml.Input.h"
 #include "Windows.UI.Xaml.Media.h"
 // Importing Collections header
@@ -354,6 +358,118 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBold ABI::Windows::UI::Xaml::Documents::IBold
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIBold_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    interface IContactContentLinkProvider;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider ABI::Windows::UI::Xaml::Documents::IContactContentLinkProvider
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    interface IContentLink;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink ABI::Windows::UI::Xaml::Documents::IContentLink
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    interface IContentLinkInvokedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs ABI::Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    interface IContentLinkProvider;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider ABI::Windows::UI::Xaml::Documents::IContentLinkProvider
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    interface IContentLinkProviderCollection;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection ABI::Windows::UI::Xaml::Documents::IContentLinkProviderCollection
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    interface IContentLinkProviderFactory;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory ABI::Windows::UI::Xaml::Documents::IContentLinkProviderFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    interface IContentLinkStatics;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics ABI::Windows::UI::Xaml::Documents::IContentLinkStatics
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIGlyphs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIGlyphs_FWD_DEFINED__
@@ -706,6 +822,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics ABI::Windows::UI::Xaml::Documents::IParagraphStatics
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    interface IPlaceContentLinkProvider;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider ABI::Windows::UI::Xaml::Documents::IPlaceContentLinkProvider
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIRun_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIRun_FWD_DEFINED__
@@ -1158,6 +1290,81 @@ namespace ABI {
         namespace UI {
             namespace Xaml {
                 namespace Documents {
+                    class ContentLinkProvider;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE
+#define DEF___FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("63e9b404-2fc1-59b1-ab76-cdb9a4530c0d"))
+IIterator<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*, ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.Xaml.Documents.ContentLinkProvider>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*> __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t;
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>
+//#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE
+#define DEF___FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("193a81bb-d85c-5cd3-a130-a1d08eaaf4be"))
+IIterable<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*, ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.Xaml.Documents.ContentLinkProvider>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*> __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t;
+#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>
+//#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
                     class Inline;
                 } /* Windows */
             } /* UI */
@@ -1407,6 +1614,38 @@ typedef IVectorView<ABI::Windows::UI::Xaml::Documents::Block*> __FIVectorView_1_
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE
+#define DEF___FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("6548aa5f-3fd4-5bea-9bd5-138b5bd899fe"))
+IVectorView<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*, ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.Xaml.Documents.ContentLinkProvider>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*> __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t;
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>
+//#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CDocuments__CInline_USE
@@ -1533,6 +1772,38 @@ typedef IVector<ABI::Windows::UI::Xaml::Documents::Block*> __FIVector_1_Windows_
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE
+#define DEF___FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("e69ef1b6-2eb1-5e9c-bc41-b94d396281e4"))
+IVector<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*, ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.UI.Xaml.Documents.ContentLinkProvider>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVector<ABI::Windows::UI::Xaml::Documents::ContentLinkProvider*> __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t;
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>
+//#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Xaml::Documents::IContentLinkProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CDocuments__CInline_USE
@@ -1630,6 +1901,125 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
+                namespace Controls {
+                    class RichEditBox;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    interface IRichEditBox;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox ABI::Windows::UI::Xaml::Controls::IRichEditBox
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    class ContentLinkInvokedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("e261fba5-7714-5e51-b12e-9c0d12da4006"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::RichEditBox*,ABI::Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Controls::RichEditBox*, ABI::Windows::UI::Xaml::Controls::IRichEditBox*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs*, ABI::Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::RichEditBox*,ABI::Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::IRichEditBox*,ABI::Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::IRichEditBox*,ABI::Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    class ContentLink;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("51ba1af0-354e-5868-b10b-8748e55a6370"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::ContentLink*,ABI::Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::ContentLink*, ABI::Windows::UI::Xaml::Documents::IContentLink*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs*, ABI::Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Documents.ContentLink, Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::ContentLink*,ABI::Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::IContentLink*,ABI::Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::IContentLink*,ABI::Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
                 namespace Documents {
                     class Hyperlink;
                 } /* Windows */
@@ -1650,6 +2040,7 @@ namespace ABI {
     } /* Documents */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Windows__CUI__CXaml__CDocuments__CHyperlinkClickEventArgs_USE
@@ -1679,6 +2070,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::Hyperlink*,ABI::Wi
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Windows__CUI__CXaml__CDocuments__CHyperlinkClickEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -1915,6 +2307,44 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace UI {
+            namespace Core {
+                
+                typedef enum CoreCursorType : int CoreCursorType;
+                
+            } /* Windows */
+        } /* UI */
+    } /* Core */} /* ABI */
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                class ContentLinkInfo;
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                interface IContentLinkInfo;
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo ABI::Windows::UI::Text::IContentLinkInfo
+
+#endif // ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
             namespace Text {
                 
                 typedef enum FontStretch : int FontStretch;
@@ -1955,6 +2385,11 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* Text */} /* ABI */
+
+
+
+
+
 
 
 
@@ -2419,6 +2854,14 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -2437,6 +2880,33 @@ namespace ABI {
             namespace Xaml {
                 namespace Documents {
                     class Bold;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    class ContactContentLinkProvider;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    class ContentLinkProviderCollection;
                 } /* Windows */
             } /* UI */
         } /* Xaml */
@@ -2512,6 +2982,18 @@ namespace ABI {
             namespace Xaml {
                 namespace Documents {
                     class Paragraph;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    class PlaceContentLinkProvider;
                 } /* Windows */
             } /* UI */
         } /* Xaml */
@@ -2711,8 +3193,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("4BCE0016-DD47-4350-8CB0-E171600AC896"), exclusiveto, contract] */
                     MIDL_INTERFACE("4BCE0016-DD47-4350-8CB0-E171600AC896")
-                    IBlock : IInspectable
+                    IBlock : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextAlignment(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::TextAlignment * value
                             ) = 0;
@@ -2774,8 +3257,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("5EC7BDF3-1333-4A92-8318-6CAEDC12EF89"), exclusiveto, contract] */
                     MIDL_INTERFACE("5EC7BDF3-1333-4A92-8318-6CAEDC12EF89")
-                    IBlock2 : IInspectable
+                    IBlock2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalTextAlignment(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::TextAlignment * value
                             ) = 0;
@@ -2819,8 +3303,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("07110532-4F59-4F3B-9CE5-25784C430507"), exclusiveto, contract] */
                     MIDL_INTERFACE("07110532-4F59-4F3B-9CE5-25784C430507")
-                    IBlockFactory : IInspectable
+                    IBlockFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -2863,8 +3348,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("F86A8C34-8D18-4C53-AEBD-91E610A5E010"), exclusiveto, contract] */
                     MIDL_INTERFACE("F86A8C34-8D18-4C53-AEBD-91E610A5E010")
-                    IBlockStatics : IInspectable
+                    IBlockStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextAlignmentProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -2914,8 +3400,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("AF01A4D6-03E3-4CEE-9B02-2BFC308B27A9"), exclusiveto, contract] */
                     MIDL_INTERFACE("AF01A4D6-03E3-4CEE-9B02-2BFC308B27A9")
-                    IBlockStatics2 : IInspectable
+                    IBlockStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalTextAlignmentProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -2956,8 +3443,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("ADE73784-1B59-4DA4-BB23-0F20E885B4BF"), exclusiveto, contract] */
                     MIDL_INTERFACE("ADE73784-1B59-4DA4-BB23-0F20E885B4BF")
-                    IBold : IInspectable
+                    IBold : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -2971,6 +3459,459 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIBold;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIBold_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContactContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContactContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContactContentLinkProvider[] = L"Windows.UI.Xaml.Documents.IContactContentLinkProvider";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    /* [object, uuid("F92FD29B-589B-4ABD-9D37-35A1468F021E"), exclusiveto, contract] */
+                    MIDL_INTERFACE("F92FD29B-589B-4ABD-9D37-35A1468F021E")
+                    IContactContentLinkProvider : public IInspectable
+                    {
+                    public:
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IContactContentLinkProvider=_uuidof(IContactContentLinkProvider);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLink
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLink
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLink[] = L"Windows.UI.Xaml.Documents.IContentLink";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    /* [object, uuid("6C60C3E1-528C-42F8-92BE-34B8C68BE304"), exclusiveto, contract] */
+                    MIDL_INTERFACE("6C60C3E1-528C-42F8-92BE-34B8C68BE304")
+                    IContentLink : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Info(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::IContentLinkInfo * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Info(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Text::IContentLinkInfo * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Background(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Background(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::IBrush * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Cursor(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Core::CoreCursorType * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Cursor(
+                            /* [in] */ABI::Windows::UI::Core::CoreCursorType value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusLeft(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_XYFocusLeft(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusRight(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_XYFocusRight(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusUp(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_XYFocusUp(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusDown(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_XYFocusDown(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ElementSoundMode(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::ElementSoundMode * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ElementSoundMode(
+                            /* [in] */ABI::Windows::UI::Xaml::ElementSoundMode value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FocusState(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FocusState * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusUpNavigationStrategy(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_XYFocusUpNavigationStrategy(
+                            /* [in] */ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusDownNavigationStrategy(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_XYFocusDownNavigationStrategy(
+                            /* [in] */ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusLeftNavigationStrategy(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_XYFocusLeftNavigationStrategy(
+                            /* [in] */ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusRightNavigationStrategy(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_XYFocusRightNavigationStrategy(
+                            /* [in] */ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTabStop(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsTabStop(
+                            /* [in] */boolean value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TabIndex(
+                            /* [retval, out] */__RPC__out INT32 * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TabIndex(
+                            /* [in] */INT32 value
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Invoked(
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * value,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Invoked(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_GotFocus(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_GotFocus(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LostFocus(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LostFocus(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE Focus(
+                            /* [in] */ABI::Windows::UI::Xaml::FocusState value,
+                            /* [retval, out] */__RPC__out boolean * result
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IContentLink=_uuidof(IContentLink);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkInvokedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkInvokedEventArgs[] = L"Windows.UI.Xaml.Documents.IContentLinkInvokedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    /* [object, uuid("546717C1-E8DF-4593-9639-97595FDF8310"), exclusiveto, contract] */
+                    MIDL_INTERFACE("546717C1-E8DF-4593-9639-97595FDF8310")
+                    IContentLinkInvokedEventArgs : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentLinkInfo(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::IContentLinkInfo * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Handled(
+                            /* [in] */boolean value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IContentLinkInvokedEventArgs=_uuidof(IContentLinkInvokedEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkProvider[] = L"Windows.UI.Xaml.Documents.IContentLinkProvider";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    /* [object, uuid("730587FD-BFDC-4CB3-904D-B65AB339BBF5"), exclusiveto, contract] */
+                    MIDL_INTERFACE("730587FD-BFDC-4CB3-904D-B65AB339BBF5")
+                    IContentLinkProvider : public IInspectable
+                    {
+                    public:
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IContentLinkProvider=_uuidof(IContentLinkProvider);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkProviderCollection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkProviderCollection
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.ContentLinkProvider
+ *     Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkProviderCollection[] = L"Windows.UI.Xaml.Documents.IContentLinkProviderCollection";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    /* [object, uuid("F5B84D0C-A9F4-4D1A-A13C-10DEF1843734"), exclusiveto, contract] */
+                    MIDL_INTERFACE("F5B84D0C-A9F4-4D1A-A13C-10DEF1843734")
+                    IContentLinkProviderCollection : public IInspectable
+                    {
+                    public:
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IContentLinkProviderCollection=_uuidof(IContentLinkProviderCollection);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkProviderFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkProviderFactory[] = L"Windows.UI.Xaml.Documents.IContentLinkProviderFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    /* [object, uuid("57D60D3B-EF1A-4E8E-839B-D36EF3A503E0"), exclusiveto, contract] */
+                    MIDL_INTERFACE("57D60D3B-EF1A-4E8E-839B-D36EF3A503E0")
+                    IContentLinkProviderFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                            /* [in] */__RPC__in_opt IInspectable * outer,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::IContentLinkProvider * * instance
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IContentLinkProviderFactory=_uuidof(IContentLinkProviderFactory);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLink
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkStatics[] = L"Windows.UI.Xaml.Documents.IContentLinkStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    /* [object, uuid("A34E3063-EB16-484E-A3DF-522B9A832E6E"), exclusiveto, contract] */
+                    MIDL_INTERFACE("A34E3063-EB16-484E-A3DF-522B9A832E6E")
+                    IContentLinkStatics : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BackgroundProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CursorProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusLeftProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusRightProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusUpProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusDownProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ElementSoundModeProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FocusStateProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusUpNavigationStrategyProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusDownNavigationStrategyProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusLeftNavigationStrategyProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusRightNavigationStrategyProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTabStopProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TabIndexProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IContentLinkStatics=_uuidof(IContentLinkStatics);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2995,8 +3936,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("D079498B-F2B1-4281-99A2-E4D05932B2B5"), exclusiveto, contract] */
                     MIDL_INTERFACE("D079498B-F2B1-4281-99A2-E4D05932B2B5")
-                    IGlyphs : IInspectable
+                    IGlyphs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnicodeString(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3082,8 +4024,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("AA8BFE5C-3754-4BEE-BBE1-4403EE9B86F0"), exclusiveto, contract] */
                     MIDL_INTERFACE("AA8BFE5C-3754-4BEE-BBE1-4403EE9B86F0")
-                    IGlyphs2 : IInspectable
+                    IGlyphs2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsColorFontEnabled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -3133,8 +4076,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("225CF4C5-FDF1-43ED-958F-414E86F103F2"), exclusiveto, contract] */
                     MIDL_INTERFACE("225CF4C5-FDF1-43ED-958F-414E86F103F2")
-                    IGlyphsStatics : IInspectable
+                    IGlyphsStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnicodeStringProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -3196,8 +4140,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("10489AA7-1615-4A33-AA02-D7EF2AEFC739"), exclusiveto, contract] */
                     MIDL_INTERFACE("10489AA7-1615-4A33-AA02-D7EF2AEFC739")
-                    IGlyphsStatics2 : IInspectable
+                    IGlyphsStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsColorFontEnabledProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -3241,8 +4186,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("0FE2363B-14E9-4152-9E58-5AEA5B21F08D"), exclusiveto, contract] */
                     MIDL_INTERFACE("0FE2363B-14E9-4152-9E58-5AEA5B21F08D")
-                    IHyperlink : IInspectable
+                    IHyperlink : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NavigateUri(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                             ) = 0;
@@ -3293,8 +4239,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("4CE9DA5F-7CFF-4291-B78F-DFEC72490576"), exclusiveto, contract] */
                     MIDL_INTERFACE("4CE9DA5F-7CFF-4291-B78F-DFEC72490576")
-                    IHyperlink2 : IInspectable
+                    IHyperlink2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnderlineStyle(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Documents::UnderlineStyle * value
                             ) = 0;
@@ -3338,8 +4285,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("C3F157D9-E5D3-4FB7-8702-4F6D85DD9E0A"), exclusiveto, contract] */
                     MIDL_INTERFACE("C3F157D9-E5D3-4FB7-8702-4F6D85DD9E0A")
-                    IHyperlink3 : IInspectable
+                    IHyperlink3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusLeft(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
                             ) = 0;
@@ -3407,8 +4355,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("F7D02959-82FB-400A-A407-5A4EE677988A"), exclusiveto, contract] */
                     MIDL_INTERFACE("F7D02959-82FB-400A-A407-5A4EE677988A")
-                    IHyperlink4 : IInspectable
+                    IHyperlink4 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FocusState(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FocusState * value
                             ) = 0;
@@ -3491,8 +4440,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("607DD7D2-0945-4328-91EE-94CCEC2EA6C3"), exclusiveto, contract] */
                     MIDL_INTERFACE("607DD7D2-0945-4328-91EE-94CCEC2EA6C3")
-                    IHyperlink5 : IInspectable
+                    IHyperlink5 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTabStop(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -3542,8 +4492,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("C755916B-7BDC-4BE7-B373-9240A503D870"), exclusiveto, contract] */
                     MIDL_INTERFACE("C755916B-7BDC-4BE7-B373-9240A503D870")
-                    IHyperlinkClickEventArgs : IInspectable
+                    IHyperlinkClickEventArgs : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -3581,8 +4532,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("3A44D3D4-FD41-41DB-8C72-3B790ACD9FD3"), exclusiveto, contract] */
                     MIDL_INTERFACE("3A44D3D4-FD41-41DB-8C72-3B790ACD9FD3")
-                    IHyperlinkStatics : IInspectable
+                    IHyperlinkStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NavigateUriProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -3623,8 +4575,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("5028D8B7-7ADF-43EE-A4AE-9C925F755716"), exclusiveto, contract] */
                     MIDL_INTERFACE("5028D8B7-7ADF-43EE-A4AE-9C925F755716")
-                    IHyperlinkStatics2 : IInspectable
+                    IHyperlinkStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnderlineStyleProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -3665,8 +4618,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("3E15DEA0-205E-4947-99A5-74E757E8E1B4"), exclusiveto, contract] */
                     MIDL_INTERFACE("3E15DEA0-205E-4947-99A5-74E757E8E1B4")
-                    IHyperlinkStatics3 : IInspectable
+                    IHyperlinkStatics3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XYFocusLeftProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -3719,8 +4673,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("0476B378-8FAA-4E24-B3B6-E9DE4D3C708C"), exclusiveto, contract] */
                     MIDL_INTERFACE("0476B378-8FAA-4E24-B3B6-E9DE4D3C708C")
-                    IHyperlinkStatics4 : IInspectable
+                    IHyperlinkStatics4 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FocusStateProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -3773,8 +4728,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("59308CEA-1E49-4921-BD88-A2878D07E30E"), exclusiveto, contract] */
                     MIDL_INTERFACE("59308CEA-1E49-4921-BD88-A2878D07E30E")
-                    IHyperlinkStatics5 : IInspectable
+                    IHyperlinkStatics5 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTabStopProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -3818,8 +4774,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("0C92712D-1BC9-4931-8CB1-1AEADF1CC685"), exclusiveto, contract] */
                     MIDL_INTERFACE("0C92712D-1BC9-4931-8CB1-1AEADF1CC685")
-                    IInline : IInspectable
+                    IInline : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -3857,8 +4814,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("4058ACD1-2F90-4B8F-99DD-4218EF5F03DE"), exclusiveto, contract] */
                     MIDL_INTERFACE("4058ACD1-2F90-4B8F-99DD-4218EF5F03DE")
-                    IInlineFactory : IInspectable
+                    IInlineFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -3901,8 +4859,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("1416CE81-28EE-452E-B121-5FC4F60B86A6"), exclusiveto, contract] */
                     MIDL_INTERFACE("1416CE81-28EE-452E-B121-5FC4F60B86A6")
-                    IInlineUIContainer : IInspectable
+                    IInlineUIContainer : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Child(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * value
                             ) = 0;
@@ -3946,8 +4905,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("91F4619C-FCBB-4157-802C-76F63B5FB657"), exclusiveto, contract] */
                     MIDL_INTERFACE("91F4619C-FCBB-4157-802C-76F63B5FB657")
-                    IItalic : IInspectable
+                    IItalic : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -3985,8 +4945,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("645589C4-F769-41ED-895B-8A1B2FB31562"), exclusiveto, contract] */
                     MIDL_INTERFACE("645589C4-F769-41ED-895B-8A1B2FB31562")
-                    ILineBreak : IInspectable
+                    ILineBreak : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4024,8 +4985,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("F83EF59A-FA61-4BEF-AE33-0B0AD756A84D"), exclusiveto, contract] */
                     MIDL_INTERFACE("F83EF59A-FA61-4BEF-AE33-0B0AD756A84D")
-                    IParagraph : IInspectable
+                    IParagraph : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Inlines(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDocuments__CInline * * value
                             ) = 0;
@@ -4072,8 +5034,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("EF08889A-535B-4E4C-8D84-283B33E98A37"), exclusiveto, contract] */
                     MIDL_INTERFACE("EF08889A-535B-4E4C-8D84-283B33E98A37")
-                    IParagraphStatics : IInspectable
+                    IParagraphStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextIndentProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4090,6 +5053,46 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IPlaceContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.PlaceContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IPlaceContentLinkProvider[] = L"Windows.UI.Xaml.Documents.IPlaceContentLinkProvider";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Documents {
+                    /* [object, uuid("10348A4C-2366-41BE-90C8-3258B53B5483"), exclusiveto, contract] */
+                    MIDL_INTERFACE("10348A4C-2366-41BE-90C8-3258B53B5483")
+                    IPlaceContentLinkProvider : public IInspectable
+                    {
+                    public:
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IPlaceContentLinkProvider=_uuidof(IPlaceContentLinkProvider);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Documents */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4114,8 +5117,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("59553C83-0E14-49BD-B84B-C526F3034349"), exclusiveto, contract] */
                     MIDL_INTERFACE("59553C83-0E14-49BD-B84B-C526F3034349")
-                    IRun : IInspectable
+                    IRun : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4165,8 +5169,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("E9303CEF-65A0-4B8D-A7F7-8FDB287B46F3"), exclusiveto, contract] */
                     MIDL_INTERFACE("E9303CEF-65A0-4B8D-A7F7-8FDB287B46F3")
-                    IRunStatics : IInspectable
+                    IRunStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FlowDirectionProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4207,8 +5212,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("9839D4A9-02AF-4811-AA15-6BEF3ACAC97A"), exclusiveto, contract] */
                     MIDL_INTERFACE("9839D4A9-02AF-4811-AA15-6BEF3ACAC97A")
-                    ISpan : IInspectable
+                    ISpan : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Inlines(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDocuments__CInline * * value
                             ) = 0;
@@ -4252,8 +5258,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("5B916F5C-CD2D-40C0-956A-386448322F79"), exclusiveto, contract] */
                     MIDL_INTERFACE("5B916F5C-CD2D-40C0-956A-386448322F79")
-                    ISpanFactory : IInspectable
+                    ISpanFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -4296,8 +5303,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("E83B0062-D776-4F92-BAEA-40E77D4791D5"), exclusiveto, contract] */
                     MIDL_INTERFACE("E83B0062-D776-4F92-BAEA-40E77D4791D5")
-                    ITextElement : IInspectable
+                    ITextElement : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4402,8 +5410,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("A8076AA8-F892-49F6-8CD2-89ADDAF06D2D"), exclusiveto, contract] */
                     MIDL_INTERFACE("A8076AA8-F892-49F6-8CD2-89ADDAF06D2D")
-                    ITextElement2 : IInspectable
+                    ITextElement2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTextScaleFactorEnabled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -4447,8 +5456,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("D1DB340F-1BC4-4CA8-BCF7-770BFF9B27AB"), exclusiveto, contract] */
                     MIDL_INTERFACE("D1DB340F-1BC4-4CA8-BCF7-770BFF9B27AB")
-                    ITextElement3 : IInspectable
+                    ITextElement3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowFocusOnInteraction(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -4504,8 +5514,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("B196E222-CA0E-48A9-83BC-36CE50566AC7"), exclusiveto, contract] */
                     MIDL_INTERFACE("B196E222-CA0E-48A9-83BC-36CE50566AC7")
-                    ITextElement4 : IInspectable
+                    ITextElement4 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextDecorations(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Text::TextDecorations * value
                             ) = 0;
@@ -4600,8 +5611,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("35007285-CF47-4BFE-B1BC-39C93AF4AE80"), exclusiveto, contract] */
                     MIDL_INTERFACE("35007285-CF47-4BFE-B1BC-39C93AF4AE80")
-                    ITextElementFactory : IInspectable
+                    ITextElementFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4639,8 +5651,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("0CE21EE7-4F76-4DD9-BF91-163BECCF84BC"), exclusiveto, contract] */
                     MIDL_INTERFACE("0CE21EE7-4F76-4DD9-BF91-163BECCF84BC")
-                    ITextElementOverrides : IInspectable
+                    ITextElementOverrides : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OnDisconnectVisualChildren(void) = 0;
                         
                     };
@@ -4679,8 +5692,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("0A2F9B98-6C03-4470-A79B-3298A10482CE"), exclusiveto, contract] */
                     MIDL_INTERFACE("0A2F9B98-6C03-4470-A79B-3298A10482CE")
-                    ITextElementStatics : IInspectable
+                    ITextElementStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FontSizeProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4742,8 +5756,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("164297B2-982B-49E1-8C03-CA43BC4D5B6D"), exclusiveto, contract] */
                     MIDL_INTERFACE("164297B2-982B-49E1-8C03-CA43BC4D5B6D")
-                    ITextElementStatics2 : IInspectable
+                    ITextElementStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTextScaleFactorEnabledProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4784,8 +5799,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("CFEFCFAF-0FA1-45EC-9A4E-9B33664DC8B1"), exclusiveto, contract] */
                     MIDL_INTERFACE("CFEFCFAF-0FA1-45EC-9A4E-9B33664DC8B1")
-                    ITextElementStatics3 : IInspectable
+                    ITextElementStatics3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowFocusOnInteractionProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4832,8 +5848,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("FD8F641E-6B12-40D5-B6EF-D1BD12AC9066"), exclusiveto, contract] */
                     MIDL_INTERFACE("FD8F641E-6B12-40D5-B6EF-D1BD12AC9066")
-                    ITextElementStatics4 : IInspectable
+                    ITextElementStatics4 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextDecorationsProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4889,8 +5906,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("BA6CB54B-7D75-4535-B30D-A81A00B637A4"), exclusiveto, contract] */
                     MIDL_INTERFACE("BA6CB54B-7D75-4535-B30D-A81A00B637A4")
-                    ITextHighlighter : IInspectable
+                    ITextHighlighter : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Ranges(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDocuments__CTextRange * * value
                             ) = 0;
@@ -4943,8 +5961,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("D957601A-5F0D-4CDF-9758-97E0EB95C8FA"), exclusiveto, contract] */
                     MIDL_INTERFACE("D957601A-5F0D-4CDF-9758-97E0EB95C8FA")
-                    ITextHighlighterBase : IInspectable
+                    ITextHighlighterBase : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4982,8 +6001,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("9592B2D0-EADC-4C74-92C8-6E896E22506D"), exclusiveto, contract] */
                     MIDL_INTERFACE("9592B2D0-EADC-4C74-92C8-6E896E22506D")
-                    ITextHighlighterBaseFactory : IInspectable
+                    ITextHighlighterBaseFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5021,8 +6041,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("70125461-9A8F-4FA0-B235-8FFAA507BEF2"), exclusiveto, contract] */
                     MIDL_INTERFACE("70125461-9A8F-4FA0-B235-8FFAA507BEF2")
-                    ITextHighlighterFactory : IInspectable
+                    ITextHighlighterFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -5065,8 +6086,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("B3B009C4-3A7E-49CC-AB84-29C405488765"), exclusiveto, contract] */
                     MIDL_INTERFACE("B3B009C4-3A7E-49CC-AB84-29C405488765")
-                    ITextHighlighterStatics : IInspectable
+                    ITextHighlighterStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ForegroundProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -5110,8 +6132,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("AC687AA1-6A41-43FF-851E-45348AA2CF7B"), exclusiveto, contract] */
                     MIDL_INTERFACE("AC687AA1-6A41-43FF-851E-45348AA2CF7B")
-                    ITextPointer : IInspectable
+                    ITextPointer : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Parent(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
                             ) = 0;
@@ -5170,8 +6193,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("866F65D5-EA97-42AB-9288-9C01AEBC7A97"), exclusiveto, contract] */
                     MIDL_INTERFACE("866F65D5-EA97-42AB-9288-9C01AEBC7A97")
-                    ITypography : IInspectable
+                    ITypography : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5209,8 +6233,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("67B9EC88-6C57-4CE0-95F1-D4B9ED632FB4"), exclusiveto, contract] */
                     MIDL_INTERFACE("67B9EC88-6C57-4CE0-95F1-D4B9ED632FB4")
-                    ITypographyStatics : IInspectable
+                    ITypographyStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnnotationAlternatesProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -5721,8 +6746,9 @@ namespace ABI {
                 namespace Documents {
                     /* [object, uuid("A5FA8202-61C0-47D7-93EF-BC0B577C5F26"), exclusiveto, contract] */
                     MIDL_INTERFACE("A5FA8202-61C0-47D7-93EF-BC0B577C5F26")
-                    IUnderline : IInspectable
+                    IUnderline : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5817,6 +6843,140 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_Bold[] = L"Windows.UI.Xaml.Documents.Bold";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.ContactContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContactContentLinkProvider ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContactContentLinkProvider_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContactContentLinkProvider_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContactContentLinkProvider[] = L"Windows.UI.Xaml.Documents.ContactContentLinkProvider";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.ContentLink
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Documents.IContentLinkStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContentLink ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLink_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLink_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContentLink[] = L"Windows.UI.Xaml.Documents.ContentLink";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContentLinkInvokedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkInvokedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkInvokedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContentLinkInvokedEventArgs[] = L"Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContentLinkProvider ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkProvider_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkProvider_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContentLinkProvider[] = L"Windows.UI.Xaml.Documents.ContentLinkProvider";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.ContentLinkProviderCollection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContentLinkProviderCollection ** Default Interface **
+ *    Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.ContentLinkProvider
+ *    Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkProviderCollection_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkProviderCollection_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContentLinkProviderCollection[] = L"Windows.UI.Xaml.Documents.ContentLinkProviderCollection";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6071,6 +7231,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_Paragraph[] = L"Windows.UI.Xaml.Documents.Paragraph";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.PlaceContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IPlaceContentLinkProvider ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_PlaceContentLinkProvider_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_PlaceContentLinkProvider_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_PlaceContentLinkProvider[] = L"Windows.UI.Xaml.Documents.PlaceContentLinkProvider";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6331,6 +7518,48 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBold __x_ABI_CWindows_
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIBold_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIGlyphs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIGlyphs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIGlyphs __x_ABI_CWindows_CUI_CXaml_CDocuments_CIGlyphs;
@@ -6462,6 +7691,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraph __x_ABI_CWin
 typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics __x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIRun_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIRun_FWD_DEFINED__
@@ -6765,6 +8000,168 @@ interface __FIIterable_1_Windows__CUI__CXaml__CDocuments__CBlock
 #endif // ____FIIterable_1_Windows__CUI__CXaml__CDocuments__CBlock_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider;
+
+typedef struct __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl;
+
+interface __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider;
+
+typedef  struct __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl;
+
+interface __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -7361,6 +8758,117 @@ interface __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CBlock
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider;
+
+typedef struct __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl;
+
+interface __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIVectorView_1_Windows__CUI__CXaml__CDocuments__CInline_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CUI__CXaml__CDocuments__CInline_INTERFACE_DEFINED__
@@ -7835,6 +9343,149 @@ interface __FIVector_1_Windows__CUI__CXaml__CDocuments__CBlock
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__)
+#define ____FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__
+
+typedef interface __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider;
+
+typedef struct __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This, /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl;
+
+interface __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider
+{
+    CONST_VTBL struct __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProviderVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVector_1_Windows__CUI__CXaml__CDocuments__CContentLinkProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIVector_1_Windows__CUI__CXaml__CDocuments__CInline_INTERFACE_DEFINED__)
 #define ____FIVector_1_Windows__CUI__CXaml__CDocuments__CInline_INTERFACE_DEFINED__
@@ -8261,8 +9912,121 @@ interface __FIVector_1_Windows__CUI__CXaml__CDocuments__CTextRange
 #endif // ____FIVector_1_Windows__CUI__CXaml__CDocuments__CTextRange_INTERFACE_DEFINED__
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox __x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox_FWD_DEFINED__
 
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CRichEditBox_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Windows__CUI__CXaml__CDocuments__CHyperlinkClickEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Windows__CUI__CXaml__CDocuments__CHyperlinkClickEventArgs_INTERFACE_DEFINED__
@@ -8310,6 +10074,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Wi
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Windows__CUI__CXaml__CDocuments__CHyperlinkClickEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -8504,6 +10269,19 @@ typedef interface __x_ABI_CWindows_CFoundation_CIUriRuntimeClass __x_ABI_CWindow
 
 
 
+typedef enum __x_ABI_CWindows_CUI_CCore_CCoreCursorType __x_ABI_CWindows_CUI_CCore_CCoreCursorType;
+
+
+
+
+#ifndef ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CText_CIContentLinkInfo __x_ABI_CWindows_CUI_CText_CIContentLinkInfo;
+
+#endif // ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+
+
+
 typedef enum __x_ABI_CWindows_CUI_CText_CFontStretch __x_ABI_CWindows_CUI_CText_CFontStretch;
 
 
@@ -8514,6 +10292,11 @@ typedef struct __x_ABI_CWindows_CUI_CText_CFontWeight __x_ABI_CWindows_CUI_CText
 
 
 typedef enum __x_ABI_CWindows_CUI_CText_CTextDecorations __x_ABI_CWindows_CUI_CText_CTextDecorations;
+
+
+
+
+
 
 
 
@@ -8643,6 +10426,20 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CDocuments_CUnderlineStyle __x_ABI_CWind
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CTextRange __x_ABI_CWindows_CUI_CXaml_CDocuments_CTextRange;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9410,6 +11207,997 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBold
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIBold;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIBold_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContactContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContactContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContactContentLinkProvider[] = L"Windows.UI.Xaml.Documents.IContactContentLinkProvider";
+/* [object, uuid("F92FD29B-589B-4ABD-9D37-35A1468F021E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProviderVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProviderVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProviderVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContactContentLinkProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLink
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLink
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLink[] = L"Windows.UI.Xaml.Documents.IContentLink";
+/* [object, uuid("6C60C3E1-528C-42F8-92BE-34B8C68BE304"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Info )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Info )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Background )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrush * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Background )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrush * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Cursor )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CCore_CCoreCursorType * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Cursor )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__x_ABI_CWindows_CUI_CCore_CCoreCursorType value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusLeft )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_XYFocusLeft )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusRight )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_XYFocusRight )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusUp )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_XYFocusUp )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusDown )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_XYFocusDown )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ElementSoundMode )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CElementSoundMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ElementSoundMode )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CElementSoundMode value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FocusState )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFocusState * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusUpNavigationStrategy )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_XYFocusUpNavigationStrategy )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusDownNavigationStrategy )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_XYFocusDownNavigationStrategy )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusLeftNavigationStrategy )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_XYFocusLeftNavigationStrategy )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusRightNavigationStrategy )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_XYFocusRightNavigationStrategy )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsTabStop )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsTabStop )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TabIndex )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_TabIndex )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */INT32 value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Invoked )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * value,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Invoked )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_GotFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_GotFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LostFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LostFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */EventRegistrationToken token
+        );
+    HRESULT ( STDMETHODCALLTYPE *Focus )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CFocusState value,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_Info(This,value) \
+    ( (This)->lpVtbl->get_Info(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_Info(This,value) \
+    ( (This)->lpVtbl->put_Info(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_Background(This,value) \
+    ( (This)->lpVtbl->get_Background(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_Background(This,value) \
+    ( (This)->lpVtbl->put_Background(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_Cursor(This,value) \
+    ( (This)->lpVtbl->get_Cursor(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_Cursor(This,value) \
+    ( (This)->lpVtbl->put_Cursor(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_XYFocusLeft(This,value) \
+    ( (This)->lpVtbl->get_XYFocusLeft(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_XYFocusLeft(This,value) \
+    ( (This)->lpVtbl->put_XYFocusLeft(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_XYFocusRight(This,value) \
+    ( (This)->lpVtbl->get_XYFocusRight(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_XYFocusRight(This,value) \
+    ( (This)->lpVtbl->put_XYFocusRight(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_XYFocusUp(This,value) \
+    ( (This)->lpVtbl->get_XYFocusUp(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_XYFocusUp(This,value) \
+    ( (This)->lpVtbl->put_XYFocusUp(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_XYFocusDown(This,value) \
+    ( (This)->lpVtbl->get_XYFocusDown(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_XYFocusDown(This,value) \
+    ( (This)->lpVtbl->put_XYFocusDown(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_ElementSoundMode(This,value) \
+    ( (This)->lpVtbl->get_ElementSoundMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_ElementSoundMode(This,value) \
+    ( (This)->lpVtbl->put_ElementSoundMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_FocusState(This,value) \
+    ( (This)->lpVtbl->get_FocusState(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_XYFocusUpNavigationStrategy(This,value) \
+    ( (This)->lpVtbl->get_XYFocusUpNavigationStrategy(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_XYFocusUpNavigationStrategy(This,value) \
+    ( (This)->lpVtbl->put_XYFocusUpNavigationStrategy(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_XYFocusDownNavigationStrategy(This,value) \
+    ( (This)->lpVtbl->get_XYFocusDownNavigationStrategy(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_XYFocusDownNavigationStrategy(This,value) \
+    ( (This)->lpVtbl->put_XYFocusDownNavigationStrategy(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_XYFocusLeftNavigationStrategy(This,value) \
+    ( (This)->lpVtbl->get_XYFocusLeftNavigationStrategy(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_XYFocusLeftNavigationStrategy(This,value) \
+    ( (This)->lpVtbl->put_XYFocusLeftNavigationStrategy(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_XYFocusRightNavigationStrategy(This,value) \
+    ( (This)->lpVtbl->get_XYFocusRightNavigationStrategy(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_XYFocusRightNavigationStrategy(This,value) \
+    ( (This)->lpVtbl->put_XYFocusRightNavigationStrategy(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_IsTabStop(This,value) \
+    ( (This)->lpVtbl->get_IsTabStop(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_IsTabStop(This,value) \
+    ( (This)->lpVtbl->put_IsTabStop(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_get_TabIndex(This,value) \
+    ( (This)->lpVtbl->get_TabIndex(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_TabIndex(This,value) \
+    ( (This)->lpVtbl->put_TabIndex(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_add_Invoked(This,value,token) \
+    ( (This)->lpVtbl->add_Invoked(This,value,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_remove_Invoked(This,token) \
+    ( (This)->lpVtbl->remove_Invoked(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_add_GotFocus(This,value,token) \
+    ( (This)->lpVtbl->add_GotFocus(This,value,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_remove_GotFocus(This,token) \
+    ( (This)->lpVtbl->remove_GotFocus(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_add_LostFocus(This,value,token) \
+    ( (This)->lpVtbl->add_LostFocus(This,value,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_remove_LostFocus(This,token) \
+    ( (This)->lpVtbl->remove_LostFocus(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_Focus(This,value,result) \
+    ( (This)->lpVtbl->Focus(This,value,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkInvokedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkInvokedEventArgs[] = L"Windows.UI.Xaml.Documents.IContentLinkInvokedEventArgs";
+/* [object, uuid("546717C1-E8DF-4593-9639-97595FDF8310"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContentLinkInfo )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Handled )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Handled )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_get_ContentLinkInfo(This,value) \
+    ( (This)->lpVtbl->get_ContentLinkInfo(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_get_Handled(This,value) \
+    ( (This)->lpVtbl->get_Handled(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_put_Handled(This,value) \
+    ( (This)->lpVtbl->put_Handled(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkInvokedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkProvider[] = L"Windows.UI.Xaml.Documents.IContentLinkProvider";
+/* [object, uuid("730587FD-BFDC-4CB3-904D-B65AB339BBF5"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkProviderCollection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkProviderCollection
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.ContentLinkProvider
+ *     Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkProviderCollection[] = L"Windows.UI.Xaml.Documents.IContentLinkProviderCollection";
+/* [object, uuid("F5B84D0C-A9F4-4D1A-A13C-10DEF1843734"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollectionVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollectionVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollectionVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkProviderFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkProviderFactory[] = L"Windows.UI.Xaml.Documents.IContentLinkProviderFactory";
+/* [object, uuid("57D60D3B-EF1A-4E8E-839B-D36EF3A503E0"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * outer,
+        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * * instance
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_CreateInstance(This,outer,inner,instance) \
+    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IContentLinkStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLink
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IContentLinkStatics[] = L"Windows.UI.Xaml.Documents.IContentLinkStatics";
+/* [object, uuid("A34E3063-EB16-484E-A3DF-522B9A832E6E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BackgroundProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CursorProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusLeftProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusRightProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusUpProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusDownProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ElementSoundModeProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FocusStateProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusUpNavigationStrategyProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusDownNavigationStrategyProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusLeftNavigationStrategyProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_XYFocusRightNavigationStrategyProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsTabStopProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TabIndexProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_BackgroundProperty(This,value) \
+    ( (This)->lpVtbl->get_BackgroundProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_CursorProperty(This,value) \
+    ( (This)->lpVtbl->get_CursorProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_XYFocusLeftProperty(This,value) \
+    ( (This)->lpVtbl->get_XYFocusLeftProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_XYFocusRightProperty(This,value) \
+    ( (This)->lpVtbl->get_XYFocusRightProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_XYFocusUpProperty(This,value) \
+    ( (This)->lpVtbl->get_XYFocusUpProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_XYFocusDownProperty(This,value) \
+    ( (This)->lpVtbl->get_XYFocusDownProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_ElementSoundModeProperty(This,value) \
+    ( (This)->lpVtbl->get_ElementSoundModeProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_FocusStateProperty(This,value) \
+    ( (This)->lpVtbl->get_FocusStateProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_XYFocusUpNavigationStrategyProperty(This,value) \
+    ( (This)->lpVtbl->get_XYFocusUpNavigationStrategyProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_XYFocusDownNavigationStrategyProperty(This,value) \
+    ( (This)->lpVtbl->get_XYFocusDownNavigationStrategyProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_XYFocusLeftNavigationStrategyProperty(This,value) \
+    ( (This)->lpVtbl->get_XYFocusLeftNavigationStrategyProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_XYFocusRightNavigationStrategyProperty(This,value) \
+    ( (This)->lpVtbl->get_XYFocusRightNavigationStrategyProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_IsTabStopProperty(This,value) \
+    ( (This)->lpVtbl->get_IsTabStopProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_get_TabIndexProperty(This,value) \
+    ( (This)->lpVtbl->get_TabIndexProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -11903,6 +14691,92 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIParagraphStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Documents.IPlaceContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.PlaceContentLinkProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Documents_IPlaceContentLinkProvider[] = L"Windows.UI.Xaml.Documents.IPlaceContentLinkProvider";
+/* [object, uuid("10348A4C-2366-41BE-90C8-3258B53B5483"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProviderVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProviderVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProviderVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIPlaceContentLinkProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -15588,6 +18462,140 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Documents.ContactContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContactContentLinkProvider ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContactContentLinkProvider_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContactContentLinkProvider_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContactContentLinkProvider[] = L"Windows.UI.Xaml.Documents.ContactContentLinkProvider";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.ContentLink
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Documents.IContentLinkStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContentLink ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLink_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLink_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContentLink[] = L"Windows.UI.Xaml.Documents.ContentLink";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContentLinkInvokedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkInvokedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkInvokedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContentLinkInvokedEventArgs[] = L"Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContentLinkProvider ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkProvider_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkProvider_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContentLinkProvider[] = L"Windows.UI.Xaml.Documents.ContentLinkProvider";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.ContentLinkProviderCollection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IContentLinkProviderCollection ** Default Interface **
+ *    Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.ContentLinkProvider
+ *    Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.ContentLinkProvider
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkProviderCollection_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_ContentLinkProviderCollection_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_ContentLinkProviderCollection[] = L"Windows.UI.Xaml.Documents.ContentLinkProviderCollection";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Documents.Glyphs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -15838,6 +18846,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_Paragraph[] = L"Windows.UI.Xaml.Documents.Paragraph";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Documents.PlaceContentLinkProvider
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Documents.IPlaceContentLinkProvider ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Documents_PlaceContentLinkProvider_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Documents_PlaceContentLinkProvider_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Documents_PlaceContentLinkProvider[] = L"Windows.UI.Xaml.Documents.PlaceContentLinkProvider";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

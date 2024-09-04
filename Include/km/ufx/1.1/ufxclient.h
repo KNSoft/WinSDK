@@ -971,3 +971,29 @@ UfxEndpointGetCommandQueue (
              UfxClassFunctions[UfxEndpointGetCommandQueueIndex])(UfxGlobals, 
                                                                  UfxEndpoint);
 }
+
+//
+// UFXDEVICE Function: UfxDeviceNotifyFinalExit
+//
+
+typedef
+_IRQL_requires_max_(DISPATCH_LEVEL)
+VOID
+UFX_DEVICE_NOTIFY_FINAL_EXIT (
+    _In_ PUFX_GLOBALS,
+    _In_ UFXDEVICE
+    );
+    
+typedef UFX_DEVICE_NOTIFY_FINAL_EXIT *PFN_UFX_DEVICE_NOTIFY_FINAL_EXIT;
+
+_IRQL_requires_max_(DISPATCH_LEVEL)
+VOID
+FORCEINLINE
+UfxDeviceNotifyFinalExit (
+    _In_ UFXDEVICE UfxDevice
+    )
+{
+    ((PFN_UFX_DEVICE_NOTIFY_FINAL_EXIT)
+     UfxClassFunctions[UfxDeviceNotifyFinalExitIndex])(UfxGlobals, 
+                                                       UfxDevice);
+}

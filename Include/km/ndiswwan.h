@@ -1047,4 +1047,43 @@ typedef struct _NDIS_WWAN_BASE_STATIONS_INFO {
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4 || NDIS_SUPPORT_NDIS680)
+// (may need to restrict to higher NDIS version such as 7.0)
+
+typedef struct _NDIS_WWAN_MPDP_INFO  
+{  
+    ULONG                       Operation;          // 0 -- create a new MPDP child interface; 1 -- delete an exiting MPDP child interface; other -- invalid
+    GUID                        ChildInterfaceGUID; // GUID of the child interface to be deleted.
+    NDIS_WWAN_MAC_ADDRESS       MacAddr;            // unused at present
+} NDIS_WWAN_MPDP_INFO, *PNDIS_WWAN_MPDP_INFO;
+
+// data for OID_WWAN_MPDP set request
+typedef struct _NDIS_WWAN_SET_MPDP_STATE{
+    NDIS_OBJECT_HEADER          Header;
+    NDIS_WWAN_MPDP_INFO         Info; 
+} NDIS_WWAN_SET_MPDP_STATE, *PNDIS_WWAN_SET_MPDP_STATE;
+
+// data for NDIS_STATUS_WWAN_MPDP_STATE notification
+typedef struct _NDIS_WWAN_MPDP_STATE {
+    NDIS_OBJECT_HEADER          Header;
+    WWAN_STATUS                 uStatus;
+    NDIS_WWAN_MPDP_INFO         Info;
+} NDIS_WWAN_MPDP_STATE, *PNDIS_WWAN_MPDP_STATE;
+
+// data for NDIS_STATUS_WWAN_MPDP_LIST notification
+// The ElementType of the list must be WwanStructMPDPChildInterface. 
+// ElementCount of interface GUIDs must follow this header.
+typedef struct _NDIS_WWAN_MPDP_LIST {
+    NDIS_OBJECT_HEADER          Header;
+    WWAN_STATUS                 uStatus;
+    WWAN_LIST_HEADER            ChildInterfaceList;
+} NDIS_WWAN_MPDP_LIST, *PNDIS_WWAN_MPDP_LIST;
+
+#define NDIS_WWAN_MPDP_SET_QUERY_REVISION_1         1
+#define SIZEOF_NDIS_WWAN_SET_MPDP_STATE_1           sizeof(NDIS_WWAN_SET_MPDP_STATE)
+#define SIZEOF_NDIS_WWAN_MPDP_STATE_1               sizeof(NDIS_WWAN_MPDP_STATE)
+#define SIZEOF_NDIS_WWAN_MPDP_LIST_1                sizeof(NDIS_WWAN_MPDP_LIST)
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4 || NDIS_SUPPORT_NDIS680)
+
 #endif //__NDIS_WWAN_DECL__

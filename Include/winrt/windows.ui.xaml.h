@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -722,6 +724,34 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                interface IBringIntoViewOptions2;
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 ABI::Windows::UI::Xaml::IBringIntoViewOptions2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                interface IBringIntoViewRequestedEventArgs;
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs ABI::Windows::UI::Xaml::IBringIntoViewRequestedEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CICornerRadiusHelper_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CICornerRadiusHelper_FWD_DEFINED__
 namespace ABI {
@@ -1197,6 +1227,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics ABI::Windows::UI::Xaml::IElementSoundPlayerStatics
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                interface IElementSoundPlayerStatics2;
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 ABI::Windows::UI::Xaml::IElementSoundPlayerStatics2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIEventTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIEventTrigger_FWD_DEFINED__
@@ -2136,6 +2180,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElement7_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElement8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElement8_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                interface IUIElement8;
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8 ABI::Windows::UI::Xaml::IUIElement8
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElement8_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElementFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIUIElementFactory_FWD_DEFINED__
 namespace ABI {
@@ -2177,6 +2235,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7 ABI::Windows::UI::Xaml::IUIElementOverrides7
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                interface IUIElementOverrides8;
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 ABI::Windows::UI::Xaml::IUIElementOverrides8
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics_FWD_DEFINED__
@@ -2275,6 +2347,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics7 ABI::Windows::UI::Xaml::IUIElementStatics7
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics7_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                interface IUIElementStatics8;
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 ABI::Windows::UI::Xaml::IUIElementStatics8
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIUnhandledExceptionEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIUnhandledExceptionEventArgs_FWD_DEFINED__
@@ -4182,6 +4268,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CSearchBox_Windows__CUI__CXaml__CRoutedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CSearchBox_Windows__CUI__CXaml__CRoutedEventArgs_USE
@@ -4210,6 +4297,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::SearchBox*,ABI::Win
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CSearchBox_Windows__CUI__CXaml__CRoutedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -4266,6 +4354,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CFrameworkElement_Windows__CUI__CXaml__CDataContextChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CFrameworkElement_Windows__CUI__CXaml__CDataContextChangedEventArgs_USE
@@ -4295,6 +4384,51 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::FrameworkElement*,ABI::Window
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                class BringIntoViewRequestedEventArgs;
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2126cf26-9201-5d6b-845e-97e1c44b9ffd"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::BringIntoViewRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::BringIntoViewRequestedEventArgs*, ABI::Windows::UI::Xaml::IBringIntoViewRequestedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.UIElement, Windows.UI.Xaml.BringIntoViewRequestedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::BringIntoViewRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::IUIElement*,ABI::Windows::UI::Xaml::IBringIntoViewRequestedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::IUIElement*,ABI::Windows::UI::Xaml::IBringIntoViewRequestedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 namespace ABI {
@@ -4307,6 +4441,7 @@ namespace ABI {
     } /* Xaml */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CDragStartingEventArgs_USE
@@ -4337,6 +4472,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -4349,6 +4485,7 @@ namespace ABI {
     } /* Xaml */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CDropCompletedEventArgs_USE
@@ -4379,9 +4516,11 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CRoutedEventArgs_USE
@@ -4411,6 +4550,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CRoutedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -6788,6 +6928,47 @@ namespace ABI {
         namespace UI {
             namespace Xaml {
                 namespace Input {
+                    class KeyboardAcceleratorInvokedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IKeyboardAcceleratorInvokedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs ABI::Windows::UI::Xaml::Input::IKeyboardAcceleratorInvokedEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    typedef enum KeyboardAcceleratorPlacementMode : int KeyboardAcceleratorPlacementMode;
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
                     
                     typedef enum KeyboardNavigationMode : int KeyboardNavigationMode;
                     
@@ -7447,6 +7628,17 @@ namespace ABI {
         namespace UI {
             namespace Xaml {
                 
+                typedef enum ElementSpatialAudioMode : int ElementSpatialAudioMode;
+                
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                
                 typedef enum ElementTheme : int ElementTheme;
                 
             } /* Windows */
@@ -7888,6 +8080,12 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -7936,6 +8134,7 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* Xaml */} /* ABI */
+
 
 
 namespace ABI {
@@ -8667,6 +8866,34 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.UI.Xaml.ElementSpatialAudioMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                /* [v1_enum, contract] */
+                enum ElementSpatialAudioMode : int
+                {
+                    ElementSpatialAudioMode_Auto = 0,
+                    ElementSpatialAudioMode_Off = 1,
+                    ElementSpatialAudioMode_On = 2,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Struct Windows.UI.Xaml.ElementTheme
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -8768,6 +8995,11 @@ namespace ABI {
                 {
                     FocusVisualKind_DottedLine = 0,
                     FocusVisualKind_HighVisibility = 1,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
+                    FocusVisualKind_Reveal = 2,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
                 };
                 
             } /* Windows */
@@ -9456,8 +9688,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("B6351C55-C284-46E4-8310-FB0967FAB76F"), contract] */
                 MIDL_INTERFACE("B6351C55-C284-46E4-8310-FB0967FAB76F")
-                IApplicationInitializationCallback : IUnknown
+                IApplicationInitializationCallback : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IApplicationInitializationCallbackParams * p
                         ) = 0;
@@ -9492,8 +9725,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("136B1782-54BA-420D-A1AA-82828721CDE6"), contract] */
                 MIDL_INTERFACE("136B1782-54BA-420D-A1AA-82828721CDE6")
-                IBindingFailedEventHandler : IUnknown
+                IBindingFailedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IBindingFailedEventArgs * e
@@ -9529,8 +9763,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("D6ECB12C-15B5-4EC8-B95C-CDD208F08153"), contract] */
                 MIDL_INTERFACE("D6ECB12C-15B5-4EC8-B95C-CDD208F08153")
-                ICreateDefaultValueCallback : IUnknown
+                ICreateDefaultValueCallback : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -9565,8 +9800,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("45883D16-27BF-4BC1-AC26-94C1601F3A49"), contract] */
                 MIDL_INTERFACE("45883D16-27BF-4BC1-AC26-94C1601F3A49")
-                IDependencyPropertyChangedCallback : IUnknown
+                IDependencyPropertyChangedCallback : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyProperty * dp
@@ -9602,8 +9838,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("09223E5A-75BE-4499-8180-1DDC005421C0"), contract] */
                 MIDL_INTERFACE("09223E5A-75BE-4499-8180-1DDC005421C0")
-                IDependencyPropertyChangedEventHandler : IUnknown
+                IDependencyPropertyChangedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyPropertyChangedEventArgs * e
@@ -9639,8 +9876,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("2AB1A205-1E73-4BCF-AABC-57B97E21961D"), contract] */
                 MIDL_INTERFACE("2AB1A205-1E73-4BCF-AABC-57B97E21961D")
-                IDragEventHandler : IUnknown
+                IDragEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDragEventArgs * e
@@ -9676,8 +9914,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("93A956AE-1D7F-438B-B7B8-227D96B609C0"), contract] */
                 MIDL_INTERFACE("93A956AE-1D7F-438B-B7B8-227D96B609C0")
-                IEnteredBackgroundEventHandler : IUnknown
+                IEnteredBackgroundEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::IEnteredBackgroundEventArgs * e
@@ -9713,8 +9952,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("68E0E810-F6EA-42BC-855B-5D9B67E6A262"), contract] */
                 MIDL_INTERFACE("68E0E810-F6EA-42BC-855B-5D9B67E6A262")
-                IExceptionRoutedEventHandler : IUnknown
+                IExceptionRoutedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IExceptionRoutedEventArgs * e
@@ -9750,8 +9990,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("AAAD5DAD-4FC6-4AA4-B7CF-877E36ADA4F6"), contract] */
                 MIDL_INTERFACE("AAAD5DAD-4FC6-4AA4-B7CF-877E36ADA4F6")
-                ILeavingBackgroundEventHandler : IUnknown
+                ILeavingBackgroundEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::ILeavingBackgroundEventArgs * e
@@ -9787,8 +10028,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("5A9F8A25-D142-44A4-8231-FD676724F29B"), contract] */
                 MIDL_INTERFACE("5A9F8A25-D142-44A4-8231-FD676724F29B")
-                IPropertyChangedCallback : IUnknown
+                IPropertyChangedCallback : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * d,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyPropertyChangedEventArgs * e
@@ -9824,8 +10066,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A856E674-B0B6-4BC3-BBA8-1BA06E40D4B5"), contract] */
                 MIDL_INTERFACE("A856E674-B0B6-4BC3-BBA8-1BA06E40D4B5")
-                IRoutedEventHandler : IUnknown
+                IRoutedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventArgs * e
@@ -9861,8 +10104,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("1115B13C-25D2-480B-89DC-EB3DCBD6B7FA"), contract] */
                 MIDL_INTERFACE("1115B13C-25D2-480B-89DC-EB3DCBD6B7FA")
-                ISizeChangedEventHandler : IUnknown
+                ISizeChangedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::ISizeChangedEventArgs * e
@@ -9898,8 +10142,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("23429465-E36A-40E2-B139-A4704602A6E1"), contract] */
                 MIDL_INTERFACE("23429465-E36A-40E2-B139-A4704602A6E1")
-                ISuspendingEventHandler : IUnknown
+                ISuspendingEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::ISuspendingEventArgs * e
@@ -9935,8 +10180,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("9274E6BD-49A1-4958-BEEE-D0E19587B6E3"), contract] */
                 MIDL_INTERFACE("9274E6BD-49A1-4958-BEEE-D0E19587B6E3")
-                IUnhandledExceptionEventHandler : IUnknown
+                IUnhandledExceptionEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUnhandledExceptionEventArgs * e
@@ -9972,8 +10218,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("E6D5BBD5-E029-43A6-B36D-84A81042D774"), contract] */
                 MIDL_INTERFACE("E6D5BBD5-E029-43A6-B36D-84A81042D774")
-                IVisualStateChangedEventHandler : IUnknown
+                IVisualStateChangedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IVisualStateChangedEventArgs * e
@@ -10009,8 +10256,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("18026348-8619-4C7B-B534-CED45D9DE219"), contract] */
                 MIDL_INTERFACE("18026348-8619-4C7B-B534-CED45D9DE219")
-                IWindowActivatedEventHandler : IUnknown
+                IWindowActivatedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Core::IWindowActivatedEventArgs * e
@@ -10046,8 +10294,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("0DB89161-20D7-45DF-9122-BA89576703BA"), contract] */
                 MIDL_INTERFACE("0DB89161-20D7-45DF-9122-BA89576703BA")
-                IWindowClosedEventHandler : IUnknown
+                IWindowClosedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Core::ICoreWindowEventArgs * e
@@ -10083,8 +10332,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("5C21C742-2CED-4FD9-BA38-7118D40E966B"), contract] */
                 MIDL_INTERFACE("5C21C742-2CED-4FD9-BA38-7118D40E966B")
-                IWindowSizeChangedEventHandler : IUnknown
+                IWindowSizeChangedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Core::IWindowSizeChangedEventArgs * e
@@ -10120,8 +10370,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("10406AD6-B090-4A4A-B2AD-D682DF27130F"), contract] */
                 MIDL_INTERFACE("10406AD6-B090-4A4A-B2AD-D682DF27130F")
-                IWindowVisibilityChangedEventHandler : IUnknown
+                IWindowVisibilityChangedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Core::IVisibilityChangedEventArgs * e
@@ -10161,8 +10412,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A5F04119-0CD9-49F1-A23F-44E547AB9F1A"), exclusiveto, contract] */
                 MIDL_INTERFACE("A5F04119-0CD9-49F1-A23F-44E547AB9F1A")
-                IAdaptiveTrigger : IInspectable
+                IAdaptiveTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinWindowWidth(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -10210,8 +10462,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("C966D482-5AEB-4841-9247-C1A0BDD6F59F"), exclusiveto, contract] */
                 MIDL_INTERFACE("C966D482-5AEB-4841-9247-C1A0BDD6F59F")
-                IAdaptiveTriggerFactory : IInspectable
+                IAdaptiveTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10252,8 +10505,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("B92E29EA-1615-4350-9C3B-92B2986BF444"), exclusiveto, contract] */
                 MIDL_INTERFACE("B92E29EA-1615-4350-9C3B-92B2986BF444")
-                IAdaptiveTriggerStatics : IInspectable
+                IAdaptiveTriggerStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinWindowWidthProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -10295,8 +10549,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("74B861A1-7487-46A9-9A6E-C78B512726C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("74B861A1-7487-46A9-9A6E-C78B512726C5")
-                IApplication : IInspectable
+                IApplication : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Resources(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IResourceDictionary * * value
                         ) = 0;
@@ -10369,8 +10624,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("019104BE-522A-5904-F52F-DE72010429E0"), exclusiveto, contract] */
                 MIDL_INTERFACE("019104BE-522A-5904-F52F-DE72010429E0")
-                IApplication2 : IInspectable
+                IApplication2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FocusVisualKind(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FocusVisualKind * value
                         ) = 0;
@@ -10432,8 +10688,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("B775AD7C-18B8-45CA-A1B0-DC483E4B1028"), exclusiveto, contract] */
                 MIDL_INTERFACE("B775AD7C-18B8-45CA-A1B0-DC483E4B1028")
-                IApplication3 : IInspectable
+                IApplication3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HighContrastAdjustment(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::ApplicationHighContrastAdjustment * value
                         ) = 0;
@@ -10475,8 +10732,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("93BBE361-BE5A-4EE3-B4A3-95118DC97A89"), exclusiveto, contract] */
                 MIDL_INTERFACE("93BBE361-BE5A-4EE3-B4A3-95118DC97A89")
-                IApplicationFactory : IInspectable
+                IApplicationFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10517,8 +10775,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("751B792E-5772-4488-8B87-F547FAA64474"), exclusiveto, contract] */
                 MIDL_INTERFACE("751B792E-5772-4488-8B87-F547FAA64474")
-                IApplicationInitializationCallbackParams : IInspectable
+                IApplicationInitializationCallbackParams : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -10554,8 +10813,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("25F99FF7-9347-459A-9FAC-B2D0E11C1A0F"), exclusiveto, contract] */
                 MIDL_INTERFACE("25F99FF7-9347-459A-9FAC-B2D0E11C1A0F")
-                IApplicationOverrides : IInspectable
+                IApplicationOverrides : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE OnActivated(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs * args
                         ) = 0;
@@ -10618,8 +10878,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("DB5CD2B9-D3B4-558C-C64E-0434FD1BD889"), exclusiveto, contract] */
                 MIDL_INTERFACE("DB5CD2B9-D3B4-558C-C64E-0434FD1BD889")
-                IApplicationOverrides2 : IInspectable
+                IApplicationOverrides2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE OnBackgroundActivated(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs * args
                         ) = 0;
@@ -10658,8 +10919,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("06499997-F7B4-45FE-B763-7577D1D3CB4A"), exclusiveto, contract] */
                 MIDL_INTERFACE("06499997-F7B4-45FE-B763-7577D1D3CB4A")
-                IApplicationStatics : IInspectable
+                IApplicationStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IApplication * * value
                         ) = 0;
@@ -10710,8 +10972,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("32C1D013-4DBD-446D-BBB8-0DE35048A449"), exclusiveto, contract] */
                 MIDL_INTERFACE("32C1D013-4DBD-446D-BBB8-0DE35048A449")
-                IBindingFailedEventArgs : IInspectable
+                IBindingFailedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Message(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -10750,8 +11013,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("19BDD1B5-C7CB-46D9-A4DD-A1BBE83EF2FB"), exclusiveto, contract] */
                 MIDL_INTERFACE("19BDD1B5-C7CB-46D9-A4DD-A1BBE83EF2FB")
-                IBringIntoViewOptions : IInspectable
+                IBringIntoViewOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnimationDesired(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -10780,6 +11044,148 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions;
 
 /*
  *
+ * Interface Windows.UI.Xaml.IBringIntoViewOptions2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.BringIntoViewOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IBringIntoViewOptions2[] = L"Windows.UI.Xaml.IBringIntoViewOptions2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                /* [object, uuid("E855E08E-64B6-1211-BDDB-1FDDBB6E8231"), exclusiveto, contract] */
+                MIDL_INTERFACE("E855E08E-64B6-1211-BDDB-1FDDBB6E8231")
+                IBringIntoViewOptions2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalAlignmentRatio(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_HorizontalAlignmentRatio(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VerticalAlignmentRatio(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_VerticalAlignmentRatio(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalOffset(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_HorizontalOffset(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VerticalOffset(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_VerticalOffset(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IBringIntoViewOptions2=_uuidof(IBringIntoViewOptions2);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.IBringIntoViewRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.BringIntoViewRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IBringIntoViewRequestedEventArgs[] = L"Windows.UI.Xaml.IBringIntoViewRequestedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                /* [object, uuid("0E629EC4-2206-4C8B-94AE-BDB66A4EBFD1"), exclusiveto, contract] */
+                MIDL_INTERFACE("0E629EC4-2206-4C8B-94AE-BDB66A4EBFD1")
+                IBringIntoViewRequestedEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetElement(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TargetElement(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnimationDesired(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AnimationDesired(
+                        /* [in] */boolean value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetRect(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TargetRect(
+                        /* [in] */ABI::Windows::Foundation::Rect value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalAlignmentRatio(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VerticalAlignmentRatio(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalOffset(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_HorizontalOffset(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VerticalOffset(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_VerticalOffset(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Handled(
+                        /* [in] */boolean value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IBringIntoViewRequestedEventArgs=_uuidof(IBringIntoViewRequestedEventArgs);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.ICornerRadiusHelper
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10799,8 +11205,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("FD7BE182-1CDB-4288-B8C8-85EE79297BFC"), exclusiveto, contract] */
                 MIDL_INTERFACE("FD7BE182-1CDB-4288-B8C8-85EE79297BFC")
-                ICornerRadiusHelper : IInspectable
+                ICornerRadiusHelper : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -10836,8 +11243,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("F4A1F659-D4D4-451F-A387-D6BF4B2451D4"), exclusiveto, contract] */
                 MIDL_INTERFACE("F4A1F659-D4D4-451F-A387-D6BF4B2451D4")
-                ICornerRadiusHelperStatics : IInspectable
+                ICornerRadiusHelperStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromRadii(
                         /* [in] */DOUBLE topLeft,
                         /* [in] */DOUBLE topRight,
@@ -10884,8 +11292,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("7DA68E21-0B8F-4F9F-A143-F8E7780136A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("7DA68E21-0B8F-4F9F-A143-F8E7780136A2")
-                IDataContextChangedEventArgs : IInspectable
+                IDataContextChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NewValue(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -10930,8 +11339,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("9910AEC7-8AB5-4118-9BC6-09F45A35073D"), exclusiveto, contract] */
                 MIDL_INTERFACE("9910AEC7-8AB5-4118-9BC6-09F45A35073D")
-                IDataTemplate : IInspectable
+                IDataTemplate : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE LoadContent(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * returnValue
                         ) = 0;
@@ -10967,8 +11377,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("595E9547-CDFF-4B92-B773-AB396878F353"), contract] */
                 MIDL_INTERFACE("595E9547-CDFF-4B92-B773-AB396878F353")
-                IDataTemplateExtension : IInspectable
+                IDataTemplateExtension : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ResetTemplate(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE ProcessBinding(
                         /* [in] */UINT32 phase,
@@ -11013,8 +11424,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("51ED9D7E-2B53-475B-9C88-0C1832C8351A"), exclusiveto, contract] */
                 MIDL_INTERFACE("51ED9D7E-2B53-475B-9C88-0C1832C8351A")
-                IDataTemplateFactory : IInspectable
+                IDataTemplateFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -11055,8 +11467,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("873B6C28-CCEB-4B61-86FA-B2CEC39CC2FA"), exclusiveto, contract] */
                 MIDL_INTERFACE("873B6C28-CCEB-4B61-86FA-B2CEC39CC2FA")
-                IDataTemplateKey : IInspectable
+                IDataTemplateKey : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataType(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -11098,8 +11511,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("E96B2959-D982-4152-91CB-DE0E4DFD7693"), exclusiveto, contract] */
                 MIDL_INTERFACE("E96B2959-D982-4152-91CB-DE0E4DFD7693")
-                IDataTemplateKeyFactory : IInspectable
+                IDataTemplateKeyFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -11146,8 +11560,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("8AF77D73-AA01-471E-BEDD-8BAD86219B77"), exclusiveto, contract] */
                 MIDL_INTERFACE("8AF77D73-AA01-471E-BEDD-8BAD86219B77")
-                IDataTemplateStatics2 : IInspectable
+                IDataTemplateStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtensionInstanceProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -11194,8 +11609,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("3D451F98-C6A7-4D17-8398-D83A067183D8"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D451F98-C6A7-4D17-8398-D83A067183D8")
-                IDebugSettings : IInspectable
+                IDebugSettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnableFrameRateCounter(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -11256,8 +11672,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("48D37585-E1A6-469B-83C8-30825037119E"), exclusiveto, contract] */
                 MIDL_INTERFACE("48D37585-E1A6-469B-83C8-30825037119E")
-                IDebugSettings2 : IInspectable
+                IDebugSettings2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnableRedrawRegions(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -11299,8 +11716,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("E6BB5022-0625-479F-8E32-4B583D73B7AC"), exclusiveto, contract] */
                 MIDL_INTERFACE("E6BB5022-0625-479F-8E32-4B583D73B7AC")
-                IDebugSettings3 : IInspectable
+                IDebugSettings3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTextPerformanceVisualizationEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -11342,8 +11760,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("5C526665-F60E-4912-AF59-5FE0680F089D"), exclusiveto, contract] */
                 MIDL_INTERFACE("5C526665-F60E-4912-AF59-5FE0680F089D")
-                IDependencyObject : IInspectable
+                IDependencyObject : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetValue(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyProperty * dp,
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
@@ -11401,8 +11820,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("29FED85D-3D22-43A1-ADD0-17027C08B212"), exclusiveto, contract] */
                 MIDL_INTERFACE("29FED85D-3D22-43A1-ADD0-17027C08B212")
-                IDependencyObject2 : IInspectable
+                IDependencyObject2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RegisterPropertyChangedCallback(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyProperty * dp,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyPropertyChangedCallback  * callback,
@@ -11447,8 +11867,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("051E79FF-B3A8-49EE-B5AF-AC8F68B649E4"), exclusiveto, contract] */
                 MIDL_INTERFACE("051E79FF-B3A8-49EE-B5AF-AC8F68B649E4")
-                IDependencyObjectCollectionFactory : IInspectable
+                IDependencyObjectCollectionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -11489,8 +11910,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("9A03AF92-7D8A-4937-884F-ECF34FE02ACB"), exclusiveto, contract] */
                 MIDL_INTERFACE("9A03AF92-7D8A-4937-884F-ECF34FE02ACB")
-                IDependencyObjectFactory : IInspectable
+                IDependencyObjectFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -11531,8 +11953,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("85B13970-9BC4-4E96-ACF1-30C8FD3D55C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("85B13970-9BC4-4E96-ACF1-30C8FD3D55C8")
-                IDependencyProperty : IInspectable
+                IDependencyProperty : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetMetadata(
                         /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName forType,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IPropertyMetadata * * returnValue
@@ -11572,8 +11995,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("81212C2B-24D0-4957-ABC3-224470A93A4E"), exclusiveto, contract] */
                 MIDL_INTERFACE("81212C2B-24D0-4957-ABC3-224470A93A4E")
-                IDependencyPropertyChangedEventArgs : IInspectable
+                IDependencyPropertyChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Property(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -11618,8 +12042,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("49E5F28F-8259-4D5C-AAE0-83D56DBB68D9"), exclusiveto, contract] */
                 MIDL_INTERFACE("49E5F28F-8259-4D5C-AAE0-83D56DBB68D9")
-                IDependencyPropertyStatics : IInspectable
+                IDependencyPropertyStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnsetValue(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -11672,8 +12097,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("D160CE46-CD22-4F5F-8C97-40E61DA3E2DC"), exclusiveto, contract] */
                 MIDL_INTERFACE("D160CE46-CD22-4F5F-8C97-40E61DA3E2DC")
-                IDispatcherTimer : IInspectable
+                IDispatcherTimer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Interval(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -11727,8 +12153,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("E9961E6E-3626-403A-AFE0-040D58165632"), exclusiveto, contract] */
                 MIDL_INTERFACE("E9961E6E-3626-403A-AFE0-040D58165632")
-                IDispatcherTimerFactory : IInspectable
+                IDispatcherTimerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -11769,8 +12196,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("B440C7C3-02B4-4980-9342-25DAE1C0F188"), exclusiveto, contract] */
                 MIDL_INTERFACE("B440C7C3-02B4-4980-9342-25DAE1C0F188")
-                IDragEventArgs : IInspectable
+                IDragEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -11822,8 +12250,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("26336658-2917-411D-BFC3-2F22471CBBE7"), exclusiveto, contract] */
                 MIDL_INTERFACE("26336658-2917-411D-BFC3-2F22471CBBE7")
-                IDragEventArgs2 : IInspectable
+                IDragEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView * * value
                         ) = 0;
@@ -11877,8 +12306,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("D04FC3C6-8119-427A-8152-5F9550CC0416"), exclusiveto, contract] */
                 MIDL_INTERFACE("D04FC3C6-8119-427A-8152-5F9550CC0416")
-                IDragEventArgs3 : IInspectable
+                IDragEventArgs3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowedOperations(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::DataTransfer::DataPackageOperation * value
                         ) = 0;
@@ -11917,8 +12347,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("BA73ECBA-1B73-4086-B3D3-C223BEEA1633"), exclusiveto, contract] */
                 MIDL_INTERFACE("BA73ECBA-1B73-4086-B3D3-C223BEEA1633")
-                IDragOperationDeferral : IInspectable
+                IDragOperationDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -11955,8 +12386,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("6800D3FA-90B8-46F9-8E30-5AC25F73F0F9"), exclusiveto, contract] */
                 MIDL_INTERFACE("6800D3FA-90B8-46F9-8E30-5AC25F73F0F9")
-                IDragStartingEventArgs : IInspectable
+                IDragStartingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Cancel(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -12011,8 +12443,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("D855E08E-44B6-4211-BD0B-7FDDBB6E8231"), exclusiveto, contract] */
                 MIDL_INTERFACE("D855E08E-44B6-4211-BD0B-7FDDBB6E8231")
-                IDragStartingEventArgs2 : IInspectable
+                IDragStartingEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowedOperations(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::DataTransfer::DataPackageOperation * value
                         ) = 0;
@@ -12054,8 +12487,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("2D9BD838-7C60-4842-9170-346FE10A226A"), exclusiveto, contract] */
                 MIDL_INTERFACE("2D9BD838-7C60-4842-9170-346FE10A226A")
-                IDragUI : IInspectable
+                IDragUI : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE SetContentFromBitmapImage(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Imaging::IBitmapImage * bitmapImage
                         ) = 0;
@@ -12106,8 +12540,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("BD6C9DFA-C961-4861-B7A5-BF4FE4A8A6EF"), exclusiveto, contract] */
                 MIDL_INTERFACE("BD6C9DFA-C961-4861-B7A5-BF4FE4A8A6EF")
-                IDragUIOverride : IInspectable
+                IDragUIOverride : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Caption(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -12182,8 +12617,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("6C4FC188-95BC-4261-9EC5-21CAB677B734"), exclusiveto, contract] */
                 MIDL_INTERFACE("6C4FC188-95BC-4261-9EC5-21CAB677B734")
-                IDropCompletedEventArgs : IInspectable
+                IDropCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DropResult(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::DataTransfer::DataPackageOperation * value
                         ) = 0;
@@ -12222,8 +12658,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("25C1659F-4497-4135-940F-EE96F4D6E934"), exclusiveto, contract] */
                 MIDL_INTERFACE("25C1659F-4497-4135-940F-EE96F4D6E934")
-                IDurationHelper : IInspectable
+                IDurationHelper : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -12259,8 +12696,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("BC88093E-3547-4EC0-B519-FFA8F9C4838C"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC88093E-3547-4EC0-B519-FFA8F9C4838C")
-                IDurationHelperStatics : IInspectable
+                IDurationHelperStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Automatic(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Duration * value
                         ) = 0;
@@ -12330,8 +12768,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("387773A5-F036-460C-9B81-F3D6EA43F6F2"), exclusiveto, contract] */
                 MIDL_INTERFACE("387773A5-F036-460C-9B81-F3D6EA43F6F2")
-                IElementSoundPlayer : IInspectable
+                IElementSoundPlayer : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -12367,8 +12806,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("217A9004-981D-41C9-B152-ADA911A4B13A"), exclusiveto, contract] */
                 MIDL_INTERFACE("217A9004-981D-41C9-B152-ADA911A4B13A")
-                IElementSoundPlayerStatics : IInspectable
+                IElementSoundPlayerStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Volume(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -12400,6 +12840,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics;
 
 /*
  *
+ * Interface Windows.UI.Xaml.IElementSoundPlayerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.ElementSoundPlayer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IElementSoundPlayerStatics2[] = L"Windows.UI.Xaml.IElementSoundPlayerStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                /* [object, uuid("F2505956-ED41-48D7-AAE8-F2ABCB444929"), exclusiveto, contract] */
+                MIDL_INTERFACE("F2505956-ED41-48D7-AAE8-F2ABCB444929")
+                IElementSoundPlayerStatics2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SpatialAudioMode(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::ElementSpatialAudioMode * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_SpatialAudioMode(
+                        /* [in] */ABI::Windows::UI::Xaml::ElementSpatialAudioMode value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IElementSoundPlayerStatics2=_uuidof(IElementSoundPlayerStatics2);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.IEventTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12419,8 +12903,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("DEF8F855-0B49-4087-B1A9-B8B38488F786"), exclusiveto, contract] */
                 MIDL_INTERFACE("DEF8F855-0B49-4087-B1A9-B8B38488F786")
-                IEventTrigger : IInspectable
+                IEventTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RoutedEvent(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IRoutedEvent * * value
                         ) = 0;
@@ -12465,8 +12950,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("DD9FF16A-4B62-4A6C-A49D-0671EF6136BE"), exclusiveto, contract] */
                 MIDL_INTERFACE("DD9FF16A-4B62-4A6C-A49D-0671EF6136BE")
-                IExceptionRoutedEventArgs : IInspectable
+                IExceptionRoutedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ErrorMessage(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -12505,8 +12991,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("BBA9826D-5D7A-44E7-B893-B2AE0DD24273"), exclusiveto, contract] */
                 MIDL_INTERFACE("BBA9826D-5D7A-44E7-B893-B2AE0DD24273")
-                IExceptionRoutedEventArgsFactory : IInspectable
+                IExceptionRoutedEventArgsFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -12542,8 +13029,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A391D09B-4A99-4B7C-9D8D-6FA5D01F6FBF"), exclusiveto, contract] */
                 MIDL_INTERFACE("A391D09B-4A99-4B7C-9D8D-6FA5D01F6FBF")
-                IFrameworkElement : IInspectable
+                IFrameworkElement : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Triggers(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CTriggerBase * * value
                         ) = 0;
@@ -12726,8 +13214,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("F19104BE-422A-4904-A52F-EE72010429E5"), exclusiveto, contract] */
                 MIDL_INTERFACE("F19104BE-422A-4904-A52F-EE72010429E5")
-                IFrameworkElement2 : IInspectable
+                IFrameworkElement2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequestedTheme(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::ElementTheme * value
                         ) = 0;
@@ -12780,8 +13269,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("C81C2720-5C52-4BBE-A199-2B1E34F00F70"), exclusiveto, contract] */
                 MIDL_INTERFACE("C81C2720-5C52-4BBE-A199-2B1E34F00F70")
-                IFrameworkElement3 : IInspectable
+                IFrameworkElement3 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Loading(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CFrameworkElement_IInspectable * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -12824,8 +13314,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("6B765BB3-FBA3-4404-BDEE-1A45D1CA5F21"), exclusiveto, contract] */
                 MIDL_INTERFACE("6B765BB3-FBA3-4404-BDEE-1A45D1CA5F21")
-                IFrameworkElement4 : IInspectable
+                IFrameworkElement4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowFocusOnInteraction(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -12903,8 +13394,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("792A5D91-62A1-40BF-A0CE-F9C131FCB7A7"), exclusiveto, contract] */
                 MIDL_INTERFACE("792A5D91-62A1-40BF-A0CE-F9C131FCB7A7")
-                IFrameworkElement6 : IInspectable
+                IFrameworkElement6 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActualTheme(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::ElementTheme * value
                         ) = 0;
@@ -12950,8 +13442,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("DEAEE126-03CA-4966-B576-604CCE93B5E8"), exclusiveto, contract] */
                 MIDL_INTERFACE("DEAEE126-03CA-4966-B576-604CCE93B5E8")
-                IFrameworkElementFactory : IInspectable
+                IFrameworkElementFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -12992,8 +13485,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("DA007E54-B3C2-4B9A-AA8E-D3F071262B97"), exclusiveto, contract] */
                 MIDL_INTERFACE("DA007E54-B3C2-4B9A-AA8E-D3F071262B97")
-                IFrameworkElementOverrides : IInspectable
+                IFrameworkElementOverrides : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE MeasureOverride(
                         /* [in] */ABI::Windows::Foundation::Size availableSize,
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * returnValue
@@ -13038,8 +13532,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("CB5CD2B9-E3B4-458C-B64E-1434FD1BD88A"), exclusiveto, contract] */
                 MIDL_INTERFACE("CB5CD2B9-E3B4-458C-B64E-1434FD1BD88A")
-                IFrameworkElementOverrides2 : IInspectable
+                IFrameworkElementOverrides2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GoToElementStateCore(
                         /* [in] */__RPC__in HSTRING stateName,
                         /* [in] */boolean useTransitions,
@@ -13080,8 +13575,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("48383032-FBEB-4F8A-AED2-EE21FB27A57B"), exclusiveto, contract] */
                 MIDL_INTERFACE("48383032-FBEB-4F8A-AED2-EE21FB27A57B")
-                IFrameworkElementStatics : IInspectable
+                IFrameworkElementStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TagProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -13168,8 +13664,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("9695DB02-C0D8-4FA2-B100-3FA2DF8B9538"), exclusiveto, contract] */
                 MIDL_INTERFACE("9695DB02-C0D8-4FA2-B100-3FA2DF8B9538")
-                IFrameworkElementStatics2 : IInspectable
+                IFrameworkElementStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequestedThemeProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -13208,8 +13705,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("9C41B155-C5D8-4663-BFF2-D8D54FB5DBB3"), exclusiveto, contract] */
                 MIDL_INTERFACE("9C41B155-C5D8-4663-BFF2-D8D54FB5DBB3")
-                IFrameworkElementStatics4 : IInspectable
+                IFrameworkElementStatics4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowFocusOnInteractionProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -13266,8 +13764,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("525D3941-0B3C-4BE6-9978-19A8025C09D8"), exclusiveto, contract] */
                 MIDL_INTERFACE("525D3941-0B3C-4BE6-9978-19A8025C09D8")
-                IFrameworkElementStatics5 : IInspectable
+                IFrameworkElementStatics5 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE DeferTree(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element
                         ) = 0;
@@ -13306,8 +13805,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("FCC1529A-69DB-4582-A7BE-CF6A1CFDACD0"), exclusiveto, contract] */
                 MIDL_INTERFACE("FCC1529A-69DB-4582-A7BE-CF6A1CFDACD0")
-                IFrameworkElementStatics6 : IInspectable
+                IFrameworkElementStatics6 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActualThemeProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -13346,8 +13846,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A1E254D8-A446-4A27-9A9D-A0F59E1258A5"), exclusiveto, contract] */
                 MIDL_INTERFACE("A1E254D8-A446-4A27-9A9D-A0F59E1258A5")
-                IFrameworkTemplate : IInspectable
+                IFrameworkTemplate : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -13383,8 +13884,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("1A78A0A5-937D-46D4-832B-94FF14DAB061"), exclusiveto, contract] */
                 MIDL_INTERFACE("1A78A0A5-937D-46D4-832B-94FF14DAB061")
-                IFrameworkTemplateFactory : IInspectable
+                IFrameworkTemplateFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -13425,8 +13927,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("DDBA664B-B603-47AA-942D-3833174F0D80"), exclusiveto, contract] */
                 MIDL_INTERFACE("DDBA664B-B603-47AA-942D-3833174F0D80")
-                IFrameworkView : IInspectable
+                IFrameworkView : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -13462,8 +13965,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("E3B077DA-35AD-4B09-B5B2-27420041BA9F"), exclusiveto, contract] */
                 MIDL_INTERFACE("E3B077DA-35AD-4B09-B5B2-27420041BA9F")
-                IFrameworkViewSource : IInspectable
+                IFrameworkViewSource : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -13499,8 +14003,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("7A826CE1-07A0-4083-B6D1-B1D917B976AC"), exclusiveto, contract] */
                 MIDL_INTERFACE("7A826CE1-07A0-4083-B6D1-B1D917B976AC")
-                IGridLengthHelper : IInspectable
+                IGridLengthHelper : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -13536,8 +14041,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("9D457B9B-019F-4266-8872-215F198F6A9D"), exclusiveto, contract] */
                 MIDL_INTERFACE("9D457B9B-019F-4266-8872-215F198F6A9D")
-                IGridLengthHelperStatics : IInspectable
+                IGridLengthHelperStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Auto(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::GridLength * value
                         ) = 0;
@@ -13602,8 +14108,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("46D1FA8D-5149-4153-BA3C-B03E64EE531E"), exclusiveto, contract] */
                 MIDL_INTERFACE("46D1FA8D-5149-4153-BA3C-B03E64EE531E")
-                IMediaFailedRoutedEventArgs : IInspectable
+                IMediaFailedRoutedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ErrorTrace(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -13642,8 +14149,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("727BDD92-64B0-49CF-A321-A9793E73E2E7"), exclusiveto, contract] */
                 MIDL_INTERFACE("727BDD92-64B0-49CF-A321-A9793E73E2E7")
-                IPointHelper : IInspectable
+                IPointHelper : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -13679,8 +14187,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("015ACA75-76D8-4B7E-8A33-7D79204691EE"), exclusiveto, contract] */
                 MIDL_INTERFACE("015ACA75-76D8-4B7E-8A33-7D79204691EE")
-                IPointHelperStatics : IInspectable
+                IPointHelperStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromCoordinates(
                         /* [in] */FLOAT x,
                         /* [in] */FLOAT y,
@@ -13721,8 +14230,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("814EF30D-8D18-448A-8644-F2CB51E70380"), exclusiveto, contract] */
                 MIDL_INTERFACE("814EF30D-8D18-448A-8644-F2CB51E70380")
-                IPropertyMetadata : IInspectable
+                IPropertyMetadata : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DefaultValue(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -13764,8 +14274,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("C1B81CC0-57CD-4F2F-B0A9-E1801B28F76B"), exclusiveto, contract] */
                 MIDL_INTERFACE("C1B81CC0-57CD-4F2F-B0A9-E1801B28F76B")
-                IPropertyMetadataFactory : IInspectable
+                IPropertyMetadataFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDefaultValue(
                         /* [in] */__RPC__in_opt IInspectable * defaultValue,
                         /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13814,8 +14325,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("3B01077A-6E06-45E9-8B5C-AF243458C062"), exclusiveto, contract] */
                 MIDL_INTERFACE("3B01077A-6E06-45E9-8B5C-AF243458C062")
-                IPropertyMetadataStatics : IInspectable
+                IPropertyMetadataStatics : public IInspectable
                 {
+                public:
                     /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE CreateWithDefaultValue(
                         /* [in] */__RPC__in_opt IInspectable * defaultValue,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IPropertyMetadata * * returnValue
@@ -13869,8 +14381,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("300E5D8A-1FF3-4D2C-95EC-27F81DEBACB8"), exclusiveto, contract] */
                 MIDL_INTERFACE("300E5D8A-1FF3-4D2C-95EC-27F81DEBACB8")
-                IPropertyPath : IInspectable
+                IPropertyPath : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Path(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -13909,8 +14422,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("4E4CDF99-9826-4E56-847C-CA055F162905"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E4CDF99-9826-4E56-847C-CA055F162905")
-                IPropertyPathFactory : IInspectable
+                IPropertyPathFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in HSTRING path,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IPropertyPath * * instance
@@ -13950,8 +14464,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A38781E2-4BFB-4EE2-AFE5-89F31B37478D"), exclusiveto, contract] */
                 MIDL_INTERFACE("A38781E2-4BFB-4EE2-AFE5-89F31B37478D")
-                IRectHelper : IInspectable
+                IRectHelper : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -13987,8 +14502,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("5EE163E4-C17E-494F-B580-2F0574FC3A15"), exclusiveto, contract] */
                 MIDL_INTERFACE("5EE163E4-C17E-494F-B580-2F0574FC3A15")
-                IRectHelperStatics : IInspectable
+                IRectHelperStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Empty(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                         ) = 0;
@@ -14089,8 +14605,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("C1EA4F24-D6DE-4191-8E3A-F48601F7489C"), exclusiveto, contract] */
                 MIDL_INTERFACE("C1EA4F24-D6DE-4191-8E3A-F48601F7489C")
-                IResourceDictionary : IInspectable
+                IResourceDictionary : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Source(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                         ) = 0;
@@ -14138,8 +14655,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("EA3639B5-31B7-4271-92C9-7C9584A91C22"), exclusiveto, contract] */
                 MIDL_INTERFACE("EA3639B5-31B7-4271-92C9-7C9584A91C22")
-                IResourceDictionaryFactory : IInspectable
+                IResourceDictionaryFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -14180,8 +14698,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A6B25818-43C1-4C70-865C-7BDD5A32E327"), exclusiveto, contract] */
                 MIDL_INTERFACE("A6B25818-43C1-4C70-865C-7BDD5A32E327")
-                IRoutedEvent : IInspectable
+                IRoutedEvent : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -14217,8 +14736,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("5C985AC6-D802-4B38-A223-BF070C43FEDF"), exclusiveto, contract] */
                 MIDL_INTERFACE("5C985AC6-D802-4B38-A223-BF070C43FEDF")
-                IRoutedEventArgs : IInspectable
+                IRoutedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OriginalSource(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -14257,8 +14777,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("B61C4D87-70E5-412E-B520-1A41EE76BBF4"), exclusiveto, contract] */
                 MIDL_INTERFACE("B61C4D87-70E5-412E-B520-1A41EE76BBF4")
-                IRoutedEventArgsFactory : IInspectable
+                IRoutedEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -14299,8 +14820,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A73DED29-B4AE-4A81-BE85-E690BA0D3B6E"), exclusiveto, contract] */
                 MIDL_INTERFACE("A73DED29-B4AE-4A81-BE85-E690BA0D3B6E")
-                ISetter : IInspectable
+                ISetter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Property(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -14348,8 +14870,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("70169561-05B1-4FA3-9D53-8E0C8C747AFC"), exclusiveto, contract] */
                 MIDL_INTERFACE("70169561-05B1-4FA3-9D53-8E0C8C747AFC")
-                ISetter2 : IInspectable
+                ISetter2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Target(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::ITargetPropertyPath * * value
                         ) = 0;
@@ -14391,8 +14914,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("418BE27C-2AC4-4F22-8097-DEA3AEEB2FB3"), exclusiveto, contract] */
                 MIDL_INTERFACE("418BE27C-2AC4-4F22-8097-DEA3AEEB2FB3")
-                ISetterBase : IInspectable
+                ISetterBase : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSealed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -14436,8 +14960,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("03C40CA8-909E-4117-811C-A4529496BDF1"), exclusiveto, contract] */
                 MIDL_INTERFACE("03C40CA8-909E-4117-811C-A4529496BDF1")
-                ISetterBaseCollection : IInspectable
+                ISetterBaseCollection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSealed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -14476,8 +15001,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("81F8AD60-1CE8-469D-A667-16E37CEF8BA9"), exclusiveto, contract] */
                 MIDL_INTERFACE("81F8AD60-1CE8-469D-A667-16E37CEF8BA9")
-                ISetterBaseFactory : IInspectable
+                ISetterBaseFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -14513,8 +15039,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("D3CA3D42-09B1-49D5-8891-E7B5648E02A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("D3CA3D42-09B1-49D5-8891-E7B5648E02A2")
-                ISetterFactory : IInspectable
+                ISetterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyProperty * targetProperty,
                         /* [in] */__RPC__in_opt IInspectable * value,
@@ -14555,8 +15082,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("D5312E60-5CC1-42A1-920C-1AF46BE2F986"), exclusiveto, contract] */
                 MIDL_INTERFACE("D5312E60-5CC1-42A1-920C-1AF46BE2F986")
-                ISizeChangedEventArgs : IInspectable
+                ISizeChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PreviousSize(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * value
                         ) = 0;
@@ -14598,8 +15126,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("E7225A94-5D03-4A03-BA94-967FC68FCEFE"), exclusiveto, contract] */
                 MIDL_INTERFACE("E7225A94-5D03-4A03-BA94-967FC68FCEFE")
-                ISizeHelper : IInspectable
+                ISizeHelper : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -14635,8 +15164,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("6286C5B2-CF78-4915-AA40-76004A165F5E"), exclusiveto, contract] */
                 MIDL_INTERFACE("6286C5B2-CF78-4915-AA40-76004A165F5E")
-                ISizeHelperStatics : IInspectable
+                ISizeHelperStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Empty(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * value
                         ) = 0;
@@ -14689,8 +15219,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("67ADEF2E-D8D9-49F7-A1FD-2E35EEDD23CD"), exclusiveto, contract] */
                 MIDL_INTERFACE("67ADEF2E-D8D9-49F7-A1FD-2E35EEDD23CD")
-                IStateTrigger : IInspectable
+                IStateTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsActive(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -14732,8 +15263,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("48B20698-AF06-466C-8052-93666DDE0E49"), exclusiveto, contract] */
                 MIDL_INTERFACE("48B20698-AF06-466C-8052-93666DDE0E49")
-                IStateTriggerBase : IInspectable
+                IStateTriggerBase : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -14769,8 +15301,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("970E2C4B-BFAF-47B0-BE42-C1D711BB2E9F"), exclusiveto, contract] */
                 MIDL_INTERFACE("970E2C4B-BFAF-47B0-BE42-C1D711BB2E9F")
-                IStateTriggerBaseFactory : IInspectable
+                IStateTriggerBaseFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -14811,8 +15344,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("3C41E253-8D14-4216-994C-F9930429F6E5"), exclusiveto, contract] */
                 MIDL_INTERFACE("3C41E253-8D14-4216-994C-F9930429F6E5")
-                IStateTriggerBaseProtected : IInspectable
+                IStateTriggerBaseProtected : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetActive(
                         /* [in] */boolean IsActive
                         ) = 0;
@@ -14851,8 +15385,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("71E95C90-B3FE-4DD3-A8A8-44A2CE25E0B8"), exclusiveto, contract] */
                 MIDL_INTERFACE("71E95C90-B3FE-4DD3-A8A8-44A2CE25E0B8")
-                IStateTriggerStatics : IInspectable
+                IStateTriggerStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsActiveProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -14891,8 +15426,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("C4A9F225-9DB7-4A7D-B6D1-F74EDB9293C2"), exclusiveto, contract] */
                 MIDL_INTERFACE("C4A9F225-9DB7-4A7D-B6D1-F74EDB9293C2")
-                IStyle : IInspectable
+                IStyle : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSealed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -14947,8 +15483,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A36824E3-3D81-4CE5-AA51-8B410F602FCD"), exclusiveto, contract] */
                 MIDL_INTERFACE("A36824E3-3D81-4CE5-AA51-8B410F602FCD")
-                IStyleFactory : IInspectable
+                IStyleFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName targetType,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IStyle * * instance
@@ -14988,8 +15525,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("40740F8E-085F-4CED-BE70-6F47ACF15AD0"), exclusiveto, contract] */
                 MIDL_INTERFACE("40740F8E-085F-4CED-BE70-6F47ACF15AD0")
-                ITargetPropertyPath : IInspectable
+                ITargetPropertyPath : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Path(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IPropertyPath * * value
                         ) = 0;
@@ -15037,8 +15575,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("88EECCC8-99E2-4A44-9907-B44BC86E2BBE"), exclusiveto, contract] */
                 MIDL_INTERFACE("88EECCC8-99E2-4A44-9907-B44BC86E2BBE")
-                ITargetPropertyPathFactory : IInspectable
+                ITargetPropertyPathFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyProperty * targetProperty,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::ITargetPropertyPath * * instance
@@ -15078,8 +15617,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A86BAE4B-1E8F-4EEB-9013-0B2838A97B34"), exclusiveto, contract] */
                 MIDL_INTERFACE("A86BAE4B-1E8F-4EEB-9013-0B2838A97B34")
-                IThicknessHelper : IInspectable
+                IThicknessHelper : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -15115,8 +15655,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("C0991A7C-070C-4DA6-8784-01CA800EB73A"), exclusiveto, contract] */
                 MIDL_INTERFACE("C0991A7C-070C-4DA6-8784-01CA800EB73A")
-                IThicknessHelperStatics : IInspectable
+                IThicknessHelperStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromLengths(
                         /* [in] */DOUBLE left,
                         /* [in] */DOUBLE top,
@@ -15163,8 +15704,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("A2C0DF02-63D5-4B46-9B83-0868D3079621"), exclusiveto, contract] */
                 MIDL_INTERFACE("A2C0DF02-63D5-4B46-9B83-0868D3079621")
-                ITriggerAction : IInspectable
+                ITriggerAction : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -15200,8 +15742,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("68D2C0B9-3289-414F-8F6E-C6B97AEDDA03"), exclusiveto, contract] */
                 MIDL_INTERFACE("68D2C0B9-3289-414F-8F6E-C6B97AEDDA03")
-                ITriggerActionFactory : IInspectable
+                ITriggerActionFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -15237,8 +15780,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("E7EA222F-DEE6-4393-A8B2-8923D641F395"), exclusiveto, contract] */
                 MIDL_INTERFACE("E7EA222F-DEE6-4393-A8B2-8923D641F395")
-                ITriggerBase : IInspectable
+                ITriggerBase : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -15274,8 +15818,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("6A3B9E57-FC5D-42D0-8CB9-CA50667AF746"), exclusiveto, contract] */
                 MIDL_INTERFACE("6A3B9E57-FC5D-42D0-8CB9-CA50667AF746")
-                ITriggerBaseFactory : IInspectable
+                ITriggerBaseFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -15311,8 +15856,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("676D0BE9-B65C-41C6-BA40-58CF87F201C1"), exclusiveto, contract] */
                 MIDL_INTERFACE("676D0BE9-B65C-41C6-BA40-58CF87F201C1")
-                IUIElement : IInspectable
+                IUIElement : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredSize(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * value
                         ) = 0;
@@ -15658,8 +16204,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("676D0BF9-B66C-41D6-BA50-58CF87F201D1"), exclusiveto, contract] */
                 MIDL_INTERFACE("676D0BF9-B66C-41D6-BA50-58CF87F201D1")
-                IUIElement2 : IInspectable
+                IUIElement2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompositeMode(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::ElementCompositeMode * value
                         ) = 0;
@@ -15704,8 +16251,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("BC2B28F1-26F2-4AAB-B256-3B5350881E37"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC2B28F1-26F2-4AAB-B256-3B5350881E37")
-                IUIElement3 : IInspectable
+                IUIElement3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Transform3D(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Media3D::ITransform3D * * value
                         ) = 0;
@@ -15771,8 +16319,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("69145CD4-199A-4657-9E57-E99E8F136712"), exclusiveto, contract] */
                 MIDL_INTERFACE("69145CD4-199A-4657-9E57-E99E8F136712")
-                IUIElement4 : IInspectable
+                IUIElement4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContextFlyout(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase * * value
                         ) = 0;
@@ -15873,8 +16422,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("8EED9BC2-A58C-4453-AF0F-A92EE06D0317"), exclusiveto, contract] */
                 MIDL_INTERFACE("8EED9BC2-A58C-4453-AF0F-A92EE06D0317")
-                IUIElement5 : IInspectable
+                IUIElement5 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Lights(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CXamlLight * * value
                         ) = 0;
@@ -15998,8 +16548,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("CAFC4968-6369-4249-80F9-3D656319E811"), exclusiveto, contract] */
                 MIDL_INTERFACE("CAFC4968-6369-4249-80F9-3D656319E811")
-                IUIElement7 : IInspectable
+                IUIElement7 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAccelerators(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CInput__CKeyboardAccelerator * * value
                         ) = 0;
@@ -16050,6 +16601,69 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElement7;
 
 /*
  *
+ * Interface Windows.UI.Xaml.IUIElement8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.UIElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElement8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElement8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IUIElement8[] = L"Windows.UI.Xaml.IUIElement8";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                /* [object, uuid("3AB70E85-D508-4477-B6F8-0E435701C836"), exclusiveto, contract] */
+                MIDL_INTERFACE("3AB70E85-D508-4477-B6F8-0E435701C836")
+                IUIElement8 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyTipTarget(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_KeyTipTarget(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAcceleratorPlacementTarget(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_KeyboardAcceleratorPlacementTarget(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAcceleratorPlacementMode(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Input::KeyboardAcceleratorPlacementMode * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_KeyboardAcceleratorPlacementMode(
+                        /* [in] */ABI::Windows::UI::Xaml::Input::KeyboardAcceleratorPlacementMode value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_BringIntoViewRequested(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs * value,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_BringIntoViewRequested(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IUIElement8=_uuidof(IUIElement8);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElement8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElement8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.IUIElementFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -16069,8 +16683,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("B9EE93FE-A338-419F-AC32-91DCAADF5D08"), exclusiveto, contract] */
                 MIDL_INTERFACE("B9EE93FE-A338-419F-AC32-91DCAADF5D08")
-                IUIElementFactory : IInspectable
+                IUIElementFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -16106,8 +16721,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("608D2F1D-7858-4AEB-89E4-B54E2C7ED3D3"), exclusiveto, contract] */
                 MIDL_INTERFACE("608D2F1D-7858-4AEB-89E4-B54E2C7ED3D3")
-                IUIElementOverrides : IInspectable
+                IUIElementOverrides : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE OnCreateAutomationPeer(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
                         ) = 0;
@@ -16152,8 +16768,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("B97F7F68-C29B-4C99-A1C3-952619D6E720"), exclusiveto, contract] */
                 MIDL_INTERFACE("B97F7F68-C29B-4C99-A1C3-952619D6E720")
-                IUIElementOverrides7 : IInspectable
+                IUIElementOverrides7 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetChildrenInTabFocusOrder(
                         /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CDependencyObject * * returnValue
                         ) = 0;
@@ -16172,6 +16789,50 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.IUIElementOverrides8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.UIElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IUIElementOverrides8[] = L"Windows.UI.Xaml.IUIElementOverrides8";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                /* [object, uuid("4A5A645C-548D-48CF-B998-7844D6E235A1"), exclusiveto, contract] */
+                MIDL_INTERFACE("4A5A645C-548D-48CF-B998-7844D6E235A1")
+                IUIElementOverrides8 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE OnKeyboardAcceleratorInvoked(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Input::IKeyboardAcceleratorInvokedEventArgs * args
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE OnBringIntoViewRequested(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IBringIntoViewRequestedEventArgs * e
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IUIElementOverrides8=_uuidof(IUIElementOverrides8);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -16195,8 +16856,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("58D3573B-F52C-45BE-988B-A5869564873C"), exclusiveto, contract] */
                 MIDL_INTERFACE("58D3573B-F52C-45BE-988B-A5869564873C")
-                IUIElementStatics : IInspectable
+                IUIElementStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyDownEvent(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IRoutedEvent * * value
                         ) = 0;
@@ -16352,8 +17014,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("58D3574B-F53C-45BE-989B-A5869564874C"), exclusiveto, contract] */
                 MIDL_INTERFACE("58D3574B-F53C-45BE-989B-A5869564874C")
-                IUIElementStatics2 : IInspectable
+                IUIElementStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompositeModeProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -16392,8 +17055,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("D1F87ADE-ECA1-4561-A32B-64601B4E0597"), exclusiveto, contract] */
                 MIDL_INTERFACE("D1F87ADE-ECA1-4561-A32B-64601B4E0597")
-                IUIElementStatics3 : IInspectable
+                IUIElementStatics3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Transform3DProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -16439,8 +17103,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("1D157D61-16AF-411F-B774-272375A4AC2C"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D157D61-16AF-411F-B774-272375A4AC2C")
-                IUIElementStatics4 : IInspectable
+                IUIElementStatics4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContextFlyoutProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -16491,8 +17156,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("59BD7D91-8FA3-4C65-BA1B-40DF38556CBB"), exclusiveto, contract] */
                 MIDL_INTERFACE("59BD7D91-8FA3-4C65-BA1B-40DF38556CBB")
-                IUIElementStatics5 : IInspectable
+                IUIElementStatics5 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LightsProperty(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                         ) = 0;
@@ -16561,8 +17227,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("647E03B7-036A-4DEA-9540-1DD7FD1266F1"), exclusiveto, contract] */
                 MIDL_INTERFACE("647E03B7-036A-4DEA-9540-1DD7FD1266F1")
-                IUIElementStatics6 : IInspectable
+                IUIElementStatics6 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GettingFocusEvent(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IRoutedEvent * * value
                         ) = 0;
@@ -16607,8 +17274,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("DA9B4493-A695-4145-AE93-888024396A0F"), exclusiveto, contract] */
                 MIDL_INTERFACE("DA9B4493-A695-4145-AE93-888024396A0F")
-                IUIElementStatics7 : IInspectable
+                IUIElementStatics7 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PreviewKeyDownEvent(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IRoutedEvent * * value
                         ) = 0;
@@ -16634,6 +17302,62 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElementStatics7;
 
 /*
  *
+ * Interface Windows.UI.Xaml.IUIElementStatics8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.UIElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IUIElementStatics8[] = L"Windows.UI.Xaml.IUIElementStatics8";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                /* [object, uuid("17BE3487-4875-4915-B0B1-A4C0F851DF3F"), exclusiveto, contract] */
+                MIDL_INTERFACE("17BE3487-4875-4915-B0B1-A4C0F851DF3F")
+                IUIElementStatics8 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BringIntoViewRequestedEvent(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IRoutedEvent * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContextRequestedEvent(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IRoutedEvent * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyTipTargetProperty(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAcceleratorPlacementTargetProperty(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAcceleratorPlacementModeProperty(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE RegisterAsScrollPort(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IUIElementStatics8=_uuidof(IUIElementStatics8);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.IUnhandledExceptionEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -16653,8 +17377,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("7230269C-054E-4CF3-86C5-BE90EB6863D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("7230269C-054E-4CF3-86C5-BE90EB6863D5")
-                IUnhandledExceptionEventArgs : IInspectable
+                IUnhandledExceptionEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Exception(
                         /* [retval, out] */__RPC__out HRESULT * value
                         ) = 0;
@@ -16702,8 +17427,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("6320AFFC-C31A-4450-AFDE-F6EA7BD1F586"), exclusiveto, contract] */
                 MIDL_INTERFACE("6320AFFC-C31A-4450-AFDE-F6EA7BD1F586")
-                IVisualState : IInspectable
+                IVisualState : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -16748,8 +17474,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("0FA0F896-64C0-45FB-8D24-FB83298C0D93"), exclusiveto, contract] */
                 MIDL_INTERFACE("0FA0F896-64C0-45FB-8D24-FB83298C0D93")
-                IVisualState2 : IInspectable
+                IVisualState2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Setters(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::ISetterBaseCollection * * value
                         ) = 0;
@@ -16791,8 +17518,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("FE216AB1-F31F-4791-8989-C70E1D9B59FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("FE216AB1-F31F-4791-8989-C70E1D9B59FF")
-                IVisualStateChangedEventArgs : IInspectable
+                IVisualStateChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OldState(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IVisualState * * value
                         ) = 0;
@@ -16846,8 +17574,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("E4F9D9A4-E028-44DE-9B15-4929AE0A26C2"), exclusiveto, contract] */
                 MIDL_INTERFACE("E4F9D9A4-E028-44DE-9B15-4929AE0A26C2")
-                IVisualStateGroup : IInspectable
+                IVisualStateGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -16909,8 +17638,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("6FDA9F9A-6FAB-4112-9258-1006A3C3476E"), exclusiveto, contract] */
                 MIDL_INTERFACE("6FDA9F9A-6FAB-4112-9258-1006A3C3476E")
-                IVisualStateManager : IInspectable
+                IVisualStateManager : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -16946,8 +17676,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("85E598FD-A575-47B6-9E30-383CD08585F2"), exclusiveto, contract] */
                 MIDL_INTERFACE("85E598FD-A575-47B6-9E30-383CD08585F2")
-                IVisualStateManagerFactory : IInspectable
+                IVisualStateManagerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -16988,8 +17719,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("4A66910E-7979-43C8-8FF4-EC6122750006"), exclusiveto, contract] */
                 MIDL_INTERFACE("4A66910E-7979-43C8-8FF4-EC6122750006")
-                IVisualStateManagerOverrides : IInspectable
+                IVisualStateManagerOverrides : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GoToStateCore(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IControl * control,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IFrameworkElement * templateRoot,
@@ -17034,8 +17766,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("4B3B8640-B0B7-404C-9EF4-D949640E245D"), exclusiveto, contract] */
                 MIDL_INTERFACE("4B3B8640-B0B7-404C-9EF4-D949640E245D")
-                IVisualStateManagerProtected : IInspectable
+                IVisualStateManagerProtected : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RaiseCurrentStateChanging(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IVisualStateGroup * stateGroup,
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IVisualState * oldState,
@@ -17083,8 +17816,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("01D0E9E0-D713-414E-A74E-E63EC7AC8C3D"), exclusiveto, contract] */
                 MIDL_INTERFACE("01D0E9E0-D713-414E-A74E-E63EC7AC8C3D")
-                IVisualStateManagerStatics : IInspectable
+                IVisualStateManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetVisualStateGroups(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IFrameworkElement * obj,
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CVisualStateGroup * * value
@@ -17141,8 +17875,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("55C5905E-2BC7-400D-AAA4-1A2981491EE0"), exclusiveto, contract] */
                 MIDL_INTERFACE("55C5905E-2BC7-400D-AAA4-1A2981491EE0")
-                IVisualTransition : IInspectable
+                IVisualTransition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GeneratedDuration(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Duration * value
                         ) = 0;
@@ -17208,8 +17943,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("EA75864F-D1E0-4DAE-B429-89FC322724F4"), exclusiveto, contract] */
                 MIDL_INTERFACE("EA75864F-D1E0-4DAE-B429-89FC322724F4")
-                IVisualTransitionFactory : IInspectable
+                IVisualTransitionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt IInspectable * outer,
                         /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -17250,8 +17986,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("3276167D-C9F6-462D-9DE2-AE4C1FD8C2E5"), exclusiveto, contract] */
                 MIDL_INTERFACE("3276167D-C9F6-462D-9DE2-AE4C1FD8C2E5")
-                IWindow : IInspectable
+                IWindow : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Bounds(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                         ) = 0;
@@ -17335,8 +18072,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("D384759F-34F6-4482-8435-F552F9B24CC8"), exclusiveto, contract] */
                 MIDL_INTERFACE("D384759F-34F6-4482-8435-F552F9B24CC8")
-                IWindow2 : IInspectable
+                IWindow2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetTitleBar(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * value
                         ) = 0;
@@ -17375,8 +18113,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("B70BDC9D-1C35-462A-9B97-808D5AF9F28E"), exclusiveto, contract] */
                 MIDL_INTERFACE("B70BDC9D-1C35-462A-9B97-808D5AF9F28E")
-                IWindow3 : IInspectable
+                IWindow3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Compositor(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositor * * value
                         ) = 0;
@@ -17415,8 +18154,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("31B71470-FEFF-4654-AF48-9B398AB5772B"), exclusiveto, contract] */
                 MIDL_INTERFACE("31B71470-FEFF-4654-AF48-9B398AB5772B")
-                IWindowCreatedEventArgs : IInspectable
+                IWindowCreatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Window(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IWindow * * value
                         ) = 0;
@@ -17455,8 +18195,9 @@ namespace ABI {
             namespace Xaml {
                 /* [object, uuid("93328409-4EA1-4AFA-83DC-0C4E73E88BB1"), exclusiveto, contract] */
                 MIDL_INTERFACE("93328409-4EA1-4AFA-83DC-0C4E73E88BB1")
-                IWindowStatics : IInspectable
+                IWindowStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IWindow * * value
                         ) = 0;
@@ -17592,6 +18333,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.IBringIntoViewOptions ** Default Interface **
+ *    Windows.UI.Xaml.IBringIntoViewOptions2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -17605,6 +18347,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_BringIntoViewOptions[] = L"Windows.UI.Xaml.BringIntoViewOptions";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.BringIntoViewRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.IBringIntoViewRequestedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_BringIntoViewRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_BringIntoViewRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_BringIntoViewRequestedEventArgs[] = L"Windows.UI.Xaml.BringIntoViewRequestedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -18043,6 +18809,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.IElementSoundPlayerStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.IElementSoundPlayerStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -18843,6 +19610,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.IUIElementStatics8 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.IUIElementStatics7 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.IUIElementStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.IUIElementStatics5 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -18860,6 +19628,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.IUIElement5
  *    Windows.UI.Xaml.IUIElement7
  *    Windows.UI.Xaml.IUIElementOverrides7
+ *    Windows.UI.Xaml.IUIElement8
+ *    Windows.UI.Xaml.IUIElementOverrides8
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -19283,6 +20053,18 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions __x_ABI_CWin
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CICornerRadiusHelper_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CICornerRadiusHelper_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CICornerRadiusHelper __x_ABI_CWindows_CUI_CXaml_CICornerRadiusHelper;
@@ -19486,6 +20268,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayer __x_ABI_CWindo
 typedef interface __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIEventTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIEventTrigger_FWD_DEFINED__
@@ -19889,6 +20677,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElement7 __x_ABI_CWindows_CUI_C
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElement7_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElement8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElement8_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElement8 __x_ABI_CWindows_CUI_CXaml_CIUIElement8;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElement8_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElementFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIUIElementFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElementFactory __x_ABI_CWindows_CUI_CXaml_CIUIElementFactory;
@@ -19906,6 +20700,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides __x_ABI_CWindo
 typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7 __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics_FWD_DEFINED__
@@ -19948,6 +20748,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics6 __x_ABI_CWindow
 typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics7 __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics7;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics7_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIUnhandledExceptionEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIUnhandledExceptionEventArgs_FWD_DEFINED__
@@ -24790,6 +25596,7 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CISearchBox __x_ABI_CWind
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CSearchBox_Windows__CUI__CXaml__CRoutedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CSearchBox_Windows__CUI__CXaml__CRoutedEventArgs_INTERFACE_DEFINED__
 
@@ -24836,6 +25643,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CSearchBox_Win
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CSearchBox_Windows__CUI__CXaml__CRoutedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -24892,6 +25700,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CFrameworkElement_IInspec
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CFrameworkElement_Windows__CUI__CXaml__CDataContextChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CFrameworkElement_Windows__CUI__CXaml__CDataContextChangedEventArgs_INTERFACE_DEFINED__
 
@@ -24939,9 +25748,64 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CFrameworkElement_Windows
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CFrameworkElement_Windows__CUI__CXaml__CDataContextChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CDragStartingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CDragStartingEventArgs_INTERFACE_DEFINED__
@@ -24990,9 +25854,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CDragStartingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CDropCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CDropCompletedEventArgs_INTERFACE_DEFINED__
@@ -25041,9 +25907,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CDropCompletedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CRoutedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CRoutedEventArgs_INTERFACE_DEFINED__
@@ -25091,6 +25959,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CRoutedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -28029,6 +28898,16 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyEventHandler __x_ABI_CW
 typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CKeyTipPlacementMode __x_ABI_CWindows_CUI_CXaml_CInput_CKeyTipPlacementMode;
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs_FWD_DEFINED__
+
+
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CKeyboardAcceleratorPlacementMode __x_ABI_CWindows_CUI_CXaml_CInput_CKeyboardAcceleratorPlacementMode;
+
 
 typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CKeyboardNavigationMode __x_ABI_CWindows_CUI_CXaml_CInput_CKeyboardNavigationMode;
 
@@ -28238,6 +29117,9 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CElementSoundMode __x_ABI_CWindows_CUI_C
 typedef enum __x_ABI_CWindows_CUI_CXaml_CElementSoundPlayerState __x_ABI_CWindows_CUI_CXaml_CElementSoundPlayerState;
 
 
+typedef enum __x_ABI_CWindows_CUI_CXaml_CElementSpatialAudioMode __x_ABI_CWindows_CUI_CXaml_CElementSpatialAudioMode;
+
+
 typedef enum __x_ABI_CWindows_CUI_CXaml_CElementTheme __x_ABI_CWindows_CUI_CXaml_CElementTheme;
 
 
@@ -28314,6 +29196,13 @@ typedef struct __x_ABI_CWindows_CUI_CXaml_CGridLength __x_ABI_CWindows_CUI_CXaml
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CThickness __x_ABI_CWindows_CUI_CXaml_CThickness;
+
+
+
+
+
+
+
 
 
 
@@ -28764,6 +29653,26 @@ enum __x_ABI_CWindows_CUI_CXaml_CElementSoundPlayerState
 
 /*
  *
+ * Struct Windows.UI.Xaml.ElementSpatialAudioMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CXaml_CElementSpatialAudioMode
+{
+    ElementSpatialAudioMode_Auto = 0,
+    ElementSpatialAudioMode_Off = 1,
+    ElementSpatialAudioMode_On = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Struct Windows.UI.Xaml.ElementTheme
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -28837,6 +29746,11 @@ enum __x_ABI_CWindows_CUI_CXaml_CFocusVisualKind
 {
     FocusVisualKind_DottedLine = 0,
     FocusVisualKind_HighVisibility = 1,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    FocusVisualKind_Reveal = 2,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -31974,6 +32888,332 @@ interface __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.IBringIntoViewOptions2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.BringIntoViewOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IBringIntoViewOptions2[] = L"Windows.UI.Xaml.IBringIntoViewOptions2";
+/* [object, uuid("E855E08E-64B6-1211-BDDB-1FDDBB6E8231"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HorizontalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_HorizontalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+        /* [in] */DOUBLE value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_VerticalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_VerticalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+        /* [in] */DOUBLE value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HorizontalOffset )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_HorizontalOffset )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+        /* [in] */DOUBLE value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_VerticalOffset )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_VerticalOffset )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2 * This,
+        /* [in] */DOUBLE value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_get_HorizontalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->get_HorizontalAlignmentRatio(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_put_HorizontalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->put_HorizontalAlignmentRatio(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_get_VerticalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->get_VerticalAlignmentRatio(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_put_VerticalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->put_VerticalAlignmentRatio(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_get_HorizontalOffset(This,value) \
+    ( (This)->lpVtbl->get_HorizontalOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_put_HorizontalOffset(This,value) \
+    ( (This)->lpVtbl->put_HorizontalOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_get_VerticalOffset(This,value) \
+    ( (This)->lpVtbl->get_VerticalOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_put_VerticalOffset(This,value) \
+    ( (This)->lpVtbl->put_VerticalOffset(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewOptions2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.IBringIntoViewRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.BringIntoViewRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IBringIntoViewRequestedEventArgs[] = L"Windows.UI.Xaml.IBringIntoViewRequestedEventArgs";
+/* [object, uuid("0E629EC4-2206-4C8B-94AE-BDB66A4EBFD1"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TargetElement )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_TargetElement )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AnimationDesired )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AnimationDesired )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TargetRect )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_TargetRect )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CRect value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HorizontalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_VerticalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HorizontalOffset )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_HorizontalOffset )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [in] */DOUBLE value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_VerticalOffset )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_VerticalOffset )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [in] */DOUBLE value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Handled )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Handled )(
+        __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_get_TargetElement(This,value) \
+    ( (This)->lpVtbl->get_TargetElement(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_put_TargetElement(This,value) \
+    ( (This)->lpVtbl->put_TargetElement(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_get_AnimationDesired(This,value) \
+    ( (This)->lpVtbl->get_AnimationDesired(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_put_AnimationDesired(This,value) \
+    ( (This)->lpVtbl->put_AnimationDesired(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_get_TargetRect(This,value) \
+    ( (This)->lpVtbl->get_TargetRect(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_put_TargetRect(This,value) \
+    ( (This)->lpVtbl->put_TargetRect(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_get_HorizontalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->get_HorizontalAlignmentRatio(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_get_VerticalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->get_VerticalAlignmentRatio(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_get_HorizontalOffset(This,value) \
+    ( (This)->lpVtbl->get_HorizontalOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_put_HorizontalOffset(This,value) \
+    ( (This)->lpVtbl->put_HorizontalOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_get_VerticalOffset(This,value) \
+    ( (This)->lpVtbl->get_VerticalOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_put_VerticalOffset(This,value) \
+    ( (This)->lpVtbl->put_VerticalOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_get_Handled(This,value) \
+    ( (This)->lpVtbl->get_Handled(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_put_Handled(This,value) \
+    ( (This)->lpVtbl->put_Handled(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -35694,6 +36934,106 @@ interface __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.IElementSoundPlayerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.ElementSoundPlayer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IElementSoundPlayerStatics2[] = L"Windows.UI.Xaml.IElementSoundPlayerStatics2";
+/* [object, uuid("F2505956-ED41-48D7-AAE8-F2ABCB444929"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SpatialAudioMode )(
+        __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CElementSpatialAudioMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_SpatialAudioMode )(
+        __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2 * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CElementSpatialAudioMode value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_get_SpatialAudioMode(This,value) \
+    ( (This)->lpVtbl->get_SpatialAudioMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_put_SpatialAudioMode(This,value) \
+    ( (This)->lpVtbl->put_SpatialAudioMode(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIElementSoundPlayerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -44038,6 +45378,149 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElement7;
 
 /*
  *
+ * Interface Windows.UI.Xaml.IUIElement8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.UIElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElement8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElement8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IUIElement8[] = L"Windows.UI.Xaml.IUIElement8";
+/* [object, uuid("3AB70E85-D508-4477-B6F8-0E435701C836"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CIUIElement8Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyTipTarget )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_KeyTipTarget )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyboardAcceleratorPlacementTarget )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_KeyboardAcceleratorPlacementTarget )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyboardAcceleratorPlacementMode )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CKeyboardAcceleratorPlacementMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_KeyboardAcceleratorPlacementMode )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CKeyboardAcceleratorPlacementMode value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_BringIntoViewRequested )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CBringIntoViewRequestedEventArgs * value,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_BringIntoViewRequested )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElement8 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CIUIElement8Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CIUIElement8
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CIUIElement8Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_get_KeyTipTarget(This,value) \
+    ( (This)->lpVtbl->get_KeyTipTarget(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_put_KeyTipTarget(This,value) \
+    ( (This)->lpVtbl->put_KeyTipTarget(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_get_KeyboardAcceleratorPlacementTarget(This,value) \
+    ( (This)->lpVtbl->get_KeyboardAcceleratorPlacementTarget(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_put_KeyboardAcceleratorPlacementTarget(This,value) \
+    ( (This)->lpVtbl->put_KeyboardAcceleratorPlacementTarget(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_get_KeyboardAcceleratorPlacementMode(This,value) \
+    ( (This)->lpVtbl->get_KeyboardAcceleratorPlacementMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_put_KeyboardAcceleratorPlacementMode(This,value) \
+    ( (This)->lpVtbl->put_KeyboardAcceleratorPlacementMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_add_BringIntoViewRequested(This,value,token) \
+    ( (This)->lpVtbl->add_BringIntoViewRequested(This,value,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElement8_remove_BringIntoViewRequested(This,token) \
+    ( (This)->lpVtbl->remove_BringIntoViewRequested(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElement8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElement8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.IUIElementFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -44328,6 +45811,106 @@ interface __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides7_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.IUIElementOverrides8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.UIElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IUIElementOverrides8[] = L"Windows.UI.Xaml.IUIElementOverrides8";
+/* [object, uuid("4A5A645C-548D-48CF-B998-7844D6E235A1"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *OnKeyboardAcceleratorInvoked )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorInvokedEventArgs * args
+        );
+    HRESULT ( STDMETHODCALLTYPE *OnBringIntoViewRequested )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIBringIntoViewRequestedEventArgs * e
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_OnKeyboardAcceleratorInvoked(This,args) \
+    ( (This)->lpVtbl->OnKeyboardAcceleratorInvoked(This,args) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_OnBringIntoViewRequested(This,e) \
+    ( (This)->lpVtbl->OnBringIntoViewRequested(This,e) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementOverrides8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -45393,6 +46976,134 @@ interface __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics7
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElementStatics7;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics7_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.IUIElementStatics8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.UIElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_IUIElementStatics8[] = L"Windows.UI.Xaml.IUIElementStatics8";
+/* [object, uuid("17BE3487-4875-4915-B0B1-A4C0F851DF3F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BringIntoViewRequestedEvent )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEvent * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContextRequestedEvent )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEvent * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyTipTargetProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyboardAcceleratorPlacementTargetProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyboardAcceleratorPlacementModeProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *RegisterAsScrollPort )(
+        __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_get_BringIntoViewRequestedEvent(This,value) \
+    ( (This)->lpVtbl->get_BringIntoViewRequestedEvent(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_get_ContextRequestedEvent(This,value) \
+    ( (This)->lpVtbl->get_ContextRequestedEvent(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_get_KeyTipTargetProperty(This,value) \
+    ( (This)->lpVtbl->get_KeyTipTargetProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_get_KeyboardAcceleratorPlacementTargetProperty(This,value) \
+    ( (This)->lpVtbl->get_KeyboardAcceleratorPlacementTargetProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_get_KeyboardAcceleratorPlacementModeProperty(This,value) \
+    ( (This)->lpVtbl->get_KeyboardAcceleratorPlacementModeProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_RegisterAsScrollPort(This,element) \
+    ( (This)->lpVtbl->RegisterAsScrollPort(This,element) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CIUIElementStatics8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -47442,6 +49153,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.IBringIntoViewOptions ** Default Interface **
+ *    Windows.UI.Xaml.IBringIntoViewOptions2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -47455,6 +49167,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_BringIntoViewOptions[] = L"Windows.UI.Xaml.BringIntoViewOptions";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.BringIntoViewRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.IBringIntoViewRequestedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_BringIntoViewRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_BringIntoViewRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_BringIntoViewRequestedEventArgs[] = L"Windows.UI.Xaml.BringIntoViewRequestedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -47893,6 +49629,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.IElementSoundPlayerStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.IElementSoundPlayerStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -48693,6 +50430,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.IUIElementStatics8 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.IUIElementStatics7 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.IUIElementStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.IUIElementStatics5 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -48710,6 +50448,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.IUIElement5
  *    Windows.UI.Xaml.IUIElement7
  *    Windows.UI.Xaml.IUIElementOverrides7
+ *    Windows.UI.Xaml.IUIElement8
+ *    Windows.UI.Xaml.IUIElementOverrides8
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

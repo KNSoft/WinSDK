@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.viewmanagement.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -251,6 +253,7 @@
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
 #include "Windows.Devices.Enumeration.h"
+#include "Windows.Phone.h"
 #include "Windows.UI.h"
 #include "Windows.UI.Core.h"
 #include "Windows.UI.Popups.h"
@@ -651,6 +654,48 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CViewManagement_CIProjectionManagerStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                interface IStatusBar;
+            } /* Windows */
+        } /* UI */
+    } /* ViewManagement */} /* ABI */
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar ABI::Windows::UI::ViewManagement::IStatusBar
+
+#endif // ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                interface IStatusBarProgressIndicator;
+            } /* Windows */
+        } /* UI */
+    } /* ViewManagement */} /* ABI */
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator ABI::Windows::UI::ViewManagement::IStatusBarProgressIndicator
+
+#endif // ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                interface IStatusBarStatics;
+            } /* Windows */
+        } /* UI */
+    } /* ViewManagement */} /* ABI */
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics ABI::Windows::UI::ViewManagement::IStatusBarStatics
+
+#endif // ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CViewManagement_CIUISettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CViewManagement_CIUISettings_FWD_DEFINED__
 namespace ABI {
@@ -900,6 +945,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_USE
@@ -929,6 +975,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::ViewManagement::ApplicationView*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -950,6 +997,7 @@ namespace ABI {
     } /* ViewManagement */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CViewManagement__CInputPane_Windows__CUI__CViewManagement__CInputPaneVisibilityEventArgs_USE
@@ -980,6 +1028,49 @@ typedef ITypedEventHandler<ABI::Windows::UI::ViewManagement::InputPane*,ABI::Win
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                class StatusBar;
+            } /* Windows */
+        } /* UI */
+    } /* ViewManagement */} /* ABI */
+
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("38254d6e-8596-5218-bb61-5d9db935aa02"))
+ITypedEventHandler<ABI::Windows::UI::ViewManagement::StatusBar*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ViewManagement::StatusBar*, ABI::Windows::UI::ViewManagement::IStatusBar*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.ViewManagement.StatusBar, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::ViewManagement::StatusBar*,IInspectable*> __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::IStatusBar*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::IStatusBar*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_USE */
+
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -1149,6 +1240,35 @@ typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
 
 
 
+#ifndef DEF___FIReference_1_double_USE
+#define DEF___FIReference_1_double_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2"))
+IReference<double> : IReference_impl<double> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Double>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<double> __FIReference_1_double_t;
+#define __FIReference_1_double ABI::Windows::Foundation::__FIReference_1_double_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_double ABI::Windows::Foundation::IReference<DOUBLE>
+//#define __FIReference_1_double_t ABI::Windows::Foundation::IReference<DOUBLE>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_double_USE */
+
+
+
+
 
 namespace ABI {
     namespace Windows {
@@ -1207,6 +1327,9 @@ namespace ABI {
             
         } /* Windows */
     } /* Foundation */} /* ABI */
+
+
+
 
 
 
@@ -1424,6 +1547,9 @@ namespace ABI {
 
 
 
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -1468,6 +1594,17 @@ namespace ABI {
 
 
 
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                class StatusBarProgressIndicator;
+            } /* Windows */
+        } /* UI */
+    } /* ViewManagement */} /* ABI */
 
 
 
@@ -1948,8 +2085,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("FE0E8147-C4C0-4562-B962-1327B52AD5B9"), exclusiveto, contract] */
                 MIDL_INTERFACE("FE0E8147-C4C0-4562-B962-1327B52AD5B9")
-                IAccessibilitySettings : IInspectable
+                IAccessibilitySettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HighContrast(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1998,8 +2136,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("DCA71BB6-7350-492B-AAC7-C8A13D7224AD"), exclusiveto, contract] */
                 MIDL_INTERFACE("DCA71BB6-7350-492B-AAC7-C8A13D7224AD")
-                IActivationViewSwitcher : IInspectable
+                IActivationViewSwitcher : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowAsStandaloneAsync(
                         /* [in] */INT32 viewId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
@@ -2048,8 +2187,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("D222D519-4361-451E-96C4-60F4F9742DB0"), exclusiveto, contract] */
                 MIDL_INTERFACE("D222D519-4361-451E-96C4-60F4F9742DB0")
-                IApplicationView : IInspectable
+                IApplicationView : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Orientation(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::ViewManagement::ApplicationViewOrientation * value
                         ) = 0;
@@ -2126,8 +2266,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("E876B196-A545-40DC-B594-450CBA68CC00"), exclusiveto, contract] */
                 MIDL_INTERFACE("E876B196-A545-40DC-B594-450CBA68CC00")
-                IApplicationView2 : IInspectable
+                IApplicationView2 : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")
@@ -2194,8 +2335,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("903C9CE5-793A-4FDF-A2B2-AF1AC21E3108"), exclusiveto, contract] */
                 MIDL_INTERFACE("903C9CE5-793A-4FDF-A2B2-AF1AC21E3108")
-                IApplicationView3 : IInspectable
+                IApplicationView3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TitleBar(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ViewManagement::IApplicationViewTitleBar * * value
                         ) = 0;
@@ -2255,8 +2397,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("15E5CBEC-9E0F-46B5-BC3F-9BF653E74B5E"), exclusiveto, contract] */
                 MIDL_INTERFACE("15E5CBEC-9E0F-46B5-BC3F-9BF653E74B5E")
-                IApplicationView4 : IInspectable
+                IApplicationView4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewMode(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::ViewManagement::ApplicationViewMode * value
                         ) = 0;
@@ -2311,8 +2454,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("514449EC-7EA2-4DE7-A6A6-7DFBAAEBB6FB"), exclusiveto, contract] */
                 MIDL_INTERFACE("514449EC-7EA2-4DE7-A6A6-7DFBAAEBB6FB")
-                IApplicationViewConsolidatedEventArgs : IInspectable
+                IApplicationViewConsolidatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsUserInitiated(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2351,8 +2495,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("1C199ECC-6DC1-40F4-AFEE-07D9EA296430"), exclusiveto, contract] */
                 MIDL_INTERFACE("1C199ECC-6DC1-40F4-AFEE-07D9EA296430")
-                IApplicationViewConsolidatedEventArgs2 : IInspectable
+                IApplicationViewConsolidatedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAppInitiated(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2395,8 +2540,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                IApplicationViewFullscreenStatics : IInspectable
+                IApplicationViewFullscreenStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")
@@ -2439,8 +2585,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("C446FB5D-4793-4896-A8E2-BE57A8BB0F50"), exclusiveto, contract] */
                 MIDL_INTERFACE("C446FB5D-4793-4896-A8E2-BE57A8BB0F50")
-                IApplicationViewInteropStatics : IInspectable
+                IApplicationViewInteropStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetApplicationViewIdForWindow(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Core::ICoreWindow * window,
                         /* [retval, out] */__RPC__out INT32 * id
@@ -2480,8 +2627,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("1D0DDC23-23F3-4B2D-84FE-74BF37B48B66"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D0DDC23-23F3-4B2D-84FE-74BF37B48B66")
-                IApplicationViewScaling : IInspectable
+                IApplicationViewScaling : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -2517,8 +2665,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("B08FECF0-B946-45C8-A5E3-71F5AA78F861"), exclusiveto, contract] */
                 MIDL_INTERFACE("B08FECF0-B946-45C8-A5E3-71F5AA78F861")
-                IApplicationViewScalingStatics : IInspectable
+                IApplicationViewScalingStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisableLayoutScaling(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2565,8 +2714,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("ApplicationView static methods may be altered or unavailable for releases after Windows 8.1. Instead, use ApplicationView.GetForCurrentView to get an instance of ApplicationView.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                IApplicationViewStatics : IInspectable
+                IApplicationViewStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("Value may be altered or unavailable for releases after Windows 8.1. Instead, query for window layout sizes directly.")
@@ -2616,8 +2766,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("AF338AE5-CF64-423C-85E5-F3E72448FB23"), exclusiveto, contract] */
                 MIDL_INTERFACE("AF338AE5-CF64-423C-85E5-F3E72448FB23")
-                IApplicationViewStatics2 : IInspectable
+                IApplicationViewStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ViewManagement::IApplicationView * * current
                         ) = 0;
@@ -2662,8 +2813,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("A28D7594-8C41-4E13-9719-5164796FE4C7"), exclusiveto, contract] */
                 MIDL_INTERFACE("A28D7594-8C41-4E13-9719-5164796FE4C7")
-                IApplicationViewStatics3 : IInspectable
+                IApplicationViewStatics3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PreferredLaunchWindowingMode(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::ViewManagement::ApplicationViewWindowingMode * value
                         ) = 0;
@@ -2711,8 +2863,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("975F2F1E-E656-4C5E-A0A1-717C6FFA7D64"), exclusiveto, contract] */
                 MIDL_INTERFACE("975F2F1E-E656-4C5E-A0A1-717C6FFA7D64")
-                IApplicationViewSwitcherStatics : IInspectable
+                IApplicationViewSwitcherStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE DisableShowingMainViewOnActivation(void) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryShowAsStandaloneAsync(
                         /* [in] */INT32 viewId,
@@ -2786,8 +2939,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("60E995CD-4FC2-48C4-B8E3-395F2B9F0FC1"), exclusiveto, contract] */
                 MIDL_INTERFACE("60E995CD-4FC2-48C4-B8E3-395F2B9F0FC1")
-                IApplicationViewSwitcherStatics2 : IInspectable
+                IApplicationViewSwitcherStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE DisableSystemViewActivationPolicy(void) = 0;
                     
                 };
@@ -2824,8 +2978,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("92059420-80A7-486D-B21F-C7A4A242A383"), exclusiveto, contract] */
                 MIDL_INTERFACE("92059420-80A7-486D-B21F-C7A4A242A383")
-                IApplicationViewSwitcherStatics3 : IInspectable
+                IApplicationViewSwitcherStatics3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryShowAsViewModeAsync(
                         /* [in] */INT32 viewId,
                         /* [in] */ABI::Windows::UI::ViewManagement::ApplicationViewMode viewMode,
@@ -2872,8 +3027,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("00924AC0-932B-4A6B-9C4B-DC38C82478CE"), exclusiveto, contract] */
                 MIDL_INTERFACE("00924AC0-932B-4A6B-9C4B-DC38C82478CE")
-                IApplicationViewTitleBar : IInspectable
+                IApplicationViewTitleBar : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ForegroundColor(
                         /* [in] */__RPC__in_opt __FIReference_1_Windows__CUI__CColor * value
                         ) = 0;
@@ -2981,8 +3137,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("8574BC63-3C17-408E-9408-8A1A9EA81BFA"), exclusiveto, contract] */
                 MIDL_INTERFACE("8574BC63-3C17-408E-9408-8A1A9EA81BFA")
-                IApplicationViewTransferContext : IInspectable
+                IApplicationViewTransferContext : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewId(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -3024,8 +3181,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("15A89D92-DD79-4B0B-BC47-D5F195F14661"), exclusiveto, contract] */
                 MIDL_INTERFACE("15A89D92-DD79-4B0B-BC47-D5F195F14661")
-                IApplicationViewTransferContextStatics : IInspectable
+                IApplicationViewTransferContextStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataPackageFormatId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3064,8 +3222,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("640ADA70-06F3-4C87-A678-9829C9127C28"), exclusiveto, contract] */
                 MIDL_INTERFACE("640ADA70-06F3-4C87-A678-9829C9127C28")
-                IInputPane : IInspectable
+                IInputPane : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Showing(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CViewManagement__CInputPane_Windows__CUI__CViewManagement__CInputPaneVisibilityEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3118,8 +3277,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("8A6B3F26-7090-4793-944C-C3F2CDE26276"), exclusiveto, contract] */
                 MIDL_INTERFACE("8A6B3F26-7090-4793-944C-C3F2CDE26276")
-                IInputPane2 : IInspectable
+                IInputPane2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryShow(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -3161,8 +3321,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("088BB24F-962F-489D-AA6E-C6BE1A0A6E52"), exclusiveto, contract] */
                 MIDL_INTERFACE("088BB24F-962F-489D-AA6E-C6BE1A0A6E52")
-                IInputPaneControl : IInspectable
+                IInputPaneControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Visible(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3204,8 +3365,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("95F4AF3A-EF47-424A-9741-FD2815EBA2BD"), exclusiveto, contract] */
                 MIDL_INTERFACE("95F4AF3A-EF47-424A-9741-FD2815EBA2BD")
-                IInputPaneStatics : IInspectable
+                IInputPaneStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ViewManagement::IInputPane * * inputPane
                         ) = 0;
@@ -3244,8 +3406,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("D243E016-D907-4FCC-BB8D-F77BAA5028F1"), exclusiveto, contract] */
                 MIDL_INTERFACE("D243E016-D907-4FCC-BB8D-F77BAA5028F1")
-                IInputPaneVisibilityEventArgs : IInspectable
+                IInputPaneVisibilityEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OccludedRect(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                         ) = 0;
@@ -3290,8 +3453,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("B65F913D-E2F0-4FFD-BA95-34241647E45C"), exclusiveto, contract] */
                 MIDL_INTERFACE("B65F913D-E2F0-4FFD-BA95-34241647E45C")
-                IProjectionManagerStatics : IInspectable
+                IProjectionManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartProjectingAsync(
                         /* [in] */INT32 projectionViewId,
                         /* [in] */INT32 anchorViewId,
@@ -3352,8 +3516,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("F33D2F43-2749-4CDE-B977-C0C41E7415D1"), exclusiveto, contract] */
                 MIDL_INTERFACE("F33D2F43-2749-4CDE-B977-C0C41E7415D1")
-                IProjectionManagerStatics2 : IInspectable
+                IProjectionManagerStatics2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartProjectingWithDeviceInfoAsync(
                         /* [in] */INT32 projectionViewId,
                         /* [in] */INT32 anchorViewId,
@@ -3392,6 +3557,185 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CIProjectionManagerS
 
 /*
  *
+ * Interface Windows.UI.ViewManagement.IStatusBar
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ViewManagement.StatusBar
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ViewManagement_IStatusBar[] = L"Windows.UI.ViewManagement.IStatusBar";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                /* [object, uuid("0FFCC5BF-98D0-4864-B1E8-B3F4020BE8B4"), exclusiveto, contract] */
+                MIDL_INTERFACE("0FFCC5BF-98D0-4864-B1E8-B3F4020BE8B4")
+                IStatusBar : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE ShowAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE HideAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BackgroundOpacity(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_BackgroundOpacity(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ForegroundColor(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CUI__CColor * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ForegroundColor(
+                        /* [in] */__RPC__in_opt __FIReference_1_Windows__CUI__CColor * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BackgroundColor(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CUI__CColor * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_BackgroundColor(
+                        /* [in] */__RPC__in_opt __FIReference_1_Windows__CUI__CColor * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProgressIndicator(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ViewManagement::IStatusBarProgressIndicator * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OccludedRect(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Showing(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable * eventHandler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Showing(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Hiding(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable * eventHandler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Hiding(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStatusBar=_uuidof(IStatusBar);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ViewManagement */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CIStatusBar;
+#endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ViewManagement.IStatusBarProgressIndicator
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ViewManagement.StatusBarProgressIndicator
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ViewManagement_IStatusBarProgressIndicator[] = L"Windows.UI.ViewManagement.IStatusBarProgressIndicator";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                /* [object, uuid("76CB2670-A3D7-49CF-8200-4F3EEDCA27BB"), exclusiveto, contract] */
+                MIDL_INTERFACE("76CB2670-A3D7-49CF-8200-4F3EEDCA27BB")
+                IStatusBarProgressIndicator : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE ShowAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE HideAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Text(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProgressValue(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_double * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ProgressValue(
+                        /* [in] */__RPC__in_opt __FIReference_1_double * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStatusBarProgressIndicator=_uuidof(IStatusBarProgressIndicator);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ViewManagement */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator;
+#endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ViewManagement.IStatusBarStatics
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ViewManagement.StatusBar
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ViewManagement_IStatusBarStatics[] = L"Windows.UI.ViewManagement.IStatusBarStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                /* [object, uuid("8B463FDF-422F-4561-8806-FB1289CADFB7"), exclusiveto, contract] */
+                MIDL_INTERFACE("8B463FDF-422F-4561-8806-FB1289CADFB7")
+                IStatusBarStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ViewManagement::IStatusBar * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStatusBarStatics=_uuidof(IStatusBarStatics);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ViewManagement */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Interface Windows.UI.ViewManagement.IUISettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3411,8 +3755,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("85361600-1C63-4627-BCB1-3A89E0BC9C55"), exclusiveto, contract] */
                 MIDL_INTERFACE("85361600-1C63-4627-BCB1-3A89E0BC9C55")
-                IUISettings : IInspectable
+                IUISettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HandPreference(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::ViewManagement::HandPreference * value
                         ) = 0;
@@ -3488,8 +3833,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("BAD82401-2721-44F9-BB91-2BB228BE442F"), exclusiveto, contract] */
                 MIDL_INTERFACE("BAD82401-2721-44F9-BB91-2BB228BE442F")
-                IUISettings2 : IInspectable
+                IUISettings2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextScaleFactor(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -3535,8 +3881,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("03021BE4-5254-4781-8194-5168F7D06D7B"), exclusiveto, contract] */
                 MIDL_INTERFACE("03021BE4-5254-4781-8194-5168F7D06D7B")
-                IUISettings3 : IInspectable
+                IUISettings3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetColorValue(
                         /* [in] */ABI::Windows::UI::ViewManagement::UIColorType desiredColor,
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
@@ -3583,8 +3930,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("52BB3002-919B-4D6B-9B78-8DD66FF4B93B"), exclusiveto, contract] */
                 MIDL_INTERFACE("52BB3002-919B-4D6B-9B78-8DD66FF4B93B")
-                IUISettings4 : IInspectable
+                IUISettings4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AdvancedEffectsEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3630,8 +3978,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("C63657F6-8850-470D-88F8-455E16EA2C26"), exclusiveto, contract] */
                 MIDL_INTERFACE("C63657F6-8850-470D-88F8-455E16EA2C26")
-                IUIViewSettings : IInspectable
+                IUIViewSettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UserInteractionMode(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::ViewManagement::UserInteractionMode * value
                         ) = 0;
@@ -3670,8 +4019,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("595C97A5-F8F6-41CF-B0FB-AACDB81FD5F6"), exclusiveto, contract] */
                 MIDL_INTERFACE("595C97A5-F8F6-41CF-B0FB-AACDB81FD5F6")
-                IUIViewSettingsStatics : IInspectable
+                IUIViewSettingsStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ViewManagement::IUIViewSettings * * current
                         ) = 0;
@@ -3710,8 +4060,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("878FCD3A-0B99-42C9-84D0-D3F1D403554B"), exclusiveto, contract] */
                 MIDL_INTERFACE("878FCD3A-0B99-42C9-84D0-D3F1D403554B")
-                IViewModePreferences : IInspectable
+                IViewModePreferences : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewSizePreference(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::ViewManagement::ViewSizePreference * value
                         ) = 0;
@@ -3759,8 +4110,9 @@ namespace ABI {
             namespace ViewManagement {
                 /* [object, uuid("69B60A65-5DE5-40D8-8306-3833DF7A2274"), exclusiveto, contract] */
                 MIDL_INTERFACE("69B60A65-5DE5-40D8-8306-3833DF7A2274")
-                IViewModePreferencesStatics : IInspectable
+                IViewModePreferencesStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateDefault(
                         /* [in] */ABI::Windows::UI::ViewManagement::ApplicationViewMode mode,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ViewManagement::IViewModePreferences * * result
@@ -4056,6 +4408,53 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.ViewManagement.StatusBar
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.ViewManagement.IStatusBarStatics interface starting with version 1.0 of the Windows.Phone.PhoneContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ViewManagement.IStatusBar ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ViewManagement_StatusBar_DEFINED
+#define RUNTIMECLASS_Windows_UI_ViewManagement_StatusBar_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ViewManagement_StatusBar[] = L"Windows.UI.ViewManagement.StatusBar";
+#endif
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ViewManagement.StatusBarProgressIndicator
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ViewManagement.IStatusBarProgressIndicator ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ViewManagement_StatusBarProgressIndicator_DEFINED
+#define RUNTIMECLASS_Windows_UI_ViewManagement_StatusBarProgressIndicator_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ViewManagement_StatusBarProgressIndicator[] = L"Windows.UI.ViewManagement.StatusBarProgressIndicator";
+#endif
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Class Windows.UI.ViewManagement.UISettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4302,6 +4701,24 @@ typedef interface __x_ABI_CWindows_CUI_CViewManagement_CIProjectionManagerStatic
 
 #endif // ____x_ABI_CWindows_CUI_CViewManagement_CIProjectionManagerStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar;
+
+#endif // ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator;
+
+#endif // ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CViewManagement_CIUISettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CViewManagement_CIUISettings_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CViewManagement_CIUISettings __x_ABI_CWindows_CUI_CViewManagement_CIUISettings;
@@ -4515,6 +4932,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationVie
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_INTERFACE_DEFINED__
 
@@ -4562,9 +4980,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationVie
 #endif // ____FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CViewManagement__CInputPane_Windows__CUI__CViewManagement__CInputPaneVisibilityEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CViewManagement__CInputPane_Windows__CUI__CViewManagement__CInputPaneVisibilityEventArgs_INTERFACE_DEFINED__
@@ -4613,6 +5033,58 @@ interface __FITypedEventHandler_2_Windows__CUI__CViewManagement__CInputPane_Wind
 #endif // ____FITypedEventHandler_2_Windows__CUI__CViewManagement__CInputPane_Windows__CUI__CViewManagement__CInputPaneVisibilityEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
 
 
 
@@ -4876,6 +5348,62 @@ interface __FIEventHandler_1_IInspectable
 #endif // ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
 
 
+#if !defined(____FIReference_1_double_INTERFACE_DEFINED__)
+#define ____FIReference_1_double_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_double __FIReference_1_double;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_double;
+
+typedef struct __FIReference_1_doubleVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_double * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_double * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_double * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_double * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_double * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_double * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_double * This, /* [retval][out] */ __RPC__out double *value);
+    END_INTERFACE
+} __FIReference_1_doubleVtbl;
+
+interface __FIReference_1_double
+{
+    CONST_VTBL struct __FIReference_1_doubleVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_double_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_double_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_double_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_double_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_double_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_double_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_double_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_double_INTERFACE_DEFINED__
+
+
 
 #ifndef ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation_FWD_DEFINED__
@@ -4899,6 +5427,9 @@ typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_C
 
 
 typedef struct __x_ABI_CWindows_CFoundation_CSize __x_ABI_CWindows_CFoundation_CSize;
+
+
+
 
 
 
@@ -4960,6 +5491,11 @@ typedef enum __x_ABI_CWindows_CUI_CViewManagement_CUserInteractionMode __x_ABI_C
 
 
 typedef enum __x_ABI_CWindows_CUI_CViewManagement_CViewSizePreference __x_ABI_CWindows_CUI_CViewManagement_CViewSizePreference;
+
+
+
+
+
 
 
 
@@ -8678,6 +9214,413 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CIProjectionManagerS
 
 /*
  *
+ * Interface Windows.UI.ViewManagement.IStatusBar
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ViewManagement.StatusBar
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ViewManagement_IStatusBar[] = L"Windows.UI.ViewManagement.IStatusBar";
+/* [object, uuid("0FFCC5BF-98D0-4864-B1E8-B3F4020BE8B4"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *ShowAsync )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        );
+    HRESULT ( STDMETHODCALLTYPE *HideAsync )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BackgroundOpacity )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_BackgroundOpacity )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [in] */DOUBLE value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ForegroundColor )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CUI__CColor * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ForegroundColor )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [in] */__RPC__in_opt __FIReference_1_Windows__CUI__CColor * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BackgroundColor )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CUI__CColor * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_BackgroundColor )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [in] */__RPC__in_opt __FIReference_1_Windows__CUI__CColor * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProgressIndicator )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OccludedRect )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Showing )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable * eventHandler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Showing )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Hiding )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable * eventHandler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Hiding )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarVtbl;
+
+interface __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_ShowAsync(This,returnValue) \
+    ( (This)->lpVtbl->ShowAsync(This,returnValue) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_HideAsync(This,returnValue) \
+    ( (This)->lpVtbl->HideAsync(This,returnValue) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_get_BackgroundOpacity(This,value) \
+    ( (This)->lpVtbl->get_BackgroundOpacity(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_put_BackgroundOpacity(This,value) \
+    ( (This)->lpVtbl->put_BackgroundOpacity(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_get_ForegroundColor(This,value) \
+    ( (This)->lpVtbl->get_ForegroundColor(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_put_ForegroundColor(This,value) \
+    ( (This)->lpVtbl->put_ForegroundColor(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_get_BackgroundColor(This,value) \
+    ( (This)->lpVtbl->get_BackgroundColor(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_put_BackgroundColor(This,value) \
+    ( (This)->lpVtbl->put_BackgroundColor(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_get_ProgressIndicator(This,value) \
+    ( (This)->lpVtbl->get_ProgressIndicator(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_get_OccludedRect(This,value) \
+    ( (This)->lpVtbl->get_OccludedRect(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_add_Showing(This,eventHandler,token) \
+    ( (This)->lpVtbl->add_Showing(This,eventHandler,token) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_remove_Showing(This,token) \
+    ( (This)->lpVtbl->remove_Showing(This,token) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_add_Hiding(This,eventHandler,token) \
+    ( (This)->lpVtbl->add_Hiding(This,eventHandler,token) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_remove_Hiding(This,token) \
+    ( (This)->lpVtbl->remove_Hiding(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CIStatusBar;
+#endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBar_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ViewManagement.IStatusBarProgressIndicator
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ViewManagement.StatusBarProgressIndicator
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ViewManagement_IStatusBarProgressIndicator[] = L"Windows.UI.ViewManagement.IStatusBarProgressIndicator";
+/* [object, uuid("76CB2670-A3D7-49CF-8200-4F3EEDCA27BB"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicatorVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *ShowAsync )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        );
+    HRESULT ( STDMETHODCALLTYPE *HideAsync )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Text )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Text )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProgressValue )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_double * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ProgressValue )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator * This,
+        /* [in] */__RPC__in_opt __FIReference_1_double * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicatorVtbl;
+
+interface __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicatorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_ShowAsync(This,returnValue) \
+    ( (This)->lpVtbl->ShowAsync(This,returnValue) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_HideAsync(This,returnValue) \
+    ( (This)->lpVtbl->HideAsync(This,returnValue) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_get_Text(This,value) \
+    ( (This)->lpVtbl->get_Text(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_put_Text(This,value) \
+    ( (This)->lpVtbl->put_Text(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_get_ProgressValue(This,value) \
+    ( (This)->lpVtbl->get_ProgressValue(This,value) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_put_ProgressValue(This,value) \
+    ( (This)->lpVtbl->put_ProgressValue(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator;
+#endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarProgressIndicator_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ViewManagement.IStatusBarStatics
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ViewManagement.StatusBar
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ViewManagement_IStatusBarStatics[] = L"Windows.UI.ViewManagement.IStatusBarStatics";
+/* [object, uuid("8B463FDF-422F-4561-8806-FB1289CADFB7"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetForCurrentView )(
+        __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CViewManagement_CIStatusBar * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_GetForCurrentView(This,value) \
+    ( (This)->lpVtbl->GetForCurrentView(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CIStatusBarStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Interface Windows.UI.ViewManagement.IUISettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9846,6 +10789,53 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ViewManagement_ProjectionManager[] = L"Windows.UI.ViewManagement.ProjectionManager";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ViewManagement.StatusBar
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.ViewManagement.IStatusBarStatics interface starting with version 1.0 of the Windows.Phone.PhoneContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ViewManagement.IStatusBar ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ViewManagement_StatusBar_DEFINED
+#define RUNTIMECLASS_Windows_UI_ViewManagement_StatusBar_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ViewManagement_StatusBar[] = L"Windows.UI.ViewManagement.StatusBar";
+#endif
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ViewManagement.StatusBarProgressIndicator
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ViewManagement.IStatusBarProgressIndicator ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ViewManagement_StatusBarProgressIndicator_DEFINED
+#define RUNTIMECLASS_Windows_UI_ViewManagement_StatusBarProgressIndicator_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ViewManagement_StatusBarProgressIndicator[] = L"Windows.UI.ViewManagement.StatusBarProgressIndicator";
+#endif
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
 
 
 /*

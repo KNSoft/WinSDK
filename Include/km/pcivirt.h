@@ -23,24 +23,6 @@ Abstract:
 #ifndef _PCIVIRT_H_
 #define _PCIVIRT_H_
 
-typedef struct _VPCI_PNP_ID
-{
-    //
-    // These make up the PnP identifiers for a virtual PCI device.
-    //
-
-    USHORT  VendorID;
-    USHORT  DeviceID;
-    UCHAR   RevisionID;
-    UCHAR   ProgIf;
-    UCHAR   SubClass;
-    UCHAR   BaseClass;
-    USHORT  SubVendorID;
-    USHORT  SubSystemID;
-
-} VPCI_PNP_ID, *PVPCI_PNP_ID;
-
-
 // {A13A7A93-11F0-4bd2-A9F5-6B5C5B88527D}
 DEFINE_GUID(GUID_DEVINTERFACE_VIRTUALIZABLE_DEVICE,
 0xa13a7a93, 0x11f0, 0x4bd2, 0xa9, 0xf5, 0x6b, 0x5c, 0x5b, 0x88, 0x52, 0x7d);
@@ -173,9 +155,14 @@ typedef struct _SRIOV_MITIGATED_RANGES_INPUT
 
 } SRIOV_MITIGATED_RANGES_INPUT, *PSRIOV_MITIGATED_RANGES_INPUT;
 
+//
+// This struct is the return from IOCTL_SRIOV_QUERY_MITIGATED_RANGES
+// note PageCount of each range must be less than 2GB (0x80000 pages)
+//
 typedef struct _SRIOV_MITIGATED_RANGES_OUTPUT
 {
     ULONG64 BasePageNumber;
+    _Field_range_(1, 0x80000)
     ULONG   PageCount;
     BOOLEAN InterceptReads;
     BOOLEAN InterceptWrites;

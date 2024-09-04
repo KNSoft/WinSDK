@@ -183,6 +183,7 @@
 #define FACILITY_LEAP                    2184
 #define FACILITY_AUDCLNT                 2185
 #define FACILITY_WINCODEC_DWRITE_DWM     2200
+#define FACILITY_WINML                   2192
 #define FACILITY_DIRECT2D                2201
 #define FACILITY_DEFRAG                  2304
 #define FACILITY_USERMODE_SDBUS          2305
@@ -285,7 +286,7 @@
 //
 // MessageText:
 //
-// Not enough storage is available to process this command.
+// Not enough memory resources are available to process this command.
 //
 #define ERROR_NOT_ENOUGH_MEMORY          8L    // dderror
 
@@ -339,7 +340,7 @@
 //
 // MessageText:
 //
-// Not enough storage is available to complete this operation.
+// Not enough memory resources are available to complete this operation.
 //
 #define ERROR_OUTOFMEMORY                14L
 
@@ -2699,7 +2700,7 @@
 //
 // MessageText:
 //
-// The cloud sync root is already connected with another cloud sync engine.
+// The cloud sync root is already connected with another cloud sync provider.
 //
 #define ERROR_CLOUD_FILE_ALREADY_CONNECTED 378L
 
@@ -2708,7 +2709,7 @@
 //
 // MessageText:
 //
-// The operation is not supported by the cloud sync engine.
+// The operation is not supported by the cloud sync provider.
 //
 #define ERROR_CLOUD_FILE_NOT_SUPPORTED   379L
 
@@ -2735,7 +2736,7 @@
 //
 // MessageText:
 //
-// The operation is reserved for a connected cloud sync engine.
+// The operation is reserved for a connected cloud sync provider.
 //
 #define ERROR_CLOUD_FILE_CONNECTED_PROVIDER_ONLY 382L
 
@@ -2744,7 +2745,7 @@
 //
 // MessageText:
 //
-// The cloud sync engine failed to validate the downloaded data.
+// The cloud sync provider failed to validate the downloaded data.
 //
 #define ERROR_CLOUD_FILE_VALIDATION_FAILED 383L
 
@@ -2772,7 +2773,7 @@
 //
 // MessageText:
 //
-// The cloud sync engine failed user authentication.
+// The cloud sync provider failed user authentication.
 //
 #define ERROR_CLOUD_FILE_AUTHENTICATION_FAILED 386L
 
@@ -2781,7 +2782,7 @@
 //
 // MessageText:
 //
-// The cloud sync engine failed to perform the operation due to low system resources.
+// The cloud sync provider failed to perform the operation due to low system resources.
 //
 #define ERROR_CLOUD_FILE_INSUFFICIENT_RESOURCES 387L
 
@@ -2790,7 +2791,7 @@
 //
 // MessageText:
 //
-// The cloud sync engine failed to perform the operation due to network being unavailable.
+// The cloud sync provider failed to perform the operation due to network being unavailable.
 //
 #define ERROR_CLOUD_FILE_NETWORK_UNAVAILABLE 388L
 
@@ -2894,9 +2895,6 @@
 #define ERROR_EXTERNAL_SYSKEY_NOT_SUPPORTED 399L
 
 //
-// **** Available SYSTEM error codes ****
-//
-//
 // MessageId: ERROR_THREAD_MODE_ALREADY_BACKGROUND
 //
 // MessageText:
@@ -2931,6 +2929,105 @@
 // The process is not in background processing mode.
 //
 #define ERROR_PROCESS_MODE_NOT_BACKGROUND 403L
+
+//
+// MessageId: ERROR_CLOUD_FILE_PROVIDER_TERMINATED
+//
+// MessageText:
+//
+// The cloud file provider exited unexpectedly.
+//
+#define ERROR_CLOUD_FILE_PROVIDER_TERMINATED 404L
+
+//
+// MessageId: ERROR_NOT_A_CLOUD_SYNC_ROOT
+//
+// MessageText:
+//
+// The file is not a cloud sync root.
+//
+#define ERROR_NOT_A_CLOUD_SYNC_ROOT      405L
+
+//
+// MessageId: ERROR_FILE_PROTECTED_UNDER_DPL
+//
+// MessageText:
+//
+// File is not accessible because it's currently protected under DPL.
+//
+#define ERROR_FILE_PROTECTED_UNDER_DPL   406L
+
+//
+// MessageId: ERROR_VOLUME_NOT_CLUSTER_ALIGNED
+//
+// MessageText:
+//
+// The volume is not cluster aligned on the disk.
+//
+#define ERROR_VOLUME_NOT_CLUSTER_ALIGNED 407L
+
+//
+// MessageId: ERROR_NO_PHYSICALLY_ALIGNED_FREE_SPACE_FOUND
+//
+// MessageText:
+//
+// No physically aligned free space was found on the volume.
+//
+#define ERROR_NO_PHYSICALLY_ALIGNED_FREE_SPACE_FOUND 408L
+
+//
+// MessageId: ERROR_APPX_FILE_NOT_ENCRYPTED
+//
+// MessageText:
+//
+// The APPX file can not be accessed because it is not encrypted as expected.
+//
+#define ERROR_APPX_FILE_NOT_ENCRYPTED    409L
+
+//
+// MessageId: ERROR_RWRAW_ENCRYPTED_FILE_NOT_ENCRYPTED
+//
+// MessageText:
+//
+// A read or write of raw encrypted data cannot be performed because the file is not encrypted.
+//
+#define ERROR_RWRAW_ENCRYPTED_FILE_NOT_ENCRYPTED 410L
+
+//
+// MessageId: ERROR_RWRAW_ENCRYPTED_INVALID_EDATAINFO_FILEOFFSET
+//
+// MessageText:
+//
+// An invalid file offset in the encrypted data info block was passed for read or write operation of file's raw encrypted data.
+//
+#define ERROR_RWRAW_ENCRYPTED_INVALID_EDATAINFO_FILEOFFSET 411L
+
+//
+// MessageId: ERROR_RWRAW_ENCRYPTED_INVALID_EDATAINFO_FILERANGE
+//
+// MessageText:
+//
+// An invalid offset and length combination in the encrypted data info block was passed for read or write operation of file's raw encrypted data.
+//
+#define ERROR_RWRAW_ENCRYPTED_INVALID_EDATAINFO_FILERANGE 412L
+
+//
+// MessageId: ERROR_RWRAW_ENCRYPTED_INVALID_EDATAINFO_PARAMETER
+//
+// MessageText:
+//
+// An invalid parameter in the encrypted data info block was passed for read or write operation of file's raw encrypted data.
+//
+#define ERROR_RWRAW_ENCRYPTED_INVALID_EDATAINFO_PARAMETER 413L
+
+//
+// MessageId: ERROR_LINUX_SUBSYSTEM_NOT_PRESENT
+//
+// MessageText:
+//
+// The Windows Subsystem for Linux has not been enabled.
+//
+#define ERROR_LINUX_SUBSYSTEM_NOT_PRESENT 414L
 
 //
 // **** Available SYSTEM error codes ****
@@ -3011,7 +3108,7 @@
 //
 // MessageText:
 //
-// There is no matching authorized in the SCCD.
+// None of the authorized entity elements in the SCCD matched the app being installed; either the PFNs don't match, or the element's signature hash doesn't validate.
 //
 #define ERROR_CAPAUTHZ_SCCD_NO_AUTH_ENTITY 457L
 
@@ -5647,6 +5744,15 @@
 #define ERROR_ENCLAVE_NOT_TERMINATED     814L
 
 //
+// MessageId: ERROR_ENCLAVE_VIOLATION
+//
+// MessageText:
+//
+// An attempt was made to access protected memory in violation of its secure access policy.
+//
+#define ERROR_ENCLAVE_VIOLATION          815L
+
+//
 // **** Available SYSTEM error codes ****
 //
 //
@@ -6486,7 +6592,7 @@
 //
 // MessageText:
 //
-// Not enough server storage is available to process this command.
+// Not enough server memory resources are available to process this command.
 //
 #define ERROR_NOT_ENOUGH_SERVER_MEMORY   1130L
 
@@ -11981,9 +12087,80 @@
 
 ///////////////////////////////////////////////////
 //                                               //
+//           AppExec Error codes                 //
+//                                               //
+//                 3060 to 3079                  //
+///////////////////////////////////////////////////
+
+//
+// MessageId: ERROR_APPEXEC_CONDITION_NOT_SATISFIED
+//
+// MessageText:
+//
+// The condition supplied for the app execution request was not satisfied, so the request was not performed.
+//
+#define ERROR_APPEXEC_CONDITION_NOT_SATISFIED 3060L
+
+//
+// MessageId: ERROR_APPEXEC_HANDLE_INVALIDATED
+//
+// MessageText:
+//
+// The supplied handle has been invalidated and may not be used for the requested operation.
+//
+#define ERROR_APPEXEC_HANDLE_INVALIDATED 3061L
+
+//
+// MessageId: ERROR_APPEXEC_INVALID_HOST_GENERATION
+//
+// MessageText:
+//
+// The supplied host generation has been invalidated and may not be used for the requested operation.
+//
+#define ERROR_APPEXEC_INVALID_HOST_GENERATION 3062L
+
+//
+// MessageId: ERROR_APPEXEC_UNEXPECTED_PROCESS_REGISTRATION
+//
+// MessageText:
+//
+// An attempt to register a process failed because the target host was not in a valid state to receive process registrations.
+//
+#define ERROR_APPEXEC_UNEXPECTED_PROCESS_REGISTRATION 3063L
+
+//
+// MessageId: ERROR_APPEXEC_INVALID_HOST_STATE
+//
+// MessageText:
+//
+// The host is not in a valid state to support the execution request.
+//
+#define ERROR_APPEXEC_INVALID_HOST_STATE 3064L
+
+//
+// MessageId: ERROR_APPEXEC_NO_DONOR
+//
+// MessageText:
+//
+// The operation was not completed because a required resource donor was not found for the host.
+//
+#define ERROR_APPEXEC_NO_DONOR           3065L
+
+//
+// MessageId: ERROR_APPEXEC_HOST_ID_MISMATCH
+//
+// MessageText:
+//
+// The operation was not completed because an unexpected host ID was encountered.
+//
+#define ERROR_APPEXEC_HOST_ID_MISMATCH   3066L
+
+
+///////////////////////////////////////////////////
+//                                               //
 //                  Available                    //
 //                                               //
-//                 3060 to 3199                  //
+//                 3080 to 3199                  //
 ///////////////////////////////////////////////////
 
 
@@ -13152,7 +13329,7 @@
 
 ///////////////////////////////////////////////////
 //                                               //
-//   File System Supported Features Error Codes  //
+//       File System Specific Error Codes        //
 //                                               //
 //                 4440 to 4499                  //
 ///////////////////////////////////////////////////
@@ -13210,6 +13387,33 @@
 // The volume must undergo garbage collection.
 //
 #define ERROR_SMR_GARBAGE_COLLECTION_REQUIRED 4445L
+
+//
+// MessageId: ERROR_WOF_WIM_HEADER_CORRUPT
+//
+// MessageText:
+//
+// The WOF driver encountered a corruption in WIM image's Header.
+//
+#define ERROR_WOF_WIM_HEADER_CORRUPT     4446L
+
+//
+// MessageId: ERROR_WOF_WIM_RESOURCE_TABLE_CORRUPT
+//
+// MessageText:
+//
+// The WOF driver encountered a corruption in WIM image's Resource Table.
+//
+#define ERROR_WOF_WIM_RESOURCE_TABLE_CORRUPT 4447L
+
+//
+// MessageId: ERROR_WOF_FILE_RESOURCE_TABLE_CORRUPT
+//
+// MessageText:
+//
+// The WOF driver encountered a corruption in the compressed file's Resource Table.
+//
+#define ERROR_WOF_FILE_RESOURCE_TABLE_CORRUPT 4448L
 
 
 ///////////////////////////////////////////////////
@@ -26367,7 +26571,7 @@
 //
 // MessageText:
 //
-// The event data raised by the publisher is not compatible with the event template definition in the publisher's manifest
+// The event data raised by the publisher is not compatible with the event template definition in the publisher's manifest.
 //
 #define ERROR_EVT_INVALID_EVENT_DATA     15005L
 
@@ -26376,7 +26580,7 @@
 //
 // MessageText:
 //
-// The specified channel could not be found. Check channel configuration.
+// The specified channel could not be found.
 //
 #define ERROR_EVT_CHANNEL_NOT_FOUND      15007L
 
@@ -26385,7 +26589,7 @@
 //
 // MessageText:
 //
-// The specified xml text was not well-formed. See Extended Error for more details.
+// The specified XML text was not well-formed. See Extended Error for more details.
 //
 #define ERROR_EVT_MALFORMED_XML_TEXT     15008L
 
@@ -26394,7 +26598,7 @@
 //
 // MessageText:
 //
-// The caller is trying to subscribe to a direct channel which is not allowed. The events for a direct channel go directly to a logfile and cannot be subscribed to.
+// The events for a direct channel go directly to a log file and cannot be subscribed to.
 //
 #define ERROR_EVT_SUBSCRIPTION_TO_DIRECT_CHANNEL 15009L
 
@@ -26412,7 +26616,7 @@
 //
 // MessageText:
 //
-// The query result is stale / invalid. This may be due to the log being cleared or rolling over after the query result was created. Users should handle this code by releasing the query result object and reissuing the query.
+// The query result is stale or invalid and must be recreated. This may be due to the log being cleared or rolling over after the query result was created.
 //
 #define ERROR_EVT_QUERY_RESULT_STALE     15011L
 
@@ -26421,7 +26625,7 @@
 //
 // MessageText:
 //
-// Query result is currently at an invalid position.
+// The query result is currently at an invalid position.
 //
 #define ERROR_EVT_QUERY_RESULT_INVALID_POSITION 15012L
 
@@ -26439,7 +26643,7 @@
 //
 // MessageText:
 //
-// An expression can only be followed by a change of scope operation if it itself evaluates to a node set and is not already part of some other change of scope operation.
+// An expression can only be followed by a change-of-scope operation if the expression evaluates to a node set and is not already part of another change-of-scope operation.
 //
 #define ERROR_EVT_FILTER_ALREADYSCOPED   15014L
 
@@ -26448,7 +26652,7 @@
 //
 // MessageText:
 //
-// Can't perform a step operation from a term that does not represent an element set.
+// Cannot perform a step operation from a term that does not represent an element set.
 //
 #define ERROR_EVT_FILTER_NOTELTSET       15015L
 
@@ -26457,7 +26661,7 @@
 //
 // MessageText:
 //
-// Left hand side arguments to binary operators must be either attributes, nodes or variables and right hand side arguments must be constants.
+// Left-hand side arguments to binary operators must be either attributes, nodes or variables. Right-hand side arguments must be constants.
 //
 #define ERROR_EVT_FILTER_INVARG          15016L
 
@@ -26466,7 +26670,7 @@
 //
 // MessageText:
 //
-// A step operation must involve either a node test or, in the case of a predicate, an algebraic expression against which to test each node in the node set identified by the preceeding node set can be evaluated.
+// A step operation must involve a node test or, in the case of a predicate, an algebraic expression against which to test each node in the preceeding node set.
 //
 #define ERROR_EVT_FILTER_INVTEST         15017L
 
@@ -26502,7 +26706,7 @@
 //
 // MessageText:
 //
-// The token encountered was unexpected.
+// An unexpected token was encountered.
 //
 #define ERROR_EVT_FILTER_UNEXPECTEDTOKEN 15021L
 
@@ -26511,7 +26715,7 @@
 //
 // MessageText:
 //
-// The requested operation cannot be performed over an enabled direct channel. The channel must first be disabled before performing the requested operation.
+// The requested operation cannot be performed over an enabled direct channel. The channel must first be disabled.
 //
 #define ERROR_EVT_INVALID_OPERATION_OVER_ENABLED_DIRECT_CHANNEL 15022L
 
@@ -26520,7 +26724,7 @@
 //
 // MessageText:
 //
-// Channel property %1!s! contains invalid value. The value has invalid type, is outside of valid range, can't be updated or is not supported by this type of channel.
+// Channel property %1!s! contains an invalid value. The value has an invalid type, is outside of its valid range, cannot be changed, or is not supported by this type of channel.
 //
 #define ERROR_EVT_INVALID_CHANNEL_PROPERTY_VALUE 15023L
 
@@ -26529,7 +26733,7 @@
 //
 // MessageText:
 //
-// Publisher property %1!s! contains invalid value. The value has invalid type, is outside of valid range, can't be updated or is not supported by this type of publisher.
+// Publisher property %1!s! contains an invalid value. The value has an invalid type, is outside of its valid range, cannot be changed, or is not supported by this type of publisher.
 //
 #define ERROR_EVT_INVALID_PUBLISHER_PROPERTY_VALUE 15024L
 
@@ -26538,7 +26742,7 @@
 //
 // MessageText:
 //
-// The channel fails to activate.
+// The channel failed to activate.
 //
 #define ERROR_EVT_CHANNEL_CANNOT_ACTIVATE 15025L
 
@@ -26547,7 +26751,7 @@
 //
 // MessageText:
 //
-// The xpath expression exceeded supported complexity. Please symplify it or split it into two or more simple expressions.
+// The XPath expression exceeded the supported complexity. Simplify the expression or split it into multiple expressions.
 //
 #define ERROR_EVT_FILTER_TOO_COMPLEX     15026L
 
@@ -26556,7 +26760,7 @@
 //
 // MessageText:
 //
-// the message resource is present but the message is not found in the string/message table
+// The message resource is present but the message was not found in the message table.
 //
 #define ERROR_EVT_MESSAGE_NOT_FOUND      15027L
 
@@ -26565,7 +26769,7 @@
 //
 // MessageText:
 //
-// The message id for the desired message could not be found.
+// The message ID for the desired message could not be found.
 //
 #define ERROR_EVT_MESSAGE_ID_NOT_FOUND   15028L
 
@@ -26601,7 +26805,7 @@
 //
 // MessageText:
 //
-// The event definition could not be found for event id (%1).
+// The event definition could not be found for event ID (%1).
 //
 #define ERROR_EVT_EVENT_DEFINITION_NOT_FOUND 15032L
 
@@ -26619,7 +26823,7 @@
 //
 // MessageText:
 //
-// The resource is too old to be compatible.
+// The resource is too old and is not supported.
 //
 #define ERROR_EVT_VERSION_TOO_OLD        15034L
 
@@ -26628,7 +26832,7 @@
 //
 // MessageText:
 //
-// The resource is too new to be compatible.
+// The resource is too new and is not supported.
 //
 #define ERROR_EVT_VERSION_TOO_NEW        15035L
 
@@ -32366,6 +32570,78 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 #define APPX_E_INVALID_APPINSTALLER      _HRESULT_TYPEDEF_(0x8008020CL)
 
 //
+// MessageId: APPX_E_DELTA_BASELINE_VERSION_MISMATCH
+//
+// MessageText:
+//
+// The baseline package version in delta package does not match the version in the baseline package to be updated.
+//
+#define APPX_E_DELTA_BASELINE_VERSION_MISMATCH _HRESULT_TYPEDEF_(0x8008020DL)
+
+//
+// MessageId: APPX_E_DELTA_PACKAGE_MISSING_FILE
+//
+// MessageText:
+//
+// The delta package is missing a file from the updated package.
+//
+#define APPX_E_DELTA_PACKAGE_MISSING_FILE _HRESULT_TYPEDEF_(0x8008020EL)
+
+//
+// MessageId: APPX_E_INVALID_DELTA_PACKAGE
+//
+// MessageText:
+//
+// The delta package is invalid.
+//
+#define APPX_E_INVALID_DELTA_PACKAGE     _HRESULT_TYPEDEF_(0x8008020FL)
+
+//
+// MessageId: APPX_E_DELTA_APPENDED_PACKAGE_NOT_ALLOWED
+//
+// MessageText:
+//
+// The delta appended package is not allowed for the current operation.
+//
+#define APPX_E_DELTA_APPENDED_PACKAGE_NOT_ALLOWED _HRESULT_TYPEDEF_(0x80080210L)
+
+//
+// MessageId: APPX_E_INVALID_PACKAGING_LAYOUT
+//
+// MessageText:
+//
+// The packaging layout file is invalid.
+//
+#define APPX_E_INVALID_PACKAGING_LAYOUT  _HRESULT_TYPEDEF_(0x80080211L)
+
+//
+// MessageId: APPX_E_INVALID_PACKAGESIGNCONFIG
+//
+// MessageText:
+//
+// The packageSignConfig file is invalid.
+//
+#define APPX_E_INVALID_PACKAGESIGNCONFIG _HRESULT_TYPEDEF_(0x80080212L)
+
+//
+// MessageId: APPX_E_RESOURCESPRI_NOT_ALLOWED
+//
+// MessageText:
+//
+// The resources.pri file is not allowed when there are no resource elements in the package manifest.
+//
+#define APPX_E_RESOURCESPRI_NOT_ALLOWED  _HRESULT_TYPEDEF_(0x80080213L)
+
+//
+// MessageId: APPX_E_FILE_COMPRESSION_MISMATCH
+//
+// MessageText:
+//
+// The compression state of file in baseline and updated package does not match.
+//
+#define APPX_E_FILE_COMPRESSION_MISMATCH _HRESULT_TYPEDEF_(0x80080214L)
+
+//
 // Codes 0x0300-0x030f are reserved for background task error codes.
 //
 //
@@ -36979,7 +37255,7 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 //
 // MessageText:
 //
-// The attestation response could not be validated. It is either unexpected or incorrect.
+// The client's response could not be validated. It is either unexpected or incorrect.
 //
 #define CERTSRV_E_INVALID_RESPONSE       _HRESULT_TYPEDEF_(0x8009481DL)
 
@@ -36991,6 +37267,24 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // A valid Request ID was not detected in the request attributes, or an invalid one was submitted.
 //
 #define CERTSRV_E_INVALID_REQUESTID      _HRESULT_TYPEDEF_(0x8009481EL)
+
+//
+// MessageId: CERTSRV_E_REQUEST_PRECERTIFICATE_MISMATCH
+//
+// MessageText:
+//
+// The request is not consistent with the previously generated precertificate.
+//
+#define CERTSRV_E_REQUEST_PRECERTIFICATE_MISMATCH _HRESULT_TYPEDEF_(0x8009481FL)
+
+//
+// MessageId: CERTSRV_E_PENDING_CLIENT_RESPONSE
+//
+// MessageText:
+//
+// The request is locked against edits until a response is received from the client.
+//
+#define CERTSRV_E_PENDING_CLIENT_RESPONSE _HRESULT_TYPEDEF_(0x80094820L)
 
 //
 // The range 0x5000-0x51ff is reserved for XENROLL errors.
@@ -43669,6 +43963,609 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 #define TPM_E_NOCONTEXTSPACE             _HRESULT_TYPEDEF_(0x80280063L)
 
 //
+// MessageId: TPM_E_ASYMMETRIC
+//
+// MessageText:
+//
+// TPM2.0 Asymmetric algorithm not supported or not correct.
+//
+#define TPM_E_ASYMMETRIC                 _HRESULT_TYPEDEF_(0x80280081L)
+
+//
+// MessageId: TPM_20_E_ATTRIBUTES
+//
+// MessageText:
+//
+// TPM2.0 Inconsistent attributes.
+//
+#define TPM_20_E_ATTRIBUTES              _HRESULT_TYPEDEF_(0x80280082L)
+
+//
+// MessageId: TPM_20_E_HASH
+//
+// MessageText:
+//
+// TPM2.0 Hash algorithm not supported or not appropriate.
+//
+#define TPM_20_E_HASH                    _HRESULT_TYPEDEF_(0x80280083L)
+
+//
+// MessageId: TPM_20_E_VALUE
+//
+// MessageText:
+//
+// TPM2.0 Value is out of range or is not correct for the context.
+//
+#define TPM_20_E_VALUE                   _HRESULT_TYPEDEF_(0x80280084L)
+
+//
+// MessageId: TPM_20_E_HIERARCHY
+//
+// MessageText:
+//
+// TPM2.0 Hierarchy is not enabled or is not correct for the use.
+//
+#define TPM_20_E_HIERARCHY               _HRESULT_TYPEDEF_(0x80280085L)
+
+//
+// MessageId: TPM_20_E_KEY_SIZE
+//
+// MessageText:
+//
+// TPM2.0 Key size is not supported.
+//
+#define TPM_20_E_KEY_SIZE                _HRESULT_TYPEDEF_(0x80280087L)
+
+//
+// MessageId: TPM_20_E_MGF
+//
+// MessageText:
+//
+// TPM2.0 Mask generation function not supported.
+//
+#define TPM_20_E_MGF                     _HRESULT_TYPEDEF_(0x80280088L)
+
+//
+// MessageId: TPM_20_E_MODE
+//
+// MessageText:
+//
+// TPM2.0 Mode of operation not supported.
+//
+#define TPM_20_E_MODE                    _HRESULT_TYPEDEF_(0x80280089L)
+
+//
+// MessageId: TPM_20_E_TYPE
+//
+// MessageText:
+//
+// TPM2.0 The type of the value is not appropriate for the use.
+//
+#define TPM_20_E_TYPE                    _HRESULT_TYPEDEF_(0x8028008AL)
+
+//
+// MessageId: TPM_20_E_HANDLE
+//
+// MessageText:
+//
+// TPM2.0 The Handle is not correct for the use.
+//
+#define TPM_20_E_HANDLE                  _HRESULT_TYPEDEF_(0x8028008BL)
+
+//
+// MessageId: TPM_20_E_KDF
+//
+// MessageText:
+//
+// TPM2.0 Unsupported key derivation function or function not appropriate for use.
+//
+#define TPM_20_E_KDF                     _HRESULT_TYPEDEF_(0x8028008CL)
+
+//
+// MessageId: TPM_20_E_RANGE
+//
+// MessageText:
+//
+// TPM2.0 Value was out of allowed range.
+//
+#define TPM_20_E_RANGE                   _HRESULT_TYPEDEF_(0x8028008DL)
+
+//
+// MessageId: TPM_20_E_AUTH_FAIL
+//
+// MessageText:
+//
+// TPM2.0 The authorization HMAC check failed and DA counter incremented.
+//
+#define TPM_20_E_AUTH_FAIL               _HRESULT_TYPEDEF_(0x8028008EL)
+
+//
+// MessageId: TPM_20_E_NONCE
+//
+// MessageText:
+//
+// TPM2.0 Invalid nonce size.
+//
+#define TPM_20_E_NONCE                   _HRESULT_TYPEDEF_(0x8028008FL)
+
+//
+// MessageId: TPM_20_E_PP
+//
+// MessageText:
+//
+// TPM2.0 Authorization requires assertion of PP.
+//
+#define TPM_20_E_PP                      _HRESULT_TYPEDEF_(0x80280090L)
+
+//
+// MessageId: TPM_20_E_SCHEME
+//
+// MessageText:
+//
+// TPM2.0 Unsupported or incompatible scheme.
+//
+#define TPM_20_E_SCHEME                  _HRESULT_TYPEDEF_(0x80280092L)
+
+//
+// MessageId: TPM_20_E_SIZE
+//
+// MessageText:
+//
+// TPM2.0 Strucutre is wrong size.
+//
+#define TPM_20_E_SIZE                    _HRESULT_TYPEDEF_(0x80280095L)
+
+//
+// MessageId: TPM_20_E_SYMMETRIC
+//
+// MessageText:
+//
+// TPM2.0 Unsupported symmetric algorithm or key size, or not appropriate for instance.
+//
+#define TPM_20_E_SYMMETRIC               _HRESULT_TYPEDEF_(0x80280096L)
+
+//
+// MessageId: TPM_20_E_TAG
+//
+// MessageText:
+//
+// TPM2.0 Incorrect strucutre tag.
+//
+#define TPM_20_E_TAG                     _HRESULT_TYPEDEF_(0x80280097L)
+
+//
+// MessageId: TPM_20_E_SELECTOR
+//
+// MessageText:
+//
+// TPM2.0 Union selector is incorrect.
+//
+#define TPM_20_E_SELECTOR                _HRESULT_TYPEDEF_(0x80280098L)
+
+//
+// MessageId: TPM_20_E_INSUFFICIENT
+//
+// MessageText:
+//
+// TPM2.0 The TPM was unable to unmarshal a value because there were not enough octets in the input buffer.
+//
+#define TPM_20_E_INSUFFICIENT            _HRESULT_TYPEDEF_(0x8028009AL)
+
+//
+// MessageId: TPM_20_E_SIGNATURE
+//
+// MessageText:
+//
+// TPM2.0 The signature is not valid.
+//
+#define TPM_20_E_SIGNATURE               _HRESULT_TYPEDEF_(0x8028009BL)
+
+//
+// MessageId: TPM_20_E_KEY
+//
+// MessageText:
+//
+// TPM2.0 Key fields are not compatible with the selected use.
+//
+#define TPM_20_E_KEY                     _HRESULT_TYPEDEF_(0x8028009CL)
+
+//
+// MessageId: TPM_20_E_POLICY_FAIL
+//
+// MessageText:
+//
+// TPM2.0 A policy check failed.
+//
+#define TPM_20_E_POLICY_FAIL             _HRESULT_TYPEDEF_(0x8028009DL)
+
+//
+// MessageId: TPM_20_E_INTEGRITY
+//
+// MessageText:
+//
+// TPM2.0 Integrity check failed.
+//
+#define TPM_20_E_INTEGRITY               _HRESULT_TYPEDEF_(0x8028009FL)
+
+//
+// MessageId: TPM_20_E_TICKET
+//
+// MessageText:
+//
+// TPM2.0 Invalid ticket.
+//
+#define TPM_20_E_TICKET                  _HRESULT_TYPEDEF_(0x802800A0L)
+
+//
+// MessageId: TPM_20_E_RESERVED_BITS
+//
+// MessageText:
+//
+// TPM2.0 Reserved bits not set to zero as required.
+//
+#define TPM_20_E_RESERVED_BITS           _HRESULT_TYPEDEF_(0x802800A1L)
+
+//
+// MessageId: TPM_20_E_BAD_AUTH
+//
+// MessageText:
+//
+// TPM2.0 Authorization failure without DA implications.
+//
+#define TPM_20_E_BAD_AUTH                _HRESULT_TYPEDEF_(0x802800A2L)
+
+//
+// MessageId: TPM_20_E_EXPIRED
+//
+// MessageText:
+//
+// TPM2.0 The policy has expired.
+//
+#define TPM_20_E_EXPIRED                 _HRESULT_TYPEDEF_(0x802800A3L)
+
+//
+// MessageId: TPM_20_E_POLICY_CC
+//
+// MessageText:
+//
+// TPM2.0 The command code in the policy is not the command code of the command or the command code in a policy command references a command that is not implemented.
+//
+#define TPM_20_E_POLICY_CC               _HRESULT_TYPEDEF_(0x802800A4L)
+
+//
+// MessageId: TPM_20_E_BINDING
+//
+// MessageText:
+//
+// TPM2.0 Public and sensitive portions of an object are not cryptographically bound.
+//
+#define TPM_20_E_BINDING                 _HRESULT_TYPEDEF_(0x802800A5L)
+
+//
+// MessageId: TPM_20_E_CURVE
+//
+// MessageText:
+//
+// TPM2.0 Curve not supported.
+//
+#define TPM_20_E_CURVE                   _HRESULT_TYPEDEF_(0x802800A6L)
+
+//
+// MessageId: TPM_20_E_ECC_POINT
+//
+// MessageText:
+//
+// TPM2.0 Point is not on the required curve.
+//
+#define TPM_20_E_ECC_POINT               _HRESULT_TYPEDEF_(0x802800A7L)
+
+//
+// MessageId: TPM_20_E_INITIALIZE
+//
+// MessageText:
+//
+// TPM2.0 TPM not initialized.
+//
+#define TPM_20_E_INITIALIZE              _HRESULT_TYPEDEF_(0x80280100L)
+
+//
+// MessageId: TPM_20_E_FAILURE
+//
+// MessageText:
+//
+// TPM2.0 Commands not being accepted because of a TPM failure.
+//
+#define TPM_20_E_FAILURE                 _HRESULT_TYPEDEF_(0x80280101L)
+
+//
+// MessageId: TPM_20_E_SEQUENCE
+//
+// MessageText:
+//
+// TPM2.0 Improper use of a sequence handle.
+//
+#define TPM_20_E_SEQUENCE                _HRESULT_TYPEDEF_(0x80280103L)
+
+//
+// MessageId: TPM_20_E_PRIVATE
+//
+// MessageText:
+//
+// TPM2.0 TPM_RC_PRIVATE error.
+//
+#define TPM_20_E_PRIVATE                 _HRESULT_TYPEDEF_(0x8028010BL)
+
+//
+// MessageId: TPM_20_E_HMAC
+//
+// MessageText:
+//
+// TPM2.0 TPM_RC_HMAC.
+//
+#define TPM_20_E_HMAC                    _HRESULT_TYPEDEF_(0x80280119L)
+
+//
+// MessageId: TPM_20_E_DISABLED
+//
+// MessageText:
+//
+// TPM2.0 TPM_RC_DISABLED.
+//
+#define TPM_20_E_DISABLED                _HRESULT_TYPEDEF_(0x80280120L)
+
+//
+// MessageId: TPM_20_E_EXCLUSIVE
+//
+// MessageText:
+//
+// TPM2.0 Command failed because audit sequence required exclusivity.
+//
+#define TPM_20_E_EXCLUSIVE               _HRESULT_TYPEDEF_(0x80280121L)
+
+//
+// MessageId: TPM_20_E_AUTH_TYPE
+//
+// MessageText:
+//
+// TPM2.0 Authorization handle is not correct for command.
+//
+#define TPM_20_E_AUTH_TYPE               _HRESULT_TYPEDEF_(0x80280124L)
+
+//
+// MessageId: TPM_20_E_AUTH_MISSING
+//
+// MessageText:
+//
+// TPM2.0 Command requires an authorization session for handle and is not present.
+//
+#define TPM_20_E_AUTH_MISSING            _HRESULT_TYPEDEF_(0x80280125L)
+
+//
+// MessageId: TPM_20_E_POLICY
+//
+// MessageText:
+//
+// TPM2.0 Policy failure in Math Operation or an invalid authPolicy value.
+//
+#define TPM_20_E_POLICY                  _HRESULT_TYPEDEF_(0x80280126L)
+
+//
+// MessageId: TPM_20_E_PCR
+//
+// MessageText:
+//
+// TPM2.0 PCR check fail.
+//
+#define TPM_20_E_PCR                     _HRESULT_TYPEDEF_(0x80280127L)
+
+//
+// MessageId: TPM_20_E_PCR_CHANGED
+//
+// MessageText:
+//
+// TPM2.0 PCR have changed since checked.
+//
+#define TPM_20_E_PCR_CHANGED             _HRESULT_TYPEDEF_(0x80280128L)
+
+//
+// MessageId: TPM_20_E_UPGRADE
+//
+// MessageText:
+//
+// TPM2.0 TPM_RC_UPGRADE.
+//
+#define TPM_20_E_UPGRADE                 _HRESULT_TYPEDEF_(0x8028012DL)
+
+//
+// MessageId: TPM_20_E_TOO_MANY_CONTEXTS
+//
+// MessageText:
+//
+// TPM2.0 Context ID counter is at maximum.
+//
+#define TPM_20_E_TOO_MANY_CONTEXTS       _HRESULT_TYPEDEF_(0x8028012EL)
+
+//
+// MessageId: TPM_20_E_AUTH_UNAVAILABLE
+//
+// MessageText:
+//
+// TPM2.0 authValue or authPolicy is not available for selected entity.
+//
+#define TPM_20_E_AUTH_UNAVAILABLE        _HRESULT_TYPEDEF_(0x8028012FL)
+
+//
+// MessageId: TPM_20_E_REBOOT
+//
+// MessageText:
+//
+// TPM2.0 A _TPM_Init and Startup(CLEAR) is required before the TPM can resume operation.
+//
+#define TPM_20_E_REBOOT                  _HRESULT_TYPEDEF_(0x80280130L)
+
+//
+// MessageId: TPM_20_E_UNBALANCED
+//
+// MessageText:
+//
+// TPM2.0 The protection algorithms (hash and symmetric) are not reasonably balanced. The digest size of the hash must be larger than the key size of the symmetric algorithm.
+//
+#define TPM_20_E_UNBALANCED              _HRESULT_TYPEDEF_(0x80280131L)
+
+//
+// MessageId: TPM_20_E_COMMAND_SIZE
+//
+// MessageText:
+//
+// TPM2.0 TPM_RC_COMMAND_SIZE.
+//
+#define TPM_20_E_COMMAND_SIZE            _HRESULT_TYPEDEF_(0x80280142L)
+
+//
+// MessageId: TPM_20_E_COMMAND_CODE
+//
+// MessageText:
+//
+// TPM2.0 Command code not supported.
+//
+#define TPM_20_E_COMMAND_CODE            _HRESULT_TYPEDEF_(0x80280143L)
+
+//
+// MessageId: TPM_20_E_AUTHSIZE
+//
+// MessageText:
+//
+// TPM2.0 The value of authorizationSize is out of range or the number of octets in the authorization Area is greater than required.
+//
+#define TPM_20_E_AUTHSIZE                _HRESULT_TYPEDEF_(0x80280144L)
+
+//
+// MessageId: TPM_20_E_AUTH_CONTEXT
+//
+// MessageText:
+//
+// TPM2.0 Use of an authorization sessino with a context command or another command that cannot have an authorization session.
+//
+#define TPM_20_E_AUTH_CONTEXT            _HRESULT_TYPEDEF_(0x80280145L)
+
+//
+// MessageId: TPM_20_E_NV_RANGE
+//
+// MessageText:
+//
+// TPM2.0 NV offset+size is out of range.
+//
+#define TPM_20_E_NV_RANGE                _HRESULT_TYPEDEF_(0x80280146L)
+
+//
+// MessageId: TPM_20_E_NV_SIZE
+//
+// MessageText:
+//
+// TPM2.0 Requested allocation size is larger than allowed.
+//
+#define TPM_20_E_NV_SIZE                 _HRESULT_TYPEDEF_(0x80280147L)
+
+//
+// MessageId: TPM_20_E_NV_LOCKED
+//
+// MessageText:
+//
+// TPM2.0 NV access locked.
+//
+#define TPM_20_E_NV_LOCKED               _HRESULT_TYPEDEF_(0x80280148L)
+
+//
+// MessageId: TPM_20_E_NV_AUTHORIZATION
+//
+// MessageText:
+//
+// TPM2.0 NV access authorization fails in command actions
+//
+#define TPM_20_E_NV_AUTHORIZATION        _HRESULT_TYPEDEF_(0x80280149L)
+
+//
+// MessageId: TPM_20_E_UNINITIALIZED
+//
+// MessageText:
+//
+// TPM2.0 An NV index is used before being initialized or the state saved by TPM2_Shutdown(STATE) could not be restored.
+//
+#define TPM_20_E_UNINITIALIZED           _HRESULT_TYPEDEF_(0x8028014AL)
+
+//
+// MessageId: TPM_20_E_NV_SPACE
+//
+// MessageText:
+//
+// TPM2.0 Insufficient space for NV allocation.
+//
+#define TPM_20_E_NV_SPACE                _HRESULT_TYPEDEF_(0x8028014BL)
+
+//
+// MessageId: TPM_20_E_NV_DEFINED
+//
+// MessageText:
+//
+// TPM2.0 NV index or persistent object already defined.
+//
+#define TPM_20_E_NV_DEFINED              _HRESULT_TYPEDEF_(0x8028014CL)
+
+//
+// MessageId: TPM_20_E_BAD_CONTEXT
+//
+// MessageText:
+//
+// TPM2.0 Context in TPM2_ContextLoad() is not valid.
+//
+#define TPM_20_E_BAD_CONTEXT             _HRESULT_TYPEDEF_(0x80280150L)
+
+//
+// MessageId: TPM_20_E_CPHASH
+//
+// MessageText:
+//
+// TPM2.0 chHash value already set or not correct for use.
+//
+#define TPM_20_E_CPHASH                  _HRESULT_TYPEDEF_(0x80280151L)
+
+//
+// MessageId: TPM_20_E_PARENT
+//
+// MessageText:
+//
+// TPM2.0 Handle for parent is not a valid parent.
+//
+#define TPM_20_E_PARENT                  _HRESULT_TYPEDEF_(0x80280152L)
+
+//
+// MessageId: TPM_20_E_NEEDS_TEST
+//
+// MessageText:
+//
+// TPM2.0 Some function needs testing.
+//
+#define TPM_20_E_NEEDS_TEST              _HRESULT_TYPEDEF_(0x80280153L)
+
+//
+// MessageId: TPM_20_E_NO_RESULT
+//
+// MessageText:
+//
+// TPM2.0 TPM_RC_NO_RESULT.
+//
+#define TPM_20_E_NO_RESULT               _HRESULT_TYPEDEF_(0x80280154L)
+
+//
+// MessageId: TPM_20_E_SENSITIVE
+//
+// MessageText:
+//
+// TPM2.0 TPM_RC_SENSITIVE.
+//
+#define TPM_20_E_SENSITIVE               _HRESULT_TYPEDEF_(0x80280155L)
+
+//
 // TPM vendor specific hardware errors {0x0400..0x04ff}
 //
 //
@@ -43754,6 +44651,132 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // The TPM is defending against dictionary attacks and is in a time-out period.
 //
 #define TPM_E_DEFEND_LOCK_RUNNING        _HRESULT_TYPEDEF_(0x80280803L)
+
+//
+// MessageId: TPM_20_E_CONTEXT_GAP
+//
+// MessageText:
+//
+// TPM2.0 Gap for context ID is too large.
+//
+#define TPM_20_E_CONTEXT_GAP             _HRESULT_TYPEDEF_(0x80280901L)
+
+//
+// MessageId: TPM_20_E_OBJECT_MEMORY
+//
+// MessageText:
+//
+// TPM2.0 Out of memory for object contexts.
+//
+#define TPM_20_E_OBJECT_MEMORY           _HRESULT_TYPEDEF_(0x80280902L)
+
+//
+// MessageId: TPM_20_E_SESSION_MEMORY
+//
+// MessageText:
+//
+// TPM2.0 Out of memory for session contexts.
+//
+#define TPM_20_E_SESSION_MEMORY          _HRESULT_TYPEDEF_(0x80280903L)
+
+//
+// MessageId: TPM_20_E_MEMORY
+//
+// MessageText:
+//
+// TPM2.0 Out of shared object/session memory or need space for internal operations.
+//
+#define TPM_20_E_MEMORY                  _HRESULT_TYPEDEF_(0x80280904L)
+
+//
+// MessageId: TPM_20_E_SESSION_HANDLES
+//
+// MessageText:
+//
+// TPM2.0 Out of session handles - a session must be flushed before a nes session may be created.
+//
+#define TPM_20_E_SESSION_HANDLES         _HRESULT_TYPEDEF_(0x80280905L)
+
+//
+// MessageId: TPM_20_E_OBJECT_HANDLES
+//
+// MessageText:
+//
+// TPM2.0 Out of object handles - the handle space for objects is depleted and a reboot is required.
+//
+#define TPM_20_E_OBJECT_HANDLES          _HRESULT_TYPEDEF_(0x80280906L)
+
+//
+// MessageId: TPM_20_E_LOCALITY
+//
+// MessageText:
+//
+// TPM2.0 Bad locality.
+//
+#define TPM_20_E_LOCALITY                _HRESULT_TYPEDEF_(0x80280907L)
+
+//
+// MessageId: TPM_20_E_YIELDED
+//
+// MessageText:
+//
+// TPM2.0 The TPM has suspended operation on the command; forward progress was made and the command may be retried.
+//
+#define TPM_20_E_YIELDED                 _HRESULT_TYPEDEF_(0x80280908L)
+
+//
+// MessageId: TPM_20_E_CANCELED
+//
+// MessageText:
+//
+// TPM2.0 The command was canceled.
+//
+#define TPM_20_E_CANCELED                _HRESULT_TYPEDEF_(0x80280909L)
+
+//
+// MessageId: TPM_20_E_TESTING
+//
+// MessageText:
+//
+// TPM2.0 TPM is performing self-tests.
+//
+#define TPM_20_E_TESTING                 _HRESULT_TYPEDEF_(0x8028090AL)
+
+//
+// MessageId: TPM_20_E_NV_RATE
+//
+// MessageText:
+//
+// TPM2.0 The TPM is rate-limiting accesses to prevent wearout of NV
+//
+#define TPM_20_E_NV_RATE                 _HRESULT_TYPEDEF_(0x80280920L)
+
+//
+// MessageId: TPM_20_E_LOCKOUT
+//
+// MessageText:
+//
+// TPM2.0 Authorization for objects subject to DA protection are not allowed at this time because the TPM is in DA lockout mode.
+//
+#define TPM_20_E_LOCKOUT                 _HRESULT_TYPEDEF_(0x80280921L)
+
+//
+// MessageId: TPM_20_E_RETRY
+//
+// MessageText:
+//
+// TPM2.0 The TPM was not able to start the command.
+//
+#define TPM_20_E_RETRY                   _HRESULT_TYPEDEF_(0x80280922L)
+
+//
+// MessageId: TPM_20_E_NV_UNAVAILABLE
+//
+// MessageText:
+//
+// TPM2.0 the command may require writing of NV and NV is not current accessible.
+//
+#define TPM_20_E_NV_UNAVAILABLE          _HRESULT_TYPEDEF_(0x80280923L)
 
 //
 // TPM Base Services error codes {0x4000..0x40ff}
@@ -44822,6 +45845,24 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // The RSA key creation is blocked on this TPM due to known security vulnerabilities.
 //
 #define TPM_E_PCP_IFX_RSA_KEY_CREATION_BLOCKED _HRESULT_TYPEDEF_(0x8029041FL)
+
+//
+// MessageId: TPM_E_PCP_TICKET_MISSING
+//
+// MessageText:
+//
+// A ticket required to use a key was not provided.
+//
+#define TPM_E_PCP_TICKET_MISSING         _HRESULT_TYPEDEF_(0x80290420L)
+
+//
+// MessageId: TPM_E_PCP_RAW_POLICY_NOT_SUPPORTED
+//
+// MessageText:
+//
+// This key has a raw policy so the KSP can't authenticate against it.
+//
+#define TPM_E_PCP_RAW_POLICY_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x80290421L)
 
 //
 // Misc error codes in TPM code {0x0500..0x05ff}
@@ -51101,7 +52142,7 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 //
 // MessageText:
 //
-// Invalid Json document string.
+// Invalid JSON document string.
 //
 #define HNS_INVALID_JSON                 _HRESULT_TYPEDEF_(0xC03B001BL)
 
@@ -51110,7 +52151,7 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 //
 // MessageText:
 //
-// The reference is invalid in the json document.
+// The reference is invalid in the JSON document.
 //
 #define HNS_INVALID_JSON_REFERENCE       _HRESULT_TYPEDEF_(0xC03B001CL)
 
@@ -51131,6 +52172,15 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // IP address is either invalid or not part of any configured subnet(s).
 //
 #define HNS_INVALID_IP                   _HRESULT_TYPEDEF_(0xC03B001EL)
+
+//
+// MessageId: HNS_SWITCH_EXTENSION_NOT_FOUND
+//
+// MessageText:
+//
+// The specified switch extension does not exist on this switch.
+//
+#define HNS_SWITCH_EXTENSION_NOT_FOUND   _HRESULT_TYPEDEF_(0xC03B001FL)
 
 //
 // =======================================================
@@ -53242,6 +54292,24 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // Nested transactions are not supported.
 //
 #define STATEREPOSTORY_E_NESTED_TRANSACTION_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x80670011L)
+
+//
+// MessageId: STATEREPOSITORY_ERROR_CACHE_CORRUPTED
+//
+// MessageText:
+//
+// The StateRepository cache is not valid.
+//
+#define STATEREPOSITORY_ERROR_CACHE_CORRUPTED _HRESULT_TYPEDEF_(0x80670012L)
+
+//
+// MessageId: STATEREPOSITORY_TRANSACTION_CALLER_ID_CHANGED
+//
+// MessageText:
+//
+// The transaction caller id has changed.
+//
+#define STATEREPOSITORY_TRANSACTION_CALLER_ID_CHANGED _HRESULT_TYPEDEF_(0x00670013L)
 
 //
 // Spaceport errors
@@ -59792,5 +60860,181 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // Querying a scenario definition exceeded the specified maximum timeout.
 //
 #define UTC_E_TRY_GET_SCENARIO_TIMEOUT_EXCEEDED _HRESULT_TYPEDEF_(0x87C5103EL)
+
+//
+// MessageId: UTC_E_CERT_REV_FAILED
+//
+// MessageText:
+//
+// Certification revocation checking has been enabled, but the revocation check failed to verify whether a certificate has been revoked. The server used to check for revocation might be unreachable.
+//
+#define UTC_E_CERT_REV_FAILED            _HRESULT_TYPEDEF_(0x87C5103FL)
+
+//
+// MessageId: UTC_E_FAILED_TO_START_NDISCAP
+//
+// MessageText:
+//
+// Failed to start NDISCAP service for network packet capture trace.
+//
+#define UTC_E_FAILED_TO_START_NDISCAP    _HRESULT_TYPEDEF_(0x87C51040L)
+
+//
+// MessageId: UTC_E_KERNELDUMP_LIMIT_REACHED
+//
+// MessageText:
+//
+// UTC can perform no more than one KernelDump action on a device every 24 hours.
+//
+#define UTC_E_KERNELDUMP_LIMIT_REACHED   _HRESULT_TYPEDEF_(0x87C51041L)
+
+//
+// MessageId: UTC_E_MISSING_AGGREGATE_EVENT_TAG
+//
+// MessageText:
+//
+// The event contained an aggregation or differential privacy structure, but did not specify MICROSOFT_EVENTTAG_AGGREGATE.
+//
+#define UTC_E_MISSING_AGGREGATE_EVENT_TAG _HRESULT_TYPEDEF_(0x87C51042L)
+
+//
+// MessageId: UTC_E_INVALID_AGGREGATION_STRUCT
+//
+// MessageText:
+//
+// The event contained an invalid aggregation or differential privacy structure.
+//
+#define UTC_E_INVALID_AGGREGATION_STRUCT _HRESULT_TYPEDEF_(0x87C51043L)
+
+//
+// MessageId: UTC_E_ACTION_NOT_SUPPORTED_IN_DESTINATION
+//
+// MessageText:
+//
+// The action cannot be completed in the specified destination.
+//
+#define UTC_E_ACTION_NOT_SUPPORTED_IN_DESTINATION _HRESULT_TYPEDEF_(0x87C51044L)
+
+//
+// MessageId: UTC_E_FILTER_MISSING_ATTRIBUTE
+//
+// MessageText:
+//
+// Filter command is missing a required attribute.
+//
+#define UTC_E_FILTER_MISSING_ATTRIBUTE   _HRESULT_TYPEDEF_(0x87C51045L)
+
+//
+// MessageId: UTC_E_FILTER_INVALID_TYPE
+//
+// MessageText:
+//
+// Filter command contains an unsupported type.
+//
+#define UTC_E_FILTER_INVALID_TYPE        _HRESULT_TYPEDEF_(0x87C51046L)
+
+//
+// MessageId: UTC_E_FILTER_VARIABLE_NOT_FOUND
+//
+// MessageText:
+//
+// Filter variable does not exist at point of evaluation.
+//
+#define UTC_E_FILTER_VARIABLE_NOT_FOUND  _HRESULT_TYPEDEF_(0x87C51047L)
+
+//
+// MessageId: UTC_E_FILTER_FUNCTION_RESTRICTED
+//
+// MessageText:
+//
+// Filter command is not allowed in the current context.
+//
+#define UTC_E_FILTER_FUNCTION_RESTRICTED _HRESULT_TYPEDEF_(0x87C51048L)
+
+//
+// MessageId: UTC_E_FILTER_VERSION_MISMATCH
+//
+// MessageText:
+//
+// Requested filter version is incompatible with available version.
+//
+#define UTC_E_FILTER_VERSION_MISMATCH    _HRESULT_TYPEDEF_(0x87C51049L)
+
+//
+// MessageId: UTC_E_FILTER_INVALID_FUNCTION
+//
+// MessageText:
+//
+// Filter does not support this function.
+//
+#define UTC_E_FILTER_INVALID_FUNCTION    _HRESULT_TYPEDEF_(0x87C51050L)
+
+//
+// MessageId: UTC_E_FILTER_INVALID_FUNCTION_PARAMS
+//
+// MessageText:
+//
+// Filter function does not accept the provided parameter types and/or count.
+//
+#define UTC_E_FILTER_INVALID_FUNCTION_PARAMS _HRESULT_TYPEDEF_(0x87C51051L)
+
+//
+// MessageId: UTC_E_FILTER_INVALID_COMMAND
+//
+// MessageText:
+//
+// Filter command does not exist or is incorrectly formatted.
+//
+#define UTC_E_FILTER_INVALID_COMMAND     _HRESULT_TYPEDEF_(0x87C51052L)
+
+//
+// MessageId: UTC_E_FILTER_ILLEGAL_EVAL
+//
+// MessageText:
+//
+// Filter types can not be compared to each other.
+//
+#define UTC_E_FILTER_ILLEGAL_EVAL        _HRESULT_TYPEDEF_(0x87C51053L)
+
+
+//
+// WinML
+//
+
+//
+// MessageId: WINML_ERR_INVALID_DEVICE
+//
+// MessageText:
+//
+// The device is invalid or does not support machine learning.
+//
+#define WINML_ERR_INVALID_DEVICE         _HRESULT_TYPEDEF_(0x88900001L)
+
+//
+// MessageId: WINML_ERR_INVALID_BINDING
+//
+// MessageText:
+//
+// The binding is incomplete or does not match the input/output description.
+//
+#define WINML_ERR_INVALID_BINDING        _HRESULT_TYPEDEF_(0x88900002L)
+
+//
+// MessageId: WINML_ERR_VALUE_NOTFOUND
+//
+// MessageText:
+//
+// An attempt was made to bind an unknown input or output.
+//
+#define WINML_ERR_VALUE_NOTFOUND         _HRESULT_TYPEDEF_(0x88900003L)
+
+//
+// MessageId: WINML_ERR_SIZE_MISMATCH
+//
+// MessageText:
+//
+// The size of the buffer provided for a bound variable is invalid.
+//
+#define WINML_ERR_SIZE_MISMATCH          _HRESULT_TYPEDEF_(0x88900004L)
 
 #endif//_WINERROR_

@@ -119,6 +119,7 @@ DEFINE_DEVPROPKEY(DEVPKEY_Device_Legacy,                     0x80497100, 0x8c73,
 DEFINE_DEVPROPKEY(DEVPKEY_Device_ContainerId,             0x8c7ed206, 0x3f8a, 0x4827, 0xb3, 0xab, 0xae, 0x9e, 0x1f, 0xae, 0xfc, 0x6c, 2);     // DEVPROP_TYPE_GUID
 DEFINE_DEVPROPKEY(DEVPKEY_Device_InLocalMachineContainer, 0x8c7ed206, 0x3f8a, 0x4827, 0xb3, 0xab, 0xae, 0x9e, 0x1f, 0xae, 0xfc, 0x6c, 4);     // DEVPROP_TYPE_BOOLEAN
 
+
 //
 // Device property
 // This DEVPKEY correspond to a device's model.

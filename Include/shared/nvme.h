@@ -38,7 +38,7 @@ typedef union {
 
         ULONGLONG MQES      : 16;   // RO - Maximum Queue Entries Supported (MQES)
         ULONGLONG CQR       : 1;    // RO - Contiguous Queues Required (CQR)
-        
+
                                     // Bit 17, 18 - AMS; RO - Arbitration Mechanism Supported (AMS)
         ULONGLONG AMS_WeightedRoundRobinWithUrgent  : 1;    // Bit 17: Weighted Round Robin with Urgent;
         ULONGLONG AMS_VendorSpecific                : 1;    // Bit 18: Vendor Specific.
@@ -77,7 +77,7 @@ typedef union {
 
     struct {
         //LSB
-        ULONG Reserved  : 8;
+        ULONG TER       : 8;      // Tertiary Version Number (TER)
         ULONG MNR       : 8;      // Minor Version Number (MNR)
         ULONG MJR       : 16;     // Major Version Number (MJR)
         //MSB
@@ -498,17 +498,17 @@ typedef enum {
 //
 typedef enum {
 
-    NVME_STATUS_COMPLETION_QUEUE_INVALID                            = 0x00,         // Create I/O Submission Queue 
-    NVME_STATUS_INVALID_QUEUE_IDENTIFIER                            = 0x01,         // Create I/O Submission Queue, Create I/O Completion Queue, Delete I/O Completion Queue, Delete I/O Submission Queue 
-    NVME_STATUS_MAX_QUEUE_SIZE_EXCEEDED                             = 0x02,         // Create I/O Submission Queue, Create I/O Completion Queue 
-    NVME_STATUS_ABORT_COMMAND_LIMIT_EXCEEDED                        = 0x03,         // Abort  
-    NVME_STATUS_ASYNC_EVENT_REQUEST_LIMIT_EXCEEDED                  = 0x05,         // Asynchronous Event Request 
-    NVME_STATUS_INVALID_FIRMWARE_SLOT                               = 0x06,         // Firmware Commit 
-    NVME_STATUS_INVALID_FIRMWARE_IMAGE                              = 0x07,         // Firmware Commit 
-    NVME_STATUS_INVALID_INTERRUPT_VECTOR                            = 0x08,         // Create I/O Completion Queue 
-    NVME_STATUS_INVALID_LOG_PAGE                                    = 0x09,         // Get Log Page 
-    NVME_STATUS_INVALID_FORMAT                                      = 0x0A,         // Format NVM 
-    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_CONVENTIONAL_RESET     = 0x0B,         // Firmware Commit 
+    NVME_STATUS_COMPLETION_QUEUE_INVALID                            = 0x00,         // Create I/O Submission Queue
+    NVME_STATUS_INVALID_QUEUE_IDENTIFIER                            = 0x01,         // Create I/O Submission Queue, Create I/O Completion Queue, Delete I/O Completion Queue, Delete I/O Submission Queue
+    NVME_STATUS_MAX_QUEUE_SIZE_EXCEEDED                             = 0x02,         // Create I/O Submission Queue, Create I/O Completion Queue
+    NVME_STATUS_ABORT_COMMAND_LIMIT_EXCEEDED                        = 0x03,         // Abort
+    NVME_STATUS_ASYNC_EVENT_REQUEST_LIMIT_EXCEEDED                  = 0x05,         // Asynchronous Event Request
+    NVME_STATUS_INVALID_FIRMWARE_SLOT                               = 0x06,         // Firmware Commit
+    NVME_STATUS_INVALID_FIRMWARE_IMAGE                              = 0x07,         // Firmware Commit
+    NVME_STATUS_INVALID_INTERRUPT_VECTOR                            = 0x08,         // Create I/O Completion Queue
+    NVME_STATUS_INVALID_LOG_PAGE                                    = 0x09,         // Get Log Page
+    NVME_STATUS_INVALID_FORMAT                                      = 0x0A,         // Format NVM
+    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_CONVENTIONAL_RESET     = 0x0B,         // Firmware Commit
     NVME_STATUS_INVALID_QUEUE_DELETION                              = 0x0C,         // Delete I/O Completion Queue
     NVME_STATUS_FEATURE_ID_NOT_SAVEABLE                             = 0x0D,         // Set Features
     NVME_STATUS_FEATURE_NOT_CHANGEABLE                              = 0x0E,         // Set Features
@@ -538,7 +538,7 @@ typedef enum {
 
     NVME_STATUS_STREAM_RESOURCE_ALLOCATION_FAILED                   = 0x7F,         // Streams Directive
 
-    NVME_STATUS_NVM_CONFLICTING_ATTRIBUTES                          = 0x80,         // Dataset Management, Read, Write 
+    NVME_STATUS_NVM_CONFLICTING_ATTRIBUTES                          = 0x80,         // Dataset Management, Read, Write
     NVME_STATUS_NVM_INVALID_PROTECTION_INFORMATION                  = 0x81,         // Compare, Read, Write, Write Zeroes
     NVME_STATUS_NVM_ATTEMPTED_WRITE_TO_READ_ONLY_RANGE              = 0x82,         // Dataset Management, Write, Write Uncorrectable, Write Zeroes
 
@@ -666,7 +666,7 @@ typedef union {
 
 typedef struct {
     USHORT  MP;                 // bit 0:15.    Maximum  Power (MP)
-    
+
     UCHAR   Reserved0;          // bit 16:23
 
     UCHAR   MPS         : 1;    // bit 24: Max Power Scale (MPS)
@@ -692,7 +692,7 @@ typedef struct {
 
     UCHAR   Reserved6   : 6;    // bit 144:149
     UCHAR   IPS         : 2;    // bit 150:151  Idle Power Scale (IPS)
-    
+
     UCHAR   Reserved7;          // bit 152:159
 
     USHORT  ACTP;               // bit 160:175  Active Power (ACTP)
@@ -814,7 +814,7 @@ typedef struct {
     struct {
         ULONG   CryptoErase             : 1;     // Controller supports Crypto Erase Sanitize
         ULONG   BlockErase              : 1;     // Controller supports Block Erase Sanitize
-        ULONG   Overwrite               : 1;     // Controller supports Overwrite Santize 
+        ULONG   Overwrite               : 1;     // Controller supports Overwrite Santize
         ULONG   Reserved                : 29;
     } SANICAP;                  // byte 328:331  O - Sanitize Capabilities (SANICAP)
 
@@ -1030,7 +1030,7 @@ typedef struct {
     UCHAR           NVMCAP[16];         // byte 48:63 O - NVM Capacity (NVMCAP)
 
     UCHAR           Reserved2[40];      // byte 64:103
-    
+
     UCHAR           NGUID[16];          // byte 104:119 O - NAmespace Globally Unique Identifier (NGUID)
 
     UCHAR           EUI64[8];           // byte 120:127 M - IEEE Extended Unique Identifier (EUI64)
@@ -1514,7 +1514,7 @@ typedef struct {
 typedef struct {
 
     union {
-    
+
         struct {
             UCHAR   AvailableSpaceLow   : 1;                    // If set to 1, then the available spare space has fallen below the threshold.
             UCHAR   TemperatureThreshold : 1;                   // If set to 1, then a temperature is above an over temperature threshold or below an under temperature threshold.
@@ -1523,9 +1523,9 @@ typedef struct {
             UCHAR   VolatileMemoryBackupDeviceFailed    : 1;    // If set to 1, then the volatile memory backup device has failed. This field is only valid if the controller has a volatile memory backup solution.
             UCHAR   Reserved                            : 3;
         } DUMMYSTRUCTNAME;
-        
+
         UCHAR AsUchar;
-        
+
     } CriticalWarning;    // This field indicates critical warnings for the state of the  controller. Each bit corresponds to a critical warning type; multiple bits may be set.
 
     UCHAR   Temperature[2];                 // Temperature: Contains the temperature of the overall device (controller and NVM included) in units of Kelvin. If the temperature exceeds the temperature threshold, refer to section 5.12.1.4, then an asynchronous event completion may occur
@@ -1536,7 +1536,7 @@ typedef struct {
 
     UCHAR   DataUnitRead[16];               // Data Units Read:  Contains the number of 512 byte data units the host has read from the controller; this value does not include metadata. This value is reported in thousands (i.e., a value of 1 corresponds to 1000 units of 512 bytes read)  and is rounded up.  When the LBA size is a value other than 512 bytes, the controller shall convert the amount of data read to 512 byte units. For the NVM command set, logical blocks read as part of Compare and Read operations shall be included in this value
     UCHAR   DataUnitWritten[16];            // Data Units Written: Contains the number of 512 byte data units the host has written to the controller; this value does not include metadata. This value is reported in thousands (i.e., a value of 1 corresponds to 1000 units of 512 bytes written)  and is rounded up.  When the LBA size is a value other than 512 bytes, the controller shall convert the amount of data written to 512 byte units. For the NVM command set, logical blocks written as part of Write operations shall be included in this value. Write Uncorrectable commands shall not impact this value.
-    UCHAR   HostReadCommands[16];           // Host Read Commands:  Contains the number of read commands  completed by  the controller. For the NVM command set, this is the number of Compare and Read commands. 
+    UCHAR   HostReadCommands[16];           // Host Read Commands:  Contains the number of read commands  completed by  the controller. For the NVM command set, this is the number of Compare and Read commands.
     UCHAR   HostWrittenCommands[16];        // Host Write Commands:  Contains the number of write commands  completed by  the controller. For the NVM command set, this is the number of Write commands.
     UCHAR   ControllerBusyTime[16];         // Controller Busy Time:  Contains the amount of time the controller is busy with I/O commands. The controller is busy when there is a command outstanding to an I/O Queue (specifically, a command was issued via an I/O Submission Queue Tail doorbell write and the corresponding  completion queue entry  has not been posted yet to the associated I/O Completion Queue). This value is reported in minutes.
     UCHAR   PowerCycle[16];                 // Power Cycles: Contains the number of power cycles.
@@ -1649,7 +1649,7 @@ typedef struct {
     UCHAR       StatusCode;                     // Additional information related to errors/conditons. Only valid if SCValid is set
     USHORT      VendorSpecific;
 
-} NVME_DEVICE_SELF_TEST_RESULT_DATA, *PNVME_DEVICE_SELF_TEST_RESULT_DATA; 
+} NVME_DEVICE_SELF_TEST_RESULT_DATA, *PNVME_DEVICE_SELF_TEST_RESULT_DATA;
 
 //
 // Information of log: NVME_LOG_PAGE_DEVICE_SELF_TEST. Size: 564 bytes
@@ -1761,7 +1761,7 @@ typedef union {
         ULONG   PI          : 3;                // Protection Information (PI)
         ULONG   PIL         : 1;                // Protection Information Location (PIL)
         ULONG   SES         : 3;                // Secure Erase Settings (SES)
-        
+
         ULONG   Reserved    : 20;
     } DUMMYSTRUCTNAME;
 
@@ -1799,7 +1799,7 @@ typedef struct {
 typedef union {
 
     struct {
-        ULONG   DOPER : 8;    // Directive Operation        
+        ULONG   DOPER : 8;    // Directive Operation
         ULONG   DTYPE : 8;    // Directive Type
         ULONG   DSPEC : 16;   // Directive Specific
     } DUMMYSTRUCTNAME;
@@ -1822,7 +1822,7 @@ typedef struct {
 typedef union {
 
     struct {
-        ULONG   DOPER : 8;    // Directive Operation        
+        ULONG   DOPER : 8;    // Directive Operation
         ULONG   DTYPE : 8;    // Directive Type
         ULONG   DSPEC : 16;   // Directive Specific
     } DUMMYSTRUCTNAME;
@@ -1859,10 +1859,10 @@ typedef struct {
 } NVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS_DESCRIPTOR, *PNVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS_DESCRIPTOR;
 
 typedef struct {
-    
+
     NVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS_DESCRIPTOR     DirectivesSupported;
     NVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS_DESCRIPTOR     DirectivesEnabled;
-    
+
     //
     // This data structure is 4KB in size.  The reserved space is commented out
     // so that this data structure can be safely allocated on the stack.
@@ -1932,7 +1932,7 @@ typedef union {
         ULONG   NSR         : 16;   // Namespace Streams Requested
         ULONG   Reserved    : 16;
     } DUMMYSTRUCTNAME;
-        
+
     ULONG AsUlong;
 
 } NVME_CDW12_DIRECTIVE_RECEIVE_STREAMS_ALLOCATE_RESOURCES, *PNVME_CDW12_DIRECTIVE_RECEIVE_STREAMS_ALLOCATE_RESOURCES;
@@ -1950,7 +1950,7 @@ typedef struct {
 
 typedef union {
     NVME_CDW12_DIRECTIVE_SEND_IDENTIFY_ENABLE_DIRECTIVE EnableDirective;
-    
+
     ULONG AsUlong;
 } NVME_CDW12_DIRECTIVE_SEND;
 
@@ -2092,7 +2092,7 @@ typedef union {
 
     struct {
         ULONG   NR          : 8;        // Number of Ranges (NR)
-        ULONG   Reserved    : 24;       
+        ULONG   Reserved    : 24;
     } DUMMYSTRUCTNAME;
 
     ULONG   AsUlong;
@@ -2105,7 +2105,7 @@ typedef union {
         ULONG   IDR         : 1;        // Integral Dataset for Read (IDR)
         ULONG   IDW         : 1;        // Integral Dataset for Write (IDW)
         ULONG   AD          : 1;        // Deallocate (AD)
-        ULONG   Reserved    : 29;       
+        ULONG   Reserved    : 29;
     } DUMMYSTRUCTNAME;
 
     ULONG   AsUlong;
@@ -2184,7 +2184,7 @@ typedef struct {
     union {
 
         //
-        // General Command data fields 
+        // General Command data fields
         //
         struct {
             ULONG   CDW10;
@@ -2206,6 +2206,18 @@ typedef struct {
             ULONG   CDW14;
             ULONG   CDW15;
         } IDENTIFY;
+
+        //
+        // Admin Command: Abort
+        //
+        struct {
+            NVME_CDW10_ABORT CDW10;
+            ULONG   CDW11;
+            ULONG   CDW12;
+            ULONG   CDW13;
+            ULONG   CDW14;
+            ULONG   CDW15;
+        } ABORT;
 
         //
         // Admin Command: Get/Set Features
@@ -2358,7 +2370,7 @@ typedef struct {
             ULONG   CDW13;
             ULONG   CDW14;
             ULONG   CDW15;
-        } DIRECTIVESEND;        
+        } DIRECTIVESEND;
 
         //
         // NVM Command: Read/Write

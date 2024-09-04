@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.search.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -533,6 +535,7 @@ namespace ABI {
 
 
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_USE
@@ -562,6 +565,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane*,A
 
 
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -574,6 +578,7 @@ namespace ABI {
     } /* Search */} /* ABI */
 
 
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQuerySubmittedEventArgs_USE
@@ -604,6 +609,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane*,A
 
 
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -616,6 +622,7 @@ namespace ABI {
     } /* Search */} /* ABI */
 
 
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneResultSuggestionChosenEventArgs_USE
@@ -646,6 +653,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane*,A
 
 
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -658,6 +666,7 @@ namespace ABI {
     } /* Search */} /* ABI */
 
 
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneSuggestionsRequestedEventArgs_USE
@@ -688,6 +697,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane*,A
 
 
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -700,6 +710,7 @@ namespace ABI {
     } /* Search */} /* ABI */
 
 
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_USE
@@ -729,6 +740,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane*,A
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_USE */
 
 
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -1155,8 +1167,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("EEAEB062-743D-456E-84A3-23F06F2D15D7"), exclusiveto, contract] */
                 MIDL_INTERFACE("EEAEB062-743D-456E-84A3-23F06F2D15D7")
-                ILocalContentSuggestionSettings : IInspectable
+                ILocalContentSuggestionSettings : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Enabled(
                         /* [in] */boolean value
                         ) = 0;
@@ -1214,8 +1227,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPane may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPane : IInspectable
+                ISearchPane : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPane may be altered or unavailable for releases after Windows 10.")
@@ -1431,8 +1445,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneQueryChangedEventArgs : IInspectable
+                ISearchPaneQueryChangedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
@@ -1489,8 +1504,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("82FB460E-0940-4B6D-B8D0-642B30989E15"), exclusiveto, contract] */
                 MIDL_INTERFACE("82FB460E-0940-4B6D-B8D0-642B30989E15")
-                ISearchPaneQueryLinguisticDetails : IInspectable
+                ISearchPaneQueryLinguisticDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_QueryTextAlternatives(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -1539,8 +1555,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneQuerySubmittedEventArgs may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneQuerySubmittedEventArgs : IInspectable
+                ISearchPaneQuerySubmittedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneQuerySubmittedEventArgs may be altered or unavailable for releases after Windows 10.")
@@ -1594,8 +1611,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails : IInspectable
+                ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails may be altered or unavailable for releases after Windows 10.")
@@ -1642,8 +1660,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneResultSuggestionChosenEventArgs may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneResultSuggestionChosenEventArgs : IInspectable
+                ISearchPaneResultSuggestionChosenEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneResultSuggestionChosenEventArgs may be altered or unavailable for releases after Windows 10.")
@@ -1690,8 +1709,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneStatics may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneStatics : IInspectable
+                ISearchPaneStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneStatics may be altered or unavailable for releases after Windows 10.")
@@ -1738,8 +1758,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneStaticsWithHideThisApplication may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneStaticsWithHideThisApplication : IInspectable
+                ISearchPaneStaticsWithHideThisApplication : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneStaticsWithHideThisApplication may be altered or unavailable for releases after Windows 10.")
@@ -1784,8 +1805,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneSuggestionsRequest may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneSuggestionsRequest : IInspectable
+                ISearchPaneSuggestionsRequest : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneSuggestionsRequest may be altered or unavailable for releases after Windows 10.")
@@ -1846,8 +1868,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneSuggestionsRequestDeferral may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneSuggestionsRequestDeferral : IInspectable
+                ISearchPaneSuggestionsRequestDeferral : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneSuggestionsRequestDeferral may be altered or unavailable for releases after Windows 10.")
@@ -1896,8 +1919,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneSuggestionsRequestedEventArgs may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneSuggestionsRequestedEventArgs : IInspectable
+                ISearchPaneSuggestionsRequestedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneSuggestionsRequestedEventArgs may be altered or unavailable for releases after Windows 10.")
@@ -1944,8 +1968,9 @@ namespace ABI {
                 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISearchPaneVisibilityChangedEventArgs may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
-                ISearchPaneVisibilityChangedEventArgs : IInspectable
+                ISearchPaneVisibilityChangedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISearchPaneVisibilityChangedEventArgs may be altered or unavailable for releases after Windows 10.")
@@ -1988,8 +2013,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("46A1205B-69C9-4745-B72F-A8A4FC8F24AE"), exclusiveto, contract] */
                 MIDL_INTERFACE("46A1205B-69C9-4745-B72F-A8A4FC8F24AE")
-                ISearchQueryLinguisticDetails : IInspectable
+                ISearchQueryLinguisticDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_QueryTextAlternatives(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -2034,8 +2060,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("CAC6C3B8-3C64-4DFD-AD9F-479E4D4065A4"), exclusiveto, contract] */
                 MIDL_INTERFACE("CAC6C3B8-3C64-4DFD-AD9F-479E4D4065A4")
-                ISearchQueryLinguisticDetailsFactory : IInspectable
+                ISearchQueryLinguisticDetailsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * queryTextAlternatives,
                         /* [in] */UINT32 queryTextCompositionStart,
@@ -2077,8 +2104,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("323A8A4B-FBEA-4446-ABBC-3DA7915FDD3A"), exclusiveto, contract] */
                 MIDL_INTERFACE("323A8A4B-FBEA-4446-ABBC-3DA7915FDD3A")
-                ISearchSuggestionCollection : IInspectable
+                ISearchSuggestionCollection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Size(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2133,8 +2161,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("4E4E26A7-44E5-4039-9099-6000EAD1F0C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E4E26A7-44E5-4039-9099-6000EAD1F0C6")
-                ISearchSuggestionsRequest : IInspectable
+                ISearchSuggestionsRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsCanceled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2179,8 +2208,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("B71598A9-C065-456D-A845-1ECCEC5DC28B"), exclusiveto, contract] */
                 MIDL_INTERFACE("B71598A9-C065-456D-A845-1ECCEC5DC28B")
-                ISearchSuggestionsRequestDeferral : IInspectable
+                ISearchSuggestionsRequestDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -2666,6 +2696,7 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CSearch_CISearchSuggestions
 
 
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_INTERFACE_DEFINED__
 
@@ -2713,9 +2744,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPa
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQuerySubmittedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQuerySubmittedEventArgs_INTERFACE_DEFINED__
@@ -2764,9 +2797,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPa
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQuerySubmittedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneResultSuggestionChosenEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneResultSuggestionChosenEventArgs_INTERFACE_DEFINED__
@@ -2815,9 +2850,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPa
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneResultSuggestionChosenEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneSuggestionsRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneSuggestionsRequestedEventArgs_INTERFACE_DEFINED__
@@ -2866,9 +2903,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPa
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneSuggestionsRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_INTERFACE_DEFINED__
@@ -2916,6 +2955,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPa
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION >= 0x10000
 
 #ifndef ____x_ABI_CWindows_CStorage_CIStorageFolder_FWD_DEFINED__

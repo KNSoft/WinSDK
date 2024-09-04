@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.networking.proximity.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -769,6 +771,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::Proximity::PeerWatcher*,IIn
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CProximity__CPeerWatcher_Windows__CNetworking__CProximity__CPeerInformation_USE
 #define DEF___FITypedEventHandler_2_Windows__CNetworking__CProximity__CPeerWatcher_Windows__CNetworking__CProximity__CPeerInformation_USE
@@ -797,6 +800,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::Proximity::PeerWatcher*,ABI
 #endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CProximity__CPeerWatcher_Windows__CNetworking__CProximity__CPeerInformation_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1331,8 +1335,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("EFA9DA69-F6E1-49C9-A49E-8E0FC58FB911"), contract] */
                 MIDL_INTERFACE("EFA9DA69-F6E1-49C9-A49E-8E0FC58FB911")
-                IDeviceArrivedEventHandler : IUnknown
+                IDeviceArrivedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Proximity::IProximityDevice * sender
                         ) = 0;
@@ -1367,8 +1372,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("EFA9DA69-F6E2-49C9-A49E-8E0FC58FB911"), contract] */
                 MIDL_INTERFACE("EFA9DA69-F6E2-49C9-A49E-8E0FC58FB911")
-                IDeviceDepartedEventHandler : IUnknown
+                IDeviceDepartedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Proximity::IProximityDevice * sender
                         ) = 0;
@@ -1403,8 +1409,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("EFAB0782-F6E2-4675-A045-D8E320C24808"), contract] */
                 MIDL_INTERFACE("EFAB0782-F6E2-4675-A045-D8E320C24808")
-                IMessageReceivedHandler : IUnknown
+                IMessageReceivedHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Proximity::IProximityDevice * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Proximity::IProximityMessage * message
@@ -1440,8 +1447,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("EFAA0B4A-F6E2-4D7D-856C-78FC8EFC021E"), contract] */
                 MIDL_INTERFACE("EFAA0B4A-F6E2-4D7D-856C-78FC8EFC021E")
-                IMessageTransmittedHandler : IUnknown
+                IMessageTransmittedHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Proximity::IProximityDevice * sender,
                         /* [in] */INT64 messageId
@@ -1481,8 +1489,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("EB6891AE-4F1E-4C66-BD0D-46924A942E08"), exclusiveto, contract] */
                 MIDL_INTERFACE("EB6891AE-4F1E-4C66-BD0D-46924A942E08")
-                IConnectionRequestedEventArgs : IInspectable
+                IConnectionRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PeerInformation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Proximity::IPeerInformation * * value
                         ) = 0;
@@ -1521,8 +1530,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("914B3B61-F6E1-47C4-A14C-148A1903D0C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("914B3B61-F6E1-47C4-A14C-148A1903D0C6")
-                IPeerFinderStatics : IInspectable
+                IPeerFinderStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowBluetooth(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1614,8 +1624,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("D6E73C65-FDD0-4B0B-9312-866408935D82"), exclusiveto, contract] */
                 MIDL_INTERFACE("D6E73C65-FDD0-4B0B-9312-866408935D82")
-                IPeerFinderStatics2 : IInspectable
+                IPeerFinderStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Role(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Proximity::PeerRole * value
                         ) = 0;
@@ -1666,8 +1677,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("20024F08-9FFF-45F4-B6E9-408B2EBEF373"), exclusiveto, contract] */
                 MIDL_INTERFACE("20024F08-9FFF-45F4-B6E9-408B2EBEF373")
-                IPeerInformation : IInspectable
+                IPeerInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1706,8 +1718,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("B20F612A-DBD0-40F8-95BD-2D4209C7836F"), exclusiveto, contract] */
                 MIDL_INTERFACE("B20F612A-DBD0-40F8-95BD-2D4209C7836F")
-                IPeerInformation3 : IInspectable
+                IPeerInformation3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1749,8 +1762,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("ECC7CCAD-1B70-4E8B-92DB-BBE781419308"), exclusiveto, contract] */
                 MIDL_INTERFACE("ECC7CCAD-1B70-4E8B-92DB-BBE781419308")
-                IPeerInformationWithHostAndService : IInspectable
+                IPeerInformationWithHostAndService : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HostName(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::IHostName * * value
                         ) = 0;
@@ -1792,8 +1806,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("3CEE21F8-2FA6-4679-9691-03C94A420F34"), exclusiveto, contract] */
                 MIDL_INTERFACE("3CEE21F8-2FA6-4679-9691-03C94A420F34")
-                IPeerWatcher : IInspectable
+                IPeerWatcher : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Added(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CProximity__CPeerWatcher_Windows__CNetworking__CProximity__CPeerInformation * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1869,8 +1884,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("EFA8A552-F6E1-4329-A0FC-AB6B0FD28262"), exclusiveto, contract] */
                 MIDL_INTERFACE("EFA8A552-F6E1-4329-A0FC-AB6B0FD28262")
-                IProximityDevice : IInspectable
+                IProximityDevice : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SubscribeForMessage(
                         /* [in] */__RPC__in HSTRING messageType,
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Proximity::IMessageReceivedHandler  * messageReceivedHandler,
@@ -1971,8 +1987,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("914BA01D-F6E1-47C4-A14C-148A1903D0C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("914BA01D-F6E1-47C4-A14C-148A1903D0C6")
-                IProximityDeviceStatics : IInspectable
+                IProximityDeviceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * selector
                         ) = 0;
@@ -2018,8 +2035,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("EFAB0782-F6E1-4675-A045-D8E320C24808"), exclusiveto, contract] */
                 MIDL_INTERFACE("EFAB0782-F6E1-4675-A045-D8E320C24808")
-                IProximityMessage : IInspectable
+                IProximityMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MessageType(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2067,8 +2085,9 @@ namespace ABI {
             namespace Proximity {
                 /* [object, uuid("C6A780AD-F6E1-4D54-96E2-33F620BCA88A"), exclusiveto, contract] */
                 MIDL_INTERFACE("C6A780AD-F6E1-4D54-96E2-33F620BCA88A")
-                ITriggeredConnectionStateChangedEventArgs : IInspectable
+                ITriggeredConnectionStateChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Proximity::TriggeredConnectState * value
                         ) = 0;
@@ -2898,6 +2917,7 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CProximity__CPeerWatcher
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CProximity__CPeerWatcher_Windows__CNetworking__CProximity__CPeerInformation_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CProximity__CPeerWatcher_Windows__CNetworking__CProximity__CPeerInformation_INTERFACE_DEFINED__
 
@@ -2944,6 +2964,7 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CProximity__CPeerWatcher
 
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CProximity__CPeerWatcher_Windows__CNetworking__CProximity__CPeerInformation_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__)

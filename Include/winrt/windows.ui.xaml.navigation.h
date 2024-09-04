@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.navigation.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -879,8 +881,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("AEBAF785-43FC-4E2C-95C3-97AE84EABC8E"), contract] */
                     MIDL_INTERFACE("AEBAF785-43FC-4E2C-95C3-97AE84EABC8E")
-                    ILoadCompletedEventHandler : IUnknown
+                    ILoadCompletedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs * e
@@ -918,8 +921,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("7BD1CF54-23CF-4CCE-B2F5-4CE78D96896E"), contract] */
                     MIDL_INTERFACE("7BD1CF54-23CF-4CCE-B2F5-4CE78D96896E")
-                    INavigatedEventHandler : IUnknown
+                    INavigatedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs * e
@@ -957,8 +961,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("75D6A78F-A302-4489-9898-24EA49182910"), contract] */
                     MIDL_INTERFACE("75D6A78F-A302-4489-9898-24EA49182910")
-                    INavigatingCancelEventHandler : IUnknown
+                    INavigatingCancelEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs * e
@@ -996,8 +1001,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("4DAB4671-12B2-43C7-B892-9BE2DCD3E88D"), contract] */
                     MIDL_INTERFACE("4DAB4671-12B2-43C7-B892-9BE2DCD3E88D")
-                    INavigationFailedEventHandler : IUnknown
+                    INavigationFailedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationFailedEventArgs * e
@@ -1035,8 +1041,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("F0117DDB-12FA-4D8D-8B26-B383D09C2B3C"), contract] */
                     MIDL_INTERFACE("F0117DDB-12FA-4D8D-8B26-B383D09C2B3C")
-                    INavigationStoppedEventHandler : IUnknown
+                    INavigationStoppedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs * e
@@ -1078,8 +1085,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("FD1D67AE-EAFB-4079-BE80-6DC92A03AEDF"), exclusiveto, contract] */
                     MIDL_INTERFACE("FD1D67AE-EAFB-4079-BE80-6DC92A03AEDF")
-                    INavigatingCancelEventArgs : IInspectable
+                    INavigatingCancelEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Cancel(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1129,8 +1137,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("5407B704-8147-4343-838F-DD1EE908C137"), exclusiveto, contract] */
                     MIDL_INTERFACE("5407B704-8147-4343-838F-DD1EE908C137")
-                    INavigatingCancelEventArgs2 : IInspectable
+                    INavigatingCancelEventArgs2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Parameter(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                             ) = 0;
@@ -1174,8 +1183,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("B6AA9834-6691-44D1-BDF7-58820C27B0D0"), exclusiveto, contract] */
                     MIDL_INTERFACE("B6AA9834-6691-44D1-BDF7-58820C27B0D0")
-                    INavigationEventArgs : IInspectable
+                    INavigationEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                             ) = 0;
@@ -1231,8 +1241,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("DBFF71D9-979A-4B2E-A49B-3BB17FDEF574"), exclusiveto, contract] */
                     MIDL_INTERFACE("DBFF71D9-979A-4B2E-A49B-3BB17FDEF574")
-                    INavigationEventArgs2 : IInspectable
+                    INavigationEventArgs2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NavigationTransitionInfo(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * * value
                             ) = 0;
@@ -1273,8 +1284,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("11C1DFF7-36C2-4102-B2EF-0217A97289B3"), exclusiveto, contract] */
                     MIDL_INTERFACE("11C1DFF7-36C2-4102-B2EF-0217A97289B3")
-                    INavigationFailedEventArgs : IInspectable
+                    INavigationFailedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Exception(
                             /* [retval, out] */__RPC__out HRESULT * value
                             ) = 0;
@@ -1324,8 +1336,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("EF8814A6-9388-4ACA-8572-405194069080"), exclusiveto, contract] */
                     MIDL_INTERFACE("EF8814A6-9388-4ACA-8572-405194069080")
-                    IPageStackEntry : IInspectable
+                    IPageStackEntry : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourcePageType(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Interop::TypeName * value
                             ) = 0;
@@ -1372,8 +1385,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("4454048A-A8B9-4F78-9B84-1F51F58851FF"), exclusiveto, contract] */
                     MIDL_INTERFACE("4454048A-A8B9-4F78-9B84-1F51F58851FF")
-                    IPageStackEntryFactory : IInspectable
+                    IPageStackEntryFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName sourcePageType,
                             /* [in] */__RPC__in_opt IInspectable * parameter,
@@ -1417,8 +1431,9 @@ namespace ABI {
                 namespace Navigation {
                     /* [object, uuid("ACEFF8E3-246C-4033-9F01-01CB0DA5254E"), exclusiveto, contract] */
                     MIDL_INTERFACE("ACEFF8E3-246C-4033-9F01-01CB0DA5254E")
-                    IPageStackEntryStatics : IInspectable
+                    IPageStackEntryStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourcePageTypeProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;

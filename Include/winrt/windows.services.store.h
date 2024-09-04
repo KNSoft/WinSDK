@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.services.store.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,15 +224,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION)
-#define WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION 0x20000
+#define WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -304,6 +306,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreAvailability_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                interface IStoreCanAcquireLicenseResult;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult ABI::Windows::Services::Store::IStoreCanAcquireLicenseResult
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreCollectionData_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreCollectionData_FWD_DEFINED__
 namespace ABI {
@@ -360,6 +376,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreContext2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreContext3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreContext3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                interface IStoreContext3;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3 ABI::Windows::Services::Store::IStoreContext3
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreContext3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreContextStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreContextStatics_FWD_DEFINED__
 namespace ABI {
@@ -401,6 +431,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CServices_CStore_CIStoreLicense ABI::Windows::Services::Store::IStoreLicense
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreLicense_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                interface IStorePackageInstallOptions;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions ABI::Windows::Services::Store::IStorePackageInstallOptions
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStorePackageLicense_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStorePackageLicense_FWD_DEFINED__
@@ -444,6 +488,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                interface IStorePackageUpdateResult2;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2 ABI::Windows::Services::Store::IStorePackageUpdateResult2
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStorePrice_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStorePrice_FWD_DEFINED__
 namespace ABI {
@@ -471,6 +529,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CServices_CStore_CIStoreProduct ABI::Windows::Services::Store::IStoreProduct
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreProduct_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                interface IStoreProductOptions;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#define __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions ABI::Windows::Services::Store::IStoreProductOptions
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreProductPagedQueryResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreProductPagedQueryResult_FWD_DEFINED__
@@ -556,6 +628,48 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStorePurchaseResult_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                interface IStoreQueueItem;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem ABI::Windows::Services::Store::IStoreQueueItem
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                interface IStoreQueueItemCompletedEventArgs;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs ABI::Windows::Services::Store::IStoreQueueItemCompletedEventArgs
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                interface IStoreQueueItemStatus;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus ABI::Windows::Services::Store::IStoreQueueItemStatus
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreRequestHelperStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreRequestHelperStatics_FWD_DEFINED__
 namespace ABI {
@@ -625,6 +739,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CServices_CStore_CIStoreSubscriptionInfo ABI::Windows::Services::Store::IStoreSubscriptionInfo
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreSubscriptionInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                interface IStoreUninstallStorePackageResult;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#define __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult ABI::Windows::Services::Store::IStoreUninstallStorePackageResult
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreVideo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreVideo_FWD_DEFINED__
@@ -1145,6 +1273,79 @@ namespace ABI {
     namespace Windows {
         namespace Services {
             namespace Store {
+                class StoreQueueItem;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#define DEF___FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("907dd469-85b9-52e7-b52f-7310a44745ef"))
+IIterator<ABI::Windows::Services::Store::StoreQueueItem*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreQueueItem*, ABI::Windows::Services::Store::IStoreQueueItem*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Services.Store.StoreQueueItem>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::Services::Store::StoreQueueItem*> __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_t;
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Services::Store::IStoreQueueItem*>
+//#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Services::Store::IStoreQueueItem*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#define DEF___FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("68eb92e6-3cc6-5259-9a05-bd7f8d9fb8da"))
+IIterable<ABI::Windows::Services::Store::StoreQueueItem*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreQueueItem*, ABI::Windows::Services::Store::IStoreQueueItem*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Services.Store.StoreQueueItem>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::Services::Store::StoreQueueItem*> __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_t;
+#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Services::Store::IStoreQueueItem*>
+//#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Services::Store::IStoreQueueItem*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
                 class StoreSku;
             } /* Windows */
         } /* Services */
@@ -1478,6 +1679,38 @@ typedef IVectorView<struct ABI::Windows::Services::Store::StorePackageUpdateStat
 
 
 
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#define DEF___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("b2d3e99f-d3ac-577d-b977-fdb667d20def"))
+IVectorView<ABI::Windows::Services::Store::StoreQueueItem*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreQueueItem*, ABI::Windows::Services::Store::IStoreQueueItem*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Services.Store.StoreQueueItem>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::Services::Store::StoreQueueItem*> __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_t;
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Services::Store::IStoreQueueItem*>
+//#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Services::Store::IStoreQueueItem*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
 #if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CStore__CStoreSku_USE
@@ -1713,6 +1946,70 @@ typedef IAsyncOperation<__FIVectorView_1_Windows__CServices__CStore__CStorePacka
 
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
 
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("776b0864-b93d-5669-a75d-70a29325e919"))
+IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.Services.Store.StoreQueueItem>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_t;
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Services::Store::IStoreQueueItem*>*>
+//#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Services::Store::IStoreQueueItem*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("1346377d-4d6f-5999-9a6e-9c8fbf6f38a2"))
+IAsyncOperation<__FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem*> : IAsyncOperation_impl<__FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.Services.Store.StoreQueueItem>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<__FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem*> __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_t;
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Services::Store::IStoreQueueItem*>*>
+//#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Services::Store::IStoreQueueItem*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
 namespace ABI {
     namespace Windows {
         namespace Services {
@@ -1858,6 +2155,79 @@ typedef IAsyncOperation<ABI::Windows::Services::Store::StoreAppLicense*> __FIAsy
 
 
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                class StoreCanAcquireLicenseResult;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("572a21d0-7150-50ba-a558-d91dffec1a24"))
+IAsyncOperationCompletedHandler<ABI::Windows::Services::Store::StoreCanAcquireLicenseResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreCanAcquireLicenseResult*, ABI::Windows::Services::Store::IStoreCanAcquireLicenseResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Services.Store.StoreCanAcquireLicenseResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Services::Store::StoreCanAcquireLicenseResult*> __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Services::Store::IStoreCanAcquireLicenseResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Services::Store::IStoreCanAcquireLicenseResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("71ae9f6e-0d10-5bdb-b441-9312e3d2efc2"))
+IAsyncOperation<ABI::Windows::Services::Store::StoreCanAcquireLicenseResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreCanAcquireLicenseResult*, ABI::Windows::Services::Store::IStoreCanAcquireLicenseResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Services.Store.StoreCanAcquireLicenseResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Services::Store::StoreCanAcquireLicenseResult*> __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_t;
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Services::Store::IStoreCanAcquireLicenseResult*>
+//#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Services::Store::IStoreCanAcquireLicenseResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 namespace ABI {
     namespace Windows {
@@ -2301,6 +2671,79 @@ namespace ABI {
     namespace Windows {
         namespace Services {
             namespace Store {
+                class StoreUninstallStorePackageResult;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c4de9fb6-1fd9-5229-8818-ba65751db046"))
+IAsyncOperationCompletedHandler<ABI::Windows::Services::Store::StoreUninstallStorePackageResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreUninstallStorePackageResult*, ABI::Windows::Services::Store::IStoreUninstallStorePackageResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Services.Store.StoreUninstallStorePackageResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Services::Store::StoreUninstallStorePackageResult*> __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Services::Store::IStoreUninstallStorePackageResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Services::Store::IStoreUninstallStorePackageResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("55aa82fd-ce55-550a-95ec-0554b1915208"))
+IAsyncOperation<ABI::Windows::Services::Store::StoreUninstallStorePackageResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreUninstallStorePackageResult*, ABI::Windows::Services::Store::IStoreUninstallStorePackageResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Services.Store.StoreUninstallStorePackageResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Services::Store::StoreUninstallStorePackageResult*> __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_t;
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Services::Store::IStoreUninstallStorePackageResult*>
+//#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Services::Store::IStoreUninstallStorePackageResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
                 class StoreContext;
             } /* Windows */
         } /* Services */
@@ -2380,6 +2823,83 @@ typedef ITypedEventHandler<ABI::Windows::Services::Store::StorePackageLicense*,I
 
 
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f8ae3690-f9db-57e8-843e-244c0a6a13e0"))
+ITypedEventHandler<ABI::Windows::Services::Store::StoreQueueItem*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreQueueItem*, ABI::Windows::Services::Store::IStoreQueueItem*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Services.Store.StoreQueueItem, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Services::Store::StoreQueueItem*,IInspectable*> __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Services::Store::IStoreQueueItem*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Services::Store::IStoreQueueItem*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                class StoreQueueItemCompletedEventArgs;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2bac2880-78fd-5cbe-8271-7d583e4ec2c4"))
+ITypedEventHandler<ABI::Windows::Services::Store::StoreQueueItem*,ABI::Windows::Services::Store::StoreQueueItemCompletedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreQueueItem*, ABI::Windows::Services::Store::IStoreQueueItem*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Store::StoreQueueItemCompletedEventArgs*, ABI::Windows::Services::Store::IStoreQueueItemCompletedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Services.Store.StoreQueueItem, Windows.Services.Store.StoreQueueItemCompletedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Services::Store::StoreQueueItem*,ABI::Windows::Services::Store::StoreQueueItemCompletedEventArgs*> __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Services::Store::IStoreQueueItem*,ABI::Windows::Services::Store::IStoreQueueItemCompletedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Services::Store::IStoreQueueItem*,ABI::Windows::Services::Store::IStoreQueueItemCompletedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_USE */
+
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
@@ -2585,6 +3105,35 @@ typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
 
 
 
+#ifndef DEF___FIVector_1_HSTRING_USE
+#define DEF___FIVector_1_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90"))
+IVector<HSTRING> : IVector_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<String>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVector<HSTRING> __FIVector_1_HSTRING_t;
+#define __FIVector_1_HSTRING ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_HSTRING ABI::Windows::Foundation::Collections::IVector<HSTRING>
+//#define __FIVector_1_HSTRING_t ABI::Windows::Foundation::Collections::IVector<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVector_1_HSTRING_USE */
+
+
+
+
 
 namespace ABI {
     namespace Windows {
@@ -2703,6 +3252,17 @@ namespace ABI {
         namespace Services {
             namespace Store {
                 
+                typedef enum StoreCanLicenseStatus : int StoreCanLicenseStatus;
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                
                 typedef enum StoreConsumableStatus : int StoreConsumableStatus;
                 
             } /* Windows */
@@ -2737,6 +3297,50 @@ namespace ABI {
             namespace Store {
                 
                 typedef enum StorePurchaseStatus : int StorePurchaseStatus;
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                
+                typedef enum StoreQueueItemExtendedState : int StoreQueueItemExtendedState;
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                
+                typedef enum StoreQueueItemKind : int StoreQueueItemKind;
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                
+                typedef enum StoreQueueItemState : int StoreQueueItemState;
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                
+                typedef enum StoreUninstallStorePackageStatus : int StoreUninstallStorePackageStatus;
                 
             } /* Windows */
         } /* Services */
@@ -2783,6 +3387,16 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Services {
@@ -2795,6 +3409,16 @@ namespace ABI {
 
 
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                class StorePackageInstallOptions;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
 
 
 
@@ -2811,6 +3435,16 @@ namespace ABI {
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                class StoreProductOptions;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+
 
 
 
@@ -2823,6 +3457,18 @@ namespace ABI {
         } /* Services */
     } /* Store */} /* ABI */
 
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                class StoreQueueItemStatus;
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
 
 
 
@@ -2846,6 +3492,37 @@ namespace ABI {
 
 
 
+
+
+
+/*
+ *
+ * Struct Windows.Services.Store.StoreCanLicenseStatus
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [v1_enum, contract] */
+                enum StoreCanLicenseStatus : int
+                {
+                    StoreCanLicenseStatus_NotLicensableToUser = 0,
+                    StoreCanLicenseStatus_Licensable = 1,
+                    StoreCanLicenseStatus_LicenseActionNotApplicableToProduct = 2,
+                    StoreCanLicenseStatus_NetworkError = 3,
+                    StoreCanLicenseStatus_ServerError = 4,
+                };
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -2974,6 +3651,134 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Services.Store.StoreQueueItemExtendedState
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [v1_enum, contract] */
+                enum StoreQueueItemExtendedState : int
+                {
+                    StoreQueueItemExtendedState_ActivePending = 0,
+                    StoreQueueItemExtendedState_ActiveStarting = 1,
+                    StoreQueueItemExtendedState_ActiveAcquiringLicense = 2,
+                    StoreQueueItemExtendedState_ActiveDownloading = 3,
+                    StoreQueueItemExtendedState_ActiveRestoringData = 4,
+                    StoreQueueItemExtendedState_ActiveInstalling = 5,
+                    StoreQueueItemExtendedState_Completed = 6,
+                    StoreQueueItemExtendedState_Canceled = 7,
+                    StoreQueueItemExtendedState_Paused = 8,
+                    StoreQueueItemExtendedState_Error = 9,
+                    StoreQueueItemExtendedState_PausedPackagesInUse = 10,
+                    StoreQueueItemExtendedState_PausedLowBattery = 11,
+                    StoreQueueItemExtendedState_PausedWiFiRecommended = 12,
+                    StoreQueueItemExtendedState_PausedWiFiRequired = 13,
+                    StoreQueueItemExtendedState_PausedReadyToInstall = 14,
+                };
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Struct Windows.Services.Store.StoreQueueItemKind
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [v1_enum, contract] */
+                enum StoreQueueItemKind : int
+                {
+                    StoreQueueItemKind_Install = 0,
+                    StoreQueueItemKind_Update = 1,
+                    StoreQueueItemKind_Repair = 2,
+                };
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Struct Windows.Services.Store.StoreQueueItemState
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [v1_enum, contract] */
+                enum StoreQueueItemState : int
+                {
+                    StoreQueueItemState_Active = 0,
+                    StoreQueueItemState_Completed = 1,
+                    StoreQueueItemState_Canceled = 2,
+                    StoreQueueItemState_Error = 3,
+                    StoreQueueItemState_Paused = 4,
+                };
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Struct Windows.Services.Store.StoreUninstallStorePackageStatus
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [v1_enum, contract] */
+                enum StoreUninstallStorePackageStatus : int
+                {
+                    StoreUninstallStorePackageStatus_Succeeded = 0,
+                    StoreUninstallStorePackageStatus_CanceledByUser = 1,
+                    StoreUninstallStorePackageStatus_NetworkError = 2,
+                    StoreUninstallStorePackageStatus_UninstallNotApplicable = 3,
+                    StoreUninstallStorePackageStatus_Error = 4,
+                };
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Struct Windows.Services.Store.StorePackageUpdateStatus
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -3024,8 +3829,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("FBD7946D-F040-4CB3-9A39-29BCECDBE22D"), exclusiveto, contract] */
                 MIDL_INTERFACE("FBD7946D-F040-4CB3-9A39-29BCECDBE22D")
-                IStoreAcquireLicenseResult : IInspectable
+                IStoreAcquireLicenseResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StorePackageLicense(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Store::IStorePackageLicense * * value
                         ) = 0;
@@ -3067,8 +3873,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("F389F9DE-73C0-45CE-9BAB-B2FE3E5EAFD3"), exclusiveto, contract] */
                 MIDL_INTERFACE("F389F9DE-73C0-45CE-9BAB-B2FE3E5EAFD3")
-                IStoreAppLicense : IInspectable
+                IStoreAppLicense : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SkuStoreId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3131,8 +3938,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("FA060325-0FFD-4493-AD43-F1F9918F69FA"), exclusiveto, contract] */
                 MIDL_INTERFACE("FA060325-0FFD-4493-AD43-F1F9918F69FA")
-                IStoreAvailability : IInspectable
+                IStoreAvailability : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StoreId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3168,6 +3976,53 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreAvailability;
 
 /*
  *
+ * Interface Windows.Services.Store.IStoreCanAcquireLicenseResult
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreCanAcquireLicenseResult
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreCanAcquireLicenseResult[] = L"Windows.Services.Store.IStoreCanAcquireLicenseResult";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [object, uuid("3A693DB3-0088-482F-86D5-BD46522663AD"), exclusiveto, contract] */
+                MIDL_INTERFACE("3A693DB3-0088-482F-86D5-BD46522663AD")
+                IStoreCanAcquireLicenseResult : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
+                        /* [retval, out] */__RPC__out HRESULT * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LicensableSku(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__out ABI::Windows::Services::Store::StoreCanLicenseStatus * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStoreCanAcquireLicenseResult=_uuidof(IStoreCanAcquireLicenseResult);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.Services.Store.IStoreCollectionData
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -3187,8 +4042,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("8AA4C3B3-5BB3-441A-2AB4-4DAB73D5CE67"), exclusiveto, contract] */
                 MIDL_INTERFACE("8AA4C3B3-5BB3-441A-2AB4-4DAB73D5CE67")
-                IStoreCollectionData : IInspectable
+                IStoreCollectionData : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTrial(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3248,8 +4104,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("EA5DAB72-6A00-4052-BE5B-BFDAB4433352"), exclusiveto, contract] */
                 MIDL_INTERFACE("EA5DAB72-6A00-4052-BE5B-BFDAB4433352")
-                IStoreConsumableResult : IInspectable
+                IStoreConsumableResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Services::Store::StoreConsumableStatus * value
                         ) = 0;
@@ -3297,8 +4154,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("AC98B6BE-F4FD-4912-BABD-5035E5E8BCAB"), exclusiveto, contract] */
                 MIDL_INTERFACE("AC98B6BE-F4FD-4912-BABD-5035E5E8BCAB")
-                IStoreContext : IInspectable
+                IStoreContext : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
                         ) = 0;
@@ -3421,8 +4279,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("18BC54DA-7BD9-452C-9116-3BBD06FFC63A"), exclusiveto, contract] */
                 MIDL_INTERFACE("18BC54DA-7BD9-452C-9116-3BBD06FFC63A")
-                IStoreContext2 : IInspectable
+                IStoreContext2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindStoreProductForPackageAsync(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * productKinds,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::IPackage * package,
@@ -3440,6 +4299,101 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreContext2;
 #endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreContext2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStoreContext3
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreContext
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreContext3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreContext3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreContext3[] = L"Windows.Services.Store.IStoreContext3";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [object, uuid("E26226CA-1A01-4730-85A6-ECC896E4AE38"), exclusiveto, contract] */
+                MIDL_INTERFACE("E26226CA-1A01-4730-85A6-ECC896E4AE38")
+                IStoreContext3 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanSilentlyDownloadStorePackageUpdates(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE TrySilentDownloadStorePackageUpdatesAsync(
+                        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CServices__CStore__CStorePackageUpdate * storePackageUpdates,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CServices__CStore__CStorePackageUpdateResult_Windows__CServices__CStore__CStorePackageUpdateStatus * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE TrySilentDownloadAndInstallStorePackageUpdatesAsync(
+                        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CServices__CStore__CStorePackageUpdate * storePackageUpdates,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CServices__CStore__CStorePackageUpdateResult_Windows__CServices__CStore__CStorePackageUpdateStatus * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CanAcquireStoreLicenseForOptionalPackageAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::IPackage * optionalPackage,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CanAcquireStoreLicenseAsync(
+                        /* [in] */__RPC__in HSTRING productStoreId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetStoreProductsWithOptionsAsync(
+                        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * productKinds,
+                        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * storeIds,
+                        /* [in] */__RPC__in_opt ABI::Windows::Services::Store::IStoreProductOptions * storeProductOptions,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreProductQueryResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetAssociatedStoreQueueItemsAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetStoreQueueItemsAsync(
+                        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * storeIds,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestDownloadAndInstallStorePackagesWithInstallOptionsAsync(
+                        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * storeIds,
+                        /* [in] */__RPC__in_opt ABI::Windows::Services::Store::IStorePackageInstallOptions * storePackageInstallOptions,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CServices__CStore__CStorePackageUpdateResult_Windows__CServices__CStore__CStorePackageUpdateStatus * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE DownloadAndInstallStorePackagesAsync(
+                        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * storeIds,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CServices__CStore__CStorePackageUpdateResult_Windows__CServices__CStore__CStorePackageUpdateStatus * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE RequestUninstallStorePackageAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::IPackage * package,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE RequestUninstallStorePackageByStoreIdAsync(
+                        /* [in] */__RPC__in HSTRING storeId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE UninstallStorePackageAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::IPackage * package,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE UninstallStorePackageByStoreIdAsync(
+                        /* [in] */__RPC__in HSTRING storeId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStoreContext3=_uuidof(IStoreContext3);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreContext3;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreContext3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -3463,8 +4417,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("9C06EE5F-15C0-4E72-9330-D6191CEBD19C"), exclusiveto, contract] */
                 MIDL_INTERFACE("9C06EE5F-15C0-4E72-9330-D6191CEBD19C")
-                IStoreContextStatics : IInspectable
+                IStoreContextStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Store::IStoreContext * * value
                         ) = 0;
@@ -3507,8 +4462,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("081FD248-ADB4-4B64-A993-784789926ED5"), exclusiveto, contract] */
                 MIDL_INTERFACE("081FD248-ADB4-4B64-A993-784789926ED5")
-                IStoreImage : IInspectable
+                IStoreImage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                         ) = 0;
@@ -3559,8 +4515,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("26DC9579-4C4F-4F30-BC89-649F60E36055"), exclusiveto, contract] */
                 MIDL_INTERFACE("26DC9579-4C4F-4F30-BC89-649F60E36055")
-                IStoreLicense : IInspectable
+                IStoreLicense : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SkuStoreId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3592,6 +4549,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreLicense;
 
 /*
  *
+ * Interface Windows.Services.Store.IStorePackageInstallOptions
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StorePackageInstallOptions
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStorePackageInstallOptions[] = L"Windows.Services.Store.IStorePackageInstallOptions";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [object, uuid("1D3D630C-0CCD-44DD-8C59-80810A729973"), exclusiveto, contract] */
+                MIDL_INTERFACE("1D3D630C-0CCD-44DD-8C59-80810A729973")
+                IStorePackageInstallOptions : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowForcedAppRestart(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AllowForcedAppRestart(
+                        /* [in] */boolean value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStorePackageInstallOptions=_uuidof(IStorePackageInstallOptions);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.Services.Store.IStorePackageLicense
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -3615,8 +4616,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("0C465714-14E1-4973-BD14-F77724271E99"), exclusiveto, contract] */
                 MIDL_INTERFACE("0C465714-14E1-4973-BD14-F77724271E99")
-                IStorePackageLicense : IInspectable
+                IStorePackageLicense : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LicenseLost(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CServices__CStore__CStorePackageLicense_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3666,8 +4668,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("140FA150-3CBF-4A35-B91F-48271C31B072"), exclusiveto, contract] */
                 MIDL_INTERFACE("140FA150-3CBF-4A35-B91F-48271C31B072")
-                IStorePackageUpdate : IInspectable
+                IStorePackageUpdate : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Package(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IPackage * * value
                         ) = 0;
@@ -3709,8 +4712,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("E79142ED-61F9-4893-B4FE-CF191603AF7B"), exclusiveto, contract] */
                 MIDL_INTERFACE("E79142ED-61F9-4893-B4FE-CF191603AF7B")
-                IStorePackageUpdateResult : IInspectable
+                IStorePackageUpdateResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OverallState(
                         /* [retval, out] */__RPC__out ABI::Windows::Services::Store::StorePackageUpdateState * value
                         ) = 0;
@@ -3729,6 +4733,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult;
 #endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStorePackageUpdateResult2
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StorePackageUpdateResult
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStorePackageUpdateResult2[] = L"Windows.Services.Store.IStorePackageUpdateResult2";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [object, uuid("071D012E-BC62-4F2E-87EA-99D801AEAF98"), exclusiveto, contract] */
+                MIDL_INTERFACE("071D012E-BC62-4F2E-87EA-99D801AEAF98")
+                IStorePackageUpdateResult2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StoreQueueItems(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStorePackageUpdateResult2=_uuidof(IStorePackageUpdateResult2);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -3752,8 +4797,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("55BA94C4-15F1-407C-8F06-006380F4DF0B"), exclusiveto, contract] */
                 MIDL_INTERFACE("55BA94C4-15F1-407C-8F06-006380F4DF0B")
-                IStorePrice : IInspectable
+                IStorePrice : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FormattedBasePrice(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3807,8 +4853,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("320E2C52-D760-450A-A42B-67D1E901AC90"), exclusiveto, contract] */
                 MIDL_INTERFACE("320E2C52-D760-450A-A42B-67D1E901AC90")
-                IStoreProduct : IInspectable
+                IStoreProduct : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StoreId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3880,6 +4927,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreProduct;
 
 /*
  *
+ * Interface Windows.Services.Store.IStoreProductOptions
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreProductOptions
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreProductOptions[] = L"Windows.Services.Store.IStoreProductOptions";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [object, uuid("5B34A0F9-A113-4811-8326-16199C927F31"), exclusiveto, contract] */
+                MIDL_INTERFACE("5B34A0F9-A113-4811-8326-16199C927F31")
+                IStoreProductOptions : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActionFilters(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStoreProductOptions=_uuidof(IStoreProductOptions);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreProductOptions;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.Services.Store.IStoreProductPagedQueryResult
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -3899,8 +4987,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("C92718C5-4DD5-4869-A462-ECC6872E43C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("C92718C5-4DD5-4869-A462-ECC6872E43C5")
-                IStoreProductPagedQueryResult : IInspectable
+                IStoreProductPagedQueryResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Products(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CServices__CStore__CStoreProduct * * value
                         ) = 0;
@@ -3948,8 +5037,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("D805E6C5-D456-4FF6-8049-9076D5165F73"), exclusiveto, contract] */
                 MIDL_INTERFACE("D805E6C5-D456-4FF6-8049-9076D5165F73")
-                IStoreProductQueryResult : IInspectable
+                IStoreProductQueryResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Products(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CServices__CStore__CStoreProduct * * value
                         ) = 0;
@@ -3991,8 +5081,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("B7674F73-3C87-4EE1-8201-F428359BD3AF"), exclusiveto, contract] */
                 MIDL_INTERFACE("B7674F73-3C87-4EE1-8201-F428359BD3AF")
-                IStoreProductResult : IInspectable
+                IStoreProductResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Product(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Store::IStoreProduct * * value
                         ) = 0;
@@ -4034,8 +5125,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("836278F3-FF87-4364-A5B4-FD2153EBE43B"), exclusiveto, contract] */
                 MIDL_INTERFACE("836278F3-FF87-4364-A5B4-FD2153EBE43B")
-                IStorePurchaseProperties : IInspectable
+                IStorePurchaseProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4083,8 +5175,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("A768F59E-FEFD-489F-9A17-22A593E68B9D"), exclusiveto, contract] */
                 MIDL_INTERFACE("A768F59E-FEFD-489F-9A17-22A593E68B9D")
-                IStorePurchasePropertiesFactory : IInspectable
+                IStorePurchasePropertiesFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Store::IStorePurchaseProperties * * storePurchaseProperties
@@ -4124,8 +5217,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("ADD28552-F96A-463D-A7BB-C20B4FCA6952"), exclusiveto, contract] */
                 MIDL_INTERFACE("ADD28552-F96A-463D-A7BB-C20B4FCA6952")
-                IStorePurchaseResult : IInspectable
+                IStorePurchaseResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Services::Store::StorePurchaseStatus * value
                         ) = 0;
@@ -4144,6 +5238,161 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStorePurchaseResult;
 #endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStorePurchaseResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStoreQueueItem
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreQueueItem
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreQueueItem[] = L"Windows.Services.Store.IStoreQueueItem";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [object, uuid("56D5C32B-F830-4293-9188-CAD2DCDE7357"), exclusiveto, contract] */
+                MIDL_INTERFACE("56D5C32B-F830-4293-9188-CAD2DCDE7357")
+                IStoreQueueItem : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PackageFamilyName(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InstallKind(
+                        /* [retval, out] */__RPC__out ABI::Windows::Services::Store::StoreQueueItemKind * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetCurrentStatus(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Store::IStoreQueueItemStatus * * result
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Completed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Completed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_StatusChanged(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_StatusChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStoreQueueItem=_uuidof(IStoreQueueItem);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreQueueItem;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStoreQueueItemCompletedEventArgs
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreQueueItemCompletedEventArgs
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreQueueItemCompletedEventArgs[] = L"Windows.Services.Store.IStoreQueueItemCompletedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [object, uuid("1247DF6C-B44A-439B-BB07-1D3003D005C2"), exclusiveto, contract] */
+                MIDL_INTERFACE("1247DF6C-B44A-439B-BB07-1D3003D005C2")
+                IStoreQueueItemCompletedEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Store::IStoreQueueItemStatus * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStoreQueueItemCompletedEventArgs=_uuidof(IStoreQueueItemCompletedEventArgs);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStoreQueueItemStatus
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreQueueItemStatus
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreQueueItemStatus[] = L"Windows.Services.Store.IStoreQueueItemStatus";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [object, uuid("9BD6796F-9CC3-4EC3-B2EF-7BE433B30174"), exclusiveto, contract] */
+                MIDL_INTERFACE("9BD6796F-9CC3-4EC3-B2EF-7BE433B30174")
+                IStoreQueueItemStatus : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PackageInstallState(
+                        /* [retval, out] */__RPC__out ABI::Windows::Services::Store::StoreQueueItemState * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PackageInstallExtendedState(
+                        /* [retval, out] */__RPC__out ABI::Windows::Services::Store::StoreQueueItemExtendedState * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UpdateStatus(
+                        /* [retval, out] */__RPC__out ABI::Windows::Services::Store::StorePackageUpdateStatus * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
+                        /* [retval, out] */__RPC__out HRESULT * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStoreQueueItemStatus=_uuidof(IStoreQueueItemStatus);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -4167,8 +5416,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("6CE5E5F9-A0C9-4B2C-96A6-A171C630038D"), exclusiveto, contract] */
                 MIDL_INTERFACE("6CE5E5F9-A0C9-4B2C-96A6-A171C630038D")
-                IStoreRequestHelperStatics : IInspectable
+                IStoreRequestHelperStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SendRequestAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Services::Store::IStoreContext * context,
                         /* [in] */UINT32 requestKind,
@@ -4210,8 +5460,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("C73ABE60-8272-4502-8A69-6E75153A4299"), exclusiveto, contract] */
                 MIDL_INTERFACE("C73ABE60-8272-4502-8A69-6E75153A4299")
-                IStoreSendRequestResult : IInspectable
+                IStoreSendRequestResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Response(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4253,8 +5504,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("2901296F-C0B0-49D0-8E8D-AA940AF9C10B"), exclusiveto, contract] */
                 MIDL_INTERFACE("2901296F-C0B0-49D0-8E8D-AA940AF9C10B")
-                IStoreSendRequestResult2 : IInspectable
+                IStoreSendRequestResult2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HttpStatusCode(
                         /* [retval, out] */__RPC__out ABI::Windows::Web::Http::HttpStatusCode * value
                         ) = 0;
@@ -4293,8 +5545,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("397E6F55-4440-4F03-863C-91F3FEC83D79"), exclusiveto, contract] */
                 MIDL_INTERFACE("397E6F55-4440-4F03-863C-91F3FEC83D79")
-                IStoreSku : IInspectable
+                IStoreSku : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StoreId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4388,8 +5641,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("4189776A-0559-43AC-A9C6-3AB0011FB8EB"), exclusiveto, contract] */
                 MIDL_INTERFACE("4189776A-0559-43AC-A9C6-3AB0011FB8EB")
-                IStoreSubscriptionInfo : IInspectable
+                IStoreSubscriptionInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BillingPeriod(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -4421,6 +5675,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreSubscriptionInfo
 
 /*
  *
+ * Interface Windows.Services.Store.IStoreUninstallStorePackageResult
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreUninstallStorePackageResult
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreUninstallStorePackageResult[] = L"Windows.Services.Store.IStoreUninstallStorePackageResult";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Store {
+                /* [object, uuid("9FCA39FD-126F-4CDA-B801-1346B8D0A260"), exclusiveto, contract] */
+                MIDL_INTERFACE("9FCA39FD-126F-4CDA-B801-1346B8D0A260")
+                IStoreUninstallStorePackageResult : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
+                        /* [retval, out] */__RPC__out HRESULT * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__out ABI::Windows::Services::Store::StoreUninstallStorePackageStatus * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStoreUninstallStorePackageResult=_uuidof(IStoreUninstallStorePackageResult);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Store */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.Services.Store.IStoreVideo
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -4440,8 +5738,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("F26CB184-6F5E-4DC2-886C-3C63083C2F94"), exclusiveto, contract] */
                 MIDL_INTERFACE("F26CB184-6F5E-4DC2-886C-3C63083C2F94")
-                IStoreVideo : IInspectable
+                IStoreVideo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                         ) = 0;
@@ -4548,6 +5847,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Services.Store.StoreCanAcquireLicenseResult
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreCanAcquireLicenseResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreCanAcquireLicenseResult_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreCanAcquireLicenseResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreCanAcquireLicenseResult[] = L"Windows.Services.Store.StoreCanAcquireLicenseResult";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.Services.Store.StoreCollectionData
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -4607,6 +5930,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Services.Store.IStoreContext ** Default Interface **
  *    Windows.Services.Store.IStoreContext2
+ *    Windows.Services.Store.IStoreContext3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -4672,6 +5996,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Services.Store.StorePackageInstallOptions
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 3.0 of the Windows.Services.Store.StoreContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStorePackageInstallOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StorePackageInstallOptions_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StorePackageInstallOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StorePackageInstallOptions[] = L"Windows.Services.Store.StorePackageInstallOptions";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.Services.Store.StorePackageLicense
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -4728,6 +6079,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Services.Store.IStorePackageUpdateResult ** Default Interface **
+ *    Windows.Services.Store.IStorePackageUpdateResult2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -4789,6 +6141,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreProduct[] = L"Windows.Services.Store.StoreProduct";
 #endif
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Services.Store.StoreProductOptions
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 3.0 of the Windows.Services.Store.StoreContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreProductOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreProductOptions_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreProductOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreProductOptions[] = L"Windows.Services.Store.StoreProductOptions";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -4917,6 +6296,78 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Services.Store.StoreQueueItem
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreQueueItem ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreQueueItem_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreQueueItem_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreQueueItem[] = L"Windows.Services.Store.StoreQueueItem";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.Services.Store.StoreQueueItemCompletedEventArgs
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreQueueItemCompletedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreQueueItemCompletedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreQueueItemCompletedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreQueueItemCompletedEventArgs[] = L"Windows.Services.Store.StoreQueueItemCompletedEventArgs";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.Services.Store.StoreQueueItemStatus
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreQueueItemStatus ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreQueueItemStatus_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreQueueItemStatus_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreQueueItemStatus[] = L"Windows.Services.Store.StoreQueueItemStatus";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.Services.Store.StoreRequestHelper
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -5013,6 +6464,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Services.Store.StoreUninstallStorePackageResult
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreUninstallStorePackageResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreUninstallStorePackageResult_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreUninstallStorePackageResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreUninstallStorePackageResult[] = L"Windows.Services.Store.StoreUninstallStorePackageResult";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.Services.Store.StoreVideo
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -5057,6 +6532,12 @@ typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreAvailability __x_ABI_
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreAvailability_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult;
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreCollectionData_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreCollectionData_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreCollectionData __x_ABI_CWindows_CServices_CStore_CIStoreCollectionData;
@@ -5081,6 +6562,12 @@ typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreContext2 __x_ABI_CWin
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreContext2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreContext3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreContext3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreContext3 __x_ABI_CWindows_CServices_CStore_CIStoreContext3;
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreContext3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreContextStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreContextStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreContextStatics __x_ABI_CWindows_CServices_CStore_CIStoreContextStatics;
@@ -5098,6 +6585,12 @@ typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreImage __x_ABI_CWindow
 typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreLicense __x_ABI_CWindows_CServices_CStore_CIStoreLicense;
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreLicense_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions;
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStorePackageLicense_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStorePackageLicense_FWD_DEFINED__
@@ -5117,6 +6610,12 @@ typedef interface __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult _
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2 __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2;
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStorePrice_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStorePrice_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CServices_CStore_CIStorePrice __x_ABI_CWindows_CServices_CStore_CIStorePrice;
@@ -5128,6 +6627,12 @@ typedef interface __x_ABI_CWindows_CServices_CStore_CIStorePrice __x_ABI_CWindow
 typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreProduct __x_ABI_CWindows_CServices_CStore_CIStoreProduct;
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreProduct_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions;
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreProductPagedQueryResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreProductPagedQueryResult_FWD_DEFINED__
@@ -5165,6 +6670,24 @@ typedef interface __x_ABI_CWindows_CServices_CStore_CIStorePurchaseResult __x_AB
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStorePurchaseResult_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem;
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs;
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus;
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreRequestHelperStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreRequestHelperStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreRequestHelperStatics __x_ABI_CWindows_CServices_CStore_CIStoreRequestHelperStatics;
@@ -5194,6 +6717,12 @@ typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreSku __x_ABI_CWindows_
 typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreSubscriptionInfo __x_ABI_CWindows_CServices_CStore_CIStoreSubscriptionInfo;
 
 #endif // ____x_ABI_CWindows_CServices_CStore_CIStoreSubscriptionInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult;
+
+#endif // ____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CServices_CStore_CIStoreVideo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CStore_CIStoreVideo_FWD_DEFINED__
@@ -6312,6 +7841,168 @@ interface __FIIterable_1_Windows__CServices__CStore__CStorePackageUpdateStatus
 
 
 
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CServices__CStore__CStoreQueueItem;
+
+typedef struct __FIIterator_1_Windows__CServices__CStore__CStoreQueueItemVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CServices__CStore__CStoreQueueItemVtbl;
+
+interface __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CServices__CStore__CStoreQueueItemVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CServices__CStore__CStoreQueueItem;
+
+typedef  struct __FIIterable_1_Windows__CServices__CStore__CStoreQueueItemVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CServices__CStore__CStoreQueueItem **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CServices__CStore__CStoreQueueItemVtbl;
+
+interface __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CServices__CStore__CStoreQueueItemVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
 #if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
 #if !defined(____FIIterator_1_Windows__CServices__CStore__CStoreSku_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CServices__CStore__CStoreSku_INTERFACE_DEFINED__
@@ -7226,6 +8917,117 @@ interface __FIVectorView_1_Windows__CServices__CStore__CStorePackageUpdateStatus
 
 
 
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem;
+
+typedef struct __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItemVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+            /* [in] */ __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItemVtbl;
+
+interface __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItemVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
 #if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
 #if !defined(____FIVectorView_1_Windows__CServices__CStore__CStoreSku_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CServices__CStore__CStoreSku_INTERFACE_DEFINED__
@@ -7739,6 +9541,121 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CSto
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem;
+
+typedef struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItemVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItemVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItemVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem;
+
+typedef struct __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItemVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * This, /* [retval][out] */ __RPC__out __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItemVtbl;
+
+interface __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem
+{
+    CONST_VTBL struct __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItemVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
 #if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreAcquireLicenseResult_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreAcquireLicenseResult_INTERFACE_DEFINED__
@@ -7967,6 +9884,121 @@ interface __FIAsyncOperation_1_Windows__CServices__CStore__CStoreAppLicense
 #endif // ____FIAsyncOperation_1_Windows__CServices__CStore__CStoreAppLicense_INTERFACE_DEFINED__
 
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResultVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult;
+
+typedef struct __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResultVtbl;
+
+interface __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 #if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
@@ -8659,6 +10691,121 @@ interface __FIAsyncOperation_1_Windows__CServices__CStore__CStoreSendRequestResu
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResultVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult;
+
+typedef struct __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResultVtbl;
+
+interface __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
 
 #if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CServices__CStore__CStoreContext_IInspectable_INTERFACE_DEFINED__)
@@ -8759,6 +10906,110 @@ interface __FITypedEventHandler_2_Windows__CServices__CStore__CStorePackageLicen
 #endif // ____FITypedEventHandler_2_Windows__CServices__CStore__CStorePackageLicense_IInspectable_INTERFACE_DEFINED__
 
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 #if !defined(____FIAsyncOperationCompletedHandler_1_HSTRING_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_HSTRING_INTERFACE_DEFINED__
@@ -9242,6 +11493,146 @@ interface __FIAsyncOperation_1_boolean
 #endif // ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
 
 
+#if !defined(____FIVector_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIVector_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIVector_1_HSTRING __FIVector_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVector_1_HSTRING;
+
+typedef struct __FIVector_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_HSTRING * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_HSTRING * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_HSTRING * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt HSTRING *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_HSTRING * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_HSTRING * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_HSTRING **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ __RPC__in HSTRING item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in HSTRING item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in HSTRING item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_HSTRING * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_HSTRING * This, /* [in] */ __RPC__in HSTRING item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_HSTRING * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_HSTRING * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) HSTRING *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) HSTRING *value);
+
+    END_INTERFACE
+} __FIVector_1_HSTRINGVtbl;
+
+interface __FIVector_1_HSTRING
+{
+    CONST_VTBL struct __FIVector_1_HSTRINGVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_HSTRING_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_HSTRING_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_HSTRING_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_HSTRING_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_HSTRING_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_HSTRING_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_HSTRING_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_HSTRING_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_HSTRING_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_HSTRING_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_HSTRING_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_HSTRING_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVector_1_HSTRING_INTERFACE_DEFINED__
+
+
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CIPackage_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CIPackage_FWD_DEFINED__
@@ -9291,6 +11682,9 @@ typedef enum __x_ABI_CWindows_CWeb_CHttp_CHttpStatusCode __x_ABI_CWindows_CWeb_C
 
 
 
+typedef enum __x_ABI_CWindows_CServices_CStore_CStoreCanLicenseStatus __x_ABI_CWindows_CServices_CStore_CStoreCanLicenseStatus;
+
+
 typedef enum __x_ABI_CWindows_CServices_CStore_CStoreConsumableStatus __x_ABI_CWindows_CServices_CStore_CStoreConsumableStatus;
 
 
@@ -9301,6 +11695,18 @@ typedef enum __x_ABI_CWindows_CServices_CStore_CStorePackageUpdateState __x_ABI_
 
 
 typedef enum __x_ABI_CWindows_CServices_CStore_CStorePurchaseStatus __x_ABI_CWindows_CServices_CStore_CStorePurchaseStatus;
+
+
+typedef enum __x_ABI_CWindows_CServices_CStore_CStoreQueueItemExtendedState __x_ABI_CWindows_CServices_CStore_CStoreQueueItemExtendedState;
+
+
+typedef enum __x_ABI_CWindows_CServices_CStore_CStoreQueueItemKind __x_ABI_CWindows_CServices_CStore_CStoreQueueItemKind;
+
+
+typedef enum __x_ABI_CWindows_CServices_CStore_CStoreQueueItemState __x_ABI_CWindows_CServices_CStore_CStoreQueueItemState;
+
+
+typedef enum __x_ABI_CWindows_CServices_CStore_CStoreUninstallStorePackageStatus __x_ABI_CWindows_CServices_CStore_CStoreUninstallStorePackageStatus;
 
 
 typedef struct __x_ABI_CWindows_CServices_CStore_CStorePackageUpdateStatus __x_ABI_CWindows_CServices_CStore_CStorePackageUpdateStatus;
@@ -9362,6 +11768,44 @@ typedef struct __x_ABI_CWindows_CServices_CStore_CStorePackageUpdateStatus __x_A
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.Services.Store.StoreCanLicenseStatus
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CServices_CStore_CStoreCanLicenseStatus
+{
+    StoreCanLicenseStatus_NotLicensableToUser = 0,
+    StoreCanLicenseStatus_Licensable = 1,
+    StoreCanLicenseStatus_LicenseActionNotApplicableToProduct = 2,
+    StoreCanLicenseStatus_NetworkError = 3,
+    StoreCanLicenseStatus_ServerError = 4,
+};
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -9454,6 +11898,102 @@ enum __x_ABI_CWindows_CServices_CStore_CStorePurchaseStatus
     StorePurchaseStatus_ServerError = 4,
 };
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Services.Store.StoreQueueItemExtendedState
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CServices_CStore_CStoreQueueItemExtendedState
+{
+    StoreQueueItemExtendedState_ActivePending = 0,
+    StoreQueueItemExtendedState_ActiveStarting = 1,
+    StoreQueueItemExtendedState_ActiveAcquiringLicense = 2,
+    StoreQueueItemExtendedState_ActiveDownloading = 3,
+    StoreQueueItemExtendedState_ActiveRestoringData = 4,
+    StoreQueueItemExtendedState_ActiveInstalling = 5,
+    StoreQueueItemExtendedState_Completed = 6,
+    StoreQueueItemExtendedState_Canceled = 7,
+    StoreQueueItemExtendedState_Paused = 8,
+    StoreQueueItemExtendedState_Error = 9,
+    StoreQueueItemExtendedState_PausedPackagesInUse = 10,
+    StoreQueueItemExtendedState_PausedLowBattery = 11,
+    StoreQueueItemExtendedState_PausedWiFiRecommended = 12,
+    StoreQueueItemExtendedState_PausedWiFiRequired = 13,
+    StoreQueueItemExtendedState_PausedReadyToInstall = 14,
+};
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Struct Windows.Services.Store.StoreQueueItemKind
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CServices_CStore_CStoreQueueItemKind
+{
+    StoreQueueItemKind_Install = 0,
+    StoreQueueItemKind_Update = 1,
+    StoreQueueItemKind_Repair = 2,
+};
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Struct Windows.Services.Store.StoreQueueItemState
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CServices_CStore_CStoreQueueItemState
+{
+    StoreQueueItemState_Active = 0,
+    StoreQueueItemState_Completed = 1,
+    StoreQueueItemState_Canceled = 2,
+    StoreQueueItemState_Error = 3,
+    StoreQueueItemState_Paused = 4,
+};
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Struct Windows.Services.Store.StoreUninstallStorePackageStatus
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CServices_CStore_CStoreUninstallStorePackageStatus
+{
+    StoreUninstallStorePackageStatus_Succeeded = 0,
+    StoreUninstallStorePackageStatus_CanceledByUser = 1,
+    StoreUninstallStorePackageStatus_NetworkError = 2,
+    StoreUninstallStorePackageStatus_UninstallNotApplicable = 3,
+    StoreUninstallStorePackageStatus_Error = 4,
+};
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -9855,6 +12395,113 @@ interface __x_ABI_CWindows_CServices_CStore_CIStoreAvailability
 EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreAvailability;
 #endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreAvailability_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStoreCanAcquireLicenseResult
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreCanAcquireLicenseResult
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreCanAcquireLicenseResult[] = L"Windows.Services.Store.IStoreCanAcquireLicenseResult";
+/* [object, uuid("3A693DB3-0088-482F-86D5-BD46522663AD"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * This,
+        /* [retval, out] */__RPC__out HRESULT * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LicensableSku )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CServices_CStore_CStoreCanLicenseStatus * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResultVtbl;
+
+interface __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_get_ExtendedError(This,value) \
+    ( (This)->lpVtbl->get_ExtendedError(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_get_LicensableSku(This,value) \
+    ( (This)->lpVtbl->get_LicensableSku(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_get_Status(This,value) \
+    ( (This)->lpVtbl->get_Status(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreCanAcquireLicenseResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -10467,6 +13114,205 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreContext2;
 
 /*
  *
+ * Interface Windows.Services.Store.IStoreContext3
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreContext
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreContext3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreContext3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreContext3[] = L"Windows.Services.Store.IStoreContext3";
+/* [object, uuid("E26226CA-1A01-4730-85A6-ECC896E4AE38"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CStore_CIStoreContext3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CanSilentlyDownloadStorePackageUpdates )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *TrySilentDownloadStorePackageUpdatesAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CServices__CStore__CStorePackageUpdate * storePackageUpdates,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CServices__CStore__CStorePackageUpdateResult_Windows__CServices__CStore__CStorePackageUpdateStatus * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *TrySilentDownloadAndInstallStorePackageUpdatesAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CServices__CStore__CStorePackageUpdate * storePackageUpdates,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CServices__CStore__CStorePackageUpdateResult_Windows__CServices__CStore__CStorePackageUpdateStatus * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *CanAcquireStoreLicenseForOptionalPackageAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CIPackage * optionalPackage,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *CanAcquireStoreLicenseAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in HSTRING productStoreId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreCanAcquireLicenseResult * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *GetStoreProductsWithOptionsAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * productKinds,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * storeIds,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions * storeProductOptions,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreProductQueryResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetAssociatedStoreQueueItemsAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetStoreQueueItemsAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * storeIds,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *RequestDownloadAndInstallStorePackagesWithInstallOptionsAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * storeIds,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions * storePackageInstallOptions,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CServices__CStore__CStorePackageUpdateResult_Windows__CServices__CStore__CStorePackageUpdateStatus * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *DownloadAndInstallStorePackagesAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * storeIds,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CServices__CStore__CStorePackageUpdateResult_Windows__CServices__CStore__CStorePackageUpdateStatus * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *RequestUninstallStorePackageAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CIPackage * package,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *RequestUninstallStorePackageByStoreIdAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in HSTRING storeId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *UninstallStorePackageAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CIPackage * package,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *UninstallStorePackageByStoreIdAsync )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreContext3 * This,
+        /* [in] */__RPC__in HSTRING storeId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CStore__CStoreUninstallStorePackageResult * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CStore_CIStoreContext3Vtbl;
+
+interface __x_ABI_CWindows_CServices_CStore_CIStoreContext3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CStore_CIStoreContext3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_get_CanSilentlyDownloadStorePackageUpdates(This,value) \
+    ( (This)->lpVtbl->get_CanSilentlyDownloadStorePackageUpdates(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_TrySilentDownloadStorePackageUpdatesAsync(This,storePackageUpdates,operation) \
+    ( (This)->lpVtbl->TrySilentDownloadStorePackageUpdatesAsync(This,storePackageUpdates,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_TrySilentDownloadAndInstallStorePackageUpdatesAsync(This,storePackageUpdates,operation) \
+    ( (This)->lpVtbl->TrySilentDownloadAndInstallStorePackageUpdatesAsync(This,storePackageUpdates,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_CanAcquireStoreLicenseForOptionalPackageAsync(This,optionalPackage,operation) \
+    ( (This)->lpVtbl->CanAcquireStoreLicenseForOptionalPackageAsync(This,optionalPackage,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_CanAcquireStoreLicenseAsync(This,productStoreId,operation) \
+    ( (This)->lpVtbl->CanAcquireStoreLicenseAsync(This,productStoreId,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_GetStoreProductsWithOptionsAsync(This,productKinds,storeIds,storeProductOptions,operation) \
+    ( (This)->lpVtbl->GetStoreProductsWithOptionsAsync(This,productKinds,storeIds,storeProductOptions,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_GetAssociatedStoreQueueItemsAsync(This,operation) \
+    ( (This)->lpVtbl->GetAssociatedStoreQueueItemsAsync(This,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_GetStoreQueueItemsAsync(This,storeIds,operation) \
+    ( (This)->lpVtbl->GetStoreQueueItemsAsync(This,storeIds,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_RequestDownloadAndInstallStorePackagesWithInstallOptionsAsync(This,storeIds,storePackageInstallOptions,operation) \
+    ( (This)->lpVtbl->RequestDownloadAndInstallStorePackagesWithInstallOptionsAsync(This,storeIds,storePackageInstallOptions,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_DownloadAndInstallStorePackagesAsync(This,storeIds,operation) \
+    ( (This)->lpVtbl->DownloadAndInstallStorePackagesAsync(This,storeIds,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_RequestUninstallStorePackageAsync(This,package,operation) \
+    ( (This)->lpVtbl->RequestUninstallStorePackageAsync(This,package,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_RequestUninstallStorePackageByStoreIdAsync(This,storeId,operation) \
+    ( (This)->lpVtbl->RequestUninstallStorePackageByStoreIdAsync(This,storeId,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_UninstallStorePackageAsync(This,package,operation) \
+    ( (This)->lpVtbl->UninstallStorePackageAsync(This,package,operation) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreContext3_UninstallStorePackageByStoreIdAsync(This,storeId,operation) \
+    ( (This)->lpVtbl->UninstallStorePackageByStoreIdAsync(This,storeId,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreContext3;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreContext3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.Services.Store.IStoreContextStatics
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -10810,6 +13656,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreLicense;
 
 /*
  *
+ * Interface Windows.Services.Store.IStorePackageInstallOptions
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StorePackageInstallOptions
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStorePackageInstallOptions[] = L"Windows.Services.Store.IStorePackageInstallOptions";
+/* [object, uuid("1D3D630C-0CCD-44DD-8C59-80810A729973"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptionsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AllowForcedAppRestart )(
+        __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AllowForcedAppRestart )(
+        __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptionsVtbl;
+
+interface __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptionsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_get_AllowForcedAppRestart(This,value) \
+    ( (This)->lpVtbl->get_AllowForcedAppRestart(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_put_AllowForcedAppRestart(This,value) \
+    ( (This)->lpVtbl->put_AllowForcedAppRestart(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageInstallOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.Services.Store.IStorePackageLicense
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -11131,6 +14077,99 @@ interface __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult
 EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult;
 #endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStorePackageUpdateResult2
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StorePackageUpdateResult
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStorePackageUpdateResult2[] = L"Windows.Services.Store.IStorePackageUpdateResult2";
+/* [object, uuid("071D012E-BC62-4F2E-87EA-99D801AEAF98"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StoreQueueItems )(
+        __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CStore__CStoreQueueItem * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2Vtbl;
+
+interface __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_get_StoreQueueItems(This,value) \
+    ( (This)->lpVtbl->get_StoreQueueItems(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStorePackageUpdateResult2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -11472,6 +14511,99 @@ interface __x_ABI_CWindows_CServices_CStore_CIStoreProduct
 EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreProduct;
 #endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreProduct_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStoreProductOptions
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreProductOptions
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreProductOptions[] = L"Windows.Services.Store.IStoreProductOptions";
+/* [object, uuid("5B34A0F9-A113-4811-8326-16199C927F31"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CStore_CIStoreProductOptionsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ActionFilters )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CStore_CIStoreProductOptionsVtbl;
+
+interface __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CStore_CIStoreProductOptionsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_get_ActionFilters(This,value) \
+    ( (This)->lpVtbl->get_ActionFilters(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreProductOptions;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreProductOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -12094,6 +15226,357 @@ interface __x_ABI_CWindows_CServices_CStore_CIStorePurchaseResult
 EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStorePurchaseResult;
 #endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStorePurchaseResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStoreQueueItem
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreQueueItem
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreQueueItem[] = L"Windows.Services.Store.IStoreQueueItem";
+/* [object, uuid("56D5C32B-F830-4293-9188-CAD2DCDE7357"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProductId )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PackageFamilyName )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_InstallKind )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CServices_CStore_CStoreQueueItemKind * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetCurrentStatus )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * * result
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Completed )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_Windows__CServices__CStore__CStoreQueueItemCompletedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Completed )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_StatusChanged )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CServices__CStore__CStoreQueueItem_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_StatusChanged )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemVtbl;
+
+interface __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_get_ProductId(This,value) \
+    ( (This)->lpVtbl->get_ProductId(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_get_PackageFamilyName(This,value) \
+    ( (This)->lpVtbl->get_PackageFamilyName(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_get_InstallKind(This,value) \
+    ( (This)->lpVtbl->get_InstallKind(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_GetCurrentStatus(This,result) \
+    ( (This)->lpVtbl->GetCurrentStatus(This,result) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_add_Completed(This,handler,token) \
+    ( (This)->lpVtbl->add_Completed(This,handler,token) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_remove_Completed(This,token) \
+    ( (This)->lpVtbl->remove_Completed(This,token) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_add_StatusChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_StatusChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_remove_StatusChanged(This,token) \
+    ( (This)->lpVtbl->remove_StatusChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreQueueItem;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItem_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStoreQueueItemCompletedEventArgs
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreQueueItemCompletedEventArgs
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreQueueItemCompletedEventArgs[] = L"Windows.Services.Store.IStoreQueueItemCompletedEventArgs";
+/* [object, uuid("1247DF6C-B44A-439B-BB07-1D3003D005C2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_get_Status(This,value) \
+    ( (This)->lpVtbl->get_Status(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemCompletedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Services.Store.IStoreQueueItemStatus
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreQueueItemStatus
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreQueueItemStatus[] = L"Windows.Services.Store.IStoreQueueItemStatus";
+/* [object, uuid("9BD6796F-9CC3-4EC3-B2EF-7BE433B30174"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatusVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PackageInstallState )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CServices_CStore_CStoreQueueItemState * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PackageInstallExtendedState )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CServices_CStore_CStoreQueueItemExtendedState * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_UpdateStatus )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CServices_CStore_CStorePackageUpdateStatus * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus * This,
+        /* [retval, out] */__RPC__out HRESULT * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatusVtbl;
+
+interface __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatusVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_get_PackageInstallState(This,value) \
+    ( (This)->lpVtbl->get_PackageInstallState(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_get_PackageInstallExtendedState(This,value) \
+    ( (This)->lpVtbl->get_PackageInstallExtendedState(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_get_UpdateStatus(This,value) \
+    ( (This)->lpVtbl->get_UpdateStatus(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_get_ExtendedError(This,value) \
+    ( (This)->lpVtbl->get_ExtendedError(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreQueueItemStatus_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -12728,6 +16211,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreSubscriptionInfo
 
 /*
  *
+ * Interface Windows.Services.Store.IStoreUninstallStorePackageResult
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Store.StoreUninstallStorePackageResult
+ *
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Store_IStoreUninstallStorePackageResult[] = L"Windows.Services.Store.IStoreUninstallStorePackageResult";
+/* [object, uuid("9FCA39FD-126F-4CDA-B801-1346B8D0A260"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult * This,
+        /* [retval, out] */__RPC__out HRESULT * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CServices_CStore_CStoreUninstallStorePackageStatus * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResultVtbl;
+
+interface __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_get_ExtendedError(This,value) \
+    ( (This)->lpVtbl->get_ExtendedError(This,value) )
+
+#define __x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_get_Status(This,value) \
+    ( (This)->lpVtbl->get_Status(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult;
+#endif /* !defined(____x_ABI_CWindows_CServices_CStore_CIStoreUninstallStorePackageResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.Services.Store.IStoreVideo
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -12928,6 +16511,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Services.Store.StoreCanAcquireLicenseResult
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreCanAcquireLicenseResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreCanAcquireLicenseResult_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreCanAcquireLicenseResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreCanAcquireLicenseResult[] = L"Windows.Services.Store.StoreCanAcquireLicenseResult";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.Services.Store.StoreCollectionData
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -12987,6 +16594,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Services.Store.IStoreContext ** Default Interface **
  *    Windows.Services.Store.IStoreContext2
+ *    Windows.Services.Store.IStoreContext3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -13052,6 +16660,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Services.Store.StorePackageInstallOptions
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 3.0 of the Windows.Services.Store.StoreContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStorePackageInstallOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StorePackageInstallOptions_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StorePackageInstallOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StorePackageInstallOptions[] = L"Windows.Services.Store.StorePackageInstallOptions";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.Services.Store.StorePackageLicense
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -13108,6 +16743,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Services.Store.IStorePackageUpdateResult ** Default Interface **
+ *    Windows.Services.Store.IStorePackageUpdateResult2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -13169,6 +16805,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreProduct[] = L"Windows.Services.Store.StoreProduct";
 #endif
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Services.Store.StoreProductOptions
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 3.0 of the Windows.Services.Store.StoreContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreProductOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreProductOptions_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreProductOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreProductOptions[] = L"Windows.Services.Store.StoreProductOptions";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -13297,6 +16960,78 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Services.Store.StoreQueueItem
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreQueueItem ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreQueueItem_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreQueueItem_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreQueueItem[] = L"Windows.Services.Store.StoreQueueItem";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.Services.Store.StoreQueueItemCompletedEventArgs
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreQueueItemCompletedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreQueueItemCompletedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreQueueItemCompletedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreQueueItemCompletedEventArgs[] = L"Windows.Services.Store.StoreQueueItemCompletedEventArgs";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.Services.Store.StoreQueueItemStatus
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreQueueItemStatus ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreQueueItemStatus_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreQueueItemStatus_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreQueueItemStatus[] = L"Windows.Services.Store.StoreQueueItemStatus";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.Services.Store.StoreRequestHelper
  *
  * Introduced to Windows.Services.Store.StoreContract in version 1.0
@@ -13389,6 +17124,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreSubscriptionInfo[] = L"Windows.Services.Store.StoreSubscriptionInfo";
 #endif
 #endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Services.Store.StoreUninstallStorePackageResult
+ *
+ * Introduced to Windows.Services.Store.StoreContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Store.IStoreUninstallStorePackageResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_Services_Store_StoreUninstallStorePackageResult_DEFINED
+#define RUNTIMECLASS_Windows_Services_Store_StoreUninstallStorePackageResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Store_StoreUninstallStorePackageResult[] = L"Windows.Services.Store.StoreUninstallStorePackageResult";
+#endif
+#endif // WINDOWS_SERVICES_STORE_STORECONTRACT_VERSION >= 0x30000
 
 
 /*

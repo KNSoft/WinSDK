@@ -73,6 +73,11 @@ For additional details, see TLG_HAVE_EVENT_SET_INFORMATION.
 
 #ifdef __cplusplus
 extern "C" {
+#define _TLG_EXTERN_C_BEGIN extern "C" {
+#define _TLG_EXTERN_C_END }
+#else
+#define _TLG_EXTERN_C_BEGIN /* nothing */
+#define _TLG_EXTERN_C_END /* nothing */
 #endif // __cplusplus
 
 // Enum declaration may be missing from older evntprov.h:
@@ -103,6 +108,20 @@ Determine whether TraceLoggingWriteEx should be defined.
 #define _TLG_ENABLE_TraceLoggingWriteEx NTDDI_VERSION >= 0x06010000
 #else
 #define _TLG_ENABLE_TraceLoggingWriteEx WINVER >= 0x0601
+#endif
+
+#ifndef TLG_INLINE
+#define TLG_INLINE __inline
+#endif
+
+#ifndef TLG_PFORCEINLINE
+  #if defined(PFORCEINLINE)
+    #define TLG_PFORCEINLINE PFORCEINLINE
+  #elif defined(FORCEINLINE)
+    #define TLG_PFORCEINLINE FORCEINLINE
+  #else
+    #define TLG_PFORCEINLINE __forceinline
+  #endif
 #endif
 
 #pragma region Public interface
@@ -285,7 +304,7 @@ has been uninitialized and then reinitialized. You should not register and
 unregister a provider each time you need to write a few events.
 */
 _IRQL_requires_max_(PASSIVE_LEVEL)
-__inline void TraceLoggingUnregister(
+TLG_INLINE void TraceLoggingUnregister(
     TraceLoggingHProvider _Inout_ hProvider);
 
 /*
@@ -302,7 +321,7 @@ Note that it is ok to ignore failure - if TraceLoggingRegisterEx fails,
 TraceLoggingWrite and TraceLoggingUnregister will be no-ops.
 */
 _IRQL_requires_max_(PASSIVE_LEVEL)
-__inline TLG_STATUS TraceLoggingRegister(
+TLG_INLINE TLG_STATUS TraceLoggingRegister(
     TraceLoggingHProvider _Inout_ hProvider);
 
 /*
@@ -318,7 +337,7 @@ Note that it is ok to ignore failure - if TraceLoggingRegisterEx fails,
 TraceLoggingWrite and TraceLoggingUnregister will be no-ops.
 */
 _IRQL_requires_max_(PASSIVE_LEVEL)
-__inline TLG_STATUS TraceLoggingRegisterEx(
+TLG_INLINE TLG_STATUS TraceLoggingRegisterEx(
     TraceLoggingHProvider _Inout_ hProvider,
     _In_opt_ TLG_PENABLECALLBACK pEnableCallback,
     _In_opt_ PVOID pCallbackContext);
@@ -334,7 +353,7 @@ value of WINVER (user-mode) or NTDDI_VERSION (kernel-mode). Use the
 TLG_HAVE_EVENT_SET_INFORMATION macro to override the default behavior.
 */
 _IRQL_requires_max_(PASSIVE_LEVEL)
-__inline TLG_STATUS TraceLoggingSetInformation(
+TLG_INLINE TLG_STATUS TraceLoggingSetInformation(
     TraceLoggingHProvider _Inout_ hProvider,
     _In_ enum _EVENT_INFO_CLASS informationClass,
     _In_reads_bytes_opt_(cbInformation) PVOID pvInformation,
@@ -348,7 +367,7 @@ whether the provider is enabled for any level. Use 0 for eventKeyword to
 determine whether the provider is enabled for any keyword.
 */
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline BOOLEAN TraceLoggingProviderEnabled(
+TLG_INLINE BOOLEAN TraceLoggingProviderEnabled(
     TraceLoggingHProvider _In_ hProvider,
     UCHAR eventLevel,
     ULONGLONG eventKeyword);
@@ -359,7 +378,7 @@ Returns the provider ID (GUID) that was specified in
 TRACELOGGING_DEFINE_PROVIDER.
 */
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline GUID TraceLoggingProviderId(
+TLG_INLINE GUID TraceLoggingProviderId(
     TraceLoggingHProvider _In_ hProvider);
 
 /*
@@ -2240,7 +2259,7 @@ TraceLoggingSetInformation will return a NOT_SUPPORTED error.
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _IRQL_requires_same_
-__inline void NTAPI _TlgEnableCallback(
+TLG_INLINE void NTAPI _TlgEnableCallback(
     _In_ LPCGUID pSourceId,
     _In_ ULONG callbackType,
     _In_ UCHAR level,
@@ -2280,7 +2299,7 @@ __inline void NTAPI _TlgEnableCallback(
 }
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-__inline void TraceLoggingUnregister(TraceLoggingHProvider _Inout_ hProvider)
+TLG_INLINE void TraceLoggingUnregister(TraceLoggingHProvider _Inout_ hProvider)
 {
     struct _TlgProvider_t* pProvider = (struct _TlgProvider_t*)hProvider;
     TLG_PAGED_CODE();
@@ -2290,7 +2309,7 @@ __inline void TraceLoggingUnregister(TraceLoggingHProvider _Inout_ hProvider)
 }
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-__inline TLG_STATUS TraceLoggingRegister(
+TLG_INLINE TLG_STATUS TraceLoggingRegister(
     TraceLoggingHProvider _Inout_ hProvider)
 {
     TLG_PAGED_CODE();
@@ -2298,7 +2317,7 @@ __inline TLG_STATUS TraceLoggingRegister(
 }
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-__inline TLG_STATUS TraceLoggingRegisterEx(
+TLG_INLINE TLG_STATUS TraceLoggingRegisterEx(
     TraceLoggingHProvider _Inout_ hProvider,
     _In_opt_ TLG_PENABLECALLBACK pEnableCallback,
     _In_opt_ PVOID pCallbackContext)
@@ -2336,7 +2355,7 @@ __inline TLG_STATUS TraceLoggingRegisterEx(
 }
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-__inline TLG_STATUS TraceLoggingSetInformation(
+TLG_INLINE TLG_STATUS TraceLoggingSetInformation(
     TraceLoggingHProvider _Inout_ hProvider,
     _In_ enum _EVENT_INFO_CLASS informationClass,
     _In_reads_bytes_opt_(cbInformation) PVOID pvInformation,
@@ -2464,15 +2483,7 @@ _TlgWriteCommon does not get inlined. The result is slightly larger code at the
 call site with little or no benefit in performance.
 */
 _IRQL_requires_max_(HIGH_LEVEL)
-#if defined(PFORCEINLINE)
-    // __forceinline recommended for performance.
-    // In this case, it typically results in smaller code.
-    PFORCEINLINE
-#elif defined(FORCEINLINE)
-    FORCEINLINE
-#else
-    __inline
-#endif
+TLG_PFORCEINLINE
 void _TlgWriteCommon(
     _In_ TraceLoggingHProvider hProvider,
     _In_reads_bytes_(_TLG_EVENT_METADATA_PREAMBLE + *(UINT16*)((char*)pEventMetadata + _TLG_EVENT_METADATA_PREAMBLE))
@@ -2518,7 +2529,7 @@ void _TlgWriteCommon(
 }
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline
+TLG_INLINE
 TLG_STATUS _TlgWrite(
     _In_ TraceLoggingHProvider hProvider,
     _In_reads_bytes_(_TLG_EVENT_METADATA_PREAMBLE + *(UINT16*)((char*)pEventMetadata + _TLG_EVENT_METADATA_PREAMBLE))
@@ -2539,7 +2550,7 @@ TLG_STATUS _TlgWrite(
 #if _TLG_ENABLE_TraceLoggingWriteEx
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline
+TLG_INLINE
 TLG_STATUS _TlgWriteEx(
     _In_ TraceLoggingHProvider hProvider,
     _In_reads_bytes_(_TLG_EVENT_METADATA_PREAMBLE + *(UINT16*)((char*)pEventMetadata + _TLG_EVENT_METADATA_PREAMBLE))
@@ -2564,7 +2575,7 @@ TLG_STATUS _TlgWriteEx(
 #pragma warning(pop) // Don't warn if _TlgWriteCommon not inlined
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline BOOLEAN _TlgKeywordOn(
+TLG_INLINE BOOLEAN _TlgKeywordOn(
     TraceLoggingHProvider _In_ hProvider,
     ULONGLONG keyword)
 {
@@ -2574,7 +2585,7 @@ __inline BOOLEAN _TlgKeywordOn(
 }
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline BOOLEAN TraceLoggingProviderEnabled(
+TLG_INLINE BOOLEAN TraceLoggingProviderEnabled(
     TraceLoggingHProvider _In_ hProvider,
     UCHAR eventLevel,
     ULONGLONG eventKeyword)
@@ -2583,7 +2594,7 @@ __inline BOOLEAN TraceLoggingProviderEnabled(
 }
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline GUID TraceLoggingProviderId(
+TLG_INLINE GUID TraceLoggingProviderId(
     TraceLoggingHProvider _In_ hProvider)
 {
     GUID const UNALIGNED* pProviderId =
@@ -2595,7 +2606,7 @@ __inline GUID TraceLoggingProviderId(
 #pragma warning(disable: 4995 4996) // strlen/wcslen marked as deprecated
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline void _TlgCreateSz(
+TLG_INLINE void _TlgCreateSz(
     _Out_ PEVENT_DATA_DESCRIPTOR pDesc,
     _In_opt_z_ LPCSTR psz)
 {
@@ -2610,7 +2621,7 @@ __inline void _TlgCreateSz(
 }
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline void _TlgCreateWsz(
+TLG_INLINE void _TlgCreateWsz(
     _Out_ PEVENT_DATA_DESCRIPTOR pDesc,
     _In_opt_z_ LPCWSTR pwsz)
 {
@@ -2628,7 +2639,7 @@ __inline void _TlgCreateWsz(
 
 #ifdef SID_DEFINED
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline void _TlgCreateSid(
+TLG_INLINE void _TlgCreateSid(
     _Out_ PEVENT_DATA_DESCRIPTOR pDesc,
     _In_ SID const* pSid)
 {
@@ -2641,7 +2652,7 @@ __inline void _TlgCreateSid(
 #endif
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline void _TlgCreateFixedArray(
+TLG_INLINE void _TlgCreateFixedArray(
     _Out_ PEVENT_DATA_DESCRIPTOR pDesc,
     _In_reads_bytes_(cVals * cbVal) void const* pVals,
     ULONG cVals,
@@ -2651,7 +2662,7 @@ __inline void _TlgCreateFixedArray(
 }
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline void _TlgCreateBinary(
+TLG_INLINE void _TlgCreateBinary(
     _Out_writes_(2) PEVENT_DATA_DESCRIPTOR pDesc,
     _In_reads_bytes_(cVals) void const* pVals,
     _In_ ULONG cVals)
@@ -2663,7 +2674,7 @@ __inline void _TlgCreateBinary(
 #ifdef __cplusplus
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline void _TlgCreateArray(
+TLG_INLINE void _TlgCreateArray(
     _Out_writes_(2) PEVENT_DATA_DESCRIPTOR pDesc,
     _In_reads_bytes_(cVals * cbVal) void const* pVals,
     _In_ UINT16 const& cVals,
@@ -2676,7 +2687,7 @@ __inline void _TlgCreateArray(
 #else // __cplusplus
 
 _IRQL_requires_max_(HIGH_LEVEL)
-__inline void _TlgCreateArray(
+TLG_INLINE void _TlgCreateArray(
     _Out_writes_(2) PEVENT_DATA_DESCRIPTOR pDesc,
     _In_reads_bytes_(*pcVals * cbVal) void const* pVals,
     _In_ UINT16 const* pcVals,
@@ -3009,7 +3020,17 @@ Output = EventTag value encoded for UINT16 (but without chain bit set).
 
 #define _TlgAnnotationFunc_imp(use_annotationFunc, storageVariable) _TLG_PASTE(_TlgAnnotationFunc_imp, use_annotationFunc) (storageVariable)
 #define _TlgAnnotationFunc_imp0(storageVariable) 0
-#define _TlgAnnotationFunc_imp1(storageVariable) &_TLG_PASTE(_TlgDefineProvider_annotation_, storageVariable)
+
+// NOTE: The pragma is NOT associated with the data as it appears, but with the source/object it occurs in (i.e. .c/.obj).
+// Any reference to the object will bring in the linker directive and the function with the annotation.
+// Putting the pragma link-directive on the data is a reasonable place to author it, and wishful
+// thinking as to the exact semantics. Address-taking has slight acceptable-but-avoided side effect
+// of adding the function to the CFG data, which is to be minimized.
+#if defined(_M_IX86) || defined(_X86_) // x86 requires leading underscore
+#define _TlgAnnotationFunc_imp1(storageVariable) __pragma(comment(linker, "/include:_" _TLG_STRINGIZE(_TLG_PASTE(_TlgDefineProvider_annotation_, storageVariable))))(0)
+#else
+#define _TlgAnnotationFunc_imp1(storageVariable) __pragma(comment(linker,  "/include:" _TLG_STRINGIZE(_TLG_PASTE(_TlgDefineProvider_annotation_, storageVariable))))(0)
+#endif
 
 /*
 _TlgArg(data_type, in_type, out_type, has_out, dim, value, cVals, name, desc, tags)
@@ -3513,20 +3534,30 @@ template<UINT32 n> struct _TraceLoggingEventTag : _TlgIntegralConstant<UINT32, n
 
 #define _TlgDefineProvider_functionWrapperBegin0(functionPostfix)
 
-#if defined(XBOX_SYSTEMOS)
-
-#define _TlgDefineProvider_functionWrapperBegin1(functionPostfix) void __cdecl _TLG_PASTE(_TlgDefineProvider_annotation_, functionPostfix)(void) \
-                                                {
-
-#else
-
-#define _TlgDefineProvider_functionWrapperBegin1(functionPostfix) static void __cdecl _TLG_PASTE(_TlgDefineProvider_annotation_, functionPostfix)(void) \
-                                                {
-
-#endif
-
+// These functions exist only to contain annotations. They are never executed.
+//
+// They are extern so that they can be named in pragma(linker, /include).
+// Static functions cannot be referenced with pragma(linker, /include).
+//
+// They are extern "C" also so that they can be named in pragma(linker, /include),
+// independently of C vs. C++ and C++ namespaces -- the names are not predictable
+// unless they are extern "C".
+//
+// They are extern __inline so that duplicates are silently tie-broken.
+// This is equivalent to __declspec(selectany) but for functions instead of data.
+// There should be no duplication, but currently there is.
+// Duplicates were previously hidden by virtue of being static.
+// Duplicate associated extern "handleVariable" data is presumably hidden due to:
+//  - C vs. C++ vs. C++ namespaces
+//  - being optimized away
+//
+#define _TlgDefineProvider_functionWrapperBegin1(functionPostfix)       \
+    _TLG_EXTERN_C_BEGIN                                                 \
+    extern __inline void __cdecl                                        \
+    _TLG_PASTE(_TlgDefineProvider_annotation_, functionPostfix)(void)   \
+    {
 #define _TlgDefineProvider_functionWrapperEnd0
-#define _TlgDefineProvider_functionWrapperEnd1  }
+#define _TlgDefineProvider_functionWrapperEnd1  } _TLG_EXTERN_C_END 
 
 #define _TlgWrite_annotation(hProvider, eventName, ...)  __annotation( \
     L"_TlgWrite:|" _TLG_PASTE(L, _TLG_STRINGIZE(__LINE__)) L"|" _TLG_PASTE(L, _TLG_STRINGIZE(hProvider)) L"|" \

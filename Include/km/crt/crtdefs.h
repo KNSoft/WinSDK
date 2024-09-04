@@ -187,14 +187,9 @@ defined(__cplusplus) is due to some code that sets MANAGED_CXX but builds .c fil
 
 #if defined (_M_CEE_PURE)
 #define __CLR_OR_THIS_CALL  __clrcall
-#else
-#define __CLR_OR_THIS_CALL
-#endif
-
-
-#if defined (_M_CEE_PURE)
 #define __CLRCALL_OR_CDECL __clrcall
 #else
+#define __CLR_OR_THIS_CALL
 #define __CLRCALL_OR_CDECL __cdecl
 #endif
 

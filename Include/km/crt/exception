@@ -3,11 +3,7 @@
 #elif defined _STL100_
 #include "_100_exception"
 #elif defined _STL110_
-#if defined _STLFKG_
-#include "_fkg_exception"
-#else
 #include "_110_exception"
-#endif
 #else
 
 /***

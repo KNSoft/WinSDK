@@ -156,6 +156,7 @@ extern "C" {
 #define WDI_INDICATION_ADAPTER_STATE                                129
 #define WDI_GET_SUPPORTED_DEVICE_SERVICES                           130
 #define WDI_DEVICE_SERVICE_COMMAND                                  131
+#define WDI_INDICATION_CIPHER_KEY_UPDATED                           132
 
 // Special codes
 /*++
@@ -1261,7 +1262,10 @@ RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_DRIVER_WDI_CHARACTERISTICS, LeCancelIdleN
 // For 1.1.5 compliant drivers
 #define WDI_VERSION_1_1_5                   ((1 << 16) | (1 << 8) | 0x5)
 
-#define WDI_VERSION_LATEST                  WDI_VERSION_1_1_5
+// For 1.1.6 compliant drivers
+#define WDI_VERSION_1_1_6                   ((1 << 16) | (1 << 8) | 0x6)
+
+#define WDI_VERSION_LATEST                  WDI_VERSION_1_1_6
 
 #ifndef NDIS_EXPORT
 #  define NDIS_EXPORT
@@ -1627,6 +1631,9 @@ NdisMDeregisterWdiMiniportDriver(
 
 #define NDIS_STATUS_WDI_INDICATION_ADAPTER_STATE   \
     WDI_DEFINE_INDICATION(WDI_INDICATION_ADAPTER_STATE)
+
+#define NDIS_STATUS_WDI_INDICATION_CIPHER_KEY_UPDATED   \
+    WDI_DEFINE_INDICATION(WDI_INDICATION_CIPHER_KEY_UPDATED)
 
 // Special codes
 /*++

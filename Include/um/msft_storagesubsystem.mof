@@ -709,6 +709,9 @@ class MSFT_StorageSubSystem : MSFT_StorageObject {
         [In]
         Boolean AutoWriteCacheSize,
 
+        [In]
+        UInt16 Version,
+
         [Out, EmbeddedInstance("MSFT_StoragePool")]
         String CreatedStoragePool,
 

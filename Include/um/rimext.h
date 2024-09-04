@@ -1,4 +1,3 @@
- 
 /****************************************************************************
 *                                                                           *
 * rimext.h --        ApiSet Contract for ext-ms-win-ntuser-rim-l1           *
@@ -6,6 +5,9 @@
 * Copyright (c) Microsoft Corporation. All rights reserved.                 *
 *                                                                           *
 ****************************************************************************/
+
+
+
 #pragma once
 #ifndef _RIM_EXT_H_
 #define _RIM_EXT_H_
@@ -24,23 +26,6 @@
 #include <windows.h>
 #pragma warning (disable : 4201)
 #endif
-
-/* APISET_NAME: ext-ms-win-ntuser-rim-l1 */
-
-#if !defined(RC_INVOKED)
-
-#ifndef _APISET_RIM_VER
-#ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
-#define _APISET_RIM_VER 0x0101
-#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
-#define _APISET_RIM_VER 0x0100
-#endif
-#endif
-#endif
-
-#endif // !defined(RC_INVOKED)
-
 
 #ifdef __cplusplus
 extern "C" {
@@ -72,10 +57,12 @@ typedef struct _RIM_USAGE_ANDPAGE
 #define RIM_DEVICE_OPENED          2
 #define RIM_DEVICE_CLOSED          3
 #define RIM_DEVICE_DESTROYED       4
+#define RIM_DEVICE_RESET           5
 
 typedef BOOL (CALLBACK* RIMDEVCHANGECALLBACKPROC)(
     HANDLE hRim,
     HANDLE hRimDev,
+    DWORD dwDeviceIdentity,
     DWORD dwCode,
     DWORD dwDeviceType,
     DWORD dwRimInputType,
@@ -115,7 +102,6 @@ typedef enum tagRIMOBSERVERERRORCODE {
     RIMERR_DROPPED_INPUT,
     RIMERR_MAX = RIMERR_DROPPED_INPUT
 } RIMOBSERVERERRORCODE, *PRIMOBSERVERERRORCODE;
-
 
 typedef struct tagRIMOBSERVERMESSAGE {
     RIMOBSERVERMESSAGETYPE type;
@@ -266,18 +252,6 @@ typedef struct _RIM_MOUSE_ATTRIBUTES
 typedef struct _RIM_HID_ATTRIBUTES
 {
     //
-    // Handle to monitor that is mapped to this HID device.
-    //
-
-    HMONITOR Monitor;
-
-    //
-    // Display ID of the monitor that is mapped to this HID device.
-    //
-
-    DWORD DisplayID;
-
-    //
     // Vendor ID of the device.
     //
 
@@ -294,6 +268,18 @@ typedef struct _RIM_HID_ATTRIBUTES
     //
 
     USHORT VersionNumber;
+
+    //
+    // Adapter LUID of the display that is mapped to this HID device.
+    //
+
+    LUID AdapterLuid;
+
+    //
+    // Video Target ID of the display that is mapped to this HID device.
+    //
+
+    DWORD VidPnTargetId;
 } RIM_HID_ATTRIBUTES, *PRIM_HID_ATTRIBUTES;
 
 #define RIM_DEVICE_PROP_KEYBOARD 1
@@ -400,7 +386,6 @@ typedef struct _RIMIDE_GENERIC_HID_DEVICE_PROPERTIES {
 
 } RIMIDE_GENERIC_HID_DEVICE_PROPERTIES, *PRIMIDE_GENERIC_HID_DEVICE_PROPERTIES;
 
-
 #if !defined(_BUILD_RIM_) && !defined(_CONVERGED_BASE_SYS_DRIVER_) && !defined(_CONVERGED_WINDOWS_SYS_DRIVER_) && !defined(_CONVERGED_MIN_SYS_DRIVER_)
 
 WINUSERAPI
@@ -410,7 +395,7 @@ RIMRegisterForInput(
     _In_ DWORD dwInputType,
     _In_opt_ PUNICODE_STRING pusDeviceName,
     _In_opt_ DWORD cRimUsages,
-    _In_opt_ RIM_USAGE_AND_PAGE * pRimUsages,
+    _In_opt_ RIM_USAGE_AND_PAGE* pRimUsages,
     _In_ HANDLE hPnpNotificationEvent,
     _In_ HANDLE hTimer,
     _In_ HANDLE hAutoRepeatTimer,
@@ -425,7 +410,7 @@ NTSTATUS
 WINAPI
 RIMReadInput(
     _In_ HANDLE hRimHandle,
-    _Inout_ PVOID * ppBuffer,
+    _Inout_ PVOID* ppBuffer,
     _In_ ULONG ulLengthToRead,
     _In_ HANDLE hReadCompletionEvent,
     _Out_ PHANDLE phRimDevice,
@@ -590,7 +575,7 @@ WINAPI
 RIMGetPhysicalDeviceRect(
     _In_ HANDLE hRimHandle,
     _In_ HANDLE hRimDev,
-    _Out_ RECT * pPhysicalDeviceRect
+    _Out_ RECT* pPhysicalDeviceRect
     );
 
 
@@ -610,7 +595,7 @@ WINAPI
 RIMEnableMonitorMappingForDevice(
     _In_ HANDLE hRimHandle,
     _In_ HANDLE hRimDev,
-    _Out_opt_ HMONITOR * phMonitor
+    _Out_opt_ HMONITOR* phMonitor
     );
 
 
@@ -659,8 +644,6 @@ typedef struct tagPOINTER_INFO {
     UINT64          PerformanceCount;
     POINTER_BUTTON_CHANGE_TYPE ButtonChangeType;
 } POINTER_INFO;
-
-
 
 typedef UINT32 TOUCH_FLAGS;
 #define TOUCH_FLAG_NONE                 0x00000000 // Default
@@ -722,8 +705,6 @@ typedef struct tagPOINTER_PEN_INFO {
 #define POINTER_FLAG_WHEEL              0x00080000 // Vertical wheel
 #define POINTER_FLAG_HWHEEL             0x00100000 // Horizontal wheel
 
-
-
 typedef struct tagUSAGE_PROPERTIES {
     USHORT level;
     USHORT page;
@@ -764,9 +745,8 @@ InitializeInputDeviceInjection(
     _In_ ULONG cUsages,
     _In_ HMONITOR monitor,
     _In_ DWORD visualMode,
-    _Out_writes_(1) HANDLE * device
+    _Out_writes_(1) HANDLE* device
     );
-
 
 
 WINUSERAPI
@@ -777,7 +757,7 @@ InitializePointerDeviceInjection(
     _In_ ULONG contactCount,
     _In_ HMONITOR monitor,
     _In_ DWORD visualMode,
-    _Out_writes_(1) HANDLE * device
+    _Out_writes_(1) HANDLE* device
     );
 
 
@@ -832,13 +812,10 @@ BOOL
 WINAPI
 InjectPointerInput(
     _In_ HANDLE device,
-    _In_reads_(count) CONST POINTER_TYPE_INFO * pointerInfo,
+    _In_reads_(count) CONST POINTER_TYPE_INFO* pointerInfo,
     _In_ UINT32 count
     );
 
-
-
-#if !defined(_CONTRACT_GEN) || (_APISET_RIM_VER >= 0x0101)
 
 WINUSERAPI
 BOOL
@@ -849,7 +826,7 @@ InitializePointerDeviceInjectionEx(
     _In_ HMONITOR monitor,
     _In_ DWORD visualMode,
     _In_ DWORD workspaceId,
-    _Out_writes_(1) HANDLE * device
+    _Out_writes_(1) HANDLE* device
     );
 
 
@@ -858,7 +835,7 @@ BOOL
 WINAPI
 InitializeGenericHidInjection(
     _In_ PRIMIDE_GENERIC_HID_DEVICE_PROPERTIES pDeviceProperties,
-    _Out_writes_(1) HANDLE * phDevice
+    _Out_writes_(1) HANDLE* phDevice
     );
 
 
@@ -871,8 +848,6 @@ InjectGenericHidInput(
     _In_ ULONG ulInputReportLength
     );
 
-
-#endif // !defined(_CONTRACT_GEN) || (_APISET_RIM_VER >= 0x0101)
 
 #ifdef __cplusplus
 }
@@ -1062,9 +1037,6 @@ IsInjectPointerInputPresent(
     VOID
     );
 
-#if !defined(_CONTRACT_GEN) || (_APISET_RIM_VER >= 0x0101)
-
-
 BOOLEAN
 __stdcall
 IsInitializePointerDeviceInjectionExPresent(
@@ -1082,8 +1054,6 @@ __stdcall
 IsInjectGenericHidInputPresent(
     VOID
     );
-
-#endif
 
 #ifdef __cplusplus
 }

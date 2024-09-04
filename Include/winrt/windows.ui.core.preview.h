@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.core.preview.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -290,8 +292,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("83D00DE1-CBE5-4F31-8414-361DA046518F"), exclusiveto, contract] */
                     MIDL_INTERFACE("83D00DE1-CBE5-4F31-8414-361DA046518F")
-                    ISystemNavigationCloseRequestedPreviewEventArgs : IInspectable
+                    ISystemNavigationCloseRequestedPreviewEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -338,8 +341,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("EC5F0488-6425-4777-A536-CB5634427F0D"), exclusiveto, contract] */
                     MIDL_INTERFACE("EC5F0488-6425-4777-A536-CB5634427F0D")
-                    ISystemNavigationManagerPreview : IInspectable
+                    ISystemNavigationManagerPreview : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CloseRequested(
                             /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CCore__CPreview__CSystemNavigationCloseRequestedPreviewEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -384,8 +388,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("0E971360-DF74-4BCE-84CB-BD1181AC0A71"), exclusiveto, contract] */
                     MIDL_INTERFACE("0E971360-DF74-4BCE-84CB-BD1181AC0A71")
-                    ISystemNavigationManagerPreviewStatics : IInspectable
+                    ISystemNavigationManagerPreviewStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Core::Preview::ISystemNavigationManagerPreview * * loader
                             ) = 0;

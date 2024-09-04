@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.humaninterfacedevice.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1079,6 +1081,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CHumanInterfaceDevice__CHidDevice_Windows__CDevices__CHumanInterfaceDevice__CHidInputReportReceivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CHumanInterfaceDevice__CHidDevice_Windows__CDevices__CHumanInterfaceDevice__CHidInputReportReceivedEventArgs_USE
@@ -1107,6 +1110,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::HumanInterfaceDevice::HidDevic
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CHumanInterfaceDevice__CHidDevice_Windows__CDevices__CHumanInterfaceDevice__CHidInputReportReceivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1366,8 +1370,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("524DF48A-3695-408C-BBA2-E2EB5ABFBC20"), exclusiveto, contract] */
                 MIDL_INTERFACE("524DF48A-3695-408C-BBA2-E2EB5ABFBC20")
-                IHidBooleanControl : IInspectable
+                IHidBooleanControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -1421,8 +1426,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("6196E543-29D8-4A2A-8683-849E207BBE31"), exclusiveto, contract] */
                 MIDL_INTERFACE("6196E543-29D8-4A2A-8683-849E207BBE31")
-                IHidBooleanControlDescription : IInspectable
+                IHidBooleanControlDescription : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -1476,8 +1482,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("C8EED2EA-8A77-4C36-AA00-5FF0449D3E73"), exclusiveto, contract] */
                 MIDL_INTERFACE("C8EED2EA-8A77-4C36-AA00-5FF0449D3E73")
-                IHidBooleanControlDescription2 : IInspectable
+                IHidBooleanControlDescription2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAbsolute(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1516,8 +1523,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("7189F5A3-32F1-46E3-BEFD-44D2663B7E6A"), exclusiveto, contract] */
                 MIDL_INTERFACE("7189F5A3-32F1-46E3-BEFD-44D2663B7E6A")
-                IHidCollection : IInspectable
+                IHidCollection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -1569,8 +1577,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("5F8A14E7-2200-432E-95DA-D09B87D574A8"), exclusiveto, contract] */
                 MIDL_INTERFACE("5F8A14E7-2200-432E-95DA-D09B87D574A8")
-                IHidDevice : IInspectable
+                IHidDevice : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VendorId(
                         /* [retval, out] */__RPC__out UINT16 * value
                         ) = 0;
@@ -1676,8 +1685,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("9E5981E4-9856-418C-9F73-77DE0CD85754"), exclusiveto, contract] */
                 MIDL_INTERFACE("9E5981E4-9856-418C-9F73-77DE0CD85754")
-                IHidDeviceStatics : IInspectable
+                IHidDeviceStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [in] */UINT16 usagePage,
                         /* [in] */UINT16 usageId,
@@ -1730,8 +1740,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("841D9B79-5AE5-46E3-82EF-1FEC5C8942F4"), exclusiveto, contract] */
                 MIDL_INTERFACE("841D9B79-5AE5-46E3-82EF-1FEC5C8942F4")
-                IHidFeatureReport : IInspectable
+                IHidFeatureReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out UINT16 * value
                         ) = 0;
@@ -1794,8 +1805,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("C35D0E50-F7E7-4E8D-B23E-CABBE56B90E9"), exclusiveto, contract] */
                 MIDL_INTERFACE("C35D0E50-F7E7-4E8D-B23E-CABBE56B90E9")
-                IHidInputReport : IInspectable
+                IHidInputReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out UINT16 * value
                         ) = 0;
@@ -1861,8 +1873,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("7059C5CB-59B2-4DC2-985C-0ADC6136FA2D"), exclusiveto, contract] */
                 MIDL_INTERFACE("7059C5CB-59B2-4DC2-985C-0ADC6136FA2D")
-                IHidInputReportReceivedEventArgs : IInspectable
+                IHidInputReportReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Report(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::HumanInterfaceDevice::IHidInputReport * * value
                         ) = 0;
@@ -1901,8 +1914,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("E38A12A5-35A7-4B75-89C8-FB1F28B10823"), exclusiveto, contract] */
                 MIDL_INTERFACE("E38A12A5-35A7-4B75-89C8-FB1F28B10823")
-                IHidNumericControl : IInspectable
+                IHidNumericControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -1965,8 +1979,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("638D5E86-1D97-4C75-927F-5FF58BA05E32"), exclusiveto, contract] */
                 MIDL_INTERFACE("638D5E86-1D97-4C75-927F-5FF58BA05E32")
-                IHidNumericControlDescription : IInspectable
+                IHidNumericControlDescription : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2050,8 +2065,9 @@ namespace ABI {
             namespace HumanInterfaceDevice {
                 /* [object, uuid("62CB2544-C896-4463-93C1-DF9DB053C450"), exclusiveto, contract] */
                 MIDL_INTERFACE("62CB2544-C896-4463-93C1-DF9DB053C450")
-                IHidOutputReport : IInspectable
+                IHidOutputReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out UINT16 * value
                         ) = 0;
@@ -3837,6 +3853,7 @@ interface __FIAsyncOperation_1_Windows__CDevices__CHumanInterfaceDevice__CHidInp
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CHumanInterfaceDevice__CHidDevice_Windows__CDevices__CHumanInterfaceDevice__CHidInputReportReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CHumanInterfaceDevice__CHidDevice_Windows__CDevices__CHumanInterfaceDevice__CHidInputReportReceivedEventArgs_INTERFACE_DEFINED__
 
@@ -3883,6 +3900,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CHumanInterfaceDevice__CHid
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CHumanInterfaceDevice__CHidDevice_Windows__CDevices__CHumanInterfaceDevice__CHidInputReportReceivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIAsyncOperationCompletedHandler_1_UINT32_INTERFACE_DEFINED__)

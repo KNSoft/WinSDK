@@ -1751,6 +1751,10 @@ typedef enum _MFVideoTransferFunction
     MFVideoTransFunc_HLG = 16,  // Hybrid Log-Gamma, ARIB STD-B67
 #endif // (WINVER > _WIN32_WINNT_WIN10)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4) 
+    MFVideoTransFunc_10_rel = 17, // No gamma, display referred (relative) 
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS4) */ 
+
     MFVideoTransFunc_Last,
     MFVideoTransFunc_ForceDWORD         = 0x7FFFFFFF
 } MFVideoTransferFunction;
@@ -4595,7 +4599,7 @@ cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WIN7) ")
 
 #pragma region Desktop Family
 cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
-cpp_quote("#if (WINVER >= _WIN32_WINNT_WIN10_RS2)")
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)")
 
 [
     object,

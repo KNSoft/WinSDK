@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.perception.spatial.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1243,6 +1245,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_USE
@@ -1271,6 +1274,7 @@ typedef ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialAnchor*,ABI
 #endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 namespace ABI {
@@ -1327,6 +1331,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_USE
@@ -1356,6 +1361,7 @@ typedef ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatch
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -1368,6 +1374,7 @@ namespace ABI {
     } /* Spatial */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_USE
@@ -1398,6 +1405,7 @@ typedef ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatch
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -1410,6 +1418,7 @@ namespace ABI {
     } /* Spatial */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_USE
@@ -1439,6 +1448,7 @@ typedef ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatch
 #endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 namespace ABI {
@@ -1495,6 +1505,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_USE
@@ -1523,6 +1534,7 @@ typedef ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialLocator*,AB
 #endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
@@ -2580,8 +2592,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("0529E5CE-1D34-3702-BCEC-EABFF578A869"), exclusiveto, contract] */
                 MIDL_INTERFACE("0529E5CE-1D34-3702-BCEC-EABFF578A869")
-                ISpatialAnchor : IInspectable
+                ISpatialAnchor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CoordinateSystem(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem * * value
                         ) = 0;
@@ -2630,8 +2643,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("ED17C908-A695-4CF6-92FD-97263BA71047"), exclusiveto, contract] */
                 MIDL_INTERFACE("ED17C908-A695-4CF6-92FD-97263BA71047")
-                ISpatialAnchor2 : IInspectable
+                ISpatialAnchor2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RemovedByUser(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2670,8 +2684,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("88E30EAB-F3B7-420B-B086-8A80C07D910D"), exclusiveto, contract] */
                 MIDL_INTERFACE("88E30EAB-F3B7-420B-B086-8A80C07D910D")
-                ISpatialAnchorManagerStatics : IInspectable
+                ISpatialAnchorManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestStoreAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore * * value
                         ) = 0;
@@ -2710,8 +2725,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("A1E81EB8-56C7-3117-A2E4-81E0FCF28E00"), exclusiveto, contract] */
                 MIDL_INTERFACE("A1E81EB8-56C7-3117-A2E4-81E0FCF28E00")
-                ISpatialAnchorRawCoordinateSystemAdjustedEventArgs : IInspectable
+                ISpatialAnchorRawCoordinateSystemAdjustedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OldRawCoordinateSystemToNewRawCoordinateSystemTransform(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Matrix4x4 * value
                         ) = 0;
@@ -2750,8 +2766,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("A9928642-0174-311C-AE79-0E5107669F16"), exclusiveto, contract] */
                 MIDL_INTERFACE("A9928642-0174-311C-AE79-0E5107669F16")
-                ISpatialAnchorStatics : IInspectable
+                ISpatialAnchorStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryCreateRelativeTo(
                         /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialAnchor * * value
@@ -2802,8 +2819,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("B0BC3636-486A-3CB0-9E6F-1245165C4DB6"), exclusiveto, contract] */
                 MIDL_INTERFACE("B0BC3636-486A-3CB0-9E6F-1245165C4DB6")
-                ISpatialAnchorStore : IInspectable
+                ISpatialAnchorStore : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAllSavedAnchors(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor * * value
                         ) = 0;
@@ -2855,8 +2873,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                ISpatialAnchorTransferManagerStatics : IInspectable
+                ISpatialAnchorTransferManagerStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")
@@ -2916,8 +2935,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("FB2065DA-68C3-33DF-B7AF-4C787207999C"), exclusiveto, contract] */
                 MIDL_INTERFACE("FB2065DA-68C3-33DF-B7AF-4C787207999C")
-                ISpatialBoundingVolume : IInspectable
+                ISpatialBoundingVolume : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -2953,8 +2973,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("05889117-B3E1-36D8-B017-566181A5B196"), exclusiveto, contract] */
                 MIDL_INTERFACE("05889117-B3E1-36D8-B017-566181A5B196")
-                ISpatialBoundingVolumeStatics : IInspectable
+                ISpatialBoundingVolumeStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromBox(
                         /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem,
                         /* [in] */ABI::Windows::Perception::Spatial::SpatialBoundingBox box,
@@ -3010,8 +3031,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("69EBCA4B-60A3-3586-A653-59A7BD676D07"), exclusiveto, contract] */
                 MIDL_INTERFACE("69EBCA4B-60A3-3586-A653-59A7BD676D07")
-                ISpatialCoordinateSystem : IInspectable
+                ISpatialCoordinateSystem : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryGetTransformTo(
                         /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem * target,
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CNumerics__CMatrix4x4 * * value
@@ -3051,8 +3073,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("166DE955-E1EB-454C-BA08-E6C0668DDC65"), exclusiveto, contract] */
                 MIDL_INTERFACE("166DE955-E1EB-454C-BA08-E6C0668DDC65")
-                ISpatialEntity : IInspectable
+                ISpatialEntity : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3097,8 +3120,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("A397F49B-156A-4707-AC2C-D31D570ED399"), exclusiveto, contract] */
                 MIDL_INTERFACE("A397F49B-156A-4707-AC2C-D31D570ED399")
-                ISpatialEntityAddedEventArgs : IInspectable
+                ISpatialEntityAddedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Entity(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntity * * value
                         ) = 0;
@@ -3137,8 +3161,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("E1F1E325-349F-4225-A2F3-4B01C15FE056"), exclusiveto, contract] */
                 MIDL_INTERFACE("E1F1E325-349F-4225-A2F3-4B01C15FE056")
-                ISpatialEntityFactory : IInspectable
+                ISpatialEntityFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithSpatialAnchor(
                         /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialAnchor * spatialAnchor,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntity * * value
@@ -3183,8 +3208,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("91741800-536D-4E9F-ABF6-415B5444D651"), exclusiveto, contract] */
                 MIDL_INTERFACE("91741800-536D-4E9F-ABF6-415B5444D651")
-                ISpatialEntityRemovedEventArgs : IInspectable
+                ISpatialEntityRemovedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Entity(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntity * * value
                         ) = 0;
@@ -3223,8 +3249,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("329788BA-E513-4F06-889D-1BE30ECF43E6"), exclusiveto, contract] */
                 MIDL_INTERFACE("329788BA-E513-4F06-889D-1BE30ECF43E6")
-                ISpatialEntityStore : IInspectable
+                ISpatialEntityStore : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SaveAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntity * entity,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * action
@@ -3271,8 +3298,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("6B4B389E-7C50-4E92-8A62-4D1D4B7CCD3E"), exclusiveto, contract] */
                 MIDL_INTERFACE("6B4B389E-7C50-4E92-8A62-4D1D4B7CCD3E")
-                ISpatialEntityStoreStatics : IInspectable
+                ISpatialEntityStoreStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3315,8 +3343,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("E5671766-627B-43CB-A49F-B3BE6D47DEED"), exclusiveto, contract] */
                 MIDL_INTERFACE("E5671766-627B-43CB-A49F-B3BE6D47DEED")
-                ISpatialEntityUpdatedEventArgs : IInspectable
+                ISpatialEntityUpdatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Entity(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntity * * value
                         ) = 0;
@@ -3355,8 +3384,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("B3B85FA0-6D5E-4BBC-805D-5FE5B9BA1959"), exclusiveto, contract] */
                 MIDL_INTERFACE("B3B85FA0-6D5E-4BBC-805D-5FE5B9BA1959")
-                ISpatialEntityWatcher : IInspectable
+                ISpatialEntityWatcher : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Perception::Spatial::SpatialEntityWatcherStatus * value
                         ) = 0;
@@ -3425,8 +3455,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("1D81D29D-24A1-37D5-8FA1-39B4F9AD67E2"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D81D29D-24A1-37D5-8FA1-39B4F9AD67E2")
-                ISpatialLocation : IInspectable
+                ISpatialLocation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector3 * value
                         ) = 0;
@@ -3480,8 +3511,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("F6478925-9E0C-3BB6-997E-B64ECCA24CF4"), exclusiveto, contract] */
                 MIDL_INTERFACE("F6478925-9E0C-3BB6-997E-B64ECCA24CF4")
-                ISpatialLocator : IInspectable
+                ISpatialLocator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Locatability(
                         /* [retval, out] */__RPC__out ABI::Windows::Perception::Spatial::SpatialLocatability * value
                         ) = 0;
@@ -3575,8 +3607,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("E1774EF6-1F4F-499C-9625-EF5E6ED7A048"), exclusiveto, contract] */
                 MIDL_INTERFACE("E1774EF6-1F4F-499C-9625-EF5E6ED7A048")
-                ISpatialLocatorAttachedFrameOfReference : IInspectable
+                ISpatialLocatorAttachedFrameOfReference : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RelativePosition(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector3 * value
                         ) = 0;
@@ -3635,8 +3668,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("B8A84063-E3F4-368B-9061-9EA9D1D6CC16"), exclusiveto, contract] */
                 MIDL_INTERFACE("B8A84063-E3F4-368B-9061-9EA9D1D6CC16")
-                ISpatialLocatorPositionalTrackingDeactivatingEventArgs : IInspectable
+                ISpatialLocatorPositionalTrackingDeactivatingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Canceled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3678,8 +3712,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("B76E3340-A7C2-361B-BB82-56E93B89B1BB"), exclusiveto, contract] */
                 MIDL_INTERFACE("B76E3340-A7C2-361B-BB82-56E93B89B1BB")
-                ISpatialLocatorStatics : IInspectable
+                ISpatialLocatorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialLocator * * value
                         ) = 0;
@@ -3718,8 +3753,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("7A8A3464-AD0D-4590-AB86-33062B674926"), exclusiveto, contract] */
                 MIDL_INTERFACE("7A8A3464-AD0D-4590-AB86-33062B674926")
-                ISpatialStageFrameOfReference : IInspectable
+                ISpatialStageFrameOfReference : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CoordinateSystem(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem * * value
                         ) = 0;
@@ -3773,8 +3809,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("F78D5C4D-A0A4-499C-8D91-A8C965D40654"), exclusiveto, contract] */
                 MIDL_INTERFACE("F78D5C4D-A0A4-499C-8D91-A8C965D40654")
-                ISpatialStageFrameOfReferenceStatics : IInspectable
+                ISpatialStageFrameOfReferenceStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReference * * value
                         ) = 0;
@@ -3823,8 +3860,9 @@ namespace ABI {
             namespace Spatial {
                 /* [object, uuid("09DBCCB9-BCF8-3E7F-BE7E-7EDCCBB178A8"), exclusiveto, contract] */
                 MIDL_INTERFACE("09DBCCB9-BCF8-3E7F-BE7E-7EDCCBB178A8")
-                ISpatialStationaryFrameOfReference : IInspectable
+                ISpatialStationaryFrameOfReference : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CoordinateSystem(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem * * value
                         ) = 0;
@@ -5582,6 +5620,7 @@ interface __FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingOrient
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__
 
@@ -5628,6 +5667,7 @@ interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor
 
 #endif // ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
@@ -5684,6 +5724,7 @@ interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntity
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_INTERFACE_DEFINED__
 
@@ -5731,9 +5772,11 @@ interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntity
 #endif // ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_INTERFACE_DEFINED__
@@ -5782,9 +5825,11 @@ interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntity
 #endif // ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__
@@ -5832,6 +5877,7 @@ interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntity
 
 #endif // ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -5888,6 +5934,7 @@ interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocato
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__
 
@@ -5934,6 +5981,7 @@ interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocato
 
 #endif // ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.background.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -253,6 +255,7 @@
 #include "Windows.ApplicationModel.Activation.h"
 #include "Windows.ApplicationModel.Calls.h"
 #include "Windows.ApplicationModel.Calls.Background.h"
+#include "Windows.ApplicationModel.CommunicationBlocking.h"
 #include "Windows.Devices.Bluetooth.h"
 #include "Windows.Devices.Bluetooth.Advertisement.h"
 #include "Windows.Devices.Bluetooth.Background.h"
@@ -468,6 +471,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics ABI::Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IBackgroundExecutionManagerStatics2;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2 ABI::Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics2
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask_FWD_DEFINED__
@@ -833,6 +850,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageReceivedNotificationTrigger_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface ICommunicationBlockingAppSetAsActiveTrigger;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger ABI::Windows::ApplicationModel::Background::ICommunicationBlockingAppSetAsActiveTrigger
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger_FWD_DEFINED__
 namespace ABI {
@@ -874,6 +905,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory ABI::Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface ICustomSystemEventTrigger;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger ABI::Windows::ApplicationModel::Background::ICustomSystemEventTrigger
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface ICustomSystemEventTriggerFactory;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory ABI::Windows::ApplicationModel::Background::ICustomSystemEventTriggerFactory
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTrigger_FWD_DEFINED__
@@ -1378,6 +1437,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger ABI::Windows::ApplicationModel::Background::ISocketActivityTrigger
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IStorageLibraryChangeTrackerTriggerFactory;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory ABI::Windows::ApplicationModel::Background::IStorageLibraryChangeTrackerTriggerFactory
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTrigger_FWD_DEFINED__
@@ -2792,6 +2865,64 @@ typedef IObservableMap<HSTRING,IInspectable*> __FIObservableMap_2_HSTRING_IInspe
 
 
 
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a"))
+IAsyncOperationCompletedHandler<bool> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Boolean>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<bool> __FIAsyncOperationCompletedHandler_1_boolean_t;
+#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_boolean_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
+//#define __FIAsyncOperationCompletedHandler_1_boolean_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperation_1_boolean_USE
+#define DEF___FIAsyncOperation_1_boolean_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a"))
+IAsyncOperation<bool> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Boolean>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
+#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::IAsyncOperation<boolean>
+//#define __FIAsyncOperation_1_boolean_t ABI::Windows::Foundation::IAsyncOperation<boolean>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_boolean_USE */
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
@@ -2816,8 +2947,8 @@ namespace ABI {
 #endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE
@@ -2846,8 +2977,8 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Background::Backgroun
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE */
 
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 namespace ABI {
     namespace Windows {
@@ -2951,6 +3082,10 @@ namespace ABI {
             } /* ApplicationModel */
         } /* Calls */
     } /* Background */} /* ABI */
+
+
+
+
 
 
 
@@ -3422,6 +3557,26 @@ namespace ABI {
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            class StorageLibraryChangeTracker;
+        } /* Windows */
+    } /* Storage */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            interface IStorageLibraryChangeTracker;
+        } /* Windows */
+    } /* Storage */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker ABI::Windows::Storage::IStorageLibraryChangeTracker
+
+#endif // ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+
+
 
 
 namespace ABI {
@@ -3488,6 +3643,17 @@ namespace ABI {
         namespace ApplicationModel {
             namespace Background {
                 
+                typedef enum BackgroundAccessRequestKind : int BackgroundAccessRequestKind;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                
                 typedef enum BackgroundAccessStatus : int BackgroundAccessStatus;
                 
             } /* Windows */
@@ -3522,6 +3688,17 @@ namespace ABI {
             namespace Background {
                 
                 typedef enum BackgroundWorkCostValue : int BackgroundWorkCostValue;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                
+                typedef enum CustomSystemEventTriggerRecurrence : int CustomSystemEventTriggerRecurrence;
                 
             } /* Windows */
         } /* ApplicationModel */
@@ -3581,6 +3758,11 @@ namespace ABI {
             } /* Windows */
         } /* ApplicationModel */
     } /* Background */} /* ABI */
+
+
+
+
+
 
 
 
@@ -3841,6 +4023,16 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Background {
+                class CommunicationBlockingAppSetAsActiveTrigger;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
                 class ContactStoreNotificationTrigger;
             } /* Windows */
         } /* ApplicationModel */
@@ -3852,6 +4044,16 @@ namespace ABI {
         namespace ApplicationModel {
             namespace Background {
                 class ContentPrefetchTrigger;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                class CustomSystemEventTrigger;
             } /* Windows */
         } /* ApplicationModel */
     } /* Background */} /* ABI */
@@ -3983,6 +4185,16 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Background {
+                class MobileBroadbandPcoDataChangeTrigger;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
                 class MobileBroadbandPinLockStateChangeTrigger;
             } /* Windows */
         } /* ApplicationModel */
@@ -4004,6 +4216,16 @@ namespace ABI {
         namespace ApplicationModel {
             namespace Background {
                 class MobileBroadbandRegistrationStateChangeTrigger;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                class NetworkOperatorDataUsageTrigger;
             } /* Windows */
         } /* ApplicationModel */
     } /* Background */} /* ABI */
@@ -4133,6 +4355,16 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Background {
+                class StorageLibraryChangeTrackerTrigger;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
                 class StorageLibraryContentChangedTrigger;
             } /* Windows */
         } /* ApplicationModel */
@@ -4154,6 +4386,16 @@ namespace ABI {
         namespace ApplicationModel {
             namespace Background {
                 class SystemTrigger;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                class TetheringEntitlementCheckTrigger;
             } /* Windows */
         } /* ApplicationModel */
     } /* Background */} /* ABI */
@@ -4264,6 +4506,33 @@ namespace ABI {
         } /* ApplicationModel */
     } /* Background */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Background.BackgroundAccessRequestKind
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                /* [v1_enum, contract] */
+                enum BackgroundAccessRequestKind : int
+                {
+                    BackgroundAccessRequestKind_AlwaysAllowed = 0,
+                    BackgroundAccessRequestKind_AllowedSubjectToSystemPolicy = 1,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4450,6 +4719,33 @@ namespace ABI {
         } /* ApplicationModel */
     } /* Background */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Background.CustomSystemEventTriggerRecurrence
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                /* [v1_enum, contract] */
+                enum CustomSystemEventTriggerRecurrence : int
+                {
+                    CustomSystemEventTriggerRecurrence_Once = 0,
+                    CustomSystemEventTriggerRecurrence_Always = 1,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4648,8 +4944,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("A6C4BAC0-51F8-4C57-AC3F-156DD1680C4F"), contract] */
                 MIDL_INTERFACE("A6C4BAC0-51F8-4C57-AC3F-156DD1680C4F")
-                IBackgroundTaskCanceledEventHandler : IUnknown
+                IBackgroundTaskCanceledEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskInstance * sender,
                         /* [in] */ABI::Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason
@@ -4685,8 +4982,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("5B38E929-A086-46A7-A678-439135822BCF"), contract] */
                 MIDL_INTERFACE("5B38E929-A086-46A7-A678-439135822BCF")
-                IBackgroundTaskCompletedEventHandler : IUnknown
+                IBackgroundTaskCompletedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistration * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs * args
@@ -4722,8 +5020,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("46E0683C-8A88-4C99-804C-76897F6277A6"), contract] */
                 MIDL_INTERFACE("46E0683C-8A88-4C99-804C-76897F6277A6")
-                IBackgroundTaskProgressEventHandler : IUnknown
+                IBackgroundTaskProgressEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistration * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs * args
@@ -4767,8 +5066,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("D0DD4342-E37B-4823-A5FE-6B31DFEFDEB0"), exclusiveto, contract] */
                 MIDL_INTERFACE("D0DD4342-E37B-4823-A5FE-6B31DFEFDEB0")
-                IActivitySensorTrigger : IInspectable
+                IActivitySensorTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SubscribedActivities(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CDevices__CSensors__CActivityType * * value
                         ) = 0;
@@ -4816,8 +5116,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("A72691C3-3837-44F7-831B-0132CC872BC3"), exclusiveto, contract] */
                 MIDL_INTERFACE("A72691C3-3837-44F7-831B-0132CC872BC3")
-                IActivitySensorTriggerFactory : IInspectable
+                IActivitySensorTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */UINT32 reportIntervalInMilliseconds,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IActivitySensorTrigger * * activityTrigger
@@ -4857,8 +5158,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("CA03FA3B-CCE6-4DE2-B09B-9628BD33BBBE"), exclusiveto, contract] */
                 MIDL_INTERFACE("CA03FA3B-CCE6-4DE2-B09B-9628BD33BBBE")
-                IAlarmApplicationManagerStatics : IInspectable
+                IAlarmApplicationManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestAccessAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus * * operation
                         ) = 0;
@@ -4904,8 +5206,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("74D4F496-8D37-44EC-9481-2A0B9854EB48"), exclusiveto, contract] */
                 MIDL_INTERFACE("74D4F496-8D37-44EC-9481-2A0B9854EB48")
-                IAppBroadcastTrigger : IInspectable
+                IAppBroadcastTrigger : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ProviderInfo(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo * value
                         ) = 0;
@@ -4947,8 +5250,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("280B9F44-22F4-4618-A02E-E7E411EB7238"), exclusiveto, contract] */
                 MIDL_INTERFACE("280B9F44-22F4-4618-A02E-E7E411EB7238")
-                IAppBroadcastTriggerFactory : IInspectable
+                IAppBroadcastTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateAppBroadcastTrigger(
                         /* [in] */__RPC__in HSTRING providerKey,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IAppBroadcastTrigger * * broadcastTrigger
@@ -4988,8 +5292,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("F219352D-9DE8-4420-9CE2-5EFF8F17376B"), exclusiveto, contract] */
                 MIDL_INTERFACE("F219352D-9DE8-4420-9CE2-5EFF8F17376B")
-                IAppBroadcastTriggerProviderInfo : IInspectable
+                IAppBroadcastTriggerProviderInfo : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_DisplayNameResource(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -5065,8 +5370,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("0B468630-9574-492C-9E93-1A3AE6335FE9"), exclusiveto, contract] */
                 MIDL_INTERFACE("0B468630-9574-492C-9E93-1A3AE6335FE9")
-                IApplicationTrigger : IInspectable
+                IApplicationTrigger : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult * * result
                         ) = 0;
@@ -5109,8 +5415,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("97DC6AB2-2219-4A9E-9C5E-41D047F76E82"), exclusiveto, contract] */
                 MIDL_INTERFACE("97DC6AB2-2219-4A9E-9C5E-41D047F76E82")
-                IApplicationTriggerDetails : IInspectable
+                IApplicationTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Arguments(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
                         ) = 0;
@@ -5153,8 +5460,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("64D4040C-C201-42AD-AA2A-E21BA3425B6D"), exclusiveto, contract] */
                 MIDL_INTERFACE("64D4040C-C201-42AD-AA2A-E21BA3425B6D")
-                IAppointmentStoreNotificationTrigger : IInspectable
+                IAppointmentStoreNotificationTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5187,8 +5495,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("AE48A1EE-8951-400A-8302-9C9C9A2A3A3B"), contract] */
                 MIDL_INTERFACE("AE48A1EE-8951-400A-8302-9C9C9A2A3A3B")
-                IBackgroundCondition : IInspectable
+                IBackgroundCondition : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5224,8 +5533,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("E826EA58-66A9-4D41-83D4-B4C18C87B846"), exclusiveto, contract] */
                 MIDL_INTERFACE("E826EA58-66A9-4D41-83D4-B4C18C87B846")
-                IBackgroundExecutionManagerStatics : IInspectable
+                IBackgroundExecutionManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestAccessAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus * * operation
                         ) = 0;
@@ -5260,6 +5570,49 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 
 /*
  *
+ * Interface Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.BackgroundExecutionManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBackgroundExecutionManagerStatics2[] = L"Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                /* [object, uuid("469B24EF-9BBB-4E18-999A-FD6512931BE9"), exclusiveto, contract] */
+                MIDL_INTERFACE("469B24EF-9BBB-4E18-999A-FD6512931BE9")
+                IBackgroundExecutionManagerStatics2 : public IInspectable
+                {
+                public:
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestAccessKindAsync(
+                        /* [in] */ABI::Windows::ApplicationModel::Background::BackgroundAccessRequestKind requestedAccess,
+                        /* [in] */__RPC__in HSTRING reason,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IBackgroundExecutionManagerStatics2=_uuidof(IBackgroundExecutionManagerStatics2);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Background.IBackgroundTask
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5276,8 +5629,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("7D13D534-FD12-43CE-8C22-EA1FF13C06DF"), contract] */
                 MIDL_INTERFACE("7D13D534-FD12-43CE-8C22-EA1FF13C06DF")
-                IBackgroundTask : IInspectable
+                IBackgroundTask : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Run(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskInstance * taskInstance
                         ) = 0;
@@ -5316,8 +5670,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("0351550E-3E64-4572-A93A-84075A37C917"), exclusiveto, contract] */
                 MIDL_INTERFACE("0351550E-3E64-4572-A93A-84075A37C917")
-                IBackgroundTaskBuilder : IInspectable
+                IBackgroundTaskBuilder : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TaskEntryPoint(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -5378,8 +5733,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("6AE7CFB1-104F-406D-8DB6-844A570F42BB"), exclusiveto, contract] */
                 MIDL_INTERFACE("6AE7CFB1-104F-406D-8DB6-844A570F42BB")
-                IBackgroundTaskBuilder2 : IInspectable
+                IBackgroundTaskBuilder2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_CancelOnConditionLoss(
                         /* [in] */boolean value
                         ) = 0;
@@ -5425,8 +5781,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("28C74F4A-8BA9-4C09-A24F-19683E2C924C"), exclusiveto, contract] */
                 MIDL_INTERFACE("28C74F4A-8BA9-4C09-A24F-19683E2C924C")
-                IBackgroundTaskBuilder3 : IInspectable
+                IBackgroundTaskBuilder3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsNetworkRequested(
                         /* [in] */boolean value
                         ) = 0;
@@ -5472,8 +5829,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("4755E522-CBA2-4E35-BD16-A6DA7F1C19AA"), exclusiveto, contract] */
                 MIDL_INTERFACE("4755E522-CBA2-4E35-BD16-A6DA7F1C19AA")
-                IBackgroundTaskBuilder4 : IInspectable
+                IBackgroundTaskBuilder4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskGroup(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup * * value
                         ) = 0;
@@ -5515,8 +5873,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("565D25CF-F209-48F4-9967-2B184F7BFBF0"), exclusiveto, contract] */
                 MIDL_INTERFACE("565D25CF-F209-48F4-9967-2B184F7BFBF0")
-                IBackgroundTaskCompletedEventArgs : IInspectable
+                IBackgroundTaskCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InstanceId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -5556,8 +5915,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("93CC156D-AF27-4DD3-846E-24EE40CADD25"), exclusiveto, contract] */
                 MIDL_INTERFACE("93CC156D-AF27-4DD3-846E-24EE40CADD25")
-                IBackgroundTaskDeferral : IInspectable
+                IBackgroundTaskDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -5591,8 +5951,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("865BDA7A-21D8-4573-8F32-928A1B0641F6"), contract] */
                 MIDL_INTERFACE("865BDA7A-21D8-4573-8F32-928A1B0641F6")
-                IBackgroundTaskInstance : IInspectable
+                IBackgroundTaskInstance : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InstanceId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -5657,8 +6018,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("4F7D0176-0C76-4FB4-896D-5DE1864122F6"), contract] */
                 MIDL_INTERFACE("4F7D0176-0C76-4FB4-896D-5DE1864122F6")
-                IBackgroundTaskInstance2 : IInspectable
+                IBackgroundTaskInstance2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetThrottleCount(
                         /* [in] */ABI::Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter counter,
                         /* [retval, out] */__RPC__out UINT32 * value
@@ -5699,8 +6061,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("7F29F23C-AA04-4B08-97B0-06D874CDABF5"), contract] */
                 MIDL_INTERFACE("7F29F23C-AA04-4B08-97B0-06D874CDABF5")
-                IBackgroundTaskInstance4 : IInspectable
+                IBackgroundTaskInstance4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
                         ) = 0;
@@ -5739,8 +6102,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("FB1468AC-8332-4D0A-9532-03EAE684DA31"), exclusiveto, contract] */
                 MIDL_INTERFACE("FB1468AC-8332-4D0A-9532-03EAE684DA31")
-                IBackgroundTaskProgressEventArgs : IInspectable
+                IBackgroundTaskProgressEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InstanceId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -5779,8 +6143,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("10654CC2-A26E-43BF-8C12-1FB40DBFBFA0"), contract] */
                 MIDL_INTERFACE("10654CC2-A26E-43BF-8C12-1FB40DBFBFA0")
-                IBackgroundTaskRegistration : IInspectable
+                IBackgroundTaskRegistration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -5840,8 +6205,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("6138C703-BB86-4112-AFC3-7F939B166E3B"), contract] */
                 MIDL_INTERFACE("6138C703-BB86-4112-AFC3-7F939B166E3B")
-                IBackgroundTaskRegistration2 : IInspectable
+                IBackgroundTaskRegistration2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Trigger(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * value
                         ) = 0;
@@ -5881,8 +6247,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("FE338195-9423-4D8B-830D-B1DD2C7BADD5"), contract] */
                 MIDL_INTERFACE("FE338195-9423-4D8B-830D-B1DD2C7BADD5")
-                IBackgroundTaskRegistration3 : IInspectable
+                IBackgroundTaskRegistration3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskGroup(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup * * value
                         ) = 0;
@@ -5921,8 +6288,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("2AB1919A-871B-4167-8A76-055CD67B5B23"), exclusiveto, contract] */
                 MIDL_INTERFACE("2AB1919A-871B-4167-8A76-055CD67B5B23")
-                IBackgroundTaskRegistrationGroup : IInspectable
+                IBackgroundTaskRegistrationGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5974,8 +6342,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("83D92B69-44CF-4631-9740-03C7D8741BC5"), exclusiveto, contract] */
                 MIDL_INTERFACE("83D92B69-44CF-4631-9740-03C7D8741BC5")
-                IBackgroundTaskRegistrationGroupFactory : IInspectable
+                IBackgroundTaskRegistrationGroupFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING id,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup * * group
@@ -6020,8 +6389,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("4C542F69-B000-42BA-A093-6A563C65E3F8"), exclusiveto, contract] */
                 MIDL_INTERFACE("4C542F69-B000-42BA-A093-6A563C65E3F8")
-                IBackgroundTaskRegistrationStatics : IInspectable
+                IBackgroundTaskRegistrationStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllTasks(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration * * tasks
                         ) = 0;
@@ -6060,8 +6430,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("174B671E-B20D-4FA9-AD9A-E93AD6C71E01"), exclusiveto, contract] */
                 MIDL_INTERFACE("174B671E-B20D-4FA9-AD9A-E93AD6C71E01")
-                IBackgroundTaskRegistrationStatics2 : IInspectable
+                IBackgroundTaskRegistrationStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllTaskGroups(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * * value
                         ) = 0;
@@ -6101,8 +6472,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("84B3A058-6027-4B87-9790-BDF3F757DBD7"), contract] */
                 MIDL_INTERFACE("84B3A058-6027-4B87-9790-BDF3F757DBD7")
-                IBackgroundTrigger : IInspectable
+                IBackgroundTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6138,8 +6510,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("C740A662-C310-4B82-B3E3-3BCFB9E4C77D"), exclusiveto, contract] */
                 MIDL_INTERFACE("C740A662-C310-4B82-B3E3-3BCFB9E4C77D")
-                IBackgroundWorkCostStatics : IInspectable
+                IBackgroundWorkCostStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentBackgroundWorkCost(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Background::BackgroundWorkCostValue * value
                         ) = 0;
@@ -6182,8 +6555,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("AB3E2612-25D3-48AE-8724-D81877AE6129"), exclusiveto, contract] */
                 MIDL_INTERFACE("AB3E2612-25D3-48AE-8724-D81877AE6129")
-                IBluetoothLEAdvertisementPublisherTrigger : IInspectable
+                IBluetoothLEAdvertisementPublisherTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Advertisement(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement * * value
                         ) = 0;
@@ -6226,8 +6600,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("1AAB1819-BCE1-48EB-A827-59FB7CEE52A6"), exclusiveto, contract] */
                 MIDL_INTERFACE("1AAB1819-BCE1-48EB-A827-59FB7CEE52A6")
-                IBluetoothLEAdvertisementWatcherTrigger : IInspectable
+                IBluetoothLEAdvertisementWatcherTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinSamplingInterval(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -6291,8 +6666,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("E21CAEEB-32F2-4D31-B553-B9E01BDE37E0"), exclusiveto, contract] */
                 MIDL_INTERFACE("E21CAEEB-32F2-4D31-B553-B9E01BDE37E0")
-                ICachedFileUpdaterTrigger : IInspectable
+                ICachedFileUpdaterTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6328,8 +6704,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("71838C13-1314-47B4-9597-DC7E248C17CC"), exclusiveto, contract] */
                 MIDL_INTERFACE("71838C13-1314-47B4-9597-DC7E248C17CC")
-                ICachedFileUpdaterTriggerDetails : IInspectable
+                ICachedFileUpdaterTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UpdateTarget(
                         /* [retval, out] */__RPC__out ABI::Windows::Storage::Provider::CachedFileTarget * value
                         ) = 0;
@@ -6378,8 +6755,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("513B43BF-1D40-5C5D-78F5-C923FEE3739E"), exclusiveto, contract] */
                 MIDL_INTERFACE("513B43BF-1D40-5C5D-78F5-C923FEE3739E")
-                IChatMessageNotificationTrigger : IInspectable
+                IChatMessageNotificationTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6419,8 +6797,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("3EA3760E-BAF5-4077-88E9-060CF6F0C6D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("3EA3760E-BAF5-4077-88E9-060CF6F0C6D5")
-                IChatMessageReceivedNotificationTrigger : IInspectable
+                IChatMessageReceivedNotificationTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6433,6 +6812,48 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageReceivedNotificationTrigger;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageReceivedNotificationTrigger_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Background.ICommunicationBlockingAppSetAsActiveTrigger
+ *
+ * Introduced to Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.CommunicationBlockingAppSetAsActiveTrigger
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.ApplicationModel.Background.IBackgroundTrigger
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_ICommunicationBlockingAppSetAsActiveTrigger[] = L"Windows.ApplicationModel.Background.ICommunicationBlockingAppSetAsActiveTrigger";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                /* [object, uuid("FB91F28A-16A5-486D-974C-7835A8477BE2"), exclusiveto, contract] */
+                MIDL_INTERFACE("FB91F28A-16A5-486D-974C-7835A8477BE2")
+                ICommunicationBlockingAppSetAsActiveTrigger : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICommunicationBlockingAppSetAsActiveTrigger=_uuidof(ICommunicationBlockingAppSetAsActiveTrigger);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -6460,8 +6881,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("C833419B-4705-4571-9A16-06B997BF9C96"), exclusiveto, contract] */
                 MIDL_INTERFACE("C833419B-4705-4571-9A16-06B997BF9C96")
-                IContactStoreNotificationTrigger : IInspectable
+                IContactStoreNotificationTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6501,8 +6923,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("710627EE-04FA-440B-80C0-173202199E5D"), exclusiveto, contract] */
                 MIDL_INTERFACE("710627EE-04FA-440B-80C0-173202199E5D")
-                IContentPrefetchTrigger : IInspectable
+                IContentPrefetchTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WaitInterval(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * waitInterval
                         ) = 0;
@@ -6541,8 +6964,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("C2643EDA-8A03-409E-B8C4-88814C28CCB6"), exclusiveto, contract] */
                 MIDL_INTERFACE("C2643EDA-8A03-409E-B8C4-88814C28CCB6")
-                IContentPrefetchTriggerFactory : IInspectable
+                IContentPrefetchTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Foundation::TimeSpan waitInterval,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IContentPrefetchTrigger * * trigger
@@ -6559,6 +6983,93 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Background.ICustomSystemEventTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.CustomSystemEventTrigger
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_ICustomSystemEventTrigger[] = L"Windows.ApplicationModel.Background.ICustomSystemEventTrigger";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                /* [object, uuid("F3596798-CF6B-4EF4-A0CA-29CF4A278C87"), exclusiveto, contract] */
+                MIDL_INTERFACE("F3596798-CF6B-4EF4-A0CA-29CF4A278C87")
+                ICustomSystemEventTrigger : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TriggerId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Recurrence(
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICustomSystemEventTrigger=_uuidof(ICustomSystemEventTrigger);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Background.ICustomSystemEventTriggerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.CustomSystemEventTrigger
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_ICustomSystemEventTriggerFactory[] = L"Windows.ApplicationModel.Background.ICustomSystemEventTriggerFactory";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                /* [object, uuid("6BCB16C5-F2DC-41B2-9EFD-B96BDCD13CED"), exclusiveto, contract] */
+                MIDL_INTERFACE("6BCB16C5-F2DC-41B2-9EFD-B96BDCD13CED")
+                ICustomSystemEventTriggerFactory : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Create(
+                        /* [in] */__RPC__in HSTRING triggerId,
+                        /* [in] */ABI::Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence recurrence,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::ICustomSystemEventTrigger * * trigger
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICustomSystemEventTriggerFactory=_uuidof(ICustomSystemEventTriggerFactory);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6586,8 +7097,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("90875E64-3CDD-4EFB-AB1C-5B3B6A60CE34"), exclusiveto, contract] */
                 MIDL_INTERFACE("90875E64-3CDD-4EFB-AB1C-5B3B6A60CE34")
-                IDeviceConnectionChangeTrigger : IInspectable
+                IDeviceConnectionChangeTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6635,8 +7147,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("C3EA246A-4EFD-4498-AA60-A4E4E3B17AB9"), exclusiveto, contract] */
                 MIDL_INTERFACE("C3EA246A-4EFD-4498-AA60-A4E4E3B17AB9")
-                IDeviceConnectionChangeTriggerStatics : IInspectable
+                IDeviceConnectionChangeTriggerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger * * deviceChangeTrigger
@@ -6678,14 +7191,27 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Background {
-                /* [object, uuid("81278AB5-41AB-16DA-86C2-7F7BF0912F5B"), exclusiveto, contract] */
+                /* [object, uuid("81278AB5-41AB-16DA-86C2-7F7BF0912F5B"), exclusiveto, deprecated, contract] */
                 MIDL_INTERFACE("81278AB5-41AB-16DA-86C2-7F7BF0912F5B")
-                IDeviceManufacturerNotificationTrigger : IInspectable
+                
+                #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+                #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                IDeviceManufacturerNotificationTrigger : public IInspectable
                 {
-                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TriggerQualifier(
+                public:
+                    
+                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_TriggerQualifier(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
-                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OneShot(
+                    
+                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_OneShot(
                         /* [retval, out] */__RPC__out boolean * oneShot
                         ) = 0;
                     
@@ -6721,11 +7247,20 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Background {
-                /* [object, uuid("7955DE75-25BB-4153-A1A2-3029FCABB652"), exclusiveto, contract] */
+                /* [object, uuid("7955DE75-25BB-4153-A1A2-3029FCABB652"), exclusiveto, deprecated, contract] */
                 MIDL_INTERFACE("7955DE75-25BB-4153-A1A2-3029FCABB652")
-                IDeviceManufacturerNotificationTriggerFactory : IInspectable
+                
+                #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+                #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                IDeviceManufacturerNotificationTriggerFactory : public IInspectable
                 {
-                    virtual HRESULT STDMETHODCALLTYPE Create(
+                public:
+                    
+                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING triggerQualifier,
                         /* [in] */boolean oneShot,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger * * trigger
@@ -6769,8 +7304,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("1AB217AD-6E34-49D3-9E6F-17F1B6DFA881"), exclusiveto, contract] */
                 MIDL_INTERFACE("1AB217AD-6E34-49D3-9E6F-17F1B6DFA881")
-                IDeviceServicingTrigger : IInspectable
+                IDeviceServicingTrigger : public IInspectable
                 {
+                public:
                     /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE RequestAsyncSimple(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [in] */ABI::Windows::Foundation::TimeSpan expectedDuration,
@@ -6821,8 +7357,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("0DA68011-334F-4D57-B6EC-6DCA64B412E4"), exclusiveto, contract] */
                 MIDL_INTERFACE("0DA68011-334F-4D57-B6EC-6DCA64B412E4")
-                IDeviceUseTrigger : IInspectable
+                IDeviceUseTrigger : public IInspectable
                 {
+                public:
                     /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE RequestAsyncSimple(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult * * result
@@ -6871,8 +7408,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("A4617FDD-8573-4260-BEFC-5BEC89CB693D"), exclusiveto, contract] */
                 MIDL_INTERFACE("A4617FDD-8573-4260-BEFC-5BEC89CB693D")
-                IDeviceWatcherTrigger : IInspectable
+                IDeviceWatcherTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6912,8 +7450,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("986D06DA-47EB-4268-A4F2-F3F77188388A"), exclusiveto, contract] */
                 MIDL_INTERFACE("986D06DA-47EB-4268-A4F2-F3F77188388A")
-                IEmailStoreNotificationTrigger : IInspectable
+                IEmailStoreNotificationTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6953,8 +7492,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("E25F8FC8-0696-474F-A732-F292B0CEBC5D"), exclusiveto, contract] */
                 MIDL_INTERFACE("E25F8FC8-0696-474F-A732-F292B0CEBC5D")
-                IGattCharacteristicNotificationTrigger : IInspectable
+                IGattCharacteristicNotificationTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Characteristic(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic * * value
                         ) = 0;
@@ -6993,8 +7533,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("9322A2C4-AE0E-42F2-B28C-F51372E69245"), exclusiveto, contract] */
                 MIDL_INTERFACE("9322A2C4-AE0E-42F2-B28C-F51372E69245")
-                IGattCharacteristicNotificationTrigger2 : IInspectable
+                IGattCharacteristicNotificationTrigger2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EventTriggeringMode(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode * value
                         ) = 0;
@@ -7033,8 +7574,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("57BA1995-B143-4575-9F6B-FD59D93ACE1A"), exclusiveto, contract] */
                 MIDL_INTERFACE("57BA1995-B143-4575-9F6B-FD59D93ACE1A")
-                IGattCharacteristicNotificationTriggerFactory : IInspectable
+                IGattCharacteristicNotificationTriggerFactory : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic * characteristic,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger * * gattCharacteristicNotificationTrigger
@@ -7074,8 +7616,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("5998E91F-8A53-4E9F-A32C-23CD33664CEE"), exclusiveto, contract] */
                 MIDL_INTERFACE("5998E91F-8A53-4E9F-A32C-23CD33664CEE")
-                IGattCharacteristicNotificationTriggerFactory2 : IInspectable
+                IGattCharacteristicNotificationTriggerFactory2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateWithEventTriggeringMode(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic * characteristic,
                         /* [in] */ABI::Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode,
@@ -7116,8 +7659,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("DDC6A3E9-1557-4BD8-8542-468AA0C696F6"), exclusiveto, contract] */
                 MIDL_INTERFACE("DDC6A3E9-1557-4BD8-8542-468AA0C696F6")
-                IGattServiceProviderTrigger : IInspectable
+                IGattServiceProviderTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TriggerId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7165,8 +7709,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("3C4691B1-B198-4E84-BAD4-CF4AD299ED3A"), exclusiveto, contract] */
                 MIDL_INTERFACE("3C4691B1-B198-4E84-BAD4-CF4AD299ED3A")
-                IGattServiceProviderTriggerResult : IInspectable
+                IGattServiceProviderTriggerResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Trigger(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IGattServiceProviderTrigger * * value
                         ) = 0;
@@ -7208,8 +7753,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("B413A36A-E294-4591-A5A6-64891A828153"), exclusiveto, contract] */
                 MIDL_INTERFACE("B413A36A-E294-4591-A5A6-64891A828153")
-                IGattServiceProviderTriggerStatics : IInspectable
+                IGattServiceProviderTriggerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateAsync(
                         /* [in] */__RPC__in HSTRING triggerId,
                         /* [in] */GUID serviceUuid,
@@ -7254,8 +7800,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("4818EDAA-04E1-4127-9A4C-19351B8A80A4"), exclusiveto, contract] */
                 MIDL_INTERFACE("4818EDAA-04E1-4127-9A4C-19351B8A80A4")
-                IGeovisitTrigger : IInspectable
+                IGeovisitTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MonitoringScope(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::VisitMonitoringScope * value
                         ) = 0;
@@ -7301,8 +7848,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("47666A1C-6877-481E-8026-FF7E14A811A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("47666A1C-6877-481E-8026-FF7E14A811A0")
-                ILocationTrigger : IInspectable
+                ILocationTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TriggerType(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Background::LocationTriggerType * triggerType
                         ) = 0;
@@ -7341,8 +7889,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("1106BB07-FF69-4E09-AA8B-1384EA475E98"), exclusiveto, contract] */
                 MIDL_INTERFACE("1106BB07-FF69-4E09-AA8B-1384EA475E98")
-                ILocationTriggerFactory : IInspectable
+                ILocationTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::ApplicationModel::Background::LocationTriggerType triggerType,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::ILocationTrigger * * locationTrigger
@@ -7386,8 +7935,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("68184C83-FC22-4CE5-841A-7239A9810047"), exclusiveto, contract] */
                 MIDL_INTERFACE("68184C83-FC22-4CE5-841A-7239A9810047")
-                IMaintenanceTrigger : IInspectable
+                IMaintenanceTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FreshnessTime(
                         /* [retval, out] */__RPC__out UINT32 * freshnessTime
                         ) = 0;
@@ -7429,8 +7979,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("4B3DDB2E-97DD-4629-88B0-B06CF9482AE5"), exclusiveto, contract] */
                 MIDL_INTERFACE("4B3DDB2E-97DD-4629-88B0-B06CF9482AE5")
-                IMaintenanceTriggerFactory : IInspectable
+                IMaintenanceTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */UINT32 freshnessTime,
                         /* [in] */boolean oneShot,
@@ -7475,8 +8026,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("9A95BE65-8A52-4B30-9011-CF38040EA8B0"), exclusiveto, contract] */
                 MIDL_INTERFACE("9A95BE65-8A52-4B30-9011-CF38040EA8B0")
-                IMediaProcessingTrigger : IInspectable
+                IMediaProcessingTrigger : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult * * result
                         ) = 0;
@@ -7523,8 +8075,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("E756C791-3001-4DE5-83C7-DE61D88831D0"), exclusiveto, contract] */
                 MIDL_INTERFACE("E756C791-3001-4DE5-83C7-DE61D88831D0")
-                INetworkOperatorHotspotAuthenticationTrigger : IInspectable
+                INetworkOperatorHotspotAuthenticationTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -7564,8 +8117,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("90089CC6-63CD-480C-95D1-6E6AEF801E4A"), exclusiveto, contract] */
                 MIDL_INTERFACE("90089CC6-63CD-480C-95D1-6E6AEF801E4A")
-                INetworkOperatorNotificationTrigger : IInspectable
+                INetworkOperatorNotificationTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkAccountId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7604,8 +8158,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("0A223E00-27D7-4353-ADB9-9265AAEA579D"), exclusiveto, contract] */
                 MIDL_INTERFACE("0A223E00-27D7-4353-ADB9-9265AAEA579D")
-                INetworkOperatorNotificationTriggerFactory : IInspectable
+                INetworkOperatorNotificationTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING networkAccountId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger * * trigger
@@ -7650,8 +8205,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("8DCFE99B-D4C5-49F1-B7D3-82E87A0E9DDE"), from_contract, exclusiveto, contract] */
                 MIDL_INTERFACE("8DCFE99B-D4C5-49F1-B7D3-82E87A0E9DDE")
-                IPhoneTrigger : IInspectable
+                IPhoneTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OneShot(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -7695,8 +8251,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("A0D93CDA-5FC1-48FB-A546-32262040157B"), from_contract, exclusiveto, contract] */
                 MIDL_INTERFACE("A0D93CDA-5FC1-48FB-A546-32262040157B")
-                IPhoneTriggerFactory : IInspectable
+                IPhoneTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::ApplicationModel::Calls::Background::PhoneTriggerType type,
                         /* [in] */boolean oneShot,
@@ -7738,8 +8295,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("6DD8ED1B-458E-4FC2-BC2E-D5664F77ED19"), exclusiveto, contract] */
                 MIDL_INTERFACE("6DD8ED1B-458E-4FC2-BC2E-D5664F77ED19")
-                IPushNotificationTriggerFactory : IInspectable
+                IPushNotificationTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING applicationId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * trigger
@@ -7783,8 +8341,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("986D0D6A-B2F6-467F-A978-A44091C11A66"), exclusiveto, contract] */
                 MIDL_INTERFACE("986D0D6A-B2F6-467F-A978-A44091C11A66")
-                IRcsEndUserMessageAvailableTrigger : IInspectable
+                IRcsEndUserMessageAvailableTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -7824,8 +8383,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("E8C4CAE2-0B53-4464-9394-FD875654DE64"), exclusiveto, contract] */
                 MIDL_INTERFACE("E8C4CAE2-0B53-4464-9394-FD875654DE64")
-                IRfcommConnectionTrigger : IInspectable
+                IRfcommConnectionTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InboundConnection(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::Background::IRfcommInboundConnectionInformation * * value
                         ) = 0;
@@ -7889,8 +8449,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("F237F327-5181-4F24-96A7-700A4E5FAC62"), exclusiveto, contract] */
                 MIDL_INTERFACE("F237F327-5181-4F24-96A7-700A4E5FAC62")
-                ISecondaryAuthenticationFactorAuthenticationTrigger : IInspectable
+                ISecondaryAuthenticationFactorAuthenticationTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -7930,8 +8491,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("5BC0F372-D48B-4B7F-ABEC-15F9BACC12E2"), exclusiveto, contract] */
                 MIDL_INTERFACE("5BC0F372-D48B-4B7F-ABEC-15F9BACC12E2")
-                ISensorDataThresholdTrigger : IInspectable
+                ISensorDataThresholdTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -7967,8 +8529,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("921FE675-7DF0-4DA3-97B3-E544EE857FE6"), exclusiveto, contract] */
                 MIDL_INTERFACE("921FE675-7DF0-4DA3-97B3-E544EE857FE6")
-                ISensorDataThresholdTriggerFactory : IInspectable
+                ISensorDataThresholdTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Sensors::ISensorDataThreshold * threshold,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::ISensorDataThresholdTrigger * * trigger
@@ -8012,8 +8575,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("F53BC5AC-84CA-4972-8CE9-E58F97B37A50"), exclusiveto, contract] */
                 MIDL_INTERFACE("F53BC5AC-84CA-4972-8CE9-E58F97B37A50")
-                ISmartCardTrigger : IInspectable
+                ISmartCardTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TriggerType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardTriggerType * triggerType
                         ) = 0;
@@ -8052,8 +8616,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("63BF54C3-89C1-4E00-A9D3-97C629269DAD"), exclusiveto, contract] */
                 MIDL_INTERFACE("63BF54C3-89C1-4E00-A9D3-97C629269DAD")
-                ISmartCardTriggerFactory : IInspectable
+                ISmartCardTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Devices::SmartCards::SmartCardTriggerType triggerType,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::ISmartCardTrigger * * trigger
@@ -8093,8 +8658,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("EA3AD8C8-6BA4-4AB2-8D21-BC6B09C77564"), exclusiveto, contract] */
                 MIDL_INTERFACE("EA3AD8C8-6BA4-4AB2-8D21-BC6B09C77564")
-                ISmsMessageReceivedTriggerFactory : IInspectable
+                ISmsMessageReceivedTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Sms::ISmsFilterRules * filterRules,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * value
@@ -8134,8 +8700,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("A9BBF810-9DDE-4F8A-83E3-B0E0E7A50D70"), exclusiveto, contract] */
                 MIDL_INTERFACE("A9BBF810-9DDE-4F8A-83E3-B0E0E7A50D70")
-                ISocketActivityTrigger : IInspectable
+                ISocketActivityTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsWakeFromLowPowerSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -8151,6 +8718,48 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Background.IStorageLibraryChangeTrackerTriggerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.StorageLibraryChangeTrackerTrigger
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IStorageLibraryChangeTrackerTriggerFactory[] = L"Windows.ApplicationModel.Background.IStorageLibraryChangeTrackerTriggerFactory";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                /* [object, uuid("1EB0FFD0-5A85-499E-A888-824607124F50"), exclusiveto, contract] */
+                MIDL_INTERFACE("1EB0FFD0-5A85-499E-A888-824607124F50")
+                IStorageLibraryChangeTrackerTriggerFactory : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Create(
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageLibraryChangeTracker * tracker,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStorageLibraryChangeTrackerTriggerFactory=_uuidof(IStorageLibraryChangeTrackerTriggerFactory);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Background */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8178,8 +8787,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("1637E0A7-829C-45BC-929B-A1E7EA78D89B"), exclusiveto, contract] */
                 MIDL_INTERFACE("1637E0A7-829C-45BC-929B-A1E7EA78D89B")
-                IStorageLibraryContentChangedTrigger : IInspectable
+                IStorageLibraryContentChangedTrigger : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -8215,8 +8825,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("7F9F1B39-5F90-4E12-914E-A7D8E0BBFB18"), exclusiveto, contract] */
                 MIDL_INTERFACE("7F9F1B39-5F90-4E12-914E-A7D8E0BBFB18")
-                IStorageLibraryContentChangedTriggerStatics : IInspectable
+                IStorageLibraryContentChangedTriggerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageLibrary * storageLibrary,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger * * result
@@ -8264,8 +8875,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("C15FB476-89C5-420B-ABD3-FB3030472128"), exclusiveto, contract] */
                 MIDL_INTERFACE("C15FB476-89C5-420B-ABD3-FB3030472128")
-                ISystemCondition : IInspectable
+                ISystemCondition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConditionType(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Background::SystemConditionType * conditionType
                         ) = 0;
@@ -8304,8 +8916,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("D269D1F1-05A7-49AE-87D7-16B2B8B9A553"), exclusiveto, contract] */
                 MIDL_INTERFACE("D269D1F1-05A7-49AE-87D7-16B2B8B9A553")
-                ISystemConditionFactory : IInspectable
+                ISystemConditionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::ApplicationModel::Background::SystemConditionType conditionType,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::ISystemCondition * * condition
@@ -8349,8 +8962,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("1D80C776-3748-4463-8D7E-276DC139AC1C"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D80C776-3748-4463-8D7E-276DC139AC1C")
-                ISystemTrigger : IInspectable
+                ISystemTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OneShot(
                         /* [retval, out] */__RPC__out boolean * oneShot
                         ) = 0;
@@ -8392,8 +9006,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("E80423D4-8791-4579-8126-87EC8AAA407A"), exclusiveto, contract] */
                 MIDL_INTERFACE("E80423D4-8791-4579-8126-87EC8AAA407A")
-                ISystemTriggerFactory : IInspectable
+                ISystemTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::ApplicationModel::Background::SystemTriggerType triggerType,
                         /* [in] */boolean oneShot,
@@ -8438,8 +9053,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("656E5556-0B2A-4377-BA70-3B45A935547F"), exclusiveto, contract] */
                 MIDL_INTERFACE("656E5556-0B2A-4377-BA70-3B45A935547F")
-                ITimeTrigger : IInspectable
+                ITimeTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FreshnessTime(
                         /* [retval, out] */__RPC__out UINT32 * freshnessTime
                         ) = 0;
@@ -8481,8 +9097,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("38C682FE-9B54-45E6-B2F3-269B87A6F734"), exclusiveto, contract] */
                 MIDL_INTERFACE("38C682FE-9B54-45E6-B2F3-269B87A6F734")
-                ITimeTriggerFactory : IInspectable
+                ITimeTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */UINT32 freshnessTime,
                         /* [in] */boolean oneShot,
@@ -8523,8 +9140,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("B09DFC27-6480-4349-8125-97B3EFAA0A3A"), exclusiveto, contract] */
                 MIDL_INTERFACE("B09DFC27-6480-4349-8125-97B3EFAA0A3A")
-                IToastNotificationActionTriggerFactory : IInspectable
+                IToastNotificationActionTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING applicationId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * trigger
@@ -8564,8 +9182,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("81C6FAAD-8797-4785-81B4-B0CCCB73D1D9"), exclusiveto, contract] */
                 MIDL_INTERFACE("81C6FAAD-8797-4785-81B4-B0CCCB73D1D9")
-                IToastNotificationHistoryChangedTriggerFactory : IInspectable
+                IToastNotificationHistoryChangedTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING applicationId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * trigger
@@ -8605,8 +9224,9 @@ namespace ABI {
             namespace Background {
                 /* [object, uuid("CAD4436C-69AB-4E18-A48A-5ED2AC435957"), exclusiveto, contract] */
                 MIDL_INTERFACE("CAD4436C-69AB-4E18-A48A-5ED2AC435957")
-                IUserNotificationChangedTriggerFactory : IInspectable
+                IUserNotificationChangedTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::UI::Notifications::NotificationKinds notificationKinds,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * trigger
@@ -8812,6 +9432,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  */
@@ -9167,6 +9788,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Background.CommunicationBlockingAppSetAsActiveTrigger
+ *
+ * Introduced to Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger
+ *    Windows.ApplicationModel.Background.ICommunicationBlockingAppSetAsActiveTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_CommunicationBlockingAppSetAsActiveTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_CommunicationBlockingAppSetAsActiveTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_CommunicationBlockingAppSetAsActiveTrigger[] = L"Windows.ApplicationModel.Background.CommunicationBlockingAppSetAsActiveTrigger";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Background.ContactStoreNotificationTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9224,6 +9873,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Background.CustomSystemEventTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.ApplicationModel.Background.ICustomSystemEventTriggerFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.ICustomSystemEventTrigger ** Default Interface **
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger
+ *
+ * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_CustomSystemEventTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_CustomSystemEventTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_CustomSystemEventTrigger[] = L"Windows.ApplicationModel.Background.CustomSystemEventTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9273,6 +9950,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_DeviceManufacturerNotificationTrigger_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_DeviceManufacturerNotificationTrigger_DEFINED
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_DeviceManufacturerNotificationTrigger[] = L"Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -9610,6 +10291,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Background.MobileBroadbandPcoDataChangeTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_MobileBroadbandPcoDataChangeTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_MobileBroadbandPcoDataChangeTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_MobileBroadbandPcoDataChangeTrigger[] = L"Windows.ApplicationModel.Background.MobileBroadbandPcoDataChangeTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Background.MobileBroadbandPinLockStateChangeTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9687,6 +10395,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_MobileBroadbandRegistrationStateChangeTrigger[] = L"Windows.ApplicationModel.Background.MobileBroadbandRegistrationStateChangeTrigger";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Background.NetworkOperatorDataUsageTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_NetworkOperatorDataUsageTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_NetworkOperatorDataUsageTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_NetworkOperatorDataUsageTrigger[] = L"Windows.ApplicationModel.Background.NetworkOperatorDataUsageTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10025,6 +10760,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Background.StorageLibraryChangeTrackerTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.ApplicationModel.Background.IStorageLibraryChangeTrackerTriggerFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_StorageLibraryChangeTrackerTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_StorageLibraryChangeTrackerTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_StorageLibraryChangeTrackerTrigger[] = L"Windows.ApplicationModel.Background.StorageLibraryChangeTrackerTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10101,6 +10863,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_SystemTrigger[] = L"Windows.ApplicationModel.Background.SystemTrigger";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Background.TetheringEntitlementCheckTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_TetheringEntitlementCheckTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_TetheringEntitlementCheckTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_TetheringEntitlementCheckTrigger[] = L"Windows.ApplicationModel.Background.TetheringEntitlementCheckTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10296,6 +11085,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExe
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2 __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask;
@@ -10452,6 +11247,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageRe
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageReceivedNotificationTrigger_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger;
@@ -10469,6 +11270,18 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefet
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory __x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTrigger_FWD_DEFINED__
@@ -10685,6 +11498,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageRec
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTrigger_FWD_DEFINED__
@@ -13429,6 +14248,115 @@ interface __FIObservableMap_2_HSTRING_IInspectable
 #endif // ____FIObservableMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 
 
+#if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_boolean __FIAsyncOperationCompletedHandler_1_boolean;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_boolean;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_booleanVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_boolean *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_booleanVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_boolean
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_booleanVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_boolean_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_boolean;
+
+typedef struct __FIAsyncOperation_1_booleanVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_boolean * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_boolean * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_boolean * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_boolean * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_boolean *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_boolean **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__out boolean *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_booleanVtbl;
+
+interface __FIAsyncOperation_1_boolean
+{
+    CONST_VTBL struct __FIAsyncOperation_1_booleanVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_boolean_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_boolean_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_boolean_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_boolean_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_boolean_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_boolean_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
+
+
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
@@ -13437,8 +14365,8 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundAct
 #endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__
 
@@ -13485,8 +14413,8 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBack
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef ____x_ABI_CWindows_CStorage_CIStorageLibrary_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIStorageLibrary_FWD_DEFINED__
@@ -13673,6 +14601,10 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CBackground_CPhoneTrigger
 
 
 
+
+
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisement_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisement_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisement __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisement;
@@ -13835,6 +14767,13 @@ typedef interface __x_ABI_CWindows_CStorage_CProvider_CIFileUpdateRequest __x_AB
 
 
 
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker;
+
+#endif // ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+
+
 
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
@@ -13860,6 +14799,9 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CAlarmAccessStatus _
 typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CApplicationTriggerResult __x_ABI_CWindows_CApplicationModel_CBackground_CApplicationTriggerResult;
 
 
+typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundAccessRequestKind __x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundAccessRequestKind;
+
+
 typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundAccessStatus __x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundAccessStatus;
 
 
@@ -13870,6 +14812,9 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundTaskThrot
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundWorkCostValue __x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundWorkCostValue;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CCustomSystemEventTriggerRecurrence __x_ABI_CWindows_CApplicationModel_CBackground_CCustomSystemEventTriggerRecurrence;
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CDeviceTriggerResult __x_ABI_CWindows_CApplicationModel_CBackground_CDeviceTriggerResult;
@@ -13885,6 +14830,17 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CSystemConditionType
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CSystemTriggerType __x_ABI_CWindows_CApplicationModel_CBackground_CSystemTriggerType;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -14088,6 +15044,25 @@ enum __x_ABI_CWindows_CApplicationModel_CBackground_CApplicationTriggerResult
 
 /*
  *
+ * Struct Windows.ApplicationModel.Background.BackgroundAccessRequestKind
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundAccessRequestKind
+{
+    BackgroundAccessRequestKind_AlwaysAllowed = 0,
+    BackgroundAccessRequestKind_AllowedSubjectToSystemPolicy = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Struct Windows.ApplicationModel.Background.BackgroundAccessStatus
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -14238,6 +15213,25 @@ enum __x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundWorkCostValue
     BackgroundWorkCostValue_High = 2,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Background.CustomSystemEventTriggerRecurrence
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CBackground_CCustomSystemEventTriggerRecurrence
+{
+    CustomSystemEventTriggerRecurrence_Once = 0,
+    CustomSystemEventTriggerRecurrence_Always = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -15743,6 +16737,101 @@ interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionMa
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.BackgroundExecutionManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBackgroundExecutionManagerStatics2[] = L"Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics2";
+/* [object, uuid("469B24EF-9BBB-4E18-999A-FD6512931BE9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *RequestAccessKindAsync )(
+        __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2 * This,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CBackground_CBackgroundAccessRequestKind requestedAccess,
+        /* [in] */__RPC__in HSTRING reason,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_RequestAccessKindAsync(This,requestedAccess,reason,operation) \
+    ( (This)->lpVtbl->RequestAccessKindAsync(This,requestedAccess,reason,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -18448,6 +19537,96 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIChatMess
 
 /*
  *
+ * Interface Windows.ApplicationModel.Background.ICommunicationBlockingAppSetAsActiveTrigger
+ *
+ * Introduced to Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.CommunicationBlockingAppSetAsActiveTrigger
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.ApplicationModel.Background.IBackgroundTrigger
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_ICommunicationBlockingAppSetAsActiveTrigger[] = L"Windows.ApplicationModel.Background.ICommunicationBlockingAppSetAsActiveTrigger";
+/* [object, uuid("FB91F28A-16A5-486D-974C-7835A8477BE2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTriggerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTriggerVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTriggerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICommunicationBlockingAppSetAsActiveTrigger_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Background.IContactStoreNotificationTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -18729,6 +19908,201 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIContentP
 
 /*
  *
+ * Interface Windows.ApplicationModel.Background.ICustomSystemEventTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.CustomSystemEventTrigger
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_ICustomSystemEventTrigger[] = L"Windows.ApplicationModel.Background.ICustomSystemEventTrigger";
+/* [object, uuid("F3596798-CF6B-4EF4-A0CA-29CF4A278C87"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TriggerId )(
+        __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Recurrence )(
+        __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CBackground_CCustomSystemEventTriggerRecurrence * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_get_TriggerId(This,value) \
+    ( (This)->lpVtbl->get_TriggerId(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_get_Recurrence(This,value) \
+    ( (This)->lpVtbl->get_Recurrence(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Background.ICustomSystemEventTriggerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.CustomSystemEventTrigger
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_ICustomSystemEventTriggerFactory[] = L"Windows.ApplicationModel.Background.ICustomSystemEventTriggerFactory";
+/* [object, uuid("6BCB16C5-F2DC-41B2-9EFD-B96BDCD13CED"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Create )(
+        __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory * This,
+        /* [in] */__RPC__in HSTRING triggerId,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CBackground_CCustomSystemEventTriggerRecurrence recurrence,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTrigger * * trigger
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactoryVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_Create(This,triggerId,recurrence,trigger) \
+    ( (This)->lpVtbl->Create(This,triggerId,recurrence,trigger) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICustomSystemEventTriggerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Background.IDeviceConnectionChangeTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -18958,8 +20332,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceCo
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IDeviceManufacturerNotificationTrigger[] = L"Windows.ApplicationModel.Background.IDeviceManufacturerNotificationTrigger";
-/* [object, uuid("81278AB5-41AB-16DA-86C2-7F7BF0912F5B"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerVtbl
+/* [object, uuid("81278AB5-41AB-16DA-86C2-7F7BF0912F5B"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+__x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -18992,11 +20370,19 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TriggerQualifier )(
+
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_TriggerQualifier )(
         __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This,
         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OneShot )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_OneShot )(
         __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This,
         /* [retval, out] */__RPC__out boolean * oneShot
         );
@@ -19028,9 +20414,17 @@ interface __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNot
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_get_TriggerQualifier(This,value) \
     ( (This)->lpVtbl->get_TriggerQualifier(This,value) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_get_OneShot(This,oneShot) \
     ( (This)->lpVtbl->get_OneShot(This,oneShot) )
 
@@ -19058,8 +20452,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceMa
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IDeviceManufacturerNotificationTriggerFactory[] = L"Windows.ApplicationModel.Background.IDeviceManufacturerNotificationTriggerFactory";
-/* [object, uuid("7955DE75-25BB-4153-A1A2-3029FCABB652"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactoryVtbl
+/* [object, uuid("7955DE75-25BB-4153-A1A2-3029FCABB652"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+__x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactoryVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -19092,7 +20490,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-HRESULT ( STDMETHODCALLTYPE *Create )(
+
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *Create )(
         __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory * This,
         /* [in] */__RPC__in HSTRING triggerQualifier,
         /* [in] */boolean oneShot,
@@ -19126,6 +20528,10 @@ interface __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNot
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_Create(This,triggerQualifier,oneShot,trigger) \
     ( (This)->lpVtbl->Create(This,triggerQualifier,oneShot,trigger) )
 
@@ -22289,6 +23695,100 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISocketAc
 
 /*
  *
+ * Interface Windows.ApplicationModel.Background.IStorageLibraryChangeTrackerTriggerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.StorageLibraryChangeTrackerTrigger
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IStorageLibraryChangeTrackerTriggerFactory[] = L"Windows.ApplicationModel.Background.IStorageLibraryChangeTrackerTriggerFactory";
+/* [object, uuid("1EB0FFD0-5A85-499E-A888-824607124F50"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Create )(
+        __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker * tracker,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactoryVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_Create(This,tracker,result) \
+    ( (This)->lpVtbl->Create(This,tracker,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryChangeTrackerTriggerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Background.IStorageLibraryContentChangedTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -23537,6 +25037,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  */
@@ -23892,6 +25393,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Background.CommunicationBlockingAppSetAsActiveTrigger
+ *
+ * Introduced to Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger
+ *    Windows.ApplicationModel.Background.ICommunicationBlockingAppSetAsActiveTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_CommunicationBlockingAppSetAsActiveTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_CommunicationBlockingAppSetAsActiveTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_CommunicationBlockingAppSetAsActiveTrigger[] = L"Windows.ApplicationModel.Background.CommunicationBlockingAppSetAsActiveTrigger";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Background.ContactStoreNotificationTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -23949,6 +25478,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Background.CustomSystemEventTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.ApplicationModel.Background.ICustomSystemEventTriggerFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.ICustomSystemEventTrigger ** Default Interface **
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger
+ *
+ * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_CustomSystemEventTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_CustomSystemEventTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_CustomSystemEventTrigger[] = L"Windows.ApplicationModel.Background.CustomSystemEventTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -23998,6 +25555,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_DeviceManufacturerNotificationTrigger_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_DeviceManufacturerNotificationTrigger_DEFINED
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_DeviceManufacturerNotificationTrigger[] = L"Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -24335,6 +25896,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Background.MobileBroadbandPcoDataChangeTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_MobileBroadbandPcoDataChangeTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_MobileBroadbandPcoDataChangeTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_MobileBroadbandPcoDataChangeTrigger[] = L"Windows.ApplicationModel.Background.MobileBroadbandPcoDataChangeTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Background.MobileBroadbandPinLockStateChangeTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -24412,6 +26000,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_MobileBroadbandRegistrationStateChangeTrigger[] = L"Windows.ApplicationModel.Background.MobileBroadbandRegistrationStateChangeTrigger";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Background.NetworkOperatorDataUsageTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_NetworkOperatorDataUsageTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_NetworkOperatorDataUsageTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_NetworkOperatorDataUsageTrigger[] = L"Windows.ApplicationModel.Background.NetworkOperatorDataUsageTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -24750,6 +26365,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Background.StorageLibraryChangeTrackerTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.ApplicationModel.Background.IStorageLibraryChangeTrackerTriggerFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_StorageLibraryChangeTrackerTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_StorageLibraryChangeTrackerTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_StorageLibraryChangeTrackerTrigger[] = L"Windows.ApplicationModel.Background.StorageLibraryChangeTrackerTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -24826,6 +26468,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_SystemTrigger[] = L"Windows.ApplicationModel.Background.SystemTrigger";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Background.TetheringEntitlementCheckTrigger
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_TetheringEntitlementCheckTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_TetheringEntitlementCheckTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_TetheringEntitlementCheckTrigger[] = L"Windows.ApplicationModel.Background.TetheringEntitlementCheckTrigger";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

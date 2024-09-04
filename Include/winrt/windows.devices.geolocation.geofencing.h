@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.geolocation.geofencing.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -782,8 +784,9 @@ namespace ABI {
                 namespace Geofencing {
                     /* [object, uuid("9C090823-EDB8-47E0-8245-5BF61D321F2D"), exclusiveto, contract] */
                     MIDL_INTERFACE("9C090823-EDB8-47E0-8245-5BF61D321F2D")
-                    IGeofence : IInspectable
+                    IGeofence : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartTime(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                             ) = 0;
@@ -842,8 +845,9 @@ namespace ABI {
                 namespace Geofencing {
                     /* [object, uuid("841F624B-325F-4B90-BCA7-2B8022A93796"), exclusiveto, contract] */
                     MIDL_INTERFACE("841F624B-325F-4B90-BCA7-2B8022A93796")
-                    IGeofenceFactory : IInspectable
+                    IGeofenceFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in HSTRING id,
                             /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeoshape * geoshape,
@@ -911,8 +915,9 @@ namespace ABI {
                 namespace Geofencing {
                     /* [object, uuid("4C0F5F78-1C1F-4621-BBBD-833B92247226"), exclusiveto, contract] */
                     MIDL_INTERFACE("4C0F5F78-1C1F-4621-BBBD-833B92247226")
-                    IGeofenceMonitor : IInspectable
+                    IGeofenceMonitor : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::Geofencing::GeofenceMonitorStatus * value
                             ) = 0;
@@ -976,8 +981,9 @@ namespace ABI {
                 namespace Geofencing {
                     /* [object, uuid("2DD32FCF-7E75-4899-ACE3-2BD0A65CCE06"), exclusiveto, contract] */
                     MIDL_INTERFACE("2DD32FCF-7E75-4899-ACE3-2BD0A65CCE06")
-                    IGeofenceMonitorStatics : IInspectable
+                    IGeofenceMonitorStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor * * value
                             ) = 0;
@@ -1018,8 +1024,9 @@ namespace ABI {
                 namespace Geofencing {
                     /* [object, uuid("9A243C18-2464-4C89-BE05-B3FFFF5BABC5"), exclusiveto, contract] */
                     MIDL_INTERFACE("9A243C18-2464-4C89-BE05-B3FFFF5BABC5")
-                    IGeofenceStateChangeReport : IInspectable
+                    IGeofenceStateChangeReport : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NewState(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::Geofencing::GeofenceState * value
                             ) = 0;

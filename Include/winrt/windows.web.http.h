@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.web.http.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2993,8 +2995,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("BC20C193-C41F-4FF7-9123-6435736EADC2"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC20C193-C41F-4FF7-9123-6435736EADC2")
-                IHttpBufferContentFactory : IInspectable
+                IHttpBufferContentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromBuffer(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * content,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpContent * * bufferContent
@@ -3044,8 +3047,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("7FDA1151-3574-4880-A8BA-E6B1E0061F3D"), exclusiveto, contract] */
                 MIDL_INTERFACE("7FDA1151-3574-4880-A8BA-E6B1E0061F3D")
-                IHttpClient : IInspectable
+                IHttpClient : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE DeleteAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress * * operation
@@ -3128,8 +3132,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("C30C4ECA-E3FA-4F99-AFB4-63CC65009462"), exclusiveto, contract] */
                 MIDL_INTERFACE("C30C4ECA-E3FA-4F99-AFB4-63CC65009462")
-                IHttpClientFactory : IInspectable
+                IHttpClientFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Web::Http::Filters::IHttpFilter * filter,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpClient * * client
@@ -3170,8 +3175,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("6B14A441-FBA7-4BD2-AF0A-839DE7C295DA"), contract] */
                 MIDL_INTERFACE("6B14A441-FBA7-4BD2-AF0A-839DE7C295DA")
-                IHttpContent : IInspectable
+                IHttpContent : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Headers(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::Headers::IHttpContentHeaderCollection * * value
                         ) = 0;
@@ -3230,8 +3236,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("1F5488E2-CC2D-4779-86A7-88F10687D249"), exclusiveto, contract] */
                 MIDL_INTERFACE("1F5488E2-CC2D-4779-86A7-88F10687D249")
-                IHttpCookie : IInspectable
+                IHttpCookie : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3300,8 +3307,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("6A0585A9-931C-4CD1-A96D-C21701785C5F"), exclusiveto, contract] */
                 MIDL_INTERFACE("6A0585A9-931C-4CD1-A96D-C21701785C5F")
-                IHttpCookieFactory : IInspectable
+                IHttpCookieFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING name,
                         /* [in] */__RPC__in HSTRING domain,
@@ -3343,8 +3351,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("7A431780-CD4F-4E57-A84A-5B0A53D6BB96"), exclusiveto, contract] */
                 MIDL_INTERFACE("7A431780-CD4F-4E57-A84A-5B0A53D6BB96")
-                IHttpCookieManager : IInspectable
+                IHttpCookieManager : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE SetCookie(
                         /* [in] */__RPC__in_opt ABI::Windows::Web::Http::IHttpCookie * cookie,
                         /* [retval, out] */__RPC__out boolean * replaced
@@ -3396,8 +3405,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("43F0138C-2F73-4302-B5F3-EAE9238A5E01"), exclusiveto, contract] */
                 MIDL_INTERFACE("43F0138C-2F73-4302-B5F3-EAE9238A5E01")
-                IHttpFormUrlEncodedContentFactory : IInspectable
+                IHttpFormUrlEncodedContentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING * content,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpContent * * formUrlEncodedContent
@@ -3437,8 +3447,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("728D4022-700D-4FE0-AFA5-40299C58DBFD"), exclusiveto, contract] */
                 MIDL_INTERFACE("728D4022-700D-4FE0-AFA5-40299C58DBFD")
-                IHttpMethod : IInspectable
+                IHttpMethod : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Method(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3477,8 +3488,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("3C51D10D-36D7-40F8-A86D-E759CAF2F83F"), exclusiveto, contract] */
                 MIDL_INTERFACE("3C51D10D-36D7-40F8-A86D-E759CAF2F83F")
-                IHttpMethodFactory : IInspectable
+                IHttpMethodFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING method,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpMethod * * httpMethod
@@ -3518,8 +3530,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("64D171F0-D99A-4153-8DC6-D68CC4CCE317"), exclusiveto, contract] */
                 MIDL_INTERFACE("64D171F0-D99A-4153-8DC6-D68CC4CCE317")
-                IHttpMethodStatics : IInspectable
+                IHttpMethodStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Delete(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpMethod * * value
                         ) = 0;
@@ -3580,8 +3593,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("DF916AFF-9926-4AC9-AAF1-E0D04EF09BB9"), exclusiveto, contract] */
                 MIDL_INTERFACE("DF916AFF-9926-4AC9-AAF1-E0D04EF09BB9")
-                IHttpMultipartContent : IInspectable
+                IHttpMultipartContent : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Add(
                         /* [in] */__RPC__in_opt ABI::Windows::Web::Http::IHttpContent * content
                         ) = 0;
@@ -3620,8 +3634,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("7EB42E62-0222-4F20-B372-47D5DB5D33B4"), exclusiveto, contract] */
                 MIDL_INTERFACE("7EB42E62-0222-4F20-B372-47D5DB5D33B4")
-                IHttpMultipartContentFactory : IInspectable
+                IHttpMultipartContentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithSubtype(
                         /* [in] */__RPC__in HSTRING subtype,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpContent * * multipartContent
@@ -3670,8 +3685,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("64D337E2-E967-4624-B6D1-CF74604A4A42"), exclusiveto, contract] */
                 MIDL_INTERFACE("64D337E2-E967-4624-B6D1-CF74604A4A42")
-                IHttpMultipartFormDataContent : IInspectable
+                IHttpMultipartFormDataContent : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE Add(
                         /* [in] */__RPC__in_opt ABI::Windows::Web::Http::IHttpContent * content
                         ) = 0;
@@ -3719,8 +3735,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("A04D7311-5017-4622-93A8-49B24A4FCBFC"), exclusiveto, contract] */
                 MIDL_INTERFACE("A04D7311-5017-4622-93A8-49B24A4FCBFC")
-                IHttpMultipartFormDataContentFactory : IInspectable
+                IHttpMultipartFormDataContentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithBoundary(
                         /* [in] */__RPC__in HSTRING boundary,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpContent * * multipartFormDataContent
@@ -3764,8 +3781,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("F5762B3C-74D4-4811-B5DC-9F8B4E2F9ABF"), exclusiveto, contract] */
                 MIDL_INTERFACE("F5762B3C-74D4-4811-B5DC-9F8B4E2F9ABF")
-                IHttpRequestMessage : IInspectable
+                IHttpRequestMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpContent * * value
                         ) = 0;
@@ -3828,8 +3846,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("5BAC994E-3886-412E-AEC3-52EC7F25616F"), exclusiveto, contract] */
                 MIDL_INTERFACE("5BAC994E-3886-412E-AEC3-52EC7F25616F")
-                IHttpRequestMessageFactory : IInspectable
+                IHttpRequestMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Web::Http::IHttpMethod * method,
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
@@ -3874,8 +3893,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("FEE200FB-8664-44E0-95D9-42696199BFFC"), exclusiveto, contract] */
                 MIDL_INTERFACE("FEE200FB-8664-44E0-95D9-42696199BFFC")
-                IHttpResponseMessage : IInspectable
+                IHttpResponseMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpContent * * value
                         ) = 0;
@@ -3956,8 +3976,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("52A8AF99-F095-43DA-B60F-7CFC2BC7EA2F"), exclusiveto, contract] */
                 MIDL_INTERFACE("52A8AF99-F095-43DA-B60F-7CFC2BC7EA2F")
-                IHttpResponseMessageFactory : IInspectable
+                IHttpResponseMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Web::Http::HttpStatusCode statusCode,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpResponseMessage * * httpResponseMessage
@@ -3997,8 +4018,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("F3E64D9D-F725-407E-942F-0EDA189809F4"), exclusiveto, contract] */
                 MIDL_INTERFACE("F3E64D9D-F725-407E-942F-0EDA189809F4")
-                IHttpStreamContentFactory : IInspectable
+                IHttpStreamContentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromInputStream(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IInputStream * content,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpContent * * streamContent
@@ -4038,8 +4060,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("46649D5B-2E93-48EB-8E61-19677878E57F"), exclusiveto, contract] */
                 MIDL_INTERFACE("46649D5B-2E93-48EB-8E61-19677878E57F")
-                IHttpStringContentFactory : IInspectable
+                IHttpStringContentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromString(
                         /* [in] */__RPC__in HSTRING content,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpContent * * stringContent
@@ -4090,8 +4113,9 @@ namespace ABI {
             namespace Http {
                 /* [object, uuid("70127198-C6A7-4ED0-833A-83FD8B8F178D"), exclusiveto, contract] */
                 MIDL_INTERFACE("70127198-C6A7-4ED0-833A-83FD8B8F178D")
-                IHttpTransportInformation : IInspectable
+                IHttpTransportInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServerCertificate(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificate * * value
                         ) = 0;

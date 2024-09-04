@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.services.maps.offlinemaps.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -732,8 +734,9 @@ namespace ABI {
                 namespace OfflineMaps {
                     /* [object, uuid("A797673B-A5B5-4144-B525-E68C8862664B"), exclusiveto, contract] */
                     MIDL_INTERFACE("A797673B-A5B5-4144-B525-E68C8862664B")
-                    IOfflineMapPackage : IInspectable
+                    IOfflineMapPackage : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Services::Maps::OfflineMaps::OfflineMapPackageStatus * value
                             ) = 0;
@@ -793,8 +796,9 @@ namespace ABI {
                 namespace OfflineMaps {
                     /* [object, uuid("55585411-39E1-4E41-A4E1-5F4872BEE199"), exclusiveto, contract] */
                     MIDL_INTERFACE("55585411-39E1-4E41-A4E1-5F4872BEE199")
-                    IOfflineMapPackageQueryResult : IInspectable
+                    IOfflineMapPackageQueryResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryStatus * value
                             ) = 0;
@@ -838,8 +842,9 @@ namespace ABI {
                 namespace OfflineMaps {
                     /* [object, uuid("D965B918-D4D6-4AFE-9378-3EC71EF11C3D"), exclusiveto, contract] */
                     MIDL_INTERFACE("D965B918-D4D6-4AFE-9378-3EC71EF11C3D")
-                    IOfflineMapPackageStartDownloadResult : IInspectable
+                    IOfflineMapPackageStartDownloadResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadStatus * value
                             ) = 0;
@@ -880,8 +885,9 @@ namespace ABI {
                 namespace OfflineMaps {
                     /* [object, uuid("185E7922-A831-4AB0-941F-6998FA929285"), exclusiveto, contract] */
                     MIDL_INTERFACE("185E7922-A831-4AB0-941F-6998FA929285")
-                    IOfflineMapPackageStatics : IInspectable
+                    IOfflineMapPackageStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE FindPackagesAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * queryPoint,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CMaps__COfflineMaps__COfflineMapPackageQueryResult * * result

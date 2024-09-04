@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.storage.pickers.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1438,8 +1440,9 @@ namespace ABI {
             namespace Pickers {
                 /* [object, uuid("2CA8278A-12C5-4C5F-8977-94547793C241"), exclusiveto, contract] */
                 MIDL_INTERFACE("2CA8278A-12C5-4C5F-8977-94547793C241")
-                IFileOpenPicker : IInspectable
+                IFileOpenPicker : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewMode(
                         /* [retval, out] */__RPC__out ABI::Windows::Storage::Pickers::PickerViewMode * value
                         ) = 0;
@@ -1512,8 +1515,9 @@ namespace ABI {
             namespace Pickers {
                 /* [object, uuid("8CEB6CD2-B446-46F7-B265-90F8E55AD650"), exclusiveto, contract] */
                 MIDL_INTERFACE("8CEB6CD2-B446-46F7-B265-90F8E55AD650")
-                IFileOpenPicker2 : IInspectable
+                IFileOpenPicker2 : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("Instead, use PickSingleFileAsync/PickMultipleFilesAsync")
@@ -1566,8 +1570,9 @@ namespace ABI {
             namespace Pickers {
                 /* [object, uuid("6821573B-2F02-4833-96D4-ABBFAD72B67B"), exclusiveto, contract] */
                 MIDL_INTERFACE("6821573B-2F02-4833-96D4-ABBFAD72B67B")
-                IFileOpenPickerStatics : IInspectable
+                IFileOpenPickerStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("Instead, use PickSingleFileAsync")
@@ -1610,8 +1615,9 @@ namespace ABI {
             namespace Pickers {
                 /* [object, uuid("3F57B569-2522-4CA5-AA73-A15509F1FCBF"), exclusiveto, contract] */
                 MIDL_INTERFACE("3F57B569-2522-4CA5-AA73-A15509F1FCBF")
-                IFileOpenPickerWithOperationId : IInspectable
+                IFileOpenPickerWithOperationId : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE PickSingleFileAsync(
                         /* [in] */__RPC__in HSTRING pickerOperationId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFile * * pickSingleFileOperation
@@ -1651,8 +1657,9 @@ namespace ABI {
             namespace Pickers {
                 /* [object, uuid("3286FFCB-617F-4CC5-AF6A-B3FDF29AD145"), exclusiveto, contract] */
                 MIDL_INTERFACE("3286FFCB-617F-4CC5-AF6A-B3FDF29AD145")
-                IFileSavePicker : IInspectable
+                IFileSavePicker : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SettingsIdentifier(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1734,8 +1741,9 @@ namespace ABI {
             namespace Pickers {
                 /* [object, uuid("0EC313A2-D24B-449A-8197-E89104FD42CC"), exclusiveto, contract] */
                 MIDL_INTERFACE("0EC313A2-D24B-449A-8197-E89104FD42CC")
-                IFileSavePicker2 : IInspectable
+                IFileSavePicker2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContinuationData(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
                         ) = 0;
@@ -1783,8 +1791,9 @@ namespace ABI {
             namespace Pickers {
                 /* [object, uuid("698AEC69-BA3C-4E51-BD90-4ABCBBF4CFAF"), exclusiveto, contract] */
                 MIDL_INTERFACE("698AEC69-BA3C-4E51-BD90-4ABCBBF4CFAF")
-                IFileSavePicker3 : IInspectable
+                IFileSavePicker3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnterpriseId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1826,8 +1835,9 @@ namespace ABI {
             namespace Pickers {
                 /* [object, uuid("084F7799-F3FB-400A-99B1-7B4A772FD60D"), exclusiveto, contract] */
                 MIDL_INTERFACE("084F7799-F3FB-400A-99B1-7B4A772FD60D")
-                IFolderPicker : IInspectable
+                IFolderPicker : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewMode(
                         /* [retval, out] */__RPC__out ABI::Windows::Storage::Pickers::PickerViewMode * value
                         ) = 0;
@@ -1897,8 +1907,9 @@ namespace ABI {
             namespace Pickers {
                 /* [object, uuid("8EB3BA97-DC85-4616-BE94-9660881F2F5D"), exclusiveto, contract] */
                 MIDL_INTERFACE("8EB3BA97-DC85-4616-BE94-9660881F2F5D")
-                IFolderPicker2 : IInspectable
+                IFolderPicker2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContinuationData(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
                         ) = 0;

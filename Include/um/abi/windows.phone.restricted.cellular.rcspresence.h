@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.phone.restricted.cellular.rcspresence.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -35,17 +35,14 @@
 #pragma once
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -53,8 +50,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -701,6 +702,7 @@ namespace ABI {
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs_USE
@@ -730,6 +732,7 @@ typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresenc
 
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -746,6 +749,7 @@ namespace ABI {
     } /* RcsPresence */} /* ABI */
 
 
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs_USE
@@ -775,6 +779,7 @@ typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresenc
 #endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs_USE */
 
 
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -902,6 +907,7 @@ namespace ABI {
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs_USE
@@ -930,6 +936,7 @@ typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresenc
 #endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs_USE */
 
 
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -1238,6 +1245,7 @@ namespace ABI {
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs_USE
@@ -1267,6 +1275,7 @@ typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresenc
 
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1283,6 +1292,7 @@ namespace ABI {
     } /* RcsPresence */} /* ABI */
 
 
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs_USE
@@ -1312,6 +1322,7 @@ typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresenc
 #endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs_USE */
 
 
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1775,8 +1786,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("ECE4FA8C-C015-42D1-A77C-35171F4684E1"), contract] */
                         MIDL_INTERFACE("ECE4FA8C-C015-42D1-A77C-35171F4684E1")
-                        IRcsAddress : IInspectable
+                        IRcsAddress : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                                 ) = 0;
@@ -1822,8 +1834,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("024FD9E5-C187-4A69-9225-5774404EA1F3"), exclusiveto, contract] */
                         MIDL_INTERFACE("024FD9E5-C187-4A69-9225-5774404EA1F3")
-                        IRcsCapabilitiesReceivedArgs : IInspectable
+                        IRcsCapabilitiesReceivedArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResourceUri(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                                 ) = 0;
@@ -1873,8 +1886,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("9394D478-7C0B-4493-9B99-3A1D9244981D"), exclusiveto, contract] */
                         MIDL_INTERFACE("9394D478-7C0B-4493-9B99-3A1D9244981D")
-                        IRcsPresenceService : IInspectable
+                        IRcsPresenceService : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE PublishCapabilitiesAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * contactUri,
                                 /* [in] */__RPC__in_opt __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * serviceDescriptions,
@@ -1950,8 +1964,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("DD7B70D0-8C2C-41D9-92D9-8FF63499342A"), exclusiveto, contract] */
                         MIDL_INTERFACE("DD7B70D0-8C2C-41D9-92D9-8FF63499342A")
-                        IRcsPresenceSettings : IInspectable
+                        IRcsPresenceSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PublishEnabled(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -2003,8 +2018,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("D38BAC8A-4AF0-4B59-B6BE-08FD640AB9B9"), exclusiveto, contract] */
                         MIDL_INTERFACE("D38BAC8A-4AF0-4B59-B6BE-08FD640AB9B9")
-                        IRcsPresenceSettings2 : IInspectable
+                        IRcsPresenceSettings2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsCapabilityDiscoveryEnabled(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -2098,8 +2114,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("1F062F50-8973-4CB9-BE29-DFA18AD1CAC4"), exclusiveto, contract] */
                         MIDL_INTERFACE("1F062F50-8973-4CB9-BE29-DFA18AD1CAC4")
-                        IRcsPublishCapabilitiesRequestedArgs : IInspectable
+                        IRcsPublishCapabilitiesRequestedArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reason(
                                 /* [retval, out] */__RPC__out ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsPublishRequestReason * value
                                 ) = 0;
@@ -2145,8 +2162,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("C37FA519-AB14-462D-91C9-3242D174FC72"), exclusiveto, contract] */
                         MIDL_INTERFACE("C37FA519-AB14-462D-91C9-3242D174FC72")
-                        IRcsResource : IInspectable
+                        IRcsResource : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                                 ) = 0;
@@ -2195,8 +2213,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("71381418-C4D2-424C-B35C-340E6306785E"), exclusiveto, contract] */
                         MIDL_INTERFACE("71381418-C4D2-424C-B35C-340E6306785E")
-                        IRcsResourceInstance : IInspectable
+                        IRcsResourceInstance : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                                 ) = 0;
@@ -2248,8 +2267,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("79F2A52B-0C12-483A-A06B-5D88F2EDFD4B"), contract] */
                         MIDL_INTERFACE("79F2A52B-0C12-483A-A06B-5D88F2EDFD4B")
-                        IRcsResourceList : IInspectable
+                        IRcsResourceList : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                                 ) = 0;
@@ -2304,8 +2324,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("B7EBCF86-6640-4BB4-8192-FEB1BAA17872"), exclusiveto, contract] */
                         MIDL_INTERFACE("B7EBCF86-6640-4BB4-8192-FEB1BAA17872")
-                        IRcsResponse : IInspectable
+                        IRcsResponse : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResponseCode(
                                 /* [retval, out] */__RPC__out UINT32 * value
                                 ) = 0;
@@ -2348,8 +2369,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("B57094FD-74DA-4273-9039-F489ABC6FF8D"), contract] */
                         MIDL_INTERFACE("B57094FD-74DA-4273-9039-F489ABC6FF8D")
-                        IRcsService : IInspectable
+                        IRcsService : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE StartServiceAsync(
                                 /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus * * operation
                                 ) = 0;
@@ -2418,8 +2440,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("433108B4-1B3F-4033-8D0B-768D78F658A7"), exclusiveto, contract] */
                         MIDL_INTERFACE("433108B4-1B3F-4033-8D0B-768D78F658A7")
-                        IRcsServiceAvailabilityChangedArgs : IInspectable
+                        IRcsServiceAvailabilityChangedArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceAvailability(
                                 /* [retval, out] */__RPC__out ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceAvailability * value
                                 ) = 0;
@@ -2459,8 +2482,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("416437DE-E78B-44C9-990F-7EDE1F2A0C91"), contract] */
                         MIDL_INTERFACE("416437DE-E78B-44C9-990F-7EDE1F2A0C91")
-                        IRcsServiceDescription : IInspectable
+                        IRcsServiceDescription : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceIdentifier(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -2524,8 +2548,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("661AE45A-412A-460D-BDD4-DD8EA3C15583"), exclusiveto, contract] */
                         MIDL_INTERFACE("661AE45A-412A-460D-BDD4-DD8EA3C15583")
-                        IRcsServiceStatusChangedArgs : IInspectable
+                        IRcsServiceStatusChangedArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceStatus(
                                 /* [retval, out] */__RPC__out ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceStatus * value
                                 ) = 0;
@@ -2568,8 +2593,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("CE17A39B-2E8B-41AF-B5A9-5CB072CC373C"), exclusiveto, contract] */
                         MIDL_INTERFACE("CE17A39B-2E8B-41AF-B5A9-5CB072CC373C")
-                        IRcsServiceTuple : IInspectable
+                        IRcsServiceTuple : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceDescription(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceDescription * * value
                                 ) = 0;
@@ -2618,8 +2644,9 @@ namespace ABI {
                     namespace RcsPresence {
                         /* [object, uuid("04EAF06D-42BC-46CC-A637-EEB3A8723FE4"), exclusiveto, contract] */
                         MIDL_INTERFACE("04EAF06D-42BC-46CC-A637-EEB3A8723FE4")
-                        IRcsSubscriptionReceivedArgs : IInspectable
+                        IRcsSubscriptionReceivedArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResourceList(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResourceList * * value
                                 ) = 0;
@@ -3718,6 +3745,7 @@ interface __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPres
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs_INTERFACE_DEFINED__
 
@@ -3765,9 +3793,11 @@ interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsP
 #endif // ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs_INTERFACE_DEFINED__
@@ -3815,6 +3845,7 @@ interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsP
 
 #endif // ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -4093,6 +4124,7 @@ interface __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs_INTERFACE_DEFINED__
 
@@ -4139,6 +4171,7 @@ interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsP
 
 #endif // ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -4801,6 +4834,7 @@ interface __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPres
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs_INTERFACE_DEFINED__
 
@@ -4848,9 +4882,11 @@ interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsP
 #endif // ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs_INTERFACE_DEFINED__
@@ -4898,6 +4934,7 @@ interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsP
 
 #endif // ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 

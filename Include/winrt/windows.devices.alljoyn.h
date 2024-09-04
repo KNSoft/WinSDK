@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.alljoyn.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1219,6 +1221,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynAcceptSessionJoinerEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynAcceptSessionJoinerEventArgs_USE
@@ -1248,6 +1251,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::AllJoyn::AllJoynBusAttachment*
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1260,6 +1264,7 @@ namespace ABI {
     } /* AllJoyn */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynAuthenticationCompleteEventArgs_USE
@@ -1290,6 +1295,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::AllJoyn::AllJoynBusAttachment*
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1302,6 +1308,7 @@ namespace ABI {
     } /* AllJoyn */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynBusAttachmentStateChangedEventArgs_USE
@@ -1332,6 +1339,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::AllJoyn::AllJoynBusAttachment*
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1344,6 +1352,7 @@ namespace ABI {
     } /* AllJoyn */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynCredentialsRequestedEventArgs_USE
@@ -1374,6 +1383,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::AllJoyn::AllJoynBusAttachment*
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1386,6 +1396,7 @@ namespace ABI {
     } /* AllJoyn */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynCredentialsVerificationRequestedEventArgs_USE
@@ -1415,6 +1426,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::AllJoyn::AllJoynBusAttachment*
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynCredentialsVerificationRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1482,6 +1494,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusObject_Windows__CDevices__CAllJoyn__CAllJoynBusObjectStoppedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusObject_Windows__CDevices__CAllJoyn__CAllJoynBusObjectStoppedEventArgs_USE
@@ -1511,6 +1524,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::AllJoyn::AllJoynBusObject*,ABI
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1523,8 +1537,8 @@ namespace ABI {
     } /* AllJoyn */} /* ABI */
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionLostEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionLostEventArgs_USE
@@ -1553,8 +1567,8 @@ typedef ITypedEventHandler<ABI::Windows::Devices::AllJoyn::AllJoynSession*,ABI::
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionLostEventArgs_USE */
 
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1567,8 +1581,8 @@ namespace ABI {
     } /* AllJoyn */} /* ABI */
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberAddedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberAddedEventArgs_USE
@@ -1597,8 +1611,8 @@ typedef ITypedEventHandler<ABI::Windows::Devices::AllJoyn::AllJoynSession*,ABI::
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberAddedEventArgs_USE */
 
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1611,8 +1625,8 @@ namespace ABI {
     } /* AllJoyn */} /* ABI */
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberRemovedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberRemovedEventArgs_USE
@@ -1641,8 +1655,8 @@ typedef ITypedEventHandler<ABI::Windows::Devices::AllJoyn::AllJoynSession*,ABI::
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberRemovedEventArgs_USE */
 
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -2882,8 +2896,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("E5A9BF00-1FA2-4839-93EF-F9DF404890F7"), exclusiveto, contract] */
                 MIDL_INTERFACE("E5A9BF00-1FA2-4839-93EF-F9DF404890F7")
-                IAllJoynAboutData : IInspectable
+                IAllJoynAboutData : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2982,8 +2997,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("6823111F-6212-4934-9C48-E19CA4984288"), exclusiveto, contract] */
                 MIDL_INTERFACE("6823111F-6212-4934-9C48-E19CA4984288")
-                IAllJoynAboutDataView : IInspectable
+                IAllJoynAboutDataView : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -3067,8 +3083,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("57EDB688-0C5E-416E-88B5-39B32D25C47D"), exclusiveto, contract] */
                 MIDL_INTERFACE("57EDB688-0C5E-416E-88B5-39B32D25C47D")
-                IAllJoynAboutDataViewStatics : IInspectable
+                IAllJoynAboutDataViewStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDataBySessionPortAsync(
                         /* [in] */__RPC__in HSTRING uniqueName,
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::AllJoyn::IAllJoynBusAttachment * busAttachment,
@@ -3114,8 +3131,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("4DA817D2-CD1D-4023-A7C4-16DEF89C28DF"), contract] */
                 MIDL_INTERFACE("4DA817D2-CD1D-4023-A7C4-16DEF89C28DF")
-                IAllJoynAcceptSessionJoiner : IInspectable
+                IAllJoynAcceptSessionJoiner : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Accept(void) = 0;
                     
                 };
@@ -3152,8 +3170,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("4EFB5365-3E8A-4257-8F10-539CE0D56C0F"), exclusiveto, contract] */
                 MIDL_INTERFACE("4EFB5365-3E8A-4257-8F10-539CE0D56C0F")
-                IAllJoynAcceptSessionJoinerEventArgs : IInspectable
+                IAllJoynAcceptSessionJoinerEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UniqueName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3205,8 +3224,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("B4435BC0-6145-429E-84DB-D5BFE772B14F"), exclusiveto, contract] */
                 MIDL_INTERFACE("B4435BC0-6145-429E-84DB-D5BFE772B14F")
-                IAllJoynAcceptSessionJoinerEventArgsFactory : IInspectable
+                IAllJoynAcceptSessionJoinerEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING uniqueName,
                         /* [in] */UINT16 sessionPort,
@@ -3250,8 +3270,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("97B4701C-15DC-4B53-B6A4-7D134300D7BF"), exclusiveto, contract] */
                 MIDL_INTERFACE("97B4701C-15DC-4B53-B6A4-7D134300D7BF")
-                IAllJoynAuthenticationCompleteEventArgs : IInspectable
+                IAllJoynAuthenticationCompleteEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AuthenticationMechanism(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism * value
                         ) = 0;
@@ -3296,8 +3317,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("F309F153-1EED-42C3-A20E-436D41FE62F6"), exclusiveto, contract] */
                 MIDL_INTERFACE("F309F153-1EED-42C3-A20E-436D41FE62F6")
-                IAllJoynBusAttachment : IInspectable
+                IAllJoynBusAttachment : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AboutData(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynAboutData * * value
                         ) = 0;
@@ -3382,8 +3404,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("3474CB1E-2368-43B2-B43E-6A3AC1278D98"), exclusiveto, contract] */
                 MIDL_INTERFACE("3474CB1E-2368-43B2-B43E-6A3AC1278D98")
-                IAllJoynBusAttachment2 : IInspectable
+                IAllJoynBusAttachment2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetAboutDataAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::AllJoyn::IAllJoynServiceInfo * serviceInfo,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CAllJoyn__CAllJoynAboutDataView * * operation
@@ -3442,8 +3465,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("642EF1A4-AD85-4DDF-90AE-604452B22288"), exclusiveto, contract] */
                 MIDL_INTERFACE("642EF1A4-AD85-4DDF-90AE-604452B22288")
-                IAllJoynBusAttachmentFactory : IInspectable
+                IAllJoynBusAttachmentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING connectionSpecification,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynBusAttachment * * result
@@ -3483,8 +3507,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("D82E75F4-C02A-41EC-A8D5-EAB1558953AA"), exclusiveto, contract] */
                 MIDL_INTERFACE("D82E75F4-C02A-41EC-A8D5-EAB1558953AA")
-                IAllJoynBusAttachmentStateChangedEventArgs : IInspectable
+                IAllJoynBusAttachmentStateChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::AllJoyn::AllJoynBusAttachmentState * value
                         ) = 0;
@@ -3526,8 +3551,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("839D4D3D-1051-40D7-872A-8D0141115B1F"), exclusiveto, contract] */
                 MIDL_INTERFACE("839D4D3D-1051-40D7-872A-8D0141115B1F")
-                IAllJoynBusAttachmentStatics : IInspectable
+                IAllJoynBusAttachmentStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynBusAttachment * * defaultBusAttachment
                         ) = 0;
@@ -3570,8 +3596,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("E8FD825E-F73A-490C-8804-04E026643047"), exclusiveto, contract] */
                 MIDL_INTERFACE("E8FD825E-F73A-490C-8804-04E026643047")
-                IAllJoynBusObject : IInspectable
+                IAllJoynBusObject : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Start(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE Stop(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE AddProducer(
@@ -3625,8 +3652,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("2C2F9F0B-8E02-4F9C-AC27-EA6DAD5D3B50"), exclusiveto, contract] */
                 MIDL_INTERFACE("2C2F9F0B-8E02-4F9C-AC27-EA6DAD5D3B50")
-                IAllJoynBusObjectFactory : IInspectable
+                IAllJoynBusObjectFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING objectPath,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynBusObject * * result
@@ -3671,8 +3699,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("DE102115-EF8E-4D42-B93B-A2AE74519766"), exclusiveto, contract] */
                 MIDL_INTERFACE("DE102115-EF8E-4D42-B93B-A2AE74519766")
-                IAllJoynBusObjectStoppedEventArgs : IInspectable
+                IAllJoynBusObjectStoppedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -3711,8 +3740,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("6B22FD48-D0A3-4255-953A-4772B4028073"), exclusiveto, contract] */
                 MIDL_INTERFACE("6B22FD48-D0A3-4255-953A-4772B4028073")
-                IAllJoynBusObjectStoppedEventArgsFactory : IInspectable
+                IAllJoynBusObjectStoppedEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */INT32 status,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs * * result
@@ -3752,8 +3782,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("824650F2-A190-40B1-ABAB-349EC244DFAA"), exclusiveto, contract] */
                 MIDL_INTERFACE("824650F2-A190-40B1-ABAB-349EC244DFAA")
-                IAllJoynCredentials : IInspectable
+                IAllJoynCredentials : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AuthenticationMechanism(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism * value
                         ) = 0;
@@ -3810,8 +3841,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("6A87E34E-B069-4B80-9E1A-41BC837C65D2"), exclusiveto, contract] */
                 MIDL_INTERFACE("6A87E34E-B069-4B80-9E1A-41BC837C65D2")
-                IAllJoynCredentialsRequestedEventArgs : IInspectable
+                IAllJoynCredentialsRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AttemptCount(
                         /* [retval, out] */__RPC__out UINT16 * value
                         ) = 0;
@@ -3862,8 +3894,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("800A7612-B805-44AF-A2E1-792AB655A2D0"), exclusiveto, contract] */
                 MIDL_INTERFACE("800A7612-B805-44AF-A2E1-792AB655A2D0")
-                IAllJoynCredentialsVerificationRequestedEventArgs : IInspectable
+                IAllJoynCredentialsVerificationRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AuthenticationMechanism(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism * value
                         ) = 0;
@@ -3921,8 +3954,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("FF2B0127-2C12-4859-AA3A-C74461EE814C"), exclusiveto, contract] */
                 MIDL_INTERFACE("FF2B0127-2C12-4859-AA3A-C74461EE814C")
-                IAllJoynMessageInfo : IInspectable
+                IAllJoynMessageInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SenderUniqueName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3961,8 +3995,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("34664C2A-8289-43D4-B4A8-3F4DE359F043"), exclusiveto, contract] */
                 MIDL_INTERFACE("34664C2A-8289-43D4-B4A8-3F4DE359F043")
-                IAllJoynMessageInfoFactory : IInspectable
+                IAllJoynMessageInfoFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING senderUniqueName,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynMessageInfo * * result
@@ -3999,8 +4034,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("9D084679-469B-495A-A710-AC50F123069F"), contract] */
                 MIDL_INTERFACE("9D084679-469B-495A-A710-AC50F123069F")
-                IAllJoynProducer : IInspectable
+                IAllJoynProducer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetBusObject(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::AllJoyn::IAllJoynBusObject * busObject
                         ) = 0;
@@ -4039,8 +4075,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("51309770-4937-492D-8080-236439987CEB"), exclusiveto, contract] */
                 MIDL_INTERFACE("51309770-4937-492D-8080-236439987CEB")
-                IAllJoynProducerStoppedEventArgs : IInspectable
+                IAllJoynProducerStoppedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -4079,8 +4116,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("56529961-B219-4D6E-9F78-FA3F99FA8FE5"), exclusiveto, contract] */
                 MIDL_INTERFACE("56529961-B219-4D6E-9F78-FA3F99FA8FE5")
-                IAllJoynProducerStoppedEventArgsFactory : IInspectable
+                IAllJoynProducerStoppedEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */INT32 status,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs * * result
@@ -4120,8 +4158,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("4CBE8209-B93E-4182-999B-DDD000F9C575"), exclusiveto, contract] */
                 MIDL_INTERFACE("4CBE8209-B93E-4182-999B-DDD000F9C575")
-                IAllJoynServiceInfo : IInspectable
+                IAllJoynServiceInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UniqueName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4166,8 +4205,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("7581DABD-FE03-4F4B-94A4-F02FDCBD11B8"), exclusiveto, contract] */
                 MIDL_INTERFACE("7581DABD-FE03-4F4B-94A4-F02FDCBD11B8")
-                IAllJoynServiceInfoFactory : IInspectable
+                IAllJoynServiceInfoFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING uniqueName,
                         /* [in] */__RPC__in HSTRING objectPath,
@@ -4209,8 +4249,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("3057A95F-1D3F-41F3-8969-E32792627396"), exclusiveto, contract] */
                 MIDL_INTERFACE("3057A95F-1D3F-41F3-8969-E32792627396")
-                IAllJoynServiceInfoRemovedEventArgs : IInspectable
+                IAllJoynServiceInfoRemovedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UniqueName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4249,8 +4290,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("0DBF8627-9AFF-4955-9227-6953BAF41569"), exclusiveto, contract] */
                 MIDL_INTERFACE("0DBF8627-9AFF-4955-9227-6953BAF41569")
-                IAllJoynServiceInfoRemovedEventArgsFactory : IInspectable
+                IAllJoynServiceInfoRemovedEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING uniqueName,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs * * result
@@ -4290,8 +4332,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("5678570A-603A-49FC-B750-0EF13609213C"), exclusiveto, contract] */
                 MIDL_INTERFACE("5678570A-603A-49FC-B750-0EF13609213C")
-                IAllJoynServiceInfoStatics : IInspectable
+                IAllJoynServiceInfoStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CAllJoyn__CAllJoynServiceInfo * * operation
@@ -4331,8 +4374,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("E8D11B0C-C0D4-406C-88A9-A93EFA85D4B1"), exclusiveto, contract] */
                 MIDL_INTERFACE("E8D11B0C-C0D4-406C-88A9-A93EFA85D4B1")
-                IAllJoynSession : IInspectable
+                IAllJoynSession : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -4399,8 +4443,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("9E9F5BD0-B5D7-47C5-8DAB-B040CC192871"), exclusiveto, contract] */
                 MIDL_INTERFACE("9E9F5BD0-B5D7-47C5-8DAB-B040CC192871")
-                IAllJoynSessionJoinedEventArgs : IInspectable
+                IAllJoynSessionJoinedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Session(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynSession * * value
                         ) = 0;
@@ -4439,8 +4484,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("6824D689-D6CB-4D9E-A09E-35806870B17F"), exclusiveto, contract] */
                 MIDL_INTERFACE("6824D689-D6CB-4D9E-A09E-35806870B17F")
-                IAllJoynSessionJoinedEventArgsFactory : IInspectable
+                IAllJoynSessionJoinedEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::AllJoyn::IAllJoynSession * session,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs * * result
@@ -4480,8 +4526,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("E766A48A-8BB8-4954-AE67-D2FA43D1F96B"), exclusiveto, contract] */
                 MIDL_INTERFACE("E766A48A-8BB8-4954-AE67-D2FA43D1F96B")
-                IAllJoynSessionLostEventArgs : IInspectable
+                IAllJoynSessionLostEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reason(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::AllJoyn::AllJoynSessionLostReason * value
                         ) = 0;
@@ -4520,8 +4567,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("13BBFD32-D2F4-49C9-980E-2805E13586B1"), exclusiveto, contract] */
                 MIDL_INTERFACE("13BBFD32-D2F4-49C9-980E-2805E13586B1")
-                IAllJoynSessionLostEventArgsFactory : IInspectable
+                IAllJoynSessionLostEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Devices::AllJoyn::AllJoynSessionLostReason reason,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs * * result
@@ -4561,8 +4609,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("49A2798A-0DD1-46C1-9CD6-27190E503A5E"), exclusiveto, contract] */
                 MIDL_INTERFACE("49A2798A-0DD1-46C1-9CD6-27190E503A5E")
-                IAllJoynSessionMemberAddedEventArgs : IInspectable
+                IAllJoynSessionMemberAddedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UniqueName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4601,8 +4650,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("341DE352-1D33-40A1-A1D3-E5777020E1F1"), exclusiveto, contract] */
                 MIDL_INTERFACE("341DE352-1D33-40A1-A1D3-E5777020E1F1")
-                IAllJoynSessionMemberAddedEventArgsFactory : IInspectable
+                IAllJoynSessionMemberAddedEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING uniqueName,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs * * result
@@ -4642,8 +4692,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("409A219F-AA4A-4893-B430-BAA1B63C6219"), exclusiveto, contract] */
                 MIDL_INTERFACE("409A219F-AA4A-4893-B430-BAA1B63C6219")
-                IAllJoynSessionMemberRemovedEventArgs : IInspectable
+                IAllJoynSessionMemberRemovedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UniqueName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4682,8 +4733,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("C4D355E8-42B8-4B67-B757-D0CFCAD59280"), exclusiveto, contract] */
                 MIDL_INTERFACE("C4D355E8-42B8-4B67-B757-D0CFCAD59280")
-                IAllJoynSessionMemberRemovedEventArgsFactory : IInspectable
+                IAllJoynSessionMemberRemovedEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING uniqueName,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs * * result
@@ -4723,8 +4775,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("9E05D604-A06C-46D4-B46C-0B0B54105B44"), exclusiveto, contract] */
                 MIDL_INTERFACE("9E05D604-A06C-46D4-B46C-0B0B54105B44")
-                IAllJoynSessionStatics : IInspectable
+                IAllJoynSessionStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetFromServiceInfoAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::AllJoyn::IAllJoynServiceInfo * serviceInfo,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CAllJoyn__CAllJoynSession * * operation
@@ -4769,8 +4822,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("D0B7A17E-0D29-4DA9-8AC6-54C554BEDBC5"), exclusiveto, contract] */
                 MIDL_INTERFACE("D0B7A17E-0D29-4DA9-8AC6-54C554BEDBC5")
-                IAllJoynStatusStatics : IInspectable
+                IAllJoynStatusStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Ok(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -4860,8 +4914,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("C9FCA03B-701D-4AA8-97DD-A2BB0A8F5FA3"), exclusiveto, contract] */
                 MIDL_INTERFACE("C9FCA03B-701D-4AA8-97DD-A2BB0A8F5FA3")
-                IAllJoynWatcherStoppedEventArgs : IInspectable
+                IAllJoynWatcherStoppedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -4900,8 +4955,9 @@ namespace ABI {
             namespace AllJoyn {
                 /* [object, uuid("878FA5A8-2D50-47E1-904A-20BF0D48C782"), exclusiveto, contract] */
                 MIDL_INTERFACE("878FA5A8-2D50-47E1-904A-20BF0D48C782")
-                IAllJoynWatcherStoppedEventArgsFactory : IInspectable
+                IAllJoynWatcherStoppedEventArgsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */INT32 status,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs * * result
@@ -6472,6 +6528,7 @@ interface __FIAsyncOperation_1_Windows__CDevices__CAllJoyn__CAllJoynSession
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynAcceptSessionJoinerEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynAcceptSessionJoinerEventArgs_INTERFACE_DEFINED__
 
@@ -6519,9 +6576,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttach
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynAcceptSessionJoinerEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynAuthenticationCompleteEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynAuthenticationCompleteEventArgs_INTERFACE_DEFINED__
@@ -6570,9 +6629,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttach
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynAuthenticationCompleteEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynBusAttachmentStateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynBusAttachmentStateChangedEventArgs_INTERFACE_DEFINED__
@@ -6621,9 +6682,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttach
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynBusAttachmentStateChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynCredentialsRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynCredentialsRequestedEventArgs_INTERFACE_DEFINED__
@@ -6672,9 +6735,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttach
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynCredentialsRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynCredentialsVerificationRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynCredentialsVerificationRequestedEventArgs_INTERFACE_DEFINED__
@@ -6722,6 +6787,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttach
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttachment_Windows__CDevices__CAllJoyn__CAllJoynCredentialsVerificationRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -6780,6 +6846,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusAttach
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusObject_Windows__CDevices__CAllJoyn__CAllJoynBusObjectStoppedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusObject_Windows__CDevices__CAllJoyn__CAllJoynBusObjectStoppedEventArgs_INTERFACE_DEFINED__
 
@@ -6827,11 +6894,12 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusObject
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynBusObject_Windows__CDevices__CAllJoyn__CAllJoynBusObjectStoppedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionLostEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionLostEventArgs_INTERFACE_DEFINED__
 
@@ -6878,13 +6946,13 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_W
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionLostEventArgs_INTERFACE_DEFINED__
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberAddedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberAddedEventArgs_INTERFACE_DEFINED__
 
@@ -6931,13 +6999,13 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_W
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberAddedEventArgs_INTERFACE_DEFINED__
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberRemovedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberRemovedEventArgs_INTERFACE_DEFINED__
 
@@ -6984,8 +7052,8 @@ interface __FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_W
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CAllJoyn__CAllJoynSession_Windows__CDevices__CAllJoyn__CAllJoynSessionMemberRemovedEventArgs_INTERFACE_DEFINED__
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__)
 #define ____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__

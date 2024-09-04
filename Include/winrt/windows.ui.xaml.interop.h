@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.interop.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -460,8 +462,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("624CD4E1-D007-43B1-9C03-AF4D3E6258C4"), contract] */
                     MIDL_INTERFACE("624CD4E1-D007-43B1-9C03-AF4D3E6258C4")
-                    IBindableVectorChangedEventHandler : IUnknown
+                    IBindableVectorChangedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Interop::IBindableObservableVector * vector,
                             /* [in] */__RPC__in_opt IInspectable * e
@@ -499,8 +502,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("CA10B37C-F382-4591-8557-5E24965279B0"), contract] */
                     MIDL_INTERFACE("CA10B37C-F382-4591-8557-5E24965279B0")
-                    INotifyCollectionChangedEventHandler : IUnknown
+                    INotifyCollectionChangedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs * e
@@ -539,8 +543,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("036D2C08-DF29-41AF-8AA2-D774BE62BA6F"), contract] */
                     MIDL_INTERFACE("036D2C08-DF29-41AF-8AA2-D774BE62BA6F")
-                    IBindableIterable : IInspectable
+                    IBindableIterable : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE First(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Interop::IBindableIterator * * returnValue
                             ) = 0;
@@ -578,8 +583,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("6A1D6C07-076D-49F2-8314-F52C9C9A8331"), contract] */
                     MIDL_INTERFACE("6A1D6C07-076D-49F2-8314-F52C9C9A8331")
-                    IBindableIterator : IInspectable
+                    IBindableIterator : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                             ) = 0;
@@ -628,8 +634,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("FE1EB536-7E7F-4F90-AC9A-474984AAE512"), contract] */
                     MIDL_INTERFACE("FE1EB536-7E7F-4F90-AC9A-474984AAE512")
-                    IBindableObservableVector : IInspectable
+                    IBindableObservableVector : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_VectorChanged(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Interop::IBindableVectorChangedEventHandler  * value,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -675,8 +682,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("393DE7DE-6FD0-4C0D-BB71-47244A113E93"), contract] */
                     MIDL_INTERFACE("393DE7DE-6FD0-4C0D-BB71-47244A113E93")
-                    IBindableVector : IInspectable
+                    IBindableVector : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetAt(
                             /* [in] */UINT32 index,
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
@@ -746,8 +754,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("346DD6E7-976E-4BC3-815D-ECE243BC0F33"), contract] */
                     MIDL_INTERFACE("346DD6E7-976E-4BC3-815D-ECE243BC0F33")
-                    IBindableVectorView : IInspectable
+                    IBindableVectorView : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetAt(
                             /* [in] */UINT32 index,
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
@@ -794,8 +803,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("28B167D5-1A31-465B-9B25-D5C3AE686C40"), contract] */
                     MIDL_INTERFACE("28B167D5-1A31-465B-9B25-D5C3AE686C40")
-                    INotifyCollectionChanged : IInspectable
+                    INotifyCollectionChanged : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CollectionChanged(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Interop::INotifyCollectionChangedEventHandler  * value,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -840,8 +850,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("4CF68D33-E3F2-4964-B85E-945B4F7E2F21"), exclusiveto, contract] */
                     MIDL_INTERFACE("4CF68D33-E3F2-4964-B85E-945B4F7E2F21")
-                    INotifyCollectionChangedEventArgs : IInspectable
+                    INotifyCollectionChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Action(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Interop::NotifyCollectionChangedAction * value
                             ) = 0;
@@ -894,8 +905,9 @@ namespace ABI {
                 namespace Interop {
                     /* [object, uuid("B30C3E3A-DF8D-44A5-9A38-7AC0D08CE63D"), exclusiveto, contract] */
                     MIDL_INTERFACE("B30C3E3A-DF8D-44A5-9A38-7AC0D08CE63D")
-                    INotifyCollectionChangedEventArgsFactory : IInspectable
+                    INotifyCollectionChangedEventArgsFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithAllParameters(
                             /* [in] */ABI::Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Interop::IBindableVector * newItems,

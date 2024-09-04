@@ -1343,7 +1343,51 @@ typedef struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE1_
       LPWSTR* remotePrincipalGroupSids;
 } FWPM_NET_EVENT_IKEEXT_MM_FAILURE1;
 cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN7)")
-
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)") 
+// Version-2 of event specific data for FWPM_NET_EVENT_TYPE_IKEEXT_MM_FAILURE.
+typedef struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_
+{
+   // Windows error code for the failure
+   UINT32 failureErrorCode;
+   // Point of failure
+   IPSEC_FAILURE_POINT failurePoint;
+   // Flags for the failure event
+   UINT32 flags;
+   // IKE or Authip
+   IKEEXT_KEY_MODULE_TYPE keyingModuleType;
+   // Main mode state
+   IKEEXT_MM_SA_STATE mmState;
+   // Initiator or Responder
+   IKEEXT_SA_ROLE saRole;
+   // Authentication method
+   IKEEXT_AUTHENTICATION_METHOD_TYPE mmAuthMethod;
+   // Hash (SHA thumbprint) of the end certificate corresponding to failures
+   // that happen during building or validating certificate chains.
+   UINT8 endCertHash[IKEEXT_CERT_HASH_LEN];
+   // LUID for the MM SA
+   UINT64 mmId;
+   // Main mode filter ID
+   UINT64 mmFilterId;
+   // Name of local security principal that was authenticated, if available.
+   // If not available, an empty string will be stored.
+   [string, ref] wchar_t* localPrincipalNameForAuth;
+   // Name of remote security principal that was authenticated, if available.
+   // If not available, an empty string will be stored.
+   [string, ref] wchar_t* remotePrincipalNameForAuth;
+   // Array of group SIDs corresponding to the local security principal that
+   // was authenticated, if available.
+   UINT32 numLocalPrincipalGroupSids;
+   [size_is(numLocalPrincipalGroupSids), string, unique]
+      LPWSTR* localPrincipalGroupSids;
+   // Array of group SIDs corresponding to the remote security principal that
+   // was authenticated, if available.
+   UINT32 numRemotePrincipalGroupSids;
+   [size_is(numRemotePrincipalGroupSids), string, unique]
+      LPWSTR* remotePrincipalGroupSids;
+   //Provider Context GUID
+   GUID *providerContextKey;
+} FWPM_NET_EVENT_IKEEXT_MM_FAILURE2;
+cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4)")
 // Event-specific data for FWPM_NET_EVENT_TYPE_IKEEXT_QM_FAILURE.
 typedef struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_
 {
@@ -1378,7 +1422,44 @@ typedef struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_
    // Quick mode filter ID
    UINT64 qmFilterId;
 } FWPM_NET_EVENT_IKEEXT_QM_FAILURE0;
-
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)") 
+// Version-1 Event-specific data for FWPM_NET_EVENT_TYPE_IKEEXT_QM_FAILURE.
+typedef struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_
+{
+   // Windows error code for the failure
+   UINT32 failureErrorCode;
+   // Point of failure
+   IPSEC_FAILURE_POINT failurePoint;
+   // IKE or Authip
+   IKEEXT_KEY_MODULE_TYPE keyingModuleType;
+   // Quick mode state
+   IKEEXT_QM_SA_STATE qmState;
+   // Initiator or Responder
+   IKEEXT_SA_ROLE saRole;
+   // Tunnel or transport mode
+   IPSEC_TRAFFIC_TYPE saTrafficType;
+   [switch_type(IPSEC_TRAFFIC_TYPE), switch_is(saTrafficType)]
+   union
+   {
+      [case (IPSEC_TRAFFIC_TYPE_TRANSPORT)];
+      [case (IPSEC_TRAFFIC_TYPE_TUNNEL)]
+         // Must be of type FWP_V4_ADDR_MASK or FWP_V6_ADDR_MASK.
+         FWP_CONDITION_VALUE0 localSubNet;
+   };
+   [switch_type(IPSEC_TRAFFIC_TYPE), switch_is(saTrafficType)]
+   union
+   {
+      [case (IPSEC_TRAFFIC_TYPE_TRANSPORT)];
+      [case (IPSEC_TRAFFIC_TYPE_TUNNEL)]
+         // Must be of type FWP_V4_ADDR_MASK or FWP_V6_ADDR_MASK.
+         FWP_CONDITION_VALUE0 remoteSubNet;
+   };
+   // Quick mode filter ID
+   UINT64 qmFilterId;
+   UINT64 mmSaLuid;
+   GUID mmProviderContextKey;
+} FWPM_NET_EVENT_IKEEXT_QM_FAILURE1;
+cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4)") 
 // Flag indicating that multiple IKE EM failure events have been reported that
 // should be correlated using the mmId field.
 cpp_quote("#define FWPM_NET_EVENT_IKEEXT_EM_FAILURE_FLAG_MULTIPLE (0x00000001)")
@@ -1573,7 +1654,6 @@ typedef struct FWPM_NET_EVENT_IPSEC_DOSP_DROP0_
    FWP_DIRECTION direction;
 } FWPM_NET_EVENT_IPSEC_DOSP_DROP0;
 
-
 cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN8)")
 // Event specific data for FWPM_NET_EVENT_TYPE_CAPABILITY_DROP
 typedef enum FWPM_APPC_NETWORK_CAPABILITY_TYPE_
@@ -1724,6 +1804,42 @@ typedef struct FWPM_NET_EVENT3_
    };
 } FWPM_NET_EVENT3;
 cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)")
+
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)") 
+// Version-4 of consolidated event struct for all event types.
+typedef struct FWPM_NET_EVENT4_
+{
+   // Common data.
+   FWPM_NET_EVENT_HEADER3 header;
+   // Type of event.
+   FWPM_NET_EVENT_TYPE type;
+   // Event-specific data.
+   [switch_type(FWPM_NET_EVENT_TYPE), switch_is(type)]
+   union
+   {
+      [case(FWPM_NET_EVENT_TYPE_IKEEXT_MM_FAILURE)]
+         [unique] FWPM_NET_EVENT_IKEEXT_MM_FAILURE2* ikeMmFailure;
+      [case(FWPM_NET_EVENT_TYPE_IKEEXT_QM_FAILURE)]
+         [unique] FWPM_NET_EVENT_IKEEXT_QM_FAILURE1* ikeQmFailure;
+      [case(FWPM_NET_EVENT_TYPE_IKEEXT_EM_FAILURE)]
+         [unique] FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure;
+      [case(FWPM_NET_EVENT_TYPE_CLASSIFY_DROP)]
+         [unique] FWPM_NET_EVENT_CLASSIFY_DROP2* classifyDrop;
+      [case(FWPM_NET_EVENT_TYPE_IPSEC_KERNEL_DROP)]
+         [unique] FWPM_NET_EVENT_IPSEC_KERNEL_DROP0* ipsecDrop;
+      [case(FWPM_NET_EVENT_TYPE_IPSEC_DOSP_DROP)]
+         [unique] FWPM_NET_EVENT_IPSEC_DOSP_DROP0* idpDrop;
+      [case(FWPM_NET_EVENT_TYPE_CLASSIFY_ALLOW)]
+         [unique] FWPM_NET_EVENT_CLASSIFY_ALLOW0* classifyAllow;
+      [case(FWPM_NET_EVENT_TYPE_CAPABILITY_DROP)]
+         [unique] FWPM_NET_EVENT_CAPABILITY_DROP0* capabilityDrop;
+      [case(FWPM_NET_EVENT_TYPE_CAPABILITY_ALLOW)]
+         [unique] FWPM_NET_EVENT_CAPABILITY_ALLOW0* capabilityAllow;
+      [case(FWPM_NET_EVENT_TYPE_CLASSIFY_DROP_MAC)]
+         [unique] FWPM_NET_EVENT_CLASSIFY_DROP_MAC0* classifyDropMac;
+   };
+} FWPM_NET_EVENT4;
+cpp_quote("#endif //(NTDDI_VERSION >= NTDDI_WIN10_RS4)") 
 
 // Template for filtering events. Supported filter conditions are:
 //    FWPM_CONDITION_IP_PROTOCOL

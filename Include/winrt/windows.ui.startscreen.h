@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.startscreen.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -483,6 +485,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel ABI::Windows::UI::StartScreen::ITileMixedRealityModel
 
 #endif // ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                interface ITileMixedRealityModel2;
+            } /* Windows */
+        } /* UI */
+    } /* StartScreen */} /* ABI */
+#define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 ABI::Windows::UI::StartScreen::ITileMixedRealityModel2
+
+#endif // ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_FWD_DEFINED__
@@ -1025,6 +1041,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CStartScreen__CSecondaryTile_Windows__CUI__CStartScreen__CVisualElementsRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CStartScreen__CSecondaryTile_Windows__CUI__CStartScreen__CVisualElementsRequestedEventArgs_USE
@@ -1053,6 +1070,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::StartScreen::SecondaryTile*,ABI::Wi
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CStartScreen__CSecondaryTile_Windows__CUI__CStartScreen__CVisualElementsRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1343,6 +1361,17 @@ namespace ABI {
         namespace UI {
             namespace StartScreen {
                 
+                typedef enum TileMixedRealityModelActivationBehavior : int TileMixedRealityModelActivationBehavior;
+                
+            } /* Windows */
+        } /* UI */
+    } /* StartScreen */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                
                 typedef enum TileOptions : unsigned int TileOptions;
                 
             } /* Windows */
@@ -1359,6 +1388,7 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* StartScreen */} /* ABI */
+
 
 
 
@@ -1516,6 +1546,33 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.UI.StartScreen.TileMixedRealityModelActivationBehavior
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                /* [v1_enum, contract] */
+                enum TileMixedRealityModelActivationBehavior : int
+                {
+                    TileMixedRealityModelActivationBehavior_Default = 0,
+                    TileMixedRealityModelActivationBehavior_None = 1,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* StartScreen */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Struct Windows.UI.StartScreen.TileOptions
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -1631,8 +1688,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("B0234C3E-CD6F-4CB6-A611-61FD505F3ED1"), exclusiveto, contract] */
                 MIDL_INTERFACE("B0234C3E-CD6F-4CB6-A611-61FD505F3ED1")
-                IJumpList : IInspectable
+                IJumpList : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Items(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CStartScreen__CJumpListItem * * value
                         ) = 0;
@@ -1680,8 +1738,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("7ADB6717-8B5D-4820-995B-9B418DBE48B0"), exclusiveto, contract] */
                 MIDL_INTERFACE("7ADB6717-8B5D-4820-995B-9B418DBE48B0")
-                IJumpListItem : IInspectable
+                IJumpListItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::StartScreen::JumpListItemKind * value
                         ) = 0;
@@ -1750,8 +1809,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("F1BFC4E8-C7AA-49CB-8DDE-ECFCCD7AD7E4"), exclusiveto, contract] */
                 MIDL_INTERFACE("F1BFC4E8-C7AA-49CB-8DDE-ECFCCD7AD7E4")
-                IJumpListItemStatics : IInspectable
+                IJumpListItemStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithArguments(
                         /* [in] */__RPC__in HSTRING arguments,
                         /* [in] */__RPC__in HSTRING displayName,
@@ -1795,8 +1855,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("A7E0C681-E67E-4B74-8250-3F322C4D92C3"), exclusiveto, contract] */
                 MIDL_INTERFACE("A7E0C681-E67E-4B74-8250-3F322C4D92C3")
-                IJumpListStatics : IInspectable
+                IJumpListStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE LoadCurrentAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CStartScreen__CJumpList * * result
                         ) = 0;
@@ -1838,8 +1899,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("9E9E51E0-2BB5-4BC0-BB8D-42B23ABCC88D"), exclusiveto, contract] */
                 MIDL_INTERFACE("9E9E51E0-2BB5-4BC0-BB8D-42B23ABCC88D")
-                ISecondaryTile : IInspectable
+                ISecondaryTile : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TileId(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -2042,8 +2104,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("B2F6CC35-3250-4990-923C-294AB4B694DD"), exclusiveto, contract] */
                 MIDL_INTERFACE("B2F6CC35-3250-4990-923C-294AB4B694DD")
-                ISecondaryTile2 : IInspectable
+                ISecondaryTile2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PhoneticName(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -2101,8 +2164,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("57F52CA0-51BC-4ABF-8EBF-627A0398B05A"), exclusiveto, contract] */
                 MIDL_INTERFACE("57F52CA0-51BC-4ABF-8EBF-627A0398B05A")
-                ISecondaryTileFactory : IInspectable
+                ISecondaryTileFactory : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("SecondaryTile(string, string, string, string, Windows.UI.StartScreen.TileOptions, Windows.Foundation.Uri) may be altered or unavailable for releases after Windows Phone 8.1. Instead, use SecondaryTile(string, string, string, Windows.Foundation.Uri, Windows.UI.StartScreen.TileSize).")
@@ -2173,8 +2237,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("274B8A3B-522D-448E-9EB2-D0672AB345C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("274B8A3B-522D-448E-9EB2-D0672AB345C8")
-                ISecondaryTileFactory2 : IInspectable
+                ISecondaryTileFactory2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMinimalTile(
                         /* [in] */__RPC__in HSTRING tileId,
                         /* [in] */__RPC__in HSTRING displayName,
@@ -2218,8 +2283,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("99908DAE-D051-4676-87FE-9EC242D83C74"), exclusiveto, contract] */
                 MIDL_INTERFACE("99908DAE-D051-4676-87FE-9EC242D83C74")
-                ISecondaryTileStatics : IInspectable
+                ISecondaryTileStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Exists(
                         /* [in] */__RPC__in HSTRING tileId,
                         /* [retval, out] */__RPC__out boolean * exists
@@ -2269,8 +2335,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("1D8DF333-815E-413F-9F50-A81DA70A96B2"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D8DF333-815E-413F-9F50-A81DA70A96B2")
-                ISecondaryTileVisualElements : IInspectable
+                ISecondaryTileVisualElements : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("SecondaryTileVisualElements.Square30x30Logo may be altered or unavailable for release after Windows 10.")
@@ -2382,8 +2449,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("FD2E31D0-57DC-4794-8ECF-5682F5F3E6EF"), exclusiveto, contract] */
                 MIDL_INTERFACE("FD2E31D0-57DC-4794-8ECF-5682F5F3E6EF")
-                ISecondaryTileVisualElements2 : IInspectable
+                ISecondaryTileVisualElements2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Square71x71Logo(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * value
                         ) = 0;
@@ -2425,8 +2493,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("56B55AD6-D15C-40F4-81E7-57FFD8F8A4E9"), exclusiveto, contract] */
                 MIDL_INTERFACE("56B55AD6-D15C-40F4-81E7-57FFD8F8A4E9")
-                ISecondaryTileVisualElements3 : IInspectable
+                ISecondaryTileVisualElements3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Square44x44Logo(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * value
                         ) = 0;
@@ -2468,8 +2537,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("66566117-B544-40D2-8D12-74D4EC24D04C"), exclusiveto, contract] */
                 MIDL_INTERFACE("66566117-B544-40D2-8D12-74D4EC24D04C")
-                ISecondaryTileVisualElements4 : IInspectable
+                ISecondaryTileVisualElements4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MixedRealityModel(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::StartScreen::ITileMixedRealityModel * * value
                         ) = 0;
@@ -2508,8 +2578,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("4A1DCBCB-26E9-4EB4-8933-859EB6ECDB29"), exclusiveto, contract] */
                 MIDL_INTERFACE("4A1DCBCB-26E9-4EB4-8933-859EB6ECDB29")
-                IStartScreenManager : IInspectable
+                IStartScreenManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
                         ) = 0;
@@ -2560,8 +2631,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("7865EF0F-B585-464E-8993-34E8F8738D48"), exclusiveto, contract] */
                 MIDL_INTERFACE("7865EF0F-B585-464E-8993-34E8F8738D48")
-                IStartScreenManagerStatics : IInspectable
+                IStartScreenManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::StartScreen::IStartScreenManager * * value
                         ) = 0;
@@ -2604,8 +2676,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("B0764E5B-887D-4242-9A19-3D0A4EA78031"), exclusiveto, contract] */
                 MIDL_INTERFACE("B0764E5B-887D-4242-9A19-3D0A4EA78031")
-                ITileMixedRealityModel : IInspectable
+                ITileMixedRealityModel : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Uri(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * value
                         ) = 0;
@@ -2634,6 +2707,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel
 
 /*
  *
+ * Interface Windows.UI.StartScreen.ITileMixedRealityModel2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.StartScreen.TileMixedRealityModel
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_StartScreen_ITileMixedRealityModel2[] = L"Windows.UI.StartScreen.ITileMixedRealityModel2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                /* [object, uuid("439470B2-D7C5-410B-8319-9486A27B6C67"), exclusiveto, contract] */
+                MIDL_INTERFACE("439470B2-D7C5-410B-8319-9486A27B6C67")
+                ITileMixedRealityModel2 : public IInspectable
+                {
+                public:
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ActivationBehavior(
+                        /* [in] */ABI::Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivationBehavior(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ITileMixedRealityModel2=_uuidof(ITileMixedRealityModel2);
+                
+            } /* Windows */
+        } /* UI */
+    } /* StartScreen */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.StartScreen.IVisualElementsRequest
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2653,8 +2770,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("C138333A-9308-4072-88CC-D068DB347C68"), exclusiveto, contract] */
                 MIDL_INTERFACE("C138333A-9308-4072-88CC-D068DB347C68")
-                IVisualElementsRequest : IInspectable
+                IVisualElementsRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VisualElements(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::StartScreen::ISecondaryTileVisualElements * * value
                         ) = 0;
@@ -2702,8 +2820,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("A1656EB0-0126-4357-8204-BD82BB2A046D"), exclusiveto, contract] */
                 MIDL_INTERFACE("A1656EB0-0126-4357-8204-BD82BB2A046D")
-                IVisualElementsRequestDeferral : IInspectable
+                IVisualElementsRequestDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -2740,8 +2859,9 @@ namespace ABI {
             namespace StartScreen {
                 /* [object, uuid("7B6FC982-3A0D-4ECE-AF96-CD17E1B00B2D"), exclusiveto, contract] */
                 MIDL_INTERFACE("7B6FC982-3A0D-4ECE-AF96-CD17E1B00B2D")
-                IVisualElementsRequestedEventArgs : IInspectable
+                IVisualElementsRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::StartScreen::IVisualElementsRequest * * value
                         ) = 0;
@@ -2895,6 +3015,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.StartScreen.ITileMixedRealityModel ** Default Interface **
+ *    Windows.UI.StartScreen.ITileMixedRealityModel2
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
@@ -3073,6 +3194,12 @@ typedef interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics 
 typedef interface __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel;
 
 #endif // ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2;
+
+#endif // ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_FWD_DEFINED__
@@ -4290,6 +4417,7 @@ interface __FIAsyncOperation_1_Windows__CUI__CStartScreen__CJumpList
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CStartScreen__CSecondaryTile_Windows__CUI__CStartScreen__CVisualElementsRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CStartScreen__CSecondaryTile_Windows__CUI__CStartScreen__CVisualElementsRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -4336,6 +4464,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CStartScreen__CSecondaryTile_Win
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CStartScreen__CSecondaryTile_Windows__CUI__CStartScreen__CVisualElementsRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)
@@ -4578,10 +4707,14 @@ typedef enum __x_ABI_CWindows_CUI_CStartScreen_CJumpListItemKind __x_ABI_CWindow
 typedef enum __x_ABI_CWindows_CUI_CStartScreen_CJumpListSystemGroupKind __x_ABI_CWindows_CUI_CStartScreen_CJumpListSystemGroupKind;
 
 
+typedef enum __x_ABI_CWindows_CUI_CStartScreen_CTileMixedRealityModelActivationBehavior __x_ABI_CWindows_CUI_CStartScreen_CTileMixedRealityModelActivationBehavior;
+
+
 typedef enum __x_ABI_CWindows_CUI_CStartScreen_CTileOptions __x_ABI_CWindows_CUI_CStartScreen_CTileOptions;
 
 
 typedef enum __x_ABI_CWindows_CUI_CStartScreen_CTileSize __x_ABI_CWindows_CUI_CStartScreen_CTileSize;
+
 
 
 
@@ -4675,6 +4808,25 @@ enum __x_ABI_CWindows_CUI_CStartScreen_CJumpListSystemGroupKind
     JumpListSystemGroupKind_Recent = 2,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Struct Windows.UI.StartScreen.TileMixedRealityModelActivationBehavior
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CStartScreen_CTileMixedRealityModelActivationBehavior
+{
+    TileMixedRealityModelActivationBehavior_Default = 0,
+    TileMixedRealityModelActivationBehavior_None = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7051,6 +7203,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel
 
 /*
  *
+ * Interface Windows.UI.StartScreen.ITileMixedRealityModel2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.StartScreen.TileMixedRealityModel
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_StartScreen_ITileMixedRealityModel2[] = L"Windows.UI.StartScreen.ITileMixedRealityModel2";
+/* [object, uuid("439470B2-D7C5-410B-8319-9486A27B6C67"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ActivationBehavior )(
+        __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 * This,
+        /* [in] */__x_ABI_CWindows_CUI_CStartScreen_CTileMixedRealityModelActivationBehavior value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ActivationBehavior )(
+        __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CStartScreen_CTileMixedRealityModelActivationBehavior * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_put_ActivationBehavior(This,value) \
+    ( (This)->lpVtbl->put_ActivationBehavior(This,value) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_get_ActivationBehavior(This,value) \
+    ( (This)->lpVtbl->get_ActivationBehavior(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CITileMixedRealityModel2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.StartScreen.IVisualElementsRequest
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7484,6 +7736,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.StartScreen.ITileMixedRealityModel ** Default Interface **
+ *    Windows.UI.StartScreen.ITileMixedRealityModel2
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *

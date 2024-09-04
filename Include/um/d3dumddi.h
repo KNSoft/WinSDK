@@ -3401,6 +3401,23 @@ typedef struct _D3DDDICB_QUERYADAPTERINFO
     UINT   PrivateDriverDataSize;
 } D3DDDICB_QUERYADAPTERINFO;
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4) || (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4)
+
+typedef enum _D3DDDI_QUERYADAPTERTYPE
+{
+    D3DDDI_QUERYADAPTERTYPE_DRIVERPRIVATE   = 0,
+    D3DDDI_QUERYADAPTERTYPE_QUERYREGISTRY   = 1,
+} D3DDDI_QUERYADAPTERTYPE;
+
+typedef struct _D3DDDICB_QUERYADAPTERINFO2
+{
+    D3DDDI_QUERYADAPTERTYPE QueryType;  
+    VOID*  pPrivateDriverData;
+    UINT   PrivateDriverDataSize;
+} D3DDDICB_QUERYADAPTERINFO2;
+
+#endif (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4)
+
 typedef struct _D3DDDICB_GETMULTISAMPLEMETHODLIST
 {
     D3DDDI_VIDEO_PRESENT_SOURCE_ID  VidPnSourceId;  // in: adapter's VidPN source ID
@@ -4105,7 +4122,7 @@ typedef struct _D3DDDICB_SUBMITCOMMANDTOHWQUEUE
 
     UINT                                    NumPrimaries;
     _Field_size_                           (NumPrimaries)
-    D3DKMT_HANDLE*                          WrittenPrimaries;
+    const D3DKMT_HANDLE*                    WrittenPrimaries;
 } D3DDDICB_SUBMITCOMMANDTOHWQUEUE;
 
 typedef struct _D3DDDICB_SUBMITWAITFORSYNCOBJECTSTOHWQUEUE
@@ -4140,6 +4157,21 @@ typedef struct _D3DDDICB_SUBMITSIGNALSYNCOBJECTSTOHWQUEUE
 } D3DDDICB_SUBMITSIGNALSYNCOBJECTSTOHWQUEUE;
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
+
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
+
+typedef struct _D3DDDICB_SUBMITPRESENTBLTTOHWQUEUE
+{
+    D3DKMT_HANDLE               hSrcAllocation;                                 // in: The allocation of which content will be presented
+    D3DKMT_HANDLE               hDstAllocation;                                 // in: if non-zero, it's the destination allocation of the present
+    HANDLE                      hHwQueue;                                       // in: Hardware queue being submitted to.
+    UINT64                      HwQueueProgressFenceId;                         // Hardware queue progress fence ID that will be signaled when the Present Blt is done on the GPU
+    UINT                        PrivateDriverDataSize;
+    _Field_size_bytes_(PrivateDriverDataSize)
+    PVOID                       pPrivateDriverData;                             // in: Private driver data to pass to DdiPresent
+} D3DDDICB_SUBMITPRESENTBLTTOHWQUEUE;
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
 
 typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_ALLOCATECB)(
         _In_ HANDLE hDevice, _Inout_ D3DDDICB_ALLOCATE*);
@@ -4316,6 +4348,13 @@ typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_SUBMITSIGNALSYNCOBJ
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_SUBMITPRESENTBLTTOHWQUEUECB)(
+        _In_ HANDLE hDevice, _Inout_ D3DDDICB_SUBMITPRESENTBLTTOHWQUEUE*);
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
+
 typedef struct _D3DDDI_DEVICECALLBACKS
 {
     PFND3DDDI_ALLOCATECB                            pfnAllocateCb;
@@ -4394,6 +4433,9 @@ typedef struct _D3DDDI_DEVICECALLBACKS
     PFND3DDDI_SUBMITWAITFORSYNCOBJECTSTOHWQUEUECB   pfnSubmitWaitForSyncObjectsToHwQueueCb;
     PFND3DDDI_SUBMITSIGNALSYNCOBJECTSTOHWQUEUECB    pfnSubmitSignalSyncObjectsToHwQueueCb;
 #endif // D3D_UMD_INTERFACE_VERSION
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
+    PFND3DDDI_SUBMITPRESENTBLTTOHWQUEUECB           pfnSubmitPresentBltToHwQueueCb;
+#endif // D3D_UMD_INTERFACE_VERSION
 } D3DDDI_DEVICECALLBACKS;
 
 typedef struct _D3DDDI_CREATEDEVICEFLAGS
@@ -4436,10 +4478,18 @@ typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_QUERYADAPTERINFOCB)
 typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_GETMULTISAMPLEMETHODLISTCB)(
         _In_ HANDLE hAdapter, _Inout_ D3DDDICB_GETMULTISAMPLEMETHODLIST*);
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4)
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_QUERYADAPTERINFOCB2)(
+        _In_ HANDLE hAdapter, _Inout_ CONST D3DDDICB_QUERYADAPTERINFO2*);
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4)
+
 typedef struct _D3DDDI_ADAPTERCALLBACKS
 {
     PFND3DDDI_QUERYADAPTERINFOCB            pfnQueryAdapterInfoCb;
     PFND3DDDI_GETMULTISAMPLEMETHODLISTCB    pfnGetMultisampleMethodListCb;
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4)
+    PFND3DDDI_QUERYADAPTERINFOCB2           pfnQueryAdapterInfoCb2;
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4)
 } D3DDDI_ADAPTERCALLBACKS;
 
 typedef _Check_return_ HRESULT (APIENTRY *PFND3DDDI_GETCAPS)(

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.graphics.printing3d.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -206,11 +208,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -226,11 +228,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -3134,6 +3136,7 @@ namespace ABI {
 
 
 #if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
+#if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DManager_Windows__CGraphics__CPrinting3D__CPrint3DTaskRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DManager_Windows__CGraphics__CPrinting3D__CPrint3DTaskRequestedEventArgs_USE
@@ -3162,6 +3165,7 @@ typedef ITypedEventHandler<ABI::Windows::Graphics::Printing3D::Print3DManager*,A
 #endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DManager_Windows__CGraphics__CPrinting3D__CPrint3DTaskRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -3218,6 +3222,7 @@ namespace ABI {
 
 
 #if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
+#if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskCompletedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskCompletedEventArgs_USE
@@ -3247,6 +3252,7 @@ typedef ITypedEventHandler<ABI::Windows::Graphics::Printing3D::Print3DTask*,ABI:
 
 
 #endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3259,6 +3265,7 @@ namespace ABI {
     } /* Printing3D */} /* ABI */
 
 
+#if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 #if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskSourceChangedEventArgs_USE
@@ -3288,6 +3295,7 @@ typedef ITypedEventHandler<ABI::Windows::Graphics::Printing3D::Print3DTask*,ABI:
 #endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskSourceChangedEventArgs_USE */
 
 
+#endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 
 
@@ -4615,8 +4623,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("E9175E70-C917-46DE-BB51-D9A94DB3711F"), contract] */
                 MIDL_INTERFACE("E9175E70-C917-46DE-BB51-D9A94DB3711F")
-                IPrint3DTaskSourceRequestedHandler : IUnknown
+                IPrint3DTaskSourceRequestedHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs * args
                         ) = 0;
@@ -4655,8 +4664,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("4D2FCB0A-7366-4971-8BD5-17C4E3E8C6C0"), exclusiveto, contract] */
                 MIDL_INTERFACE("4D2FCB0A-7366-4971-8BD5-17C4E3E8C6C0")
-                IPrint3DManager : IInspectable
+                IPrint3DManager : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_TaskRequested(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DManager_Windows__CGraphics__CPrinting3D__CPrint3DTaskRequestedEventArgs * eventHandler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -4699,8 +4709,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("0EF1CAFE-A9AD-4C08-A917-1D1F863EABCB"), exclusiveto, contract] */
                 MIDL_INTERFACE("0EF1CAFE-A9AD-4C08-A917-1D1F863EABCB")
-                IPrint3DManagerStatics : IInspectable
+                IPrint3DManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrint3DManager * * result
                         ) = 0;
@@ -4742,8 +4753,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("8CE3D080-2118-4C28-80DE-F426D70191AE"), exclusiveto, contract] */
                 MIDL_INTERFACE("8CE3D080-2118-4C28-80DE-F426D70191AE")
-                IPrint3DTask : IInspectable
+                IPrint3DTask : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Source(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3D3MFPackage * * value
                         ) = 0;
@@ -4803,8 +4815,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("CC1914AF-2614-4F1D-ACCC-D6FC4FDA5455"), exclusiveto, contract] */
                 MIDL_INTERFACE("CC1914AF-2614-4F1D-ACCC-D6FC4FDA5455")
-                IPrint3DTaskCompletedEventArgs : IInspectable
+                IPrint3DTaskCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Completion(
                         /* [retval, out] */__RPC__out ABI::Windows::Graphics::Printing3D::Print3DTaskCompletion * value
                         ) = 0;
@@ -4846,8 +4859,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("2595C46F-2245-4C5A-8731-0D604DC6BC3C"), exclusiveto, contract] */
                 MIDL_INTERFACE("2595C46F-2245-4C5A-8731-0D604DC6BC3C")
-                IPrint3DTaskRequest : IInspectable
+                IPrint3DTaskRequest : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateTask(
                         /* [in] */__RPC__in HSTRING title,
                         /* [in] */__RPC__in HSTRING printerId,
@@ -4889,8 +4903,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("150CB77F-18C5-40D7-9F40-FAB3096E05A9"), exclusiveto, contract] */
                 MIDL_INTERFACE("150CB77F-18C5-40D7-9F40-FAB3096E05A9")
-                IPrint3DTaskRequestedEventArgs : IInspectable
+                IPrint3DTaskRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrint3DTaskRequest * * value
                         ) = 0;
@@ -4929,8 +4944,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("5BCD34AF-24E9-4C10-8D07-14C346BA3FCF"), exclusiveto, contract] */
                 MIDL_INTERFACE("5BCD34AF-24E9-4C10-8D07-14C346BA3FCF")
-                IPrint3DTaskSourceChangedEventArgs : IInspectable
+                IPrint3DTaskSourceChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Source(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3D3MFPackage * * value
                         ) = 0;
@@ -4969,8 +4985,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("C77C9ABA-24AF-424D-A3BF-92250C355602"), exclusiveto, contract] */
                 MIDL_INTERFACE("C77C9ABA-24AF-424D-A3BF-92250C355602")
-                IPrint3DTaskSourceRequestedArgs : IInspectable
+                IPrint3DTaskSourceRequestedArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetSource(
                         /* [in] */__RPC__in_opt ABI::Windows::Graphics::Printing3D::IPrinting3D3MFPackage * source
                         ) = 0;
@@ -5009,8 +5026,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("F64DD5C8-2AB7-45A9-A1B7-267E948D5B18"), exclusiveto, contract] */
                 MIDL_INTERFACE("F64DD5C8-2AB7-45A9-A1B7-267E948D5B18")
-                IPrinting3D3MFPackage : IInspectable
+                IPrinting3D3MFPackage : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SaveAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream * * operation
                         ) = 0;
@@ -5078,8 +5096,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("965C7AC4-93CB-4430-92B8-789CD454F883"), exclusiveto, contract] */
                 MIDL_INTERFACE("965C7AC4-93CB-4430-92B8-789CD454F883")
-                IPrinting3D3MFPackage2 : IInspectable
+                IPrinting3D3MFPackage2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Compression(
                         /* [retval, out] */__RPC__out ABI::Windows::Graphics::Printing3D::Printing3DPackageCompression * value
                         ) = 0;
@@ -5121,8 +5140,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("7058D9AF-7A9A-4787-B817-F6F459214823"), exclusiveto, contract] */
                 MIDL_INTERFACE("7058D9AF-7A9A-4787-B817-F6F459214823")
-                IPrinting3D3MFPackageStatics : IInspectable
+                IPrinting3D3MFPackageStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE LoadAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * value,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGraphics__CPrinting3D__CPrinting3D3MFPackage * * operation
@@ -5162,8 +5182,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("D0F0E743-C50C-4BCB-9D04-FC16ADCEA2C9"), exclusiveto, contract] */
                 MIDL_INTERFACE("D0F0E743-C50C-4BCB-9D04-FC16ADCEA2C9")
-                IPrinting3DBaseMaterial : IInspectable
+                IPrinting3DBaseMaterial : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5211,8 +5232,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("94F070B8-2515-4A8D-A1F0-D0FC13D06021"), exclusiveto, contract] */
                 MIDL_INTERFACE("94F070B8-2515-4A8D-A1F0-D0FC13D06021")
-                IPrinting3DBaseMaterialGroup : IInspectable
+                IPrinting3DBaseMaterialGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Bases(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CGraphics__CPrinting3D__CPrinting3DBaseMaterial * * value
                         ) = 0;
@@ -5254,8 +5276,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("5C1546DC-8697-4193-976B-84BB4116E5BF"), exclusiveto, contract] */
                 MIDL_INTERFACE("5C1546DC-8697-4193-976B-84BB4116E5BF")
-                IPrinting3DBaseMaterialGroupFactory : IInspectable
+                IPrinting3DBaseMaterialGroupFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */UINT32 MaterialGroupId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup * * result
@@ -5295,8 +5318,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("815A47BC-374A-476D-BE92-3ECFD1CB9776"), exclusiveto, contract] */
                 MIDL_INTERFACE("815A47BC-374A-476D-BE92-3ECFD1CB9776")
-                IPrinting3DBaseMaterialStatics : IInspectable
+                IPrinting3DBaseMaterialStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Abs(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5338,8 +5362,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("E1899928-7CE7-4285-A35D-F145C9510C7B"), exclusiveto, contract] */
                 MIDL_INTERFACE("E1899928-7CE7-4285-A35D-F145C9510C7B")
-                IPrinting3DColorMaterial : IInspectable
+                IPrinting3DColorMaterial : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -5381,8 +5406,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("FAB0E852-0AEF-44E9-9DDD-36EEEA5ACD44"), exclusiveto, contract] */
                 MIDL_INTERFACE("FAB0E852-0AEF-44E9-9DDD-36EEEA5ACD44")
-                IPrinting3DColorMaterial2 : IInspectable
+                IPrinting3DColorMaterial2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                         ) = 0;
@@ -5424,8 +5450,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("001A6BD0-AADF-4226-AFE9-F369A0B45004"), exclusiveto, contract] */
                 MIDL_INTERFACE("001A6BD0-AADF-4226-AFE9-F369A0B45004")
-                IPrinting3DColorMaterialGroup : IInspectable
+                IPrinting3DColorMaterialGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Colors(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CGraphics__CPrinting3D__CPrinting3DColorMaterial * * value
                         ) = 0;
@@ -5467,8 +5494,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("71D38D6D-B1EA-4A5B-BC54-19C65F3DF044"), exclusiveto, contract] */
                 MIDL_INTERFACE("71D38D6D-B1EA-4A5B-BC54-19C65F3DF044")
-                IPrinting3DColorMaterialGroupFactory : IInspectable
+                IPrinting3DColorMaterialGroupFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */UINT32 MaterialGroupId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup * * result
@@ -5508,8 +5536,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("7E287845-BF7F-4CDB-A27F-30A01437FEDE"), exclusiveto, contract] */
                 MIDL_INTERFACE("7E287845-BF7F-4CDB-A27F-30A01437FEDE")
-                IPrinting3DComponent : IInspectable
+                IPrinting3DComponent : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mesh(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DMesh * * value
                         ) = 0;
@@ -5578,8 +5607,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("3279F335-0EF0-456B-9A21-49BEBE8B51C2"), exclusiveto, contract] */
                 MIDL_INTERFACE("3279F335-0EF0-456B-9A21-49BEBE8B51C2")
-                IPrinting3DComponentWithMatrix : IInspectable
+                IPrinting3DComponentWithMatrix : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Component(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DComponent * * value
                         ) = 0;
@@ -5627,8 +5657,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("462238DD-562E-4F6C-882D-F4D841FD63C7"), exclusiveto, contract] */
                 MIDL_INTERFACE("462238DD-562E-4F6C-882D-F4D841FD63C7")
-                IPrinting3DCompositeMaterial : IInspectable
+                IPrinting3DCompositeMaterial : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Values(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_double * * value
                         ) = 0;
@@ -5667,8 +5698,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("8D946A5B-40F1-496D-A5FB-340A5A678E30"), exclusiveto, contract] */
                 MIDL_INTERFACE("8D946A5B-40F1-496D-A5FB-340A5A678E30")
-                IPrinting3DCompositeMaterialGroup : IInspectable
+                IPrinting3DCompositeMaterialGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Composites(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CGraphics__CPrinting3D__CPrinting3DCompositeMaterial * * value
                         ) = 0;
@@ -5713,8 +5745,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("06E86D62-7D3B-41E1-944C-BAFDE4555483"), exclusiveto, contract] */
                 MIDL_INTERFACE("06E86D62-7D3B-41E1-944C-BAFDE4555483")
-                IPrinting3DCompositeMaterialGroup2 : IInspectable
+                IPrinting3DCompositeMaterialGroup2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BaseMaterialGroup(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup * * value
                         ) = 0;
@@ -5756,8 +5789,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("D08ECD13-92FF-43AA-A627-8D43C22C817E"), exclusiveto, contract] */
                 MIDL_INTERFACE("D08ECD13-92FF-43AA-A627-8D43C22C817E")
-                IPrinting3DCompositeMaterialGroupFactory : IInspectable
+                IPrinting3DCompositeMaterialGroupFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */UINT32 MaterialGroupId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup * * result
@@ -5797,8 +5831,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("BBFED397-2D74-46F7-BE85-99A67BBB6629"), exclusiveto, contract] */
                 MIDL_INTERFACE("BBFED397-2D74-46F7-BE85-99A67BBB6629")
-                IPrinting3DFaceReductionOptions : IInspectable
+                IPrinting3DFaceReductionOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxReductionArea(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -5852,8 +5887,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("378DB256-ED62-4952-B85B-03567D7C465E"), exclusiveto, contract] */
                 MIDL_INTERFACE("378DB256-ED62-4952-B85B-03567D7C465E")
-                IPrinting3DMaterial : IInspectable
+                IPrinting3DMaterial : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BaseGroups(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CGraphics__CPrinting3D__CPrinting3DBaseMaterialGroup * * value
                         ) = 0;
@@ -5904,8 +5940,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("192E90DC-0228-2E01-BC20-C5290CBF32C4"), exclusiveto, contract] */
                 MIDL_INTERFACE("192E90DC-0228-2E01-BC20-C5290CBF32C4")
-                IPrinting3DMesh : IInspectable
+                IPrinting3DMesh : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VertexCount(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -6011,8 +6048,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("195671BA-E93A-4E8A-A46F-DEA8E852197E"), exclusiveto, contract] */
                 MIDL_INTERFACE("195671BA-E93A-4E8A-A46F-DEA8E852197E")
-                IPrinting3DMeshVerificationResult : IInspectable
+                IPrinting3DMeshVerificationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsValid(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6057,8 +6095,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("2D012EF0-52FB-919A-77B0-4B1A3B80324F"), exclusiveto, contract] */
                 MIDL_INTERFACE("2D012EF0-52FB-919A-77B0-4B1A3B80324F")
-                IPrinting3DModel : IInspectable
+                IPrinting3DModel : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Unit(
                         /* [retval, out] */__RPC__out ABI::Windows::Graphics::Printing3D::Printing3DModelUnit * value
                         ) = 0;
@@ -6139,8 +6178,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("C92069C7-C841-47F3-A84E-A149FD08B657"), exclusiveto, contract] */
                 MIDL_INTERFACE("C92069C7-C841-47F3-A84E-A149FD08B657")
-                IPrinting3DModel2 : IInspectable
+                IPrinting3DModel2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryPartialRepairAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                         ) = 0;
@@ -6198,8 +6238,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("5DAFCF01-B59D-483C-97BB-A4D546D1C75C"), exclusiveto, contract] */
                 MIDL_INTERFACE("5DAFCF01-B59D-483C-97BB-A4D546D1C75C")
-                IPrinting3DModelTexture : IInspectable
+                IPrinting3DModelTexture : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextureResource(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DTextureResource * * value
                         ) = 0;
@@ -6253,8 +6294,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("25A6254B-C6E9-484D-A214-A25E5776BA62"), exclusiveto, contract] */
                 MIDL_INTERFACE("25A6254B-C6E9-484D-A214-A25E5776BA62")
-                IPrinting3DMultiplePropertyMaterial : IInspectable
+                IPrinting3DMultiplePropertyMaterial : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaterialIndices(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_UINT32 * * value
                         ) = 0;
@@ -6293,8 +6335,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("F0950519-AEB9-4515-A39B-A088FBBB277C"), exclusiveto, contract] */
                 MIDL_INTERFACE("F0950519-AEB9-4515-A39B-A088FBBB277C")
-                IPrinting3DMultiplePropertyMaterialGroup : IInspectable
+                IPrinting3DMultiplePropertyMaterialGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MultipleProperties(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CGraphics__CPrinting3D__CPrinting3DMultiplePropertyMaterial * * value
                         ) = 0;
@@ -6339,8 +6382,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("323E196E-D4C6-451E-A814-4D78A210FE53"), exclusiveto, contract] */
                 MIDL_INTERFACE("323E196E-D4C6-451E-A814-4D78A210FE53")
-                IPrinting3DMultiplePropertyMaterialGroupFactory : IInspectable
+                IPrinting3DMultiplePropertyMaterialGroupFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */UINT32 MaterialGroupId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroup * * result
@@ -6380,8 +6424,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("8D844BFB-07E9-4986-9833-8DD3D48C6859"), exclusiveto, contract] */
                 MIDL_INTERFACE("8D844BFB-07E9-4986-9833-8DD3D48C6859")
-                IPrinting3DTexture2CoordMaterial : IInspectable
+                IPrinting3DTexture2CoordMaterial : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Texture(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DModelTexture * * value
                         ) = 0;
@@ -6435,8 +6480,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("627D7CA7-6D90-4FB9-9FC4-9FEFF3DFA892"), exclusiveto, contract] */
                 MIDL_INTERFACE("627D7CA7-6D90-4FB9-9FC4-9FEFF3DFA892")
-                IPrinting3DTexture2CoordMaterialGroup : IInspectable
+                IPrinting3DTexture2CoordMaterialGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Texture2Coords(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CGraphics__CPrinting3D__CPrinting3DTexture2CoordMaterial * * value
                         ) = 0;
@@ -6478,8 +6524,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("69FBDBBA-B12E-429B-8386-DF5284F6E80F"), exclusiveto, contract] */
                 MIDL_INTERFACE("69FBDBBA-B12E-429B-8386-DF5284F6E80F")
-                IPrinting3DTexture2CoordMaterialGroup2 : IInspectable
+                IPrinting3DTexture2CoordMaterialGroup2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Texture(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DModelTexture * * value
                         ) = 0;
@@ -6521,8 +6568,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("CBB049B0-468A-4C6F-B2A2-8EB8BA8DEA48"), exclusiveto, contract] */
                 MIDL_INTERFACE("CBB049B0-468A-4C6F-B2A2-8EB8BA8DEA48")
-                IPrinting3DTexture2CoordMaterialGroupFactory : IInspectable
+                IPrinting3DTexture2CoordMaterialGroupFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */UINT32 MaterialGroupId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup * * result
@@ -6562,8 +6610,9 @@ namespace ABI {
             namespace Printing3D {
                 /* [object, uuid("A70DF32D-6AB1-44AE-BC45-A27382C0D38C"), exclusiveto, contract] */
                 MIDL_INTERFACE("A70DF32D-6AB1-44AE-BC45-A27382C0D38C")
-                IPrinting3DTextureResource : IInspectable
+                IPrinting3DTextureResource : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextureData(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType * * value
                         ) = 0;
@@ -14148,6 +14197,7 @@ interface __FIAsyncOperation_1_Windows__CGraphics__CPrinting3D__CPrinting3DModel
 
 
 #if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
+#if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DManager_Windows__CGraphics__CPrinting3D__CPrint3DTaskRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DManager_Windows__CGraphics__CPrinting3D__CPrint3DTaskRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -14194,6 +14244,7 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DManag
 
 #endif // ____FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DManager_Windows__CGraphics__CPrinting3D__CPrint3DTaskRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 
 
@@ -14250,6 +14301,7 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_
 
 
 #if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
+#if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskCompletedEventArgs_INTERFACE_DEFINED__
 
@@ -14297,9 +14349,11 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_
 #endif // ____FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskCompletedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 #if WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskSourceChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskSourceChangedEventArgs_INTERFACE_DEFINED__
@@ -14347,6 +14401,7 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_
 
 #endif // ____FITypedEventHandler_2_Windows__CGraphics__CPrinting3D__CPrint3DTask_Windows__CGraphics__CPrinting3D__CPrint3DTaskSourceChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_GRAPHICS_PRINTING3D_PRINTING3DCONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)

@@ -362,8 +362,6 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 //
 #define SRB_FUNCTION_STORAGE_REQUEST_BLOCK  0x28
 
-#define SRB_FUNCTION_CRYPTO_OPERATION       0x29
-
 
 //
 // SRB Status
@@ -443,6 +441,11 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 // This flag indicates the request is part of the workflow for processing a D3.
 //
 #define SRB_FLAGS_D3_PROCESSING             0x00000800
+
+//
+// This flag indicates that LBA range falls into sequential write required zone
+//
+#define SRB_FLAGS_SEQUENTIAL_REQUIRED       0x00001000
 
 
 #define SRB_FLAGS_IS_ACTIVE                 0x00010000
@@ -1033,6 +1036,22 @@ typedef union _CDB {
         UCHAR Reserved2;
         UCHAR Control;
     } CDB16;
+
+    //
+    // Read Buffer(10) command from SPC-5
+    //
+
+    struct _READ_BUFFER_10 {
+
+        UCHAR OperationCode;    // 0x3c - SCSIOP_READ_DATA_BUFF
+        UCHAR Mode : 5;
+        UCHAR ModeSpecific : 3;
+        UCHAR BufferId;
+        UCHAR BufferOffset[3];
+        UCHAR AllocationLength[3];
+        UCHAR Control;
+
+    } READ_BUFFER_10;
 
     //
     // Security-related commands from SPC-4
@@ -3678,6 +3697,74 @@ typedef struct _VPD_IDENTIFICATION_PAGE {
     UCHAR Descriptors[0];
 #endif
 } VPD_IDENTIFICATION_PAGE, *PVPD_IDENTIFICATION_PAGE;
+
+//
+// VPD Page 0x86, Extended INQUIRY Data
+//
+typedef struct _VPD_EXTENDED_INQUIRY_DATA_PAGE {
+    UCHAR DeviceType : 5;
+    UCHAR DeviceTypeQualifier : 3;
+
+    UCHAR PageCode;         // 86h
+    UCHAR PageLength[2];    // [0] - 00h, [1] - 3Ch
+
+    UCHAR RefChk : 1;       // byte 4 bit 0
+    UCHAR AppChk : 1;
+    UCHAR GrdChk : 1;
+    UCHAR Spt : 3;
+    UCHAR ActivateMicrocode : 2;
+
+    UCHAR SimpSup : 1;      // byte 5 bit 0
+    UCHAR OrdSup : 1;
+    UCHAR HeadSup : 1;
+    UCHAR PriorSup : 1;
+    UCHAR GroupSup : 1;
+    UCHAR UaskSup : 1;
+    UCHAR Reserved0 : 2;
+
+    UCHAR VSup : 1;         // byte 6 bit 0
+    UCHAR NvSup : 1;
+    UCHAR Obsolete0 : 1;
+    UCHAR WuSup : 1;
+    UCHAR Reserved1 : 4;
+
+    UCHAR LuiClr : 1;       // byte 7 bit 0
+    UCHAR Reserved2 : 3;
+    UCHAR PiiSup : 1;
+    UCHAR NoPiChk : 1;
+    UCHAR Reserved3 : 2;
+
+    UCHAR Obsolete1 : 1;    // byte 8 bit 0
+    UCHAR HssRelef : 1;
+    UCHAR Reserved4 : 1;
+    UCHAR RtdSup : 1;
+    UCHAR RSup : 1;
+    UCHAR LuCollectionType : 3;
+
+    UCHAR Multi_i_t_Nexus_Microcode_Download : 4;   // byte 9 bit 0
+    UCHAR Reserved5 : 4;
+
+    UCHAR ExtendedSelfTestCompletionMinutes[2];
+
+    UCHAR Reserved6 : 5;    // byte 12 bit 0
+    UCHAR VsaSup : 1;
+    UCHAR HraSup : 1;
+    UCHAR PoaSup : 1;
+
+    UCHAR MaxSupportedSenseDataLength;
+
+    UCHAR Nrd0 : 1;         // byte 14 bit 0
+    UCHAR Nrd1 : 1;
+    UCHAR Sac : 1;
+    UCHAR Reserved7 : 3;
+    UCHAR Ias : 1;
+    UCHAR Ibs : 1;
+
+    UCHAR MaxInquiryChangeLogs[2];
+    UCHAR MaxModePageChangeLogs[2];
+
+    UCHAR Reserved8[45];
+} VPD_EXTENDED_INQUIRY_DATA_PAGE, *PVPD_EXTENDED_INQUIRY_DATA_PAGE;
 
 //
 // VPD Page 0x89, ATA Information
@@ -6687,6 +6774,185 @@ typedef struct _PHYSICAL_ELEMENT_STATUS_PARAMETER_DATA {
 #pragma pack(pop, physical_element_status)
 
 //
+// Definitions related to 0x3C - SCSIOP_READ_DATA_BUFF(Mode 0x1C: Error History)
+//
+
+//
+// Input: Mode field for Read buffer command
+//
+
+#define READ_BUFFER_MODE_ERROR_HISTORY                                              0x1C
+
+//
+// Input: Mode specific field for Read buffer command
+//
+
+#define MODE_SPECIFIC_CREATE_VENDOR_SPECIFIC_DATA                                   0x0
+#define MODE_SPECIFIC_CREATE_CURRENT_INTERNAL_STATUS_DATA                           0x1
+
+//
+// Input: Buffer ID field for Read buffer command
+//
+
+//
+// Return error history directory.
+//
+#define BUFFER_ID_RETURN_ERROR_HISTORY_DIRECTORY                                    0x0
+
+//
+// Return error history directory and create new error history snapshot.
+//
+#define BUFFER_ID_RETURN_ERROR_HISTORY_DIRECTORY_CREATE_NEW_ERROR_HISTORY_SNAPSHOT  0x1
+
+//
+// Return error history directory and establish new error history I_T nexus.
+//
+#define BUFFER_ID_RETURN_ERROR_HISTORY_DIRECTORY_ESTABLISH_NEW_NEXUS                0x2
+
+//
+// Return error history directory, establish new error history I_T nexus, 
+// and create new error history snapshot.
+//
+#define BUFFER_ID_RETURN_ERROR_HISTORY_DIRECTORY_ESTABLISH_NEW_NEXUS_AND_SNAPSHOT   0x3
+
+//
+// 0x04h - 0x0Fh    Reserved.
+//
+
+//
+// 0x10h - 0xEFh    Return error history.
+//
+#define BUFFER_ID_RETURN_ERROR_HISTORY_MINIMUM_THRESHOLD                            0x10
+
+#define BUFFER_ID_RETURN_ERROR_HISTORY_MAXIMUM_THRESHOLD                            0xEF
+
+//
+// 0xF0h - 0xFDh    Reserved.
+//
+
+//
+// Clear error history I_T nexus.
+//
+#define BUFFER_ID_CLEAR_ERROR_HISTORY_NEXUS                                         0xFE
+
+//
+// Clear error history I_T nexus and release any error history snapshots.
+//
+#define BUFFER_ID_CLEAR_ERROR_HISTORY_AND_RELEASE_ANY_SNAPSHOT                      0xFF
+
+//
+// Output: Error history source field
+//
+
+#define ERROR_HISTORY_SOURCE_CREATED_BY_DEVICE_SERVER                               0x0
+#define ERROR_HISTORY_SOURCE_CREATED_DUE_TO_CURRENT_READ_BUFFER_COMMAND             0x1
+#define ERROR_HISTORY_SOURCE_CREATED_DUE_TO_PREVIOUS_READ_BUFFER_COMMAND            0x2
+#define ERROR_HISTORY_SOURCE_INDICATED_IN_BUFFER_SOURCE_FIELD                       0x3
+
+//
+// Output: Error history retrieved field
+//
+
+#define ERROR_HISTORY_RETRIEVED_NO_INFORMATION                                      0x0
+
+//
+// The error history I_T nexus has requested buffer ID FEh (i.e., clear error history I_T nexus) or buffer ID FFh
+// (i.e., clear error history I_T nexus and release snapshot) for the current error history snapshot.
+//
+#define ERROR_HISTORY_RETRIEVED_BUFFER_ID_FE_OR_FF                                  0x1
+
+//
+// An error history I_T nexus has not requested buffer ID FEh (i.e., clear error history I_T nexus) or buffer ID FFh
+// (i.e., clear error history I_T nexus and release snapshot) for the current error history snapshot.
+//
+#define ERROR_HISTORY_RETRIEVED_NOT_BUFFER_ID_FE_OR_FF                              0x2
+#define ERROR_HISTORY_RETRIEVED_RESERVED                                            0x3
+
+//
+// Output: Buffer format
+//
+
+#define BUFFER_FORMAT_VENDOR_SPECIFIC                                               0x0
+#define BUFFER_FORMAT_CURRENT_INTERNAL_STATUS_DATA                                  0x1
+#define BUFFER_FORMAT_SAVED_INTERNAL_STATUS_DATA                                    0x2
+
+//
+// Output: Buffer source
+//
+
+#define BUFFER_SOURCE_INDICATED_IN_EHS_SOURCE_FIELD                                 0x0
+#define BUFFER_SOURCE_UNKNOWN                                                       0x1
+#define BUFFER_SOURCE_CREATED_BY_DEVICE_SERVER                                      0x2
+#define BUFFER_SOURCE_CREATED_DUE_TO_CURRENT_COMMAND                                0x3
+#define BUFFER_SOURCE_CREATED_DUE_TO_PREVIOUS_COMMAND                               0x4
+
+#define STATUS_DATA_SET_SIZE_INCREMENT_IN_BYTES                                     0x200
+
+#pragma pack(push, error_history, 1)
+
+typedef struct _ERROR_HISTORY_DIRECTORY_ENTRY {
+
+    UCHAR SupportedBufferId;
+    UCHAR BufferFormat;
+    UCHAR BufferSource : 4;
+    UCHAR Reserved0 : 4;
+    UCHAR Reserved1;
+    UCHAR MaxAvailableLength[4];
+
+} ERROR_HISTORY_DIRECTORY_ENTRY, *PERROR_HISTORY_DIRECTORY_ENTRY;
+
+typedef struct _ERROR_HISTORY_DIRECTORY {
+
+    UCHAR T10VendorId[8];
+    UCHAR ErrorHistoryVersion;
+    UCHAR ClearSupport : 1;
+    UCHAR ErrorHistorySource : 2;
+    UCHAR ErrorHistoryRetrieved : 2;
+    UCHAR Reserved0 : 3;
+    UCHAR Reserved1[20];
+    UCHAR DirectoryLength[2];
+
+    ERROR_HISTORY_DIRECTORY_ENTRY ErrorHistoryDirectoryList[ANYSIZE_ARRAY];
+
+} ERROR_HISTORY_DIRECTORY, *PERROR_HISTORY_DIRECTORY;
+
+typedef struct _CURRENT_INTERNAL_STATUS_PARAMETER_DATA {
+
+    UCHAR Reserved0[4];
+    UCHAR IEEECompanyId[4];
+    UCHAR CurrentInternalStatusDataSetOneLength[2];
+    UCHAR CurrentInternalStatusDataSetTwoLength[2];
+    UCHAR CurrentInternalStatusDataSetThreeLength[2];
+    UCHAR CurrentInternalStatusDataSetFourLength[4];
+    UCHAR Reserved1[364];
+    UCHAR NewSavedDataAvailable;
+    UCHAR SavedDataGenerationNumber;
+    UCHAR CurrentReasonIdentifier[128];
+
+    UCHAR CurrentInternalStatusData[ANYSIZE_ARRAY];
+
+} CURRENT_INTERNAL_STATUS_PARAMETER_DATA, *PCURRENT_INTERNAL_STATUS_PARAMETER_DATA;
+
+typedef struct _SAVED_INTERNAL_STATUS_PARAMETER_DATA {
+
+    UCHAR Reserved0[4];
+    UCHAR IEEECompanyId[4];
+    UCHAR SavedInternalStatusDataSetOneLength[2];
+    UCHAR SavedInternalStatusDataSetTwoLength[2];
+    UCHAR SavedInternalStatusDataSetThreeLength[2];
+    UCHAR SavedInternalStatusDataSetFourLength[4];
+    UCHAR Reserved1[364];
+    UCHAR NewSavedDataAvailable;
+    UCHAR SavedDataGenerationNumber;
+    UCHAR SavedReasonIdentifier[128];
+
+    UCHAR SavedInternalStatusData[ANYSIZE_ARRAY];
+
+} SAVED_INTERNAL_STATUS_PARAMETER_DATA, *PSAVED_INTERNAL_STATUS_PARAMETER_DATA;
+
+#pragma pack(pop, error_history)
+
+//
 // Collections of SCSI utility functions
 //
 
@@ -8014,6 +8280,7 @@ typedef enum _SCSI_ADAPTER_CONTROL_TYPE {
     ScsiAdapterPoFxSetPerfState,
     ScsiAdapterSurpriseRemoval,
     ScsiAdapterSerialNumber,
+    ScsiAdapterCryptoOperation,
     ScsiAdapterControlMax,
     MakeAdapterControlTypeSizeOfUlong = 0xffffffff
 } SCSI_ADAPTER_CONTROL_TYPE, *PSCSI_ADAPTER_CONTROL_TYPE;
@@ -8359,6 +8626,61 @@ typedef struct _STOR_RICH_DEVICE_DESCRIPTION_V2 {
     PSTOR_ADDRESS Address;
 
 } STOR_RICH_DEVICE_DESCRIPTION_V2, *PSTOR_RICH_DEVICE_DESCRIPTION_V2;
+
+//
+// Parameter to miniport driver for Scsi(Adapter/Unit)CryptoOperation.
+// This will only be invoked if the miniport has declared support for
+// inline crypto operations.
+//
+
+typedef enum _STOR_CRYPTO_OPERATION_TYPE {
+    
+    StorCryptoOperationInsertKey = 1,
+    StorCryptoOperationMax,
+    
+} STOR_CRYPTO_OPERATION_TYPE, *PSTOR_CRYPTO_OPERATION_TYPE;
+
+typedef struct _STOR_CRYPTO_OPERATION {
+
+    STOR_CRYPTO_OPERATION_TYPE OperationType;
+    ULONG                      OperationBufferLength;
+    PVOID                      OperationBuffer;
+
+} STOR_CRYPTO_OPERATION, *PSTOR_CRYPTO_OPERATION;
+
+#define STOR_CRYPTO_OPERATION_INSERT_KEY_VERSION_1            1
+
+typedef struct _STOR_CRYPTO_OPERATION_INSERT_KEY {
+
+    //
+    // Structure version
+    //
+    USHORT Version;
+
+    //
+    // Structure size
+    //
+    USHORT Size;
+
+    //
+    // Key Table Index
+    //
+    ULONG KeyIndex;
+    
+    //
+    // Data for Inserting a Key into an Adapter Crypto Engine
+    //
+
+    ULONG CryptoCapabilityIndex;
+    ULONG DataUnitSizeBitmask;
+    ULONG KeySize;
+
+    ULONG Reserved;
+
+    PVOID KeyVirtualAddress;
+    PHYSICAL_ADDRESS KeyPhysicalAddress;
+    
+} STOR_CRYPTO_OPERATION_INSERT_KEY, *PSTOR_CRYPTO_OPERATION_INSERT_KEY;
 
 //
 // ScsiQuerySupportedControlTypes:
@@ -9111,7 +9433,10 @@ typedef enum _STORPORT_FUNCTION_CODE {
     ExtFunctionInitializeCryptoEngine,
     ExtFunctionGetRequestCryptoInfo,
     ExtFunctionMiniportTelemetry,
-    ExtFunctionUpdateAdapterMaxIO
+    ExtFunctionUpdateAdapterMaxIO,
+    ExtFunctionDelayExecution,
+    ExtFunctionAllocateDmaMemory,
+    ExtFunctionFreeDmaMemory
 } STORPORT_FUNCTION_CODE, *PSTORPORT_FUNCTION_CODE;
 
 
@@ -9658,6 +9983,7 @@ typedef struct _HW_INITIALIZATION_DATA {
 #define STOR_FEATURE_ADAPTER_NOT_REQUIRE_IO_PORT            0x00000200  // Indicating that miniport driver doesn't require IO Port resource for its adapter.
 #define STOR_FEATURE_DUMP_16_BYTE_ALIGNMENT                 0x00000400  // Indicating that the miniport driver wants its HwDeviceExtension to be 16 byte aligned in dump mode
 #define STOR_FEATURE_SET_ADAPTER_INTERFACE_TYPE             0x00000800  // Indicating that the miniport driver wants storport to set the adapter interface type.
+#define STOR_FEATURE_DUMP_INFO                              0x00001000  // Indicating that the miniport driver supports the dump info SRBs
 
 
 // Flags for denoting the SRB type(s) supported by miniport
@@ -9783,54 +10109,6 @@ typedef struct _MINIPORT_DUMP_POINTERS {
     
 
 
-
-//
-// Adapter Crypto Operation Data Structures for SRB_FUNCTION_CRYPTO_OPERATION
-//
-
-typedef enum _STOR_CRYPTO_OPERATION_TYPE {
-    
-    StorCryptoOperationInsertKey = 1,
-    StorCryptoOperationMax,
-    
-} STOR_CRYPTO_OPERATION_TYPE, *PSTOR_CRYPTO_OPERATION_TYPE;
-
-#define STOR_CRYPTO_OPERATION_INSERT_KEY_VERSION_1            1
-
-typedef struct _STOR_CRYPTO_OPERATION_INSERT_KEY {
-
-    //
-    // Structure version
-    //
-    USHORT Version;
-
-    //
-    // Structure size
-    //
-    USHORT Size;
-
-    //
-    // Key Operation
-    //
-    _Field_range_(StorCryptoKeyOperationInsertKey, StorCryptoKeyOperationInsertKey)
-    STOR_CRYPTO_OPERATION_TYPE KeyOperation;
-
-    //
-    // Key Table Index
-    //
-    ULONG KeyIndex;
-    
-    //
-    // Data for Inserting a Key into an Adapter Crypto Engine
-    //
-
-    ULONG CryptoCapabilityIndex;
-    ULONG DataUnitSizeBitmask;
-    ULONG KeySize;
-    PVOID KeyVirtualAddress;
-    PHYSICAL_ADDRESS KeyPhysicalAddress;
-    
-} STOR_CRYPTO_OPERATION_INSERT_KEY, *PSTOR_CRYPTO_OPERATION_INSERT_KEY;
 
 //
 //  Structure used with StorPortLogSystemEvent
@@ -13331,6 +13609,207 @@ Returns:
 
     UNREFERENCED_PARAMETER(HwDeviceExtension);
     UNREFERENCED_PARAMETER(MaxIoCount);
+
+#endif
+
+    return status;
+}
+
+ULONG
+FORCEINLINE
+StorPortDelayExecution(
+    _In_ PVOID HwDeviceExtension,
+    _In_ ULONG DelayInMicroseconds
+)
+/*
+Description:
+    
+    StorPortDelayExecution delays the current thread by the given amount of
+    time, in microseconds.
+    If the current IRQL is lower than DISPATCH_LEVEL then the current thread is
+    simply put in the wait state and other threads are allowed to run.
+    Otherwise, this routine performs a busy-wait.
+    
+Parameters:
+    
+    HwDeviceExtension - The miniport's device extension.
+
+    DelayInMicroseconds - The delay, in microseconds.
+    
+Returns:
+        
+    STOR_STATUS_SUCCESS
+    
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+    status = StorPortExtendedFunction(ExtFunctionDelayExecution,
+                                      HwDeviceExtension,
+                                      DelayInMicroseconds);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(DelayInMicroseconds);
+
+#endif
+
+    return status;
+
+}
+
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortAllocateDmaMemory(
+    _In_ PVOID HwDeviceExtension,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ PHYSICAL_ADDRESS LowestAcceptableAddress,
+    _In_ PHYSICAL_ADDRESS HighestAcceptableAddress,
+    _In_opt_ PHYSICAL_ADDRESS BoundaryAddressMultiple,
+    _In_ MEMORY_CACHING_TYPE CacheType,
+    _In_ NODE_REQUIREMENT PreferredNode,
+    _Out_ _At_(*BufferPointer,
+        _When_(return!=STOR_STATUS_SUCCESS, _Post_null_)
+        _When_(return==STOR_STATUS_SUCCESS, _Post_notnull_ _Post_writable_byte_size_(NumberOfBytes)))
+         PVOID* BufferPointer,
+    _Out_ PPHYSICAL_ADDRESS PhysicalAddress
+    )
+/*++
+    
+Routine Description:
+    
+    This function is the extended version of StorPortAllocateContiguousMemorySpecifyCacheNode.
+    It allocates a range of physically contiguous noncached, nonpaged memory, and return the 
+    physical address of the allocated buffer.
+    
+Arguments:
+    
+    HwDeviceExtension - A pointer to the hardware device extension for the host
+        bus adapter (HBA).
+    
+    NumberOfBytes - The number of bytes to allocate.
+
+    LowestAcceptableAddress - The lowest physical address that is valid for the allocation. 
+        For example, if the device can only reference physical memory in the 8 MB to 16 MB 
+        range, this value would be set to 0x800000 (8 MB).
+    
+    HighestAcceptableAddress - The highest physical address that is valid for the allocation. 
+        For example, if the device can only reference physical memory below 16 MB, this value
+        would be set to 0xFFFFFF (16 MB - 1).
+    
+    BoundaryAddressMultiple - The physical address multiple that this allocation must not cross.
+
+    CacheType - The desired cache type for the mapping.
+
+    PreferredNode - The preferred node from which the allocation should be made if pages are 
+        available on that node.
+
+    BufferPointer - The variable that receives the starting address of the allocated memory 
+        block. Upon return from this routine, if this variable is zero, a contiguous range 
+        could not be found to satisfy the request. If this variable is not NULL, it contains
+        a pointer (for example, a virtual address in the nonpaged portion of the system) to 
+        the allocated physically contiguous memory.
+
+    PhysicalAddress - Physical address of the allocated memory block.
+    
+Return Value:
+    
+    A STOR_STATUS code.
+    
+--*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+    status = StorPortExtendedFunction(ExtFunctionAllocateDmaMemory,
+                                      HwDeviceExtension,
+                                      NumberOfBytes,
+                                      LowestAcceptableAddress,
+                                      HighestAcceptableAddress,
+                                      BoundaryAddressMultiple,
+                                      CacheType,
+                                      PreferredNode,
+                                      BufferPointer,
+                                      PhysicalAddress);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(NumberOfBytes);
+    UNREFERENCED_PARAMETER(LowestAcceptableAddress);
+    UNREFERENCED_PARAMETER(HighestAcceptableAddress);
+    UNREFERENCED_PARAMETER(BoundaryAddressMultiple);
+    UNREFERENCED_PARAMETER(CacheType);
+    UNREFERENCED_PARAMETER(PreferredNode);
+    UNREFERENCED_PARAMETER(BufferPointer);
+    UNREFERENCED_PARAMETER(PhysicalAddress);
+
+#endif
+
+    return status;
+}
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortFreeDmaMemory(
+    _In_ PVOID HwDeviceExtension,
+    _In_reads_bytes_(NumberOfBytes) _Post_invalid_ PVOID BaseAddress,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ MEMORY_CACHING_TYPE CacheType,
+    _In_opt_ PHYSICAL_ADDRESS PhysicalAddress
+    )
+/*++
+    
+Routine Description:
+    
+    This function is the extended version of StorPortFreeContiguousMemorySpecifyCache.
+    It deallocates a range of noncached memory in the nonpaged portion of the system address space.
+    
+Arguments:
+    
+    HwDeviceExtension - A pointer to the hardware device extension for the host bus adapter (HBA).
+    
+    BaseAddress - The base virtual address to free.
+
+    NumberOfBytes - The number of bytes that are allocated to the request. This must be the same 
+        number that was supplied as a parameter when the StorPortAllocateDmaMemory routine was 
+        previously called.
+
+    CacheType - The cache type that is used in the call to the StorPortAllocateDmaMemory routine.
+
+    PreferredNode - The preferred node from which the allocation should be made if pages are 
+        available on that node.
+
+    PhysicalAddress - Physical address of the starting address of memory block to be deallocated.
+    
+Return Value:
+    
+    A STOR_STATUS code.
+    
+--*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+    status = StorPortExtendedFunction(ExtFunctionFreeDmaMemory,
+                                      HwDeviceExtension,
+                                      BaseAddress,
+                                      NumberOfBytes,
+                                      CacheType,
+                                      PhysicalAddress);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(BaseAddress);
+    UNREFERENCED_PARAMETER(NumberOfBytes);
+    UNREFERENCED_PARAMETER(CacheType);
+    UNREFERENCED_PARAMETER(PhysicalAddress);
 
 #endif
 

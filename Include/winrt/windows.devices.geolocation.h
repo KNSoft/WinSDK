@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.geolocation.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -1454,6 +1456,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_USE
@@ -1483,6 +1486,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Geolocation::Geolocator*,ABI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1495,6 +1499,7 @@ namespace ABI {
     } /* Geolocation */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_USE
@@ -1525,6 +1530,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Geolocation::Geolocator*,ABI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -1546,6 +1552,7 @@ namespace ABI {
     } /* Geolocation */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_USE
@@ -1575,6 +1582,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Geolocation::GeovisitMonitor*,
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
@@ -2218,8 +2226,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("A8567A1A-64F4-4D48-BCEA-F6B008ECA34C"), exclusiveto, contract] */
                 MIDL_INTERFACE("A8567A1A-64F4-4D48-BCEA-F6B008ECA34C")
-                ICivicAddress : IInspectable
+                ICivicAddress : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Country(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2274,8 +2283,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("0896C80B-274F-43DA-9A06-CBFCDAEB4EC2"), exclusiveto, contract] */
                 MIDL_INTERFACE("0896C80B-274F-43DA-9A06-CBFCDAEB4EC2")
-                IGeoboundingBox : IInspectable
+                IGeoboundingBox : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NorthwestCorner(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::BasicGeoposition * value
                         ) = 0;
@@ -2326,8 +2336,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("4DFBA589-0411-4ABC-B3B5-5BBCCB57D98C"), exclusiveto, contract] */
                 MIDL_INTERFACE("4DFBA589-0411-4ABC-B3B5-5BBCCB57D98C")
-                IGeoboundingBoxFactory : IInspectable
+                IGeoboundingBoxFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Devices::Geolocation::BasicGeoposition northwestCorner,
                         /* [in] */ABI::Windows::Devices::Geolocation::BasicGeoposition southeastCorner,
@@ -2381,8 +2392,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("67B80708-E61A-4CD0-841B-93233792B5CA"), exclusiveto, contract] */
                 MIDL_INTERFACE("67B80708-E61A-4CD0-841B-93233792B5CA")
-                IGeoboundingBoxStatics : IInspectable
+                IGeoboundingBoxStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryCompute(
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition * positions,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeoboundingBox * * value
@@ -2437,8 +2449,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("39E45843-A7F9-4E63-92A7-BA0C28D124B1"), exclusiveto, contract] */
                 MIDL_INTERFACE("39E45843-A7F9-4E63-92A7-BA0C28D124B1")
-                IGeocircle : IInspectable
+                IGeocircle : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Center(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::BasicGeoposition * value
                         ) = 0;
@@ -2480,8 +2493,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("AFD6531F-72B1-4F7D-87CC-4ED4C9849C05"), exclusiveto, contract] */
                 MIDL_INTERFACE("AFD6531F-72B1-4F7D-87CC-4ED4C9849C05")
-                IGeocircleFactory : IInspectable
+                IGeocircleFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Devices::Geolocation::BasicGeoposition position,
                         /* [in] */DOUBLE radius,
@@ -2535,8 +2549,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("EE21A3AA-976A-4C70-803D-083EA55BCBC4"), exclusiveto, contract] */
                 MIDL_INTERFACE("EE21A3AA-976A-4C70-803D-083EA55BCBC4")
-                IGeocoordinate : IInspectable
+                IGeocoordinate : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("Latitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Latitude")
@@ -2608,8 +2623,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("C32A74D9-2608-474C-912C-06DD490F4AF7"), exclusiveto, contract] */
                 MIDL_INTERFACE("C32A74D9-2608-474C-912C-06DD490F4AF7")
-                IGeocoordinateSatelliteData : IInspectable
+                IGeocoordinateSatelliteData : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PositionDilutionOfPrecision(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_double * * ppValue
                         ) = 0;
@@ -2654,8 +2670,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("FEEA0525-D22C-4D46-B527-0B96066FC7DB"), exclusiveto, contract] */
                 MIDL_INTERFACE("FEEA0525-D22C-4D46-B527-0B96066FC7DB")
-                IGeocoordinateWithPoint : IInspectable
+                IGeocoordinateWithPoint : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Point(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                         ) = 0;
@@ -2698,8 +2715,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("95E634BE-DBD6-40AC-B8F2-A65C0340D9A6"), exclusiveto, contract] */
                 MIDL_INTERFACE("95E634BE-DBD6-40AC-B8F2-A65C0340D9A6")
-                IGeocoordinateWithPositionData : IInspectable
+                IGeocoordinateWithPositionData : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PositionSource(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::PositionSource * pValue
                         ) = 0;
@@ -2741,8 +2759,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("8543FC02-C9F1-4610-AFE0-8BC3A6A87036"), exclusiveto, contract] */
                 MIDL_INTERFACE("8543FC02-C9F1-4610-AFE0-8BC3A6A87036")
-                IGeocoordinateWithPositionSourceTimestamp : IInspectable
+                IGeocoordinateWithPositionSourceTimestamp : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PositionSourceTimestamp(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
                         ) = 0;
@@ -2781,8 +2800,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("A9C3BF62-4524-4989-8AA9-DE019D2E551F"), exclusiveto, contract] */
                 MIDL_INTERFACE("A9C3BF62-4524-4989-8AA9-DE019D2E551F")
-                IGeolocator : IInspectable
+                IGeolocator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredAccuracy(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::PositionAccuracy * value
                         ) = 0;
@@ -2861,8 +2881,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("D1B42E6D-8891-43B4-AD36-27C6FE9A97B1"), exclusiveto, contract] */
                 MIDL_INTERFACE("D1B42E6D-8891-43B4-AD36-27C6FE9A97B1")
-                IGeolocator2 : IInspectable
+                IGeolocator2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AllowFallbackToConsentlessPositions(void) = 0;
                     
                 };
@@ -2899,8 +2920,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("9A8E7571-2DF5-4591-9F87-EB5FD894E9B7"), exclusiveto, contract] */
                 MIDL_INTERFACE("9A8E7571-2DF5-4591-9F87-EB5FD894E9B7")
-                IGeolocatorStatics : IInspectable
+                IGeolocatorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestAccessAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus * * result
                         ) = 0;
@@ -2948,8 +2970,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("993011A2-FA1C-4631-A71D-0DBEB1250D9C"), exclusiveto, contract] */
                 MIDL_INTERFACE("993011A2-FA1C-4631-A71D-0DBEB1250D9C")
-                IGeolocatorStatics2 : IInspectable
+                IGeolocatorStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsDefaultGeopositionRecommended(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2998,8 +3021,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("96F5D3C1-B80F-460A-994D-A96C47A51AA4"), exclusiveto, contract] */
                 MIDL_INTERFACE("96F5D3C1-B80F-460A-994D-A96C47A51AA4")
-                IGeolocatorWithScalarAccuracy : IInspectable
+                IGeolocatorWithScalarAccuracy : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredAccuracyInMeters(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_UINT32 * * value
                         ) = 0;
@@ -3045,8 +3069,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("E53FD7B9-2DA4-4714-A652-DE8593289898"), exclusiveto, contract] */
                 MIDL_INTERFACE("E53FD7B9-2DA4-4714-A652-DE8593289898")
-                IGeopath : IInspectable
+                IGeopath : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Positions(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CGeolocation__CBasicGeoposition * * value
                         ) = 0;
@@ -3085,8 +3110,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("27BEA9C8-C7E7-4359-9B9B-FCA3E05EF593"), exclusiveto, contract] */
                 MIDL_INTERFACE("27BEA9C8-C7E7-4359-9B9B-FCA3E05EF593")
-                IGeopathFactory : IInspectable
+                IGeopathFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition * positions,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopath * * value
@@ -3141,8 +3167,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("6BFA00EB-E56E-49BB-9CAF-CBAA78A8BCEF"), exclusiveto, contract] */
                 MIDL_INTERFACE("6BFA00EB-E56E-49BB-9CAF-CBAA78A8BCEF")
-                IGeopoint : IInspectable
+                IGeopoint : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::BasicGeoposition * value
                         ) = 0;
@@ -3181,8 +3208,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("DB6B8D33-76BD-4E30-8AF7-A844DC37B7A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("DB6B8D33-76BD-4E30-8AF7-A844DC37B7A0")
-                IGeopointFactory : IInspectable
+                IGeopointFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Devices::Geolocation::BasicGeoposition position,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
@@ -3233,8 +3261,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("C18D0454-7D41-4FF7-A957-9DFFB4EF7F5B"), exclusiveto, contract] */
                 MIDL_INTERFACE("C18D0454-7D41-4FF7-A957-9DFFB4EF7F5B")
-                IGeoposition : IInspectable
+                IGeoposition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Coordinate(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeocoordinate * * value
                         ) = 0;
@@ -3280,8 +3309,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("7F62F697-8671-4B0D-86F8-474A8496187C"), exclusiveto, contract] */
                 MIDL_INTERFACE("7F62F697-8671-4B0D-86F8-474A8496187C")
-                IGeoposition2 : IInspectable
+                IGeoposition2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VenueData(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IVenueData * * value
                         ) = 0;
@@ -3317,8 +3347,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("C99CA2AF-C729-43C1-8FAB-D6DEC914DF7E"), contract] */
                 MIDL_INTERFACE("C99CA2AF-C729-43C1-8FAB-D6DEC914DF7E")
-                IGeoshape : IInspectable
+                IGeoshape : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GeoshapeType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::GeoshapeType * value
                         ) = 0;
@@ -3363,8 +3394,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("B1877A76-9EF6-41AB-A0DD-793ECE76E2DE"), exclusiveto, contract] */
                 MIDL_INTERFACE("B1877A76-9EF6-41AB-A0DD-793ECE76E2DE")
-                IGeovisit : IInspectable
+                IGeovisit : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeoposition * * value
                         ) = 0;
@@ -3409,8 +3441,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("80118AAF-5944-4591-83C1-396647F54F2C"), exclusiveto, contract] */
                 MIDL_INTERFACE("80118AAF-5944-4591-83C1-396647F54F2C")
-                IGeovisitMonitor : IInspectable
+                IGeovisitMonitor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MonitoringScope(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::VisitMonitoringScope * value
                         ) = 0;
@@ -3460,8 +3493,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("BCF976A7-BBF2-4CDD-95CF-554C82EDFB87"), exclusiveto, contract] */
                 MIDL_INTERFACE("BCF976A7-BBF2-4CDD-95CF-554C82EDFB87")
-                IGeovisitMonitorStatics : IInspectable
+                IGeovisitMonitorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetLastReportAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeovisit * * value
                         ) = 0;
@@ -3500,8 +3534,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("CEB4D1FF-8B53-4968-BEED-4CECD029CE15"), exclusiveto, contract] */
                 MIDL_INTERFACE("CEB4D1FF-8B53-4968-BEED-4CECD029CE15")
-                IGeovisitStateChangedEventArgs : IInspectable
+                IGeovisitStateChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Visit(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeovisit * * value
                         ) = 0;
@@ -3540,8 +3575,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("EA770D9E-D1C9-454B-99B7-B2F8CDD2482F"), exclusiveto, contract] */
                 MIDL_INTERFACE("EA770D9E-D1C9-454B-99B7-B2F8CDD2482F")
-                IGeovisitTriggerDetails : IInspectable
+                IGeovisitTriggerDetails : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReadReports(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CGeolocation__CGeovisit * * values
                         ) = 0;
@@ -3580,8 +3616,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("37859CE5-9D1E-46C5-BF3B-6AD8CAC1A093"), exclusiveto, contract] */
                 MIDL_INTERFACE("37859CE5-9D1E-46C5-BF3B-6AD8CAC1A093")
-                IPositionChangedEventArgs : IInspectable
+                IPositionChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeoposition * * value
                         ) = 0;
@@ -3620,8 +3657,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("3453D2DA-8C93-4111-A205-9AECFC9BE5C0"), exclusiveto, contract] */
                 MIDL_INTERFACE("3453D2DA-8C93-4111-A205-9AECFC9BE5C0")
-                IStatusChangedEventArgs : IInspectable
+                IStatusChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::PositionStatus * value
                         ) = 0;
@@ -3660,8 +3698,9 @@ namespace ABI {
             namespace Geolocation {
                 /* [object, uuid("66F39187-60E3-4B2F-B527-4F53F1C3C677"), exclusiveto, contract] */
                 MIDL_INTERFACE("66F39187-60E3-4B2F-B527-4F53F1C3C677")
-                IVenueData : IInspectable
+                IVenueData : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6296,6 +6335,7 @@ interface __FIReference_1_Windows__CDevices__CGeolocation__CBasicGeoposition
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_INTERFACE_DEFINED__
 
@@ -6343,9 +6383,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_W
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_INTERFACE_DEFINED__
@@ -6394,9 +6436,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_W
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_INTERFACE_DEFINED__
@@ -6444,6 +6488,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMoni
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #if !defined(____FIReference_1_double_INTERFACE_DEFINED__)

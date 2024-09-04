@@ -3857,6 +3857,11 @@ WriteNoFence64 (
           ((crm & 15) << 3) | \
           ((op2 & 7) << 0) )
 
+#define ARM64_SYSREG_OP1(_Reg_) (((_Reg_) >> 11) & 7)
+#define ARM64_SYSREG_CRN(_Reg_) (((_Reg_) >> 7) & 15)
+#define ARM64_SYSREG_CRM(_Reg_) (((_Reg_) >> 3) & 15)
+#define ARM64_SYSREG_OP2(_Reg_) ((_Reg_) & 7)
+
 #define ARM64_CNTVCT            ARM64_SYSREG(3,3,14, 0,2)  // Generic Timer counter register
 #define ARM64_PMCCNTR_EL0       ARM64_SYSREG(3,3, 9,13,0)  // Cycle Count Register [CP15_PMCCNTR]
 #define ARM64_PMSELR_EL0        ARM64_SYSREG(3,3, 9,12,5)  // Event Counter Selection Register [CP15_PMSELR]
@@ -3892,7 +3897,7 @@ extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
 
 #if defined(_M_HYBRID_X86_ARM64)
 
-DECLSPEC_GUARDNOCF 
+DECLSPEC_GUARDNOCF
 
 #endif
 
@@ -5856,7 +5861,12 @@ _Struct_size_bytes_(Size) struct _SYSTEM_CPU_SET_INFORMATION {
                     UCHAR ReservedFlags : 4;
                 } DUMMYSTRUCTNAME;
             } DUMMYUNIONNAME2;
-            ULONG Reserved;
+
+            union {
+                ULONG Reserved;
+                UCHAR SchedulingClass;
+            };
+
             ULONG64 AllocationTag;
         } CpuSet;
     } DUMMYUNIONNAME;
@@ -8091,6 +8101,7 @@ typedef union _PCI_EXPRESS_PME_REQUESTOR_ID {
 #define PCI_EXPRESS_MPCIE_CAP_ID                                        0x0020
 #define PCI_EXPRESS_FRS_QUEUEING_CAP_ID                                 0x0021
 #define PCI_EXPRESS_READINESS_TIME_REPORTING_CAP_ID                     0x0022
+#define PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_CAP_ID                   0x0023
 
 
 //

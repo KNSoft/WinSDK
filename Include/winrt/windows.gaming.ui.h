@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.gaming.ui.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -210,11 +212,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -230,11 +232,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -468,6 +470,7 @@ namespace ABI {
 
 
 #if WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
+#if WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGaming__CUI__CGameChatOverlayMessageSource_Windows__CGaming__CUI__CGameChatMessageReceivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CGaming__CUI__CGameChatOverlayMessageSource_Windows__CGaming__CUI__CGameChatMessageReceivedEventArgs_USE
@@ -496,6 +499,7 @@ typedef ITypedEventHandler<ABI::Windows::Gaming::UI::GameChatOverlayMessageSourc
 #endif /* DEF___FITypedEventHandler_2_Windows__CGaming__CUI__CGameChatOverlayMessageSource_Windows__CGaming__CUI__CGameChatMessageReceivedEventArgs_USE */
 
 
+#endif // WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
 
 
@@ -1021,8 +1025,9 @@ namespace ABI {
             namespace UI {
                 /* [object, uuid("1DB9A292-CC78-4173-BE45-B61E67283EA7"), exclusiveto, contract] */
                 MIDL_INTERFACE("1DB9A292-CC78-4173-BE45-B61E67283EA7")
-                IGameBarStatics : IInspectable
+                IGameBarStatics : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_VisibilityChanged(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1078,8 +1083,9 @@ namespace ABI {
             namespace UI {
                 /* [object, uuid("A28201F1-3FB9-4E42-A403-7AFCE2023B1E"), exclusiveto, contract] */
                 MIDL_INTERFACE("A28201F1-3FB9-4E42-A403-7AFCE2023B1E")
-                IGameChatMessageReceivedEventArgs : IInspectable
+                IGameChatMessageReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1130,8 +1136,9 @@ namespace ABI {
             namespace UI {
                 /* [object, uuid("FBC64865-F6FC-4A48-AE07-03AC6ED43704"), exclusiveto, contract] */
                 MIDL_INTERFACE("FBC64865-F6FC-4A48-AE07-03AC6ED43704")
-                IGameChatOverlay : IInspectable
+                IGameChatOverlay : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredPosition(
                         /* [retval, out] */__RPC__out ABI::Windows::Gaming::UI::GameChatOverlayPosition * value
                         ) = 0;
@@ -1178,8 +1185,9 @@ namespace ABI {
             namespace UI {
                 /* [object, uuid("1E177397-59FB-4F4F-8E9A-80ACF817743C"), exclusiveto, contract] */
                 MIDL_INTERFACE("1E177397-59FB-4F4F-8E9A-80ACF817743C")
-                IGameChatOverlayMessageSource : IInspectable
+                IGameChatOverlayMessageSource : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MessageReceived(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CGaming__CUI__CGameChatOverlayMessageSource_Windows__CGaming__CUI__CGameChatMessageReceivedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1225,8 +1233,9 @@ namespace ABI {
             namespace UI {
                 /* [object, uuid("89ACF614-7867-49F7-9687-25D9DBF444D1"), exclusiveto, contract] */
                 MIDL_INTERFACE("89ACF614-7867-49F7-9687-25D9DBF444D1")
-                IGameChatOverlayStatics : IInspectable
+                IGameChatOverlayStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::UI::IGameChatOverlay * * value
                         ) = 0;
@@ -1265,8 +1274,9 @@ namespace ABI {
             namespace UI {
                 /* [object, uuid("12234358-DD09-4511-ADCD-8D5975D81028"), exclusiveto, contract] */
                 MIDL_INTERFACE("12234358-DD09-4511-ADCD-8D5975D81028")
-                IGameMonitor : IInspectable
+                IGameMonitor : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestPermissionAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * * operation
                         ) = 0;
@@ -1305,8 +1315,9 @@ namespace ABI {
             namespace UI {
                 /* [object, uuid("11674B34-5AE0-4BB4-B91F-8ACB48159A71"), exclusiveto, contract] */
                 MIDL_INTERFACE("11674B34-5AE0-4BB4-B91F-8ACB48159A71")
-                IGameMonitorStatics : IInspectable
+                IGameMonitorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::UI::IGameMonitor * * gameMonitor
                         ) = 0;
@@ -1349,8 +1360,9 @@ namespace ABI {
             namespace UI {
                 /* [object, uuid("A7B3203E-CAF7-4DED-BBD2-47DE43BB6DD5"), exclusiveto, contract] */
                 MIDL_INTERFACE("A7B3203E-CAF7-4DED-BBD2-47DE43BB6DD5")
-                IGameUIProviderActivatedEventArgs : IInspectable
+                IGameUIProviderActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GameUIArgs(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
                         ) = 0;
@@ -1691,6 +1703,7 @@ interface __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission
 
 
 #if WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
+#if WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CGaming__CUI__CGameChatOverlayMessageSource_Windows__CGaming__CUI__CGameChatMessageReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGaming__CUI__CGameChatOverlayMessageSource_Windows__CGaming__CUI__CGameChatMessageReceivedEventArgs_INTERFACE_DEFINED__
 
@@ -1737,6 +1750,7 @@ interface __FITypedEventHandler_2_Windows__CGaming__CUI__CGameChatOverlayMessage
 
 #endif // ____FITypedEventHandler_2_Windows__CGaming__CUI__CGameChatOverlayMessageSource_Windows__CGaming__CUI__CGameChatMessageReceivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
 
 

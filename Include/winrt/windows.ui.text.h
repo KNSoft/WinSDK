@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.text.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -257,6 +259,20 @@
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                interface IContentLinkInfo;
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo ABI::Windows::UI::Text::IContentLinkInfo
+
+#endif // ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CText_CIFontWeights_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CIFontWeights_FWD_DEFINED__
 namespace ABI {
@@ -284,6 +300,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CText_CIFontWeightsStatics ABI::Windows::UI::Text::IFontWeightsStatics
 
 #endif // ____x_ABI_CWindows_CUI_CText_CIFontWeightsStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                interface IRichEditTextRange;
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+#define __x_ABI_CWindows_CUI_CText_CIRichEditTextRange ABI::Windows::UI::Text::IRichEditTextRange
+
+#endif // ____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CText_CITextCharacterFormat_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CITextCharacterFormat_FWD_DEFINED__
@@ -443,6 +473,26 @@ namespace ABI {
             
         } /* Windows */
     } /* Foundation */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            class Uri;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IUriRuntimeClass;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIUriRuntimeClass ABI::Windows::Foundation::IUriRuntimeClass
+
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 
 
 
@@ -793,6 +843,18 @@ namespace ABI {
 
 
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                class ContentLinkInfo;
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -808,6 +870,16 @@ namespace ABI {
         namespace UI {
             namespace Text {
                 class RichEditTextDocument;
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                class RichEditTextRange;
             } /* Windows */
         } /* UI */
     } /* Text */} /* ABI */
@@ -1578,6 +1650,11 @@ namespace ABI {
                     TextRangeUnit_Superscript = 29,
                     TextRangeUnit_FontBound = 30,
                     TextRangeUnit_LinkProtected = 31,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
+                    TextRangeUnit_ContentLink = 32,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
                 };
                 
             } /* Windows */
@@ -1810,6 +1887,74 @@ namespace ABI {
 
 /*
  *
+ * Interface Windows.UI.Text.IContentLinkInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Text.ContentLinkInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_IContentLinkInfo[] = L"Windows.UI.Text.IContentLinkInfo";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                /* [object, uuid("1ED52525-1C5F-48CB-B335-78B50A2EE642"), exclusiveto, contract] */
+                MIDL_INTERFACE("1ED52525-1C5F-48CB-B335-78B50A2EE642")
+                IContentLinkInfo : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
+                        /* [retval, out] */__RPC__out UINT32 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Id(
+                        /* [in] */UINT32 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayText(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_DisplayText(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SecondaryText(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_SecondaryText(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Uri(
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LinkContentKind(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_LinkContentKind(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IContentLinkInfo=_uuidof(IContentLinkInfo);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CIContentLinkInfo;
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Text.IFontWeights
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -1829,8 +1974,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("7880A444-01AB-4997-8517-DF822A0C45F1"), exclusiveto, contract] */
                 MIDL_INTERFACE("7880A444-01AB-4997-8517-DF822A0C45F1")
-                IFontWeights : IInspectable
+                IFontWeights : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -1866,8 +2012,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("B3B579D5-1BA9-48EB-9DAD-C095E8C23BA3"), exclusiveto, contract] */
                 MIDL_INTERFACE("B3B579D5-1BA9-48EB-9DAD-C095E8C23BA3")
-                IFontWeightsStatics : IInspectable
+                IFontWeightsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Black(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Text::FontWeight * value
                         ) = 0;
@@ -1917,6 +2064,54 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CIFontWeightsStatics;
 
 /*
  *
+ * Interface Windows.UI.Text.IRichEditTextRange
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Text.RichEditTextRange
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.Text.ITextRange
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_IRichEditTextRange[] = L"Windows.UI.Text.IRichEditTextRange";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                /* [object, uuid("374E3515-BA8A-4A6E-8C59-0DDE3D0CF5CD"), exclusiveto, contract] */
+                MIDL_INTERFACE("374E3515-BA8A-4A6E-8C59-0DDE3D0CF5CD")
+                IRichEditTextRange : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentLinkInfo(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::IContentLinkInfo * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ContentLinkInfo(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Text::IContentLinkInfo * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IRichEditTextRange=_uuidof(IRichEditTextRange);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CIRichEditTextRange;
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Text.ITextCharacterFormat
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -1933,8 +2128,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("5ADEF3DB-05FB-442D-8065-642AFEA02CED"), contract] */
                 MIDL_INTERFACE("5ADEF3DB-05FB-442D-8065-642AFEA02CED")
-                ITextCharacterFormat : IInspectable
+                ITextCharacterFormat : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllCaps(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Text::FormatEffect * value
                         ) = 0;
@@ -2121,8 +2317,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("779E7C33-189D-4BFA-97C8-10DB135D976E"), exclusiveto, contract] */
                 MIDL_INTERFACE("779E7C33-189D-4BFA-97C8-10DB135D976E")
-                ITextConstantsStatics : IInspectable
+                ITextConstantsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AutoColor(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                         ) = 0;
@@ -2179,8 +2376,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("BEEE4DDB-90B2-408C-A2F6-0A0AC31E33E4"), contract] */
                 MIDL_INTERFACE("BEEE4DDB-90B2-408C-A2F6-0A0AC31E33E4")
-                ITextDocument : IInspectable
+                ITextDocument : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CaretType(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Text::CaretType * value
                         ) = 0;
@@ -2301,8 +2499,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("F2311112-8C89-49C9-9118-F057CBB814EE"), exclusiveto, contract] */
                 MIDL_INTERFACE("F2311112-8C89-49C9-9118-F057CBB814EE")
-                ITextDocument2 : IInspectable
+                ITextDocument2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlignmentIncludesTrailingWhitespace(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2347,8 +2546,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("2CF8CFA6-4676-498A-93F5-BBDBFC0BD883"), contract] */
                 MIDL_INTERFACE("2CF8CFA6-4676-498A-93F5-BBDBFC0BD883")
-                ITextParagraphFormat : IInspectable
+                ITextParagraphFormat : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Alignment(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Text::ParagraphAlignment * value
                         ) = 0;
@@ -2532,8 +2732,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("5B9E4E57-C072-42A0-8945-AF503EE54768"), contract] */
                 MIDL_INTERFACE("5B9E4E57-C072-42A0-8945-AF503EE54768")
-                ITextRange : IInspectable
+                ITextRange : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Character(
                         /* [retval, out] */__RPC__out WCHAR * value
                         ) = 0;
@@ -2761,8 +2962,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("A6D36724-F28F-430A-B2CF-C343671EC0E9"), contract] */
                 MIDL_INTERFACE("A6D36724-F28F-430A-B2CF-C343671EC0E9")
-                ITextSelection : IInspectable
+                ITextSelection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Options(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Text::SelectionOptions * value
                         ) = 0;
@@ -2825,6 +3027,33 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextSelection;
 
 /*
  *
+ * Class Windows.UI.Text.ContentLinkInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Text.IContentLinkInfo ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Text_ContentLinkInfo_DEFINED
+#define RUNTIMECLASS_Windows_UI_Text_ContentLinkInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Text_ContentLinkInfo[] = L"Windows.UI.Text.ContentLinkInfo";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Text.FontWeights
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2875,6 +3104,29 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Text.RichEditTextRange
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Text.ITextRange ** Default Interface **
+ *    Windows.UI.Text.IRichEditTextRange
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Text_RichEditTextRange_DEFINED
+#define RUNTIMECLASS_Windows_UI_Text_RichEditTextRange_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Text_RichEditTextRange[] = L"Windows.UI.Text.RichEditTextRange";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Text.TextConstants
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2900,6 +3152,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #else // !defined(__cplusplus)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CText_CIContentLinkInfo __x_ABI_CWindows_CUI_CText_CIContentLinkInfo;
+
+#endif // ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CText_CIFontWeights_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CIFontWeights_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CText_CIFontWeights __x_ABI_CWindows_CUI_CText_CIFontWeights;
@@ -2911,6 +3169,12 @@ typedef interface __x_ABI_CWindows_CUI_CText_CIFontWeights __x_ABI_CWindows_CUI_
 typedef interface __x_ABI_CWindows_CUI_CText_CIFontWeightsStatics __x_ABI_CWindows_CUI_CText_CIFontWeightsStatics;
 
 #endif // ____x_ABI_CWindows_CUI_CText_CIFontWeightsStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CText_CIRichEditTextRange __x_ABI_CWindows_CUI_CText_CIRichEditTextRange;
+
+#endif // ____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CText_CITextCharacterFormat_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CITextCharacterFormat_FWD_DEFINED__
@@ -3022,6 +3286,13 @@ typedef struct __x_ABI_CWindows_CFoundation_CPoint __x_ABI_CWindows_CFoundation_
 typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_CRect;
 
 
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIUriRuntimeClass __x_ABI_CWindows_CFoundation_CIUriRuntimeClass;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+
+
 
 
 #ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream_FWD_DEFINED__
@@ -3122,6 +3393,10 @@ typedef enum __x_ABI_CWindows_CUI_CText_CVerticalCharacterAlignment __x_ABI_CWin
 
 
 typedef struct __x_ABI_CWindows_CUI_CText_CFontWeight __x_ABI_CWindows_CUI_CText_CFontWeight;
+
+
+
+
 
 
 
@@ -3709,6 +3984,11 @@ enum __x_ABI_CWindows_CUI_CText_CTextRangeUnit
     TextRangeUnit_Superscript = 29,
     TextRangeUnit_FontBound = 30,
     TextRangeUnit_LinkProtected = 31,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    TextRangeUnit_ContentLink = 32,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -3891,6 +4171,162 @@ struct __x_ABI_CWindows_CUI_CText_CFontWeight
     UINT16 Weight;
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Text.IContentLinkInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Text.ContentLinkInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_IContentLinkInfo[] = L"Windows.UI.Text.IContentLinkInfo";
+/* [object, uuid("1ED52525-1C5F-48CB-B335-78B50A2EE642"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CText_CIContentLinkInfoVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Id )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [retval, out] */__RPC__out UINT32 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Id )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [in] */UINT32 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DisplayText )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_DisplayText )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SecondaryText )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_SecondaryText )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Uri )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Uri )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LinkContentKind )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_LinkContentKind )(
+        __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CText_CIContentLinkInfoVtbl;
+
+interface __x_ABI_CWindows_CUI_CText_CIContentLinkInfo
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CText_CIContentLinkInfoVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_get_Id(This,value) \
+    ( (This)->lpVtbl->get_Id(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_put_Id(This,value) \
+    ( (This)->lpVtbl->put_Id(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_get_DisplayText(This,value) \
+    ( (This)->lpVtbl->get_DisplayText(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_put_DisplayText(This,value) \
+    ( (This)->lpVtbl->put_DisplayText(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_get_SecondaryText(This,value) \
+    ( (This)->lpVtbl->get_SecondaryText(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_put_SecondaryText(This,value) \
+    ( (This)->lpVtbl->put_SecondaryText(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_get_Uri(This,value) \
+    ( (This)->lpVtbl->get_Uri(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_put_Uri(This,value) \
+    ( (This)->lpVtbl->put_Uri(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_get_LinkContentKind(This,value) \
+    ( (This)->lpVtbl->get_LinkContentKind(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIContentLinkInfo_put_LinkContentKind(This,value) \
+    ( (This)->lpVtbl->put_LinkContentKind(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CIContentLinkInfo;
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CIContentLinkInfo_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4140,6 +4576,110 @@ interface __x_ABI_CWindows_CUI_CText_CIFontWeightsStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CIFontWeightsStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CText_CIFontWeightsStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Text.IRichEditTextRange
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Text.RichEditTextRange
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.Text.ITextRange
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_IRichEditTextRange[] = L"Windows.UI.Text.IRichEditTextRange";
+/* [object, uuid("374E3515-BA8A-4A6E-8C59-0DDE3D0CF5CD"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CText_CIRichEditTextRangeVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIRichEditTextRange * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIRichEditTextRange * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIRichEditTextRange * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIRichEditTextRange * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIRichEditTextRange * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CIRichEditTextRange * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContentLinkInfo )(
+        __x_ABI_CWindows_CUI_CText_CIRichEditTextRange * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ContentLinkInfo )(
+        __x_ABI_CWindows_CUI_CText_CIRichEditTextRange * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CText_CIContentLinkInfo * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CText_CIRichEditTextRangeVtbl;
+
+interface __x_ABI_CWindows_CUI_CText_CIRichEditTextRange
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CText_CIRichEditTextRangeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CText_CIRichEditTextRange_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CText_CIRichEditTextRange_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CText_CIRichEditTextRange_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CText_CIRichEditTextRange_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CText_CIRichEditTextRange_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CText_CIRichEditTextRange_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CText_CIRichEditTextRange_get_ContentLinkInfo(This,value) \
+    ( (This)->lpVtbl->get_ContentLinkInfo(This,value) )
+
+#define __x_ABI_CWindows_CUI_CText_CIRichEditTextRange_put_ContentLinkInfo(This,value) \
+    ( (This)->lpVtbl->put_ContentLinkInfo(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CIRichEditTextRange;
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6199,6 +6739,33 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextSelection;
 
 /*
  *
+ * Class Windows.UI.Text.ContentLinkInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Text.IContentLinkInfo ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Text_ContentLinkInfo_DEFINED
+#define RUNTIMECLASS_Windows_UI_Text_ContentLinkInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Text_ContentLinkInfo[] = L"Windows.UI.Text.ContentLinkInfo";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Text.FontWeights
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -6245,6 +6812,29 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Text_RichEditTextDocument[] = L"Windows.UI.Text.RichEditTextDocument";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Class Windows.UI.Text.RichEditTextRange
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Text.ITextRange ** Default Interface **
+ *    Windows.UI.Text.IRichEditTextRange
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Text_RichEditTextRange_DEFINED
+#define RUNTIMECLASS_Windows_UI_Text_RichEditTextRange_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Text_RichEditTextRange[] = L"Windows.UI.Text.RichEditTextRange";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

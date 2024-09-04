@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.cryptography.certificates.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2658,8 +2660,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("333F740C-04D8-43B3-B278-8C5FCC9BE5A0"), exclusiveto, contract] */
                     MIDL_INTERFACE("333F740C-04D8-43B3-B278-8C5FCC9BE5A0")
-                    ICertificate : IInspectable
+                    ICertificate : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE BuildChainAsync(
                             /* [in] */__RPC__in_opt __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate * certificates,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain * * value
@@ -2749,8 +2752,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("17B8374C-8A25-4D96-A492-8FC29AC4FDA6"), exclusiveto, contract] */
                     MIDL_INTERFACE("17B8374C-8A25-4D96-A492-8FC29AC4FDA6")
-                    ICertificate2 : IInspectable
+                    ICertificate2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSecurityDeviceBound(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -2806,8 +2810,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("BE51A966-AE5F-4652-ACE7-C6D7E7724CF3"), exclusiveto, contract] */
                     MIDL_INTERFACE("BE51A966-AE5F-4652-ACE7-C6D7E7724CF3")
-                    ICertificate3 : IInspectable
+                    ICertificate3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPerUser(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -2854,8 +2859,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("20BF5385-3691-4501-A62C-FD97278B31EE"), exclusiveto, contract] */
                     MIDL_INTERFACE("20BF5385-3691-4501-A62C-FD97278B31EE")
-                    ICertificateChain : IInspectable
+                    ICertificateChain : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE Validate(
                             /* [retval, out] */__RPC__out ABI::Windows::Security::Cryptography::Certificates::ChainValidationResult * status
                             ) = 0;
@@ -2904,8 +2910,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("8846EF3F-A986-48FB-9FD7-9AEC06935BF1"), exclusiveto, contract] */
                     MIDL_INTERFACE("8846EF3F-A986-48FB-9FD7-9AEC06935BF1")
-                    ICertificateEnrollmentManagerStatics : IInspectable
+                    ICertificateEnrollmentManagerStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateRequestAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties * request,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * value
@@ -2961,8 +2968,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("DC5B1C33-6429-4014-999C-5D9735802D1D"), exclusiveto, contract] */
                     MIDL_INTERFACE("DC5B1C33-6429-4014-999C-5D9735802D1D")
-                    ICertificateEnrollmentManagerStatics2 : IInspectable
+                    ICertificateEnrollmentManagerStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UserCertificateEnrollmentManager(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager * * value
                             ) = 0;
@@ -3013,8 +3021,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("FDEC82BE-617C-425A-B72D-398B26AC7264"), exclusiveto, contract] */
                     MIDL_INTERFACE("FDEC82BE-617C-425A-B72D-398B26AC7264")
-                    ICertificateEnrollmentManagerStatics3 : IInspectable
+                    ICertificateEnrollmentManagerStatics3 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE ImportPfxDataToKspWithParametersAsync(
                             /* [in] */__RPC__in HSTRING pfxData,
                             /* [in] */__RPC__in HSTRING password,
@@ -3058,8 +3067,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("84CF0656-A9E6-454D-8E45-2EA7C4BCD53B"), exclusiveto, contract] */
                     MIDL_INTERFACE("84CF0656-A9E6-454D-8E45-2EA7C4BCD53B")
-                    ICertificateExtension : IInspectable
+                    ICertificateExtension : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ObjectId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3120,8 +3130,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("17B4221C-4BAF-44A2-9608-04FB62B16942"), exclusiveto, contract] */
                     MIDL_INTERFACE("17B4221C-4BAF-44A2-9608-04FB62B16942")
-                    ICertificateFactory : IInspectable
+                    ICertificateFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateCertificate(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * certBlob,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificate * * certificate
@@ -3163,8 +3174,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("6AC6206F-E1CF-486A-B485-A69C83E46FD1"), exclusiveto, contract] */
                     MIDL_INTERFACE("6AC6206F-E1CF-486A-B485-A69C83E46FD1")
-                    ICertificateKeyUsages : IInspectable
+                    ICertificateKeyUsages : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EncipherOnly(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -3250,8 +3262,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("5B082A31-A728-4916-B5EE-FFCB8ACF2417"), exclusiveto, contract] */
                     MIDL_INTERFACE("5B082A31-A728-4916-B5EE-FFCB8ACF2417")
-                    ICertificateQuery : IInspectable
+                    ICertificateQuery : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnhancedKeyUsages(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                             ) = 0;
@@ -3318,8 +3331,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("935A0AF7-0BD9-4F75-B8C2-E27A7F74EECD"), exclusiveto, contract] */
                     MIDL_INTERFACE("935A0AF7-0BD9-4F75-B8C2-E27A7F74EECD")
-                    ICertificateQuery2 : IInspectable
+                    ICertificateQuery2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IncludeDuplicates(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -3375,8 +3389,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("487E84F6-94E2-4DCE-8833-1A700A37A29A"), exclusiveto, contract] */
                     MIDL_INTERFACE("487E84F6-94E2-4DCE-8833-1A700A37A29A")
-                    ICertificateRequestProperties : IInspectable
+                    ICertificateRequestProperties : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Subject(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3468,8 +3483,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("3DA0C954-D73F-4FF3-A0A6-0677C0ADA05B"), exclusiveto, contract] */
                     MIDL_INTERFACE("3DA0C954-D73F-4FF3-A0A6-0677C0ADA05B")
-                    ICertificateRequestProperties2 : IInspectable
+                    ICertificateRequestProperties2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SmartcardReaderName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3525,8 +3541,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("E687F616-734D-46B1-9D4C-6EDFDBFC845B"), exclusiveto, contract] */
                     MIDL_INTERFACE("E687F616-734D-46B1-9D4C-6EDFDBFC845B")
-                    ICertificateRequestProperties3 : IInspectable
+                    ICertificateRequestProperties3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurveName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3596,8 +3613,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("4E429AD2-1C61-4FEA-B8FE-135FB19CDCE4"), exclusiveto, contract] */
                     MIDL_INTERFACE("4E429AD2-1C61-4FEA-B8FE-135FB19CDCE4")
-                    ICertificateRequestProperties4 : IInspectable
+                    ICertificateRequestProperties4 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SuppressedDefaults(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                             ) = 0;
@@ -3644,8 +3662,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("B0BFF720-344E-4331-AF14-A7F7A7EBC93A"), exclusiveto, contract] */
                     MIDL_INTERFACE("B0BFF720-344E-4331-AF14-A7F7A7EBC93A")
-                    ICertificateStore : IInspectable
+                    ICertificateStore : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Add(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificate * certificate
                             ) = 0;
@@ -3689,8 +3708,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("C7E68E4A-417D-4D1A-BABD-15687E549974"), exclusiveto, contract] */
                     MIDL_INTERFACE("C7E68E4A-417D-4D1A-BABD-15687E549974")
-                    ICertificateStore2 : IInspectable
+                    ICertificateStore2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3731,8 +3751,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("FBECC739-C6FE-4DE7-99CF-74C3E596E032"), exclusiveto, contract] */
                     MIDL_INTERFACE("FBECC739-C6FE-4DE7-99CF-74C3E596E032")
-                    ICertificateStoresStatics : IInspectable
+                    ICertificateStoresStatics : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindAllAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate * * value
                             ) = 0;
@@ -3787,8 +3808,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("FA900B79-A0D4-4B8C-BC55-C0A37EB141ED"), exclusiveto, contract] */
                     MIDL_INTERFACE("FA900B79-A0D4-4B8C-BC55-C0A37EB141ED")
-                    ICertificateStoresStatics2 : IInspectable
+                    ICertificateStoresStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetUserStoreByName(
                             /* [in] */__RPC__in HSTRING storeName,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::IUserCertificateStore * * result
@@ -3830,8 +3852,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("422BA922-7C8D-47B7-B59B-B12703733AC3"), exclusiveto, contract] */
                     MIDL_INTERFACE("422BA922-7C8D-47B7-B59B-B12703733AC3")
-                    IChainBuildingParameters : IInspectable
+                    IChainBuildingParameters : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnhancedKeyUsages(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                             ) = 0;
@@ -3905,8 +3928,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("C4743B4A-7EB0-4B56-A040-B9C8E655DDF3"), exclusiveto, contract] */
                     MIDL_INTERFACE("C4743B4A-7EB0-4B56-A040-B9C8E655DDF3")
-                    IChainValidationParameters : IInspectable
+                    IChainValidationParameters : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CertificateChainPolicy(
                             /* [retval, out] */__RPC__out ABI::Windows::Security::Cryptography::Certificates::CertificateChainPolicy * value
                             ) = 0;
@@ -3956,8 +3980,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("61899D9D-3757-4ECB-BDDC-0CA357D7A936"), exclusiveto, contract] */
                     MIDL_INTERFACE("61899D9D-3757-4ECB-BDDC-0CA357D7A936")
-                    ICmsAttachedSignature : IInspectable
+                    ICmsAttachedSignature : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Certificates(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate * * value
                             ) = 0;
@@ -4008,8 +4033,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("D0C8FC15-F757-4C64-A362-52CC1C77CFFB"), exclusiveto, contract] */
                     MIDL_INTERFACE("D0C8FC15-F757-4C64-A362-52CC1C77CFFB")
-                    ICmsAttachedSignatureFactory : IInspectable
+                    ICmsAttachedSignatureFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateCmsAttachedSignature(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * inputBlob,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICmsAttachedSignature * * cmsSignedData
@@ -4051,8 +4077,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("87989C8E-B0AD-498D-A7F5-78B59BCE4B36"), exclusiveto, contract] */
                     MIDL_INTERFACE("87989C8E-B0AD-498D-A7F5-78B59BCE4B36")
-                    ICmsAttachedSignatureStatics : IInspectable
+                    ICmsAttachedSignatureStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GenerateSignatureAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
                             /* [in] */__RPC__in_opt __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo * signers,
@@ -4096,8 +4123,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("0F1EF154-F65E-4536-8339-5944081DB2CA"), exclusiveto, contract] */
                     MIDL_INTERFACE("0F1EF154-F65E-4536-8339-5944081DB2CA")
-                    ICmsDetachedSignature : IInspectable
+                    ICmsDetachedSignature : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Certificates(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate * * value
                             ) = 0;
@@ -4145,8 +4173,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("C4AB3503-AE7F-4387-AD19-00F150E48EBB"), exclusiveto, contract] */
                     MIDL_INTERFACE("C4AB3503-AE7F-4387-AD19-00F150E48EBB")
-                    ICmsDetachedSignatureFactory : IInspectable
+                    ICmsDetachedSignatureFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateCmsDetachedSignature(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * inputBlob,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICmsDetachedSignature * * cmsSignedData
@@ -4188,8 +4217,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("3D114CFD-BF9B-4682-9BE6-91F57C053808"), exclusiveto, contract] */
                     MIDL_INTERFACE("3D114CFD-BF9B-4682-9BE6-91F57C053808")
-                    ICmsDetachedSignatureStatics : IInspectable
+                    ICmsDetachedSignatureStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GenerateSignatureAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IInputStream * data,
                             /* [in] */__RPC__in_opt __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo * signers,
@@ -4233,8 +4263,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("50D020DB-1D2F-4C1A-B5C5-D0188FF91F47"), exclusiveto, contract] */
                     MIDL_INTERFACE("50D020DB-1D2F-4C1A-B5C5-D0188FF91F47")
-                    ICmsSignerInfo : IInspectable
+                    ICmsSignerInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Certificate(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificate * * value
                             ) = 0;
@@ -4287,8 +4318,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("2F5F00F2-2C18-4F88-8435-C534086076F5"), exclusiveto, contract] */
                     MIDL_INTERFACE("2F5F00F2-2C18-4F88-8435-C534086076F5")
-                    ICmsTimestampInfo : IInspectable
+                    ICmsTimestampInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SigningCertificate(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificate * * value
                             ) = 0;
@@ -4335,8 +4367,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("479065D7-7AC7-4581-8C3B-D07027140448"), exclusiveto, contract] */
                     MIDL_INTERFACE("479065D7-7AC7-4581-8C3B-D07027140448")
-                    IKeyAlgorithmNamesStatics : IInspectable
+                    IKeyAlgorithmNamesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Rsa(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4398,8 +4431,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("C99B5686-E1FD-4A4A-893D-A26F33DD8BB4"), exclusiveto, contract] */
                     MIDL_INTERFACE("C99B5686-E1FD-4A4A-893D-A26F33DD8BB4")
-                    IKeyAlgorithmNamesStatics2 : IInspectable
+                    IKeyAlgorithmNamesStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Ecdsa(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4443,8 +4477,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("1648E246-F644-4326-88BE-3AF102D30E0C"), exclusiveto, contract] */
                     MIDL_INTERFACE("1648E246-F644-4326-88BE-3AF102D30E0C")
-                    IKeyAttestationHelperStatics : IInspectable
+                    IKeyAttestationHelperStatics : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE DecryptTpmAttestationCredentialAsync(
                             /* [in] */__RPC__in HSTRING credential,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * value
@@ -4490,8 +4525,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("9C590B2C-A6C6-4A5E-9E64-E85D5279DF97"), exclusiveto, contract] */
                     MIDL_INTERFACE("9C590B2C-A6C6-4A5E-9E64-E85D5279DF97")
-                    IKeyAttestationHelperStatics2 : IInspectable
+                    IKeyAttestationHelperStatics2 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE DecryptTpmAttestationCredentialWithContainerNameAsync(
                             /* [in] */__RPC__in HSTRING credential,
                             /* [in] */__RPC__in HSTRING containerName,
@@ -4534,8 +4570,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("AF186AE0-5529-4602-BD94-0AAB91957B5C"), exclusiveto, contract] */
                     MIDL_INTERFACE("AF186AE0-5529-4602-BD94-0AAB91957B5C")
-                    IKeyStorageProviderNamesStatics : IInspectable
+                    IKeyStorageProviderNamesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SoftwareKeyStorageProvider(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4582,8 +4619,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("262D743D-9C2E-41CC-8812-C4D971DD7C60"), exclusiveto, contract] */
                     MIDL_INTERFACE("262D743D-9C2E-41CC-8812-C4D971DD7C60")
-                    IKeyStorageProviderNamesStatics2 : IInspectable
+                    IKeyStorageProviderNamesStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PassportKeyStorageProvider(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4624,8 +4662,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("680D3511-9A08-47C8-864A-2EDD4D8EB46C"), exclusiveto, contract] */
                     MIDL_INTERFACE("680D3511-9A08-47C8-864A-2EDD4D8EB46C")
-                    IPfxImportParameters : IInspectable
+                    IPfxImportParameters : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Exportable(
                             /* [retval, out] */__RPC__out ABI::Windows::Security::Cryptography::Certificates::ExportOption * value
                             ) = 0;
@@ -4705,8 +4744,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("0C154ADB-A496-41F8-8FE5-9E96F36EFBF8"), exclusiveto, contract] */
                     MIDL_INTERFACE("0C154ADB-A496-41F8-8FE5-9E96F36EFBF8")
-                    IStandardCertificateStoreNamesStatics : IInspectable
+                    IStandardCertificateStoreNamesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Personal(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4753,8 +4793,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("582859F1-569D-4C20-BE7B-4E1C9A0BC52B"), exclusiveto, contract] */
                     MIDL_INTERFACE("582859F1-569D-4C20-BE7B-4E1C9A0BC52B")
-                    ISubjectAlternativeNameInfo : IInspectable
+                    ISubjectAlternativeNameInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailName(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                             ) = 0;
@@ -4810,8 +4851,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("437A78C6-1C51-41EA-B34A-3D654398A370"), exclusiveto, contract] */
                     MIDL_INTERFACE("437A78C6-1C51-41EA-B34A-3D654398A370")
-                    ISubjectAlternativeNameInfo2 : IInspectable
+                    ISubjectAlternativeNameInfo2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailNames(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                             ) = 0;
@@ -4870,8 +4912,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("96313718-22E1-4819-B20B-AB46A6ECA06E"), exclusiveto, contract] */
                     MIDL_INTERFACE("96313718-22E1-4819-B20B-AB46A6ECA06E")
-                    IUserCertificateEnrollmentManager : IInspectable
+                    IUserCertificateEnrollmentManager : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateRequestAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties * request,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * value
@@ -4937,8 +4980,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("0DAD9CB1-65DE-492A-B86D-FC5C482C3747"), exclusiveto, contract] */
                     MIDL_INTERFACE("0DAD9CB1-65DE-492A-B86D-FC5C482C3747")
-                    IUserCertificateEnrollmentManager2 : IInspectable
+                    IUserCertificateEnrollmentManager2 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE ImportPfxDataToKspWithParametersAsync(
                             /* [in] */__RPC__in HSTRING pfxData,
                             /* [in] */__RPC__in HSTRING password,
@@ -4982,8 +5026,9 @@ namespace ABI {
                 namespace Certificates {
                     /* [object, uuid("C9FB1D83-789F-4B4E-9180-045A757AAC6D"), exclusiveto, contract] */
                     MIDL_INTERFACE("C9FB1D83-789F-4B4E-9180-045A757AAC6D")
-                    IUserCertificateStore : IInspectable
+                    IUserCertificateStore : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE RequestAddAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificate * certificate,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result

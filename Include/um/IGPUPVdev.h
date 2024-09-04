@@ -212,7 +212,8 @@ typedef /* [public][public][public][public][public][public][v1_enum] */
 enum __MIDL_IGPUPMitigationDevice_0003
     {
         GpupSaveInvalid	= 0,
-        GpupSaveMaximum	= ( GpupSaveInvalid + 1 ) 
+        GpupSavePartitionPersist	= ( GpupSaveInvalid + 1 ) ,
+        GpupSaveMaximum	= ( GpupSavePartitionPersist + 1 ) 
     } 	GPUP_SAVE_RESTORE_PAUSE_STATE;
 
 
@@ -274,8 +275,8 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
             /* [in] */ PLUID DeviceLuid,
             /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags,
             /* [in] */ ULONG Length,
-            /* [in] */ ULONG Offset,
-            /* [in] */ ULONG TotalLength,
+            /* [in] */ ULONG64 Offset,
+            /* [in] */ ULONG64 TotalLength,
             /* [in] */ BYTE RestoreBuffer[  ]) = 0;
         
     };
@@ -358,8 +359,8 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
             /* [in] */ PLUID DeviceLuid,
             /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags,
             /* [in] */ ULONG Length,
-            /* [in] */ ULONG Offset,
-            /* [in] */ ULONG TotalLength,
+            /* [in] */ ULONG64 Offset,
+            /* [in] */ ULONG64 TotalLength,
             /* [in] */ BYTE RestoreBuffer[  ]);
         
         END_INTERFACE
@@ -555,7 +556,7 @@ EXTERN_C const IID IID_IVmGPUPGuestMsiAccess;
     {
     public:
         virtual HRESULT STDMETHODCALLTYPE DeliverInterrupt( 
-            /* [in] */ UINT32 DestAddr,
+            /* [in] */ UINT64 DestAddr,
             /* [in] */ UINT32 Data) = 0;
         
     };
@@ -581,7 +582,7 @@ EXTERN_C const IID IID_IVmGPUPGuestMsiAccess;
         
         HRESULT ( STDMETHODCALLTYPE *DeliverInterrupt )( 
             IVmGPUPGuestMsiAccess * This,
-            /* [in] */ UINT32 DestAddr,
+            /* [in] */ UINT64 DestAddr,
             /* [in] */ UINT32 Data);
         
         END_INTERFACE

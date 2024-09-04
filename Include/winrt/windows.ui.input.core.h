@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.input.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -251,6 +253,7 @@
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
 #include "Windows.ApplicationModel.Core.h"
+#include "Windows.System.h"
 #include "Windows.UI.Core.h"
 #include "Windows.UI.Input.h"
 
@@ -271,6 +274,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource ABI::Windows::UI::Input::Core::IRadialControllerIndependentInputSource
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Core {
+                    interface IRadialControllerIndependentInputSource2;
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2 ABI::Windows::UI::Input::Core::IRadialControllerIndependentInputSource2
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSourceStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSourceStatics_FWD_DEFINED__
@@ -315,6 +334,28 @@ namespace ABI {
 
 
 
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            class DispatcherQueue;
+        } /* Windows */
+    } /* System */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CSystem_CIDispatcherQueue_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIDispatcherQueue_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IDispatcherQueue;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIDispatcherQueue ABI::Windows::System::IDispatcherQueue
+
+#endif // ____x_ABI_CWindows_CSystem_CIDispatcherQueue_FWD_DEFINED__
 
 
 
@@ -375,6 +416,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -414,8 +456,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("3D577EF6-4CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                     MIDL_INTERFACE("3D577EF6-4CEE-11E6-B535-001BDC06AB3B")
-                    IRadialControllerIndependentInputSource : IInspectable
+                    IRadialControllerIndependentInputSource : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Controller(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialController * * value
                             ) = 0;
@@ -435,6 +478,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Input.Core.IRadialControllerIndependentInputSource2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Core.RadialControllerIndependentInputSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Core_IRadialControllerIndependentInputSource2[] = L"Windows.UI.Input.Core.IRadialControllerIndependentInputSource2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Core {
+                    /* [object, uuid("7073AAD8-35F3-4EEB-8751-BE4D0A66FAF4"), exclusiveto, contract] */
+                    MIDL_INTERFACE("7073AAD8-35F3-4EEB-8751-BE4D0A66FAF4")
+                    IRadialControllerIndependentInputSource2 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DispatcherQueue(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IDispatcherQueue * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IRadialControllerIndependentInputSource2=_uuidof(IRadialControllerIndependentInputSource2);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -459,8 +545,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("3D577EF5-4CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                     MIDL_INTERFACE("3D577EF5-4CEE-11E6-B535-001BDC06AB3B")
-                    IRadialControllerIndependentInputSourceStatics : IInspectable
+                    IRadialControllerIndependentInputSourceStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateForView(
                             /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Core::ICoreApplicationView * view,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Core::IRadialControllerIndependentInputSource * * result
@@ -492,6 +579,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndep
  *
  * Class implements the following interfaces:
  *    Windows.UI.Input.Core.IRadialControllerIndependentInputSource ** Default Interface **
+ *    Windows.UI.Input.Core.IRadialControllerIndependentInputSource2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -516,6 +604,12 @@ typedef interface __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependen
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2 __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2;
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSourceStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSourceStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSourceStatics __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSourceStatics;
@@ -535,6 +629,15 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView
 
 
 
+#ifndef ____x_ABI_CWindows_CSystem_CIDispatcherQueue_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIDispatcherQueue_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIDispatcherQueue __x_ABI_CWindows_CSystem_CIDispatcherQueue;
+
+#endif // ____x_ABI_CWindows_CSystem_CIDispatcherQueue_FWD_DEFINED__
+
+
+
+
 #ifndef ____x_ABI_CWindows_CUI_CCore_CICoreDispatcher_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CCore_CICoreDispatcher_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CCore_CICoreDispatcher __x_ABI_CWindows_CUI_CCore_CICoreDispatcher;
@@ -550,6 +653,7 @@ typedef interface __x_ABI_CWindows_CUI_CCore_CICoreDispatcher __x_ABI_CWindows_C
 typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialController __x_ABI_CWindows_CUI_CInput_CIRadialController;
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CIRadialController_FWD_DEFINED__
+
 
 
 
@@ -665,6 +769,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndep
 
 /*
  *
+ * Interface Windows.UI.Input.Core.IRadialControllerIndependentInputSource2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Core.RadialControllerIndependentInputSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Core_IRadialControllerIndependentInputSource2[] = L"Windows.UI.Input.Core.IRadialControllerIndependentInputSource2";
+/* [object, uuid("7073AAD8-35F3-4EEB-8751-BE4D0A66FAF4"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DispatcherQueue )(
+        __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIDispatcherQueue * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_get_DispatcherQueue(This,value) \
+    ( (This)->lpVtbl->get_DispatcherQueue(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndependentInputSource2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Input.Core.IRadialControllerIndependentInputSourceStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -769,6 +966,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CCore_CIRadialControllerIndep
  *
  * Class implements the following interfaces:
  *    Windows.UI.Input.Core.IRadialControllerIndependentInputSource ** Default Interface **
+ *    Windows.UI.Input.Core.IRadialControllerIndependentInputSource2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

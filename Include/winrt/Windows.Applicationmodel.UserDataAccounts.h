@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.userdataaccounts.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2330,8 +2332,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("B9C4367E-B348-4910-BE94-4AD4BBA6DEA7"), exclusiveto, contract] */
                 MIDL_INTERFACE("B9C4367E-B348-4910-BE94-4AD4BBA6DEA7")
-                IUserDataAccount : IInspectable
+                IUserDataAccount : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2413,8 +2416,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("078CD89F-DE82-404B-8195-C8A3AC198F60"), exclusiveto, contract] */
                 MIDL_INTERFACE("078CD89F-DE82-404B-8195-C8A3AC198F60")
-                IUserDataAccount2 : IInspectable
+                IUserDataAccount2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnterpriseId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2456,8 +2460,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("01533845-6C43-4286-9D69-3E1709A1F266"), exclusiveto, contract] */
                 MIDL_INTERFACE("01533845-6C43-4286-9D69-3E1709A1F266")
-                IUserDataAccount3 : IInspectable
+                IUserDataAccount3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExplictReadAccessPackageFamilyNames(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                         ) = 0;
@@ -2502,8 +2507,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("C4315210-EAE5-4F0A-A8B2-1CCA115E008F"), exclusiveto, contract] */
                 MIDL_INTERFACE("C4315210-EAE5-4F0A-A8B2-1CCA115E008F")
-                IUserDataAccount4 : IInspectable
+                IUserDataAccount4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanShowCreateContactGroup(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2563,8 +2569,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("56A6E8DB-DB8F-41AB-A65F-8C5971AAC982"), exclusiveto, contract] */
                 MIDL_INTERFACE("56A6E8DB-DB8F-41AB-A65F-8C5971AAC982")
-                IUserDataAccountManagerForUser : IInspectable
+                IUserDataAccountManagerForUser : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestStoreAsync(
                         /* [in] */ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore * * result
@@ -2607,8 +2614,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("0D9B89EA-1928-4A20-86D5-3C737F7DC3B0"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D9B89EA-1928-4A20-86D5-3C737F7DC3B0")
-                IUserDataAccountManagerStatics : IInspectable
+                IUserDataAccountManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestStoreAsync(
                         /* [in] */ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore * * result
@@ -2660,8 +2668,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("6A3DED88-316B-435E-B534-F7D4B4B7DBA6"), exclusiveto, contract] */
                 MIDL_INTERFACE("6A3DED88-316B-435E-B534-F7D4B4B7DBA6")
-                IUserDataAccountManagerStatics2 : IInspectable
+                IUserDataAccountManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser * * result
@@ -2701,8 +2710,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("2073B0AD-7D0A-4E76-BF45-2368F978A59A"), exclusiveto, contract] */
                 MIDL_INTERFACE("2073B0AD-7D0A-4E76-BF45-2368F978A59A")
-                IUserDataAccountStore : IInspectable
+                IUserDataAccountStore : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindAccountsAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount * * result
                         ) = 0;
@@ -2753,8 +2763,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("B1E0AEF7-9560-4631-8AF0-061D30161469"), exclusiveto, contract] */
                 MIDL_INTERFACE("B1E0AEF7-9560-4631-8AF0-061D30161469")
-                IUserDataAccountStore2 : IInspectable
+                IUserDataAccountStore2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateAccountWithPackageRelativeAppIdAsync(
                         /* [in] */__RPC__in HSTRING userDisplayName,
                         /* [in] */__RPC__in HSTRING packageRelativeAppId,
@@ -2806,8 +2817,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("8142C094-F3C9-478B-B117-6585BEBB6789"), exclusiveto, contract] */
                 MIDL_INTERFACE("8142C094-F3C9-478B-B117-6585BEBB6789")
-                IUserDataAccountStore3 : IInspectable
+                IUserDataAccountStore3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(
                         /* [in] */__RPC__in HSTRING userDisplayName,
                         /* [in] */__RPC__in HSTRING packageRelativeAppId,
@@ -2849,8 +2861,9 @@ namespace ABI {
             namespace UserDataAccounts {
                 /* [object, uuid("84E3E2E5-8820-4512-B1F6-2E035BE1072C"), exclusiveto, contract] */
                 MIDL_INTERFACE("84E3E2E5-8820-4512-B1F6-2E035BE1072C")
-                IUserDataAccountStoreChangedEventArgs : IInspectable
+                IUserDataAccountStoreChangedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * result
                         ) = 0;

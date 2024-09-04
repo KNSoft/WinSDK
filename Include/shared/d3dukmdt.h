@@ -41,6 +41,7 @@
 #define DXGKDDI_INTERFACE_VERSION_WDDM2_1    0x6003
 #define DXGKDDI_INTERFACE_VERSION_WDDM2_2    0x700A
 #define DXGKDDI_INTERFACE_VERSION_WDDM2_3    0x8001
+#define DXGKDDI_INTERFACE_VERSION_WDDM2_4    0x9006
 
 
 #define IS_OFFICIAL_DDI_INTERFACE_VERSION(version)                 \
@@ -53,11 +54,12 @@
              ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_0) ||   \
              ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_1) ||   \
              ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_2) ||   \
-             ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_3)      \
+             ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_3) ||   \
+             ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_4)      \
             )
 
 #if !defined(DXGKDDI_INTERFACE_VERSION)
-#define DXGKDDI_INTERFACE_VERSION           DXGKDDI_INTERFACE_VERSION_WDDM2_3
+#define DXGKDDI_INTERFACE_VERSION           DXGKDDI_INTERFACE_VERSION_WDDM2_4
 #endif // !defined(DXGKDDI_INTERFACE_VERSION)
 
 #define D3D_UMD_INTERFACE_VERSION_VISTA      0x000C
@@ -87,8 +89,12 @@
 #define D3D_UMD_INTERFACE_VERSION_WDDM2_3_2     0x8001
 #define D3D_UMD_INTERFACE_VERSION_WDDM2_3       D3D_UMD_INTERFACE_VERSION_WDDM2_3_2
 
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_4_1     0x9000
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_4_2     0x9001
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_4       D3D_UMD_INTERFACE_VERSION_WDDM2_4_2
+
 #if !defined(D3D_UMD_INTERFACE_VERSION)
-#define D3D_UMD_INTERFACE_VERSION           D3D_UMD_INTERFACE_VERSION_WDDM2_3
+#define D3D_UMD_INTERFACE_VERSION           D3D_UMD_INTERFACE_VERSION_WDDM2_4
 #endif // !defined(D3D_UMD_INTERFACE_VERSION)
 
 //
@@ -160,7 +166,8 @@ typedef struct _DXGKVGPU_ESCAPE_POWERTRANSITIONCOMPLETE
 
 typedef struct _DXGKVGPU_ESCAPE_INITIALIZE
 {
-    DXGKVGPU_ESCAPE_HEAD Header;
+    DXGKVGPU_ESCAPE_HEAD    Header;
+    GUID                    VmGuid;
 } DXGKVGPU_ESCAPE_INITIALIZE;
 
 typedef struct _DXGKVGPU_ESCAPE_RELEASE
@@ -796,6 +803,10 @@ typedef enum _D3DDDI_OUTPUT_WIRE_COLOR_SPACE_TYPE
     // OS only intend to use the _G22_P2020 value in future,
     // for now graphics drivers should not expect it.
     D3DDDI_OUTPUT_WIRE_COLOR_SPACE_G22_P2020              = 31,
+    
+    // OS only intend to use the _G2084_P2020_HDR10PLUS value in future,
+    // for now graphics drivers should not expect it.
+    D3DDDI_OUTPUT_WIRE_COLOR_SPACE_G2084_P2020_HDR10PLUS  = 32,
 } D3DDDI_OUTPUT_WIRE_COLOR_SPACE_TYPE;
 
 typedef struct _D3DDDIRECT
@@ -858,6 +869,7 @@ typedef enum _D3DDDI_HDR_METADATA_TYPE
 {
     D3DDDI_HDR_METADATA_TYPE_NONE               = 0,
     D3DDDI_HDR_METADATA_TYPE_HDR10              = 1,
+    D3DDDI_HDR_METADATA_TYPE_HDR10PLUS         = 2,
 } D3DDDI_HDR_METADATA_TYPE;
 
 typedef struct _D3DDDI_HDR_METADATA_HDR10
@@ -874,6 +886,11 @@ typedef struct _D3DDDI_HDR_METADATA_HDR10
     UINT16 MaxContentLightLevel;
     UINT16 MaxFrameAverageLightLevel;
 } D3DDDI_HDR_METADATA_HDR10;
+
+typedef struct D3DDDI_HDR_METADATA_HDR10PLUS
+{
+    BYTE Data[72];
+} D3DDDI_HDR_METADATA_HDR10PLUS;
 
 // Used as a value for D3DDDI_VIDEO_PRESENT_SOURCE_ID and D3DDDI_VIDEO_PRESENT_TARGET_ID types to specify
 // that the respective video present source/target ID hasn't been initialized.
@@ -1240,6 +1257,7 @@ typedef struct D3DDDI_MAKERESIDENT
     D3DKMT_HANDLE               hPagingQueue;       // [in] Handle to the paging queue used to synchronize paging operations for this call.
     UINT                        NumAllocations;     // [in/out] On input, the number of allocation handles om the AllocationList array. On output,
                                                     //          the number of allocations successfully made resident.
+    _Field_size_(NumAllocations)
     CONST D3DKMT_HANDLE*        AllocationList;     // [in] An array of NumAllocations allocation handles
     CONST UINT*                 PriorityList;       // [in] Residency priority array for each of the allocations in the resource or allocation list
     D3DDDI_MAKERESIDENT_FLAGS   Flags;              // [in] Residency flags
@@ -1648,6 +1666,61 @@ typedef struct _D3DDDI_WAITFORSYNCHRONIZATIONOBJECTFROMCPU_FLAGS
 } D3DDDI_WAITFORSYNCHRONIZATIONOBJECTFROMCPU_FLAGS;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+typedef struct _D3DDDI_QUERYREGISTRY_FLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT   TranslatePath    :  1;
+            UINT   MutableValue     :  1;
+            UINT   Reserved         : 30;
+        };
+        UINT Value;
+    };
+} D3DDDI_QUERYREGISTRY_FLAGS;
+
+typedef enum _D3DDDI_QUERYREGISTRY_TYPE
+{
+   D3DDDI_QUERYREGISTRY_SERVICEKEY      = 0,	
+   D3DDDI_QUERYREGISTRY_ADAPTERKEY      = 1,	
+   D3DDDI_QUERYREGISTRY_DRIVERSTOREPATH = 2,
+   D3DDDI_QUERYREGISTRY_MAX,
+} D3DDDI_QUERYREGISTRY_TYPE;
+
+typedef enum _D3DDDI_QUERYREGISTRY_STATUS
+{
+   D3DDDI_QUERYREGISTRY_STATUS_SUCCESS              = 0,	
+   D3DDDI_QUERYREGISTRY_STATUS_BUFFER_OVERFLOW      = 1,	
+   D3DDDI_QUERYREGISTRY_STATUS_FAIL                 = 2,	
+   D3DDDI_QUERYREGISTRY_STATUS_MAX,
+} D3DDDI_QUERYREGISTRY_STATUS;
+
+//
+// Output data value follows this structure.
+// PrivateDriverSize must be sizeof(D3DDDI_QUERYREGISTRY_INFO) + (size of the the key value in bytes)
+//
+typedef struct _D3DDDI_QUERYREGISTRY_INFO
+{
+   D3DDDI_QUERYREGISTRY_TYPE    QueryType;              // In
+   D3DDDI_QUERYREGISTRY_FLAGS   QueryFlags;             // In
+   WCHAR                        ValueName[MAX_PATH];    // In
+   ULONG                        ValueType;              // In
+   ULONG                        PhysicalAdapterIndex;   // In
+   ULONG                        OutputValueSize;        // Out. Number of bytes written to the output value or required in case of D3DDDI_QUERYREGISTRY_STATUS_BUFFER_OVERFLOW.
+   D3DDDI_QUERYREGISTRY_STATUS  Status;                 // Out
+   union {
+        DWORD   OutputDword;                            // Out
+        UINT64  OutputQword;                            // Out
+        WCHAR   OutputString[1];                        // Out. Dynamic array
+        BYTE    OutputBinary[1];                        // Out. Dynamic array
+   };
+ } D3DDDI_QUERYREGISTRY_INFO;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 
 //
 // Defines the maximum number of context a particular command buffer can

@@ -37,7 +37,7 @@
 
 #if !defined ( D3D11DDI_MINOR_HEADER_VERSION )  || ( D3D11DDI_MINOR_HEADER_VERSION < 5 && D3D12DDI_MINOR_HEADER_VERSION >= 1 )
 #undef D3D11DDI_MINOR_HEADER_VERSION
-#define D3D11DDI_MINOR_HEADER_VERSION 12
+#define D3D11DDI_MINOR_HEADER_VERSION 13
 #endif
 
 //----------------------------------
@@ -3125,7 +3125,7 @@ typedef struct D3D11_1DDI_ENCRYPTED_BLOCK_INFO
     UINT NumBytesInEncryptPattern;
 } D3D11_1DDI_ENCRYPTED_BLOCK_INFO;
 
-typedef struct D3D11_1DDI_VIDEO_DECODERR_BUFFER_DESC
+typedef struct D3D11_1DDI_VIDEO_DECODER_BUFFER_DESC
 {
     D3D10DDI_HRESOURCE hResource;
     D3D11_1DDI_VIDEO_DECODER_BUFFER_TYPE BufferType;
@@ -4034,6 +4034,16 @@ typedef struct D3DWDDM2_0DDI_VIDEO_DECODER_BUFFER_DESC1
 
 DEFINE_GUID(D3DWDDM2_0DDI_DECODER_ENCRYPTION_HW_CENC, 0x89d6ac4f, 0x9f2, 0x4229, 0xb2, 0xcd, 0x37, 0x74, 0xa, 0x6d, 0xfd, 0x81); 
 
+#if D3D11DDI_MINOR_HEADER_VERSION >= 13
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// Bitstream encryption types introduced in 2.4.  
+//
+DEFINE_GUID(D3DWDDM2_4DDI_DECODER_BITSTREAM_ENCRYPTION_TYPE_CENC, 0xb0405235, 0xc13d, 0x44f2, 0x9a, 0xe5, 0xdd, 0x48, 0xe0, 0x8e, 0x5b, 0x67);
+DEFINE_GUID(D3DWDDM2_4DDI_DECODER_BITSTREAM_ENCRYPTION_TYPE_CBCS, 0x422d9319, 0x9d21, 0x4bb7, 0x93, 0x71, 0xfa, 0xf5, 0xa8, 0x2c, 0x3e, 0x04);
+
+#endif /*D3D11DDI_MINOR_HEADER_VERSION >= 13*/
+
 typedef struct D3DWDDM2_0DDI_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION
 {
     D3D11_1DDI_HCRYPTOSESSION hCryptoSession; 
@@ -4066,6 +4076,10 @@ typedef enum D3DWDDM2_0DDI_VIDEO_CAPABILITY_QUERY
     D3DWDDM2_0DDI_VIDEO_CAPABILITY_QUERY_RECOMMEND_DECODER_DOWNSAMPLING   = 3,
     D3DWDDM2_0DDI_VIDEO_CAPABILITY_QUERY_DECODER_CAPS                     = 4,
     D3DWDDM2_0DDI_VIDEO_CAPABILITY_QUERY_DECODER_DOWNSAMPLE_OUTPUT_FORMAT = 5,
+
+#if D3D11DDI_MINOR_HEADER_VERSION >= 13
+    D3DWDDM2_4DDI_VIDEO_CAPABILITY_QUERY_DECODER_HISTOGRAM                = 6,
+#endif /*D3D11DDI_MINOR_HEADER_VERSION >= 13*/
 } D3DWDDM2_0DDI_VIDEO_CAPABILITY_QUERY;
 
 typedef enum D3DWDDM2_0DDI_VIDEO_DECODER_CAPS 
@@ -4489,6 +4503,350 @@ typedef struct D3DWDDM2_1DDI_VIDEO_OUTPUT
     UINT8 Reserved; // C doesn't allow empty structures. They are, at least, the size of a byte.
 } D3DWDDM2_1DDI_VIDEO_OUTPUT;
 #endif /*D3D11DDI_MINOR_HEADER_VERSION >= 10*/
+
+#if D3D11DDI_MINOR_HEADER_VERSION >= 13
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// User mode device function table 2.4 video
+//
+
+typedef enum D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT
+{
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_Y = 0,
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_U = 1, 
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_V = 2,
+
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_R = 0,
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_G = 1, 
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_B = 2,
+
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_A = 3,
+} D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT; 
+
+
+typedef enum D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS
+{
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAG_NONE = 0x0,
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAG_Y = (1 << D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_Y),
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAG_U = (1 << D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_U), 
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAG_V = (1 << D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_V),
+
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAG_R = (1 << D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_R),
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAG_G = (1 << D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_G), 
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAG_B = (1 << D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_B),
+
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAG_A = (1 << D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_A),
+
+} D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS; 
+
+typedef struct D3DWDDM2_4DDI_VIDEO_CAPABILITY_DECODER_HISTOGRAM
+{
+    D3D11_1DDI_VIDEO_DECODER_DESC DecoderDesc;                            // in
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS Components;     // out
+    UINT BinCount;                                                        // out
+    UINT CounterBitDepth;                                                 // out
+} D3DWDDM2_4DDI_VIDEO_CAPABILITY_DECODER_HISTOGRAM;
+
+typedef struct D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_RS4_0
+{
+    UINT64 Offset;
+    D3D10DDI_HRESOURCE hBuffer;
+} D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_RS4_0;
+
+#define D3DWDDM2_4DDI_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS 4
+
+typedef struct D3DWDDM2_4DDIARG_VIDEODECODERBEGINFRAME_RS4_0
+{
+    D3D11_1DDI_HVIDEODECODEROUTPUTVIEW hOutputView;
+    CONST void* pContentKey;
+    UINT ContentKeySize; 
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM_RS4_0 Histograms[D3DWDDM2_4DDI_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS];
+} D3DWDDM2_4DDIARG_VIDEODECODERBEGINFRAME_RS4_0;
+
+typedef HRESULT ( APIENTRY* PFND3DWDDM2_4DDI_VIDEODECODERBEGINFRAME_RS4_0 )(
+    D3D10DDI_HDEVICE hDevice, 
+    D3D11_1DDI_HDECODE hDecode, 
+    CONST D3DWDDM2_4DDIARG_VIDEODECODERBEGINFRAME_RS4_0* pBeginFrame);
+
+typedef struct D3DWDDM2_4DDI_VIDEO_DECODER_BUFFER_DESC
+{
+    D3D10DDI_HRESOURCE hResource;
+    D3D11_1DDI_VIDEO_DECODER_BUFFER_TYPE BufferType;
+    UINT DataOffset;
+    UINT DataSize;
+    _Field_size_opt_(IVSize) void* pIV;
+    UINT IVSize;
+    _Field_size_opt_(SubSampleMappingCount) D3DWDDM2_0DDI_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK* pSubSampleMappingBlock;
+    UINT SubSampleMappingCount; 
+    UINT cBlocksStripeEncrypted;
+    UINT cBlocksStripeClear;
+} D3DWDDM2_4DDI_VIDEO_DECODER_BUFFER_DESC;
+
+typedef HRESULT ( APIENTRY* PFND3DWDDM2_4DDI_VIDEODECODERSUBMITBUFFERS )(
+    _In_ D3D10DDI_HDEVICE hDevice, 
+    _In_ D3D11_1DDI_HDECODE hDecode, 
+    _In_ UINT BufferCount, 
+    _In_ CONST D3DWDDM2_4DDI_VIDEO_DECODER_BUFFER_DESC* pBufferDesc);
+
+typedef struct D3DWDDM2_4DDI_VIDEODEVICEFUNCS_RS4_0
+{
+    PFND3D11_1DDI_GETVIDEODECODERPROFILECOUNT                 pfnGetVideoDecoderProfileCount;
+    PFND3D11_1DDI_GETVIDEODECODERPROFILE                      pfnGetVideoDecoderProfile;
+    PFND3D11_1DDI_CHECKVIDEODECODERFORMAT                     pfnCheckVideoDecoderFormat;
+    PFND3D11_1DDI_GETVIDEODECODERCONFIGCOUNT                  pfnGetVideoDecoderConfigCount;
+    PFND3D11_1DDI_GETVIDEODECODERCONFIG                       pfnGetVideoDecoderConfig;
+    PFND3D11_1DDI_GETVIDEODECODERBUFFERTYPECOUNT              pfnGetVideoDecoderBufferTypeCount;
+    PFND3D11_1DDI_GETVIDEODECODERBUFFERINFO                   pfnGetVideoDecoderBufferInfo;
+    PFND3D11_1DDI_CALCPRIVATEVIDEODECODERSIZE                 pfnCalcPrivateVideoDecoderSize;
+    PFND3D11_1DDI_CREATEVIDEODECODER                          pfnCreateVideoDecoder;
+    PFND3D11_1DDI_DESTROYVIDEODECODER                         pfnDestroyVideoDecoder;
+    PFND3D11_1DDI_VIDEODECODEREXTENSION                       pfnVideoDecoderExtension;
+    PFND3DWDDM2_4DDI_VIDEODECODERBEGINFRAME_RS4_0             pfnVideoDecoderBeginFrame;
+    PFND3D11_1DDI_VIDEODECODERENDFRAME                        pfnVideoDecoderEndFrame;
+    PFND3D11_1DDI_VIDEODECODERSUBMITBUFFERS                   pfnVideoDecoderSubmitBuffers;
+    PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORENUMSIZE           pfnCalcPrivateVideoProcessorEnumSize;
+    PFND3D11_1DDI_CREATEVIDEOPROCESSORENUM                    pfnCreateVideoProcessorEnum;
+    PFND3D11_1DDI_DESTROYVIDEOPROCESSORENUM                   pfnDestroyVideoProcessorEnum;
+    PFND3D11_1DDI_CHECKVIDEOPROCESSORFORMAT                   pfnCheckVideoProcessorFormat;
+    PFND3D11_1DDI_GETVIDEOPROCESSORCAPS                       pfnGetVideoProcessorCaps;
+    PFND3D11_1DDI_GETVIDEOPROCESSORRATECONVERSIONCAPS         pfnGetVideoProcessorRateConversionCaps;
+    PFND3D11_1DDI_GETVIDEOPROCESSORCUSTOMRATE                 pfnGetVideoProcessorCustomRate;
+    PFND3D11_1DDI_GETVIDEOPROCESSORFILTERRANGE                pfnGetVideoProcessorFilterRange;
+    PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORSIZE               pfnCalcPrivateVideoProcessorSize;
+    PFND3D11_1DDI_CREATEVIDEOPROCESSOR                        pfnCreateVideoProcessor;
+    PFND3D11_1DDI_DESTROYVIDEOPROCESSOR                       pfnDestroyVideoProcessor;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTTARGETRECT           pfnVideoProcessorSetOutputTargetRect;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTBACKGROUNDCOLOR      pfnVideoProcessorSetOutputBackgroundColor;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTCOLORSPACE           pfnVideoProcessorSetOutputColorSpace;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTALPHAFILLMODE        pfnVideoProcessorSetOutputAlphaFillMode;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTCONSTRICTION         pfnVideoProcessorSetOutputConstriction;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTSTEREOMODE           pfnVideoProcessorSetOutputStereoMode;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTEXTENSION            pfnVideoProcessorSetOutputExtension;
+    PFND3D11_1DDI_VIDEOPROCESSORGETOUTPUTEXTENSION            pfnVideoProcessorGetOutputExtension;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMFRAMEFORMAT          pfnVideoProcessorSetStreamFrameFormat;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMCOLORSPACE           pfnVideoProcessorSetStreamColorSpace;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMOUTPUTRATE           pfnVideoProcessorSetStreamOutputRate;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMSOURCERECT           pfnVideoProcessorSetStreamSourceRect;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMDESTRECT             pfnVideoProcessorSetStreamDestRect;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMALPHA                pfnVideoProcessorSetStreamAlpha;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMPALETTE              pfnVideoProcessorSetStreamPalette;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMPIXELASPECTRATIO     pfnVideoProcessorSetStreamPixelAspectRatio;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMLUMAKEY              pfnVideoProcessorSetStreamLumaKey;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMSTEREOFORMAT         pfnVideoProcessorSetStreamStereoFormat;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMAUTOPROCESSINGMODE   pfnVideoProcessorSetStreamAutoProcessingMode;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMFILTER               pfnVideoProcessorSetStreamFilter;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMEXTENSION            pfnVideoProcessorSetStreamExtension;
+    PFND3D11_1DDI_VIDEOPROCESSORGETSTREAMEXTENSION            pfnVideoProcessorGetStreamExtension;
+    PFND3D11_1DDI_VIDEOPROCESSORBLT                           pfnVideoProcessorBlt;
+    PFND3D11_1DDI_CALCPRIVATEVIDEODECODEROUTPUTVIEWSIZE       pfnCalcPrivateVideoDecoderOutputViewSize;
+    PFND3D11_1DDI_CREATEVIDEODECODEROUTPUTVIEW                pfnCreateVideoDecoderOutputView;
+    PFND3D11_1DDI_DESTROYVIDEODECODEROUTPUTVIEW               pfnDestroyVideoDecoderOutputView;
+    PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORINPUTVIEWSIZE      pfnCalcPrivateVideoProcessorInputViewSize;
+    PFND3D11_1DDI_CREATEVIDEOPROCESSORINPUTVIEW               pfnCreateVideoProcessorInputView;
+    PFND3D11_1DDI_DESTROYVIDEOPROCESSORINPUTVIEW              pfnDestroyVideoProcessorInputView;
+    PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSOROUTPUTVIEWSIZE     pfnCalcPrivateVideoProcessorOutputViewSize;
+    PFND3D11_1DDI_CREATEVIDEOPROCESSOROUTPUTVIEW              pfnCreateVideoProcessorOutputView;
+    PFND3D11_1DDI_DESTROYVIDEOPROCESSOROUTPUTVIEW             pfnDestroyVideoProcessorOutputView;
+    PFND3D11_1DDI_VIDEOPROCESSORINPUTVIEWREADAFTERWRITEHAZARD pfnVideoProcessorInputViewReadAfterWriteHazard;
+    PFND3D11_1DDI_GETCONTENTPROTECTIONCAPS                    pfnGetContentProtectionCaps;
+    PFND3D11_1DDI_GETCRYPTOKEYEXCHANGETYPE                    pfnGetCryptoKeyExchangeType;
+    PFND3D11_1DDI_CALCPRIVATECRYPTOSESSIONSIZE                pfnCalcPrivateCryptoSessionSize;
+    PFND3D11_1DDI_CREATECRYPTOSESSION                         pfnCreateCryptoSession;
+    PFND3D11_1DDI_DESTROYCRYPTOSESSION                        pfnDestroyCryptoSession;
+    PFND3D11_1DDI_GETCERTIFICATESIZE                          pfnGetCertificateSize;
+    PFND3D11_1DDI_GETCERTIFICATE                              pfnGetCertificate;
+    PFND3D11_1DDI_NEGOTIATECRYPTOSESSIONKEYESCHANGE           pfnNegotiateCryptoSessionKeyExchange;
+    PFND3D11_1DDI_ENCRYPTIONBLT                               pfnEncryptionBlt;
+    PFND3D11_1DDI_DECRYPTIONBLT                               pfnDecryptionBlt;
+    PFND3D11_1DDI_STARTSESSIONKEYREFRESH                      pfnStartSessionKeyRefresh;
+    PFND3D11_1DDI_FINISHSESSIONKEYREFRESH                     pfnFinishSessionKeyRefresh;
+    PFND3D11_1DDI_GETENCRYPTIONBLTKEY                         pfnGetEncryptionBltKey;
+    PFND3D11_1DDI_CALCPRIVATEAUTHENTICATEDCHANNELSIZE         pfnCalcPrivateAuthenticatedChannelSize;
+    PFND3D11_1DDI_CREATEAUTHENTICATEDCHANNEL                  pfnCreateAuthenticatedChannel;
+    PFND3D11_1DDI_DESTROYAUTHENTICATEDCHANNEL                 pfnDestroyAuthenticatedChannel;
+    PFND3D11_1DDI_NEGOTIATEAUTHENTICATEDCHANNELKEYEXCHANGE    pfnNegotiateAuthenticatedChannelKeyExchange;
+    PFND3D11_1DDI_QUERYAUTHENTICATEDCHANNEL                   pfnQueryAuthenticatedChannel;
+    PFND3D11_1DDI_CONFIGUREAUTHENTICATEDCHANNEL               pfnConfigureAuthenticatedChannel;
+    PFND3D11_1DDI_VIDEODECODERGETHANDLE                       pfnVideoDecoderGetHandle;
+    PFND3D11_1DDI_CRYPTOSESSIONGETHANDLE                      pfnCryptoSessionGetHandle;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMROTATION             pfnVideoProcessorSetStreamRotation;
+    PFND3D11_1DDI_GETCAPTUREHANDLE                            pfnGetCaptureHandle;
+    PFND3DWDDM2_0DDI_GETDATAFORNEWHARDWAREKEY                 pfnGetDataForNewHardwareKey;
+    PFND3DWDDM2_0DDI_CHECKCRYPTOSESSIONSTATUS                 pfnCheckCryptoSessionStatus;
+    PFND3DWDDM2_4DDI_VIDEODECODERSUBMITBUFFERS                pfnVideoDecoderSubmitBuffers2;
+    PFND3DWDDM2_0DDI_QUERYVIDEOCAPABILITIES                   pfnQueryVideoCapabilities; 
+    PFND3DWDDM2_0DDI_CHECKVIDEOPROCESSORFORMATCONVERSION      pfnCheckVideoProcessorFormatConversion; 
+    PFND3DWDDM2_0DDI_VIDEODECODERENABLEDOWNSAMPLING           pfnVideoDecoderEnableDownsampling; 
+    PFND3DWDDM2_0DDI_VIDEODECODERUPDATEDOWNSAMPLING           pfnVideoDecoderUpdateDownsampling;  
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORSETSTREAMMIRROR            pfnVideoProcessorSetStreamMirror; 
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORSETOUTPUTCOLORSPACE1       pfnVideoProcessorSetOutputColorSpace1;
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORSETSTREAMCOLORSPACE1       pfnVideoProcessorSetStreamColorSpace1;
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORSETOUTPUTSHADERUSAGE       pfnVideoProcessorSetOutputShaderUsage;
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORGETBEHAVIORHINTS           pfnVideoProcessorGetBehaviorHints;
+    PFND3DWDDM2_0DDI_GETCRYPTOSESSIONPRIVATEDATASIZE          pfnGetCryptoSessionPrivateDataSize;
+    PFND3DWDDM2_1DDI_VIDEOPROCESSORSETOUTPUTHDRMETADATA       pfnVideoProcessorSetOutputHDRMetaData;
+    PFND3DWDDM2_1DDI_VIDEOPROCESSORSETSTREAMHDRMETADATA       pfnVideoProcessorSetStreamHDRMetaData;
+} D3DWDDM2_4DDI_VIDEODEVICEFUNCS_RS4_0;
+
+typedef struct D3DWDDM2_4DDI_VIDEO_INPUT_RS4_0
+{
+   BOOL Relocate;
+   D3DWDDM2_4DDI_VIDEODEVICEFUNCS_RS4_0*           pWDDM2_4VideoDeviceFuncs;
+} D3DWDDM2_4DDI_VIDEO_INPUT_RS4_0;
+
+typedef struct D3DWDDM2_4DDI_VIDEO_OUTPUT_RS4_0
+{
+    UINT8 Reserved; // C doesn't allow empty structures. They are, at least, the size of a byte.
+} D3DWDDM2_4DDI_VIDEO_OUTPUT_RS4_0;
+
+typedef enum D3DWDDM2_4DDI_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS
+{
+    D3DWDDM2_4DDI_CRYPTO_SESSION_KEY_EXCHANGE_FLAG_NONE = 0x0,
+} D3DWDDM2_4DDI_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS;
+
+typedef HRESULT ( APIENTRY* PFND3DWDDM2_4DDI_NEGOTIATECRYPTOSESSIONKEYEXCHANGE)(
+    _In_ D3D10DDI_HDEVICE hDevice, 
+    _In_ D3D11_1DDI_HCRYPTOSESSION hCryptoSession, 
+    _In_ D3DWDDM2_4DDI_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags,
+    _In_ UINT                      DataSize,
+    _Inout_updates_bytes_(DataSize) BYTE *pData);
+
+typedef struct D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM
+{
+    UINT Offset;
+    D3D10DDI_HRESOURCE hBuffer;
+} D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM;
+
+typedef struct D3DWDDM2_4DDIARG_VIDEODECODERBEGINFRAME
+{
+    D3D11_1DDI_HVIDEODECODEROUTPUTVIEW hOutputView;
+    CONST void* pContentKey;
+    UINT ContentKeySize; 
+    D3DWDDM2_4DDI_VIDEO_DECODER_HISTOGRAM Histograms[D3DWDDM2_4DDI_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS];
+} D3DWDDM2_4DDIARG_VIDEODECODERBEGINFRAME;
+
+typedef HRESULT ( APIENTRY* PFND3DWDDM2_4DDI_VIDEODECODERBEGINFRAME )(
+    D3D10DDI_HDEVICE hDevice, 
+    D3D11_1DDI_HDECODE hDecode, 
+    CONST D3DWDDM2_4DDIARG_VIDEODECODERBEGINFRAME* pBeginFrame);
+
+typedef struct D3DWDDM2_4DDI_VIDEODEVICEFUNCS
+{
+    PFND3D11_1DDI_GETVIDEODECODERPROFILECOUNT                 pfnGetVideoDecoderProfileCount;
+    PFND3D11_1DDI_GETVIDEODECODERPROFILE                      pfnGetVideoDecoderProfile;
+    PFND3D11_1DDI_CHECKVIDEODECODERFORMAT                     pfnCheckVideoDecoderFormat;
+    PFND3D11_1DDI_GETVIDEODECODERCONFIGCOUNT                  pfnGetVideoDecoderConfigCount;
+    PFND3D11_1DDI_GETVIDEODECODERCONFIG                       pfnGetVideoDecoderConfig;
+    PFND3D11_1DDI_GETVIDEODECODERBUFFERTYPECOUNT              pfnGetVideoDecoderBufferTypeCount;
+    PFND3D11_1DDI_GETVIDEODECODERBUFFERINFO                   pfnGetVideoDecoderBufferInfo;
+    PFND3D11_1DDI_CALCPRIVATEVIDEODECODERSIZE                 pfnCalcPrivateVideoDecoderSize;
+    PFND3D11_1DDI_CREATEVIDEODECODER                          pfnCreateVideoDecoder;
+    PFND3D11_1DDI_DESTROYVIDEODECODER                         pfnDestroyVideoDecoder;
+    PFND3D11_1DDI_VIDEODECODEREXTENSION                       pfnVideoDecoderExtension;
+    PFND3DWDDM2_4DDI_VIDEODECODERBEGINFRAME                   pfnVideoDecoderBeginFrame;
+    PFND3D11_1DDI_VIDEODECODERENDFRAME                        pfnVideoDecoderEndFrame;
+    PFND3D11_1DDI_VIDEODECODERSUBMITBUFFERS                   pfnVideoDecoderSubmitBuffers;
+    PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORENUMSIZE           pfnCalcPrivateVideoProcessorEnumSize;
+    PFND3D11_1DDI_CREATEVIDEOPROCESSORENUM                    pfnCreateVideoProcessorEnum;
+    PFND3D11_1DDI_DESTROYVIDEOPROCESSORENUM                   pfnDestroyVideoProcessorEnum;
+    PFND3D11_1DDI_CHECKVIDEOPROCESSORFORMAT                   pfnCheckVideoProcessorFormat;
+    PFND3D11_1DDI_GETVIDEOPROCESSORCAPS                       pfnGetVideoProcessorCaps;
+    PFND3D11_1DDI_GETVIDEOPROCESSORRATECONVERSIONCAPS         pfnGetVideoProcessorRateConversionCaps;
+    PFND3D11_1DDI_GETVIDEOPROCESSORCUSTOMRATE                 pfnGetVideoProcessorCustomRate;
+    PFND3D11_1DDI_GETVIDEOPROCESSORFILTERRANGE                pfnGetVideoProcessorFilterRange;
+    PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORSIZE               pfnCalcPrivateVideoProcessorSize;
+    PFND3D11_1DDI_CREATEVIDEOPROCESSOR                        pfnCreateVideoProcessor;
+    PFND3D11_1DDI_DESTROYVIDEOPROCESSOR                       pfnDestroyVideoProcessor;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTTARGETRECT           pfnVideoProcessorSetOutputTargetRect;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTBACKGROUNDCOLOR      pfnVideoProcessorSetOutputBackgroundColor;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTCOLORSPACE           pfnVideoProcessorSetOutputColorSpace;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTALPHAFILLMODE        pfnVideoProcessorSetOutputAlphaFillMode;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTCONSTRICTION         pfnVideoProcessorSetOutputConstriction;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTSTEREOMODE           pfnVideoProcessorSetOutputStereoMode;
+    PFND3D11_1DDI_VIDEOPROCESSORSETOUTPUTEXTENSION            pfnVideoProcessorSetOutputExtension;
+    PFND3D11_1DDI_VIDEOPROCESSORGETOUTPUTEXTENSION            pfnVideoProcessorGetOutputExtension;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMFRAMEFORMAT          pfnVideoProcessorSetStreamFrameFormat;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMCOLORSPACE           pfnVideoProcessorSetStreamColorSpace;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMOUTPUTRATE           pfnVideoProcessorSetStreamOutputRate;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMSOURCERECT           pfnVideoProcessorSetStreamSourceRect;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMDESTRECT             pfnVideoProcessorSetStreamDestRect;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMALPHA                pfnVideoProcessorSetStreamAlpha;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMPALETTE              pfnVideoProcessorSetStreamPalette;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMPIXELASPECTRATIO     pfnVideoProcessorSetStreamPixelAspectRatio;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMLUMAKEY              pfnVideoProcessorSetStreamLumaKey;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMSTEREOFORMAT         pfnVideoProcessorSetStreamStereoFormat;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMAUTOPROCESSINGMODE   pfnVideoProcessorSetStreamAutoProcessingMode;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMFILTER               pfnVideoProcessorSetStreamFilter;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMEXTENSION            pfnVideoProcessorSetStreamExtension;
+    PFND3D11_1DDI_VIDEOPROCESSORGETSTREAMEXTENSION            pfnVideoProcessorGetStreamExtension;
+    PFND3D11_1DDI_VIDEOPROCESSORBLT                           pfnVideoProcessorBlt;
+    PFND3D11_1DDI_CALCPRIVATEVIDEODECODEROUTPUTVIEWSIZE       pfnCalcPrivateVideoDecoderOutputViewSize;
+    PFND3D11_1DDI_CREATEVIDEODECODEROUTPUTVIEW                pfnCreateVideoDecoderOutputView;
+    PFND3D11_1DDI_DESTROYVIDEODECODEROUTPUTVIEW               pfnDestroyVideoDecoderOutputView;
+    PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSORINPUTVIEWSIZE      pfnCalcPrivateVideoProcessorInputViewSize;
+    PFND3D11_1DDI_CREATEVIDEOPROCESSORINPUTVIEW               pfnCreateVideoProcessorInputView;
+    PFND3D11_1DDI_DESTROYVIDEOPROCESSORINPUTVIEW              pfnDestroyVideoProcessorInputView;
+    PFND3D11_1DDI_CALCPRIVATEVIDEOPROCESSOROUTPUTVIEWSIZE     pfnCalcPrivateVideoProcessorOutputViewSize;
+    PFND3D11_1DDI_CREATEVIDEOPROCESSOROUTPUTVIEW              pfnCreateVideoProcessorOutputView;
+    PFND3D11_1DDI_DESTROYVIDEOPROCESSOROUTPUTVIEW             pfnDestroyVideoProcessorOutputView;
+    PFND3D11_1DDI_VIDEOPROCESSORINPUTVIEWREADAFTERWRITEHAZARD pfnVideoProcessorInputViewReadAfterWriteHazard;
+    PFND3D11_1DDI_GETCONTENTPROTECTIONCAPS                    pfnGetContentProtectionCaps;
+    PFND3D11_1DDI_GETCRYPTOKEYEXCHANGETYPE                    pfnGetCryptoKeyExchangeType;
+    PFND3D11_1DDI_CALCPRIVATECRYPTOSESSIONSIZE                pfnCalcPrivateCryptoSessionSize;
+    PFND3D11_1DDI_CREATECRYPTOSESSION                         pfnCreateCryptoSession;
+    PFND3D11_1DDI_DESTROYCRYPTOSESSION                        pfnDestroyCryptoSession;
+    PFND3D11_1DDI_GETCERTIFICATESIZE                          pfnGetCertificateSize;
+    PFND3D11_1DDI_GETCERTIFICATE                              pfnGetCertificate;
+    PFND3DWDDM2_4DDI_NEGOTIATECRYPTOSESSIONKEYEXCHANGE        pfnNegotiateCryptoSessionKeyExchange;
+    PFND3D11_1DDI_ENCRYPTIONBLT                               pfnEncryptionBlt;
+    PFND3D11_1DDI_DECRYPTIONBLT                               pfnDecryptionBlt;
+    PFND3D11_1DDI_STARTSESSIONKEYREFRESH                      pfnStartSessionKeyRefresh;
+    PFND3D11_1DDI_FINISHSESSIONKEYREFRESH                     pfnFinishSessionKeyRefresh;
+    PFND3D11_1DDI_GETENCRYPTIONBLTKEY                         pfnGetEncryptionBltKey;
+    PFND3D11_1DDI_CALCPRIVATEAUTHENTICATEDCHANNELSIZE         pfnCalcPrivateAuthenticatedChannelSize;
+    PFND3D11_1DDI_CREATEAUTHENTICATEDCHANNEL                  pfnCreateAuthenticatedChannel;
+    PFND3D11_1DDI_DESTROYAUTHENTICATEDCHANNEL                 pfnDestroyAuthenticatedChannel;
+    PFND3D11_1DDI_NEGOTIATEAUTHENTICATEDCHANNELKEYEXCHANGE    pfnNegotiateAuthenticatedChannelKeyExchange;
+    PFND3D11_1DDI_QUERYAUTHENTICATEDCHANNEL                   pfnQueryAuthenticatedChannel;
+    PFND3D11_1DDI_CONFIGUREAUTHENTICATEDCHANNEL               pfnConfigureAuthenticatedChannel;
+    PFND3D11_1DDI_VIDEODECODERGETHANDLE                       pfnVideoDecoderGetHandle;
+    PFND3D11_1DDI_CRYPTOSESSIONGETHANDLE                      pfnCryptoSessionGetHandle;
+    PFND3D11_1DDI_VIDEOPROCESSORSETSTREAMROTATION             pfnVideoProcessorSetStreamRotation;
+    PFND3D11_1DDI_GETCAPTUREHANDLE                            pfnGetCaptureHandle;
+    PFND3DWDDM2_0DDI_GETDATAFORNEWHARDWAREKEY                 pfnGetDataForNewHardwareKey;
+    PFND3DWDDM2_0DDI_CHECKCRYPTOSESSIONSTATUS                 pfnCheckCryptoSessionStatus;
+    PFND3DWDDM2_4DDI_VIDEODECODERSUBMITBUFFERS                pfnVideoDecoderSubmitBuffers2;
+    PFND3DWDDM2_0DDI_QUERYVIDEOCAPABILITIES                   pfnQueryVideoCapabilities; 
+    PFND3DWDDM2_0DDI_CHECKVIDEOPROCESSORFORMATCONVERSION      pfnCheckVideoProcessorFormatConversion; 
+    PFND3DWDDM2_0DDI_VIDEODECODERENABLEDOWNSAMPLING           pfnVideoDecoderEnableDownsampling; 
+    PFND3DWDDM2_0DDI_VIDEODECODERUPDATEDOWNSAMPLING           pfnVideoDecoderUpdateDownsampling;  
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORSETSTREAMMIRROR            pfnVideoProcessorSetStreamMirror; 
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORSETOUTPUTCOLORSPACE1       pfnVideoProcessorSetOutputColorSpace1;
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORSETSTREAMCOLORSPACE1       pfnVideoProcessorSetStreamColorSpace1;
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORSETOUTPUTSHADERUSAGE       pfnVideoProcessorSetOutputShaderUsage;
+    PFND3DWDDM2_0DDI_VIDEOPROCESSORGETBEHAVIORHINTS           pfnVideoProcessorGetBehaviorHints;
+    PFND3DWDDM2_0DDI_GETCRYPTOSESSIONPRIVATEDATASIZE          pfnGetCryptoSessionPrivateDataSize;
+    PFND3DWDDM2_1DDI_VIDEOPROCESSORSETOUTPUTHDRMETADATA       pfnVideoProcessorSetOutputHDRMetaData;
+    PFND3DWDDM2_1DDI_VIDEOPROCESSORSETSTREAMHDRMETADATA       pfnVideoProcessorSetStreamHDRMetaData;
+
+    // 2.4 Video DDIs
+    PFND3DWDDM2_4DDI_NEGOTIATECRYPTOSESSIONKEYEXCHANGE        pfnNegotiateCryptoSessionKeyExchangeMT;
+} D3DWDDM2_4DDI_VIDEODEVICEFUNCS;
+
+typedef struct D3DWDDM2_4DDI_VIDEO_INPUT
+{
+   BOOL Relocate;
+   D3DWDDM2_4DDI_VIDEODEVICEFUNCS*           pWDDM2_4VideoDeviceFuncs;
+} D3DWDDM2_4DDI_VIDEO_INPUT;
+
+typedef struct D3DWDDM2_4DDI_VIDEO_OUTPUT
+{
+    UINT8 Reserved; // C doesn't allow empty structures. They are, at least, the size of a byte.
+} D3DWDDM2_4DDI_VIDEO_OUTPUT;
+
+#endif /*D3D11DDI_MINOR_HEADER_VERSION >= 13*/
+
+
 
 #if D3D11DDI_MINOR_HEADER_VERSION >= 4
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -6414,6 +6772,10 @@ typedef HRESULT ( APIENTRY* PFND3D10DDI_RETRIEVESUBOBJECT )(
 #if D3D11DDI_MINOR_HEADER_VERSION >= 10
 #define D3DWDDM2_1DDI_VIDEO_FUNCTIONS   5    // Sub ID for 2.1 video function table
 #endif
+#if D3D11DDI_MINOR_HEADER_VERSION >= 13
+#define D3DWDDM2_4DDI_VIDEO_FUNCTIONS_RS4_0   6    // Sub ID for 2.4 video function table
+#define D3DWDDM2_4DDI_VIDEO_FUNCTIONS         7    // Sub ID for 2.4 video function table
+#endif
 
 typedef struct D3D10DDIARG_CREATEDEVICE
 {
@@ -7150,6 +7512,15 @@ typedef HRESULT (APIENTRY *PFND3D10DDI_OPENADAPTER)(_Inout_ D3D10DDIARG_OPENADAP
 
 #define D3DWDDM2_3_DDI_INTERFACE_VERSION ((D3D11_DDI_MAJOR_VERSION << 16) | D3DWDDM2_3_DDI_MINOR_VERSION)
 #define D3DWDDM2_3_DDI_SUPPORTED ((((UINT64)D3DWDDM2_3_DDI_INTERFACE_VERSION) << 32) | (((UINT64)D3DWDDM2_3_DDI_BUILD_VERSION) << 16))
+#endif
+
+#if D3D11DDI_MINOR_HEADER_VERSION >= 13
+#define D3DWDDM2_4_DDI_MINOR_VERSION 37
+#define D3DWDDM2_4_DDI_BUILD_VERSION 1
+
+
+#define D3DWDDM2_4_DDI_INTERFACE_VERSION ((D3D11_DDI_MAJOR_VERSION << 16) | D3DWDDM2_4_DDI_MINOR_VERSION)
+#define D3DWDDM2_4_DDI_SUPPORTED ((((UINT64)D3DWDDM2_4_DDI_INTERFACE_VERSION) << 32) | (((UINT64)D3DWDDM2_4_DDI_BUILD_VERSION) << 16))
 #endif
 
 

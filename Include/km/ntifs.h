@@ -485,6 +485,7 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 #define DOMAIN_ALIAS_RID_REMOTE_MANAGEMENT_USERS        (0x00000244L)
 #define DOMAIN_ALIAS_RID_DEFAULT_ACCOUNT                (0x00000245L)
 #define DOMAIN_ALIAS_RID_STORAGE_REPLICA_ADMINS         (0x00000246L)
+#define DOMAIN_ALIAS_RID_DEVICE_OWNERS                  (0x00000247L)
 
 //
 // Application Package Authority.
@@ -579,6 +580,7 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 #define SECURITY_PROCESS_PROTECTION_LEVEL_WINTCB_RID        (0x00002000L)
 #define SECURITY_PROCESS_PROTECTION_LEVEL_WINDOWS_RID       (0x00001000L)
 #define SECURITY_PROCESS_PROTECTION_LEVEL_APP_RID           (0x00000800L)
+#define SECURITY_PROCESS_PROTECTION_LEVEL_ANTIMALWARE_RID   (0x00000600L)
 #define SECURITY_PROCESS_PROTECTION_LEVEL_AUTHENTICODE_RID  (0x00000400L)
 #define SECURITY_PROCESS_PROTECTION_LEVEL_NONE_RID          (0x00000000L)
 
@@ -1783,6 +1785,7 @@ typedef struct _CLAIM_SECURITY_ATTRIBUTES_INFORMATION {
 // end_winnt
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -1810,6 +1813,7 @@ NtOpenThreadTokenEx(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -1861,6 +1865,7 @@ NtDuplicateToken(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -1903,6 +1908,7 @@ NtQueryInformationToken (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -1916,6 +1922,7 @@ NtSetInformationToken (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -1931,6 +1938,7 @@ NtAdjustPrivilegesToken (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -1958,6 +1966,7 @@ NtPrivilegeCheck (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -2149,7 +2158,43 @@ typedef struct _RTL_HEAP_PARAMETERS {
     SIZE_T Reserved[ 2 ];
 } RTL_HEAP_PARAMETERS, *PRTL_HEAP_PARAMETERS;
 
+//
+// Segment heap parameters.
+//
+
+typedef enum _RTL_MEMORY_TYPE {
+    MemoryTypePaged,
+    MemoryTypeNonPaged,
+    MemoryTypeLargePage,
+    MemoryTypeHugePage,
+    MemoryTypeMax
+} RTL_MEMORY_TYPE, *PRTL_MEMORY_TYPE;
+
+#define RTL_SEGHEAP_MEM_SOURCE_ANY_NODE             ((ULONG)-1)
+
+typedef struct _RTL_SEGMENT_HEAP_MEMORY_SOURCE {
+    ULONG Flags;
+    ULONG MemoryTypeMask;               // Mask of RTL_MEMORY_TYPE members.
+    ULONG NumaNode;
+    HANDLE PartitionHandle;
+
+    SIZE_T Reserved[2];
+} RTL_SEGMENT_HEAP_MEMORY_SOURCE, *PRTL_SEGMENT_HEAP_MEMORY_SOURCE;
+
+#define SEGMENT_HEAP_PARAMETERS_VERSION         1
+
+typedef struct _RTL_SEGMENT_HEAP_PARAMETERS {
+    USHORT Version;
+    USHORT Size;
+    ULONG Flags;
+
+    RTL_SEGMENT_HEAP_MEMORY_SOURCE MemorySource;
+
+    SIZE_T Reserved[4];
+} RTL_SEGMENT_HEAP_PARAMETERS, *PRTL_SEGMENT_HEAP_PARAMETERS;
+
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 NTSYSAPI
 PVOID
@@ -2246,6 +2291,7 @@ HEAP_MAKE_TAG_FLAGS (
 // end_winnt
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 NTSYSAPI
 PVOID
 NTAPI
@@ -2255,6 +2301,7 @@ RtlDestroyHeap(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 NTSYSAPI
 _Must_inspect_result_
 _Ret_maybenull_
@@ -2271,6 +2318,7 @@ RtlAllocateHeap(
 // begin_wudfpwdm
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
+//@[comment("MVI_tracked")]
 _Success_(return != 0)
 NTSYSAPI
 LOGICAL
@@ -2282,6 +2330,7 @@ RtlFreeHeap(
     );
 #else
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Success_(return != 0)
 NTSYSAPI
 BOOLEAN
@@ -3647,6 +3696,7 @@ RtlFreeSid(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 NTSYSAPI
 NTSTATUS
@@ -3962,6 +4012,7 @@ RtlSetOwnerSecurityDescriptor (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WS03SP1)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -4037,6 +4088,7 @@ RtlGetOwnerSecurityDescriptor (
 // begin_wudfpwdm
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 _When_(Status < 0, _Out_range_(>, 0))
 _When_(Status >= 0, _Out_range_(==, 0))
@@ -4051,6 +4103,7 @@ RtlNtStatusToDosError (
 // end_wudfpwdm
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _When_(Status < 0, _Out_range_(>, 0))
 _When_(Status >= 0, _Out_range_(==, 0))
 NTSYSAPI
@@ -4226,11 +4279,33 @@ RtlSetThreadPlaceholderCompatibilityMode(
 
 #endif // NTDDI_VERSION >= NTDDI_RS3
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+#undef PHCM_MAX
+#define PHCM_DISGUISE_FULL_PLACEHOLDERS  ((CHAR)3)
+#define PHCM_MAX                         ((CHAR)3)
+
+#define PHCM_ERROR_NO_PEB                ((CHAR)-3)
+
+NTSYSAPI
+CHAR
+NTAPI
+RtlQueryProcessPlaceholderCompatibilityMode(
+    VOID
+    );
+
+NTSYSAPI
+CHAR
+NTAPI
+RtlSetProcessPlaceholderCompatibilityMode(
+    _In_ CHAR Mode
+    );
+
+#endif // NTDDI_VERSION >= NTDDI_RS4
+
 
 #pragma region Application or OneCore Family
-
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
 
 #if (NTDDI_VERSION > NTDDI_WINXP)
 
@@ -4241,7 +4316,7 @@ NTAPI
 RtlCaptureStackBackTrace(
     _In_ ULONG FramesToSkip,
     _In_ ULONG FramesToCapture,
-    _Out_writes_to_(FramesToCapture, return) PVOID * BackTrace,
+    _Out_writes_to_(FramesToCapture,return) PVOID* BackTrace,
     _Out_opt_ PULONG BackTraceHash
     );
 
@@ -4252,9 +4327,7 @@ RtlCaptureStackBackTrace(
 #pragma endregion
 
 #pragma region Desktop Family or OneCore Family
-
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 
 #if (NTDDI_VERSION > NTDDI_WIN2K)
 
@@ -4445,6 +4518,7 @@ NtSetInformationThread (
 
 #else
 
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -6327,6 +6401,52 @@ typedef struct _FILE_STAT_INFORMATION {
     ACCESS_MASK EffectiveAccess;
 } FILE_STAT_INFORMATION, *PFILE_STAT_INFORMATION;
 
+//
+// LxFlags for FILE_STAT_LX_INFORMATION that specify which metadata fields
+// were present for the file.
+//
+
+#define LX_FILE_METADATA_HAS_UID 0x1
+#define LX_FILE_METADATA_HAS_GID 0x2
+#define LX_FILE_METADATA_HAS_MODE 0x4
+#define LX_FILE_METADATA_HAS_DEVICE_ID 0x8
+#define LX_FILE_CASE_SENSITIVE_DIR 0x10
+
+typedef struct _FILE_STAT_LX_INFORMATION {
+    LARGE_INTEGER FileId;
+    LARGE_INTEGER CreationTime;
+    LARGE_INTEGER LastAccessTime;
+    LARGE_INTEGER LastWriteTime;
+    LARGE_INTEGER ChangeTime;
+    LARGE_INTEGER AllocationSize;
+    LARGE_INTEGER EndOfFile;
+    ULONG FileAttributes;
+    ULONG ReparseTag;
+    ULONG NumberOfLinks;
+    ACCESS_MASK EffectiveAccess;
+    ULONG LxFlags;
+    ULONG LxUid;
+    ULONG LxGid;
+    ULONG LxMode;
+    ULONG LxDeviceIdMajor;
+    ULONG LxDeviceIdMinor;
+} FILE_STAT_LX_INFORMATION, *PFILE_STAT_LX_INFORMATION;
+
+//
+// Types and contants used for FileCaseSensitiveInformation.
+//
+
+//
+// Flag definitions for Flags in FILE_CASE_SENSITIVE_INFORMATION.
+//
+
+#define FILE_CS_FLAG_CASE_SENSITIVE_DIR     0x00000001
+
+typedef struct _FILE_CASE_SENSITIVE_INFORMATION {
+    ULONG Flags;
+} FILE_CASE_SENSITIVE_INFORMATION, *PFILE_CASE_SENSITIVE_INFORMATION;
+
+
 typedef struct _FILE_ALLOCATION_INFORMATION {
     LARGE_INTEGER AllocationSize;
 } FILE_ALLOCATION_INFORMATION, *PFILE_ALLOCATION_INFORMATION;
@@ -6549,6 +6669,12 @@ typedef struct _FILE_GET_EA_INFORMATION {
 #if (_WIN32_WINNT >= _WIN32_WINNT_RS1)
 #define RPI_SMB2_SHARECAP_ACCESS_BASED_DIRECTORY_ENUM 0x00000100
 #endif
+
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_RS4)
+#define RPI_SMB2_SHARECAP_IDENTITY_REMOTING  0x00000200
+#endif
+
 //
 // Protocol specific SMB2 server capability flags for version
 // 2 and higher
@@ -6701,6 +6827,7 @@ typedef struct _FILE_FS_DATA_COPY_INFORMATION {
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -6722,6 +6849,7 @@ NtCreateFile (
 // begin_wudfpwdm
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -6742,6 +6870,7 @@ NtDeviceIoControlFile (
 // end_wudfpwdm
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -6778,6 +6907,7 @@ NtLockFile (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -6831,6 +6961,7 @@ NtQueryDirectoryFileEx (
 // begin_wudfpwdm
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -6877,6 +7008,7 @@ NtQueryVolumeInformationFile (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -6896,6 +7028,7 @@ NtReadFile (
 // begin_wudfpwdm
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -6936,6 +7069,7 @@ NtSetVolumeInformationFile (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -7403,6 +7537,20 @@ NtFlushBuffersFileEx (
 #define FSCTL_DELETE_CORRUPTED_REFS_CONTAINER   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 253, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_SCRUB_UNDISCOVERABLE_ID           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 254, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3) */
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4)
+#define FSCTL_NOTIFY_DATA_CHANGE                CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 255, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4) */
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
+#define FSCTL_START_VIRTUALIZATION_INSTANCE_EX  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 256, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1) */
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4)
+#define FSCTL_ENCRYPTION_KEY_CONTROL            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 257, METHOD_BUFFERED, FILE_ANY_ACCESS)  // protect/unprotect under DPL
+#define FSCTL_VIRTUAL_STORAGE_SET_BEHAVIOR      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 258, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4) */
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
+#define FSCTL_SET_REPARSE_POINT_EX              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 259, METHOD_BUFFERED, FILE_SPECIAL_ACCESS) // REPARSE_DATA_BUFFER_EX
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1) */
 
 //
 // The following long list of structs are associated with the preceeding
@@ -8146,6 +8294,12 @@ typedef struct {
 #define MARK_HANDLE_SKIP_COHERENCY_SYNC_DISALLOW_WRITES (0x00004000)        // 9.0 and newer
 
 #endif /*_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD */
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4)
+
+#define MARK_HANDLE_ENABLE_CPU_CACHE                    (0x10000000)
+
+#endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4 */
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
 
@@ -10777,6 +10931,8 @@ typedef enum _CSV_CONTROL_OP {
     CsvControlMarkHandleLocalVolumeMount         = 0x0e,
     CsvControlUnmarkHandleLocalVolumeMount       = 0x0f,
     CsvControlGetCsvFsMdsPathV2                  = 0x12,
+    CsvControlDisableCaching                     = 0x13,
+    CsvControlEnableCaching                      = 0x14,
 } CSV_CONTROL_OP, *PCSV_CONTROL_OP;
 
 typedef struct _CSV_CONTROL_PARAM {
@@ -11674,6 +11830,15 @@ typedef struct _REPAIR_COPIES_OUTPUT {
 
 #define FILE_REGION_USAGE_VALID_CACHED_DATA     0x00000001
 #define FILE_REGION_USAGE_VALID_NONCACHED_DATA  0x00000002
+#define FILE_REGION_USAGE_OTHER_PAGE_ALIGNMENT  0x00000004
+#define FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT  0x00000008
+#ifdef _WIN64
+#define FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT   0x00000010
+#define FILE_REGION_USAGE_QUERY_ALIGNMENT       (FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT   |\
+                                                 FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT)
+#else
+#define FILE_REGION_USAGE_QUERY_ALIGNMENT       (FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT)
+#endif  // _WIN64
 
 typedef struct _FILE_REGION_INFO {
     LONGLONG FileOffset;
@@ -12357,7 +12522,69 @@ typedef struct _SET_DAX_ALLOC_ALIGNMENT_HINT_INPUT {
 
     ULONGLONG FileOffsetToAlign;
 
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4)
+    //
+    //  If DAX_ALLOC_ALIGNMENT_FLAG_FALLBACK_SPECIFIED is present in
+    //  Flags, this field specifies a fallback block size to align
+    //  the given offset of the file whenever allocation satisfying
+    //  AlignmentShift could not be found.
+    //
+
+    ULONG FallbackAlignmentShift;
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4) */
+
 } SET_DAX_ALLOC_ALIGNMENT_HINT_INPUT, *PSET_DAX_ALLOC_ALIGNMENT_HINT_INPUT;
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4)
+
+//
+//  MANDATORY - If allocation satisyfing AlignmentShift (or at least
+//     FallbackAlignmentShift if specified) cannot be found, then fail
+//     the file system operation (e.g. extending the file).
+//
+
+#define DAX_ALLOC_ALIGNMENT_FLAG_MANDATORY             (0x00000001)
+
+//
+//  FALLBACK_SPECIFIED - Indicates that the FallbackAlignmentShift field
+//      is present in the input structure and indicates a fallback
+//      alignment if the optimal alignment isn't available.
+//
+
+#define DAX_ALLOC_ALIGNMENT_FLAG_FALLBACK_SPECIFIED    (0x00000002)
+
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4) */
+
+//
+//========= FSCTL_VIRTUAL_STORAGE_SET_BEHAVIOR =========
+//
+//  Configures file system-specific behaviors for files
+//  used as backing stored for virtual storage devices.
+//
+
+typedef enum _VIRTUAL_STORAGE_BEHAVIOR_CODE {
+
+    VirtualStorageBehaviorUndefined = 0,
+    VirtualStorageBehaviorCacheWriteThrough = 1,
+    VirtualStorageBehaviorCacheWriteBack = 2
+
+} VIRTUAL_STORAGE_BEHAVIOR_CODE, *PVIRTUAL_STORAGE_BEHAVIOR_CODE;
+
+typedef struct _VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT {
+
+    ULONG Size;
+    VIRTUAL_STORAGE_BEHAVIOR_CODE BehaviorCode;
+
+} VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT, *PVIRTUAL_STORAGE_SET_BEHAVIOR_INPUT;
+
+// TO BE DELETED: add for testing purpose only.
+
+typedef struct _ENCRYPTION_KEY_CTRL_INPUT {
+
+    BOOLEAN IsProtect;
+} ENCRYPTION_KEY_CTRL_INPUT, *PENCRYPTION_KEY_CTRL_INPUT;
+
+// end testing purpose only
 
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3) */
 
@@ -12511,13 +12738,31 @@ typedef struct _CONTAINER_ROOT_INFO_OUTPUT {
 #define CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_ROOT            (0x00000004)
 #define CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_TARGET_ROOT     (0x00000008)
 #define CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_EXCEPTION_ROOT  (0x00000010)
+#define CONTAINER_ROOT_INFO_FLAG_BIND_ROOT                      (0x00000020)
+#define CONTAINER_ROOT_INFO_FLAG_BIND_TARGET_ROOT               (0x00000040)
+#define CONTAINER_ROOT_INFO_FLAG_BIND_EXCEPTION_ROOT            (0x00000080)
 
-#define CONTAINER_ROOT_INFO_VALID_FLAGS                         (0x0000001f)
+#define CONTAINER_ROOT_INFO_VALID_FLAGS                         (0x000000ff)
+
+#endif
+
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
 
 typedef struct _VIRTUALIZATION_INSTANCE_INFO_INPUT {
     ULONG NumberOfWorkerThreads;
     ULONG Flags;
 } VIRTUALIZATION_INSTANCE_INFO_INPUT, *PVIRTUALIZATION_INSTANCE_INFO_INPUT;
+
+#define GV_CURRENT_VERSION          2
+
+typedef struct _VIRTUALIZATION_INSTANCE_INFO_INPUT_EX {
+    USHORT HeaderSize;               // sizeof(VIRTUALIZATION_INSTANCE_INFO_INPUT_EX)
+    ULONG Flags;
+    ULONG NotificationInfoSize;      // Total Size of the NotificationInfo Buffer.
+    USHORT NotificationInfoOffset;   // Offset from beginning of this struct to the NotificationInfo Buffer.
+    USHORT ProviderMajorVersion;     // This should be set to GV_CURRENT_VERSION.
+} VIRTUALIZATION_INSTANCE_INFO_INPUT_EX, *PVIRTUALIZATION_INSTANCE_INFO_INPUT_EX;
 
 typedef struct _VIRTUALIZATION_INSTANCE_INFO_OUTPUT {
     GUID VirtualizationInstanceID;
@@ -12537,8 +12782,10 @@ typedef struct _GET_FILTER_FILE_IDENTIFIER_OUTPUT {
     UCHAR FilterFileIdentifier[ANYSIZE_ARRAY];
 } GET_FILTER_FILE_IDENTIFIER_OUTPUT, *PGET_FILTER_FILE_IDENTIFIER_OUTPUT;
 
-#endif
+#endif  //  (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
 
+// end_ntosifs
+// begin_ntifs begin_winioctl
 
 // ****************** Insert New FSCTLs Here ********************************
 
@@ -12564,7 +12811,11 @@ typedef struct _GET_FILTER_FILE_IDENTIFIER_OUTPUT {
 #endif
 #pragma warning(disable:4201)       // unnamed struct
 
-#define SYMLINK_FLAG_RELATIVE   1
+#define SYMLINK_FLAG_RELATIVE   0x00000001   // If set then this is a relative symlink.
+#define SYMLINK_DIRECTORY       0x80000000   // If set then this is a directory symlink. This is not persisted on disk and is programmatically set by file system.
+#define SYMLINK_FILE            0x40000000   // If set then this is a file symlink. This is not persisted on disk and is programmatically set by file system.
+
+#define SYMLINK_RESERVERD_MASK  0xF0000000   // We reserve the high nibble for internal use
 
 typedef struct _REPARSE_DATA_BUFFER {
     ULONG  ReparseTag;
@@ -12762,13 +13013,17 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 #define IO_REPARSE_TAG_CLOUD_F                  (0x9000F01AL)       // winnt
 #define IO_REPARSE_TAG_CLOUD_MASK               (0x0000F000L)       // winnt
 #define IO_REPARSE_TAG_APPEXECLINK              (0x8000001BL)       // winnt
-#define IO_REPARSE_TAG_GVFS                     (0x9000001CL)       // winnt
+#define IO_REPARSE_TAG_PROJFS                   (0x9000001CL)       // winnt
 #define IO_REPARSE_TAG_LX_SYMLINK               (0xA000001DL)
 #define IO_REPARSE_TAG_STORAGE_SYNC             (0x8000001EL)       // winnt
 #define IO_REPARSE_TAG_WCI_TOMBSTONE            (0xA000001FL)       // winnt
 #define IO_REPARSE_TAG_UNHANDLED                (0x80000020L)       // winnt
 #define IO_REPARSE_TAG_ONEDRIVE                 (0x80000021L)       // winnt
-#define IO_REPARSE_TAG_GVFS_TOMBSTONE           (0xA0000022L)       // winnt
+#define IO_REPARSE_TAG_PROJFS_TOMBSTONE         (0xA0000022L)       // winnt
+#define IO_REPARSE_TAG_AF_UNIX                  (0x80000023L)       // winnt
+#define IO_REPARSE_TAG_LX_FIFO                  (0x80000024L)
+#define IO_REPARSE_TAG_LX_CHR                   (0x80000025L)
+#define IO_REPARSE_TAG_LX_BLK                   (0x80000026L)
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -13293,6 +13548,13 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 #define IO_REPARSE_TAG_REDSTOR_HSM              (0x00000050L)
 
 //
+//  Tag allocated to NeuShield for monitoring
+//  GUID: 585414E1-6E0E-46B6-8838-ED837173F590
+//
+
+#define IO_REPARSE_TAG_NEUSHIELD                (0x00000051L)
+
+//
 //  Reparse point index keys.
 //
 //  The index with all the reparse points that exist in a volume at a
@@ -13320,6 +13582,64 @@ typedef struct _REPARSE_INDEX_KEY {
 } REPARSE_INDEX_KEY, *PREPARSE_INDEX_KEY;
 
 #pragma pack()
+
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
+
+//
+//======================= FSCTL_SET_REPARSE_POINT_EX =========================
+//
+//  This FSCTL can be used to set or replace  reparse tag of a file.
+//
+
+typedef struct _REPARSE_DATA_BUFFER_EX {
+
+    //
+    //  This is the existing reparse tag on the file if any,  if the
+    //  caller wants to replace the reparse tag too.
+    //
+    //    - To set the reparse data  along with the reparse tag that
+    //      could be different,  pass the current reparse tag of the
+    //      file.
+    //
+    //    - To update the reparse data while having the same reparse
+    //      tag,  the caller should give the existing reparse tag in
+    //      this ExistingReparseTag field.
+    //
+    //    - To set the reparse tag along with reparse data on a file
+    //      that doesn't have a reparse tag yet, set this to zero.
+    //
+    //  If the ExistingReparseTag  does not match the reparse tag on
+    //  the file,  the FSCTL_SET_REPARSE_POINT_EX  would  fail  with
+    //  STATUS_IO_REPARSE_TAG_MISMATCH. NOTE: If a file doesn't have
+    //  a reparse tag, ExistingReparseTag should be 0.
+    //
+
+    ULONG ExistingReparseTag;
+
+    ULONG Flags;
+
+    //
+    //  Reserved
+    //
+
+    ULONGLONG Reserved;
+
+    //
+    //  Reparse data to set
+    //
+
+    REPARSE_DATA_BUFFER ReparseBuffer;
+
+} REPARSE_DATA_BUFFER_EX, *PREPARSE_DATA_BUFFER_EX;
+
+//
+//  REPARSE_DATA_BUFFER_EX Flags
+//
+//  No flags are defined currently.
+//
+
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1) */
 
 //
 //  To better guarentee backwards compatibility for selective new file system
@@ -13366,8 +13686,8 @@ typedef struct _REPARSE_INDEX_KEY {
 #define SCRUB_DATA_INPUT_FLAG_SKIP_IN_SYNC                     0x00000002
 #define SCRUB_DATA_INPUT_FLAG_SKIP_NON_INTEGRITY_DATA          0x00000004
 #define SCRUB_DATA_INPUT_FLAG_IGNORE_REDUNDANCY                0x00000008
-#define SCRUB_DATA_INPUT_FLAG_SKIP_DATA                        0x00000010 
-#define SCRUB_DATA_INPUT_FLAG_SCRUB_BY_OBJECT_ID               0x00000020                   
+#define SCRUB_DATA_INPUT_FLAG_SKIP_DATA                        0x00000010
+#define SCRUB_DATA_INPUT_FLAG_SCRUB_BY_OBJECT_ID               0x00000020
 
 #define SCRUB_DATA_OUTPUT_FLAG_INCOMPLETE                      0x00000001
 
@@ -13401,13 +13721,13 @@ typedef struct _SCRUB_DATA_INPUT {
     //
 
     ULONG MaximumIos;
-    
+
     //
     // 16 Byte object id. Only used if SCRUB_DATA_INPUT_FLAG_SCRUB_BY_OBJECT_ID
-    // is specified via FSCTL_SCRUB_UNDISCOVERABLE_ID. Array of ULONGs to 
+    // is specified via FSCTL_SCRUB_UNDISCOVERABLE_ID. Array of ULONGs to
     // preserve previous alignment.
     //
-    
+
     ULONG ObjectId[4];
 
     //
@@ -14197,6 +14517,12 @@ typedef struct _NETWORK_APP_INSTANCE_EA {
 #endif //_NETWORK_APP_INSTANCE_EA_DEFINED
 
 
+#define LX_FILE_METADATA_UID_EA_NAME "$LXUID"
+#define LX_FILE_METADATA_GID_EA_NAME "$LXGID"
+#define LX_FILE_METADATA_MODE_EA_NAME "$LXMOD"
+#define LX_FILE_METADATA_DEVICE_ID_EA_NAME "$LXDEV"
+
+
 //
 // Object Information Classes
 //
@@ -14228,6 +14554,7 @@ typedef struct __PUBLIC_OBJECT_TYPE_INFORMATION {
 } PUBLIC_OBJECT_TYPE_INFORMATION, *PPUBLIC_OBJECT_TYPE_INFORMATION;
 
 #if (NTDDI_VERSION >= NTDDI_NT4)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -14242,6 +14569,7 @@ NtQueryObject (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -14270,6 +14598,7 @@ NtQuerySecurityObject (
 // begin_wudfpwdm
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -14305,6 +14634,7 @@ typedef struct _MEMORY_BASIC_INFORMATION {
 
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -14322,6 +14652,7 @@ NtCreateSection (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __drv_allocatesMem(Mem)
 __kernel_entry NTSYSCALLAPI
@@ -14338,6 +14669,7 @@ NtAllocateVirtualMemory (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -14350,6 +14682,7 @@ NtFreeVirtualMemory (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -14823,6 +15156,7 @@ KeSetKernelStackSwapEnable (
 
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _Requires_lock_not_held_(Number)
 _Acquires_lock_(Number)
 _IRQL_raises_(DISPATCH_LEVEL)
@@ -14835,6 +15169,7 @@ KeAcquireQueuedSpinLock (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _Requires_lock_held_(Number)
 _Releases_lock_(Number)
 NTKERNELAPI
@@ -15163,6 +15498,12 @@ typedef struct _SE_EXPORTS {
 
     PSID SeAllAppPackagesSid;
     PSID SeUserModeDriversSid;
+
+    //
+    // Process Trust Sids.
+    //
+
+    PSID SeProcTrustWinTcbSid;
 
     //
     // Trusted Installer SID.
@@ -15529,6 +15870,7 @@ SeDeleteObjectAuditAlarm(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
+//@[comment("MVI_tracked")]
 NTKERNELAPI
 VOID
 SeDeleteObjectAuditAlarmWithTransaction(
@@ -15588,6 +15930,7 @@ SeTokenSetNoChildProcessRestricted(
     _In_ BOOLEAN AuditOnly
     );
 
+//@[comment("MVI_tracked")]
 NTKERNELAPI
 VOID
 SeTokenGetNoChildProcessRestricted(
@@ -15989,7 +16332,7 @@ SeQueryInformationToken (
     );
 #endif
 
-
+//@[comment("MVI_tracked")]
 NTSTATUS
 SeLocateProcessImageName(
     _Inout_ PEPROCESS Process,
@@ -16207,6 +16550,7 @@ PsLookupProcessByProcessId(
     _Outptr_ PEPROCESS *Process
     );
 
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
@@ -16256,6 +16600,7 @@ PsReturnPoolQuota(
 #endif
 
 
+//@[comment("MVI_tracked")]
 NTKERNELAPI
 PEPROCESS
 PsGetThreadProcess(
@@ -17074,6 +17419,7 @@ IoStartNextPacketByKey(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 VOID
@@ -17550,6 +17896,7 @@ POWER_SETTING_CALLBACK (
 typedef POWER_SETTING_CALLBACK *PPOWER_SETTING_CALLBACK;
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -17612,6 +17959,21 @@ BOOLEAN
 MmForceSectionClosed (
     _In_ PSECTION_OBJECT_POINTERS SectionObjectPointer,
     _In_ BOOLEAN DelayClose
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+#define MM_FORCE_CLOSED_DATA                0x1
+#define MM_FORCE_CLOSED_IMAGE               0x2
+#define MM_FORCE_CLOSED_LATER_OK            0x4
+
+_IRQL_requires_max_ (APC_LEVEL)
+NTKERNELAPI
+BOOLEAN
+MmForceSectionClosedEx (
+    _In_ PSECTION_OBJECT_POINTERS SectionObjectPointer,
+    _In_ ULONG ForceCloseFlags
     );
 #endif
 
@@ -17779,6 +18141,7 @@ KeStallExecutionProcessor (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 NTKERNELAPI
 NTSTATUS
 ObInsertObject(
@@ -17821,6 +18184,7 @@ ObOpenObjectByPointerWithTag(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 NTKERNELAPI
 VOID
 ObMakeTemporaryObject(
@@ -20196,6 +20560,25 @@ FsRtlIsNameInExpression (
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+//
+// FsRtlIsNameInExpression expects the Expression to be in upper case
+// if IgnoreCase is TRUE.  FsRtlIsNameInUnUpcasedExpression does not
+// have that expectation.
+//
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+BOOLEAN
+FsRtlIsNameInUnUpcasedExpression (
+    _In_ PUNICODE_STRING Expression,
+    _In_ PUNICODE_STRING Name,
+    _In_ BOOLEAN IgnoreCase,
+    _In_opt_ PWCH UpcaseTable
+    );
+#endif
 // end_ntosp
 
 
@@ -20281,7 +20664,7 @@ FsRtlRegisterUncProviderEx(
     );
 #endif
 
-#if (NTDDI_VERSION >= NTDDI_WINBLUE)    /* ABRACADABRA_THRESHOLD */
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 #define FSRTL_UNC_REGISTRATION_VERSION_0200  0x0200
 
@@ -20292,22 +20675,17 @@ FsRtlRegisterUncProviderEx(
 
 #endif
 
-//
-//  FSRTL_UNC_REGISTRATION_VERSION_0201 is available in post threshold only.
-//  Change NTDDI_WINTHRESHOLD to appropriate value when new
-//  version is available.
-//
-#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)    /* ABRACADABRA_THRESHOLD */
+#if (NTDDI_VERSION >= NTDDI_WIN10_TH2)
 
 #define FSRTL_UNC_REGISTRATION_CURRENT_VERSION FSRTL_UNC_REGISTRATION_VERSION_0201  // Current version is 2.1
 
-#elif (NTDDI_VERSION >= NTDDI_WINBLUE)    /* ABRACADABRA_THRESHOLD */
+#elif (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 #define FSRTL_UNC_REGISTRATION_CURRENT_VERSION FSRTL_UNC_REGISTRATION_VERSION_0200  // Current version is 2.0
 
 #endif
 
-#if (NTDDI_VERSION >= NTDDI_WINBLUE)    /* ABRACADABRA_THRESHOLD */
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 typedef ULONG FSRTL_UNC_HARDENING_CAPABILITIES;
 
@@ -21157,6 +21535,7 @@ FsRtlIncrementCcFastMdlReadWait(
 //
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
 LOGICAL
@@ -21626,7 +22005,7 @@ typedef ULONG NETWORK_OPEN_IN_FLAGS;
 #define NETWORK_OPEN_ECP_IN_FLAG_DISABLE_OPLOCKS 0x4
 #endif
 
-#if (NTDDI_VERSION >= NTDDI_WINBLUE)    // ABRACADABRA_THRESHOLD
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 #define NETWORK_OPEN_ECP_IN_FLAG_REQ_MUTUAL_AUTH 0x8
 #endif
 
@@ -21634,7 +22013,7 @@ typedef ULONG NETWORK_OPEN_IN_FLAGS;
 
 typedef ULONG NETWORK_OPEN_OUT_FLAGS;
 
-#if (NTDDI_VERSION >= NTDDI_WINBLUE)    // ABRACADABRA_THRESHOLD
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 #define NETWORK_OPEN_ECP_OUT_FLAG_RET_MUTUAL_AUTH 0x8
 #endif
 
@@ -22336,30 +22715,83 @@ typedef struct _CSV_SET_HANDLE_PROPERTIES_ECP_CONTEXT {
 //  recognized by FsRtlIsNonEmptyDirectoryReparsePointAllowed):
 //
 //    OPEN_REPARSE_POINT_REPARSE_IF_CHILD_EXISTS -
-//    If the reparse point is on a directory that is not the final path
-//    component and the next path component exists, reparse on the directory.
+//    If the reparse point is not the final path component and the next
+//    path component exists, return STATUS_REPARSE.
 //
 //    OPEN_REPARSE_POINT_REPARSE_IF_CHILD_NOT_EXISTS -
-//    If the reparse point is on a directory that is not the final path
-//    component and the next path component does not exist, reparse on the
-//    directory.
+//    If the reparse point is not the final path component and the next
+//    path component does not exist, return STATUS_REPARSE.
 //
 //    OPEN_REPARSE_POINT_REPARSE_IF_DIRECTORY_FINAL_COMPONENT -
-//    If the reparse point is on a directory that is the final path
-//    component, reparse on the directory unless FILE_OPEN_REPARSE_POINT
-//    is specified.
+//    If the reparse point is the final path component, return
+//    STATUS_REPARSE unless FILE_OPEN_REPARSE_POINT is specified in the create
+//    options.
 //
 //  Specifying all three of the above flags is legal and simply means always
-//  reparse on any directory reparse point.
+//  return STATUS_REPARSE for any reparse point on a directory that may be
+//  non-empty, unless it is the final path component and
+//  FILE_OPEN_REPARSE_POINT is specified in the create options.
+//
+//  The following flags control behavior when a reparse point is encountered
+//  on a file or on a directory that must be empty (one whose reparse tag
+//  is not recognized by FsRtlIsNonEmptyDirectoryReparsePointAllowed):
+//
+//    OPEN_REPARSE_POINT_REPARSE_IF_NON_DIRECTORY_NON_FINAL_COMPONENT -
+//    If the reparse point is not the final path component, return
+//    STATUS_REPARSE.
+//
+//    OPEN_REPARSE_POINT_REPARSE_IF_NON_DIRECTORY_FINAL_COMPONENT -
+//    If the reparse point is the final path component, return
+//    STATUS_REPARSE unless FILE_OPEN_REPARSE_POINT is specified in the create
+//    options.
+//
+//  Specifying all five of the above flags is legal and simply means always
+//  return STATUS_REPARSE for any reparse point, unless it is the final path
+//  component and FILE_OPEN_REPARSE_POINT is specified in the create options.
+//
+//  The following flag modifies the behavior of the previously described
+//  flags:
+//
+//    OPEN_REPARSE_POINT_OVERRIDE_CREATE_OPTION -
+//    If the reparse point is the final path component, ignore the presence
+//    of the FILE_OPEN_REPARSE_POINT flag in the create options (allowing
+//    this ECP to take precedence).
+//
+//  Specifying all six of the above flags is legal and simply means always
+//  return STATUS_REPARSE for any reparse point.
 //
 
 #if (NTDDI_VERSION >= NTDDI_WINBLUE) || (defined(INCLUDE_OPEN_REPARSE_SUPPORT))
 
-#define OPEN_REPARSE_POINT_TAG_ENCOUNTERED                       (0x00000001)
-#define OPEN_REPARSE_POINT_REPARSE_IF_CHILD_EXISTS               (0x00000002)
-#define OPEN_REPARSE_POINT_REPARSE_IF_CHILD_NOT_EXISTS           (0x00000004)
-#define OPEN_REPARSE_POINT_REPARSE_IF_DIRECTORY_FINAL_COMPONENT  (0x00000008)
-#define OPEN_REPARSE_POINT_VERSION_EX                            (0x80000000)
+//
+//  Flags values
+//
+
+#define OPEN_REPARSE_POINT_TAG_ENCOUNTERED                                      (0x00000001)
+#define OPEN_REPARSE_POINT_REPARSE_IF_CHILD_EXISTS                              (0x00000002)
+#define OPEN_REPARSE_POINT_REPARSE_IF_CHILD_NOT_EXISTS                          (0x00000004)
+#define OPEN_REPARSE_POINT_REPARSE_IF_DIRECTORY_FINAL_COMPONENT                 (0x00000008)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+#define OPEN_REPARSE_POINT_REPARSE_IF_NON_DIRECTORY_NON_FINAL_COMPONENT         (0x00000010)
+#define OPEN_REPARSE_POINT_REPARSE_IF_NON_DIRECTORY_FINAL_COMPONENT             (0x00000020)
+#define OPEN_REPARSE_POINT_OVERRIDE_CREATE_OPTION                               (0x00000040)
+#endif
+#define OPEN_REPARSE_POINT_VERSION_EX                                           (0x80000000)
+
+//
+//  Combinations of Flags values (for convenience)
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+#define OPEN_REPARSE_POINT_REPARSE_IF_NON_FINAL_COMPONENT                       (0x00000016)
+#define OPEN_REPARSE_POINT_REPARSE_IF_DIRECTORY_FINAL_COMPONENT_ALWAYS          (0x00000048)
+#define OPEN_REPARSE_POINT_REPARSE_IF_NON_DIRECTORY_NON_FINAL_COMPONENT_ALWAYS  (0x00000050)
+#define OPEN_REPARSE_POINT_REPARSE_IF_NON_DIRECTORY_FINAL_COMPONENT_ALWAYS      (0x00000060)
+#define OPEN_REPARSE_POINT_REPARSE_IF_FINAL_COMPONENT                           (0x00000028)
+#define OPEN_REPARSE_POINT_REPARSE_IF_FINAL_COMPONENT_ALWAYS                    (0x00000068)
+#define OPEN_REPARSE_POINT_REPARSE_ALWAYS                                       (0x0000007E)
+#endif
+
 
 typedef struct _OPEN_REPARSE_LIST_ENTRY {
     LIST_ENTRY OpenReparseListEntry;
@@ -22397,6 +22829,49 @@ DEFINE_GUID( /* 323eb6a8-affd-4d95-8230-863bce09d37a */
     0x4d95,
     0x82, 0x30, 0x86, 0x3b, 0xce, 0x09, 0xd3, 0x7a
 );
+
+//
+// ECP to restrict the behavior of IO_STOP_ON_SYMLINK to act on specified reparse tags only. A zero length ECP context
+// or an ECP with just the "Out" portion tells IO manager to honor the IO_STOP_ON_SYMLINK flag only for reparse points
+// with the IO_REPARSE_TAG_SYMLINK tag. In future we reserve the right to modify this to allow filtering based on
+// arbitrary reparse tags.
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)  
+
+typedef struct _IO_STOP_ON_SYMLINK_FILTER_ECP_v0 {
+
+    //
+    // OUT parameters : The IO manager returns these to the caller.
+    //
+
+    struct {
+
+        //
+        // Count of name-grafting reparses.
+        //
+
+        ULONG ReparseCount;
+
+        //
+        // Portion of the path remaining after the last reparse.
+        //
+
+        ULONG RemainingPathLength;
+
+    } Out;
+
+} IO_STOP_ON_SYMLINK_FILTER_ECP_v0, *PIO_STOP_ON_SYMLINK_FILTER_ECP_v0;
+
+DEFINE_GUID( /* 940e5d56-1646-4d3c-87b6-577ec36a1466 */
+    ECP_TYPE_IO_STOP_ON_SYMLINK_FILTER_GUID,
+    0x940e5d56,
+    0x1646,
+    0x4d3c,
+    0x87, 0xb6, 0x57, 0x7e, 0xc3, 0x6a, 0x14, 0x66
+);
+
+#endif
 
 #endif
 
@@ -22840,6 +23315,7 @@ FsRtlQueryMaximumVirtualDiskNestingLevel (
 //  Routine to query virtual disk info for a given disk or volume object
 //
 
+//@[comment("MVI_tracked")]
 NTKERNELAPI
 NTSTATUS
 FsRtlGetVirtualDiskNestingLevel (
@@ -23028,8 +23504,7 @@ FsRtlIsMobileOS();
 
 #endif
 
-// TODO_NTDDI_WIN10_TH2
-#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+#if (NTDDI_VERSION >= NTDDI_WIN10_TH2)
 _IRQL_requires_max_(APC_LEVEL)
 PFN_NUMBER
 FsRtlIsExtentDangling (
@@ -23792,9 +24267,7 @@ CcScheduleReadAheadEx (
     );
 #endif
 
-//  TODO_NTDDI_WIN10_REDSTONE
-//  TODO_NTDDI_ABRACADABRA
-#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 NTKERNELAPI
 VOID
 CcInitializeCacheMapEx (
@@ -24076,6 +24549,14 @@ CcSetAdditionalCacheAttributes (
 //
 
 #define CC_DISABLE_UNMAP_BEHIND                 (0x00000020)
+
+//
+//  Flag to tell Cc to enable the CPU cache when copying on systems where the
+//  CPU cache is normally disabled.
+//
+
+#define CC_ENABLE_CPU_CACHE                     (0x10000000)
+
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 NTKERNELAPI
@@ -26281,6 +26762,8 @@ typedef struct _QUERY_PATH_RESPONSE {
 #define     WNNC_NET_GOOGLE      0x00430000
 #define     WNNC_NET_NDFS        0x00440000
 #define     WNNC_NET_DOCUSHARE   0x00450000
+#define     WNNC_NET_AURISTOR_FS 0x00460000
+#define     WNNC_NET_SECUREAGENT 0x00470000
 
 #define     WNNC_CRED_MANAGER   0xFFFF0000
 
@@ -26299,6 +26782,7 @@ typedef struct _QUERY_PATH_RESPONSE {
 #define IOCTL_VOLSNAP_FLUSH_AND_HOLD_WRITES             CTL_CODE(VOLSNAPCONTROLTYPE, 0, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS) 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -26332,6 +26816,7 @@ ZwNotifyChangeKey(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -26356,6 +26841,7 @@ ZwDeleteFile(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -26463,6 +26949,7 @@ ZwFsControlFile(
 // begin_nthal
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -26493,6 +26980,7 @@ ZwOpenDirectoryObject(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _When_(return==0, __drv_allocatesMem(Region))
@@ -26510,6 +26998,7 @@ ZwAllocateVirtualMemory(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _When_(return==0, __drv_freesMem(Region))
 NTSYSAPI
@@ -26524,6 +27013,7 @@ ZwFreeVirtualMemory(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _Must_inspect_result_
 NTSYSAPI
@@ -26556,6 +27046,7 @@ ZwSetInformationVirtualMemory(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _When_(Timeout == NULL, _IRQL_requires_max_(APC_LEVEL))
 _When_(Timeout->QuadPart != 0, _IRQL_requires_max_(APC_LEVEL))
 _When_(Timeout->QuadPart == 0, _IRQL_requires_max_(DISPATCH_LEVEL))
@@ -26570,6 +27061,7 @@ ZwWaitForSingleObject(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -26621,6 +27113,7 @@ ZwOpenThreadTokenEx(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -26648,6 +27141,7 @@ ZwSetInformationToken (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -26660,6 +27154,7 @@ ZwSetSecurityObject(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -26738,6 +27233,7 @@ ZwSetQuotaInformationFile(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.gaming.input.forcefeedback.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -833,8 +835,9 @@ namespace ABI {
                 namespace ForceFeedback {
                     /* [object, uuid("32D1EA68-3695-4E69-85C0-CD1944189140"), exclusiveto, contract] */
                     MIDL_INTERFACE("32D1EA68-3695-4E69-85C0-CD1944189140")
-                    IConditionForceEffect : IInspectable
+                    IConditionForceEffect : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                             /* [retval, out] */__RPC__out ABI::Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind * value
                             ) = 0;
@@ -884,8 +887,9 @@ namespace ABI {
                 namespace ForceFeedback {
                     /* [object, uuid("91A99264-1810-4EB6-A773-BFD3B8CDDBAB"), exclusiveto, contract] */
                     MIDL_INTERFACE("91A99264-1810-4EB6-A773-BFD3B8CDDBAB")
-                    IConditionForceEffectFactory : IInspectable
+                    IConditionForceEffectFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */ABI::Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind effectKind,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect * * value
@@ -931,8 +935,9 @@ namespace ABI {
                 namespace ForceFeedback {
                     /* [object, uuid("9BFA0140-F3C7-415C-B068-0F068734BCE0"), exclusiveto, contract] */
                     MIDL_INTERFACE("9BFA0140-F3C7-415C-B068-0F068734BCE0")
-                    IConstantForceEffect : IInspectable
+                    IConstantForceEffect : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SetParameters(
                             /* [in] */ABI::Windows::Foundation::Numerics::Vector3 vector,
                             /* [in] */ABI::Windows::Foundation::TimeSpan duration
@@ -982,8 +987,9 @@ namespace ABI {
                 namespace ForceFeedback {
                     /* [object, uuid("A17FBA0C-2AE4-48C2-8063-EABD0777CB89"), contract] */
                     MIDL_INTERFACE("A17FBA0C-2AE4-48C2-8063-EABD0777CB89")
-                    IForceFeedbackEffect : IInspectable
+                    IForceFeedbackEffect : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Gain(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -1032,8 +1038,9 @@ namespace ABI {
                 namespace ForceFeedback {
                     /* [object, uuid("8D3D417C-A5EA-4516-8026-2B00F74EF6E5"), exclusiveto, contract] */
                     MIDL_INTERFACE("8D3D417C-A5EA-4516-8026-2B00F74EF6E5")
-                    IForceFeedbackMotor : IInspectable
+                    IForceFeedbackMotor : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AreEffectsPaused(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1110,8 +1117,9 @@ namespace ABI {
                 namespace ForceFeedback {
                     /* [object, uuid("5C5138D7-FC75-4D52-9A0A-EFE4CAB5FE64"), exclusiveto, contract] */
                     MIDL_INTERFACE("5C5138D7-FC75-4D52-9A0A-EFE4CAB5FE64")
-                    IPeriodicForceEffect : IInspectable
+                    IPeriodicForceEffect : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                             /* [retval, out] */__RPC__out ABI::Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind * value
                             ) = 0;
@@ -1173,8 +1181,9 @@ namespace ABI {
                 namespace ForceFeedback {
                     /* [object, uuid("6F62EB1A-9851-477B-B318-35ECAA15070F"), exclusiveto, contract] */
                     MIDL_INTERFACE("6F62EB1A-9851-477B-B318-35ECAA15070F")
-                    IPeriodicForceEffectFactory : IInspectable
+                    IPeriodicForceEffectFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */ABI::Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind effectKind,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect * * value
@@ -1220,8 +1229,9 @@ namespace ABI {
                 namespace ForceFeedback {
                     /* [object, uuid("F1F81259-1CA6-4080-B56D-B43F3354D052"), exclusiveto, contract] */
                     MIDL_INTERFACE("F1F81259-1CA6-4080-B56D-B43F3354D052")
-                    IRampForceEffect : IInspectable
+                    IRampForceEffect : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SetParameters(
                             /* [in] */ABI::Windows::Foundation::Numerics::Vector3 startVector,
                             /* [in] */ABI::Windows::Foundation::Numerics::Vector3 endVector,

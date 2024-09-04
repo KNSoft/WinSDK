@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.core.animationmetrics.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -635,8 +637,9 @@ namespace ABI {
                 namespace AnimationMetrics {
                     /* [object, uuid("7D11A549-BE3D-41DE-B081-05C149962F9B"), exclusiveto, contract] */
                     MIDL_INTERFACE("7D11A549-BE3D-41DE-B081-05C149962F9B")
-                    IAnimationDescription : IInspectable
+                    IAnimationDescription : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Animations(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CCore__CAnimationMetrics__CIPropertyAnimation * * value
                             ) = 0;
@@ -689,8 +692,9 @@ namespace ABI {
                 namespace AnimationMetrics {
                     /* [object, uuid("C6E27ABE-C1FB-48B5-9271-ECC70AC86EF0"), exclusiveto, contract] */
                     MIDL_INTERFACE("C6E27ABE-C1FB-48B5-9271-ECC70AC86EF0")
-                    IAnimationDescriptionFactory : IInspectable
+                    IAnimationDescriptionFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */ABI::Windows::UI::Core::AnimationMetrics::AnimationEffect effect,
                             /* [in] */ABI::Windows::UI::Core::AnimationMetrics::AnimationEffectTarget target,
@@ -737,8 +741,9 @@ namespace ABI {
                 namespace AnimationMetrics {
                     /* [object, uuid("803AABE5-EE7E-455F-84E9-2506AFB8D2B4"), exclusiveto, contract] */
                     MIDL_INTERFACE("803AABE5-EE7E-455F-84E9-2506AFB8D2B4")
-                    IOpacityAnimation : IInspectable
+                    IOpacityAnimation : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InitialOpacity(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_float * * value
                             ) = 0;
@@ -779,8 +784,9 @@ namespace ABI {
                 namespace AnimationMetrics {
                     /* [object, uuid("3A01B4DA-4D8C-411E-B615-1ADE683A9903"), contract] */
                     MIDL_INTERFACE("3A01B4DA-4D8C-411E-B615-1ADE683A9903")
-                    IPropertyAnimation : IInspectable
+                    IPropertyAnimation : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Core::AnimationMetrics::PropertyAnimationType * value
                             ) = 0;
@@ -837,8 +843,9 @@ namespace ABI {
                 namespace AnimationMetrics {
                     /* [object, uuid("023552C7-71AB-428C-9C9F-D31780964995"), exclusiveto, contract] */
                     MIDL_INTERFACE("023552C7-71AB-428C-9C9F-D31780964995")
-                    IScaleAnimation : IInspectable
+                    IScaleAnimation : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InitialScaleX(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_float * * value
                             ) = 0;

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.activation.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -416,6 +418,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs ABI::Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Activation {
+                interface IBarcodeScannerPreviewActivatedEventArgs;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Activation */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs ABI::Windows::ApplicationModel::Activation::IBarcodeScannerPreviewActivatedEventArgs
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs_FWD_DEFINED__
@@ -1256,8 +1272,8 @@ namespace ABI {
 
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE
@@ -1286,8 +1302,8 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Background::Backgroun
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE */
 
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 namespace ABI {
     namespace Windows {
@@ -1314,6 +1330,7 @@ namespace ABI {
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_USE
@@ -1343,6 +1360,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Core::CoreApplication
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -2873,6 +2891,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
@@ -2922,6 +2941,16 @@ namespace ABI {
         } /* ApplicationModel */
     } /* Activation */} /* ABI */
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Activation {
+                class BarcodeScannerPreviewActivatedEventArgs;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Activation */} /* ABI */
 
 
 namespace ABI {
@@ -3501,6 +3530,11 @@ namespace ABI {
                     ActivationKind_CommandLineLaunch = 1021,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
                     
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
+                    ActivationKind_BarcodeScannerProvider = 1022,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
                 };
                 
             } /* Windows */
@@ -3557,8 +3591,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("CF651713-CD08-4FD8-B697-A281B6544E2E"), contract] */
                 MIDL_INTERFACE("CF651713-CD08-4FD8-B697-A281B6544E2E")
-                IActivatedEventArgs : IInspectable
+                IActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Activation::ActivationKind * value
                         ) = 0;
@@ -3604,8 +3639,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("1CF09B9E-9962-4936-80FF-AFC8E8AE5C8C"), contract] */
                 MIDL_INTERFACE("1CF09B9E-9962-4936-80FF-AFC8E8AE5C8C")
-                IActivatedEventArgsWithUser : IInspectable
+                IActivatedEventArgsWithUser : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
                         ) = 0;
@@ -3645,8 +3681,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("930CEF4B-B829-40FC-88F4-8513E8A64738"), contract] */
                 MIDL_INTERFACE("930CEF4B-B829-40FC-88F4-8513E8A64738")
-                IApplicationViewActivatedEventArgs : IInspectable
+                IApplicationViewActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentlyShownApplicationViewId(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -3686,8 +3723,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("3364C405-933C-4E7D-A034-500FB8DCD9F3"), contract] */
                 MIDL_INTERFACE("3364C405-933C-4E7D-A034-500FB8DCD9F3")
-                IAppointmentsProviderActivatedEventArgs : IInspectable
+                IAppointmentsProviderActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Verb(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3728,8 +3766,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("A2861367-CEE5-4E4D-9ED7-41C34EC18B02"), contract] */
                 MIDL_INTERFACE("A2861367-CEE5-4E4D-9ED7-41C34EC18B02")
-                IAppointmentsProviderAddAppointmentActivatedEventArgs : IInspectable
+                IAppointmentsProviderAddAppointmentActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AddAppointmentOperation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation * * value
                         ) = 0;
@@ -3770,8 +3809,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("751F3AB8-0B8E-451C-9F15-966E699BAC25"), contract] */
                 MIDL_INTERFACE("751F3AB8-0B8E-451C-9F15-966E699BAC25")
-                IAppointmentsProviderRemoveAppointmentActivatedEventArgs : IInspectable
+                IAppointmentsProviderRemoveAppointmentActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RemoveAppointmentOperation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation * * value
                         ) = 0;
@@ -3812,8 +3852,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("1551B7D4-A981-4067-8A62-0524E4ADE121"), contract] */
                 MIDL_INTERFACE("1551B7D4-A981-4067-8A62-0524E4ADE121")
-                IAppointmentsProviderReplaceAppointmentActivatedEventArgs : IInspectable
+                IAppointmentsProviderReplaceAppointmentActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ReplaceAppointmentOperation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation * * value
                         ) = 0;
@@ -3854,8 +3895,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("3958F065-9841-4CA5-999B-885198B9EF2A"), contract] */
                 MIDL_INTERFACE("3958F065-9841-4CA5-999B-885198B9EF2A")
-                IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs : IInspectable
+                IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InstanceStartDate(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
                         ) = 0;
@@ -3902,8 +3944,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("9BAEABA6-0E0B-49AA-BABC-12B1DC774986"), contract] */
                 MIDL_INTERFACE("9BAEABA6-0E0B-49AA-BABC-12B1DC774986")
-                IAppointmentsProviderShowTimeFrameActivatedEventArgs : IInspectable
+                IAppointmentsProviderShowTimeFrameActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TimeToShow(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -3942,8 +3985,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("AB14BEE0-E760-440E-A91C-44796DE3A92D"), contract] */
                 MIDL_INTERFACE("AB14BEE0-E760-440E-A91C-44796DE3A92D")
-                IBackgroundActivatedEventArgs : IInspectable
+                IBackgroundActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskInstance(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskInstance * * value
                         ) = 0;
@@ -3959,6 +4003,48 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Activation.IBarcodeScannerPreviewActivatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.ApplicationModel.Activation.IActivatedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Activation_IBarcodeScannerPreviewActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.IBarcodeScannerPreviewActivatedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Activation {
+                /* [object, uuid("6772797C-99BF-4349-AF22-E4123560371C"), contract] */
+                MIDL_INTERFACE("6772797C-99BF-4349-AF22-E4123560371C")
+                IBarcodeScannerPreviewActivatedEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConnectionId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IBarcodeScannerPreviewActivatedEventArgs=_uuidof(IBarcodeScannerPreviewActivatedEventArgs);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Activation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3983,8 +4069,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("D06EB1C7-3805-4ECB-B757-6CF15E26FEF3"), contract] */
                 MIDL_INTERFACE("D06EB1C7-3805-4ECB-B757-6CF15E26FEF3")
-                ICachedFileUpdaterActivatedEventArgs : IInspectable
+                ICachedFileUpdaterActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CachedFileUpdaterUI(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Provider::ICachedFileUpdaterUI * * value
                         ) = 0;
@@ -4024,8 +4111,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("FB67A508-2DAD-490A-9170-DCA036EB114B"), contract] */
                 MIDL_INTERFACE("FB67A508-2DAD-490A-9170-DCA036EB114B")
-                ICameraSettingsActivatedEventArgs : IInspectable
+                ICameraSettingsActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VideoDeviceController(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -4068,8 +4156,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("4506472C-006A-48EB-8AFB-D07AB25E3366"), contract] */
                 MIDL_INTERFACE("4506472C-006A-48EB-8AFB-D07AB25E3366")
-                ICommandLineActivatedEventArgs : IInspectable
+                ICommandLineActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Operation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Activation::ICommandLineActivationOperation * * value
                         ) = 0;
@@ -4108,8 +4197,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("994B2841-C59E-4F69-BCFD-B61ED4E622EB"), exclusiveto, contract] */
                 MIDL_INTERFACE("994B2841-C59E-4F69-BCFD-B61ED4E622EB")
-                ICommandLineActivationOperation : IInspectable
+                ICommandLineActivationOperation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Arguments(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4161,8 +4251,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("D627A1C4-C025-4C41-9DEF-F1EAFAD075E7"), contract] */
                 MIDL_INTERFACE("D627A1C4-C025-4C41-9DEF-F1EAFAD075E7")
-                IContactActivatedEventArgs : IInspectable
+                IContactActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Verb(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4203,8 +4294,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("C2DF14C7-30EB-41C6-B3BC-5B1694F9DAB3"), contract] */
                 MIDL_INTERFACE("C2DF14C7-30EB-41C6-B3BC-5B1694F9DAB3")
-                IContactCallActivatedEventArgs : IInspectable
+                IContactCallActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4251,8 +4343,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("B32BF870-EEE7-4AD2-AAF1-A87EFFCF00A4"), contract] */
                 MIDL_INTERFACE("B32BF870-EEE7-4AD2-AAF1-A87EFFCF00A4")
-                IContactMapActivatedEventArgs : IInspectable
+                IContactMapActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Address(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactAddress * * value
                         ) = 0;
@@ -4296,8 +4389,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("DE598DB2-0E03-43B0-BF56-BCC40B3162DF"), contract] */
                 MIDL_INTERFACE("DE598DB2-0E03-43B0-BF56-BCC40B3162DF")
-                IContactMessageActivatedEventArgs : IInspectable
+                IContactMessageActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4339,8 +4433,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("52BB63E4-D3D4-4B63-8051-4AF2082CAB80"), contract] */
                 MIDL_INTERFACE("52BB63E4-D3D4-4B63-8051-4AF2082CAB80")
-                IContactPanelActivatedEventArgs : IInspectable
+                IContactPanelActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactPanel(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactPanel * * value
                         ) = 0;
@@ -4383,8 +4478,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("CE57AAE7-6449-45A7-971F-D113BE7A8936"), contract] */
                 MIDL_INTERFACE("CE57AAE7-6449-45A7-971F-D113BE7A8936")
-                IContactPickerActivatedEventArgs : IInspectable
+                IContactPickerActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactPickerUI(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::Provider::IContactPickerUI * * value
                         ) = 0;
@@ -4425,8 +4521,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("B35A3C67-F1E7-4655-AD6E-4857588F552F"), contract] */
                 MIDL_INTERFACE("B35A3C67-F1E7-4655-AD6E-4857588F552F")
-                IContactPostActivatedEventArgs : IInspectable
+                IContactPostActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4473,8 +4570,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("61079DB8-E3E7-4B4F-858D-5C63A96EF684"), contract] */
                 MIDL_INTERFACE("61079DB8-E3E7-4B4F-858D-5C63A96EF684")
-                IContactVideoCallActivatedEventArgs : IInspectable
+                IContactVideoCallActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4520,8 +4618,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("4580DCA8-5750-4916-AA52-C0829521EB94"), contract] */
                 MIDL_INTERFACE("4580DCA8-5750-4916-AA52-C0829521EB94")
-                IContactsProviderActivatedEventArgs : IInspectable
+                IContactsProviderActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Verb(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4561,8 +4660,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("E58106B5-155F-4A94-A742-C7E08F4E188C"), contract] */
                 MIDL_INTERFACE("E58106B5-155F-4A94-A742-C7E08F4E188C")
-                IContinuationActivatedEventArgs : IInspectable
+                IContinuationActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContinuationData(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
                         ) = 0;
@@ -4602,8 +4702,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("CD50B9A9-CE10-44D2-8234-C355A073EF33"), contract] */
                 MIDL_INTERFACE("CD50B9A9-CE10-44D2-8234-C355A073EF33")
-                IDeviceActivatedEventArgs : IInspectable
+                IDeviceActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceInformationId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4646,8 +4747,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("EBA0D1E4-ECC6-4148-94ED-F4B37EC05B3E"), contract] */
                 MIDL_INTERFACE("EBA0D1E4-ECC6-4148-94ED-F4B37EC05B3E")
-                IDevicePairingActivatedEventArgs : IInspectable
+                IDevicePairingActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceInformation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceInformation * * value
                         ) = 0;
@@ -4688,8 +4790,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("FB777ED7-85EE-456E-A44D-85D730E70AED"), contract] */
                 MIDL_INTERFACE("FB777ED7-85EE-456E-A44D-85D730E70AED")
-                IDialReceiverActivatedEventArgs : IInspectable
+                IDialReceiverActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4729,8 +4832,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("BB2AFC33-93B1-42ED-8B26-236DD9C78496"), contract] */
                 MIDL_INTERFACE("BB2AFC33-93B1-42ED-8B26-236DD9C78496")
-                IFileActivatedEventArgs : IInspectable
+                IFileActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Files(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CStorage__CIStorageItem * * value
                         ) = 0;
@@ -4773,8 +4877,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("2D60F06B-D25F-4D25-8653-E1C5E1108309"), contract] */
                 MIDL_INTERFACE("2D60F06B-D25F-4D25-8653-E1C5E1108309")
-                IFileActivatedEventArgsWithCallerPackageFamilyName : IInspectable
+                IFileActivatedEventArgsWithCallerPackageFamilyName : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CallerPackageFamilyName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4815,8 +4920,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("433BA1A4-E1E2-48FD-B7FC-B5D6EEE65033"), contract] */
                 MIDL_INTERFACE("433BA1A4-E1E2-48FD-B7FC-B5D6EEE65033")
-                IFileActivatedEventArgsWithNeighboringFiles : IInspectable
+                IFileActivatedEventArgsWithNeighboringFiles : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NeighboringFilesQuery(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Search::IStorageFileQueryResult * * value
                         ) = 0;
@@ -4856,8 +4962,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("72827082-5525-4BF2-BC09-1F5095D4964D"), contract] */
                 MIDL_INTERFACE("72827082-5525-4BF2-BC09-1F5095D4964D")
-                IFileOpenPickerActivatedEventArgs : IInspectable
+                IFileOpenPickerActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FileOpenPickerUI(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Pickers::Provider::IFileOpenPickerUI * * value
                         ) = 0;
@@ -4893,8 +5000,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("5E731F66-8D1F-45FB-AF1D-73205C8FC7A1"), contract] */
                 MIDL_INTERFACE("5E731F66-8D1F-45FB-AF1D-73205C8FC7A1")
-                IFileOpenPickerActivatedEventArgs2 : IInspectable
+                IFileOpenPickerActivatedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CallerPackageFamilyName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4935,8 +5043,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("F0FA3F3A-D4E8-4AD3-9C34-2308F32FCEC9"), contract] */
                 MIDL_INTERFACE("F0FA3F3A-D4E8-4AD3-9C34-2308F32FCEC9")
-                IFileOpenPickerContinuationEventArgs : IInspectable
+                IFileOpenPickerContinuationEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Files(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CStorage__CStorageFile * * value
                         ) = 0;
@@ -4976,8 +5085,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("81C19CF1-74E6-4387-82EB-BB8FD64B4346"), contract] */
                 MIDL_INTERFACE("81C19CF1-74E6-4387-82EB-BB8FD64B4346")
-                IFileSavePickerActivatedEventArgs : IInspectable
+                IFileSavePickerActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FileSavePickerUI(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Pickers::Provider::IFileSavePickerUI * * value
                         ) = 0;
@@ -5013,8 +5123,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("6B73FE13-2CF2-4D48-8CBC-AF67D23F1CE7"), contract] */
                 MIDL_INTERFACE("6B73FE13-2CF2-4D48-8CBC-AF67D23F1CE7")
-                IFileSavePickerActivatedEventArgs2 : IInspectable
+                IFileSavePickerActivatedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CallerPackageFamilyName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5058,8 +5169,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("2C846FE1-3BAD-4F33-8C8B-E46FAE824B4B"), contract] */
                 MIDL_INTERFACE("2C846FE1-3BAD-4F33-8C8B-E46FAE824B4B")
-                IFileSavePickerContinuationEventArgs : IInspectable
+                IFileSavePickerContinuationEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_File(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFile * * value
                         ) = 0;
@@ -5100,8 +5212,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("51882366-9F4B-498F-BEB0-42684F6E1C29"), contract] */
                 MIDL_INTERFACE("51882366-9F4B-498F-BEB0-42684F6E1C29")
-                IFolderPickerContinuationEventArgs : IInspectable
+                IFolderPickerContinuationEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Folder(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
                         ) = 0;
@@ -5141,8 +5254,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("FBC93E26-A14A-4B4F-82B0-33BED920AF52"), contract] */
                 MIDL_INTERFACE("FBC93E26-A14A-4B4F-82B0-33BED920AF52")
-                ILaunchActivatedEventArgs : IInspectable
+                ILaunchActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Arguments(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5186,8 +5300,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("0FD37EBC-9DC9-46B5-9ACE-BD95D4565345"), contract] */
                 MIDL_INTERFACE("0FD37EBC-9DC9-46B5-9ACE-BD95D4565345")
-                ILaunchActivatedEventArgs2 : IInspectable
+                ILaunchActivatedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TileActivatedInfo(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Activation::ITileActivatedInfo * * value
                         ) = 0;
@@ -5227,8 +5342,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("3CA77966-6108-4A41-8220-EE7D133C8532"), contract] */
                 MIDL_INTERFACE("3CA77966-6108-4A41-8220-EE7D133C8532")
-                ILockScreenActivatedEventArgs : IInspectable
+                ILockScreenActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Info(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -5269,8 +5385,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("06F37FBE-B5F2-448B-B13E-E328AC1C516A"), contract] */
                 MIDL_INTERFACE("06F37FBE-B5F2-448B-B13E-E328AC1C516A")
-                ILockScreenCallActivatedEventArgs : IInspectable
+                ILockScreenCallActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CallUI(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::ILockScreenCallUI * * value
                         ) = 0;
@@ -5310,8 +5427,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("360DEFB9-A9D3-4984-A4ED-9EC734604921"), contract] */
                 MIDL_INTERFACE("360DEFB9-A9D3-4984-A4ED-9EC734604921")
-                IPickerReturnedActivatedEventArgs : IInspectable
+                IPickerReturnedActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PickerOperationId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5351,8 +5469,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("0C44717B-19F7-48D6-B046-CF22826EAA74"), contract] */
                 MIDL_INTERFACE("0C44717B-19F7-48D6-B046-CF22826EAA74")
-                IPrelaunchActivatedEventArgs : IInspectable
+                IPrelaunchActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrelaunchActivated(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5392,8 +5511,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("3F57E78B-F2AC-4619-8302-EF855E1C9B90"), contract] */
                 MIDL_INTERFACE("3F57E78B-F2AC-4619-8302-EF855E1C9B90")
-                IPrint3DWorkflowActivatedEventArgs : IInspectable
+                IPrint3DWorkflowActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Workflow(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Printers::Extensions::IPrint3DWorkflow * * value
                         ) = 0;
@@ -5433,8 +5553,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("EE30A0C9-CE56-4865-BA8E-8954AC271107"), contract] */
                 MIDL_INTERFACE("EE30A0C9-CE56-4865-BA8E-8954AC271107")
-                IPrintTaskSettingsActivatedEventArgs : IInspectable
+                IPrintTaskSettingsActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Configuration(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Printers::Extensions::IPrintTaskConfiguration * * value
                         ) = 0;
@@ -5474,8 +5595,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("6095F4DD-B7C0-46AB-81FE-D90F36D00D24"), contract] */
                 MIDL_INTERFACE("6095F4DD-B7C0-46AB-81FE-D90F36D00D24")
-                IProtocolActivatedEventArgs : IInspectable
+                IProtocolActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                         ) = 0;
@@ -5515,8 +5637,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("D84A0C12-5C8F-438C-83CB-C28FCC0B2FDB"), contract] */
                 MIDL_INTERFACE("D84A0C12-5C8F-438C-83CB-C28FCC0B2FDB")
-                IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData : IInspectable
+                IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CallerPackageFamilyName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5559,8 +5682,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("E75132C2-7AE7-4517-80AC-DBE8D7CC5B9C"), contract] */
                 MIDL_INTERFACE("E75132C2-7AE7-4517-80AC-DBE8D7CC5B9C")
-                IProtocolForResultsActivatedEventArgs : IInspectable
+                IProtocolForResultsActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProtocolForResultsOperation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IProtocolForResultsOperation * * value
                         ) = 0;
@@ -5600,8 +5724,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("E0B7AC81-BFC3-4344-A5DA-19FD5A27BAAE"), contract] */
                 MIDL_INTERFACE("E0B7AC81-BFC3-4344-A5DA-19FD5A27BAAE")
-                IRestrictedLaunchActivatedEventArgs : IInspectable
+                IRestrictedLaunchActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SharedContext(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -5641,8 +5766,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("8CB36951-58C8-43E3-94BC-41D33F8B630E"), contract] */
                 MIDL_INTERFACE("8CB36951-58C8-43E3-94BC-41D33F8B630E")
-                ISearchActivatedEventArgs : IInspectable
+                ISearchActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_QueryText(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5681,8 +5807,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("C09F33DA-08AB-4931-9B7C-451025F21F81"), contract] */
                 MIDL_INTERFACE("C09F33DA-08AB-4931-9B7C-451025F21F81")
-                ISearchActivatedEventArgsWithLinguisticDetails : IInspectable
+                ISearchActivatedEventArgsWithLinguisticDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LinguisticDetails(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Search::ISearchPaneQueryLinguisticDetails * * value
                         ) = 0;
@@ -5722,8 +5849,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("4BDAF9C8-CDB2-4ACB-BFC3-6648563378EC"), contract] */
                 MIDL_INTERFACE("4BDAF9C8-CDB2-4ACB-BFC3-6648563378EC")
-                IShareTargetActivatedEventArgs : IInspectable
+                IShareTargetActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShareOperation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation * * value
                         ) = 0;
@@ -5762,8 +5890,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("CA4D975C-D4D6-43F0-97C0-0833C6391C24"), exclusiveto, contract] */
                 MIDL_INTERFACE("CA4D975C-D4D6-43F0-97C0-0833C6391C24")
-                ISplashScreen : IInspectable
+                ISplashScreen : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ImageLocation(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                         ) = 0;
@@ -5810,8 +5939,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("03B11A58-5276-4D91-8621-54611864D5FA"), contract] */
                 MIDL_INTERFACE("03B11A58-5276-4D91-8621-54611864D5FA")
-                IStartupTaskActivatedEventArgs : IInspectable
+                IStartupTaskActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5850,8 +5980,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("80E4A3B1-3980-4F17-B738-89194E0B8F65"), exclusiveto, contract] */
                 MIDL_INTERFACE("80E4A3B1-3980-4F17-B738-89194E0B8F65")
-                ITileActivatedInfo : IInspectable
+                ITileActivatedInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecentlyShownNotifications(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification * * value
                         ) = 0;
@@ -5891,8 +6022,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("92A86F82-5290-431D-BE85-C4AAEEB8685F"), contract] */
                 MIDL_INTERFACE("92A86F82-5290-431D-BE85-C4AAEEB8685F")
-                IToastNotificationActivatedEventArgs : IInspectable
+                IToastNotificationActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Argument(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * argument
                         ) = 0;
@@ -5935,8 +6067,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("1BC9F723-8EF1-4A51-A63A-FE711EEAB607"), contract] */
                 MIDL_INTERFACE("1BC9F723-8EF1-4A51-A63A-FE711EEAB607")
-                IUserDataAccountProviderActivatedEventArgs : IInspectable
+                IUserDataAccountProviderActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Operation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation * * value
                         ) = 0;
@@ -5976,8 +6109,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("33F288A6-5C2C-4D27-BAC7-7536088F1219"), contract] */
                 MIDL_INTERFACE("33F288A6-5C2C-4D27-BAC7-7536088F1219")
-                IViewSwitcherProvider : IInspectable
+                IViewSwitcherProvider : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewSwitcher(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ViewManagement::IActivationViewSwitcher * * value
                         ) = 0;
@@ -6017,8 +6151,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("AB92DCFD-8D43-4DE6-9775-20704B581B00"), contract] */
                 MIDL_INTERFACE("AB92DCFD-8D43-4DE6-9775-20704B581B00")
-                IVoiceCommandActivatedEventArgs : IInspectable
+                IVoiceCommandActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Result(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionResult * * value
                         ) = 0;
@@ -6058,8 +6193,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("FCFC027B-1A1A-4D22-923F-AE6F45FA52D9"), contract] */
                 MIDL_INTERFACE("FCFC027B-1A1A-4D22-923F-AE6F45FA52D9")
-                IWalletActionActivatedEventArgs : IInspectable
+                IWalletActionActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ItemId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6105,8 +6241,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("72B71774-98EA-4CCF-9752-46D9051004F1"), contract] */
                 MIDL_INTERFACE("72B71774-98EA-4CCF-9752-46D9051004F1")
-                IWebAccountProviderActivatedEventArgs : IInspectable
+                IWebAccountProviderActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Operation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation * * value
                         ) = 0;
@@ -6147,8 +6284,9 @@ namespace ABI {
             namespace Activation {
                 /* [object, uuid("75DDA3D4-7714-453D-B7FF-B95E3A1709DA"), contract] */
                 MIDL_INTERFACE("75DDA3D4-7714-453D-B7FF-B95E3A1709DA")
-                IWebAuthenticationBrokerContinuationEventArgs : IInspectable
+                IWebAuthenticationBrokerContinuationEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebAuthenticationResult(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Web::IWebAuthenticationResult * * result
                         ) = 0;
@@ -6311,6 +6449,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_BackgroundActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Activation.BarcodeScannerPreviewActivatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Activation.IBarcodeScannerPreviewActivatedEventArgs ** Default Interface **
+ *    Windows.ApplicationModel.Activation.IActivatedEventArgs
+ *    Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_BarcodeScannerPreviewActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Activation_BarcodeScannerPreviewActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_BarcodeScannerPreviewActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.BarcodeScannerPreviewActivatedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7375,6 +7537,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundAct
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs;
@@ -7795,8 +7963,8 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTas
 
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__
 
@@ -7843,8 +8011,8 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBack
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView_FWD_DEFINED__
@@ -7854,6 +8022,7 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__
@@ -7901,6 +8070,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplic
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 struct __x_ABI_CWindows_CFoundation_CDateTime;
@@ -9798,6 +9968,8 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CActivation_CApplicationExecutio
 
 
 
+
+
 /*
  *
  * Struct Windows.ApplicationModel.Activation.ActivationKind
@@ -9957,6 +10129,11 @@ enum __x_ABI_CWindows_CApplicationModel_CActivation_CActivationKind
     
     ActivationKind_CommandLineLaunch = 1021,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    ActivationKind_BarcodeScannerProvider = 1022,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
     
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -10954,6 +11131,100 @@ interface __x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEv
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Activation.IBarcodeScannerPreviewActivatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.ApplicationModel.Activation.IActivatedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Activation_IBarcodeScannerPreviewActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.IBarcodeScannerPreviewActivatedEventArgs";
+/* [object, uuid("6772797C-99BF-4349-AF22-E4123560371C"), contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ConnectionId )(
+        __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_get_ConnectionId(This,value) \
+    ( (This)->lpVtbl->get_ConnectionId(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -16166,6 +16437,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_BackgroundActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Activation.BarcodeScannerPreviewActivatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Activation.IBarcodeScannerPreviewActivatedEventArgs ** Default Interface **
+ *    Windows.ApplicationModel.Activation.IActivatedEventArgs
+ *    Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_BarcodeScannerPreviewActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Activation_BarcodeScannerPreviewActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_BarcodeScannerPreviewActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.BarcodeScannerPreviewActivatedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

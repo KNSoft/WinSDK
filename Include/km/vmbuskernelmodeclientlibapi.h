@@ -11,7 +11,7 @@
 @{
 VMBus is a collection of technologies.  At its lowest layer, it's a message
 passing and signaling mechanism, allowing efficient passing of messages to and
-from guest VMs.  A layer higher, it's a mechanism for defining channels of 
+from guest VMs.  A layer higher, it's a mechanism for defining channels of
 communication, where each channel is tagged with a type (which implies a
 protocol) and a instance ID.  A layer higher than that, it's a bus driver,
 serving as the basis of device enumeration within a VM, where a channel can
@@ -113,7 +113,7 @@ Other guest operating systems, or "Child Partitions," all run with guest
 physical address spaces which have no particular relationship with the actual
 system physical address space.  Just as an example, pretty much all operating
 systems expect to find memory at the bottom of their physical address space, and
-only one OS on the machine can occupy the actual bottom of the the machine's 
+only one OS on the machine can occupy the actual bottom of the the machine's
 memory.  Furthermore, since these child partitions are often used a full virtual
 machine, we need to be able to move the VM from one physical host to another,
 save it and restore it later, checkpoint it, etc., and all of these operations
@@ -237,68 +237,68 @@ them.  Either endpoint may pause or resume channel processing locally.
 Channel Lifetime
 ----------------
 
-A channel allocated with \ref VmbChannelAllocate starts in 
-the disabled state.  At this point, the channel struct can be configured 
-using *Init* functions.  Once the channel has been appropriately 
-configured, the KMCL client calls \ref VmbChannelEnable.  On the host, this 
-function offers a channel to the guest.  On the guest, this function 
-accepts an existing offer or waits for such an offer to arrive.  In either 
-case, VmbChannelEnable does not wait until the opposite endpoint 
-offers/opens the channel and returns immediately.  
+A channel allocated with \ref VmbChannelAllocate starts in
+the disabled state.  At this point, the channel struct can be configured
+using *Init* functions.  Once the channel has been appropriately
+configured, the KMCL client calls \ref VmbChannelEnable.  On the host, this
+function offers a channel to the guest.  On the guest, this function
+accepts an existing offer or waits for such an offer to arrive.  In either
+case, VmbChannelEnable does not wait until the opposite endpoint
+offers/opens the channel and returns immediately.
 
-At this point, the channel is enabled but not open.  When the host offers 
-a channel that the guest is waiting on, or the guest decides to open an 
-existing channel offer, KMCL will invoke the \ref EvtChannelOpened callback.  
-During and after this callback, the KMCL client may establish any 
+At this point, the channel is enabled but not open.  When the host offers
+a channel that the guest is waiting on, or the guest decides to open an
+existing channel offer, KMCL will invoke the \ref EvtChannelOpened callback.
+During and after this callback, the KMCL client may establish any
 long-term GPADLs.   (See \ref gpadl_theory.)  After this callback, the channel
-is in the open state.  
+is in the open state.
 
 When an open channel closes (i.e.  the KMCL client calls \ref VmbChannelDisable
-or the opposite endpoint rescinds or closes the 
-channel), KMCL will invoke the \ref EvtChannelClosed callback.  The KMCL 
-client must destroy all existing GPADLs inside 
-this callback.  After this callback completes on the host, the channel 
-will be either closed or disabled (depending on whether the guest closed 
-the channel or the KMCL client called \ref VmbChannelDisable, 
-respectively).  On the guest, the channel will always become disabled and 
-must be restarted using \ref VmbChannelEnable.  
+or the opposite endpoint rescinds or closes the
+channel), KMCL will invoke the \ref EvtChannelClosed callback.  The KMCL
+client must destroy all existing GPADLs inside
+this callback.  After this callback completes on the host, the channel
+will be either closed or disabled (depending on whether the guest closed
+the channel or the KMCL client called \ref VmbChannelDisable,
+respectively).  On the guest, the channel will always become disabled and
+must be restarted using \ref VmbChannelEnable.
 
-Orthogonally to a channel's open/closed state, a channel also has a 
-paused/active state.  This state is controlled using the 
-\ref VmbChannelStart and \ref VmbChannelPause functions.  These functions may be 
-called anytime after \ref VmbChannelEnable and before \ref VmbChannelDisable.  They 
+Orthogonally to a channel's open/closed state, a channel also has a
+paused/active state.  This state is controlled using the
+\ref VmbChannelStart and \ref VmbChannelPause functions.  These functions may be
+called anytime after \ref VmbChannelEnable and before \ref VmbChannelDisable.  They
 may not be called within state change callbacks.
 
 In the guest VM, which is to say the client endpoint, calling \ref VmbChannelEnable
 implicitly puts the channel into the active state.  On the host, \ref VmbChannelStart
-must be called manually.  This can occur immediately after \ref VmbChannelEnable.  
+must be called manually.  This can occur immediately after \ref VmbChannelEnable.
 
-If a paused channel is opened or an opened channel is started, KMCL will 
-call the \ref EvtChannelStarted callback after it calls the \ref EvtChannelOpened 
-callback.  The \ref EvtChannelStarted callback can call \ref VmbPacketSend functions 
-to queue up outgoing packets but must not block on incoming packets or 
-completions.  This is because the incoming queue is not running yet.  
+If a paused channel is opened or an opened channel is started, KMCL will
+call the \ref EvtChannelStarted callback after it calls the \ref EvtChannelOpened
+callback.  The \ref EvtChannelStarted callback can call \ref VmbPacketSend functions
+to queue up outgoing packets but must not block on incoming packets or
+completions.  This is because the incoming queue is not running yet.
 
-After \ref EvtChannelStarted returns, KMCL will enable the incoming queue.  This 
-may lead to \ref EvtChannelProcessPacket callbacks being invoked for incoming 
-packets.  Then, KMCL will call \ref EvtChannelPostStarted.  This callback is the 
-right place to perform synchronous sends, e.g.  for protocol negotiation.  
-At this point, the channel is in a active state.  
+After \ref EvtChannelStarted returns, KMCL will enable the incoming queue.  This
+may lead to \ref EvtChannelProcessPacket callbacks being invoked for incoming
+packets.  Then, KMCL will call \ref EvtChannelPostStarted.  This callback is the
+right place to perform synchronous sends, e.g.  for protocol negotiation.
+At this point, the channel is in a active state.
 
-If a running channel is suspended via \ref VmbChannelPause or closed via 
-\ref VmbChannelDisable or action by the opposite endpoint, KMCL will call 
-\ref EvtChannelSuspend.  This callback guarantees that no more 
-\ref EvtChannelProcessPacket callbacks are running or will be queued (at least 
-until the next \ref EvtChannelStarted callback).  This callback is also a 
-notification that the KMCL client must eventually complete all outstanding 
-packets indicated via EvtChannelProcessPacket.  Note that these packets do 
-not have to be completed synchronously.  KMCL will block until they have 
-been completed.  The KMCL client must also stop sending packets with 
-VmbPacketSend*.  
+If a running channel is suspended via \ref VmbChannelPause or closed via
+\ref VmbChannelDisable or action by the opposite endpoint, KMCL will call
+\ref EvtChannelSuspend.  This callback guarantees that no more
+\ref EvtChannelProcessPacket callbacks are running or will be queued (at least
+until the next \ref EvtChannelStarted callback).  This callback is also a
+notification that the KMCL client must eventually complete all outstanding
+packets indicated via EvtChannelProcessPacket.  Note that these packets do
+not have to be completed synchronously.  KMCL will block until they have
+been completed.  The KMCL client must also stop sending packets with
+VmbPacketSend*.
 
-A call to \ref VmbChannelPause on an active channel will block until 
-\ref EvtChannelSuspend is called an no more oustanding incoming packets exist.  
-A call to \ref VmbChannelDisable will block until the channel is disabled, i.e.  
+A call to \ref VmbChannelPause on an active channel will block until
+\ref EvtChannelSuspend is called an no more oustanding incoming packets exist.
+A call to \ref VmbChannelDisable will block until the channel is disabled, i.e.
 paused and closed.
 
 Server States
@@ -340,12 +340,12 @@ without further resource allocation.  Furthermore, the KMCL will keep recently
 released packet objects on a list so that attempts to create new ones are
 generally very cheap.
 
-After allocating a packet object (see \ref VmbPacketAllocate), the client 
-driver may choose to set a completion callback, to be notified when the 
+After allocating a packet object (see \ref VmbPacketAllocate), the client
+driver may choose to set a completion callback, to be notified when the
 entire transaction has been retired, as with \ref VmbPacketSetCompletionRoutine.
 If the client doesn't use the \ref VMBUS_CHANNEL_FORMAT_FLAG_WAIT_FOR_COMPLETION
 flag, then the transaction is considered complete as soon as the outgoing message
-is inserted into the ring buffer.  After the packet completion routine is invoked the 
+is inserted into the ring buffer.  After the packet completion routine is invoked the
 packet object can be freed (see \ref VmbPacketFree) or reused.
 
 Sometimes a VM is saved to disk, or migrated to another machine.  When this happens,
@@ -363,7 +363,7 @@ collect the state associated with outgoing packet objects and restore them later
 @}
 */
 #if NTDDI_VERSION >=NTDDI_WINBLUE
- 
+
 #ifdef _MSC_VER
    #pragma once
 #endif //_MSC_VER
@@ -672,7 +672,7 @@ typedef EVT_VMB_CHANNEL_POST_STARTED *PFN_VMB_CHANNEL_POST_STARTED;
 /// \param Buffer This contains the packet which was sent by the opposite endpoint.  It does not contain the VMBus and KMCL headers.
 /// \param BufferLength The length of Buffer in bytes.
 /// \param Flags See VMBUS_CHANNEL_PROCESS_PACKET_FLAGS.
-/// 
+///
 /// This callback is invoked when a packet has arrived in the incoming ring buffer.
 /// For every invocation of this function, the implementer must eventually call
 /// \ref VmbChannelPacketComplete.
@@ -700,11 +700,11 @@ typedef EVT_VMB_CHANNEL_PROCESS_PACKET *PFN_VMB_CHANNEL_PROCESS_PACKET;
 /// \b EvtVmbChannelProcessingComplete
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param PacketsProcessed The number of packets which were delivered in this batch.
-/// 
+///
 /// This callback is invoked when a group of packets has been delivered by
 /// \ref EvtVmbChannelProcessPacket, if there will be any pause in delivering
 /// subsequent packets.  A pause in packet processing might occur because the
-/// incoming ring buffer was empty, because the number of packets which 
+/// incoming ring buffer was empty, because the number of packets which
 ///
 /// This callback can be invoked at DISPATCH_LEVEL or lower, unless the channel
 /// has been configured to defer packet processing to a worker thread.  See
@@ -760,13 +760,17 @@ VMB_CHANNEL_STATE_CHANGE_CALLBACKS_INIT(
 /// \param ParentDeviceObject A pointer to the parent device.
 /// \param IsServer Whether the new channel should be a server endpoint.
 /// \param Channel Returns a pointer to an allocated channel.
+typedef
 _IRQL_requires_(PASSIVE_LEVEL)
 NTSTATUS
-VmbChannelAllocate(
+FN_VMB_CHANNEL_ALLOCATE(
     _In_ PDEVICE_OBJECT ParentDeviceObject,
     _In_ BOOLEAN IsServer,
     _Out_ _At_(*Channel, __drv_allocatesMem(Mem)) VMBCHANNEL *Channel
     );
+
+typedef FN_VMB_CHANNEL_ALLOCATE *PFN_VMB_CHANNEL_ALLOCATE;
+FN_VMB_CHANNEL_ALLOCATE VmbChannelAllocate;
 
 /// \page VmbChannelInitSetMaximumPacketSize VmbChannelInitSetMaximumPacketSize
 /// This function, which can only be called during channel initialization, sets
@@ -780,11 +784,15 @@ VmbChannelAllocate(
 /// \return STATUS_SUCCESS - function completed successfully
 /// \return STATUS_INVALID_PARAMETER_1 - channel parameter was invalid or in an invalid state(Disabled)
 /// \return STATUS_INVALID_PARAMETER_2 - Packet size invalid (zero is invalid)
+typedef
 NTSTATUS
-VmbChannelInitSetMaximumPacketSize(
+FN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_SIZE(
     _In_ VMBCHANNEL Channel,
     _In_range_(>,0) UINT32 PacketSize
     );
+
+typedef FN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_SIZE *PFN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_SIZE;
+FN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_SIZE VmbChannelInitSetMaximumPacketSize;
 
 /// \page VmbChannelInitSetMaximumExternalData VmbChannelInitSetMaximumExternalData
 /// Sets the maximum size and chain length of data that will be described by a
@@ -802,12 +810,16 @@ VmbChannelInitSetMaximumPacketSize(
 /// \return STATUS_INVALID_PARAMETER_1 - Channel parameter was invalid or in an invalid state(Disabled)
 /// \return STATUS_INVALID_PARAMETER_2 - DataSize invalid (zero is invalid)
 /// \return STATUS_INVALID_PARAMETER_3 - ChainLength invalid (zero is invalid)
+typedef
 NTSTATUS
-VmbChannelInitSetMaximumExternalData(
+FN_VMB_CHANNEL_INIT_SET_MAXIMUM_EXTERNAL_DATA(
     _In_ VMBCHANNEL Channel,
     _In_range_(>,0) UINT32 DataSize,
     _In_range_(>,0) UINT32 ChainLength
     );
+
+typedef FN_VMB_CHANNEL_INIT_SET_MAXIMUM_EXTERNAL_DATA *PFN_VMB_CHANNEL_INIT_SET_MAXIMUM_EXTERNAL_DATA;
+FN_VMB_CHANNEL_INIT_SET_MAXIMUM_EXTERNAL_DATA VmbChannelInitSetMaximumExternalData;
 
 /// \page VmbChannelInitSetClientContextSize VmbChannelInitSetClientContextSize
 /// Sets the size of the optional context area allocated for the client driver
@@ -816,11 +828,15 @@ VmbChannelInitSetMaximumExternalData(
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param ContextSize The size of the context area allocated on each packet
 ///     object.
+typedef
 NTSTATUS
-VmbChannelInitSetClientContextSize(
+FN_VMB_CHANNEL_INIT_SET_CLIENT_CONTEXT_SIZE(
     _In_ VMBCHANNEL Channel,
     _In_ UINT32 ContextSize
     );
+
+typedef FN_VMB_CHANNEL_INIT_SET_CLIENT_CONTEXT_SIZE *PFN_VMB_CHANNEL_INIT_SET_CLIENT_CONTEXT_SIZE;
+FN_VMB_CHANNEL_INIT_SET_CLIENT_CONTEXT_SIZE VmbChannelInitSetClientContextSize;
 
 /// \page VmbChannelInitSetProcessPacketCallbacks VmbChannelInitSetProcessPacketCallbacks
 /// Sets callbacks for packet processing. Only meaningful if KMCL queue
@@ -839,12 +855,16 @@ VmbChannelInitSetClientContextSize(
 ///
 /// \return STATUS_SUCCESS - function completed successfully
 /// \return STATUS_INVALID_PARAMETER_1 - channel parameter was invalid or in an invalid state(Disabled)
+typedef
 NTSTATUS
-VmbChannelInitSetProcessPacketCallbacks(
+FN_VMB_CHANNEL_INIT_SET_PROCESS_PACKET_CALLBACKS(
     _In_ VMBCHANNEL Channel,
     _In_ PFN_VMB_CHANNEL_PROCESS_PACKET ProcessPacketCallback,
     _In_opt_ PFN_VMB_CHANNEL_PROCESSING_COMPLETE ProcessingCompleteCallback
     );
+
+typedef FN_VMB_CHANNEL_INIT_SET_PROCESS_PACKET_CALLBACKS *PFN_VMB_CHANNEL_INIT_SET_PROCESS_PACKET_CALLBACKS;
+FN_VMB_CHANNEL_INIT_SET_PROCESS_PACKET_CALLBACKS VmbChannelInitSetProcessPacketCallbacks;
 
 /// \page VmbChannelInitSetStateChangeCallbacks VmbChannelInitSetStateChangeCallbacks
 /// Sets optional callbacks for state changes.
@@ -855,11 +875,15 @@ VmbChannelInitSetProcessPacketCallbacks(
 /// \return STATUS_SUCCESS - function completed successfully
 /// \return STATUS_INVALID_PARAMETER_1 - channel parameter was invalid or in an invalid state(Disabled)
 /// \return STATUS_INVALID_PARAMETER_2 - StateChangeCallbacks are wrong version or size
+typedef
 NTSTATUS
-VmbChannelInitSetStateChangeCallbacks(
+FN_VMB_CHANNEL_INIT_SET_STATE_CHANGE_CALLBACKS(
     _In_ VMBCHANNEL Channel,
     _In_ PVMB_CHANNEL_STATE_CHANGE_CALLBACKS StateChangeCallbacks
     );
+
+typedef FN_VMB_CHANNEL_INIT_SET_STATE_CHANGE_CALLBACKS *PFN_VMB_CHANNEL_INIT_SET_STATE_CHANGE_CALLBACKS;
+FN_VMB_CHANNEL_INIT_SET_STATE_CHANGE_CALLBACKS VmbChannelInitSetStateChangeCallbacks;
 
 /// \page VmbChannelInitSetFriendlyName VmbChannelInitSetFriendlyName
 /// Sets the friendly name of the KMCL channel.  This is used for debugging and
@@ -868,11 +892,15 @@ VmbChannelInitSetStateChangeCallbacks(
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param Name Name of the channel.
+typedef
 NTSTATUS
-VmbChannelInitSetFriendlyName(
+FN_VMB_CHANNEL_INIT_SET_FRIENDLY_NAME(
     _In_    VMBCHANNEL          Channel,
     _In_    PCUNICODE_STRING    Name
     );
+
+typedef FN_VMB_CHANNEL_INIT_SET_FRIENDLY_NAME *PFN_VMB_CHANNEL_INIT_SET_FRIENDLY_NAME;
+FN_VMB_CHANNEL_INIT_SET_FRIENDLY_NAME VmbChannelInitSetFriendlyName;
 
 /// \page VmbChannelInitSetFlags VmbChannelInitSetFlags
 /// Sets flags common to server or client channel endpoints.
@@ -884,11 +912,15 @@ VmbChannelInitSetFriendlyName(
 ///
 /// \return STATUS_INVALID_PARAMETER_1 - Channel parameter was invalid or in an invalid state(Disabled)
 /// \return STATUS_INVALID_PARAMETER_2 - flags have invalid bits set
+typedef
 NTSTATUS
-VmbChannelInitSetFlags(
+FN_VMB_CHANNEL_INIT_SET_FLAGS(
     _In_    VMBCHANNEL          Channel,
     _In_    UINT32              Flags
     );
+
+typedef FN_VMB_CHANNEL_INIT_SET_FLAGS *PFN_VMB_CHANNEL_INIT_SET_FLAGS;
+FN_VMB_CHANNEL_INIT_SET_FLAGS VmbChannelInitSetFlags;
 
 /// \page VmbServerChannelInitSetFlags VmbServerChannelInitSetFlags
 /// Sets flags unique to server channel endpoints.
@@ -900,11 +932,34 @@ VmbChannelInitSetFlags(
 ///
 /// \return STATUS_INVALID_PARAMETER_1 - Channel parameter was invalid or in an invalid state(Disabled)
 /// \return STATUS_INVALID_PARAMETER_2 - flags have invalid bits set
+typedef
 NTSTATUS
-VmbServerChannelInitSetFlags(
+FN_VMB_SERVER_CHANNEL_INIT_SET_FLAGS(
     _In_ VMBCHANNEL Channel,
     _In_ UINT32 Flags
     );
+
+typedef FN_VMB_SERVER_CHANNEL_INIT_SET_FLAGS *PFN_VMB_SERVER_CHANNEL_INIT_SET_FLAGS;
+FN_VMB_SERVER_CHANNEL_INIT_SET_FLAGS VmbServerChannelInitSetFlags;
+
+/// \page VmbServerChannelInitSetTargetVtl VmbServerChannelInitSetTargetVtl
+/// Sets the target VTL for this channel. The channel will be offered to
+/// clients running in the specified VTL and no others.
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param TargetVtl VTL level where this channel will be offered.
+///
+/// \return STATUS_INVALID_PARAMETER_1 - Channel parameter was invalid or in an invalid state(Disabled)
+/// \return STATUS_INVALID_PARAMETER_2 - TargetVtl is invalid
+typedef
+NTSTATUS
+FN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_VTL(
+    _In_ VMBCHANNEL Channel,
+    _In_ UINT8 TargetVtl
+    );
+
+typedef FN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_VTL *PFN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_VTL;
+FN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_VTL VmbServerChannelInitSetTargetVtl;
 
 /// \page VmbServerChannelInitSetMmioMegabytes VmbServerChannelInitSetMmioMegabytes
 /// Specifies the amount of guest MMIO space to reserve for the device, in
@@ -922,12 +977,16 @@ VmbServerChannelInitSetFlags(
 ///
 /// \return STATUS_INVALID_PARAMETER_1 - channel parameter was invalid or in an invalid state(Disabled)
 /// \return STATUS_INVALID_PARAMETER - one of the MmioMegabytes parameters should be greater than zeroNTSTATUS
+typedef
 NTSTATUS
-VmbServerChannelInitSetMmioMegabytes(
+FN_VMB_SERVER_CHANNEL_INIT_SET_MMIO_MEGABYTES(
     _In_ VMBCHANNEL Channel,
     _In_range_(>,0) UINT16 MmioMegabytes,
     _In_            UINT16 MmioMegabytesOptional
     );
+
+typedef FN_VMB_SERVER_CHANNEL_INIT_SET_MMIO_MEGABYTES *PFN_VMB_SERVER_CHANNEL_INIT_SET_MMIO_MEGABYTES;
+FN_VMB_SERVER_CHANNEL_INIT_SET_MMIO_MEGABYTES VmbServerChannelInitSetMmioMegabytes;
 
 /// \page VmbServerChannelInitSetTargetInterfaceId VmbServerChannelInitSetTargetInterfaceId
 /// Sets the channel offer's target interface type and instance GUIDs.  The InterfaceType
@@ -941,12 +1000,16 @@ VmbServerChannelInitSetMmioMegabytes(
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param InterfaceType A pointer to the interface type GUID.
 /// \param InterfaceInstance A pointer to the instance type GUID.
+typedef
 NTSTATUS
-VmbServerChannelInitSetTargetInterfaceId(
+FN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_INTERFACE_ID(
     _In_ VMBCHANNEL Channel,
     _In_ GUID InterfaceType,
     _In_ GUID InterfaceInstance
     );
+
+typedef FN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_INTERFACE_ID *PFN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_INTERFACE_ID;
+FN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_INTERFACE_ID VmbServerChannelInitSetTargetInterfaceId;
 
 /// \page VmbServerChannelInitSetSaveRestorePacketCallbacks VmbServerChannelInitSetSaveRestorePacketCallbacks
 /// Sets the save and restore callbacks that are called for each packet when the
@@ -959,12 +1022,16 @@ VmbServerChannelInitSetTargetInterfaceId(
 ///     restore.
 ///
 /// \return STATUS_INVALID_PARAMETER_1 - channel parameter was invalid or in an invalid state(Disabled)
+typedef
 NTSTATUS
-VmbServerChannelInitSetSaveRestorePacketCallbacks(
+FN_VMB_SERVER_CHANNEL_INIT_SET_SAVE_RESTORE_PACKET_CALLBACKS(
     _In_ VMBCHANNEL Channel,
     _In_ PFN_VMB_CHANNEL_SAVE_PACKET SavePacketCallback,
     _In_ PFN_VMB_CHANNEL_RESTORE_PACKET RestorePacketCallback
     );
+
+typedef FN_VMB_SERVER_CHANNEL_INIT_SET_SAVE_RESTORE_PACKET_CALLBACKS *PFN_VMB_SERVER_CHANNEL_INIT_SET_SAVE_RESTORE_PACKET_CALLBACKS;
+FN_VMB_SERVER_CHANNEL_INIT_SET_SAVE_RESTORE_PACKET_CALLBACKS VmbServerChannelInitSetSaveRestorePacketCallbacks;
 
 /// \page VmbServerChannelInitSetVmbusHandle VmbServerChannelInitSetVmbusHandle
 /// This routine associates an instance of VMBus with this channel.  The VMBus
@@ -977,11 +1044,15 @@ VmbServerChannelInitSetSaveRestorePacketCallbacks(
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param VmbusHandle A kernel mode handle to the vmbus vdev of the partition.
+typedef
 NTSTATUS
-VmbServerChannelInitSetVmbusHandle(
+FN_VMB_SERVER_CHANNEL_INIT_SET_VMBUS_HANDLE(
     _In_ VMBCHANNEL Channel,
     _In_ HANDLE VmbusHandle
     );
+
+typedef FN_VMB_SERVER_CHANNEL_INIT_SET_VMBUS_HANDLE *PFN_VMB_SERVER_CHANNEL_INIT_SET_VMBUS_HANDLE;
+FN_VMB_SERVER_CHANNEL_INIT_SET_VMBUS_HANDLE VmbServerChannelInitSetVmbusHandle;
 
 /// \page VmbConvertVmbusHandleToKernelHandle VmbConvertVmbusHandleToKernelHandle
 /// This routine converts the user mode vmbus handle to kernel mode handle. The
@@ -994,11 +1065,15 @@ VmbServerChannelInitSetVmbusHandle(
 ///
 /// \param VmbusHandle The user-mode handle which was opened in the VM worker process.
 /// \param KernelHandle The kernel handle referencing the same object as VmbusHandle.
+typedef
 NTSTATUS
-VmbConvertVmbusHandleToKernelHandle(
+FN_VMB_CONVERT_VMBUS_HANDLE_TO_KERNEL_HANDLE(
     _In_ HANDLE VmbusHandle,
     _Out_ PHANDLE KernelHandle
     );
+
+typedef FN_VMB_CONVERT_VMBUS_HANDLE_TO_KERNEL_HANDLE *PFN_VMB_CONVERT_VMBUS_HANDLE_TO_KERNEL_HANDLE;
+FN_VMB_CONVERT_VMBUS_HANDLE_TO_KERNEL_HANDLE VmbConvertVmbusHandleToKernelHandle;
 
 /// \page VmbClientChannelInitSetRingBufferPageCount VmbClientChannelInitSetRingBufferPageCount
 /// Sets the number of pages of memory the client will allocate for incoming and outgoing ring
@@ -1010,12 +1085,16 @@ VmbConvertVmbusHandleToKernelHandle(
 ///     buffer.
 /// \param OutgoingPageCount Number of pages to allocate for the outgoing ring
 ///     buffer.
+typedef
 NTSTATUS
-VmbClientChannelInitSetRingBufferPageCount(
+FN_VMB_CLIENT_CHANNEL_INIT_SET_RING_BUFFER_PAGE_COUNT(
     _In_ VMBCHANNEL Channel,
     _In_ UINT32 IncomingPageCount,
     _In_ UINT32 OutgoingPageCount
     );
+
+typedef FN_VMB_CLIENT_CHANNEL_INIT_SET_RING_BUFFER_PAGE_COUNT *PFN_VMB_CLIENT_CHANNEL_INIT_SET_RING_BUFFER_PAGE_COUNT;
+FN_VMB_CLIENT_CHANNEL_INIT_SET_RING_BUFFER_PAGE_COUNT VmbClientChannelInitSetRingBufferPageCount;
 
 /// \page VmbChannelCleanup VmbChannelCleanup
 /// Disposes of a channel allocated with \ref VmbChannelAllocate or initialized with
@@ -1025,10 +1104,14 @@ VmbClientChannelInitSetRingBufferPageCount(
 /// The channel must be disabled before this routine is called.
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+typedef
 VOID
-VmbChannelCleanup(
+FN_VMB_CHANNEL_CLEANUP(
     _In_ __drv_freesMem(Mem) VMBCHANNEL Channel
     );
+
+typedef FN_VMB_CHANNEL_CLEANUP *PFN_VMB_CHANNEL_CLEANUP;
+FN_VMB_CHANNEL_CLEANUP VmbChannelCleanup;
 
 /// \page VmbChannelSetPointer VmbChannelSetPointer
 /// This function lets a client driver save an arbitrary pointer in the channel
@@ -1037,12 +1120,16 @@ VmbChannelCleanup(
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param Pointer Arbitrary pointer to save in the channel's context
+typedef
 VOID
 FASTCALL
-VmbChannelSetPointer(
+FN_VMB_CHANNEL_SET_POINTER(
     _In_ VMBCHANNEL Channel,
     _In_opt_ __drv_aliasesMem PVOID Pointer
     );
+
+typedef FN_VMB_CHANNEL_SET_POINTER *PFN_VMB_CHANNEL_SET_POINTER;
+FN_VMB_CHANNEL_SET_POINTER VmbChannelSetPointer;
 
 /// \page VmbChannelGetPointer VmbChannelGetPointer
 /// This function lets a client driver retrive a pointer that was previously
@@ -1051,11 +1138,15 @@ VmbChannelSetPointer(
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 ///
 /// \returns The value previously saved with \ref VmbPacketSetPointer
+typedef
 PVOID
 FASTCALL
-VmbChannelGetPointer(
+FN_VMB_CHANNEL_GET_POINTER(
     _In_     VMBCHANNEL  Channel
     );
+
+typedef FN_VMB_CHANNEL_GET_POINTER *PFN_VMB_CHANNEL_GET_POINTER;
+FN_VMB_CHANNEL_GET_POINTER VmbChannelGetPointer;
 
 /// \page VmbChannelEnable VmbChannelEnable
 /// Enables a channel that is in the disabled state by connecting to vmbus and
@@ -1065,28 +1156,36 @@ VmbChannelGetPointer(
 /// See \ref state_model.
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+typedef
 _Must_inspect_result_
 NTSTATUS
-VmbChannelEnable(
+FN_VMB_CHANNEL_ENABLE(
     _In_    VMBCHANNEL  Channel
     );
+
+typedef FN_VMB_CHANNEL_ENABLE *PFN_VMB_CHANNEL_ENABLE;
+FN_VMB_CHANNEL_ENABLE VmbChannelEnable;
 
 /// \page VmbChannelSetInterruptLatency VmbChannelSetInterruptLatency
 /// Guest VM updates to the outgoing monitor latency for MNF interrupts.
 ///
-/// This call is valid for opened channels, that is between the calls to 
+/// This call is valid for opened channels, that is between the calls to
 /// EvtChannelOpened and EvtChannelClosed, inclusive.
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param Latency Desired Monitor Latency in 100ns units.
 /// \param OriginalLatency on success, set to the previous latency value.
+typedef
 _Must_inspect_result_
 NTSTATUS
-VmbChannelSetInterruptLatency(
+FN_VMB_CHANNEL_SET_INTERRUPT_LATENCY(
     _In_ VMBCHANNEL Channel,
     _In_ UINT16 Latency,
     _Out_ PUINT16 OriginalLatency
     );
+
+typedef FN_VMB_CHANNEL_SET_INTERRUPT_LATENCY *PFN_VMB_CHANNEL_SET_INTERRUPT_LATENCY;
+FN_VMB_CHANNEL_SET_INTERRUPT_LATENCY VmbChannelSetInterruptLatency;
 
 /// \page VmbChannelDisable VmbChannelDisable
 /// Disables a channel, closing it for client channels and revoking the channel
@@ -1096,10 +1195,14 @@ VmbChannelSetInterruptLatency(
 /// See \ref state_model.
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+typedef
 VOID
-VmbChannelDisable(
+FN_VMB_CHANNEL_DISABLE(
     _In_    VMBCHANNEL  Channel
     );
+
+typedef FN_VMB_CHANNEL_DISABLE *PFN_VMB_CHANNEL_DISABLE;
+FN_VMB_CHANNEL_DISABLE VmbChannelDisable;
 
 /// \page VmbChannelStart VmbChannelStart
 /// Moves a channel out of the paused state.
@@ -1107,10 +1210,14 @@ VmbChannelDisable(
 /// See \ref state_model.
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+typedef
 VOID
-VmbChannelStart(
+FN_VMB_CHANNEL_START(
     _In_    VMBCHANNEL  Channel
     );
+
+typedef FN_VMB_CHANNEL_START *PFN_VMB_CHANNEL_START;
+FN_VMB_CHANNEL_START VmbChannelStart;
 
 /// \page VmbChannelPause VmbChannelPause
 /// Moves a channel into the paused state, preventing new I/O from starting.
@@ -1123,10 +1230,14 @@ VmbChannelStart(
 /// See \ref state_model.
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+typedef
 VOID
-VmbChannelPause(
+FN_VMB_CHANNEL_PAUSE(
     _In_    VMBCHANNEL  Channel
     );
+
+typedef FN_VMB_CHANNEL_PAUSE *PFN_VMB_CHANNEL_PAUSE;
+FN_VMB_CHANNEL_PAUSE VmbChannelPause;
 
 /// \page VmbChannelSaveBegin VmbChannelSaveBegin
 /// This routine initializes the context for saving the channel state. The
@@ -1136,11 +1247,15 @@ VmbChannelPause(
 /// \param Channel A handle for the channel to save.  Allocated by \ref VmbChannelAllocate.
 ///
 /// \returns NT Status
+typedef
 _Must_inspect_result_
 NTSTATUS
-VmbChannelSaveBegin(
+FN_VMB_CHANNEL_SAVE_BEGIN(
     _In_ VMBCHANNEL  Channel
     );
+
+typedef FN_VMB_CHANNEL_SAVE_BEGIN *PFN_VMB_CHANNEL_SAVE_BEGIN;
+FN_VMB_CHANNEL_SAVE_BEGIN VmbChannelSaveBegin;
 
 /// \page VmbChannelSaveContinue VmbChannelSaveContinue
 /// This routine saves the channel state to the buffer.  The save process saves
@@ -1162,9 +1277,10 @@ VmbChannelSaveBegin(
 ///     contains the number of bytes that are required to make any progress.
 /// \retval STATUS_BUFFER_OVERFLOW Some data was written to the save
 ///     buffer, but there's more data to be saved.
+typedef
 _Must_inspect_result_
 NTSTATUS
-VmbChannelSaveContinue(
+FN_VMB_CHANNEL_SAVE_CONTINUE(
     _In_    VMBCHANNEL  Channel,
     _Out_writes_bytes_to_(SaveBufferSize, *BytesFilled)
             PVOID       SaveBuffer,
@@ -1173,14 +1289,21 @@ VmbChannelSaveContinue(
     _Out_   PULONG      BytesRequired
     );
 
+typedef FN_VMB_CHANNEL_SAVE_CONTINUE *PFN_VMB_CHANNEL_SAVE_CONTINUE;
+FN_VMB_CHANNEL_SAVE_CONTINUE VmbChannelSaveContinue;
+
 /// \page VmbChannelSaveEnd VmbChannelSaveEnd
 /// This routine cleans up any resources that were allocated for saving state.
 ///
 /// \param Channel Handle of the channel to save
+typedef
 VOID
-VmbChannelSaveEnd(
+FN_VMB_CHANNEL_SAVE_END(
     _In_ VMBCHANNEL  Channel
     );
+
+typedef FN_VMB_CHANNEL_SAVE_END *PFN_VMB_CHANNEL_SAVE_END;
+FN_VMB_CHANNEL_SAVE_END VmbChannelSaveEnd;
 
 /// \page VmbChannelRestoreFromBuffer VmbChannelRestoreFromBuffer
 /// This routine restores the client state from previously saved state.
@@ -1197,13 +1320,17 @@ VmbChannelSaveEnd(
 ///     but more chunks were saved.
 /// \returns Other status code for which NT_SUCCESS is FALSE - The function
 ///     failed.
+typedef
 _Must_inspect_result_
 NTSTATUS
-VmbChannelRestoreFromBuffer(
+FN_VMB_CHANNEL_RESTORE_FROM_BUFFER(
     _In_                            VMBCHANNEL            Channel,
     _In_reads_bytes_(BufferSize)    PVOID                 Buffer,
     _In_                            ULONG                 BufferSize
     );
+
+typedef FN_VMB_CHANNEL_RESTORE_FROM_BUFFER *PFN_VMB_CHANNEL_RESTORE_FROM_BUFFER;
+FN_VMB_CHANNEL_RESTORE_FROM_BUFFER VmbChannelRestoreFromBuffer;
 
 /// \page VmbChannelPacketComplete VmbChannelPacketComplete
 /// This function is called when the client driver is completely finished
@@ -1219,12 +1346,16 @@ VmbChannelRestoreFromBuffer(
 /// will usually just contain a status value, the exact contents are up to
 /// the client driver.
 /// \param BufSize Size in bytes of the completion buffer.
+typedef
 VOID
-VmbChannelPacketComplete(
+FN_VMB_CHANNEL_PACKET_COMPLETE(
     _In_                            VMBPACKETCOMPLETION PacketCompletionContext,
     _In_reads_bytes_opt_(BufSize)   PVOID               PacketCompletionBuffer,
     _In_                            UINT32              BufSize
     );
+
+typedef FN_VMB_CHANNEL_PACKET_COMPLETE *PFN_VMB_CHANNEL_PACKET_COMPLETE;
+FN_VMB_CHANNEL_PACKET_COMPLETE VmbChannelPacketComplete;
 
 /// \page VmbChannelPacketDeferToPassive VmbChannelPacketDeferToPassive
 /// This function is called when the client driver wishes to defer a packet
@@ -1235,11 +1366,15 @@ VmbChannelPacketComplete(
 /// This routine is designed to only be called in-line from \ref EvtChannelProcessPacket.
 ///
 /// \param PacketCompletionContext See \ref VMBPACKETCOMPLETION
+typedef
 VOID
 FASTCALL
-VmbChannelPacketDeferToPassive(
+FN_VMB_CHANNEL_PACKET_DEFER_TO_PASSIVE(
     _In_ VMBPACKETCOMPLETION PacketCompletionContext
     );
+
+typedef FN_VMB_CHANNEL_PACKET_DEFER_TO_PASSIVE *PFN_VMB_CHANNEL_PACKET_DEFER_TO_PASSIVE;
+FN_VMB_CHANNEL_PACKET_DEFER_TO_PASSIVE VmbChannelPacketDeferToPassive;
 
 /// \page VmbChannelPacketFail VmbChannelPacketFail
 /// This function can be called during a packet processing to fail the packet
@@ -1248,11 +1383,15 @@ VmbChannelPacketDeferToPassive(
 /// the extent that channel processing should cease.
 ///
 /// \param PacketCompletionContext See \ref VMBPACKETCOMPLETION
+typedef
 VOID
 FASTCALL
-VmbChannelPacketFail(
+FN_VMB_CHANNEL_PACKET_FAIL(
     _In_ VMBPACKETCOMPLETION PacketCompletionContext
     );
+
+typedef FN_VMB_CHANNEL_PACKET_FAIL *PFN_VMB_CHANNEL_PACKET_FAIL;
+FN_VMB_CHANNEL_PACKET_FAIL VmbChannelPacketFail;
 
 
 /// \page VmbChannelPacketGetExternalData VmbChannelPacketGetExternalData
@@ -1288,13 +1427,17 @@ VmbChannelPacketFail(
 /// \ref VMBUS_CHANNEL_PACKET_EXTERNAL_DATA_FLAG_READ_ONLY - Map MDL as read-only.
 /// \endparblock
 /// \param Mdl A pointer to return the mapped MDL.
+typedef
 _Success_(return == STATUS_SUCCESS)
 NTSTATUS
-VmbChannelPacketGetExternalData(
+FN_VMB_CHANNEL_PACKET_GET_EXTERNAL_DATA(
     _In_ VMBPACKETCOMPLETION PacketCompletionContext,
     _In_ UINT32 Flags,
     _Out_ PMDL *Mdl
     );
+
+typedef FN_VMB_CHANNEL_PACKET_GET_EXTERNAL_DATA *PFN_VMB_CHANNEL_PACKET_GET_EXTERNAL_DATA;
+FN_VMB_CHANNEL_PACKET_GET_EXTERNAL_DATA VmbChannelPacketGetExternalData;
 
 /// \page VmbChannelMapGpadl VmbChannelMapGpadl
 /// Maps a client-side buffer into server-side physical address space by GPADL
@@ -1317,13 +1460,17 @@ VmbChannelPacketGetExternalData(
 /// \param Mdl Returns a pointer to a MDL describing the client buffer. This
 /// buffer is only mapped into physical address space; the caller must take
 /// additional steps to map it into virtual address space.
+typedef
 NTSTATUS
-VmbChannelMapGpadl(
+FN_VMB_CHANNEL_MAP_GPADL(
     _In_ VMBCHANNEL Channel,
     _In_ UINT32 Flags,
     _In_ UINT32 GpadlHandle,
     _Out_ PMDL *Mdl
     );
+
+typedef FN_VMB_CHANNEL_MAP_GPADL *PFN_VMB_CHANNEL_MAP_GPADL;
+FN_VMB_CHANNEL_MAP_GPADL VmbChannelMapGpadl;
 
 /// \page VmbChannelUnmapGpadl VmbChannelUnmapGpadl
 /// Unmaps a GPADL mapped by \ref VmbChannelMapGpadl. The buffer must no longer be in
@@ -1331,11 +1478,15 @@ VmbChannelMapGpadl(
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param GpadlHandle The handle of the GPADL to unmap.
+typedef
 VOID
-VmbChannelUnmapGpadl(
+FN_VMB_CHANNEL_UNMAP_GPADL(
     _In_ VMBCHANNEL Channel,
     _In_ UINT32 GpadlHandle
     );
+
+typedef FN_VMB_CHANNEL_UNMAP_GPADL *PFN_VMB_CHANNEL_UNMAP_GPADL;
+FN_VMB_CHANNEL_UNMAP_GPADL VmbChannelUnmapGpadl;
 
 /// \page VmbChannelCreateGpadlFromMdl VmbChannelCreateGpadlFromMdl
 /// Establishes a GPADL describing a client-side buffer. The GPADL may be used
@@ -1361,8 +1512,9 @@ VmbChannelUnmapGpadl(
 ///     use until the end of the MDL.
 /// \param GpadlHandle Returns a GPADL handle of the created MDL. This should be
 ///     sent to the server to use with VmbChannelMapGpadl.
+typedef
 NTSTATUS
-VmbChannelCreateGpadlFromMdl(
+FN_VMB_CHANNEL_CREATE_GPADL_FROM_MDL(
     _In_ VMBCHANNEL Channel,
     _In_ UINT32 Flags,
     _In_ PMDL Mdl,
@@ -1370,6 +1522,9 @@ VmbChannelCreateGpadlFromMdl(
     _In_ UINT32 DataLengthWithinMdl,
     _Out_ PUINT32 GpadlHandle
     );
+
+typedef FN_VMB_CHANNEL_CREATE_GPADL_FROM_MDL *PFN_VMB_CHANNEL_CREATE_GPADL_FROM_MDL;
+FN_VMB_CHANNEL_CREATE_GPADL_FROM_MDL VmbChannelCreateGpadlFromMdl;
 
 /// \page VmbChannelCreateGpadlFromBuffer VmbChannelCreateGpadlFromBuffer
 /// Establishes a GPADL describing a client-side buffer. The GPADL may be used
@@ -1392,14 +1547,18 @@ VmbChannelCreateGpadlFromMdl(
 /// \param ByteCount The length of the buffer, in bytes.
 /// \param GpadlHandle Returns a GPADL handle of the created MDL. This should be
 ///     sent to the server to use with VmbChannelMapGpadl.
+typedef
 NTSTATUS
-VmbChannelCreateGpadlFromBuffer(
+FN_VMB_CHANNEL_CREATE_GPADL_FROM_BUFFER(
     _In_ VMBCHANNEL Channel,
     _In_ UINT32 Flags,
     _In_reads_bytes_(ByteCount) PVOID Buffer,
     _In_ UINT32 ByteCount,
     _Out_ PUINT32 GpadlHandle
     );
+
+typedef FN_VMB_CHANNEL_CREATE_GPADL_FROM_BUFFER *PFN_VMB_CHANNEL_CREATE_GPADL_FROM_BUFFER;
+FN_VMB_CHANNEL_CREATE_GPADL_FROM_BUFFER VmbChannelCreateGpadlFromBuffer;
 
 /// \page VmbChannelDeleteGpadl VmbChannelDeleteGpadl
 /// Deletes a GPADL mapped by \ref VmbChannelCreateGpadlFromMdl or
@@ -1410,11 +1569,15 @@ VmbChannelCreateGpadlFromBuffer(
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param GpadlHandle The GPADL handle of the GPADL to delete.
+typedef
 VOID
-VmbChannelDeleteGpadl(
+FN_VMB_CHANNEL_DELETE_GPADL(
     _In_ VMBCHANNEL Channel,
     _In_ UINT32 GpadlHandle
     );
+
+typedef FN_VMB_CHANNEL_DELETE_GPADL *PFN_VMB_CHANNEL_DELETE_GPADL;
+FN_VMB_CHANNEL_DELETE_GPADL VmbChannelDeleteGpadl;
 
 /// \page VmbPacketAllocate VmbPacketAllocate
 /// Allocates a packet from the channel's lookaside list.
@@ -1426,20 +1589,28 @@ VmbChannelDeleteGpadl(
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 ///
 /// \returns A pointer to an allocated \ref VMBPACKET, or NULL.
+typedef
 __drv_allocatesMem(Mem)
 VMBPACKET
-VmbPacketAllocate(
+FN_VMB_PACKET_ALLOCATE(
     _In_ VMBCHANNEL Channel
     );
+
+typedef FN_VMB_PACKET_ALLOCATE *PFN_VMB_PACKET_ALLOCATE;
+FN_VMB_PACKET_ALLOCATE VmbPacketAllocate;
 
 /// \page VmbPacketFree VmbPacketFree
 /// Frees a packet allocated with \ref VmbPacketAllocate.
 ///
 /// \param VmbPacket A pointer to an allocated \ref VMBPACKET.
+typedef
 VOID
-VmbPacketFree(
+FN_VMB_PACKET_FREE(
     _In_ __drv_freesMem(Mem) VMBPACKET VmbPacket
     );
+
+typedef FN_VMB_PACKET_FREE *PFN_VMB_PACKET_FREE;
+FN_VMB_PACKET_FREE VmbPacketFree;
 
 /// \page VmbPacketSetPointer VmbPacketSetPointer
 /// This function lets a client driver save an arbitrary pointer in the packet
@@ -1448,12 +1619,16 @@ VmbPacketFree(
 ///
 /// \param PacketObject Handle for the \ref VMBPACKET
 /// \param Pointer Arbitrary pointer to save in the packet's context
+typedef
 VOID
 FASTCALL
-VmbPacketSetPointer(
+FN_VMB_PACKET_SET_POINTER(
     _In_     VMBPACKET PacketObject,
     _In_opt_ PVOID     Pointer
     );
+
+typedef FN_VMB_PACKET_SET_POINTER *PFN_VMB_PACKET_SET_POINTER;
+FN_VMB_PACKET_SET_POINTER VmbPacketSetPointer;
 
 /// \page VmbPacketGetPointer VmbPacketGetPointer
 /// This function lets a client driver retrive a pointer that was previously
@@ -1462,11 +1637,15 @@ VmbPacketSetPointer(
 /// \param PacketObject Handle for the packet object
 ///
 /// \returns The value previously saved with \ref VmbPacketSetPointer
+typedef
 PVOID
 FASTCALL
-VmbPacketGetPointer(
+FN_VMB_PACKET_GET_POINTER(
     _In_     VMBPACKET PacketObject
     );
+
+typedef FN_VMB_PACKET_GET_POINTER *PFN_VMB_PACKET_GET_POINTER;
+FN_VMB_PACKET_GET_POINTER VmbPacketGetPointer;
 
 /// \page VmbPacketSend VmbPacketSend
 /// This function sends the data in PacketBuf and/or ExternalDataMdl,
@@ -1497,14 +1676,18 @@ VmbPacketGetPointer(
 /// \endparblock
 ///
 /// \returns NT Status code.
+typedef
 NTSTATUS
-VmbPacketSend(
+FN_VMB_PACKET_SEND(
     _In_ __drv_aliasesMem           VMBPACKET              PacketObject,
     _In_reads_bytes_(BufferLength)  PVOID                  Buffer,
     _In_                            UINT32                 BufferLength,
     _In_opt_                        PMDL                   ExternalDataMdl,
     _In_                            UINT32                 Flags
     );
+
+typedef FN_VMB_PACKET_SEND *PFN_VMB_PACKET_SEND;
+FN_VMB_PACKET_SEND VmbPacketSend;
 
 /// \page VmbPacketSendWithExternalMdl VmbPacketSendWithExternalMdl
 /// This function sends the data in PacketBuf and ExternalDataMdl, associating
@@ -1545,8 +1728,9 @@ VmbPacketSend(
 /// \endparblock
 ///
 /// \returns NT Status code.
+typedef
 NTSTATUS
-VmbPacketSendWithExternalMdl(
+FN_VMB_PACKET_SEND_WITH_EXTERNAL_MDL(
     _In_ __drv_aliasesMem           VMBPACKET              PacketObject,
     _In_reads_bytes_(BufferLength)  PVOID                  Buffer,
     _In_                            UINT32                 BufferLength,
@@ -1556,24 +1740,27 @@ VmbPacketSendWithExternalMdl(
     _In_                            UINT32                 Flags
     );
 
-/// \page VmbPacketSendWithExternalPfns 
-/// VmbPacketSendWithExternalPfns This function sends the data 
-/// in PacketBuf and ExternalDataPfn, associating it with the 
-/// \ref VMBPACKET object, which will represent the packet 
-/// through the lifetime of the transaction. 
+typedef FN_VMB_PACKET_SEND_WITH_EXTERNAL_MDL *PFN_VMB_PACKET_SEND_WITH_EXTERNAL_MDL;
+FN_VMB_PACKET_SEND_WITH_EXTERNAL_MDL VmbPacketSendWithExternalMdl;
+
+/// \page VmbPacketSendWithExternalPfns
+/// VmbPacketSendWithExternalPfns This function sends the data
+/// in PacketBuf and ExternalDataPfn, associating it with the
+/// \ref VMBPACKET object, which will represent the packet
+/// through the lifetime of the transaction.
 ///
 /// This function is different from \ref VmbPacketSend in that it allows passing a
-/// array of PFNs (Page Frame Numbers, effectively Physical 
-/// addresses) 
+/// array of PFNs (Page Frame Numbers, effectively Physical
+/// addresses)
 ///
 /// \param PacketObject This is a handle to the \ref VMBPACKET object.
 /// \param PacketBuf Buffer containing the "command" packet which will be sent
 ///     through the VMBus ring buffer.
 /// \param BufSize Size in bytes of the buffer pointed to by PacketBuf.
-/// \param ExternalDataPfns Optional array of Physical Frame 
-///     nubmers describing a data buffer associated with 
+/// \param ExternalDataPfns Optional array of Physical Frame
+///     nubmers describing a data buffer associated with
 ///     the packet.
-/// \param PfnLength The number of Pfns to send from 
+/// \param PfnLength The number of Pfns to send from
 ///     ExternalDataPfns. The final referenced array index will
 ///     be  ExternalDataPfns[PfnLength-1] inclusive
 /// \param Flags \parblock Any pertinent flags:
@@ -1589,8 +1776,9 @@ VmbPacketSendWithExternalMdl(
 /// \endparblock
 ///
 /// \returns NT Status code.
+typedef
 NTSTATUS
-VmbPacketSendWithExternalPfns(
+FN_VMB_PACKET_SEND_WITH_EXTERNAL_PFNS(
     _In_ __drv_aliasesMem           VMBPACKET              PacketObject,
     _In_reads_bytes_(BufferLength)  PVOID                  Buffer,
     _In_                            UINT32                 BufferLength,
@@ -1598,6 +1786,9 @@ VmbPacketSendWithExternalPfns(
     _In_                            UINT32                 PfnLength,
     _In_                            UINT32                 Flags
     );
+
+typedef FN_VMB_PACKET_SEND_WITH_EXTERNAL_PFNS *PFN_VMB_PACKET_SEND_WITH_EXTERNAL_PFNS;
+FN_VMB_PACKET_SEND_WITH_EXTERNAL_PFNS VmbPacketSendWithExternalPfns;
 
 
 /// \page VmbChannelSendSynchronousRequest VmbChannelSendSynchronousRequest
@@ -1633,8 +1824,9 @@ _When_(Timeout == NULL || Timeout->QuadPart != 0 ||
 _When_(Timeout != NULL && Timeout->QuadPart == 0 &&
        (Flags & VMBUS_CHANNEL_FORMAT_FLAG_WAIT_FOR_COMPLETION) == 0,
         _IRQL_requires_max_(DISPATCH_LEVEL))
+typedef
 NTSTATUS
-VmbChannelSendSynchronousRequest(
+FN_VMB_CHANNEL_SEND_SYNCHRONOUS_REQUEST(
     _In_                            VMBCHANNEL      Channel,
     _In_reads_bytes_(BufferSize)    PVOID           Buffer,
     _In_                            UINT32          BufferSize,
@@ -1647,6 +1839,9 @@ VmbChannelSendSynchronousRequest(
     _In_opt_                        PLARGE_INTEGER  Timeout
     );
 
+typedef FN_VMB_CHANNEL_SEND_SYNCHRONOUS_REQUEST *PFN_VMB_CHANNEL_SEND_SYNCHRONOUS_REQUEST;
+FN_VMB_CHANNEL_SEND_SYNCHRONOUS_REQUEST VmbChannelSendSynchronousRequest;
+
 /// \page VmbPacketRestore VmbPacketRestore
 /// This routine restores packet from a buffer that contains saved packet
 /// context
@@ -1656,22 +1851,30 @@ VmbChannelSendSynchronousRequest(
 /// \param BufferSize The size in bytes of buffer
 ///
 /// \returns NT Status
+typedef
 NTSTATUS
-VmbPacketRestore(
+FN_VMB_PACKET_RESTORE(
     _In_ __drv_aliasesMem           VMBPACKET                  PacketObject,
     _In_reads_bytes_(BufferSize)    PVOID                      Buffer,
     _In_                            ULONG                      BufferSize
     );
 
+typedef FN_VMB_PACKET_RESTORE *PFN_VMB_PACKET_RESTORE;
+FN_VMB_PACKET_RESTORE VmbPacketRestore;
+
 /// \page VmbPacketGetChannel VmbPacketGetChannel
 /// This function returns the \ref VMBCHANNEL that a \ref VMBPACKET is associated with.
 ///
 /// \param PacketObject The packet object.
+typedef
 VMBCHANNEL
 FASTCALL
-VmbPacketGetChannel(
+FN_VMB_PACKET_GET_CHANNEL(
     _In_    VMBPACKET   PacketObject
     );
+
+typedef FN_VMB_PACKET_GET_CHANNEL *PFN_VMB_PACKET_GET_CHANNEL;
+FN_VMB_PACKET_GET_CHANNEL VmbPacketGetChannel;
 
 /// \page VmbChannelSetIncomingProcessingAtPassive VmbChannelSetIncomingProcessingAtPassive
 /// Sets the required IRQL for incoming parsing routines for a channel to
@@ -1680,11 +1883,15 @@ VmbPacketGetChannel(
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param RequirePassive If TRUE, require PASSIVE_LEVEL. If FALSE, packets may
 ///     arrive at either DISPATCH_LEVEL or PASSIVE_LEVEL.
+typedef
 VOID
-VmbChannelSetIncomingProcessingAtPassive(
+FN_VMB_CHANNEL_SET_INCOMING_PROCESSING_AT_PASSIVE(
     _In_ VMBCHANNEL Channel,
     _In_ BOOLEAN RequirePassive
     );
+
+typedef FN_VMB_CHANNEL_SET_INCOMING_PROCESSING_AT_PASSIVE *PFN_VMB_CHANNEL_SET_INCOMING_PROCESSING_AT_PASSIVE;
+FN_VMB_CHANNEL_SET_INCOMING_PROCESSING_AT_PASSIVE VmbChannelSetIncomingProcessingAtPassive;
 
 /// \page VmbChannelSetTransactionQuota VmbChannelSetTransactionQuota
 /// Sets the incoming packet quota. Can be set to be lower than the current
@@ -1696,11 +1903,15 @@ VmbChannelSetIncomingProcessingAtPassive(
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param Quota The maximum outstanding packet quota. Must be greater than 0.
+typedef
 VOID
-VmbChannelSetTransactionQuota(
+FN_VMB_CHANNEL_SET_TRANSACTION_QUOTA(
     _In_ VMBCHANNEL Channel,
     _In_ UINT32 Quota
     );
+
+typedef FN_VMB_CHANNEL_SET_TRANSACTION_QUOTA *PFN_VMB_CHANNEL_SET_TRANSACTION_QUOTA;
+FN_VMB_CHANNEL_SET_TRANSACTION_QUOTA VmbChannelSetTransactionQuota;
 
 /// \page VmbChannelGetInterfaceInstance VmbChannelGetInterfaceInstance
 /// Retrieves the active interface instance, a GUID that uniquely identifies a
@@ -1709,11 +1920,35 @@ VmbChannelSetTransactionQuota(
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param InterfaceInstance A pointer to a GUID to store the interface instance
 ///     of the channel.
+typedef
 VOID
-VmbChannelGetInterfaceInstance(
+FN_VMB_CHANNEL_GET_INTERFACE_INSTANCE(
     _In_ VMBCHANNEL Channel,
     _Out_ LPGUID InterfaceInstance
     );
+
+typedef FN_VMB_CHANNEL_GET_INTERFACE_INSTANCE *PFN_VMB_CHANNEL_GET_INTERFACE_INSTANCE;
+FN_VMB_CHANNEL_GET_INTERFACE_INSTANCE VmbChannelGetInterfaceInstance;
+
+/// \page VmbChannelGetMmioSpace VmbChannelGetMmioSpace
+/// Retrieves the kernel virtual address of the MMIO space allocated to the channel.
+/// This MMIO space is reserved via /ref VmbServerChannelInitSetMmioMegabytes.  This
+/// function is only valid after the open channel callback has been received.
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param MmioAddress A pointer to a PVOID to fill with the MMIO physical address
+/// \param MmioSize A pointer to the returned size of the MMIO space
+
+typedef 
+VOID
+FN_VMB_CHANNEL_GET_MMIO_SPACE(
+    _In_ VMBCHANNEL Channel,
+    _Out_ UINT64* MmioAddress,
+    _Out_ UINT64* MmioSize
+    );
+
+typedef FN_VMB_CHANNEL_GET_MMIO_SPACE *PFN_VMB_CHANNEL_GET_MMIO_SPACE;
+FN_VMB_CHANNEL_GET_MMIO_SPACE VmbChannelGetMmioSpace;
 
 /// \page VmbChannelSizeofPacket VmbChannelSizeofPacket
 /// Calculates the necessary size for buffers to be used with
@@ -1722,10 +1957,14 @@ VmbChannelGetInterfaceInstance(
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 ///
 /// \returns The necessary buffer size in bytes.
+typedef
 UINT32
-VmbChannelSizeofPacket(
+FN_VMB_CHANNEL_SIZEOF_PACKET(
     _In_ VMBCHANNEL Channel
     );
+
+typedef FN_VMB_CHANNEL_SIZEOF_PACKET *PFN_VMB_CHANNEL_SIZEOF_PACKET;
+FN_VMB_CHANNEL_SIZEOF_PACKET VmbChannelSizeofPacket;
 
 /// \page VmbPacketSetPointer VmbPacketSetPointer
 /// Initializes a buffer to contain a VMBPACKET. The buffer's size must be at
@@ -1741,12 +1980,16 @@ VmbChannelSizeofPacket(
 /// \param ByteCount The length of Buffer in bytes.
 /// \return STATUS_SUCCESS - function completed successfully
 /// \return STATUS_INVALID_PARAMETER_3 - ByteCount needs to be greater than MaximumPacketSize + a PVOID)
+typedef
 NTSTATUS
-VmbPacketInitialize(
+FN_VMB_PACKET_INITIALIZE(
     _In_ VMBCHANNEL Channel,
     _Out_writes_bytes_(ByteCount) VMBPACKET VmbPacket,
     _In_ UINT32 ByteCount
     );
+
+typedef FN_VMB_PACKET_INITIALIZE *PFN_VMB_PACKET_INITIALIZE;
+FN_VMB_PACKET_INITIALIZE VmbPacketInitialize;
 
 /// \page EvtVmbPacketCompletionRoutine EvtVmbPacketCompletionRoutine
 /// \b EvtVmbPacketCompletionRoutine
@@ -1780,19 +2023,23 @@ typedef EVT_VMB_PACKET_COMPLETION_ROUTINE *PFN_VMB_PACKET_COMPLETION_ROUTINE;
 
 /// \page VmbPacketSetCompletionRoutine VmbPacketSetCompletionRoutine
 /// Sets the completion routine for a packet object. See \ref VmbPacketSend
-/// and \ref VmbPacketSendWithExternalMdl and \ref 
-/// VmbPacketSendWithExternalPfns.  See also \ref 
-/// EvtVmbPacketCompletionRoutine. 
+/// and \ref VmbPacketSendWithExternalMdl and \ref
+/// VmbPacketSendWithExternalPfns.  See also \ref
+/// EvtVmbPacketCompletionRoutine.
 ///
 /// \param PacketObject The packet object.
 /// \param CompletionRoutine Function to call when the packet is complete.
+typedef
 VOID
-VmbPacketSetCompletionRoutine(
+FN_VMB_PACKET_SET_COMPLETION_ROUTINE(
     _In_    VMBPACKET                           PacketObject,
     _In_    PFN_VMB_PACKET_COMPLETION_ROUTINE   CompletionRoutine
     );
 
-///\page EvtChannelPnpFailure EvtChannelPnpFailure 
+typedef FN_VMB_PACKET_SET_COMPLETION_ROUTINE *PFN_VMB_PACKET_SET_COMPLETION_ROUTINE;
+FN_VMB_PACKET_SET_COMPLETION_ROUTINE VmbPacketSetCompletionRoutine;
+
+///\page EvtChannelPnpFailure EvtChannelPnpFailure
 /// \b EvtChannelPnpFailure
 /// \param Channel VMBCHANNEL
 /// \param FailureStatus NTSTATUS failure code
@@ -1817,12 +2064,12 @@ typedef EVT_VMB_CHANNEL_PNP_FAILURE *PFN_VMB_CHANNEL_PNP_FAILURE;
 
 /// Sets a client channel's target by interface type and instance IDs. If this
 /// is called, KMCL will use PnP to find the vmbus PDO corresponding to the
-/// provided interface. The InterfaceType GUID identifies the 
-/// type of channel, and specifically the protocol that is used 
-/// with the channel.  The InterfaceInstance identifies a 
-/// specific instance of the service.  If, for instance, you 
-/// have two paravirtual network interfaces, they will have the 
-/// same InterfaceType but different InterfaceInstances. 
+/// provided interface. The InterfaceType GUID identifies the
+/// type of channel, and specifically the protocol that is used
+/// with the channel.  The InterfaceInstance identifies a
+/// specific instance of the service.  If, for instance, you
+/// have two paravirtual network interfaces, they will have the
+/// same InterfaceType but different InterfaceInstances.
 ///
 /// \param Channel A pointer to a channel.
 /// \param InterfaceType A pointer to the interface type GUID.
@@ -1833,15 +2080,119 @@ typedef EVT_VMB_CHANNEL_PNP_FAILURE *PFN_VMB_CHANNEL_PNP_FAILURE;
 ///     located.
 ///
 /// \return STATUS_INVALID_PARAMETER_1 - channel parameter was invalid or in an invalid state(Disabled)
+typedef
 NTSTATUS
-VmbClientChannelInitSetTargetPnp(
+FN_VMB_CLIENT_CHANNEL_INIT_SET_TARGET_PNP(
     _In_ VMBCHANNEL Channel,
     _In_ LPCGUID InterfaceType,
     _In_opt_ LPCGUID InterfaceInstance,
     _In_opt_ PFN_VMB_CHANNEL_PNP_FAILURE PnpFailureCallback
     );
 
+typedef FN_VMB_CLIENT_CHANNEL_INIT_SET_TARGET_PNP *PFN_VMB_CLIENT_CHANNEL_INIT_SET_TARGET_PNP;
+FN_VMB_CLIENT_CHANNEL_INIT_SET_TARGET_PNP VmbClientChannelInitSetTargetPnp;
+
+
+typedef struct _KMCL_SERVER_ONLY_METHODS {
+    PFN_VMB_CHANNEL_MAP_GPADL                                        VmbChannelMapGpadl;
+    PFN_VMB_CHANNEL_RESTORE_FROM_BUFFER                              VmbChannelRestoreFromBuffer;
+    PFN_VMB_CHANNEL_SAVE_BEGIN                                       VmbChannelSaveBegin;
+    PFN_VMB_CHANNEL_SAVE_CONTINUE                                    VmbChannelSaveContinue;
+    PFN_VMB_CHANNEL_SAVE_END                                         VmbChannelSaveEnd;
+    PFN_VMB_CHANNEL_UNMAP_GPADL                                      VmbChannelUnmapGpadl;
+    PFN_VMB_CONVERT_VMBUS_HANDLE_TO_KERNEL_HANDLE                    VmbConvertVmbusHandleToKernelHandle;
+    PFN_VMB_PACKET_RESTORE                                           VmbPacketRestore;
+    PFN_VMB_SERVER_CHANNEL_INIT_SET_FLAGS                            VmbServerChannelInitSetFlags;
+    PFN_VMB_SERVER_CHANNEL_INIT_SET_MMIO_MEGABYTES                   VmbServerChannelInitSetMmioMegabytes;
+    PFN_VMB_SERVER_CHANNEL_INIT_SET_SAVE_RESTORE_PACKET_CALLBACKS    VmbServerChannelInitSetSaveRestorePacketCallbacks;
+    PFN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_INTERFACE_ID              VmbServerChannelInitSetTargetInterfaceId;
+    PFN_VMB_SERVER_CHANNEL_INIT_SET_TARGET_VTL                       VmbServerChannelInitSetTargetVtl;
+    PFN_VMB_SERVER_CHANNEL_INIT_SET_VMBUS_HANDLE                     VmbServerChannelInitSetVmbusHandle;
+
+} KMCL_SERVER_ONLY_METHODS;
+
+#define KMCL_CLIENT_INTERFACE_VERSION_V1     1
+#define KMCL_CLIENT_INTERFACE_VERSION_LATEST KMCL_CLIENT_INTERFACE_VERSION_V1
+/* 4aecb860-e161-42bb-a5ca-77f3a9645905 */
+DEFINE_GUID(KMCL_CLIENT_INTERFACE_TYPE, 0x4aecb860, 0xe161, 0x42bb, 0xa5, 0xca, 0x77, 0xf3, 0xa9, 0x64, 0x59, 0x05);
+
+#ifdef __cplusplus
+
+typedef struct _KMCL_CLIENT_INTERFACE_V1 : INTERFACE {
+
+#else
+
+typedef struct _KMCL_CLIENT_INTERFACE_V1 {
+    INTERFACE;
+
+#endif
+
+    PFN_VMB_CHANNEL_ALLOCATE                                         VmbChannelAllocate;
+    PFN_VMB_CHANNEL_CLEANUP                                          VmbChannelCleanup;
+    PFN_VMB_CHANNEL_CREATE_GPADL_FROM_BUFFER                         VmbChannelCreateGpadlFromBuffer;
+    PFN_VMB_CHANNEL_CREATE_GPADL_FROM_MDL                            VmbChannelCreateGpadlFromMdl;
+    PFN_VMB_CHANNEL_DELETE_GPADL                                     VmbChannelDeleteGpadl;
+    PFN_VMB_CHANNEL_DISABLE                                          VmbChannelDisable;
+    PFN_VMB_CHANNEL_ENABLE                                           VmbChannelEnable;
+    PFN_VMB_CHANNEL_GET_INTERFACE_INSTANCE                           VmbChannelGetInterfaceInstance;
+    PFN_VMB_CHANNEL_GET_MMIO_SPACE                                   VmbChannelGetMmioSpace;
+    PFN_VMB_CHANNEL_GET_POINTER                                      VmbChannelGetPointer;
+    PFN_VMB_CHANNEL_INIT_SET_CLIENT_CONTEXT_SIZE                     VmbChannelInitSetClientContextSize;
+    PFN_VMB_CHANNEL_INIT_SET_FLAGS                                   VmbChannelInitSetFlags;
+    PFN_VMB_CHANNEL_INIT_SET_FRIENDLY_NAME                           VmbChannelInitSetFriendlyName;
+    PFN_VMB_CHANNEL_INIT_SET_MAXIMUM_EXTERNAL_DATA                   VmbChannelInitSetMaximumExternalData;
+    PFN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_SIZE                     VmbChannelInitSetMaximumPacketSize;
+    PFN_VMB_CHANNEL_INIT_SET_PROCESS_PACKET_CALLBACKS                VmbChannelInitSetProcessPacketCallbacks;
+    PFN_VMB_CHANNEL_INIT_SET_STATE_CHANGE_CALLBACKS                  VmbChannelInitSetStateChangeCallbacks;
+    PFN_VMB_CHANNEL_PACKET_COMPLETE                                  VmbChannelPacketComplete;
+    PFN_VMB_CHANNEL_PACKET_DEFER_TO_PASSIVE                          VmbChannelPacketDeferToPassive;
+    PFN_VMB_CHANNEL_PACKET_FAIL                                      VmbChannelPacketFail;
+    PFN_VMB_CHANNEL_PACKET_GET_EXTERNAL_DATA                         VmbChannelPacketGetExternalData;
+    PFN_VMB_CHANNEL_PAUSE                                            VmbChannelPause;
+    PFN_VMB_CHANNEL_SEND_SYNCHRONOUS_REQUEST                         VmbChannelSendSynchronousRequest;
+    PFN_VMB_CHANNEL_SET_INCOMING_PROCESSING_AT_PASSIVE               VmbChannelSetIncomingProcessingAtPassive;
+    PFN_VMB_CHANNEL_SET_INTERRUPT_LATENCY                            VmbChannelSetInterruptLatency;
+    PFN_VMB_CHANNEL_SET_POINTER                                      VmbChannelSetPointer;
+    PFN_VMB_CHANNEL_SET_TRANSACTION_QUOTA                            VmbChannelSetTransactionQuota;
+    PFN_VMB_CHANNEL_SIZEOF_PACKET                                    VmbChannelSizeofPacket;
+    PFN_VMB_CHANNEL_START                                            VmbChannelStart;
+    PFN_VMB_CLIENT_CHANNEL_INIT_SET_RING_BUFFER_PAGE_COUNT           VmbClientChannelInitSetRingBufferPageCount;
+    PFN_VMB_CLIENT_CHANNEL_INIT_SET_TARGET_PNP                       VmbClientChannelInitSetTargetPnp;
+    PFN_VMB_PACKET_ALLOCATE                                          VmbPacketAllocate;
+    PFN_VMB_PACKET_FREE                                              VmbPacketFree;
+    PFN_VMB_PACKET_GET_CHANNEL                                       VmbPacketGetChannel;
+    PFN_VMB_PACKET_GET_POINTER                                       VmbPacketGetPointer;
+    PFN_VMB_PACKET_INITIALIZE                                        VmbPacketInitialize;
+    PFN_VMB_PACKET_SEND                                              VmbPacketSend;
+    PFN_VMB_PACKET_SEND_WITH_EXTERNAL_MDL                            VmbPacketSendWithExternalMdl;
+    PFN_VMB_PACKET_SEND_WITH_EXTERNAL_PFNS                           VmbPacketSendWithExternalPfns;
+    PFN_VMB_PACKET_SET_COMPLETION_ROUTINE                            VmbPacketSetCompletionRoutine;
+    PFN_VMB_PACKET_SET_POINTER                                       VmbPacketSetPointer;
+
+} KMCL_CLIENT_INTERFACE_V1, *PKMCL_CLIENT_INTERFACE_V1;
+
+C_ASSERT(sizeof(KMCL_CLIENT_INTERFACE_V1) <= MAXUSHORT);
+
+#define KMCL_SERVER_INTERFACE_VERSION_V1     1
+#define KMCL_SERVER_INTERFACE_VERSION_LATEST KMCL_SERVER_INTERFACE_VERSION_V1
+/* 83b21474-c5b9-4f65-b5e7-720c692bd371 */
+DEFINE_GUID(KMCL_SERVER_INTERFACE_TYPE, 0x83b21474, 0xc5b9, 0x4f65, 0xb5, 0xe7, 0x72, 0x0c, 0x69, 0x2b, 0xd3, 0x71);
+
+#ifdef __cplusplus
+
+typedef struct _KMCL_SERVER_INTERFACE_V1 : KMCL_CLIENT_INTERFACE_V1, KMCL_SERVER_ONLY_METHODS {
+
+#else
+
+typedef struct _KMCL_SERVER_INTERFACE_V1 {
+    KMCL_CLIENT_INTERFACE_V1;
+    KMCL_SERVER_ONLY_METHODS;
+#endif
+} KMCL_SERVER_INTERFACE_V1, *PKMCL_SERVER_INTERFACE_V1;
+
+C_ASSERT(sizeof(KMCL_SERVER_INTERFACE_V1) <= MAXUSHORT);
 
 #pragma warning(pop)
 #endif // NTDDI_VERSION >=NTDDI_WINBLUE
+
 

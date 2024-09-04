@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.data.json.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -714,8 +716,9 @@ namespace ABI {
             namespace Json {
                 /* [object, uuid("08C1DDB6-0CBD-4A9A-B5D3-2F852DC37E81"), exclusiveto, contract] */
                 MIDL_INTERFACE("08C1DDB6-0CBD-4A9A-B5D3-2F852DC37E81")
-                IJsonArray : IInspectable
+                IJsonArray : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetObjectAt(
                         /* [in] */UINT32 index,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Json::IJsonObject * * returnValue
@@ -771,8 +774,9 @@ namespace ABI {
             namespace Json {
                 /* [object, uuid("DB1434A9-E164-499F-93E2-8A8F49BB90BA"), exclusiveto, contract] */
                 MIDL_INTERFACE("DB1434A9-E164-499F-93E2-8A8F49BB90BA")
-                IJsonArrayStatics : IInspectable
+                IJsonArrayStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Parse(
                         /* [in] */__RPC__in HSTRING input,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Json::IJsonArray * * jsonArray
@@ -817,8 +821,9 @@ namespace ABI {
             namespace Json {
                 /* [object, uuid("404030DA-87D0-436C-83AB-FC7B12C0CC26"), exclusiveto, contract] */
                 MIDL_INTERFACE("404030DA-87D0-436C-83AB-FC7B12C0CC26")
-                IJsonErrorStatics2 : IInspectable
+                IJsonErrorStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetJsonStatus(
                         /* [in] */INT32 hresult,
                         /* [retval, out] */__RPC__out ABI::Windows::Data::Json::JsonErrorStatus * status
@@ -862,8 +867,9 @@ namespace ABI {
             namespace Json {
                 /* [object, uuid("064E24DD-29C2-4F83-9AC1-9EE11578BEB3"), exclusiveto, contract] */
                 MIDL_INTERFACE("064E24DD-29C2-4F83-9AC1-9EE11578BEB3")
-                IJsonObject : IInspectable
+                IJsonObject : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetNamedValue(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Json::IJsonValue * * returnValue
@@ -927,8 +933,9 @@ namespace ABI {
             namespace Json {
                 /* [object, uuid("2289F159-54DE-45D8-ABCC-22603FA066A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("2289F159-54DE-45D8-ABCC-22603FA066A0")
-                IJsonObjectStatics : IInspectable
+                IJsonObjectStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Parse(
                         /* [in] */__RPC__in HSTRING input,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Json::IJsonObject * * jsonObject
@@ -978,8 +985,9 @@ namespace ABI {
             namespace Json {
                 /* [object, uuid("D960D2A2-B7F0-4F00-8E44-D82CF415EA13"), exclusiveto, contract] */
                 MIDL_INTERFACE("D960D2A2-B7F0-4F00-8E44-D82CF415EA13")
-                IJsonObjectWithDefaultValues : IInspectable
+                IJsonObjectWithDefaultValues : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetNamedValueOrDefault(
                         /* [in] */__RPC__in HSTRING name,
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Json::IJsonValue * defaultValue,
@@ -1042,8 +1050,9 @@ namespace ABI {
             namespace Json {
                 /* [object, uuid("A3219ECB-F0B3-4DCD-BEEE-19D48CD3ED1E"), contract] */
                 MIDL_INTERFACE("A3219ECB-F0B3-4DCD-BEEE-19D48CD3ED1E")
-                IJsonValue : IInspectable
+                IJsonValue : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ValueType(
                         /* [retval, out] */__RPC__out ABI::Windows::Data::Json::JsonValueType * value
                         ) = 0;
@@ -1100,8 +1109,9 @@ namespace ABI {
             namespace Json {
                 /* [object, uuid("5F6B544A-2F53-48E1-91A3-F78B50A6345C"), exclusiveto, contract] */
                 MIDL_INTERFACE("5F6B544A-2F53-48E1-91A3-F78B50A6345C")
-                IJsonValueStatics : IInspectable
+                IJsonValueStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Parse(
                         /* [in] */__RPC__in HSTRING input,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Json::IJsonValue * * jsonValue
@@ -1158,8 +1168,9 @@ namespace ABI {
             namespace Json {
                 /* [object, uuid("1D9ECBE4-3FE8-4335-8392-93D8E36865F0"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D9ECBE4-3FE8-4335-8392-93D8E36865F0")
-                IJsonValueStatics2 : IInspectable
+                IJsonValueStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateNullValue(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Json::IJsonValue * * jsonValue
                         ) = 0;

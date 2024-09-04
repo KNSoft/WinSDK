@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.networking.backgroundtransfer.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -681,6 +683,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace BackgroundTransfer {
+                interface IDownloadOperation4;
+            } /* Windows */
+        } /* Networking */
+    } /* BackgroundTransfer */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4 ABI::Windows::Networking::BackgroundTransfer::IDownloadOperation4
+
+#endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIResponseInformation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIResponseInformation_FWD_DEFINED__
 namespace ABI {
@@ -736,6 +752,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation2 ABI::Windows::Networking::BackgroundTransfer::IUploadOperation2
 
 #endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace BackgroundTransfer {
+                interface IUploadOperation3;
+            } /* Windows */
+        } /* Networking */
+    } /* BackgroundTransfer */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3 ABI::Windows::Networking::BackgroundTransfer::IUploadOperation3
+
+#endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -1155,6 +1185,7 @@ typedef IVector<struct ABI::Windows::Networking::BackgroundTransfer::BackgroundT
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_USE
 #define DEF___FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_USE
@@ -1184,9 +1215,11 @@ typedef IAsyncOperationProgressHandler<ABI::Windows::Networking::BackgroundTrans
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_USE
@@ -1217,9 +1250,11 @@ typedef IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Networking::Ba
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_USE
@@ -1250,9 +1285,11 @@ typedef IAsyncOperationWithProgress<ABI::Windows::Networking::BackgroundTransfer
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_USE
@@ -1283,9 +1320,11 @@ typedef IAsyncOperationProgressHandler<ABI::Windows::Networking::BackgroundTrans
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_USE
@@ -1316,9 +1355,11 @@ typedef IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Networking::Ba
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_USE
@@ -1348,6 +1389,7 @@ typedef IAsyncOperationWithProgress<ABI::Windows::Networking::BackgroundTransfer
 #endif /* DEF___FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2482,6 +2524,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace Networking {
@@ -2796,8 +2840,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("C1C79333-6649-4B1D-A826-A4B3DD234D0B"), exclusiveto, contract] */
                 MIDL_INTERFACE("C1C79333-6649-4B1D-A826-A4B3DD234D0B")
-                IBackgroundDownloader : IInspectable
+                IBackgroundDownloader : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateDownload(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * resultFile,
@@ -2850,8 +2895,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("A94A5847-348D-4A35-890E-8A1EF3798479"), exclusiveto, contract] */
                 MIDL_INTERFACE("A94A5847-348D-4A35-890E-8A1EF3798479")
-                IBackgroundDownloader2 : IInspectable
+                IBackgroundDownloader2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TransferGroup(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * * value
                         ) = 0;
@@ -2917,8 +2963,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("D11A8C48-86E8-48E2-B615-6976AABF861D"), exclusiveto, contract] */
                 MIDL_INTERFACE("D11A8C48-86E8-48E2-B615-6976AABF861D")
-                IBackgroundDownloader3 : IInspectable
+                IBackgroundDownloader3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompletionGroup(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup * * value
                         ) = 0;
@@ -2957,8 +3004,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("26836C24-D89E-46F4-A29A-4F4D4F144155"), exclusiveto, contract] */
                 MIDL_INTERFACE("26836C24-D89E-46F4-A29A-4F4D4F144155")
-                IBackgroundDownloaderFactory : IInspectable
+                IBackgroundDownloaderFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithCompletionGroup(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup * completionGroup,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundDownloader * * backgroundDownloader
@@ -2998,8 +3046,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("52A65A35-C64E-426C-9919-540D0D21A650"), exclusiveto, contract] */
                 MIDL_INTERFACE("52A65A35-C64E-426C-9919-540D0D21A650")
-                IBackgroundDownloaderStaticMethods : IInspectable
+                IBackgroundDownloaderStaticMethods : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetCurrentDownloadsAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation * * operation
                         ) = 0;
@@ -3046,8 +3095,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("2FAA1327-1AD4-4CA5-B2CD-08DBF0746AFE"), exclusiveto, contract] */
                 MIDL_INTERFACE("2FAA1327-1AD4-4CA5-B2CD-08DBF0746AFE")
-                IBackgroundDownloaderStaticMethods2 : IInspectable
+                IBackgroundDownloaderStaticMethods2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentDownloadsForTransferGroupAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * group,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation * * operation
@@ -3091,8 +3141,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                 DEPRECATED("IBackgroundDownloaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                IBackgroundDownloaderUserConsent : IInspectable
+                IBackgroundDownloaderUserConsent : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("RequestUnconstrainedDownloadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")
@@ -3133,8 +3184,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("2A9DA250-C769-458C-AFE8-FEB8D4D3B2EF"), contract] */
                 MIDL_INTERFACE("2A9DA250-C769-458C-AFE8-FEB8D4D3B2EF")
-                IBackgroundTransferBase : IInspectable
+                IBackgroundTransferBase : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetRequestHeader(
                         /* [in] */__RPC__in HSTRING headerName,
                         /* [in] */__RPC__in HSTRING headerValue
@@ -3212,8 +3264,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("2D930225-986B-574D-7950-0ADD47F5D706"), exclusiveto, contract] */
                 MIDL_INTERFACE("2D930225-986B-574D-7950-0ADD47F5D706")
-                IBackgroundTransferCompletionGroup : IInspectable
+                IBackgroundTransferCompletionGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Trigger(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * value
                         ) = 0;
@@ -3256,8 +3309,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("7B6BE286-6E47-5136-7FCB-FA4389F46F5B"), exclusiveto, contract] */
                 MIDL_INTERFACE("7B6BE286-6E47-5136-7FCB-FA4389F46F5B")
-                IBackgroundTransferCompletionGroupTriggerDetails : IInspectable
+                IBackgroundTransferCompletionGroupTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Downloads(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation * * value
                         ) = 0;
@@ -3299,8 +3353,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("E8E15657-D7D1-4ED8-838E-674AC217ACE6"), exclusiveto, contract] */
                 MIDL_INTERFACE("E8E15657-D7D1-4ED8-838E-674AC217ACE6")
-                IBackgroundTransferContentPart : IInspectable
+                IBackgroundTransferContentPart : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetHeader(
                         /* [in] */__RPC__in HSTRING headerName,
                         /* [in] */__RPC__in HSTRING headerValue
@@ -3343,8 +3398,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("90EF98A9-7A01-4A0B-9F80-A0B0BB370F8D"), contract] */
                 MIDL_INTERFACE("90EF98A9-7A01-4A0B-9F80-A0B0BB370F8D")
-                IBackgroundTransferContentPartFactory : IInspectable
+                IBackgroundTransferContentPartFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithName(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart * * value
@@ -3389,8 +3445,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("AAD33B04-1192-4BF4-8B68-39C5ADD244E2"), exclusiveto, contract] */
                 MIDL_INTERFACE("AAD33B04-1192-4BF4-8B68-39C5ADD244E2")
-                IBackgroundTransferErrorStaticMethods : IInspectable
+                IBackgroundTransferErrorStaticMethods : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetStatus(
                         /* [in] */INT32 hresult,
                         /* [retval, out] */__RPC__out ABI::Windows::Web::WebErrorStatus * status
@@ -3430,8 +3487,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("D8C3E3E4-6459-4540-85EB-AAA1C8903677"), exclusiveto, contract] */
                 MIDL_INTERFACE("D8C3E3E4-6459-4540-85EB-AAA1C8903677")
-                IBackgroundTransferGroup : IInspectable
+                IBackgroundTransferGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3476,8 +3534,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("02EC50B2-7D18-495B-AA22-32A97D45D3E2"), exclusiveto, contract] */
                 MIDL_INTERFACE("02EC50B2-7D18-495B-AA22-32A97D45D3E2")
-                IBackgroundTransferGroupStatics : IInspectable
+                IBackgroundTransferGroupStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateGroup(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * * value
@@ -3514,8 +3573,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("DED06846-90CA-44FB-8FB1-124154C0D539"), contract] */
                 MIDL_INTERFACE("DED06846-90CA-44FB-8FB1-124154C0D539")
-                IBackgroundTransferOperation : IInspectable
+                IBackgroundTransferOperation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Guid(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -3577,8 +3637,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("04854327-5254-4B3A-915E-0AA49275C0F9"), contract] */
                 MIDL_INTERFACE("04854327-5254-4B3A-915E-0AA49275C0F9")
-                IBackgroundTransferOperationPriority : IInspectable
+                IBackgroundTransferOperationPriority : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Priority(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferPriority * value
                         ) = 0;
@@ -3620,8 +3681,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("3EBC7453-BF48-4A88-9248-B0C165184F5C"), exclusiveto, contract] */
                 MIDL_INTERFACE("3EBC7453-BF48-4A88-9248-B0C165184F5C")
-                IBackgroundTransferRangesDownloadedEventArgs : IInspectable
+                IBackgroundTransferRangesDownloadedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WasDownloadRestarted(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3670,8 +3732,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("C595C9AE-CEAD-465B-8801-C55AC90A01CE"), exclusiveto, contract] */
                 MIDL_INTERFACE("C595C9AE-CEAD-465B-8801-C55AC90A01CE")
-                IBackgroundUploader : IInspectable
+                IBackgroundUploader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateUpload(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * sourceFile,
@@ -3735,8 +3798,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("8E0612CE-0C34-4463-807F-198A1B8BD4AD"), exclusiveto, contract] */
                 MIDL_INTERFACE("8E0612CE-0C34-4463-807F-198A1B8BD4AD")
-                IBackgroundUploader2 : IInspectable
+                IBackgroundUploader2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TransferGroup(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * * value
                         ) = 0;
@@ -3802,8 +3866,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("B95E9439-5BF0-4B3A-8C47-2C6199A854B9"), exclusiveto, contract] */
                 MIDL_INTERFACE("B95E9439-5BF0-4B3A-8C47-2C6199A854B9")
-                IBackgroundUploader3 : IInspectable
+                IBackgroundUploader3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompletionGroup(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup * * value
                         ) = 0;
@@ -3842,8 +3907,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("736203C7-10E7-48A0-AC3C-1AC71095EC57"), exclusiveto, contract] */
                 MIDL_INTERFACE("736203C7-10E7-48A0-AC3C-1AC71095EC57")
-                IBackgroundUploaderFactory : IInspectable
+                IBackgroundUploaderFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithCompletionGroup(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup * completionGroup,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundUploader * * backgroundUploader
@@ -3883,8 +3949,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("F2875CFB-9B05-4741-9121-740A83E247DF"), exclusiveto, contract] */
                 MIDL_INTERFACE("F2875CFB-9B05-4741-9121-740A83E247DF")
-                IBackgroundUploaderStaticMethods : IInspectable
+                IBackgroundUploaderStaticMethods : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetCurrentUploadsAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation * * operation
                         ) = 0;
@@ -3931,8 +3998,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("E919AC62-EA08-42F0-A2AC-07E467549080"), exclusiveto, contract] */
                 MIDL_INTERFACE("E919AC62-EA08-42F0-A2AC-07E467549080")
-                IBackgroundUploaderStaticMethods2 : IInspectable
+                IBackgroundUploaderStaticMethods2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentUploadsForTransferGroupAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * group,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation * * operation
@@ -3976,8 +4044,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                 DEPRECATED("IBackgroundUploaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                IBackgroundUploaderUserConsent : IInspectable
+                IBackgroundUploaderUserConsent : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("RequestUnconstrainedUploadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")
@@ -4021,8 +4090,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("A8D6F754-7DC1-4CD9-8810-2A6AA9417E11"), exclusiveto, contract] */
                 MIDL_INTERFACE("A8D6F754-7DC1-4CD9-8810-2A6AA9417E11")
-                IContentPrefetcher : IInspectable
+                IContentPrefetcher : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentUris(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CFoundation__CUri * * value
                         ) = 0;
@@ -4067,8 +4137,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("E361FD08-132A-4FDE-A7CC-FCB0E66523AF"), exclusiveto, contract] */
                 MIDL_INTERFACE("E361FD08-132A-4FDE-A7CC-FCB0E66523AF")
-                IContentPrefetcherTime : IInspectable
+                IContentPrefetcherTime : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LastSuccessfulPrefetchTime(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
                         ) = 0;
@@ -4111,8 +4182,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("BD87EBB0-5714-4E09-BA68-BEF73903B0D7"), exclusiveto, contract] */
                 MIDL_INTERFACE("BD87EBB0-5714-4E09-BA68-BEF73903B0D7")
-                IDownloadOperation : IInspectable
+                IDownloadOperation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResultFile(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFile * * value
                         ) = 0;
@@ -4162,8 +4234,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("A3CCED40-8F9C-4353-9CD4-290DEE387C38"), exclusiveto, contract] */
                 MIDL_INTERFACE("A3CCED40-8F9C-4353-9CD4-290DEE387C38")
-                IDownloadOperation2 : IInspectable
+                IDownloadOperation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TransferGroup(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * * value
                         ) = 0;
@@ -4202,8 +4275,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("5027351C-7D5E-4ADC-B8D3-DF5C6031B9CC"), exclusiveto, contract] */
                 MIDL_INTERFACE("5027351C-7D5E-4ADC-B8D3-DF5C6031B9CC")
-                IDownloadOperation3 : IInspectable
+                IDownloadOperation3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsRandomAccessRequired(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4248,6 +4322,45 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownlo
 
 /*
  *
+ * Interface Windows.Networking.BackgroundTransfer.IDownloadOperation4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.BackgroundTransfer.DownloadOperation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_BackgroundTransfer_IDownloadOperation4[] = L"Windows.Networking.BackgroundTransfer.IDownloadOperation4";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace BackgroundTransfer {
+                /* [object, uuid("0CDAAEF4-8CEF-404A-966D-F058400BED80"), exclusiveto, contract] */
+                MIDL_INTERFACE("0CDAAEF4-8CEF-404A-966D-F058400BED80")
+                IDownloadOperation4 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE MakeCurrentInTransferGroup(void) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IDownloadOperation4=_uuidof(IDownloadOperation4);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* BackgroundTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Networking.BackgroundTransfer.IResponseInformation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4267,8 +4380,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("F8BB9A12-F713-4792-8B68-D9D297F91D2E"), exclusiveto, contract] */
                 MIDL_INTERFACE("F8BB9A12-F713-4792-8B68-D9D297F91D2E")
-                IResponseInformation : IInspectable
+                IResponseInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsResumable(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4320,8 +4434,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                 DEPRECATED("IUnconstrainedTransferRequestResult is deprecated and may not work on all platforms. For more info, see MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                IUnconstrainedTransferRequestResult : IInspectable
+                IUnconstrainedTransferRequestResult : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("IsUnconstrained is deprecated and may not work on all platforms. For more info, see MSDN.")
@@ -4368,8 +4483,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("3E5624E0-7389-434C-8B35-427FD36BBDAE"), exclusiveto, contract] */
                 MIDL_INTERFACE("3E5624E0-7389-434C-8B35-427FD36BBDAE")
-                IUploadOperation : IInspectable
+                IUploadOperation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourceFile(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFile * * value
                         ) = 0;
@@ -4417,8 +4533,9 @@ namespace ABI {
             namespace BackgroundTransfer {
                 /* [object, uuid("556189F2-2774-4DF6-9FA5-209F2BFB12F7"), exclusiveto, contract] */
                 MIDL_INTERFACE("556189F2-2774-4DF6-9FA5-209F2BFB12F7")
-                IUploadOperation2 : IInspectable
+                IUploadOperation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TransferGroup(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * * value
                         ) = 0;
@@ -4434,6 +4551,45 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation2;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Networking.BackgroundTransfer.IUploadOperation3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.BackgroundTransfer.UploadOperation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_BackgroundTransfer_IUploadOperation3[] = L"Windows.Networking.BackgroundTransfer.IUploadOperation3";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace BackgroundTransfer {
+                /* [object, uuid("42C92CA3-DE39-4546-BC62-3774B4294DE3"), exclusiveto, contract] */
+                MIDL_INTERFACE("42C92CA3-DE39-4546-BC62-3774B4294DE3")
+                IUploadOperation3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE MakeCurrentInTransferGroup(void) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IUploadOperation3=_uuidof(IUploadOperation3);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* BackgroundTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4696,6 +4852,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority
  *    Windows.Networking.BackgroundTransfer.IDownloadOperation2
  *    Windows.Networking.BackgroundTransfer.IDownloadOperation3
+ *    Windows.Networking.BackgroundTransfer.IDownloadOperation4
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -4771,6 +4928,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation
  *    Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority
  *    Windows.Networking.BackgroundTransfer.IUploadOperation2
+ *    Windows.Networking.BackgroundTransfer.IUploadOperation3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -4968,6 +5126,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOpe
 
 #endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4 __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4;
+
+#endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIResponseInformation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIResponseInformation_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIResponseInformation __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIResponseInformation;
@@ -4991,6 +5155,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOpera
 typedef interface __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation2 __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation2;
 
 #endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3 __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3;
+
+#endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -6115,6 +6285,7 @@ interface __FIVector_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTra
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_INTERFACE_DEFINED__
 
@@ -6161,9 +6332,11 @@ interface __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundT
 #endif // ____FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_INTERFACE_DEFINED__
@@ -6214,9 +6387,11 @@ interface __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking_
 #endif // ____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_INTERFACE_DEFINED__
@@ -6287,9 +6462,11 @@ interface __FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTran
 #endif // ____FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_INTERFACE_DEFINED__
@@ -6337,9 +6514,11 @@ interface __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundT
 #endif // ____FIAsyncOperationProgressHandler_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_INTERFACE_DEFINED__
@@ -6390,9 +6569,11 @@ interface __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking_
 #endif // ____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_INTERFACE_DEFINED__
@@ -6462,6 +6643,7 @@ interface __FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTran
 
 #endif // ____FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -8435,6 +8617,8 @@ typedef struct __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CBackgroundTrans
 
 
 typedef struct __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CBackgroundUploadProgress __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CBackgroundUploadProgress;
+
+
 
 
 
@@ -12023,6 +12207,98 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownlo
 
 /*
  *
+ * Interface Windows.Networking.BackgroundTransfer.IDownloadOperation4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.BackgroundTransfer.DownloadOperation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_BackgroundTransfer_IDownloadOperation4[] = L"Windows.Networking.BackgroundTransfer.IDownloadOperation4";
+/* [object, uuid("0CDAAEF4-8CEF-404A-966D-F058400BED80"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *MakeCurrentInTransferGroup )(
+        __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4 * This
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4Vtbl;
+
+interface __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_MakeCurrentInTransferGroup(This) \
+    ( (This)->lpVtbl->MakeCurrentInTransferGroup(This) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Networking.BackgroundTransfer.IResponseInformation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12453,6 +12729,98 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUpload
 
 /*
  *
+ * Interface Windows.Networking.BackgroundTransfer.IUploadOperation3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.BackgroundTransfer.UploadOperation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_BackgroundTransfer_IUploadOperation3[] = L"Windows.Networking.BackgroundTransfer.IUploadOperation3";
+/* [object, uuid("42C92CA3-DE39-4546-BC62-3774B4294DE3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *MakeCurrentInTransferGroup )(
+        __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3 * This
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3Vtbl;
+
+interface __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_MakeCurrentInTransferGroup(This) \
+    ( (This)->lpVtbl->MakeCurrentInTransferGroup(This) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIUploadOperation3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Networking.BackgroundTransfer.BackgroundDownloader
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12711,6 +13079,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority
  *    Windows.Networking.BackgroundTransfer.IDownloadOperation2
  *    Windows.Networking.BackgroundTransfer.IDownloadOperation3
+ *    Windows.Networking.BackgroundTransfer.IDownloadOperation4
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -12786,6 +13155,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation
  *    Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority
  *    Windows.Networking.BackgroundTransfer.IUploadOperation2
+ *    Windows.Networking.BackgroundTransfer.IUploadOperation3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

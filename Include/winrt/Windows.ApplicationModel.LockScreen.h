@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.lockscreen.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -469,6 +471,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CLockScreen__CLockApplicationHost_Windows__CApplicationModel__CLockScreen__CLockScreenUnlockingEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CLockScreen__CLockApplicationHost_Windows__CApplicationModel__CLockScreen__CLockScreenUnlockingEventArgs_USE
@@ -497,6 +500,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::LockScreen::LockAppli
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CLockScreen__CLockApplicationHost_Windows__CApplicationModel__CLockScreen__CLockScreenUnlockingEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -738,8 +742,9 @@ namespace ABI {
             namespace LockScreen {
                 /* [object, uuid("38EE31AD-D94F-4E7C-81FA-4F4436506281"), exclusiveto, contract] */
                 MIDL_INTERFACE("38EE31AD-D94F-4E7C-81FA-4F4436506281")
-                ILockApplicationHost : IInspectable
+                ILockApplicationHost : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestUnlock(void) = 0;
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Unlocking(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CLockScreen__CLockApplicationHost_Windows__CApplicationModel__CLockScreen__CLockScreenUnlockingEventArgs * handler,
@@ -783,8 +788,9 @@ namespace ABI {
             namespace LockScreen {
                 /* [object, uuid("F48FAB8E-23D7-4E63-96A1-666FF52D3B2C"), exclusiveto, contract] */
                 MIDL_INTERFACE("F48FAB8E-23D7-4E63-96A1-666FF52D3B2C")
-                ILockApplicationHostStatics : IInspectable
+                ILockApplicationHostStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::LockScreen::ILockApplicationHost * * result
                         ) = 0;
@@ -823,8 +829,9 @@ namespace ABI {
             namespace LockScreen {
                 /* [object, uuid("E95105D9-2BFF-4DB0-9B4F-3824778B9C9A"), exclusiveto, contract] */
                 MIDL_INTERFACE("E95105D9-2BFF-4DB0-9B4F-3824778B9C9A")
-                ILockScreenBadge : IInspectable
+                ILockScreenBadge : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Logo(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStream * * value
                         ) = 0;
@@ -873,8 +880,9 @@ namespace ABI {
             namespace LockScreen {
                 /* [object, uuid("F59AA65C-9711-4DC9-A630-95B6CB8CDAD0"), exclusiveto, contract] */
                 MIDL_INTERFACE("F59AA65C-9711-4DC9-A630-95B6CB8CDAD0")
-                ILockScreenInfo : IInspectable
+                ILockScreenInfo : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LockScreenImageChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CLockScreen__CLockScreenInfo_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -950,8 +958,9 @@ namespace ABI {
             namespace LockScreen {
                 /* [object, uuid("7E7D1AD6-5203-43E7-9BD6-7C3947D1E3FE"), exclusiveto, contract] */
                 MIDL_INTERFACE("7E7D1AD6-5203-43E7-9BD6-7C3947D1E3FE")
-                ILockScreenUnlockingDeferral : IInspectable
+                ILockScreenUnlockingDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -988,8 +997,9 @@ namespace ABI {
             namespace LockScreen {
                 /* [object, uuid("44E6C007-75FB-4ABB-9F8B-824748900C71"), exclusiveto, contract] */
                 MIDL_INTERFACE("44E6C007-75FB-4ABB-9F8B-824748900C71")
-                ILockScreenUnlockingEventArgs : IInspectable
+                ILockScreenUnlockingEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::LockScreen::ILockScreenUnlockingDeferral * * deferral
                         ) = 0;
@@ -1442,6 +1452,7 @@ interface __FIVectorView_1_Windows__CApplicationModel__CLockScreen__CLockScreenB
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CLockScreen__CLockApplicationHost_Windows__CApplicationModel__CLockScreen__CLockScreenUnlockingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CLockScreen__CLockApplicationHost_Windows__CApplicationModel__CLockScreen__CLockScreenUnlockingEventArgs_INTERFACE_DEFINED__
 
@@ -1488,6 +1499,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CLockScreen__CLock
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CLockScreen__CLockApplicationHost_Windows__CApplicationModel__CLockScreen__CLockScreenUnlockingEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

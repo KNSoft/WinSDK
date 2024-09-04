@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.automation.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -449,6 +451,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    interface IAutomationElementIdentifiersStatics7;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Automation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7 ABI::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics7
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 namespace ABI {
@@ -560,6 +578,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 ABI::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    interface IAutomationPropertiesStatics7;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Automation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 ABI::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics7
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_FWD_DEFINED__
@@ -1688,6 +1722,21 @@ namespace ABI {
                 namespace Automation {
                     namespace Peers {
                         
+                        typedef enum AutomationHeadingLevel : int AutomationHeadingLevel;
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        
                         typedef enum AutomationLandmarkType : int AutomationLandmarkType;
                         
                     } /* Windows */
@@ -2017,6 +2066,8 @@ namespace ABI {
             } /* UI */
         } /* Xaml */
     } /* Automation */} /* ABI */
+
+
 
 
 
@@ -3158,8 +3209,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("D475A0C1-48B2-4E40-A6CF-3DC4B638C0DE"), exclusiveto, contract] */
                     MIDL_INTERFACE("D475A0C1-48B2-4E40-A6CF-3DC4B638C0DE")
-                    IAnnotationPatternIdentifiers : IInspectable
+                    IAnnotationPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -3197,8 +3249,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("E0E3A35D-D167-46DC-95AB-330AF61AEBB5"), exclusiveto, contract] */
                     MIDL_INTERFACE("E0E3A35D-D167-46DC-95AB-330AF61AEBB5")
-                    IAnnotationPatternIdentifiersStatics : IInspectable
+                    IAnnotationPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnnotationTypeIdProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -3251,8 +3304,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("FB3C30CA-03D8-4618-91BF-E4D84F4AF318"), exclusiveto, contract] */
                     MIDL_INTERFACE("FB3C30CA-03D8-4618-91BF-E4D84F4AF318")
-                    IAutomationAnnotation : IInspectable
+                    IAutomationAnnotation : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::AnnotationType * value
                             ) = 0;
@@ -3302,8 +3356,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("4906FA52-DDC0-4E69-B76B-019D928D822F"), exclusiveto, contract] */
                     MIDL_INTERFACE("4906FA52-DDC0-4E69-B76B-019D928D822F")
-                    IAutomationAnnotationFactory : IInspectable
+                    IAutomationAnnotationFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */ABI::Windows::UI::Xaml::Automation::AnnotationType type,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationAnnotation * * instance
@@ -3350,8 +3405,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("E503EAB7-4EE5-48CB-B5B8-BBCD46C9D1DA"), exclusiveto, contract] */
                     MIDL_INTERFACE("E503EAB7-4EE5-48CB-B5B8-BBCD46C9D1DA")
-                    IAutomationAnnotationStatics : IInspectable
+                    IAutomationAnnotationStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TypeProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -3395,8 +3451,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("E68A63CF-4345-4E2D-8A6A-49CCE1FA2DCC"), exclusiveto, contract] */
                     MIDL_INTERFACE("E68A63CF-4345-4E2D-8A6A-49CCE1FA2DCC")
-                    IAutomationElementIdentifiers : IInspectable
+                    IAutomationElementIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -3434,8 +3491,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("4549399F-8340-4D67-B9BF-8C2AC6A0773A"), exclusiveto, contract] */
                     MIDL_INTERFACE("4549399F-8340-4D67-B9BF-8C2AC6A0773A")
-                    IAutomationElementIdentifiersStatics : IInspectable
+                    IAutomationElementIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AcceleratorKeyProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -3542,8 +3600,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("B5CBB1E2-D55F-46A9-9EDA-1A4742515DC3"), exclusiveto, contract] */
                     MIDL_INTERFACE("B5CBB1E2-D55F-46A9-9EDA-1A4742515DC3")
-                    IAutomationElementIdentifiersStatics2 : IInspectable
+                    IAutomationElementIdentifiersStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ControlledPeersProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -3584,8 +3643,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("0F5CBEBD-B3EB-4083-ADC7-0C2F39BB3543"), exclusiveto, contract] */
                     MIDL_INTERFACE("0F5CBEBD-B3EB-4083-ADC7-0C2F39BB3543")
-                    IAutomationElementIdentifiersStatics3 : IInspectable
+                    IAutomationElementIdentifiersStatics3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PositionInSetProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -3635,8 +3695,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("5AF51F75-5913-4D78-B330-A6F50B73ED9B"), exclusiveto, contract] */
                     MIDL_INTERFACE("5AF51F75-5913-4D78-B330-A6F50B73ED9B")
-                    IAutomationElementIdentifiersStatics4 : IInspectable
+                    IAutomationElementIdentifiersStatics4 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LandmarkTypeProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -3680,8 +3741,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("986A8206-DE59-42F9-A1E7-62B8AF9E756D"), exclusiveto, contract] */
                     MIDL_INTERFACE("986A8206-DE59-42F9-A1E7-62B8AF9E756D")
-                    IAutomationElementIdentifiersStatics5 : IInspectable
+                    IAutomationElementIdentifiersStatics5 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPeripheralProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -3737,8 +3799,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("DE52B00D-8328-4EAE-8035-F8DB99C8BAC4"), exclusiveto, contract] */
                     MIDL_INTERFACE("DE52B00D-8328-4EAE-8035-F8DB99C8BAC4")
-                    IAutomationElementIdentifiersStatics6 : IInspectable
+                    IAutomationElementIdentifiersStatics6 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CultureProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -3755,6 +3818,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.AutomationElementIdentifiers
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationElementIdentifiersStatics7[] = L"Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    /* [object, uuid("00F1ABB2-742C-446A-A8F6-1672B10D2874"), exclusiveto, contract] */
+                    MIDL_INTERFACE("00F1ABB2-742C-446A-A8F6-1672B10D2874")
+                    IAutomationElementIdentifiersStatics7 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HeadingLevelProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IAutomationElementIdentifiersStatics7=_uuidof(IAutomationElementIdentifiersStatics7);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Automation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3779,8 +3885,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("68D7232C-E622-48E9-AF0B-1FFA33CC5CBA"), exclusiveto, contract] */
                     MIDL_INTERFACE("68D7232C-E622-48E9-AF0B-1FFA33CC5CBA")
-                    IAutomationProperties : IInspectable
+                    IAutomationProperties : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -3818,8 +3925,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("B618FD7B-32D0-4970-9C42-7C039AC7BE78"), exclusiveto, contract] */
                     MIDL_INTERFACE("B618FD7B-32D0-4970-9C42-7C039AC7BE78")
-                    IAutomationPropertiesStatics : IInspectable
+                    IAutomationPropertiesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AcceleratorKeyProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -3967,8 +4075,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("3976547F-7089-4801-8F1D-AAB78090D1A0"), exclusiveto, contract] */
                     MIDL_INTERFACE("3976547F-7089-4801-8F1D-AAB78090D1A0")
-                    IAutomationPropertiesStatics2 : IInspectable
+                    IAutomationPropertiesStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AccessibilityViewProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4024,8 +4133,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("7B75D735-5CB1-42AD-9B57-5FABA8C1867F"), exclusiveto, contract] */
                     MIDL_INTERFACE("7B75D735-5CB1-42AD-9B57-5FABA8C1867F")
-                    IAutomationPropertiesStatics3 : IInspectable
+                    IAutomationPropertiesStatics3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PositionInSetProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4103,8 +4213,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("F7D62655-311A-4B7C-A131-524E89CD3CF9"), exclusiveto, contract] */
                     MIDL_INTERFACE("F7D62655-311A-4B7C-A131-524E89CD3CF9")
-                    IAutomationPropertiesStatics4 : IInspectable
+                    IAutomationPropertiesStatics4 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LandmarkTypeProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4164,8 +4275,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("0BE35B26-C8F9-41A2-B4DB-E6A7A32B0C34"), exclusiveto, contract] */
                     MIDL_INTERFACE("0BE35B26-C8F9-41A2-B4DB-E6A7A32B0C34")
-                    IAutomationPropertiesStatics5 : IInspectable
+                    IAutomationPropertiesStatics5 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPeripheralProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4268,8 +4380,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("C61E030F-EB49-4E5D-B012-4C1C96C3901B"), exclusiveto, contract] */
                     MIDL_INTERFACE("C61E030F-EB49-4E5D-B012-4C1C96C3901B")
-                    IAutomationPropertiesStatics6 : IInspectable
+                    IAutomationPropertiesStatics6 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CultureProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -4298,6 +4411,57 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProper
 
 /*
  *
+ * Interface Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.AutomationProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationPropertiesStatics7[] = L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    /* [object, uuid("F7E98BF3-8F91-4068-A4AD-B7B402D10A2C"), exclusiveto, contract] */
+                    MIDL_INTERFACE("F7E98BF3-8F91-4068-A4AD-B7B402D10A2C")
+                    IAutomationPropertiesStatics7 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HeadingLevelProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE GetHeadingLevel(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE SetHeadingLevel(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
+                            /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IAutomationPropertiesStatics7=_uuidof(IAutomationPropertiesStatics7);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Automation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Automation.IAutomationProperty
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4318,8 +4482,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("B627195B-3227-4E16-9534-DDECE30DDB46"), exclusiveto, contract] */
                     MIDL_INTERFACE("B627195B-3227-4E16-9534-DDECE30DDB46")
-                    IAutomationProperty : IInspectable
+                    IAutomationProperty : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4357,8 +4522,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("CCD7F4E6-E4F9-47FF-BDE7-378B11F78E09"), exclusiveto, contract] */
                     MIDL_INTERFACE("CCD7F4E6-E4F9-47FF-BDE7-378B11F78E09")
-                    IDockPatternIdentifiers : IInspectable
+                    IDockPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4396,8 +4562,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("2B87245C-ED80-4FE5-8EB4-708A39C841E5"), exclusiveto, contract] */
                     MIDL_INTERFACE("2B87245C-ED80-4FE5-8EB4-708A39C841E5")
-                    IDockPatternIdentifiersStatics : IInspectable
+                    IDockPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DockPositionProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -4438,8 +4605,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("6266E985-4D07-4E80-82EB-8F96690A1A0C"), exclusiveto, contract] */
                     MIDL_INTERFACE("6266E985-4D07-4E80-82EB-8F96690A1A0C")
-                    IDragPatternIdentifiers : IInspectable
+                    IDragPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4477,8 +4645,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("2A05379D-1755-4082-9D90-46F1411D7986"), exclusiveto, contract] */
                     MIDL_INTERFACE("2A05379D-1755-4082-9D90-46F1411D7986")
-                    IDragPatternIdentifiersStatics : IInspectable
+                    IDragPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DropEffectProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -4528,8 +4697,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("11865133-A6FE-4634-BD18-0EF612B7B208"), exclusiveto, contract] */
                     MIDL_INTERFACE("11865133-A6FE-4634-BD18-0EF612B7B208")
-                    IDropTargetPatternIdentifiers : IInspectable
+                    IDropTargetPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4567,8 +4737,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("1B693304-89FB-4B0A-9452-CA2C66AAF9F3"), exclusiveto, contract] */
                     MIDL_INTERFACE("1B693304-89FB-4B0A-9452-CA2C66AAF9F3")
-                    IDropTargetPatternIdentifiersStatics : IInspectable
+                    IDropTargetPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DropTargetEffectProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -4612,8 +4783,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("B006BAC0-751B-4D55-92CB-613EC1BDF5D0"), exclusiveto, contract] */
                     MIDL_INTERFACE("B006BAC0-751B-4D55-92CB-613EC1BDF5D0")
-                    IExpandCollapsePatternIdentifiers : IInspectable
+                    IExpandCollapsePatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4651,8 +4823,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("D7816FD4-6EE0-4F38-8E14-56EF21ADACFD"), exclusiveto, contract] */
                     MIDL_INTERFACE("D7816FD4-6EE0-4F38-8E14-56EF21ADACFD")
-                    IExpandCollapsePatternIdentifiersStatics : IInspectable
+                    IExpandCollapsePatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandCollapseStateProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -4693,8 +4866,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("757744F1-3285-4FB1-803B-2545BD431599"), exclusiveto, contract] */
                     MIDL_INTERFACE("757744F1-3285-4FB1-803B-2545BD431599")
-                    IGridItemPatternIdentifiers : IInspectable
+                    IGridItemPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4732,8 +4906,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("217D2402-5E46-4D61-8794-B8EE8E774714"), exclusiveto, contract] */
                     MIDL_INTERFACE("217D2402-5E46-4D61-8794-B8EE8E774714")
-                    IGridItemPatternIdentifiersStatics : IInspectable
+                    IGridItemPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColumnProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -4786,8 +4961,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("C902980F-96C5-450C-9044-7E52C24F9E94"), exclusiveto, contract] */
                     MIDL_INTERFACE("C902980F-96C5-450C-9044-7E52C24F9E94")
-                    IGridPatternIdentifiers : IInspectable
+                    IGridPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4825,8 +5001,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("7BC452F3-A181-4137-8DE9-1F9B1A8320ED"), exclusiveto, contract] */
                     MIDL_INTERFACE("7BC452F3-A181-4137-8DE9-1F9B1A8320ED")
-                    IGridPatternIdentifiersStatics : IInspectable
+                    IGridPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColumnCountProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -4870,8 +5047,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("5D5CD3B8-1E12-488B-B0EA-5E6CB89816E1"), exclusiveto, contract] */
                     MIDL_INTERFACE("5D5CD3B8-1E12-488B-B0EA-5E6CB89816E1")
-                    IMultipleViewPatternIdentifiers : IInspectable
+                    IMultipleViewPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4909,8 +5087,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("A9CFA66F-6B84-4D71-9E48-D764D3BCDA8E"), exclusiveto, contract] */
                     MIDL_INTERFACE("A9CFA66F-6B84-4D71-9E48-D764D3BCDA8E")
-                    IMultipleViewPatternIdentifiersStatics : IInspectable
+                    IMultipleViewPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentViewProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -4954,8 +5133,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("F8760F45-33C9-467D-BC9E-D1515263ACE1"), exclusiveto, contract] */
                     MIDL_INTERFACE("F8760F45-33C9-467D-BC9E-D1515263ACE1")
-                    IRangeValuePatternIdentifiers : IInspectable
+                    IRangeValuePatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -4993,8 +5173,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("CE23450F-1C27-457F-B815-7A5E46863DBB"), exclusiveto, contract] */
                     MIDL_INTERFACE("CE23450F-1C27-457F-B815-7A5E46863DBB")
-                    IRangeValuePatternIdentifiersStatics : IInspectable
+                    IRangeValuePatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsReadOnlyProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5050,8 +5231,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("366B1003-425C-4951-AE83-D521E73BC696"), exclusiveto, contract] */
                     MIDL_INTERFACE("366B1003-425C-4951-AE83-D521E73BC696")
-                    IScrollPatternIdentifiers : IInspectable
+                    IScrollPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5089,8 +5271,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("4BF8E0A1-FB7F-4FA4-83B3-CFAEB103A685"), exclusiveto, contract] */
                     MIDL_INTERFACE("4BF8E0A1-FB7F-4FA4-83B3-CFAEB103A685")
-                    IScrollPatternIdentifiersStatics : IInspectable
+                    IScrollPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontallyScrollableProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5149,8 +5332,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("2DAFA41A-3EF8-4BB5-A02B-3EE1B2274740"), exclusiveto, contract] */
                     MIDL_INTERFACE("2DAFA41A-3EF8-4BB5-A02B-3EE1B2274740")
-                    ISelectionItemPatternIdentifiers : IInspectable
+                    ISelectionItemPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5188,8 +5372,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("A918D163-487E-4E3E-9F86-7B44ACBE27CE"), exclusiveto, contract] */
                     MIDL_INTERFACE("A918D163-487E-4E3E-9F86-7B44ACBE27CE")
-                    ISelectionItemPatternIdentifiersStatics : IInspectable
+                    ISelectionItemPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSelectedProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5233,8 +5418,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("4AA66FB0-E3F7-475F-B78D-F8A83BB730C4"), exclusiveto, contract] */
                     MIDL_INTERFACE("4AA66FB0-E3F7-475F-B78D-F8A83BB730C4")
-                    ISelectionPatternIdentifiers : IInspectable
+                    ISelectionPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5272,8 +5458,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("93035B4C-6B50-40A1-B23F-5C78DDBD479A"), exclusiveto, contract] */
                     MIDL_INTERFACE("93035B4C-6B50-40A1-B23F-5C78DDBD479A")
-                    ISelectionPatternIdentifiersStatics : IInspectable
+                    ISelectionPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanSelectMultipleProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5320,8 +5507,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("84347E19-CA4B-46A2-A794-C87928A3B1AB"), exclusiveto, contract] */
                     MIDL_INTERFACE("84347E19-CA4B-46A2-A794-C87928A3B1AB")
-                    ISpreadsheetItemPatternIdentifiers : IInspectable
+                    ISpreadsheetItemPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5359,8 +5547,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("43658779-5380-4F12-B468-B4F368AD4499"), exclusiveto, contract] */
                     MIDL_INTERFACE("43658779-5380-4F12-B468-B4F368AD4499")
-                    ISpreadsheetItemPatternIdentifiersStatics : IInspectable
+                    ISpreadsheetItemPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FormulaProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5401,8 +5590,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("B0E4E201-E89D-436B-8287-4F7903466879"), exclusiveto, contract] */
                     MIDL_INTERFACE("B0E4E201-E89D-436B-8287-4F7903466879")
-                    IStylesPatternIdentifiers : IInspectable
+                    IStylesPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5440,8 +5630,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("528A457A-BC3C-4D48-94AF-1F68703CA296"), exclusiveto, contract] */
                     MIDL_INTERFACE("528A457A-BC3C-4D48-94AF-1F68703CA296")
-                    IStylesPatternIdentifiersStatics : IInspectable
+                    IStylesPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedPropertiesProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5500,8 +5691,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("C326E5AD-8077-4C64-98E4-E83BCF1B4389"), exclusiveto, contract] */
                     MIDL_INTERFACE("C326E5AD-8077-4C64-98E4-E83BCF1B4389")
-                    ITableItemPatternIdentifiers : IInspectable
+                    ITableItemPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5539,8 +5731,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("24C4B923-E9A2-4DE9-B2A4-A8B22D0BE362"), exclusiveto, contract] */
                     MIDL_INTERFACE("24C4B923-E9A2-4DE9-B2A4-A8B22D0BE362")
-                    ITableItemPatternIdentifiersStatics : IInspectable
+                    ITableItemPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColumnHeaderItemsProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5584,8 +5777,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("38D104FE-0D0C-412A-BF8D-51EDE683BAF5"), exclusiveto, contract] */
                     MIDL_INTERFACE("38D104FE-0D0C-412A-BF8D-51EDE683BAF5")
-                    ITablePatternIdentifiers : IInspectable
+                    ITablePatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5623,8 +5817,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("75073D25-32C9-4903-AECF-DC3504CBD244"), exclusiveto, contract] */
                     MIDL_INTERFACE("75073D25-32C9-4903-AECF-DC3504CBD244")
-                    ITablePatternIdentifiersStatics : IInspectable
+                    ITablePatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColumnHeadersProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5671,8 +5866,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("7E191F6B-34D4-4AE7-83AC-29F88882D985"), exclusiveto, contract] */
                     MIDL_INTERFACE("7E191F6B-34D4-4AE7-83AC-29F88882D985")
-                    ITogglePatternIdentifiers : IInspectable
+                    ITogglePatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5710,8 +5906,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("C7F75544-14A5-4F2F-92FC-760524DE06EA"), exclusiveto, contract] */
                     MIDL_INTERFACE("C7F75544-14A5-4F2F-92FC-760524DE06EA")
-                    ITogglePatternIdentifiersStatics : IInspectable
+                    ITogglePatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ToggleStateProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5752,8 +5949,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("08AAA03D-DEA7-402F-8097-9A2783D60E5D"), exclusiveto, contract] */
                     MIDL_INTERFACE("08AAA03D-DEA7-402F-8097-9A2783D60E5D")
-                    ITransformPattern2Identifiers : IInspectable
+                    ITransformPattern2Identifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5791,8 +5989,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("78963644-11F0-467C-A72B-5DAC41C1F6FE"), exclusiveto, contract] */
                     MIDL_INTERFACE("78963644-11F0-467C-A72B-5DAC41C1F6FE")
-                    ITransformPattern2IdentifiersStatics : IInspectable
+                    ITransformPattern2IdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanZoomProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5842,8 +6041,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("E4115B8C-C3C8-4A37-B994-2709A7811665"), exclusiveto, contract] */
                     MIDL_INTERFACE("E4115B8C-C3C8-4A37-B994-2709A7811665")
-                    ITransformPatternIdentifiers : IInspectable
+                    ITransformPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5881,8 +6081,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("4570EDAB-D705-40C4-A1DC-E9ACFCEF85F6"), exclusiveto, contract] */
                     MIDL_INTERFACE("4570EDAB-D705-40C4-A1DC-E9ACFCEF85F6")
-                    ITransformPatternIdentifiersStatics : IInspectable
+                    ITransformPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanMoveProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -5929,8 +6130,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("425BF64C-5333-4E41-B470-2BAD14ECD085"), exclusiveto, contract] */
                     MIDL_INTERFACE("425BF64C-5333-4E41-B470-2BAD14ECD085")
-                    IValuePatternIdentifiers : IInspectable
+                    IValuePatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5968,8 +6170,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("C247E8F7-ADCC-440F-B123-33788A40525A"), exclusiveto, contract] */
                     MIDL_INTERFACE("C247E8F7-ADCC-440F-B123-33788A40525A")
-                    IValuePatternIdentifiersStatics : IInspectable
+                    IValuePatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsReadOnlyProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -6013,8 +6216,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("39F78BB4-7032-41E2-B79E-27B74A8628DE"), exclusiveto, contract] */
                     MIDL_INTERFACE("39F78BB4-7032-41E2-B79E-27B74A8628DE")
-                    IWindowPatternIdentifiers : IInspectable
+                    IWindowPatternIdentifiers : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -6052,8 +6256,9 @@ namespace ABI {
                 namespace Automation {
                     /* [object, uuid("07D0AD06-6302-4D29-878B-19DA03FC228D"), exclusiveto, contract] */
                     MIDL_INTERFACE("07D0AD06-6302-4D29-878B-19DA03FC228D")
-                    IWindowPatternIdentifiersStatics : IInspectable
+                    IWindowPatternIdentifiersStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanMaximizeProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
                             ) = 0;
@@ -6153,6 +6358,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics5 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics4 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -6185,6 +6391,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics5 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics4 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -6850,6 +7057,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIden
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7 __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties;
@@ -6891,6 +7104,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesS
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_FWD_DEFINED__
@@ -8409,6 +8628,9 @@ interface __FIVector_1_Windows__CUI__CXaml__CDependencyObject
 typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAccessibilityView __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAccessibilityView;
 
 
+typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel;
+
+
 typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType;
 
 
@@ -8493,6 +8715,8 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CWindowVisualState __x_ABI_C
 
 
 typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CZoomUnit __x_ABI_CWindows_CUI_CXaml_CAutomation_CZoomUnit;
+
+
 
 
 
@@ -10525,6 +10749,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElemen
 
 /*
  *
+ * Interface Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.AutomationElementIdentifiers
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationElementIdentifiersStatics7[] = L"Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7";
+/* [object, uuid("00F1ABB2-742C-446A-A8F6-1672B10D2874"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HeadingLevelProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_get_HeadingLevelProperty(This,value) \
+    ( (This)->lpVtbl->get_HeadingLevelProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Automation.IAutomationProperties
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -11681,6 +11998,115 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.AutomationProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationPropertiesStatics7[] = L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7";
+/* [object, uuid("F7E98BF3-8F91-4068-A4AD-B7B402D10A2C"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HeadingLevelProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetHeadingLevel )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *SetHeadingLevel )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_get_HeadingLevelProperty(This,value) \
+    ( (This)->lpVtbl->get_HeadingLevelProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_GetHeadingLevel(This,element,value) \
+    ( (This)->lpVtbl->GetHeadingLevel(This,element,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_SetHeadingLevel(This,element,value) \
+    ( (This)->lpVtbl->SetHeadingLevel(This,element,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -15723,6 +16149,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics5 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics4 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -15755,6 +16182,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics5 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics4 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract

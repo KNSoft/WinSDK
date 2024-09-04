@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.protection.playready.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1540,6 +1542,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Protection::PlayReady::NDClient*
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDClosedCaptionDataReceivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDClosedCaptionDataReceivedEventArgs_USE
@@ -1569,9 +1572,11 @@ typedef ITypedEventHandler<ABI::Windows::Media::Protection::PlayReady::NDClient*
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDLicenseFetchCompletedEventArgs_USE
@@ -1602,9 +1607,11 @@ typedef ITypedEventHandler<ABI::Windows::Media::Protection::PlayReady::NDClient*
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDProximityDetectionCompletedEventArgs_USE
@@ -1635,9 +1642,11 @@ typedef ITypedEventHandler<ABI::Windows::Media::Protection::PlayReady::NDClient*
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDRegistrationCompletedEventArgs_USE
@@ -1667,6 +1676,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Protection::PlayReady::NDClient*
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDRegistrationCompletedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3298,8 +3308,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDClient : IInspectable
+                    INDClient : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -3448,8 +3459,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDClientFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDClientFactory : IInspectable
+                    INDClientFactory : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDClientFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -3498,8 +3510,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDClosedCaptionDataReceivedEventArgs : IInspectable
+                    INDClosedCaptionDataReceivedEventArgs : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -3560,8 +3573,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDCustomData : IInspectable
+                    INDCustomData : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -3619,8 +3633,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDCustomDataFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDCustomDataFactory : IInspectable
+                    INDCustomDataFactory : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDCustomDataFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -3670,8 +3685,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDDownloadEngine : IInspectable
+                    INDDownloadEngine : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -3769,8 +3785,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDDownloadEngineNotifier : IInspectable
+                    INDDownloadEngineNotifier : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -3848,8 +3865,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDLicenseFetchCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDLicenseFetchCompletedEventArgs : IInspectable
+                    INDLicenseFetchCompletedEventArgs : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDLicenseFetchCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -3895,8 +3913,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDLicenseFetchDescriptor : IInspectable
+                    INDLicenseFetchDescriptor : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -3967,8 +3986,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDLicenseFetchDescriptorFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDLicenseFetchDescriptorFactory : IInspectable
+                    INDLicenseFetchDescriptorFactory : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDLicenseFetchDescriptorFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4018,8 +4038,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDLicenseFetchResult is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDLicenseFetchResult : IInspectable
+                    INDLicenseFetchResult : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDLicenseFetchResult is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4065,8 +4086,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDMessenger : IInspectable
+                    INDMessenger : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4155,8 +4177,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDProximityDetectionCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDProximityDetectionCompletedEventArgs : IInspectable
+                    INDProximityDetectionCompletedEventArgs : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDProximityDetectionCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4202,8 +4225,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDRegistrationCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDRegistrationCompletedEventArgs : IInspectable
+                    INDRegistrationCompletedEventArgs : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDRegistrationCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4270,8 +4294,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDSendResult is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDSendResult : IInspectable
+                    INDSendResult : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDSendResult is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4318,8 +4343,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDStartResult is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDStartResult : IInspectable
+                    INDStartResult : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDStartResult is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4365,8 +4391,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDStorageFileHelper is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDStorageFileHelper : IInspectable
+                    INDStorageFileHelper : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDStorageFileHelper is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4413,8 +4440,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDStreamParser : IInspectable
+                    INDStreamParser : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4487,8 +4515,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDStreamParserNotifier : IInspectable
+                    INDStreamParserNotifier : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4568,8 +4597,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDTCPMessengerFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDTCPMessengerFactory : IInspectable
+                    INDTCPMessengerFactory : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDTCPMessengerFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4617,8 +4647,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    INDTransmitterProperties : IInspectable
+                    INDTransmitterProperties : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -4736,8 +4767,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("9A438A6A-7F4C-452E-88BD-0148C6387A2C"), exclusiveto, contract] */
                     MIDL_INTERFACE("9A438A6A-7F4C-452E-88BD-0148C6387A2C")
-                    IPlayReadyContentHeader : IInspectable
+                    IPlayReadyContentHeader : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyId(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -4810,8 +4842,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("359C79F4-2180-498C-965B-E754D875EAB2"), exclusiveto, contract] */
                     MIDL_INTERFACE("359C79F4-2180-498C-965B-E754D875EAB2")
-                    IPlayReadyContentHeader2 : IInspectable
+                    IPlayReadyContentHeader2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyIds(
                             /* [out] */__RPC__out UINT32 * __contentKeyIdsSize,
                             /* [size_is(, *(__contentKeyIdsSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__contentKeyIdsSize)) GUID * * contentKeyIds
@@ -4857,8 +4890,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("CB97C8FF-B758-4776-BF01-217A8B510B2C"), exclusiveto, contract] */
                     MIDL_INTERFACE("CB97C8FF-B758-4776-BF01-217A8B510B2C")
-                    IPlayReadyContentHeaderFactory : IInspectable
+                    IPlayReadyContentHeaderFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceFromWindowsMediaDrmHeader(
                             /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __headerBytesSize,
                             /* [size_is(__headerBytesSize), in] */__RPC__in_ecount_full(__headerBytesSize) BYTE * headerBytes,
@@ -4920,8 +4954,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("D1239CF5-AE6D-4778-97FD-6E3A2EEADBEB"), exclusiveto, contract] */
                     MIDL_INTERFACE("D1239CF5-AE6D-4778-97FD-6E3A2EEADBEB")
-                    IPlayReadyContentHeaderFactory2 : IInspectable
+                    IPlayReadyContentHeaderFactory2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceFromComponents2(
                             /* [in] */UINT32 dwFlags,
                             /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __contentKeyIdsSize,
@@ -4972,8 +5007,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("FBFD2523-906D-4982-A6B8-6849565A7CE8"), exclusiveto, contract] */
                     MIDL_INTERFACE("FBFD2523-906D-4982-A6B8-6849565A7CE8")
-                    IPlayReadyContentResolver : IInspectable
+                    IPlayReadyContentResolver : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE ServiceRequest(
                             /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader * contentHeader,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest * * serviceRequest
@@ -5012,8 +5048,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("ADCC93AC-97E6-43EF-95E4-D7868F3B16A9"), contract] */
                     MIDL_INTERFACE("ADCC93AC-97E6-43EF-95E4-D7868F3B16A9")
-                    IPlayReadyDomain : IInspectable
+                    IPlayReadyDomain : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AccountId(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -5066,8 +5103,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("4DF384EE-3121-4DF3-A5E8-D0C24C0500FC"), exclusiveto, contract] */
                     MIDL_INTERFACE("4DF384EE-3121-4DF3-A5E8-D0C24C0500FC")
-                    IPlayReadyDomainIterableFactory : IInspectable
+                    IPlayReadyDomainIterableFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */GUID domainAccountId,
                             /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CMedia__CProtection__CPlayReady__CIPlayReadyDomain * * domainIterable
@@ -5114,8 +5152,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("171B4A5A-405F-4739-B040-67B9F0C38758"), exclusiveto, contract] */
                     MIDL_INTERFACE("171B4A5A-405F-4739-B040-67B9F0C38758")
-                    IPlayReadyDomainJoinServiceRequest : IInspectable
+                    IPlayReadyDomainJoinServiceRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DomainAccountId(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -5176,8 +5215,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("062D58BE-97AD-4917-AA03-46D4C252D464"), exclusiveto, contract] */
                     MIDL_INTERFACE("062D58BE-97AD-4917-AA03-46D4C252D464")
-                    IPlayReadyDomainLeaveServiceRequest : IInspectable
+                    IPlayReadyDomainLeaveServiceRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DomainAccountId(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -5227,8 +5267,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("24446B8E-10B9-4530-B25B-901A8029A9B2"), exclusiveto, contract] */
                     MIDL_INTERFACE("24446B8E-10B9-4530-B25B-901A8029A9B2")
-                    IPlayReadyITADataGenerator : IInspectable
+                    IPlayReadyITADataGenerator : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GenerateData(
                             /* [in] */GUID guidCPSystemId,
                             /* [in] */UINT32 countOfStreams,
@@ -5279,8 +5320,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("21F5A86B-008C-4611-AB2F-AAA6C69F0E24"), exclusiveto, contract] */
                     MIDL_INTERFACE("21F5A86B-008C-4611-AB2F-AAA6C69F0E24")
-                    IPlayReadyIndividualizationServiceRequest : IInspectable
+                    IPlayReadyIndividualizationServiceRequest : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5315,8 +5357,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("EE474C4E-FA3C-414D-A9F2-3FFC1EF832D4"), contract] */
                     MIDL_INTERFACE("EE474C4E-FA3C-414D-A9F2-3FFC1EF832D4")
-                    IPlayReadyLicense : IInspectable
+                    IPlayReadyLicense : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FullyEvaluated(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -5380,8 +5423,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("30F4E7A7-D8E3-48A0-BCDA-FF9F40530436"), exclusiveto, contract] */
                     MIDL_INTERFACE("30F4E7A7-D8E3-48A0-BCDA-FF9F40530436")
-                    IPlayReadyLicense2 : IInspectable
+                    IPlayReadyLicense2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SecureStopId(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -5433,8 +5477,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("5D85FF45-3E9F-4F48-93E1-9530C8D58C3E"), contract] */
                     MIDL_INTERFACE("5D85FF45-3E9F-4F48-93E1-9530C8D58C3E")
-                    IPlayReadyLicenseAcquisitionServiceRequest : IInspectable
+                    IPlayReadyLicenseAcquisitionServiceRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentHeader(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader * * value
                             ) = 0;
@@ -5490,8 +5535,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("B7FA5EB5-FE0C-B225-BC60-5A9EDD32CEB5"), exclusiveto, contract] */
                     MIDL_INTERFACE("B7FA5EB5-FE0C-B225-BC60-5A9EDD32CEB5")
-                    IPlayReadyLicenseAcquisitionServiceRequest2 : IInspectable
+                    IPlayReadyLicenseAcquisitionServiceRequest2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SessionId(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -5539,8 +5585,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("394E5F4D-7F75-430D-B2E7-7F75F34B2D75"), exclusiveto, contract] */
                     MIDL_INTERFACE("394E5F4D-7F75-430D-B2E7-7F75F34B2D75")
-                    IPlayReadyLicenseAcquisitionServiceRequest3 : IInspectable
+                    IPlayReadyLicenseAcquisitionServiceRequest3 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateLicenseIterable(
                             /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader * contentHeader,
                             /* [in] */boolean fullyEvaluated,
@@ -5583,8 +5630,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("D4179F08-0837-4978-8E68-BE4293C8D7A6"), exclusiveto, contract] */
                     MIDL_INTERFACE("D4179F08-0837-4978-8E68-BE4293C8D7A6")
-                    IPlayReadyLicenseIterableFactory : IInspectable
+                    IPlayReadyLicenseIterableFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader * contentHeader,
                             /* [in] */boolean fullyEvaluated,
@@ -5627,8 +5675,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("AAEB2141-0957-4405-B892-8BF3EC5DADD9"), exclusiveto, contract] */
                     MIDL_INTERFACE("AAEB2141-0957-4405-B892-8BF3EC5DADD9")
-                    IPlayReadyLicenseManagement : IInspectable
+                    IPlayReadyLicenseManagement : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE DeleteLicenses(
                             /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader * contentHeader,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
@@ -5667,8 +5716,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("A1723A39-87FA-4FDD-ABBB-A9720E845259"), contract] */
                     MIDL_INTERFACE("A1723A39-87FA-4FDD-ABBB-A9720E845259")
-                    IPlayReadyLicenseSession : IInspectable
+                    IPlayReadyLicenseSession : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateLAServiceRequest(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest * * serviceRequest
                             ) = 0;
@@ -5713,8 +5763,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("4909BE3A-3AED-4656-8AD7-EE0FD7799510"), contract] */
                     MIDL_INTERFACE("4909BE3A-3AED-4656-8AD7-EE0FD7799510")
-                    IPlayReadyLicenseSession2 : IInspectable
+                    IPlayReadyLicenseSession2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateLicenseIterable(
                             /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader * contentHeader,
                             /* [in] */boolean fullyEvaluated,
@@ -5757,8 +5808,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("62492699-6527-429E-98BE-48D798AC2739"), exclusiveto, contract] */
                     MIDL_INTERFACE("62492699-6527-429E-98BE-48D798AC2739")
-                    IPlayReadyLicenseSessionFactory : IInspectable
+                    IPlayReadyLicenseSessionFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::Collections::IPropertySet * configuration,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession * * instance
@@ -5805,8 +5857,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("C12B231C-0ECD-4F11-A185-1E24A4A67FB7"), exclusiveto, contract] */
                     MIDL_INTERFACE("C12B231C-0ECD-4F11-A185-1E24A4A67FB7")
-                    IPlayReadyMeteringReportServiceRequest : IInspectable
+                    IPlayReadyMeteringReportServiceRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MeteringCertificate(
                             /* [out] */__RPC__out UINT32 * __meteringCertBytesSize,
                             /* [size_is(, *(__meteringCertBytesSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__meteringCertBytesSize)) BYTE * * meteringCertBytes
@@ -5857,8 +5910,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("543D66AC-FAF0-4560-84A5-0E4ACEC939E4"), exclusiveto, contract] */
                     MIDL_INTERFACE("543D66AC-FAF0-4560-84A5-0E4ACEC939E4")
-                    IPlayReadyRevocationServiceRequest : IInspectable
+                    IPlayReadyRevocationServiceRequest : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -5896,8 +5950,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("5F1F0165-4214-4D9E-81EB-E89F9D294AEE"), exclusiveto, contract] */
                     MIDL_INTERFACE("5F1F0165-4214-4D9E-81EB-E89F9D294AEE")
-                    IPlayReadySecureStopIterableFactory : IInspectable
+                    IPlayReadySecureStopIterableFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __publisherCertBytesSize,
                             /* [size_is(__publisherCertBytesSize), in] */__RPC__in_ecount_full(__publisherCertBytesSize) BYTE * publisherCertBytes,
@@ -5942,8 +5997,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("B5501EE5-01BF-4401-9677-05630A6A4CC8"), contract] */
                     MIDL_INTERFACE("B5501EE5-01BF-4401-9677-05630A6A4CC8")
-                    IPlayReadySecureStopServiceRequest : IInspectable
+                    IPlayReadySecureStopServiceRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SessionID(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -5997,8 +6053,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("0E448AC9-E67E-494E-9F49-6285438C76CF"), exclusiveto, contract] */
                     MIDL_INTERFACE("0E448AC9-E67E-494E-9F49-6285438C76CF")
-                    IPlayReadySecureStopServiceRequestFactory : IInspectable
+                    IPlayReadySecureStopServiceRequestFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __publisherCertBytesSize,
                             /* [size_is(__publisherCertBytesSize), in] */__RPC__in_ecount_full(__publisherCertBytesSize) BYTE * publisherCertBytes,
@@ -6048,8 +6105,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("8BAD2836-A703-45A6-A180-76F3565AA725"), contract] */
                     MIDL_INTERFACE("8BAD2836-A703-45A6-A180-76F3565AA725")
-                    IPlayReadyServiceRequest : IInspectable
+                    IPlayReadyServiceRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                             ) = 0;
@@ -6116,8 +6174,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("B659FCB5-CE41-41BA-8A0D-61DF5FFFA139"), exclusiveto, contract] */
                     MIDL_INTERFACE("B659FCB5-CE41-41BA-8A0D-61DF5FFFA139")
-                    IPlayReadySoapMessage : IInspectable
+                    IPlayReadySoapMessage : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetMessageBody(
                             /* [out] */__RPC__out UINT32 * __messageBodyBytesSize,
                             /* [size_is(, *(__messageBodyBytesSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__messageBodyBytesSize)) BYTE * * messageBodyBytes
@@ -6165,8 +6224,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("5E69C00D-247C-469A-8F31-5C1A1571D9C6"), exclusiveto, contract] */
                     MIDL_INTERFACE("5E69C00D-247C-469A-8F31-5C1A1571D9C6")
-                    IPlayReadyStatics : IInspectable
+                    IPlayReadyStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DomainJoinServiceRequestType(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -6232,8 +6292,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("1F8D6A92-5F9A-423E-9466-B33969AF7A3D"), exclusiveto, contract] */
                     MIDL_INTERFACE("1F8D6A92-5F9A-423E-9466-B33969AF7A3D")
-                    IPlayReadyStatics2 : IInspectable
+                    IPlayReadyStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PlayReadyCertificateSecurityLevel(
                             /* [retval, out] */__RPC__out UINT32 * value
                             ) = 0;
@@ -6279,8 +6340,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("3FA33F71-2DD3-4BED-AE49-F7148E63E710"), exclusiveto, contract] */
                     MIDL_INTERFACE("3FA33F71-2DD3-4BED-AE49-F7148E63E710")
-                    IPlayReadyStatics3 : IInspectable
+                    IPlayReadyStatics3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SecureStopServiceRequestType(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -6331,8 +6393,9 @@ namespace ABI {
                 namespace PlayReady {
                     /* [object, uuid("50A91300-D824-4231-9D5E-78EF8844C7D7"), exclusiveto, contract] */
                     MIDL_INTERFACE("50A91300-D824-4231-9D5E-78EF8844C7D7")
-                    IPlayReadyStatics4 : IInspectable
+                    IPlayReadyStatics4 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputTrustAuthorityToCreate(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -8254,6 +8317,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDC
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDClosedCaptionDataReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDClosedCaptionDataReceivedEventArgs_INTERFACE_DEFINED__
 
@@ -8301,9 +8365,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDC
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDClosedCaptionDataReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDLicenseFetchCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDLicenseFetchCompletedEventArgs_INTERFACE_DEFINED__
@@ -8352,9 +8418,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDC
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDLicenseFetchCompletedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDProximityDetectionCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDProximityDetectionCompletedEventArgs_INTERFACE_DEFINED__
@@ -8403,9 +8471,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDC
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDProximityDetectionCompletedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDRegistrationCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDRegistrationCompletedEventArgs_INTERFACE_DEFINED__
@@ -8453,6 +8523,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDC
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CProtection__CPlayReady__CNDClient_Windows__CMedia__CProtection__CPlayReady__CINDRegistrationCompletedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)

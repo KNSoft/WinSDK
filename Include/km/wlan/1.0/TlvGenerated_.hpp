@@ -1842,6 +1842,20 @@ typedef struct _WDI_GUID
 #endif // __cplusplus
 } WDI_GUID, *PWDI_GUID;
 
+
+//
+// Structure definition for OS power management features
+//
+typedef struct _WDI_OS_POWER_MANAGEMENT_FEATURES
+{
+    WDI_OS_POWER_MANAGEMENT_FLAGS EnableFlags; // OS power management enablement flags
+#ifdef __cplusplus
+    _WDI_OS_POWER_MANAGEMENT_FEATURES() : EnableFlags( (WDI_OS_POWER_MANAGEMENT_FLAGS)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_OS_POWER_MANAGEMENT_FEATURES, *PWDI_OS_POWER_MANAGEMENT_FEATURES;
+
 struct ArrayOfElementsOfUINT8
 {
     UINT32 ElementCount;
@@ -2762,7 +2776,7 @@ typedef WDI_PM_PROTOCOL_OFFLOAD_IPv4ARP_STRUCT WDI_PM_PROTOCOL_OFFLOAD_IPv4ARP_C
 
 typedef WDI_PM_PROTOCOL_OFFLOAD_IPv6_STRUCT WDI_PM_PROTOCOL_OFFLOAD_IPv6NS_CONTAINER;
 
-typedef WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_STRUCT WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_CONTAINER;
+typedef WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_STRUCT WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_CONTAINER_V1_1_5;
 
 
 //
@@ -3131,6 +3145,8 @@ typedef WDI_PM_CAPABILITIES WDI_PM_CAPABILITIES_CONTAINER;
 typedef WDI_RECEIVE_COALESCING_CAPABILITIES WDI_RECEIVE_COALESCING_CAPABILITIES_CONTAINER;
 
 typedef WDI_PRIVACY_EXEMPTION_PARAMETERS_STRUCT WDI_PRIVACY_EXEMPTION_LIST_CONTAINER;
+
+typedef WDI_OS_POWER_MANAGEMENT_FEATURES WDI_OS_POWER_MGMT_FEATURES_CONTAINER;
 
 
 //
@@ -3553,6 +3569,10 @@ typedef WDI_CIPHER_KEY_ID_STRUCT WDI_CIPHER_KEY_ID_CONTAINER;
 
 typedef WDI_SET_DEFAULT_KEY_ID_STRUCT WDI_SET_DEFAULT_KEY_ID_CONTAINER;
 
+typedef WDI_CIPHER_KEY_TYPE WDI_CIPHER_KEY_TYPE_CONTAINER;
+
+typedef WDI_CIPHER_ALGORITHM WDI_CIPHER_ALGORITHM_CONTAINER;
+
 typedef WDI_CIPHER_KEY_TYPE_STRUCT WDI_CIPHER_KEY_TYPE_INFO_CONTAINER;
 
 typedef WDI_RECEIVE_SEQUENCE_COUNT_STRUCT WDI_RECEIVE_SEQUENCE_COUNT_CONTAINER;
@@ -3574,6 +3594,94 @@ namespace WDI_TLV
     namespace PARSER
     {
         void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_CIPHER_KEY_TKIP_INFO_CONTAINER * pField );
+    }
+}
+#endif // __cplusplus
+
+//
+// Container for Specifying a Cipher Key entry.
+//
+typedef struct _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER
+{
+    struct _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_Optional
+    {
+        UINT32 CCMPKey_IsPresent : 1;
+        UINT32 GCMPKey_IsPresent : 1;
+        UINT32 TKIPInfo_IsPresent : 1;
+        UINT32 BIPKey_IsPresent : 1;
+        UINT32 WEPKey_IsPresent : 1;
+        UINT32 IHVKey_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_Optional() : CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_CIPHER_KEY_TYPE_CONTAINER CipherKeyType;
+    WDI_CIPHER_ALGORITHM_CONTAINER CipherAlgorithm;
+    WDI_RECEIVE_SEQUENCE_COUNT_CONTAINER ReceiveSequenceCount;
+    WDI_PRIVATE_BYTE_BLOB CCMPKey;
+    WDI_PRIVATE_BYTE_BLOB GCMPKey;
+    WDI_CIPHER_KEY_TKIP_INFO_CONTAINER TKIPInfo;
+    WDI_PRIVATE_BYTE_BLOB BIPKey;
+    WDI_PRIVATE_BYTE_BLOB WEPKey;
+    WDI_PRIVATE_BYTE_BLOB IHVKey;
+#ifdef __cplusplus
+    _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER() : CipherKeyType( (WDI_CIPHER_KEY_TYPE_CONTAINER)0 ), CipherAlgorithm( (WDI_CIPHER_ALGORITHM_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER, *PWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER * pField );
+    }
+}
+#endif // __cplusplus
+typedef WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_STRUCT WDI_PM_RSN_KEY_INFO_CONTAINER;
+
+struct ArrayOfElementsOfWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER
+{
+    UINT32 ElementCount;
+    WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER ) );
+#endif // __cplusplus
+
+//
+// Container for RSN Offload Key(s).
+//
+typedef struct _WDI_RSN_OFFLOAD_KEYS_CONTAINER
+{
+    struct _WDI_RSN_OFFLOAD_KEYS_CONTAINER_Optional
+    {
+        UINT32 CipherKey_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_RSN_OFFLOAD_KEYS_CONTAINER_Optional() : CipherKey_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_PM_RSN_KEY_INFO_CONTAINER RsnKeyInfo;
+#ifdef __cplusplus
+    ArrayOfElements<WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER> CipherKey;
+#else // __cplusplus
+    struct ArrayOfElementsOfWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER CipherKey;
+#endif // __cplusplus
+} WDI_RSN_OFFLOAD_KEYS_CONTAINER, *PWDI_RSN_OFFLOAD_KEYS_CONTAINER;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_RSN_OFFLOAD_KEYS_CONTAINER * pField );
     }
 }
 #endif // __cplusplus
@@ -4783,8 +4891,9 @@ typedef struct _WDI_GET_ADAPTER_CAPABILITIES_PARAMETERS
         UINT32 ReceiveCoalescingCapabilities_IsPresent : 1;
         UINT32 TcpOffloadCapabilities_IsPresent : 1;
         UINT32 SupportedGuids_IsPresent : 1;
+        UINT32 OsPowerMgmtFeatures_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_GET_ADAPTER_CAPABILITIES_PARAMETERS_Optional() : CommunicationAttributes_IsPresent( FALSE ), APAttributes_IsPresent( FALSE ), VirtualizationAttributes_IsPresent( FALSE ), P2PAttributes_IsPresent( FALSE ), DatapathAttributes_IsPresent( FALSE ), BandInfo_IsPresent( FALSE ), PhyInfo_IsPresent( FALSE ), PmCapabilities_IsPresent( FALSE ), CountryRegionList_IsPresent( FALSE ), ReceiveCoalescingCapabilities_IsPresent( FALSE ), TcpOffloadCapabilities_IsPresent( FALSE ), SupportedGuids_IsPresent( FALSE )
+        _WDI_GET_ADAPTER_CAPABILITIES_PARAMETERS_Optional() : CommunicationAttributes_IsPresent( FALSE ), APAttributes_IsPresent( FALSE ), VirtualizationAttributes_IsPresent( FALSE ), P2PAttributes_IsPresent( FALSE ), DatapathAttributes_IsPresent( FALSE ), BandInfo_IsPresent( FALSE ), PhyInfo_IsPresent( FALSE ), PmCapabilities_IsPresent( FALSE ), CountryRegionList_IsPresent( FALSE ), ReceiveCoalescingCapabilities_IsPresent( FALSE ), TcpOffloadCapabilities_IsPresent( FALSE ), SupportedGuids_IsPresent( FALSE ), OsPowerMgmtFeatures_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -4816,6 +4925,7 @@ typedef struct _WDI_GET_ADAPTER_CAPABILITIES_PARAMETERS
 #else // __cplusplus
     struct ArrayOfElementsOfWDI_NDIS_GUID_CONTAINER SupportedGuids;
 #endif // __cplusplus
+    WDI_OS_POWER_MGMT_FEATURES_CONTAINER OsPowerMgmtFeatures;
 } WDI_GET_ADAPTER_CAPABILITIES_PARAMETERS, *PWDI_GET_ADAPTER_CAPABILITIES_PARAMETERS;
 
 
@@ -5311,7 +5421,7 @@ typedef struct _WDI_SET_ADD_PM_PROTOCOL_OFFLOAD_PARAMETERS_PARAMETERS
 
     WDI_PM_PROTOCOL_OFFLOAD_IPv4ARP_CONTAINER ipv4ARPOffload;
     WDI_PM_PROTOCOL_OFFLOAD_IPv6NS_CONTAINER ipv6ARPOffload;
-    WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_CONTAINER DOT11RSNREKeyOffload;
+    WDI_RSN_OFFLOAD_KEYS_CONTAINER DOT11RSNREKeyOffload;
 } WDI_SET_ADD_PM_PROTOCOL_OFFLOAD_PARAMETERS_PARAMETERS, *PWDI_SET_ADD_PM_PROTOCOL_OFFLOAD_PARAMETERS_PARAMETERS;
 
 
@@ -5482,7 +5592,7 @@ typedef struct _WDI_GET_PM_PROTOCOL_OFFLOAD_RESULTS
 
     WDI_PM_PROTOCOL_OFFLOAD_IPv4ARP_CONTAINER ipv4ARPOffload;
     WDI_PM_PROTOCOL_OFFLOAD_IPv6NS_CONTAINER ipv6ARPOffload;
-    WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_CONTAINER DOT11RSNREKeyOffload;
+    WDI_RSN_OFFLOAD_KEYS_CONTAINER DOT11RSNREKeyOffload;
 } WDI_GET_PM_PROTOCOL_OFFLOAD_RESULTS, *PWDI_GET_PM_PROTOCOL_OFFLOAD_RESULTS;
 
 
@@ -6083,6 +6193,15 @@ typedef struct _WDI_DEVICE_SERVICE_COMMAND_PARAMETERS
     struct ArrayOfElementsOfWDI_BYTE_BLOB Params;
 #endif // __cplusplus
 } WDI_DEVICE_SERVICE_COMMAND_PARAMETERS, *PWDI_DEVICE_SERVICE_COMMAND_PARAMETERS;
+
+
+//
+// Parameters for Cipher Key Updated
+//
+typedef struct _WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS
+{
+    WDI_RSN_OFFLOAD_KEYS_CONTAINER DOT11RSNREKeyOffload;
+} WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS, *PWDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS;
 
 
 //
@@ -8901,6 +9020,26 @@ extern "C" {
         _Out_ WDI_DEVICE_SERVICE_COMMAND_PARAMETERS* pParsedMessage );
     void __stdcall CleanupParsedWdiDeviceServiceCommandFromIhv( _In_ WDI_DEVICE_SERVICE_COMMAND_PARAMETERS* pParsedMessage );
 
+    NDIS_STATUS __stdcall GenerateWdiIndicationCipherKeyUpdatedFromIhv(
+        _In_ WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiIndicationCipherKeyUpdatedFromIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiIndicationCipherKeyUpdatedFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiIndicationCipherKeyUpdatedFromIhv( _In_ WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS* pParsedMessage );
+
     NDIS_STATUS __stdcall GenerateWdiTestTask(
         _In_ WDI_TASK_TEST_PARAMETERS const * pInput,
         _In_ ULONG ReservedHeaderLength,
@@ -9195,6 +9334,8 @@ extern "C" {
 #define GenerateWdiDeviceServiceCommand GenerateWdiDeviceServiceCommandToIhv
 #define ParseWdiDeviceServiceCommand ParseWdiDeviceServiceCommandFromIhv
 #define CleanupParsedWdiDeviceServiceCommand CleanupParsedWdiDeviceServiceCommandFromIhv
+#define ParseWdiIndicationCipherKeyUpdated ParseWdiIndicationCipherKeyUpdatedFromIhv
+#define CleanupParsedWdiIndicationCipherKeyUpdated CleanupParsedWdiIndicationCipherKeyUpdatedFromIhv
 #define Parse ParseFromIhv
 #define FreeParsed FreeParsedFromIhv
 
@@ -9402,6 +9543,7 @@ extern "C" {
 #define ParseWdiDeviceServiceCommand ParseWdiDeviceServiceCommandToIhv
 #define CleanupParsedWdiDeviceServiceCommand CleanupParsedWdiDeviceServiceCommandToIhv
 #define GenerateWdiDeviceServiceCommand GenerateWdiDeviceServiceCommandFromIhv
+#define GenerateWdiIndicationCipherKeyUpdated GenerateWdiIndicationCipherKeyUpdatedFromIhv
 #define Parse ParseToIhv
 #define FreeParsed FreeParsedToIhv
 

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.markup.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1030,8 +1032,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("F6790987-E6E5-47F2-92C6-ECCCE4BA159A"), contract] */
                     MIDL_INTERFACE("F6790987-E6E5-47F2-92C6-ECCCE4BA159A")
-                    IComponentConnector : IInspectable
+                    IComponentConnector : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Connect(
                             /* [in] */INT32 connectionId,
                             /* [in] */__RPC__in_opt IInspectable * target
@@ -1070,8 +1073,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("DC8F368B-ECCC-498E-B139-91142254D7AE"), contract] */
                     MIDL_INTERFACE("DC8F368B-ECCC-498E-B139-91142254D7AE")
-                    IComponentConnector2 : IInspectable
+                    IComponentConnector2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetBindingConnector(
                             /* [in] */INT32 connectionId,
                             /* [in] */__RPC__in_opt IInspectable * target,
@@ -1111,8 +1115,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("08429DC8-8AB0-4747-AA9A-FEADFC8DA8E1"), contract] */
                     MIDL_INTERFACE("08429DC8-8AB0-4747-AA9A-FEADFC8DA8E1")
-                    IDataTemplateComponent : IInspectable
+                    IDataTemplateComponent : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Recycle(void) = 0;
                         virtual HRESULT STDMETHODCALLTYPE ProcessBindings(
                             /* [in] */__RPC__in_opt IInspectable * item,
@@ -1157,8 +1162,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("1EE3416D-562B-486E-9EE5-0F0CBCC8048C"), exclusiveto, contract] */
                     MIDL_INTERFACE("1EE3416D-562B-486E-9EE5-0F0CBCC8048C")
-                    IMarkupExtension : IInspectable
+                    IMarkupExtension : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1196,8 +1202,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("65329C05-FB5A-4567-9D55-5CDFBADA2739"), exclusiveto, contract] */
                     MIDL_INTERFACE("65329C05-FB5A-4567-9D55-5CDFBADA2739")
-                    IMarkupExtensionFactory : IInspectable
+                    IMarkupExtensionFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -1240,8 +1247,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("393779BF-B9C0-4FFB-A57F-58E7356E425F"), exclusiveto, contract] */
                     MIDL_INTERFACE("393779BF-B9C0-4FFB-A57F-58E7356E425F")
-                    IMarkupExtensionOverrides : IInspectable
+                    IMarkupExtensionOverrides : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE ProvideValue(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
                             ) = 0;
@@ -1282,8 +1290,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("829D2AD3-620A-46F6-845D-436A05927100"), exclusiveto, contract] */
                     MIDL_INTERFACE("829D2AD3-620A-46F6-845D-436A05927100")
-                    IXamlBinaryWriter : IInspectable
+                    IXamlBinaryWriter : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1321,8 +1330,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("0D8ED07A-9B82-4AA8-B68B-026F2DE1CC86"), exclusiveto, contract] */
                     MIDL_INTERFACE("0D8ED07A-9B82-4AA8-B68B-026F2DE1CC86")
-                    IXamlBinaryWriterStatics : IInspectable
+                    IXamlBinaryWriterStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Write(
                             /* [in] */__RPC__in_opt __FIVector_1_Windows__CStorage__CStreams__CIRandomAccessStream * inputStreams,
                             /* [in] */__RPC__in_opt __FIVector_1_Windows__CStorage__CStreams__CIRandomAccessStream * outputStreams,
@@ -1366,8 +1376,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("FAA6FB06-8AB9-4EF7-8AE7-FBD30BBFD06D"), exclusiveto, contract] */
                     MIDL_INTERFACE("FAA6FB06-8AB9-4EF7-8AE7-FBD30BBFD06D")
-                    IXamlBindingHelper : IInspectable
+                    IXamlBindingHelper : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1405,8 +1416,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("F65CFB71-C80C-4FFA-86EE-558754EE336D"), exclusiveto, contract] */
                     MIDL_INTERFACE("F65CFB71-C80C-4FFA-86EE-558754EE336D")
-                    IXamlBindingHelperStatics : IInspectable
+                    IXamlBindingHelperStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataTemplateComponentProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -1551,8 +1563,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("D0E6673C-5342-44EF-85A7-ED327A739D9A"), exclusiveto, contract] */
                     MIDL_INTERFACE("D0E6673C-5342-44EF-85A7-ED327A739D9A")
-                    IXamlMarkupHelper : IInspectable
+                    IXamlMarkupHelper : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1590,8 +1603,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("C9BC3725-F34F-445C-81A2-6B72A5E8F072"), exclusiveto, contract] */
                     MIDL_INTERFACE("C9BC3725-F34F-445C-81A2-6B72A5E8F072")
-                    IXamlMarkupHelperStatics : IInspectable
+                    IXamlMarkupHelperStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE UnloadObject(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element
                             ) = 0;
@@ -1629,8 +1643,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("C541F58C-43A9-4216-B718-E0B11B14E93E"), contract] */
                     MIDL_INTERFACE("C541F58C-43A9-4216-B718-E0B11B14E93E")
-                    IXamlMember : IInspectable
+                    IXamlMember : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAttachable(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1691,8 +1706,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("B3765D69-68A5-4B32-8861-FDB90C1F5836"), contract] */
                     MIDL_INTERFACE("B3765D69-68A5-4B32-8861-FDB90C1F5836")
-                    IXamlMetadataProvider : IInspectable
+                    IXamlMetadataProvider : public IInspectable
                     {
+                    public:
                         /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE GetXamlType(
                             /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName type,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IXamlType * * xamlType
@@ -1742,8 +1758,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("24374CF1-CCEB-48BF-A514-41B0186F84C2"), exclusiveto, contract] */
                     MIDL_INTERFACE("24374CF1-CCEB-48BF-A514-41B0186F84C2")
-                    IXamlReader : IInspectable
+                    IXamlReader : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1781,8 +1798,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("9891C6BD-534F-4955-B85A-8A8DC0DCA602"), exclusiveto, contract] */
                     MIDL_INTERFACE("9891C6BD-534F-4955-B85A-8A8DC0DCA602")
-                    IXamlReaderStatics : IInspectable
+                    IXamlReaderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Load(
                             /* [in] */__RPC__in HSTRING xaml,
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
@@ -1825,8 +1843,9 @@ namespace ABI {
                 namespace Markup {
                     /* [object, uuid("7920EAB1-A2E5-479A-BD50-6CEF3C0B4970"), contract] */
                     MIDL_INTERFACE("7920EAB1-A2E5-479A-BD50-6CEF3C0B4970")
-                    IXamlType : IInspectable
+                    IXamlType : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BaseType(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IXamlType * * value
                             ) = 0;

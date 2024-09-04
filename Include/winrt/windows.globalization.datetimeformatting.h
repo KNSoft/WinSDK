@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.globalization.datetimeformatting.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -595,8 +597,9 @@ namespace ABI {
             namespace DateTimeFormatting {
                 /* [object, uuid("95EECA10-73E0-4E4B-A183-3D6AD0BA35EC"), exclusiveto, contract] */
                 MIDL_INTERFACE("95EECA10-73E0-4E4B-A183-3D6AD0BA35EC")
-                IDateTimeFormatter : IInspectable
+                IDateTimeFormatter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Languages(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -687,8 +690,9 @@ namespace ABI {
             namespace DateTimeFormatting {
                 /* [object, uuid("27C91A86-BDAA-4FD0-9E36-671D5AA5EE03"), exclusiveto, contract] */
                 MIDL_INTERFACE("27C91A86-BDAA-4FD0-9E36-671D5AA5EE03")
-                IDateTimeFormatter2 : IInspectable
+                IDateTimeFormatter2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE FormatUsingTimeZone(
                         /* [in] */ABI::Windows::Foundation::DateTime datetime,
                         /* [in] */__RPC__in HSTRING timeZoneId,
@@ -729,8 +733,9 @@ namespace ABI {
             namespace DateTimeFormatting {
                 /* [object, uuid("EC8D8A53-1A2E-412D-8815-3B745FB1A2A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("EC8D8A53-1A2E-412D-8815-3B745FB1A2A0")
-                IDateTimeFormatterFactory : IInspectable
+                IDateTimeFormatterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateDateTimeFormatter(
                         /* [in] */__RPC__in HSTRING formatTemplate,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::DateTimeFormatting::IDateTimeFormatter * * result
@@ -821,8 +826,9 @@ namespace ABI {
             namespace DateTimeFormatting {
                 /* [object, uuid("BFCDE7C0-DF4C-4A2E-9012-F47DAF3F1212"), exclusiveto, contract] */
                 MIDL_INTERFACE("BFCDE7C0-DF4C-4A2E-9012-F47DAF3F1212")
-                IDateTimeFormatterStatics : IInspectable
+                IDateTimeFormatterStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LongDate(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::DateTimeFormatting::IDateTimeFormatter * * value
                         ) = 0;

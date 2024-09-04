@@ -41,7 +41,9 @@
 // Warning 4624 is generated if the object has private destructor and the object cannot be created on the stack
 // ComPtr does not require the object to be created on the stack thus disabling the warning
 
-// Enable sealed / final optimizations for classes in release builds, and RemoveIUnknown of ComPtr in checked builds
+// Legacy artifact: This enabled sealed / final optimizations for classes in release builds, and blocking 
+// of access to AddRef/Release through ComPtr in checked builds. This guard has been removed, so prefer the C++ 
+// keywords intead.
 #if defined(_DEBUG) || defined(DBG)
 #define WrlFinal 
 #define WrlSealed 
@@ -55,59 +57,7 @@ namespace WRL {
 
 namespace Details
 {
-// Helper object that makes IUnknown methods private
-template <typename T>
-class RemoveIUnknownBase : public T
-{
-private:
-    ~RemoveIUnknownBase();
 
-    // STDMETHOD macro implies virtual.
-    // ComPtr can be used with any class that implements the 3 methods of IUnknown.
-    // ComPtr does not require these methods to be virtual.
-    // When ComPtr is used with a class without a virtual table, marking the functions
-    // as virtual in this class adds unnecessary overhead.
-
-    // WRL::ComPtr is designed to take over responsibility for managing
-    // COM ref-counts, reducing the risk of leaking references to COM objects
-    // (implying memory leaks) or of over-releasing (leading to crashes and/or
-    // heap corruption).  To maximize the safey of ComPtr-using code, RemoveIUnknown
-    // is used to hide from ComPtr clients direct access to the native IUnknown
-    // refcounting methods.  However, RemoveIUnknown is only used in checked/debug builds.
-    // Its implementation is incompatible with the performance win that
-    // comes from marking WRL-implemented runtimeclasses as "final" (or "sealed").
-    // That performance win is enabled in production/release builds, while
-    // ComPtr's use of RemoveIUnknown is enabled in check/debug builds.
-    // This difference in compile-time behavior between production/release and
-    // checked/debug builds leads to developer friction for any projects
-    // that do production builds more frequently than they do checked/debug builds;
-    // code that compiles in production builds fails in checked/debug builds.
-    // Experience has shown that ComPtr clients attempt to access
-    // IUnknown::QueryInterface far more commonly than they do IUnknown::AddRef
-    // or IUnknown::Release.  And that same experience has shown that they tend
-    // to use QueryInterface in a safe way, appropriately using a ComPtr to
-    // provide the output-paremeter to QueryInteface.  Based on that experience,
-    // RemoveIUnknown will no longer block access to QueryInterface.  (It is worth
-    // noting, however, that there is never an actual requirement to access
-    // QueryInterface directly; any caller could instead use a call
-    // to CompPtr::CopyTo(REFIID riid, void** ptr).)
-    //
-    // HRESULT __stdcall QueryInterface(REFIID riid, _COM_Outptr_ void **ppvObject);
-    ULONG __stdcall AddRef();
-    ULONG __stdcall Release();
-};
-
-template<typename T>
-struct RemoveIUnknown
-{
-    typedef RemoveIUnknownBase<T> ReturnType;
-};
-
-template<typename T>
-struct RemoveIUnknown<const T>
-{
-    typedef const RemoveIUnknownBase<T> ReturnType;
-};
 
 template <typename T> // T should be the ComPtr<T> or a derived type of it, not just the interface
 class ComPtrRefBase
@@ -361,18 +311,10 @@ public:
         return ptr_;
     }
 
-#if defined(_DEBUG) || defined(DBG)
-    typename Details::RemoveIUnknown<InterfaceType>::ReturnType* operator->() const throw()
-    {
-        return static_cast<typename Details::RemoveIUnknown<InterfaceType>::ReturnType*>(ptr_);
-    }
-#else
-    // allow use of sealed / final in retail builds.
     InterfaceType* operator->() const throw()
     {
         return ptr_;
     }
-#endif
 
     Details::ComPtrRef<ComPtr<T>> operator&() throw()
     {

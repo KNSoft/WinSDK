@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.networking.xboxlive.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION)
@@ -226,11 +228,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1249,6 +1251,7 @@ namespace ABI {
 
 
 #if WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
+#if WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPair_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairStateChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPair_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairStateChangedEventArgs_USE
@@ -1278,6 +1281,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::XboxLive::XboxLiveEndpointP
 
 
 #endif // WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1290,6 +1294,7 @@ namespace ABI {
     } /* XboxLive */} /* ABI */
 
 
+#if WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 #if WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairTemplate_Windows__CNetworking__CXboxLive__CXboxLiveInboundEndpointPairCreatedEventArgs_USE
@@ -1319,6 +1324,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::XboxLive::XboxLiveEndpointP
 #endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairTemplate_Windows__CNetworking__CXboxLive__CXboxLiveInboundEndpointPairCreatedEventArgs_USE */
 
 
+#endif // WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 
 
@@ -1739,8 +1745,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("F5BBD279-3C86-4B57-A31A-B9462408FD01"), exclusiveto, contract] */
                 MIDL_INTERFACE("F5BBD279-3C86-4B57-A31A-B9462408FD01")
-                IXboxLiveDeviceAddress : IInspectable
+                IXboxLiveDeviceAddress : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SnapshotChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveDeviceAddress_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1807,8 +1814,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("5954A819-4A79-4931-827C-7F503E963263"), exclusiveto, contract] */
                 MIDL_INTERFACE("5954A819-4A79-4931-827C-7F503E963263")
-                IXboxLiveDeviceAddressStatics : IInspectable
+                IXboxLiveDeviceAddressStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromSnapshotBase64(
                         /* [in] */__RPC__in HSTRING base64,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::XboxLive::IXboxLiveDeviceAddress * * value
@@ -1863,8 +1871,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("1E9A839B-813E-44E0-B87F-C87A093475E4"), exclusiveto, contract] */
                 MIDL_INTERFACE("1E9A839B-813E-44E0-B87F-C87A093475E4")
-                IXboxLiveEndpointPair : IInspectable
+                IXboxLiveEndpointPair : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_StateChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPair_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairStateChangedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1939,8 +1948,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("D9A8BB95-2AAB-4D1E-9794-33ECC0DCF0FE"), exclusiveto, contract] */
                 MIDL_INTERFACE("D9A8BB95-2AAB-4D1E-9794-33ECC0DCF0FE")
-                IXboxLiveEndpointPairCreationResult : IInspectable
+                IXboxLiveEndpointPairCreationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceAddress(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::XboxLive::IXboxLiveDeviceAddress * * value
                         ) = 0;
@@ -1988,8 +1998,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("592E3B55-DE08-44E7-AC3B-B9B9A169583A"), exclusiveto, contract] */
                 MIDL_INTERFACE("592E3B55-DE08-44E7-AC3B-B9B9A169583A")
-                IXboxLiveEndpointPairStateChangedEventArgs : IInspectable
+                IXboxLiveEndpointPairStateChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OldState(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::XboxLive::XboxLiveEndpointPairState * value
                         ) = 0;
@@ -2031,8 +2042,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("64316B30-217A-4243-8EE1-6729281D27DB"), exclusiveto, contract] */
                 MIDL_INTERFACE("64316B30-217A-4243-8EE1-6729281D27DB")
-                IXboxLiveEndpointPairStatics : IInspectable
+                IXboxLiveEndpointPairStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindEndpointPairBySocketAddressBytes(
                         /* [in] */UINT32 __localSocketAddressSize,
                         /* [size_is(__localSocketAddressSize), in] */__RPC__in_ecount_full(__localSocketAddressSize) BYTE * localSocketAddress,
@@ -2082,8 +2094,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("6B286ECF-3457-40CE-B9A1-C0CFE0213EA7"), exclusiveto, contract] */
                 MIDL_INTERFACE("6B286ECF-3457-40CE-B9A1-C0CFE0213EA7")
-                IXboxLiveEndpointPairTemplate : IInspectable
+                IXboxLiveEndpointPairTemplate : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_InboundEndpointPairCreated(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairTemplate_Windows__CNetworking__CXboxLive__CXboxLiveInboundEndpointPairCreatedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -2169,8 +2182,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("1E13137B-737B-4A23-BC64-0870F75655BA"), exclusiveto, contract] */
                 MIDL_INTERFACE("1E13137B-737B-4A23-BC64-0870F75655BA")
-                IXboxLiveEndpointPairTemplateStatics : IInspectable
+                IXboxLiveEndpointPairTemplateStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetTemplateByName(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplate * * namedTemplate
@@ -2213,8 +2227,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("DC183B62-22BA-48D2-80DE-C23968BD198B"), exclusiveto, contract] */
                 MIDL_INTERFACE("DC183B62-22BA-48D2-80DE-C23968BD198B")
-                IXboxLiveInboundEndpointPairCreatedEventArgs : IInspectable
+                IXboxLiveInboundEndpointPairCreatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EndpointPair(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::XboxLive::IXboxLiveEndpointPair * * value
                         ) = 0;
@@ -2253,8 +2268,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("4D682BCE-A5D6-47E6-A236-CFDE5FBDF2ED"), exclusiveto, contract] */
                 MIDL_INTERFACE("4D682BCE-A5D6-47E6-A236-CFDE5FBDF2ED")
-                IXboxLiveQualityOfServiceMeasurement : IInspectable
+                IXboxLiveQualityOfServiceMeasurement : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE MeasureAsync(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * action
                         ) = 0;
@@ -2343,8 +2359,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("6E352DCA-23CF-440A-B077-5E30857A8234"), exclusiveto, contract] */
                 MIDL_INTERFACE("6E352DCA-23CF-440A-B077-5E30857A8234")
-                IXboxLiveQualityOfServiceMeasurementStatics : IInspectable
+                IXboxLiveQualityOfServiceMeasurementStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE PublishPrivatePayloadBytes(
                         /* [in] */UINT32 __payloadSize,
                         /* [size_is(__payloadSize), in] */__RPC__in_ecount_full(__payloadSize) BYTE * payload
@@ -2412,8 +2429,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("AEEC53D1-3561-4782-B0CF-D3AE29D9FA87"), exclusiveto, contract] */
                 MIDL_INTERFACE("AEEC53D1-3561-4782-B0CF-D3AE29D9FA87")
-                IXboxLiveQualityOfServiceMetricResult : IInspectable
+                IXboxLiveQualityOfServiceMetricResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::XboxLive::XboxLiveQualityOfServiceMeasurementStatus * value
                         ) = 0;
@@ -2461,8 +2479,9 @@ namespace ABI {
             namespace XboxLive {
                 /* [object, uuid("5A6302AE-6F38-41C0-9FCC-EA6CB978CAFC"), exclusiveto, contract] */
                 MIDL_INTERFACE("5A6302AE-6F38-41C0-9FCC-EA6CB978CAFC")
-                IXboxLiveQualityOfServicePrivatePayloadResult : IInspectable
+                IXboxLiveQualityOfServicePrivatePayloadResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::XboxLive::XboxLiveQualityOfServiceMeasurementStatus * value
                         ) = 0;
@@ -4887,6 +4906,7 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveDevi
 
 
 #if WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
+#if WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPair_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairStateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPair_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairStateChangedEventArgs_INTERFACE_DEFINED__
 
@@ -4934,9 +4954,11 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndp
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPair_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairStateChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 #if WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairTemplate_Windows__CNetworking__CXboxLive__CXboxLiveInboundEndpointPairCreatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairTemplate_Windows__CNetworking__CXboxLive__CXboxLiveInboundEndpointPairCreatedEventArgs_INTERFACE_DEFINED__
@@ -4984,6 +5006,7 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndp
 
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CXboxLive__CXboxLiveEndpointPairTemplate_Windows__CNetworking__CXboxLive__CXboxLiveInboundEndpointPairCreatedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_NETWORKING_XBOXLIVE_XBOXLIVESECURESOCKETSCONTRACT_VERSION >= 0x10000
 
 

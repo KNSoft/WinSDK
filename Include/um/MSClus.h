@@ -1257,6 +1257,15 @@ enum CLUSTER_OBJECT_TYPE
         CLUSTER_OBJECT_TYPE_GROUPSET	= 0xd
     } 	CLUSTER_OBJECT_TYPE;
 
+typedef 
+enum CLUSTERSET_OBJECT_TYPE
+    {
+        CLUSTERSET_OBJECT_TYPE_NONE	= 0,
+        CLUSTERSET_OBJECT_TYPE_MEMBER	= 0x1,
+        CLUSTERSET_OBJECT_TYPE_WORKLOAD	= 0x2,
+        CLUSTERSET_OBJECT_TYPE_DATABASE	= 0x3
+    } 	CLUSTERSET_OBJECT_TYPE;
+
 typedef struct _NOTIFY_FILTER_AND_TYPE
     {
     DWORD dwObjectType;
@@ -1338,7 +1347,8 @@ enum CLUSTER_NODE_STATUS
         NodeStatusDrainInProgress	= 0x4,
         NodeStatusDrainCompleted	= 0x8,
         NodeStatusDrainFailed	= 0x10,
-        NodeStatusMax	= ( ( NodeStatusIsolated | NodeStatusQuarantined )  | NodeStatusDrainFailed ) 
+        NodeStatusAvoidPlacement	= 0x20,
+        NodeStatusMax	= ( ( ( NodeStatusIsolated | NodeStatusQuarantined )  | NodeStatusDrainFailed )  | NodeStatusAvoidPlacement ) 
     } 	CLUSTER_NODE_STATUS;
 
 typedef 

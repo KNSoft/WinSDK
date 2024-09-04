@@ -81,13 +81,13 @@ __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(char *, __RETURN_POLICY_DST, __EMPTY_DEC
 #if __STDC_WANT_SECURE_LIB__
 _Check_return_wat_ _CRTIMP_ALT errno_t __ALTDECL strcpy_s(_Out_writes_z_(_SizeInBytes) char * _Dst, _In_ rsize_t _SizeInBytes, _In_z_ const char * _Src);
 #endif
-__DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, strcpy_s, _Deref_post_z_ char, _Dest, _In_z_ const char *, _Source)
+__DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, strcpy_s, _Post_z_ char, _Dest, _In_z_ const char *, _Source)
 #pragma prefast (suppress: __WARNING_BANNED_API_USAGE, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(char *, __RETURN_POLICY_DST, __EMPTY_DECLSPEC, strcpy, _Out_writes_z_(_String_length_(_Source) + 1), char, _Dest, _In_z_ const char *, _Source)
 #if __STDC_WANT_SECURE_LIB__
 _Check_return_wat_ _CRTIMP_ALT errno_t __ALTDECL strcat_s(_Inout_updates_z_(_SizeInBytes) char * _Dst, _In_ rsize_t _SizeInBytes, _In_z_ const char * _Src);
 #endif
-__DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, strcat_s, _Deref_prepost_z_ char, _Dest, _In_z_ const char *, _Source)
+__DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, strcat_s, _Inout_z_ char, _Dest, _In_z_ const char *, _Source)
 #pragma prefast (suppress: __WARNING_BANNED_API_USAGE, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(char *, __RETURN_POLICY_DST, __EMPTY_DECLSPEC, strcat, _Inout_updates_z_(_String_length_(_Dest) + _String_length_(_Source) + 1), char, _Dest, _In_z_ const char *, _Source)
         _Check_return_ int     __cdecl strcmp(_In_z_ const char * _Str1, _In_z_ const char * _Str2);

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.authentication.identity.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -398,8 +400,9 @@ namespace ABI {
                 namespace Identity {
                     /* [object, uuid("38321ACC-672B-4823-B603-6B3C753DAF97"), exclusiveto, contract] */
                     MIDL_INTERFACE("38321ACC-672B-4823-B603-6B3C753DAF97")
-                    IEnterpriseKeyCredentialRegistrationInfo : IInspectable
+                    IEnterpriseKeyCredentialRegistrationInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TenantId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -452,8 +455,9 @@ namespace ABI {
                 namespace Identity {
                     /* [object, uuid("83F3BE3F-A25F-4CBA-BB8E-BDC32D03C297"), exclusiveto, contract] */
                     MIDL_INTERFACE("83F3BE3F-A25F-4CBA-BB8E-BDC32D03C297")
-                    IEnterpriseKeyCredentialRegistrationManager : IInspectable
+                    IEnterpriseKeyCredentialRegistrationManager : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetRegistrationsAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CEnterpriseKeyCredentialRegistrationInfo * * value
                             ) = 0;
@@ -494,8 +498,9 @@ namespace ABI {
                 namespace Identity {
                     /* [object, uuid("77B85E9E-ACF4-4BC0-BAC2-40BB46EFBB3F"), exclusiveto, contract] */
                     MIDL_INTERFACE("77B85E9E-ACF4-4BC0-BAC2-40BB46EFBB3F")
-                    IEnterpriseKeyCredentialRegistrationManagerStatics : IInspectable
+                    IEnterpriseKeyCredentialRegistrationManagerStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager * * value
                             ) = 0;

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.printing.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -618,8 +620,9 @@ namespace ABI {
                 namespace Printing {
                     /* [object, uuid("D4B57970-57A0-4209-847C-C093B54BC729"), contract] */
                     MIDL_INTERFACE("D4B57970-57A0-4209-847C-C093B54BC729")
-                    IAddPagesEventHandler : IUnknown
+                    IAddPagesEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Printing::IAddPagesEventArgs * e
@@ -657,8 +660,9 @@ namespace ABI {
                 namespace Printing {
                     /* [object, uuid("CCB3E9ED-9C11-4E50-AB49-E98086BBFDEF"), contract] */
                     MIDL_INTERFACE("CCB3E9ED-9C11-4E50-AB49-E98086BBFDEF")
-                    IGetPreviewPageEventHandler : IUnknown
+                    IGetPreviewPageEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs * e
@@ -696,8 +700,9 @@ namespace ABI {
                 namespace Printing {
                     /* [object, uuid("0CC05B61-811B-4A32-9965-13EB78DBB01B"), contract] */
                     MIDL_INTERFACE("0CC05B61-811B-4A32-9965-13EB78DBB01B")
-                    IPaginateEventHandler : IUnknown
+                    IPaginateEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Printing::IPaginateEventArgs * e
@@ -739,8 +744,9 @@ namespace ABI {
                 namespace Printing {
                     /* [object, uuid("E2E52BE5-056C-4420-9795-CB3526CE0C20"), exclusiveto, contract] */
                     MIDL_INTERFACE("E2E52BE5-056C-4420-9795-CB3526CE0C20")
-                    IAddPagesEventArgs : IInspectable
+                    IAddPagesEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrintTaskOptions(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing::IPrintTaskOptionsCore * * value
                             ) = 0;
@@ -781,8 +787,9 @@ namespace ABI {
                 namespace Printing {
                     /* [object, uuid("A43D703D-DEA9-4DF6-A7ED-35049CD485C7"), exclusiveto, contract] */
                     MIDL_INTERFACE("A43D703D-DEA9-4DF6-A7ED-35049CD485C7")
-                    IGetPreviewPageEventArgs : IInspectable
+                    IGetPreviewPageEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PageNumber(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -823,8 +830,9 @@ namespace ABI {
                 namespace Printing {
                     /* [object, uuid("ED945FD6-79AB-42B7-930A-3D6E09011D21"), exclusiveto, contract] */
                     MIDL_INTERFACE("ED945FD6-79AB-42B7-930A-3D6E09011D21")
-                    IPaginateEventArgs : IInspectable
+                    IPaginateEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrintTaskOptions(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing::IPrintTaskOptionsCore * * value
                             ) = 0;
@@ -868,8 +876,9 @@ namespace ABI {
                 namespace Printing {
                     /* [object, uuid("E44327C3-A999-485B-B1D8-72DC517821E6"), exclusiveto, contract] */
                     MIDL_INTERFACE("E44327C3-A999-485B-B1D8-72DC517821E6")
-                    IPrintDocument : IInspectable
+                    IPrintDocument : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DocumentSource(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing::IPrintDocumentSource * * value
                             ) = 0;
@@ -944,8 +953,9 @@ namespace ABI {
                 namespace Printing {
                     /* [object, uuid("FB87B18F-2606-4A2F-99D4-A7CDBC35D7C7"), exclusiveto, contract] */
                     MIDL_INTERFACE("FB87B18F-2606-4A2F-99D4-A7CDBC35D7C7")
-                    IPrintDocumentFactory : IInspectable
+                    IPrintDocumentFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -988,8 +998,9 @@ namespace ABI {
                 namespace Printing {
                     /* [object, uuid("FD970A3C-B152-49E0-A6BD-6AA6477E43C7"), exclusiveto, contract] */
                     MIDL_INTERFACE("FD970A3C-B152-49E0-A6BD-6AA6477E43C7")
-                    IPrintDocumentStatics : IInspectable
+                    IPrintDocumentStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DocumentSourceProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;

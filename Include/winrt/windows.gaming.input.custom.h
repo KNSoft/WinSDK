@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.gaming.input.custom.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -958,8 +960,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("69A0AE5E-758E-4CBE-ACE6-62155FE9126F"), contract] */
                     MIDL_INTERFACE("69A0AE5E-758E-4CBE-ACE6-62155FE9126F")
-                    ICustomGameControllerFactory : IInspectable
+                    ICustomGameControllerFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateGameController(
                             /* [in] */__RPC__in_opt ABI::Windows::Gaming::Input::Custom::IGameControllerProvider * provider,
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
@@ -1007,8 +1010,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("36CB66E3-D0A1-4986-A24C-40B137DEBA9E"), exclusiveto, contract] */
                     MIDL_INTERFACE("36CB66E3-D0A1-4986-A24C-40B137DEBA9E")
-                    IGameControllerFactoryManagerStatics : IInspectable
+                    IGameControllerFactoryManagerStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE RegisterCustomFactoryForGipInterface(
                             /* [in] */__RPC__in_opt ABI::Windows::Gaming::Input::Custom::ICustomGameControllerFactory * factory,
                             /* [in] */GUID interfaceId
@@ -1064,8 +1068,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("EACE5644-19DF-4115-B32A-2793E2AEA3BB"), exclusiveto, contract] */
                     MIDL_INTERFACE("EACE5644-19DF-4115-B32A-2793E2AEA3BB")
-                    IGameControllerFactoryManagerStatics2 : IInspectable
+                    IGameControllerFactoryManagerStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE TryGetFactoryControllerFromGameController(
                             /* [in] */__RPC__in_opt ABI::Windows::Gaming::Input::Custom::ICustomGameControllerFactory * factory,
                             /* [in] */__RPC__in_opt ABI::Windows::Gaming::Input::IGameController * gameController,
@@ -1105,8 +1110,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("1FF6F922-C640-4C78-A820-9A715C558BCB"), contract] */
                     MIDL_INTERFACE("1FF6F922-C640-4C78-A820-9A715C558BCB")
-                    IGameControllerInputSink : IInspectable
+                    IGameControllerInputSink : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OnInputResumed(
                             /* [in] */UINT64 timestamp
                             ) = 0;
@@ -1147,8 +1153,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("E6D73982-2996-4559-B16C-3E57D46E58D6"), contract] */
                     MIDL_INTERFACE("E6D73982-2996-4559-B16C-3E57D46E58D6")
-                    IGameControllerProvider : IInspectable
+                    IGameControllerProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FirmwareVersionInfo(
                             /* [retval, out] */__RPC__out ABI::Windows::Gaming::Input::Custom::GameControllerVersionInfo * value
                             ) = 0;
@@ -1201,8 +1208,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("6B794D32-8553-4292-8E03-E16651A2F8BC"), exclusiveto, contract] */
                     MIDL_INTERFACE("6B794D32-8553-4292-8E03-E16651A2F8BC")
-                    IGipFirmwareUpdateResult : IInspectable
+                    IGipFirmwareUpdateResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedErrorCode(
                             /* [retval, out] */__RPC__out UINT32 * value
                             ) = 0;
@@ -1250,8 +1258,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("A2108ABF-09F1-43BC-A140-80F899EC36FB"), contract] */
                     MIDL_INTERFACE("A2108ABF-09F1-43BC-A140-80F899EC36FB")
-                    IGipGameControllerInputSink : IInspectable
+                    IGipGameControllerInputSink : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OnKeyReceived(
                             /* [in] */UINT64 timestamp,
                             /* [in] */BYTE keyCode,
@@ -1306,8 +1315,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("DBCF1E19-1AF5-45A8-BF02-A0EE50C823FC"), exclusiveto, contract] */
                     MIDL_INTERFACE("DBCF1E19-1AF5-45A8-BF02-A0EE50C823FC")
-                    IGipGameControllerProvider : IInspectable
+                    IGipGameControllerProvider : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SendMessage(
                             /* [in] */ABI::Windows::Gaming::Input::Custom::GipMessageClass messageClass,
                             /* [in] */BYTE messageId,
@@ -1364,8 +1374,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("F754C322-182D-40E4-A126-FCEE4FFA1E31"), contract] */
                     MIDL_INTERFACE("F754C322-182D-40E4-A126-FCEE4FFA1E31")
-                    IHidGameControllerInputSink : IInspectable
+                    IHidGameControllerInputSink : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OnInputReportReceived(
                             /* [in] */UINT64 timestamp,
                             /* [in] */BYTE reportId,
@@ -1413,8 +1424,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("95CE3AF4-ABF0-4B68-A081-3B7DE73FF0E7"), exclusiveto, contract] */
                     MIDL_INTERFACE("95CE3AF4-ABF0-4B68-A081-3B7DE73FF0E7")
-                    IHidGameControllerProvider : IInspectable
+                    IHidGameControllerProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UsageId(
                             /* [retval, out] */__RPC__out UINT16 * value
                             ) = 0;
@@ -1474,8 +1486,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("B2AC1D95-6ECB-42B3-8AAB-025401CA4712"), contract] */
                     MIDL_INTERFACE("B2AC1D95-6ECB-42B3-8AAB-025401CA4712")
-                    IXusbGameControllerInputSink : IInspectable
+                    IXusbGameControllerInputSink : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OnInputReceived(
                             /* [in] */UINT64 timestamp,
                             /* [in] */BYTE reportId,
@@ -1523,8 +1536,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("6E2971EB-0EFB-48B4-808B-837643B2F216"), exclusiveto, contract] */
                     MIDL_INTERFACE("6E2971EB-0EFB-48B4-808B-837643B2F216")
-                    IXusbGameControllerProvider : IInspectable
+                    IXusbGameControllerProvider : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SetVibration(
                             /* [in] */DOUBLE lowFrequencyMotorSpeed,
                             /* [in] */DOUBLE highFrequencyMotorSpeed

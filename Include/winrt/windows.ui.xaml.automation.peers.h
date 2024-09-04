@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.automation.peers.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -530,6 +532,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer7_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface IAutomationPeer8;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer8
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation_FWD_DEFINED__
 namespace ABI {
@@ -710,6 +730,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides6_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface IAutomationPeerOverrides8;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides8
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_FWD_DEFINED__
 namespace ABI {
@@ -835,6 +873,42 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory ABI::Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeerFactory
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface ICalendarDatePickerAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer ABI::Windows::UI::Xaml::Automation::Peers::ICalendarDatePickerAutomationPeer
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface ICalendarDatePickerAutomationPeerFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory ABI::Windows::UI::Xaml::Automation::Peers::ICalendarDatePickerAutomationPeerFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeer_FWD_DEFINED__
@@ -3500,6 +3574,78 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface ITreeViewItemAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewItemAutomationPeer
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface ITreeViewItemAutomationPeerFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewItemAutomationPeerFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface ITreeViewListAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewListAutomationPeer
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface ITreeViewListAutomationPeerFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewListAutomationPeerFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_FWD_DEFINED__
+
 // Parameterized interface forward declarations (C++)
 
 // Collection interface definitions
@@ -4413,6 +4559,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CIButton ABI::Windows::UI::Xaml::Controls::IButton
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIButton_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    class CalendarDatePicker;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    interface ICalendarDatePicker;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker ABI::Windows::UI::Xaml::Controls::ICalendarDatePicker
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker_FWD_DEFINED__
 
 
 namespace ABI {
@@ -6140,6 +6314,62 @@ namespace ABI {
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIToggleSwitch_FWD_DEFINED__
 
 
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    class TreeViewItem;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    interface ITreeViewItem;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem ABI::Windows::UI::Xaml::Controls::ITreeViewItem
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    class TreeViewList;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    interface ITreeViewList;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList ABI::Windows::UI::Xaml::Controls::ITreeViewList
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList_FWD_DEFINED__
+
+
 
 
 
@@ -6257,6 +6487,21 @@ namespace ABI {
                     namespace Peers {
                         
                         typedef enum AutomationEvents : int AutomationEvents;
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        
+                        typedef enum AutomationHeadingLevel : int AutomationHeadingLevel;
                         
                     } /* Windows */
                 } /* UI */
@@ -6579,6 +6824,14 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -6658,6 +6911,20 @@ namespace ABI {
                 namespace Automation {
                     namespace Peers {
                         class ButtonBaseAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        class CalendarDatePickerAutomationPeer;
                     } /* Windows */
                 } /* UI */
             } /* Xaml */
@@ -7743,6 +8010,34 @@ namespace ABI {
     } /* Peers */} /* ABI */
 
 
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        class TreeViewItemAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        class TreeViewListAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+
 
 
 
@@ -7950,6 +8245,45 @@ namespace ABI {
         } /* Automation */
     } /* Peers */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Automation.Peers.AutomationHeadingLevel
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [v1_enum, contract] */
+                        enum AutomationHeadingLevel : int
+                        {
+                            AutomationHeadingLevel_None = 0,
+                            AutomationHeadingLevel_Level1 = 1,
+                            AutomationHeadingLevel_Level2 = 2,
+                            AutomationHeadingLevel_Level3 = 3,
+                            AutomationHeadingLevel_Level4 = 4,
+                            AutomationHeadingLevel_Level5 = 5,
+                            AutomationHeadingLevel_Level6 = 6,
+                            AutomationHeadingLevel_Level7 = 7,
+                            AutomationHeadingLevel_Level8 = 8,
+                            AutomationHeadingLevel_Level9 = 9,
+                        };
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8337,8 +8671,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("8B4ACFEB-89FA-4F13-84BE-35CA5B7C9590"), exclusiveto, contract] */
                         MIDL_INTERFACE("8B4ACFEB-89FA-4F13-84BE-35CA5B7C9590")
-                        IAppBarAutomationPeer : IInspectable
+                        IAppBarAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8378,8 +8713,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("8360F4E2-E396-4517-AF5D-F4CF34C54EDF"), exclusiveto, contract] */
                         MIDL_INTERFACE("8360F4E2-E396-4517-AF5D-F4CF34C54EDF")
-                        IAppBarAutomationPeerFactory : IInspectable
+                        IAppBarAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IAppBar * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -8425,8 +8761,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("443262B2-4F6D-4B76-9D2E-3EFF777E8864"), exclusiveto, contract] */
                         MIDL_INTERFACE("443262B2-4F6D-4B76-9D2E-3EFF777E8864")
-                        IAppBarButtonAutomationPeer : IInspectable
+                        IAppBarButtonAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8466,8 +8803,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("AEF0342A-ACB7-42DC-97E3-847071865FD6"), exclusiveto, contract] */
                         MIDL_INTERFACE("AEF0342A-ACB7-42DC-97E3-847071865FD6")
-                        IAppBarButtonAutomationPeerFactory : IInspectable
+                        IAppBarButtonAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IAppBarButton * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -8513,8 +8851,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("8464EFAD-9655-4AFF-9550-63AE9EC8FE9C"), exclusiveto, contract] */
                         MIDL_INTERFACE("8464EFAD-9655-4AFF-9550-63AE9EC8FE9C")
-                        IAppBarToggleButtonAutomationPeer : IInspectable
+                        IAppBarToggleButtonAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8554,8 +8893,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("D6F9139D-02C1-4221-9591-7D4EFEB74701"), exclusiveto, contract] */
                         MIDL_INTERFACE("D6F9139D-02C1-4221-9591-7D4EFEB74701")
-                        IAppBarToggleButtonAutomationPeerFactory : IInspectable
+                        IAppBarToggleButtonAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IAppBarToggleButton * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -8601,8 +8941,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("2F32C302-F99B-491D-9726-A5E181643EFA"), exclusiveto, contract] */
                         MIDL_INTERFACE("2F32C302-F99B-491D-9726-A5E181643EFA")
-                        IAutoSuggestBoxAutomationPeer : IInspectable
+                        IAutoSuggestBoxAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8642,8 +8983,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("80046849-18E7-4475-B362-4BBD53D24562"), exclusiveto, contract] */
                         MIDL_INTERFACE("80046849-18E7-4475-B362-4BBD53D24562")
-                        IAutoSuggestBoxAutomationPeerFactory : IInspectable
+                        IAutoSuggestBoxAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IAutoSuggestBox * owner,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutoSuggestBoxAutomationPeer * * instance
@@ -8687,8 +9029,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("35AAC87A-62EE-4D3E-A24C-2BC8432D68B7"), exclusiveto, contract] */
                         MIDL_INTERFACE("35AAC87A-62EE-4D3E-A24C-2BC8432D68B7")
-                        IAutomationPeer : IInspectable
+                        IAutomationPeer : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EventsSource(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * value
                                 ) = 0;
@@ -8835,8 +9178,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("EA1F89C7-EBF5-4AB8-88F7-680D821DAC61"), exclusiveto, contract] */
                         MIDL_INTERFACE("EA1F89C7-EBF5-4AB8-88F7-680D821DAC61")
-                        IAutomationPeer2 : IInspectable
+                        IAutomationPeer2 : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8876,8 +9220,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("D3CFB977-0084-41D7-A221-28158D3BC32C"), exclusiveto, contract] */
                         MIDL_INTERFACE("D3CFB977-0084-41D7-A221-28158D3BC32C")
-                        IAutomationPeer3 : IInspectable
+                        IAutomationPeer3 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Navigate(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction,
                                 /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
@@ -8955,8 +9300,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("761CE752-73C1-4F44-BE75-43C49EC0D4D5"), exclusiveto, contract] */
                         MIDL_INTERFACE("761CE752-73C1-4F44-BE75-43C49EC0D4D5")
-                        IAutomationPeer4 : IInspectable
+                        IAutomationPeer4 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetLandmarkType(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * returnValue
                                 ) = 0;
@@ -9002,8 +9348,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F632E1C6-0A3F-4574-9FEF-CDC151765674"), exclusiveto, contract] */
                         MIDL_INTERFACE("F632E1C6-0A3F-4574-9FEF-CDC151765674")
-                        IAutomationPeer5 : IInspectable
+                        IAutomationPeer5 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE IsPeripheral(
                                 /* [retval, out] */__RPC__out boolean * returnValue
                                 ) = 0;
@@ -9052,8 +9399,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("CAF8608F-13FF-42FB-866D-22206434CC6B"), exclusiveto, contract] */
                         MIDL_INTERFACE("CAF8608F-13FF-42FB-866D-22206434CC6B")
-                        IAutomationPeer6 : IInspectable
+                        IAutomationPeer6 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetCulture(
                                 /* [retval, out] */__RPC__out INT32 * returnValue
                                 ) = 0;
@@ -9096,8 +9444,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("796B3287-E642-48AB-B223-5208B41DA9D6"), exclusiveto, contract] */
                         MIDL_INTERFACE("796B3287-E642-48AB-B223-5208B41DA9D6")
-                        IAutomationPeer7 : IInspectable
+                        IAutomationPeer7 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE RaiseNotificationEvent(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationNotificationKind notificationKind,
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationNotificationProcessing notificationProcessing,
@@ -9118,6 +9467,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer7;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer7_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeer8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.AutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IAutomationPeer8[] = L"Windows.UI.Xaml.Automation.Peers.IAutomationPeer8";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("5C6A1FE6-9A55-4D7F-9498-CFE429E92DA8"), exclusiveto, contract] */
+                        MIDL_INTERFACE("5C6A1FE6-9A55-4D7F-9498-CFE429E92DA8")
+                        IAutomationPeer8 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE GetHeadingLevel(
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel * returnValue
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAutomationPeer8=_uuidof(IAutomationPeer8);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9143,8 +9537,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("0C456061-52CF-43FA-82F8-07F137351E5A"), exclusiveto, contract] */
                         MIDL_INTERFACE("0C456061-52CF-43FA-82F8-07F137351E5A")
-                        IAutomationPeerAnnotation : IInspectable
+                        IAutomationPeerAnnotation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::AnnotationType * value
                                 ) = 0;
@@ -9196,8 +9591,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F59C439E-C65B-43CD-9009-03FC023363A7"), exclusiveto, contract] */
                         MIDL_INTERFACE("F59C439E-C65B-43CD-9009-03FC023363A7")
-                        IAutomationPeerAnnotationFactory : IInspectable
+                        IAutomationPeerAnnotationFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::AnnotationType type,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation * * instance
@@ -9246,8 +9642,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("8809A87D-09B2-4D45-B78B-1D3B3B09F661"), exclusiveto, contract] */
                         MIDL_INTERFACE("8809A87D-09B2-4D45-B78B-1D3B3B09F661")
-                        IAutomationPeerAnnotationStatics : IInspectable
+                        IAutomationPeerAnnotationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TypeProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9293,8 +9690,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("20C27545-A88B-43C8-BC24-CEA9DAFD04A3"), exclusiveto, contract] */
                         MIDL_INTERFACE("20C27545-A88B-43C8-BC24-CEA9DAFD04A3")
-                        IAutomationPeerFactory : IInspectable
+                        IAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -9339,8 +9737,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("BEA93E67-DBEE-4F7B-AF0D-A79AAE5333BF"), exclusiveto, contract] */
                         MIDL_INTERFACE("BEA93E67-DBEE-4F7B-AF0D-A79AAE5333BF")
-                        IAutomationPeerOverrides : IInspectable
+                        IAutomationPeerOverrides : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetPatternCore(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface,
                                 /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
@@ -9461,8 +9860,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("2603682A-9DA6-4023-B496-496E5EF228D2"), exclusiveto, contract] */
                         MIDL_INTERFACE("2603682A-9DA6-4023-B496-496E5EF228D2")
-                        IAutomationPeerOverrides2 : IInspectable
+                        IAutomationPeerOverrides2 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE ShowContextMenuCore(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetControlledPeersCore(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
@@ -9506,8 +9906,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("B6F0C4AD-4D39-49E6-BB91-D924EEFD8538"), exclusiveto, contract] */
                         MIDL_INTERFACE("B6F0C4AD-4D39-49E6-BB91-D924EEFD8538")
-                        IAutomationPeerOverrides3 : IInspectable
+                        IAutomationPeerOverrides3 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE NavigateCore(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction,
                                 /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
@@ -9570,8 +9971,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("B186CDA2-5D46-4BCD-A811-269AD15B3AEE"), exclusiveto, contract] */
                         MIDL_INTERFACE("B186CDA2-5D46-4BCD-A811-269AD15B3AEE")
-                        IAutomationPeerOverrides4 : IInspectable
+                        IAutomationPeerOverrides4 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetLandmarkTypeCore(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * returnValue
                                 ) = 0;
@@ -9617,8 +10019,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("2C847C85-781E-49F7-9FEF-B9E14D014707"), exclusiveto, contract] */
                         MIDL_INTERFACE("2C847C85-781E-49F7-9FEF-B9E14D014707")
-                        IAutomationPeerOverrides5 : IInspectable
+                        IAutomationPeerOverrides5 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE IsPeripheralCore(
                                 /* [retval, out] */__RPC__out boolean * returnValue
                                 ) = 0;
@@ -9676,8 +10079,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("E98BABE7-F6FF-444C-9C0D-277EAF0AD9C0"), exclusiveto, contract] */
                         MIDL_INTERFACE("E98BABE7-F6FF-444C-9C0D-277EAF0AD9C0")
-                        IAutomationPeerOverrides6 : IInspectable
+                        IAutomationPeerOverrides6 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetCultureCore(
                                 /* [retval, out] */__RPC__out INT32 * returnValue
                                 ) = 0;
@@ -9695,6 +10099,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides6;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides6_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.AutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IAutomationPeerOverrides8[] = L"Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides8";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("0E1EBBD4-A003-4936-8175-F5457C07F0C6"), exclusiveto, contract] */
+                        MIDL_INTERFACE("0E1EBBD4-A003-4936-8175-F5457C07F0C6")
+                        IAutomationPeerOverrides8 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE GetHeadingLevelCore(
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel * returnValue
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAutomationPeerOverrides8=_uuidof(IAutomationPeerOverrides8);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9720,8 +10169,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F4B40E52-642F-4629-A54A-EA5D2349C448"), exclusiveto, contract] */
                         MIDL_INTERFACE("F4B40E52-642F-4629-A54A-EA5D2349C448")
-                        IAutomationPeerProtected : IInspectable
+                        IAutomationPeerProtected : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE PeerFromProvider(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * provider,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
@@ -9769,8 +10219,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("562F7FB0-A331-4A9C-9DEC-BFB7586FFFFF"), exclusiveto, contract] */
                         MIDL_INTERFACE("562F7FB0-A331-4A9C-9DEC-BFB7586FFFFF")
-                        IAutomationPeerStatics : IInspectable
+                        IAutomationPeerStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE ListenerExists(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationEvents eventId,
                                 /* [retval, out] */__RPC__out boolean * returnValue
@@ -9814,8 +10265,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("572C5714-7F87-4271-819F-6CF4C4D022D0"), exclusiveto, contract] */
                         MIDL_INTERFACE("572C5714-7F87-4271-819F-6CF4C4D022D0")
-                        IAutomationPeerStatics3 : IInspectable
+                        IAutomationPeerStatics3 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GenerateRawElementProviderRuntimeId(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::RawElementProviderRuntimeId * returnValue
                                 ) = 0;
@@ -9858,8 +10310,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("FB77EFBE-39EC-4508-8AC3-51A1424027D7"), exclusiveto, contract] */
                         MIDL_INTERFACE("FB77EFBE-39EC-4508-8AC3-51A1424027D7")
-                        IButtonAutomationPeer : IInspectable
+                        IButtonAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9899,8 +10352,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("3FDB9F49-F4AB-4780-8644-03376299A175"), exclusiveto, contract] */
                         MIDL_INTERFACE("3FDB9F49-F4AB-4780-8644-03376299A175")
-                        IButtonAutomationPeerFactory : IInspectable
+                        IButtonAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IButton * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -9946,8 +10400,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("A4F3B5B6-7585-4E0B-96D2-08CF6F28BEFA"), exclusiveto, contract] */
                         MIDL_INTERFACE("A4F3B5B6-7585-4E0B-96D2-08CF6F28BEFA")
-                        IButtonBaseAutomationPeer : IInspectable
+                        IButtonBaseAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9987,8 +10442,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("8A04091E-E6B2-4C60-A759-C13CA45165ED"), exclusiveto, contract] */
                         MIDL_INTERFACE("8A04091E-E6B2-4C60-A759-C13CA45165ED")
-                        IButtonBaseAutomationPeerFactory : IInspectable
+                        IButtonBaseAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IButtonBase * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10009,6 +10465,96 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.CalendarDatePickerAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ICalendarDatePickerAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeer";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("40D8938E-DB5E-4B03-BEBA-D10F62419787"), exclusiveto, contract] */
+                        MIDL_INTERFACE("40D8938E-DB5E-4B03-BEBA-D10F62419787")
+                        ICalendarDatePickerAutomationPeer : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ICalendarDatePickerAutomationPeer=_uuidof(ICalendarDatePickerAutomationPeer);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.CalendarDatePickerAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ICalendarDatePickerAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeerFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("AB705DD2-D293-45BF-9F19-26F7603A5E9B"), exclusiveto, contract] */
+                        MIDL_INTERFACE("AB705DD2-D293-45BF-9F19-26F7603A5E9B")
+                        ICalendarDatePickerAutomationPeerFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ICalendarDatePicker * owner,
+                                /* [in] */__RPC__in_opt IInspectable * outer,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ICalendarDatePickerAutomationPeer * * instance
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ICalendarDatePickerAutomationPeerFactory=_uuidof(ICalendarDatePickerAutomationPeerFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10034,8 +10580,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("DCC44EE0-FA45-45C6-8BB7-320D808F5958"), exclusiveto, contract] */
                         MIDL_INTERFACE("DCC44EE0-FA45-45C6-8BB7-320D808F5958")
-                        ICaptureElementAutomationPeer : IInspectable
+                        ICaptureElementAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10075,8 +10622,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("9B92EF48-85E9-4869-B175-8F7CF45A6D9F"), exclusiveto, contract] */
                         MIDL_INTERFACE("9B92EF48-85E9-4869-B175-8F7CF45A6D9F")
-                        ICaptureElementAutomationPeerFactory : IInspectable
+                        ICaptureElementAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ICaptureElement * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10122,8 +10670,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("EB15BC42-C0A9-46C6-AC24-B83DE429C733"), exclusiveto, contract] */
                         MIDL_INTERFACE("EB15BC42-C0A9-46C6-AC24-B83DE429C733")
-                        ICheckBoxAutomationPeer : IInspectable
+                        ICheckBoxAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10163,8 +10712,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("B75C775D-EB8F-44EF-A27C-E26AC7DE8333"), exclusiveto, contract] */
                         MIDL_INTERFACE("B75C775D-EB8F-44EF-A27C-E26AC7DE8333")
-                        ICheckBoxAutomationPeerFactory : IInspectable
+                        ICheckBoxAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ICheckBox * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10210,8 +10760,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("A514215A-7293-4577-924C-47D4E0BF9B90"), exclusiveto, contract] */
                         MIDL_INTERFACE("A514215A-7293-4577-924C-47D4E0BF9B90")
-                        IColorPickerSliderAutomationPeer : IInspectable
+                        IColorPickerSliderAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10251,8 +10802,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("1A55C77E-9DD6-45A3-9042-B40200FEA1A9"), exclusiveto, contract] */
                         MIDL_INTERFACE("1A55C77E-9DD6-45A3-9042-B40200FEA1A9")
-                        IColorPickerSliderAutomationPeerFactory : IInspectable
+                        IColorPickerSliderAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IColorPickerSlider * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10298,8 +10850,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("15D5BA03-010D-4FF7-9087-F4DD09F831B7"), exclusiveto, contract] */
                         MIDL_INTERFACE("15D5BA03-010D-4FF7-9087-F4DD09F831B7")
-                        IColorSpectrumAutomationPeer : IInspectable
+                        IColorSpectrumAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10339,8 +10892,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("0AC400E1-B743-4496-837A-8889E6AC6497"), exclusiveto, contract] */
                         MIDL_INTERFACE("0AC400E1-B743-4496-837A-8889E6AC6497")
-                        IColorSpectrumAutomationPeerFactory : IInspectable
+                        IColorSpectrumAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IColorSpectrum * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10386,8 +10940,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("7EB40D0B-75C5-4263-BA6A-D4A54FB0F239"), exclusiveto, contract] */
                         MIDL_INTERFACE("7EB40D0B-75C5-4263-BA6A-D4A54FB0F239")
-                        IComboBoxAutomationPeer : IInspectable
+                        IComboBoxAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10427,8 +10982,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("098E5B0D-1B90-40B9-9BE3-B23267EB13CF"), exclusiveto, contract] */
                         MIDL_INTERFACE("098E5B0D-1B90-40B9-9BE3-B23267EB13CF")
-                        IComboBoxAutomationPeerFactory : IInspectable
+                        IComboBoxAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IComboBox * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10474,8 +11030,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("12DDC76E-9552-446A-82EE-938CC371800F"), exclusiveto, contract] */
                         MIDL_INTERFACE("12DDC76E-9552-446A-82EE-938CC371800F")
-                        IComboBoxItemAutomationPeer : IInspectable
+                        IComboBoxItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10515,8 +11072,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("134AC7FC-397A-403F-A6EC-1CE8BEDA15E5"), exclusiveto, contract] */
                         MIDL_INTERFACE("134AC7FC-397A-403F-A6EC-1CE8BEDA15E5")
-                        IComboBoxItemAutomationPeerFactory : IInspectable
+                        IComboBoxItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IComboBoxItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10562,8 +11120,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("4FEF6DF2-289C-4C04-831B-5A668C6D7104"), exclusiveto, contract] */
                         MIDL_INTERFACE("4FEF6DF2-289C-4C04-831B-5A668C6D7104")
-                        IComboBoxItemDataAutomationPeer : IInspectable
+                        IComboBoxItemDataAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10603,8 +11162,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("14A8D4F6-469A-41BA-9D93-44A1A55DA872"), exclusiveto, contract] */
                         MIDL_INTERFACE("14A8D4F6-469A-41BA-9D93-44A1A55DA872")
-                        IComboBoxItemDataAutomationPeerFactory : IInspectable
+                        IComboBoxItemDataAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer * parent,
@@ -10651,8 +11211,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("D07D357F-A0B9-45DC-991A-76C505E7D0F5"), exclusiveto, contract] */
                         MIDL_INTERFACE("D07D357F-A0B9-45DC-991A-76C505E7D0F5")
-                        IDatePickerAutomationPeer : IInspectable
+                        IDatePickerAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10692,8 +11253,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("E5667D19-9157-4436-9F4D-7FB99174B48E"), exclusiveto, contract] */
                         MIDL_INTERFACE("E5667D19-9157-4436-9F4D-7FB99174B48E")
-                        IDatePickerAutomationPeerFactory : IInspectable
+                        IDatePickerAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IDatePicker * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10739,8 +11301,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("752AED38-C2BF-4880-82B2-A6C05E90C135"), exclusiveto, contract] */
                         MIDL_INTERFACE("752AED38-C2BF-4880-82B2-A6C05E90C135")
-                        IDatePickerFlyoutPresenterAutomationPeer : IInspectable
+                        IDatePickerFlyoutPresenterAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10780,8 +11343,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("8EC0353A-4284-4B00-AEF8-A2688EA5E3C4"), exclusiveto, contract] */
                         MIDL_INTERFACE("8EC0353A-4284-4B00-AEF8-A2688EA5E3C4")
-                        IFlipViewAutomationPeer : IInspectable
+                        IFlipViewAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10821,8 +11385,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("4395AB0D-8D83-483C-88EB-E2617B0D293F"), exclusiveto, contract] */
                         MIDL_INTERFACE("4395AB0D-8D83-483C-88EB-E2617B0D293F")
-                        IFlipViewAutomationPeerFactory : IInspectable
+                        IFlipViewAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IFlipView * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10868,8 +11433,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("C83034DE-FA08-4BD3-AEB2-D2E5BFA04DF9"), exclusiveto, contract] */
                         MIDL_INTERFACE("C83034DE-FA08-4BD3-AEB2-D2E5BFA04DF9")
-                        IFlipViewItemAutomationPeer : IInspectable
+                        IFlipViewItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10909,8 +11475,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("69109356-D0E5-4C10-A09C-AD0BF1B0CB01"), exclusiveto, contract] */
                         MIDL_INTERFACE("69109356-D0E5-4C10-A09C-AD0BF1B0CB01")
-                        IFlipViewItemAutomationPeerFactory : IInspectable
+                        IFlipViewItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IFlipViewItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -10956,8 +11523,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("B0986175-00BC-4118-8A6F-16EE9C15D968"), exclusiveto, contract] */
                         MIDL_INTERFACE("B0986175-00BC-4118-8A6F-16EE9C15D968")
-                        IFlipViewItemDataAutomationPeer : IInspectable
+                        IFlipViewItemDataAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10997,8 +11565,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("3C864393-0AEA-4E78-BC11-B775CAC4114C"), exclusiveto, contract] */
                         MIDL_INTERFACE("3C864393-0AEA-4E78-BC11-B775CAC4114C")
-                        IFlipViewItemDataAutomationPeerFactory : IInspectable
+                        IFlipViewItemDataAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer * parent,
@@ -11045,8 +11614,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("A01840B4-5FCA-456F-98EA-300EB40B585E"), exclusiveto, contract] */
                         MIDL_INTERFACE("A01840B4-5FCA-456F-98EA-300EB40B585E")
-                        IFlyoutPresenterAutomationPeer : IInspectable
+                        IFlyoutPresenterAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11086,8 +11656,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F350155F-8924-44C0-BA44-653FE79F1EFB"), exclusiveto, contract] */
                         MIDL_INTERFACE("F350155F-8924-44C0-BA44-653FE79F1EFB")
-                        IFlyoutPresenterAutomationPeerFactory : IInspectable
+                        IFlyoutPresenterAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IFlyoutPresenter * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11133,8 +11704,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("B90AD781-BFEB-4451-BD47-9F3A63EBD24A"), exclusiveto, contract] */
                         MIDL_INTERFACE("B90AD781-BFEB-4451-BD47-9F3A63EBD24A")
-                        IFrameworkElementAutomationPeer : IInspectable
+                        IFrameworkElementAutomationPeer : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Owner(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * value
                                 ) = 0;
@@ -11177,8 +11749,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("0DB9B8BC-B812-48E3-AF1F-DBC57600C325"), exclusiveto, contract] */
                         MIDL_INTERFACE("0DB9B8BC-B812-48E3-AF1F-DBC57600C325")
-                        IFrameworkElementAutomationPeerFactory : IInspectable
+                        IFrameworkElementAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IFrameworkElement * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11224,8 +11797,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("B9C0B997-2820-44A1-A5A8-9B801EDC269E"), exclusiveto, contract] */
                         MIDL_INTERFACE("B9C0B997-2820-44A1-A5A8-9B801EDC269E")
-                        IFrameworkElementAutomationPeerStatics : IInspectable
+                        IFrameworkElementAutomationPeerStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE FromElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
@@ -11273,8 +11847,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("1C4401A4-D951-49CA-8F82-C7F3C60681B0"), exclusiveto, contract] */
                         MIDL_INTERFACE("1C4401A4-D951-49CA-8F82-C7F3C60681B0")
-                        IGridViewAutomationPeer : IInspectable
+                        IGridViewAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11314,8 +11889,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("8ACA59DD-22A7-4800-894B-C1F485F38953"), exclusiveto, contract] */
                         MIDL_INTERFACE("8ACA59DD-22A7-4800-894B-C1F485F38953")
-                        IGridViewAutomationPeerFactory : IInspectable
+                        IGridViewAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IGridView * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11361,8 +11937,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("E3DCEF3A-E08A-48E7-B23A-2BE5B66E474E"), exclusiveto, contract] */
                         MIDL_INTERFACE("E3DCEF3A-E08A-48E7-B23A-2BE5B66E474E")
-                        IGridViewHeaderItemAutomationPeer : IInspectable
+                        IGridViewHeaderItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11402,8 +11979,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("2C80B4D2-FFC2-4157-88DD-59CD92E39715"), exclusiveto, contract] */
                         MIDL_INTERFACE("2C80B4D2-FFC2-4157-88DD-59CD92E39715")
-                        IGridViewHeaderItemAutomationPeerFactory : IInspectable
+                        IGridViewHeaderItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IGridViewHeaderItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11449,8 +12027,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("93EF2D07-346C-4166-A4BA-BC6A181E7F33"), exclusiveto, contract] */
                         MIDL_INTERFACE("93EF2D07-346C-4166-A4BA-BC6A181E7F33")
-                        IGridViewItemAutomationPeer : IInspectable
+                        IGridViewItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11490,8 +12069,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("FAFEC376-F22E-466D-913C-AE24CCDB160F"), exclusiveto, contract] */
                         MIDL_INTERFACE("FAFEC376-F22E-466D-913C-AE24CCDB160F")
-                        IGridViewItemAutomationPeerFactory : IInspectable
+                        IGridViewItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IGridViewItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11537,8 +12117,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F3F4868F-29D4-4094-8C54-EA61A88294A4"), exclusiveto, contract] */
                         MIDL_INTERFACE("F3F4868F-29D4-4094-8C54-EA61A88294A4")
-                        IGridViewItemDataAutomationPeer : IInspectable
+                        IGridViewItemDataAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11578,8 +12159,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("A65E7A88-770D-402C-996F-67506AF2A4AF"), exclusiveto, contract] */
                         MIDL_INTERFACE("A65E7A88-770D-402C-996F-67506AF2A4AF")
-                        IGridViewItemDataAutomationPeerFactory : IInspectable
+                        IGridViewItemDataAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer * parent,
@@ -11626,8 +12208,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("1914FE6D-0740-4236-9EE1-38CF19C1C388"), exclusiveto, contract] */
                         MIDL_INTERFACE("1914FE6D-0740-4236-9EE1-38CF19C1C388")
-                        IGroupItemAutomationPeer : IInspectable
+                        IGroupItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11667,8 +12250,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("56A64567-F21C-4C90-B379-15A27C7F8409"), exclusiveto, contract] */
                         MIDL_INTERFACE("56A64567-F21C-4C90-B379-15A27C7F8409")
-                        IGroupItemAutomationPeerFactory : IInspectable
+                        IGroupItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IGroupItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11714,8 +12298,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("4DDEE056-4EBC-4620-A05D-903E3C9A4EAD"), exclusiveto, contract] */
                         MIDL_INTERFACE("4DDEE056-4EBC-4620-A05D-903E3C9A4EAD")
-                        IHubAutomationPeer : IInspectable
+                        IHubAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11755,8 +12340,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("C762D43F-79DD-43EE-8777-8D08B39AA065"), exclusiveto, contract] */
                         MIDL_INTERFACE("C762D43F-79DD-43EE-8777-8D08B39AA065")
-                        IHubAutomationPeerFactory : IInspectable
+                        IHubAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IHub * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11802,8 +12388,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("16D91FF7-7431-4D82-83CE-CFA3192B0F18"), exclusiveto, contract] */
                         MIDL_INTERFACE("16D91FF7-7431-4D82-83CE-CFA3192B0F18")
-                        IHubSectionAutomationPeer : IInspectable
+                        IHubSectionAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11843,8 +12430,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("C68E27E8-17EC-4329-91AE-2D0B2339D498"), exclusiveto, contract] */
                         MIDL_INTERFACE("C68E27E8-17EC-4329-91AE-2D0B2339D498")
-                        IHubSectionAutomationPeerFactory : IInspectable
+                        IHubSectionAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IHubSection * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11890,8 +12478,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("AA7AFCB1-0EDF-46D9-AA9E-0EB21D140097"), exclusiveto, contract] */
                         MIDL_INTERFACE("AA7AFCB1-0EDF-46D9-AA9E-0EB21D140097")
-                        IHyperlinkButtonAutomationPeer : IInspectable
+                        IHyperlinkButtonAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11931,8 +12520,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("59BC1661-C182-49AF-9526-44B88E628455"), exclusiveto, contract] */
                         MIDL_INTERFACE("59BC1661-C182-49AF-9526-44B88E628455")
-                        IHyperlinkButtonAutomationPeerFactory : IInspectable
+                        IHyperlinkButtonAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IHyperlinkButton * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11978,8 +12568,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("9B0BBF8C-60A2-48BF-AB2C-1A52A451D2D4"), exclusiveto, contract] */
                         MIDL_INTERFACE("9B0BBF8C-60A2-48BF-AB2C-1A52A451D2D4")
-                        IImageAutomationPeer : IInspectable
+                        IImageAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12019,8 +12610,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("90304003-687D-47BF-B3A2-4BABCAD8EF50"), exclusiveto, contract] */
                         MIDL_INTERFACE("90304003-687D-47BF-B3A2-4BABCAD8EF50")
-                        IImageAutomationPeerFactory : IInspectable
+                        IImageAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IImage * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -12066,8 +12658,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("123BAAA4-F2E8-4BCB-9382-5DFDD11FE45F"), exclusiveto, contract] */
                         MIDL_INTERFACE("123BAAA4-F2E8-4BCB-9382-5DFDD11FE45F")
-                        IInkToolbarAutomationPeer : IInspectable
+                        IInkToolbarAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12107,8 +12700,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("953C34F6-3B31-47A7-B3BF-25D3AE99C317"), exclusiveto, contract] */
                         MIDL_INTERFACE("953C34F6-3B31-47A7-B3BF-25D3AE99C317")
-                        IItemAutomationPeer : IInspectable
+                        IItemAutomationPeer : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Item(
                                 /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                                 ) = 0;
@@ -12154,8 +12748,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("29065073-DE3D-4D3F-97B4-4D6F9D53444D"), exclusiveto, contract] */
                         MIDL_INTERFACE("29065073-DE3D-4D3F-97B4-4D6F9D53444D")
-                        IItemAutomationPeerFactory : IInspectable
+                        IItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer * parent,
@@ -12202,8 +12797,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("96E76BF1-37F7-4088-925D-65268E83E34D"), exclusiveto, contract] */
                         MIDL_INTERFACE("96E76BF1-37F7-4088-925D-65268E83E34D")
-                        IItemsControlAutomationPeer : IInspectable
+                        IItemsControlAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12243,8 +12839,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("C48D8917-95A8-47B8-A517-BF891A6C039B"), exclusiveto, contract] */
                         MIDL_INTERFACE("C48D8917-95A8-47B8-A517-BF891A6C039B")
-                        IItemsControlAutomationPeer2 : IInspectable
+                        IItemsControlAutomationPeer2 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateItemAutomationPeer(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer * * returnValue
@@ -12288,8 +12885,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("4038A259-2E1A-49CA-A533-C64F181577E6"), exclusiveto, contract] */
                         MIDL_INTERFACE("4038A259-2E1A-49CA-A533-C64F181577E6")
-                        IItemsControlAutomationPeerFactory : IInspectable
+                        IItemsControlAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IItemsControl * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -12335,8 +12933,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("361DC0E8-B56F-45E9-80FE-10A0FB0FE177"), exclusiveto, contract] */
                         MIDL_INTERFACE("361DC0E8-B56F-45E9-80FE-10A0FB0FE177")
-                        IItemsControlAutomationPeerOverrides2 : IInspectable
+                        IItemsControlAutomationPeerOverrides2 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE OnCreateItemAutomationPeer(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer * * returnValue
@@ -12380,8 +12979,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("8CD0D608-B402-4A6E-BD9A-343F8845EB32"), exclusiveto, contract] */
                         MIDL_INTERFACE("8CD0D608-B402-4A6E-BD9A-343F8845EB32")
-                        IListBoxAutomationPeer : IInspectable
+                        IListBoxAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12421,8 +13021,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("E2362185-7DF6-49F7-8ABC-4C33F1A3D46E"), exclusiveto, contract] */
                         MIDL_INTERFACE("E2362185-7DF6-49F7-8ABC-4C33F1A3D46E")
-                        IListBoxAutomationPeerFactory : IInspectable
+                        IListBoxAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListBox * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -12468,8 +13069,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("1BC6E1C6-2997-42DF-99EB-92BC1DD149FB"), exclusiveto, contract] */
                         MIDL_INTERFACE("1BC6E1C6-2997-42DF-99EB-92BC1DD149FB")
-                        IListBoxItemAutomationPeer : IInspectable
+                        IListBoxItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12509,8 +13111,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("509F9DD8-B0AA-443F-A110-41209AF44F1C"), exclusiveto, contract] */
                         MIDL_INTERFACE("509F9DD8-B0AA-443F-A110-41209AF44F1C")
-                        IListBoxItemAutomationPeerFactory : IInspectable
+                        IListBoxItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListBoxItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -12556,8 +13159,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("FD7D5FEE-FDE0-482A-8084-DCEBBA5B9806"), exclusiveto, contract] */
                         MIDL_INTERFACE("FD7D5FEE-FDE0-482A-8084-DCEBBA5B9806")
-                        IListBoxItemDataAutomationPeer : IInspectable
+                        IListBoxItemDataAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12597,8 +13201,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("D7924E16-BD8D-4662-A995-20FF9A056093"), exclusiveto, contract] */
                         MIDL_INTERFACE("D7924E16-BD8D-4662-A995-20FF9A056093")
-                        IListBoxItemDataAutomationPeerFactory : IInspectable
+                        IListBoxItemDataAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer * parent,
@@ -12645,8 +13250,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("56DFDC58-2395-4060-8047-8EA463698A24"), exclusiveto, contract] */
                         MIDL_INTERFACE("56DFDC58-2395-4060-8047-8EA463698A24")
-                        IListPickerFlyoutPresenterAutomationPeer : IInspectable
+                        IListPickerFlyoutPresenterAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12686,8 +13292,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("73CECC87-C0DC-4260-9148-75E9864A7230"), exclusiveto, contract] */
                         MIDL_INTERFACE("73CECC87-C0DC-4260-9148-75E9864A7230")
-                        IListViewAutomationPeer : IInspectable
+                        IListViewAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12727,8 +13334,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("65F39174-EAA2-4E44-8BE6-4CCA28CD0288"), exclusiveto, contract] */
                         MIDL_INTERFACE("65F39174-EAA2-4E44-8BE6-4CCA28CD0288")
-                        IListViewAutomationPeerFactory : IInspectable
+                        IListViewAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListView * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -12774,8 +13382,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("87EC7649-B83D-4E55-9AFD-BD835E748F5C"), exclusiveto, contract] */
                         MIDL_INTERFACE("87EC7649-B83D-4E55-9AFD-BD835E748F5C")
-                        IListViewBaseAutomationPeer : IInspectable
+                        IListViewBaseAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12815,8 +13424,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("70D3C2BE-8950-4647-9362-FD002F8FF82E"), exclusiveto, contract] */
                         MIDL_INTERFACE("70D3C2BE-8950-4647-9362-FD002F8FF82E")
-                        IListViewBaseAutomationPeerFactory : IInspectable
+                        IListViewBaseAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewBase * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -12862,8 +13472,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("7CB8B732-C1F0-4A3C-BC14-85DD48DEDB85"), exclusiveto, contract] */
                         MIDL_INTERFACE("7CB8B732-C1F0-4A3C-BC14-85DD48DEDB85")
-                        IListViewBaseHeaderItemAutomationPeer : IInspectable
+                        IListViewBaseHeaderItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12903,8 +13514,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("40EC995F-D631-4004-832E-6D8643E51561"), exclusiveto, contract] */
                         MIDL_INTERFACE("40EC995F-D631-4004-832E-6D8643E51561")
-                        IListViewBaseHeaderItemAutomationPeerFactory : IInspectable
+                        IListViewBaseHeaderItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewBaseHeaderItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -12950,8 +13562,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("67AB1E4B-AD61-4C88-BA45-0F3A8D061F8F"), exclusiveto, contract] */
                         MIDL_INTERFACE("67AB1E4B-AD61-4C88-BA45-0F3A8D061F8F")
-                        IListViewHeaderItemAutomationPeer : IInspectable
+                        IListViewHeaderItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12991,8 +13604,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("07668694-2CA5-4BE4-A8B9-592D48F76087"), exclusiveto, contract] */
                         MIDL_INTERFACE("07668694-2CA5-4BE4-A8B9-592D48F76087")
-                        IListViewHeaderItemAutomationPeerFactory : IInspectable
+                        IListViewHeaderItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewHeaderItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13038,8 +13652,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("CA114E70-A16D-4D09-A1CF-1856EF98A9EC"), exclusiveto, contract] */
                         MIDL_INTERFACE("CA114E70-A16D-4D09-A1CF-1856EF98A9EC")
-                        IListViewItemAutomationPeer : IInspectable
+                        IListViewItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13079,8 +13694,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("C47DFBC0-FACC-4024-A73B-17EC4E662654"), exclusiveto, contract] */
                         MIDL_INTERFACE("C47DFBC0-FACC-4024-A73B-17EC4E662654")
-                        IListViewItemAutomationPeerFactory : IInspectable
+                        IListViewItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13126,8 +13742,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("15A8D7FD-D7A5-4A6C-963C-6F7CE464671A"), exclusiveto, contract] */
                         MIDL_INTERFACE("15A8D7FD-D7A5-4A6C-963C-6F7CE464671A")
-                        IListViewItemDataAutomationPeer : IInspectable
+                        IListViewItemDataAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13167,8 +13784,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("D0DB12BB-D715-4523-ACC0-1E1072D8E32B"), exclusiveto, contract] */
                         MIDL_INTERFACE("D0DB12BB-D715-4523-ACC0-1E1072D8E32B")
-                        IListViewItemDataAutomationPeerFactory : IInspectable
+                        IListViewItemDataAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer * parent,
@@ -13215,8 +13833,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("50B406CA-BAE9-4816-8A3A-0CB4F96478A2"), exclusiveto, contract] */
                         MIDL_INTERFACE("50B406CA-BAE9-4816-8A3A-0CB4F96478A2")
-                        ILoopingSelectorAutomationPeer : IInspectable
+                        ILoopingSelectorAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13256,8 +13875,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("D3FA68BF-04CF-4F4C-8D3E-4780A19D4788"), exclusiveto, contract] */
                         MIDL_INTERFACE("D3FA68BF-04CF-4F4C-8D3E-4780A19D4788")
-                        ILoopingSelectorItemAutomationPeer : IInspectable
+                        ILoopingSelectorItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13297,8 +13917,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("EF567E32-7CD2-4D32-9590-1F588D5EF38D"), exclusiveto, contract] */
                         MIDL_INTERFACE("EF567E32-7CD2-4D32-9590-1F588D5EF38D")
-                        ILoopingSelectorItemDataAutomationPeer : IInspectable
+                        ILoopingSelectorItemDataAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13338,8 +13959,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("425BEEE4-F2E8-4BCB-9382-5DFDD11FE45F"), exclusiveto, contract] */
                         MIDL_INTERFACE("425BEEE4-F2E8-4BCB-9382-5DFDD11FE45F")
-                        IMapControlAutomationPeer : IInspectable
+                        IMapControlAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13379,8 +14001,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("BA0B9FC2-A6E2-41A5-B17A-D1594613EFBA"), exclusiveto, contract] */
                         MIDL_INTERFACE("BA0B9FC2-A6E2-41A5-B17A-D1594613EFBA")
-                        IMediaElementAutomationPeer : IInspectable
+                        IMediaElementAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13420,8 +14043,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("B2AD3B28-7575-4173-9BC7-80367A164ED2"), exclusiveto, contract] */
                         MIDL_INTERFACE("B2AD3B28-7575-4173-9BC7-80367A164ED2")
-                        IMediaElementAutomationPeerFactory : IInspectable
+                        IMediaElementAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMediaElement * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13467,8 +14091,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("02BED209-3F65-4FDD-B5CA-C4750D4E6EA4"), exclusiveto, contract] */
                         MIDL_INTERFACE("02BED209-3F65-4FDD-B5CA-C4750D4E6EA4")
-                        IMediaPlayerElementAutomationPeer : IInspectable
+                        IMediaPlayerElementAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13508,8 +14133,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("08848077-82AF-4D19-B170-282A9E0E7F37"), exclusiveto, contract] */
                         MIDL_INTERFACE("08848077-82AF-4D19-B170-282A9E0E7F37")
-                        IMediaPlayerElementAutomationPeerFactory : IInspectable
+                        IMediaPlayerElementAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMediaPlayerElement * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13555,8 +14181,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("A3AD8D93-79F8-4958-A3C8-980DEFB83D15"), exclusiveto, contract] */
                         MIDL_INTERFACE("A3AD8D93-79F8-4958-A3C8-980DEFB83D15")
-                        IMediaTransportControlsAutomationPeer : IInspectable
+                        IMediaTransportControlsAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13596,8 +14223,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F41CB003-E103-4AB0-812A-A08FBDB570CE"), exclusiveto, contract] */
                         MIDL_INTERFACE("F41CB003-E103-4AB0-812A-A08FBDB570CE")
-                        IMediaTransportControlsAutomationPeerFactory : IInspectable
+                        IMediaTransportControlsAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMediaTransportControls * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13643,8 +14271,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("1FC19462-21DF-456E-AA11-8FAC6B4B2AF6"), exclusiveto, contract] */
                         MIDL_INTERFACE("1FC19462-21DF-456E-AA11-8FAC6B4B2AF6")
-                        IMenuFlyoutItemAutomationPeer : IInspectable
+                        IMenuFlyoutItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13684,8 +14313,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("D08BFCB8-20D1-45D8-A2C2-2F130DF714E0"), exclusiveto, contract] */
                         MIDL_INTERFACE("D08BFCB8-20D1-45D8-A2C2-2F130DF714E0")
-                        IMenuFlyoutItemAutomationPeerFactory : IInspectable
+                        IMenuFlyoutItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMenuFlyoutItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13731,8 +14361,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("E244A871-FCBB-48FC-8A93-41EA134B53CE"), exclusiveto, contract] */
                         MIDL_INTERFACE("E244A871-FCBB-48FC-8A93-41EA134B53CE")
-                        IMenuFlyoutPresenterAutomationPeer : IInspectable
+                        IMenuFlyoutPresenterAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13772,8 +14403,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("07B5172D-761D-452B-9E6D-FA2A8BE0AD26"), exclusiveto, contract] */
                         MIDL_INTERFACE("07B5172D-761D-452B-9E6D-FA2A8BE0AD26")
-                        IMenuFlyoutPresenterAutomationPeerFactory : IInspectable
+                        IMenuFlyoutPresenterAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMenuFlyoutPresenter * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13819,8 +14451,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("309847A5-9971-4D8D-A81C-085C7086A1B9"), exclusiveto, contract] */
                         MIDL_INTERFACE("309847A5-9971-4D8D-A81C-085C7086A1B9")
-                        INavigationViewItemAutomationPeer : IInspectable
+                        INavigationViewItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13860,8 +14493,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("0BC2835D-AA38-4F97-9664-E6FC821D81ED"), exclusiveto, contract] */
                         MIDL_INTERFACE("0BC2835D-AA38-4F97-9664-E6FC821D81ED")
-                        INavigationViewItemAutomationPeerFactory : IInspectable
+                        INavigationViewItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::INavigationViewItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13907,8 +14541,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("684F065E-3DF3-4B9F-82AD-8819DB3B218A"), exclusiveto, contract] */
                         MIDL_INTERFACE("684F065E-3DF3-4B9F-82AD-8819DB3B218A")
-                        IPasswordBoxAutomationPeer : IInspectable
+                        IPasswordBoxAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -13948,8 +14583,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("AC3D7EDE-DCA4-481C-B520-4A9B3F3B179C"), exclusiveto, contract] */
                         MIDL_INTERFACE("AC3D7EDE-DCA4-481C-B520-4A9B3F3B179C")
-                        IPasswordBoxAutomationPeerFactory : IInspectable
+                        IPasswordBoxAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IPasswordBox * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -13995,8 +14631,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("27156D4C-A66F-4AAF-8286-4F796D30628C"), exclusiveto, contract] */
                         MIDL_INTERFACE("27156D4C-A66F-4AAF-8286-4F796D30628C")
-                        IPersonPictureAutomationPeer : IInspectable
+                        IPersonPictureAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14036,8 +14673,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("A95F1F6D-2524-44A4-97FD-1181130100AD"), exclusiveto, contract] */
                         MIDL_INTERFACE("A95F1F6D-2524-44A4-97FD-1181130100AD")
-                        IPersonPictureAutomationPeerFactory : IInspectable
+                        IPersonPictureAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IPersonPicture * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -14083,8 +14721,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("28414BF7-8382-4EAE-93C1-D6F035AA8155"), exclusiveto, contract] */
                         MIDL_INTERFACE("28414BF7-8382-4EAE-93C1-D6F035AA8155")
-                        IPickerFlyoutPresenterAutomationPeer : IInspectable
+                        IPickerFlyoutPresenterAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14124,8 +14763,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("E715A8F8-3B9D-402C-81E2-6E912EF58981"), exclusiveto, contract] */
                         MIDL_INTERFACE("E715A8F8-3B9D-402C-81E2-6E912EF58981")
-                        IPivotAutomationPeer : IInspectable
+                        IPivotAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14165,8 +14805,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("3EFE0F94-0C91-4341-B9AC-1B56B4E6B84F"), exclusiveto, contract] */
                         MIDL_INTERFACE("3EFE0F94-0C91-4341-B9AC-1B56B4E6B84F")
-                        IPivotAutomationPeerFactory : IInspectable
+                        IPivotAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IPivot * owner,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeer * * instance
@@ -14210,8 +14851,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("1A4241AD-5D55-4D27-B40F-2D37506FBE78"), exclusiveto, contract] */
                         MIDL_INTERFACE("1A4241AD-5D55-4D27-B40F-2D37506FBE78")
-                        IPivotItemAutomationPeer : IInspectable
+                        IPivotItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14251,8 +14893,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F2810471-183F-416B-B41A-1E5A958A91F4"), exclusiveto, contract] */
                         MIDL_INTERFACE("F2810471-183F-416B-B41A-1E5A958A91F4")
-                        IPivotItemAutomationPeerFactory : IInspectable
+                        IPivotItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IPivotItem * owner,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotItemAutomationPeer * * instance
@@ -14296,8 +14939,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("A2A3B788-EA1D-48B7-88EE-F08B6AA07FEE"), exclusiveto, contract] */
                         MIDL_INTERFACE("A2A3B788-EA1D-48B7-88EE-F08B6AA07FEE")
-                        IPivotItemDataAutomationPeer : IInspectable
+                        IPivotItemDataAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14337,8 +14981,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("517A2480-D3B6-412E-82B6-94A0A84C13B0"), exclusiveto, contract] */
                         MIDL_INTERFACE("517A2480-D3B6-412E-82B6-94A0A84C13B0")
-                        IPivotItemDataAutomationPeerFactory : IInspectable
+                        IPivotItemDataAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeer * parent,
@@ -14383,8 +15028,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("93F48F86-D840-4FB6-AC2F-5F779B854B0D"), exclusiveto, contract] */
                         MIDL_INTERFACE("93F48F86-D840-4FB6-AC2F-5F779B854B0D")
-                        IProgressBarAutomationPeer : IInspectable
+                        IProgressBarAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14424,8 +15070,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("364679AB-B80F-41B4-8EEA-2F5251BC739C"), exclusiveto, contract] */
                         MIDL_INTERFACE("364679AB-B80F-41B4-8EEA-2F5251BC739C")
-                        IProgressBarAutomationPeerFactory : IInspectable
+                        IProgressBarAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IProgressBar * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -14471,8 +15118,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("BC305EEE-39D3-4EEB-AC33-2394DE123E2E"), exclusiveto, contract] */
                         MIDL_INTERFACE("BC305EEE-39D3-4EEB-AC33-2394DE123E2E")
-                        IProgressRingAutomationPeer : IInspectable
+                        IProgressRingAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14512,8 +15160,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F3DB204B-157E-40BC-9593-55BC5C71A4F6"), exclusiveto, contract] */
                         MIDL_INTERFACE("F3DB204B-157E-40BC-9593-55BC5C71A4F6")
-                        IProgressRingAutomationPeerFactory : IInspectable
+                        IProgressRingAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IProgressRing * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -14559,8 +15208,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("7E6A5ED8-0B30-4743-B102-DCDF548E3131"), exclusiveto, contract] */
                         MIDL_INTERFACE("7E6A5ED8-0B30-4743-B102-DCDF548E3131")
-                        IRadioButtonAutomationPeer : IInspectable
+                        IRadioButtonAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14600,8 +15250,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("4940C4FD-3D88-49CA-8F31-924187AF0BFE"), exclusiveto, contract] */
                         MIDL_INTERFACE("4940C4FD-3D88-49CA-8F31-924187AF0BFE")
-                        IRadioButtonAutomationPeerFactory : IInspectable
+                        IRadioButtonAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRadioButton * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -14647,8 +15298,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("E454B549-4B2C-42AD-B04B-D35947D1EE50"), exclusiveto, contract] */
                         MIDL_INTERFACE("E454B549-4B2C-42AD-B04B-D35947D1EE50")
-                        IRangeBaseAutomationPeer : IInspectable
+                        IRangeBaseAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14688,8 +15340,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("827C7601-3078-4479-95EA-91374CA06207"), exclusiveto, contract] */
                         MIDL_INTERFACE("827C7601-3078-4479-95EA-91374CA06207")
-                        IRangeBaseAutomationPeerFactory : IInspectable
+                        IRangeBaseAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IRangeBase * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -14735,8 +15388,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("3D14349A-9963-4A47-823C-F457CB3209D5"), exclusiveto, contract] */
                         MIDL_INTERFACE("3D14349A-9963-4A47-823C-F457CB3209D5")
-                        IRatingControlAutomationPeer : IInspectable
+                        IRatingControlAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14776,8 +15430,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F179F272-9846-4632-8B9C-BE6FA8D3C9BB"), exclusiveto, contract] */
                         MIDL_INTERFACE("F179F272-9846-4632-8B9C-BE6FA8D3C9BB")
-                        IRatingControlAutomationPeerFactory : IInspectable
+                        IRatingControlAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRatingControl * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -14823,8 +15478,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("29E41AD5-A8AC-4E8A-83D8-09E37E054257"), exclusiveto, contract] */
                         MIDL_INTERFACE("29E41AD5-A8AC-4E8A-83D8-09E37E054257")
-                        IRepeatButtonAutomationPeer : IInspectable
+                        IRepeatButtonAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14864,8 +15520,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("6A6FF9D4-575E-4E60-BDD6-EC14419B4FF6"), exclusiveto, contract] */
                         MIDL_INTERFACE("6A6FF9D4-575E-4E60-BDD6-EC14419B4FF6")
-                        IRepeatButtonAutomationPeerFactory : IInspectable
+                        IRepeatButtonAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IRepeatButton * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -14911,8 +15568,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("C69F5C04-16EE-467A-A833-C3DA8458AD64"), exclusiveto, contract] */
                         MIDL_INTERFACE("C69F5C04-16EE-467A-A833-C3DA8458AD64")
-                        IRichEditBoxAutomationPeer : IInspectable
+                        IRichEditBoxAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -14952,8 +15610,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("752C8399-D296-4D87-9020-A4750E885B3C"), exclusiveto, contract] */
                         MIDL_INTERFACE("752C8399-D296-4D87-9020-A4750E885B3C")
-                        IRichEditBoxAutomationPeerFactory : IInspectable
+                        IRichEditBoxAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRichEditBox * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -14999,8 +15658,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("93A01A9C-9609-41FA-82F3-909C09F49A72"), exclusiveto, contract] */
                         MIDL_INTERFACE("93A01A9C-9609-41FA-82F3-909C09F49A72")
-                        IRichTextBlockAutomationPeer : IInspectable
+                        IRichTextBlockAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15040,8 +15700,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("2038AE61-1389-467A-AED6-37334DA9622B"), exclusiveto, contract] */
                         MIDL_INTERFACE("2038AE61-1389-467A-AED6-37334DA9622B")
-                        IRichTextBlockAutomationPeerFactory : IInspectable
+                        IRichTextBlockAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRichTextBlock * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15087,8 +15748,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("8C9A409A-2736-437B-AB36-A16A202F105D"), exclusiveto, contract] */
                         MIDL_INTERFACE("8C9A409A-2736-437B-AB36-A16A202F105D")
-                        IRichTextBlockOverflowAutomationPeer : IInspectable
+                        IRichTextBlockOverflowAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15128,8 +15790,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("BD5EB663-2C14-4665-ADEF-F2B033947BEB"), exclusiveto, contract] */
                         MIDL_INTERFACE("BD5EB663-2C14-4665-ADEF-F2B033947BEB")
-                        IRichTextBlockOverflowAutomationPeerFactory : IInspectable
+                        IRichTextBlockOverflowAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRichTextBlockOverflow * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15175,8 +15838,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("69E0C369-BBE7-41F2-87CA-AAD813FE550E"), exclusiveto, contract] */
                         MIDL_INTERFACE("69E0C369-BBE7-41F2-87CA-AAD813FE550E")
-                        IScrollBarAutomationPeer : IInspectable
+                        IScrollBarAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15216,8 +15880,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("E1302110-AFEB-4595-8E3D-EDC0844A2B21"), exclusiveto, contract] */
                         MIDL_INTERFACE("E1302110-AFEB-4595-8E3D-EDC0844A2B21")
-                        IScrollBarAutomationPeerFactory : IInspectable
+                        IScrollBarAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IScrollBar * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15263,8 +15928,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("D985F259-1B09-4E88-88FD-421750DC6B45"), exclusiveto, contract] */
                         MIDL_INTERFACE("D985F259-1B09-4E88-88FD-421750DC6B45")
-                        IScrollViewerAutomationPeer : IInspectable
+                        IScrollViewerAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15304,8 +15970,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("270DFF7D-D96D-48F9-A36A-C252AA9C4670"), exclusiveto, contract] */
                         MIDL_INTERFACE("270DFF7D-D96D-48F9-A36A-C252AA9C4670")
-                        IScrollViewerAutomationPeerFactory : IInspectable
+                        IScrollViewerAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IScrollViewer * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15351,8 +16018,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("854011A4-18A6-4F30-939B-8871AFA3F5E9"), exclusiveto, contract] */
                         MIDL_INTERFACE("854011A4-18A6-4F30-939B-8871AFA3F5E9")
-                        ISearchBoxAutomationPeer : IInspectable
+                        ISearchBoxAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15392,8 +16060,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("B3C01430-7FAA-41BB-8E91-7C761C5267F1"), exclusiveto, contract] */
                         MIDL_INTERFACE("B3C01430-7FAA-41BB-8E91-7C761C5267F1")
-                        ISearchBoxAutomationPeerFactory : IInspectable
+                        ISearchBoxAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISearchBox * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15439,8 +16108,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("162AC829-7115-43EC-B383-A7B71644069D"), exclusiveto, contract] */
                         MIDL_INTERFACE("162AC829-7115-43EC-B383-A7B71644069D")
-                        ISelectorAutomationPeer : IInspectable
+                        ISelectorAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15480,8 +16150,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("7B525646-829B-4DCC-BD52-5A8D0399387A"), exclusiveto, contract] */
                         MIDL_INTERFACE("7B525646-829B-4DCC-BD52-5A8D0399387A")
-                        ISelectorAutomationPeerFactory : IInspectable
+                        ISelectorAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::ISelector * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15527,8 +16198,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("AE8B3477-860A-45BB-BF7C-E1B27419D1DD"), exclusiveto, contract] */
                         MIDL_INTERFACE("AE8B3477-860A-45BB-BF7C-E1B27419D1DD")
-                        ISelectorItemAutomationPeer : IInspectable
+                        ISelectorItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15568,8 +16240,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("66D7EDFB-786D-4362-A964-EBFB21776C30"), exclusiveto, contract] */
                         MIDL_INTERFACE("66D7EDFB-786D-4362-A964-EBFB21776C30")
-                        ISelectorItemAutomationPeerFactory : IInspectable
+                        ISelectorItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer * parent,
@@ -15616,8 +16289,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("3C2FAC6C-A977-47FC-B44E-2754C0B2BEA9"), exclusiveto, contract] */
                         MIDL_INTERFACE("3C2FAC6C-A977-47FC-B44E-2754C0B2BEA9")
-                        ISemanticZoomAutomationPeer : IInspectable
+                        ISemanticZoomAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15657,8 +16331,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F518D44D-A493-4496-B077-9674C7F4C5FA"), exclusiveto, contract] */
                         MIDL_INTERFACE("F518D44D-A493-4496-B077-9674C7F4C5FA")
-                        ISemanticZoomAutomationPeerFactory : IInspectable
+                        ISemanticZoomAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISemanticZoom * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15704,8 +16379,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("D0DE0CDB-30CF-47A6-A5EB-9C77F0B0D6DD"), exclusiveto, contract] */
                         MIDL_INTERFACE("D0DE0CDB-30CF-47A6-A5EB-9C77F0B0D6DD")
-                        ISettingsFlyoutAutomationPeer : IInspectable
+                        ISettingsFlyoutAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15745,8 +16421,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("F94762BD-8A14-40E4-94A7-3F33C922E945"), exclusiveto, contract] */
                         MIDL_INTERFACE("F94762BD-8A14-40E4-94A7-3F33C922E945")
-                        ISettingsFlyoutAutomationPeerFactory : IInspectable
+                        ISettingsFlyoutAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISettingsFlyout * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15792,8 +16469,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("EC30015A-D611-46D0-AE4F-6ECF27DFBAA5"), exclusiveto, contract] */
                         MIDL_INTERFACE("EC30015A-D611-46D0-AE4F-6ECF27DFBAA5")
-                        ISliderAutomationPeer : IInspectable
+                        ISliderAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15833,8 +16511,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("971B8056-9A7A-4DF9-95FA-6F5C04C91CAC"), exclusiveto, contract] */
                         MIDL_INTERFACE("971B8056-9A7A-4DF9-95FA-6F5C04C91CAC")
-                        ISliderAutomationPeerFactory : IInspectable
+                        ISliderAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISlider * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15880,8 +16559,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("BE2057F5-6715-4E69-A050-92BD0CE232A9"), exclusiveto, contract] */
                         MIDL_INTERFACE("BE2057F5-6715-4E69-A050-92BD0CE232A9")
-                        ITextBlockAutomationPeer : IInspectable
+                        ITextBlockAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -15921,8 +16601,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("76BF924B-7CA0-4B01-BC5C-A8CF4D3691DE"), exclusiveto, contract] */
                         MIDL_INTERFACE("76BF924B-7CA0-4B01-BC5C-A8CF4D3691DE")
-                        ITextBlockAutomationPeerFactory : IInspectable
+                        ITextBlockAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITextBlock * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -15968,8 +16649,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("3A4F1CA0-5E5D-4D26-9067-E740BF657A9F"), exclusiveto, contract] */
                         MIDL_INTERFACE("3A4F1CA0-5E5D-4D26-9067-E740BF657A9F")
-                        ITextBoxAutomationPeer : IInspectable
+                        ITextBoxAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -16009,8 +16691,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("01F0C067-966B-4130-B872-469E42BD4A7F"), exclusiveto, contract] */
                         MIDL_INTERFACE("01F0C067-966B-4130-B872-469E42BD4A7F")
-                        ITextBoxAutomationPeerFactory : IInspectable
+                        ITextBoxAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITextBox * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -16056,8 +16739,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("DC2949B5-B45E-4D6D-892F-D9422C950EFB"), exclusiveto, contract] */
                         MIDL_INTERFACE("DC2949B5-B45E-4D6D-892F-D9422C950EFB")
-                        IThumbAutomationPeer : IInspectable
+                        IThumbAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -16097,8 +16781,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("970743FF-AF41-4600-B55D-26D43DF860E1"), exclusiveto, contract] */
                         MIDL_INTERFACE("970743FF-AF41-4600-B55D-26D43DF860E1")
-                        IThumbAutomationPeerFactory : IInspectable
+                        IThumbAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IThumb * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -16144,8 +16829,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("A43D44EF-3285-4DF7-B4A4-E4CDF36A3A17"), exclusiveto, contract] */
                         MIDL_INTERFACE("A43D44EF-3285-4DF7-B4A4-E4CDF36A3A17")
-                        ITimePickerAutomationPeer : IInspectable
+                        ITimePickerAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -16185,8 +16871,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("978F6671-47F8-40A7-9E21-68128B16B4FD"), exclusiveto, contract] */
                         MIDL_INTERFACE("978F6671-47F8-40A7-9E21-68128B16B4FD")
-                        ITimePickerAutomationPeerFactory : IInspectable
+                        ITimePickerAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITimePicker * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -16232,8 +16919,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("DA93EE27-82F1-4701-8706-BE297BF06043"), exclusiveto, contract] */
                         MIDL_INTERFACE("DA93EE27-82F1-4701-8706-BE297BF06043")
-                        ITimePickerFlyoutPresenterAutomationPeer : IInspectable
+                        ITimePickerFlyoutPresenterAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -16273,8 +16961,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("62DBE6C5-BC0A-45BB-BF77-EA0F1502891F"), exclusiveto, contract] */
                         MIDL_INTERFACE("62DBE6C5-BC0A-45BB-BF77-EA0F1502891F")
-                        IToggleButtonAutomationPeer : IInspectable
+                        IToggleButtonAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -16314,8 +17003,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("C9218CC4-AD4B-4D03-A6A4-7D59E6360004"), exclusiveto, contract] */
                         MIDL_INTERFACE("C9218CC4-AD4B-4D03-A6A4-7D59E6360004")
-                        IToggleButtonAutomationPeerFactory : IInspectable
+                        IToggleButtonAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IToggleButton * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -16361,8 +17051,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("6B57EAFE-6AF1-4903-8373-3437BF352345"), exclusiveto, contract] */
                         MIDL_INTERFACE("6B57EAFE-6AF1-4903-8373-3437BF352345")
-                        IToggleMenuFlyoutItemAutomationPeer : IInspectable
+                        IToggleMenuFlyoutItemAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -16402,8 +17093,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("94364B77-8F6C-4837-AAE3-94D010D8D162"), exclusiveto, contract] */
                         MIDL_INTERFACE("94364B77-8F6C-4837-AAE3-94D010D8D162")
-                        IToggleMenuFlyoutItemAutomationPeerFactory : IInspectable
+                        IToggleMenuFlyoutItemAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -16449,8 +17141,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("C011F174-E89E-4790-BF9A-78EBB5F59E9F"), exclusiveto, contract] */
                         MIDL_INTERFACE("C011F174-E89E-4790-BF9A-78EBB5F59E9F")
-                        IToggleSwitchAutomationPeer : IInspectable
+                        IToggleSwitchAutomationPeer : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -16490,8 +17183,9 @@ namespace ABI {
                     namespace Peers {
                         /* [object, uuid("31F933E3-FEF8-4419-9DF5-D9EF7196EA34"), exclusiveto, contract] */
                         MIDL_INTERFACE("31F933E3-FEF8-4419-9DF5-D9EF7196EA34")
-                        IToggleSwitchAutomationPeerFactory : IInspectable
+                        IToggleSwitchAutomationPeerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IToggleSwitch * owner,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -16512,6 +17206,186 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.TreeViewItemAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ITreeViewItemAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeer";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("2331D648-B617-437F-920C-71D450503E65"), exclusiveto, contract] */
+                        MIDL_INTERFACE("2331D648-B617-437F-920C-71D450503E65")
+                        ITreeViewItemAutomationPeer : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ITreeViewItemAutomationPeer=_uuidof(ITreeViewItemAutomationPeer);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.TreeViewItemAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ITreeViewItemAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeerFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("73D388BF-1D01-4159-82C0-2B2996DBFDCE"), exclusiveto, contract] */
+                        MIDL_INTERFACE("73D388BF-1D01-4159-82C0-2B2996DBFDCE")
+                        ITreeViewItemAutomationPeerFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITreeViewItem * owner,
+                                /* [in] */__RPC__in_opt IInspectable * outer,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewItemAutomationPeer * * instance
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ITreeViewItemAutomationPeerFactory=_uuidof(ITreeViewItemAutomationPeerFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.TreeViewListAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ITreeViewListAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeer";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("71C1B5BC-BB29-4479-A8A8-606BE6B823AE"), exclusiveto, contract] */
+                        MIDL_INTERFACE("71C1B5BC-BB29-4479-A8A8-606BE6B823AE")
+                        ITreeViewListAutomationPeer : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ITreeViewListAutomationPeer=_uuidof(ITreeViewListAutomationPeer);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.TreeViewListAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ITreeViewListAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeerFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("00F597E2-F811-475A-BFE6-290FE707FA88"), exclusiveto, contract] */
+                        MIDL_INTERFACE("00F597E2-F811-475A-BFE6-290FE707FA88")
+                        ITreeViewListAutomationPeerFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITreeViewList * owner,
+                                /* [in] */__RPC__in_opt IInspectable * outer,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewListAutomationPeer * * instance
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ITreeViewListAutomationPeerFactory=_uuidof(ITreeViewListAutomationPeerFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -16601,6 +17475,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IInvokeProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -16642,6 +17517,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer6
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer7
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer8
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides8
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -16735,6 +17612,32 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_ButtonBaseAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Automation.Peers.CalendarDatePickerAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IInvokeProvider
+ *    Windows.UI.Xaml.Automation.Provider.IValueProvider
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_CalendarDatePickerAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_CalendarDatePickerAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_CalendarDatePickerAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.CalendarDatePickerAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -18638,6 +19541,55 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+/*
+ *
+ * Class Windows.UI.Xaml.Automation.Peers.TreeViewItemAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
+ *    Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeer ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_TreeViewItemAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_TreeViewItemAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_TreeViewItemAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.TreeViewItemAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Automation.Peers.TreeViewListAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeer ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_TreeViewListAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_TreeViewListAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_TreeViewListAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.TreeViewListAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 
 
 
@@ -18734,6 +19686,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer7_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation;
@@ -18794,6 +19752,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides6_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected;
@@ -18835,6 +19799,18 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAuto
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeer_FWD_DEFINED__
@@ -19723,6 +20699,30 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAu
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -21002,6 +22002,13 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIButton __x_ABI_CWindows
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIButton_FWD_DEFINED__
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker __x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CICaptureElement_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CICaptureElement_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CICaptureElement __x_ABI_CWindows_CUI_CXaml_CControls_CICaptureElement;
@@ -21431,6 +22438,20 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIToggleSwitch __x_ABI_CW
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIToggleSwitch_FWD_DEFINED__
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList_FWD_DEFINED__
+
+
 
 
 
@@ -21469,6 +22490,9 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationControlTyp
 typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationEvents __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationEvents;
 
 
+typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel;
+
+
 typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType;
 
 
@@ -21494,6 +22518,17 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CPatternInterface __x
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CRawElementProviderRuntimeId __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CRawElementProviderRuntimeId;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -21931,6 +22966,33 @@ enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationEvents
     
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Automation.Peers.AutomationHeadingLevel
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel
+{
+    AutomationHeadingLevel_None = 0,
+    AutomationHeadingLevel_Level1 = 1,
+    AutomationHeadingLevel_Level2 = 2,
+    AutomationHeadingLevel_Level3 = 3,
+    AutomationHeadingLevel_Level4 = 4,
+    AutomationHeadingLevel_Level5 = 5,
+    AutomationHeadingLevel_Level6 = 6,
+    AutomationHeadingLevel_Level7 = 7,
+    AutomationHeadingLevel_Level8 = 8,
+    AutomationHeadingLevel_Level9 = 9,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -23905,6 +24967,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomatio
 
 /*
  *
+ * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeer8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.AutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IAutomationPeer8[] = L"Windows.UI.Xaml.Automation.Peers.IAutomationPeer8";
+/* [object, uuid("5C6A1FE6-9A55-4D7F-9498-CFE429E92DA8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetHeadingLevel )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel * returnValue
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_GetHeadingLevel(This,returnValue) \
+    ( (This)->lpVtbl->GetHeadingLevel(This,returnValue) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -25150,6 +26305,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomatio
 
 /*
  *
+ * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.AutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IAutomationPeerOverrides8[] = L"Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides8";
+/* [object, uuid("0E1EBBD4-A003-4936-8175-F5457C07F0C6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetHeadingLevelCore )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel * returnValue
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_GetHeadingLevelCore(This,returnValue) \
+    ( (This)->lpVtbl->GetHeadingLevelCore(This,returnValue) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -25799,6 +27047,188 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPe
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.CalendarDatePickerAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ICalendarDatePickerAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeer";
+/* [object, uuid("40D8938E-DB5E-4B03-BEBA-D10F62419787"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.CalendarDatePickerAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ICalendarDatePickerAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeerFactory";
+/* [object, uuid("AB705DD2-D293-45BF-9F19-26F7603A5E9B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker * owner,
+        /* [in] */__RPC__in_opt IInspectable * outer,
+        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer * * instance
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -39266,6 +40696,370 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwi
 
 /*
  *
+ * Interface Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.TreeViewItemAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ITreeViewItemAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeer";
+/* [object, uuid("2331D648-B617-437F-920C-71D450503E65"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.TreeViewItemAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ITreeViewItemAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeerFactory";
+/* [object, uuid("73D388BF-1D01-4159-82C0-2B2996DBFDCE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem * owner,
+        /* [in] */__RPC__in_opt IInspectable * outer,
+        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer * * instance
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.TreeViewListAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ITreeViewListAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeer";
+/* [object, uuid("71C1B5BC-BB29-4479-A8A8-606BE6B823AE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.TreeViewListAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_ITreeViewListAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeerFactory";
+/* [object, uuid("00F597E2-F811-475A-BFE6-290FE707FA88"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList * owner,
+        /* [in] */__RPC__in_opt IInspectable * outer,
+        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer * * instance
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Automation.Peers.AppBarAutomationPeer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -39351,6 +41145,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IInvokeProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -39392,6 +41187,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer6
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer7
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer8
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides8
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -39485,6 +41282,32 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_ButtonBaseAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Automation.Peers.CalendarDatePickerAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Peers.ICalendarDatePickerAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IInvokeProvider
+ *    Windows.UI.Xaml.Automation.Provider.IValueProvider
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_CalendarDatePickerAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_CalendarDatePickerAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_CalendarDatePickerAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.CalendarDatePickerAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -41386,6 +43209,55 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_ToggleSwitchAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.ToggleSwitchAutomationPeer";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Automation.Peers.TreeViewItemAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
+ *    Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeer ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_TreeViewItemAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_TreeViewItemAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_TreeViewItemAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.TreeViewItemAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Automation.Peers.TreeViewListAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Peers.ITreeViewListAutomationPeer ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_TreeViewListAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_TreeViewListAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_TreeViewListAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.TreeViewListAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 

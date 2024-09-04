@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.contacts.dataprovider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -552,6 +554,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListServerSearchReadBatchRequestEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListServerSearchReadBatchRequestEventArgs_USE
@@ -581,6 +584,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::DataProvide
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -595,6 +599,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListSyncManagerSyncRequestEventArgs_USE
@@ -624,6 +629,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::DataProvide
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListSyncManagerSyncRequestEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -834,8 +840,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("1A398A52-8C9D-4D6F-A4E0-111E9A125A30"), exclusiveto, contract] */
                     MIDL_INTERFACE("1A398A52-8C9D-4D6F-A4E0-111E9A125A30")
-                    IContactDataProviderConnection : IInspectable
+                    IContactDataProviderConnection : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SyncRequested(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListSyncManagerSyncRequestEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -888,8 +895,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("A1D327B0-196C-4BFD-8F0F-C68D67F249D3"), exclusiveto, contract] */
                     MIDL_INTERFACE("A1D327B0-196C-4BFD-8F0F-C68D67F249D3")
-                    IContactDataProviderConnection2 : IInspectable
+                    IContactDataProviderConnection2 : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CreateOrUpdateContactRequested(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListCreateOrUpdateContactRequestEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -941,8 +949,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("527104BE-3C62-43C8-9AE7-DB531685CD99"), exclusiveto, contract] */
                     MIDL_INTERFACE("527104BE-3C62-43C8-9AE7-DB531685CD99")
-                    IContactDataProviderTriggerDetails : IInspectable
+                    IContactDataProviderTriggerDetails : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Connection(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::DataProvider::IContactDataProviderConnection * * value
                             ) = 0;
@@ -983,8 +992,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("B4AF411F-C849-47D0-B119-91CF605B2F2A"), exclusiveto, contract] */
                     MIDL_INTERFACE("B4AF411F-C849-47D0-B119-91CF605B2F2A")
-                    IContactListCreateOrUpdateContactRequest : IInspectable
+                    IContactListCreateOrUpdateContactRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactListId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1035,8 +1045,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("851C1690-1A51-4B0C-AEEF-1240AC5BED75"), exclusiveto, contract] */
                     MIDL_INTERFACE("851C1690-1A51-4B0C-AEEF-1240AC5BED75")
-                    IContactListCreateOrUpdateContactRequestEventArgs : IInspectable
+                    IContactListCreateOrUpdateContactRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::DataProvider::IContactListCreateOrUpdateContactRequest * * value
                             ) = 0;
@@ -1080,8 +1091,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("5E114687-CE03-4DE5-8557-9CCF552D472A"), exclusiveto, contract] */
                     MIDL_INTERFACE("5E114687-CE03-4DE5-8557-9CCF552D472A")
-                    IContactListDeleteContactRequest : IInspectable
+                    IContactListDeleteContactRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactListId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1131,8 +1143,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("B22054A1-E8FA-4DB5-9389-2D12EE7D15EE"), exclusiveto, contract] */
                     MIDL_INTERFACE("B22054A1-E8FA-4DB5-9389-2D12EE7D15EE")
-                    IContactListDeleteContactRequestEventArgs : IInspectable
+                    IContactListDeleteContactRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::DataProvider::IContactListDeleteContactRequest * * value
                             ) = 0;
@@ -1176,8 +1189,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("BA776A97-4030-4925-9FB4-143B295E653B"), exclusiveto, contract] */
                     MIDL_INTERFACE("BA776A97-4030-4925-9FB4-143B295E653B")
-                    IContactListServerSearchReadBatchRequest : IInspectable
+                    IContactListServerSearchReadBatchRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SessionId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1238,8 +1252,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("1A27E87B-69D7-4E4E-8042-861CBA61471E"), exclusiveto, contract] */
                     MIDL_INTERFACE("1A27E87B-69D7-4E4E-8042-861CBA61471E")
-                    IContactListServerSearchReadBatchRequestEventArgs : IInspectable
+                    IContactListServerSearchReadBatchRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::DataProvider::IContactListServerSearchReadBatchRequest * * value
                             ) = 0;
@@ -1283,8 +1298,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("3C0E57A4-C4E7-4970-9A8F-9A66A2BB6C1A"), exclusiveto, contract] */
                     MIDL_INTERFACE("3C0E57A4-C4E7-4970-9A8F-9A66A2BB6C1A")
-                    IContactListSyncManagerSyncRequest : IInspectable
+                    IContactListSyncManagerSyncRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactListId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1331,8 +1347,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("158E4DAC-446D-4F10-AFC2-02683EC533A6"), exclusiveto, contract] */
                     MIDL_INTERFACE("158E4DAC-446D-4F10-AFC2-02683EC533A6")
-                    IContactListSyncManagerSyncRequestEventArgs : IInspectable
+                    IContactListSyncManagerSyncRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::DataProvider::IContactListSyncManagerSyncRequest * * value
                             ) = 0;
@@ -1778,6 +1795,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataPr
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListServerSearchReadBatchRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListServerSearchReadBatchRequestEventArgs_INTERFACE_DEFINED__
 
@@ -1825,9 +1843,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataPr
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListServerSearchReadBatchRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__
@@ -1875,6 +1895,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataPr
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CDataProvider__CContactDataProviderConnection_Windows__CApplicationModel__CContacts__CDataProvider__CContactListSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 

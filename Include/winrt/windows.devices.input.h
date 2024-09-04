@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.input.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -477,6 +479,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_USE
@@ -505,6 +508,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Input::MouseDevice*,ABI::Windo
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -713,8 +717,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3A3F9B56-6798-4BBC-833E-0F34B17C65FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("3A3F9B56-6798-4BBC-833E-0F34B17C65FF")
-                IKeyboardCapabilities : IInspectable
+                IKeyboardCapabilities : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardPresent(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -753,8 +758,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("BCA5E023-7DD9-4B6B-9A92-55D43CB38F73"), exclusiveto, contract] */
                 MIDL_INTERFACE("BCA5E023-7DD9-4B6B-9A92-55D43CB38F73")
-                IMouseCapabilities : IInspectable
+                IMouseCapabilities : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MousePresent(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -805,8 +811,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("88EDF458-F2C8-49F4-BE1F-C256B388BC11"), exclusiveto, contract] */
                 MIDL_INTERFACE("88EDF458-F2C8-49F4-BE1F-C256B388BC11")
-                IMouseDevice : IInspectable
+                IMouseDevice : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MouseMoved(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -849,8 +856,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("484A9045-6D70-49DB-8E68-46FFBD17D38D"), exclusiveto, contract] */
                 MIDL_INTERFACE("484A9045-6D70-49DB-8E68-46FFBD17D38D")
-                IMouseDeviceStatics : IInspectable
+                IMouseDeviceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Input::IMouseDevice * * mouseDevice
                         ) = 0;
@@ -889,8 +897,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("F625AA5D-2354-4CC7-9230-96941C969FDE"), exclusiveto, contract] */
                 MIDL_INTERFACE("F625AA5D-2354-4CC7-9230-96941C969FDE")
-                IMouseEventArgs : IInspectable
+                IMouseEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MouseDelta(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::MouseDelta * value
                         ) = 0;
@@ -929,8 +938,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("93C9BAFC-EBCB-467E-82C6-276FEAE36B5A"), exclusiveto, contract] */
                 MIDL_INTERFACE("93C9BAFC-EBCB-467E-82C6-276FEAE36B5A")
-                IPointerDevice : IInspectable
+                IPointerDevice : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -984,8 +994,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("F8A6D2A0-C484-489F-AE3E-30D2EE1FFD3E"), exclusiveto, contract] */
                 MIDL_INTERFACE("F8A6D2A0-C484-489F-AE3E-30D2EE1FFD3E")
-                IPointerDevice2 : IInspectable
+                IPointerDevice2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPointersWithZDistance(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -1024,8 +1035,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("D8B89AA1-D1C6-416E-BD8D-5790914DC563"), exclusiveto, contract] */
                 MIDL_INTERFACE("D8B89AA1-D1C6-416E-BD8D-5790914DC563")
-                IPointerDeviceStatics : IInspectable
+                IPointerDeviceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetPointerDevice(
                         /* [in] */UINT32 pointerId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Input::IPointerDevice * * pointerDevice
@@ -1068,8 +1080,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("20DD55F9-13F1-46C8-9285-2C05FA3EDA6F"), exclusiveto, contract] */
                 MIDL_INTERFACE("20DD55F9-13F1-46C8-9285-2C05FA3EDA6F")
-                ITouchCapabilities : IInspectable
+                ITouchCapabilities : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TouchPresent(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -1843,6 +1856,7 @@ interface __FIVectorView_1_Windows__CDevices__CInput__CPointerDeviceUsage
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_INTERFACE_DEFINED__
 
@@ -1889,6 +1903,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Window
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

@@ -42,13 +42,10 @@ _CRTIMP new_handler __cdecl set_new_handler(_In_opt_ new_handler _NewHandler);
 #ifndef __NOTHROW_T_DEFINED
 #define __NOTHROW_T_DEFINED
 namespace std {
-        /* placement new tag type to suppress exceptions */
-        struct nothrow_t {};
+struct nothrow_t { }; // placement new tag type to suppress exceptions */
 
-        /* constant for placement new tag */
-        /* marking as selectany to permit use in non-STL-consuming projects */
-        extern const __declspec(selectany) nothrow_t nothrow;
-};
+extern const nothrow_t nothrow;	// constant for placement new tag
+}
 
 _Ret_maybenull_ _Post_writable_byte_size_(_Size) void *__CRTDECL operator new(size_t _Size, const std::nothrow_t&) throw();
 _Ret_maybenull_ _Post_writable_byte_size_(_Size) void *__CRTDECL operator new[](size_t _Size, const std::nothrow_t&) throw();

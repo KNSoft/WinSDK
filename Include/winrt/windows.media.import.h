@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.import.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1581,6 +1583,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportItemImportedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportItemImportedEventArgs_USE
@@ -1610,6 +1613,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Import::PhotoImportFindItemsResu
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1622,6 +1626,7 @@ namespace ABI {
     } /* Import */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportSelectionChangedEventArgs_USE
@@ -1651,6 +1656,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Import::PhotoImportFindItemsResu
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportSelectionChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2559,8 +2565,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("F4E112F8-843D-428A-A1A6-81510292B0AE"), exclusiveto, contract] */
                 MIDL_INTERFACE("F4E112F8-843D-428A-A1A6-81510292B0AE")
-                IPhotoImportDeleteImportedItemsFromSourceResult : IInspectable
+                IPhotoImportDeleteImportedItemsFromSourceResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Session(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Import::IPhotoImportSession * * value
                         ) = 0;
@@ -2635,8 +2642,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("3915E647-6C78-492B-844E-8FE5E8F6BFB9"), exclusiveto, contract] */
                 MIDL_INTERFACE("3915E647-6C78-492B-844E-8FE5E8F6BFB9")
-                IPhotoImportFindItemsResult : IInspectable
+                IPhotoImportFindItemsResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Session(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Import::IPhotoImportSession * * value
                         ) = 0;
@@ -2769,8 +2777,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("FBDD6A3B-ECF9-406A-815E-5015625B0A88"), exclusiveto, contract] */
                 MIDL_INTERFACE("FBDD6A3B-ECF9-406A-815E-5015625B0A88")
-                IPhotoImportFindItemsResult2 : IInspectable
+                IPhotoImportFindItemsResult2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AddItemsInDateRangeToSelection(
                         /* [in] */ABI::Windows::Foundation::DateTime rangeStart,
                         /* [in] */ABI::Windows::Foundation::TimeSpan rangeLength
@@ -2810,8 +2819,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("E4D4F478-D419-4443-A84E-F06A850C0B00"), exclusiveto, contract] */
                 MIDL_INTERFACE("E4D4F478-D419-4443-A84E-F06A850C0B00")
-                IPhotoImportImportItemsResult : IInspectable
+                IPhotoImportImportItemsResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Session(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Import::IPhotoImportSession * * value
                         ) = 0;
@@ -2889,8 +2899,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("A9D07E76-9BFC-43B8-B356-633B6A988C9E"), exclusiveto, contract] */
                 MIDL_INTERFACE("A9D07E76-9BFC-43B8-B356-633B6A988C9E")
-                IPhotoImportItem : IInspectable
+                IPhotoImportItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2965,8 +2976,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("42CB2FDD-7D68-47B5-BC7C-CEB73E0C77DC"), exclusiveto, contract] */
                 MIDL_INTERFACE("42CB2FDD-7D68-47B5-BC7C-CEB73E0C77DC")
-                IPhotoImportItemImportedEventArgs : IInspectable
+                IPhotoImportItemImportedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ImportedItem(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Import::IPhotoImportItem * * value
                         ) = 0;
@@ -3005,8 +3017,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("2771903D-A046-4F06-9B9C-BFD662E83287"), exclusiveto, contract] */
                 MIDL_INTERFACE("2771903D-A046-4F06-9B9C-BFD662E83287")
-                IPhotoImportManagerStatics : IInspectable
+                IPhotoImportManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsSupportedAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                         ) = 0;
@@ -3051,8 +3064,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("D9F797E4-A09A-4EE4-A4B1-20940277A5BE"), exclusiveto, contract] */
                 MIDL_INTERFACE("D9F797E4-A09A-4EE4-A4B1-20940277A5BE")
-                IPhotoImportOperation : IInspectable
+                IPhotoImportOperation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Stage(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Import::PhotoImportStage * value
                         ) = 0;
@@ -3103,8 +3117,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("10461782-FA9D-4C30-8BC9-4D64911572D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("10461782-FA9D-4C30-8BC9-4D64911572D5")
-                IPhotoImportSelectionChangedEventArgs : IInspectable
+                IPhotoImportSelectionChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSelectionEmpty(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3147,8 +3162,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("AA63916E-ECDB-4EFE-94C6-5F5CAFE34CFB"), exclusiveto, contract] */
                 MIDL_INTERFACE("AA63916E-ECDB-4EFE-94C6-5F5CAFE34CFB")
-                IPhotoImportSession : IInspectable
+                IPhotoImportSession : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Source(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Import::IPhotoImportSource * * value
                         ) = 0;
@@ -3219,8 +3235,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("2A526710-3EC6-469D-A375-2B9F4785391E"), exclusiveto, contract] */
                 MIDL_INTERFACE("2A526710-3EC6-469D-A375-2B9F4785391E")
-                IPhotoImportSession2 : IInspectable
+                IPhotoImportSession2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_SubfolderDateFormat(
                         /* [in] */ABI::Windows::Media::Import::PhotoImportSubfolderDateFormat value
                         ) = 0;
@@ -3268,8 +3285,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("46D7D757-F802-44C7-9C98-7A71F4BC1486"), exclusiveto, contract] */
                 MIDL_INTERFACE("46D7D757-F802-44C7-9C98-7A71F4BC1486")
-                IPhotoImportSidecar : IInspectable
+                IPhotoImportSidecar : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3314,8 +3332,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("1F8EA35E-145B-4CD6-87F1-54965A982FEF"), exclusiveto, contract] */
                 MIDL_INTERFACE("1F8EA35E-145B-4CD6-87F1-54965A982FEF")
-                IPhotoImportSource : IInspectable
+                IPhotoImportSource : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3402,8 +3421,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("0528E586-32D8-467C-8CEE-23A1B2F43E85"), exclusiveto, contract] */
                 MIDL_INTERFACE("0528E586-32D8-467C-8CEE-23A1B2F43E85")
-                IPhotoImportSourceStatics : IInspectable
+                IPhotoImportSourceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                         /* [in] */__RPC__in HSTRING sourceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CImport__CPhotoImportSource * * operation
@@ -3447,8 +3467,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("F2B9B093-FC85-487F-87C2-58D675D05B07"), exclusiveto, contract] */
                 MIDL_INTERFACE("F2B9B093-FC85-487F-87C2-58D675D05B07")
-                IPhotoImportStorageMedium : IInspectable
+                IPhotoImportStorageMedium : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3506,8 +3527,9 @@ namespace ABI {
             namespace Import {
                 /* [object, uuid("623C0289-321A-41D8-9166-8C62A333276C"), exclusiveto, contract] */
                 MIDL_INTERFACE("623C0289-321A-41D8-9166-8C62A333276C")
-                IPhotoImportVideoSegment : IInspectable
+                IPhotoImportVideoSegment : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6327,6 +6349,7 @@ interface __FIAsyncOperation_1_Windows__CMedia__CImport__CPhotoImportSource
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportItemImportedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportItemImportedEventArgs_INTERFACE_DEFINED__
 
@@ -6374,9 +6397,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItem
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportItemImportedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportSelectionChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportSelectionChangedEventArgs_INTERFACE_DEFINED__
@@ -6424,6 +6449,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItem
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CImport__CPhotoImportFindItemsResult_Windows__CMedia__CImport__CPhotoImportSelectionChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)

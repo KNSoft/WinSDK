@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.management.deployment.preview.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,12 +92,16 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_MANAGEMENT_DEPLOYMENT_PREVIEW_DEPLOYMENTPREVIEWCONTRACT_VERSION)
 #define WINDOWS_MANAGEMENT_DEPLOYMENT_PREVIEW_DEPLOYMENTPREVIEWCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_MANAGEMENT_DEPLOYMENT_PREVIEW_DEPLOYMENTPREVIEWCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -202,8 +204,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("E2FAD668-882C-4F33-B035-0DF7B90D67E6"), exclusiveto, contract] */
                     MIDL_INTERFACE("E2FAD668-882C-4F33-B035-0DF7B90D67E6")
-                    IClassicAppManagerStatics : IInspectable
+                    IClassicAppManagerStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE FindInstalledApp(
                             /* [in] */__RPC__in HSTRING appUninstallKey,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Management::Deployment::Preview::IInstalledClassicAppInfo * * result
@@ -245,8 +248,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("0A7D3DA3-65D0-4086-80D6-0610D760207D"), exclusiveto, contract] */
                     MIDL_INTERFACE("0A7D3DA3-65D0-4086-80D6-0610D760207D")
-                    IInstalledClassicAppInfo : IInspectable
+                    IInstalledClassicAppInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;

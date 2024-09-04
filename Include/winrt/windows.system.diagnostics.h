@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.diagnostics.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -284,6 +286,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker ABI::Windows::System::Diagnostics::IDiagnosticInvoker
 
 #endif // ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Diagnostics {
+                interface IDiagnosticInvoker2;
+            } /* Windows */
+        } /* System */
+    } /* Diagnostics */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2 ABI::Windows::System::Diagnostics::IDiagnosticInvoker2
+
+#endif // ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvokerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvokerStatics_FWD_DEFINED__
@@ -1470,6 +1486,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -1651,8 +1668,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("C265A296-E73B-4097-B28F-3442F03DD831"), exclusiveto, contract] */
                 MIDL_INTERFACE("C265A296-E73B-4097-B28F-3442F03DD831")
-                IDiagnosticActionResult : IInspectable
+                IDiagnosticActionResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
                         /* [retval, out] */__RPC__out HRESULT * value
                         ) = 0;
@@ -1694,8 +1712,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("187B270A-02E3-4F86-84FC-FDD892B5940F"), exclusiveto, contract] */
                 MIDL_INTERFACE("187B270A-02E3-4F86-84FC-FDD892B5940F")
-                IDiagnosticInvoker : IInspectable
+                IDiagnosticInvoker : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RunDiagnosticActionAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Json::IJsonObject * context,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CSystem__CDiagnostics__CDiagnosticActionResult_Windows__CSystem__CDiagnostics__CDiagnosticActionState * * operation
@@ -1712,6 +1731,48 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.System.Diagnostics.IDiagnosticInvoker2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Diagnostics.DiagnosticInvoker
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Diagnostics_IDiagnosticInvoker2[] = L"Windows.System.Diagnostics.IDiagnosticInvoker2";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Diagnostics {
+                /* [object, uuid("E3BF945C-155A-4B52-A8EC-070C44F95000"), exclusiveto, contract] */
+                MIDL_INTERFACE("E3BF945C-155A-4B52-A8EC-070C44F95000")
+                IDiagnosticInvoker2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE RunDiagnosticActionFromStringAsync(
+                        /* [in] */__RPC__in HSTRING context,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CSystem__CDiagnostics__CDiagnosticActionResult_Windows__CSystem__CDiagnostics__CDiagnosticActionState * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IDiagnosticInvoker2=_uuidof(IDiagnosticInvoker2);
+                
+            } /* Windows */
+        } /* System */
+    } /* Diagnostics */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -1735,8 +1796,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("5CFAD8DE-F15C-4554-A813-C113C3881B09"), exclusiveto, contract] */
                 MIDL_INTERFACE("5CFAD8DE-F15C-4554-A813-C113C3881B09")
-                IDiagnosticInvokerStatics : IInspectable
+                IDiagnosticInvokerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Diagnostics::IDiagnosticInvoker * * result
                         ) = 0;
@@ -1782,8 +1844,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("0BBB2472-C8BF-423A-A810-B559AE4354E2"), exclusiveto, contract] */
                 MIDL_INTERFACE("0BBB2472-C8BF-423A-A810-B559AE4354E2")
-                IProcessCpuUsage : IInspectable
+                IProcessCpuUsage : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetReport(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Diagnostics::IProcessCpuUsageReport * * value
                         ) = 0;
@@ -1822,8 +1885,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("8A6D9CAC-3987-4E2F-A119-6B5FA214F1B4"), exclusiveto, contract] */
                 MIDL_INTERFACE("8A6D9CAC-3987-4E2F-A119-6B5FA214F1B4")
-                IProcessCpuUsageReport : IInspectable
+                IProcessCpuUsageReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KernelTime(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -1865,8 +1929,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("E830B04B-300E-4EE6-A0AB-5B5F5231B434"), exclusiveto, contract] */
                 MIDL_INTERFACE("E830B04B-300E-4EE6-A0AB-5B5F5231B434")
-                IProcessDiagnosticInfo : IInspectable
+                IProcessDiagnosticInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProcessId(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -1923,8 +1988,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("9558CB1A-3D0B-49EC-AB70-4F7A112805DE"), exclusiveto, contract] */
                 MIDL_INTERFACE("9558CB1A-3D0B-49EC-AB70-4F7A112805DE")
-                IProcessDiagnosticInfo2 : IInspectable
+                IProcessDiagnosticInfo2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAppDiagnosticInfos(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * * result
                         ) = 0;
@@ -1966,8 +2032,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("2F41B260-B49F-428C-AA0E-84744F49CA95"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F41B260-B49F-428C-AA0E-84744F49CA95")
-                IProcessDiagnosticInfoStatics : IInspectable
+                IProcessDiagnosticInfoStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForProcesses(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CSystem__CDiagnostics__CProcessDiagnosticInfo * * processes
                         ) = 0;
@@ -2009,8 +2076,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("4A869897-9899-4A44-A29B-091663BE09B6"), exclusiveto, contract] */
                 MIDL_INTERFACE("4A869897-9899-4A44-A29B-091663BE09B6")
-                IProcessDiagnosticInfoStatics2 : IInspectable
+                IProcessDiagnosticInfoStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryGetForProcessId(
                         /* [in] */UINT32 processId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Diagnostics::IProcessDiagnosticInfo * * result
@@ -2050,8 +2118,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("5AD78BFD-7E51-4E53-BFAA-5A6EE1AABBF8"), exclusiveto, contract] */
                 MIDL_INTERFACE("5AD78BFD-7E51-4E53-BFAA-5A6EE1AABBF8")
-                IProcessDiskUsage : IInspectable
+                IProcessDiskUsage : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetReport(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Diagnostics::IProcessDiskUsageReport * * value
                         ) = 0;
@@ -2090,8 +2159,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("401627FD-535D-4C1F-81B8-DA54E1BE635E"), exclusiveto, contract] */
                 MIDL_INTERFACE("401627FD-535D-4C1F-81B8-DA54E1BE635E")
-                IProcessDiskUsageReport : IInspectable
+                IProcessDiskUsageReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ReadOperationCount(
                         /* [retval, out] */__RPC__out INT64 * value
                         ) = 0;
@@ -2145,8 +2215,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("F50B229B-827C-42B7-B07C-0E32627E6B3E"), exclusiveto, contract] */
                 MIDL_INTERFACE("F50B229B-827C-42B7-B07C-0E32627E6B3E")
-                IProcessMemoryUsage : IInspectable
+                IProcessMemoryUsage : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetReport(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Diagnostics::IProcessMemoryUsageReport * * value
                         ) = 0;
@@ -2185,8 +2256,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("C2C77CBA-1951-4685-8532-7E749ECF8EEB"), exclusiveto, contract] */
                 MIDL_INTERFACE("C2C77CBA-1951-4685-8532-7E749ECF8EEB")
-                IProcessMemoryUsageReport : IInspectable
+                IProcessMemoryUsageReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NonPagedPoolSizeInBytes(
                         /* [retval, out] */__RPC__out UINT64 * value
                         ) = 0;
@@ -2258,8 +2330,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("6037B3AC-02D6-4234-8362-7FE3ADC81F5F"), exclusiveto, contract] */
                 MIDL_INTERFACE("6037B3AC-02D6-4234-8362-7FE3ADC81F5F")
-                ISystemCpuUsage : IInspectable
+                ISystemCpuUsage : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetReport(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Diagnostics::ISystemCpuUsageReport * * value
                         ) = 0;
@@ -2298,8 +2371,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("2C26D0B2-9483-4F62-AB57-82B29D9719B8"), exclusiveto, contract] */
                 MIDL_INTERFACE("2C26D0B2-9483-4F62-AB57-82B29D9719B8")
-                ISystemCpuUsageReport : IInspectable
+                ISystemCpuUsageReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KernelTime(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -2344,8 +2418,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("A290FE05-DFF3-407F-9A1B-0B2B317CA800"), exclusiveto, contract] */
                 MIDL_INTERFACE("A290FE05-DFF3-407F-9A1B-0B2B317CA800")
-                ISystemDiagnosticInfo : IInspectable
+                ISystemDiagnosticInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MemoryUsage(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Diagnostics::ISystemMemoryUsage * * value
                         ) = 0;
@@ -2387,8 +2462,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("D404AC21-FC7D-45F0-9A3F-39203AED9F7E"), exclusiveto, contract] */
                 MIDL_INTERFACE("D404AC21-FC7D-45F0-9A3F-39203AED9F7E")
-                ISystemDiagnosticInfoStatics : IInspectable
+                ISystemDiagnosticInfoStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentSystem(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Diagnostics::ISystemDiagnosticInfo * * value
                         ) = 0;
@@ -2427,8 +2503,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("17FFC595-1702-49CF-AA27-2F0A32591404"), exclusiveto, contract] */
                 MIDL_INTERFACE("17FFC595-1702-49CF-AA27-2F0A32591404")
-                ISystemMemoryUsage : IInspectable
+                ISystemMemoryUsage : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetReport(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Diagnostics::ISystemMemoryUsageReport * * value
                         ) = 0;
@@ -2467,8 +2544,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("38663C87-2A9F-403A-BD19-2CF3E8169500"), exclusiveto, contract] */
                 MIDL_INTERFACE("38663C87-2A9F-403A-BD19-2CF3E8169500")
-                ISystemMemoryUsageReport : IInspectable
+                ISystemMemoryUsageReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TotalPhysicalSizeInBytes(
                         /* [retval, out] */__RPC__out UINT64 * value
                         ) = 0;
@@ -2528,6 +2606,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.System.Diagnostics.IDiagnosticInvoker ** Default Interface **
+ *    Windows.System.Diagnostics.IDiagnosticInvoker2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -2854,6 +2933,12 @@ typedef interface __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticActionResult
 typedef interface __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker;
 
 #endif // ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2 __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2;
+
+#endif // ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvokerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvokerStatics_FWD_DEFINED__
@@ -5030,6 +5115,7 @@ typedef enum __x_ABI_CWindows_CSystem_CDiagnostics_CDiagnosticActionState __x_AB
 
 
 
+
 /*
  *
  * Struct Windows.System.Diagnostics.DiagnosticActionState
@@ -5245,6 +5331,100 @@ interface __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.System.Diagnostics.IDiagnosticInvoker2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Diagnostics.DiagnosticInvoker
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Diagnostics_IDiagnosticInvoker2[] = L"Windows.System.Diagnostics.IDiagnosticInvoker2";
+/* [object, uuid("E3BF945C-155A-4B52-A8EC-070C44F95000"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *RunDiagnosticActionFromStringAsync )(
+        __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2 * This,
+        /* [in] */__RPC__in HSTRING context,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CSystem__CDiagnostics__CDiagnosticActionResult_Windows__CSystem__CDiagnostics__CDiagnosticActionState * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2Vtbl;
+
+interface __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_RunDiagnosticActionFromStringAsync(This,context,operation) \
+    ( (This)->lpVtbl->RunDiagnosticActionFromStringAsync(This,context,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CIDiagnosticInvoker2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7090,6 +7270,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.System.Diagnostics.IDiagnosticInvoker ** Default Interface **
+ *    Windows.System.Diagnostics.IDiagnosticInvoker2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

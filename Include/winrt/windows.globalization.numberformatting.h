@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.globalization.numberformatting.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -762,8 +764,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("11730CA5-4B00-41B2-B332-73B12A497D54"), exclusiveto, contract] */
                 MIDL_INTERFACE("11730CA5-4B00-41B2-B332-73B12A497D54")
-                ICurrencyFormatter : IInspectable
+                ICurrencyFormatter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Currency(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -809,8 +812,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("072C2F1D-E7BA-4197-920E-247C92F7DEA6"), exclusiveto, contract] */
                 MIDL_INTERFACE("072C2F1D-E7BA-4197-920E-247C92F7DEA6")
-                ICurrencyFormatter2 : IInspectable
+                ICurrencyFormatter2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
                         /* [retval, out] */__RPC__out ABI::Windows::Globalization::NumberFormatting::CurrencyFormatterMode * value
                         ) = 0;
@@ -855,8 +859,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("86C7537E-B938-4AA2-84B0-2C33DC5B1450"), exclusiveto, contract] */
                 MIDL_INTERFACE("86C7537E-B938-4AA2-84B0-2C33DC5B1450")
-                ICurrencyFormatterFactory : IInspectable
+                ICurrencyFormatterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateCurrencyFormatterCode(
                         /* [in] */__RPC__in HSTRING currencyCode,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::NumberFormatting::ICurrencyFormatter * * result
@@ -902,8 +907,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("0D018C9A-E393-46B8-B830-7A69C8F89FBB"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D018C9A-E393-46B8-B830-7A69C8F89FBB")
-                IDecimalFormatterFactory : IInspectable
+                IDecimalFormatterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateDecimalFormatter(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * languages,
                         /* [in] */__RPC__in HSTRING geographicRegion,
@@ -944,8 +950,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("70A64FF8-66AB-4155-9DA1-739E46764543"), exclusiveto, contract] */
                 MIDL_INTERFACE("70A64FF8-66AB-4155-9DA1-739E46764543")
-                IIncrementNumberRounder : IInspectable
+                IIncrementNumberRounder : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RoundingAlgorithm(
                         /* [retval, out] */__RPC__out ABI::Windows::Globalization::NumberFormatting::RoundingAlgorithm * value
                         ) = 0;
@@ -990,8 +997,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("A5007C49-7676-4DB7-8631-1B6FF265CAA9"), contract] */
                 MIDL_INTERFACE("A5007C49-7676-4DB7-8631-1B6FF265CAA9")
-                INumberFormatter : IInspectable
+                INumberFormatter : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE FormatInt(
                         /* [in] */INT64 value,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
@@ -1036,8 +1044,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("D4A8C1F0-80D0-4B0D-A89E-882C1E8F8310"), contract] */
                 MIDL_INTERFACE("D4A8C1F0-80D0-4B0D-A89E-882C1E8F8310")
-                INumberFormatter2 : IInspectable
+                INumberFormatter2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FormatInt(
                         /* [in] */INT64 value,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
@@ -1082,8 +1091,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("80332D21-AEE1-4A39-BAA2-07ED8C96DAF6"), contract] */
                 MIDL_INTERFACE("80332D21-AEE1-4A39-BAA2-07ED8C96DAF6")
-                INumberFormatterOptions : IInspectable
+                INumberFormatterOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Languages(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -1158,8 +1168,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("E6659412-4A13-4A53-83A1-392FBE4CFF9F"), contract] */
                 MIDL_INTERFACE("E6659412-4A13-4A53-83A1-392FBE4CFF9F")
-                INumberParser : IInspectable
+                INumberParser : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ParseInt(
                         /* [in] */__RPC__in HSTRING text,
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1___z__zint64 * * result
@@ -1204,8 +1215,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("5473C375-38ED-4631-B80C-EF34FC48B7F5"), contract] */
                 MIDL_INTERFACE("5473C375-38ED-4631-B80C-EF34FC48B7F5")
-                INumberRounder : IInspectable
+                INumberRounder : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RoundInt32(
                         /* [in] */INT32 value,
                         /* [retval, out] */__RPC__out INT32 * result
@@ -1262,8 +1274,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("3B088433-646F-4EFE-8D48-66EB2E49E736"), contract] */
                 MIDL_INTERFACE("3B088433-646F-4EFE-8D48-66EB2E49E736")
-                INumberRounderOption : IInspectable
+                INumberRounderOption : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NumberRounder(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::NumberFormatting::INumberRounder * * value
                         ) = 0;
@@ -1305,8 +1318,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("28F5BC2C-8C23-4234-AD2E-FA5A3A426E9B"), exclusiveto, contract] */
                 MIDL_INTERFACE("28F5BC2C-8C23-4234-AD2E-FA5A3A426E9B")
-                INumeralSystemTranslator : IInspectable
+                INumeralSystemTranslator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Languages(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -1358,8 +1372,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("9630C8DA-36EF-4D88-A85C-6F0D98D620A6"), exclusiveto, contract] */
                 MIDL_INTERFACE("9630C8DA-36EF-4D88-A85C-6F0D98D620A6")
-                INumeralSystemTranslatorFactory : IInspectable
+                INumeralSystemTranslatorFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * languages,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::NumberFormatting::INumeralSystemTranslator * * result
@@ -1399,8 +1414,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("B7828AEF-FED4-4018-A6E2-E09961E03765"), exclusiveto, contract] */
                 MIDL_INTERFACE("B7828AEF-FED4-4018-A6E2-E09961E03765")
-                IPercentFormatterFactory : IInspectable
+                IPercentFormatterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreatePercentFormatter(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * languages,
                         /* [in] */__RPC__in HSTRING geographicRegion,
@@ -1441,8 +1457,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("2B37B4AC-E638-4ED5-A998-62F6B06A49AE"), exclusiveto, contract] */
                 MIDL_INTERFACE("2B37B4AC-E638-4ED5-A998-62F6B06A49AE")
-                IPermilleFormatterFactory : IInspectable
+                IPermilleFormatterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreatePermilleFormatter(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * languages,
                         /* [in] */__RPC__in HSTRING geographicRegion,
@@ -1480,8 +1497,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("FD1CDD31-0A3C-49C4-A642-96A1564F4F30"), contract] */
                 MIDL_INTERFACE("FD1CDD31-0A3C-49C4-A642-96A1564F4F30")
-                ISignedZeroOption : IInspectable
+                ISignedZeroOption : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsZeroSigned(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1523,8 +1541,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("F5941BCA-6646-4913-8C76-1B191FF94DFD"), exclusiveto, contract] */
                 MIDL_INTERFACE("F5941BCA-6646-4913-8C76-1B191FF94DFD")
-                ISignificantDigitsNumberRounder : IInspectable
+                ISignificantDigitsNumberRounder : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RoundingAlgorithm(
                         /* [retval, out] */__RPC__out ABI::Windows::Globalization::NumberFormatting::RoundingAlgorithm * value
                         ) = 0;
@@ -1569,8 +1588,9 @@ namespace ABI {
             namespace NumberFormatting {
                 /* [object, uuid("1D4DFCDD-2D43-4EE8-BBF1-C1B26A711A58"), contract] */
                 MIDL_INTERFACE("1D4DFCDD-2D43-4EE8-BBF1-C1B26A711A58")
-                ISignificantDigitsOption : IInspectable
+                ISignificantDigitsOption : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SignificantDigits(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;

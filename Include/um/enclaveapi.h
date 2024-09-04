@@ -1,4 +1,3 @@
- 
 // begin_1_0
 // begin_1_1
 /********************************************************************************
@@ -21,24 +20,6 @@
 #include <minwindef.h>
 #include <minwinbase.h>
 
-/* APISET_NAME: api-ms-win-core-enclave-l1 */
-/* APISET_TAG: public */
-
-#if !defined(RC_INVOKED)
-
-#ifndef _APISET_ENCLAVE_VER
-#ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
-#define _APISET_ENCLAVE_VER 0x0101
-#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINTHRESHOLD
-#define _APISET_ENCLAVE_VER 0x0100
-#endif
-#endif
-#endif
-
-#endif // !defined(RC_INVOKED)
-
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -48,7 +29,6 @@ extern "C" {
 // begin_1_0
 
 #pragma region Desktop Family or OneCore Or App Family
-
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP)
 
 WINBASEAPI
@@ -61,7 +41,8 @@ IsEnclaveTypeSupported(
 
 
 WINBASEAPI
-_Ret_maybenull_ _Post_writable_byte_size_(dwSize)
+_Ret_maybenull_
+_Post_writable_byte_size_(dwSize)
 LPVOID
 WINAPI
 CreateEnclave(
@@ -113,11 +94,7 @@ InitializeEnclave(
 // begin_1_1
 
 #pragma region Desktop Family or OneCore Family
-
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-
-#if !defined(_CONTRACT_GEN) || (_APISET_ENCLAVE_VER >= 0x0101)
 
 WINBASEAPI
 _Success_(return != FALSE)
@@ -151,7 +128,7 @@ CallEnclave(
     _In_ LPENCLAVE_ROUTINE lpRoutine,
     _In_ LPVOID lpParameter,
     _In_ BOOL fWaitForThread,
-    _Out_ LPVOID * lpReturnValue
+    _Out_ LPVOID* lpReturnValue
     );
 
 
@@ -173,8 +150,6 @@ DeleteEnclave(
     _In_ LPVOID lpAddress
     );
 
-
-#endif // !defined(_CONTRACT_GEN) || (_APISET_ENCLAVE_VER >= 0x0101)
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion

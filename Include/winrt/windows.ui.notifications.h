@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.notifications.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -552,6 +554,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3 ABI::Windows::UI::Notifications::IScheduledToastNotification3
 
 #endif // ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IScheduledToastNotification4;
+            } /* Windows */
+        } /* UI */
+    } /* Notifications */} /* ABI */
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 ABI::Windows::UI::Notifications::IScheduledToastNotification4
+
+#endif // ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_FWD_DEFINED__
@@ -2351,6 +2367,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_USE
@@ -2379,6 +2396,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Notifications::Management::UserNoti
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -2426,6 +2444,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_USE
@@ -2455,6 +2474,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotification*,A
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -2467,6 +2487,7 @@ namespace ABI {
     } /* Notifications */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_USE
@@ -2496,6 +2517,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotification*,A
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3339,6 +3361,7 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* Notifications */} /* ABI */
+
 
 
 
@@ -4628,8 +4651,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("EB0DBE66-7448-448D-9DB8-D78ACD2ABBA9"), contract] */
                 MIDL_INTERFACE("EB0DBE66-7448-448D-9DB8-D78ACD2ABBA9")
-                IAdaptiveNotificationContent : IInspectable
+                IAdaptiveNotificationContent : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Notifications::AdaptiveNotificationContentKind * value
                         ) = 0;
@@ -4675,8 +4699,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("46D4A3BE-609A-4326-A40B-BFDE872034A3"), exclusiveto, contract] */
                 MIDL_INTERFACE("46D4A3BE-609A-4326-A40B-BFDE872034A3")
-                IAdaptiveNotificationText : IInspectable
+                IAdaptiveNotificationText : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4724,8 +4749,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("075CB4CA-D08A-4E2F-9233-7E289C1F7722"), exclusiveto, contract] */
                 MIDL_INTERFACE("075CB4CA-D08A-4E2F-9233-7E289C1F7722")
-                IBadgeNotification : IInspectable
+                IBadgeNotification : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * value
                         ) = 0;
@@ -4770,8 +4796,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("EDF255CE-0618-4D59-948A-5A61040C52F9"), exclusiveto, contract] */
                 MIDL_INTERFACE("EDF255CE-0618-4D59-948A-5A61040C52F9")
-                IBadgeNotificationFactory : IInspectable
+                IBadgeNotificationFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateBadgeNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeNotification * * notification
@@ -4811,8 +4838,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("996B21BC-0386-44E5-BA8D-0C1077A62E92"), exclusiveto, contract] */
                 MIDL_INTERFACE("996B21BC-0386-44E5-BA8D-0C1077A62E92")
-                IBadgeUpdateManagerForUser : IInspectable
+                IBadgeUpdateManagerForUser : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateBadgeUpdaterForApplication(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeUpdater * * result
                         ) = 0;
@@ -4862,8 +4890,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("33400FAA-6DD5-4105-AEBC-9B50FCA492DA"), exclusiveto, contract] */
                 MIDL_INTERFACE("33400FAA-6DD5-4105-AEBC-9B50FCA492DA")
-                IBadgeUpdateManagerStatics : IInspectable
+                IBadgeUpdateManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateBadgeUpdaterForApplication(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeUpdater * * updater
                         ) = 0;
@@ -4914,8 +4943,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("979A35CE-F940-48BF-94E8-CA244D400B41"), exclusiveto, contract] */
                 MIDL_INTERFACE("979A35CE-F940-48BF-94E8-CA244D400B41")
-                IBadgeUpdateManagerStatics2 : IInspectable
+                IBadgeUpdateManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeUpdateManagerForUser * * result
@@ -4955,8 +4985,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("B5FA1FD4-7562-4F6C-BFA3-1B6ED2E57F2F"), exclusiveto, contract] */
                 MIDL_INTERFACE("B5FA1FD4-7562-4F6C-BFA3-1B6ED2E57F2F")
-                IBadgeUpdater : IInspectable
+                IBadgeUpdater : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Update(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Notifications::IBadgeNotification * notification
                         ) = 0;
@@ -5006,8 +5037,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("06206598-D496-497D-8692-4F7D7C2770DF"), exclusiveto, contract] */
                 MIDL_INTERFACE("06206598-D496-497D-8692-4F7D7C2770DF")
-                IKnownAdaptiveNotificationHintsStatics : IInspectable
+                IKnownAdaptiveNotificationHintsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Style(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5061,8 +5093,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("202192D7-8996-45AA-8BA1-D461D72C2A1B"), exclusiveto, contract] */
                 MIDL_INTERFACE("202192D7-8996-45AA-8BA1-D461D72C2A1B")
-                IKnownAdaptiveNotificationTextStylesStatics : IInspectable
+                IKnownAdaptiveNotificationTextStylesStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Caption(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5155,8 +5188,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("79427BAE-A8B7-4D58-89EA-76A7B7BCCDED"), exclusiveto, contract] */
                 MIDL_INTERFACE("79427BAE-A8B7-4D58-89EA-76A7B7BCCDED")
-                IKnownNotificationBindingsStatics : IInspectable
+                IKnownNotificationBindingsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ToastGeneric(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5195,8 +5229,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("108037FE-EB76-4F82-97BC-DA07530A2E20"), exclusiveto, contract] */
                 MIDL_INTERFACE("108037FE-EB76-4F82-97BC-DA07530A2E20")
-                INotification : IInspectable
+                INotification : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpirationTime(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
                         ) = 0;
@@ -5244,8 +5279,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("F29E4B85-0370-4AD3-B4EA-DA9E35E7EABF"), exclusiveto, contract] */
                 MIDL_INTERFACE("F29E4B85-0370-4AD3-B4EA-DA9E35E7EABF")
-                INotificationBinding : IInspectable
+                INotificationBinding : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Template(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5299,8 +5335,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("9FFD2312-9D6A-4AAF-B6AC-FF17F0C1F280"), exclusiveto, contract] */
                 MIDL_INTERFACE("9FFD2312-9D6A-4AAF-B6AC-FF17F0C1F280")
-                INotificationData : IInspectable
+                INotificationData : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Values(
                         /* [retval, out] */__RPC__deref_out_opt __FIMap_2_HSTRING_HSTRING * * value
                         ) = 0;
@@ -5345,8 +5382,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("23C1E33A-1C10-46FB-8040-DEC384621CF8"), exclusiveto, contract] */
                 MIDL_INTERFACE("23C1E33A-1C10-46FB-8040-DEC384621CF8")
-                INotificationDataFactory : IInspectable
+                INotificationDataFactory : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateNotificationDataWithValuesAndSequenceNumber(
                         /* [in] */__RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING * initialValues,
                         /* [in] */UINT32 sequenceNumber,
@@ -5391,8 +5429,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("68835B8E-AA56-4E11-86D3-5F9A6957BC5B"), exclusiveto, contract] */
                 MIDL_INTERFACE("68835B8E-AA56-4E11-86D3-5F9A6957BC5B")
-                INotificationVisual : IInspectable
+                INotificationVisual : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Language(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5441,8 +5480,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("0ABCA6D5-99DC-4C78-A11C-C9E7F86D7EF7"), exclusiveto, contract] */
                 MIDL_INTERFACE("0ABCA6D5-99DC-4C78-A11C-C9E7F86D7EF7")
-                IScheduledTileNotification : IInspectable
+                IScheduledTileNotification : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * value
                         ) = 0;
@@ -5502,8 +5542,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("3383138A-98C0-4C3B-BBD6-4A633C7CFC29"), exclusiveto, contract] */
                 MIDL_INTERFACE("3383138A-98C0-4C3B-BBD6-4A633C7CFC29")
-                IScheduledTileNotificationFactory : IInspectable
+                IScheduledTileNotificationFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateScheduledTileNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
                         /* [in] */ABI::Windows::Foundation::DateTime deliveryTime,
@@ -5544,8 +5585,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("79F577F8-0DE7-48CD-9740-9B370490C838"), exclusiveto, contract] */
                 MIDL_INTERFACE("79F577F8-0DE7-48CD-9740-9B370490C838")
-                IScheduledToastNotification : IInspectable
+                IScheduledToastNotification : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * value
                         ) = 0;
@@ -5599,8 +5641,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("A66EA09C-31B4-43B0-B5DD-7A40E85363B1"), exclusiveto, contract] */
                 MIDL_INTERFACE("A66EA09C-31B4-43B0-B5DD-7A40E85363B1")
-                IScheduledToastNotification2 : IInspectable
+                IScheduledToastNotification2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Tag(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -5654,8 +5697,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("98429E8B-BD32-4A3B-9D15-22AEA49462A1"), exclusiveto, contract] */
                 MIDL_INTERFACE("98429E8B-BD32-4A3B-9D15-22AEA49462A1")
-                IScheduledToastNotification3 : IInspectable
+                IScheduledToastNotification3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NotificationMirroring(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Notifications::NotificationMirroring * value
                         ) = 0;
@@ -5684,6 +5728,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotif
 
 /*
  *
+ * Interface Windows.UI.Notifications.IScheduledToastNotification4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Notifications.ScheduledToastNotification
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IScheduledToastNotification4[] = L"Windows.UI.Notifications.IScheduledToastNotification4";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                /* [object, uuid("1D4761FD-BDEF-4E4A-96BE-0101369B58D2"), exclusiveto, contract] */
+                MIDL_INTERFACE("1D4761FD-BDEF-4E4A-96BE-0101369B58D2")
+                IScheduledToastNotification4 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpirationTime(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ExpirationTime(
+                        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IScheduledToastNotification4=_uuidof(IScheduledToastNotification4);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Notifications */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Notifications.IScheduledToastNotificationFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5703,8 +5791,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("E7BED191-0BB9-4189-8394-31761B476FD7"), exclusiveto, contract] */
                 MIDL_INTERFACE("E7BED191-0BB9-4189-8394-31761B476FD7")
-                IScheduledToastNotificationFactory : IInspectable
+                IScheduledToastNotificationFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateScheduledToastNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
                         /* [in] */ABI::Windows::Foundation::DateTime deliveryTime,
@@ -5752,8 +5841,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("342D8988-5AF2-481A-A6A3-F2FDC78DE88E"), exclusiveto, contract] */
                 MIDL_INTERFACE("342D8988-5AF2-481A-A6A3-F2FDC78DE88E")
-                IShownTileNotification : IInspectable
+                IShownTileNotification : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Arguments(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5792,8 +5882,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("9A53B261-C70C-42BE-B2F3-F42AA97D34E5"), exclusiveto, contract] */
                 MIDL_INTERFACE("9A53B261-C70C-42BE-B2F3-F42AA97D34E5")
-                ITileFlyoutNotification : IInspectable
+                ITileFlyoutNotification : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * value
                         ) = 0;
@@ -5838,8 +5929,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("EF556FF5-5226-4F2B-B278-88A35DFE569F"), exclusiveto, contract] */
                 MIDL_INTERFACE("EF556FF5-5226-4F2B-B278-88A35DFE569F")
-                ITileFlyoutNotificationFactory : IInspectable
+                ITileFlyoutNotificationFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutNotification * * notification
@@ -5879,8 +5971,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("04363B0B-1AC0-4B99-88E7-ADA83E953D48"), exclusiveto, contract] */
                 MIDL_INTERFACE("04363B0B-1AC0-4B99-88E7-ADA83E953D48")
-                ITileFlyoutUpdateManagerStatics : IInspectable
+                ITileFlyoutUpdateManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutUpdaterForApplication(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater * * updater
                         ) = 0;
@@ -5931,8 +6024,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("8D40C76A-C465-4052-A740-5C2654C1A089"), exclusiveto, contract] */
                 MIDL_INTERFACE("8D40C76A-C465-4052-A740-5C2654C1A089")
-                ITileFlyoutUpdater : IInspectable
+                ITileFlyoutUpdater : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Update(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Notifications::ITileFlyoutNotification * notification
                         ) = 0;
@@ -5985,8 +6079,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("EBAEC8FA-50EC-4C18-B4D0-3AF02E5540AB"), exclusiveto, contract] */
                 MIDL_INTERFACE("EBAEC8FA-50EC-4C18-B4D0-3AF02E5540AB")
-                ITileNotification : IInspectable
+                ITileNotification : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * value
                         ) = 0;
@@ -6037,8 +6132,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("C6ABDD6E-4928-46C8-BDBF-81A047DEA0D4"), exclusiveto, contract] */
                 MIDL_INTERFACE("C6ABDD6E-4928-46C8-BDBF-81A047DEA0D4")
-                ITileNotificationFactory : IInspectable
+                ITileNotificationFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateTileNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileNotification * * notification
@@ -6078,8 +6174,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("55141348-2EE2-4E2D-9CC1-216A20DECC9F"), exclusiveto, contract] */
                 MIDL_INTERFACE("55141348-2EE2-4E2D-9CC1-216A20DECC9F")
-                ITileUpdateManagerForUser : IInspectable
+                ITileUpdateManagerForUser : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateTileUpdaterForApplication(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * updater
                         ) = 0;
@@ -6129,8 +6226,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("DA159E5D-3EA9-4986-8D84-B09D5E12276D"), exclusiveto, contract] */
                 MIDL_INTERFACE("DA159E5D-3EA9-4986-8D84-B09D5E12276D")
-                ITileUpdateManagerStatics : IInspectable
+                ITileUpdateManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateTileUpdaterForApplication(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * updater
                         ) = 0;
@@ -6181,8 +6279,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("731C1DDC-8E14-4B7C-A34B-9D22DE76C84D"), exclusiveto, contract] */
                 MIDL_INTERFACE("731C1DDC-8E14-4B7C-A34B-9D22DE76C84D")
-                ITileUpdateManagerStatics2 : IInspectable
+                ITileUpdateManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdateManagerForUser * * result
@@ -6222,8 +6321,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("0942A48B-1D91-44EC-9243-C1E821C29A20"), exclusiveto, contract] */
                 MIDL_INTERFACE("0942A48B-1D91-44EC-9243-C1E821C29A20")
-                ITileUpdater : IInspectable
+                ITileUpdater : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Update(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Notifications::ITileNotification * notification
                         ) = 0;
@@ -6297,8 +6397,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("A2266E12-15EE-43ED-83F5-65B352BB1A84"), exclusiveto, contract] */
                 MIDL_INTERFACE("A2266E12-15EE-43ED-83F5-65B352BB1A84")
-                ITileUpdater2 : IInspectable
+                ITileUpdater2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE EnableNotificationQueueForSquare150x150(
                         /* [in] */boolean enable
                         ) = 0;
@@ -6343,8 +6444,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("E3BF92F3-C197-436F-8265-0625824F8DAC"), exclusiveto, contract] */
                 MIDL_INTERFACE("E3BF92F3-C197-436F-8265-0625824F8DAC")
-                IToastActivatedEventArgs : IInspectable
+                IToastActivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Arguments(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6383,8 +6485,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("0A8BC3B0-E0BE-4858-BC2A-89DFE0B32863"), exclusiveto, contract] */
                 MIDL_INTERFACE("0A8BC3B0-E0BE-4858-BC2A-89DFE0B32863")
-                IToastCollection : IInspectable
+                IToastCollection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6441,8 +6544,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("164DD3D7-73C4-44F7-B4FF-FB6D4BF1F4C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("164DD3D7-73C4-44F7-B4FF-FB6D4BF1F4C6")
-                IToastCollectionFactory : IInspectable
+                IToastCollectionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                         /* [in] */__RPC__in HSTRING collectionId,
                         /* [in] */__RPC__in HSTRING displayName,
@@ -6485,8 +6589,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("2A1821FE-179D-49BC-B79D-A527920D3665"), exclusiveto, contract] */
                 MIDL_INTERFACE("2A1821FE-179D-49BC-B79D-A527920D3665")
-                IToastCollectionManager : IInspectable
+                IToastCollectionManager : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SaveToastCollectionAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Notifications::IToastCollection * collection,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
@@ -6546,8 +6651,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("3F89D935-D9CB-4538-A0F0-FFE7659938F8"), exclusiveto, contract] */
                 MIDL_INTERFACE("3F89D935-D9CB-4538-A0F0-FFE7659938F8")
-                IToastDismissedEventArgs : IInspectable
+                IToastDismissedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reason(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Notifications::ToastDismissalReason * value
                         ) = 0;
@@ -6586,8 +6692,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("35176862-CFD4-44F8-AD64-F500FD896C3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("35176862-CFD4-44F8-AD64-F500FD896C3B")
-                IToastFailedEventArgs : IInspectable
+                IToastFailedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ErrorCode(
                         /* [retval, out] */__RPC__out HRESULT * value
                         ) = 0;
@@ -6626,8 +6733,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("997E2675-059E-4E60-8B06-1760917C8B80"), exclusiveto, contract] */
                 MIDL_INTERFACE("997E2675-059E-4E60-8B06-1760917C8B80")
-                IToastNotification : IInspectable
+                IToastNotification : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * value
                         ) = 0;
@@ -6693,8 +6801,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("9DFB9FD1-143A-490E-90BF-B9FBA7132DE7"), exclusiveto, contract] */
                 MIDL_INTERFACE("9DFB9FD1-143A-490E-90BF-B9FBA7132DE7")
-                IToastNotification2 : IInspectable
+                IToastNotification2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Tag(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -6748,8 +6857,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("31E8AED8-8141-4F99-BC0A-C4ED21297D77"), exclusiveto, contract] */
                 MIDL_INTERFACE("31E8AED8-8141-4F99-BC0A-C4ED21297D77")
-                IToastNotification3 : IInspectable
+                IToastNotification3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NotificationMirroring(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Notifications::NotificationMirroring * value
                         ) = 0;
@@ -6797,8 +6907,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("15154935-28EA-4727-88E9-C58680E2D118"), exclusiveto, contract] */
                 MIDL_INTERFACE("15154935-28EA-4727-88E9-C58680E2D118")
-                IToastNotification4 : IInspectable
+                IToastNotification4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::INotificationData * * value
                         ) = 0;
@@ -6846,8 +6957,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("9445135A-38F3-42F6-96AA-7955B0F03DA2"), exclusiveto, contract] */
                 MIDL_INTERFACE("9445135A-38F3-42F6-96AA-7955B0F03DA2")
-                IToastNotificationActionTriggerDetail : IInspectable
+                IToastNotificationActionTriggerDetail : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Argument(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * argument
                         ) = 0;
@@ -6889,8 +7001,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("04124B20-82C6-4229-B109-FD9ED4662B53"), exclusiveto, contract] */
                 MIDL_INTERFACE("04124B20-82C6-4229-B109-FD9ED4662B53")
-                IToastNotificationFactory : IInspectable
+                IToastNotificationFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateToastNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotification * * notification
@@ -6930,8 +7043,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("5CADDC63-01D3-4C97-986F-0533483FEE14"), exclusiveto, contract] */
                 MIDL_INTERFACE("5CADDC63-01D3-4C97-986F-0533483FEE14")
-                IToastNotificationHistory : IInspectable
+                IToastNotificationHistory : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RemoveGroup(
                         /* [in] */__RPC__in HSTRING group
                         ) = 0;
@@ -6990,8 +7104,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("3BC3D253-2F31-4092-9129-8AD5ABF067DA"), exclusiveto, contract] */
                 MIDL_INTERFACE("3BC3D253-2F31-4092-9129-8AD5ABF067DA")
-                IToastNotificationHistory2 : IInspectable
+                IToastNotificationHistory2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetHistory(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification * * toasts
                         ) = 0;
@@ -7034,8 +7149,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("DB037FFA-0068-412C-9C83-267C37F65670"), exclusiveto, contract] */
                 MIDL_INTERFACE("DB037FFA-0068-412C-9C83-267C37F65670")
-                IToastNotificationHistoryChangedTriggerDetail : IInspectable
+                IToastNotificationHistoryChangedTriggerDetail : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeType(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Notifications::ToastHistoryChangedType * value
                         ) = 0;
@@ -7074,8 +7190,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("0B36E982-C871-49FB-BABB-25BDBC4CC45B"), exclusiveto, contract] */
                 MIDL_INTERFACE("0B36E982-C871-49FB-BABB-25BDBC4CC45B")
-                IToastNotificationHistoryChangedTriggerDetail2 : IInspectable
+                IToastNotificationHistoryChangedTriggerDetail2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CollectionId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * collectionId
                         ) = 0;
@@ -7114,8 +7231,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("79AB57F6-43FE-487B-8A7F-99567200AE94"), exclusiveto, contract] */
                 MIDL_INTERFACE("79AB57F6-43FE-487B-8A7F-99567200AE94")
-                IToastNotificationManagerForUser : IInspectable
+                IToastNotificationManagerForUser : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateToastNotifier(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotifier * * result
                         ) = 0;
@@ -7164,8 +7282,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("679C64B7-81AB-42C2-8819-C958767753F4"), exclusiveto, contract] */
                 MIDL_INTERFACE("679C64B7-81AB-42C2-8819-C958767753F4")
-                IToastNotificationManagerForUser2 : IInspectable
+                IToastNotificationManagerForUser2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetToastNotifierForToastCollectionIdAsync(
                         /* [in] */__RPC__in HSTRING collectionId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * * operation
@@ -7216,8 +7335,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("50AC103F-D235-4598-BBEF-98FE4D1A3AD4"), exclusiveto, contract] */
                 MIDL_INTERFACE("50AC103F-D235-4598-BBEF-98FE4D1A3AD4")
-                IToastNotificationManagerStatics : IInspectable
+                IToastNotificationManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateToastNotifier(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotifier * * notifier
                         ) = 0;
@@ -7264,8 +7384,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("7AB93C52-0E48-4750-BA9D-1A4113981847"), exclusiveto, contract] */
                 MIDL_INTERFACE("7AB93C52-0E48-4750-BA9D-1A4113981847")
-                IToastNotificationManagerStatics2 : IInspectable
+                IToastNotificationManagerStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_History(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotificationHistory * * value
                         ) = 0;
@@ -7304,8 +7425,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("8F993FD3-E516-45FB-8130-398E93FA52C3"), exclusiveto, contract] */
                 MIDL_INTERFACE("8F993FD3-E516-45FB-8130-398E93FA52C3")
-                IToastNotificationManagerStatics4 : IInspectable
+                IToastNotificationManagerStatics4 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotificationManagerForUser * * result
@@ -7348,8 +7470,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("D6F5F569-D40D-407C-8989-88CAB42CFD14"), exclusiveto, contract] */
                 MIDL_INTERFACE("D6F5F569-D40D-407C-8989-88CAB42CFD14")
-                IToastNotificationManagerStatics5 : IInspectable
+                IToastNotificationManagerStatics5 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotificationManagerForUser * * value
                         ) = 0;
@@ -7388,8 +7511,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("75927B93-03F3-41EC-91D3-6E5BAC1B38E7"), exclusiveto, contract] */
                 MIDL_INTERFACE("75927B93-03F3-41EC-91D3-6E5BAC1B38E7")
-                IToastNotifier : IInspectable
+                IToastNotifier : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Show(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Notifications::IToastNotification * notification
                         ) = 0;
@@ -7443,8 +7567,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("354389C6-7C01-4BD5-9C20-604340CD2B74"), exclusiveto, contract] */
                 MIDL_INTERFACE("354389C6-7C01-4BD5-9C20-604340CD2B74")
-                IToastNotifier2 : IInspectable
+                IToastNotifier2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE UpdateWithTagAndGroup(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Notifications::INotificationData * data,
                         /* [in] */__RPC__in HSTRING tag,
@@ -7491,8 +7616,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("ADF7E52F-4E53-42D5-9C33-EB5EA515B23E"), exclusiveto, contract] */
                 MIDL_INTERFACE("ADF7E52F-4E53-42D5-9C33-EB5EA515B23E")
-                IUserNotification : IInspectable
+                IUserNotification : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Notification(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::INotification * * value
                         ) = 0;
@@ -7540,8 +7666,9 @@ namespace ABI {
             namespace Notifications {
                 /* [object, uuid("B6BD6839-79CF-4B25-82C0-0CE1EEF81F8C"), exclusiveto, contract] */
                 MIDL_INTERFACE("B6BD6839-79CF-4B25-82C0-0CE1EEF81F8C")
-                IUserNotificationChangedEventArgs : IInspectable
+                IUserNotificationChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeKind(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Notifications::UserNotificationChangedKind * value
                         ) = 0;
@@ -7864,6 +7991,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Notifications.IScheduledToastNotification ** Default Interface **
  *    Windows.UI.Notifications.IScheduledToastNotification2
  *    Windows.UI.Notifications.IScheduledToastNotification3
+ *    Windows.UI.Notifications.IScheduledToastNotification4
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
@@ -8501,6 +8629,12 @@ typedef interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificati
 typedef interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3 __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3;
 
 #endif // ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4;
+
+#endif // ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_FWD_DEFINED__
@@ -11650,6 +11784,7 @@ typedef interface __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotifica
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_INTERFACE_DEFINED__
 
@@ -11696,6 +11831,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUs
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -11752,6 +11888,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotificati
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_INTERFACE_DEFINED__
 
@@ -11799,9 +11936,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotificati
 #endif // ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_INTERFACE_DEFINED__
@@ -11849,6 +11988,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotificati
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__)
@@ -13191,6 +13331,7 @@ typedef enum __x_ABI_CWindows_CUI_CNotifications_CToastTemplateType __x_ABI_CWin
 
 
 typedef enum __x_ABI_CWindows_CUI_CNotifications_CUserNotificationChangedKind __x_ABI_CWindows_CUI_CNotifications_CUserNotificationChangedKind;
+
 
 
 
@@ -16681,6 +16822,106 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3;
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Notifications.IScheduledToastNotification4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Notifications.ScheduledToastNotification
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IScheduledToastNotification4[] = L"Windows.UI.Notifications.IScheduledToastNotification4";
+/* [object, uuid("1D4761FD-BDEF-4E4A-96BE-0101369B58D2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpirationTime )(
+        __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ExpirationTime )(
+        __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4 * This,
+        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4Vtbl;
+
+interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_get_ExpirationTime(This,value) \
+    ( (This)->lpVtbl->get_ExpirationTime(This,value) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_put_ExpirationTime(This,value) \
+    ( (This)->lpVtbl->put_ExpirationTime(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -21305,6 +21546,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Notifications.IScheduledToastNotification ** Default Interface **
  *    Windows.UI.Notifications.IScheduledToastNotification2
  *    Windows.UI.Notifications.IScheduledToastNotification3
+ *    Windows.UI.Notifications.IScheduledToastNotification4
  *
  * Class Threading Model:  Multi Threaded Apartment
  *

@@ -816,6 +816,11 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 //
 #define SRB_FLAGS_D3_PROCESSING             0x00000800
 
+//
+// This flag indicates that LBA range falls into sequential write required zone
+//
+#define SRB_FLAGS_SEQUENTIAL_REQUIRED       0x00001000
+
 
 #define SRB_FLAGS_IS_ACTIVE                 0x00010000
 #define SRB_FLAGS_ALLOCATED_FROM_ZONE       0x00020000

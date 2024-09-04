@@ -351,7 +351,7 @@ _Function_class_DXGK_(DXGKDDI_PROTECTED_CALLBACK)
 _IRQL_requires_DXGK_(PASSIVE_LEVEL)
 VOID
 (*DXGKDDI_PROTECTED_CALLBACK)(
-    _In_ CONST PVOID MiniportDeviceContext,
+    IN_CONST_PVOID MiniportDeviceContext,
     _In_ PVOID ProtectedCallbackContext,
     _In_ NTSTATUS ProtectionStatus
     );
@@ -416,6 +416,12 @@ DEFINE_GUID(GUID_DEVINTERFACE_MIRACAST_DISPLAY, 0xaf03f190, 0x22af, 0x48cb, 0x94
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
 
 //
+// GUID_DEVINTERFACE_BRIGHTNESS_3 {197A4A6E-0391-4322-96EA-C2760F881D3A}
+//
+
+DEFINE_GUID(GUID_DEVINTERFACE_BRIGHTNESS_3, 0x197a4a6e, 0x391, 0x4322, 0x96, 0xea, 0xc2, 0x76, 0xf, 0x88, 0x1d, 0x3a);
+
+//
 // I2C Interface queried from the miniport.
 //
 
@@ -430,7 +436,7 @@ NTSTATUS
     _In_ D3DDDI_VIDEO_PRESENT_TARGET_ID VidPnTargetId,
     _In_ ULONG SevenBitI2CAddress,
     _In_ ULONG DataLength,
-    _In_reads_bytes_(DataLength) CONST PVOID Data
+    _In_reads_bytes_(DataLength) CONST VOID* Data
     );
 
 typedef
@@ -512,7 +518,7 @@ NTSTATUS
 (*DXGKDDI_OPM_SET_SIGNING_KEY_AND_SEQUENCE_NUMBERS)(
     _In_ PVOID MiniportDeviceContext,
     _In_ HANDLE ProtectedOutputHandle,
-    _In_ CONST PDXGKMDT_OPM_ENCRYPTED_PARAMETERS EncryptedParameters
+    _In_ CONST DXGKMDT_OPM_ENCRYPTED_PARAMETERS* EncryptedParameters
     );
 
 typedef
@@ -522,7 +528,7 @@ NTSTATUS
 (*DXGKDDI_OPM_GET_INFORMATION)(
     _In_ PVOID MiniportDeviceContext,
     _In_ HANDLE ProtectedOutputHandle,
-    _In_ CONST PDXGKMDT_OPM_GET_INFO_PARAMETERS Parameters,
+    _In_ CONST DXGKMDT_OPM_GET_INFO_PARAMETERS* Parameters,
     _Out_ PDXGKMDT_OPM_REQUESTED_INFORMATION RequestedInformation
     );
 
@@ -533,7 +539,7 @@ NTSTATUS
 (*DXGKDDI_OPM_GET_COPP_COMPATIBLE_INFORMATION)(
     _In_ PVOID MiniportDeviceContext,
     _In_ HANDLE ProtectedOutputHandle,
-    _In_ CONST PDXGKMDT_OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS Parameters,
+    _In_ CONST DXGKMDT_OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS* Parameters,
     _Out_ PDXGKMDT_OPM_REQUESTED_INFORMATION RequestedInformation
     );
 
@@ -544,9 +550,9 @@ NTSTATUS
 (*DXGKDDI_OPM_CONFIGURE_PROTECTED_OUTPUT)(
     _In_ PVOID MiniportDeviceContext,
     _In_ HANDLE ProtectedOutputHandle,
-    _In_ CONST PDXGKMDT_OPM_CONFIGURE_PARAMETERS Parameters,
+    _In_ CONST DXGKMDT_OPM_CONFIGURE_PARAMETERS* Parameters,
     _In_ ULONG AdditionalParametersSize,
-    _In_ CONST PVOID AdditionalParameters
+    _In_ CONST VOID* AdditionalParameters
     );
 
 typedef
@@ -822,6 +828,72 @@ typedef struct
     OUT DXGK_BRIGHTNESS_SET_BACKLIGHT_OPTIMIZATION  SetBacklightOptimization;
     OUT DXGK_BRIGHTNESS_GET_BACKLIGHT_REDUCTION     GetBacklightReduction;
 } DXGK_BRIGHTNESS_INTERFACE_2, *PDXGK_BRIGHTNESS_INTERFACE_2;
+
+#define DXGK_BRIGHTNESS_INTERFACE_VERSION_3 0x03
+
+typedef
+_Function_class_DXGK_(DXGK_BRIGHTNESS_SET_3)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGK_BRIGHTNESS_SET_3)(
+    _In_ PVOID                      Context,
+    _In_ ULONG                      ChildUid,
+    _In_ PDXGK_BRIGHTNESS_SET_IN    pIn
+    );
+
+typedef
+_Function_class_DXGK_(DXGK_BRIGHTNESS_GET_3)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGK_BRIGHTNESS_GET_3)(
+    _In_  PVOID                     Context,
+    _In_  ULONG                     ChildUid,
+    _Out_ PDXGK_BRIGHTNESS_GET_OUT  pOut
+    );
+
+typedef
+_Function_class_DXGK_(DXGK_BRIGHTNESS_GET_CAPS_3)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGK_BRIGHTNESS_GET_CAPS_3)(
+    _In_   PVOID                   Context,
+    _In_   ULONG                   ChildUid,
+    _Out_  DXGK_BRIGHTNESS_CAPS    *pBrightnessCaps
+    );
+
+typedef
+_Function_class_DXGK_(DXGK_BRIGHTNESS_GET_NIT_RANGES)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGK_BRIGHTNESS_GET_NIT_RANGES)(
+    _In_    PVOID                               Context,
+    _In_    ULONG                               ChildUid,
+    _Out_   PDXGK_BRIGHTNESS_GET_NIT_RANGES_OUT pOut
+    );
+
+typedef
+_Function_class_DXGK_(DXGK_BRIGHTNESS_SET_BACKLIGHT_OPTIMIZATION_3)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGK_BRIGHTNESS_SET_BACKLIGHT_OPTIMIZATION_3)(
+    _In_  PVOID                               Context,
+    _In_  ULONG                               ChildUid,
+    _In_  DXGK_BACKLIGHT_OPTIMIZATION_LEVEL   OptimizationLevel
+    );
+
+typedef struct
+{
+    IN USHORT                                         Size;
+    IN USHORT                                         Version;
+    OUT PVOID                                         Context;
+    OUT PINTERFACE_REFERENCE                          InterfaceReference;
+    OUT PINTERFACE_DEREFERENCE                        InterfaceDereference;
+    OUT DXGK_BRIGHTNESS_SET_3                         SetBrightness;
+    OUT DXGK_BRIGHTNESS_GET_3                         GetBrightness;
+    OUT DXGK_BRIGHTNESS_GET_CAPS_3                    GetBrightnessCaps;
+    OUT DXGK_BRIGHTNESS_GET_NIT_RANGES                GetNitRanges;
+    OUT DXGK_BRIGHTNESS_SET_BACKLIGHT_OPTIMIZATION_3  SetBacklightOptimization;
+} DXGK_BRIGHTNESS_INTERFACE_3, *PDXGK_BRIGHTNESS_INTERFACE_3;
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
 
@@ -1472,6 +1544,114 @@ NTSTATUS
 
 #endif // DXGKDDI_INTERFACE_VERSION
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+typedef struct _DXGK_DIAGNOSTIC_CATEGORIES
+{
+    union
+    {
+        struct
+        {
+            UINT Notifications  : 1; // 0x00000001
+            UINT Reserved       :31; // 0xFFFFFFFE
+        };
+        UINT Value;
+    };
+} DXGK_DIAGNOSTIC_CATEGORIES;
+
+#define DXGK_DIAGCAT_NOTIFICATIONS_BIT 0
+#define DXGK_DIAGCAT_NOTIFICATIONS_MASK (1<<DXGK_DIAGCAT_NOTIFICATIONS_BIT)
+#define DXGK_DIAGCAT_BITCOUNT 1
+
+typedef struct _DXGK_DIAGTYPE_NOTIFICATIONS
+{
+    union
+    {
+        struct
+        {
+            UINT PanelSelfRefreshSoftware   : 1; // 0x00000001
+            UINT PanelSelfRefreshHardware   : 1; // 0x00000002
+            UINT Reserved                   :30; // 0xFFFFFFFC
+        };
+        UINT Value;
+    };
+} DXGK_DIAGTYPE_NOTIFICATIONS;
+
+#define DXGK_DIAG_NOTIFICATIONS_PSR_SW_BIT 0
+#define DXGK_DIAG_NOTIFICATIONS_PSR_SW_MASK (1<<DXGK_DIAG_NOTIFICATIONS_PSR_SW_BIT)
+#define DXGK_DIAG_NOTIFICATIONS_PSR_HW_BIT 1
+#define DXGK_DIAG_NOTIFICATIONS_PSR_HW_MASK (1<<DXGK_DIAG_NOTIFICATIONS_PSR_HW_BIT)
+#define DXGK_DIAG_NOTIFICATIONS_BITCOUNT 2
+
+typedef struct _DXGK_DIAGNOSTIC_TYPES
+{
+    union
+    {
+        DXGK_DIAGTYPE_NOTIFICATIONS Notifications;
+        UINT                        Value;
+    };
+} DXGK_DIAGNOSTIC_TYPES;
+
+
+typedef struct _DXGK_DIAGNOSTIC_HEADER
+{
+    DXGK_DIAGNOSTIC_CATEGORIES  Category;
+    DXGK_DIAGNOSTIC_TYPES       Type;
+    union
+    {
+        struct
+        {
+            UINT Size       :16;    // 0x0000FFFF - Size of whole diagnostic structure, including header
+            UINT Reserved   :16;    // 0xFFFF0000
+        };
+        UINT Value;
+    };
+    UINT SequenceNumber;
+    union
+    {
+        D3DDDI_VIDEO_PRESENT_TARGET_ID  TargetId;
+        D3DDDI_VIDEO_PRESENT_SOURCE_ID  SourceId;
+        UINT                            Id;
+    };
+} DXGK_DIAGNOSTIC_HEADER;
+
+typedef struct _DXGK_DIAGNOSTIC_PSR
+{
+    DXGK_DIAGNOSTIC_HEADER   Header;
+    union
+    {
+        struct
+        {
+            UINT Present                    : 1;    // 0x00000001
+            UINT CursorUpdate               : 1;    // 0x00000002
+            UINT VSyncEnabled               : 1;    // 0x00000004
+            UINT ColorTransformationChange  : 1;    // 0x00000008
+            UINT BrightnessChange           : 1;    // 0x00000010
+            UINT SinkRequest                : 1;    // 0x00000020
+            UINT Other                      : 1;    // 0x00000040
+            UINT Reserved                   :25;    // 0xFFFFFF80
+        } RefreshReason;
+        UINT    Value;
+    };
+} DXGK_DIAGNOSTIC_PSR;
+
+typedef _In_ DXGK_DIAGNOSTIC_HEADER*   IN_PDXGK_DIAGNOSTIC_HEADER;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_REPORT_DIAGNOSTIC)
+    _IRQL_requires_max_(DISPATCH_LEVEL)
+    _IRQL_requires_same_
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_REPORT_DIAGNOSTIC)(
+    _In_ HANDLE                 DeviceHandle,
+    IN_PDXGK_DIAGNOSTIC_HEADER  pDiagnostic
+    );
+
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
+
+
 typedef struct _DXGKRNL_INTERFACE {
     ULONG                                   Size;
     ULONG                                   Version;
@@ -1554,6 +1734,20 @@ typedef struct _DXGKRNL_INTERFACE {
     DXGKCB_SETPROTECTEDSESSIONSTATUS        DxgkCbSetProtectedSessionStatus;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+    DXGKCB_ALLOCATECONTIGUOUSMEMORY         DxgkCbAllocateContiguousMemory;
+    DXGKCB_FREECONTIGUOUSMEMORY             DxgkCbFreeContiguousMemory;
+    DXGKCB_ALLOCATEPAGESFORMDL              DxgkCbAllocatePagesForMdl;
+    DXGKCB_FREEPAGESFROMMDL                 DxgkCbFreePagesFromMdl;
+    DXGKCB_PINFRAMEBUFFERFORSAVE            DxgkCbPinFrameBufferForSave;
+    DXGKCB_UNPINFRAMEBUFFERFORSAVE          DxgkCbUnpinFrameBufferForSave;
+    DXGKCB_MAPFRAMEBUFFERPOINTER            DxgkCbMapFrameBufferPointer;
+    DXGKCB_UNMAPFRAMEBUFFERPOINTER          DxgkCbUnmapFrameBufferPointer;
+    DXGKCB_MAPMDLTOIOMMU                    DxgkCbMapMdlToIoMmu;
+    DXGKCB_UNMAPMDLFROMIOMMU                DxgkCbUnmapMdlFromIoMmu;
+    DXGKCB_REPORT_DIAGNOSTIC                DxgkCbReportDiagnostic;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 
 } DXGKRNL_INTERFACE, *PDXGKRNL_INTERFACE;
 
@@ -1644,7 +1838,7 @@ _Function_class_DXGK_(DXGKDDI_QUERY_CHILD_RELATIONS)
 _IRQL_requires_DXGK_(PASSIVE_LEVEL)
 NTSTATUS
 DXGKDDI_QUERY_CHILD_RELATIONS(
-    _In_ CONST PVOID                                                  MiniportDeviceContext,
+    IN_CONST_PVOID                                                    MiniportDeviceContext,
     _Inout_updates_bytes_(ChildRelationsSize) PDXGK_CHILD_DESCRIPTOR  ChildRelations,
     _In_ ULONG                                                        ChildRelationsSize
     );
@@ -1804,6 +1998,47 @@ DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY(
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+typedef struct _DXGKARG_QUERYDIAGNOSTICTYPESSUPPORT
+{
+    _In_  DXGK_DIAGNOSTIC_CATEGORIES    DiagnosticCategory;
+    _Out_ DXGK_DIAGNOSTIC_TYPES         NoninvasiveTypes; 
+    _Out_ DXGK_DIAGNOSTIC_TYPES         InvasiveTypes; 
+} DXGKARG_QUERYDIAGNOSTICTYPESSUPPORT, *PDXGKARG_QUERYDIAGNOSTICTYPESSUPPORT;
+typedef _Inout_ PDXGKARG_QUERYDIAGNOSTICTYPESSUPPORT    INOUT_PDXGKARG_QUERYDIAGNOSTICTYPESSUPPORT;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_QUERYDIAGNOSTICTYPESSUPPORT)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_QUERYDIAGNOSTICTYPESSUPPORT(
+    IN_CONST_PVOID                              MiniportDeviceContext,
+    INOUT_PDXGKARG_QUERYDIAGNOSTICTYPESSUPPORT  pArgQueryDiagnosticTypesSupport
+    );
+
+typedef struct _DXGKARG_CONTROLDIAGNOSTICREPORTING
+{
+    _In_  DXGK_DIAGNOSTIC_CATEGORIES    DiagnosticCategory;
+    _In_  DXGK_DIAGNOSTIC_TYPES         RequestedDiagnostics; 
+} DXGKARG_CONTROLDIAGNOSTICREPORTING, *PDXGKARG_CONTROLDIAGNOSTICREPORTING;
+typedef _In_    PDXGKARG_CONTROLDIAGNOSTICREPORTING  IN_PDXGKARG_CONTROLDIAGNOSTICREPORTING;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_CONTROLDIAGNOSTICREPORTING)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_CONTROLDIAGNOSTICREPORTING(
+    IN_CONST_PVOID                          MiniportDeviceContext,
+    IN_PDXGKARG_CONTROLDIAGNOSTICREPORTING  pArgControlDiagnosticReporting
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
 //
 //     Function pointer typedefs
 //
@@ -1829,6 +2064,10 @@ typedef DXGKDDI_LINK_DEVICE                     *PDXGKDDI_LINK_DEVICE;
 typedef DXGKDDI_EXCHANGEPRESTARTINFO            *PDXGKDDI_EXCHANGEPRESTARTINFO;
 typedef DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY    *PDXGKDDI_SETTARGETADJUSTEDCOLORIMETRY;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+typedef DXGKDDI_QUERYDIAGNOSTICTYPESSUPPORT     *PDXGKDDI_QUERYDIAGNOSTICTYPESSUPPORT;
+typedef DXGKDDI_CONTROLDIAGNOSTICREPORTING      *PDXGKDDI_CONTROLDIAGNOSTICREPORTING;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
@@ -2205,6 +2444,23 @@ typedef struct _DRIVER_INITIALIZATION_DATA {
     PDXGKDDI_DESTROYPROTECTEDSESSION        DxgkDdiDestroyProtectedSession;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+    PDXGKDDI_SETSCHEDULINGLOGBUFFER         DxgkDdiSetSchedulingLogBuffer;
+    PDXGKDDI_SETUPPRIORITYBANDS             DxgkDdiSetupPriorityBands;
+    PDXGKDDI_NOTIFYFOCUSPRESENT             DxgkDdiNotifyFocusPresent;
+    PDXGKDDI_SETCONTEXTSCHEDULINGPROPERTIES DxgkDdiSetContextSchedulingProperties;
+    PDXGKDDI_SUSPENDCONTEXT                 DxgkDdiSuspendContext;
+    PDXGKDDI_RESUMECONTEXT                  DxgkDdiResumeContext;
+    PDXGKDDI_SETVIRTUALMACHINEDATA          DxgkDdiSetVirtualMachineData;
+    PDXGKDDI_BEGINEXCLUSIVEACCESS           DxgkDdiBeginExclusiveAccess;
+    PDXGKDDI_ENDEXCLUSIVEACCESS             DxgkDdiEndExclusiveAccess;
+    PDXGKDDI_QUERYDIAGNOSTICTYPESSUPPORT    DxgkDdiQueryDiagnosticTypesSupport;
+    PDXGKDDI_CONTROLDIAGNOSTICREPORTING     DxgkDdiControlDiagnosticReporting;
+    PDXGKDDI_RESUMEHWENGINE                 DxgkDdiResumeHwEngine;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 
 } DRIVER_INITIALIZATION_DATA, *PDRIVER_INITIALIZATION_DATA;
 

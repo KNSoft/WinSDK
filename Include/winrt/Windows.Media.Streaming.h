@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.streaming.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -206,11 +208,11 @@
 #endif // defined(WINDOWS_MEDIA_STREAMING_STREAMINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -226,11 +228,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2135,8 +2137,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("B571C28C-A472-48D5-88D2-8ADCAF1B8813"), contract] */
                 MIDL_INTERFACE("B571C28C-A472-48D5-88D2-8ADCAF1B8813")
-                IConnectionStatusHandler : IUnknown
+                IConnectionStatusHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Streaming::IBasicDevice * sender,
                         /* [in] */ABI::Windows::Media::Streaming::ConnectionStatus arg
@@ -2172,8 +2175,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("A88A7D06-988C-4403-9D8A-015BED140B34"), contract] */
                 MIDL_INTERFACE("A88A7D06-988C-4403-9D8A-015BED140B34")
-                IDeviceControllerFinderHandler : IUnknown
+                IDeviceControllerFinderHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Streaming::IDeviceController * sender,
                         /* [in] */__RPC__in HSTRING uniqueDeviceName,
@@ -2210,8 +2214,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("3A2D9D45-72E9-4311-B46C-27C8BB7E6CB3"), contract] */
                 MIDL_INTERFACE("3A2D9D45-72E9-4311-B46C-27C8BB7E6CB3")
-                IRenderingParametersUpdateHandler : IUnknown
+                IRenderingParametersUpdateHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Streaming::IMediaRenderer * sender,
                         /* [in] */ABI::Windows::Media::Streaming::RenderingParameters arg
@@ -2247,8 +2252,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("16FD02D5-DA61-49D7-AAB2-76867DD42DB7"), contract] */
                 MIDL_INTERFACE("16FD02D5-DA61-49D7-AAB2-76867DD42DB7")
-                ITransportParametersUpdateHandler : IUnknown
+                ITransportParametersUpdateHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Streaming::IMediaRenderer * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Streaming::ITransportParameters * arg
@@ -2289,8 +2295,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("B64D6974-6E79-49AF-9933-908B6E9A160C"), contract] */
                 MIDL_INTERFACE("B64D6974-6E79-49AF-9933-908B6E9A160C")
-                IActiveBasicDevice : IInspectable
+                IActiveBasicDevice : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxVolume(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2374,8 +2381,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("6D33255D-3642-4618-9DB6-43524F4DEADC"), contract] */
                 MIDL_INTERFACE("6D33255D-3642-4618-9DB6-43524F4DEADC")
-                IActiveBasicDeviceStatics : IInspectable
+                IActiveBasicDeviceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateBasicDeviceAsync(
                         /* [in] */__RPC__in HSTRING deviceIdentifier,
                         /* [in] */ABI::Windows::Media::Streaming::DeviceTypes type,
@@ -2431,8 +2439,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("F4F26CBB-7962-48B7-80F7-C3A5D753BCB0"), contract] */
                 MIDL_INTERFACE("F4F26CBB-7962-48B7-80F7-C3A5D753BCB0")
-                IBasicDevice : IInspectable
+                IBasicDevice : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FriendlyName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2529,8 +2538,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("4FEEB26D-50A7-402B-896A-BE95064D6BFF"), contract] */
                 MIDL_INTERFACE("4FEEB26D-50A7-402B-896A-BE95064D6BFF")
-                IDeviceController : IInspectable
+                IDeviceController : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CachedDevices(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CMedia__CStreaming__CIBasicDevice * * value
                         ) = 0;
@@ -2586,8 +2596,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("8FFB1A1E-023D-4DE1-B556-AB5ABF01929C"), contract] */
                 MIDL_INTERFACE("8FFB1A1E-023D-4DE1-B556-AB5ABF01929C")
-                IDeviceIcon : IInspectable
+                IDeviceIcon : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Width(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2632,8 +2643,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("F1A423F1-B7B4-449C-A90D-AEA8E17C5E5F"), contract] */
                 MIDL_INTERFACE("F1A423F1-B7B4-449C-A90D-AEA8E17C5E5F")
-                IDevicePair : IInspectable
+                IDevicePair : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Server(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Streaming::IActiveBasicDevice * * value
                         ) = 0;
@@ -2676,8 +2688,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("2C012EC3-D975-47FB-96AC-A6418B326D2B"), contract] */
                 MIDL_INTERFACE("2C012EC3-D975-47FB-96AC-A6418B326D2B")
-                IMediaRenderer : IInspectable
+                IMediaRenderer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAudioSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2800,8 +2813,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("66FBBFEE-5AB0-4A4F-8D15-E5056B26BEDA"), contract] */
                 MIDL_INTERFACE("66FBBFEE-5AB0-4A4F-8D15-E5056B26BEDA")
-                IMediaRendererActionInformation : IInspectable
+                IMediaRendererActionInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsMuteAvailable(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2858,8 +2872,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("657AB43D-B909-42B2-94D0-E3A0B134E8C9"), contract] */
                 MIDL_INTERFACE("657AB43D-B909-42B2-94D0-E3A0B134E8C9")
-                IMediaRendererFactory : IInspectable
+                IMediaRendererFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMediaRendererAsync(
                         /* [in] */__RPC__in HSTRING deviceIdentifier,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer * * value
@@ -2900,8 +2915,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("8A4CD4A1-ED85-4E0F-BD68-8A6862E4636D"), contract] */
                 MIDL_INTERFACE("8A4CD4A1-ED85-4E0F-BD68-8A6862E4636D")
-                IStreamSelectorStatics : IInspectable
+                IStreamSelectorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SelectBestStreamAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * storageFile,
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::Collections::IPropertySet * selectorProperties,
@@ -2954,8 +2970,9 @@ namespace ABI {
             namespace Streaming {
                 /* [object, uuid("EB0C4E24-2283-438D-8FFF-DBE9DF1CB2CC"), contract] */
                 MIDL_INTERFACE("EB0C4E24-2283-438D-8FFF-DBE9DF1CB2CC")
-                ITransportParameters : IInspectable
+                ITransportParameters : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActionInformation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Streaming::IMediaRendererActionInformation * * value
                         ) = 0;

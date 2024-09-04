@@ -1,3 +1,4 @@
+
 ;++
 ;
 ; Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -27,9 +28,12 @@ ifndef XBOX_SYSTEMOS_CFG_ASM
 
         extern  _guard_dispatch_icall:proc
 
-endif
+endif ; XBOX_SYSTEMOS_CFG_ASM
 
-endif
+endif ; XBOX_SYSTEMOS
+
+;
+;
 
 ;
 ; IceCAP macros
@@ -1022,6 +1026,9 @@ endif
         endm
 
 ;
+;
+
+;
 ; Define restore trap state macro.
 ;
 ;   This macro restores the volatile state, and if necessary, restores the
@@ -1059,7 +1066,7 @@ endif
 
 RESTORE_TRAP_STATE macro State, NoDisable, NmiFlag, LBranch, SkipUmsExit, SkipSetCtxState
 
-        local   first, second, third, fourth, fifth, noalternate
+        local   first, second, third, fourth, fifth, noalternate, nonshadowmce, altreturn
 
 ifdef XBOX_SYSTEMOS
 
@@ -1285,13 +1292,18 @@ ifidn <NmiFlag>, <NmiAlternateReturn>
 ; passive level alternate context handler upon trap return.
 ;
 
-        lea     rax, KxMcheckAlternateReturn    ; compute handler address
-        mov     TrRip[rbp], rax                 ; write handler address
+        mov     word ptr TrSegSs[rbp], KGDT64_R0_DATA ; set kernel SegSs
         mov     word ptr TrSegCs[rbp], KGDT64_R0_CODE ; set kernel SegCs
         and     dword ptr TrEFlags[rbp], NOT EFLAGS_IF_MASK
+        lea     rax, KxMcheckAlternateReturn    ; compute handler address
+
+;
+;
+
+        mov     TrRip[rbp], rax                 ; write handler address
         mov     TrRsp[rbp], rcx                 ; set stack pointer to fake
                                                 ; trap entry machine frame
-        mov     word ptr TrSegSs[rbp], KGDT64_R0_DATA ; set kernel SegSs
+        jmp     altreturn
 
 noalternate:
 
@@ -1299,19 +1311,32 @@ endif ; ifidn <NmiFlag>, <NmiAlternateReturn>
 
 endif ; ifndef XBOX_SYSTEMOS
 
+;
+;
+
+altreturn:
         mov     rdx, TrRdx[rbp]         ;
         mov     rcx, TrRcx[rbp]         ;
         mov     rax, TrRax[rbp]         ;
         mov     rsp, rbp                ; trim stack to frame offset
         mov     rbp, TrRbp[rbp]         ; restore RBP
         add     rsp, (KTRAP_FRAME_LENGTH - (5 * 8) - 128) ; deallocate stack
+
+;
+;
+
         swapgs                          ; swap GS base to user mode TEB
 
         BEGIN_EPILOGUE
 
         iretq                           ;
 
+
+
 else  ; ifidn <State>, <Volatile>
+
+;
+;
 
         mov     r8, TrRsp[rbp]          ; get previous RSP value
         mov     r9, TrRbp[rbp]          ; get previous RBP value
@@ -1324,10 +1349,15 @@ else  ; ifidn <State>, <Volatile>
         pxor    xmm5, xmm5              ;
         mov     rcx, TrRip[rbp]         ; get return address
         mov     r11, TrEFlags[rbp]      ; get previous EFLAGS
+
+;
+;
+
         mov     rbp, r9                 ; restore RBP
         mov     rsp, r8                 ; restore RSP
         swapgs                          ; swap GS base to user mode TEB
         sysretq                         ; return from system call to user mode
+
 
 endif ; ifidn <State>, <Volatile>
 
@@ -1342,6 +1372,9 @@ fourth: ldmxcsr TrMxCsr[rbp]            ; restore XMM control/status
         movaps  xmm5, TrXmm5[rbp]       ;
 
 ifnb <NmiFlag>
+
+;
+;
 
         mov     eax, TrGsBase[rbp]      ; restore GS base MSR
         mov     edx, TrGsBase + 4[rbp]  ;
@@ -1373,11 +1406,21 @@ fifth:  mov     r11, TrR11[rbp]         ; restore volatile integer state
         mov     rbp, TrRbp[rbp]         ; restore RBP
         add     rsp, (KTRAP_FRAME_LENGTH - (5 * 8) - 128) ; deallocate stack
 
+;
+;
+
+        BEGIN_EPILOGUE
+
+;
+;
+
         BEGIN_EPILOGUE
 
         iretq                           ;
 
 endif ; ifidn <State>, <Volatile>
+
+
 
 ;
 ; State is pico.
@@ -1424,7 +1467,12 @@ else ; ifdif <State>, <Pico>
 ; Restore all state from the trap frame.
 ;
 
-@@:     ldmxcsr TrMxCsr[rbp]            ; restore XMM control/status
+@@:
+
+;
+;
+
+        ldmxcsr TrMxCsr[rbp]            ; restore XMM control/status
         movaps  xmm0, TrXmm0[rbp]       ; restore volatile XMM registers
         movaps  xmm1, TrXmm1[rbp]       ;
         movaps  xmm2, TrXmm2[rbp]       ;
@@ -1444,6 +1492,10 @@ else ; ifdif <State>, <Pico>
         mov     rsp, rbp                ; trim stack to frame offset
         mov     rbp, TrRbp[rbp]         ; restore RBP
         add     rsp, (KTRAP_FRAME_LENGTH - (5 * 8) - 128) ; deallocate stack
+
+;
+;
+
         swapgs                          ; swap GS base to user mode TEB
 
         BEGIN_EPILOGUE
@@ -1454,6 +1506,8 @@ else ; ifdif <State>, <Pico>
 ;
 
         iretq                           ;
+
+
 
 endif ; ifdif <State>, <Pico>
 
@@ -1584,13 +1638,16 @@ SAVE_TRAP_STATE macro Service, SaveGSSwap, NmiFlag, LBranch, PrepareUms
         mov     TrR10[rbp], r10         ;
         mov     TrR11[rbp], r11         ;
 
-ifnb <NmiFlag>
-
         test    byte ptr TrSegCs[rbp], MODE_MASK ; test if previous mode user
         jnz     second                  ; if nz, previous mode user
 
+ifnb <NmiFlag>
+
 ;
 ; Preserve the current GS base in the trap frame.
+;
+;
+;
 ;
 
         mov     ecx, MSR_GS_BASE        ; save GS base MSR in trap frame
@@ -1686,19 +1743,33 @@ fifth:  mov     eax, edx                ; set current GS base MSR
 
         mov     rax, cr2                ; save CR2 in trap frame
         mov     TrFaultAddress[rbp], rax ;
+
+;
+;
+
+else ; ifnb <NmiFlag>
+
+;
+;
+
+endif ; ifnb <NmiFlag>
+
         jmp     first                   ;
 
 second:
 
-else ; ifnb <NmiFlag>
-
-        test    byte ptr TrSegCs[rbp], MODE_MASK ; test if previous mode user
-        jz      first                   ; if z, previous mode kernel
-
-endif ; ifnb <NmiFlag>
+;
+;
 
         swapgs                          ; swap GS base to kernel mode PCR
+
+;
+;
+
         mov     r10, gs:[PcCurrentThread] ; get current thread address
+
+;
+;
 
 if DBG
 
@@ -2313,3 +2384,5 @@ dont_switch:
         mov     rsp, (MfRsp - 8)[rsp]   ; restore previous RSP from machine frame
 
         endm
+
+;

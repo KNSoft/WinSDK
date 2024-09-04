@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.credentials.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -453,6 +455,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider3 ABI::Windows::Security::Credentials::IWebAccountProvider3
 
 #endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Credentials {
+                interface IWebAccountProvider4;
+            } /* Windows */
+        } /* Security */
+    } /* Credentials */} /* ABI */
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4 ABI::Windows::Security::Credentials::IWebAccountProvider4
+
+#endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProviderFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProviderFactory_FWD_DEFINED__
@@ -1778,6 +1794,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace Security {
@@ -1989,8 +2006,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("54EF13A1-BF26-47B5-97DD-DE779B7CAD58"), exclusiveto, contract] */
                 MIDL_INTERFACE("54EF13A1-BF26-47B5-97DD-DE779B7CAD58")
-                ICredentialFactory : IInspectable
+                ICredentialFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreatePasswordCredential(
                         /* [in] */__RPC__in HSTRING resource,
                         /* [in] */__RPC__in HSTRING userName,
@@ -2032,8 +2050,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("9585EF8D-457B-4847-B11A-FA960BBDB138"), exclusiveto, contract] */
                 MIDL_INTERFACE("9585EF8D-457B-4847-B11A-FA960BBDB138")
-                IKeyCredential : IInspectable
+                IKeyCredential : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2086,8 +2105,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("78AAB3A1-A3C1-4103-B6CC-472C44171CBB"), exclusiveto, contract] */
                 MIDL_INTERFACE("78AAB3A1-A3C1-4103-B6CC-472C44171CBB")
-                IKeyCredentialAttestationResult : IInspectable
+                IKeyCredentialAttestationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CertificateChainBuffer(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -2132,8 +2152,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("6AAC468B-0EF1-4CE0-8290-4106DA6A63B5"), exclusiveto, contract] */
                 MIDL_INTERFACE("6AAC468B-0EF1-4CE0-8290-4106DA6A63B5")
-                IKeyCredentialManagerStatics : IInspectable
+                IKeyCredentialManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsSupportedAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * value
                         ) = 0;
@@ -2188,8 +2209,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("F53786C1-5261-4CDD-976D-CC909AC71620"), exclusiveto, contract] */
                 MIDL_INTERFACE("F53786C1-5261-4CDD-976D-CC909AC71620")
-                IKeyCredentialOperationResult : IInspectable
+                IKeyCredentialOperationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Result(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -2231,8 +2253,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("58CD7703-8D87-4249-9B58-F6598CC9644E"), exclusiveto, contract] */
                 MIDL_INTERFACE("58CD7703-8D87-4249-9B58-F6598CC9644E")
-                IKeyCredentialRetrievalResult : IInspectable
+                IKeyCredentialRetrievalResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Credential(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Credentials::IKeyCredential * * value
                         ) = 0;
@@ -2274,8 +2297,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("6AB18989-C720-41A7-A6C1-FEADB36329A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("6AB18989-C720-41A7-A6C1-FEADB36329A0")
-                IPasswordCredential : IInspectable
+                IPasswordCredential : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Resource(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * resource
                         ) = 0;
@@ -2333,8 +2357,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("61FD2C0B-C8D4-48C1-A54F-BC5A64205AF2"), exclusiveto, contract] */
                 MIDL_INTERFACE("61FD2C0B-C8D4-48C1-A54F-BC5A64205AF2")
-                IPasswordVault : IInspectable
+                IPasswordVault : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Add(
                         /* [in] */__RPC__in_opt ABI::Windows::Security::Credentials::IPasswordCredential * credential
                         ) = 0;
@@ -2389,8 +2414,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("69473EB2-8031-49BE-80BB-96CB46D99ABA"), contract] */
                 MIDL_INTERFACE("69473EB2-8031-49BE-80BB-96CB46D99ABA")
-                IWebAccount : IInspectable
+                IWebAccount : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebAccountProvider(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Credentials::IWebAccountProvider * * value
                         ) = 0;
@@ -2439,8 +2465,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("7B56D6F8-990B-4EB5-94A7-5621F3A8B824"), exclusiveto, contract] */
                 MIDL_INTERFACE("7B56D6F8-990B-4EB5-94A7-5621F3A8B824")
-                IWebAccount2 : IInspectable
+                IWebAccount2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2493,8 +2520,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("AC9AFB39-1DE9-4E92-B78F-0581A87F6E5C"), exclusiveto, contract] */
                 MIDL_INTERFACE("AC9AFB39-1DE9-4E92-B78F-0581A87F6E5C")
-                IWebAccountFactory : IInspectable
+                IWebAccountFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWebAccount(
                         /* [in] */__RPC__in_opt ABI::Windows::Security::Credentials::IWebAccountProvider * webAccountProvider,
                         /* [in] */__RPC__in HSTRING userName,
@@ -2536,8 +2564,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("29DCC8C3-7AB9-4A7C-A336-B942F9DBF7C7"), exclusiveto, contract] */
                 MIDL_INTERFACE("29DCC8C3-7AB9-4A7C-A336-B942F9DBF7C7")
-                IWebAccountProvider : IInspectable
+                IWebAccountProvider : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2590,8 +2619,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("4A01EB05-4E42-41D4-B518-E008A5163614"), exclusiveto, contract] */
                 MIDL_INTERFACE("4A01EB05-4E42-41D4-B518-E008A5163614")
-                IWebAccountProvider2 : IInspectable
+                IWebAccountProvider2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayPurpose(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2638,8 +2668,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("DA1C518B-970D-4D49-825C-F2706F8CA7FE"), exclusiveto, contract] */
                 MIDL_INTERFACE("DA1C518B-970D-4D49-825C-F2706F8CA7FE")
-                IWebAccountProvider3 : IInspectable
+                IWebAccountProvider3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * user
                         ) = 0;
@@ -2655,6 +2686,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider3;
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Security.Credentials.IWebAccountProvider4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Security.Credentials.WebAccountProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Credentials_IWebAccountProvider4[] = L"Windows.Security.Credentials.IWebAccountProvider4";
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Credentials {
+                /* [object, uuid("718FD8DB-E796-4210-B74E-84D29894B080"), exclusiveto, contract] */
+                MIDL_INTERFACE("718FD8DB-E796-4210-B74E-84D29894B080")
+                IWebAccountProvider4 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSystemProvider(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebAccountProvider4=_uuidof(IWebAccountProvider4);
+                
+            } /* Windows */
+        } /* Security */
+    } /* Credentials */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4;
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2678,8 +2750,9 @@ namespace ABI {
             namespace Credentials {
                 /* [object, uuid("1D767DF1-E1E1-4B9A-A774-5C7C7E3BF371"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D767DF1-E1E1-4B9A-A774-5C7C7E3BF371")
-                IWebAccountProviderFactory : IInspectable
+                IWebAccountProviderFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWebAccountProvider(
                         /* [in] */__RPC__in HSTRING id,
                         /* [in] */__RPC__in HSTRING displayName,
@@ -2938,6 +3011,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Security.Credentials.IWebAccountProvider ** Default Interface **
  *    Windows.Security.Credentials.IWebAccountProvider2
  *    Windows.Security.Credentials.IWebAccountProvider3
+ *    Windows.Security.Credentials.IWebAccountProvider4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3040,6 +3114,12 @@ typedef interface __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider2 
 typedef interface __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider3 __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider3;
 
 #endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4 __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4;
+
+#endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProviderFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProviderFactory_FWD_DEFINED__
@@ -5480,6 +5560,7 @@ typedef enum __x_ABI_CWindows_CSecurity_CCredentials_CWebAccountState __x_ABI_CW
 
 
 
+
 /*
  *
  * Struct Windows.Security.Credentials.KeyCredentialAttestationStatus
@@ -7155,6 +7236,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvi
 
 /*
  *
+ * Interface Windows.Security.Credentials.IWebAccountProvider4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Security.Credentials.WebAccountProvider
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Credentials_IWebAccountProvider4[] = L"Windows.Security.Credentials.IWebAccountProvider4";
+/* [object, uuid("718FD8DB-E796-4210-B74E-84D29894B080"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsSystemProvider )(
+        __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4Vtbl;
+
+interface __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_get_IsSystemProvider(This,value) \
+    ( (This)->lpVtbl->get_IsSystemProvider(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4;
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Security.Credentials.IWebAccountProviderFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7487,6 +7661,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Security.Credentials.IWebAccountProvider ** Default Interface **
  *    Windows.Security.Credentials.IWebAccountProvider2
  *    Windows.Security.Credentials.IWebAccountProvider3
+ *    Windows.Security.Credentials.IWebAccountProvider4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

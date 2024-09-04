@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.sensors.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -3461,6 +3463,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_USE
@@ -3490,6 +3493,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Accelerometer*,ABI::W
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3502,6 +3506,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerShakenEventArgs_USE
@@ -3532,6 +3537,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Accelerometer*,ABI::W
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3544,6 +3550,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_Windows__CDevices__CSensors__CActivitySensorReadingChangedEventArgs_USE
@@ -3574,6 +3581,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::ActivitySensor*,ABI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -3595,6 +3603,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CAltimeter_Windows__CDevices__CSensors__CAltimeterReadingChangedEventArgs_USE
@@ -3625,6 +3634,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Altimeter*,ABI::Windo
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3637,6 +3647,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Windows__CDevices__CSensors__CBarometerReadingChangedEventArgs_USE
@@ -3667,6 +3678,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Barometer*,ABI::Windo
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3679,6 +3691,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CCompass_Windows__CDevices__CSensors__CCompassReadingChangedEventArgs_USE
@@ -3709,6 +3722,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Compass*,ABI::Windows
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3721,6 +3735,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Windows__CDevices__CSensors__CGyrometerReadingChangedEventArgs_USE
@@ -3751,6 +3766,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Gyrometer*,ABI::Windo
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3763,6 +3779,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Windows__CDevices__CSensors__CInclinometerReadingChangedEventArgs_USE
@@ -3793,6 +3810,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Inclinometer*,ABI::Wi
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3805,6 +3823,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Windows__CDevices__CSensors__CLightSensorReadingChangedEventArgs_USE
@@ -3835,6 +3854,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::LightSensor*,ABI::Win
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3847,6 +3867,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CMagnetometer_Windows__CDevices__CSensors__CMagnetometerReadingChangedEventArgs_USE
@@ -3877,6 +3898,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Magnetometer*,ABI::Wi
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3889,6 +3911,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__COrientationSensor_Windows__CDevices__CSensors__COrientationSensorReadingChangedEventArgs_USE
@@ -3919,6 +3942,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::OrientationSensor*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3931,6 +3955,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Windows__CDevices__CSensors__CPedometerReadingChangedEventArgs_USE
@@ -3961,6 +3986,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Pedometer*,ABI::Windo
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -3982,6 +4008,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CProximitySensor_Windows__CDevices__CSensors__CProximitySensorReadingChangedEventArgs_USE
@@ -4012,6 +4039,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::ProximitySensor*,ABI:
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -4033,6 +4061,7 @@ namespace ABI {
     } /* Sensors */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_USE
@@ -4062,6 +4091,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::SimpleOrientationSens
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -5030,8 +5060,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("DF184548-2711-4DA7-8098-4B82205D3C7D"), exclusiveto, contract] */
                 MIDL_INTERFACE("DF184548-2711-4DA7-8098-4B82205D3C7D")
-                IAccelerometer : IInspectable
+                IAccelerometer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IAccelerometerReading * * value
                         ) = 0;
@@ -5093,8 +5124,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("E8F092EE-4964-401A-B602-220D7153C60A"), exclusiveto, contract] */
                 MIDL_INTERFACE("E8F092EE-4964-401A-B602-220D7153C60A")
-                IAccelerometer2 : IInspectable
+                IAccelerometer2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReadingTransform(
                         /* [in] */ABI::Windows::Graphics::Display::DisplayOrientations value
                         ) = 0;
@@ -5136,8 +5168,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("87E0022A-ED80-49EB-BF8A-A4EA31E5CD84"), exclusiveto, contract] */
                 MIDL_INTERFACE("87E0022A-ED80-49EB-BF8A-A4EA31E5CD84")
-                IAccelerometer3 : IInspectable
+                IAccelerometer3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -5182,8 +5215,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("1D373C4F-42D3-45B2-8144-AB7FB665EB59"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D373C4F-42D3-45B2-8144-AB7FB665EB59")
-                IAccelerometer4 : IInspectable
+                IAccelerometer4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ReadingType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sensors::AccelerometerReadingType * type
                         ) = 0;
@@ -5222,8 +5256,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("7EAC64A9-97D5-446D-AB5A-917DF9B96A2C"), exclusiveto, contract] */
                 MIDL_INTERFACE("7EAC64A9-97D5-446D-AB5A-917DF9B96A2C")
-                IAccelerometerDeviceId : IInspectable
+                IAccelerometerDeviceId : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5262,8 +5297,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("B9FE7ACB-D351-40AF-8BB6-7AA9AE641FB7"), exclusiveto, contract] */
                 MIDL_INTERFACE("B9FE7ACB-D351-40AF-8BB6-7AA9AE641FB7")
-                IAccelerometerReading : IInspectable
+                IAccelerometerReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -5311,8 +5347,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("0A864AA2-15AE-4A40-BE55-DB58D7DE7389"), exclusiveto, contract] */
                 MIDL_INTERFACE("0A864AA2-15AE-4A40-BE55-DB58D7DE7389")
-                IAccelerometerReading2 : IInspectable
+                IAccelerometerReading2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -5354,8 +5391,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("0095C65B-B6AC-475A-9F44-8B32D35A3F25"), exclusiveto, contract] */
                 MIDL_INTERFACE("0095C65B-B6AC-475A-9F44-8B32D35A3F25")
-                IAccelerometerReadingChangedEventArgs : IInspectable
+                IAccelerometerReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IAccelerometerReading * * value
                         ) = 0;
@@ -5394,8 +5432,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("95FF01D1-4A28-4F35-98E8-8178AAE4084A"), exclusiveto, contract] */
                 MIDL_INTERFACE("95FF01D1-4A28-4F35-98E8-8178AAE4084A")
-                IAccelerometerShakenEventArgs : IInspectable
+                IAccelerometerShakenEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -5434,8 +5473,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("A5E28B74-5A87-4A2D-BECC-0F906EA061DD"), exclusiveto, contract] */
                 MIDL_INTERFACE("A5E28B74-5A87-4A2D-BECC-0F906EA061DD")
-                IAccelerometerStatics : IInspectable
+                IAccelerometerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IAccelerometer * * result
                         ) = 0;
@@ -5474,8 +5514,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("C4C4842F-D86B-4685-B2D7-3396F798D57B"), exclusiveto, contract] */
                 MIDL_INTERFACE("C4C4842F-D86B-4685-B2D7-3396F798D57B")
-                IAccelerometerStatics2 : IInspectable
+                IAccelerometerStatics2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDefaultWithAccelerometerReadingType(
                         /* [in] */ABI::Windows::Devices::Sensors::AccelerometerReadingType readingType,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IAccelerometer * * result
@@ -5515,8 +5556,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("9DE218CF-455D-4CF3-8200-70E1410340F8"), exclusiveto, contract] */
                 MIDL_INTERFACE("9DE218CF-455D-4CF3-8200-70E1410340F8")
-                IAccelerometerStatics3 : IInspectable
+                IAccelerometerStatics3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CAccelerometer * * operation
@@ -5560,8 +5602,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("CD7A630C-FB5F-48EB-B09B-A2708D1C61EF"), exclusiveto, contract] */
                 MIDL_INTERFACE("CD7A630C-FB5F-48EB-B09B-A2708D1C61EF")
-                IActivitySensor : IInspectable
+                IActivitySensor : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReadingAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensorReading * * result
                         ) = 0;
@@ -5622,8 +5665,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("85125A96-1472-40A2-B2AE-E1EF29226C78"), exclusiveto, contract] */
                 MIDL_INTERFACE("85125A96-1472-40A2-B2AE-E1EF29226C78")
-                IActivitySensorReading : IInspectable
+                IActivitySensorReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -5668,8 +5712,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("4F3C2915-D93B-47BD-960A-F20FB2F322B9"), exclusiveto, contract] */
                 MIDL_INTERFACE("4F3C2915-D93B-47BD-960A-F20FB2F322B9")
-                IActivitySensorReadingChangeReport : IInspectable
+                IActivitySensorReadingChangeReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IActivitySensorReading * * value
                         ) = 0;
@@ -5708,8 +5753,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("DE386717-AEB6-4EC7-946A-D9CC19B951EC"), exclusiveto, contract] */
                 MIDL_INTERFACE("DE386717-AEB6-4EC7-946A-D9CC19B951EC")
-                IActivitySensorReadingChangedEventArgs : IInspectable
+                IActivitySensorReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IActivitySensorReading * * value
                         ) = 0;
@@ -5748,8 +5794,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("A71E0E9D-EE8B-45D1-B25B-08CC0DF92AB6"), exclusiveto, contract] */
                 MIDL_INTERFACE("A71E0E9D-EE8B-45D1-B25B-08CC0DF92AB6")
-                IActivitySensorStatics : IInspectable
+                IActivitySensorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefaultAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor * * result
                         ) = 0;
@@ -5804,8 +5851,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("2C9E6612-B9CA-4677-B263-243297F79D3A"), exclusiveto, contract] */
                 MIDL_INTERFACE("2C9E6612-B9CA-4677-B263-243297F79D3A")
-                IActivitySensorTriggerDetails : IInspectable
+                IActivitySensorTriggerDetails : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReadReports(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReadingChangeReport * * value
                         ) = 0;
@@ -5844,8 +5892,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("72F057FD-8F04-49F1-B4A7-F4E363B701A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("72F057FD-8F04-49F1-B4A7-F4E363B701A2")
-                IAltimeter : IInspectable
+                IAltimeter : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IAltimeterReading * * value
                         ) = 0;
@@ -5903,8 +5952,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("C9471BF9-2ADD-48F5-9F08-3D0C7660D938"), exclusiveto, contract] */
                 MIDL_INTERFACE("C9471BF9-2ADD-48F5-9F08-3D0C7660D938")
-                IAltimeter2 : IInspectable
+                IAltimeter2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -5949,8 +5999,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("FBE8EF73-7F5E-48C8-AA1A-F1F3BEFC1144"), exclusiveto, contract] */
                 MIDL_INTERFACE("FBE8EF73-7F5E-48C8-AA1A-F1F3BEFC1144")
-                IAltimeterReading : IInspectable
+                IAltimeterReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -5992,8 +6043,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("543A1BD9-6D0B-42B2-BD69-BC8FAE0F782C"), exclusiveto, contract] */
                 MIDL_INTERFACE("543A1BD9-6D0B-42B2-BD69-BC8FAE0F782C")
-                IAltimeterReading2 : IInspectable
+                IAltimeterReading2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -6035,8 +6087,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("7069D077-446D-47F7-998C-EBC23B45E4A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("7069D077-446D-47F7-998C-EBC23B45E4A2")
-                IAltimeterReadingChangedEventArgs : IInspectable
+                IAltimeterReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IAltimeterReading * * value
                         ) = 0;
@@ -6075,8 +6128,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("9EB4D7C3-E5AC-47CE-8EEF-D3718168C01F"), exclusiveto, contract] */
                 MIDL_INTERFACE("9EB4D7C3-E5AC-47CE-8EEF-D3718168C01F")
-                IAltimeterStatics : IInspectable
+                IAltimeterStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IAltimeter * * result
                         ) = 0;
@@ -6115,8 +6169,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("934475A8-78BF-452F-B017-F0209CE6DAB4"), exclusiveto, contract] */
                 MIDL_INTERFACE("934475A8-78BF-452F-B017-F0209CE6DAB4")
-                IBarometer : IInspectable
+                IBarometer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IBarometerReading * * value
                         ) = 0;
@@ -6174,8 +6229,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("32BCC418-3EEB-4D04-9574-7633A8781F9F"), exclusiveto, contract] */
                 MIDL_INTERFACE("32BCC418-3EEB-4D04-9574-7633A8781F9F")
-                IBarometer2 : IInspectable
+                IBarometer2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -6220,8 +6276,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("F5B9D2E6-1DF6-4A1A-A7AD-321D4F5DB247"), exclusiveto, contract] */
                 MIDL_INTERFACE("F5B9D2E6-1DF6-4A1A-A7AD-321D4F5DB247")
-                IBarometerReading : IInspectable
+                IBarometerReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -6263,8 +6320,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("85A244EB-90C5-4875-891C-3865B4C357E7"), exclusiveto, contract] */
                 MIDL_INTERFACE("85A244EB-90C5-4875-891C-3865B4C357E7")
-                IBarometerReading2 : IInspectable
+                IBarometerReading2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -6306,8 +6364,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("3D84945F-037B-404F-9BBB-6232D69543C3"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D84945F-037B-404F-9BBB-6232D69543C3")
-                IBarometerReadingChangedEventArgs : IInspectable
+                IBarometerReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IBarometerReading * * value
                         ) = 0;
@@ -6346,8 +6405,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("286B270A-02E3-4F86-84FC-FDD892B5940F"), exclusiveto, contract] */
                 MIDL_INTERFACE("286B270A-02E3-4F86-84FC-FDD892B5940F")
-                IBarometerStatics : IInspectable
+                IBarometerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IBarometer * * result
                         ) = 0;
@@ -6386,8 +6446,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("8FC6B1E7-95FF-44AC-878E-D65C8308C34C"), exclusiveto, contract] */
                 MIDL_INTERFACE("8FC6B1E7-95FF-44AC-878E-D65C8308C34C")
-                IBarometerStatics2 : IInspectable
+                IBarometerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CBarometer * * operation
@@ -6430,8 +6491,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("292FFA94-1B45-403C-BA06-B106DBA69A64"), exclusiveto, contract] */
                 MIDL_INTERFACE("292FFA94-1B45-403C-BA06-B106DBA69A64")
-                ICompass : IInspectable
+                ICompass : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::ICompassReading * * value
                         ) = 0;
@@ -6486,8 +6548,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("36F26D09-C7D7-434F-B461-979DDFC2322F"), exclusiveto, contract] */
                 MIDL_INTERFACE("36F26D09-C7D7-434F-B461-979DDFC2322F")
-                ICompass2 : IInspectable
+                ICompass2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReadingTransform(
                         /* [in] */ABI::Windows::Graphics::Display::DisplayOrientations value
                         ) = 0;
@@ -6529,8 +6592,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("A424801B-C5EA-4D45-A0EC-4B791F041A89"), exclusiveto, contract] */
                 MIDL_INTERFACE("A424801B-C5EA-4D45-A0EC-4B791F041A89")
-                ICompass3 : IInspectable
+                ICompass3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -6575,8 +6639,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("D181CA29-B085-4B1D-870A-4FF57BA74FD4"), exclusiveto, contract] */
                 MIDL_INTERFACE("D181CA29-B085-4B1D-870A-4FF57BA74FD4")
-                ICompassDeviceId : IInspectable
+                ICompassDeviceId : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6615,8 +6680,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("82911128-513D-4DC9-B781-5EEDFBF02D0C"), exclusiveto, contract] */
                 MIDL_INTERFACE("82911128-513D-4DC9-B781-5EEDFBF02D0C")
-                ICompassReading : IInspectable
+                ICompassReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -6661,8 +6727,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("B13A661E-51BB-4A12-BEDD-AD47FF87D2E8"), exclusiveto, contract] */
                 MIDL_INTERFACE("B13A661E-51BB-4A12-BEDD-AD47FF87D2E8")
-                ICompassReading2 : IInspectable
+                ICompassReading2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -6704,8 +6771,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("8F1549B0-E8BC-4C7E-B009-4E41DF137072"), exclusiveto, contract] */
                 MIDL_INTERFACE("8F1549B0-E8BC-4C7E-B009-4E41DF137072")
-                ICompassReadingChangedEventArgs : IInspectable
+                ICompassReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::ICompassReading * * value
                         ) = 0;
@@ -6744,8 +6812,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("E761354E-8911-40F7-9E16-6ECC7DAEC5DE"), exclusiveto, contract] */
                 MIDL_INTERFACE("E761354E-8911-40F7-9E16-6ECC7DAEC5DE")
-                ICompassReadingHeadingAccuracy : IInspectable
+                ICompassReadingHeadingAccuracy : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HeadingAccuracy(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sensors::MagnetometerAccuracy * value
                         ) = 0;
@@ -6784,8 +6853,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("9ABC97DF-56EC-4C25-B54D-40A68BB5B269"), exclusiveto, contract] */
                 MIDL_INTERFACE("9ABC97DF-56EC-4C25-B54D-40A68BB5B269")
-                ICompassStatics : IInspectable
+                ICompassStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::ICompass * * result
                         ) = 0;
@@ -6824,8 +6894,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("0ACE0EAD-3BAA-4990-9CE4-BE0913754ED2"), exclusiveto, contract] */
                 MIDL_INTERFACE("0ACE0EAD-3BAA-4990-9CE4-BE0913754ED2")
-                ICompassStatics2 : IInspectable
+                ICompassStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -6868,8 +6939,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("FDB9A9C4-84B1-4CA2-9763-9B589506C70C"), exclusiveto, contract] */
                 MIDL_INTERFACE("FDB9A9C4-84B1-4CA2-9763-9B589506C70C")
-                IGyrometer : IInspectable
+                IGyrometer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IGyrometerReading * * value
                         ) = 0;
@@ -6924,8 +6996,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("63DF2443-8CE8-41C3-AC44-8698810B557F"), exclusiveto, contract] */
                 MIDL_INTERFACE("63DF2443-8CE8-41C3-AC44-8698810B557F")
-                IGyrometer2 : IInspectable
+                IGyrometer2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReadingTransform(
                         /* [in] */ABI::Windows::Graphics::Display::DisplayOrientations value
                         ) = 0;
@@ -6967,8 +7040,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("5D6F88D5-8FBC-4484-914B-528ADFD947B1"), exclusiveto, contract] */
                 MIDL_INTERFACE("5D6F88D5-8FBC-4484-914B-528ADFD947B1")
-                IGyrometer3 : IInspectable
+                IGyrometer3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -7013,8 +7087,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("1EE5E978-89A2-4275-9E95-7126F4708760"), exclusiveto, contract] */
                 MIDL_INTERFACE("1EE5E978-89A2-4275-9E95-7126F4708760")
-                IGyrometerDeviceId : IInspectable
+                IGyrometerDeviceId : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7053,8 +7128,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("B3D6DE5C-1EE4-456F-9DE7-E2493B5C8E03"), exclusiveto, contract] */
                 MIDL_INTERFACE("B3D6DE5C-1EE4-456F-9DE7-E2493B5C8E03")
-                IGyrometerReading : IInspectable
+                IGyrometerReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -7102,8 +7178,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("16AFE13C-2B89-44BB-822B-D1E1556FF09B"), exclusiveto, contract] */
                 MIDL_INTERFACE("16AFE13C-2B89-44BB-822B-D1E1556FF09B")
-                IGyrometerReading2 : IInspectable
+                IGyrometerReading2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -7145,8 +7222,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("0FDF1895-6F9E-42CE-8D58-388C0AB8356D"), exclusiveto, contract] */
                 MIDL_INTERFACE("0FDF1895-6F9E-42CE-8D58-388C0AB8356D")
-                IGyrometerReadingChangedEventArgs : IInspectable
+                IGyrometerReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IGyrometerReading * * value
                         ) = 0;
@@ -7185,8 +7263,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("83B6E7C9-E49D-4B39-86E6-CD554BE4C5C1"), exclusiveto, contract] */
                 MIDL_INTERFACE("83B6E7C9-E49D-4B39-86E6-CD554BE4C5C1")
-                IGyrometerStatics : IInspectable
+                IGyrometerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IGyrometer * * result
                         ) = 0;
@@ -7225,8 +7304,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("EF83F7A1-D700-4204-9613-79C6B161DF4E"), exclusiveto, contract] */
                 MIDL_INTERFACE("EF83F7A1-D700-4204-9613-79C6B161DF4E")
-                IGyrometerStatics2 : IInspectable
+                IGyrometerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -7269,8 +7349,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("2648CA6F-2286-406F-9161-F0C4BD806EBF"), exclusiveto, contract] */
                 MIDL_INTERFACE("2648CA6F-2286-406F-9161-F0C4BD806EBF")
-                IInclinometer : IInspectable
+                IInclinometer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IInclinometerReading * * value
                         ) = 0;
@@ -7325,8 +7406,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("029F3393-28B2-45F8-BB16-61E86A7FAE6E"), exclusiveto, contract] */
                 MIDL_INTERFACE("029F3393-28B2-45F8-BB16-61E86A7FAE6E")
-                IInclinometer2 : IInspectable
+                IInclinometer2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReadingTransform(
                         /* [in] */ABI::Windows::Graphics::Display::DisplayOrientations value
                         ) = 0;
@@ -7371,8 +7453,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("3A095004-D765-4384-A3D7-0283F3ABE6AE"), exclusiveto, contract] */
                 MIDL_INTERFACE("3A095004-D765-4384-A3D7-0283F3ABE6AE")
-                IInclinometer3 : IInspectable
+                IInclinometer3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -7417,8 +7500,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("01E91982-41FF-4406-AE83-62210FF16FE3"), exclusiveto, contract] */
                 MIDL_INTERFACE("01E91982-41FF-4406-AE83-62210FF16FE3")
-                IInclinometerDeviceId : IInspectable
+                IInclinometerDeviceId : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7457,8 +7541,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("9F44F055-B6F6-497F-B127-1A775E501458"), exclusiveto, contract] */
                 MIDL_INTERFACE("9F44F055-B6F6-497F-B127-1A775E501458")
-                IInclinometerReading : IInspectable
+                IInclinometerReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -7506,8 +7591,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("4F164781-E90B-4658-8915-0103E08A805A"), exclusiveto, contract] */
                 MIDL_INTERFACE("4F164781-E90B-4658-8915-0103E08A805A")
-                IInclinometerReading2 : IInspectable
+                IInclinometerReading2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -7549,8 +7635,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("4AE91DC1-E7EB-4938-8511-AE0D6B440438"), exclusiveto, contract] */
                 MIDL_INTERFACE("4AE91DC1-E7EB-4938-8511-AE0D6B440438")
-                IInclinometerReadingChangedEventArgs : IInspectable
+                IInclinometerReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IInclinometerReading * * value
                         ) = 0;
@@ -7589,8 +7676,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("B453E880-1FE3-4986-A257-E6ECE2723949"), exclusiveto, contract] */
                 MIDL_INTERFACE("B453E880-1FE3-4986-A257-E6ECE2723949")
-                IInclinometerReadingYawAccuracy : IInspectable
+                IInclinometerReadingYawAccuracy : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_YawAccuracy(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sensors::MagnetometerAccuracy * value
                         ) = 0;
@@ -7629,8 +7717,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("F22EC551-9C30-453A-8B49-3C3EEB33CB61"), exclusiveto, contract] */
                 MIDL_INTERFACE("F22EC551-9C30-453A-8B49-3C3EEB33CB61")
-                IInclinometerStatics : IInspectable
+                IInclinometerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IInclinometer * * result
                         ) = 0;
@@ -7669,8 +7758,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("043F9775-6A1E-499C-86E0-638C1A864B00"), exclusiveto, contract] */
                 MIDL_INTERFACE("043F9775-6A1E-499C-86E0-638C1A864B00")
-                IInclinometerStatics2 : IInspectable
+                IInclinometerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefaultForRelativeReadings(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IInclinometer * * result
                         ) = 0;
@@ -7709,8 +7799,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("BD9A4280-B91A-4829-9392-ABC0B6BDF2B4"), exclusiveto, contract] */
                 MIDL_INTERFACE("BD9A4280-B91A-4829-9392-ABC0B6BDF2B4")
-                IInclinometerStatics3 : IInspectable
+                IInclinometerStatics3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDefaultWithSensorReadingType(
                         /* [in] */ABI::Windows::Devices::Sensors::SensorReadingType sensorReadingtype,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IInclinometer * * result
@@ -7750,8 +7841,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("E8BA96F9-6E85-4A83-AED0-D7CDCC9856C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("E8BA96F9-6E85-4A83-AED0-D7CDCC9856C8")
-                IInclinometerStatics4 : IInspectable
+                IInclinometerStatics4 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [in] */ABI::Windows::Devices::Sensors::SensorReadingType readingType,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
@@ -7795,8 +7887,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("F84C0718-0C54-47AE-922E-789F57FB03A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("F84C0718-0C54-47AE-922E-789F57FB03A0")
-                ILightSensor : IInspectable
+                ILightSensor : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::ILightSensorReading * * value
                         ) = 0;
@@ -7851,8 +7944,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("486B24E8-A94C-4090-8F48-09F782A9F7D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("486B24E8-A94C-4090-8F48-09F782A9F7D5")
-                ILightSensor2 : IInspectable
+                ILightSensor2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -7897,8 +7991,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("7FEE49F8-0AFB-4F51-87F0-6C26375CE94F"), exclusiveto, contract] */
                 MIDL_INTERFACE("7FEE49F8-0AFB-4F51-87F0-6C26375CE94F")
-                ILightSensorDeviceId : IInspectable
+                ILightSensorDeviceId : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7937,8 +8032,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("FFDF6300-227C-4D2B-B302-FC0142485C68"), exclusiveto, contract] */
                 MIDL_INTERFACE("FFDF6300-227C-4D2B-B302-FC0142485C68")
-                ILightSensorReading : IInspectable
+                ILightSensorReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -7980,8 +8076,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("B7512185-44A3-44C9-8190-9EF6DE0A8A74"), exclusiveto, contract] */
                 MIDL_INTERFACE("B7512185-44A3-44C9-8190-9EF6DE0A8A74")
-                ILightSensorReading2 : IInspectable
+                ILightSensorReading2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -8023,8 +8120,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("A3A2F4CF-258B-420C-B8AB-8EDD601ECF50"), exclusiveto, contract] */
                 MIDL_INTERFACE("A3A2F4CF-258B-420C-B8AB-8EDD601ECF50")
-                ILightSensorReadingChangedEventArgs : IInspectable
+                ILightSensorReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::ILightSensorReading * * value
                         ) = 0;
@@ -8063,8 +8161,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("45DB8C84-C3A8-471E-9A53-6457FAD87C0E"), exclusiveto, contract] */
                 MIDL_INTERFACE("45DB8C84-C3A8-471E-9A53-6457FAD87C0E")
-                ILightSensorStatics : IInspectable
+                ILightSensorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::ILightSensor * * result
                         ) = 0;
@@ -8103,8 +8202,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("0EC0A650-DDC6-40AB-ACE3-EC3359D42C51"), exclusiveto, contract] */
                 MIDL_INTERFACE("0EC0A650-DDC6-40AB-ACE3-EC3359D42C51")
-                ILightSensorStatics2 : IInspectable
+                ILightSensorStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -8147,8 +8247,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("484F626E-D3C9-4111-B3F6-2CF1FAA418D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("484F626E-D3C9-4111-B3F6-2CF1FAA418D5")
-                IMagnetometer : IInspectable
+                IMagnetometer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IMagnetometerReading * * value
                         ) = 0;
@@ -8203,8 +8304,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("B4656C85-26F6-444B-A9E2-A23F966CD368"), exclusiveto, contract] */
                 MIDL_INTERFACE("B4656C85-26F6-444B-A9E2-A23F966CD368")
-                IMagnetometer2 : IInspectable
+                IMagnetometer2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReadingTransform(
                         /* [in] */ABI::Windows::Graphics::Display::DisplayOrientations value
                         ) = 0;
@@ -8246,8 +8348,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("BE93DB7C-A625-48EF-ACF7-FAC104832671"), exclusiveto, contract] */
                 MIDL_INTERFACE("BE93DB7C-A625-48EF-ACF7-FAC104832671")
-                IMagnetometer3 : IInspectable
+                IMagnetometer3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -8292,8 +8395,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("58B498C2-7E4B-404C-9FC5-5DE8B40EBAE3"), exclusiveto, contract] */
                 MIDL_INTERFACE("58B498C2-7E4B-404C-9FC5-5DE8B40EBAE3")
-                IMagnetometerDeviceId : IInspectable
+                IMagnetometerDeviceId : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8332,8 +8436,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("0C2CC40D-EBFD-4E5C-BB11-AFC29B3CAE61"), exclusiveto, contract] */
                 MIDL_INTERFACE("0C2CC40D-EBFD-4E5C-BB11-AFC29B3CAE61")
-                IMagnetometerReading : IInspectable
+                IMagnetometerReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -8384,8 +8489,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("D4C95C61-61D9-404B-A328-066F177A1409"), exclusiveto, contract] */
                 MIDL_INTERFACE("D4C95C61-61D9-404B-A328-066F177A1409")
-                IMagnetometerReading2 : IInspectable
+                IMagnetometerReading2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -8427,8 +8533,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("17EAE872-2EB9-4EE7-8AD0-3127537D949B"), exclusiveto, contract] */
                 MIDL_INTERFACE("17EAE872-2EB9-4EE7-8AD0-3127537D949B")
-                IMagnetometerReadingChangedEventArgs : IInspectable
+                IMagnetometerReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IMagnetometerReading * * value
                         ) = 0;
@@ -8467,8 +8574,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("853C64CC-0698-4DDA-A6DF-9CB9CC4AB40A"), exclusiveto, contract] */
                 MIDL_INTERFACE("853C64CC-0698-4DDA-A6DF-9CB9CC4AB40A")
-                IMagnetometerStatics : IInspectable
+                IMagnetometerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IMagnetometer * * result
                         ) = 0;
@@ -8507,8 +8615,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("2C0819F0-FFC6-4F89-A06F-18FA10792933"), exclusiveto, contract] */
                 MIDL_INTERFACE("2C0819F0-FFC6-4F89-A06F-18FA10792933")
-                IMagnetometerStatics2 : IInspectable
+                IMagnetometerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -8551,8 +8660,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("5E354635-CF6B-4C63-ABD8-10252B0BF6EC"), exclusiveto, contract] */
                 MIDL_INTERFACE("5E354635-CF6B-4C63-ABD8-10252B0BF6EC")
-                IOrientationSensor : IInspectable
+                IOrientationSensor : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IOrientationSensorReading * * value
                         ) = 0;
@@ -8607,8 +8717,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("0D924CF9-2F1F-49C9-8042-4A1813D67760"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D924CF9-2F1F-49C9-8042-4A1813D67760")
-                IOrientationSensor2 : IInspectable
+                IOrientationSensor2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReadingTransform(
                         /* [in] */ABI::Windows::Graphics::Display::DisplayOrientations value
                         ) = 0;
@@ -8653,8 +8764,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("2CCE578D-646B-48C5-B7EE-44FDC4C6AAFD"), exclusiveto, contract] */
                 MIDL_INTERFACE("2CCE578D-646B-48C5-B7EE-44FDC4C6AAFD")
-                IOrientationSensor3 : IInspectable
+                IOrientationSensor3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -8699,8 +8811,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("5A69B648-4C29-49EC-B28F-EA1D117B66F0"), exclusiveto, contract] */
                 MIDL_INTERFACE("5A69B648-4C29-49EC-B28F-EA1D117B66F0")
-                IOrientationSensorDeviceId : IInspectable
+                IOrientationSensorDeviceId : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8739,8 +8852,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("4756C993-6595-4897-BCC6-D537EE757564"), exclusiveto, contract] */
                 MIDL_INTERFACE("4756C993-6595-4897-BCC6-D537EE757564")
-                IOrientationSensorReading : IInspectable
+                IOrientationSensorReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -8785,8 +8899,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("00576E5F-49F8-4C05-9E07-24FAC79408C3"), exclusiveto, contract] */
                 MIDL_INTERFACE("00576E5F-49F8-4C05-9E07-24FAC79408C3")
-                IOrientationSensorReading2 : IInspectable
+                IOrientationSensorReading2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -8828,8 +8943,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("012C1186-C3BA-46BC-AE65-7A98996CBFB8"), exclusiveto, contract] */
                 MIDL_INTERFACE("012C1186-C3BA-46BC-AE65-7A98996CBFB8")
-                IOrientationSensorReadingChangedEventArgs : IInspectable
+                IOrientationSensorReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IOrientationSensorReading * * value
                         ) = 0;
@@ -8868,8 +8984,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("D1AC9824-3F5A-49A2-BC7B-1180BC38CD2B"), exclusiveto, contract] */
                 MIDL_INTERFACE("D1AC9824-3F5A-49A2-BC7B-1180BC38CD2B")
-                IOrientationSensorReadingYawAccuracy : IInspectable
+                IOrientationSensorReadingYawAccuracy : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_YawAccuracy(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sensors::MagnetometerAccuracy * value
                         ) = 0;
@@ -8908,8 +9025,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("10EF8712-FB4C-428A-898B-2765E409E669"), exclusiveto, contract] */
                 MIDL_INTERFACE("10EF8712-FB4C-428A-898B-2765E409E669")
-                IOrientationSensorStatics : IInspectable
+                IOrientationSensorStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IOrientationSensor * * result
                         ) = 0;
@@ -8948,8 +9066,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("59DA0D0B-D40A-4C71-9276-8A272A0A6619"), exclusiveto, contract] */
                 MIDL_INTERFACE("59DA0D0B-D40A-4C71-9276-8A272A0A6619")
-                IOrientationSensorStatics2 : IInspectable
+                IOrientationSensorStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefaultForRelativeReadings(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IOrientationSensor * * result
                         ) = 0;
@@ -8988,8 +9107,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("D82CE920-2777-40FF-9F59-D654B085F12F"), exclusiveto, contract] */
                 MIDL_INTERFACE("D82CE920-2777-40FF-9F59-D654B085F12F")
-                IOrientationSensorStatics3 : IInspectable
+                IOrientationSensorStatics3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDefaultWithSensorReadingType(
                         /* [in] */ABI::Windows::Devices::Sensors::SensorReadingType sensorReadingtype,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IOrientationSensor * * result
@@ -9034,8 +9154,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("A67FEB55-2C85-4B28-A0FE-58C4B20495F5"), exclusiveto, contract] */
                 MIDL_INTERFACE("A67FEB55-2C85-4B28-A0FE-58C4B20495F5")
-                IOrientationSensorStatics4 : IInspectable
+                IOrientationSensorStatics4 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [in] */ABI::Windows::Devices::Sensors::SensorReadingType readingType,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
@@ -9084,8 +9205,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("9A1E013D-3D98-45F8-8920-8E4ECACA5F97"), exclusiveto, contract] */
                 MIDL_INTERFACE("9A1E013D-3D98-45F8-8920-8E4ECACA5F97")
-                IPedometer : IInspectable
+                IPedometer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9143,8 +9265,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("E5A406DF-2B81-4ADD-B2FF-77AB6C98BA19"), exclusiveto, contract] */
                 MIDL_INTERFACE("E5A406DF-2B81-4ADD-B2FF-77AB6C98BA19")
-                IPedometer2 : IInspectable
+                IPedometer2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReadings(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_Windows__CDevices__CSensors__CPedometerStepKind_Windows__CDevices__CSensors__CPedometerReading * * value
                         ) = 0;
@@ -9183,8 +9306,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("CBAD8F50-7A54-466B-9010-77A162FCA5D7"), exclusiveto, contract] */
                 MIDL_INTERFACE("CBAD8F50-7A54-466B-9010-77A162FCA5D7")
-                IPedometerDataThresholdFactory : IInspectable
+                IPedometerDataThresholdFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Sensors::IPedometer * sensor,
                         /* [in] */INT32 stepGoal,
@@ -9225,8 +9349,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("2245DCF4-A8E1-432F-896A-BE0DD9B02D24"), exclusiveto, contract] */
                 MIDL_INTERFACE("2245DCF4-A8E1-432F-896A-BE0DD9B02D24")
-                IPedometerReading : IInspectable
+                IPedometerReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StepKind(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sensors::PedometerStepKind * value
                         ) = 0;
@@ -9274,8 +9399,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("F855E47E-ABBC-4456-86A8-25CF2B333742"), exclusiveto, contract] */
                 MIDL_INTERFACE("F855E47E-ABBC-4456-86A8-25CF2B333742")
-                IPedometerReadingChangedEventArgs : IInspectable
+                IPedometerReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IPedometerReading * * value
                         ) = 0;
@@ -9314,8 +9440,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("82980A2F-4083-4DFB-B411-938EA0F4B946"), exclusiveto, contract] */
                 MIDL_INTERFACE("82980A2F-4083-4DFB-B411-938EA0F4B946")
-                IPedometerStatics : IInspectable
+                IPedometerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CPedometer * * operation
@@ -9370,8 +9497,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("79F5C6BB-CE0E-4133-B47E-8627EA72F677"), exclusiveto, contract] */
                 MIDL_INTERFACE("79F5C6BB-CE0E-4133-B47E-8627EA72F677")
-                IPedometerStatics2 : IInspectable
+                IPedometerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetReadingsFromTriggerDetails(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails * triggerDetails,
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading * * result
@@ -9411,8 +9539,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("54C076B8-ECFB-4944-B928-74FC504D47EE"), exclusiveto, contract] */
                 MIDL_INTERFACE("54C076B8-ECFB-4944-B928-74FC504D47EE")
-                IProximitySensor : IInspectable
+                IProximitySensor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9470,8 +9599,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("905AC121-6D27-4AD3-9DB5-6467F2A5AD9D"), exclusiveto, contract] */
                 MIDL_INTERFACE("905AC121-6D27-4AD3-9DB5-6467F2A5AD9D")
-                IProximitySensorDataThresholdFactory : IInspectable
+                IProximitySensorDataThresholdFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Sensors::IProximitySensor * sensor,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::ISensorDataThreshold * * threshold
@@ -9511,8 +9641,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("71228D59-132D-4D5F-8FF9-2F0DB8751CED"), exclusiveto, contract] */
                 MIDL_INTERFACE("71228D59-132D-4D5F-8FF9-2F0DB8751CED")
-                IProximitySensorReading : IInspectable
+                IProximitySensorReading : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -9557,8 +9688,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("CFC2F366-C3E8-40FD-8CC3-67E289004938"), exclusiveto, contract] */
                 MIDL_INTERFACE("CFC2F366-C3E8-40FD-8CC3-67E289004938")
-                IProximitySensorReadingChangedEventArgs : IInspectable
+                IProximitySensorReadingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IProximitySensorReading * * value
                         ) = 0;
@@ -9597,8 +9729,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("29186649-6269-4E57-A5AD-82BE80813392"), exclusiveto, contract] */
                 MIDL_INTERFACE("29186649-6269-4E57-A5AD-82BE80813392")
-                IProximitySensorStatics : IInspectable
+                IProximitySensorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9641,8 +9774,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("CBF473AE-E9CA-422F-AD67-4C3D25DF350C"), exclusiveto, contract] */
                 MIDL_INTERFACE("CBF473AE-E9CA-422F-AD67-4C3D25DF350C")
-                IProximitySensorStatics2 : IInspectable
+                IProximitySensorStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetReadingsFromTriggerDetails(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails * triggerDetails,
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CSensors__CProximitySensorReading * * result
@@ -9679,8 +9813,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("54DAEC61-FE4B-4E07-B260-3A4CDFBE396E"), contract] */
                 MIDL_INTERFACE("54DAEC61-FE4B-4E07-B260-3A4CDFBE396E")
-                ISensorDataThreshold : IInspectable
+                ISensorDataThreshold : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -9716,8 +9851,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("9106F1B7-E88D-48B1-BC90-619C7B349391"), exclusiveto, contract] */
                 MIDL_INTERFACE("9106F1B7-E88D-48B1-BC90-619C7B349391")
-                ISensorDataThresholdTriggerDetails : IInspectable
+                ISensorDataThresholdTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9759,8 +9895,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("C9C5C827-C71C-46E7-9DA3-36A193B232BC"), exclusiveto, contract] */
                 MIDL_INTERFACE("C9C5C827-C71C-46E7-9DA3-36A193B232BC")
-                ISensorQuaternion : IInspectable
+                ISensorQuaternion : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_W(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -9808,8 +9945,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("0A3D5A67-22F4-4392-9538-65D0BD064AA6"), exclusiveto, contract] */
                 MIDL_INTERFACE("0A3D5A67-22F4-4392-9538-65D0BD064AA6")
-                ISensorRotationMatrix : IInspectable
+                ISensorRotationMatrix : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_M11(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -9872,8 +10010,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("5FF53856-214A-4DEE-A3F9-616F1AB06FFD"), exclusiveto, contract] */
                 MIDL_INTERFACE("5FF53856-214A-4DEE-A3F9-616F1AB06FFD")
-                ISimpleOrientationSensor : IInspectable
+                ISimpleOrientationSensor : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentOrientation(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sensors::SimpleOrientation * value
                         ) = 0;
@@ -9919,8 +10058,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("A277A798-8870-453E-8BD6-B8F5D8D7941B"), exclusiveto, contract] */
                 MIDL_INTERFACE("A277A798-8870-453E-8BD6-B8F5D8D7941B")
-                ISimpleOrientationSensor2 : IInspectable
+                ISimpleOrientationSensor2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReadingTransform(
                         /* [in] */ABI::Windows::Graphics::Display::DisplayOrientations value
                         ) = 0;
@@ -9962,8 +10102,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("FBC00ACB-3B76-41F6-8091-30EFE646D3CF"), exclusiveto, contract] */
                 MIDL_INTERFACE("FBC00ACB-3B76-41F6-8091-30EFE646D3CF")
-                ISimpleOrientationSensorDeviceId : IInspectable
+                ISimpleOrientationSensorDeviceId : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -10002,8 +10143,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("BCD5C660-23D4-4B4C-A22E-BA81ADE0C601"), exclusiveto, contract] */
                 MIDL_INTERFACE("BCD5C660-23D4-4B4C-A22E-BA81ADE0C601")
-                ISimpleOrientationSensorOrientationChangedEventArgs : IInspectable
+                ISimpleOrientationSensorOrientationChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -10045,8 +10187,9 @@ namespace ABI {
             namespace Sensors {
                 /* [object, uuid("72ED066F-70AA-40C6-9B1B-3433F7459B4E"), exclusiveto, contract] */
                 MIDL_INTERFACE("72ED066F-70AA-40C6-9B1B-3433F7459B4E")
-                ISimpleOrientationSensorStatics : IInspectable
+                ISimpleOrientationSensorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::ISimpleOrientationSensor * * result
                         ) = 0;
@@ -15270,6 +15413,7 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPe
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_INTERFACE_DEFINED__
 
@@ -15317,9 +15461,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Wi
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerShakenEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerShakenEventArgs_INTERFACE_DEFINED__
@@ -15368,9 +15514,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Wi
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerShakenEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_Windows__CDevices__CSensors__CActivitySensorReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_Windows__CDevices__CSensors__CActivitySensorReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15419,9 +15567,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_W
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_Windows__CDevices__CSensors__CActivitySensorReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CAltimeter_Windows__CDevices__CSensors__CAltimeterReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CAltimeter_Windows__CDevices__CSensors__CAltimeterReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15470,9 +15620,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CAltimeter_Window
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CAltimeter_Windows__CDevices__CSensors__CAltimeterReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Windows__CDevices__CSensors__CBarometerReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Windows__CDevices__CSensors__CBarometerReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15521,9 +15673,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Window
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Windows__CDevices__CSensors__CBarometerReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CCompass_Windows__CDevices__CSensors__CCompassReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CCompass_Windows__CDevices__CSensors__CCompassReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15572,9 +15726,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CCompass_Windows_
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CCompass_Windows__CDevices__CSensors__CCompassReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Windows__CDevices__CSensors__CGyrometerReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Windows__CDevices__CSensors__CGyrometerReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15623,9 +15779,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Window
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Windows__CDevices__CSensors__CGyrometerReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Windows__CDevices__CSensors__CInclinometerReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Windows__CDevices__CSensors__CInclinometerReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15674,9 +15832,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Win
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Windows__CDevices__CSensors__CInclinometerReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Windows__CDevices__CSensors__CLightSensorReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Windows__CDevices__CSensors__CLightSensorReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15725,9 +15885,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Wind
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Windows__CDevices__CSensors__CLightSensorReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CMagnetometer_Windows__CDevices__CSensors__CMagnetometerReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CMagnetometer_Windows__CDevices__CSensors__CMagnetometerReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15776,9 +15938,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CMagnetometer_Win
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CMagnetometer_Windows__CDevices__CSensors__CMagnetometerReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__COrientationSensor_Windows__CDevices__CSensors__COrientationSensorReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__COrientationSensor_Windows__CDevices__CSensors__COrientationSensorReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15827,9 +15991,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__COrientationSenso
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__COrientationSensor_Windows__CDevices__CSensors__COrientationSensorReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Windows__CDevices__CSensors__CPedometerReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Windows__CDevices__CSensors__CPedometerReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15878,9 +16044,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Window
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Windows__CDevices__CSensors__CPedometerReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CProximitySensor_Windows__CDevices__CSensors__CProximitySensorReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CProximitySensor_Windows__CDevices__CSensors__CProximitySensorReadingChangedEventArgs_INTERFACE_DEFINED__
@@ -15929,9 +16097,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CProximitySensor_
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CProximitySensor_Windows__CDevices__CSensors__CProximitySensorReadingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_INTERFACE_DEFINED__
@@ -15979,6 +16149,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientatio
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 struct __x_ABI_CWindows_CFoundation_CTimeSpan;

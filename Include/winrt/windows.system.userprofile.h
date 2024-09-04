@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.userprofile.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION)
@@ -365,6 +367,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                interface IGlobalizationPreferencesForUser;
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser ABI::Windows::System::UserProfile::IGlobalizationPreferencesForUser
+
+#endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics_FWD_DEFINED__
 namespace ABI {
@@ -392,6 +408,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics2 ABI::Windows::System::UserProfile::IGlobalizationPreferencesStatics2
 
 #endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                interface IGlobalizationPreferencesStatics3;
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3 ABI::Windows::System::UserProfile::IGlobalizationPreferencesStatics3
+
+#endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFeedStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFeedStatics_FWD_DEFINED__
@@ -1181,6 +1211,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -1210,6 +1242,16 @@ namespace ABI {
         } /* System */
     } /* UserProfile */} /* ABI */
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                class GlobalizationPreferencesForUser;
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
 
 
 
@@ -1342,8 +1384,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("928BF3D0-CF7C-4AB0-A7DC-6DC5BCD44252"), exclusiveto, contract] */
                 MIDL_INTERFACE("928BF3D0-CF7C-4AB0-A7DC-6DC5BCD44252")
-                IAdvertisingManagerForUser : IInspectable
+                IAdvertisingManagerForUser : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AdvertisingId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1385,8 +1428,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("ADD3468C-A273-48CB-B346-3544522D5581"), exclusiveto, contract] */
                 MIDL_INTERFACE("ADD3468C-A273-48CB-B346-3544522D5581")
-                IAdvertisingManagerStatics : IInspectable
+                IAdvertisingManagerStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AdvertisingId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1425,8 +1469,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("DD0947AF-1A6D-46B0-95BC-F3F9D6BEB9FB"), exclusiveto, contract] */
                 MIDL_INTERFACE("DD0947AF-1A6D-46B0-95BC-F3F9D6BEB9FB")
-                IAdvertisingManagerStatics2 : IInspectable
+                IAdvertisingManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::UserProfile::IAdvertisingManagerForUser * * value
@@ -1466,8 +1511,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("E5E9ECCD-2711-44E0-973C-491D78048D24"), exclusiveto, contract] */
                 MIDL_INTERFACE("E5E9ECCD-2711-44E0-973C-491D78048D24")
-                IDiagnosticsSettings : IInspectable
+                IDiagnosticsSettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanUseDiagnosticsToTailorExperiences(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1509,8 +1555,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("72D2E80F-5390-4793-990B-3CCC7D6AC9C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("72D2E80F-5390-4793-990B-3CCC7D6AC9C8")
-                IDiagnosticsSettingsStatics : IInspectable
+                IDiagnosticsSettingsStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::UserProfile::IDiagnosticsSettings * * value
                         ) = 0;
@@ -1558,8 +1605,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("3E945153-3A5E-452E-A601-F5BAAD2A4870"), exclusiveto, contract] */
                 MIDL_INTERFACE("3E945153-3A5E-452E-A601-F5BAAD2A4870")
-                IFirstSignInSettings : IInspectable
+                IFirstSignInSettings : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -1595,8 +1643,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("1CE18F0F-1C41-4EA0-B7A2-6F0C1C7E8438"), exclusiveto, contract] */
                 MIDL_INTERFACE("1CE18F0F-1C41-4EA0-B7A2-6F0C1C7E8438")
-                IFirstSignInSettingsStatics : IInspectable
+                IFirstSignInSettingsStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::UserProfile::IFirstSignInSettings * * result
                         ) = 0;
@@ -1612,6 +1661,65 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsStatics;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.System.UserProfile.IGlobalizationPreferencesForUser
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.UserProfile.GlobalizationPreferencesForUser
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IGlobalizationPreferencesForUser[] = L"Windows.System.UserProfile.IGlobalizationPreferencesForUser";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                /* [object, uuid("150F0795-4F6E-40BA-A010-E27D81BDA7F5"), exclusiveto, contract] */
+                MIDL_INTERFACE("150F0795-4F6E-40BA-A010-E27D81BDA7F5")
+                IGlobalizationPreferencesForUser : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Calendars(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Clocks(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Currencies(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Languages(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HomeGeographicRegion(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WeekStartsOn(
+                        /* [retval, out] */__RPC__out ABI::Windows::Globalization::DayOfWeek * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IGlobalizationPreferencesForUser=_uuidof(IGlobalizationPreferencesForUser);
+                
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -1635,8 +1743,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("01BF4326-ED37-4E96-B0E9-C1340D1EA158"), exclusiveto, contract] */
                 MIDL_INTERFACE("01BF4326-ED37-4E96-B0E9-C1340D1EA158")
-                IGlobalizationPreferencesStatics : IInspectable
+                IGlobalizationPreferencesStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Calendars(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -1690,8 +1799,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("FCCE85F1-4300-4CD0-9CAC-1A8E7B7E18F4"), exclusiveto, contract] */
                 MIDL_INTERFACE("FCCE85F1-4300-4CD0-9CAC-1A8E7B7E18F4")
-                IGlobalizationPreferencesStatics2 : IInspectable
+                IGlobalizationPreferencesStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TrySetHomeGeographicRegion(
                         /* [in] */__RPC__in HSTRING region,
                         /* [retval, out] */__RPC__out boolean * result
@@ -1716,6 +1826,48 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPref
 
 /*
  *
+ * Interface Windows.System.UserProfile.IGlobalizationPreferencesStatics3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.UserProfile.GlobalizationPreferences
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IGlobalizationPreferencesStatics3[] = L"Windows.System.UserProfile.IGlobalizationPreferencesStatics3";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                /* [object, uuid("1E059733-35F5-40D8-B9E8-AEF3EF856FCE"), exclusiveto, contract] */
+                MIDL_INTERFACE("1E059733-35F5-40D8-B9E8-AEF3EF856FCE")
+                IGlobalizationPreferencesStatics3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetForUser(
+                        /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::UserProfile::IGlobalizationPreferencesForUser * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IGlobalizationPreferencesStatics3=_uuidof(IGlobalizationPreferencesStatics3);
+                
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.System.UserProfile.ILockScreenImageFeedStatics
  *
  * Introduced to Windows.System.UserProfile.UserProfileLockScreenContract in version 1.0
@@ -1735,8 +1887,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("2C0D73F6-03A9-41A6-9B01-495251FF51D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("2C0D73F6-03A9-41A6-9B01-495251FF51D5")
-                ILockScreenImageFeedStatics : IInspectable
+                ILockScreenImageFeedStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestSetImageFeedAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * syndicationFeedUri,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSetImageFeedResult * * value
@@ -1779,8 +1932,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("3EE9D3AD-B607-40AE-B426-7631D9821269"), exclusiveto, contract] */
                 MIDL_INTERFACE("3EE9D3AD-B607-40AE-B426-7631D9821269")
-                ILockScreenStatics : IInspectable
+                ILockScreenStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OriginalImageFile(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                         ) = 0;
@@ -1830,8 +1984,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("77F3A910-48FA-489C-934E-2AE85BA8F772"), exclusiveto, contract] */
                 MIDL_INTERFACE("77F3A910-48FA-489C-934E-2AE85BA8F772")
-                IUserInformationStatics : IInspectable
+                IUserInformationStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AccountPictureChangeEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1922,8 +2077,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("8CEDDAB4-7998-46D5-8DD3-184F1C5F9AB9"), exclusiveto, contract] */
                 MIDL_INTERFACE("8CEDDAB4-7998-46D5-8DD3-184F1C5F9AB9")
-                IUserProfilePersonalizationSettings : IInspectable
+                IUserProfilePersonalizationSettings : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TrySetLockScreenImageAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * imageFile,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
@@ -1967,8 +2123,9 @@ namespace ABI {
             namespace UserProfile {
                 /* [object, uuid("91ACB841-5037-454B-9883-BB772D08DD16"), exclusiveto, contract] */
                 MIDL_INTERFACE("91ACB841-5037-454B-9883-BB772D08DD16")
-                IUserProfilePersonalizationSettingsStatics : IInspectable
+                IUserProfilePersonalizationSettingsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::UserProfile::IUserProfilePersonalizationSettings * * value
                         ) = 0;
@@ -2099,6 +2256,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.UserProfile.IGlobalizationPreferencesStatics3 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.UserProfile.IGlobalizationPreferencesStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.UserProfile.IGlobalizationPreferencesStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
@@ -2111,6 +2269,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_GlobalizationPreferences[] = L"Windows.System.UserProfile.GlobalizationPreferences";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.System.UserProfile.GlobalizationPreferencesForUser
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.UserProfile.IGlobalizationPreferencesForUser ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_System_UserProfile_GlobalizationPreferencesForUser_DEFINED
+#define RUNTIMECLASS_Windows_System_UserProfile_GlobalizationPreferencesForUser_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_GlobalizationPreferencesForUser[] = L"Windows.System.UserProfile.GlobalizationPreferencesForUser";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2225,6 +2407,12 @@ typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsSta
 
 #endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser;
+
+#endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics;
@@ -2236,6 +2424,12 @@ typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferenc
 typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics2 __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics2;
 
 #endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3 __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3;
+
+#endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFeedStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFeedStatics_FWD_DEFINED__
@@ -3525,6 +3719,9 @@ typedef enum __x_ABI_CWindows_CSystem_CUserProfile_CSetImageFeedResult __x_ABI_C
 
 
 
+
+
+
 /*
  *
  * Struct Windows.System.UserProfile.AccountPictureKind
@@ -4262,6 +4459,141 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettin
 
 /*
  *
+ * Interface Windows.System.UserProfile.IGlobalizationPreferencesForUser
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.UserProfile.GlobalizationPreferencesForUser
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IGlobalizationPreferencesForUser[] = L"Windows.System.UserProfile.IGlobalizationPreferencesForUser";
+/* [object, uuid("150F0795-4F6E-40BA-A010-E27D81BDA7F5"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUserVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_User )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Calendars )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Clocks )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Currencies )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Languages )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HomeGeographicRegion )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WeekStartsOn )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CGlobalization_CDayOfWeek * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUserVtbl;
+
+interface __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUserVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_get_User(This,value) \
+    ( (This)->lpVtbl->get_User(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_get_Calendars(This,value) \
+    ( (This)->lpVtbl->get_Calendars(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_get_Clocks(This,value) \
+    ( (This)->lpVtbl->get_Clocks(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_get_Currencies(This,value) \
+    ( (This)->lpVtbl->get_Currencies(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_get_Languages(This,value) \
+    ( (This)->lpVtbl->get_Languages(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_get_HomeGeographicRegion(This,value) \
+    ( (This)->lpVtbl->get_HomeGeographicRegion(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_get_WeekStartsOn(This,value) \
+    ( (This)->lpVtbl->get_WeekStartsOn(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.System.UserProfile.IGlobalizationPreferencesStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4488,6 +4820,100 @@ interface __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatic
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics2;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.System.UserProfile.IGlobalizationPreferencesStatics3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.UserProfile.GlobalizationPreferences
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IGlobalizationPreferencesStatics3[] = L"Windows.System.UserProfile.IGlobalizationPreferencesStatics3";
+/* [object, uuid("1E059733-35F5-40D8-B9E8-AEF3EF856FCE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetForUser )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesForUser * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3Vtbl;
+
+interface __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_GetForUser(This,user,value) \
+    ( (This)->lpVtbl->GetForUser(This,user,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5220,6 +5646,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.UserProfile.IGlobalizationPreferencesStatics3 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.UserProfile.IGlobalizationPreferencesStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.UserProfile.IGlobalizationPreferencesStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
@@ -5232,6 +5659,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_GlobalizationPreferences[] = L"Windows.System.UserProfile.GlobalizationPreferences";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.System.UserProfile.GlobalizationPreferencesForUser
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.UserProfile.IGlobalizationPreferencesForUser ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_System_UserProfile_GlobalizationPreferencesForUser_DEFINED
+#define RUNTIMECLASS_Windows_System_UserProfile_GlobalizationPreferencesForUser_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_GlobalizationPreferencesForUser[] = L"Windows.System.UserProfile.GlobalizationPreferencesForUser";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

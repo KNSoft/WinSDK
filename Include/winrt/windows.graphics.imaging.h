@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.graphics.imaging.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1633,6 +1635,45 @@ typedef IAsyncOperation<ABI::Windows::Graphics::Imaging::SoftwareBitmap*> __FIAs
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Imaging {
+                struct BitmapBounds;
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Imaging */} /* ABI */
+
+
+#ifndef DEF___FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_USE
+#define DEF___FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("aa19da70-dee6-5b42-b562-2fcd218c34ca"))
+IReference<struct ABI::Windows::Graphics::Imaging::BitmapBounds> : IReference_impl<struct ABI::Windows::Graphics::Imaging::BitmapBounds> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Windows.Graphics.Imaging.BitmapBounds>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<struct ABI::Windows::Graphics::Imaging::BitmapBounds> __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_t;
+#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds ABI::Windows::Foundation::__FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds ABI::Windows::Foundation::IReference<ABI::Windows::Graphics::Imaging::BitmapBounds>
+//#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_t ABI::Windows::Foundation::IReference<ABI::Windows::Graphics::Imaging::BitmapBounds>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_USE */
+
+
+
 
 #ifndef DEF___FIIterator_1_HSTRING_USE
 #define DEF___FIIterator_1_HSTRING_USE
@@ -2251,6 +2292,11 @@ namespace ABI {
                     BitmapPixelFormat_Nv12 = 103,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
+                    BitmapPixelFormat_P010 = 104,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     
                     BitmapPixelFormat_Yuy2 = 107,
@@ -2552,8 +2598,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("A53E04C4-399C-438C-B28F-A63A6B83D1A1"), exclusiveto, contract] */
                 MIDL_INTERFACE("A53E04C4-399C-438C-B28F-A63A6B83D1A1")
-                IBitmapBuffer : IInspectable
+                IBitmapBuffer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetPlaneCount(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -2596,8 +2643,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("400CAAF2-C4B0-4392-A3B0-6F6F9BA95CB4"), exclusiveto, contract] */
                 MIDL_INTERFACE("400CAAF2-C4B0-4392-A3B0-6F6F9BA95CB4")
-                IBitmapCodecInformation : IInspectable
+                IBitmapCodecInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CodecId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -2645,8 +2693,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("ACEF22BA-1D74-4C91-9DFC-9620745233E6"), exclusiveto, contract] */
                 MIDL_INTERFACE("ACEF22BA-1D74-4C91-9DFC-9620745233E6")
-                IBitmapDecoder : IInspectable
+                IBitmapDecoder : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BitmapContainerProperties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Imaging::IBitmapPropertiesView * * value
                         ) = 0;
@@ -2698,8 +2747,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("438CCB26-BCEF-4E95-BAD6-23A822E58D01"), exclusiveto, contract] */
                 MIDL_INTERFACE("438CCB26-BCEF-4E95-BAD6-23A822E58D01")
-                IBitmapDecoderStatics : IInspectable
+                IBitmapDecoderStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BmpDecoderId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -2768,8 +2818,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("2BC468E3-E1F8-4B54-95E8-32919551CE62"), exclusiveto, contract] */
                 MIDL_INTERFACE("2BC468E3-E1F8-4B54-95E8-32919551CE62")
-                IBitmapEncoder : IInspectable
+                IBitmapEncoder : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EncoderInformation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Imaging::IBitmapCodecInformation * * value
                         ) = 0;
@@ -2855,8 +2906,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("A74356A7-A4E4-4EB9-8E40-564DE7E1CCB2"), exclusiveto, contract] */
                 MIDL_INTERFACE("A74356A7-A4E4-4EB9-8E40-564DE7E1CCB2")
-                IBitmapEncoderStatics : IInspectable
+                IBitmapEncoderStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BmpEncoderId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -2933,8 +2985,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("686CD241-4330-4C77-ACE4-0334968B1768"), exclusiveto, contract] */
                 MIDL_INTERFACE("686CD241-4330-4C77-ACE4-0334968B1768")
-                IBitmapEncoderWithSoftwareBitmap : IInspectable
+                IBitmapEncoderWithSoftwareBitmap : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetSoftwareBitmap(
                         /* [in] */__RPC__in_opt ABI::Windows::Graphics::Imaging::ISoftwareBitmap * bitmap
                         ) = 0;
@@ -2970,8 +3023,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("72A49A1C-8081-438D-91BC-94ECFC8185C6"), contract] */
                 MIDL_INTERFACE("72A49A1C-8081-438D-91BC-94ECFC8185C6")
-                IBitmapFrame : IInspectable
+                IBitmapFrame : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetThumbnailAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream * * asyncInfo
                         ) = 0;
@@ -3049,8 +3103,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("FE287C9A-420C-4963-87AD-691436E08383"), contract] */
                 MIDL_INTERFACE("FE287C9A-420C-4963-87AD-691436E08383")
-                IBitmapFrameWithSoftwareBitmap : IInspectable
+                IBitmapFrameWithSoftwareBitmap : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetSoftwareBitmapAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap * * value
                         ) = 0;
@@ -3106,8 +3161,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("EA9F4F1B-B505-4450-A4D1-E8CA94529D8D"), exclusiveto, contract] */
                 MIDL_INTERFACE("EA9F4F1B-B505-4450-A4D1-E8CA94529D8D")
-                IBitmapProperties : IInspectable
+                IBitmapProperties : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetPropertiesAsync(
                         /* [in] */__RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue * propertiesToSet,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncInfo
@@ -3144,8 +3200,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("7E0FE87A-3A70-48F8-9C55-196CF5A545F5"), contract] */
                 MIDL_INTERFACE("7E0FE87A-3A70-48F8-9C55-196CF5A545F5")
-                IBitmapPropertiesView : IInspectable
+                IBitmapPropertiesView : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetPropertiesAsync(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * propertiesToRetrieve,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapPropertySet * * asyncInfo
@@ -3185,8 +3242,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("AE755344-E268-4D35-ADCF-E995D31A8D34"), exclusiveto, contract] */
                 MIDL_INTERFACE("AE755344-E268-4D35-ADCF-E995D31A8D34")
-                IBitmapTransform : IInspectable
+                IBitmapTransform : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ScaledWidth(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -3258,8 +3316,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("CD8044A9-2443-4000-B0CD-79316C56F589"), exclusiveto, contract] */
                 MIDL_INTERFACE("CD8044A9-2443-4000-B0CD-79316C56F589")
-                IBitmapTypedValue : IInspectable
+                IBitmapTypedValue : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                         ) = 0;
@@ -3301,8 +3360,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("92DBB599-CE13-46BB-9545-CB3A3F63EB8B"), exclusiveto, contract] */
                 MIDL_INTERFACE("92DBB599-CE13-46BB-9545-CB3A3F63EB8B")
-                IBitmapTypedValueFactory : IInspectable
+                IBitmapTypedValueFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt IInspectable * value,
                         /* [in] */ABI::Windows::Foundation::PropertyType type,
@@ -3343,8 +3403,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("DD831F25-185C-4595-9FB9-CCBE6EC18A6F"), exclusiveto, contract] */
                 MIDL_INTERFACE("DD831F25-185C-4595-9FB9-CCBE6EC18A6F")
-                IPixelDataProvider : IInspectable
+                IPixelDataProvider : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE DetachPixelData(
                         /* [out] */__RPC__out UINT32 * __pixelDataSize,
                         /* [size_is(, *(__pixelDataSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__pixelDataSize)) BYTE * * pixelData
@@ -3388,8 +3449,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("689E0708-7EEF-483F-963F-DA938818E073"), exclusiveto, contract] */
                 MIDL_INTERFACE("689E0708-7EEF-483F-963F-DA938818E073")
-                ISoftwareBitmap : IInspectable
+                ISoftwareBitmap : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BitmapPixelFormat(
                         /* [retval, out] */__RPC__out ABI::Windows::Graphics::Imaging::BitmapPixelFormat * value
                         ) = 0;
@@ -3468,8 +3530,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("C99FEB69-2D62-4D47-A6B3-4FDB6A07FDF8"), exclusiveto, contract] */
                 MIDL_INTERFACE("C99FEB69-2D62-4D47-A6B3-4FDB6A07FDF8")
-                ISoftwareBitmapFactory : IInspectable
+                ISoftwareBitmapFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Graphics::Imaging::BitmapPixelFormat format,
                         /* [in] */INT32 width,
@@ -3518,8 +3581,9 @@ namespace ABI {
             namespace Imaging {
                 /* [object, uuid("DF0385DB-672F-4A9D-806E-C2442F343E86"), exclusiveto, contract] */
                 MIDL_INTERFACE("DF0385DB-672F-4A9D-806E-C2442F343E86")
-                ISoftwareBitmapStatics : IInspectable
+                ISoftwareBitmapStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Copy(
                         /* [in] */__RPC__in_opt ABI::Windows::Graphics::Imaging::ISoftwareBitmap * source,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Imaging::ISoftwareBitmap * * value
@@ -6318,6 +6382,64 @@ interface __FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+struct __x_ABI_CWindows_CGraphics_CImaging_CBitmapBounds;
+
+#if !defined(____FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_INTERFACE_DEFINED__)
+#define ____FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds;
+
+typedef struct __FIReference_1_Windows__CGraphics__CImaging__CBitmapBoundsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds * This, /* [retval][out] */ __RPC__out struct __x_ABI_CWindows_CGraphics_CImaging_CBitmapBounds *value);
+    END_INTERFACE
+} __FIReference_1_Windows__CGraphics__CImaging__CBitmapBoundsVtbl;
+
+interface __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds
+{
+    CONST_VTBL struct __FIReference_1_Windows__CGraphics__CImaging__CBitmapBoundsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_Windows__CGraphics__CImaging__CBitmapBounds_INTERFACE_DEFINED__
+
+
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
 #define ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
 
@@ -6853,6 +6975,11 @@ enum __x_ABI_CWindows_CGraphics_CImaging_CBitmapPixelFormat
     
     BitmapPixelFormat_Nv12 = 103,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    BitmapPixelFormat_P010 = 104,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
     
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
     

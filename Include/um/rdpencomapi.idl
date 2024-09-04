@@ -1187,6 +1187,8 @@ interface IRDPViewerRenderingSurface : IUnknown
         );
 };  // IRDPViewerRenderingSurface
 
+cpp_quote("#pragma deprecated(IRDPViewerRenderingSurface)")
+
 [
     object,
     uuid(BB590853-A6C5-4A7B-8DD4-76B69EEA12D5),
@@ -2081,5 +2083,12 @@ library RDPCOMAPILib
     };
 }; // RDPCOMAPILib
 
+cpp_quote("#if !WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+cpp_quote("#pragma deprecated(RDPViewer)")
+cpp_quote("#pragma deprecated(IRDPSRAPIViewer)")
+cpp_quote("#pragma deprecated(IRDPViewerInputSink)")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
+
 #pragma endregion

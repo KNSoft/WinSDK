@@ -66,6 +66,7 @@ typedef ULONG WWAN_STATUS;
 #define WWAN_STATUS_MEDIA_PREF_CONFLICT                         0xC004001e
 #define WWAN_STATUS_MEDIA_PREF_SOME_SERVICES_UNSUPPORTED        0xC004001f
 #define WWAN_STATUS_NOT_SUPPORTED                               0xC0040020
+#define WWAN_STATUS_OPERATION_TIMEOUT                           0xC0040021
 
 //SMS specific error codes
 #define WWAN_STATUS_SMS_OPERATION_NOT_ALLOWED                   0xC0040100
@@ -119,6 +120,7 @@ typedef enum _WWAN_STRUCT_TYPE {
     WwanStructSarConfig,
     WwanStructContextV2,
     WwanStructNetworkBlacklistProvider,
+    WwanStructMPDPChildInterface,
     WwanStructMax
 } WWAN_STRUCT_TYPE, *PWWAN_STRUCT_TYPE;
 
@@ -674,6 +676,7 @@ typedef struct _WWAN_PIN_ACTION {
     WWAN_PIN_OPERATION  PinOperation;
     WCHAR               Pin [WWAN_PIN_LEN];
     WCHAR               NewPin [WWAN_PIN_LEN];
+    BOOLEAN             RequestPinOperationPrompt;
 } WWAN_PIN_ACTION, *PWWAN_PIN_ACTION;
 
 #if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WINTHRESHOLD || NDIS_SUPPORT_NDIS650 )
@@ -1919,7 +1922,6 @@ typedef enum _WWAN_MODEM_CONFIG_REASON
 {
     WwanModemConfigReasonNone = 0,
     WwanModemConfigReasonSIMDetected,
-    WwanModemConfigReasonSIMRemoved,
     WwanModemConfigReasonNOSIM,
     WwanModemConfigReasonIMSIReset,
     WwanModemConfigReasonActivationFailure,
@@ -1938,22 +1940,25 @@ typedef enum _WWAN_MODEM_CONFIG_STATE {
     WwanModemConfigStatePending,
 //  If modem selection process is not able to identify MO specific config file, the default config file is used.
 //  Once activation is completed, the modem will inform OS with unsolicted indication where config state default is set
-    WwanModemConfigStateActivated,
+    WwanModemConfigStateCompleted,
     WwanModemConfigStateMax
 } WWAN_MODEM_CONFIG_STATE, *PWWAN_MODEM_CONFIG_STATE;
 
-typedef struct _WWAN_MODEM_CONFIG_STATUS {
-    WWAN_MODEM_CONFIG_STATE     ConfigState;
-    WWAN_MODEM_CONFIG_REASON    ConfigReason;
-    ULONG                       PreviousConfigID;
-    ULONG                       CurrentConfigID;
-    DWORD                       DefaultOrNot;
-} WWAN_MODEM_CONFIG_STATUS, *PWWAN_MODEM_CONFIG_STATUS;
+#define WWAN_MAX_MODEM_CONFIG_ID_LEN 32
+typedef struct _WWAN_MODEM_CONFIG_ID
+{
+    DWORD ConfigIdLen;
+    BYTE  ConfigId[WWAN_MAX_MODEM_CONFIG_ID_LEN];
+} WWAN_MODEM_CONFIG_ID, *PWWAN_MODEM_CONFIG_ID;
 
 typedef struct _WWAN_MODEM_CONFIG_INFO
 {
-    WWAN_MODEM_CONFIG_STATUS    ConfigStatus;
-    WWAN_MODEM_CONFIG_MODE      ConfigMode;
+    WWAN_MODEM_CONFIG_MODE    ConfigMode;
+    WWAN_MODEM_CONFIG_STATE   ConfigState;
+    WWAN_MODEM_CONFIG_REASON  ConfigReason;
+    WWAN_MODEM_CONFIG_ID      PreviousConfigID;
+    WWAN_MODEM_CONFIG_ID      CurrentConfigID;
+    DWORD                     IsCurrentConfigDefault;
 } WWAN_MODEM_CONFIG_INFO, *PWWAN_MODEM_CONFIG_INFO;
 
 // According to 3GPP TS24.008 spec, the maximum length of PCO structure is 253 octets
@@ -1983,6 +1988,13 @@ typedef enum _WWAN_UICC_PASSTHROUGH_STATUS {
     WwanUiccPassThroughEnabled = 1,
     WwanUiccPassThroughStatusMaximum
 } WWAN_UICC_PASSTHROUGH_STATUS, *PWWAN_UICC_PASSTHROUGH_STATUS;
+
+typedef enum _WWAN_MULTIVARIANT_RUNNING_STATE {
+    WwanMvNotStarted = 0,
+    WwanMvRunning,
+    WwanMvComplete,
+    WwanMvRunningStateMax
+} WWAN_MULTIVARIANT_RUNNING_STATE, *PWWAN_MULTIVARIANT_RUNNING_STATE;
 
 typedef struct _WWAN_SET_UICC_RESET {
     WWAN_UICC_PASSTHROUGH_ACTION    PassThroughAction;
@@ -2162,6 +2174,31 @@ typedef struct _WWAN_CDMA_MRL {
     ULONG       ElementCount;
     BYTE        CDMAMrl[ANYSIZE_ARRAY];
 } WWAN_CDMA_MRL, *PWWAN_CDMA_MRL;
+
+typedef enum _WWAN_NETWORK_ISOLATION_STATE
+{
+    WwanNetworkIsolationSettingStateDisabled = 0,
+    WwanNetworkIsolationSettingStateEnabled
+} WWAN_NETWORK_ISOLATION_STATE, *PWWAN_NETWORK_ISOLATION_STATE;
+
+#define WWAN_NETWORK_ISOLATION_RULE_GROUP_ID_PREFIX_LEN 64
+#define WWAN_NETWORK_ISOLATION_RULE_GROUP_ID_LEN        36
+#define WWAN_NETWORK_ISOLATION_SERVICE_NAME_LEN         256
+#define WWAN_NETWORK_ISOLATION_PROCESS_PATH_LEN         MAX_PATH
+#define WWAN_NETWORK_ISOLATION_APPLICATION_SID_LEN      SECURITY_MAX_SID_STRING_CHARACTERS
+
+typedef struct _WWAN_NETWORK_ISOLATION
+{
+    WCHAR        RuleGroupId[(WWAN_NETWORK_ISOLATION_RULE_GROUP_ID_PREFIX_LEN + 1) + (WWAN_NETWORK_ISOLATION_RULE_GROUP_ID_LEN + 1)];
+    WWAN_NETWORK_ISOLATION_STATE IsolationSettingState;
+    DWORD        DataSizeInBytes;
+    DWORD        Ipv4AllowedRangeCount;
+    DWORD        Ipv6AllowedRangeCount;
+    DWORD        AllowedServicesCount;
+    DWORD        AllowedProcessesCount;
+    DWORD        AllowedApplicationsCount;
+    BYTE         Data[1]; // Ipv4AllowedRanges followed by all Ipv6AllowedRanges followed by Services followed by Process followed by Applications
+} WWAN_NETWORK_ISOLATION, *PWWAN_NETWORK_ISOLATION;
 
 #endif // ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680 )
 

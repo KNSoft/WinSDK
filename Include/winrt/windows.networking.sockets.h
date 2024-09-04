@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.networking.sockets.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -486,6 +488,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                interface IMessageWebSocket3;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 ABI::Windows::Networking::Sockets::IMessageWebSocket3
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketControl_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketControl_FWD_DEFINED__
 namespace ABI {
@@ -541,6 +557,76 @@ namespace ABI {
 #define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs2 ABI::Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs2
 
 #endif // ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                interface IServerMessageWebSocket;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket ABI::Windows::Networking::Sockets::IServerMessageWebSocket
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                interface IServerMessageWebSocketControl;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl ABI::Windows::Networking::Sockets::IServerMessageWebSocketControl
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                interface IServerMessageWebSocketInformation;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation ABI::Windows::Networking::Sockets::IServerMessageWebSocketInformation
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                interface IServerStreamWebSocket;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket ABI::Windows::Networking::Sockets::IServerStreamWebSocket
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                interface IServerStreamWebSocketInformation;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation ABI::Windows::Networking::Sockets::IServerStreamWebSocketInformation
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CSockets_CISocketActivityContext_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CSockets_CISocketActivityContext_FWD_DEFINED__
@@ -1266,6 +1352,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_USE
@@ -1295,6 +1382,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::Sockets::DatagramSocket*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1307,6 +1395,7 @@ namespace ABI {
     } /* Sockets */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_USE
@@ -1337,6 +1426,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::Sockets::IWebSocket*,ABI::W
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -1358,6 +1448,7 @@ namespace ABI {
     } /* Sockets */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_USE
@@ -1387,6 +1478,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::Sockets::MessageWebSocket*,
 #endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1437,6 +1529,129 @@ namespace ABI {
     namespace Windows {
         namespace Networking {
             namespace Sockets {
+                class ServerMessageWebSocket;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("6e66714b-94d1-5c08-b2b3-10b891d08747"))
+ITypedEventHandler<ABI::Windows::Networking::Sockets::ServerMessageWebSocket*,ABI::Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::Sockets::ServerMessageWebSocket*, ABI::Windows::Networking::Sockets::IServerMessageWebSocket*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs*, ABI::Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.Sockets.ServerMessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::Sockets::ServerMessageWebSocket*,ABI::Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs*> __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::IServerMessageWebSocket*,ABI::Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::IServerMessageWebSocket*,ABI::Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("cae65204-b986-5cf3-87ea-b67b00fba78d"))
+ITypedEventHandler<ABI::Windows::Networking::Sockets::ServerMessageWebSocket*,ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::Sockets::ServerMessageWebSocket*, ABI::Windows::Networking::Sockets::IServerMessageWebSocket*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs*, ABI::Windows::Networking::Sockets::IWebSocketClosedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.Sockets.ServerMessageWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::Sockets::ServerMessageWebSocket*,ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs*> __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::IServerMessageWebSocket*,ABI::Windows::Networking::Sockets::IWebSocketClosedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::IServerMessageWebSocket*,ABI::Windows::Networking::Sockets::IWebSocketClosedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                class ServerStreamWebSocket;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b51c5b3b-161b-559e-a553-0059336329cc"))
+ITypedEventHandler<ABI::Windows::Networking::Sockets::ServerStreamWebSocket*,ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::Sockets::ServerStreamWebSocket*, ABI::Windows::Networking::Sockets::IServerStreamWebSocket*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs*, ABI::Windows::Networking::Sockets::IWebSocketClosedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.Sockets.ServerStreamWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::Sockets::ServerStreamWebSocket*,ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs*> __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::IServerStreamWebSocket*,ABI::Windows::Networking::Sockets::IWebSocketClosedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::IServerStreamWebSocket*,ABI::Windows::Networking::Sockets::IWebSocketClosedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
                 class StreamSocketListener;
             } /* Windows */
         } /* Networking */
@@ -1453,6 +1668,7 @@ namespace ABI {
     } /* Sockets */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_USE
@@ -1482,6 +1698,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::Sockets::StreamSocketListen
 #endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -1784,6 +2001,93 @@ typedef IAsyncOperation<__FIVectorView_1_Windows__CNetworking__CEndpointPair*> _
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#ifndef DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE
+#define DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("ea0fe405-d432-5ac7-9ef8-5a65e1f97d7e"))
+IAsyncOperationProgressHandler<UINT32,UINT32> : IAsyncOperationProgressHandler_impl<UINT32,UINT32> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationProgressHandler`2<UInt32, UInt32>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationProgressHandler<UINT32,UINT32> __FIAsyncOperationProgressHandler_2_UINT32_UINT32_t;
+#define __FIAsyncOperationProgressHandler_2_UINT32_UINT32 ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_UINT32_UINT32_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationProgressHandler_2_UINT32_UINT32 ABI::Windows::Foundation::IAsyncOperationProgressHandler<UINT32,UINT32>
+//#define __FIAsyncOperationProgressHandler_2_UINT32_UINT32_t ABI::Windows::Foundation::IAsyncOperationProgressHandler<UINT32,UINT32>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE
+#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("1e466dc5-840f-54f9-b877-5e3a9f4b6c74"))
+IAsyncOperationWithProgressCompletedHandler<UINT32,UINT32> : IAsyncOperationWithProgressCompletedHandler_impl<UINT32,UINT32> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<UInt32, UInt32>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationWithProgressCompletedHandler<UINT32,UINT32> __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_t;
+#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<UINT32,UINT32>
+//#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_t ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<UINT32,UINT32>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE
+#define DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("eccb574a-c684-5572-a679-6b0842cfb57f"))
+IAsyncOperationWithProgress<UINT32,UINT32> : IAsyncOperationWithProgress_impl<UINT32,UINT32> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperationWithProgress`2<UInt32, UInt32>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationWithProgress<UINT32,UINT32> __FIAsyncOperationWithProgress_2_UINT32_UINT32_t;
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32 ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_UINT32_UINT32_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationWithProgress_2_UINT32_UINT32 ABI::Windows::Foundation::IAsyncOperationWithProgress<UINT32,UINT32>
+//#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_t ABI::Windows::Foundation::IAsyncOperationWithProgress<UINT32,UINT32>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE */
+
+
 
 namespace ABI {
     namespace Windows {
@@ -2650,6 +2954,12 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Networking {
@@ -2702,6 +3012,38 @@ namespace ABI {
         } /* Networking */
     } /* Sockets */} /* ABI */
 
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                class ServerMessageWebSocketControl;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                class ServerMessageWebSocketInformation;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                class ServerStreamWebSocketInformation;
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
 
 
 namespace ABI {
@@ -2811,7 +3153,6 @@ namespace ABI {
 
 
 
-
 /*
  *
  * Struct Windows.Networking.Sockets.ControlChannelTriggerResetReason
@@ -2880,17 +3221,18 @@ namespace ABI {
  *
  * Struct Windows.Networking.Sockets.ControlChannelTriggerStatus
  *
- * Introduced to Windows.Networking.Sockets.ControlChannelTriggerContract in version 1.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
  *
  *
  */
 
-#if WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000 || \
+    WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION >= 0x10000 && WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION < 0x30000
 namespace ABI {
     namespace Windows {
         namespace Networking {
             namespace Sockets {
-                /* [v1_enum, contract] */
+                /* [v1_enum, from_contract, contract] */
                 enum ControlChannelTriggerStatus : int
                 {
                     ControlChannelTriggerStatus_HardwareSlotRequested = 0,
@@ -2905,7 +3247,8 @@ namespace ABI {
             } /* Windows */
         } /* Networking */
     } /* Sockets */} /* ABI */
-#endif // WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000 || \
+//     WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION >= 0x10000 && WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION < 0x30000
 
 
 /*
@@ -3315,8 +3658,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("7D1431A7-EE96-40E8-A199-8703CD969EC3"), exclusiveto, contract] */
                 MIDL_INTERFACE("7D1431A7-EE96-40E8-A199-8703CD969EC3")
-                IControlChannelTrigger : IInspectable
+                IControlChannelTrigger : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ControlChannelTriggerId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3381,8 +3725,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("AF00D237-51BE-4514-9725-3556E1879580"), exclusiveto, contract] */
                 MIDL_INTERFACE("AF00D237-51BE-4514-9725-3556E1879580")
-                IControlChannelTrigger2 : IInspectable
+                IControlChannelTrigger2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsWakeFromLowPowerSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3418,8 +3763,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("1B36E047-89BB-4236-96AC-71D012BB4869"), contract] */
                 MIDL_INTERFACE("1B36E047-89BB-4236-96AC-71D012BB4869")
-                IControlChannelTriggerEventDetails : IInspectable
+                IControlChannelTriggerEventDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ControlChannelTrigger(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IControlChannelTrigger * * value
                         ) = 0;
@@ -3458,8 +3804,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("DA4B7CF0-8D71-446F-88C3-B95184A2D6CD"), exclusiveto, contract] */
                 MIDL_INTERFACE("DA4B7CF0-8D71-446F-88C3-B95184A2D6CD")
-                IControlChannelTriggerFactory : IInspectable
+                IControlChannelTriggerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateControlChannelTrigger(
                         /* [in] */__RPC__in HSTRING channelId,
                         /* [in] */UINT32 serverKeepAliveIntervalInMinutes,
@@ -3503,8 +3850,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("6851038E-8EC4-42FE-9BB2-21E91B7BFCB1"), contract] */
                 MIDL_INTERFACE("6851038E-8EC4-42FE-9BB2-21E91B7BFCB1")
-                IControlChannelTriggerResetEventDetails : IInspectable
+                IControlChannelTriggerResetEventDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResetReason(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::ControlChannelTriggerResetReason * value
                         ) = 0;
@@ -3553,8 +3901,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("7FE25BBB-C3BC-4677-8446-CA28A465A3AF"), exclusiveto, contract] */
                 MIDL_INTERFACE("7FE25BBB-C3BC-4677-8446-CA28A465A3AF")
-                IDatagramSocket : IInspectable
+                IDatagramSocket : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Control(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IDatagramSocketControl * * value
                         ) = 0;
@@ -3640,8 +3989,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("D83BA354-9A9D-4185-A20A-1424C9C2A7CD"), exclusiveto, contract] */
                 MIDL_INTERFACE("D83BA354-9A9D-4185-A20A-1424C9C2A7CD")
-                IDatagramSocket2 : IInspectable
+                IDatagramSocket2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE BindServiceNameAndAdapterAsync(
                         /* [in] */__RPC__in HSTRING localServiceName,
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Connectivity::INetworkAdapter * adapter,
@@ -3682,8 +4032,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("37544F09-AB92-4306-9AC1-0C381283D9C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("37544F09-AB92-4306-9AC1-0C381283D9C6")
-                IDatagramSocket3 : IInspectable
+                IDatagramSocket3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CancelIOAsync(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                         ) = 0;
@@ -3741,8 +4092,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("52AC3F2E-349A-4135-BB58-B79B2647D390"), exclusiveto, contract] */
                 MIDL_INTERFACE("52AC3F2E-349A-4135-BB58-B79B2647D390")
-                IDatagramSocketControl : IInspectable
+                IDatagramSocketControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_QualityOfService(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::SocketQualityOfService * value
                         ) = 0;
@@ -3790,8 +4142,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("33EAD5C2-979C-4415-82A1-3CFAF646C192"), exclusiveto, contract] */
                 MIDL_INTERFACE("33EAD5C2-979C-4415-82A1-3CFAF646C192")
-                IDatagramSocketControl2 : IInspectable
+                IDatagramSocketControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InboundBufferSizeInBytes(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -3839,8 +4192,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("D4EB8256-1F6D-4598-9B57-D42A001DF349"), exclusiveto, contract] */
                 MIDL_INTERFACE("D4EB8256-1F6D-4598-9B57-D42A001DF349")
-                IDatagramSocketControl3 : IInspectable
+                IDatagramSocketControl3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MulticastOnly(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3882,8 +4236,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("5F1A569A-55FB-48CD-9706-7A974F7B1585"), exclusiveto, contract] */
                 MIDL_INTERFACE("5F1A569A-55FB-48CD-9706-7A974F7B1585")
-                IDatagramSocketInformation : IInspectable
+                IDatagramSocketInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalAddress(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::IHostName * * value
                         ) = 0;
@@ -3931,8 +4286,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("9E2DDCA2-1712-4CE4-B179-8C652C6D107E"), exclusiveto, contract] */
                 MIDL_INTERFACE("9E2DDCA2-1712-4CE4-B179-8C652C6D107E")
-                IDatagramSocketMessageReceivedEventArgs : IInspectable
+                IDatagramSocketMessageReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RemoteAddress(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::IHostName * * value
                         ) = 0;
@@ -3983,8 +4339,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("E9C62AEE-1494-4A21-BB7E-8589FC751D9D"), exclusiveto, contract] */
                 MIDL_INTERFACE("E9C62AEE-1494-4A21-BB7E-8589FC751D9D")
-                IDatagramSocketStatics : IInspectable
+                IDatagramSocketStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetEndpointPairsAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::IHostName * remoteHostName,
                         /* [in] */__RPC__in HSTRING remoteServiceName,
@@ -4036,8 +4393,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("33727D08-34D5-4746-AD7B-8DDE5BC2EF88"), exclusiveto, contract] */
                 MIDL_INTERFACE("33727D08-34D5-4746-AD7B-8DDE5BC2EF88")
-                IMessageWebSocket : IInspectable
+                IMessageWebSocket : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Control(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IMessageWebSocketControl * * value
                         ) = 0;
@@ -4092,8 +4450,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("BED0CEE7-F9C8-440A-9AD5-737281D9742E"), exclusiveto, contract] */
                 MIDL_INTERFACE("BED0CEE7-F9C8-440A-9AD5-737281D9742E")
-                IMessageWebSocket2 : IInspectable
+                IMessageWebSocket2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ServerCustomValidationRequested(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CSockets__CMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketServerCustomValidationRequestedEventArgs * eventHandler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * eventCookie
@@ -4113,6 +4472,52 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket2;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IMessageWebSocket3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.MessageWebSocket
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IMessageWebSocket3[] = L"Windows.Networking.Sockets.IMessageWebSocket3";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                /* [object, uuid("59D9DEFB-71AF-4349-8487-911FCF681597"), exclusiveto, contract] */
+                MIDL_INTERFACE("59D9DEFB-71AF-4349-8487-911FCF681597")
+                IMessageWebSocket3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE SendNonfinalFrameAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_UINT32_UINT32 * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE SendFinalFrameAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_UINT32_UINT32 * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMessageWebSocket3=_uuidof(IMessageWebSocket3);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4140,8 +4545,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("8118388A-C629-4F0A-80FB-81FC05538862"), exclusiveto, contract] */
                 MIDL_INTERFACE("8118388A-C629-4F0A-80FB-81FC05538862")
-                IMessageWebSocketControl : IInspectable
+                IMessageWebSocketControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxMessageSize(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -4189,8 +4595,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("E30FD791-080C-400A-A712-27DFA9E744D8"), exclusiveto, contract] */
                 MIDL_INTERFACE("E30FD791-080C-400A-A712-27DFA9E744D8")
-                IMessageWebSocketControl2 : IInspectable
+                IMessageWebSocketControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredUnsolicitedPongInterval(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -4247,8 +4654,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("478C22AC-4C4B-42ED-9ED7-1EF9F94FA3D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("478C22AC-4C4B-42ED-9ED7-1EF9F94FA3D5")
-                IMessageWebSocketMessageReceivedEventArgs : IInspectable
+                IMessageWebSocketMessageReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MessageType(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::SocketMessageType * value
                         ) = 0;
@@ -4297,8 +4705,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("89CE06FD-DD6F-4A07-87F9-F9EB4D89D83D"), exclusiveto, contract] */
                 MIDL_INTERFACE("89CE06FD-DD6F-4A07-87F9-F9EB4D89D83D")
-                IMessageWebSocketMessageReceivedEventArgs2 : IInspectable
+                IMessageWebSocketMessageReceivedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsMessageComplete(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4314,6 +4723,275 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs2;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerMessageWebSocket
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerMessageWebSocket
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerMessageWebSocket[] = L"Windows.Networking.Sockets.IServerMessageWebSocket";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                /* [object, uuid("E3AC9240-813B-5EFD-7E11-AE2305FC77F1"), exclusiveto, contract] */
+                MIDL_INTERFACE("E3AC9240-813B-5EFD-7E11-AE2305FC77F1")
+                IServerMessageWebSocket : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MessageReceived(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs * value,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MessageReceived(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Control(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IServerMessageWebSocketControl * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Information(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IServerMessageWebSocketInformation * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OutputStream(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IOutputStream * * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * value,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CloseWithStatus(
+                        /* [in] */UINT16 code,
+                        /* [in] */__RPC__in HSTRING reason
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IServerMessageWebSocket=_uuidof(IServerMessageWebSocket);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerMessageWebSocketControl
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerMessageWebSocketControl
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerMessageWebSocketControl[] = L"Windows.Networking.Sockets.IServerMessageWebSocketControl";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                /* [object, uuid("69C2F051-1C1F-587A-4519-2181610192B7"), exclusiveto, contract] */
+                MIDL_INTERFACE("69C2F051-1C1F-587A-4519-2181610192B7")
+                IServerMessageWebSocketControl : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MessageType(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::SocketMessageType * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MessageType(
+                        /* [in] */ABI::Windows::Networking::Sockets::SocketMessageType value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IServerMessageWebSocketControl=_uuidof(IServerMessageWebSocketControl);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerMessageWebSocketInformation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerMessageWebSocketInformation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerMessageWebSocketInformation[] = L"Windows.Networking.Sockets.IServerMessageWebSocketInformation";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                /* [object, uuid("FC32B45F-4448-5505-6CC9-09AFA8915F5D"), exclusiveto, contract] */
+                MIDL_INTERFACE("FC32B45F-4448-5505-6CC9-09AFA8915F5D")
+                IServerMessageWebSocketInformation : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BandwidthStatistics(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::BandwidthStatistics * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Protocol(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalAddress(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::IHostName * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IServerMessageWebSocketInformation=_uuidof(IServerMessageWebSocketInformation);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerStreamWebSocket
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerStreamWebSocket
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerStreamWebSocket[] = L"Windows.Networking.Sockets.IServerStreamWebSocket";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                /* [object, uuid("2CED5BBF-74F6-55E4-79DF-9132680DFEE8"), exclusiveto, contract] */
+                MIDL_INTERFACE("2CED5BBF-74F6-55E4-79DF-9132680DFEE8")
+                IServerStreamWebSocket : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Information(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IServerStreamWebSocketInformation * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputStream(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IInputStream * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OutputStream(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IOutputStream * * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * value,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CloseWithStatus(
+                        /* [in] */UINT16 code,
+                        /* [in] */__RPC__in HSTRING reason
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IServerStreamWebSocket=_uuidof(IServerStreamWebSocket);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerStreamWebSocketInformation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerStreamWebSocketInformation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerStreamWebSocketInformation[] = L"Windows.Networking.Sockets.IServerStreamWebSocketInformation";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Sockets {
+                /* [object, uuid("FC32B45F-4448-5505-6CC9-09ABA8915F5D"), exclusiveto, contract] */
+                MIDL_INTERFACE("FC32B45F-4448-5505-6CC9-09ABA8915F5D")
+                IServerStreamWebSocketInformation : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BandwidthStatistics(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::BandwidthStatistics * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Protocol(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalAddress(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::IHostName * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IServerStreamWebSocketInformation=_uuidof(IServerStreamWebSocketInformation);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Sockets */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4337,8 +5015,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("43B04D64-4C85-4396-A637-1D973F6EBD49"), exclusiveto, contract] */
                 MIDL_INTERFACE("43B04D64-4C85-4396-A637-1D973F6EBD49")
-                ISocketActivityContext : IInspectable
+                ISocketActivityContext : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -4377,8 +5056,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("B99FC3C3-088C-4388-83AE-2525138E049A"), exclusiveto, contract] */
                 MIDL_INTERFACE("B99FC3C3-088C-4388-83AE-2525138E049A")
-                ISocketActivityContextFactory : IInspectable
+                ISocketActivityContextFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::ISocketActivityContext * * context
@@ -4418,8 +5098,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("8D8A42E4-A87E-4B74-9968-185B2511DEFE"), exclusiveto, contract] */
                 MIDL_INTERFACE("8D8A42E4-A87E-4B74-9968-185B2511DEFE")
-                ISocketActivityInformation : IInspectable
+                ISocketActivityInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -4476,8 +5157,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("8570B47A-7E7D-4736-8041-1327A6543C56"), exclusiveto, contract] */
                 MIDL_INTERFACE("8570B47A-7E7D-4736-8041-1327A6543C56")
-                ISocketActivityInformationStatics : IInspectable
+                ISocketActivityInformationStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllSockets(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CNetworking__CSockets__CSocketActivityInformation * * sockets
                         ) = 0;
@@ -4516,8 +5198,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("45F406A7-FC9F-4F81-ACAD-355FEF51E67B"), exclusiveto, contract] */
                 MIDL_INTERFACE("45F406A7-FC9F-4F81-ACAD-355FEF51E67B")
-                ISocketActivityTriggerDetails : IInspectable
+                ISocketActivityTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reason(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::SocketActivityTriggerReason * value
                         ) = 0;
@@ -4559,8 +5242,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("828337F4-7D56-4D8E-B7B4-A07DD7C1BCA9"), exclusiveto, contract] */
                 MIDL_INTERFACE("828337F4-7D56-4D8E-B7B4-A07DD7C1BCA9")
-                ISocketErrorStatics : IInspectable
+                ISocketErrorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetStatus(
                         /* [in] */INT32 hresult,
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::SocketErrorStatus * status
@@ -4604,8 +5288,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("69A22CF3-FC7B-4857-AF38-F6E7DE6A5B49"), exclusiveto, contract] */
                 MIDL_INTERFACE("69A22CF3-FC7B-4857-AF38-F6E7DE6A5B49")
-                IStreamSocket : IInspectable
+                IStreamSocket : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Control(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IStreamSocketControl * * value
                         ) = 0;
@@ -4682,8 +5367,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("29D0E575-F314-4D09-ADF0-0FBD967FBD9F"), exclusiveto, contract] */
                 MIDL_INTERFACE("29D0E575-F314-4D09-ADF0-0FBD967FBD9F")
-                IStreamSocket2 : IInspectable
+                IStreamSocket2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ConnectWithProtectionLevelAndAdapterAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::IHostName * remoteHostName,
                         /* [in] */__RPC__in HSTRING remoteServiceName,
@@ -4726,8 +5412,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("3F430B00-9D28-4854-BAC3-2301941EC223"), exclusiveto, contract] */
                 MIDL_INTERFACE("3F430B00-9D28-4854-BAC3-2301941EC223")
-                IStreamSocket3 : IInspectable
+                IStreamSocket3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CancelIOAsync(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                         ) = 0;
@@ -4785,8 +5472,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("FE25ADF1-92AB-4AF3-9992-0F4C85E36CC4"), exclusiveto, contract] */
                 MIDL_INTERFACE("FE25ADF1-92AB-4AF3-9992-0F4C85E36CC4")
-                IStreamSocketControl : IInspectable
+                IStreamSocketControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NoDelay(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4852,8 +5540,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("C2D09A56-060F-44C1-B8E2-1FBF60BD62C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("C2D09A56-060F-44C1-B8E2-1FBF60BD62C5")
-                IStreamSocketControl2 : IInspectable
+                IStreamSocketControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IgnorableServerCertificateErrors(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult * * value
                         ) = 0;
@@ -4892,8 +5581,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("C56A444C-4E74-403E-894C-B31CAE5C7342"), exclusiveto, contract] */
                 MIDL_INTERFACE("C56A444C-4E74-403E-894C-B31CAE5C7342")
-                IStreamSocketControl3 : IInspectable
+                IStreamSocketControl3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SerializeConnectionAttempts(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4941,8 +5631,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("964E2B3D-EC27-4888-B3CE-C74B418423AD"), exclusiveto, contract] */
                 MIDL_INTERFACE("964E2B3D-EC27-4888-B3CE-C74B418423AD")
-                IStreamSocketControl4 : IInspectable
+                IStreamSocketControl4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinProtectionLevel(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::SocketProtectionLevel * value
                         ) = 0;
@@ -4984,8 +5675,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("3B80AE30-5E68-4205-88F0-DC85D2E25DED"), exclusiveto, contract] */
                 MIDL_INTERFACE("3B80AE30-5E68-4205-88F0-DC85D2E25DED")
-                IStreamSocketInformation : IInspectable
+                IStreamSocketInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalAddress(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::IHostName * * value
                         ) = 0;
@@ -5051,8 +5743,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("12C28452-4BDC-4EE4-976A-CF130E9D92E3"), exclusiveto, contract] */
                 MIDL_INTERFACE("12C28452-4BDC-4EE4-976A-CF130E9D92E3")
-                IStreamSocketInformation2 : IInspectable
+                IStreamSocketInformation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServerCertificateErrorSeverity(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::SocketSslErrorSeverity * value
                         ) = 0;
@@ -5104,8 +5797,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("FF513437-DF9F-4DF0-BF82-0EC5D7B35AAE"), exclusiveto, contract] */
                 MIDL_INTERFACE("FF513437-DF9F-4DF0-BF82-0EC5D7B35AAE")
-                IStreamSocketListener : IInspectable
+                IStreamSocketListener : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Control(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IStreamSocketListenerControl * * value
                         ) = 0;
@@ -5167,8 +5861,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("658DC13E-BB3E-4458-B232-ED1088694B98"), exclusiveto, contract] */
                 MIDL_INTERFACE("658DC13E-BB3E-4458-B232-ED1088694B98")
-                IStreamSocketListener2 : IInspectable
+                IStreamSocketListener2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE BindServiceNameWithProtectionLevelAsync(
                         /* [in] */__RPC__in HSTRING localServiceName,
                         /* [in] */ABI::Windows::Networking::Sockets::SocketProtectionLevel protectionLevel,
@@ -5215,8 +5910,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("4798201C-BDF8-4919-8542-28D450E74507"), exclusiveto, contract] */
                 MIDL_INTERFACE("4798201C-BDF8-4919-8542-28D450E74507")
-                IStreamSocketListener3 : IInspectable
+                IStreamSocketListener3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CancelIOAsync(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                         ) = 0;
@@ -5269,8 +5965,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("0C472EA9-373F-447B-85B1-DDD4548803BA"), exclusiveto, contract] */
                 MIDL_INTERFACE("0C472EA9-373F-447B-85B1-DDD4548803BA")
-                IStreamSocketListenerConnectionReceivedEventArgs : IInspectable
+                IStreamSocketListenerConnectionReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Socket(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IStreamSocket * * value
                         ) = 0;
@@ -5309,8 +6006,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("20D8C576-8D8A-4DBA-9722-A16C4D984980"), exclusiveto, contract] */
                 MIDL_INTERFACE("20D8C576-8D8A-4DBA-9722-A16C4D984980")
-                IStreamSocketListenerControl : IInspectable
+                IStreamSocketListenerControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_QualityOfService(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Sockets::SocketQualityOfService * value
                         ) = 0;
@@ -5352,8 +6050,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("948BB665-2C3E-404B-B8B0-8EB249A2B0A1"), exclusiveto, contract] */
                 MIDL_INTERFACE("948BB665-2C3E-404B-B8B0-8EB249A2B0A1")
-                IStreamSocketListenerControl2 : IInspectable
+                IStreamSocketListenerControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NoDelay(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5413,8 +6112,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("E62BA82F-A63A-430B-BF62-29E93E5633B4"), exclusiveto, contract] */
                 MIDL_INTERFACE("E62BA82F-A63A-430B-BF62-29E93E5633B4")
-                IStreamSocketListenerInformation : IInspectable
+                IStreamSocketListenerInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalPort(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5453,8 +6153,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("A420BC4A-6E2E-4AF5-B556-355AE0CD4F29"), exclusiveto, contract] */
                 MIDL_INTERFACE("A420BC4A-6E2E-4AF5-B556-355AE0CD4F29")
-                IStreamSocketStatics : IInspectable
+                IStreamSocketStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetEndpointPairsAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::IHostName * remoteHostName,
                         /* [in] */__RPC__in HSTRING remoteServiceName,
@@ -5506,8 +6207,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("BD4A49D8-B289-45BB-97EB-C7525205A843"), exclusiveto, contract] */
                 MIDL_INTERFACE("BD4A49D8-B289-45BB-97EB-C7525205A843")
-                IStreamWebSocket : IInspectable
+                IStreamWebSocket : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Control(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Sockets::IStreamWebSocketControl * * value
                         ) = 0;
@@ -5558,8 +6260,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("AA4D08CB-93F5-4678-8236-57CCE5417ED5"), exclusiveto, contract] */
                 MIDL_INTERFACE("AA4D08CB-93F5-4678-8236-57CCE5417ED5")
-                IStreamWebSocket2 : IInspectable
+                IStreamWebSocket2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ServerCustomValidationRequested(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketServerCustomValidationRequestedEventArgs * eventHandler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * eventCookie
@@ -5606,8 +6309,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("B4F478B1-A45A-48DB-953A-645B7D964C07"), exclusiveto, contract] */
                 MIDL_INTERFACE("B4F478B1-A45A-48DB-953A-645B7D964C07")
-                IStreamWebSocketControl : IInspectable
+                IStreamWebSocketControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NoDelay(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5649,8 +6353,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("215D9F7E-FA58-40DA-9F11-A48DAFE95037"), exclusiveto, contract] */
                 MIDL_INTERFACE("215D9F7E-FA58-40DA-9F11-A48DAFE95037")
-                IStreamWebSocketControl2 : IInspectable
+                IStreamWebSocketControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredUnsolicitedPongInterval(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -5702,8 +6407,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("F877396F-99B1-4E18-BC08-850C9ADF156E"), contract] */
                 MIDL_INTERFACE("F877396F-99B1-4E18-BC08-850C9ADF156E")
-                IWebSocket : IInspectable
+                IWebSocket : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OutputStream(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IOutputStream * * value
                         ) = 0;
@@ -5761,8 +6467,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("CEB78D07-D0A8-4703-A091-C8C2C0915BC3"), exclusiveto, contract] */
                 MIDL_INTERFACE("CEB78D07-D0A8-4703-A091-C8C2C0915BC3")
-                IWebSocketClosedEventArgs : IInspectable
+                IWebSocketClosedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Code(
                         /* [retval, out] */__RPC__out UINT16 * value
                         ) = 0;
@@ -5801,8 +6508,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("2EC4BDC3-D9A5-455A-9811-DE24D45337E9"), contract] */
                 MIDL_INTERFACE("2EC4BDC3-D9A5-455A-9811-DE24D45337E9")
-                IWebSocketControl : IInspectable
+                IWebSocketControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OutboundBufferSizeInBytes(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -5860,8 +6568,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("79C3BE03-F2CA-461E-AF4E-9665BC2D0620"), contract] */
                 MIDL_INTERFACE("79C3BE03-F2CA-461E-AF4E-9665BC2D0620")
-                IWebSocketControl2 : IInspectable
+                IWebSocketControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IgnorableServerCertificateErrors(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult * * value
                         ) = 0;
@@ -5900,8 +6609,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("27CDF35B-1F61-4709-8E02-61283ADA4E9D"), exclusiveto, contract] */
                 MIDL_INTERFACE("27CDF35B-1F61-4709-8E02-61283ADA4E9D")
-                IWebSocketErrorStatics : IInspectable
+                IWebSocketErrorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetStatus(
                         /* [in] */INT32 hresult,
                         /* [retval, out] */__RPC__out ABI::Windows::Web::WebErrorStatus * status
@@ -5938,8 +6648,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("5E01E316-C92A-47A5-B25F-07847639D181"), contract] */
                 MIDL_INTERFACE("5E01E316-C92A-47A5-B25F-07847639D181")
-                IWebSocketInformation : IInspectable
+                IWebSocketInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalAddress(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::IHostName * * value
                         ) = 0;
@@ -5985,8 +6696,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("CE1D39CE-A1B7-4D43-8269-8D5B981BD47A"), contract] */
                 MIDL_INTERFACE("CE1D39CE-A1B7-4D43-8269-8D5B981BD47A")
-                IWebSocketInformation2 : IInspectable
+                IWebSocketInformation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServerCertificate(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificate * * value
                         ) = 0;
@@ -6034,8 +6746,9 @@ namespace ABI {
             namespace Sockets {
                 /* [object, uuid("FFEFFE48-022A-4AB7-8B36-E10AF4640E6B"), exclusiveto, contract] */
                 MIDL_INTERFACE("FFEFFE48-022A-4AB7-8B36-E10AF4640E6B")
-                IWebSocketServerCustomValidationRequestedEventArgs : IInspectable
+                IWebSocketServerCustomValidationRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServerCertificate(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificate * * value
                         ) = 0;
@@ -6211,6 +6924,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Networking.Sockets.IWebSocket
  *    Windows.Foundation.IClosable
  *    Windows.Networking.Sockets.IMessageWebSocket2
+ *    Windows.Networking.Sockets.IMessageWebSocket3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -6295,6 +7009,128 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_MessageWebSocketMessageReceivedEventArgs[] = L"Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerMessageWebSocket
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerMessageWebSocket ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocket_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocket_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerMessageWebSocket[] = L"Windows.Networking.Sockets.ServerMessageWebSocket";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerMessageWebSocketControl
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerMessageWebSocketControl ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocketControl_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocketControl_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerMessageWebSocketControl[] = L"Windows.Networking.Sockets.ServerMessageWebSocketControl";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerMessageWebSocketInformation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerMessageWebSocketInformation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocketInformation_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocketInformation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerMessageWebSocketInformation[] = L"Windows.Networking.Sockets.ServerMessageWebSocketInformation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerStreamWebSocket
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerStreamWebSocket ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerStreamWebSocket_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerStreamWebSocket_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerStreamWebSocket[] = L"Windows.Networking.Sockets.ServerStreamWebSocket";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerStreamWebSocketInformation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerStreamWebSocketInformation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerStreamWebSocketInformation_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerStreamWebSocketInformation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerStreamWebSocketInformation[] = L"Windows.Networking.Sockets.ServerStreamWebSocketInformation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6848,6 +7684,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket2 __x_
 
 #endif // ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3;
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketControl_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketControl_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketControl __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketControl;
@@ -6871,6 +7713,36 @@ typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessag
 typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs2 __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs2;
 
 #endif // ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket;
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl;
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation;
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket;
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation;
+
+#endif // ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CSockets_CISocketActivityContext_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CSockets_CISocketActivityContext_FWD_DEFINED__
@@ -7508,6 +8380,7 @@ interface __FIAsyncOperation_1_Windows__CNetworking__CSockets__CStreamSocket
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_INTERFACE_DEFINED__
 
@@ -7555,9 +8428,11 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocke
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_INTERFACE_DEFINED__
@@ -7606,9 +8481,11 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Wi
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CSockets__CMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_INTERFACE_DEFINED__
@@ -7656,6 +8533,7 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CMessageWebSoc
 
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -7713,6 +8591,166 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CMessageWebSoc
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CSockets_CIWebSocketClosedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CSockets_CIWebSocketClosedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_INTERFACE_DEFINED__
@@ -7760,6 +8798,7 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketL
 
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -8329,6 +9368,170 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointP
 #endif // ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#if !defined(____FIAsyncOperationProgressHandler_2_UINT32_UINT32_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationProgressHandler_2_UINT32_UINT32_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationProgressHandler_2_UINT32_UINT32 __FIAsyncOperationProgressHandler_2_UINT32_UINT32;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_UINT32_UINT32;
+
+typedef interface __FIAsyncOperationWithProgress_2_UINT32_UINT32 __FIAsyncOperationWithProgress_2_UINT32_UINT32;
+
+typedef struct __FIAsyncOperationProgressHandler_2_UINT32_UINT32Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationProgressHandler_2_UINT32_UINT32 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationProgressHandler_2_UINT32_UINT32 * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationProgressHandler_2_UINT32_UINT32 * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationProgressHandler_2_UINT32_UINT32 * This, /* [in] */ __RPC__in_opt __FIAsyncOperationWithProgress_2_UINT32_UINT32 *asyncInfo, /* [in] */ UINT64 progressInfo);
+    END_INTERFACE
+} __FIAsyncOperationProgressHandler_2_UINT32_UINT32Vtbl;
+
+interface __FIAsyncOperationProgressHandler_2_UINT32_UINT32
+{
+    CONST_VTBL struct __FIAsyncOperationProgressHandler_2_UINT32_UINT32Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationProgressHandler_2_UINT32_UINT32_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationProgressHandler_2_UINT32_UINT32_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationProgressHandler_2_UINT32_UINT32_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationProgressHandler_2_UINT32_UINT32_Invoke(This,asyncInfo,progressInfo)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,progressInfo) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationProgressHandler_2_UINT32_UINT32_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32;
+
+//  Forward declare the async operation.
+typedef interface __FIAsyncOperationWithProgress_2_UINT32_UINT32 __FIAsyncOperationWithProgress_2_UINT32_UINT32;
+
+typedef struct __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 * This, /* [in] */ __RPC__in_opt __FIAsyncOperationWithProgress_2_UINT32_UINT32 *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32Vtbl;
+
+interface __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32
+{
+    CONST_VTBL struct __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32Vtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperationWithProgress_2_UINT32_UINT32_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationWithProgress_2_UINT32_UINT32_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationWithProgress_2_UINT32_UINT32 __FIAsyncOperationWithProgress_2_UINT32_UINT32;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_UINT32_UINT32;
+
+typedef struct __FIAsyncOperationWithProgress_2_UINT32_UINT32Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Progress )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This, /* [in] */ __RPC__in_opt __FIAsyncOperationProgressHandler_2_UINT32_UINT32 *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Progress )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationProgressHandler_2_UINT32_UINT32 **handler);
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This, /* [in] */ __RPC__in_opt __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperationWithProgress_2_UINT32_UINT32 * This, /* [retval][out] */ __RPC__deref_out_opt int *results);
+    END_INTERFACE
+} __FIAsyncOperationWithProgress_2_UINT32_UINT32Vtbl;
+
+interface __FIAsyncOperationWithProgress_2_UINT32_UINT32
+{
+    CONST_VTBL struct __FIAsyncOperationWithProgress_2_UINT32_UINT32Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_put_Progress(This,handler)	\
+    ( (This)->lpVtbl -> put_Progress(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_get_Progress(This,handler)	\
+    ( (This)->lpVtbl -> get_Progress(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIAsyncOperationWithProgress_2_UINT32_UINT32_INTERFACE_DEFINED__
+
 
 enum __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CChainValidationResult;
 #if !defined(____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__)
@@ -9678,6 +10881,16 @@ typedef struct __x_ABI_CWindows_CNetworking_CSockets_CRoundTripTimeStatistics __
 
 
 
+
+
+
+
+
+
+
+
+
+
 /*
  *
  * Struct Windows.Networking.Sockets.ControlChannelTriggerResetReason
@@ -9730,13 +10943,14 @@ enum __x_ABI_CWindows_CNetworking_CSockets_CControlChannelTriggerResourceType
  *
  * Struct Windows.Networking.Sockets.ControlChannelTriggerStatus
  *
- * Introduced to Windows.Networking.Sockets.ControlChannelTriggerContract in version 1.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
  *
  *
  */
 
-#if WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION >= 0x10000
-/* [v1_enum, contract] */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000 || \
+    WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION >= 0x10000 && WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION < 0x30000
+/* [v1_enum, from_contract, contract] */
 enum __x_ABI_CWindows_CNetworking_CSockets_CControlChannelTriggerStatus
 {
     ControlChannelTriggerStatus_HardwareSlotRequested = 0,
@@ -9747,7 +10961,8 @@ enum __x_ABI_CWindows_CNetworking_CSockets_CControlChannelTriggerStatus
     ControlChannelTriggerStatus_TransportDisconnected = 5,
     ControlChannelTriggerStatus_ServiceUnavailable = 6,
 };
-#endif // WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000 || \
+//     WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION >= 0x10000 && WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION < 0x30000
 
 
 /*
@@ -11913,6 +13128,108 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket2
 
 /*
  *
+ * Interface Windows.Networking.Sockets.IMessageWebSocket3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.MessageWebSocket
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IMessageWebSocket3[] = L"Windows.Networking.Sockets.IMessageWebSocket3";
+/* [object, uuid("59D9DEFB-71AF-4349-8487-911FCF681597"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *SendNonfinalFrameAsync )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer * data,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_UINT32_UINT32 * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *SendFinalFrameAsync )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer * data,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_UINT32_UINT32 * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3Vtbl;
+
+interface __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_SendNonfinalFrameAsync(This,data,operation) \
+    ( (This)->lpVtbl->SendNonfinalFrameAsync(This,data,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_SendFinalFrameAsync(This,data,operation) \
+    ( (This)->lpVtbl->SendFinalFrameAsync(This,data,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocket3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Networking.Sockets.IMessageWebSocketControl
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12366,6 +13683,603 @@ interface __x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceive
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs2;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIMessageWebSocketMessageReceivedEventArgs2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerMessageWebSocket
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerMessageWebSocket
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerMessageWebSocket[] = L"Windows.Networking.Sockets.IServerMessageWebSocket";
+/* [object, uuid("E3AC9240-813B-5EFD-7E11-AE2305FC77F1"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MessageReceived )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs * value,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MessageReceived )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Control )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Information )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OutputStream )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIOutputStream * * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * value,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CloseWithStatus )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket * This,
+        /* [in] */UINT16 code,
+        /* [in] */__RPC__in HSTRING reason
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_add_MessageReceived(This,value,token) \
+    ( (This)->lpVtbl->add_MessageReceived(This,value,token) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_remove_MessageReceived(This,token) \
+    ( (This)->lpVtbl->remove_MessageReceived(This,token) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_get_Control(This,value) \
+    ( (This)->lpVtbl->get_Control(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_get_Information(This,value) \
+    ( (This)->lpVtbl->get_Information(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_get_OutputStream(This,value) \
+    ( (This)->lpVtbl->get_OutputStream(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_add_Closed(This,value,token) \
+    ( (This)->lpVtbl->add_Closed(This,value,token) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_remove_Closed(This,token) \
+    ( (This)->lpVtbl->remove_Closed(This,token) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_CloseWithStatus(This,code,reason) \
+    ( (This)->lpVtbl->CloseWithStatus(This,code,reason) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocket_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerMessageWebSocketControl
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerMessageWebSocketControl
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerMessageWebSocketControl[] = L"Windows.Networking.Sockets.IServerMessageWebSocketControl";
+/* [object, uuid("69C2F051-1C1F-587A-4519-2181610192B7"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControlVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MessageType )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CSockets_CSocketMessageType * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MessageType )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl * This,
+        /* [in] */__x_ABI_CWindows_CNetworking_CSockets_CSocketMessageType value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControlVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControlVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_get_MessageType(This,value) \
+    ( (This)->lpVtbl->get_MessageType(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_put_MessageType(This,value) \
+    ( (This)->lpVtbl->put_MessageType(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketControl_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerMessageWebSocketInformation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerMessageWebSocketInformation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerMessageWebSocketInformation[] = L"Windows.Networking.Sockets.IServerMessageWebSocketInformation";
+/* [object, uuid("FC32B45F-4448-5505-6CC9-09AFA8915F5D"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BandwidthStatistics )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CSockets_CBandwidthStatistics * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Protocol )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LocalAddress )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CIHostName * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformationVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_get_BandwidthStatistics(This,value) \
+    ( (This)->lpVtbl->get_BandwidthStatistics(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_get_Protocol(This,value) \
+    ( (This)->lpVtbl->get_Protocol(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_get_LocalAddress(This,value) \
+    ( (This)->lpVtbl->get_LocalAddress(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerMessageWebSocketInformation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerStreamWebSocket
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerStreamWebSocket
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerStreamWebSocket[] = L"Windows.Networking.Sockets.IServerStreamWebSocket";
+/* [object, uuid("2CED5BBF-74F6-55E4-79DF-9132680DFEE8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Information )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_InputStream )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIInputStream * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OutputStream )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIOutputStream * * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs * value,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CloseWithStatus )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket * This,
+        /* [in] */UINT16 code,
+        /* [in] */__RPC__in HSTRING reason
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_get_Information(This,value) \
+    ( (This)->lpVtbl->get_Information(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_get_InputStream(This,value) \
+    ( (This)->lpVtbl->get_InputStream(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_get_OutputStream(This,value) \
+    ( (This)->lpVtbl->get_OutputStream(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_add_Closed(This,value,token) \
+    ( (This)->lpVtbl->add_Closed(This,value,token) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_remove_Closed(This,token) \
+    ( (This)->lpVtbl->remove_Closed(This,token) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_CloseWithStatus(This,code,reason) \
+    ( (This)->lpVtbl->CloseWithStatus(This,code,reason) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocket_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.Sockets.IServerStreamWebSocketInformation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Sockets.ServerStreamWebSocketInformation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Sockets_IServerStreamWebSocketInformation[] = L"Windows.Networking.Sockets.IServerStreamWebSocketInformation";
+/* [object, uuid("FC32B45F-4448-5505-6CC9-09ABA8915F5D"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BandwidthStatistics )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CSockets_CBandwidthStatistics * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Protocol )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LocalAddress )(
+        __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CIHostName * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformationVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_get_BandwidthStatistics(This,value) \
+    ( (This)->lpVtbl->get_BandwidthStatistics(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_get_Protocol(This,value) \
+    ( (This)->lpVtbl->get_Protocol(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_get_LocalAddress(This,value) \
+    ( (This)->lpVtbl->get_LocalAddress(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CSockets_CIServerStreamWebSocketInformation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -16495,6 +18409,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Networking.Sockets.IWebSocket
  *    Windows.Foundation.IClosable
  *    Windows.Networking.Sockets.IMessageWebSocket2
+ *    Windows.Networking.Sockets.IMessageWebSocket3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -16579,6 +18494,128 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_MessageWebSocketMessageReceivedEventArgs[] = L"Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerMessageWebSocket
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerMessageWebSocket ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocket_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocket_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerMessageWebSocket[] = L"Windows.Networking.Sockets.ServerMessageWebSocket";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerMessageWebSocketControl
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerMessageWebSocketControl ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocketControl_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocketControl_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerMessageWebSocketControl[] = L"Windows.Networking.Sockets.ServerMessageWebSocketControl";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerMessageWebSocketInformation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerMessageWebSocketInformation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocketInformation_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerMessageWebSocketInformation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerMessageWebSocketInformation[] = L"Windows.Networking.Sockets.ServerMessageWebSocketInformation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerStreamWebSocket
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerStreamWebSocket ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerStreamWebSocket_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerStreamWebSocket_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerStreamWebSocket[] = L"Windows.Networking.Sockets.ServerStreamWebSocket";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.Sockets.ServerStreamWebSocketInformation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.Sockets.IServerStreamWebSocketInformation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_Sockets_ServerStreamWebSocketInformation_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Sockets_ServerStreamWebSocketInformation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Sockets_ServerStreamWebSocketInformation[] = L"Windows.Networking.Sockets.ServerStreamWebSocketInformation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.email.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -3483,6 +3485,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CEmailMailbox_Windows__CApplicationModel__CEmail__CEmailMailboxChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CEmailMailbox_Windows__CApplicationModel__CEmail__CEmailMailboxChangedEventArgs_USE
@@ -3511,6 +3514,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::EmailMailbox*,
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CEmailMailbox_Windows__CApplicationModel__CEmail__CEmailMailboxChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -5516,8 +5520,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("F353CAF9-57C8-4ADB-B992-60FCEB584F54"), exclusiveto, contract] */
                 MIDL_INTERFACE("F353CAF9-57C8-4ADB-B992-60FCEB584F54")
-                IEmailAttachment : IInspectable
+                IEmailAttachment : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FileName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5565,8 +5570,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("225F1070-B0FF-4571-9D54-A706C48D55C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("225F1070-B0FF-4571-9D54-A706C48D55C6")
-                IEmailAttachment2 : IInspectable
+                IEmailAttachment2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5644,8 +5650,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("796EAC46-ED56-4979-8708-ABB8BC854B7D"), exclusiveto, contract] */
                 MIDL_INTERFACE("796EAC46-ED56-4979-8708-ABB8BC854B7D")
-                IEmailAttachmentFactory : IInspectable
+                IEmailAttachmentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING fileName,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * data,
@@ -5686,8 +5693,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("23259435-51F9-427D-ADCD-241023C8CFB7"), exclusiveto, contract] */
                 MIDL_INTERFACE("23259435-51F9-427D-ADCD-241023C8CFB7")
-                IEmailAttachmentFactory2 : IInspectable
+                IEmailAttachmentFactory2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING fileName,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * data,
@@ -5729,8 +5737,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("DA18C248-A0BC-4349-902D-90F66389F51B"), exclusiveto, contract] */
                 MIDL_INTERFACE("DA18C248-A0BC-4349-902D-90F66389F51B")
-                IEmailConversation : IInspectable
+                IEmailConversation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5812,8 +5821,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("B8C1AB81-01C5-432A-9DF1-FE85D98A279A"), exclusiveto, contract] */
                 MIDL_INTERFACE("B8C1AB81-01C5-432A-9DF1-FE85D98A279A")
-                IEmailConversationBatch : IInspectable
+                IEmailConversationBatch : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Conversations(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CEmail__CEmailConversation * * value
                         ) = 0;
@@ -5855,8 +5865,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("B4630F82-2875-44C8-9B8C-85BEB3A3C653"), exclusiveto, contract] */
                 MIDL_INTERFACE("B4630F82-2875-44C8-9B8C-85BEB3A3C653")
-                IEmailConversationReader : IInspectable
+                IEmailConversationReader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReadBatchAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CEmail__CEmailConversationBatch * * result
                         ) = 0;
@@ -5895,8 +5906,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("A24F7771-996C-4864-B1BA-ED1240E57D11"), exclusiveto, contract] */
                 MIDL_INTERFACE("A24F7771-996C-4864-B1BA-ED1240E57D11")
-                IEmailFolder : IInspectable
+                IEmailFolder : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6015,8 +6027,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("90F52193-B1A0-4EBD-A6B6-DDCA55606E0E"), exclusiveto, contract] */
                 MIDL_INTERFACE("90F52193-B1A0-4EBD-A6B6-DDCA55606E0E")
-                IEmailIrmInfo : IInspectable
+                IEmailIrmInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanEdit(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6124,8 +6137,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("314BB18C-E3E6-4D7B-BE8D-91A96311B01B"), exclusiveto, contract] */
                 MIDL_INTERFACE("314BB18C-E3E6-4D7B-BE8D-91A96311B01B")
-                IEmailIrmInfoFactory : IInspectable
+                IEmailIrmInfoFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Foundation::DateTime expiration,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Email::IEmailIrmTemplate * irmTemplate,
@@ -6166,8 +6180,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("F327758D-546D-4BEA-A963-54A38B2CC016"), exclusiveto, contract] */
                 MIDL_INTERFACE("F327758D-546D-4BEA-A963-54A38B2CC016")
-                IEmailIrmTemplate : IInspectable
+                IEmailIrmTemplate : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6221,8 +6236,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("3DA31876-8738-4418-B9CB-471B936FE71E"), exclusiveto, contract] */
                 MIDL_INTERFACE("3DA31876-8738-4418-B9CB-471B936FE71E")
-                IEmailIrmTemplateFactory : IInspectable
+                IEmailIrmTemplateFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING id,
                         /* [in] */__RPC__in HSTRING name,
@@ -6264,8 +6280,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("5BD13321-FEC8-4BAB-83BA-0BAF3C1F6CBD"), exclusiveto, contract] */
                 MIDL_INTERFACE("5BD13321-FEC8-4BAB-83BA-0BAF3C1F6CBD")
-                IEmailItemCounts : IInspectable
+                IEmailItemCounts : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Flagged(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -6313,8 +6330,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("A8790649-CF5B-411B-80B1-4A6A1484CE25"), exclusiveto, contract] */
                 MIDL_INTERFACE("A8790649-CF5B-411B-80B1-4A6A1484CE25")
-                IEmailMailbox : IInspectable
+                IEmailMailbox : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Capabilities(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::IEmailMailboxCapabilities * * value
                         ) = 0;
@@ -6556,8 +6574,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("14F8E404-6CA2-4AB2-9241-79CD7BF46346"), exclusiveto, contract] */
                 MIDL_INTERFACE("14F8E404-6CA2-4AB2-9241-79CD7BF46346")
-                IEmailMailbox2 : IInspectable
+                IEmailMailbox2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LinkedMailboxId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6607,8 +6626,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("3DA5897B-458B-408A-8E37-AC8B05D8AF56"), exclusiveto, contract] */
                 MIDL_INTERFACE("3DA5897B-458B-408A-8E37-AC8B05D8AF56")
-                IEmailMailbox3 : IInspectable
+                IEmailMailbox3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ResolveRecipientsAsync(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * recipients,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CEmail__CEmailRecipientResolutionResult * * result
@@ -6665,8 +6685,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("5D1F301B-F222-48A7-B7B6-716356CD26A1"), exclusiveto, contract] */
                 MIDL_INTERFACE("5D1F301B-F222-48A7-B7B6-716356CD26A1")
-                IEmailMailbox4 : IInspectable
+                IEmailMailbox4 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RegisterSyncManagerAsync(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * result
                         ) = 0;
@@ -6705,8 +6726,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("39967087-0092-49BE-BD0E-5D4DC9D96D90"), exclusiveto, contract] */
                 MIDL_INTERFACE("39967087-0092-49BE-BD0E-5D4DC9D96D90")
-                IEmailMailbox5 : IInspectable
+                IEmailMailbox5 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetChangeTracker(
                         /* [in] */__RPC__in HSTRING identity,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::IEmailMailboxChangeTracker * * result
@@ -6746,8 +6768,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("AC9889FA-21FA-4927-9210-D410582FDF3E"), exclusiveto, contract] */
                 MIDL_INTERFACE("AC9889FA-21FA-4927-9210-D410582FDF3E")
-                IEmailMailboxAction : IInspectable
+                IEmailMailboxAction : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Email::EmailMailboxActionKind * value
                         ) = 0;
@@ -6789,8 +6812,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("E223254C-8AB4-485B-B31F-04D15476BD59"), exclusiveto, contract] */
                 MIDL_INTERFACE("E223254C-8AB4-485B-B31F-04D15476BD59")
-                IEmailMailboxAutoReply : IInspectable
+                IEmailMailboxAutoReply : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6838,8 +6862,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("A87A9FA8-0AC6-4B77-BA77-A6B99E9A27B8"), exclusiveto, contract] */
                 MIDL_INTERFACE("A87A9FA8-0AC6-4B77-BA77-A6B99E9A27B8")
-                IEmailMailboxAutoReplySettings : IInspectable
+                IEmailMailboxAutoReplySettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6908,8 +6933,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("EEDEC3A6-89DB-4305-82C4-439E0A33DA11"), exclusiveto, contract] */
                 MIDL_INTERFACE("EEDEC3A6-89DB-4305-82C4-439E0A33DA11")
-                IEmailMailboxCapabilities : IInspectable
+                IEmailMailboxCapabilities : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanForwardMeetings(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6969,8 +6995,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("69723EE4-2F21-4CBC-88AB-2E7602A4806B"), exclusiveto, contract] */
                 MIDL_INTERFACE("69723EE4-2F21-4CBC-88AB-2E7602A4806B")
-                IEmailMailboxCapabilities2 : IInspectable
+                IEmailMailboxCapabilities2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanResolveRecipients(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -7024,8 +7051,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("F690E944-56F2-45AA-872C-0CE9F3DB0B5C"), exclusiveto, contract] */
                 MIDL_INTERFACE("F690E944-56F2-45AA-872C-0CE9F3DB0B5C")
-                IEmailMailboxCapabilities3 : IInspectable
+                IEmailMailboxCapabilities3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_CanForwardMeetings(
                         /* [in] */boolean value
                         ) = 0;
@@ -7103,8 +7131,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("61EDF54B-11EF-400C-ADDE-8CDE65C85E66"), exclusiveto, contract] */
                 MIDL_INTERFACE("61EDF54B-11EF-400C-ADDE-8CDE65C85E66")
-                IEmailMailboxChange : IInspectable
+                IEmailMailboxChange : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeType(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Email::EmailMailboxChangeType * value
                         ) = 0;
@@ -7152,8 +7181,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("BDBD0EBB-C53D-4331-97BE-BE75A2146A75"), exclusiveto, contract] */
                 MIDL_INTERFACE("BDBD0EBB-C53D-4331-97BE-BE75A2146A75")
-                IEmailMailboxChangeReader : IInspectable
+                IEmailMailboxChangeReader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AcceptChanges(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE AcceptChangesThrough(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Email::IEmailMailboxChange * lastChangeToAcknowledge
@@ -7196,8 +7226,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("7AE48638-5166-42B7-8882-FD21C92BDD4B"), exclusiveto, contract] */
                 MIDL_INTERFACE("7AE48638-5166-42B7-8882-FD21C92BDD4B")
-                IEmailMailboxChangeTracker : IInspectable
+                IEmailMailboxChangeTracker : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTracking(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -7241,8 +7272,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("779A74C1-97C5-4B54-B30D-306232623E6D"), exclusiveto, contract] */
                 MIDL_INTERFACE("779A74C1-97C5-4B54-B30D-306232623E6D")
-                IEmailMailboxChangedDeferral : IInspectable
+                IEmailMailboxChangedDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -7279,8 +7311,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("3CFD5F6E-01D4-4E4A-A44C-B22DD42EC207"), exclusiveto, contract] */
                 MIDL_INTERFACE("3CFD5F6E-01D4-4E4A-A44C-B22DD42EC207")
-                IEmailMailboxChangedEventArgs : IInspectable
+                IEmailMailboxChangedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral * * result
                         ) = 0;
@@ -7319,8 +7352,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("B228557F-2885-4998-B595-8A2D374CE950"), exclusiveto, contract] */
                 MIDL_INTERFACE("B228557F-2885-4998-B595-8A2D374CE950")
-                IEmailMailboxCreateFolderResult : IInspectable
+                IEmailMailboxCreateFolderResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus * value
                         ) = 0;
@@ -7362,8 +7396,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("1F3345C5-1C3B-4DC7-B410-6373783E545D"), exclusiveto, contract] */
                 MIDL_INTERFACE("1F3345C5-1C3B-4DC7-B410-6373783E545D")
-                IEmailMailboxPolicies : IInspectable
+                IEmailMailboxPolicies : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowedSmimeEncryptionAlgorithmNegotiation(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation * value
                         ) = 0;
@@ -7411,8 +7446,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("BAB58AFB-A14B-497C-A8E2-55EAC29CC4B5"), exclusiveto, contract] */
                 MIDL_INTERFACE("BAB58AFB-A14B-497C-A8E2-55EAC29CC4B5")
-                IEmailMailboxPolicies2 : IInspectable
+                IEmailMailboxPolicies2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MustEncryptSmimeMessages(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -7454,8 +7490,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("BDD4A01F-4867-414A-81A2-803919C44191"), exclusiveto, contract] */
                 MIDL_INTERFACE("BDD4A01F-4867-414A-81A2-803919C44191")
-                IEmailMailboxPolicies3 : IInspectable
+                IEmailMailboxPolicies3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AllowedSmimeEncryptionAlgorithmNegotiation(
                         /* [in] */ABI::Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value
                         ) = 0;
@@ -7509,8 +7546,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("517AC55A-3591-4B5D-85BC-C71DDE862263"), exclusiveto, contract] */
                 MIDL_INTERFACE("517AC55A-3591-4B5D-85BC-C71DDE862263")
-                IEmailMailboxSyncManager : IInspectable
+                IEmailMailboxSyncManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Email::EmailMailboxSyncStatus * value
                         ) = 0;
@@ -7565,8 +7603,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("CD8DC97E-95C1-4F89-81B7-E6AECB6695FC"), exclusiveto, contract] */
                 MIDL_INTERFACE("CD8DC97E-95C1-4F89-81B7-E6AECB6695FC")
-                IEmailMailboxSyncManager2 : IInspectable
+                IEmailMailboxSyncManager2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Status(
                         /* [in] */ABI::Windows::ApplicationModel::Email::EmailMailboxSyncStatus value
                         ) = 0;
@@ -7611,8 +7650,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("F773DE9F-3CA5-4B0F-90C1-156E40174CE5"), exclusiveto, contract] */
                 MIDL_INTERFACE("F773DE9F-3CA5-4B0F-90C1-156E40174CE5")
-                IEmailManagerForUser : IInspectable
+                IEmailManagerForUser : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ShowComposeNewEmailAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Email::IEmailMessage * message,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * result
@@ -7659,8 +7699,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("F5128654-55C5-4890-A824-216C2618CE7F"), exclusiveto, contract] */
                 MIDL_INTERFACE("F5128654-55C5-4890-A824-216C2618CE7F")
-                IEmailManagerStatics : IInspectable
+                IEmailManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ShowComposeNewEmailAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Email::IEmailMessage * message,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncAction
@@ -7700,8 +7741,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("AC052DA3-B194-425D-B6D9-D0F04135EDA2"), exclusiveto, contract] */
                 MIDL_INTERFACE("AC052DA3-B194-425D-B6D9-D0F04135EDA2")
-                IEmailManagerStatics2 : IInspectable
+                IEmailManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestStoreAsync(
                         /* [in] */ABI::Windows::ApplicationModel::Email::EmailStoreAccessType accessType,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CEmail__CEmailStore * * result
@@ -7741,8 +7783,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("4A722395-843E-4945-B3AA-349E07A362C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("4A722395-843E-4945-B3AA-349E07A362C5")
-                IEmailManagerStatics3 : IInspectable
+                IEmailManagerStatics3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::IEmailManagerForUser * * result
@@ -7782,8 +7825,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("31C03FA9-7933-415F-A275-D165BA07026B"), exclusiveto, contract] */
                 MIDL_INTERFACE("31C03FA9-7933-415F-A275-D165BA07026B")
-                IEmailMeetingInfo : IInspectable
+                IEmailMeetingInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowNewTimeProposal(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -7897,8 +7941,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("7E59386D-B0D9-4FE5-867C-E31ED2B588B8"), exclusiveto, contract] */
                 MIDL_INTERFACE("7E59386D-B0D9-4FE5-867C-E31ED2B588B8")
-                IEmailMeetingInfo2 : IInspectable
+                IEmailMeetingInfo2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsReportedOutOfDateByServer(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -7937,8 +7982,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("6C6D948D-80B5-48F8-B0B1-E04E430F44E5"), exclusiveto, contract] */
                 MIDL_INTERFACE("6C6D948D-80B5-48F8-B0B1-E04E430F44E5")
-                IEmailMessage : IInspectable
+                IEmailMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Subject(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7998,8 +8044,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("FDC8248B-9F1A-44DB-BD3C-65C384770F86"), exclusiveto, contract] */
                 MIDL_INTERFACE("FDC8248B-9F1A-44DB-BD3C-65C384770F86")
-                IEmailMessage2 : IInspectable
+                IEmailMessage2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8172,8 +8219,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("A1EA675C-E598-4D29-A018-FC7B7EECE0A1"), exclusiveto, contract] */
                 MIDL_INTERFACE("A1EA675C-E598-4D29-A018-FC7B7EECE0A1")
-                IEmailMessage3 : IInspectable
+                IEmailMessage3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SmimeData(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * * value
                         ) = 0;
@@ -8221,8 +8269,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("317CF181-3E7F-4A05-8394-3E10336DD435"), exclusiveto, contract] */
                 MIDL_INTERFACE("317CF181-3E7F-4A05-8394-3E10336DD435")
-                IEmailMessage4 : IInspectable
+                IEmailMessage4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ReplyTo(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CApplicationModel__CEmail__CEmailRecipient * * value
                         ) = 0;
@@ -8267,8 +8316,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("605CD08F-25D9-4F1B-9E51-0514C0149653"), exclusiveto, contract] */
                 MIDL_INTERFACE("605CD08F-25D9-4F1B-9E51-0514C0149653")
-                IEmailMessageBatch : IInspectable
+                IEmailMessageBatch : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Messages(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CEmail__CEmailMessage * * value
                         ) = 0;
@@ -8310,8 +8360,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("2F4ABE9F-6213-4A85-A3B0-F92D1A839D19"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F4ABE9F-6213-4A85-A3B0-F92D1A839D19")
-                IEmailMessageReader : IInspectable
+                IEmailMessageReader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReadBatchAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CEmail__CEmailMessageBatch * * result
                         ) = 0;
@@ -8350,8 +8401,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("45504B9B-3E7F-4D52-B6DD-D6FD4E1FBD9A"), exclusiveto, contract] */
                 MIDL_INTERFACE("45504B9B-3E7F-4D52-B6DD-D6FD4E1FBD9A")
-                IEmailQueryOptions : IInspectable
+                IEmailQueryOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextSearch(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::IEmailQueryTextSearch * * value
                         ) = 0;
@@ -8411,8 +8463,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("88F1A1B8-78AB-4EE8-B4E3-046D6E2FE5E2"), exclusiveto, contract] */
                 MIDL_INTERFACE("88F1A1B8-78AB-4EE8-B4E3-046D6E2FE5E2")
-                IEmailQueryOptionsFactory : IInspectable
+                IEmailQueryOptionsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithText(
                         /* [in] */__RPC__in HSTRING text,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::IEmailQueryOptions * * result
@@ -8457,8 +8510,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("9FA0A288-3C5D-46A5-A6E2-31D6FD17E540"), exclusiveto, contract] */
                 MIDL_INTERFACE("9FA0A288-3C5D-46A5-A6E2-31D6FD17E540")
-                IEmailQueryTextSearch : IInspectable
+                IEmailQueryTextSearch : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Fields(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Email::EmailQuerySearchFields * value
                         ) = 0;
@@ -8512,8 +8566,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("CAE825B3-4478-4814-B900-C902B5E19B53"), exclusiveto, contract] */
                 MIDL_INTERFACE("CAE825B3-4478-4814-B900-C902B5E19B53")
-                IEmailRecipient : IInspectable
+                IEmailRecipient : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8561,8 +8616,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("5500B84D-C79A-4EF8-B909-722E18E3935D"), exclusiveto, contract] */
                 MIDL_INTERFACE("5500B84D-C79A-4EF8-B909-722E18E3935D")
-                IEmailRecipientFactory : IInspectable
+                IEmailRecipientFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING address,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::IEmailRecipient * * result
@@ -8607,8 +8663,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("918338FA-8D8D-4573-80D1-07172A34B98D"), exclusiveto, contract] */
                 MIDL_INTERFACE("918338FA-8D8D-4573-80D1-07172A34B98D")
-                IEmailRecipientResolutionResult : IInspectable
+                IEmailRecipientResolutionResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Email::EmailRecipientResolutionStatus * value
                         ) = 0;
@@ -8650,8 +8707,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("5E420BB6-CE5B-4BDE-B9D4-E16DA0B09FCA"), exclusiveto, contract] */
                 MIDL_INTERFACE("5E420BB6-CE5B-4BDE-B9D4-E16DA0B09FCA")
-                IEmailRecipientResolutionResult2 : IInspectable
+                IEmailRecipientResolutionResult2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Status(
                         /* [in] */ABI::Windows::ApplicationModel::Email::EmailRecipientResolutionStatus value
                         ) = 0;
@@ -8693,8 +8751,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("F803226E-9137-4F8B-A470-279AC3058EB6"), exclusiveto, contract] */
                 MIDL_INTERFACE("F803226E-9137-4F8B-A470-279AC3058EB6")
-                IEmailStore : IInspectable
+                IEmailStore : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindMailboxesAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CEmail__CEmailMailbox * * result
                         ) = 0;
@@ -8774,8 +8833,9 @@ namespace ABI {
             namespace Email {
                 /* [object, uuid("CE17563C-46E6-43C9-96F7-FACF7DD710CB"), exclusiveto, contract] */
                 MIDL_INTERFACE("CE17563C-46E6-43C9-96F7-FACF7DD710CB")
-                IEmailStoreNotificationTriggerDetails : IInspectable
+                IEmailStoreNotificationTriggerDetails : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -15300,6 +15360,7 @@ interface __FIReference_1_Windows__CApplicationModel__CEmail__CEmailMailboxSmime
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CEmailMailbox_Windows__CApplicationModel__CEmail__CEmailMailboxChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CEmailMailbox_Windows__CApplicationModel__CEmail__CEmailMailboxChangedEventArgs_INTERFACE_DEFINED__
 
@@ -15346,6 +15407,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CEmailMail
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CEmailMailbox_Windows__CApplicationModel__CEmail__CEmailMailboxChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

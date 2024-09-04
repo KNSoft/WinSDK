@@ -784,7 +784,7 @@ typedef struct {
 
 _Check_return_
 WINOLEAUTAPI VarParseNumFromStr(_In_ LPCOLESTR strIn, _In_ LCID lcid, _In_ ULONG dwFlags,
-            _Out_ NUMPARSE * pnumprs, _Out_ BYTE * rgbDig);
+            _Inout_ NUMPARSE * pnumprs, _Out_writes_(pnumprs->cDig) BYTE * rgbDig);
 
 _Check_return_
 WINOLEAUTAPI VarNumFromParseNum(_In_ NUMPARSE * pnumprs, _In_reads_(pnumprs->cDig) BYTE * rgbDig,
@@ -1040,7 +1040,7 @@ WINOLEAUTAPI VarFormatFromTokens(
 
 WINOLEAUTAPI VarTokenizeFormatString(
 	_In_opt_ LPOLESTR pstrFormat,
-	_Inout_ LPBYTE rgbTok,
+	_Inout_updates_(cbTok) LPBYTE rgbTok,
 	int cbTok,
 	int iFirstDay,
 	int iFirstWeek,
@@ -1247,7 +1247,7 @@ WINOLEAUTAPI DispGetParam(
 
 /* Automatic TypeInfo driven implementation of IDispatch::GetIDsOfNames()
  */
-_Check_return_ WINOLEAUTAPI DispGetIDsOfNames(ITypeInfo * ptinfo, _In_reads_(cNames) OLECHAR ** rgszNames,
+_Check_return_ WINOLEAUTAPI DispGetIDsOfNames(ITypeInfo * ptinfo, _In_reads_(cNames) LPOLESTR* rgszNames,
             UINT cNames, _Out_writes_(cNames) DISPID * rgdispid);
 
 /* Automatic TypeInfo driven implementation of IDispatch::Invoke()

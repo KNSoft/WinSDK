@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.authentication.web.provider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -657,6 +659,24 @@ namespace ABI {
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2 ABI::Windows::Security::Authentication::Web::Provider::IWebProviderTokenRequest2
 
 #endif // ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Web {
+                    namespace Provider {
+                        interface IWebProviderTokenRequest3;
+                    } /* Windows */
+                } /* Security */
+            } /* Authentication */
+        } /* Web */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 ABI::Windows::Security::Authentication::Web::Provider::IWebProviderTokenRequest3
+
+#endif // ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponse_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponse_FWD_DEFINED__
@@ -1697,6 +1717,64 @@ typedef IAsyncOperation<ABI::Windows::Storage::Streams::IBuffer*> __FIAsyncOpera
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a"))
+IAsyncOperationCompletedHandler<bool> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Boolean>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<bool> __FIAsyncOperationCompletedHandler_1_boolean_t;
+#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_boolean_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
+//#define __FIAsyncOperationCompletedHandler_1_boolean_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperation_1_boolean_USE
+#define DEF___FIAsyncOperation_1_boolean_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a"))
+IAsyncOperation<bool> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Boolean>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
+#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::IAsyncOperation<boolean>
+//#define __FIAsyncOperation_1_boolean_t ABI::Windows::Foundation::IAsyncOperation<boolean>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_boolean_USE */
+
+
+
+
 
 namespace ABI {
     namespace Windows {
@@ -1974,6 +2052,7 @@ namespace ABI {
             } /* Authentication */
         } /* Web */
     } /* Provider */} /* ABI */
+
 
 
 
@@ -2294,8 +2373,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("E7BD66BA-0BC7-4C66-BFD4-65D3082CBCA8"), exclusiveto, contract] */
                         MIDL_INTERFACE("E7BD66BA-0BC7-4C66-BFD4-65D3082CBCA8")
-                        IWebAccountClientView : IInspectable
+                        IWebAccountClientView : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ApplicationCallbackUri(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                                 ) = 0;
@@ -2344,8 +2424,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("616D16A4-DE22-4855-A326-06CEBF2A3F23"), exclusiveto, contract] */
                         MIDL_INTERFACE("616D16A4-DE22-4855-A326-06CEBF2A3F23")
-                        IWebAccountClientViewFactory : IInspectable
+                        IWebAccountClientViewFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Create(
                                 /* [in] */ABI::Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType,
                                 /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * applicationCallbackUri,
@@ -2396,8 +2477,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("B2E8E1A6-D49A-4032-84BF-1A2847747BF1"), exclusiveto, contract] */
                         MIDL_INTERFACE("B2E8E1A6-D49A-4032-84BF-1A2847747BF1")
-                        IWebAccountManagerStatics : IInspectable
+                        IWebAccountManagerStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE UpdateWebAccountPropertiesAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Security::Credentials::IWebAccount * webAccount,
                                 /* [in] */__RPC__in HSTRING webAccountUserName,
@@ -2484,8 +2566,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("68A7A829-2D5F-4653-8BB0-BD2FA6BD2D87"), exclusiveto, contract] */
                         MIDL_INTERFACE("68A7A829-2D5F-4653-8BB0-BD2FA6BD2D87")
-                        IWebAccountManagerStatics2 : IInspectable
+                        IWebAccountManagerStatics2 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE PullCookiesAsync(
                                 /* [in] */__RPC__in HSTRING uriString,
                                 /* [in] */__RPC__in HSTRING callerPFN,
@@ -2530,8 +2613,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("DD4523A6-8A4F-4AA2-B15E-03F550AF1359"), exclusiveto, contract] */
                         MIDL_INTERFACE("DD4523A6-8A4F-4AA2-B15E-03F550AF1359")
-                        IWebAccountManagerStatics3 : IInspectable
+                        IWebAccountManagerStatics3 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE FindAllProviderWebAccountsForUserAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                                 /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount * * operation
@@ -2599,8 +2683,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("59EBC2D2-F7DB-412F-BC3F-F2FEA04430B4"), exclusiveto, contract] */
                         MIDL_INTERFACE("59EBC2D2-F7DB-412F-BC3F-F2FEA04430B4")
-                        IWebAccountManagerStatics4 : IInspectable
+                        IWebAccountManagerStatics4 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE InvalidateAppCacheForAllAccountsAsync(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncInfo
                                 ) = 0;
@@ -2647,8 +2732,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("E8FA446F-3A1B-48A4-8E90-1E59CA6F54DB"), exclusiveto, contract] */
                         MIDL_INTERFACE("E8FA446F-3A1B-48A4-8E90-1E59CA6F54DB")
-                        IWebAccountMapManagerStatics : IInspectable
+                        IWebAccountMapManagerStatics : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE AddWebAccountWithScopeAndMapAsync(
                                 /* [in] */__RPC__in HSTRING webAccountId,
                                 /* [in] */__RPC__in HSTRING webAccountUserName,
@@ -2713,8 +2799,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("73EBDCCF-4378-4C79-9335-A5D7AB81594E"), exclusiveto, contract] */
                         MIDL_INTERFACE("73EBDCCF-4378-4C79-9335-A5D7AB81594E")
-                        IWebAccountProviderAddAccountOperation : IInspectable
+                        IWebAccountProviderAddAccountOperation : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE ReportCompleted(void) = 0;
                             
                         };
@@ -2752,8 +2839,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("BBA4ACBB-993B-4D57-BBE4-1421E3668B4C"), contract] */
                         MIDL_INTERFACE("BBA4ACBB-993B-4D57-BBE4-1421E3668B4C")
-                        IWebAccountProviderBaseReportOperation : IInspectable
+                        IWebAccountProviderBaseReportOperation : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE ReportCompleted(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE ReportError(
                                 /* [in] */__RPC__in_opt ABI::Windows::Security::Authentication::Web::Core::IWebProviderError * value
@@ -2801,8 +2889,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("0ABB48B8-9E01-49C9-A355-7D48CAF7D6CA"), exclusiveto, contract] */
                         MIDL_INTERFACE("0ABB48B8-9E01-49C9-A355-7D48CAF7D6CA")
-                        IWebAccountProviderDeleteAccountOperation : IInspectable
+                        IWebAccountProviderDeleteAccountOperation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebAccount(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Credentials::IWebAccount * * value
                                 ) = 0;
@@ -2849,8 +2938,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("ED20DC5C-D21B-463E-A9B7-C1FD0EDAE978"), exclusiveto, contract] */
                         MIDL_INTERFACE("ED20DC5C-D21B-463E-A9B7-C1FD0EDAE978")
-                        IWebAccountProviderManageAccountOperation : IInspectable
+                        IWebAccountProviderManageAccountOperation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebAccount(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Credentials::IWebAccount * * value
                                 ) = 0;
@@ -2891,8 +2981,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("6D5D2426-10B1-419A-A44E-F9C5161574E6"), contract] */
                         MIDL_INTERFACE("6D5D2426-10B1-419A-A44E-F9C5161574E6")
-                        IWebAccountProviderOperation : IInspectable
+                        IWebAccountProviderOperation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                                 /* [retval, out] */__RPC__out ABI::Windows::Security::Authentication::Web::Provider::WebAccountProviderOperationKind * value
                                 ) = 0;
@@ -2939,8 +3030,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("5A040441-0FA3-4AB1-A01C-20B110358594"), exclusiveto, contract] */
                         MIDL_INTERFACE("5A040441-0FA3-4AB1-A01C-20B110358594")
-                        IWebAccountProviderRetrieveCookiesOperation : IInspectable
+                        IWebAccountProviderRetrieveCookiesOperation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Context(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * webCookieRequestContext
                                 ) = 0;
@@ -2999,8 +3091,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("B890E21D-0C55-47BC-8C72-04A6FC7CAC07"), exclusiveto, contract] */
                         MIDL_INTERFACE("B890E21D-0C55-47BC-8C72-04A6FC7CAC07")
-                        IWebAccountProviderSignOutAccountOperation : IInspectable
+                        IWebAccountProviderSignOutAccountOperation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebAccount(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Credentials::IWebAccount * * value
                                 ) = 0;
@@ -3050,8 +3143,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("E0B545F8-3B0F-44DA-924C-7B18BAAA62A9"), contract] */
                         MIDL_INTERFACE("E0B545F8-3B0F-44DA-924C-7B18BAAA62A9")
-                        IWebAccountProviderSilentReportOperation : IInspectable
+                        IWebAccountProviderSilentReportOperation : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE ReportUserInteractionRequired(void) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE ReportUserInteractionRequiredWithError(
                                 /* [in] */__RPC__in_opt ABI::Windows::Security::Authentication::Web::Core::IWebProviderError * value
@@ -3092,8 +3186,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("408F284B-1328-42DB-89A4-0BCE7A717D8E"), contract] */
                         MIDL_INTERFACE("408F284B-1328-42DB-89A4-0BCE7A717D8E")
-                        IWebAccountProviderTokenObjects : IInspectable
+                        IWebAccountProviderTokenObjects : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Operation(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation * * value
                                 ) = 0;
@@ -3137,8 +3232,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("1020B893-5CA5-4FFF-95FB-B820273FC395"), contract] */
                         MIDL_INTERFACE("1020B893-5CA5-4FFF-95FB-B820273FC395")
-                        IWebAccountProviderTokenObjects2 : IInspectable
+                        IWebAccountProviderTokenObjects2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
                                 ) = 0;
@@ -3182,8 +3278,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("95C613BE-2034-4C38-9434-D26C14B2B4B2"), contract] */
                         MIDL_INTERFACE("95C613BE-2034-4C38-9434-D26C14B2B4B2")
-                        IWebAccountProviderTokenOperation : IInspectable
+                        IWebAccountProviderTokenOperation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProviderRequest(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Web::Provider::IWebProviderTokenRequest * * webTokenRequest
                                 ) = 0;
@@ -3236,8 +3333,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("28FF92D3-8F80-42FB-944F-B2107BBD42E6"), contract] */
                         MIDL_INTERFACE("28FF92D3-8F80-42FB-944F-B2107BBD42E6")
-                        IWebAccountProviderUIReportOperation : IInspectable
+                        IWebAccountProviderUIReportOperation : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE ReportUserCanceled(void) = 0;
                             
                         };
@@ -3278,8 +3376,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("5C6CE37C-12B2-423A-BF3D-85B8D7E53656"), exclusiveto, contract] */
                         MIDL_INTERFACE("5C6CE37C-12B2-423A-BF3D-85B8D7E53656")
-                        IWebAccountScopeManagerStatics : IInspectable
+                        IWebAccountScopeManagerStatics : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE AddWebAccountWithScopeAsync(
                                 /* [in] */__RPC__in HSTRING webAccountId,
                                 /* [in] */__RPC__in HSTRING webAccountUserName,
@@ -3335,8 +3434,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("1E18778B-8805-454B-9F11-468D2AF1095A"), exclusiveto, contract] */
                         MIDL_INTERFACE("1E18778B-8805-454B-9F11-468D2AF1095A")
-                        IWebProviderTokenRequest : IInspectable
+                        IWebProviderTokenRequest : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClientRequest(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest * * value
                                 ) = 0;
@@ -3393,8 +3493,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("B5D72E4C-10B1-4AA6-88B1-0B6C9E0C1E46"), exclusiveto, contract] */
                         MIDL_INTERFACE("B5D72E4C-10B1-4AA6-88B1-0B6C9E0C1E46")
-                        IWebProviderTokenRequest2 : IInspectable
+                        IWebProviderTokenRequest2 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetApplicationTokenBindingKeyIdAsync(
                                 /* [in] */ABI::Windows::Security::Authentication::Web::TokenBindingKeyType keyType,
                                 /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * target,
@@ -3414,6 +3515,58 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2;
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_Web_Provider_IWebProviderTokenRequest3[] = L"Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest3";
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Web {
+                    namespace Provider {
+                        /* [object, uuid("1B2716AA-4289-446E-9256-DAFB6F66A51E"), exclusiveto, contract] */
+                        MIDL_INTERFACE("1B2716AA-4289-446E-9256-DAFB6F66A51E")
+                        IWebProviderTokenRequest3 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ApplicationPackageFamilyName(
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ApplicationProcessName(
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                                ) = 0;
+                            virtual HRESULT STDMETHODCALLTYPE CheckApplicationForCapabilityAsync(
+                                /* [in] */__RPC__in HSTRING capabilityName,
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IWebProviderTokenRequest3=_uuidof(IWebProviderTokenRequest3);
+                        
+                    } /* Windows */
+                } /* Security */
+            } /* Authentication */
+        } /* Web */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3;
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3439,8 +3592,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("EF213793-EF55-4186-B7CE-8CB2E7F9849E"), exclusiveto, contract] */
                         MIDL_INTERFACE("EF213793-EF55-4186-B7CE-8CB2E7F9849E")
-                        IWebProviderTokenResponse : IInspectable
+                        IWebProviderTokenResponse : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClientResponse(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Web::Core::IWebTokenResponse * * value
                                 ) = 0;
@@ -3483,8 +3637,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("FA49D99A-25BA-4077-9CFA-9DB4DEA7B71A"), exclusiveto, contract] */
                         MIDL_INTERFACE("FA49D99A-25BA-4077-9CFA-9DB4DEA7B71A")
-                        IWebProviderTokenResponseFactory : IInspectable
+                        IWebProviderTokenResponseFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Create(
                                 /* [in] */__RPC__in_opt ABI::Windows::Security::Authentication::Web::Core::IWebTokenResponse * webTokenResponse,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Web::Provider::IWebProviderTokenResponse * * webProviderTokenResponse
@@ -3761,6 +3916,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest ** Default Interface **
  *    Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest2
+ *    Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -3938,6 +4094,12 @@ typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWe
 typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2 __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2;
 
 #endif // ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3;
+
+#endif // ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponse_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponse_FWD_DEFINED__
@@ -6226,6 +6388,115 @@ interface __FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+#if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_boolean __FIAsyncOperationCompletedHandler_1_boolean;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_boolean;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_booleanVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_boolean *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_booleanVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_boolean
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_booleanVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_boolean_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_boolean;
+
+typedef struct __FIAsyncOperation_1_booleanVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_boolean * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_boolean * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_boolean * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_boolean * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_boolean *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_boolean **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__out boolean *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_booleanVtbl;
+
+interface __FIAsyncOperation_1_boolean
+{
+    CONST_VTBL struct __FIAsyncOperation_1_booleanVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_boolean_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_boolean_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_boolean_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_boolean_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_boolean_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_boolean_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
+
+
 
 
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
@@ -6324,6 +6595,7 @@ typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CWebAccou
 
 
 typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CWebAccountSelectionOptions __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CWebAccountSelectionOptions;
+
 
 
 
@@ -8832,6 +9104,114 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 
 /*
  *
+ * Interface Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_Web_Provider_IWebProviderTokenRequest3[] = L"Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest3";
+/* [object, uuid("1B2716AA-4289-446E-9256-DAFB6F66A51E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ApplicationPackageFamilyName )(
+        __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ApplicationProcessName )(
+        __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *CheckApplicationForCapabilityAsync )(
+        __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3 * This,
+        /* [in] */__RPC__in HSTRING capabilityName,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3Vtbl;
+
+interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_get_ApplicationPackageFamilyName(This,value) \
+    ( (This)->lpVtbl->get_ApplicationPackageFamilyName(This,value) )
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_get_ApplicationProcessName(This,value) \
+    ( (This)->lpVtbl->get_ApplicationProcessName(This,value) )
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_CheckApplicationForCapabilityAsync(This,capabilityName,operation) \
+    ( (This)->lpVtbl->CheckApplicationForCapabilityAsync(This,capabilityName,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3;
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponse
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9273,6 +9653,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest ** Default Interface **
  *    Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest2
+ *    Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

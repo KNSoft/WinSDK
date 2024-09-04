@@ -10,7 +10,7 @@
          where the given containerRef is no longer valid (meaning the containerRef is valid only for 'PeerVerion < versionRemoved') -->
     <!-- versionAdded="WDI_VERSION_XXXX" Must match a #define in dot11wdi.h for a given version number.  This is the lowest version number
          where the given containerRef is first valid (meaning the containerRef is valid only for 'PeerVerion >= versionAdded') -->
-    
+
     <message commandId="WDI_TASK_OPEN" type="WDI_TASK_OPEN_PARAMETERS" description="No TLV data needed, header is sufficient" direction="Both" />
 
     <message commandId="WDI_TASK_CLOSE" type="WDI_TASK_CLOSE_PARAMETERS" description="No TLV data needed, header is sufficient" direction="Both" />
@@ -166,7 +166,7 @@
       <containerRef id="WDI_TLV_PRIVACY_EXEMPTION_ENTRY" name="PrivacyExemptionEntry" type="PrivacyExemptionEntryContainer" optional="true" multiContainer ="true"/>
     </message>
     <message commandId="WDI_SET_PRIVACY_EXEMPTION_LIST" type="WDI_SET_PRIVACY_EXEMPTION_LIST_RESULTS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
-    
+
     <message commandId="WDI_SET_ADD_CIPHER_KEYS" type="WDI_SET_ADD_CIPHER_KEYS_PARAMETERS" description="Parameters for WDI_SET_ADD_CIPHER_KEYS." direction="ToIhv">
       <containerRef id="WDI_TLV_SET_CIPHER_KEY_INFO" name="SetCipherKey" type="SetCipherKeyContainer" optional="false" multiContainer ="true"/>
     </message>
@@ -215,6 +215,7 @@
       <containerRef id="WDI_TLV_RECEIVE_COALESCING_CAPABILITIES" name="ReceiveCoalescingCapabilities" type="ReceiveCoalescingCapabilitiesContainer" optional="true" />
       <containerRef id="WDI_TLV_TCP_OFFLOAD_CAPABILITIES" name="TcpOffloadCapabilities" type="TcpOffloadCapabilitiesContainer" optional="true" />
       <containerRef id="WDI_TLV_SUPPORTED_GUIDS" name="SupportedGuids" type="NdisGuidContainer" multiContainer="true" optional="true" versionAdded="WDI_VERSION_1_0_21" />
+      <containerRef id="WDI_TLV_OS_POWER_MANAGEMENT_FEATURES" name="OsPowerMgmtFeatures" type="OsPowerMgmtFeaturesContainer" optional="true" versionAdded="WDI_VERSION_1_1_6" />
     </message>
 
     <message commandId="WDI_SET_NETWORK_LIST_OFFLOAD" type="WDI_NETWORK_LIST_OFFLOAD_PARAMETERS" description="Parameters for WDI_SET_NETWORK_LIST_OFFLOAD" direction="ToIhv" >
@@ -357,7 +358,8 @@
     <message commandId="WDI_SET_ADD_PM_PROTOCOL_OFFLOAD" type="WDI_SET_ADD_PM_PROTOCOL_OFFLOAD_PARAMETERS_PARAMETERS" description="Provide information to enable the device/firmware to implement these protocols while the main CPU is asleep" direction="ToIhv" >
       <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv4ARP" name="ipv4ARPOffload" type="ipv4ARPOffloadContiner" optional ="true"/>
       <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv6NS" name="ipv6ARPOffload" type="ipv6PMOffloadContainer" optional ="true"/>
-      <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY" name="DOT11RSNREKeyOffload" type="DOT11RSNREKeyOffloadContainer" optional ="true"/>
+      <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY" name="DOT11RSNREKeyOffload" type="DOT11RSNREKeyOffloadContainer" optional ="true" versionAdded="WDI_VERSION_1_1_6" />
+      <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY" name="DOT11RSNREKeyOffload" type="DOT11RSNREKeyOffloadContainer_V1_1_5" optional ="true" versionRemoved="WDI_VERSION_1_1_6" />
     </message>
     <message commandId="WDI_SET_ADD_PM_PROTOCOL_OFFLOAD" type="WDI_SET_ADD_PM_PROTOCOL_OFFLOAD_PARAMETERS_RESULTS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
 
@@ -405,9 +407,10 @@
     <message commandId="WDI_GET_PM_PROTOCOL_OFFLOAD" type="WDI_GET_PM_PROTOCOL_OFFLOAD_RESULTS" description="PM Protocol offload" direction="FromIhv">
       <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv4ARP" name="ipv4ARPOffload" type="ipv4ARPOffloadContiner" optional ="true" />
       <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv6NS" name="ipv6ARPOffload" type="ipv6PMOffloadContainer" optional ="true" />
-      <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY" name="DOT11RSNREKeyOffload" type="DOT11RSNREKeyOffloadContainer" optional ="true" />
+      <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY" name="DOT11RSNREKeyOffload" type="DOT11RSNREKeyOffloadContainer" optional ="true" versionAdded="WDI_VERSION_1_1_6" />
+      <containerRef id="WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY" name="DOT11RSNREKeyOffload" type="DOT11RSNREKeyOffloadContainer_V1_1_5" optional ="true" versionRemoved="WDI_VERSION_1_1_6" />
     </message>
-    
+
     <message commandId="WDI_SET_ADVERTISEMENT_INFORMATION" type="WDI_SET_ADVERTISEMENT_INFORMATION_PARAMETERS" description="Parameters for WDI_SET_ADVERTISEMENT_INFORMATION." direction="ToIhv">
       <containerRef id="WDI_TLV_ADDITIONAL_IES" name="AdditionalIEs" type="AdditionalIEs" optional="true"/>
       <containerRef id="WDI_TLV_P2P_DEVICE_INFO" name="DeviceInformation" type="P2PDeviceInfoContainer" optional="true"/>
@@ -565,6 +568,10 @@
       <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB" name="Params" type="ByteBlob" multiContainer="true" optional="true" />
     </message>
 
+    <message commandId="WDI_INDICATION_CIPHER_KEY_UPDATED" type="WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS" description="Parameters for Cipher Key Updated" direction="FromIhv" >
+      <containerRef id="WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS" name="DOT11RSNREKeyOffload" type="DOT11RSNREKeyOffloadContainer" />
+    </message>
+
     <message commandId="WDI_TEST_TASK" type="WDI_TASK_TEST_PARAMETERS" description="this is just a test" direction="Both">
       <!--Same Id, Optional Current, Optional Old, Multi Old, Multi Current" -->
       <containerRef id="WDI_TLV_TEST1" name="Newsocoomomc" type="Test" optional="true" multiContainer="true" versionAdded="WDI_VERSION_LATEST"/>
@@ -647,11 +654,11 @@
 
   <containers>
     <!-- Common/Helpful containers -->
-    
+
     <container name="WiFiSSID" description="Container for a single 802.11 SSID" isCollection="true" isZeroValid="true" type="WDI_SSID">
       <namedType name="SSID" type="UINT8" description="SSID Bytes" />
     </container>
-    
+
     <container name="ByteBlob" description="Generic container for byte blobs." isCollection="true" type="WDI_BYTE_BLOB">
       <namedType name="Payload" type="UINT8" description="Byte blob payload." />
     </container>
@@ -679,7 +686,7 @@
     <container name="RequestedIHVTaskPriorityContainer" description="Container for a IHV Task priority" type="WDI_IHV_TASK_PRIORITY_CONTAINER">
       <namedType name="PriorityValue" type="WDI_IHV_TASK_PRIORITY" description="Priority value"/>
     </container>
-    
+
     <container name="UINT32Container" description="Container for a single UINT32" type="UINT32_CONTAINER">
       <namedType name="Value" type="UINT32" description="UINT32 value."/>
     </container>
@@ -695,7 +702,7 @@
     <container name="OperationModeContainer" description="Container for a single WDI_OPERATION_MODE" type="WDI_OPERATION_MODE_CONTAINER">
       <namedType name="Value" type="WDI_OPERATION_MODE" description="WDI_OPERATION_MODE value."/>
     </container>
-    
+
     <container name="UINT16Container" description="Container for a single UINT16" type="UINT16_CONTAINER">
       <namedType name="Value" type="UINT16" description="UINT16 value."/>
     </container>
@@ -703,7 +710,7 @@
     <container name="UINT16ListContainer" description="Container for a a list of UINT16" type="UINT16_LIST_CONTAINER" isCollection="true">
       <namedType name="Value" type="UINT16" description="UINT16 value."/>
     </container>
-    
+
     <container name="UINT8Container" description="Container for a single UINT8" type="UINT8_CONTAINER">
       <namedType name="Value" type="UINT8" description="UINT8 value."/>
     </container>
@@ -715,18 +722,18 @@
     <container name="RoamingReasonContainer" description="Container for roaming needed indication" type="WDI_ROAMING_NEEDED_CONTAINER">
       <namedType name="AssociationStatus" type="WDI_ASSOC_STATUS" description="The reason for the roam trigger. When a WDI_TASK_ROAM is triggered, this reason is forwarded to it."/>
     </container>
-    
+
     <container name="ConnectionQualityContainer" description="Container for Desired Wi-Fi Connection Quality Hint" type="WDI_CONNECTION_QUALITY_CONTAINER">
       <namedType name="ConnectionQualityHint" type="WDI_CONNECTION_QUALITY_HINT" description="Desired Wi-Fi Connection Quality Hint."/>
     </container>
-    
+
     <container
       name="RscStatsParamsContainer"
       description="Container for a Rsc Statistics."
       type="WDI_TCP_RSC_STATISTICS_CONTAINER">
       <groupRef name="RscStatistics" ref="RscStatsStruct" description="Rsc Statistics"/>
     </container>
-    
+
     <container
       name="WFDChannelContainer"
       description="Container for a Wi-Fi Direct channel."
@@ -758,9 +765,9 @@
     <container name="WdiStatusContainer" description="Container for WDI_STATUS" type="WDI_STATUS_CONTAINER">
       <namedType name="Status" type="NDIS_STATUS" description="A WDI_STATUS."/>
     </container>
-    
+
     <!-- Start AP Settings -->
-    
+
     <container
       name="StartAPParametersContainer"
       description="Container for static parameters for starting an access point."
@@ -801,9 +808,9 @@
     <container name="PhyTypeContainer" type="WDI_PHY_TYPE_CONTAINER" description="Container for phy type.">
       <namedType name="PhyType" type="WDI_PHY_TYPE" description="PHY types" />
     </container>
-    
+
     <!-- Advertisement Settings -->
-       
+
     <aggregateContainer name="AdditionalIEs" description="Container for additional IE settings." type="WDI_ADDITIONAL_IES_CONTAINER">
       <containerRef id="WDI_TLV_ADDITIONAL_BEACON_IES" name="AdditionalBeaconIEs" type="ByteBlob" optional="true" />
       <containerRef id="WDI_TLV_ADDITIONAL_PROBE_RESPONSE_IES" name="AdditionalProbeResponseIEs" type="ByteBlob" optional="true" />
@@ -818,7 +825,7 @@
       <containerRef id="WDI_TLV_P2P_DEVICE_INFO_PARAMETERS" name="DeviceInfoParameters" type="P2PDeviceInfoParameters" />
       <containerRef id="WDI_TLV_P2P_DEVICE_NAME" name="DeviceName" type="ByteBlob" />
     </aggregateContainer>
-    
+
     <aggregateContainer name="NeighborReportEntryContainer" description="Container for Neighbor reports." type="WDI_NEIGHBOR_REPORT_ENTRY_CONTAINER">
       <containerRef id="WDI_TLV_BSSID" name="Bssid" type="MacAddressContainer" />
       <containerRef id="WDI_TLV_BSSID_INFO" name="BSSIDInfo" type="BSSIDInfoContainer" />
@@ -902,13 +909,13 @@
     </aggregateContainer>
 
     <!-- P2P Listen State -->
-    
+
     <container name="P2PListenStateContainer" description="Container for P2P Listen State setting." type="WDI_P2P_LISTEN_STATE_CONTAINER">
       <namedType name="ListenState" type="WDI_P2P_LISTEN_STATE" description="P2P Listen State."/>
     </container>
 
     <!-- P2P Discover -->
-    
+
     <container name="P2PDiscoverModeContainer" type="WDI_P2P_DISCOVER_MODE_CONTAINER" description="Container for discover mode setting.">
       <groupRef ref="P2PDiscoverModeStruct" name="DiscoverMode" description="Discover Mode." />
     </container>
@@ -978,7 +985,7 @@
       <containerRef id="WDI_TLV_BSS_ENTRY_AGE_INFO" name="EntryAgeInfo" type="BSSEntryAgeInfoContainer" optional="true" />
       <containerRef id="WDI_TLV_P2P_DISCOVERED_SERVICE_ENTRY" name="P2PDiscoveredServiceEntry" optional="true" type="P2PDiscoveredServiceEntry" multiContainer="true" />
     </aggregateContainer>
-    
+
     <container name="P2PListenDurationContainer" type="WDI_P2P_LISTEN_DURATION_CONTAINER" description="Container for P2P Listen Duration.">
       <groupRef ref="P2PListenDurationStruct" name="ListenDuration" description="Parameters for P2P Listen Duration." />
     </container>
@@ -1067,7 +1074,7 @@
       <groupRef ref="ipv6PMOffloadStruct" name="ipv6ARPOffload" description="Parameters for PM protocol offload" />
     </container>
 
-    <container name="DOT11RSNREKeyOffloadContainer" type="WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_CONTAINER" description="Container for 802.11 RSN PM protocol offload.">
+    <container name="DOT11RSNREKeyOffloadContainer_V1_1_5" type="WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_CONTAINER_V1_1_5" description="Container for 802.11 RSN PM protocol offload.">
       <groupRef ref="DOT11RSNREKeyOffloadStruct" name="DOT11RSNREKeyOffload" description="Parameters for PM protocol offload" />
     </container>
 
@@ -1084,7 +1091,7 @@
     <container name="PeerMACStatisticsContainer" type="WDI_MAC_STATISTICS_CONTAINER" description="Container for MAC layer statistics.">
       <groupRef ref="PeerMACStatisticsStruct" name="MACStatisticsParams" description="Per port MAC statistics." />
     </container>
-    
+
     <container name="PhyStatisticsContainer" type="WDI_PHY_STATISTICS_CONTAINER" description="Container for PHY layer statistics.">
       <groupRef ref="PHYStatisticsStruct" name="PHYStatisticsParams" description="PHY statistics." />
     </container>
@@ -1102,7 +1109,7 @@
     <container name="P2PInvitationResponseParamsContainer" type="WDI_P2P_INVITATION_RESPONSE_PARAMETERS_CONTAINER" description="Container for static Invitation Response parameters.">
       <groupRef ref="P2PInvitationResponseParamsStruct" name="ResponseParams" description="Static incoming invitation response parameters." />
     </container>
-    
+
     <aggregateContainer name="P2PInvitationResponseInfoContainer" type="WDI_P2P_INVITATION_RESPONSE_INFO_CONTAINER" description="Generic container for Invitation Response-related containers.">
       <containerRef id="WDI_TLV_P2P_INVITATION_RESPONSE_PARAMETERS" name="ResponseParams" type="P2PInvitationResponseParamsContainer"/>
       <containerRef id="WDI_TLV_P2P_GROUP_BSSID" type="MacAddressContainer" name="GroupBSSID" optional="true" />
@@ -1161,11 +1168,11 @@
     <container name="GroupOwnerResetPolicyContainer" type="WDI_P2P_GO_INTERNAL_RESET_POLICY_CONTAINER" description="Container for internal GO reset policy.">
       <namedType name="ResetPolicy" type="WDI_P2P_GO_INTERNAL_RESET_POLICY" description="Internal GO Reset Policy Enumeration Value." />
     </container>    
-    
+
     <container name="ChecksumOffloadContainerV4" type="WDI_CHECKSUM_OFFLOAD_V4_PARAMETERS_CONTAINER" description="Container for Ipv4 checksum offload.">
       <groupRef name="ChecksumV4parameters" ref="ChecksumV4parametersStruct" description="Struct for checksum V4 parameters"/>
     </container>
-    
+
     <container name="ChecksumOffloadContainerV6" type="WDI_CHECKSUM_OFFLOAD_V6_PARAMETERS_CONTAINER" description="Container for Ipv6 checksum offload.">
       <groupRef name="ChecksumV6parameters" ref="ChecksumV6parametersStruct" description="Struct for checksum V6 parameters"/>
     </container>
@@ -1174,7 +1181,7 @@
       <containerRef id="WDI_TLV_CHECKSUM_OFFLOAD_V4_TX_PARAMETERS" name="IpV4Transmit" type="ChecksumOffloadContainerV4" />
       <containerRef id="WDI_TLV_CHECKSUM_OFFLOAD_V4_RX_PARAMETERS" name="IpV4Receive" type="ChecksumOffloadContainerV4" />
     </aggregateContainer>
-    
+
     <aggregateContainer name="ChecksumOffloadAggregateContainerV6" type="WDI_IPV6_CHECKSUM_OFFLOAD_CAPABILITIES_CONTAINER" description="Container for TCP Checksum Parameters ipv4">
       <containerRef id="WDI_TLV_CHECKSUM_OFFLOAD_V6_TX_PARAMETERS" name="IpV6Transmit" type="ChecksumOffloadContainerV6" />
       <containerRef id="WDI_TLV_CHECKSUM_OFFLOAD_V6_RX_PARAMETERS" name="IpV6Receive" type="ChecksumOffloadContainerV6" />
@@ -1184,15 +1191,15 @@
       <containerRef id="WDI_TLV_IPV4_CHECKSUM_OFFLOAD" name="ipv4ChecksumOffload" type="ChecksumOffloadAggregateContainerV4" />
       <containerRef id="WDI_TLV_IPV6_CHECKSUM_OFFLOAD" name="ipv6ChecksumOffload" type="ChecksumOffloadAggregateContainerV6" />
     </aggregateContainer>
-    
+
     <container name="LsoV1CapabilitiesContainer" type="WDI_LSO_V1_CAPABILITIES_CONTAINER" description="Container for LSO V1.">
       <groupRef name="LSOV1Parameters" ref="LSOV1ParametersStruct" description="Struct for LSO V1 parameters"/>
     </container>
-    
+
     <container name="Ipv4LSOContainer" type="WDI_IPV4_LSO_V2_CONTAINER" description="Container for ipv4 LSO V2.">
       <groupRef name="Ipv4LSOParameters" ref="Ipv4LSOParametersStruct" description="Struct for LSO V2 ipv4 parameters"/>
-    </container>    
-    
+    </container>
+
     <container name="Ipv6LSOContainer" type="WDI_IPV6_LSO_V2_CONTAINER" description="Container for ipv6 LSO V2.">
       <groupRef name="Ipv6LSOParameters" ref="Ipv6LSOParametersStruct" description="Struct for LSO V2 ipv6 parameters"/>
     </container>
@@ -1200,7 +1207,7 @@
     <container name="CancelParametersContainer" type="WDI_CANCEL_PARAMETERS_CONTAINER" description="Container for abort task.">
       <groupRef name="CancelParams" ref="CancelParamsStruct" description="Struct for cancel parameters"/>
     </container>
-    
+
     <container name="PortAttributesContainer" type="WDI_PORT_ATTRIBUTES_CONTAINER" description="Container for Create port complete indication attributes.">
       <groupRef name="PortAttributesParameters" ref="PortAttributesParametersStruct" description="Struct for Create port complete indication"/>
     </container>
@@ -1217,7 +1224,7 @@
       <containerRef id="WDI_TLV_IPV4_LSO_V2" name="Ipv4LSO" type="Ipv4LSOContainer" />
       <containerRef id="WDI_TLV_IPV6_LSO_V2" name="Ipv6LSO" type="Ipv6LSOContainer" />
     </aggregateContainer>
-          
+
     <aggregateContainer name="TcpOffloadCapabilitiesContainer" type="WDI_TCP_OFFLOAD_CAPABILITIES_CONTAINER" description="Container for TCP/IP offload capabilities.">
       <containerRef id="WDI_TLV_CHECKSUM_OFFLOAD_CAPABILITIES" name="ChecksumOffload" type="ChecksumOffloadContainer" />
       <containerRef id="WDI_TLV_LSO_V1_CAPABILITIES" name="LsoV1Capabilities" type="LsoV1CapabilitiesContainer" />
@@ -1237,7 +1244,7 @@
     <container name="Dot11ResetParametersContainer" description="Container for dot11 reset" type="WDI_DOT11_RESET_PARAMETERS_CONTAINER">
        <groupRef name="Dot11ResetParameters" ref="Dot11ResetParametersStruct" description="Struct for dot11 reset parameters"/>      
     </container>
-    
+
     <!-- Scan mode parameters-->
     <container
       name="ScanMode"
@@ -1245,7 +1252,7 @@
       type="WDI_SCAN_PARAMETERS_CONTAINER">
       <groupRef name="Parameters" ref="ScanModeStruct" description="Scan mode parameters." />
     </container>
-    
+
     <container
       name="CommunicationCapabilitiesContainer"
       description="Container for Communication Capabilities"
@@ -1281,7 +1288,7 @@
       isCollection="true">
       <groupRef name="WifiAlgoPairs" ref="WifiAlgoPairsStruct" description="Wifi Algo Pairs parameters." />
     </container>
-   
+
     <container
       name="StationCapabilitiesContainer"
       description="Container for Station capabilities"
@@ -1359,7 +1366,7 @@
       description="Container for Phy Capabilities"
       type="WDI_PHY_CAPABILITIES_CONTAINER">
       <groupRef name="PhyCapabilities" ref="PhyCapabilitiesStruct" description="Parameters for Phy Capabilities" />
-    </container> 
+    </container>
 
     <container
       name="DataRateListContainer"
@@ -1367,41 +1374,48 @@
       type="WDI_PHY_DATA_RATE_LIST_CONTAINER"
       isCollection="true">
       <groupRef name="DataRateList" ref="DataRateListStruct" description="Parameters for Data rate list" />
-    </container> 
-    
+    </container>
+
     <container
       name="PmCapabilitiesContainer"
       description="Container for PM capabilities"
       type="WDI_PM_CAPABILITIES_CONTAINER">
       <groupRef name="PmCapabilities" ref="PmCapabilitiesStruct" description="Parameters for PM capabilities" />
-    </container> 
+    </container>
 
     <container
       name="ReceiveCoalescingCapabilitiesContainer"
       description="Container for Receive Coalescing capabilities"
       type="WDI_RECEIVE_COALESCING_CAPABILITIES_CONTAINER">
       <groupRef name="ReceiveCoalescingCapabilities" ref="ReceiveCoalescingCapabilitiesStruct" description="Parameters for Receive Coalescing capabilities" />
-    </container> 
+    </container>
     <container
       name="PrivacyExemptionEntryContainer"
       description="Container for Privacy Exemption Entry"
       type="WDI_PRIVACY_EXEMPTION_LIST_CONTAINER">
       <groupRef name="PrivacyExemptionEntryParams" ref="PrivacyExemptionEntryParamsStruct" description="Parameters for Privacy exemption list" />
     </container>
-    
+
+    <container
+      name="OsPowerMgmtFeaturesContainer"
+      description="Container for OS power management flags"
+      type="WDI_OS_POWER_MGMT_FEATURES_CONTAINER">
+      <groupRef name="OsPowerMgmtFeatures" ref="OsPowerMgmtStruct" description="Parameters for OS power management features" />
+    </container> 
+
     <aggregateContainer name="StationAttributesContainer" type="WDI_STATION_ATTRIBUTES_CONTAINER" description="Container for Station attributes.">
       <containerRef id="WDI_TLV_STATION_CAPABILITIES" name="StationCapabilities" type="StationCapabilitiesContainer" />
       <containerRef id="WDI_TLV_UNICAST_ALGORITHM_LIST" name="UnicastAlgorithms" type="AlgorithmPairsContainer" optional="true" />
       <containerRef id="WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST" name="MulticastDataAlgorithms" type="AlgorithmPairsContainer" optional="true" />
       <containerRef id="WDI_TLV_MULTICAST_MGMT_ALGORITHM_LIST" name="MulticastManagementAlgorithms" type="AlgorithmPairsContainer" optional="true" />
     </aggregateContainer>
-    
+
     <aggregateContainer name="APAttributesContainer" type="WDI_AP_ATTRIBUTES_CONTAINER" description="Container for AP attributes.">
       <containerRef id="WDI_TLV_AP_CAPABILITIES" name="APCapabilities" type="APCapabilitiesContainer"/>
       <containerRef id="WDI_TLV_UNICAST_ALGORITHM_LIST" name="UnicastAlgorithms" type="AlgorithmPairsContainer" />
       <containerRef id="WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST" name="MulticastDataAlgorithms" type="AlgorithmPairsContainer" />
     </aggregateContainer>
-    
+
     <aggregateContainer name="VirtualizationAttributesContainer" type="WDI_VIRTUALIZATION_ATTRIBUTES_CONTAINER" description="Container for Virtualization attributes.">
       <containerRef id="WDI_TLV_VIRTUALIZATION_CAPABILITIES" name="VirtualizationCapabilities" type="VirtualizationCapabilitiesContainer" />
     </aggregateContainer>
@@ -1412,7 +1426,7 @@
       <containerRef id="WDI_TLV_P2P_CAPABILITIES" name="P2PCapabilities" type="P2PCapabilitiesContainerV1_0_1" versionRemoved="WDI_VERSION_1_0_10" />
       <containerRef id="WDI_TLV_P2P_INTERFACE_ADDRESS_LIST" name="InterfaceAddressList" type="MacAddressListContainer" />
     </aggregateContainer>
-    
+
     <aggregateContainer name="BandInfoContainer" type="WDI_BAND_INFO_CONTAINER" description="Container for Band Info.">
       <containerRef id="WDI_TLV_BAND_CAPABILITIES" name="BandCapabilities" type="BandCapabilitiesContainer" />
       <containerRef id="WDI_TLV_PHY_TYPE_LIST" name="ValidPhyTypes" type="PhyTypeListContainer" />
@@ -1425,7 +1439,7 @@
       <containerRef id="WDI_TLV_PHY_TX_POWER_LEVEL_LIST" name="TxPowerLevelList" type="UINT32ListContainer" />
       <containerRef id="WDI_TLV_PHY_DATA_RATE_LIST" name="DataRateList" type="DataRateListContainer" />
     </aggregateContainer>  
-      
+
      <aggregateContainer name="CommunicationAttributesContainer" description="Container for Communication Attributes." type="WDI_COMMUNICATION_ATTRIBUTES_CONTAINER">
         <containerRef id="WDI_TLV_COMMUNICATION_CAPABILITIES" name="CommunicationCapabilities" type="CommunicationCapabilitiesContainer" optional="true" />    
      </aggregateContainer>
@@ -1455,7 +1469,7 @@
       type="WDI_GET_AUTO_POWER_SAVE_CONTAINER">
       <groupRef name="AutoPowerSaveParams" ref="AutoPowerSaveParamsStruct" description="Get auto power state parameters"/>
     </container>
-    
+
     <container
       name="ConnectionSettingsContainer"
       description="Container for connection settings"
@@ -1469,7 +1483,7 @@
       type="WDI_CONNECTION_SETTINGS_CONTAINER_V1_0">
       <groupRef name="ConnectionSettings" ref="ConnectionSettingsStructV1_0" description="Connection settings"/>
     </container>
-    
+
     <container
       name="AssociationResultParametersContainer"
       description="Container for association results"
@@ -1496,7 +1510,7 @@
       type="WDI_FT_INITIAL_ASSOC_PARAMETERS_CONTAINER">
       <containerRef id="WDI_TLV_FT_MDE" name="MDE" type="ByteBlob"/>
     </aggregateContainer>
-    
+
      <aggregateContainer name="HESSIDInfoContainer" description="Container for HESSID connection information." type="WDI_HESSID_INFO_CONTAINER">
       <containerRef id="WDI_TLV_ACCESS_NETWORK_TYPE" name="AccessNetworkType" type="UINT8Container" />
       <containerRef id="WDI_TLV_HESSID" name="HESSIDList" type="MacAddressListContainer" />    
@@ -1550,21 +1564,35 @@
     <container name="TkipMicFailureParametersContainer" type="WDI_TKIP_MIC_FAILURE_PARAMETERS_CONTAINER" description="Container for TKIP MIC failure parameters.">
       <groupRef name="Parameters" ref="TkipMicFailureParametersStruct" description="TKIP MIC failure parameters"/>
     </container>
-    
+
     <container
       name="CipherKeyIDContainer"
       description="Container for Cipher Key ID"
       type="WDI_CIPHER_KEY_ID_CONTAINER">
       <groupRef name="CipherKeyId" ref="CipherKeyIdStruct" description="Cipher Key ID struct"/>
     </container>
-    
+
     <container
       name="DefaultKeyIdParametersContainer"
       description="Container for setting default Key ID"
       type="WDI_SET_DEFAULT_KEY_ID_CONTAINER">
       <groupRef name="DefaultKeyIdParameters" ref="DefaultKeyIdParametersStruct" description="Set Default Key ID struct"/>
     </container>
-    
+
+    <container
+      name="CipherKeyTypeContainer"
+      type="WDI_CIPHER_KEY_TYPE_CONTAINER"
+      description="Container for Cipher key type.">
+      <namedType name="CipherKeyType" type="WDI_CIPHER_KEY_TYPE" description="The Cipher key type."/>
+    </container>
+
+    <container
+      name="CipherAlgorithmContainer"
+      type="WDI_CIPHER_ALGORITHM_CONTAINER"
+      description="Container for Cipher algorithm.">
+      <namedType name="CipherAlgorithm" type="WDI_CIPHER_ALGORITHM" description="Specifies the cipher algorithm that uses this key"/>
+    </container>
+
     <container
       name="CipherKeyTypeInfoContainer"
       description="Container for Cipher Key type info"
@@ -1578,6 +1606,7 @@
       type="WDI_RECEIVE_SEQUENCE_COUNT_CONTAINER">
       <groupRef name="ReceiveSequenceCount" ref="ReceiveSequenceCountStruct" description="Receive Sequence count struct"/>
     </container>
+
     <container
       name="LinkStateChangeParametersContainer"
       description="Container for Link state change parameters"
@@ -1592,7 +1621,28 @@
       <containerRef id="WDI_TLV_CIPHER_KEY_TKIP_KEY" name="TKIPKey" type="PrivateByteBlob" />
       <containerRef id="WDI_TLV_CIPHER_KEY_TKIP_MIC" name="TKIPMIC" type="PrivateByteBlob" />
     </aggregateContainer>
-   
+
+    <aggregateContainer name="ConfiguredCipherKeyContainer" type="WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER" description="Container for Specifying a Cipher Key entry.">
+      <containerRef id="WDI_TLV_CIPHER_KEY_TYPE" name="CipherKeyType" type="CipherKeyTypeContainer" />
+      <containerRef id="WDI_TLV_CIPHER_ALGORITHM" name="CipherAlgorithm" type="CipherAlgorithmContainer" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_RECEIVE_SEQUENCE_COUNT" name="ReceiveSequenceCount" type="ReceiveSequenceCountContainer" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_CCMP_KEY" name="CCMPKey" type="PrivateByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_GCMP_KEY" name="GCMPKey" type="PrivateByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_TKIP_INFO" name="TKIPInfo" type="TKIPInfoContainer" optional="true" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_BIP_KEY" name="BIPKey" type="PrivateByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_WEP_KEY" name="WEPKey" type="PrivateByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_IHV_KEY" name="IHVKey" type="PrivateByteBlob" optional="true" />
+    </aggregateContainer>
+
+    <container name="RsnKeyInfoContainer" type="WDI_PM_RSN_KEY_INFO_CONTAINER" description="Container for 802.11 Rsn Key information.">
+      <groupRef ref="DOT11RSNREKeyOffloadStruct" name="DOT11RSNREKeyOffload" description="Parameters for PM protocol offload" />
+    </container>
+
+    <aggregateContainer name="DOT11RSNREKeyOffloadContainer" type="WDI_RSN_OFFLOAD_KEYS_CONTAINER" description="Container for RSN Offload Key(s).">
+      <containerRef id="WDI_TLV_RSN_KEY_INFO" name="RsnKeyInfo" type="RsnKeyInfoContainer" />
+      <containerRef id="WDI_TLV_CONFIGURED_CIPHER_KEY" name="CipherKey" type="ConfiguredCipherKeyContainer" multiContainer="true" optional="true" />
+    </aggregateContainer>
+
     <aggregateContainer name="SetCipherKeyContainer" type="WDI_SET_ADD_CIPHER_KEYS_CONTAINER" description="Container for Specifying a Cipher Key Mapping Key entry.">
       <containerRef id="WDI_TLV_PEER_MAC_ADDRESS" name="PeerMacAddress" type="MacAddressContainer" optional="true"/>
       <containerRef id="WDI_TLV_CIPHER_KEY_ID" name="CipherKeyID" type="CipherKeyIDContainer" optional="true"/>
@@ -1687,13 +1737,13 @@
     <container name="Test" description="Test container" type="TEST_CONTAINER">
       <namedType type="ULONG" name="Field" description="Test field"/>
     </container>
-    
+
     <aggregateContainer name="TestAggregate" description="Test Aggregate Container" type="TEST_AGGREGATE_CONTAINER">
       <containerRef id="WDI_TLV_TEST2" name="TestField" type="Test" multiContainer="true" />
     </aggregateContainer>
-   
+
   </containers>
-  
+
   <propertyGroups>
     <propertyGroup name="StartAPParamsStruct" type="WDI_START_AP_PARAMETERS" description="Structure definition for starting an AP (v1.0.10).">
       <uint32 name="BeaconPeriod" description="If non-zero, this parameter specifies the beacon interval"/>
@@ -1723,7 +1773,7 @@
     <propertyGroup name="Dot11ResetParametersStruct" type="WDI_DOT11_RESET_PARAMETERS" description="Structure definition for dot11 reset parameters.">
        <uint8 name="SetDefaultMIB" description="If (and only if) true, all MIB attributes for the port being reset are set to their default values."/>
     </propertyGroup>
-    
+
     <propertyGroup name="DefaultKeyIdParametersStruct" type="WDI_SET_DEFAULT_KEY_ID_STRUCT" description="Structure definition for setting default key ID for packet transmission.">
       <uint32 name="KeyID" description="The default Key ID"/>
     </propertyGroup>
@@ -1737,13 +1787,14 @@
       <namedType name="ExemptionActionType" type="WDI_EXEMPTION_ACTION_TYPE" description="Specifies the type of exemption from the specified EtherType"/>
       <namedType name="ExemptionPacketType" type="WDI_EXEMPTION_PACKET_TYPE" description="Specifies the type of packet that the exemption for the specified EtherType applies to"/>      
     </propertyGroup>
-    
+
     <propertyGroup name="LinkStateChangeParametersStruct" type="WDI_LINK_STATE_CHANGE_PARAMETERS_STRUCT" description="Structure definition for link state change parameters.">
       <namedType name="PeerMACAddress" type="WDI_MAC_ADDRESS" description="MAC address of remote peer"/>
       <uint32 name="TxLinkSpeed" description="Current Tx Link Speed"/>
       <uint32 name="RxLinkSpeed" description="Current Rx Link Speed"/>
       <uint8 name="LinkQuality" description="Current Link Quality"/>
     </propertyGroup>
+
     <propertyGroup name="WFDChannelStruct" type="WDI_P2P_CHANNEL" description="Structure definition for a Wi-Fi Direct Channel.">
       <uint8 count="3" name="CountryOrRegionString" description="The country or region code where OperatingClass and ChannelNumber are valid."/>
       <uint8 name="OperatingClass" description="The frequency band for ChannelNumber."/>
@@ -1761,7 +1812,7 @@
       <uint16 name="ConfigurationMethods" description="Configuration Methods supported by this device." />
       <groupRef name="DeviceType" description="Primary Device Type." ref="WFDDeviceType" />
     </propertyGroup>
-    
+
     <propertyGroup name="RscStatsStruct" type="WDI_TCP_RSC_STATISTICS_STRUCT" description="Structure definition for TCP RSC statistics">
       <uint64 name="CoalescedPkts" description="Coalesced Packets" />
       <uint64 name="CoalescedOctets" description="Coalesced Octets" />
@@ -1849,14 +1900,14 @@
       <uint8 count="16" name="KCK_CONTENT" description="A UINT8 array that contains an IEEE 802.11 key confirmation key (KCK)."/>
       <uint8 count ="16" name="KEK_CONTENT" description="Kek content"/>
     </propertyGroup>
-    
+
     <propertyGroup name="ScanModeStruct" type="WDI_SCAN_MODE" description="Structure definition for scan mode parameters.">
       <bool name="ScanRepeatCount" description="The number of times the full scan procedure should be repeated. If set to 0, scan should be repeated until the task is aborted by the host."/>      
       <namedType name="AllowedScanType" type="WDI_SCAN_TYPE" description="Specifies the type of scan that should be performed. If WDI_SCAN_TYPE_ACTIVE is set, then device must only scan active channels." />      
       <bool name="LiveUpdatesNeeded" description="Specifies that live updates are needed"/>
       <namedType name="ScanTrigger" type="WDI_SCAN_TRIGGER" description="Specifies the trigger for the scan." />      
     </propertyGroup>
-    
+
     <propertyGroup name="PortAttributesParametersStruct" type="WDI_CREATE_PORT_COMPLETE_STRUCT" description="Create port complete indication parameters">
       <namedType name="MacAddress" type="WDI_MAC_ADDRESS" description="The MAC address associated with the created port."/>
       <uint16 name="PortNumber" description="Port Number."/>
@@ -1881,7 +1932,7 @@
       <namedType type="WDI_CHANNEL_NUMBER" name="ChannelNumber" description="The logical channel number on which the peer was discovered" />
       <namedType type="WDI_BAND_ID" name="BandId" description="Band ID for the given BSS entry." />
     </propertyGroup>
-    
+
     <propertyGroup name="BSSEntryAgeInfoStruct" type="WDI_BSS_ENTRY_AGE_INFO" description="Structure definition for BSS Entry age Information.">
       <uint64 name="HostTimeStamp" description="Timestamp of when this BSS entry was most recently discovered" />
       <bool name="CachedInformation" description="Specifies whether this is cached information." />
@@ -2220,7 +2271,7 @@
       <uint32 name="TemperatureClass" description="Temperature Class" />
       <uint32 name="DiversitySupport" description="Diversity Support" />
     </propertyGroup>
-    
+
     <propertyGroup name="PmCapabilitiesStruct" type="WDI_PM_CAPABILITIES" description="Structure definition for PM capabilities">
       <uint32 name="Flags" description="Flags" />
       <uint32 name="SupportedWoLPacketPatterns" description="Supported WoL Packet Patterns" />
@@ -2258,12 +2309,12 @@
       <uint32 name="MaxFieldTestsPerPacketCoalescingFilter" description="MaxFieldTestsPerPacketCoalescingFilter" />
       <uint32 name="MaxPacketCoalescingFilters" description="MaxPacketCoalescingFilters" />
     </propertyGroup>
-    
+
     <propertyGroup name="DataRateListStruct" type="WDI_DATA_RATE_LIST" description="Structure definition for Data rate list">
       <uint8 name="DataRateFlag" description="DataRateFlag" />
       <uint16 name="DataRateValue" description="DataRateValue" />      
     </propertyGroup>    
-    
+
     <propertyGroup name="ChecksumV4parametersStruct" type="WDI_CHECKSUM_OFFLOAD_V4_PARAMETERS" description="Structure definition for Checksum Offload ipv4">
       <uint32 name="Encapsulation" description="Encapsulation settings" />
       <uint32 name="IpOptionsSupported" description="Support offload of checksum with IP options" />   
@@ -2272,7 +2323,7 @@
       <uint32 name="UdpChecksum" description="Whether or not UDP offload is enabled" />
       <uint32 name="IpChecksum" description="Whether or not IP Checksum is enabled" />
     </propertyGroup>
-    
+
     <propertyGroup name="SetOffloadParametersStruct" type="WDI_SET_TCP_OFFLOAD_PARAMS_PARAMETERS_STRUCT" description="Structure definition for TCP Offload Params">
       <uint8 name="IPv4Checksum" description="IpV4 checksum" />
       <uint8 name="TCPIPv4Checksum" description="TCP IpV4 Checksum" />
@@ -2293,7 +2344,7 @@
       <uint8 name="EncapsulatedPacketTaskOffload" description="EncapsulatedPacketTaskOffload" />
       <uint8 name="EncapsulationTypes" description="EncapsulationTypes" />
     </propertyGroup>
-    
+
     <propertyGroup name="ChecksumV6parametersStruct" type="WDI_CHECKSUM_OFFLOAD_V6_PARAMETERS" description="Structure definition for Checksum Offload ipv4">
       <uint32 name="Encapsulation" description="Encapsulation settings" />
       <uint32 name="IpExtensionHeadersSupported" description="Support offload of checksum of packets with IP extention header" />   
@@ -2301,7 +2352,7 @@
       <uint32 name="TcpChecksum" description="Whether or not TCP Checksum offload is enabled" />
       <uint32 name="UdpChecksum" description="Whether or not UDP offload is enabled" />
     </propertyGroup>
-    
+
     <propertyGroup name="LSOV1ParametersStruct" type="WDI_LSO_V1_CAPABILITIES" description="Structure definition for LSOV1 Offload">
       <uint32 name="Encapsulation" description="Encapsulation capabilities" />
       <uint32 name="MaxOffLoadSize" description="Max bytes of TCP user data per packet" />   
@@ -2309,7 +2360,7 @@
       <uint32 name="TcpOptions" description="Whether or not TCP options supported for this offload" />
       <uint32 name="IpOptions" description="Whether or not IP options supported for this offload" />
     </propertyGroup>
-    
+
     <propertyGroup name="Ipv4LSOParametersStruct" type="WDI_IPV4_LSO_V2" description="Structure definition for LSOV2 Offload ipv4">
       <uint32 name="EncapsulationV4" description="Encapsulation capabilities" />
       <uint32 name="MaxOffloadSizeV4" description="Max bytes of TCP user data per packet" />   
@@ -2415,18 +2466,18 @@
     <propertyGroup name="CipherKeyIdStruct" type="WDI_CIPHER_KEY_ID_STRUCT" description="Structure definition for Cipher Key ID">
       <uint32 name="CipherKeyID" description="ID for this key. At least one of PeerMacAddress or CipherKeyID must be present."/>      
     </propertyGroup>
-    
+
     <propertyGroup name="CipherKeyTypeStruct" type="WDI_CIPHER_KEY_TYPE_STRUCT" description="Structure definition for Cipher Key Type.">
       <namedType name="CipherAlgorithm" type="WDI_CIPHER_ALGORITHM" description="Specifies the cipher algorithm that uses this key"/>
       <namedType name="Direction" type="WDI_CIPHER_KEY_DIRECTION" description="Specifies whether the key should be used for transmit only or receive only or both"/>
       <uint8 name="Static" description="Specifies whether the port should delete the key on a roam. If set to FALSE, the key must be delete when the port disconnects from the BSS network or connects to this BSS network. Else it should be deleted on an explicit delete or on a reset request." />
       <namedType name="KeyType" type="WDI_CIPHER_KEY_TYPE" description="The type of key being published."/>
     </propertyGroup>
-    
+
     <propertyGroup name="ReceiveSequenceCountStruct" type="WDI_RECEIVE_SEQUENCE_COUNT_STRUCT" description="Structure definition for Receive sequence count">
       <uint8 count="6" name="ReceiveSequenceCount" description="The initial 48-bit value of Packet Number (PN), which is used for replay protection. "/>
     </propertyGroup>
-    
+
     <propertyGroup name="SendActionFrameRequestParamsStruct" type="WDI_ACTION_FRAME_REQUEST_PARAMETERS" description="Structure definition for Action Frame Request Send Parameters.">
       <namedType type="WDI_CHANNEL_NUMBER" name="ChannelNumber" description="The channel number to send this action frame on" />
       <namedType type="WDI_BAND_ID" name="BandId" description="The band ID to send this action frame on" />
@@ -2445,7 +2496,7 @@
       <namedType name="RoamTrigger" type="WDI_ROAM_TRIGGER" description="Whether this roam is a critical roam because the AP has set the DisassociationImminent bit set in its BSS Transition Request action frame"/>
       <bool name="BSSTransitionSupported" description="Whether or not 11v BSS transition is supported. The Station must set the BSS Transition field of the Extended capabilities element (Bit 19) to 1 in the association request if this field is non-zero."/>
     </propertyGroup>
-    
+
     <propertyGroup name="ConnectionSettingsStructV1_0" type="WDI_CONNECTION_SETTINGSV1_0" description="Structure definition for connection settings.">
       <bool name="RoamRequest" description="Specifies if this is a first time connection or a roam request"/>
       <bool name="HiddenNetwork" description="Specifies if this is a hidden network or not"/>
@@ -2476,7 +2527,7 @@
       <namedType type="WDI_BAND_ID" name="BandID" description="Band ID on which the association is established"/>
       <uint32 name="IHVAssociationStatus" description="IHV defined status code for a failed association" />
     </propertyGroup>
-    
+
     <propertyGroup name="TkipMicFailureParametersStruct" type="WDI_TKIP_MIC_FAILURE_PARAMETERS" description="TKIP MIC failure parameters.">
       <bool name="DefaultKeyFailure" description="Default key or key mapped key failure?" />
       <uint32 name="KeyIndex" description="Default Key Index (0-3)" />
@@ -2539,6 +2590,10 @@
       <namedType name="Guid" type="GUID" description="A GUID entry" />
     </propertyGroup>
 
+    <propertyGroup name="OsPowerMgmtStruct" type="WDI_OS_POWER_MANAGEMENT_FEATURES" description="Structure definition for OS power management features">
+      <enum name="EnableFlags" type="WDI_OS_POWER_MANAGEMENT_FLAGS" description="OS power management enablement flags"/>
+    </propertyGroup>
+      
   </propertyGroups>  
 
 </WABIModel>

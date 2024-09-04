@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.wifi.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1535,8 +1537,9 @@ namespace ABI {
             namespace WiFi {
                 /* [object, uuid("A6C4E423-3D75-43A4-B9DE-11E26B72D9B0"), exclusiveto, contract] */
                 MIDL_INTERFACE("A6C4E423-3D75-43A4-B9DE-11E26B72D9B0")
-                IWiFiAdapter : IInspectable
+                IWiFiAdapter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkAdapter(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Connectivity::INetworkAdapter * * value
                         ) = 0;
@@ -1607,8 +1610,9 @@ namespace ABI {
             namespace WiFi {
                 /* [object, uuid("5BC4501D-81E4-453D-9430-1FCAFBADD6B6"), exclusiveto, contract] */
                 MIDL_INTERFACE("5BC4501D-81E4-453D-9430-1FCAFBADD6B6")
-                IWiFiAdapter2 : IInspectable
+                IWiFiAdapter2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetWpsConfigurationAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::WiFi::IWiFiAvailableNetwork * availableNetwork,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CWiFi__CWiFiWpsConfigurationResult * * operation
@@ -1656,8 +1660,9 @@ namespace ABI {
             namespace WiFi {
                 /* [object, uuid("DA25FDDD-D24C-43E3-AABD-C4659F730F99"), exclusiveto, contract] */
                 MIDL_INTERFACE("DA25FDDD-D24C-43E3-AABD-C4659F730F99")
-                IWiFiAdapterStatics : IInspectable
+                IWiFiAdapterStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindAllAdaptersAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CWiFi__CWiFiAdapter * * value
                         ) = 0;
@@ -1706,8 +1711,9 @@ namespace ABI {
             namespace WiFi {
                 /* [object, uuid("26E96246-183E-4704-9826-71B4A2F0F668"), exclusiveto, contract] */
                 MIDL_INTERFACE("26E96246-183E-4704-9826-71B4A2F0F668")
-                IWiFiAvailableNetwork : IInspectable
+                IWiFiAvailableNetwork : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uptime(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -1776,8 +1782,9 @@ namespace ABI {
             namespace WiFi {
                 /* [object, uuid("143BDFD9-C37D-40BE-A5C8-857BCE85A931"), exclusiveto, contract] */
                 MIDL_INTERFACE("143BDFD9-C37D-40BE-A5C8-857BCE85A931")
-                IWiFiConnectionResult : IInspectable
+                IWiFiConnectionResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConnectionStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::WiFi::WiFiConnectionStatus * value
                         ) = 0;
@@ -1816,8 +1823,9 @@ namespace ABI {
             namespace WiFi {
                 /* [object, uuid("9524DED2-5911-445E-8194-BE4F1A704895"), exclusiveto, contract] */
                 MIDL_INTERFACE("9524DED2-5911-445E-8194-BE4F1A704895")
-                IWiFiNetworkReport : IInspectable
+                IWiFiNetworkReport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -1859,8 +1867,9 @@ namespace ABI {
             namespace WiFi {
                 /* [object, uuid("67B49871-17EE-42D1-B14F-5A11F1226FB5"), exclusiveto, contract] */
                 MIDL_INTERFACE("67B49871-17EE-42D1-B14F-5A11F1226FB5")
-                IWiFiWpsConfigurationResult : IInspectable
+                IWiFiWpsConfigurationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::WiFi::WiFiWpsConfigurationStatus * value
                         ) = 0;

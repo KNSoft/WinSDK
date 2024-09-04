@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.sensors.custom.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -311,6 +313,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CCustom__CCustomSensor_Windows__CDevices__CSensors__CCustom__CCustomSensorReadingChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CCustom__CCustomSensor_Windows__CDevices__CSensors__CCustom__CCustomSensorReadingChangedEventArgs_USE
@@ -339,6 +342,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::Custom::CustomSensor*
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CCustom__CCustomSensor_Windows__CDevices__CSensors__CCustom__CCustomSensorReadingChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -573,8 +577,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("A136F9AD-4034-4B4D-99DD-531AAC649C09"), exclusiveto, contract] */
                     MIDL_INTERFACE("A136F9AD-4034-4B4D-99DD-531AAC649C09")
-                    ICustomSensor : IInspectable
+                    ICustomSensor : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::Custom::ICustomSensorReading * * value
                             ) = 0;
@@ -634,8 +639,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("20DB3111-EC58-4D9F-BFBD-E77825088510"), exclusiveto, contract] */
                     MIDL_INTERFACE("20DB3111-EC58-4D9F-BFBD-E77825088510")
-                    ICustomSensor2 : IInspectable
+                    ICustomSensor2 : public IInspectable
                     {
+                    public:
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportLatency(
                             /* [in] */UINT32 value
                             ) = 0;
@@ -682,8 +688,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("64004F4D-446A-4366-A87A-5F963268EC53"), exclusiveto, contract] */
                     MIDL_INTERFACE("64004F4D-446A-4366-A87A-5F963268EC53")
-                    ICustomSensorReading : IInspectable
+                    ICustomSensorReading : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                             ) = 0;
@@ -727,8 +734,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("223C98EA-BF73-4992-9A48-D3C897594CCB"), exclusiveto, contract] */
                     MIDL_INTERFACE("223C98EA-BF73-4992-9A48-D3C897594CCB")
-                    ICustomSensorReading2 : IInspectable
+                    ICustomSensorReading2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PerformanceCount(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                             ) = 0;
@@ -769,8 +777,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("6B202023-CFFD-4CC1-8FF0-E21823D76FCC"), exclusiveto, contract] */
                     MIDL_INTERFACE("6B202023-CFFD-4CC1-8FF0-E21823D76FCC")
-                    ICustomSensorReadingChangedEventArgs : IInspectable
+                    ICustomSensorReadingChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::Custom::ICustomSensorReading * * value
                             ) = 0;
@@ -811,8 +820,9 @@ namespace ABI {
                 namespace Custom {
                     /* [object, uuid("992052CF-F422-4C7D-836B-E7DC74A7124B"), exclusiveto, contract] */
                     MIDL_INTERFACE("992052CF-F422-4C7D-836B-E7DC74A7124B")
-                    ICustomSensorStatics : IInspectable
+                    ICustomSensorStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                             /* [in] */GUID interfaceId,
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * result
@@ -1075,6 +1085,7 @@ interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CCustom__CCustomSens
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CCustom__CCustomSensor_Windows__CDevices__CSensors__CCustom__CCustomSensorReadingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CCustom__CCustomSensor_Windows__CDevices__CSensors__CCustom__CCustomSensorReadingChangedEventArgs_INTERFACE_DEFINED__
 
@@ -1121,6 +1132,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CCustom__CCustomS
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CCustom__CCustomSensor_Windows__CDevices__CSensors__CCustom__CCustomSensorReadingChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

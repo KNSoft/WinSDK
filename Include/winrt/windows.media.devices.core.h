@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.devices.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1234,8 +1236,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("0AA6ED32-6589-49DA-AFDE-594270CA0AAC"), exclusiveto, contract] */
                     MIDL_INTERFACE("0AA6ED32-6589-49DA-AFDE-594270CA0AAC")
-                    ICameraIntrinsics : IInspectable
+                    ICameraIntrinsics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FocalLength(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
                             ) = 0;
@@ -1311,8 +1314,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("0CDAA447-0798-4B4D-839F-C5EC414DB27A"), exclusiveto, contract] */
                     MIDL_INTERFACE("0CDAA447-0798-4B4D-839F-C5EC414DB27A")
-                    ICameraIntrinsics2 : IInspectable
+                    ICameraIntrinsics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UndistortedProjectionTransform(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Matrix4x4 * value
                             ) = 0;
@@ -1373,8 +1377,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("C0DDC486-2132-4A34-A659-9BFE2A055712"), exclusiveto, contract] */
                     MIDL_INTERFACE("C0DDC486-2132-4A34-A659-9BFE2A055712")
-                    ICameraIntrinsicsFactory : IInspectable
+                    ICameraIntrinsicsFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */ABI::Windows::Foundation::Numerics::Vector2 focalLength,
                             /* [in] */ABI::Windows::Foundation::Numerics::Vector2 principalPoint,
@@ -1425,8 +1430,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("F95D89FB-8AF0-4CB0-926D-696866E5046A"), exclusiveto, contract] */
                     MIDL_INTERFACE("F95D89FB-8AF0-4CB0-926D-696866E5046A")
-                    IDepthCorrelatedCoordinateMapper : IInspectable
+                    IDepthCorrelatedCoordinateMapper : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE UnprojectPoint(
                             /* [in] */ABI::Windows::Foundation::Point sourcePoint,
                             /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem * targetCoordinateSystem,
@@ -1490,8 +1496,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("A8FFAE60-4E9E-4377-A789-E24C4AE7E544"), exclusiveto, contract] */
                     MIDL_INTERFACE("A8FFAE60-4E9E-4377-A789-E24C4AE7E544")
-                    IFrameControlCapabilities : IInspectable
+                    IFrameControlCapabilities : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Exposure(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::Core::IFrameExposureCapabilities * * value
                             ) = 0;
@@ -1544,8 +1551,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("CE9B0464-4730-440F-BD3E-EFE8A8F230A8"), exclusiveto, contract] */
                     MIDL_INTERFACE("CE9B0464-4730-440F-BD3E-EFE8A8F230A8")
-                    IFrameControlCapabilities2 : IInspectable
+                    IFrameControlCapabilities2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Flash(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::Core::IFrameFlashCapabilities * * value
                             ) = 0;
@@ -1586,8 +1594,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("C16459D9-BAEF-4052-9177-48AFF2AF7522"), exclusiveto, contract] */
                     MIDL_INTERFACE("C16459D9-BAEF-4052-9177-48AFF2AF7522")
-                    IFrameController : IInspectable
+                    IFrameController : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExposureControl(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::Core::IFrameExposureControl * * value
                             ) = 0;
@@ -1643,8 +1652,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("00D3BC75-D87C-485B-8A09-5C358568B427"), exclusiveto, contract] */
                     MIDL_INTERFACE("00D3BC75-D87C-485B-8A09-5C358568B427")
-                    IFrameController2 : IInspectable
+                    IFrameController2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FlashControl(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::Core::IFrameFlashControl * * value
                             ) = 0;
@@ -1685,8 +1695,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("BDBE9CE3-3985-4E72-97C2-0590D61307A1"), exclusiveto, contract] */
                     MIDL_INTERFACE("BDBE9CE3-3985-4E72-97C2-0590D61307A1")
-                    IFrameExposureCapabilities : IInspectable
+                    IFrameExposureCapabilities : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1736,8 +1747,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("B988A823-8065-41EE-B04F-722265954500"), exclusiveto, contract] */
                     MIDL_INTERFACE("B988A823-8065-41EE-B04F-722265954500")
-                    IFrameExposureCompensationCapabilities : IInspectable
+                    IFrameExposureCompensationCapabilities : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1787,8 +1799,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("E95896C9-F7F9-48CA-8591-A26531CB1578"), exclusiveto, contract] */
                     MIDL_INTERFACE("E95896C9-F7F9-48CA-8591-A26531CB1578")
-                    IFrameExposureCompensationControl : IInspectable
+                    IFrameExposureCompensationControl : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_float * * value
                             ) = 0;
@@ -1832,8 +1845,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("B1605A61-FFAF-4752-B621-F5B6F117F432"), exclusiveto, contract] */
                     MIDL_INTERFACE("B1605A61-FFAF-4752-B621-F5B6F117F432")
-                    IFrameExposureControl : IInspectable
+                    IFrameExposureControl : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Auto(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1883,8 +1897,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("BB9341A2-5EBE-4F62-8223-0E2B05BFBBD0"), exclusiveto, contract] */
                     MIDL_INTERFACE("BB9341A2-5EBE-4F62-8223-0E2B05BFBBD0")
-                    IFrameFlashCapabilities : IInspectable
+                    IFrameFlashCapabilities : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1931,8 +1946,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("75D5F6C7-BD45-4FAB-9375-45AC04B332C2"), exclusiveto, contract] */
                     MIDL_INTERFACE("75D5F6C7-BD45-4FAB-9375-45AC04B332C2")
-                    IFrameFlashControl : IInspectable
+                    IFrameFlashControl : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
                             /* [retval, out] */__RPC__out ABI::Windows::Media::Devices::Core::FrameFlashMode * value
                             ) = 0;
@@ -1994,8 +2010,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("7B25CD58-01C0-4065-9C40-C1A721425C1A"), exclusiveto, contract] */
                     MIDL_INTERFACE("7B25CD58-01C0-4065-9C40-C1A721425C1A")
-                    IFrameFocusCapabilities : IInspectable
+                    IFrameFocusCapabilities : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -2045,8 +2062,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("272DF1D0-D912-4214-A67B-E38A8D48D8C6"), exclusiveto, contract] */
                     MIDL_INTERFACE("272DF1D0-D912-4214-A67B-E38A8D48D8C6")
-                    IFrameFocusControl : IInspectable
+                    IFrameFocusControl : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_UINT32 * * value
                             ) = 0;
@@ -2090,8 +2108,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("16BDFF61-6DF6-4AC9-B92A-9F6ECD1AD2FA"), exclusiveto, contract] */
                     MIDL_INTERFACE("16BDFF61-6DF6-4AC9-B92A-9F6ECD1AD2FA")
-                    IFrameIsoSpeedCapabilities : IInspectable
+                    IFrameIsoSpeedCapabilities : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -2141,8 +2160,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("1A03EFED-786A-4C75-A557-7AB9A85F588C"), exclusiveto, contract] */
                     MIDL_INTERFACE("1A03EFED-786A-4C75-A557-7AB9A85F588C")
-                    IFrameIsoSpeedControl : IInspectable
+                    IFrameIsoSpeedControl : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Auto(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -2192,8 +2212,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("7FBFF880-ED8C-43FD-A7C3-B35809E4229A"), exclusiveto, contract] */
                     MIDL_INTERFACE("7FBFF880-ED8C-43FD-A7C3-B35809E4229A")
-                    IVariablePhotoSequenceController : IInspectable
+                    IVariablePhotoSequenceController : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;

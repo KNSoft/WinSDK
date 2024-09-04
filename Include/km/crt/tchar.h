@@ -1471,9 +1471,11 @@ __DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsncat
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
-#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
-#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
+#pragma prefast(push)
+#pragma prefast(disable: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(disable: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     return (char *)_mbsnbcat((unsigned char *)_Dst,(const unsigned char *)_Source,_Count);
+#pragma prefast(pop)
 #pragma warning(pop)
 }
 
@@ -1507,9 +1509,11 @@ __DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsncpy
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
-#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
-#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
+#pragma prefast(push)
+#pragma prefast(disable: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(disable: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     return (char *)_mbsnbcpy((unsigned char *)_Dst,(const unsigned char *)_Source,_Count);
+#pragma prefast(pop)
 #pragma warning(pop)
 }
 
@@ -1541,9 +1545,11 @@ _Check_return_ _CRT_INSECURE_DEPRECATE(_tcstok_s) __inline char *  _tcstok(_Inou
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
-#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
-#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
+#pragma prefast(push)
+#pragma prefast(disable: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(disable: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     return (char * )_mbstok((unsigned char *)_String,(const unsigned char *)_Delimiters);
+#pragma prefast(pop)
 #pragma warning(pop)
 }
 
@@ -1762,9 +1768,11 @@ __DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsncca
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
-#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
-#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
+#pragma prefast(push)
+#pragma prefast(disable: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(disable: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     return (char *)_mbsncat((unsigned char *)_Dst,(const unsigned char *)_Source, _Count);
+#pragma prefast(pop)
 #pragma warning(pop)
 }
 
@@ -1798,9 +1806,11 @@ __DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsnccp
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
-#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
-#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
+#pragma prefast(push)
+#pragma prefast(disable: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(disable: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     return (char *)_mbsncpy((unsigned char *)_Dst,(const unsigned char *)_Source, _Count);
+#pragma prefast(pop)
 #pragma warning(pop)
 }
 
@@ -1947,9 +1957,11 @@ _CRT_INSECURE_DEPRECATE(_tccpy_s) __inline void _tccpy(_Out_writes_z_(2) char * 
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
-#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
-#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
+#pragma prefast(push)
+#pragma prefast(disable: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(disable: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     _mbccpy((unsigned char *)_Destination, (const unsigned char *)_Source);
+#pragma prefast(pop)
 #pragma warning(pop)
 }
 

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.hosting.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -574,6 +576,7 @@ namespace ABI {
 
 
 #if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs_USE
@@ -602,6 +605,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::DesignerAppManager*,
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs_USE */
 
 
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
 
 
@@ -1115,8 +1119,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("F6AAC86A-0CAD-410C-8F62-DC2936151C74"), exclusiveto, contract] */
                     MIDL_INTERFACE("F6AAC86A-0CAD-410C-8F62-DC2936151C74")
-                    IDesignerAppExitedEventArgs : IInspectable
+                    IDesignerAppExitedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExitCode(
                             /* [retval, out] */__RPC__out UINT32 * value
                             ) = 0;
@@ -1157,8 +1162,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("A6272CAA-D5C6-40CB-ABD9-27BA43831BB7"), exclusiveto, contract] */
                     MIDL_INTERFACE("A6272CAA-D5C6-40CB-ABD9-27BA43831BB7")
-                    IDesignerAppManager : IInspectable
+                    IDesignerAppManager : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppUserModelId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1217,8 +1223,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("8F9D633B-1266-4C0E-8499-0DB85BBD4C43"), exclusiveto, contract] */
                     MIDL_INTERFACE("8F9D633B-1266-4C0E-8499-0DB85BBD4C43")
-                    IDesignerAppManagerFactory : IInspectable
+                    IDesignerAppManagerFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in HSTRING appUserModelId,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IDesignerAppManager * * instance
@@ -1260,8 +1267,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("5C777CEA-DD71-4A84-A56F-DACB4B14706F"), exclusiveto, contract] */
                     MIDL_INTERFACE("5C777CEA-DD71-4A84-A56F-DACB4B14706F")
-                    IDesignerAppView : IInspectable
+                    IDesignerAppView : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ApplicationViewId(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -1316,8 +1324,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("B6F1A676-CFE6-46AC-ACF6-C4687BB65E60"), exclusiveto, contract] */
                     MIDL_INTERFACE("B6F1A676-CFE6-46AC-ACF6-C4687BB65E60")
-                    IElementCompositionPreview : IInspectable
+                    IElementCompositionPreview : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1355,8 +1364,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("08C92B38-EC99-4C55-BC85-A1C180B27646"), exclusiveto, contract] */
                     MIDL_INTERFACE("08C92B38-EC99-4C55-BC85-A1C180B27646")
-                    IElementCompositionPreviewStatics : IInspectable
+                    IElementCompositionPreviewStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetElementVisual(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IVisual * * result
@@ -1410,8 +1420,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("24148FBB-23D6-4F37-BA0C-0733E799722D"), exclusiveto, contract] */
                     MIDL_INTERFACE("24148FBB-23D6-4F37-BA0C-0733E799722D")
-                    IElementCompositionPreviewStatics2 : IInspectable
+                    IElementCompositionPreviewStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SetImplicitShowAnimation(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionAnimationBase * animation
@@ -1465,8 +1476,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("A714944A-1619-4FC6-B31B-89512EF022A2"), exclusiveto, contract] */
                     MIDL_INTERFACE("A714944A-1619-4FC6-B31B-89512EF022A2")
-                    IXamlUIPresenter : IInspectable
+                    IXamlUIPresenter : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RootElement(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * value
                             ) = 0;
@@ -1525,8 +1537,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("AAFB84CD-9F6D-4F80-AC2C-0E6CB9F31659"), contract] */
                     MIDL_INTERFACE("AAFB84CD-9F6D-4F80-AC2C-0E6CB9F31659")
-                    IXamlUIPresenterHost : IInspectable
+                    IXamlUIPresenterHost : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE ResolveFileResource(
                             /* [in] */__RPC__in HSTRING path,
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
@@ -1565,8 +1578,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("61595672-7CA4-4A21-B56A-88F4812388CA"), contract] */
                     MIDL_INTERFACE("61595672-7CA4-4A21-B56A-88F4812388CA")
-                    IXamlUIPresenterHost2 : IInspectable
+                    IXamlUIPresenterHost2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetGenericXamlFilePath(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
                             ) = 0;
@@ -1604,8 +1618,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("B14292BF-7320-41BB-9F26-4D6FD34DB45A"), contract] */
                     MIDL_INTERFACE("B14292BF-7320-41BB-9F26-4D6FD34DB45A")
-                    IXamlUIPresenterHost3 : IInspectable
+                    IXamlUIPresenterHost3 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE ResolveDictionaryResource(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IResourceDictionary * dictionary,
                             /* [in] */__RPC__in_opt IInspectable * dictionaryKey,
@@ -1649,8 +1664,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("71EAEAC8-45E1-4192-85AA-3A422EDD23CF"), exclusiveto, contract] */
                     MIDL_INTERFACE("71EAEAC8-45E1-4192-85AA-3A422EDD23CF")
-                    IXamlUIPresenterStatics : IInspectable
+                    IXamlUIPresenterStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompleteTimelinesAutomatically(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1698,8 +1714,9 @@ namespace ABI {
                 namespace Hosting {
                     /* [object, uuid("5C6B68D2-CF1C-4F53-BF09-6A745F7A9703"), exclusiveto, contract] */
                     MIDL_INTERFACE("5C6B68D2-CF1C-4F53-BF09-6A745F7A9703")
-                    IXamlUIPresenterStatics2 : IInspectable
+                    IXamlUIPresenterStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetFlyoutPlacementTargetInfo(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IFrameworkElement * placementTarget,
                             /* [in] */ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutPlacementMode preferredPlacement,
@@ -2069,6 +2086,7 @@ interface __FIAsyncOperation_1_Windows__CUI__CXaml__CHosting__CDesignerAppView
 
 
 #if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs_INTERFACE_DEFINED__
 
@@ -2115,6 +2133,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppMan
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
 
 

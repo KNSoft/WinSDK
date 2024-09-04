@@ -4,11 +4,7 @@
 #elif defined _STL100_
 #include "_100_xstddef"
 #elif defined _STL110_
-#if defined _STLFKG_
-#include "_fkg_xstddef"
-#else
 #include "_110_xstddef"
-#endif
 #else
 
 // xstddef standard header

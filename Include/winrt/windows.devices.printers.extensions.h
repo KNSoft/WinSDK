@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.printers.extensions.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
@@ -98,8 +96,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -315,6 +317,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_USE
@@ -343,6 +346,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Printers::Extensions::Print3DW
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
@@ -416,6 +420,7 @@ namespace ABI {
 
 
 #if WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION >= 0x10000
+#if WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_USE
@@ -444,6 +449,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Printers::Extensions::PrintTas
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION >= 0x10000
 
 
@@ -638,8 +644,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("C56F74BD-3669-4A66-AB42-C8151930CD34"), exclusiveto, contract] */
                     MIDL_INTERFACE("C56F74BD-3669-4A66-AB42-C8151930CD34")
-                    IPrint3DWorkflow : IInspectable
+                    IPrint3DWorkflow : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceID(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -696,8 +703,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("A2A6C54F-8AC1-4918-9741-E34F3004239E"), exclusiveto, contract] */
                     MIDL_INTERFACE("A2A6C54F-8AC1-4918-9741-E34F3004239E")
-                    IPrint3DWorkflow2 : IInspectable
+                    IPrint3DWorkflow2 : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PrinterChanged(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrinterChangedEventArgs * eventHandler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * eventCookie
@@ -742,8 +750,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("19F8C858-5AC8-4B55-8A5F-E61567DAFB4D"), exclusiveto, contract] */
                     MIDL_INTERFACE("19F8C858-5AC8-4B55-8A5F-E61567DAFB4D")
-                    IPrint3DWorkflowPrintRequestedEventArgs : IInspectable
+                    IPrint3DWorkflowPrintRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Printers::Extensions::Print3DWorkflowStatus * value
                             ) = 0;
@@ -793,8 +802,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("45226402-95FC-4847-93B3-134DBF5C60F7"), exclusiveto, contract] */
                     MIDL_INTERFACE("45226402-95FC-4847-93B3-134DBF5C60F7")
-                    IPrint3DWorkflowPrinterChangedEventArgs : IInspectable
+                    IPrint3DWorkflowPrinterChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NewDeviceId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -835,8 +845,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("E70D9FC1-FF79-4AA4-8C9B-0C93AEDFDE8A"), exclusiveto, contract] */
                     MIDL_INTERFACE("E70D9FC1-FF79-4AA4-8C9B-0C93AEDFDE8A")
-                    IPrintExtensionContextStatic : IInspectable
+                    IPrintExtensionContextStatic : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE FromDeviceId(
                             /* [in] */__RPC__in HSTRING deviceId,
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * context
@@ -878,8 +889,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("E00E4C8A-4828-4DA1-8BB8-8672DF8515E7"), exclusiveto, contract] */
                     MIDL_INTERFACE("E00E4C8A-4828-4DA1-8BB8-8672DF8515E7")
-                    IPrintNotificationEventDetails : IInspectable
+                    IPrintNotificationEventDetails : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrinterName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -926,8 +938,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("E3C22451-3AA4-4885-9240-311F5F8FBE9D"), exclusiveto, contract] */
                     MIDL_INTERFACE("E3C22451-3AA4-4885-9240-311F5F8FBE9D")
-                    IPrintTaskConfiguration : IInspectable
+                    IPrintTaskConfiguration : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrinterExtensionContext(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * context
                             ) = 0;
@@ -975,8 +988,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("EEAF2FCB-621E-4B62-AC77-B281CCE08D60"), exclusiveto, contract] */
                     MIDL_INTERFACE("EEAF2FCB-621E-4B62-AC77-B281CCE08D60")
-                    IPrintTaskConfigurationSaveRequest : IInspectable
+                    IPrintTaskConfigurationSaveRequest : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Cancel(void) = 0;
                         virtual HRESULT STDMETHODCALLTYPE Save(
                             /* [in] */__RPC__in_opt IInspectable * printerExtensionContext
@@ -1024,8 +1038,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("E959D568-F729-44A4-871D-BD0628696A33"), exclusiveto, contract] */
                     MIDL_INTERFACE("E959D568-F729-44A4-871D-BD0628696A33")
-                    IPrintTaskConfigurationSaveRequestedDeferral : IInspectable
+                    IPrintTaskConfigurationSaveRequestedDeferral : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                         
                     };
@@ -1064,8 +1079,9 @@ namespace ABI {
                 namespace Extensions {
                     /* [object, uuid("E06C2879-0D61-4938-91D0-96A45BEE8479"), exclusiveto, contract] */
                     MIDL_INTERFACE("E06C2879-0D61-4938-91D0-96A45BEE8479")
-                    IPrintTaskConfigurationSaveRequestedEventArgs : IInspectable
+                    IPrintTaskConfigurationSaveRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Printers::Extensions::IPrintTaskConfigurationSaveRequest * * context
                             ) = 0;
@@ -1351,6 +1367,7 @@ typedef interface __x_ABI_CWindows_CDevices_CPrinters_CExtensions_CIPrintTaskCon
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -1397,6 +1414,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPr
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
@@ -1455,6 +1473,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPr
 
 
 #if WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION >= 0x10000
+#if WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -1501,6 +1520,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPr
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION >= 0x10000
 
 

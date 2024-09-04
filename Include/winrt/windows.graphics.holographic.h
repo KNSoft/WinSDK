@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.graphics.holographic.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -303,6 +305,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicCamera4;
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 ABI::Windows::Graphics::Holographic::IHolographicCamera4
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
 namespace ABI {
@@ -316,6 +332,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose ABI::Windows::Graphics::Holographic::IHolographicCameraPose
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicCameraPose2;
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 ABI::Windows::Graphics::Holographic::IHolographicCameraPose2
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_FWD_DEFINED__
@@ -457,6 +487,34 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePrediction_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicFramePresentationMonitor;
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor ABI::Windows::Graphics::Holographic::IHolographicFramePresentationMonitor
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicFramePresentationReport;
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayer_FWD_DEFINED__
 namespace ABI {
@@ -512,6 +570,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace ABI::Windows::Graphics::Holographic::IHolographicSpace
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicSpace2;
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 ABI::Windows::Graphics::Holographic::IHolographicSpace2
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraAddedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraAddedEventArgs_FWD_DEFINED__
@@ -736,6 +808,79 @@ namespace ABI {
     namespace Windows {
         namespace Graphics {
             namespace Holographic {
+                class HolographicFramePresentationReport;
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_USE
+#define DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("f81cb835-d690-55d7-adfb-7b92b96e29a0"))
+IIterator<ABI::Windows::Graphics::Holographic::HolographicFramePresentationReport*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Graphics::Holographic::HolographicFramePresentationReport*, ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Graphics.Holographic.HolographicFramePresentationReport>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::Graphics::Holographic::HolographicFramePresentationReport*> __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_t;
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport*>
+//#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_USE
+#define DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("d0fe1cdf-33ad-5051-8c5b-ab9a2b2c24bf"))
+IIterable<ABI::Windows::Graphics::Holographic::HolographicFramePresentationReport*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Graphics::Holographic::HolographicFramePresentationReport*, ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Graphics.Holographic.HolographicFramePresentationReport>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::Graphics::Holographic::HolographicFramePresentationReport*> __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_t;
+#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport*>
+//#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
                 class HolographicQuadLayer;
             } /* Windows */
         } /* Graphics */
@@ -870,6 +1015,38 @@ typedef IVectorView<ABI::Windows::Graphics::Holographic::HolographicCameraPose*>
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_USE
+#define DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("014f37ba-abc1-5d85-855e-ec053183a635"))
+IVectorView<ABI::Windows::Graphics::Holographic::HolographicFramePresentationReport*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Graphics::Holographic::HolographicFramePresentationReport*, ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Graphics.Holographic.HolographicFramePresentationReport>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::Graphics::Holographic::HolographicFramePresentationReport*> __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_t;
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport*>
+//#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Holographic::IHolographicFramePresentationReport*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicQuadLayer_USE
@@ -982,6 +1159,39 @@ namespace ABI {
     } /* Holographic */} /* ABI */
 
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("67aae2f2-42d8-5503-9131-deeb45a6ca03"))
+ITypedEventHandler<ABI::Windows::Graphics::Holographic::HolographicSpace*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Graphics::Holographic::HolographicSpace*, ABI::Windows::Graphics::Holographic::IHolographicSpace*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Graphics.Holographic.HolographicSpace, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Graphics::Holographic::HolographicSpace*,IInspectable*> __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Holographic::IHolographicSpace*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Holographic::IHolographicSpace*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
 namespace ABI {
     namespace Windows {
         namespace Graphics {
@@ -992,6 +1202,7 @@ namespace ABI {
     } /* Holographic */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs_USE
@@ -1022,6 +1233,7 @@ typedef ITypedEventHandler<ABI::Windows::Graphics::Holographic::HolographicSpace
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
 namespace ABI {
@@ -1034,6 +1246,7 @@ namespace ABI {
     } /* Holographic */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs_USE
@@ -1063,6 +1276,7 @@ typedef ITypedEventHandler<ABI::Windows::Graphics::Holographic::HolographicSpace
 #endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 namespace ABI {
@@ -1449,6 +1663,17 @@ namespace ABI {
         namespace Graphics {
             namespace Holographic {
                 
+                typedef enum HolographicSpaceUserPresence : int HolographicSpaceUserPresence;
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                
                 typedef struct HolographicAdapterId HolographicAdapterId;
                 
             } /* Windows */
@@ -1465,6 +1690,11 @@ namespace ABI {
             } /* Windows */
         } /* Graphics */
     } /* Holographic */} /* ABI */
+
+
+
+
+
 
 
 
@@ -1539,6 +1769,17 @@ namespace ABI {
             } /* Windows */
         } /* Graphics */
     } /* Holographic */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                class HolographicFramePresentationMonitor;
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
 
 
 
@@ -1647,6 +1888,34 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Graphics.Holographic.HolographicSpaceUserPresence
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                /* [v1_enum, contract] */
+                enum HolographicSpaceUserPresence : int
+                {
+                    HolographicSpaceUserPresence_Absent = 0,
+                    HolographicSpaceUserPresence_PresentPassive = 1,
+                    HolographicSpaceUserPresence_PresentActive = 2,
+                };
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Struct Windows.Graphics.Holographic.HolographicAdapterId
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -1720,8 +1989,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("E4E98445-9BED-4980-9BA0-E87680D1CB74"), exclusiveto, contract] */
                 MIDL_INTERFACE("E4E98445-9BED-4980-9BA0-E87680D1CB74")
-                IHolographicCamera : IInspectable
+                IHolographicCamera : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RenderTargetSize(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * value
                         ) = 0;
@@ -1782,8 +2052,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("B55B9F1A-BA8C-4F84-AD79-2E7E1E2450F3"), exclusiveto, contract] */
                 MIDL_INTERFACE("B55B9F1A-BA8C-4F84-AD79-2E7E1E2450F3")
-                IHolographicCamera2 : IInspectable
+                IHolographicCamera2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LeftViewportParameters(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicCameraViewportParameters * * result
                         ) = 0;
@@ -1833,8 +2104,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("45AA4FB3-7B59-524E-4A3F-4A6AD6650477"), exclusiveto, contract] */
                 MIDL_INTERFACE("45AA4FB3-7B59-524E-4A3F-4A6AD6650477")
-                IHolographicCamera3 : IInspectable
+                IHolographicCamera3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPrimaryLayerEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1863,6 +2135,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCame
 
 /*
  *
+ * Interface Windows.Graphics.Holographic.IHolographicCamera4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicCamera
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicCamera4[] = L"Windows.Graphics.Holographic.IHolographicCamera4";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                /* [object, uuid("9A2531D6-4723-4F39-A9A5-9D05181D9B44"), exclusiveto, contract] */
+                MIDL_INTERFACE("9A2531D6-4723-4F39-A9A5-9D05181D9B44")
+                IHolographicCamera4 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanOverrideViewport(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHolographicCamera4=_uuidof(IHolographicCamera4);
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Graphics.Holographic.IHolographicCameraPose
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -1882,8 +2195,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("0D7D7E30-12DE-45BD-912B-C7F6561599D1"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D7D7E30-12DE-45BD-912B-C7F6561599D1")
-                IHolographicCameraPose : IInspectable
+                IHolographicCameraPose : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HolographicCamera(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicCamera * * value
                         ) = 0;
@@ -1927,6 +2241,55 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCame
 
 /*
  *
+ * Interface Windows.Graphics.Holographic.IHolographicCameraPose2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicCameraPose
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicCameraPose2[] = L"Windows.Graphics.Holographic.IHolographicCameraPose2";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                /* [object, uuid("232BE073-5D2D-4560-814E-2697C4FCE16B"), exclusiveto, contract] */
+                MIDL_INTERFACE("232BE073-5D2D-4560-814E-2697C4FCE16B")
+                IHolographicCameraPose2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE OverrideViewTransform(
+                        /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem,
+                        /* [in] */ABI::Windows::Graphics::Holographic::HolographicStereoTransform coordinateSystemToViewTransform
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE OverrideProjectionTransform(
+                        /* [in] */ABI::Windows::Graphics::Holographic::HolographicStereoTransform projectionTransform
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE OverrideViewport(
+                        /* [in] */ABI::Windows::Foundation::Rect leftViewport,
+                        /* [in] */ABI::Windows::Foundation::Rect rightViewport
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHolographicCameraPose2=_uuidof(IHolographicCameraPose2);
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Graphics.Holographic.IHolographicCameraRenderingParameters
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -1946,8 +2309,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("8EAC2ED1-5BF4-4E16-8236-AE0800C11D0D"), exclusiveto, contract] */
                 MIDL_INTERFACE("8EAC2ED1-5BF4-4E16-8236-AE0800C11D0D")
-                IHolographicCameraRenderingParameters : IInspectable
+                IHolographicCameraRenderingParameters : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE SetFocusPoint(
                         /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem,
                         /* [in] */ABI::Windows::Foundation::Numerics::Vector3 position
@@ -2008,8 +2372,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("261270E3-B696-4634-94D6-BE0681643599"), exclusiveto, contract] */
                 MIDL_INTERFACE("261270E3-B696-4634-94D6-BE0681643599")
-                IHolographicCameraRenderingParameters2 : IInspectable
+                IHolographicCameraRenderingParameters2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ReprojectionMode(
                         /* [retval, out] */__RPC__out ABI::Windows::Graphics::Holographic::HolographicReprojectionMode * value
                         ) = 0;
@@ -2059,8 +2424,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("B1AA513F-136D-4B06-B9D4-E4B914CD0683"), exclusiveto, contract] */
                 MIDL_INTERFACE("B1AA513F-136D-4B06-B9D4-E4B914CD0683")
-                IHolographicCameraRenderingParameters3 : IInspectable
+                IHolographicCameraRenderingParameters3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsContentProtectionEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2102,8 +2468,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("80CDF3F7-842A-41E1-93ED-5692AB1FBB10"), exclusiveto, contract] */
                 MIDL_INTERFACE("80CDF3F7-842A-41E1-93ED-5692AB1FBB10")
-                IHolographicCameraViewportParameters : IInspectable
+                IHolographicCameraViewportParameters : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HiddenAreaMesh(
                         /* [out] */__RPC__out UINT32 * __valueSize,
                         /* [size_is(, *(__valueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__valueSize)) ABI::Windows::Foundation::Numerics::Vector2 * * value
@@ -2147,8 +2514,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("9ACEA414-1D9F-4090-A388-90C06F6EAE9C"), exclusiveto, contract] */
                 MIDL_INTERFACE("9ACEA414-1D9F-4090-A388-90C06F6EAE9C")
-                IHolographicDisplay : IInspectable
+                IHolographicDisplay : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2202,8 +2570,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("75AC3F82-E755-436C-8D96-4D32D131473E"), exclusiveto, contract] */
                 MIDL_INTERFACE("75AC3F82-E755-436C-8D96-4D32D131473E")
-                IHolographicDisplay2 : IInspectable
+                IHolographicDisplay2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RefreshRate(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -2242,8 +2611,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("CB374983-E7B0-4841-8355-3AE5B536E9A4"), exclusiveto, contract] */
                 MIDL_INTERFACE("CB374983-E7B0-4841-8355-3AE5B536E9A4")
-                IHolographicDisplayStatics : IInspectable
+                IHolographicDisplayStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicDisplay * * result
                         ) = 0;
@@ -2282,8 +2652,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("C6988EB6-A8B9-3054-A6EB-D624B6536375"), exclusiveto, contract] */
                 MIDL_INTERFACE("C6988EB6-A8B9-3054-A6EB-D624B6536375")
-                IHolographicFrame : IInspectable
+                IHolographicFrame : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AddedCameras(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCamera * * value
                         ) = 0;
@@ -2348,8 +2719,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("283F37BF-3BF2-5E91-6633-870574E6F217"), exclusiveto, contract] */
                 MIDL_INTERFACE("283F37BF-3BF2-5E91-6633-870574E6F217")
-                IHolographicFrame2 : IInspectable
+                IHolographicFrame2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetQuadLayerUpdateParameters(
                         /* [in] */__RPC__in_opt ABI::Windows::Graphics::Holographic::IHolographicQuadLayer * layer,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters * * value
@@ -2389,8 +2761,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("520F4DE1-5C0A-4E79-A81E-6ABE02BB2739"), exclusiveto, contract] */
                 MIDL_INTERFACE("520F4DE1-5C0A-4E79-A81E-6ABE02BB2739")
-                IHolographicFramePrediction : IInspectable
+                IHolographicFramePrediction : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CameraPoses(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraPose * * value
                         ) = 0;
@@ -2409,6 +2782,104 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePrediction;
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePrediction_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Graphics.Holographic.IHolographicFramePresentationMonitor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicFramePresentationMonitor
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicFramePresentationMonitor[] = L"Windows.Graphics.Holographic.IHolographicFramePresentationMonitor";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                /* [object, uuid("CA87256C-6FAE-428E-BB83-25DFEE51136B"), exclusiveto, contract] */
+                MIDL_INTERFACE("CA87256C-6FAE-428E-BB83-25DFEE51136B")
+                IHolographicFramePresentationMonitor : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE ReadReports(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHolographicFramePresentationMonitor=_uuidof(IHolographicFramePresentationMonitor);
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Graphics.Holographic.IHolographicFramePresentationReport
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicFramePresentationReport
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicFramePresentationReport[] = L"Windows.Graphics.Holographic.IHolographicFramePresentationReport";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                /* [object, uuid("80BAF614-F2F4-4C8A-8DE3-065C78F6D5DE"), exclusiveto, contract] */
+                MIDL_INTERFACE("80BAF614-F2F4-4C8A-8DE3-065C78F6D5DE")
+                IHolographicFramePresentationReport : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompositorGpuDuration(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppGpuDuration(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppGpuOverrun(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MissedPresentationOpportunityCount(
+                        /* [retval, out] */__RPC__out UINT32 * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PresentationCount(
+                        /* [retval, out] */__RPC__out UINT32 * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHolographicFramePresentationReport=_uuidof(IHolographicFramePresentationReport);
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2432,8 +2903,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("903460C9-C9D9-5D5C-41AC-A2D5AB0FD331"), exclusiveto, contract] */
                 MIDL_INTERFACE("903460C9-C9D9-5D5C-41AC-A2D5AB0FD331")
-                IHolographicQuadLayer : IInspectable
+                IHolographicQuadLayer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PixelFormat(
                         /* [retval, out] */__RPC__out ABI::Windows::Graphics::DirectX::DirectXPixelFormat * value
                         ) = 0;
@@ -2475,8 +2947,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("A67538F3-5A14-5A10-489A-455065B37B76"), exclusiveto, contract] */
                 MIDL_INTERFACE("A67538F3-5A14-5A10-489A-455065B37B76")
-                IHolographicQuadLayerFactory : IInspectable
+                IHolographicQuadLayerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Foundation::Size size,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicQuadLayer * * value
@@ -2521,8 +2994,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("2B0EA3B0-798D-5BCA-55C2-2C0C762EBB08"), exclusiveto, contract] */
                 MIDL_INTERFACE("2B0EA3B0-798D-5BCA-55C2-2C0C762EBB08")
-                IHolographicQuadLayerUpdateParameters : IInspectable
+                IHolographicQuadLayerUpdateParameters : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AcquireBufferToUpdateContent(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface * * value
                         ) = 0;
@@ -2579,8 +3053,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("4380DBA6-5E78-434F-807C-3433D1EFE8B7"), exclusiveto, contract] */
                 MIDL_INTERFACE("4380DBA6-5E78-434F-807C-3433D1EFE8B7")
-                IHolographicSpace : IInspectable
+                IHolographicSpace : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrimaryAdapterId(
                         /* [retval, out] */__RPC__out ABI::Windows::Graphics::Holographic::HolographicAdapterId * value
                         ) = 0;
@@ -2620,6 +3095,62 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpac
 
 /*
  *
+ * Interface Windows.Graphics.Holographic.IHolographicSpace2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicSpace
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicSpace2[] = L"Windows.Graphics.Holographic.IHolographicSpace2";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                /* [object, uuid("4F81A9A8-B7FF-4883-9827-7D677287EA70"), exclusiveto, contract] */
+                MIDL_INTERFACE("4F81A9A8-B7FF-4883-9827-7D677287EA70")
+                IHolographicSpace2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UserPresence(
+                        /* [retval, out] */__RPC__out ABI::Windows::Graphics::Holographic::HolographicSpaceUserPresence * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_UserPresenceChanged(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_UserPresenceChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE WaitForNextFrameReady(void) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE WaitForNextFrameReadyWithHeadStart(
+                        /* [in] */ABI::Windows::Foundation::TimeSpan requestedHeadStartDuration
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateFramePresentationMonitor(
+                        /* [in] */UINT32 maxQueuedReports,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicFramePresentationMonitor * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHolographicSpace2=_uuidof(IHolographicSpace2);
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Graphics.Holographic.IHolographicSpaceCameraAddedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -2639,8 +3170,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("58F1DA35-BBB3-3C8F-993D-6C80E7FEB99F"), exclusiveto, contract] */
                 MIDL_INTERFACE("58F1DA35-BBB3-3C8F-993D-6C80E7FEB99F")
-                IHolographicSpaceCameraAddedEventArgs : IInspectable
+                IHolographicSpaceCameraAddedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Camera(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicCamera * * value
                         ) = 0;
@@ -2682,8 +3214,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("805444A8-F2AE-322E-8DA9-836A0A95A4C1"), exclusiveto, contract] */
                 MIDL_INTERFACE("805444A8-F2AE-322E-8DA9-836A0A95A4C1")
-                IHolographicSpaceCameraRemovedEventArgs : IInspectable
+                IHolographicSpaceCameraRemovedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Camera(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicCamera * * value
                         ) = 0;
@@ -2722,8 +3255,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("364E6064-C8F2-3BA1-8391-66B8489E67FD"), exclusiveto, contract] */
                 MIDL_INTERFACE("364E6064-C8F2-3BA1-8391-66B8489E67FD")
-                IHolographicSpaceStatics : IInspectable
+                IHolographicSpaceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateForCoreWindow(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Core::ICoreWindow * window,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicSpace * * value
@@ -2763,8 +3297,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("0E777088-75FC-48AF-8758-0652F6F07C59"), exclusiveto, contract] */
                 MIDL_INTERFACE("0E777088-75FC-48AF-8758-0652F6F07C59")
-                IHolographicSpaceStatics2 : IInspectable
+                IHolographicSpaceStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2813,8 +3348,9 @@ namespace ABI {
             namespace Holographic {
                 /* [object, uuid("3B00DE3D-B1A3-4DFE-8E79-FEC5909E6DF8"), exclusiveto, contract] */
                 MIDL_INTERFACE("3B00DE3D-B1A3-4DFE-8E79-FEC5909E6DF8")
-                IHolographicSpaceStatics3 : IInspectable
+                IHolographicSpaceStatics3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsConfigured(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2843,6 +3379,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpac
  *    Windows.Graphics.Holographic.IHolographicCamera ** Default Interface **
  *    Windows.Graphics.Holographic.IHolographicCamera2
  *    Windows.Graphics.Holographic.IHolographicCamera3
+ *    Windows.Graphics.Holographic.IHolographicCamera4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -2867,6 +3404,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Holographic.IHolographicCameraPose ** Default Interface **
+ *    Windows.Graphics.Holographic.IHolographicCameraPose2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3011,6 +3549,51 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Graphics.Holographic.HolographicFramePresentationMonitor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Graphics.Holographic.IHolographicFramePresentationMonitor ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFramePresentationMonitor_DEFINED
+#define RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFramePresentationMonitor_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Graphics_Holographic_HolographicFramePresentationMonitor[] = L"Windows.Graphics.Holographic.HolographicFramePresentationMonitor";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Graphics.Holographic.HolographicFramePresentationReport
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Graphics.Holographic.IHolographicFramePresentationReport ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFramePresentationReport_DEFINED
+#define RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFramePresentationReport_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Graphics_Holographic_HolographicFramePresentationReport[] = L"Windows.Graphics.Holographic.HolographicFramePresentationReport";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Graphics.Holographic.HolographicQuadLayer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -3075,6 +3658,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Holographic.IHolographicSpace ** Default Interface **
+ *    Windows.Graphics.Holographic.IHolographicSpace2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3160,11 +3744,23 @@ typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera3 _
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4;
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose;
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2;
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_FWD_DEFINED__
@@ -3226,6 +3822,18 @@ typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePred
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePrediction_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor;
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport;
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayer __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayer;
@@ -3249,6 +3857,12 @@ typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayer
 typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace;
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2;
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraAddedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraAddedEventArgs_FWD_DEFINED__
@@ -3606,6 +4220,168 @@ interface __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPos
 #endif // ____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport;
+
+typedef struct __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReportVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReportVtbl;
+
+interface __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReportVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport;
+
+typedef  struct __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReportVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReportVtbl;
+
+interface __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReportVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
@@ -3992,6 +4768,117 @@ interface __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraP
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport;
+
+typedef struct __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReportVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReportVtbl;
+
+interface __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReportVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicQuadLayer_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicQuadLayer_INTERFACE_DEFINED__
@@ -4306,6 +5193,58 @@ interface __FIReference_1_Windows__CGraphics__CHolographic__CHolographicStereoTr
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if !defined(____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__
 
@@ -4353,9 +5292,11 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographic
 #endif // ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__
@@ -4403,6 +5344,7 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographic
 
 #endif // ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 struct __x_ABI_CWindows_CPerception_CSpatial_CSpatialBoundingFrustum;
@@ -4624,10 +5566,20 @@ typedef enum __x_ABI_CWindows_CGraphics_CHolographic_CHolographicFramePresentWai
 typedef enum __x_ABI_CWindows_CGraphics_CHolographic_CHolographicReprojectionMode __x_ABI_CWindows_CGraphics_CHolographic_CHolographicReprojectionMode;
 
 
+typedef enum __x_ABI_CWindows_CGraphics_CHolographic_CHolographicSpaceUserPresence __x_ABI_CWindows_CGraphics_CHolographic_CHolographicSpaceUserPresence;
+
+
 typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CHolographicAdapterId __x_ABI_CWindows_CGraphics_CHolographic_CHolographicAdapterId;
 
 
 typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CHolographicStereoTransform __x_ABI_CWindows_CGraphics_CHolographic_CHolographicStereoTransform;
+
+
+
+
+
+
+
 
 
 
@@ -4728,6 +5680,26 @@ enum __x_ABI_CWindows_CGraphics_CHolographic_CHolographicReprojectionMode
     HolographicReprojectionMode_Disabled = 2,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Struct Windows.Graphics.Holographic.HolographicSpaceUserPresence
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CGraphics_CHolographic_CHolographicSpaceUserPresence
+{
+    HolographicSpaceUserPresence_Absent = 0,
+    HolographicSpaceUserPresence_PresentPassive = 1,
+    HolographicSpaceUserPresence_PresentActive = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5135,6 +6107,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCame
 
 /*
  *
+ * Interface Windows.Graphics.Holographic.IHolographicCamera4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicCamera
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicCamera4[] = L"Windows.Graphics.Holographic.IHolographicCamera4";
+/* [object, uuid("9A2531D6-4723-4F39-A9A5-9D05181D9B44"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CanOverrideViewport )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4Vtbl;
+
+interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_get_CanOverrideViewport(This,value) \
+    ( (This)->lpVtbl->get_CanOverrideViewport(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Graphics.Holographic.IHolographicCameraPose
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -5276,6 +6341,115 @@ interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose
 EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose;
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Graphics.Holographic.IHolographicCameraPose2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicCameraPose
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicCameraPose2[] = L"Windows.Graphics.Holographic.IHolographicCameraPose2";
+/* [object, uuid("232BE073-5D2D-4560-814E-2697C4FCE16B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *OverrideViewTransform )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem * coordinateSystem,
+        /* [in] */__x_ABI_CWindows_CGraphics_CHolographic_CHolographicStereoTransform coordinateSystemToViewTransform
+        );
+    HRESULT ( STDMETHODCALLTYPE *OverrideProjectionTransform )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 * This,
+        /* [in] */__x_ABI_CWindows_CGraphics_CHolographic_CHolographicStereoTransform projectionTransform
+        );
+    HRESULT ( STDMETHODCALLTYPE *OverrideViewport )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2 * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CRect leftViewport,
+        /* [in] */__x_ABI_CWindows_CFoundation_CRect rightViewport
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2Vtbl;
+
+interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_OverrideViewTransform(This,coordinateSystem,coordinateSystemToViewTransform) \
+    ( (This)->lpVtbl->OverrideViewTransform(This,coordinateSystem,coordinateSystemToViewTransform) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_OverrideProjectionTransform(This,projectionTransform) \
+    ( (This)->lpVtbl->OverrideProjectionTransform(This,projectionTransform) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_OverrideViewport(This,leftViewport,rightViewport) \
+    ( (This)->lpVtbl->OverrideViewport(This,leftViewport,rightViewport) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6386,6 +7560,224 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFram
 
 /*
  *
+ * Interface Windows.Graphics.Holographic.IHolographicFramePresentationMonitor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicFramePresentationMonitor
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicFramePresentationMonitor[] = L"Windows.Graphics.Holographic.IHolographicFramePresentationMonitor";
+/* [object, uuid("CA87256C-6FAE-428E-BB83-25DFEE51136B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitorVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *ReadReports )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicFramePresentationReport * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitorVtbl;
+
+interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_ReadReports(This,result) \
+    ( (This)->lpVtbl->ReadReports(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Graphics.Holographic.IHolographicFramePresentationReport
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicFramePresentationReport
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicFramePresentationReport[] = L"Windows.Graphics.Holographic.IHolographicFramePresentationReport";
+/* [object, uuid("80BAF614-F2F4-4C8A-8DE3-065C78F6D5DE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReportVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CompositorGpuDuration )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AppGpuDuration )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AppGpuOverrun )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MissedPresentationOpportunityCount )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This,
+        /* [retval, out] */__RPC__out UINT32 * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PresentationCount )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport * This,
+        /* [retval, out] */__RPC__out UINT32 * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReportVtbl;
+
+interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReportVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_get_CompositorGpuDuration(This,value) \
+    ( (This)->lpVtbl->get_CompositorGpuDuration(This,value) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_get_AppGpuDuration(This,value) \
+    ( (This)->lpVtbl->get_AppGpuDuration(This,value) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_get_AppGpuOverrun(This,value) \
+    ( (This)->lpVtbl->get_AppGpuOverrun(This,value) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_get_MissedPresentationOpportunityCount(This,value) \
+    ( (This)->lpVtbl->get_MissedPresentationOpportunityCount(This,value) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_get_PresentationCount(This,value) \
+    ( (This)->lpVtbl->get_PresentationCount(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationReport_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Graphics.Holographic.IHolographicQuadLayer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -6853,6 +8245,135 @@ interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace
 EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace;
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Graphics.Holographic.IHolographicSpace2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicSpace
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicSpace2[] = L"Windows.Graphics.Holographic.IHolographicSpace2";
+/* [object, uuid("4F81A9A8-B7FF-4883-9827-7D677287EA70"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_UserPresence )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CGraphics_CHolographic_CHolographicSpaceUserPresence * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_UserPresenceChanged )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_UserPresenceChanged )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    HRESULT ( STDMETHODCALLTYPE *WaitForNextFrameReady )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This
+        );
+    HRESULT ( STDMETHODCALLTYPE *WaitForNextFrameReadyWithHeadStart )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan requestedHeadStartDuration
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateFramePresentationMonitor )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2 * This,
+        /* [in] */UINT32 maxQueuedReports,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePresentationMonitor * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2Vtbl;
+
+interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_get_UserPresence(This,value) \
+    ( (This)->lpVtbl->get_UserPresence(This,value) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_add_UserPresenceChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_UserPresenceChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_remove_UserPresenceChanged(This,token) \
+    ( (This)->lpVtbl->remove_UserPresenceChanged(This,token) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_WaitForNextFrameReady(This) \
+    ( (This)->lpVtbl->WaitForNextFrameReady(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_WaitForNextFrameReadyWithHeadStart(This,requestedHeadStartDuration) \
+    ( (This)->lpVtbl->WaitForNextFrameReadyWithHeadStart(This,requestedHeadStartDuration) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_CreateFramePresentationMonitor(This,maxQueuedReports,result) \
+    ( (This)->lpVtbl->CreateFramePresentationMonitor(This,maxQueuedReports,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7361,6 +8882,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpac
  *    Windows.Graphics.Holographic.IHolographicCamera ** Default Interface **
  *    Windows.Graphics.Holographic.IHolographicCamera2
  *    Windows.Graphics.Holographic.IHolographicCamera3
+ *    Windows.Graphics.Holographic.IHolographicCamera4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -7385,6 +8907,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Holographic.IHolographicCameraPose ** Default Interface **
+ *    Windows.Graphics.Holographic.IHolographicCameraPose2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -7529,6 +9052,51 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Graphics.Holographic.HolographicFramePresentationMonitor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Graphics.Holographic.IHolographicFramePresentationMonitor ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFramePresentationMonitor_DEFINED
+#define RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFramePresentationMonitor_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Graphics_Holographic_HolographicFramePresentationMonitor[] = L"Windows.Graphics.Holographic.HolographicFramePresentationMonitor";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Graphics.Holographic.HolographicFramePresentationReport
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Graphics.Holographic.IHolographicFramePresentationReport ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFramePresentationReport_DEFINED
+#define RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFramePresentationReport_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Graphics_Holographic_HolographicFramePresentationReport[] = L"Windows.Graphics.Holographic.HolographicFramePresentationReport";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Graphics.Holographic.HolographicQuadLayer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -7593,6 +9161,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Holographic.IHolographicSpace ** Default Interface **
+ *    Windows.Graphics.Holographic.IHolographicSpace2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

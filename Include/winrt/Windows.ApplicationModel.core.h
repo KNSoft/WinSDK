@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -286,6 +288,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2 ABI::Windows::ApplicationModel::Core::IAppListEntry2
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Core {
+                interface IAppListEntry3;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3 ABI::Windows::ApplicationModel::Core::IAppListEntry3
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplication_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplication_FWD_DEFINED__
@@ -965,6 +981,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_USE
@@ -993,6 +1010,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Core::CoreApplication
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -1350,6 +1368,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_USE
@@ -1378,6 +1397,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Core::CoreApplication
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1597,6 +1617,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
@@ -1666,8 +1687,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("EF00F07F-2108-490A-877A-8A9F17C25FAD"), exclusiveto, contract] */
                 MIDL_INTERFACE("EF00F07F-2108-490A-877A-8A9F17C25FAD")
-                IAppListEntry : IInspectable
+                IAppListEntry : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayInfo(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IAppDisplayInfo * * value
                         ) = 0;
@@ -1709,8 +1731,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("D0A618AD-BF35-42AC-AC06-86EEEB41D04B"), exclusiveto, contract] */
                 MIDL_INTERFACE("D0A618AD-BF35-42AC-AC06-86EEEB41D04B")
-                IAppListEntry2 : IInspectable
+                IAppListEntry2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppUserModelId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1726,6 +1749,48 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Core.IAppListEntry3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Core.AppListEntry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Core_IAppListEntry3[] = L"Windows.ApplicationModel.Core.IAppListEntry3";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Core {
+                /* [object, uuid("6099F28D-FC32-470A-BC69-4B061A76EF2E"), exclusiveto, contract] */
+                MIDL_INTERFACE("6099F28D-FC32-470A-BC69-4B061A76EF2E")
+                IAppListEntry3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE LaunchForUserAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAppListEntry3=_uuidof(IAppListEntry3);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -1749,8 +1814,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("0AACF7A4-5E1D-49DF-8034-FB6A68BC5ED1"), exclusiveto, contract] */
                 MIDL_INTERFACE("0AACF7A4-5E1D-49DF-8034-FB6A68BC5ED1")
-                ICoreApplication : IInspectable
+                ICoreApplication : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1815,8 +1881,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("998681FB-1AB6-4B7F-BE4A-9A0645224C04"), exclusiveto, contract] */
                 MIDL_INTERFACE("998681FB-1AB6-4B7F-BE4A-9A0645224C04")
-                ICoreApplication2 : IInspectable
+                ICoreApplication2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_BackgroundActivated(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1876,8 +1943,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("FEEC0D39-598B-4507-8A67-772632580A57"), exclusiveto, contract] */
                 MIDL_INTERFACE("FEEC0D39-598B-4507-8A67-772632580A57")
-                ICoreApplication3 : IInspectable
+                ICoreApplication3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestRestartAsync(
                         /* [in] */__RPC__in HSTRING launchArguments,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCore__CAppRestartFailureReason * * operation
@@ -1922,8 +1990,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("CF86461D-261E-4B72-9ACD-44ED2ACE6A29"), exclusiveto, contract] */
                 MIDL_INTERFACE("CF86461D-261E-4B72-9ACD-44ED2ACE6A29")
-                ICoreApplicationExit : IInspectable
+                ICoreApplicationExit : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Exit(void) = 0;
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Exiting(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
@@ -1964,8 +2033,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("F0E24AB0-DD09-42E1-B0BC-E0E131F78D7E"), contract] */
                 MIDL_INTERFACE("F0E24AB0-DD09-42E1-B0BC-E0E131F78D7E")
-                ICoreApplicationUnhandledError : IInspectable
+                ICoreApplicationUnhandledError : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_UnhandledErrorDetected(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CApplicationModel__CCore__CUnhandledErrorDetectedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -2008,8 +2078,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("518DC408-C077-475B-809E-0BC0C57E4B74"), exclusiveto, contract] */
                 MIDL_INTERFACE("518DC408-C077-475B-809E-0BC0C57E4B74")
-                ICoreApplicationUseCount : IInspectable
+                ICoreApplicationUseCount : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IncrementApplicationUseCount(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE DecrementApplicationUseCount(void) = 0;
                     
@@ -2047,8 +2118,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("638BB2DB-451D-4661-B099-414F34FFB9F1"), exclusiveto, contract] */
                 MIDL_INTERFACE("638BB2DB-451D-4661-B099-414F34FFB9F1")
-                ICoreApplicationView : IInspectable
+                ICoreApplicationView : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CoreWindow(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Core::ICoreWindow * * value
                         ) = 0;
@@ -2100,8 +2172,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("68EB7ADF-917F-48EB-9AEB-7DE53E086AB1"), exclusiveto, contract] */
                 MIDL_INTERFACE("68EB7ADF-917F-48EB-9AEB-7DE53E086AB1")
-                ICoreApplicationView2 : IInspectable
+                ICoreApplicationView2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Dispatcher(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Core::ICoreDispatcher * * value
                         ) = 0;
@@ -2140,8 +2213,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("07EBE1B3-A4CF-4550-AB70-B07E85330BC8"), exclusiveto, contract] */
                 MIDL_INTERFACE("07EBE1B3-A4CF-4550-AB70-B07E85330BC8")
-                ICoreApplicationView3 : IInspectable
+                ICoreApplicationView3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsComponent(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2190,8 +2264,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("2BC095A8-8EF0-446D-9E60-3A3E0428C671"), exclusiveto, contract] */
                 MIDL_INTERFACE("2BC095A8-8EF0-446D-9E60-3A3E0428C671")
-                ICoreApplicationView5 : IInspectable
+                ICoreApplicationView5 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Properties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
                         ) = 0;
@@ -2230,8 +2305,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("C119D49A-0679-49BA-803F-B79C5CF34CCA"), exclusiveto, contract] */
                 MIDL_INTERFACE("C119D49A-0679-49BA-803F-B79C5CF34CCA")
-                ICoreApplicationView6 : IInspectable
+                ICoreApplicationView6 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DispatcherQueue(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IDispatcherQueue * * value
                         ) = 0;
@@ -2270,8 +2346,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("006D35E3-E1F1-431B-9508-29B96926AC53"), exclusiveto, contract] */
                 MIDL_INTERFACE("006D35E3-E1F1-431B-9508-29B96926AC53")
-                ICoreApplicationViewTitleBar : IInspectable
+                ICoreApplicationViewTitleBar : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ExtendViewIntoTitleBar(
                         /* [in] */boolean value
                         ) = 0;
@@ -2339,8 +2416,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("1ADA0E3E-E4A2-4123-B451-DC96BF800419"), exclusiveto, contract] */
                 MIDL_INTERFACE("1ADA0E3E-E4A2-4123-B451-DC96BF800419")
-                ICoreImmersiveApplication : IInspectable
+                ICoreImmersiveApplication : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Views(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CCore__CCoreApplicationView * * value
                         ) = 0;
@@ -2387,8 +2465,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("828E1E36-E9E3-4CFC-9B66-48B78EA9BB2C"), exclusiveto, contract] */
                 MIDL_INTERFACE("828E1E36-E9E3-4CFC-9B66-48B78EA9BB2C")
-                ICoreImmersiveApplication2 : IInspectable
+                ICoreImmersiveApplication2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateNewViewFromMainView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Core::ICoreApplicationView * * view
                         ) = 0;
@@ -2427,8 +2506,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("34A05B2F-EE0D-41E5-8314-CF10C91BF0AF"), exclusiveto, contract] */
                 MIDL_INTERFACE("34A05B2F-EE0D-41E5-8314-CF10C91BF0AF")
-                ICoreImmersiveApplication3 : IInspectable
+                ICoreImmersiveApplication3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateNewViewWithViewSource(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Core::IFrameworkViewSource * viewSource,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Core::ICoreApplicationView * * view
@@ -2465,8 +2545,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("FAAB5CD0-8924-45AC-AD0F-A08FAE5D0324"), contract] */
                 MIDL_INTERFACE("FAAB5CD0-8924-45AC-AD0F-A08FAE5D0324")
-                IFrameworkView : IInspectable
+                IFrameworkView : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Initialize(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Core::ICoreApplicationView * applicationView
                         ) = 0;
@@ -2510,8 +2591,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("CD770614-65C4-426C-9494-34FC43554862"), contract] */
                 MIDL_INTERFACE("CD770614-65C4-426C-9494-34FC43554862")
-                IFrameworkViewSource : IInspectable
+                IFrameworkViewSource : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Core::IFrameworkView * * viewProvider
                         ) = 0;
@@ -2550,8 +2632,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("D238943C-B24E-4790-ACB5-3E4243C4FF87"), exclusiveto, contract] */
                 MIDL_INTERFACE("D238943C-B24E-4790-ACB5-3E4243C4FF87")
-                IHostedViewClosingEventArgs : IInspectable
+                IHostedViewClosingEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * result
                         ) = 0;
@@ -2590,8 +2673,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("9459B726-53B5-4686-9EAF-FA8162DC3980"), exclusiveto, contract] */
                 MIDL_INTERFACE("9459B726-53B5-4686-9EAF-FA8162DC3980")
-                IUnhandledError : IInspectable
+                IUnhandledError : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2631,8 +2715,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("679AB78B-B336-4822-AC40-0D750F0B7A2B"), exclusiveto, contract] */
                 MIDL_INTERFACE("679AB78B-B336-4822-AC40-0D750F0B7A2B")
-                IUnhandledErrorDetectedEventArgs : IInspectable
+                IUnhandledErrorDetectedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnhandledError(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Core::IUnhandledError * * value
                         ) = 0;
@@ -2660,6 +2745,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledError
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Core.IAppListEntry ** Default Interface **
  *    Windows.ApplicationModel.Core.IAppListEntry2
+ *    Windows.ApplicationModel.Core.IAppListEntry3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -2833,6 +2919,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry __x_AB
 typedef interface __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2 __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3 __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplication_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplication_FWD_DEFINED__
@@ -3778,6 +3870,7 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCor
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_INTERFACE_DEFINED__
 
@@ -3824,6 +3917,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplic
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -4247,6 +4341,7 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEven
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__
 
@@ -4293,6 +4388,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplic
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -4375,6 +4471,7 @@ typedef interface __x_ABI_CWindows_CUI_CCore_CICoreWindow __x_ABI_CWindows_CUI_C
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CCore_CAppRestartFailureReason __x_ABI_CWindows_CApplicationModel_CCore_CAppRestartFailureReason;
+
 
 
 
@@ -4625,6 +4722,100 @@ interface __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Core.IAppListEntry3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Core.AppListEntry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Core_IAppListEntry3[] = L"Windows.ApplicationModel.Core.IAppListEntry3";
+/* [object, uuid("6099F28D-FC32-470A-BC69-4B061A76EF2E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *LaunchForUserAsync )(
+        __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_LaunchForUserAsync(This,user,operation) \
+    ( (This)->lpVtbl->LaunchForUserAsync(This,user,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6793,6 +6984,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledError
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Core.IAppListEntry ** Default Interface **
  *    Windows.ApplicationModel.Core.IAppListEntry2
+ *    Windows.ApplicationModel.Core.IAppListEntry3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

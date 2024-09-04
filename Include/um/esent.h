@@ -245,7 +245,7 @@ typedef struct tagCONVERT_W
 	/* Callback-function types */
 
 #define JET_cbtypNull							0x00000000
-#define JET_cbtypFinalize						0x00000001	/* a finalizable column has gone to zero */
+#define JET_cbtypFinalize						0x00000001	/* DEPRECATED: a finalizable column has gone to zero */
 #define JET_cbtypBeforeInsert					0x00000002	/* about to insert a record */
 #define JET_cbtypAfterInsert					0x00000004	/* finished inserting a record */
 #define JET_cbtypBeforeReplace					0x00000008	/* about to modify a record */
@@ -2027,7 +2027,31 @@ typedef enum {
 #endif // JET_VERSION >= 0x0601
 
 #if ( JET_VERSION >= 0x0602 )
-#define JET_paramCachePriority 					177 //  per-instance property for relative cache priorities(default = 100)
+
+#define JET_paramCachePriority 					177 //  Per-instance property for relative cache priorities (default = 100).
+													//
+													//  There are three scopes for which cache priority may be assigned:
+													//
+													//    - Instance: by calling JetSetSystemParameter and setting JET_paramCachePriority for a specific
+													//                ESE instance. The cache priority for this scope is always defined (default is 100),
+													//                even if the client does not set the priority explicitly using the system parameter.
+													//    - Session: by calling JetSetSessionParameter and setting JET_sesparamCachePriority for a specific
+													//               ESE session. The cache priority for this scope is undefined by default.
+													//    - Database: by calling JetCreateDatabase3 (or above) or JetAttachDatabase3 (or above) and setting
+													//                JET_dbparamCachePriority for a specific new or attached database. The cache priority
+													//                for this scope is undefined by default.
+													//
+													//  The way cache priority for those three scopes interact is as follows:
+													//    - If only the priority for the instance scope is defined, it is used for all operations related
+													//      to that instance.
+													//    - If only the priorities for the instance and session scopes are defined, the session scope priority
+													//      is used for all operations related to that session.
+													//    - If only the priorities for the instance and database scopes are defined, the database scope priority
+													//      is used for all operations related to that database.
+													//    - If the priorities for all three scopes are defined, the lowest of session and database scope
+													//      priorities is used for all operations related to that session/database combination. For everything
+													//      else, the rules above apply on a per-database-page basis.
+
 #define JET_paramMaxTransactionSize 			178	//	Percentage of version store that can be used by oldest transaction before JET_errVersionStoreOutOfMemory (default = 100).
 #define JET_paramPrereadIOMax 		 			179	//	Maximum number of I/O operations dispatched for a given purpose.
 #define JET_paramEnableDBScanSerialization 		180	//	Database Maintenance serialization is enabled for databases sharing the same disk.
@@ -2065,15 +2089,16 @@ typedef enum {
 #define JET_paramMaxValueInvalid				212 //	This is not a valid parameter. It can change from release to release!
 
 
-//	session paramters
+//	Session parameters
 //
-//      JET_sesparamBase					4096	//	all JET_sesparams designed to be distinct from system / JET_params for code defense.
-#define JET_sesparamCommitDefault			4097	//	default grbit for JetCommitTransaction
+//      JET_sesparamBase					4096	//	All JET_sesparams designed to be distinct from system / JET_params and JET_dbparams for code defense.
+
+#define JET_sesparamCommitDefault			4097	//	Default grbit for JetCommitTransaction
 #if ( JET_VERSION >= 0x0A00 )
 #define JET_sesparamTransactionLevel		4099	//	Retrieves (read-only, no set) the current number of nested levels of transactions begun.  0 = not in a transaction.
 #define JET_sesparamOperationContext		4100	//	a client context that the engine uses to track and trace operations (such as IOs)
 #define JET_sesparamCorrelationID			4101	//	an ID that is logged in traces and can be used by clients to correlate ESE actions with their activity
-#define JET_sesparamMaxValueInvalid			4103	//	This is not a valid session parameter. It can change from release to release!
+#define JET_sesparamMaxValueInvalid			4107	//	This is not a valid session parameter. It can change from release to release!
 
 typedef struct {
 	unsigned long	ulUserID;
@@ -2213,7 +2238,7 @@ typedef struct {
 														//	to disallow fixed/var columns in derived tables (so that
 														//	fixed/var columns may be added to the template in the future)
 #endif // JET_VERSION >= 0x0501
-#if JET_VERSION >= 0xA00
+#if JET_VERSION >= 0x0A00
 #define JET_bitTableCreateImmutableStructure	0x00000008	// Do not write to the input structures. Additionally, do not return any auto-opened tableid.
 #endif // JET_VERSION >= 0x0A00
 
@@ -2233,11 +2258,11 @@ typedef struct {
 #define JET_bitColumnUnversioned		0x00001000 /* for add column only - add column unversioned */
 #if ( JET_VERSION >= 0x0501 )
 #define JET_bitColumnMaybeNull			0x00002000 /* for retrieve column info of outer join where no match from the inner table */
-#define JET_bitColumnFinalize				0x00004000 /* this is a finalizable column (issue callback if escrow value equals 0) */
+#define JET_bitColumnFinalize			0x00004000 /* DEPRECATED / Not Fully Implemented: use JET_bitColumnDeleteOnZero instead. */
 #define JET_bitColumnUserDefinedDefault	0x00008000 /* default value from a user-provided callback */
 #endif // JET_VERSION >= 0x0501
 #if ( JET_VERSION >= 0x0502 )
-#define JET_bitColumnDeleteOnZero		0x00020000 /* this is a finalizable column (delete record if escrow value equals 0) */
+#define JET_bitColumnDeleteOnZero		0x00020000 /* When the escrow-update column reaches a value of zero (after all versions are resolve), the record will be deleted. A common use for a column that can be finalized is to use it as a reference count field, and when the field reaches zero the record gets deleted. A Delete-on-zero column must be an escrow update / JET_bitColumnEscrowUpdate column. JET_bitColumnDeleteOnZero cannot be used with JET_bitColumnFinalize. JET_bitColumnDeleteOnZero cannot be used with user defined default columns. */
 #endif // JET_VERSION >= 0x0502
 #if ( JET_VERSION >= 0x0601 )
 #define JET_bitColumnCompressed			0x00080000 /* data in the column can be compressed */
@@ -2366,7 +2391,7 @@ typedef struct {
 #define JET_bitTableOpportuneRead		0x00000080	/*	attempt to opportunely read physically adjacent leaf pages using larger physical IOs */
 #define JET_bitTableSequential			0x00008000  /*  assume the table will be scanned sequentially */
 
-#define JET_bitTableClassMask		0x000F0000	/*  table stats class mask  */
+#define JET_bitTableClassMask		0x001F0000	/*  table stats class mask  */
 #define JET_bitTableClassNone		0x00000000  /*  table belongs to no stats class (default)  */
 #define JET_bitTableClass1			0x00010000  /*  table belongs to stats class 1  */
 #define JET_bitTableClass2			0x00020000  /*  table belongs to stats class 2  */
@@ -2440,9 +2465,12 @@ typedef struct {
 #define JET_bitSetIntrinsicLV				0x00000400 /* store whole LV in record without bursting or return an error */
 #endif // JET_VERSION >= 0x0501
 #if ( JET_VERSION >= 0x0601 )
-#define JET_bitSetCompressed				0x00020000 /* attempt compression when storing the data */
 #define JET_bitSetUncompressed				0x00010000 /* don't attempt compression when storing the data */
-#endif
+#define JET_bitSetCompressed				0x00020000 /* attempt compression when storing the data */
+#if ( JET_VERSION >= 0x0A01 )
+#define JET_bitSetContiguousLV				0x00040000 /* Allocates the long-value across contiguous pages (at potentialy space saving costs) for better IO behavior. Valid only with JET_bitSetSeparateLV. Invalid (or not implemented) with certain long-value operations such as replace, and certain column options such as compression. Use across many varying LVs sizes may cause space fragmentation / allocation issues. */
+#endif // JET_VERSION >= 0x0A01
+#endif // JET_VERSION >= 0x0601
 
 
 #if ( JET_VERSION >= 0x0601 )
@@ -3259,6 +3287,8 @@ typedef struct {
 
 #define JET_errTooManyRecords				-1094 /* There are too many records to enumerate, switch to an API that handles 64-bit numbers */
 
+#define JET_errInvalidDbparamId				-1095 /* This JET_dbparam* identifier is not known to the ESE engine. */
+
 #define JET_errOutOfSessions  				-1101 /* Out of sessions */
 #define JET_errWriteConflict				-1102 /* Write lock failed due to outstanding write lock */
 #define JET_errTransTooDeep					-1103 /* Transactions nested too deeply */
@@ -3977,6 +4007,7 @@ JetIdle(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PKG_ESENT) */
 #pragma endregion
 
+
 #if ( JET_VERSION < 0x0600 )
 #define JetCreateDatabaseA JetCreateDatabase
 #endif
@@ -4059,6 +4090,7 @@ JET_ERR JET_API JetCreateDatabase2W(
 #endif
 #endif
 
+
 #if ( JET_VERSION < 0x0600 )
 #define JetAttachDatabaseA JetAttachDatabase
 #endif
@@ -4134,6 +4166,7 @@ JetAttachDatabase2W(
 #define JetAttachDatabase2 JetAttachDatabase2A
 #endif
 #endif
+
 
 #if ( JET_VERSION < 0x0600 )
 #define JetDetachDatabaseA JetDetachDatabase

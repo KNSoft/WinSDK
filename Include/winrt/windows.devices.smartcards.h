@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.smartcards.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -3414,6 +3416,7 @@ namespace ABI {
 
 
 #if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_USE
@@ -3443,6 +3446,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::SmartCards::SmartCardEmulator*
 
 
 #endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3455,6 +3459,7 @@ namespace ABI {
     } /* SmartCards */} /* ABI */
 
 
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 #if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorConnectionDeactivatedEventArgs_USE
@@ -3485,6 +3490,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::SmartCards::SmartCardEmulator*
 
 
 #endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3497,6 +3503,7 @@ namespace ABI {
     } /* SmartCards */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardAddedEventArgs_USE
@@ -3527,6 +3534,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::SmartCards::SmartCardReader*,A
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3539,6 +3547,7 @@ namespace ABI {
     } /* SmartCards */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_USE
@@ -3568,6 +3577,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::SmartCards::SmartCardReader*,A
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
@@ -5237,8 +5247,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("138D5E40-F3BC-4A5C-B41D-4B4EF684E237"), contract] */
                 MIDL_INTERFACE("138D5E40-F3BC-4A5C-B41D-4B4EF684E237")
-                ISmartCardPinResetHandler : IUnknown
+                ISmartCardPinResetHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::SmartCards::ISmartCardProvisioning * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::SmartCards::ISmartCardPinResetRequest * request
@@ -5278,8 +5289,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("18BBEF98-F18B-4DD3-B118-DFB2C8E23CC6"), exclusiveto, contract] */
                 MIDL_INTERFACE("18BBEF98-F18B-4DD3-B118-DFB2C8E23CC6")
-                ICardAddedEventArgs : IInspectable
+                ICardAddedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SmartCard(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::SmartCards::ISmartCard * * value
                         ) = 0;
@@ -5318,8 +5330,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("15331AAF-22D7-4945-AFC9-03B46F42A6CD"), exclusiveto, contract] */
                 MIDL_INTERFACE("15331AAF-22D7-4945-AFC9-03B46F42A6CD")
-                ICardRemovedEventArgs : IInspectable
+                ICardRemovedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SmartCard(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::SmartCards::ISmartCard * * value
                         ) = 0;
@@ -5358,8 +5371,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("1B718871-6434-43F4-B55A-6A29623870AA"), exclusiveto, contract] */
                 MIDL_INTERFACE("1B718871-6434-43F4-B55A-6A29623870AA")
-                ISmartCard : IInspectable
+                ISmartCard : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reader(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::SmartCards::ISmartCardReader * * value
                         ) = 0;
@@ -5404,8 +5418,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("7DB165E6-6264-56F4-5E03-C86385395EB1"), exclusiveto, contract] */
                 MIDL_INTERFACE("7DB165E6-6264-56F4-5E03-C86385395EB1")
-                ISmartCardAppletIdGroup : IInspectable
+                ISmartCardAppletIdGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5468,8 +5483,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("9105EB4D-4A65-4E41-8061-CBE83F3695E5"), exclusiveto, contract] */
                 MIDL_INTERFACE("9105EB4D-4A65-4E41-8061-CBE83F3695E5")
-                ISmartCardAppletIdGroupFactory : IInspectable
+                ISmartCardAppletIdGroupFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING displayName,
                         /* [in] */__RPC__in_opt __FIVector_1_Windows__CStorage__CStreams__CIBuffer * appletIds,
@@ -5512,8 +5528,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("DF1208D1-31BB-5596-43B1-6D69A0257B3A"), exclusiveto, contract] */
                 MIDL_INTERFACE("DF1208D1-31BB-5596-43B1-6D69A0257B3A")
-                ISmartCardAppletIdGroupRegistration : IInspectable
+                ISmartCardAppletIdGroupRegistration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivationPolicy(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardAppletIdGroupActivationPolicy * value
                         ) = 0;
@@ -5566,8 +5583,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("AB2899A9-E76C-45CF-BF1D-90EAA6205927"), exclusiveto, contract] */
                 MIDL_INTERFACE("AB2899A9-E76C-45CF-BF1D-90EAA6205927")
-                ISmartCardAppletIdGroupStatics : IInspectable
+                ISmartCardAppletIdGroupStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxAppletIds(
                         /* [retval, out] */__RPC__out UINT16 * value
                         ) = 0;
@@ -5606,8 +5624,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("52152BAB-C63E-4531-A857-D756D99B986A"), exclusiveto, contract] */
                 MIDL_INTERFACE("52152BAB-C63E-4531-A857-D756D99B986A")
-                ISmartCardAutomaticResponseApdu : IInspectable
+                ISmartCardAutomaticResponseApdu : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CommandApdu(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -5673,8 +5692,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("44AEBB14-559D-4531-4E51-89DB6FA8A57A"), exclusiveto, contract] */
                 MIDL_INTERFACE("44AEBB14-559D-4531-4E51-89DB6FA8A57A")
-                ISmartCardAutomaticResponseApdu2 : IInspectable
+                ISmartCardAutomaticResponseApdu2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputState(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_UINT32 * * value
                         ) = 0;
@@ -5722,8 +5742,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("BF43DA74-6576-4392-9367-FE3BC9E2D496"), exclusiveto, contract] */
                 MIDL_INTERFACE("BF43DA74-6576-4392-9367-FE3BC9E2D496")
-                ISmartCardAutomaticResponseApdu3 : IInspectable
+                ISmartCardAutomaticResponseApdu3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowWhenCryptogramGeneratorNotPrepared(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5765,8 +5786,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("E97EA2FA-D02C-4C55-B02A-8CFF7FA9F05B"), exclusiveto, contract] */
                 MIDL_INTERFACE("E97EA2FA-D02C-4C55-B02A-8CFF7FA9F05B")
-                ISmartCardAutomaticResponseApduFactory : IInspectable
+                ISmartCardAutomaticResponseApduFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * commandApdu,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * responseApdu,
@@ -5811,8 +5833,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("192A5319-C9C4-4947-81CC-44794A61EF91"), exclusiveto, contract] */
                 MIDL_INTERFACE("192A5319-C9C4-4947-81CC-44794A61EF91")
-                ISmartCardChallengeContext : IInspectable
+                ISmartCardChallengeContext : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Challenge(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -5871,8 +5894,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("2FDF87E5-028D-491E-A058-3382C3986F40"), exclusiveto, contract] */
                 MIDL_INTERFACE("2FDF87E5-028D-491E-A058-3382C3986F40")
-                ISmartCardConnect : IInspectable
+                ISmartCardConnect : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ConnectAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardConnection * * result
                         ) = 0;
@@ -5915,8 +5939,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("7EDB991A-A81A-47BC-A649-156BE6B7F231"), exclusiveto, contract] */
                 MIDL_INTERFACE("7EDB991A-A81A-47BC-A649-156BE6B7F231")
-                ISmartCardConnection : IInspectable
+                ISmartCardConnection : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TransmitAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * command,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer * * result
@@ -5956,8 +5981,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("E39F587B-EDD3-4E49-B594-0FF5E4D0C76F"), exclusiveto, contract] */
                 MIDL_INTERFACE("E39F587B-EDD3-4E49-B594-0FF5E4D0C76F")
-                ISmartCardCryptogramGenerator : IInspectable
+                ISmartCardCryptogramGenerator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedCryptogramMaterialTypes(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramMaterialType * * result
                         ) = 0;
@@ -6048,8 +6074,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("7116AA34-5D6D-4B4A-96A3-EFA47D2A7E25"), exclusiveto, contract] */
                 MIDL_INTERFACE("7116AA34-5D6D-4B4A-96A3-EFA47D2A7E25")
-                ISmartCardCryptogramGenerator2 : IInspectable
+                ISmartCardCryptogramGenerator2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ValidateRequestApduAsync(
                         /* [in] */ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior promptingBehavior,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * apduToValidate,
@@ -6106,8 +6133,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("09933910-CB9C-4015-967D-5234F3B02900"), exclusiveto, contract] */
                 MIDL_INTERFACE("09933910-CB9C-4015-967D-5234F3B02900")
-                ISmartCardCryptogramGeneratorStatics : IInspectable
+                ISmartCardCryptogramGeneratorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetSmartCardCryptogramGeneratorAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGenerator * * result
                         ) = 0;
@@ -6146,8 +6174,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("09BDF5E5-B4BD-4E23-A588-74469204C128"), exclusiveto, contract] */
                 MIDL_INTERFACE("09BDF5E5-B4BD-4E23-A588-74469204C128")
-                ISmartCardCryptogramGeneratorStatics2 : IInspectable
+                ISmartCardCryptogramGeneratorStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsSupported(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -6186,8 +6215,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("2798E029-D687-4C92-86C6-399E9A0ECB09"), exclusiveto, contract] */
                 MIDL_INTERFACE("2798E029-D687-4C92-86C6-399E9A0ECB09")
-                ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult : IInspectable
+                ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OperationStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardCryptogramGeneratorOperationStatus * value
                         ) = 0;
@@ -6229,8 +6259,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("4E6A8A5C-9773-46C4-A32F-B1E543159E04"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E6A8A5C-9773-46C4-A32F-B1E543159E04")
-                ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult : IInspectable
+                ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OperationStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardCryptogramGeneratorOperationStatus * value
                         ) = 0;
@@ -6272,8 +6303,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("8C7CE857-A7E7-489D-B9D6-368061515012"), exclusiveto, contract] */
                 MIDL_INTERFACE("8C7CE857-A7E7-489D-B9D6-368061515012")
-                ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult : IInspectable
+                ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OperationStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardCryptogramGeneratorOperationStatus * value
                         ) = 0;
@@ -6315,8 +6347,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("FC9AC5CC-C1D7-4153-923B-A2D43C6C8D49"), exclusiveto, contract] */
                 MIDL_INTERFACE("FC9AC5CC-C1D7-4153-923B-A2D43C6C8D49")
-                ISmartCardCryptogramMaterialCharacteristics : IInspectable
+                ISmartCardCryptogramMaterialCharacteristics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaterialName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6376,8 +6409,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("FFB58E1F-0692-4C47-93CF-34D91F9DCD00"), exclusiveto, contract] */
                 MIDL_INTERFACE("FFB58E1F-0692-4C47-93CF-34D91F9DCD00")
-                ISmartCardCryptogramMaterialPackageCharacteristics : IInspectable
+                ISmartCardCryptogramMaterialPackageCharacteristics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PackageName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6425,8 +6459,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("E5B9AB8C-A141-4135-9ADD-B0D2E3AA1FC9"), exclusiveto, contract] */
                 MIDL_INTERFACE("E5B9AB8C-A141-4135-9ADD-B0D2E3AA1FC9")
-                ISmartCardCryptogramMaterialPossessionProof : IInspectable
+                ISmartCardCryptogramMaterialPossessionProof : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OperationStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardCryptogramGeneratorOperationStatus * value
                         ) = 0;
@@ -6468,8 +6503,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("947B03EB-8342-4792-A2E5-925636378A53"), exclusiveto, contract] */
                 MIDL_INTERFACE("947B03EB-8342-4792-A2E5-925636378A53")
-                ISmartCardCryptogramPlacementStep : IInspectable
+                ISmartCardCryptogramPlacementStep : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Algorithm(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardCryptogramAlgorithm * value
                         ) = 0;
@@ -6559,8 +6595,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("8552546E-4457-4825-B464-635471A39F5C"), exclusiveto, contract] */
                 MIDL_INTERFACE("8552546E-4457-4825-B464-635471A39F5C")
-                ISmartCardCryptogramStorageKeyCharacteristics : IInspectable
+                ISmartCardCryptogramStorageKeyCharacteristics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StorageKeyName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6608,8 +6645,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("77B0F00D-B097-4F61-A26A-9561639C9C3A"), exclusiveto, contract] */
                 MIDL_INTERFACE("77B0F00D-B097-4F61-A26A-9561639C9C3A")
-                ISmartCardCryptogramStorageKeyInfo : IInspectable
+                ISmartCardCryptogramStorageKeyInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OperationStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardCryptogramGeneratorOperationStatus * value
                         ) = 0;
@@ -6666,8 +6704,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("000440F9-F7FD-417D-89E1-FBB0382ADC4D"), exclusiveto, contract] */
                 MIDL_INTERFACE("000440F9-F7FD-417D-89E1-FBB0382ADC4D")
-                ISmartCardCryptogramStorageKeyInfo2 : IInspectable
+                ISmartCardCryptogramStorageKeyInfo2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OperationalRequirements(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6706,8 +6745,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("DFB906B2-875E-47E5-8077-E8BFF1B1C6FB"), exclusiveto, contract] */
                 MIDL_INTERFACE("DFB906B2-875E-47E5-8077-E8BFF1B1C6FB")
-                ISmartCardEmulator : IInspectable
+                ISmartCardEmulator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnablementPolicy(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardEmulatorEnablementPolicy * value
                         ) = 0;
@@ -6746,8 +6786,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("FE3FC0B8-8529-411A-807B-48EDC2A0AB44"), exclusiveto, contract] */
                 MIDL_INTERFACE("FE3FC0B8-8529-411A-807B-48EDC2A0AB44")
-                ISmartCardEmulator2 : IInspectable
+                ISmartCardEmulator2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ApduReceived(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -6801,8 +6842,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("D55D1576-69D2-5333-5B5F-F8C0D6E9F09F"), exclusiveto, contract] */
                 MIDL_INTERFACE("D55D1576-69D2-5333-5B5F-F8C0D6E9F09F")
-                ISmartCardEmulatorApduReceivedEventArgs : IInspectable
+                ISmartCardEmulatorApduReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CommandApdu(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -6851,8 +6893,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("8BF93DF0-22E1-4238-8610-94CE4A965425"), exclusiveto, contract] */
                 MIDL_INTERFACE("8BF93DF0-22E1-4238-8610-94CE4A965425")
-                ISmartCardEmulatorApduReceivedEventArgs2 : IInspectable
+                ISmartCardEmulatorApduReceivedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -6896,8 +6939,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("D550BAC7-B7BF-4E29-9294-0C4AC3C941BD"), exclusiveto, contract] */
                 MIDL_INTERFACE("D550BAC7-B7BF-4E29-9294-0C4AC3C941BD")
-                ISmartCardEmulatorApduReceivedEventArgsWithCryptograms : IInspectable
+                ISmartCardEmulatorApduReceivedEventArgsWithCryptograms : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryRespondWithCryptogramsAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * responseTemplate,
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramPlacementStep * cryptogramPlacementSteps,
@@ -6944,8 +6988,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("2186D8D3-C5EB-5262-43DF-62A0A1B55557"), exclusiveto, contract] */
                 MIDL_INTERFACE("2186D8D3-C5EB-5262-43DF-62A0A1B55557")
-                ISmartCardEmulatorConnectionDeactivatedEventArgs : IInspectable
+                ISmartCardEmulatorConnectionDeactivatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConnectionProperties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::SmartCards::ISmartCardEmulatorConnectionProperties * * value
                         ) = 0;
@@ -6987,8 +7032,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("4E2CA5EE-F969-507D-6CF9-34E2D18DF311"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E2CA5EE-F969-507D-6CF9-34E2D18DF311")
-                ISmartCardEmulatorConnectionProperties : IInspectable
+                ISmartCardEmulatorConnectionProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -7030,8 +7076,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("7A9BFC4B-C4D3-494F-B8A2-6215D81E85B2"), exclusiveto, contract] */
                 MIDL_INTERFACE("7A9BFC4B-C4D3-494F-B8A2-6215D81E85B2")
-                ISmartCardEmulatorStatics : IInspectable
+                ISmartCardEmulatorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefaultAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardEmulator * * result
                         ) = 0;
@@ -7070,8 +7117,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("69AE9F8A-B775-488B-8436-6C1E28ED731F"), exclusiveto, contract] */
                 MIDL_INTERFACE("69AE9F8A-B775-488B-8436-6C1E28ED731F")
-                ISmartCardEmulatorStatics2 : IInspectable
+                ISmartCardEmulatorStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAppletIdGroupRegistrationsAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration * * result
                         ) = 0;
@@ -7121,8 +7169,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("59EA142A-9F09-43F5-8565-CFA8148E4CB2"), exclusiveto, contract] */
                 MIDL_INTERFACE("59EA142A-9F09-43F5-8565-CFA8148E4CB2")
-                ISmartCardEmulatorStatics3 : IInspectable
+                ISmartCardEmulatorStatics3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsSupported(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -7161,8 +7210,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("183CE184-4DB6-4841-AC9E-2AC1F39B7304"), exclusiveto, contract] */
                 MIDL_INTERFACE("183CE184-4DB6-4841-AC9E-2AC1F39B7304")
-                ISmartCardPinPolicy : IInspectable
+                ISmartCardPinPolicy : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinLength(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -7234,8 +7284,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("18C94AAC-7805-4004-85E4-BBEFAC8F6884"), exclusiveto, contract] */
                 MIDL_INTERFACE("18C94AAC-7805-4004-85E4-BBEFAC8F6884")
-                ISmartCardPinResetDeferral : IInspectable
+                ISmartCardPinResetDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -7272,8 +7323,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("12FE3C4D-5FB9-4E8E-9FF6-61F475124FEF"), exclusiveto, contract] */
                 MIDL_INTERFACE("12FE3C4D-5FB9-4E8E-9FF6-61F475124FEF")
-                ISmartCardPinResetRequest : IInspectable
+                ISmartCardPinResetRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Challenge(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -7321,8 +7373,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("19EEEDBD-1FAB-477C-B712-1A2C5AF1FD6E"), exclusiveto, contract] */
                 MIDL_INTERFACE("19EEEDBD-1FAB-477C-B712-1A2C5AF1FD6E")
-                ISmartCardProvisioning : IInspectable
+                ISmartCardProvisioning : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SmartCard(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::SmartCards::ISmartCard * * value
                         ) = 0;
@@ -7377,8 +7430,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("10FD28EB-3F79-4B66-9B7C-11C149B7D0BC"), exclusiveto, contract] */
                 MIDL_INTERFACE("10FD28EB-3F79-4B66-9B7C-11C149B7D0BC")
-                ISmartCardProvisioning2 : IInspectable
+                ISmartCardProvisioning2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAuthorityKeyContainerNameAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * result
                         ) = 0;
@@ -7417,8 +7471,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("13882848-0D13-4E70-9735-51DAECA5254F"), exclusiveto, contract] */
                 MIDL_INTERFACE("13882848-0D13-4E70-9735-51DAECA5254F")
-                ISmartCardProvisioningStatics : IInspectable
+                ISmartCardProvisioningStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromSmartCardAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::SmartCards::ISmartCard * card,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning * * result
@@ -7475,8 +7530,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("3447C6A8-C9A0-4BD6-B50D-251F4E8D3A62"), exclusiveto, contract] */
                 MIDL_INTERFACE("3447C6A8-C9A0-4BD6-B50D-251F4E8D3A62")
-                ISmartCardProvisioningStatics2 : IInspectable
+                ISmartCardProvisioningStatics2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestAttestedVirtualSmartCardCreationAsync(
                         /* [in] */__RPC__in HSTRING friendlyName,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * administrativeKey,
@@ -7525,8 +7581,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("1074B4E0-54C2-4DF0-817A-14C14378F06C"), exclusiveto, contract] */
                 MIDL_INTERFACE("1074B4E0-54C2-4DF0-817A-14C14378F06C")
-                ISmartCardReader : IInspectable
+                ISmartCardReader : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7591,8 +7648,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("103C04E1-A1CA-48F2-A281-5B6F669AF107"), exclusiveto, contract] */
                 MIDL_INTERFACE("103C04E1-A1CA-48F2-A281-5B6F669AF107")
-                ISmartCardReaderStatics : IInspectable
+                ISmartCardReaderStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * selector
                         ) = 0;
@@ -7639,8 +7697,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("5F9BF11E-39EF-4F2B-B44F-0A9155B177BC"), exclusiveto, contract] */
                 MIDL_INTERFACE("5F9BF11E-39EF-4F2B-B44F-0A9155B177BC")
-                ISmartCardTriggerDetails : IInspectable
+                ISmartCardTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TriggerType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::SmartCards::SmartCardTriggerType * value
                         ) = 0;
@@ -7685,8 +7744,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("2945C569-8975-4A51-9E1A-5F8A76EE51AF"), exclusiveto, contract] */
                 MIDL_INTERFACE("2945C569-8975-4A51-9E1A-5F8A76EE51AF")
-                ISmartCardTriggerDetails2 : IInspectable
+                ISmartCardTriggerDetails2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Emulator(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::SmartCards::ISmartCardEmulator * * value
                         ) = 0;
@@ -7734,8 +7794,9 @@ namespace ABI {
             namespace SmartCards {
                 /* [object, uuid("B3E2C27D-18C6-4BA8-8376-EF03D4912666"), exclusiveto, contract] */
                 MIDL_INTERFACE("B3E2C27D-18C6-4BA8-8376-EF03D4912666")
-                ISmartCardTriggerDetails3 : IInspectable
+                ISmartCardTriggerDetails3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SmartCard(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::SmartCards::ISmartCard * * value
                         ) = 0;
@@ -13882,6 +13943,7 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__
 
 
 #if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_INTERFACE_DEFINED__
 
@@ -13929,9 +13991,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmul
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 #if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorConnectionDeactivatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorConnectionDeactivatedEventArgs_INTERFACE_DEFINED__
@@ -13980,9 +14044,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmul
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorConnectionDeactivatedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardAddedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardAddedEventArgs_INTERFACE_DEFINED__
@@ -14031,9 +14097,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardRead
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardAddedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_INTERFACE_DEFINED__
@@ -14081,6 +14149,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardRead
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__

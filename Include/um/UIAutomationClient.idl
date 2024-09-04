@@ -346,6 +346,7 @@ library UIAutomationClient
         const long UIA_Selection2LastSelectedItemPropertyId           = 30170;
         const long UIA_Selection2CurrentSelectedItemPropertyId        = 30171;
         const long UIA_Selection2ItemCountPropertyId                  = 30172;
+        const long UIA_HeadingLevelPropertyId                         = 30173;
     }
 
     [dllname("<no entry points>")]
@@ -503,6 +504,21 @@ library UIAutomationClient
         const long UIA_MainLandmarkTypeId       = 80002;
         const long UIA_NavigationLandmarkTypeId = 80003;
         const long UIA_SearchLandmarkTypeId     = 80004;
+    };
+
+    [dllname("<no entry points>")]
+    module UIA_HeadingLevelIds
+    {
+        const long HeadingLevel_None = 80050;
+        const long HeadingLevel1 = 80051;
+        const long HeadingLevel2 = 80052;
+        const long HeadingLevel3 = 80053;
+        const long HeadingLevel4 = 80054;
+        const long HeadingLevel5 = 80055;
+        const long HeadingLevel6 = 80056;
+        const long HeadingLevel7 = 80057;
+        const long HeadingLevel8 = 80058;
+        const long HeadingLevel9 = 80059;
     };
 
     [dllname("<no entry points>")]
@@ -2264,6 +2280,16 @@ library UIAutomationClient
             [in] int targetId,
             [in] METADATAID metadataId,
             [out, retval] VARIANT* returnVal);
+    }
+
+    [object, uuid(8C60217D-5411-4CDE-BCC0-1CEDA223830C), pointer_default(unique)]
+    interface IUIAutomationElement8 : IUIAutomationElement7
+    {
+        [propget] HRESULT CurrentHeadingLevel(
+            [out, retval] HEADINGLEVELID* retVal);
+
+        [propget] HRESULT CachedHeadingLevel(
+            [out, retval] HEADINGLEVELID* retVal);
     }
 
     //  IUIAutomationElementArray

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.data.text.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -1644,8 +1646,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("3A3DFC9C-AEDE-4DC7-9E6C-41C044BD3592"), contract] */
                 MIDL_INTERFACE("3A3DFC9C-AEDE-4DC7-9E6C-41C044BD3592")
-                ISelectableWordSegmentsTokenizingHandler : IUnknown
+                ISelectableWordSegmentsTokenizingHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CData__CText__CSelectableWordSegment * precedingWords,
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CData__CText__CSelectableWordSegment * words
@@ -1681,8 +1684,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("A5DD6357-BF2A-4C4F-A31F-29E71C6F8B35"), contract] */
                 MIDL_INTERFACE("A5DD6357-BF2A-4C4F-A31F-29E71C6F8B35")
-                IWordSegmentsTokenizingHandler : IUnknown
+                IWordSegmentsTokenizingHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CData__CText__CWordSegment * precedingWords,
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CData__CText__CWordSegment * words
@@ -1722,8 +1726,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("47396C1E-51B9-4207-9146-248E636A1D1D"), exclusiveto, contract] */
                 MIDL_INTERFACE("47396C1E-51B9-4207-9146-248E636A1D1D")
-                IAlternateWordForm : IInspectable
+                IAlternateWordForm : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourceTextSegment(
                         /* [retval, out] */__RPC__out ABI::Windows::Data::Text::TextSegment * value
                         ) = 0;
@@ -1768,8 +1773,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("916A4CB7-8AA7-4C78-B374-5DEDB752E60B"), exclusiveto, contract] */
                 MIDL_INTERFACE("916A4CB7-8AA7-4C78-B374-5DEDB752E60B")
-                ISelectableWordSegment : IInspectable
+                ISelectableWordSegment : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1811,8 +1817,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("F6DC31E7-4B13-45C5-8897-7D71269E085D"), exclusiveto, contract] */
                 MIDL_INTERFACE("F6DC31E7-4B13-45C5-8897-7D71269E085D")
-                ISelectableWordsSegmenter : IInspectable
+                ISelectableWordsSegmenter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResolvedLanguage(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1865,8 +1872,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("8C7A7648-6057-4339-BC70-F210010A4150"), exclusiveto, contract] */
                 MIDL_INTERFACE("8C7A7648-6057-4339-BC70-F210010A4150")
-                ISelectableWordsSegmenterFactory : IInspectable
+                ISelectableWordsSegmenterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithLanguage(
                         /* [in] */__RPC__in HSTRING language,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Text::ISelectableWordsSegmenter * * result
@@ -1906,8 +1914,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("6A1CAB51-1FB2-4909-80B8-35731A2B3E7F"), exclusiveto, contract] */
                 MIDL_INTERFACE("6A1CAB51-1FB2-4909-80B8-35731A2B3E7F")
-                ISemanticTextQuery : IInspectable
+                ISemanticTextQuery : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Find(
                         /* [in] */__RPC__in HSTRING content,
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CData__CText__CTextSegment * * result
@@ -1952,8 +1961,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("238C0503-F995-4587-8777-A2B7D80ACFEF"), exclusiveto, contract] */
                 MIDL_INTERFACE("238C0503-F995-4587-8777-A2B7D80ACFEF")
-                ISemanticTextQueryFactory : IInspectable
+                ISemanticTextQueryFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING aqsFilter,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Text::ISemanticTextQuery * * result
@@ -1998,8 +2008,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("03606A5E-2AA9-4AB6-AF8B-A562B63A8992"), exclusiveto, contract] */
                 MIDL_INTERFACE("03606A5E-2AA9-4AB6-AF8B-A562B63A8992")
-                ITextConversionGenerator : IInspectable
+                ITextConversionGenerator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResolvedLanguage(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2050,8 +2061,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("FCAA3781-3083-49AB-BE15-56DFBBB74D6F"), exclusiveto, contract] */
                 MIDL_INTERFACE("FCAA3781-3083-49AB-BE15-56DFBBB74D6F")
-                ITextConversionGeneratorFactory : IInspectable
+                ITextConversionGeneratorFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING languageTag,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Text::ITextConversionGenerator * * result
@@ -2091,8 +2103,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("9362A40A-9B7A-4569-94CF-D84F2F38CF9B"), exclusiveto, contract] */
                 MIDL_INTERFACE("9362A40A-9B7A-4569-94CF-D84F2F38CF9B")
-                ITextPhoneme : IInspectable
+                ITextPhoneme : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayText(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2134,8 +2147,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("5EACAB07-ABF1-4CB6-9D9E-326F2B468756"), exclusiveto, contract] */
                 MIDL_INTERFACE("5EACAB07-ABF1-4CB6-9D9E-326F2B468756")
-                ITextPredictionGenerator : IInspectable
+                ITextPredictionGenerator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResolvedLanguage(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2186,8 +2200,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("7257B416-8BA2-4751-9D30-9D85435653A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("7257B416-8BA2-4751-9D30-9D85435653A2")
-                ITextPredictionGeneratorFactory : IInspectable
+                ITextPredictionGeneratorFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING languageTag,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Text::ITextPredictionGenerator * * result
@@ -2227,8 +2242,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("51E7F514-9C51-4D86-AE1B-B498FBAD8313"), exclusiveto, contract] */
                 MIDL_INTERFACE("51E7F514-9C51-4D86-AE1B-B498FBAD8313")
-                ITextReverseConversionGenerator : IInspectable
+                ITextReverseConversionGenerator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResolvedLanguage(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2274,8 +2290,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("1AAFD2EC-85D6-46FD-828A-3A4830FA6E18"), exclusiveto, contract] */
                 MIDL_INTERFACE("1AAFD2EC-85D6-46FD-828A-3A4830FA6E18")
-                ITextReverseConversionGenerator2 : IInspectable
+                ITextReverseConversionGenerator2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetPhonemesAsync(
                         /* [in] */__RPC__in HSTRING input,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CData__CText__CTextPhoneme * * result
@@ -2315,8 +2332,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("63BED326-1FDA-41F6-89D5-23DDEA3C729A"), exclusiveto, contract] */
                 MIDL_INTERFACE("63BED326-1FDA-41F6-89D5-23DDEA3C729A")
-                ITextReverseConversionGeneratorFactory : IInspectable
+                ITextReverseConversionGeneratorFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING languageTag,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Text::ITextReverseConversionGenerator * * result
@@ -2356,8 +2374,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("97909E87-9291-4F91-B6C8-B6E359D7A7FB"), exclusiveto, contract] */
                 MIDL_INTERFACE("97909E87-9291-4F91-B6C8-B6E359D7A7FB")
-                IUnicodeCharactersStatics : IInspectable
+                IUnicodeCharactersStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCodepointFromSurrogatePair(
                         /* [in] */UINT32 highSurrogate,
                         /* [in] */UINT32 lowSurrogate,
@@ -2463,8 +2482,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("D2D4BA6D-987C-4CC0-B6BD-D49A11B38F9A"), exclusiveto, contract] */
                 MIDL_INTERFACE("D2D4BA6D-987C-4CC0-B6BD-D49A11B38F9A")
-                IWordSegment : IInspectable
+                IWordSegment : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2509,8 +2529,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("86B4D4D1-B2FE-4E34-A81D-66640300454F"), exclusiveto, contract] */
                 MIDL_INTERFACE("86B4D4D1-B2FE-4E34-A81D-66640300454F")
-                IWordsSegmenter : IInspectable
+                IWordsSegmenter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResolvedLanguage(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2563,8 +2584,9 @@ namespace ABI {
             namespace Text {
                 /* [object, uuid("E6977274-FC35-455C-8BFB-6D7F4653CA97"), exclusiveto, contract] */
                 MIDL_INTERFACE("E6977274-FC35-455C-8BFB-6D7F4653CA97")
-                IWordsSegmenterFactory : IInspectable
+                IWordsSegmenterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithLanguage(
                         /* [in] */__RPC__in HSTRING language,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Text::IWordsSegmenter * * result

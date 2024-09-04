@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.graphics.printing.workflow.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -542,6 +544,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSetupRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSetupRequestedEventArgs_USE
@@ -571,6 +574,7 @@ typedef ITypedEventHandler<ABI::Windows::Graphics::Printing::Workflow::PrintWork
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 namespace ABI {
@@ -585,6 +589,7 @@ namespace ABI {
     } /* Workflow */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowSubmittedEventArgs_USE
@@ -615,6 +620,7 @@ typedef ITypedEventHandler<ABI::Windows::Graphics::Printing::Workflow::PrintWork
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 namespace ABI {
     namespace Windows {
@@ -640,6 +646,7 @@ namespace ABI {
     } /* Workflow */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSetupRequestedEventArgs_USE
@@ -670,6 +677,7 @@ typedef ITypedEventHandler<ABI::Windows::Graphics::Printing::Workflow::PrintWork
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 namespace ABI {
@@ -684,6 +692,7 @@ namespace ABI {
     } /* Workflow */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowXpsDataAvailableEventArgs_USE
@@ -713,6 +722,7 @@ typedef ITypedEventHandler<ABI::Windows::Graphics::Printing::Workflow::PrintWork
 #endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowXpsDataAvailableEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 namespace ABI {
@@ -1163,8 +1173,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("5B7913BA-0C5E-528A-7458-86A46CBDDC45"), exclusiveto, contract] */
                     MIDL_INTERFACE("5B7913BA-0C5E-528A-7458-86A46CBDDC45")
-                    IPrintWorkflowBackgroundSession : IInspectable
+                    IPrintWorkflowBackgroundSession : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SetupRequested(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSetupRequestedEventArgs * setupEventHandler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1220,8 +1231,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("43E97342-1750-59C9-61FB-383748A20362"), exclusiveto, contract] */
                     MIDL_INTERFACE("43E97342-1750-59C9-61FB-383748A20362")
-                    IPrintWorkflowBackgroundSetupRequestedEventArgs : IInspectable
+                    IPrintWorkflowBackgroundSetupRequestedEventArgs : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetUserPrintTicketAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGraphics__CPrinting__CPrintTicket__CWorkflowPrintTicket * * operation
                             ) = 0;
@@ -1269,8 +1281,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("D0AAC4ED-FD4B-5DF5-4BB6-8D0D159EBE3F"), exclusiveto, contract] */
                     MIDL_INTERFACE("D0AAC4ED-FD4B-5DF5-4BB6-8D0D159EBE3F")
-                    IPrintWorkflowConfiguration : IInspectable
+                    IPrintWorkflowConfiguration : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourceAppDisplayName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1317,8 +1330,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("C79B63D0-F8EC-4CEB-953A-C8876157DD33"), exclusiveto, contract] */
                     MIDL_INTERFACE("C79B63D0-F8EC-4CEB-953A-C8876157DD33")
-                    IPrintWorkflowForegroundSession : IInspectable
+                    IPrintWorkflowForegroundSession : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SetupRequested(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSetupRequestedEventArgs * setupEventHandler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1374,8 +1388,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("BBE38247-9C1B-4DD3-9B2B-C80468D941B3"), exclusiveto, contract] */
                     MIDL_INTERFACE("BBE38247-9C1B-4DD3-9B2B-C80468D941B3")
-                    IPrintWorkflowForegroundSetupRequestedEventArgs : IInspectable
+                    IPrintWorkflowForegroundSetupRequestedEventArgs : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetUserPrintTicketAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGraphics__CPrinting__CPrintTicket__CWorkflowPrintTicket * * operation
                             ) = 0;
@@ -1422,8 +1437,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("C36C8A6A-8A2A-419A-B3C3-2090E6BFAB2F"), exclusiveto, contract] */
                     MIDL_INTERFACE("C36C8A6A-8A2A-419A-B3C3-2090E6BFAB2F")
-                    IPrintWorkflowObjectModelSourceFileContent : IInspectable
+                    IPrintWorkflowObjectModelSourceFileContent : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1461,8 +1477,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("7D96BC74-9B54-4CA1-AD3A-979C3D44DDAC"), exclusiveto, contract] */
                     MIDL_INTERFACE("7D96BC74-9B54-4CA1-AD3A-979C3D44DDAC")
-                    IPrintWorkflowObjectModelTargetPackage : IInspectable
+                    IPrintWorkflowObjectModelTargetPackage : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1500,8 +1517,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("1A28C641-CEB1-4533-BB73-FBE63EEFDB18"), exclusiveto, contract] */
                     MIDL_INTERFACE("1A28C641-CEB1-4533-BB73-FBE63EEFDB18")
-                    IPrintWorkflowSourceContent : IInspectable
+                    IPrintWorkflowSourceContent : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetJobPrintTicketAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGraphics__CPrinting__CPrintTicket__CWorkflowPrintTicket * * operation
                             ) = 0;
@@ -1548,8 +1566,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("72E55ECE-E406-4B74-84E1-3FF3FDCDAF70"), exclusiveto, contract] */
                     MIDL_INTERFACE("72E55ECE-E406-4B74-84E1-3FF3FDCDAF70")
-                    IPrintWorkflowSpoolStreamContent : IInspectable
+                    IPrintWorkflowSpoolStreamContent : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetInputStream(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IInputStream * * result
                             ) = 0;
@@ -1590,8 +1609,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("B23BBA84-8565-488B-9839-1C9E7C7AA916"), exclusiveto, contract] */
                     MIDL_INTERFACE("B23BBA84-8565-488B-9839-1C9E7C7AA916")
-                    IPrintWorkflowStreamTarget : IInspectable
+                    IPrintWorkflowStreamTarget : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetOutputStream(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IOutputStream * * result
                             ) = 0;
@@ -1632,8 +1652,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("3ADD0A41-3794-5569-5C87-40E8FF720F83"), exclusiveto, contract] */
                     MIDL_INTERFACE("3ADD0A41-3794-5569-5C87-40E8FF720F83")
-                    IPrintWorkflowSubmittedEventArgs : IInspectable
+                    IPrintWorkflowSubmittedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Operation(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing::Workflow::IPrintWorkflowSubmittedOperation * * value
                             ) = 0;
@@ -1681,8 +1702,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("2E4E6216-3BE1-5F0F-5C81-A5A2BD4EAB0E"), exclusiveto, contract] */
                     MIDL_INTERFACE("2E4E6216-3BE1-5F0F-5C81-A5A2BD4EAB0E")
-                    IPrintWorkflowSubmittedOperation : IInspectable
+                    IPrintWorkflowSubmittedOperation : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Complete(
                             /* [in] */ABI::Windows::Graphics::Printing::Workflow::PrintWorkflowSubmittedStatus status
                             ) = 0;
@@ -1729,8 +1751,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("29DA276C-0A73-5AED-4F3D-970D3251F057"), exclusiveto, contract] */
                     MIDL_INTERFACE("29DA276C-0A73-5AED-4F3D-970D3251F057")
-                    IPrintWorkflowTarget : IInspectable
+                    IPrintWorkflowTarget : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetAsStream(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing::Workflow::IPrintWorkflowStreamTarget * * value
                             ) = 0;
@@ -1774,8 +1797,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("5739D868-9D86-4052-B0CB-F310BECD59BB"), exclusiveto, contract] */
                     MIDL_INTERFACE("5739D868-9D86-4052-B0CB-F310BECD59BB")
-                    IPrintWorkflowTriggerDetails : IInspectable
+                    IPrintWorkflowTriggerDetails : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrintWorkflowSession(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing::Workflow::IPrintWorkflowBackgroundSession * * value
                             ) = 0;
@@ -1821,8 +1845,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("BC8A844D-09EB-5746-72A6-8DC8B5EDBE9B"), exclusiveto, contract] */
                     MIDL_INTERFACE("BC8A844D-09EB-5746-72A6-8DC8B5EDBE9B")
-                    IPrintWorkflowUIActivatedEventArgs : IInspectable
+                    IPrintWorkflowUIActivatedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrintWorkflowSession(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing::Workflow::IPrintWorkflowForegroundSession * * value
                             ) = 0;
@@ -1863,8 +1888,9 @@ namespace ABI {
                 namespace Workflow {
                     /* [object, uuid("4D11C331-54D1-434E-BE0E-82C5FA58E5B2"), exclusiveto, contract] */
                     MIDL_INTERFACE("4D11C331-54D1-434E-BE0E-82C5FA58E5B2")
-                    IPrintWorkflowXpsDataAvailableEventArgs : IInspectable
+                    IPrintWorkflowXpsDataAvailableEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Operation(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Printing::Workflow::IPrintWorkflowSubmittedOperation * * value
                             ) = 0;
@@ -2379,6 +2405,7 @@ typedef interface __x_ABI_CWindows_CGraphics_CPrinting_CWorkflow_CIPrintWorkflow
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSetupRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSetupRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -2426,9 +2453,11 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPri
 #endif // ____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSetupRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowSubmittedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowSubmittedEventArgs_INTERFACE_DEFINED__
@@ -2477,9 +2506,11 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPri
 #endif // ____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowBackgroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowSubmittedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSetupRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSetupRequestedEventArgs_INTERFACE_DEFINED__
@@ -2528,9 +2559,11 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPri
 #endif // ____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSetupRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowXpsDataAvailableEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowXpsDataAvailableEventArgs_INTERFACE_DEFINED__
@@ -2578,6 +2611,7 @@ interface __FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPri
 
 #endif // ____FITypedEventHandler_2_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowForegroundSession_Windows__CGraphics__CPrinting__CWorkflow__CPrintWorkflowXpsDataAvailableEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef ____x_ABI_CWindows_CGraphics_CPrinting_CPrintTicket_CIWorkflowPrintTicket_FWD_DEFINED__

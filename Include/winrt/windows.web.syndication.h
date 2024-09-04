@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.web.syndication.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2457,8 +2459,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("71E8F969-526E-4001-9A91-E84F83161AB1"), exclusiveto, contract] */
                 MIDL_INTERFACE("71E8F969-526E-4001-9A91-E84F83161AB1")
-                ISyndicationAttribute : IInspectable
+                ISyndicationAttribute : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2512,8 +2515,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("624F1599-ED3E-420F-BE86-640414886E4B"), exclusiveto, contract] */
                 MIDL_INTERFACE("624F1599-ED3E-420F-BE86-640414886E4B")
-                ISyndicationAttributeFactory : IInspectable
+                ISyndicationAttributeFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationAttribute(
                         /* [in] */__RPC__in HSTRING attributeName,
                         /* [in] */__RPC__in HSTRING attributeNamespace,
@@ -2559,8 +2563,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("8715626F-0CBA-4A7F-89FF-ECB5281423B6"), exclusiveto, contract] */
                 MIDL_INTERFACE("8715626F-0CBA-4A7F-89FF-ECB5281423B6")
-                ISyndicationCategory : IInspectable
+                ISyndicationCategory : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Label(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2614,8 +2619,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("AB42802F-49E0-4525-8AB2-AB45C02528FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("AB42802F-49E0-4525-8AB2-AB45C02528FF")
-                ISyndicationCategoryFactory : IInspectable
+                ISyndicationCategoryFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationCategory(
                         /* [in] */__RPC__in HSTRING term,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Syndication::ISyndicationCategory * * category
@@ -2658,8 +2664,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("9E18A9B7-7249-4B45-B229-7DF895A5A1F5"), contract] */
                 MIDL_INTERFACE("9E18A9B7-7249-4B45-B229-7DF895A5A1F5")
-                ISyndicationClient : IInspectable
+                ISyndicationClient : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServerCredential(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Credentials::IPasswordCredential * * value
                         ) = 0;
@@ -2733,8 +2740,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("2EC4B32C-A79B-4114-B29A-05DFFBAFB9A4"), exclusiveto, contract] */
                 MIDL_INTERFACE("2EC4B32C-A79B-4114-B29A-05DFFBAFB9A4")
-                ISyndicationClientFactory : IInspectable
+                ISyndicationClientFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationClient(
                         /* [in] */__RPC__in_opt ABI::Windows::Security::Credentials::IPasswordCredential * serverCredential,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Syndication::ISyndicationClient * * syndicationClient
@@ -2779,8 +2787,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("4641FEFE-0E55-40D0-B8D0-6A2CCBA9FC7C"), exclusiveto, contract] */
                 MIDL_INTERFACE("4641FEFE-0E55-40D0-B8D0-6A2CCBA9FC7C")
-                ISyndicationContent : IInspectable
+                ISyndicationContent : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourceUri(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                         ) = 0;
@@ -2822,8 +2831,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("3D2FBB93-9520-4173-9388-7E2DF324A8A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D2FBB93-9520-4173-9388-7E2DF324A8A0")
-                ISyndicationContentFactory : IInspectable
+                ISyndicationContentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationContent(
                         /* [in] */__RPC__in HSTRING text,
                         /* [in] */ABI::Windows::Web::Syndication::SyndicationTextType type,
@@ -2868,8 +2878,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("1FBB2361-45C7-4833-8AA0-BE5F3B58A7F4"), exclusiveto, contract] */
                 MIDL_INTERFACE("1FBB2361-45C7-4833-8AA0-BE5F3B58A7F4")
-                ISyndicationErrorStatics : IInspectable
+                ISyndicationErrorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetStatus(
                         /* [in] */INT32 hresult,
                         /* [retval, out] */__RPC__out ABI::Windows::Web::Syndication::SyndicationErrorStatus * status
@@ -2913,8 +2924,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("7FFE3CD2-5B66-4D62-8403-1BC10D910D6B"), exclusiveto, contract] */
                 MIDL_INTERFACE("7FFE3CD2-5B66-4D62-8403-1BC10D910D6B")
-                ISyndicationFeed : IInspectable
+                ISyndicationFeed : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Authors(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CWeb__CSyndication__CSyndicationPerson * * value
                         ) = 0;
@@ -3034,8 +3046,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("23472232-8BE9-48B7-8934-6205131D9357"), exclusiveto, contract] */
                 MIDL_INTERFACE("23472232-8BE9-48B7-8934-6205131D9357")
-                ISyndicationFeedFactory : IInspectable
+                ISyndicationFeedFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationFeed(
                         /* [in] */__RPC__in HSTRING title,
                         /* [in] */__RPC__in HSTRING subtitle,
@@ -3077,8 +3090,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("9768B379-FB2B-4F6D-B41C-088A5868825C"), exclusiveto, contract] */
                 MIDL_INTERFACE("9768B379-FB2B-4F6D-B41C-088A5868825C")
-                ISyndicationGenerator : IInspectable
+                ISyndicationGenerator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3132,8 +3146,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("A34083E3-1E26-4DBC-BA9D-1AB84BEFF97B"), exclusiveto, contract] */
                 MIDL_INTERFACE("A34083E3-1E26-4DBC-BA9D-1AB84BEFF97B")
-                ISyndicationGeneratorFactory : IInspectable
+                ISyndicationGeneratorFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationGenerator(
                         /* [in] */__RPC__in HSTRING text,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Syndication::ISyndicationGenerator * * generator
@@ -3177,8 +3192,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("548DB883-C384-45C1-8AE8-A378C4EC486C"), exclusiveto, contract] */
                 MIDL_INTERFACE("548DB883-C384-45C1-8AE8-A378C4EC486C")
-                ISyndicationItem : IInspectable
+                ISyndicationItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Authors(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CWeb__CSyndication__CSyndicationPerson * * value
                         ) = 0;
@@ -3298,8 +3314,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("251D434F-7DB8-487A-85E4-10D191E66EBB"), exclusiveto, contract] */
                 MIDL_INTERFACE("251D434F-7DB8-487A-85E4-10D191E66EBB")
-                ISyndicationItemFactory : IInspectable
+                ISyndicationItemFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationItem(
                         /* [in] */__RPC__in HSTRING title,
                         /* [in] */__RPC__in_opt ABI::Windows::Web::Syndication::ISyndicationContent * content,
@@ -3345,8 +3362,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("27553ABD-A10E-41B5-86BD-9759086EB0C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("27553ABD-A10E-41B5-86BD-9759086EB0C5")
-                ISyndicationLink : IInspectable
+                ISyndicationLink : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Length(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -3418,8 +3436,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("5ED863D4-5535-48AC-98D4-C190995080B3"), exclusiveto, contract] */
                 MIDL_INTERFACE("5ED863D4-5535-48AC-98D4-C190995080B3")
-                ISyndicationLinkFactory : IInspectable
+                ISyndicationLinkFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationLink(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Syndication::ISyndicationLink * * link
@@ -3464,8 +3483,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("753CEF78-51F8-45C0-A9F5-F1719DEC3FB2"), contract] */
                 MIDL_INTERFACE("753CEF78-51F8-45C0-A9F5-F1719DEC3FB2")
-                ISyndicationNode : IInspectable
+                ISyndicationNode : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NodeName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3541,8 +3561,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("12902188-4ACB-49A8-B777-A5EB92E18A79"), exclusiveto, contract] */
                 MIDL_INTERFACE("12902188-4ACB-49A8-B777-A5EB92E18A79")
-                ISyndicationNodeFactory : IInspectable
+                ISyndicationNodeFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationNode(
                         /* [in] */__RPC__in HSTRING nodeName,
                         /* [in] */__RPC__in HSTRING nodeNamespace,
@@ -3588,8 +3609,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("FA1EE5DA-A7C6-4517-A096-0143FAF29327"), exclusiveto, contract] */
                 MIDL_INTERFACE("FA1EE5DA-A7C6-4517-A096-0143FAF29327")
-                ISyndicationPerson : IInspectable
+                ISyndicationPerson : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Email(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3643,8 +3665,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("DCF4886D-229D-4B58-A49B-F3D2F0F5C99F"), exclusiveto, contract] */
                 MIDL_INTERFACE("DCF4886D-229D-4B58-A49B-F3D2F0F5C99F")
-                ISyndicationPersonFactory : IInspectable
+                ISyndicationPersonFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationPerson(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Syndication::ISyndicationPerson * * person
@@ -3691,8 +3714,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("B9CC5E80-313A-4091-A2A6-243E0EE923F9"), contract] */
                 MIDL_INTERFACE("B9CC5E80-313A-4091-A2A6-243E0EE923F9")
-                ISyndicationText : IInspectable
+                ISyndicationText : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3746,8 +3770,9 @@ namespace ABI {
             namespace Syndication {
                 /* [object, uuid("EE7342F7-11C6-4B25-AB62-E596BD162946"), exclusiveto, contract] */
                 MIDL_INTERFACE("EE7342F7-11C6-4B25-AB62-E596BD162946")
-                ISyndicationTextFactory : IInspectable
+                ISyndicationTextFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateSyndicationText(
                         /* [in] */__RPC__in HSTRING text,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Syndication::ISyndicationText * * syndicationText

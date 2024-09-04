@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -276,6 +278,18 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CSystem_CIDispatcherQueueHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CIAppActivationResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppActivationResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppActivationResult;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIAppActivationResult ABI::Windows::System::IAppActivationResult
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppActivationResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_FWD_DEFINED__
 namespace ABI {
@@ -299,6 +313,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2 ABI::Windows::System::IAppDiagnosticInfo2
 
 #endif // ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppDiagnosticInfo3;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3 ABI::Windows::System::IAppDiagnosticInfo3
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_FWD_DEFINED__
@@ -347,6 +373,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs ABI::Windows::System::IAppDiagnosticInfoWatcherEventArgs
 
 #endif // ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppExecutionStateChangeResult;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult ABI::Windows::System::IAppExecutionStateChangeResult
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIAppMemoryReport_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppMemoryReport_FWD_DEFINED__
@@ -407,6 +445,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo ABI::Windows::System::IAppResourceGroupInfo
 
 #endif // ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppResourceGroupInfo2;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 ABI::Windows::System::IAppResourceGroupInfo2
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfoWatcher_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfoWatcher_FWD_DEFINED__
@@ -875,6 +925,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics ABI::Windows::System::ITimeZoneSettingsStatics
 
 #endif // ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface ITimeZoneSettingsStatics2;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2 ABI::Windows::System::ITimeZoneSettingsStatics2
+
+#endif // ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
@@ -1716,6 +1778,214 @@ typedef IAsyncOperation<__FIVector_1_Windows__CSystem__CAppDiagnosticInfo*> __FI
 namespace ABI {
     namespace Windows {
         namespace System {
+            class AppActivationResult;
+        } /* Windows */
+    } /* System */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("966e2307-d529-50ea-9872-8dfb35cfeffd"))
+IAsyncOperationCompletedHandler<ABI::Windows::System::AppActivationResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppActivationResult*, ABI::Windows::System::IAppActivationResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.System.AppActivationResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::System::AppActivationResult*> __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::System::IAppActivationResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::System::IAppActivationResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b6f373b8-bd4d-50bf-82b4-5b1d452a5f83"))
+IAsyncOperation<ABI::Windows::System::AppActivationResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppActivationResult*, ABI::Windows::System::IAppActivationResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.System.AppActivationResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::System::AppActivationResult*> __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_t;
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::System::IAppActivationResult*>
+//#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::System::IAppActivationResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            class AppExecutionStateChangeResult;
+        } /* Windows */
+    } /* System */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c162b59a-bdd2-5e4d-a309-b476eb97b823"))
+IAsyncOperationCompletedHandler<ABI::Windows::System::AppExecutionStateChangeResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppExecutionStateChangeResult*, ABI::Windows::System::IAppExecutionStateChangeResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.System.AppExecutionStateChangeResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::System::AppExecutionStateChangeResult*> __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::System::IAppExecutionStateChangeResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::System::IAppExecutionStateChangeResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c251cc22-aba9-59b8-bf87-20677fc4924e"))
+IAsyncOperation<ABI::Windows::System::AppExecutionStateChangeResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppExecutionStateChangeResult*, ABI::Windows::System::IAppExecutionStateChangeResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.System.AppExecutionStateChangeResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::System::AppExecutionStateChangeResult*> __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t;
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::System::IAppExecutionStateChangeResult*>
+//#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::System::IAppExecutionStateChangeResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            enum AutoUpdateTimeZoneStatus : int;
+        } /* Windows */
+    } /* System */} /* ABI */
+
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c2b7624c-9f35-5074-8021-0633184899a7"))
+IAsyncOperationCompletedHandler<enum ABI::Windows::System::AutoUpdateTimeZoneStatus> : IAsyncOperationCompletedHandler_impl<enum ABI::Windows::System::AutoUpdateTimeZoneStatus> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.System.AutoUpdateTimeZoneStatus>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<enum ABI::Windows::System::AutoUpdateTimeZoneStatus> __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::System::AutoUpdateTimeZoneStatus>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::System::AutoUpdateTimeZoneStatus>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_USE */
+
+
+
+
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_USE
+#define DEF___FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b69475ac-a5d4-53d7-a53a-bb01b69620fa"))
+IAsyncOperation<enum ABI::Windows::System::AutoUpdateTimeZoneStatus> : IAsyncOperation_impl<enum ABI::Windows::System::AutoUpdateTimeZoneStatus> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.System.AutoUpdateTimeZoneStatus>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<enum ABI::Windows::System::AutoUpdateTimeZoneStatus> __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_t;
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::System::AutoUpdateTimeZoneStatus>
+//#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::System::AutoUpdateTimeZoneStatus>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_USE */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
             enum DiagnosticAccessStatus : int;
         } /* Windows */
     } /* System */} /* ABI */
@@ -2207,6 +2477,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_USE
@@ -2235,6 +2506,7 @@ typedef ITypedEventHandler<ABI::Windows::Gaming::Input::IGameController*,ABI::Wi
 #endif /* DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -2287,6 +2559,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_USE
@@ -2315,6 +2588,7 @@ typedef ITypedEventHandler<ABI::Windows::System::AppDiagnosticInfoWatcher*,ABI::
 #endif /* DEF___FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 namespace ABI {
@@ -2367,6 +2641,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherEventArgs_USE
@@ -2396,6 +2671,7 @@ typedef ITypedEventHandler<ABI::Windows::System::AppResourceGroupInfoWatcher*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 namespace ABI {
@@ -2406,6 +2682,7 @@ namespace ABI {
     } /* System */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherExecutionStateChangedEventArgs_USE
@@ -2435,6 +2712,7 @@ typedef ITypedEventHandler<ABI::Windows::System::AppResourceGroupInfoWatcher*,AB
 #endif /* DEF___FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherExecutionStateChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 namespace ABI {
@@ -2487,6 +2765,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_USE
@@ -2515,6 +2794,7 @@ typedef ITypedEventHandler<ABI::Windows::System::DispatcherQueue*,ABI::Windows::
 #endif /* DEF___FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 namespace ABI {
@@ -2607,6 +2887,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_USE
@@ -2636,9 +2917,11 @@ typedef ITypedEventHandler<ABI::Windows::System::UserWatcher*,ABI::Windows::Syst
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_USE
@@ -2668,6 +2951,7 @@ typedef ITypedEventHandler<ABI::Windows::System::UserWatcher*,ABI::Windows::Syst
 #endif /* DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -4197,6 +4481,15 @@ namespace ABI {
     namespace Windows {
         namespace System {
             
+            typedef enum AutoUpdateTimeZoneStatus : int AutoUpdateTimeZoneStatus;
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            
             typedef enum DiagnosticAccessStatus : int DiagnosticAccessStatus;
             
         } /* Windows */
@@ -4336,6 +4629,13 @@ namespace ABI {
             
         } /* Windows */
     } /* System */} /* ABI */
+
+
+
+
+
+
+
 
 
 
@@ -4678,6 +4978,32 @@ namespace ABI {
         } /* Windows */
     } /* System */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Struct Windows.System.AutoUpdateTimeZoneStatus
+ *
+ * Introduced to Windows.System.SystemManagementContract in version 5.0
+ *
+ *
+ */
+
+#if WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION >= 0x50000
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [v1_enum, contract] */
+            enum AutoUpdateTimeZoneStatus : int
+            {
+                AutoUpdateTimeZoneStatus_Attempted = 0,
+                AutoUpdateTimeZoneStatus_TimedOut = 1,
+                AutoUpdateTimeZoneStatus_Failed = 2,
+            };
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+#endif // WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION >= 0x50000
 
 
 /*
@@ -5454,8 +5780,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("DFA2DC9C-1A2D-4917-98F2-939AF1D6E0C8"), contract] */
             MIDL_INTERFACE("DFA2DC9C-1A2D-4917-98F2-939AF1D6E0C8")
-            IDispatcherQueueHandler : IUnknown
+            IDispatcherQueueHandler : public IUnknown
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Invoke(void) = 0;
                 
             };
@@ -5468,6 +5795,48 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIDispatcherQueueHandler;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIDispatcherQueueHandler_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.System.IAppActivationResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppActivationResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppActivationResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppActivationResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppActivationResult[] = L"Windows.System.IAppActivationResult";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("6B528900-F46E-4EB0-AA6C-38AF557CF9ED"), exclusiveto, contract] */
+            MIDL_INTERFACE("6B528900-F46E-4EB0-AA6C-38AF557CF9ED")
+            IAppActivationResult : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
+                    /* [retval, out] */__RPC__out HRESULT * value
+                    ) = 0;
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppResourceGroupInfo(
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IAppResourceGroupInfo * * value
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppActivationResult=_uuidof(IAppActivationResult);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppActivationResult;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppActivationResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5490,8 +5859,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("E348A69A-8889-4CA3-BE07-D5FFFF5F0804"), exclusiveto, contract] */
             MIDL_INTERFACE("E348A69A-8889-4CA3-BE07-D5FFFF5F0804")
-            IAppDiagnosticInfo : IInspectable
+            IAppDiagnosticInfo : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppInfo(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IAppInfo * * value
                     ) = 0;
@@ -5528,8 +5898,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("DF46FBD7-191A-446C-9473-8FBC2374A354"), exclusiveto, contract] */
             MIDL_INTERFACE("DF46FBD7-191A-446C-9473-8FBC2374A354")
-            IAppDiagnosticInfo2 : IInspectable
+            IAppDiagnosticInfo2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetResourceGroups(
                     /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CSystem__CAppResourceGroupInfo * * result
                     ) = 0;
@@ -5547,6 +5918,45 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.System.IAppDiagnosticInfo3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppDiagnosticInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppDiagnosticInfo3[] = L"Windows.System.IAppDiagnosticInfo3";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("C895C63D-DD61-4C65-BABD-81A10B4F9815"), exclusiveto, contract] */
+            MIDL_INTERFACE("C895C63D-DD61-4C65-BABD-81A10B4F9815")
+            IAppDiagnosticInfo3 : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE LaunchAsync(
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * * operation
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppDiagnosticInfo3=_uuidof(IAppDiagnosticInfo3);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5569,8 +5979,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("CE6925BF-10CA-40C8-A9CA-C5C96501866E"), exclusiveto, contract] */
             MIDL_INTERFACE("CE6925BF-10CA-40C8-A9CA-C5C96501866E")
-            IAppDiagnosticInfoStatics : IInspectable
+            IAppDiagnosticInfoStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE RequestInfoAsync(
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * * operation
                     ) = 0;
@@ -5607,8 +6018,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("05B24B86-1000-4C90-BB9F-7235071C50FE"), exclusiveto, contract] */
             MIDL_INTERFACE("05B24B86-1000-4C90-BB9F-7235071C50FE")
-            IAppDiagnosticInfoStatics2 : IInspectable
+            IAppDiagnosticInfoStatics2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateWatcher(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IAppDiagnosticInfoWatcher * * watcher
                     ) = 0;
@@ -5659,8 +6071,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("75575070-01D3-489A-9325-52F9CC6EDE0A"), exclusiveto, contract] */
             MIDL_INTERFACE("75575070-01D3-489A-9325-52F9CC6EDE0A")
-            IAppDiagnosticInfoWatcher : IInspectable
+            IAppDiagnosticInfoWatcher : public IInspectable
             {
+            public:
                 /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Added(
                     /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs * handler,
                     /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -5727,8 +6140,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("7017C716-E1DA-4C65-99DF-046DFF5BE71A"), exclusiveto, contract] */
             MIDL_INTERFACE("7017C716-E1DA-4C65-99DF-046DFF5BE71A")
-            IAppDiagnosticInfoWatcherEventArgs : IInspectable
+            IAppDiagnosticInfoWatcherEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppDiagnosticInfo(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IAppDiagnosticInfo * * value
                     ) = 0;
@@ -5743,6 +6157,45 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.System.IAppExecutionStateChangeResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppExecutionStateChangeResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppExecutionStateChangeResult[] = L"Windows.System.IAppExecutionStateChangeResult";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("6F039BF0-F91B-4DF8-AE77-3033CCB69114"), exclusiveto, contract] */
+            MIDL_INTERFACE("6F039BF0-F91B-4DF8-AE77-3033CCB69114")
+            IAppExecutionStateChangeResult : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
+                    /* [retval, out] */__RPC__out HRESULT * value
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppExecutionStateChangeResult=_uuidof(IAppExecutionStateChangeResult);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5765,8 +6218,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("6D65339B-4D6F-45BC-9C5E-E49B3FF2758D"), exclusiveto, contract] */
             MIDL_INTERFACE("6D65339B-4D6F-45BC-9C5E-E49B3FF2758D")
-            IAppMemoryReport : IInspectable
+            IAppMemoryReport : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrivateCommitUsage(
                     /* [retval, out] */__RPC__out UINT64 * value
                     ) = 0;
@@ -5812,8 +6266,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("5F7F3738-51B7-42DC-B7ED-79BA46D28857"), exclusiveto, contract] */
             MIDL_INTERFACE("5F7F3738-51B7-42DC-B7ED-79BA46D28857")
-            IAppMemoryReport2 : IInspectable
+            IAppMemoryReport2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpectedTotalCommitLimit(
                     /* [retval, out] */__RPC__out UINT64 * value
                     ) = 0;
@@ -5850,8 +6305,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("79F86664-FECA-4DA5-9E40-2BC63EFDC979"), exclusiveto, contract] */
             MIDL_INTERFACE("79F86664-FECA-4DA5-9E40-2BC63EFDC979")
-            IAppMemoryUsageLimitChangingEventArgs : IInspectable
+            IAppMemoryUsageLimitChangingEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OldLimit(
                     /* [retval, out] */__RPC__out UINT64 * value
                     ) = 0;
@@ -5891,8 +6347,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("2566E74E-B05D-40C2-9DC1-1A4F039EA120"), exclusiveto, contract] */
             MIDL_INTERFACE("2566E74E-B05D-40C2-9DC1-1A4F039EA120")
-            IAppResourceGroupBackgroundTaskReport : IInspectable
+            IAppResourceGroupBackgroundTaskReport : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskId(
                     /* [retval, out] */__RPC__out GUID * value
                     ) = 0;
@@ -5938,8 +6395,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("B913F77A-E807-49F4-845E-7B8BDCFE8EE7"), exclusiveto, contract] */
             MIDL_INTERFACE("B913F77A-E807-49F4-845E-7B8BDCFE8EE7")
-            IAppResourceGroupInfo : IInspectable
+            IAppResourceGroupInfo : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InstanceId(
                     /* [retval, out] */__RPC__out GUID * value
                     ) = 0;
@@ -5973,6 +6431,51 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppResourceGroupInfo;
 
 /*
  *
+ * Interface Windows.System.IAppResourceGroupInfo2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppResourceGroupInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppResourceGroupInfo2[] = L"Windows.System.IAppResourceGroupInfo2";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("EE9B236D-D305-4D6B-92F7-6AFDAD72DEDC"), exclusiveto, contract] */
+            MIDL_INTERFACE("EE9B236D-D305-4D6B-92F7-6AFDAD72DEDC")
+            IAppResourceGroupInfo2 : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE StartSuspendAsync(
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * * operation
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE StartResumeAsync(
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * * operation
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE StartTerminateAsync(
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * * operation
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppResourceGroupInfo2=_uuidof(IAppResourceGroupInfo2);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.System.IAppResourceGroupInfoWatcher
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -5991,8 +6494,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("D9B0A0FD-6E5A-4C72-8B17-09FEC4A212BD"), exclusiveto, contract] */
             MIDL_INTERFACE("D9B0A0FD-6E5A-4C72-8B17-09FEC4A212BD")
-            IAppResourceGroupInfoWatcher : IInspectable
+            IAppResourceGroupInfoWatcher : public IInspectable
             {
+            public:
                 /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Added(
                     /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherEventArgs * handler,
                     /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -6066,8 +6570,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("7A787637-6302-4D2F-BF89-1C12D0B2A6B9"), exclusiveto, contract] */
             MIDL_INTERFACE("7A787637-6302-4D2F-BF89-1C12D0B2A6B9")
-            IAppResourceGroupInfoWatcherEventArgs : IInspectable
+            IAppResourceGroupInfoWatcherEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppDiagnosticInfos(
                     /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * * value
                     ) = 0;
@@ -6107,8 +6612,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("1BDBEDD7-FEE6-4FD4-98DD-E92A2CC299F3"), exclusiveto, contract] */
             MIDL_INTERFACE("1BDBEDD7-FEE6-4FD4-98DD-E92A2CC299F3")
-            IAppResourceGroupInfoWatcherExecutionStateChangedEventArgs : IInspectable
+            IAppResourceGroupInfoWatcherExecutionStateChangedEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppDiagnosticInfos(
                     /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * * value
                     ) = 0;
@@ -6148,8 +6654,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("2C8C06B1-7DB1-4C51-A225-7FAE2D49E431"), exclusiveto, contract] */
             MIDL_INTERFACE("2C8C06B1-7DB1-4C51-A225-7FAE2D49E431")
-            IAppResourceGroupMemoryReport : IInspectable
+            IAppResourceGroupMemoryReport : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CommitUsageLimit(
                     /* [retval, out] */__RPC__out UINT64 * value
                     ) = 0;
@@ -6195,8 +6702,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("52849F18-2F70-4236-AB40-D04DB0C7B931"), exclusiveto, contract] */
             MIDL_INTERFACE("52849F18-2F70-4236-AB40-D04DB0C7B931")
-            IAppResourceGroupStateReport : IInspectable
+            IAppResourceGroupStateReport : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExecutionState(
                     /* [retval, out] */__RPC__out ABI::Windows::System::AppResourceGroupExecutionState * value
                     ) = 0;
@@ -6236,8 +6744,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("5D2150D1-47EE-48AB-A52B-9F1954278D82"), exclusiveto, contract] */
             MIDL_INTERFACE("5D2150D1-47EE-48AB-A52B-9F1954278D82")
-            IDateTimeSettingsStatics : IInspectable
+            IDateTimeSettingsStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE SetSystemDateTime(
                     /* [in] */ABI::Windows::Foundation::DateTime utcDateTime
                     ) = 0;
@@ -6274,8 +6783,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("603E88E4-A338-4FFE-A457-A5CFB9CEB899"), exclusiveto, contract] */
             MIDL_INTERFACE("603E88E4-A338-4FFE-A457-A5CFB9CEB899")
-            IDispatcherQueue : IInspectable
+            IDispatcherQueue : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateTimer(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IDispatcherQueueTimer * * result
                     ) = 0;
@@ -6335,8 +6845,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("22F34E66-50DB-4E36-A98D-61C01B384D20"), exclusiveto, contract] */
             MIDL_INTERFACE("22F34E66-50DB-4E36-A98D-61C01B384D20")
-            IDispatcherQueueController : IInspectable
+            IDispatcherQueueController : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DispatcherQueue(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IDispatcherQueue * * value
                     ) = 0;
@@ -6376,8 +6887,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("0A6C98E0-5198-49A2-A313-3F70D1F13C27"), exclusiveto, contract] */
             MIDL_INTERFACE("0A6C98E0-5198-49A2-A313-3F70D1F13C27")
-            IDispatcherQueueControllerStatics : IInspectable
+            IDispatcherQueueControllerStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateOnDedicatedThread(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IDispatcherQueueController * * result
                     ) = 0;
@@ -6414,8 +6926,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("C4724C4C-FF97-40C0-A226-CC0AAA545E89"), exclusiveto, contract] */
             MIDL_INTERFACE("C4724C4C-FF97-40C0-A226-CC0AAA545E89")
-            IDispatcherQueueShutdownStartingEventArgs : IInspectable
+            IDispatcherQueueShutdownStartingEventArgs : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * value
                     ) = 0;
@@ -6452,8 +6965,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("A96D83D7-9371-4517-9245-D0824AC12C74"), exclusiveto, contract] */
             MIDL_INTERFACE("A96D83D7-9371-4517-9245-D0824AC12C74")
-            IDispatcherQueueStatics : IInspectable
+            IDispatcherQueueStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetForCurrentThread(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IDispatcherQueue * * result
                     ) = 0;
@@ -6490,8 +7004,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("5FEABB1D-A31C-4727-B1AC-37454649D56A"), exclusiveto, contract] */
             MIDL_INTERFACE("5FEABB1D-A31C-4727-B1AC-37454649D56A")
-            IDispatcherQueueTimer : IInspectable
+            IDispatcherQueueTimer : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Interval(
                     /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                     ) = 0;
@@ -6549,8 +7064,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("BB91C27D-6B87-432A-BD04-776C6F5FB2AB"), exclusiveto, contract] */
             MIDL_INTERFACE("BB91C27D-6B87-432A-BD04-776C6F5FB2AB")
-            IFolderLauncherOptions : IInspectable
+            IFolderLauncherOptions : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ItemsToSelect(
                     /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CStorage__CIStorageItem * * value
                     ) = 0;
@@ -6587,8 +7103,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("7755911A-70C5-48E5-B637-5BA3441E4EE4"), exclusiveto, contract] */
             MIDL_INTERFACE("7755911A-70C5-48E5-B637-5BA3441E4EE4")
-            IKnownUserPropertiesStatics : IInspectable
+            IKnownUserPropertiesStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6649,8 +7166,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("EC27A8DF-F6D5-45CA-913A-70A40C5C8221"), exclusiveto, contract] */
             MIDL_INTERFACE("EC27A8DF-F6D5-45CA-913A-70A40C5C8221")
-            ILaunchUriResult : IInspectable
+            ILaunchUriResult : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                     /* [retval, out] */__RPC__out ABI::Windows::System::LaunchUriStatus * value
                     ) = 0;
@@ -6690,8 +7208,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("BAFA21D8-B071-4CD8-853E-341203E557D3"), exclusiveto, contract] */
             MIDL_INTERFACE("BAFA21D8-B071-4CD8-853E-341203E557D3")
-            ILauncherOptions : IInspectable
+            ILauncherOptions : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TreatAsUntrusted(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -6764,8 +7283,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("3BA08EB4-6E40-4DCE-A1A3-2F53950AFB49"), exclusiveto, contract] */
             MIDL_INTERFACE("3BA08EB4-6E40-4DCE-A1A3-2F53950AFB49")
-            ILauncherOptions2 : IInspectable
+            ILauncherOptions2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetApplicationPackageFamilyName(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6811,8 +7331,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("F0770655-4B63-4E3A-9107-4E687841923A"), exclusiveto, contract] */
             MIDL_INTERFACE("F0770655-4B63-4E3A-9107-4E687841923A")
-            ILauncherOptions3 : IInspectable
+            ILauncherOptions3 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IgnoreAppUriHandlers(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -6852,8 +7373,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("EF6FD10E-E6FB-4814-A44E-57E8B9D9A01B"), exclusiveto, contract] */
             MIDL_INTERFACE("EF6FD10E-E6FB-4814-A44E-57E8B9D9A01B")
-            ILauncherOptions4 : IInspectable
+            ILauncherOptions4 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LimitPickerToCurrentAppAndAppUriHandlers(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -6893,8 +7415,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("277151C3-9E3E-42F6-91A4-5DFDEB232451"), exclusiveto, contract] */
             MIDL_INTERFACE("277151C3-9E3E-42F6-91A4-5DFDEB232451")
-            ILauncherStatics : IInspectable
+            ILauncherStatics : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE LaunchFileAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
@@ -6946,8 +7469,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("59BA2FBB-24CB-4C02-A4C4-8294569D54F1"), exclusiveto, contract] */
             MIDL_INTERFACE("59BA2FBB-24CB-4C02-A4C4-8294569D54F1")
-            ILauncherStatics2 : IInspectable
+            ILauncherStatics2 : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE LaunchUriForResultsAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                     /* [in] */__RPC__in_opt ABI::Windows::System::ILauncherOptions * options,
@@ -7031,8 +7555,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("234261A8-9DB3-4683-AA42-DC6F51D33847"), exclusiveto, contract] */
             MIDL_INTERFACE("234261A8-9DB3-4683-AA42-DC6F51D33847")
-            ILauncherStatics3 : IInspectable
+            ILauncherStatics3 : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE LaunchFolderAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFolder * folder,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
@@ -7075,8 +7600,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("B9EC819F-B5A5-41C6-B3B3-DD1B3178BCF2"), exclusiveto, contract] */
             MIDL_INTERFACE("B9EC819F-B5A5-41C6-B3B3-DD1B3178BCF2")
-            ILauncherStatics4 : IInspectable
+            ILauncherStatics4 : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE QueryAppUriSupportAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CLaunchQuerySupportStatus * * operation
@@ -7154,8 +7680,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("1B25DA6E-8AA6-41E9-8251-4165F5985F49"), exclusiveto, contract] */
             MIDL_INTERFACE("1B25DA6E-8AA6-41E9-8251-4165F5985F49")
-            ILauncherUIOptions : IInspectable
+            ILauncherUIOptions : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InvocationPoint(
                     /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CPoint * * value
                     ) = 0;
@@ -7204,8 +7731,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("8A9B29F1-7CA7-49DE-9BD3-3C5B7184F616"), contract] */
             MIDL_INTERFACE("8A9B29F1-7CA7-49DE-9BD3-3C5B7184F616")
-            ILauncherViewOptions : IInspectable
+            ILauncherViewOptions : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredRemainingView(
                     /* [retval, out] */__RPC__out ABI::Windows::UI::ViewManagement::ViewSizePreference * value
                     ) = 0;
@@ -7245,8 +7773,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("5C6C279C-D7CA-4779-9188-4057219CE64C"), exclusiveto, contract] */
             MIDL_INTERFACE("5C6C279C-D7CA-4779-9188-4057219CE64C")
-            IMemoryManagerStatics : IInspectable
+            IMemoryManagerStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppMemoryUsage(
                     /* [retval, out] */__RPC__out UINT64 * value
                     ) = 0;
@@ -7310,8 +7839,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("6EEE351F-6D62-423F-9479-B01F9C9F7669"), exclusiveto, contract] */
             MIDL_INTERFACE("6EEE351F-6D62-423F-9479-B01F9C9F7669")
-            IMemoryManagerStatics2 : IInspectable
+            IMemoryManagerStatics2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetAppMemoryReport(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IAppMemoryReport * * memoryReport
                     ) = 0;
@@ -7351,8 +7881,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("149B59CE-92AD-4E35-89EB-50DFB4C0D91C"), exclusiveto, contract] */
             MIDL_INTERFACE("149B59CE-92AD-4E35-89EB-50DFB4C0D91C")
-            IMemoryManagerStatics3 : IInspectable
+            IMemoryManagerStatics3 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE TrySetAppMemoryUsageLimit(
                     /* [in] */UINT64 value,
                     /* [retval, out] */__RPC__out boolean * result
@@ -7390,8 +7921,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("C5A94828-E84E-4886-8A0D-44B3190E3B72"), exclusiveto, contract] */
             MIDL_INTERFACE("C5A94828-E84E-4886-8A0D-44B3190E3B72")
-            IMemoryManagerStatics4 : IInspectable
+            IMemoryManagerStatics4 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpectedAppMemoryUsageLimit(
                     /* [retval, out] */__RPC__out UINT64 * value
                     ) = 0;
@@ -7428,8 +7960,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("3080B9CF-F444-4A83-BEAF-A549A0F3229C"), exclusiveto, contract] */
             MIDL_INTERFACE("3080B9CF-F444-4A83-BEAF-A549A0F3229C")
-            IProcessLauncherOptions : IInspectable
+            IProcessLauncherOptions : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StandardInput(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IInputStream * * value
                     ) = 0;
@@ -7487,8 +8020,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("544C8934-86D8-4991-8E75-ECE8A43B6B6D"), exclusiveto, contract] */
             MIDL_INTERFACE("544C8934-86D8-4991-8E75-ECE8A43B6B6D")
-            IProcessLauncherResult : IInspectable
+            IProcessLauncherResult : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExitCode(
                     /* [retval, out] */__RPC__out UINT32 * value
                     ) = 0;
@@ -7525,8 +8059,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("33AB66E7-2D0E-448B-A6A0-C13C3836D09C"), exclusiveto, contract] */
             MIDL_INTERFACE("33AB66E7-2D0E-448B-A6A0-C13C3836D09C")
-            IProcessLauncherStatics : IInspectable
+            IProcessLauncherStatics : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE RunToCompletionAsync(
                     /* [in] */__RPC__in HSTRING fileName,
                     /* [in] */__RPC__in HSTRING args,
@@ -7571,8 +8106,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("087305A8-9B70-4782-8741-3A982B6CE5E4"), exclusiveto, contract] */
             MIDL_INTERFACE("087305A8-9B70-4782-8741-3A982B6CE5E4")
-            IProcessMemoryReport : IInspectable
+            IProcessMemoryReport : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrivateWorkingSetUsage(
                     /* [retval, out] */__RPC__out UINT64 * value
                     ) = 0;
@@ -7612,8 +8148,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("D581293A-6DE9-4D28-9378-F86782E182BB"), exclusiveto, contract] */
             MIDL_INTERFACE("D581293A-6DE9-4D28-9378-F86782E182BB")
-            IProtocolForResultsOperation : IInspectable
+            IProtocolForResultsOperation : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE ReportCompleted(
                     /* [in] */__RPC__in_opt ABI::Windows::Foundation::Collections::IPropertySet * data
                     ) = 0;
@@ -7650,8 +8187,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("9E3A2788-2891-4CDF-A2D6-9DFF7D02E693"), exclusiveto, contract] */
             MIDL_INTERFACE("9E3A2788-2891-4CDF-A2D6-9DFF7D02E693")
-            IRemoteLauncherOptions : IInspectable
+            IRemoteLauncherOptions : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FallbackUri(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                     ) = 0;
@@ -7694,8 +8232,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("D7DB7A93-A30C-48B7-9F21-051026A4E517"), exclusiveto, contract] */
             MIDL_INTERFACE("D7DB7A93-A30C-48B7-9F21-051026A4E517")
-            IRemoteLauncherStatics : IInspectable
+            IRemoteLauncherStatics : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE LaunchUriAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::System::RemoteSystems::IRemoteSystemConnectionRequest * remoteSystemConnectionRequest,
                     /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
@@ -7747,8 +8286,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("72E247ED-DD5B-4D6C-B1D0-C57A7BBB5F94"), exclusiveto, contract] */
             MIDL_INTERFACE("72E247ED-DD5B-4D6C-B1D0-C57A7BBB5F94")
-            IShutdownManagerStatics : IInspectable
+            IShutdownManagerStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE BeginShutdown(
                     /* [in] */ABI::Windows::System::ShutdownKind shutdownKind,
                     /* [in] */ABI::Windows::Foundation::TimeSpan timeout
@@ -7791,8 +8331,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("0F69A02F-9C34-43C7-A8C3-70B30A7F7504"), exclusiveto, contract] */
             MIDL_INTERFACE("0F69A02F-9C34-43C7-A8C3-70B30A7F7504")
-            IShutdownManagerStatics2 : IInspectable
+            IShutdownManagerStatics2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE IsPowerStateSupported(
                     /* [in] */ABI::Windows::System::PowerState powerState,
                     /* [retval, out] */__RPC__out boolean * value
@@ -7837,8 +8378,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("9B3B2BEA-A101-41AE-9FBD-028728BAB73D"), exclusiveto, contract] */
             MIDL_INTERFACE("9B3B2BEA-A101-41AE-9FBD-028728BAB73D")
-            ITimeZoneSettingsStatics : IInspectable
+            ITimeZoneSettingsStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentTimeZoneDisplayName(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -7866,6 +8408,46 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics;
 
 /*
  *
+ * Interface Windows.System.ITimeZoneSettingsStatics2
+ *
+ * Introduced to Windows.System.SystemManagementContract in version 5.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.TimeZoneSettings
+ *
+ *
+ */
+#if WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION >= 0x50000
+#if !defined(____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_ITimeZoneSettingsStatics2[] = L"Windows.System.ITimeZoneSettingsStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("555C0DB8-39A8-49FA-B4F6-A2C7FC2842EC"), exclusiveto, contract] */
+            MIDL_INTERFACE("555C0DB8-39A8-49FA-B4F6-A2C7FC2842EC")
+            ITimeZoneSettingsStatics2 : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE AutoUpdateTimeZoneAsync(
+                    /* [in] */ABI::Windows::Foundation::TimeSpan timeout,
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * * operation
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_ITimeZoneSettingsStatics2=_uuidof(ITimeZoneSettingsStatics2);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
  * Interface Windows.System.IUser
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7884,8 +8466,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("DF9A26C6-E746-4BCD-B5D4-120103C4209B"), exclusiveto, contract] */
             MIDL_INTERFACE("DF9A26C6-E746-4BCD-B5D4-120103C4209B")
-            IUser : IInspectable
+            IUser : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NonRoamableId(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -7940,8 +8523,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("88B59568-BB30-42FB-A270-E9902E40EFA7"), exclusiveto, contract] */
             MIDL_INTERFACE("88B59568-BB30-42FB-A270-E9902E40EFA7")
-            IUserAuthenticationStatusChangeDeferral : IInspectable
+            IUserAuthenticationStatusChangeDeferral : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                 
             };
@@ -7976,8 +8560,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("8C030F28-A711-4C1E-AB48-04179C15938F"), exclusiveto, contract] */
             MIDL_INTERFACE("8C030F28-A711-4C1E-AB48-04179C15938F")
-            IUserAuthenticationStatusChangingEventArgs : IInspectable
+            IUserAuthenticationStatusChangingEventArgs : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUserAuthenticationStatusChangeDeferral * * deferral
                     ) = 0;
@@ -8023,8 +8608,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("086459DC-18C6-48DB-BC99-724FB9203CCC"), exclusiveto, contract] */
             MIDL_INTERFACE("086459DC-18C6-48DB-BC99-724FB9203CCC")
-            IUserChangedEventArgs : IInspectable
+            IUserChangedEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
                     ) = 0;
@@ -8061,8 +8647,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("BD1F6F6C-BB5D-4D7B-A5F0-C8CD11A38D42"), exclusiveto, contract] */
             MIDL_INTERFACE("BD1F6F6C-BB5D-4D7B-A5F0-C8CD11A38D42")
-            IUserDeviceAssociationChangedEventArgs : IInspectable
+            IUserDeviceAssociationChangedEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -8105,8 +8692,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("7E491E14-F85A-4C07-8DA9-7FE3D0542343"), exclusiveto, contract] */
             MIDL_INTERFACE("7E491E14-F85A-4C07-8DA9-7FE3D0542343")
-            IUserDeviceAssociationStatics : IInspectable
+            IUserDeviceAssociationStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE FindUserFromDeviceId(
                     /* [in] */__RPC__in HSTRING deviceId,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * user
@@ -8151,8 +8739,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("7D548008-F1E3-4A6C-8DDC-A9BB0F488AED"), exclusiveto, contract] */
             MIDL_INTERFACE("7D548008-F1E3-4A6C-8DDC-A9BB0F488AED")
-            IUserPicker : IInspectable
+            IUserPicker : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowGuestAccounts(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -8201,8 +8790,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("DE3290DC-7E73-4DF6-A1AE-4D7ECA82B40D"), exclusiveto, contract] */
             MIDL_INTERFACE("DE3290DC-7E73-4DF6-A1AE-4D7ECA82B40D")
-            IUserPickerStatics : IInspectable
+            IUserPickerStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE IsSupported(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -8239,8 +8829,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("155EB23B-242A-45E0-A2E9-3171FC6A7FDD"), exclusiveto, contract] */
             MIDL_INTERFACE("155EB23B-242A-45E0-A2E9-3171FC6A7FDD")
-            IUserStatics : IInspectable
+            IUserStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateWatcher(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUserWatcher * * watcher
                     ) = 0;
@@ -8293,8 +8884,9 @@ namespace ABI {
         namespace System {
             /* [object, uuid("155EB23B-242A-45E0-A2E9-3171FC6A7FBB"), exclusiveto, contract] */
             MIDL_INTERFACE("155EB23B-242A-45E0-A2E9-3171FC6A7FBB")
-            IUserWatcher : IInspectable
+            IUserWatcher : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                     /* [retval, out] */__RPC__out ABI::Windows::System::UserWatcherStatus * value
                     ) = 0;
@@ -8364,6 +8956,30 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserWatcher;
 
 /*
  *
+ * Class Windows.System.AppActivationResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppActivationResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_System_AppActivationResult_DEFINED
+#define RUNTIMECLASS_Windows_System_AppActivationResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppActivationResult[] = L"Windows.System.AppActivationResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.System.AppDiagnosticInfo
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -8376,6 +8992,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserWatcher;
  * Class implements the following interfaces:
  *    Windows.System.IAppDiagnosticInfo ** Default Interface **
  *    Windows.System.IAppDiagnosticInfo2
+ *    Windows.System.IAppDiagnosticInfo3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -8437,6 +9054,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppDiagnosticInfoWatcherEventArgs[] = L"Windows.System.AppDiagnosticInfoWatcherEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Class Windows.System.AppExecutionStateChangeResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppExecutionStateChangeResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_System_AppExecutionStateChangeResult_DEFINED
+#define RUNTIMECLASS_Windows_System_AppExecutionStateChangeResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppExecutionStateChangeResult[] = L"Windows.System.AppExecutionStateChangeResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8517,6 +9158,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.System.IAppResourceGroupInfo ** Default Interface **
+ *    Windows.System.IAppResourceGroupInfo2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -9135,6 +9777,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.ITimeZoneSettingsStatics2 interface starting with version 5.0 of the Windows.System.SystemManagementContract API contract
  *   Static Methods exist on the Windows.System.ITimeZoneSettingsStatics interface starting with version 1.0 of the Windows.System.SystemManagementContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -9345,6 +9988,12 @@ typedef interface __x_ABI_CWindows_CSystem_CIDispatcherQueueHandler __x_ABI_CWin
 
 #endif // ____x_ABI_CWindows_CSystem_CIDispatcherQueueHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CIAppActivationResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppActivationResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppActivationResult __x_ABI_CWindows_CSystem_CIAppActivationResult;
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppActivationResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo;
@@ -9356,6 +10005,12 @@ typedef interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo __x_ABI_CWindows_
 typedef interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2 __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2;
 
 #endif // ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3 __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3;
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_FWD_DEFINED__
@@ -9380,6 +10035,12 @@ typedef interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcher __x_ABI_CW
 typedef interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs;
 
 #endif // ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult;
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIAppMemoryReport_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppMemoryReport_FWD_DEFINED__
@@ -9410,6 +10071,12 @@ typedef interface __x_ABI_CWindows_CSystem_CIAppResourceGroupBackgroundTaskRepor
 typedef interface __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo;
 
 #endif // ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2;
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfoWatcher_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfoWatcher_FWD_DEFINED__
@@ -9644,6 +10311,12 @@ typedef interface __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 __x_ABI_CWi
 typedef interface __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics;
 
 #endif // ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2 __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2;
+
+#endif // ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
@@ -11551,6 +12224,347 @@ interface __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResultVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CAppActivationResult;
+
+typedef struct __FIAsyncOperation_1_Windows__CSystem__CAppActivationResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppActivationResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CSystem_CIAppActivationResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CSystem__CAppActivationResultVtbl;
+
+interface __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CSystem__CAppActivationResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResultVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult;
+
+typedef struct __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAppExecutionStateChangeResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResultVtbl;
+
+interface __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+enum __x_ABI_CWindows_CSystem_CAutoUpdateTimeZoneStatus;
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatusVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatusVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatusVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus;
+
+typedef struct __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatusVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CAutoUpdateTimeZoneStatus **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * This, /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CSystem_CAutoUpdateTimeZoneStatus *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatusVtbl;
+
+interface __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatusVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus_INTERFACE_DEFINED__
+
+
 enum __x_ABI_CWindows_CSystem_CDiagnosticAccessStatus;
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CDiagnosticAccessStatus_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CDiagnosticAccessStatus_INTERFACE_DEFINED__
@@ -12349,6 +13363,7 @@ typedef interface __x_ABI_CWindows_CGaming_CInput_CIGameController __x_ABI_CWind
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
 
@@ -12395,6 +13410,7 @@ interface __FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Win
 
 #endif // ____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -12451,6 +13467,7 @@ interface __FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_II
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_INTERFACE_DEFINED__
 
@@ -12497,6 +13514,7 @@ interface __FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Wi
 
 #endif // ____FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
@@ -12553,6 +13571,7 @@ interface __FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherEventArgs_INTERFACE_DEFINED__
 
@@ -12600,9 +13619,11 @@ interface __FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher
 #endif // ____FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherExecutionStateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherExecutionStateChangedEventArgs_INTERFACE_DEFINED__
@@ -12650,6 +13671,7 @@ interface __FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher
 
 #endif // ____FITypedEventHandler_2_Windows__CSystem__CAppResourceGroupInfoWatcher_Windows__CSystem__CAppResourceGroupInfoWatcherExecutionStateChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
@@ -12706,6 +13728,7 @@ interface __FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_IInspectabl
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_INTERFACE_DEFINED__
 
@@ -12752,6 +13775,7 @@ interface __FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CS
 
 #endif // ____FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
@@ -12859,6 +13883,7 @@ interface __FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__
 
@@ -12906,9 +13931,11 @@ interface __FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSyste
 #endif // ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
@@ -12956,6 +13983,7 @@ interface __FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSyste
 
 #endif // ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CIProcessDiagnosticInfo_FWD_DEFINED__
@@ -15928,6 +16956,9 @@ typedef enum __x_ABI_CWindows_CSystem_CAppResourceGroupExecutionState __x_ABI_CW
 typedef enum __x_ABI_CWindows_CSystem_CAppResourceGroupInfoWatcherStatus __x_ABI_CWindows_CSystem_CAppResourceGroupInfoWatcherStatus;
 
 
+typedef enum __x_ABI_CWindows_CSystem_CAutoUpdateTimeZoneStatus __x_ABI_CWindows_CSystem_CAutoUpdateTimeZoneStatus;
+
+
 typedef enum __x_ABI_CWindows_CSystem_CDiagnosticAccessStatus __x_ABI_CWindows_CSystem_CDiagnosticAccessStatus;
 
 
@@ -15974,6 +17005,13 @@ typedef enum __x_ABI_CWindows_CSystem_CVirtualKey __x_ABI_CWindows_CSystem_CVirt
 
 
 typedef enum __x_ABI_CWindows_CSystem_CVirtualKeyModifiers __x_ABI_CWindows_CSystem_CVirtualKeyModifiers;
+
+
+
+
+
+
+
 
 
 
@@ -16195,6 +17233,26 @@ enum __x_ABI_CWindows_CSystem_CAppResourceGroupInfoWatcherStatus
     AppResourceGroupInfoWatcherStatus_Aborted = 5,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Struct Windows.System.AutoUpdateTimeZoneStatus
+ *
+ * Introduced to Windows.System.SystemManagementContract in version 5.0
+ *
+ *
+ */
+
+#if WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION >= 0x50000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CSystem_CAutoUpdateTimeZoneStatus
+{
+    AutoUpdateTimeZoneStatus_Attempted = 0,
+    AutoUpdateTimeZoneStatus_TimedOut = 1,
+    AutoUpdateTimeZoneStatus_Failed = 2,
+};
+#endif // WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION >= 0x50000
 
 
 /*
@@ -16919,6 +17977,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIDispatcherQueueHandler;
 
 /*
  *
+ * Interface Windows.System.IAppActivationResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppActivationResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppActivationResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppActivationResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppActivationResult[] = L"Windows.System.IAppActivationResult";
+/* [object, uuid("6B528900-F46E-4EB0-AA6C-38AF557CF9ED"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CIAppActivationResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppActivationResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppActivationResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppActivationResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppActivationResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppActivationResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppActivationResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )(
+        __x_ABI_CWindows_CSystem_CIAppActivationResult * This,
+        /* [retval, out] */__RPC__out HRESULT * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AppResourceGroupInfo )(
+        __x_ABI_CWindows_CSystem_CIAppActivationResult * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CIAppActivationResultVtbl;
+
+interface __x_ABI_CWindows_CSystem_CIAppActivationResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppActivationResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CIAppActivationResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CIAppActivationResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppActivationResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppActivationResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CIAppActivationResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CIAppActivationResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CIAppActivationResult_get_ExtendedError(This,value) \
+    ( (This)->lpVtbl->get_ExtendedError(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CIAppActivationResult_get_AppResourceGroupInfo(This,value) \
+    ( (This)->lpVtbl->get_AppResourceGroupInfo(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppActivationResult;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppActivationResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.System.IAppDiagnosticInfo
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -17108,6 +18266,99 @@ interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.System.IAppDiagnosticInfo3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppDiagnosticInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppDiagnosticInfo3[] = L"Windows.System.IAppDiagnosticInfo3";
+/* [object, uuid("C895C63D-DD61-4C65-BABD-81A10B4F9815"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *LaunchAsync )(
+        __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAppActivationResult * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3Vtbl;
+
+interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_LaunchAsync(This,operation) \
+    ( (This)->lpVtbl->LaunchAsync(This,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -17582,6 +18833,99 @@ interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoWatcherEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.System.IAppExecutionStateChangeResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppExecutionStateChangeResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppExecutionStateChangeResult[] = L"Windows.System.IAppExecutionStateChangeResult";
+/* [object, uuid("6F039BF0-F91B-4DF8-AE77-3033CCB69114"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )(
+        __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult * This,
+        /* [retval, out] */__RPC__out HRESULT * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResultVtbl;
+
+interface __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_get_ExtendedError(This,value) \
+    ( (This)->lpVtbl->get_ExtendedError(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppExecutionStateChangeResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -18131,6 +19475,113 @@ interface __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppResourceGroupInfo;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.System.IAppResourceGroupInfo2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppResourceGroupInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppResourceGroupInfo2[] = L"Windows.System.IAppResourceGroupInfo2";
+/* [object, uuid("EE9B236D-D305-4D6B-92F7-6AFDAD72DEDC"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *StartSuspendAsync )(
+        __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *StartResumeAsync )(
+        __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *StartTerminateAsync )(
+        __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2Vtbl;
+
+interface __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_StartSuspendAsync(This,operation) \
+    ( (This)->lpVtbl->StartSuspendAsync(This,operation) )
+
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_StartResumeAsync(This,operation) \
+    ( (This)->lpVtbl->StartResumeAsync(This,operation) )
+
+#define __x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_StartTerminateAsync(This,operation) \
+    ( (This)->lpVtbl->StartTerminateAsync(This,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppResourceGroupInfo2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -22630,6 +24081,100 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics;
 
 /*
  *
+ * Interface Windows.System.ITimeZoneSettingsStatics2
+ *
+ * Introduced to Windows.System.SystemManagementContract in version 5.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.TimeZoneSettings
+ *
+ *
+ */
+#if WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION >= 0x50000
+#if !defined(____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_ITimeZoneSettingsStatics2[] = L"Windows.System.ITimeZoneSettingsStatics2";
+/* [object, uuid("555C0DB8-39A8-49FA-B4F6-A2C7FC2842EC"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *AutoUpdateTimeZoneAsync )(
+        __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2 * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan timeout,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CAutoUpdateTimeZoneStatus * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2Vtbl;
+
+interface __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_AutoUpdateTimeZoneAsync(This,timeout,operation) \
+    ( (This)->lpVtbl->AutoUpdateTimeZoneAsync(This,timeout,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
  * Interface Windows.System.IUser
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -23825,6 +25370,30 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserWatcher;
 
 /*
  *
+ * Class Windows.System.AppActivationResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppActivationResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_System_AppActivationResult_DEFINED
+#define RUNTIMECLASS_Windows_System_AppActivationResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppActivationResult[] = L"Windows.System.AppActivationResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.System.AppDiagnosticInfo
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -23837,6 +25406,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserWatcher;
  * Class implements the following interfaces:
  *    Windows.System.IAppDiagnosticInfo ** Default Interface **
  *    Windows.System.IAppDiagnosticInfo2
+ *    Windows.System.IAppDiagnosticInfo3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -23898,6 +25468,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppDiagnosticInfoWatcherEventArgs[] = L"Windows.System.AppDiagnosticInfoWatcherEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Class Windows.System.AppExecutionStateChangeResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppExecutionStateChangeResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_System_AppExecutionStateChangeResult_DEFINED
+#define RUNTIMECLASS_Windows_System_AppExecutionStateChangeResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppExecutionStateChangeResult[] = L"Windows.System.AppExecutionStateChangeResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -23978,6 +25572,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.System.IAppResourceGroupInfo ** Default Interface **
+ *    Windows.System.IAppResourceGroupInfo2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -24596,6 +26191,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.ITimeZoneSettingsStatics2 interface starting with version 5.0 of the Windows.System.SystemManagementContract API contract
  *   Static Methods exist on the Windows.System.ITimeZoneSettingsStatics interface starting with version 1.0 of the Windows.System.SystemManagementContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment

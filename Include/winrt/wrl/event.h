@@ -238,11 +238,11 @@ class DelegateArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArgs.
     template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode, typename... TArgs>
     struct DelegateInvokeHelper WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
     {
-        DelegateInvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
+        DelegateInvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Details::Forward<TCallback>(callback)) {}
 
         HRESULT STDMETHODCALLTYPE Invoke(TArgs... args) throw() override
         {
-            return DelegateTraits<checkMode>::CheckReturn((*this)(Forward<TArgs>(args)...));
+            return DelegateTraits<checkMode>::CheckReturn((*this)(Details::Forward<TArgs>(args)...));
         }
     };
 
@@ -294,7 +294,7 @@ HRESULT CreateAgileHelper(_In_ TDelegateInterface* delegateInterface, _COM_Outpt
         ComPtr<TDelegateInterface> localDelegate;
         HRESULT hr = delegateAsAgile.CopyTo(localDelegate.GetAddressOf());
         if (FAILED(hr)) return hr;
-        return localDelegate->Invoke(Forward<decltype(args)>(args)...);
+        return localDelegate->Invoke(Details::Forward<decltype(args)>(args)...);
     });
 
     if (!callback) return E_OUTOFMEMORY;
@@ -313,7 +313,7 @@ template<typename TDelegateInterface, typename TLambda>
 ComPtr<typename Details::DelegateArgTraitsHelper<TDelegateInterface>::Interface> Callback(TLambda&& callback) throw()
 {
     using DelegateHelper = Details::DelegateArgTraitsHelper<TDelegateInterface>;
-    return DelegateHelper::Traits::Callback<TDelegateInterface, DelegateHelper::Interface>(Details::Forward<TLambda>(callback));
+    return DelegateHelper::Traits::Callback<TDelegateInterface, typename DelegateHelper::Interface>(Details::Forward<TLambda>(callback));
 }
 
 // Construct a COM/WinRT delegate, an object with an Invoke() method, from a raw function.
@@ -321,7 +321,7 @@ template<typename TDelegateInterface, typename TFunc>
 ComPtr<typename Details::DelegateArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TFunc* callback) throw()
 {
     using DelegateHelper = Details::DelegateArgTraitsHelper<TDelegateInterface>;
-    return DelegateHelper::Traits::Callback<TDelegateInterface, DelegateHelper::Interface>(
+    return DelegateHelper::Traits::Callback<TDelegateInterface, typename DelegateHelper::Interface>(
         [=](auto&& ...args)
     {
         return callback(Details::Forward<decltype(args)>(args)...);

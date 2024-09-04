@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.gaming.preview.gamesenumeration.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -206,11 +208,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -226,11 +228,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1175,8 +1177,9 @@ namespace ABI {
                 namespace GamesEnumeration {
                     /* [object, uuid("25F6A421-D8F5-4D91-B40E-53D5E86FDE64"), contract] */
                     MIDL_INTERFACE("25F6A421-D8F5-4D91-B40E-53D5E86FDE64")
-                    IGameListChangedEventHandler : IUnknown
+                    IGameListChangedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt ABI::Windows::Gaming::Preview::GamesEnumeration::IGameListEntry * game
                             ) = 0;
@@ -1213,8 +1216,9 @@ namespace ABI {
                 namespace GamesEnumeration {
                     /* [object, uuid("10C5648F-6C8F-4712-9B38-474BC22E76D8"), contract] */
                     MIDL_INTERFACE("10C5648F-6C8F-4712-9B38-474BC22E76D8")
-                    IGameListRemovedEventHandler : IUnknown
+                    IGameListRemovedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in HSTRING identifier
                             ) = 0;
@@ -1252,8 +1256,9 @@ namespace ABI {
                 namespace GamesEnumeration {
                     /* [object, uuid("735924D3-811F-4494-B69C-C641A0C61543"), contract] */
                     MIDL_INTERFACE("735924D3-811F-4494-B69C-C641A0C61543")
-                    IGameListEntry : IInspectable
+                    IGameListEntry : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayInfo(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IAppDisplayInfo * * value
                             ) = 0;
@@ -1311,8 +1316,9 @@ namespace ABI {
                 namespace GamesEnumeration {
                     /* [object, uuid("D84A8F8B-8749-4A25-90D3-F6C5A427886D"), exclusiveto, contract] */
                     MIDL_INTERFACE("D84A8F8B-8749-4A25-90D3-F6C5A427886D")
-                    IGameListEntry2 : IInspectable
+                    IGameListEntry2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LaunchableState(
                             /* [retval, out] */__RPC__out ABI::Windows::Gaming::Preview::GamesEnumeration::GameListEntryLaunchableState * value
                             ) = 0;
@@ -1378,8 +1384,9 @@ namespace ABI {
                 namespace GamesEnumeration {
                     /* [object, uuid("2DDD0F6F-9C66-4B05-945C-D6ED78491B8C"), exclusiveto, contract] */
                     MIDL_INTERFACE("2DDD0F6F-9C66-4B05-945C-D6ED78491B8C")
-                    IGameListStatics : IInspectable
+                    IGameListStatics : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindAllAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CGaming__CPreview__CGamesEnumeration__CGameListEntry * * operation
                             ) = 0;
@@ -1445,8 +1452,9 @@ namespace ABI {
                 namespace GamesEnumeration {
                     /* [object, uuid("395F2098-EA1A-45AA-9268-A83905686F27"), exclusiveto, contract] */
                     MIDL_INTERFACE("395F2098-EA1A-45AA-9268-A83905686F27")
-                    IGameListStatics2 : IInspectable
+                    IGameListStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE MergeEntriesAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Gaming::Preview::GamesEnumeration::IGameListEntry * left,
                             /* [in] */__RPC__in_opt ABI::Windows::Gaming::Preview::GamesEnumeration::IGameListEntry * right,
@@ -1493,8 +1501,9 @@ namespace ABI {
                 namespace GamesEnumeration {
                     /* [object, uuid("78E591AF-B142-4EF0-8830-55BC2BE4F5EA"), exclusiveto, contract] */
                     MIDL_INTERFACE("78E591AF-B142-4EF0-8830-55BC2BE4F5EA")
-                    IGameModeConfiguration : IInspectable
+                    IGameModeConfiguration : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1586,8 +1595,9 @@ namespace ABI {
                 namespace GamesEnumeration {
                     /* [object, uuid("72D34AF4-756B-470F-A0C2-BA62A90795DB"), exclusiveto, contract] */
                     MIDL_INTERFACE("72D34AF4-756B-470F-A0C2-BA62A90795DB")
-                    IGameModeUserConfiguration : IInspectable
+                    IGameModeUserConfiguration : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GamingRelatedProcessNames(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * processNames
                             ) = 0;
@@ -1631,8 +1641,9 @@ namespace ABI {
                 namespace GamesEnumeration {
                     /* [object, uuid("6E50D97C-66EA-478E-A4A1-F57C0E8D00E7"), exclusiveto, contract] */
                     MIDL_INTERFACE("6E50D97C-66EA-478E-A4A1-F57C0E8D00E7")
-                    IGameModeUserConfigurationStatics : IInspectable
+                    IGameModeUserConfigurationStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetDefault(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::Preview::GamesEnumeration::IGameModeUserConfiguration * * userConfiguration
                             ) = 0;

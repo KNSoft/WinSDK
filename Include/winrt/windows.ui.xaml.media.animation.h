@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.media.animation.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -5768,8 +5770,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("ADEC852E-4424-4DAB-99C1-3A04E36A3C48"), exclusiveto, contract] */
                         MIDL_INTERFACE("ADEC852E-4424-4DAB-99C1-3A04E36A3C48")
-                        IAddDeleteThemeTransition : IInspectable
+                        IAddDeleteThemeTransition : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -5809,8 +5812,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E47796E7-F805-4A8F-81C9-38E6472CAA94"), exclusiveto, contract] */
                         MIDL_INTERFACE("E47796E7-F805-4A8F-81C9-38E6472CAA94")
-                        IBackEase : IInspectable
+                        IBackEase : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Amplitude(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -5856,8 +5860,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("3C70A2FF-A0A0-4786-926C-22321F8F25B7"), exclusiveto, contract] */
                         MIDL_INTERFACE("3C70A2FF-A0A0-4786-926C-22321F8F25B7")
-                        IBackEaseStatics : IInspectable
+                        IBackEaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AmplitudeProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -5900,8 +5905,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("64189FCD-49EC-4E52-A6F6-55324C921053"), exclusiveto, contract] */
                         MIDL_INTERFACE("64189FCD-49EC-4E52-A6F6-55324C921053")
-                        IBeginStoryboard : IInspectable
+                        IBeginStoryboard : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Storyboard(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IStoryboard * * value
                                 ) = 0;
@@ -5947,8 +5953,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("12CFF18C-AA91-4C4A-B82F-DF34FC57F94B"), exclusiveto, contract] */
                         MIDL_INTERFACE("12CFF18C-AA91-4C4A-B82F-DF34FC57F94B")
-                        IBeginStoryboardStatics : IInspectable
+                        IBeginStoryboardStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StoryboardProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -5991,8 +5998,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("2BF1464E-FC71-47ED-85A1-3BA9577718B4"), exclusiveto, contract] */
                         MIDL_INTERFACE("2BF1464E-FC71-47ED-85A1-3BA9577718B4")
-                        IBounceEase : IInspectable
+                        IBounceEase : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Bounces(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -6044,8 +6052,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("C0701DA2-4F73-41C9-B2CB-2EA3105107FF"), exclusiveto, contract] */
                         MIDL_INTERFACE("C0701DA2-4F73-41C9-B2CB-2EA3105107FF")
-                        IBounceEaseStatics : IInspectable
+                        IBounceEaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BouncesProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -6091,8 +6100,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("53A3BDB2-9177-4E6E-A043-5082D889AB1F"), exclusiveto, contract] */
                         MIDL_INTERFACE("53A3BDB2-9177-4E6E-A043-5082D889AB1F")
-                        ICircleEase : IInspectable
+                        ICircleEase : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -6132,8 +6142,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("B8AE8A15-0F63-4694-9467-BDAFAC1253EA"), exclusiveto, contract] */
                         MIDL_INTERFACE("B8AE8A15-0F63-4694-9467-BDAFAC1253EA")
-                        IColorAnimation : IInspectable
+                        IColorAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_From(
                                 /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CUI__CColor * * value
                                 ) = 0;
@@ -6203,8 +6214,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("55EAF6E2-87E3-4F48-958F-855B2F9EA9EC"), exclusiveto, contract] */
                         MIDL_INTERFACE("55EAF6E2-87E3-4F48-958F-855B2F9EA9EC")
-                        IColorAnimationStatics : IInspectable
+                        IColorAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FromProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -6259,8 +6271,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("F5C82640-13C3-42AA-9AE2-7E6B51C92F95"), exclusiveto, contract] */
                         MIDL_INTERFACE("F5C82640-13C3-42AA-9AE2-7E6B51C92F95")
-                        IColorAnimationUsingKeyFrames : IInspectable
+                        IColorAnimationUsingKeyFrames : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyFrames(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame * * value
                                 ) = 0;
@@ -6309,8 +6322,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("B4723CDC-96E9-48F9-8D92-9B648B2F1CC6"), exclusiveto, contract] */
                         MIDL_INTERFACE("B4723CDC-96E9-48F9-8D92-9B648B2F1CC6")
-                        IColorAnimationUsingKeyFramesStatics : IInspectable
+                        IColorAnimationUsingKeyFramesStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnableDependentAnimationProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -6353,8 +6367,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("B51D82D9-0910-4589-A284-B0C9205858E9"), exclusiveto, contract] */
                         MIDL_INTERFACE("B51D82D9-0910-4589-A284-B0C9205858E9")
-                        IColorKeyFrame : IInspectable
+                        IColorKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                                 ) = 0;
@@ -6406,8 +6421,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("769BD88A-9CFB-4A7D-96C4-A1E7DE6FDB4B"), exclusiveto, contract] */
                         MIDL_INTERFACE("769BD88A-9CFB-4A7D-96C4-A1E7DE6FDB4B")
-                        IColorKeyFrameFactory : IInspectable
+                        IColorKeyFrameFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -6452,8 +6468,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("C043AE99-210C-430F-9DA5-DF1082692055"), exclusiveto, contract] */
                         MIDL_INTERFACE("C043AE99-210C-430F-9DA5-DF1082692055")
-                        IColorKeyFrameStatics : IInspectable
+                        IColorKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ValueProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -6499,8 +6516,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("50345692-A555-4624-A361-0A91C1706473"), exclusiveto, contract] */
                         MIDL_INTERFACE("50345692-A555-4624-A361-0A91C1706473")
-                        ICommonNavigationTransitionInfo : IInspectable
+                        ICommonNavigationTransitionInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsStaggeringEnabled(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -6546,8 +6564,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("1E3EFE33-50BE-4443-883C-E5627201C2E5"), exclusiveto, contract] */
                         MIDL_INTERFACE("1E3EFE33-50BE-4443-883C-E5627201C2E5")
-                        ICommonNavigationTransitionInfoStatics : IInspectable
+                        ICommonNavigationTransitionInfoStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsStaggeringEnabledProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -6601,8 +6620,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("3518628C-F387-4C25-AC98-44E86C3CADF0"), exclusiveto, contract] */
                         MIDL_INTERFACE("3518628C-F387-4C25-AC98-44E86C3CADF0")
-                        IConnectedAnimation : IInspectable
+                        IConnectedAnimation : public IInspectable
                         {
+                        public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Completed(
                                 /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAnimation__CConnectedAnimation_IInspectable * value,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -6654,8 +6674,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("5D2F8E5C-584B-4DDD-B668-973891431459"), exclusiveto, contract] */
                         MIDL_INTERFACE("5D2F8E5C-584B-4DDD-B668-973891431459")
-                        IConnectedAnimation2 : IInspectable
+                        IConnectedAnimation2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsScaleAnimationEnabled(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -6710,8 +6731,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("1C6875C9-19BB-4D47-B9AA-66C802DCB9FF"), exclusiveto, contract] */
                         MIDL_INTERFACE("1C6875C9-19BB-4D47-B9AA-66C802DCB9FF")
-                        IConnectedAnimationService : IInspectable
+                        IConnectedAnimationService : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DefaultDuration(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                                 ) = 0;
@@ -6772,8 +6794,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("C7078EA5-D688-40E8-8F90-96A6279273D2"), exclusiveto, contract] */
                         MIDL_INTERFACE("C7078EA5-D688-40E8-8F90-96A6279273D2")
-                        IConnectedAnimationServiceStatics : IInspectable
+                        IConnectedAnimationServiceStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimationService * * returnValue
                                 ) = 0;
@@ -6816,8 +6839,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("F66FC5C3-5915-437D-8E3B-ADF8E7F0AB57"), exclusiveto, contract] */
                         MIDL_INTERFACE("F66FC5C3-5915-437D-8E3B-ADF8E7F0AB57")
-                        IContentThemeTransition : IInspectable
+                        IContentThemeTransition : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalOffset(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -6869,8 +6893,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("0E8EE385-9A42-4459-AFA9-337DC41E1587"), exclusiveto, contract] */
                         MIDL_INTERFACE("0E8EE385-9A42-4459-AFA9-337DC41E1587")
-                        IContentThemeTransitionStatics : IInspectable
+                        IContentThemeTransitionStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalOffsetProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -6916,8 +6941,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("4BE1DBAD-8BA6-4004-8438-8A9017978543"), exclusiveto, contract] */
                         MIDL_INTERFACE("4BE1DBAD-8BA6-4004-8438-8A9017978543")
-                        IContinuumNavigationTransitionInfo : IInspectable
+                        IContinuumNavigationTransitionInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExitElement(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * value
                                 ) = 0;
@@ -6963,8 +6989,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("3E25DD53-B18F-4BF1-B3BC-92F516F29903"), exclusiveto, contract] */
                         MIDL_INTERFACE("3E25DD53-B18F-4BF1-B3BC-92F516F29903")
-                        IContinuumNavigationTransitionInfoStatics : IInspectable
+                        IContinuumNavigationTransitionInfoStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExitElementProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7040,8 +7067,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("1B94FC76-DAD7-4354-B1A2-7969FBF6A70D"), exclusiveto, contract] */
                         MIDL_INTERFACE("1B94FC76-DAD7-4354-B1A2-7969FBF6A70D")
-                        ICubicEase : IInspectable
+                        ICubicEase : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -7081,8 +7109,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("230C08F4-E062-4CB1-8E2A-14093D73ED8C"), exclusiveto, contract] */
                         MIDL_INTERFACE("230C08F4-E062-4CB1-8E2A-14093D73ED8C")
-                        IDiscreteColorKeyFrame : IInspectable
+                        IDiscreteColorKeyFrame : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -7122,8 +7151,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("F5F51F3A-AD11-49CE-8E1C-08FDF1447446"), exclusiveto, contract] */
                         MIDL_INTERFACE("F5F51F3A-AD11-49CE-8E1C-08FDF1447446")
-                        IDiscreteDoubleKeyFrame : IInspectable
+                        IDiscreteDoubleKeyFrame : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -7163,8 +7193,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("C7DCDE89-F12D-4A9C-8199-E7A9ECE3A473"), exclusiveto, contract] */
                         MIDL_INTERFACE("C7DCDE89-F12D-4A9C-8199-E7A9ECE3A473")
-                        IDiscreteObjectKeyFrame : IInspectable
+                        IDiscreteObjectKeyFrame : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -7204,8 +7235,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E0A9070D-4C42-4A90-983A-75F5A83A2FBE"), exclusiveto, contract] */
                         MIDL_INTERFACE("E0A9070D-4C42-4A90-983A-75F5A83A2FBE")
-                        IDiscretePointKeyFrame : IInspectable
+                        IDiscretePointKeyFrame : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -7245,8 +7277,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("7E9F3D59-0F07-4BC9-977D-03763FF8154F"), exclusiveto, contract] */
                         MIDL_INTERFACE("7E9F3D59-0F07-4BC9-977D-03763FF8154F")
-                        IDoubleAnimation : IInspectable
+                        IDoubleAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_From(
                                 /* [retval, out] */__RPC__deref_out_opt __FIReference_1_double * * value
                                 ) = 0;
@@ -7316,8 +7349,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E27A935D-F111-43B7-B824-832B58D7786B"), exclusiveto, contract] */
                         MIDL_INTERFACE("E27A935D-F111-43B7-B824-832B58D7786B")
-                        IDoubleAnimationStatics : IInspectable
+                        IDoubleAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FromProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7372,8 +7406,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("4FEE628F-BFEE-4F75-83C2-A93B39488473"), exclusiveto, contract] */
                         MIDL_INTERFACE("4FEE628F-BFEE-4F75-83C2-A93B39488473")
-                        IDoubleAnimationUsingKeyFrames : IInspectable
+                        IDoubleAnimationUsingKeyFrames : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyFrames(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame * * value
                                 ) = 0;
@@ -7422,8 +7457,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("109BF2F6-C60F-49AA-ABF6-F696D492116B"), exclusiveto, contract] */
                         MIDL_INTERFACE("109BF2F6-C60F-49AA-ABF6-F696D492116B")
-                        IDoubleAnimationUsingKeyFramesStatics : IInspectable
+                        IDoubleAnimationUsingKeyFramesStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnableDependentAnimationProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7466,8 +7502,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("674456FD-E81E-4F4E-B4AD-0ACFED9ECD68"), exclusiveto, contract] */
                         MIDL_INTERFACE("674456FD-E81E-4F4E-B4AD-0ACFED9ECD68")
-                        IDoubleKeyFrame : IInspectable
+                        IDoubleKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -7519,8 +7556,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("AC97DEC3-7538-40B9-B152-696F7FBF4722"), exclusiveto, contract] */
                         MIDL_INTERFACE("AC97DEC3-7538-40B9-B152-696F7FBF4722")
-                        IDoubleKeyFrameFactory : IInspectable
+                        IDoubleKeyFrameFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -7565,8 +7603,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("324641B0-7D37-427A-ADEB-43F38BB61A4D"), exclusiveto, contract] */
                         MIDL_INTERFACE("324641B0-7D37-427A-ADEB-43F38BB61A4D")
-                        IDoubleKeyFrameStatics : IInspectable
+                        IDoubleKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ValueProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7612,8 +7651,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("0C7D5DB5-7ED6-4949-B4E6-A78C9F4F978D"), exclusiveto, contract] */
                         MIDL_INTERFACE("0C7D5DB5-7ED6-4949-B4E6-A78C9F4F978D")
-                        IDragItemThemeAnimation : IInspectable
+                        IDragItemThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -7659,8 +7699,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("6218B9F5-013A-4FB1-86FC-92BC4E8D0241"), exclusiveto, contract] */
                         MIDL_INTERFACE("6218B9F5-013A-4FB1-86FC-92BC4E8D0241")
-                        IDragItemThemeAnimationStatics : IInspectable
+                        IDragItemThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7703,8 +7744,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("72F762F7-7E51-4A6B-B937-DC4B4C1C5458"), exclusiveto, contract] */
                         MIDL_INTERFACE("72F762F7-7E51-4A6B-B937-DC4B4C1C5458")
-                        IDragOverThemeAnimation : IInspectable
+                        IDragOverThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -7762,8 +7804,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("146FFE57-3C9D-41D9-A5FF-8D7239516810"), exclusiveto, contract] */
                         MIDL_INTERFACE("146FFE57-3C9D-41D9-A5FF-8D7239516810")
-                        IDragOverThemeAnimationStatics : IInspectable
+                        IDragOverThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7812,8 +7855,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("3B86201A-45D3-463B-939E-C8595F439BCC"), exclusiveto, contract] */
                         MIDL_INTERFACE("3B86201A-45D3-463B-939E-C8595F439BCC")
-                        IDrillInNavigationTransitionInfo : IInspectable
+                        IDrillInNavigationTransitionInfo : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -7853,8 +7897,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("B090B824-F1D2-41B8-87BA-78034126594C"), exclusiveto, contract] */
                         MIDL_INTERFACE("B090B824-F1D2-41B8-87BA-78034126594C")
-                        IDrillInThemeAnimation : IInspectable
+                        IDrillInThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EntranceTargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -7918,8 +7963,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("C61FE488-A17A-4B11-B53B-A4F1A07D4BA9"), exclusiveto, contract] */
                         MIDL_INTERFACE("C61FE488-A17A-4B11-B53B-A4F1A07D4BA9")
-                        IDrillInThemeAnimationStatics : IInspectable
+                        IDrillInThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EntranceTargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7971,8 +8017,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("D890CCDF-06D3-4F7E-8E4A-4FB76E256139"), exclusiveto, contract] */
                         MIDL_INTERFACE("D890CCDF-06D3-4F7E-8E4A-4FB76E256139")
-                        IDrillOutThemeAnimation : IInspectable
+                        IDrillOutThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EntranceTargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -8036,8 +8083,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("BEB5DB9B-2617-4888-80DD-72FA7BB6FAC3"), exclusiveto, contract] */
                         MIDL_INTERFACE("BEB5DB9B-2617-4888-80DD-72FA7BB6FAC3")
-                        IDrillOutThemeAnimationStatics : IInspectable
+                        IDrillOutThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EntranceTargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8089,8 +8137,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("1881C968-1824-462B-87E8-C357212B977B"), exclusiveto, contract] */
                         MIDL_INTERFACE("1881C968-1824-462B-87E8-C357212B977B")
-                        IDropTargetItemThemeAnimation : IInspectable
+                        IDropTargetItemThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -8136,8 +8185,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("AE80F486-2E56-4513-BF18-D77470164AE5"), exclusiveto, contract] */
                         MIDL_INTERFACE("AE80F486-2E56-4513-BF18-D77470164AE5")
-                        IDropTargetItemThemeAnimationStatics : IInspectable
+                        IDropTargetItemThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8180,8 +8230,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("C733D630-F4B9-4934-9BDD-27AC5ED1CFD8"), exclusiveto, contract] */
                         MIDL_INTERFACE("C733D630-F4B9-4934-9BDD-27AC5ED1CFD8")
-                        IEasingColorKeyFrame : IInspectable
+                        IEasingColorKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EasingFunction(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IEasingFunctionBase * * value
                                 ) = 0;
@@ -8227,8 +8278,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("6F3837FC-8E3D-4522-9B0F-003DB8609851"), exclusiveto, contract] */
                         MIDL_INTERFACE("6F3837FC-8E3D-4522-9B0F-003DB8609851")
-                        IEasingColorKeyFrameStatics : IInspectable
+                        IEasingColorKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EasingFunctionProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8271,8 +8323,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("965ADB8D-9A54-4108-B4FF-B5A5212CB338"), exclusiveto, contract] */
                         MIDL_INTERFACE("965ADB8D-9A54-4108-B4FF-B5A5212CB338")
-                        IEasingDoubleKeyFrame : IInspectable
+                        IEasingDoubleKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EasingFunction(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IEasingFunctionBase * * value
                                 ) = 0;
@@ -8318,8 +8371,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("C8D3D845-DBAE-4E5B-8B84-D9537398E5B1"), exclusiveto, contract] */
                         MIDL_INTERFACE("C8D3D845-DBAE-4E5B-8B84-D9537398E5B1")
-                        IEasingDoubleKeyFrameStatics : IInspectable
+                        IEasingDoubleKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EasingFunctionProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8362,8 +8416,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("C108383F-2C02-4151-8ECD-68DDAA3F0D9B"), exclusiveto, contract] */
                         MIDL_INTERFACE("C108383F-2C02-4151-8ECD-68DDAA3F0D9B")
-                        IEasingFunctionBase : IInspectable
+                        IEasingFunctionBase : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EasingMode(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::EasingMode * value
                                 ) = 0;
@@ -8413,8 +8468,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("1830FE6A-F01B-43E0-B61F-B452A1C66FD2"), exclusiveto, contract] */
                         MIDL_INTERFACE("1830FE6A-F01B-43E0-B61F-B452A1C66FD2")
-                        IEasingFunctionBaseFactory : IInspectable
+                        IEasingFunctionBaseFactory : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8454,8 +8510,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("2A5031AA-2C50-4A1D-BB04-D75E07B71548"), exclusiveto, contract] */
                         MIDL_INTERFACE("2A5031AA-2C50-4A1D-BB04-D75E07B71548")
-                        IEasingFunctionBaseStatics : IInspectable
+                        IEasingFunctionBaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EasingModeProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8498,8 +8555,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("B3C91380-6868-4225-A70B-3981CC0B2947"), exclusiveto, contract] */
                         MIDL_INTERFACE("B3C91380-6868-4225-A70B-3981CC0B2947")
-                        IEasingPointKeyFrame : IInspectable
+                        IEasingPointKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EasingFunction(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IEasingFunctionBase * * value
                                 ) = 0;
@@ -8545,8 +8603,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E22DBFC4-080C-402C-A6B5-F48D0A98116B"), exclusiveto, contract] */
                         MIDL_INTERFACE("E22DBFC4-080C-402C-A6B5-F48D0A98116B")
-                        IEasingPointKeyFrameStatics : IInspectable
+                        IEasingPointKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EasingFunctionProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8589,8 +8648,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("5C86C19B-49D7-19EC-CF19-83A73C6DE75E"), exclusiveto, contract] */
                         MIDL_INTERFACE("5C86C19B-49D7-19EC-CF19-83A73C6DE75E")
-                        IEdgeUIThemeTransition : IInspectable
+                        IEdgeUIThemeTransition : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Edge(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation * value
                                 ) = 0;
@@ -8636,8 +8696,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("16A2B13B-4705-302B-27C6-2AAC92F645AC"), exclusiveto, contract] */
                         MIDL_INTERFACE("16A2B13B-4705-302B-27C6-2AAC92F645AC")
-                        IEdgeUIThemeTransitionStatics : IInspectable
+                        IEdgeUIThemeTransitionStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EdgeProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8680,8 +8741,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("EF5BA58C-B0B6-4A6C-9CA8-FB4233F12459"), exclusiveto, contract] */
                         MIDL_INTERFACE("EF5BA58C-B0B6-4A6C-9CA8-FB4233F12459")
-                        IElasticEase : IInspectable
+                        IElasticEase : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Oscillations(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -8733,8 +8795,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("A9F566EC-FE9C-4B2B-8E52-BB785D562185"), exclusiveto, contract] */
                         MIDL_INTERFACE("A9F566EC-FE9C-4B2B-8E52-BB785D562185")
-                        IElasticEaseStatics : IInspectable
+                        IElasticEaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OscillationsProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8780,8 +8843,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("720A256B-1C8A-41EE-82EC-8A87C0CF47DA"), exclusiveto, contract] */
                         MIDL_INTERFACE("720A256B-1C8A-41EE-82EC-8A87C0CF47DA")
-                        IEntranceNavigationTransitionInfo : IInspectable
+                        IEntranceNavigationTransitionInfo : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8821,8 +8885,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("F948C27A-40C9-469F-8F33-BF45C8811F21"), exclusiveto, contract] */
                         MIDL_INTERFACE("F948C27A-40C9-469F-8F33-BF45C8811F21")
-                        IEntranceNavigationTransitionInfoStatics : IInspectable
+                        IEntranceNavigationTransitionInfoStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTargetElementProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8873,8 +8938,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("07698C09-A8E3-419A-A01D-7410A0AE8EC8"), exclusiveto, contract] */
                         MIDL_INTERFACE("07698C09-A8E3-419A-A01D-7410A0AE8EC8")
-                        IEntranceThemeTransition : IInspectable
+                        IEntranceThemeTransition : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FromHorizontalOffset(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -8932,8 +8998,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("37CC0577-FF98-4AED-B86E-5EC23702F877"), exclusiveto, contract] */
                         MIDL_INTERFACE("37CC0577-FF98-4AED-B86E-5EC23702F877")
-                        IEntranceThemeTransitionStatics : IInspectable
+                        IEntranceThemeTransitionStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FromHorizontalOffsetProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8982,8 +9049,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("7CB9E41D-F0BB-4BCA-9DA5-9BA3A11734C4"), exclusiveto, contract] */
                         MIDL_INTERFACE("7CB9E41D-F0BB-4BCA-9DA5-9BA3A11734C4")
-                        IExponentialEase : IInspectable
+                        IExponentialEase : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Exponent(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -9029,8 +9097,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("F37EE7E3-A761-4352-9AD6-70794567581A"), exclusiveto, contract] */
                         MIDL_INTERFACE("F37EE7E3-A761-4352-9AD6-70794567581A")
-                        IExponentialEaseStatics : IInspectable
+                        IExponentialEaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExponentProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9073,8 +9142,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("6D4BC8F5-A918-4477-8078-554C68812AB8"), exclusiveto, contract] */
                         MIDL_INTERFACE("6D4BC8F5-A918-4477-8078-554C68812AB8")
-                        IFadeInThemeAnimation : IInspectable
+                        IFadeInThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -9120,8 +9190,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("7F0117E1-BEA9-4923-B23A-0DDF4D7B8737"), exclusiveto, contract] */
                         MIDL_INTERFACE("7F0117E1-BEA9-4923-B23A-0DDF4D7B8737")
-                        IFadeInThemeAnimationStatics : IInspectable
+                        IFadeInThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9164,8 +9235,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("89276BA9-FFD4-45B6-9B9A-CED48951E712"), exclusiveto, contract] */
                         MIDL_INTERFACE("89276BA9-FFD4-45B6-9B9A-CED48951E712")
-                        IFadeOutThemeAnimation : IInspectable
+                        IFadeOutThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -9211,8 +9283,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("FE17A81A-4168-4F68-A28C-E5DD98CF680F"), exclusiveto, contract] */
                         MIDL_INTERFACE("FE17A81A-4168-4F68-A28C-E5DD98CF680F")
-                        IFadeOutThemeAnimationStatics : IInspectable
+                        IFadeOutThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9255,8 +9328,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("77A163BB-D5CA-4A32-BA0B-7DFF988E58A0"), exclusiveto, contract] */
                         MIDL_INTERFACE("77A163BB-D5CA-4A32-BA0B-7DFF988E58A0")
-                        IKeySpline : IInspectable
+                        IKeySpline : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ControlPoint1(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -9308,8 +9382,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("3643E480-4823-466A-ABE5-5E79C8ED77ED"), exclusiveto, contract] */
                         MIDL_INTERFACE("3643E480-4823-466A-ABE5-5E79C8ED77ED")
-                        IKeyTimeHelper : IInspectable
+                        IKeyTimeHelper : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9349,8 +9424,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("7FA2612C-22A9-45E9-9AF7-C7416EFFF7A5"), exclusiveto, contract] */
                         MIDL_INTERFACE("7FA2612C-22A9-45E9-9AF7-C7416EFFF7A5")
-                        IKeyTimeHelperStatics : IInspectable
+                        IKeyTimeHelperStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE FromTimeSpan(
                                 /* [in] */ABI::Windows::Foundation::TimeSpan timeSpan,
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::KeyTime * returnValue
@@ -9394,8 +9470,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("66FDB6EF-AC81-4611-B1D2-61F545983F03"), exclusiveto, contract] */
                         MIDL_INTERFACE("66FDB6EF-AC81-4611-B1D2-61F545983F03")
-                        ILinearColorKeyFrame : IInspectable
+                        ILinearColorKeyFrame : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9435,8 +9512,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("8EFDF265-9A7B-431D-8F0C-14C56B5EA4D9"), exclusiveto, contract] */
                         MIDL_INTERFACE("8EFDF265-9A7B-431D-8F0C-14C56B5EA4D9")
-                        ILinearDoubleKeyFrame : IInspectable
+                        ILinearDoubleKeyFrame : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9476,8 +9554,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E7C9B8EF-AF24-49EE-84F1-A86600A4E319"), exclusiveto, contract] */
                         MIDL_INTERFACE("E7C9B8EF-AF24-49EE-84F1-A86600A4E319")
-                        ILinearPointKeyFrame : IInspectable
+                        ILinearPointKeyFrame : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9517,8 +9596,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("8833848C-4EB7-41F2-8799-9EEF0A213B73"), exclusiveto, contract] */
                         MIDL_INTERFACE("8833848C-4EB7-41F2-8799-9EEF0A213B73")
-                        INavigationThemeTransition : IInspectable
+                        INavigationThemeTransition : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DefaultNavigationTransitionInfo(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * * value
                                 ) = 0;
@@ -9564,8 +9644,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("EA2F06E0-5E60-4F8E-BCAF-431487A294AB"), exclusiveto, contract] */
                         MIDL_INTERFACE("EA2F06E0-5E60-4F8E-BCAF-431487A294AB")
-                        INavigationThemeTransitionStatics : IInspectable
+                        INavigationThemeTransitionStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DefaultNavigationTransitionInfoProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9608,8 +9689,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("A9B05091-AE4A-4372-8625-21B7A8B98CA4"), exclusiveto, contract] */
                         MIDL_INTERFACE("A9B05091-AE4A-4372-8625-21B7A8B98CA4")
-                        INavigationTransitionInfo : IInspectable
+                        INavigationTransitionInfo : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9649,8 +9731,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("EDF4F8D5-AF63-4FAB-9D4A-87927F82DD6B"), exclusiveto, contract] */
                         MIDL_INTERFACE("EDF4F8D5-AF63-4FAB-9D4A-87927F82DD6B")
-                        INavigationTransitionInfoFactory : IInspectable
+                        INavigationTransitionInfoFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -9695,8 +9778,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("D9517E6A-A9D0-4BF7-9DB0-4633A69DAFF2"), exclusiveto, contract] */
                         MIDL_INTERFACE("D9517E6A-A9D0-4BF7-9DB0-4633A69DAFF2")
-                        INavigationTransitionInfoOverrides : IInspectable
+                        INavigationTransitionInfoOverrides : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetNavigationStateCore(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
                                 ) = 0;
@@ -9742,8 +9826,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("334A2D92-B74A-4C64-B9A6-58BCFA314F22"), exclusiveto, contract] */
                         MIDL_INTERFACE("334A2D92-B74A-4C64-B9A6-58BCFA314F22")
-                        IObjectAnimationUsingKeyFrames : IInspectable
+                        IObjectAnimationUsingKeyFrames : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyFrames(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame * * value
                                 ) = 0;
@@ -9792,8 +9877,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("EB736182-6AF1-49A3-97B6-783ED97400FE"), exclusiveto, contract] */
                         MIDL_INTERFACE("EB736182-6AF1-49A3-97B6-783ED97400FE")
-                        IObjectAnimationUsingKeyFramesStatics : IInspectable
+                        IObjectAnimationUsingKeyFramesStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnableDependentAnimationProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9836,8 +9922,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("9852A851-8593-48EE-A6A4-D5D4720F029A"), exclusiveto, contract] */
                         MIDL_INTERFACE("9852A851-8593-48EE-A6A4-D5D4720F029A")
-                        IObjectKeyFrame : IInspectable
+                        IObjectKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                                 /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                                 ) = 0;
@@ -9889,8 +9976,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("1626143E-3E6D-44D8-9B9A-04AEA70F8492"), exclusiveto, contract] */
                         MIDL_INTERFACE("1626143E-3E6D-44D8-9B9A-04AEA70F8492")
-                        IObjectKeyFrameFactory : IInspectable
+                        IObjectKeyFrameFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -9935,8 +10023,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("2CD6AB00-5319-4286-8EED-4E755EA0CF9C"), exclusiveto, contract] */
                         MIDL_INTERFACE("2CD6AB00-5319-4286-8EED-4E755EA0CF9C")
-                        IObjectKeyFrameStatics : IInspectable
+                        IObjectKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ValueProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9982,8 +10071,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("4708EB8E-4BFC-EE46-D4F9-708DEF3FBB2B"), exclusiveto, contract] */
                         MIDL_INTERFACE("4708EB8E-4BFC-EE46-D4F9-708DEF3FBB2B")
-                        IPaneThemeTransition : IInspectable
+                        IPaneThemeTransition : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Edge(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation * value
                                 ) = 0;
@@ -10029,8 +10119,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("316B382F-4BE4-1797-B45C-CD900BBE0CAA"), exclusiveto, contract] */
                         MIDL_INTERFACE("316B382F-4BE4-1797-B45C-CD900BBE0CAA")
-                        IPaneThemeTransitionStatics : IInspectable
+                        IPaneThemeTransitionStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EdgeProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10073,8 +10164,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("30F04312-7726-4F88-B8E2-2FA54518963B"), exclusiveto, contract] */
                         MIDL_INTERFACE("30F04312-7726-4F88-B8E2-2FA54518963B")
-                        IPointAnimation : IInspectable
+                        IPointAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_From(
                                 /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CPoint * * value
                                 ) = 0;
@@ -10144,8 +10236,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("2F99B356-E737-408B-A0FD-327826D32255"), exclusiveto, contract] */
                         MIDL_INTERFACE("2F99B356-E737-408B-A0FD-327826D32255")
-                        IPointAnimationStatics : IInspectable
+                        IPointAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FromProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10200,8 +10293,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("9B944F72-446A-41D0-A129-41A620F4595D"), exclusiveto, contract] */
                         MIDL_INTERFACE("9B944F72-446A-41D0-A129-41A620F4595D")
-                        IPointAnimationUsingKeyFrames : IInspectable
+                        IPointAnimationUsingKeyFrames : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyFrames(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame * * value
                                 ) = 0;
@@ -10250,8 +10344,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("5F454C87-2390-46EA-BAA7-762F4BC30D04"), exclusiveto, contract] */
                         MIDL_INTERFACE("5F454C87-2390-46EA-BAA7-762F4BC30D04")
-                        IPointAnimationUsingKeyFramesStatics : IInspectable
+                        IPointAnimationUsingKeyFramesStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnableDependentAnimationProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10294,8 +10389,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("FCC88D01-7F82-4DAE-8026-7B7E086878B3"), exclusiveto, contract] */
                         MIDL_INTERFACE("FCC88D01-7F82-4DAE-8026-7B7E086878B3")
-                        IPointKeyFrame : IInspectable
+                        IPointKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -10347,8 +10443,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("CB214BDF-426A-4392-8355-C2AE52852623"), exclusiveto, contract] */
                         MIDL_INTERFACE("CB214BDF-426A-4392-8355-C2AE52852623")
-                        IPointKeyFrameFactory : IInspectable
+                        IPointKeyFrameFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10393,8 +10490,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("95CF1B27-7965-4BEC-B9FB-FBE94B65518E"), exclusiveto, contract] */
                         MIDL_INTERFACE("95CF1B27-7965-4BEC-B9FB-FBE94B65518E")
-                        IPointKeyFrameStatics : IInspectable
+                        IPointKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ValueProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10440,8 +10538,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("B58E714E-C49D-4788-A233-0AE85D99DD5A"), exclusiveto, contract] */
                         MIDL_INTERFACE("B58E714E-C49D-4788-A233-0AE85D99DD5A")
-                        IPointerDownThemeAnimation : IInspectable
+                        IPointerDownThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -10487,8 +10586,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("63A7CB7B-6D46-4494-B94A-E72F3B492A61"), exclusiveto, contract] */
                         MIDL_INTERFACE("63A7CB7B-6D46-4494-B94A-E72F3B492A61")
-                        IPointerDownThemeAnimationStatics : IInspectable
+                        IPointerDownThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10531,8 +10631,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E9E9D07D-6340-4828-AD12-690694B9910B"), exclusiveto, contract] */
                         MIDL_INTERFACE("E9E9D07D-6340-4828-AD12-690694B9910B")
-                        IPointerUpThemeAnimation : IInspectable
+                        IPointerUpThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -10578,8 +10679,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("7C618F9C-7992-4139-8BFC-0883B9727A7E"), exclusiveto, contract] */
                         MIDL_INTERFACE("7C618F9C-7992-4139-8BFC-0883B9727A7E")
-                        IPointerUpThemeAnimationStatics : IInspectable
+                        IPointerUpThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10622,8 +10724,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("196938C1-1C07-4C28-8847-F9F055B32855"), exclusiveto, contract] */
                         MIDL_INTERFACE("196938C1-1C07-4C28-8847-F9F055B32855")
-                        IPopInThemeAnimation : IInspectable
+                        IPopInThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -10681,8 +10784,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("EFAA99D3-218A-4701-977F-F1BFAE8BA649"), exclusiveto, contract] */
                         MIDL_INTERFACE("EFAA99D3-218A-4701-977F-F1BFAE8BA649")
-                        IPopInThemeAnimationStatics : IInspectable
+                        IPopInThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10731,8 +10835,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("4786AB49-0E48-4E81-A2E5-CC5AA19E48D3"), exclusiveto, contract] */
                         MIDL_INTERFACE("4786AB49-0E48-4E81-A2E5-CC5AA19E48D3")
-                        IPopOutThemeAnimation : IInspectable
+                        IPopOutThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -10778,8 +10883,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("1D492C09-03C1-4490-99DC-909FEAB357FB"), exclusiveto, contract] */
                         MIDL_INTERFACE("1D492C09-03C1-4490-99DC-909FEAB357FB")
-                        IPopOutThemeAnimationStatics : IInspectable
+                        IPopOutThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10822,8 +10928,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("47843552-4283-545E-C791-268DCA22CE4B"), exclusiveto, contract] */
                         MIDL_INTERFACE("47843552-4283-545E-C791-268DCA22CE4B")
-                        IPopupThemeTransition : IInspectable
+                        IPopupThemeTransition : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FromHorizontalOffset(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -10875,8 +10982,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E5A1640E-490D-1505-9F6B-8FAFC044DEC5"), exclusiveto, contract] */
                         MIDL_INTERFACE("E5A1640E-490D-1505-9F6B-8FAFC044DEC5")
-                        IPopupThemeTransitionStatics : IInspectable
+                        IPopupThemeTransitionStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FromHorizontalOffsetProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10922,8 +11030,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("69C80579-EEDF-405B-8680-D9606880C937"), exclusiveto, contract] */
                         MIDL_INTERFACE("69C80579-EEDF-405B-8680-D9606880C937")
-                        IPowerEase : IInspectable
+                        IPowerEase : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Power(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -10969,8 +11078,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("A5955103-91A2-460C-9C41-D28F6A939BDA"), exclusiveto, contract] */
                         MIDL_INTERFACE("A5955103-91A2-460C-9C41-D28F6A939BDA")
-                        IPowerEaseStatics : IInspectable
+                        IPowerEaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PowerProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -11013,8 +11123,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E1510E91-EF6D-44F0-803D-68D16DE0DDFC"), exclusiveto, contract] */
                         MIDL_INTERFACE("E1510E91-EF6D-44F0-803D-68D16DE0DDFC")
-                        IQuadraticEase : IInspectable
+                        IQuadraticEase : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11054,8 +11165,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E8698814-FE42-4A05-B5B8-081F41157815"), exclusiveto, contract] */
                         MIDL_INTERFACE("E8698814-FE42-4A05-B5B8-081F41157815")
-                        IQuarticEase : IInspectable
+                        IQuarticEase : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11095,8 +11207,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("92EE793B-3C49-4108-AA11-AB786603DA21"), exclusiveto, contract] */
                         MIDL_INTERFACE("92EE793B-3C49-4108-AA11-AB786603DA21")
-                        IQuinticEase : IInspectable
+                        IQuinticEase : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11136,8 +11249,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("F2065C6C-D052-4AD1-8362-B71B36DF7497"), exclusiveto, contract] */
                         MIDL_INTERFACE("F2065C6C-D052-4AD1-8362-B71B36DF7497")
-                        IReorderThemeTransition : IInspectable
+                        IReorderThemeTransition : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11177,8 +11291,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("6863AB72-4997-47F9-87AD-37EFB75993EA"), exclusiveto, contract] */
                         MIDL_INTERFACE("6863AB72-4997-47F9-87AD-37EFB75993EA")
-                        IRepeatBehaviorHelper : IInspectable
+                        IRepeatBehaviorHelper : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11218,8 +11333,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("7A795033-79F3-4DD9-B267-9CF50FB51F84"), exclusiveto, contract] */
                         MIDL_INTERFACE("7A795033-79F3-4DD9-B267-9CF50FB51F84")
-                        IRepeatBehaviorHelperStatics : IInspectable
+                        IRepeatBehaviorHelperStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Forever(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior * value
                                 ) = 0;
@@ -11283,8 +11399,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("ECDA24E8-8945-4949-A1BF-62109965A7E9"), exclusiveto, contract] */
                         MIDL_INTERFACE("ECDA24E8-8945-4949-A1BF-62109965A7E9")
-                        IRepositionThemeAnimation : IInspectable
+                        IRepositionThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -11342,8 +11459,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("4D92B1B1-860B-4BF9-A59D-1EB1CCBE8FE0"), exclusiveto, contract] */
                         MIDL_INTERFACE("4D92B1B1-860B-4BF9-A59D-1EB1CCBE8FE0")
-                        IRepositionThemeAnimationStatics : IInspectable
+                        IRepositionThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -11392,8 +11510,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("88329B82-98F3-455A-AC53-2E7083B6E22C"), exclusiveto, contract] */
                         MIDL_INTERFACE("88329B82-98F3-455A-AC53-2E7083B6E22C")
-                        IRepositionThemeTransition : IInspectable
+                        IRepositionThemeTransition : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11433,8 +11552,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("CEBFE864-DBEA-4404-8E6E-DE55ADA75239"), exclusiveto, contract] */
                         MIDL_INTERFACE("CEBFE864-DBEA-4404-8E6E-DE55ADA75239")
-                        IRepositionThemeTransition2 : IInspectable
+                        IRepositionThemeTransition2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsStaggeringEnabled(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -11480,8 +11600,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("9240E930-0A19-468B-8C2A-68FAB4500027"), exclusiveto, contract] */
                         MIDL_INTERFACE("9240E930-0A19-468B-8C2A-68FAB4500027")
-                        IRepositionThemeTransitionStatics2 : IInspectable
+                        IRepositionThemeTransitionStatics2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsStaggeringEnabledProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -11524,8 +11645,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("A9382962-230B-49DA-9E0D-664987892343"), exclusiveto, contract] */
                         MIDL_INTERFACE("A9382962-230B-49DA-9E0D-664987892343")
-                        ISineEase : IInspectable
+                        ISineEase : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11565,8 +11687,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("D6AC9D77-2E03-405F-80ED-E62BEEF3668F"), exclusiveto, contract] */
                         MIDL_INTERFACE("D6AC9D77-2E03-405F-80ED-E62BEEF3668F")
-                        ISlideNavigationTransitionInfo : IInspectable
+                        ISlideNavigationTransitionInfo : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11606,8 +11729,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("1A4A5941-1FE0-473A-8EFE-4316D8C86229"), exclusiveto, contract] */
                         MIDL_INTERFACE("1A4A5941-1FE0-473A-8EFE-4316D8C86229")
-                        ISplineColorKeyFrame : IInspectable
+                        ISplineColorKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeySpline(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IKeySpline * * value
                                 ) = 0;
@@ -11653,8 +11777,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("61D1D997-8589-4F2F-8FBB-7D03EDC98DD3"), exclusiveto, contract] */
                         MIDL_INTERFACE("61D1D997-8589-4F2F-8FBB-7D03EDC98DD3")
-                        ISplineColorKeyFrameStatics : IInspectable
+                        ISplineColorKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeySplineProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -11697,8 +11822,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("00D72D38-6B2B-4843-838E-C8B115EEC801"), exclusiveto, contract] */
                         MIDL_INTERFACE("00D72D38-6B2B-4843-838E-C8B115EEC801")
-                        ISplineDoubleKeyFrame : IInspectable
+                        ISplineDoubleKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeySpline(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IKeySpline * * value
                                 ) = 0;
@@ -11744,8 +11870,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("060A8FFC-975F-4E4E-9EC7-13C5AEE02062"), exclusiveto, contract] */
                         MIDL_INTERFACE("060A8FFC-975F-4E4E-9EC7-13C5AEE02062")
-                        ISplineDoubleKeyFrameStatics : IInspectable
+                        ISplineDoubleKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeySplineProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -11788,8 +11915,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("0F19F306-7036-494F-BC3C-780DF0CC524A"), exclusiveto, contract] */
                         MIDL_INTERFACE("0F19F306-7036-494F-BC3C-780DF0CC524A")
-                        ISplinePointKeyFrame : IInspectable
+                        ISplinePointKeyFrame : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeySpline(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IKeySpline * * value
                                 ) = 0;
@@ -11835,8 +11963,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("E97A32C2-0A7A-4766-95CB-0D692611CB4C"), exclusiveto, contract] */
                         MIDL_INTERFACE("E97A32C2-0A7A-4766-95CB-0D692611CB4C")
-                        ISplinePointKeyFrameStatics : IInspectable
+                        ISplinePointKeyFrameStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeySplineProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -11879,8 +12008,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("4F799518-FF39-4E90-BB74-2ABD56027402"), exclusiveto, contract] */
                         MIDL_INTERFACE("4F799518-FF39-4E90-BB74-2ABD56027402")
-                        ISplitCloseThemeAnimation : IInspectable
+                        ISplitCloseThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OpenedTargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -11986,8 +12116,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("7AA94DE9-CC9B-4E90-A11A-0050A2216A9E"), exclusiveto, contract] */
                         MIDL_INTERFACE("7AA94DE9-CC9B-4E90-A11A-0050A2216A9E")
-                        ISplitCloseThemeAnimationStatics : IInspectable
+                        ISplitCloseThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OpenedTargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -12060,8 +12191,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("785FD7AA-5456-4639-8FD2-26BAE6A5FFE4"), exclusiveto, contract] */
                         MIDL_INTERFACE("785FD7AA-5456-4639-8FD2-26BAE6A5FFE4")
-                        ISplitOpenThemeAnimation : IInspectable
+                        ISplitOpenThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OpenedTargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -12167,8 +12299,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("8D4CFA89-3A91-458D-B0FB-4CAD625CBF8D"), exclusiveto, contract] */
                         MIDL_INTERFACE("8D4CFA89-3A91-458D-B0FB-4CAD625CBF8D")
-                        ISplitOpenThemeAnimationStatics : IInspectable
+                        ISplitOpenThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OpenedTargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -12241,8 +12374,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("D45C1E6E-3594-460E-981A-32271BD3AA06"), exclusiveto, contract] */
                         MIDL_INTERFACE("D45C1E6E-3594-460E-981A-32271BD3AA06")
-                        IStoryboard : IInspectable
+                        IStoryboard : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Children(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline * * value
                                 ) = 0;
@@ -12302,8 +12436,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("D82F07D8-73D5-4379-BD48-7E05184A8BAD"), exclusiveto, contract] */
                         MIDL_INTERFACE("D82F07D8-73D5-4379-BD48-7E05184A8BAD")
-                        IStoryboardStatics : IInspectable
+                        IStoryboardStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetPropertyProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -12369,8 +12504,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("244D7B0C-B1B7-4871-9D3E-D56203A3A5B4"), exclusiveto, contract] */
                         MIDL_INTERFACE("244D7B0C-B1B7-4871-9D3E-D56203A3A5B4")
-                        ISuppressNavigationTransitionInfo : IInspectable
+                        ISuppressNavigationTransitionInfo : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12410,8 +12546,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("A38A4214-0BCA-4D2D-95F7-CEBA57FBAF60"), exclusiveto, contract] */
                         MIDL_INTERFACE("A38A4214-0BCA-4D2D-95F7-CEBA57FBAF60")
-                        ISwipeBackThemeAnimation : IInspectable
+                        ISwipeBackThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -12469,8 +12606,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("693F31BF-4DA6-468A-8CE0-996C9AAD42E0"), exclusiveto, contract] */
                         MIDL_INTERFACE("693F31BF-4DA6-468A-8CE0-996C9AAD42E0")
-                        ISwipeBackThemeAnimationStatics : IInspectable
+                        ISwipeBackThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -12519,8 +12657,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("CDD067C0-580E-4E40-BE98-F202D3D84365"), exclusiveto, contract] */
                         MIDL_INTERFACE("CDD067C0-580E-4E40-BE98-F202D3D84365")
-                        ISwipeHintThemeAnimation : IInspectable
+                        ISwipeHintThemeAnimation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -12578,8 +12717,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("23D61A57-9115-4D63-B04A-B89F1C744DC0"), exclusiveto, contract] */
                         MIDL_INTERFACE("23D61A57-9115-4D63-B04A-B89F1C744DC0")
-                        ISwipeHintThemeAnimationStatics : IInspectable
+                        ISwipeHintThemeAnimationStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetNameProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -12628,8 +12768,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("0BC465DC-BE4D-4D0D-9549-2208B715F40D"), exclusiveto, contract] */
                         MIDL_INTERFACE("0BC465DC-BE4D-4D0D-9549-2208B715F40D")
-                        ITimeline : IInspectable
+                        ITimeline : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AutoReverse(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -12712,8 +12853,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("1D56BB07-BDA4-478B-8ADA-EB04D580CD5E"), exclusiveto, contract] */
                         MIDL_INTERFACE("1D56BB07-BDA4-478B-8ADA-EB04D580CD5E")
-                        ITimelineFactory : IInspectable
+                        ITimelineFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -12758,8 +12900,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("A902ED4E-EF10-4D6F-9A40-93CB8895F4E5"), exclusiveto, contract] */
                         MIDL_INTERFACE("A902ED4E-EF10-4D6F-9A40-93CB8895F4E5")
-                        ITimelineStatics : IInspectable
+                        ITimelineStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowDependentAnimations(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -12823,8 +12966,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("3C677C7C-01D0-4DCE-B333-976F93312B08"), exclusiveto, contract] */
                         MIDL_INTERFACE("3C677C7C-01D0-4DCE-B333-976F93312B08")
-                        ITransition : IInspectable
+                        ITransition : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -12864,8 +13008,9 @@ namespace ABI {
                     namespace Animation {
                         /* [object, uuid("DC9AB2CF-3BC9-44AA-B3FC-883A83233A2C"), exclusiveto, contract] */
                         MIDL_INTERFACE("DC9AB2CF-3BC9-44AA-B3FC-883A83233A2C")
-                        ITransitionFactory : IInspectable
+                        ITransitionFactory : public IInspectable
                         {
+                        public:
                             
                         };
 

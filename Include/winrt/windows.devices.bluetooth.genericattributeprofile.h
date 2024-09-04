@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.bluetooth.genericattributeprofile.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -3387,6 +3389,7 @@ typedef IAsyncOperation<__FIVectorView_1_Windows__CDevices__CBluetooth__CGeneric
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_USE
@@ -3415,6 +3418,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3464,6 +3468,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_USE
@@ -3493,6 +3498,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -3507,6 +3513,7 @@ namespace ABI {
     } /* GenericAttributeProfile */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_USE
@@ -3537,9 +3544,11 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_USE
@@ -3570,9 +3579,11 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_USE
@@ -3603,6 +3614,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -3617,6 +3629,7 @@ namespace ABI {
     } /* GenericAttributeProfile */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_USE
@@ -3647,6 +3660,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 namespace ABI {
     namespace Windows {
@@ -3672,6 +3686,7 @@ namespace ABI {
     } /* GenericAttributeProfile */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_USE
@@ -3701,6 +3716,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -3750,6 +3766,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_USE
@@ -3778,6 +3795,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -3816,6 +3834,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_USE
@@ -3844,6 +3863,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributePro
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -4752,8 +4772,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("59CB50C1-5934-4F68-A198-EB864FA44E6B"), exclusiveto, contract] */
                     MIDL_INTERFACE("59CB50C1-5934-4F68-A198-EB864FA44E6B")
-                    IGattCharacteristic : IInspectable
+                    IGattCharacteristic : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                         DEPRECATED("Use GetDescriptorsForUuidAsync instead of GetDescriptors.  For more information, see MSDN.")
@@ -4854,8 +4875,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("AE1AB578-EC06-4764-B780-9835A1D35D6E"), exclusiveto, contract] */
                     MIDL_INTERFACE("AE1AB578-EC06-4764-B780-9835A1D35D6E")
-                    IGattCharacteristic2 : IInspectable
+                    IGattCharacteristic2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Service(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService * * value
                             ) = 0;
@@ -4903,8 +4925,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("3F3C663E-93D4-406B-B817-DB81F8ED53B3"), exclusiveto, contract] */
                     MIDL_INTERFACE("3F3C663E-93D4-406B-B817-DB81F8ED53B3")
-                    IGattCharacteristic3 : IInspectable
+                    IGattCharacteristic3 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDescriptorsAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptorsResult * * operation
                             ) = 0;
@@ -4971,8 +4994,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("59CB50C3-5934-4F68-A198-EB864FA44E6B"), exclusiveto, contract] */
                     MIDL_INTERFACE("59CB50C3-5934-4F68-A198-EB864FA44E6B")
-                    IGattCharacteristicStatics : IInspectable
+                    IGattCharacteristicStatics : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                         DEPRECATED("Use BluetoothUuidHelper instead of ConvertShortIdToUuid.  For more information, see MSDN.")
@@ -5018,8 +5042,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("58FA4586-B1DE-470C-B7DE-0D11FF44F4B7"), exclusiveto, contract] */
                     MIDL_INTERFACE("58FA4586-B1DE-470C-B7DE-0D11FF44F4B7")
-                    IGattCharacteristicUuidsStatics : IInspectable
+                    IGattCharacteristicUuidsStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BatteryLevel(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -5120,8 +5145,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("1855B425-D46E-4A2C-9C3F-ED6DEA29E7BE"), exclusiveto, contract] */
                     MIDL_INTERFACE("1855B425-D46E-4A2C-9C3F-ED6DEA29E7BE")
-                    IGattCharacteristicUuidsStatics2 : IInspectable
+                    IGattCharacteristicUuidsStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlertCategoryId(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -5339,8 +5365,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("1194945C-B257-4F3E-9DB7-F68BC9A9AEF2"), exclusiveto, contract] */
                     MIDL_INTERFACE("1194945C-B257-4F3E-9DB7-F68BC9A9AEF2")
-                    IGattCharacteristicsResult : IInspectable
+                    IGattCharacteristicsResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus * value
                             ) = 0;
@@ -5387,8 +5414,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("506D5599-0112-419A-8E3B-AE21AFABD2C2"), exclusiveto, contract] */
                     MIDL_INTERFACE("506D5599-0112-419A-8E3B-AE21AFABD2C2")
-                    IGattClientNotificationResult : IInspectable
+                    IGattClientNotificationResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SubscribedClient(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSubscribedClient * * value
                             ) = 0;
@@ -5435,8 +5463,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("8FAEC497-45E0-497E-9582-29A1FE281AD5"), exclusiveto, contract] */
                     MIDL_INTERFACE("8FAEC497-45E0-497E-9582-29A1FE281AD5")
-                    IGattClientNotificationResult2 : IInspectable
+                    IGattClientNotificationResult2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BytesSent(
                             /* [retval, out] */__RPC__out UINT16 * value
                             ) = 0;
@@ -5477,8 +5506,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("92055F2B-8084-4344-B4C2-284DE19A8506"), exclusiveto, contract] */
                     MIDL_INTERFACE("92055F2B-8084-4344-B4C2-284DE19A8506")
-                    IGattDescriptor : IInspectable
+                    IGattDescriptor : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProtectionLevel(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel * value
                             ) = 0;
@@ -5539,8 +5569,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("8F563D39-D630-406C-BA11-10CDD16B0E5E"), exclusiveto, contract] */
                     MIDL_INTERFACE("8F563D39-D630-406C-BA11-10CDD16B0E5E")
-                    IGattDescriptor2 : IInspectable
+                    IGattDescriptor2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE WriteValueWithResultAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * value,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult * * operation
@@ -5582,8 +5613,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("92055F2D-8084-4344-B4C2-284DE19A8506"), exclusiveto, contract] */
                     MIDL_INTERFACE("92055F2D-8084-4344-B4C2-284DE19A8506")
-                    IGattDescriptorStatics : IInspectable
+                    IGattDescriptorStatics : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                         DEPRECATED("Use BluetoothUuidHelper instead of ConvertShortIdToUuid.  For more information, see MSDN.")
@@ -5629,8 +5661,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("A6F862CE-9CFC-42F1-9185-FF37B75181D3"), exclusiveto, contract] */
                     MIDL_INTERFACE("A6F862CE-9CFC-42F1-9185-FF37B75181D3")
-                    IGattDescriptorUuidsStatics : IInspectable
+                    IGattDescriptorUuidsStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CharacteristicAggregateFormat(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -5686,8 +5719,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("9BC091F3-95E7-4489-8D25-FF81955A57B9"), exclusiveto, contract] */
                     MIDL_INTERFACE("9BC091F3-95E7-4489-8D25-FF81955A57B9")
-                    IGattDescriptorsResult : IInspectable
+                    IGattDescriptorsResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus * value
                             ) = 0;
@@ -5738,8 +5772,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("AC7B7C05-B33C-47CF-990F-6B8F5577DF71"), exclusiveto, contract] */
                     MIDL_INTERFACE("AC7B7C05-B33C-47CF-990F-6B8F5577DF71")
-                    IGattDeviceService : IInspectable
+                    IGattDeviceService : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                         DEPRECATED("Use GetCharacteristicsForUuidAsync instead of GetCharacteristics.  For more information, see MSDN.")
@@ -5807,8 +5842,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("FC54520B-0B0D-4708-BAE0-9FFD9489BC59"), exclusiveto, contract] */
                     MIDL_INTERFACE("FC54520B-0B0D-4708-BAE0-9FFD9489BC59")
-                    IGattDeviceService2 : IInspectable
+                    IGattDeviceService2 : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                         DEPRECATED("Use Session instead of Device property.  For more information, see MSDN.")
@@ -5874,8 +5910,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("B293A950-0C53-437C-A9B3-5C3210C6E569"), exclusiveto, contract] */
                     MIDL_INTERFACE("B293A950-0C53-437C-A9B3-5C3210C6E569")
-                    IGattDeviceService3 : IInspectable
+                    IGattDeviceService3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceAccessInformation(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceAccessInformation * * value
                             ) = 0;
@@ -5961,8 +5998,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("196D0022-FAAD-45DC-AE5B-2AC3184E84DB"), exclusiveto, contract] */
                     MIDL_INTERFACE("196D0022-FAAD-45DC-AE5B-2AC3184E84DB")
-                    IGattDeviceServiceStatics : IInspectable
+                    IGattDeviceServiceStatics : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                             /* [in] */__RPC__in HSTRING deviceId,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService * * asyncOp
@@ -6024,8 +6062,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("0604186E-24A6-4B0D-A2F2-30CC01545D25"), exclusiveto, contract] */
                     MIDL_INTERFACE("0604186E-24A6-4B0D-A2F2-30CC01545D25")
-                    IGattDeviceServiceStatics2 : IInspectable
+                    IGattDeviceServiceStatics2 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE FromIdWithSharingModeAsync(
                             /* [in] */__RPC__in HSTRING deviceId,
                             /* [in] */ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode sharingMode,
@@ -6088,8 +6127,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("171DD3EE-016D-419D-838A-576CF475A3D8"), exclusiveto, contract] */
                     MIDL_INTERFACE("171DD3EE-016D-419D-838A-576CF475A3D8")
-                    IGattDeviceServicesResult : IInspectable
+                    IGattDeviceServicesResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus * value
                             ) = 0;
@@ -6136,8 +6176,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("AEDE376D-5412-4D74-92A8-8DEB8526829C"), exclusiveto, contract] */
                     MIDL_INTERFACE("AEDE376D-5412-4D74-92A8-8DEB8526829C")
-                    IGattLocalCharacteristic : IInspectable
+                    IGattLocalCharacteristic : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uuid(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -6237,8 +6278,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("FAF73DB4-4CFF-44C7-8445-040E6EAD0063"), exclusiveto, contract] */
                     MIDL_INTERFACE("FAF73DB4-4CFF-44C7-8445-040E6EAD0063")
-                    IGattLocalCharacteristicParameters : IInspectable
+                    IGattLocalCharacteristicParameters : public IInspectable
                     {
+                    public:
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StaticValue(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * value
                             ) = 0;
@@ -6309,8 +6351,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("7975DE9B-0170-4397-9666-92F863F12EE6"), exclusiveto, contract] */
                     MIDL_INTERFACE("7975DE9B-0170-4397-9666-92F863F12EE6")
-                    IGattLocalCharacteristicResult : IInspectable
+                    IGattLocalCharacteristicResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Characteristic(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic * * value
                             ) = 0;
@@ -6354,8 +6397,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("F48EBE06-789D-4A4B-8652-BD017B5D2FC6"), exclusiveto, contract] */
                     MIDL_INTERFACE("F48EBE06-789D-4A4B-8652-BD017B5D2FC6")
-                    IGattLocalDescriptor : IInspectable
+                    IGattLocalDescriptor : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uuid(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -6419,8 +6463,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("5FDEDE6A-F3C1-4B66-8C4B-E3D2293B40E9"), exclusiveto, contract] */
                     MIDL_INTERFACE("5FDEDE6A-F3C1-4B66-8C4B-E3D2293B40E9")
-                    IGattLocalDescriptorParameters : IInspectable
+                    IGattLocalDescriptorParameters : public IInspectable
                     {
+                    public:
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StaticValue(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * value
                             ) = 0;
@@ -6476,8 +6521,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("375791BE-321F-4366-BFC1-3BC6B82C79F8"), exclusiveto, contract] */
                     MIDL_INTERFACE("375791BE-321F-4366-BFC1-3BC6B82C79F8")
-                    IGattLocalDescriptorResult : IInspectable
+                    IGattLocalDescriptorResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Descriptor(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor * * value
                             ) = 0;
@@ -6521,8 +6567,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("F513E258-F7F7-4902-B803-57FCC7D6FE83"), exclusiveto, contract] */
                     MIDL_INTERFACE("F513E258-F7F7-4902-B803-57FCC7D6FE83")
-                    IGattLocalService : IInspectable
+                    IGattLocalService : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uuid(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -6571,8 +6618,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("196D0021-FAAD-45DC-AE5B-2AC3184E84DB"), exclusiveto, contract] */
                     MIDL_INTERFACE("196D0021-FAAD-45DC-AE5B-2AC3184E84DB")
-                    IGattPresentationFormat : IInspectable
+                    IGattPresentationFormat : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FormatType(
                             /* [retval, out] */__RPC__out BYTE * value
                             ) = 0;
@@ -6625,8 +6673,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("196D0020-FAAD-45DC-AE5B-2AC3184E84DB"), exclusiveto, contract] */
                     MIDL_INTERFACE("196D0020-FAAD-45DC-AE5B-2AC3184E84DB")
-                    IGattPresentationFormatStatics : IInspectable
+                    IGattPresentationFormatStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BluetoothSigAssignedNumbers(
                             /* [retval, out] */__RPC__out BYTE * value
                             ) = 0;
@@ -6671,8 +6720,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("A9C21713-B82F-435E-B634-21FD85A43C07"), exclusiveto, contract] */
                     MIDL_INTERFACE("A9C21713-B82F-435E-B634-21FD85A43C07")
-                    IGattPresentationFormatStatics2 : IInspectable
+                    IGattPresentationFormatStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE FromParts(
                             /* [in] */BYTE formatType,
                             /* [in] */INT32 exponent,
@@ -6718,8 +6768,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("FAF1BA0A-30BA-409C-BEF7-CFFB6D03B8FB"), exclusiveto, contract] */
                     MIDL_INTERFACE("FAF1BA0A-30BA-409C-BEF7-CFFB6D03B8FB")
-                    IGattPresentationFormatTypesStatics : IInspectable
+                    IGattPresentationFormatTypesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Boolean(
                             /* [retval, out] */__RPC__out BYTE * value
                             ) = 0;
@@ -6838,8 +6889,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("CA46C5C5-0ECC-4809-BEA3-CF79BC991E37"), exclusiveto, contract] */
                     MIDL_INTERFACE("CA46C5C5-0ECC-4809-BEA3-CF79BC991E37")
-                    IGattProtocolErrorStatics : IInspectable
+                    IGattProtocolErrorStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InvalidHandle(
                             /* [retval, out] */__RPC__out BYTE * value
                             ) = 0;
@@ -6928,8 +6980,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("63A66F09-1AEA-4C4C-A50F-97BAE474B348"), exclusiveto, contract] */
                     MIDL_INTERFACE("63A66F09-1AEA-4C4C-A50F-97BAE474B348")
-                    IGattReadClientCharacteristicConfigurationDescriptorResult : IInspectable
+                    IGattReadClientCharacteristicConfigurationDescriptorResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus * value
                             ) = 0;
@@ -6973,8 +7026,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("1BF1A59D-BA4D-4622-8651-F4EE150D0A5D"), exclusiveto, contract] */
                     MIDL_INTERFACE("1BF1A59D-BA4D-4622-8651-F4EE150D0A5D")
-                    IGattReadClientCharacteristicConfigurationDescriptorResult2 : IInspectable
+                    IGattReadClientCharacteristicConfigurationDescriptorResult2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProtocolError(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_byte * * value
                             ) = 0;
@@ -7015,8 +7069,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("F1DD6535-6ACD-42A6-A4BB-D789DAE0043E"), exclusiveto, contract] */
                     MIDL_INTERFACE("F1DD6535-6ACD-42A6-A4BB-D789DAE0043E")
-                    IGattReadRequest : IInspectable
+                    IGattReadRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Offset(
                             /* [retval, out] */__RPC__out UINT32 * value
                             ) = 0;
@@ -7076,8 +7131,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("93497243-F39C-484B-8AB6-996BA486CFA3"), exclusiveto, contract] */
                     MIDL_INTERFACE("93497243-F39C-484B-8AB6-996BA486CFA3")
-                    IGattReadRequestedEventArgs : IInspectable
+                    IGattReadRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Session(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession * * value
                             ) = 0;
@@ -7124,8 +7180,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("63A66F08-1AEA-4C4C-A50F-97BAE474B348"), exclusiveto, contract] */
                     MIDL_INTERFACE("63A66F08-1AEA-4C4C-A50F-97BAE474B348")
-                    IGattReadResult : IInspectable
+                    IGattReadResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus * value
                             ) = 0;
@@ -7169,8 +7226,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("A10F50A0-FB43-48AF-BAAA-638A5C6329FE"), exclusiveto, contract] */
                     MIDL_INTERFACE("A10F50A0-FB43-48AF-BAAA-638A5C6329FE")
-                    IGattReadResult2 : IInspectable
+                    IGattReadResult2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProtocolError(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_byte * * value
                             ) = 0;
@@ -7211,8 +7269,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("63A66F07-1AEA-4C4C-A50F-97BAE474B348"), exclusiveto, contract] */
                     MIDL_INTERFACE("63A66F07-1AEA-4C4C-A50F-97BAE474B348")
-                    IGattReliableWriteTransaction : IInspectable
+                    IGattReliableWriteTransaction : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE WriteValue(
                             /* [in] */__RPC__in_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic * characteristic,
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * value
@@ -7257,8 +7316,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("51113987-EF12-462F-9FB2-A1A43A679416"), exclusiveto, contract] */
                     MIDL_INTERFACE("51113987-EF12-462F-9FB2-A1A43A679416")
-                    IGattReliableWriteTransaction2 : IInspectable
+                    IGattReliableWriteTransaction2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CommitWithResultAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult * * operation
                             ) = 0;
@@ -7299,8 +7359,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("E834D92C-27BE-44B3-9D0D-4FC6E808DD3F"), exclusiveto, contract] */
                     MIDL_INTERFACE("E834D92C-27BE-44B3-9D0D-4FC6E808DD3F")
-                    IGattRequestStateChangedEventArgs : IInspectable
+                    IGattRequestStateChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState * value
                             ) = 0;
@@ -7344,8 +7405,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("7822B3CD-2889-4F86-A051-3F0AED1C2760"), exclusiveto, contract] */
                     MIDL_INTERFACE("7822B3CD-2889-4F86-A051-3F0AED1C2760")
-                    IGattServiceProvider : IInspectable
+                    IGattServiceProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Service(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService * * value
                             ) = 0;
@@ -7401,8 +7463,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("59A5AA65-FA21-4FFC-B155-04D928012686"), exclusiveto, contract] */
                     MIDL_INTERFACE("59A5AA65-FA21-4FFC-B155-04D928012686")
-                    IGattServiceProviderAdvertisementStatusChangedEventArgs : IInspectable
+                    IGattServiceProviderAdvertisementStatusChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::BluetoothError * value
                             ) = 0;
@@ -7446,8 +7509,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("E2CE31AB-6315-4C22-9BD7-781DBC3D8D82"), exclusiveto, contract] */
                     MIDL_INTERFACE("E2CE31AB-6315-4C22-9BD7-781DBC3D8D82")
-                    IGattServiceProviderAdvertisingParameters : IInspectable
+                    IGattServiceProviderAdvertisingParameters : public IInspectable
                     {
+                    public:
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsConnectable(
                             /* [in] */boolean value
                             ) = 0;
@@ -7497,8 +7561,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("764696D8-C53E-428C-8A48-67AFE02C3AE6"), exclusiveto, contract] */
                     MIDL_INTERFACE("764696D8-C53E-428C-8A48-67AFE02C3AE6")
-                    IGattServiceProviderResult : IInspectable
+                    IGattServiceProviderResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::BluetoothError * value
                             ) = 0;
@@ -7542,8 +7607,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("31794063-5256-4054-A4F4-7BBE7755A57E"), exclusiveto, contract] */
                     MIDL_INTERFACE("31794063-5256-4054-A4F4-7BBE7755A57E")
-                    IGattServiceProviderStatics : IInspectable
+                    IGattServiceProviderStatics : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateAsync(
                             /* [in] */GUID serviceUuid,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderResult * * operation
@@ -7585,8 +7651,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("6DC57058-9ABA-4417-B8F2-DCE016D34EE2"), exclusiveto, contract] */
                     MIDL_INTERFACE("6DC57058-9ABA-4417-B8F2-DCE016D34EE2")
-                    IGattServiceUuidsStatics : IInspectable
+                    IGattServiceUuidsStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Battery(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -7651,8 +7718,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("D2AE94F5-3D15-4F79-9C0C-EAAFA675155C"), exclusiveto, contract] */
                     MIDL_INTERFACE("D2AE94F5-3D15-4F79-9C0C-EAAFA675155C")
-                    IGattServiceUuidsStatics2 : IInspectable
+                    IGattServiceUuidsStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlertNotification(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -7729,8 +7797,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("D23B5143-E04E-4C24-999C-9C256F9856B1"), exclusiveto, contract] */
                     MIDL_INTERFACE("D23B5143-E04E-4C24-999C-9C256F9856B1")
-                    IGattSession : IInspectable
+                    IGattSession : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId * * value
                             ) = 0;
@@ -7800,8 +7869,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("2E65B95C-539F-4DB7-82A8-73BDBBF73EBF"), exclusiveto, contract] */
                     MIDL_INTERFACE("2E65B95C-539F-4DB7-82A8-73BDBBF73EBF")
-                    IGattSessionStatics : IInspectable
+                    IGattSessionStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE FromDeviceIdAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId * deviceId,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession * * operation
@@ -7843,8 +7913,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("7605B72E-837F-404C-AB34-3163F39DDF32"), exclusiveto, contract] */
                     MIDL_INTERFACE("7605B72E-837F-404C-AB34-3163F39DDF32")
-                    IGattSessionStatusChangedEventArgs : IInspectable
+                    IGattSessionStatusChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::BluetoothError * value
                             ) = 0;
@@ -7888,8 +7959,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("736E9001-15A4-4EC2-9248-E3F20D463BE9"), exclusiveto, contract] */
                     MIDL_INTERFACE("736E9001-15A4-4EC2-9248-E3F20D463BE9")
-                    IGattSubscribedClient : IInspectable
+                    IGattSubscribedClient : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Session(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession * * value
                             ) = 0;
@@ -7940,8 +8012,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("D21BDB54-06E3-4ED8-A263-ACFAC8BA7313"), exclusiveto, contract] */
                     MIDL_INTERFACE("D21BDB54-06E3-4ED8-A263-ACFAC8BA7313")
-                    IGattValueChangedEventArgs : IInspectable
+                    IGattValueChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CharacteristicValue(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                             ) = 0;
@@ -7985,8 +8058,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("AEB6A9ED-DE2F-4FC2-A9A8-94EA7844F13D"), exclusiveto, contract] */
                     MIDL_INTERFACE("AEB6A9ED-DE2F-4FC2-A9A8-94EA7844F13D")
-                    IGattWriteRequest : IInspectable
+                    IGattWriteRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                             ) = 0;
@@ -8047,8 +8121,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("2DEC8BBE-A73A-471A-94D5-037DEADD0806"), exclusiveto, contract] */
                     MIDL_INTERFACE("2DEC8BBE-A73A-471A-94D5-037DEADD0806")
-                    IGattWriteRequestedEventArgs : IInspectable
+                    IGattWriteRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Session(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession * * value
                             ) = 0;
@@ -8095,8 +8170,9 @@ namespace ABI {
                 namespace GenericAttributeProfile {
                     /* [object, uuid("4991DDB1-CB2B-44F7-99FC-D29A2871DC9B"), exclusiveto, contract] */
                     MIDL_INTERFACE("4991DDB1-CB2B-44F7-99FC-D29A2871DC9B")
-                    IGattWriteResult : IInspectable
+                    IGattWriteResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus * value
                             ) = 0;
@@ -13940,6 +14016,7 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CBluetooth__C
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_INTERFACE_DEFINED__
 
@@ -13986,6 +14063,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -14042,6 +14120,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -14089,9 +14168,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_INTERFACE_DEFINED__
@@ -14140,9 +14221,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_INTERFACE_DEFINED__
@@ -14191,9 +14274,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_INTERFACE_DEFINED__
@@ -14242,9 +14327,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_INTERFACE_DEFINED__
@@ -14293,9 +14380,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_INTERFACE_DEFINED__
@@ -14343,6 +14432,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -14399,6 +14489,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_INTERFACE_DEFINED__
 
@@ -14445,6 +14536,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -14501,6 +14593,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_INTERFACE_DEFINED__
 
@@ -14547,6 +14640,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttribu
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #if !defined(____FIReference_1_byte_INTERFACE_DEFINED__)

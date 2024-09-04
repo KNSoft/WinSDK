@@ -57,6 +57,7 @@ typedef enum _UFX_CLASS_FUNCTIONS {
     UfxEndpointGetTransferQueueIndex,
     UfxEndpointGetCommandQueueIndex,
     UfxDevicePortDetectCompleteExIndex,
+    UfxDeviceNotifyFinalExitIndex,
     UfxFunctionsMax
 } UFX_CLASS_FUNCTIONS;
 
@@ -85,6 +86,8 @@ typedef struct _UFX_DEVICE_CAPABILITIES {
     
     USHORT InEndpointBitmap;
     USHORT OutEndpointBitmap;
+    BOOLEAN SharesConnectors;
+    ULONG GroupId;
 } UFX_DEVICE_CAPABILITIES, *PUFX_DEVICE_CAPABILITIES;
 
 //

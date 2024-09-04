@@ -43,6 +43,7 @@ Revision History:
 
 // NT11 upgrade versions
 #define RS3_UPGRADE_VERSION  1
+#define RS4_UPGRADE_VERSION  2
 
 #define CLUSREG_NAME_MIXED_MODE                    L"MixedMode"
 
@@ -1080,9 +1081,16 @@ typedef enum CLUSTER_OBJECT_TYPE {
     CLUSTER_OBJECT_TYPE_REGISTRY            =    0x00000008,
     CLUSTER_OBJECT_TYPE_QUORUM              =    0x00000009,
     CLUSTER_OBJECT_TYPE_SHARED_VOLUME       =    0x0000000a,
-    CLUSTER_OBJECT_TYPE_GROUPSET          =    0x0000000d,
+    CLUSTER_OBJECT_TYPE_GROUPSET            =    0x0000000d,
 } CLUSTER_OBJECT_TYPE;
 
+
+typedef enum CLUSTERSET_OBJECT_TYPE {
+    CLUSTERSET_OBJECT_TYPE_NONE             =    0x00000000,
+    CLUSTERSET_OBJECT_TYPE_MEMBER           =    0x00000001,
+    CLUSTERSET_OBJECT_TYPE_WORKLOAD         =    0x00000002,
+    CLUSTERSET_OBJECT_TYPE_DATABASE         =    0x00000003,
+} CLUSTERSET_OBJECT_TYPE;
 //
 // Cluster notification structs V2
 //
@@ -1810,7 +1818,8 @@ typedef enum CLUSTER_NODE_STATUS
     NodeStatusDrainInProgress           =  0x4,
     NodeStatusDrainCompleted            =  0x8,
     NodeStatusDrainFailed               =  0x10,
-    NodeStatusMax                       =  (NodeStatusIsolated | NodeStatusQuarantined | NodeStatusDrainFailed)
+    NodeStatusAvoidPlacement            =  0x20,
+    NodeStatusMax                       =  (NodeStatusIsolated | NodeStatusQuarantined | NodeStatusDrainFailed | NodeStatusAvoidPlacement)
 } CLUSTER_NODE_STATUS;
 
 #endif //CLUSAPI_VERSION >= CLUSAPI_VERSION_WINTHRESHOLD
@@ -2265,7 +2274,9 @@ typedef HGROUP
 #if (CLUSAPI_VERSION >= CLUSAPI_VERSION_WINDOWS8)
 
 // flags for PauseClusterNodeEx
-#define CLUSAPI_NODE_PAUSE_REMAIN_ON_PAUSED_NODE_ON_MOVE_ERROR 0x00000001
+#define CLUSAPI_NODE_PAUSE_REMAIN_ON_PAUSED_NODE_ON_MOVE_ERROR  0x00000001
+#define CLUSAPI_NODE_AVOID_PLACEMENT                            0x00000002
+
 
 DWORD
 WINAPI
@@ -2321,6 +2332,7 @@ typedef DWORD
 #define CLUSGRP_STATUS_OS_HEARTBEAT                                            0x0000000000000200
 #define CLUSGRP_STATUS_APPLICATION_READY                                       0x0000000000000400
 #define CLUSGRP_STATUS_OFFLINE_NOT_LOCAL_DISK_OWNER                            0x0000000000000800
+#define CLUSGRP_STATUS_WAITING_FOR_DEPENDENCIES                                0x0000000000001000
 
 HGROUP
 WINAPI
@@ -6772,17 +6784,13 @@ typedef DWORD
 #define CLUS_RESTYPE_NAME_STORAGE_REPLICA       L"Storage Replica"
 #define CLUS_RESTYPE_NAME_CROSS_CLUSTER         L"Cross Cluster Dependency Orchestrator"
 
-#if CLUSTER_SET == 1
 #define CLUS_RESTYPE_NAME_SCALEOUT_MASTER       L"Scaleout Master"
 #define CLUS_RESTYPE_NAME_SCALEOUT_WORKER       L"Scaleout Worker"
-#endif
 
 #define CLUS_RESTYPE_NAME_CONTAINER             L"Container"
 
-#if CLUSTER_SET == 1
 #define CLUS_RES_NAME_SCALEOUT_MASTER           L"Scaleout Master"
 #define CLUS_RES_NAME_SCALEOUT_WORKER           L"Scaleout Worker"
-#endif
 
 //
 // Cluster common property names
@@ -6843,6 +6851,7 @@ typedef DWORD
 #define CLUSTER_NAME_AUTO_BALANCER_LEVEL           L"AutoBalancerLevel"
 #define CLUSREG_NAME_GROUP_DEPENDENCY_TIMEOUT      L"GroupDependencyTimeout"
 #define CLUSREG_NAME_PLACEMENT_OPTIONS             L"PlacementOptions"
+#define CLUSREG_NAME_ENABLED_EVENT_LOGS            L"EnabledEventLogs"
 
 //
 // Properties and defaults for single and multi subnet delays and thresholds.

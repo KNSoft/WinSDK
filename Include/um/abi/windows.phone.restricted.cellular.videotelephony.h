@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.phone.restricted.cellular.videotelephony.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -35,11 +35,8 @@
 #pragma once
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -65,11 +62,11 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -89,7 +86,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -117,7 +114,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -157,11 +154,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -181,11 +178,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
@@ -441,6 +438,7 @@ namespace ABI {
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_USE
@@ -470,6 +468,7 @@ typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelep
 
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -486,6 +485,7 @@ namespace ABI {
     } /* VideoTelephony */} /* ABI */
 
 
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_USE
@@ -515,6 +515,7 @@ typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelep
 #endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_USE */
 
 
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -546,6 +547,7 @@ namespace ABI {
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_USE
@@ -575,6 +577,7 @@ typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelep
 
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -591,6 +594,7 @@ namespace ABI {
     } /* VideoTelephony */} /* ABI */
 
 
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_USE
@@ -620,6 +624,7 @@ typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelep
 #endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_USE */
 
 
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
@@ -957,8 +962,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("54024241-6C0B-49BB-B200-E4A6EC2BDEED"), exclusiveto, contract] */
                         MIDL_INTERFACE("54024241-6C0B-49BB-B200-E4A6EC2BDEED")
-                        ILocalVideoStream : IInspectable
+                        ILocalVideoStream : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE SetDeviceOrientation(
                                 /* [in] */ABI::Windows::Graphics::Display::DisplayOrientations orientation
                                 ) = 0;
@@ -1005,8 +1011,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("71EC305F-7CAD-4BBF-953A-810DB7D68D4C"), exclusiveto, contract] */
                         MIDL_INTERFACE("71EC305F-7CAD-4BBF-953A-810DB7D68D4C")
-                        IRemoteVideoStream : IInspectable
+                        IRemoteVideoStream : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Rotation(
                                 /* [retval, out] */__RPC__out INT32 * degreesCw
                                 ) = 0;
@@ -1066,8 +1073,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("01F51655-5E82-4D53-BED4-EE2551467495"), exclusiveto, contract] */
                         MIDL_INTERFACE("01F51655-5E82-4D53-BED4-EE2551467495")
-                        IResolutionChangeEventArgs : IInspectable
+                        IResolutionChangeEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Resolution(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * value
                                 ) = 0;
@@ -1110,8 +1118,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("16DF4E9D-FB47-40B7-B8B8-55CFFAEA4251"), exclusiveto, contract] */
                         MIDL_INTERFACE("16DF4E9D-FB47-40B7-B8B8-55CFFAEA4251")
-                        IRotationChangeEventArgs : IInspectable
+                        IRotationChangeEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Rotation(
                                 /* [retval, out] */__RPC__out INT32 * degreesCw
                                 ) = 0;
@@ -1158,8 +1167,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("5EF23627-E34A-4CB3-8C41-5A5E8265A9DA"), exclusiveto, contract] */
                         MIDL_INTERFACE("5EF23627-E34A-4CB3-8C41-5A5E8265A9DA")
-                        IVideoCall : IInspectable
+                        IVideoCall : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                                 /* [retval, out] */__RPC__out INT32 * callId
                                 ) = 0;
@@ -1222,8 +1232,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("8E7C1701-821A-4CCC-9CB8-889BC3CC8468"), exclusiveto, contract] */
                         MIDL_INTERFACE("8E7C1701-821A-4CCC-9CB8-889BC3CC8468")
-                        IVideoCallFactory : IInspectable
+                        IVideoCallFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateVideoCall(
                                 /* [in] */__RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoCallInitializationParameters * parameters,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoCall * * videoCall
@@ -1267,8 +1278,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("A166B7F6-A433-4326-85B1-0F532180E6D4"), exclusiveto, contract] */
                         MIDL_INTERFACE("A166B7F6-A433-4326-85B1-0F532180E6D4")
-                        IVideoCallInitializationParameters : IInspectable
+                        IVideoCallInitializationParameters : public IInspectable
                         {
+                        public:
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_CallId(
                                 /* [in] */INT32 callId
                                 ) = 0;
@@ -1338,8 +1350,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("69646776-1DFB-4DB4-9EDB-8D15AF3C00C4"), exclusiveto, contract] */
                         MIDL_INTERFACE("69646776-1DFB-4DB4-9EDB-8D15AF3C00C4")
-                        IVideoQualityChangeEventArgs : IInspectable
+                        IVideoQualityChangeEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Quality(
                                 /* [retval, out] */__RPC__out ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::VideoQuality * value
                                 ) = 0;
@@ -1382,8 +1395,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("5E77A448-094D-4DCE-95AC-CDD849826FED"), exclusiveto, contract] */
                         MIDL_INTERFACE("5E77A448-094D-4DCE-95AC-CDD849826FED")
-                        IVideoStateChangeEventArgs : IInspectable
+                        IVideoStateChangeEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
                                 /* [retval, out] */__RPC__out ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::VideoStreamState * value
                                 ) = 0;
@@ -1423,8 +1437,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("71867226-5936-4D2F-837E-A902EA3B4213"), contract] */
                         MIDL_INTERFACE("71867226-5936-4D2F-837E-A902EA3B4213")
-                        IVideoStream : IInspectable
+                        IVideoStream : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                                 /* [retval, out] */__RPC__out ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::StreamIdentifier * streamId
                                 ) = 0;
@@ -1490,8 +1505,9 @@ namespace ABI {
                     namespace VideoTelephony {
                         /* [object, uuid("9010592C-61F3-48C7-8F2D-33944E7A5DA3"), contract] */
                         MIDL_INTERFACE("9010592C-61F3-48C7-8F2D-33944E7A5DA3")
-                        IVideoStreamExt : IInspectable
+                        IVideoStreamExt : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE SetResolution(
                                 /* [in] */ABI::Windows::Foundation::Size resolution
                                 ) = 0;
@@ -1779,6 +1795,7 @@ typedef interface __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_INTERFACE_DEFINED__
 
@@ -1826,9 +1843,11 @@ interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVide
 #endif // ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_INTERFACE_DEFINED__
@@ -1877,9 +1896,11 @@ interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVide
 #endif // ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_INTERFACE_DEFINED__
@@ -1928,9 +1949,11 @@ interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVide
 #endif // ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_INTERFACE_DEFINED__
@@ -1978,6 +2001,7 @@ interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVide
 
 #endif // ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 

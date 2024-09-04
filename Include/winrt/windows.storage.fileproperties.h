@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.storage.fileproperties.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1743,8 +1745,9 @@ namespace ABI {
             namespace FileProperties {
                 /* [object, uuid("D05D55DB-785E-4A66-BE02-9BEEC58AEA81"), exclusiveto, contract] */
                 MIDL_INTERFACE("D05D55DB-785E-4A66-BE02-9BEEC58AEA81")
-                IBasicProperties : IInspectable
+                IBasicProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Size(
                         /* [retval, out] */__RPC__out UINT64 * value
                         ) = 0;
@@ -1793,8 +1796,9 @@ namespace ABI {
             namespace FileProperties {
                 /* [object, uuid("7EAB19BC-1821-4923-B4A9-0AEA404D0070"), exclusiveto, contract] */
                 MIDL_INTERFACE("7EAB19BC-1821-4923-B4A9-0AEA404D0070")
-                IDocumentProperties : IInspectable
+                IDocumentProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Author(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                         ) = 0;
@@ -1848,8 +1852,9 @@ namespace ABI {
             namespace FileProperties {
                 /* [object, uuid("41493244-2524-4655-86A6-ED16F5FC716B"), exclusiveto, contract] */
                 MIDL_INTERFACE("41493244-2524-4655-86A6-ED16F5FC716B")
-                IGeotagHelperStatics : IInspectable
+                IGeotagHelperStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetGeotagAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint * * operation
@@ -1903,8 +1908,9 @@ namespace ABI {
             namespace FileProperties {
                 /* [object, uuid("523C9424-FCFF-4275-AFEE-ECDB9AB47973"), exclusiveto, contract] */
                 MIDL_INTERFACE("523C9424-FCFF-4275-AFEE-ECDB9AB47973")
-                IImageProperties : IInspectable
+                IImageProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Rating(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -1995,8 +2001,9 @@ namespace ABI {
             namespace FileProperties {
                 /* [object, uuid("BC8AAB62-66EC-419A-BC5D-CA65A4CB46DA"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC8AAB62-66EC-419A-BC5D-CA65A4CB46DA")
-                IMusicProperties : IInspectable
+                IMusicProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Album(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2111,8 +2118,9 @@ namespace ABI {
             namespace FileProperties {
                 /* [object, uuid("05294BAD-BC38-48BF-85D7-770E0E2AE0BA"), exclusiveto, contract] */
                 MIDL_INTERFACE("05294BAD-BC38-48BF-85D7-770E0E2AE0BA")
-                IStorageItemContentProperties : IInspectable
+                IStorageItemContentProperties : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetMusicPropertiesAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CFileProperties__CMusicProperties * * operation
                         ) = 0;
@@ -2157,8 +2165,9 @@ namespace ABI {
             namespace FileProperties {
                 /* [object, uuid("C54361B2-54CD-432B-BDBC-4B19C4B470D7"), contract] */
                 MIDL_INTERFACE("C54361B2-54CD-432B-BDBC-4B19C4B470D7")
-                IStorageItemExtraProperties : IInspectable
+                IStorageItemExtraProperties : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RetrievePropertiesAsync(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * propertiesToRetrieve,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable * * operation
@@ -2205,8 +2214,9 @@ namespace ABI {
             namespace FileProperties {
                 /* [object, uuid("693DD42F-DBE7-49B5-B3B3-2893AC5D3423"), exclusiveto, contract] */
                 MIDL_INTERFACE("693DD42F-DBE7-49B5-B3B3-2893AC5D3423")
-                IThumbnailProperties : IInspectable
+                IThumbnailProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OriginalWidth(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2258,8 +2268,9 @@ namespace ABI {
             namespace FileProperties {
                 /* [object, uuid("719AE507-68DE-4DB8-97DE-49998C059F2F"), exclusiveto, contract] */
                 MIDL_INTERFACE("719AE507-68DE-4DB8-97DE-49998C059F2F")
-                IVideoProperties : IInspectable
+                IVideoProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Rating(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;

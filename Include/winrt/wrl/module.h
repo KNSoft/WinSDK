@@ -1864,12 +1864,12 @@ class Module<OutOfProc, ModuleT> :
 {
 public: 
 #ifndef __WRL_WINRT_STRICT__
-    STDMETHOD(RegisterCOMObject)(_In_opt_z_ const wchar_t* serverName, _In_ IID* clsids, _In_ IClassFactory** factories, _Inout_ DWORD* cookies, unsigned int count)
+    STDMETHOD(RegisterCOMObject)(_In_opt_z_ const wchar_t* serverName, _In_reads_(count)  IID* clsids, _In_reads_(count)  IClassFactory** factories, _Inout_updates_(count) DWORD* cookies, unsigned int count)
     {
         return Details::RegisterCOMObject<REGCLS_MULTIPLEUSE>(serverName, clsids, factories, cookies, count);
     }
 
-    STDMETHOD(UnregisterCOMObject)(_In_opt_z_ const wchar_t*, _Inout_ DWORD* cookies, unsigned int count)
+    STDMETHOD(UnregisterCOMObject)(_In_opt_z_ const wchar_t*, _Inout_updates_(count) DWORD* cookies, unsigned int count)
     {
         HRESULT hr = S_OK;
         
@@ -1981,9 +1981,9 @@ public:
     }
 
 #ifndef __WRL_CLASSIC_COM_STRICT__
-    STDMETHOD(RegisterWinRTObject)(_In_opt_z_ const wchar_t* serverName, _In_ _Deref_pre_z_ const wchar_t** activatableClassIds, _Inout_ RO_REGISTRATION_COOKIE* cookie, unsigned int count)
+    STDMETHOD(RegisterWinRTObject)(_In_opt_z_ const wchar_t* serverName, _In_reads_(count) _Deref_pre_z_ const wchar_t** activatableClassIds, _Inout_updates_(count) RO_REGISTRATION_COOKIE* cookies, unsigned int count)
     {
-        return Details::RegisterWinRTObject<OutOfProcDisableCaching>(serverName, activatableClassIds, cookie, count);
+        return Details::RegisterWinRTObject<OutOfProcDisableCaching>(serverName, activatableClassIds, cookies, count);
     }
 #endif
 };

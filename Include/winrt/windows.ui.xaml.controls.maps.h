@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.controls.maps.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -230,11 +232,11 @@
 #endif // defined(WINDOWS_SERVICES_MAPS_LOCALSEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -667,6 +669,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl6_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapControl7;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 ABI::Windows::UI::Xaml::Controls::Maps::IMapControl7
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -901,6 +921,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics6_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapControlStatics7;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7 ABI::Windows::UI::Xaml::Controls::Maps::IMapControlStatics7
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -1117,6 +1155,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement3DStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapElement4;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 ABI::Windows::UI::Xaml::Controls::Maps::IMapElement4
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -1242,6 +1298,24 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics3 ABI::Windows::UI::Xaml::Controls::Maps::IMapElementStatics3
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapElementStatics4;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4 ABI::Windows::UI::Xaml::Controls::Maps::IMapElementStatics4
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_FWD_DEFINED__
@@ -2970,6 +3044,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_USE
@@ -2998,6 +3073,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::CustomMapTile
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -3029,6 +3105,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_USE
@@ -3058,6 +3135,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::HttpMapTileDa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -3074,6 +3152,7 @@ namespace ABI {
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_USE
@@ -3103,6 +3182,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::LocalMapTileD
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -3167,6 +3247,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs_USE
@@ -3196,6 +3277,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,A
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3212,6 +3294,7 @@ namespace ABI {
     } /* Maps */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_USE
@@ -3241,6 +3324,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,A
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3691,6 +3775,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs_USE
@@ -3720,6 +3805,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,A
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3736,6 +3822,7 @@ namespace ABI {
     } /* Maps */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs_USE
@@ -3766,6 +3853,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,A
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3782,6 +3870,7 @@ namespace ABI {
     } /* Maps */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs_USE
@@ -3812,6 +3901,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,A
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3828,6 +3918,7 @@ namespace ABI {
     } /* Maps */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs_USE
@@ -3858,6 +3949,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,A
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3874,6 +3966,7 @@ namespace ABI {
     } /* Maps */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs_USE
@@ -3903,6 +3996,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,A
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3969,6 +4063,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_USE
@@ -3997,6 +4092,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,A
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -4028,6 +4124,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerClickEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerClickEventArgs_USE
@@ -4057,6 +4154,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapElementsLa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 namespace ABI {
@@ -4073,6 +4171,7 @@ namespace ABI {
     } /* Maps */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerContextRequestedEventArgs_USE
@@ -4103,6 +4202,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapElementsLa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 namespace ABI {
@@ -4119,6 +4219,7 @@ namespace ABI {
     } /* Maps */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerEnteredEventArgs_USE
@@ -4149,6 +4250,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapElementsLa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 namespace ABI {
@@ -4165,6 +4267,7 @@ namespace ABI {
     } /* Maps */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerExitedEventArgs_USE
@@ -4195,6 +4298,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapElementsLa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 namespace ABI {
     namespace Windows {
@@ -4211,6 +4315,7 @@ namespace ABI {
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_USE
@@ -4240,6 +4345,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapScene*,ABI
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -5679,6 +5785,10 @@ namespace ABI {
 
 
 
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -6440,8 +6550,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("65DA384A-2DB1-4BE1-B155-3D0C9ECF4799"), exclusiveto, contract] */
                         MIDL_INTERFACE("65DA384A-2DB1-4BE1-B155-3D0C9ECF4799")
-                        ICustomMapTileDataSource : IInspectable
+                        ICustomMapTileDataSource : public IInspectable
                         {
+                        public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_BitmapRequested(
                                 /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs * value,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -6488,8 +6599,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("C8477947-C955-4F22-9444-A1D8D744AF11"), exclusiveto, contract] */
                         MIDL_INTERFACE("C8477947-C955-4F22-9444-A1D8D744AF11")
-                        ICustomMapTileDataSourceFactory : IInspectable
+                        ICustomMapTileDataSourceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -6534,8 +6646,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("9D03CB5C-FD79-4795-87BE-7E54CA0B37D0"), exclusiveto, contract] */
                         MIDL_INTERFACE("9D03CB5C-FD79-4795-87BE-7E54CA0B37D0")
-                        IHttpMapTileDataSource : IInspectable
+                        IHttpMapTileDataSource : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UriFormatString(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -6597,8 +6710,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("53B4B107-84DC-4291-89F8-6D0BB612A055"), exclusiveto, contract] */
                         MIDL_INTERFACE("53B4B107-84DC-4291-89F8-6D0BB612A055")
-                        IHttpMapTileDataSourceFactory : IInspectable
+                        IHttpMapTileDataSourceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -6649,8 +6763,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("616257B5-9108-4F12-8BF4-BB3C8F6274E5"), exclusiveto, contract] */
                         MIDL_INTERFACE("616257B5-9108-4F12-8BF4-BB3C8F6274E5")
-                        ILocalMapTileDataSource : IInspectable
+                        ILocalMapTileDataSource : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UriFormatString(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -6703,8 +6818,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("C5CFE9FC-72AC-4839-8A0D-011F24693C79"), exclusiveto, contract] */
                         MIDL_INTERFACE("C5CFE9FC-72AC-4839-8A0D-011F24693C79")
-                        ILocalMapTileDataSourceFactory : IInspectable
+                        ILocalMapTileDataSourceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -6755,8 +6871,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("DAA080DA-B7F4-422C-A618-BBAA7C1D814C"), exclusiveto, contract] */
                         MIDL_INTERFACE("DAA080DA-B7F4-422C-A618-BBAA7C1D814C")
-                        IMapActualCameraChangedEventArgs : IInspectable
+                        IMapActualCameraChangedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Camera(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * value
                                 ) = 0;
@@ -6799,8 +6916,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("7BA4C7E5-10DC-455A-9D04-1D72FB6D9B93"), exclusiveto, contract] */
                         MIDL_INTERFACE("7BA4C7E5-10DC-455A-9D04-1D72FB6D9B93")
-                        IMapActualCameraChangedEventArgs2 : IInspectable
+                        IMapActualCameraChangedEventArgs2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeReason(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason * value
                                 ) = 0;
@@ -6843,8 +6961,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("6B0DBED6-93F7-4682-8DE5-A47A1CC7A945"), exclusiveto, contract] */
                         MIDL_INTERFACE("6B0DBED6-93F7-4682-8DE5-A47A1CC7A945")
-                        IMapActualCameraChangingEventArgs : IInspectable
+                        IMapActualCameraChangingEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Camera(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * value
                                 ) = 0;
@@ -6887,8 +7006,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("F2867897-40AC-4E8A-A927-510F3846A47E"), exclusiveto, contract] */
                         MIDL_INTERFACE("F2867897-40AC-4E8A-A927-510F3846A47E")
-                        IMapActualCameraChangingEventArgs2 : IInspectable
+                        IMapActualCameraChangingEventArgs2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeReason(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason * value
                                 ) = 0;
@@ -6931,8 +7051,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("1694259D-0AE2-4F42-A02E-292CA835D39D"), exclusiveto, contract] */
                         MIDL_INTERFACE("1694259D-0AE2-4F42-A02E-292CA835D39D")
-                        IMapBillboard : IInspectable
+                        IMapBillboard : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Location(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                                 ) = 0;
@@ -6999,8 +7120,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("BE45A4C5-8F09-4B86-AE28-783740EB8B31"), exclusiveto, contract] */
                         MIDL_INTERFACE("BE45A4C5-8F09-4B86-AE28-783740EB8B31")
-                        IMapBillboardFactory : IInspectable
+                        IMapBillboardFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceFromCamera(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * camera,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboard * * instance
@@ -7044,8 +7166,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("FDF839FE-E1F7-4FB0-8887-7DA68C647333"), exclusiveto, contract] */
                         MIDL_INTERFACE("FDF839FE-E1F7-4FB0-8887-7DA68C647333")
-                        IMapBillboardStatics : IInspectable
+                        IMapBillboardStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocationProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7094,8 +7217,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("53A6B623-C0F8-4D8B-AD1E-A59598EA840B"), exclusiveto, contract] */
                         MIDL_INTERFACE("53A6B623-C0F8-4D8B-AD1E-A59598EA840B")
-                        IMapCamera : IInspectable
+                        IMapCamera : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Location(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                                 ) = 0;
@@ -7165,8 +7289,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("EA3B0F16-83AF-4ACE-8E71-10AD9F1E9E7F"), exclusiveto, contract] */
                         MIDL_INTERFACE("EA3B0F16-83AF-4ACE-8E71-10AD9F1E9E7F")
-                        IMapCameraFactory : IInspectable
+                        IMapCameraFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithLocation(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * instance
@@ -7229,8 +7354,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("FDD1B423-C961-4DF2-BB57-82EE0F0BB591"), exclusiveto, contract] */
                         MIDL_INTERFACE("FDD1B423-C961-4DF2-BB57-82EE0F0BB591")
-                        IMapContextRequestedEventArgs : IInspectable
+                        IMapContextRequestedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -7279,8 +7405,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("42D0B851-5256-4747-9E6C-0D11E966141E"), exclusiveto, contract] */
                         MIDL_INTERFACE("42D0B851-5256-4747-9E6C-0D11E966141E")
-                        IMapControl : IInspectable
+                        IMapControl : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Center(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                                 ) = 0;
@@ -7525,8 +7652,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("E1FD644D-96EC-4065-B0F0-75281DA3654D"), exclusiveto, contract] */
                         MIDL_INTERFACE("E1FD644D-96EC-4065-B0F0-75281DA3654D")
-                        IMapControl2 : IInspectable
+                        IMapControl2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BusinessLandmarksVisible(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -7722,8 +7850,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("586328F8-8CDD-40AE-9338-AF2A7BE845E5"), exclusiveto, contract] */
                         MIDL_INTERFACE("586328F8-8CDD-40AE-9338-AF2A7BE845E5")
-                        IMapControl3 : IInspectable
+                        IMapControl3 : public IInspectable
                         {
+                        public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapRightTapped(
                                 /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs * value,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -7770,8 +7899,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("068F132A-1817-466D-B7CE-419B3F8E248B"), exclusiveto, contract] */
                         MIDL_INTERFACE("068F132A-1817-466D-B7CE-419B3F8E248B")
-                        IMapControl4 : IInspectable
+                        IMapControl4 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BusinessLandmarksEnabled(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -7827,8 +7957,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("DD9B0FFD-7823-46A2-82C9-65DDAC4F365F"), exclusiveto, contract] */
                         MIDL_INTERFACE("DD9B0FFD-7823-46A2-82C9-65DDAC4F365F")
-                        IMapControl5 : IInspectable
+                        IMapControl5 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapProjection(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Maps::MapProjection * value
                                 ) = 0;
@@ -7917,8 +8048,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("B0DA89A2-1041-4BEA-B88A-12AC9A82E0E2"), exclusiveto, contract] */
                         MIDL_INTERFACE("B0DA89A2-1041-4BEA-B88A-12AC9A82E0E2")
-                        IMapControl6 : IInspectable
+                        IMapControl6 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Layers(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapLayer * * value
                                 ) = 0;
@@ -7954,6 +8086,54 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl6;
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapControl7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapControl
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapControl7[] = L"Windows.UI.Xaml.Controls.Maps.IMapControl7";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        /* [object, uuid("0D86E453-0C1F-4F7E-AE66-4AD0B4987857"), exclusiveto, contract] */
+                        MIDL_INTERFACE("0D86E453-0C1F-4F7E-AE66-4AD0B4987857")
+                        IMapControl7 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Region(
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Region(
+                                /* [in] */__RPC__in HSTRING value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMapControl7=_uuidof(IMapControl7);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkClickEventArgs
  *
  * Introduced to Windows.Services.Maps.LocalSearchContract in version 2.0
@@ -7975,8 +8155,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("5E464922-4A1A-4797-BEB7-5CF7754CB867"), exclusiveto, contract] */
                         MIDL_INTERFACE("5E464922-4A1A-4797-BEB7-5CF7754CB867")
-                        IMapControlBusinessLandmarkClickEventArgs : IInspectable
+                        IMapControlBusinessLandmarkClickEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalLocations(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation * * value
                                 ) = 0;
@@ -8019,8 +8200,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("5E4081A6-EA98-4F95-8CAF-5B42696FF504"), exclusiveto, contract] */
                         MIDL_INTERFACE("5E4081A6-EA98-4F95-8CAF-5B42696FF504")
-                        IMapControlBusinessLandmarkPointerEnteredEventArgs : IInspectable
+                        IMapControlBusinessLandmarkPointerEnteredEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalLocations(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation * * value
                                 ) = 0;
@@ -8063,8 +8245,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("2BB52CAF-F24A-46D0-B463-65F719731057"), exclusiveto, contract] */
                         MIDL_INTERFACE("2BB52CAF-F24A-46D0-B463-65F719731057")
-                        IMapControlBusinessLandmarkPointerExitedEventArgs : IInspectable
+                        IMapControlBusinessLandmarkPointerExitedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalLocations(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation * * value
                                 ) = 0;
@@ -8107,8 +8290,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("59AB8AE7-F184-4AB1-B0B0-35C8BF0654B2"), exclusiveto, contract] */
                         MIDL_INTERFACE("59AB8AE7-F184-4AB1-B0B0-35C8BF0654B2")
-                        IMapControlBusinessLandmarkRightTappedEventArgs : IInspectable
+                        IMapControlBusinessLandmarkRightTappedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalLocations(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation * * value
                                 ) = 0;
@@ -8151,8 +8335,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("8BB0F09C-14AB-486C-9DE5-5A5DEF0205A2"), exclusiveto, contract] */
                         MIDL_INTERFACE("8BB0F09C-14AB-486C-9DE5-5A5DEF0205A2")
-                        IMapControlDataHelper : IInspectable
+                        IMapControlDataHelper : public IInspectable
                         {
+                        public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_BusinessLandmarkClick(
                                 /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkClickEventArgs * value,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -8220,8 +8405,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("59CE429E-562F-4C21-A674-0F11DECF0FB3"), exclusiveto, contract] */
                         MIDL_INTERFACE("59CE429E-562F-4C21-A674-0F11DECF0FB3")
-                        IMapControlDataHelper2 : IInspectable
+                        IMapControlDataHelper2 : public IInspectable
                         {
+                        public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_BusinessLandmarkPointerEntered(
                                 /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerEnteredEventArgs * value,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -8289,8 +8475,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("3B70AA8E-02EF-469C-BBAF-DC2158D4289B"), exclusiveto, contract] */
                         MIDL_INTERFACE("3B70AA8E-02EF-469C-BBAF-DC2158D4289B")
-                        IMapControlDataHelperFactory : IInspectable
+                        IMapControlDataHelperFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapControl * map,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapControlDataHelper * * instance
@@ -8334,8 +8521,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("7A6632D6-E944-4110-83CF-314D0722E2E5"), exclusiveto, contract] */
                         MIDL_INTERFACE("7A6632D6-E944-4110-83CF-314D0722E2E5")
-                        IMapControlDataHelperStatics : IInspectable
+                        IMapControlDataHelperStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateMapControl(
                                 /* [in] */boolean rasterRenderMode,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapControl * * returnValue
@@ -8379,8 +8567,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("C2C61795-2147-4F0A-942A-5493A85DE807"), exclusiveto, contract] */
                         MIDL_INTERFACE("C2C61795-2147-4F0A-942A-5493A85DE807")
-                        IMapControlStatics : IInspectable
+                        IMapControlStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8496,8 +8685,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("04852B93-B446-4D31-9752-1EC69A5996AE"), exclusiveto, contract] */
                         MIDL_INTERFACE("04852B93-B446-4D31-9752-1EC69A5996AE")
-                        IMapControlStatics2 : IInspectable
+                        IMapControlStatics2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BusinessLandmarksVisibleProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8564,8 +8754,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("FE785D97-5D13-4FA1-BF1D-84061768C183"), exclusiveto, contract] */
                         MIDL_INTERFACE("FE785D97-5D13-4FA1-BF1D-84061768C183")
-                        IMapControlStatics4 : IInspectable
+                        IMapControlStatics4 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BusinessLandmarksEnabledProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8611,8 +8802,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("09626F00-B7DD-4189-A7F7-830C412DEEA3"), exclusiveto, contract] */
                         MIDL_INTERFACE("09626F00-B7DD-4189-A7F7-830C412DEEA3")
-                        IMapControlStatics5 : IInspectable
+                        IMapControlStatics5 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapProjectionProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8661,8 +8853,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("3CCFDD7F-24D1-40A2-8351-B3063A8C95A4"), exclusiveto, contract] */
                         MIDL_INTERFACE("3CCFDD7F-24D1-40A2-8351-B3063A8C95A4")
-                        IMapControlStatics6 : IInspectable
+                        IMapControlStatics6 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LayersProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8680,6 +8873,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics6;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics6_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapControlStatics7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapControl
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapControlStatics7[] = L"Windows.UI.Xaml.Controls.Maps.IMapControlStatics7";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        /* [object, uuid("55F1AC4D-72C2-46B2-B7AE-790260BE641B"), exclusiveto, contract] */
+                        MIDL_INTERFACE("55F1AC4D-72C2-46B2-B7AE-790260BE641B")
+                        IMapControlStatics7 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RegionProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMapControlStatics7=_uuidof(IMapControlStatics7);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8705,8 +8943,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("76179969-B765-4622-B08A-3072745A4541"), exclusiveto, contract] */
                         MIDL_INTERFACE("76179969-B765-4622-B08A-3072745A4541")
-                        IMapControlTransitFeatureClickEventArgs : IInspectable
+                        IMapControlTransitFeatureClickEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -8755,8 +8994,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("73911A4E-EC4F-479E-94A1-36E081D0D897"), exclusiveto, contract] */
                         MIDL_INTERFACE("73911A4E-EC4F-479E-94A1-36E081D0D897")
-                        IMapControlTransitFeaturePointerEnteredEventArgs : IInspectable
+                        IMapControlTransitFeaturePointerEnteredEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -8805,8 +9045,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("6A11258D-448D-44E7-BC69-D13D497154E9"), exclusiveto, contract] */
                         MIDL_INTERFACE("6A11258D-448D-44E7-BC69-D13D497154E9")
-                        IMapControlTransitFeaturePointerExitedEventArgs : IInspectable
+                        IMapControlTransitFeaturePointerExitedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -8855,8 +9096,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("AEA1CC49-A729-4EAE-A59A-3EC9A125A028"), exclusiveto, contract] */
                         MIDL_INTERFACE("AEA1CC49-A729-4EAE-A59A-3EC9A125A028")
-                        IMapControlTransitFeatureRightTappedEventArgs : IInspectable
+                        IMapControlTransitFeatureRightTappedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -8905,8 +9147,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("64592866-14A3-4E5F-8883-8E9C500EEEDE"), exclusiveto, contract] */
                         MIDL_INTERFACE("64592866-14A3-4E5F-8883-8E9C500EEEDE")
-                        IMapCustomExperience : IInspectable
+                        IMapCustomExperience : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8946,8 +9189,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("B9E6FB9B-8FC1-4042-AC34-A61B38BB7514"), exclusiveto, contract] */
                         MIDL_INTERFACE("B9E6FB9B-8FC1-4042-AC34-A61B38BB7514")
-                        IMapCustomExperienceChangedEventArgs : IInspectable
+                        IMapCustomExperienceChangedEventArgs : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8987,8 +9231,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("7A403FB5-A1B1-4E7F-921E-3E6B8D8EBED6"), exclusiveto, contract] */
                         MIDL_INTERFACE("7A403FB5-A1B1-4E7F-921E-3E6B8D8EBED6")
-                        IMapCustomExperienceFactory : IInspectable
+                        IMapCustomExperienceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -9033,8 +9278,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("D61FC4DF-B245-47F2-9AC2-43C058B1C903"), exclusiveto, contract] */
                         MIDL_INTERFACE("D61FC4DF-B245-47F2-9AC2-43C058B1C903")
-                        IMapElement : IInspectable
+                        IMapElement : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ZIndex(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -9086,8 +9332,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("6619F261-FBA6-4964-A7FF-F1AF63AB9CB0"), exclusiveto, contract] */
                         MIDL_INTERFACE("6619F261-FBA6-4964-A7FF-F1AF63AB9CB0")
-                        IMapElement2 : IInspectable
+                        IMapElement2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapTabIndex(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -9133,8 +9380,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("13EFBC59-45ED-48B4-93AD-E3F78F8CF218"), exclusiveto, contract] */
                         MIDL_INTERFACE("13EFBC59-45ED-48B4-93AD-E3F78F8CF218")
-                        IMapElement3 : IInspectable
+                        IMapElement3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapStyleSheetEntry(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -9192,8 +9440,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("827AF8D5-3843-48E2-BD00-0F0644FBE6A5"), exclusiveto, contract] */
                         MIDL_INTERFACE("827AF8D5-3843-48E2-BD00-0F0644FBE6A5")
-                        IMapElement3D : IInspectable
+                        IMapElement3D : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Location(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                                 ) = 0;
@@ -9269,8 +9518,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("6128011A-450F-442A-B9D9-AA815C71907A"), exclusiveto, contract] */
                         MIDL_INTERFACE("6128011A-450F-442A-B9D9-AA815C71907A")
-                        IMapElement3DStatics : IInspectable
+                        IMapElement3DStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocationProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9304,6 +9554,54 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement3D
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapElement4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapElement4[] = L"Windows.UI.Xaml.Controls.Maps.IMapElement4";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        /* [object, uuid("645883B6-1FC1-4CEB-93BD-DC2C960072E9"), exclusiveto, contract] */
+                        MIDL_INTERFACE("645883B6-1FC1-4CEB-93BD-DC2C960072E9")
+                        IMapElement4 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsEnabled(
+                                /* [in] */boolean value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMapElement4=_uuidof(IMapElement4);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapElementClickEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9325,8 +9623,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("40168A11-D080-4519-99A1-3149FB8999D0"), exclusiveto, contract] */
                         MIDL_INTERFACE("40168A11-D080-4519-99A1-3149FB8999D0")
-                        IMapElementClickEventArgs : IInspectable
+                        IMapElementClickEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -9375,8 +9674,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("4A30D007-0BD6-47A5-860B-7E7CF5F0C573"), exclusiveto, contract] */
                         MIDL_INTERFACE("4A30D007-0BD6-47A5-860B-7E7CF5F0C573")
-                        IMapElementFactory : IInspectable
+                        IMapElementFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -9421,8 +9721,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("AB85DD4E-91D7-4B31-8F0A-D390C7D3A2EF"), exclusiveto, contract] */
                         MIDL_INTERFACE("AB85DD4E-91D7-4B31-8F0A-D390C7D3A2EF")
-                        IMapElementPointerEnteredEventArgs : IInspectable
+                        IMapElementPointerEnteredEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -9471,8 +9772,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("C1A45AF9-60C9-4679-9119-20ABC75D931F"), exclusiveto, contract] */
                         MIDL_INTERFACE("C1A45AF9-60C9-4679-9119-20ABC75D931F")
-                        IMapElementPointerExitedEventArgs : IInspectable
+                        IMapElementPointerExitedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -9521,8 +9823,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("E8C71CF2-BFEF-4B49-8E99-41B5E3789FD2"), exclusiveto, contract] */
                         MIDL_INTERFACE("E8C71CF2-BFEF-4B49-8E99-41B5E3789FD2")
-                        IMapElementStatics : IInspectable
+                        IMapElementStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ZIndexProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9568,8 +9871,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("9BF72F30-80FE-4F30-BCC1-FA894050F676"), exclusiveto, contract] */
                         MIDL_INTERFACE("9BF72F30-80FE-4F30-BCC1-FA894050F676")
-                        IMapElementStatics2 : IInspectable
+                        IMapElementStatics2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapTabIndexProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9612,8 +9916,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("E11EE92F-9742-49AA-AAD8-2E466BFF3796"), exclusiveto, contract] */
                         MIDL_INTERFACE("E11EE92F-9742-49AA-AAD8-2E466BFF3796")
-                        IMapElementStatics3 : IInspectable
+                        IMapElementStatics3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapStyleSheetEntryProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9641,6 +9946,51 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementSt
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapElementStatics4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapElementStatics4[] = L"Windows.UI.Xaml.Controls.Maps.IMapElementStatics4";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        /* [object, uuid("A4296F0B-DFF8-467C-9315-6F6DB93EE2BA"), exclusiveto, contract] */
+                        MIDL_INTERFACE("A4296F0B-DFF8-467C-9315-6F6DB93EE2BA")
+                        IMapElementStatics4 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabledProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMapElementStatics4=_uuidof(IMapElementStatics4);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapElementsLayer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -9662,8 +10012,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("DE79689A-01EF-46F4-AC60-7C200B552610"), exclusiveto, contract] */
                         MIDL_INTERFACE("DE79689A-01EF-46F4-AC60-7C200B552610")
-                        IMapElementsLayer : IInspectable
+                        IMapElementsLayer : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapElements(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * * value
                                 ) = 0;
@@ -9737,8 +10088,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("2CA7CF66-AF1B-4C05-8C85-F74AE3D4677F"), exclusiveto, contract] */
                         MIDL_INTERFACE("2CA7CF66-AF1B-4C05-8C85-F74AE3D4677F")
-                        IMapElementsLayerClickEventArgs : IInspectable
+                        IMapElementsLayerClickEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -9787,8 +10139,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("DA45D0B3-7A0E-4758-808B-3A637627EB0D"), exclusiveto, contract] */
                         MIDL_INTERFACE("DA45D0B3-7A0E-4758-808B-3A637627EB0D")
-                        IMapElementsLayerContextRequestedEventArgs : IInspectable
+                        IMapElementsLayerContextRequestedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -9837,8 +10190,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("757FC032-4694-4404-8C89-348B6B76C5E6"), exclusiveto, contract] */
                         MIDL_INTERFACE("757FC032-4694-4404-8C89-348B6B76C5E6")
-                        IMapElementsLayerPointerEnteredEventArgs : IInspectable
+                        IMapElementsLayerPointerEnteredEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -9887,8 +10241,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("92F3C6AD-03ED-4C39-AF20-2A07EE1CCEA6"), exclusiveto, contract] */
                         MIDL_INTERFACE("92F3C6AD-03ED-4C39-AF20-2A07EE1CCEA6")
-                        IMapElementsLayerPointerExitedEventArgs : IInspectable
+                        IMapElementsLayerPointerExitedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -9937,8 +10292,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("34005727-F509-4D28-9180-911C03411D74"), exclusiveto, contract] */
                         MIDL_INTERFACE("34005727-F509-4D28-9180-911C03411D74")
-                        IMapElementsLayerStatics : IInspectable
+                        IMapElementsLayerStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapElementsProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9981,8 +10337,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("D2096872-23D9-4A2B-8BE0-69F3A85482AB"), exclusiveto, contract] */
                         MIDL_INTERFACE("D2096872-23D9-4A2B-8BE0-69F3A85482AB")
-                        IMapIcon : IInspectable
+                        IMapIcon : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Location(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                                 ) = 0;
@@ -10046,8 +10403,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("611254B9-D8AA-4BBD-A316-BADF06911D63"), exclusiveto, contract] */
                         MIDL_INTERFACE("611254B9-D8AA-4BBD-A316-BADF06911D63")
-                        IMapIcon2 : IInspectable
+                        IMapIcon2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CollisionBehaviorDesired(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior * value
                                 ) = 0;
@@ -10093,8 +10451,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("DCBC9E56-1190-4B5D-9E56-E5B6724AA328"), exclusiveto, contract] */
                         MIDL_INTERFACE("DCBC9E56-1190-4B5D-9E56-E5B6724AA328")
-                        IMapIconStatics : IInspectable
+                        IMapIconStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocationProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10143,8 +10502,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("FF4C306A-CF76-46AB-A12F-B603B986C696"), exclusiveto, contract] */
                         MIDL_INTERFACE("FF4C306A-CF76-46AB-A12F-B603B986C696")
-                        IMapIconStatics2 : IInspectable
+                        IMapIconStatics2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CollisionBehaviorDesiredProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10187,8 +10547,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("9FC503A0-A8A2-4394-92E9-2247764F2F49"), exclusiveto, contract] */
                         MIDL_INTERFACE("9FC503A0-A8A2-4394-92E9-2247764F2F49")
-                        IMapInputEventArgs : IInspectable
+                        IMapInputEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -10234,8 +10595,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("94C2C4D3-B335-42C5-B660-E6A07EC3BDDC"), exclusiveto, contract] */
                         MIDL_INTERFACE("94C2C4D3-B335-42C5-B660-E6A07EC3BDDC")
-                        IMapItemsControl : IInspectable
+                        IMapItemsControl : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ItemsSource(
                                 /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                                 ) = 0;
@@ -10290,8 +10652,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("33A859C7-789B-425C-8A0A-32385896CB4A"), exclusiveto, contract] */
                         MIDL_INTERFACE("33A859C7-789B-425C-8A0A-32385896CB4A")
-                        IMapItemsControlStatics : IInspectable
+                        IMapItemsControlStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ItemsSourceProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10340,8 +10703,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("6D0FF9C1-A14D-4F97-8F57-46715B57683A"), exclusiveto, contract] */
                         MIDL_INTERFACE("6D0FF9C1-A14D-4F97-8F57-46715B57683A")
-                        IMapLayer : IInspectable
+                        IMapLayer : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapTabIndex(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -10399,8 +10763,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("E02A2207-DEE3-47C8-9825-BD029C5752F7"), exclusiveto, contract] */
                         MIDL_INTERFACE("E02A2207-DEE3-47C8-9825-BD029C5752F7")
-                        IMapLayerFactory : IInspectable
+                        IMapLayerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10445,8 +10810,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("9CA4A26B-5DB9-4F0C-BDD5-B1BFFDCCE946"), exclusiveto, contract] */
                         MIDL_INTERFACE("9CA4A26B-5DB9-4F0C-BDD5-B1BFFDCCE946")
-                        IMapLayerStatics : IInspectable
+                        IMapLayerStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MapTabIndexProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10495,8 +10861,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("F8C541A1-CA27-4968-A2BF-9C20F06A0468"), exclusiveto, contract] */
                         MIDL_INTERFACE("F8C541A1-CA27-4968-A2BF-9C20F06A0468")
-                        IMapModel3D : IInspectable
+                        IMapModel3D : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10536,8 +10903,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("DF7F0BCC-580A-498B-939B-0119A9DADB9E"), exclusiveto, contract] */
                         MIDL_INTERFACE("DF7F0BCC-580A-498B-939B-0119A9DADB9E")
-                        IMapModel3DFactory : IInspectable
+                        IMapModel3DFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10582,8 +10950,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("4834A480-8E56-4B0F-872D-7EAD103187CD"), exclusiveto, contract] */
                         MIDL_INTERFACE("4834A480-8E56-4B0F-872D-7EAD103187CD")
-                        IMapModel3DStatics : IInspectable
+                        IMapModel3DStatics : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFrom3MFAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * source,
                                 /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CMapModel3D * * returnValue
@@ -10632,8 +11001,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("ABDA2285-4926-4C3A-A5F9-19DF7F69DB3D"), exclusiveto, contract] */
                         MIDL_INTERFACE("ABDA2285-4926-4C3A-A5F9-19DF7F69DB3D")
-                        IMapPolygon : IInspectable
+                        IMapPolygon : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Path(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopath * * value
                                 ) = 0;
@@ -10703,8 +11073,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("96C8A11E-636B-4018-9C2E-ACC9122A01B2"), exclusiveto, contract] */
                         MIDL_INTERFACE("96C8A11E-636B-4018-9C2E-ACC9122A01B2")
-                        IMapPolygon2 : IInspectable
+                        IMapPolygon2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Paths(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CDevices__CGeolocation__CGeopath * * value
                                 ) = 0;
@@ -10747,8 +11118,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("37F573BE-097B-424C-87CC-2EE042FDA6D2"), exclusiveto, contract] */
                         MIDL_INTERFACE("37F573BE-097B-424C-87CC-2EE042FDA6D2")
-                        IMapPolygonStatics : IInspectable
+                        IMapPolygonStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PathProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10797,8 +11169,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("FBAD24A2-24DF-4A86-8FFA-0F8F4D9EC17D"), exclusiveto, contract] */
                         MIDL_INTERFACE("FBAD24A2-24DF-4A86-8FFA-0F8F4D9EC17D")
-                        IMapPolyline : IInspectable
+                        IMapPolyline : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Path(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopath * * value
                                 ) = 0;
@@ -10862,8 +11235,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("61FDE44B-1DDF-4303-B809-EC87F58AD065"), exclusiveto, contract] */
                         MIDL_INTERFACE("61FDE44B-1DDF-4303-B809-EC87F58AD065")
-                        IMapPolylineStatics : IInspectable
+                        IMapPolylineStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PathProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10909,8 +11283,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("20943171-6FE8-40A6-AD0E-297379B575A7"), exclusiveto, contract] */
                         MIDL_INTERFACE("20943171-6FE8-40A6-AD0E-297379B575A7")
-                        IMapRightTappedEventArgs : IInspectable
+                        IMapRightTappedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                                 ) = 0;
@@ -10956,8 +11331,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("740EAEC5-BACC-41E1-A67E-DD6513832049"), exclusiveto, contract] */
                         MIDL_INTERFACE("740EAEC5-BACC-41E1-A67E-DD6513832049")
-                        IMapRouteView : IInspectable
+                        IMapRouteView : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RouteColor(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                                 ) = 0;
@@ -11012,8 +11388,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("F083ADDF-0066-4628-82FE-EA78C23CEC1E"), exclusiveto, contract] */
                         MIDL_INTERFACE("F083ADDF-0066-4628-82FE-EA78C23CEC1E")
-                        IMapRouteViewFactory : IInspectable
+                        IMapRouteViewFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithMapRoute(
                                 /* [in] */__RPC__in_opt ABI::Windows::Services::Maps::IMapRoute * route,
                                 /* [in] */__RPC__in_opt IInspectable * outer,
@@ -11059,8 +11436,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("8BBA10A9-50E7-482C-9789-C688B178AC24"), exclusiveto, contract] */
                         MIDL_INTERFACE("8BBA10A9-50E7-482C-9789-C688B178AC24")
-                        IMapScene : IInspectable
+                        IMapScene : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetCamera(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * value
                                 ) = 0;
@@ -11110,8 +11488,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("03E4AD6C-86EC-44D9-9597-FB75B7DEBA0A"), exclusiveto, contract] */
                         MIDL_INTERFACE("03E4AD6C-86EC-44D9-9597-FB75B7DEBA0A")
-                        IMapSceneStatics : IInspectable
+                        IMapSceneStatics : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromBoundingBox(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeoboundingBox * bounds,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
@@ -11197,8 +11576,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("AE54B2BF-8991-42ED-8D58-20473DEEDE1D"), exclusiveto, contract] */
                         MIDL_INTERFACE("AE54B2BF-8991-42ED-8D58-20473DEEDE1D")
-                        IMapStyleSheet : IInspectable
+                        IMapStyleSheet : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11238,8 +11618,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("C9636345-EF1A-41A4-A757-BD4F43E1E4D1"), exclusiveto, contract] */
                         MIDL_INTERFACE("C9636345-EF1A-41A4-A757-BD4F43E1E4D1")
-                        IMapStyleSheetEntriesStatics : IInspectable
+                        IMapStyleSheetEntriesStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Area(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -11471,8 +11852,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("23AC5532-866D-4BFA-B481-39BEA1DE3506"), exclusiveto, contract] */
                         MIDL_INTERFACE("23AC5532-866D-4BFA-B481-39BEA1DE3506")
-                        IMapStyleSheetEntryStatesStatics : IInspectable
+                        IMapStyleSheetEntryStatesStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Disabled(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -11521,8 +11903,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("ABBD00AD-0A1C-4335-82F4-61D936AA197D"), exclusiveto, contract] */
                         MIDL_INTERFACE("ABBD00AD-0A1C-4335-82F4-61D936AA197D")
-                        IMapStyleSheetStatics : IInspectable
+                        IMapStyleSheetStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Aerial(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * returnValue
                                 ) = 0;
@@ -11593,8 +11976,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("DBF00472-E953-4FA8-97D0-EA86359057CF"), exclusiveto, contract] */
                         MIDL_INTERFACE("DBF00472-E953-4FA8-97D0-EA86359057CF")
-                        IMapTargetCameraChangedEventArgs : IInspectable
+                        IMapTargetCameraChangedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Camera(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * value
                                 ) = 0;
@@ -11637,8 +12021,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("97C0B332-F2B6-460B-8D91-AC020A2383DD"), exclusiveto, contract] */
                         MIDL_INTERFACE("97C0B332-F2B6-460B-8D91-AC020A2383DD")
-                        IMapTargetCameraChangedEventArgs2 : IInspectable
+                        IMapTargetCameraChangedEventArgs2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeReason(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason * value
                                 ) = 0;
@@ -11681,8 +12066,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("46733FBC-D89D-472B-B5F6-D7066B0584F4"), exclusiveto, contract] */
                         MIDL_INTERFACE("46733FBC-D89D-472B-B5F6-D7066B0584F4")
-                        IMapTileBitmapRequest : IInspectable
+                        IMapTileBitmapRequest : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PixelData(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * * value
                                 ) = 0;
@@ -11731,8 +12117,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("FE370542-A4AC-4EFA-9665-0490B0CAFDD2"), exclusiveto, contract] */
                         MIDL_INTERFACE("FE370542-A4AC-4EFA-9665-0490B0CAFDD2")
-                        IMapTileBitmapRequestDeferral : IInspectable
+                        IMapTileBitmapRequestDeferral : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                             
                         };
@@ -11773,8 +12160,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("337F691D-9B02-4AA2-8B1E-CC4D91719BF3"), exclusiveto, contract] */
                         MIDL_INTERFACE("337F691D-9B02-4AA2-8B1E-CC4D91719BF3")
-                        IMapTileBitmapRequestedEventArgs : IInspectable
+                        IMapTileBitmapRequestedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_X(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -11826,8 +12214,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("C03D9F5E-BE1F-4C69-9969-79467A513C38"), exclusiveto, contract] */
                         MIDL_INTERFACE("C03D9F5E-BE1F-4C69-9969-79467A513C38")
-                        IMapTileDataSource : IInspectable
+                        IMapTileDataSource : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -11867,8 +12256,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("A3920FBD-E446-4648-A74D-FD2C5D557C06"), exclusiveto, contract] */
                         MIDL_INTERFACE("A3920FBD-E446-4648-A74D-FD2C5D557C06")
-                        IMapTileDataSourceFactory : IInspectable
+                        IMapTileDataSourceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -11913,8 +12303,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("88A76E4E-2FDF-4567-9255-1100519C8D62"), exclusiveto, contract] */
                         MIDL_INTERFACE("88A76E4E-2FDF-4567-9255-1100519C8D62")
-                        IMapTileSource : IInspectable
+                        IMapTileSource : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataSource(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileDataSource * * value
                                 ) = 0;
@@ -12020,8 +12411,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("CD7F811F-77FA-482B-9D34-71D31D465C48"), exclusiveto, contract] */
                         MIDL_INTERFACE("CD7F811F-77FA-482B-9D34-71D31D465C48")
-                        IMapTileSourceFactory : IInspectable
+                        IMapTileSourceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -12096,8 +12488,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("93FCC93C-7035-4603-99B1-E659921B6093"), exclusiveto, contract] */
                         MIDL_INTERFACE("93FCC93C-7035-4603-99B1-E659921B6093")
-                        IMapTileSourceStatics : IInspectable
+                        IMapTileSourceStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataSourceProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -12170,8 +12563,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("17402335-3127-45B8-87A7-99F87D4E2745"), exclusiveto, contract] */
                         MIDL_INTERFACE("17402335-3127-45B8-87A7-99F87D4E2745")
-                        IMapTileUriRequest : IInspectable
+                        IMapTileUriRequest : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                                 ) = 0;
@@ -12220,8 +12614,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("C117ADE0-BF3E-4C51-8FAA-4B593CF68EB2"), exclusiveto, contract] */
                         MIDL_INTERFACE("C117ADE0-BF3E-4C51-8FAA-4B593CF68EB2")
-                        IMapTileUriRequestDeferral : IInspectable
+                        IMapTileUriRequestDeferral : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                             
                         };
@@ -12262,8 +12657,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("D2147B43-1BBF-4B98-8DD3-B7834E407E0D"), exclusiveto, contract] */
                         MIDL_INTERFACE("D2147B43-1BBF-4B98-8DD3-B7834E407E0D")
-                        IMapTileUriRequestedEventArgs : IInspectable
+                        IMapTileUriRequestedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_X(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -12315,8 +12711,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("A558AEC9-E30C-46C8-8116-484691675558"), exclusiveto, contract] */
                         MIDL_INTERFACE("A558AEC9-E30C-46C8-8116-484691675558")
-                        IStreetsideExperience : IInspectable
+                        IStreetsideExperience : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AddressTextVisible(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -12392,8 +12789,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("7A5BCF3C-649E-4342-9995-68A6CF5961A7"), exclusiveto, contract] */
                         MIDL_INTERFACE("7A5BCF3C-649E-4342-9995-68A6CF5961A7")
-                        IStreetsideExperienceFactory : IInspectable
+                        IStreetsideExperienceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithPanorama(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IStreetsidePanorama * panorama,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IStreetsideExperience * * instance
@@ -12444,8 +12842,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("6FE00FD8-AD60-4664-B539-B1069F16C5AF"), exclusiveto, contract] */
                         MIDL_INTERFACE("6FE00FD8-AD60-4664-B539-B1069F16C5AF")
-                        IStreetsidePanorama : IInspectable
+                        IStreetsidePanorama : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Location(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                                 ) = 0;
@@ -12488,8 +12887,9 @@ namespace ABI {
                     namespace Maps {
                         /* [object, uuid("D3B47F69-54B3-4EC5-B2A0-4F8204576507"), exclusiveto, contract] */
                         MIDL_INTERFACE("D3B47F69-54B3-4EC5-B2A0-4F8204576507")
-                        IStreetsidePanoramaStatics : IInspectable
+                        IStreetsidePanoramaStatics : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindNearbyWithLocationAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
                                 /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama * * returnValue
@@ -12738,6 +13138,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapControlStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapControlStatics6 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapControlStatics5 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapControlStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -12751,6 +13152,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Controls.Maps.IMapControl4
  *    Windows.UI.Xaml.Controls.Maps.IMapControl5
  *    Windows.UI.Xaml.Controls.Maps.IMapControl6
+ *    Windows.UI.Xaml.Controls.Maps.IMapControl7
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -13072,6 +13474,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapElementStatics4 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapElementStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapElementStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapElementStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -13080,6 +13483,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Controls.Maps.IMapElement ** Default Interface **
  *    Windows.UI.Xaml.Controls.Maps.IMapElement2
  *    Windows.UI.Xaml.Controls.Maps.IMapElement3
+ *    Windows.UI.Xaml.Controls.Maps.IMapElement4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14132,6 +14536,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl6 __x_A
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl6_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs;
@@ -14210,6 +14620,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics6_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs;
@@ -14282,6 +14698,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement3DStati
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement3DStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs;
@@ -14323,6 +14745,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics3 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics3;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_FWD_DEFINED__
@@ -16686,6 +17114,7 @@ interface __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsid
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -16733,9 +17162,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustom
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
@@ -16784,9 +17215,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMa
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
@@ -16834,6 +17267,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalM
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -16890,6 +17324,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs_INTERFACE_DEFINED__
 
@@ -16937,9 +17372,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_INTERFACE_DEFINED__
@@ -16987,6 +17424,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -17469,6 +17907,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__
 
@@ -17516,9 +17955,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs_INTERFACE_DEFINED__
@@ -17567,9 +18008,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__
@@ -17618,9 +18061,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs_INTERFACE_DEFINED__
@@ -17669,9 +18114,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs_INTERFACE_DEFINED__
@@ -17719,6 +18166,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -17777,6 +18225,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
 
@@ -17824,9 +18273,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapCon
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerClickEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerClickEventArgs_INTERFACE_DEFINED__
@@ -17875,9 +18326,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapEle
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerClickEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerContextRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerContextRequestedEventArgs_INTERFACE_DEFINED__
@@ -17926,9 +18379,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapEle
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerContextRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerEnteredEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerEnteredEventArgs_INTERFACE_DEFINED__
@@ -17977,9 +18432,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapEle
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerEnteredEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerExitedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerExitedEventArgs_INTERFACE_DEFINED__
@@ -18028,9 +18485,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapEle
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerExitedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
@@ -18078,6 +18537,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapSce
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__)
@@ -20406,6 +20866,10 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapWatermarkMode __x_AB
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapZoomLevelRange __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapZoomLevelRange;
+
+
+
+
 
 
 
@@ -24162,6 +24626,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl6;
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapControl7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapControl
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapControl7[] = L"Windows.UI.Xaml.Controls.Maps.IMapControl7";
+/* [object, uuid("0D86E453-0C1F-4F7E-AE66-4AD0B4987857"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Region )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Region )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7 * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_get_Region(This,value) \
+    ( (This)->lpVtbl->get_Region(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_put_Region(This,value) \
+    ( (This)->lpVtbl->put_Region(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkClickEventArgs
  *
  * Introduced to Windows.Services.Maps.LocalSearchContract in version 2.0
@@ -25721,6 +26285,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlSt
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapControlStatics7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapControl
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapControlStatics7[] = L"Windows.UI.Xaml.Controls.Maps.IMapControlStatics7";
+/* [object, uuid("55F1AC4D-72C2-46B2-B7AE-790260BE641B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_RegionProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_get_RegionProperty(This,value) \
+    ( (This)->lpVtbl->get_RegionProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs
  *
  * Introduced to Windows.Services.Maps.LocalSearchContract in version 2.0
@@ -27049,6 +27706,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement3D
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapElement4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapElement4[] = L"Windows.UI.Xaml.Controls.Maps.IMapElement4";
+/* [object, uuid("645883B6-1FC1-4CEB-93BD-DC2C960072E9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsEnabled )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsEnabled )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4 * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_get_IsEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsEnabled(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_put_IsEnabled(This,value) \
+    ( (This)->lpVtbl->put_IsEnabled(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapElementClickEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -27761,6 +28518,99 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics3
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics3;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapElementStatics4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapElement
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapElementStatics4[] = L"Windows.UI.Xaml.Controls.Maps.IMapElementStatics4";
+/* [object, uuid("A4296F0B-DFF8-467C-9315-6F6DB93EE2BA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsEnabledProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_get_IsEnabledProperty(This,value) \
+    ( (This)->lpVtbl->get_IsEnabledProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -34130,6 +34980,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapControlStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapControlStatics6 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapControlStatics5 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapControlStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -34143,6 +34994,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Controls.Maps.IMapControl4
  *    Windows.UI.Xaml.Controls.Maps.IMapControl5
  *    Windows.UI.Xaml.Controls.Maps.IMapControl6
+ *    Windows.UI.Xaml.Controls.Maps.IMapControl7
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -34464,6 +35316,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapElementStatics4 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapElementStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapElementStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapElementStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -34472,6 +35325,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Controls.Maps.IMapElement ** Default Interface **
  *    Windows.UI.Xaml.Controls.Maps.IMapElement2
  *    Windows.UI.Xaml.Controls.Maps.IMapElement3
+ *    Windows.UI.Xaml.Controls.Maps.IMapElement4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

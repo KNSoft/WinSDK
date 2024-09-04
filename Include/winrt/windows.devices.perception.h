@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.perception.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1949,6 +1951,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameReader_Windows__CDevices__CPerception__CPerceptionColorFrameArrivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameReader_Windows__CDevices__CPerception__CPerceptionColorFrameArrivedEventArgs_USE
@@ -1977,6 +1980,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionColorFra
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameReader_Windows__CDevices__CPerception__CPerceptionColorFrameArrivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2024,6 +2028,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_USE
@@ -2052,6 +2057,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionColorFra
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -2108,6 +2114,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceAddedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceAddedEventArgs_USE
@@ -2137,6 +2144,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionColorFra
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -2149,6 +2157,7 @@ namespace ABI {
     } /* Perception */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceRemovedEventArgs_USE
@@ -2178,6 +2187,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionColorFra
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceRemovedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -2243,6 +2253,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameReader_Windows__CDevices__CPerception__CPerceptionDepthFrameArrivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameReader_Windows__CDevices__CPerception__CPerceptionDepthFrameArrivedEventArgs_USE
@@ -2271,6 +2282,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionDepthFra
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameReader_Windows__CDevices__CPerception__CPerceptionDepthFrameArrivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2309,6 +2321,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionDepthFra
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_USE
@@ -2337,6 +2350,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionDepthFra
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -2393,6 +2407,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceAddedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceAddedEventArgs_USE
@@ -2422,6 +2437,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionDepthFra
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -2434,6 +2450,7 @@ namespace ABI {
     } /* Perception */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceRemovedEventArgs_USE
@@ -2464,6 +2481,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionDepthFra
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -2485,6 +2503,7 @@ namespace ABI {
     } /* Perception */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameReader_Windows__CDevices__CPerception__CPerceptionInfraredFrameArrivedEventArgs_USE
@@ -2514,6 +2533,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionInfrared
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameReader_Windows__CDevices__CPerception__CPerceptionInfraredFrameArrivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2552,6 +2572,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionInfrared
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_USE
@@ -2580,6 +2601,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionInfrared
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -2636,6 +2658,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceAddedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceAddedEventArgs_USE
@@ -2665,6 +2688,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionInfrared
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -2677,6 +2701,7 @@ namespace ABI {
     } /* Perception */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceRemovedEventArgs_USE
@@ -2706,6 +2731,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Perception::PerceptionInfrared
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceRemovedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3245,8 +3271,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IKnownCameraIntrinsicsPropertiesStatics : IInspectable
+                IKnownCameraIntrinsicsPropertiesStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -3314,8 +3341,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IKnownPerceptionColorFrameSourcePropertiesStatics : IInspectable
+                IKnownPerceptionColorFrameSourcePropertiesStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -3376,8 +3404,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("KnownPerceptionDepthFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IKnownPerceptionDepthFrameSourcePropertiesStatics : IInspectable
+                IKnownPerceptionDepthFrameSourcePropertiesStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("KnownPerceptionDepthFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")
@@ -3431,8 +3460,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IKnownPerceptionFrameSourcePropertiesStatics : IInspectable
+                IKnownPerceptionFrameSourcePropertiesStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")
@@ -3507,8 +3537,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IKnownPerceptionFrameSourcePropertiesStatics2 : IInspectable
+                IKnownPerceptionFrameSourcePropertiesStatics2 : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -3555,8 +3586,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("KnownPerceptionInfraredFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IKnownPerceptionInfraredFrameSourcePropertiesStatics : IInspectable
+                IKnownPerceptionInfraredFrameSourcePropertiesStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("KnownPerceptionInfraredFrameSourceProperties.Exposure may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.ExposureControl instead.")
@@ -3645,8 +3677,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IKnownPerceptionVideoFrameSourcePropertiesStatics : IInspectable
+                IKnownPerceptionVideoFrameSourcePropertiesStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -3721,8 +3754,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IKnownPerceptionVideoProfilePropertiesStatics : IInspectable
+                IKnownPerceptionVideoProfilePropertiesStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -3801,8 +3835,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionColorFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.VideoMediaFrame instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionColorFrame : IInspectable
+                IPerceptionColorFrame : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionColorFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.VideoMediaFrame instead.")
@@ -3849,8 +3884,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionColorFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionColorFrameArrivedEventArgs : IInspectable
+                IPerceptionColorFrameArrivedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionColorFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
@@ -3908,8 +3944,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionColorFrameReader : IInspectable
+                IPerceptionColorFrameReader : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
@@ -3992,8 +4029,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionColorFrameSource : IInspectable
+                IPerceptionColorFrameSource : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
@@ -4250,8 +4288,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionColorFrameSource2 : IInspectable
+                IPerceptionColorFrameSource2 : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
@@ -4298,8 +4337,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionColorFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionColorFrameSourceAddedEventArgs : IInspectable
+                IPerceptionColorFrameSourceAddedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionColorFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -4346,8 +4386,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionColorFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionColorFrameSourceRemovedEventArgs : IInspectable
+                IPerceptionColorFrameSourceRemovedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionColorFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -4394,8 +4435,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionColorFrameSourceStatics : IInspectable
+                IPerceptionColorFrameSourceStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionColorFrameSource.CreateWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.CreateWatcher instead.")
@@ -4464,8 +4506,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionColorFrameSourceWatcher : IInspectable
+                IPerceptionColorFrameSourceWatcher : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
@@ -4586,8 +4629,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionControlSession : IInspectable
+                IPerceptionControlSession : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -4651,8 +4695,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthCorrelatedCameraIntrinsics : IInspectable
+                IPerceptionDepthCorrelatedCameraIntrinsics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
@@ -4733,8 +4778,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthCorrelatedCoordinateMapper : IInspectable
+                IPerceptionDepthCorrelatedCoordinateMapper : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
@@ -4819,8 +4865,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthFrame : IInspectable
+                IPerceptionDepthFrame : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")
@@ -4867,8 +4914,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthFrameArrivedEventArgs : IInspectable
+                IPerceptionDepthFrameArrivedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
@@ -4926,8 +4974,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthFrameReader : IInspectable
+                IPerceptionDepthFrameReader : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
@@ -5010,8 +5059,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthFrameSource : IInspectable
+                IPerceptionDepthFrameSource : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
@@ -5268,8 +5318,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthFrameSource2 : IInspectable
+                IPerceptionDepthFrameSource2 : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
@@ -5316,8 +5367,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthFrameSourceAddedEventArgs : IInspectable
+                IPerceptionDepthFrameSourceAddedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -5364,8 +5416,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthFrameSourceRemovedEventArgs : IInspectable
+                IPerceptionDepthFrameSourceRemovedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -5412,8 +5465,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthFrameSourceStatics : IInspectable
+                IPerceptionDepthFrameSourceStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthFrameSource.CreateWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.CreateWatcher instead.")
@@ -5482,8 +5536,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionDepthFrameSourceWatcher : IInspectable
+                IPerceptionDepthFrameSourceWatcher : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
@@ -5600,8 +5655,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionFrameSourcePropertiesChangedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionFrameSourcePropertiesChangedEventArgs : IInspectable
+                IPerceptionFrameSourcePropertiesChangedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionFrameSourcePropertiesChangedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -5655,8 +5711,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionFrameSourcePropertyChangeResult may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionFrameSourcePropertyChangeResult : IInspectable
+                IPerceptionFrameSourcePropertyChangeResult : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionFrameSourcePropertyChangeResult may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -5714,8 +5771,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionInfraredFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.InfraredMediaFrame instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionInfraredFrame : IInspectable
+                IPerceptionInfraredFrame : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionInfraredFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.InfraredMediaFrame instead.")
@@ -5762,8 +5820,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionInfraredFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionInfraredFrameArrivedEventArgs : IInspectable
+                IPerceptionInfraredFrameArrivedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionInfraredFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
@@ -5821,8 +5880,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionInfraredFrameReader : IInspectable
+                IPerceptionInfraredFrameReader : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
@@ -5905,8 +5965,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionInfraredFrameSource : IInspectable
+                IPerceptionInfraredFrameSource : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
@@ -6163,8 +6224,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionInfraredFrameSource2 : IInspectable
+                IPerceptionInfraredFrameSource2 : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
@@ -6211,8 +6273,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionInfraredFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionInfraredFrameSourceAddedEventArgs : IInspectable
+                IPerceptionInfraredFrameSourceAddedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionInfraredFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -6259,8 +6322,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionInfraredFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionInfraredFrameSourceRemovedEventArgs : IInspectable
+                IPerceptionInfraredFrameSourceRemovedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionInfraredFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -6307,8 +6371,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionInfraredFrameSourceStatics : IInspectable
+                IPerceptionInfraredFrameSourceStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionInfraredFrameSource.CreateWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.CreateWatcher instead.")
@@ -6377,8 +6442,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionInfraredFrameSourceWatcher : IInspectable
+                IPerceptionInfraredFrameSourceWatcher : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
@@ -6495,8 +6561,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IPerceptionVideoProfile : IInspectable
+                IPerceptionVideoProfile : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")
@@ -10013,6 +10080,7 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CPerception__
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameReader_Windows__CDevices__CPerception__CPerceptionColorFrameArrivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameReader_Windows__CDevices__CPerception__CPerceptionColorFrameArrivedEventArgs_INTERFACE_DEFINED__
 
@@ -10059,6 +10127,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionCol
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameReader_Windows__CDevices__CPerception__CPerceptionColorFrameArrivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -10115,6 +10184,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionCol
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_INTERFACE_DEFINED__
 
@@ -10161,6 +10231,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionCol
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -10217,6 +10288,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionCol
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceAddedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceAddedEventArgs_INTERFACE_DEFINED__
 
@@ -10264,9 +10336,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionCol
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceAddedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceRemovedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceRemovedEventArgs_INTERFACE_DEFINED__
@@ -10314,6 +10388,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionCol
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionColorFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionColorFrameSourceRemovedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -10370,6 +10445,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionCon
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameReader_Windows__CDevices__CPerception__CPerceptionDepthFrameArrivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameReader_Windows__CDevices__CPerception__CPerceptionDepthFrameArrivedEventArgs_INTERFACE_DEFINED__
 
@@ -10416,6 +10492,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDep
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameReader_Windows__CDevices__CPerception__CPerceptionDepthFrameArrivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -10472,6 +10549,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDep
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_INTERFACE_DEFINED__
 
@@ -10518,6 +10596,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDep
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -10574,6 +10653,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDep
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceAddedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceAddedEventArgs_INTERFACE_DEFINED__
 
@@ -10621,9 +10701,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDep
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceAddedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceRemovedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceRemovedEventArgs_INTERFACE_DEFINED__
@@ -10672,9 +10754,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDep
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionDepthFrameSourceRemovedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameReader_Windows__CDevices__CPerception__CPerceptionInfraredFrameArrivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameReader_Windows__CDevices__CPerception__CPerceptionInfraredFrameArrivedEventArgs_INTERFACE_DEFINED__
@@ -10722,6 +10806,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInf
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameReader_Windows__CDevices__CPerception__CPerceptionInfraredFrameArrivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -10778,6 +10863,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInf
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_INTERFACE_DEFINED__
 
@@ -10824,6 +10910,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInf
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSource_Windows__CDevices__CPerception__CPerceptionFrameSourcePropertiesChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -10880,6 +10967,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInf
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceAddedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceAddedEventArgs_INTERFACE_DEFINED__
 
@@ -10927,9 +11015,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInf
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceAddedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceRemovedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceRemovedEventArgs_INTERFACE_DEFINED__
@@ -10977,6 +11067,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInf
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceWatcher_Windows__CDevices__CPerception__CPerceptionInfraredFrameSourceRemovedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.playback.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -254,6 +256,7 @@
 #include "Windows.Foundation.Numerics.h"
 #include "Windows.Graphics.DirectX.Direct3D11.h"
 #include "Windows.Media.h"
+#include "Windows.Media.Audio.h"
 #include "Windows.Media.Casting.h"
 #include "Windows.Media.Core.h"
 #include "Windows.Media.MediaProperties.h"
@@ -812,6 +815,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                interface IMediaPlaybackSession3;
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 ABI::Windows::Media::Playback::IMediaPlaybackSession3
+
+#endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -825,6 +842,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs ABI::Windows::Media::Playback::IMediaPlaybackSessionBufferingStartedEventArgs
 
 #endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                interface IMediaPlaybackSessionOutputDegradationPolicyState;
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState ABI::Windows::Media::Playback::IMediaPlaybackSessionOutputDegradationPolicyState
+
+#endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_FWD_DEFINED__
@@ -951,6 +982,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer6 ABI::Windows::Media::Playback::IMediaPlayer6
 
 #endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer6_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                interface IMediaPlayer7;
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7 ABI::Windows::Media::Playback::IMediaPlayer7
+
+#endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_FWD_DEFINED__
@@ -1578,6 +1623,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_USE
@@ -1607,6 +1653,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaBreakManager*,ABI
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1619,6 +1666,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_USE
@@ -1649,6 +1697,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaBreakManager*,ABI
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1661,6 +1710,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_USE
@@ -1691,6 +1741,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaBreakManager*,ABI
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1703,6 +1754,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_USE
@@ -1732,6 +1784,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaBreakManager*,ABI
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 namespace ABI {
@@ -1797,6 +1850,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_USE
@@ -1826,6 +1880,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1838,6 +1893,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_USE
@@ -1868,6 +1924,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1880,6 +1937,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_USE
@@ -1910,6 +1968,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1922,6 +1981,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_USE
@@ -1952,6 +2012,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1964,6 +2025,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_USE
@@ -1994,6 +2056,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -2006,6 +2069,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_USE
@@ -2036,6 +2100,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -2048,6 +2113,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_USE
@@ -2078,6 +2144,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -2090,6 +2157,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_USE
@@ -2120,6 +2188,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -2132,6 +2201,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_USE
@@ -2162,6 +2232,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -2174,6 +2245,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_USE
@@ -2203,6 +2275,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 namespace ABI {
@@ -2268,6 +2341,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_USE
@@ -2297,6 +2371,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackList*,ABI
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -2309,6 +2384,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_USE
@@ -2339,6 +2415,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackList*,ABI
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -2351,6 +2428,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_USE
@@ -2380,6 +2458,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackList*,ABI
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -2564,6 +2643,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_USE
@@ -2592,6 +2672,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackTimedMeta
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -2648,6 +2729,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_USE
@@ -2677,6 +2759,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlayer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -2689,6 +2772,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_USE
@@ -2719,6 +2803,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlayer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -2731,6 +2816,7 @@ namespace ABI {
     } /* Playback */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_USE
@@ -2760,6 +2846,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlayer*,ABI::Wind
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3054,8 +3141,8 @@ namespace ABI {
 #endif // ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_FWD_DEFINED__
 
 
-#if WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_USE
@@ -3084,8 +3171,8 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackItem*,ABI
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_USE */
 
 
-#endif // WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -3618,6 +3705,33 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Media {
+            namespace Audio {
+                class AudioStateMonitor;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                interface IAudioStateMonitor;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor ABI::Windows::Media::Audio::IAudioStateMonitor
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
             namespace Casting {
                 class CastingSource;
             } /* Windows */
@@ -3721,6 +3835,17 @@ namespace ABI {
     } /* Media */} /* ABI */
 
 
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                
+                typedef enum MediaRotation : int MediaRotation;
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -4037,6 +4162,17 @@ namespace ABI {
         namespace Media {
             namespace Playback {
                 
+                typedef enum MediaPlaybackSessionVideoConstrictionReason : int MediaPlaybackSessionVideoConstrictionReason;
+                
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                
                 typedef enum MediaPlaybackState : int MediaPlaybackState;
                 
             } /* Windows */
@@ -4191,6 +4327,9 @@ namespace ABI {
 
 
 
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Media {
@@ -4243,6 +4382,16 @@ namespace ABI {
         namespace Media {
             namespace Playback {
                 class MediaPlaybackSessionBufferingStartedEventArgs;
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                class MediaPlaybackSessionOutputDegradationPolicyState;
             } /* Windows */
         } /* Media */
     } /* Playback */} /* ABI */
@@ -4474,6 +4623,38 @@ namespace ABI {
         } /* Media */
     } /* Playback */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Media.Playback.MediaPlaybackSessionVideoConstrictionReason
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                /* [v1_enum, contract] */
+                enum MediaPlaybackSessionVideoConstrictionReason : int
+                {
+                    MediaPlaybackSessionVideoConstrictionReason_None = 0,
+                    MediaPlaybackSessionVideoConstrictionReason_VirtualMachine = 1,
+                    MediaPlaybackSessionVideoConstrictionReason_UnsupportedDisplayAdapter = 2,
+                    MediaPlaybackSessionVideoConstrictionReason_UnsignedDriver = 3,
+                    MediaPlaybackSessionVideoConstrictionReason_FrameServerEnabled = 4,
+                    MediaPlaybackSessionVideoConstrictionReason_OutputProtectionFailed = 5,
+                    MediaPlaybackSessionVideoConstrictionReason_Unknown = 6,
+                };
+                
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4742,8 +4923,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                 DEPRECATED("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-                IBackgroundMediaPlayerStatics : IInspectable
+                IBackgroundMediaPlayerStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                     DEPRECATED("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
@@ -4842,8 +5024,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("1743A892-5C43-4A15-967A-572D2D0F26C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("1743A892-5C43-4A15-967A-572D2D0F26C6")
-                ICurrentMediaPlaybackItemChangedEventArgs : IInspectable
+                ICurrentMediaPlaybackItemChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NewItem(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackItem * * value
                         ) = 0;
@@ -4889,8 +5072,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("1D80A51E-996E-40A9-BE48-E66EC90B2B7D"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D80A51E-996E-40A9-BE48-E66EC90B2B7D")
-                ICurrentMediaPlaybackItemChangedEventArgs2 : IInspectable
+                ICurrentMediaPlaybackItemChangedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reason(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Playback::MediaPlaybackItemChangedReason * value
                         ) = 0;
@@ -4929,8 +5113,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("714BE270-0DEF-4EBC-A489-6B34930E1558"), exclusiveto, contract] */
                 MIDL_INTERFACE("714BE270-0DEF-4EBC-A489-6B34930E1558")
-                IMediaBreak : IInspectable
+                IMediaBreak : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PlaybackList(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackList * * value
                         ) = 0;
@@ -4984,8 +5169,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("32B93276-1C5D-4FEE-8732-236DC3A88580"), exclusiveto, contract] */
                 MIDL_INTERFACE("32B93276-1C5D-4FEE-8732-236DC3A88580")
-                IMediaBreakEndedEventArgs : IInspectable
+                IMediaBreakEndedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MediaBreak(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaBreak * * value
                         ) = 0;
@@ -5024,8 +5210,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("4516E002-18E0-4079-8B5F-D33495C15D2E"), exclusiveto, contract] */
                 MIDL_INTERFACE("4516E002-18E0-4079-8B5F-D33495C15D2E")
-                IMediaBreakFactory : IInspectable
+                IMediaBreakFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaBreak * * result
@@ -5070,8 +5257,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("A854DDB1-FEB4-4D9B-9D97-0FDBE58E5E39"), exclusiveto, contract] */
                 MIDL_INTERFACE("A854DDB1-FEB4-4D9B-9D97-0FDBE58E5E39")
-                IMediaBreakManager : IInspectable
+                IMediaBreakManager : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_BreaksSeekedOver(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -5145,8 +5333,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("A19A5813-98B6-41D8-83DA-F971D22B7BBA"), exclusiveto, contract] */
                 MIDL_INTERFACE("A19A5813-98B6-41D8-83DA-F971D22B7BBA")
-                IMediaBreakSchedule : IInspectable
+                IMediaBreakSchedule : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ScheduleChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -5213,8 +5402,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("E5AA6746-0606-4492-B9D3-C3C8FDE0A4EA"), exclusiveto, contract] */
                 MIDL_INTERFACE("E5AA6746-0606-4492-B9D3-C3C8FDE0A4EA")
-                IMediaBreakSeekedOverEventArgs : IInspectable
+                IMediaBreakSeekedOverEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SeekedOverBreaks(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak * * value
                         ) = 0;
@@ -5259,8 +5449,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("6EE94C05-2F54-4A3E-A3AB-24C3B270B4A3"), exclusiveto, contract] */
                 MIDL_INTERFACE("6EE94C05-2F54-4A3E-A3AB-24C3B270B4A3")
-                IMediaBreakSkippedEventArgs : IInspectable
+                IMediaBreakSkippedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MediaBreak(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaBreak * * value
                         ) = 0;
@@ -5299,8 +5490,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("A87EFE71-DFD4-454A-956E-0A4A648395F8"), exclusiveto, contract] */
                 MIDL_INTERFACE("A87EFE71-DFD4-454A-956E-0A4A648395F8")
-                IMediaBreakStartedEventArgs : IInspectable
+                IMediaBreakStartedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MediaBreak(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaBreak * * value
                         ) = 0;
@@ -5340,8 +5532,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                 DEPRECATED("Use MediaPlayer instead of MediaEngine. For more info, see MSDN.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                IMediaEnginePlaybackSource : IInspectable
+                IMediaEnginePlaybackSource : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("Use MediaPlayer instead of MediaEngine. For more info, see MSDN.")
@@ -5391,8 +5584,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("1E3C1B48-7097-4384-A217-C1291DFA8C16"), exclusiveto, contract] */
                 MIDL_INTERFACE("1E3C1B48-7097-4384-A217-C1291DFA8C16")
-                IMediaItemDisplayProperties : IInspectable
+                IMediaItemDisplayProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::MediaPlaybackType * value
                         ) = 0;
@@ -5447,8 +5641,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("5ACEE5A6-5CB6-4A5A-8521-CC86B1C1ED37"), exclusiveto, contract] */
                 MIDL_INTERFACE("5ACEE5A6-5CB6-4A5A-8521-CC86B1C1ED37")
-                IMediaPlaybackCommandManager : IInspectable
+                IMediaPlaybackCommandManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5593,8 +5788,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("3D6F4F23-5230-4411-A0E9-BAD94C2A045C"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D6F4F23-5230-4411-A0E9-BAD94C2A045C")
-                IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5642,8 +5838,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("786C1E78-CE78-4A10-AFD6-843FCBB90C2E"), exclusiveto, contract] */
                 MIDL_INTERFACE("786C1E78-CE78-4A10-AFD6-843FCBB90C2E")
-                IMediaPlaybackCommandManagerCommandBehavior : IInspectable
+                IMediaPlaybackCommandManagerCommandBehavior : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CommandManager(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackCommandManager * * value
                         ) = 0;
@@ -5698,8 +5895,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("30F064D9-B491-4D0A-BC21-3098BD1332E9"), exclusiveto, contract] */
                 MIDL_INTERFACE("30F064D9-B491-4D0A-BC21-3098BD1332E9")
-                IMediaPlaybackCommandManagerFastForwardReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerFastForwardReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5744,8 +5942,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("E1504433-A2B0-45D4-B9DE-5F42AC14A839"), exclusiveto, contract] */
                 MIDL_INTERFACE("E1504433-A2B0-45D4-B9DE-5F42AC14A839")
-                IMediaPlaybackCommandManagerNextReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerNextReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5790,8 +5989,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("5CECCD1C-C25C-4221-B16C-C3C98CE012D6"), exclusiveto, contract] */
                 MIDL_INTERFACE("5CECCD1C-C25C-4221-B16C-C3C98CE012D6")
-                IMediaPlaybackCommandManagerPauseReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerPauseReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5836,8 +6036,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("9AF0004E-578B-4C56-A006-16159D888A48"), exclusiveto, contract] */
                 MIDL_INTERFACE("9AF0004E-578B-4C56-A006-16159D888A48")
-                IMediaPlaybackCommandManagerPlayReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerPlayReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5882,8 +6083,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("5591A754-D627-4BDD-A90D-86A015B24902"), exclusiveto, contract] */
                 MIDL_INTERFACE("5591A754-D627-4BDD-A90D-86A015B24902")
-                IMediaPlaybackCommandManagerPositionReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerPositionReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5931,8 +6133,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("525E3081-4632-4F76-99B1-D771623F6287"), exclusiveto, contract] */
                 MIDL_INTERFACE("525E3081-4632-4F76-99B1-D771623F6287")
-                IMediaPlaybackCommandManagerPreviousReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerPreviousReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5977,8 +6180,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("18EA3939-4A16-4169-8B05-3EB9F5FF78EB"), exclusiveto, contract] */
                 MIDL_INTERFACE("18EA3939-4A16-4169-8B05-3EB9F5FF78EB")
-                IMediaPlaybackCommandManagerRateReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerRateReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6026,8 +6230,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("9F085947-A3C0-425D-AAEF-97BA7898B141"), exclusiveto, contract] */
                 MIDL_INTERFACE("9F085947-A3C0-425D-AAEF-97BA7898B141")
-                IMediaPlaybackCommandManagerRewindReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerRewindReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6072,8 +6277,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("50A05CEF-63EE-4A96-B7B5-FEE08B9FF90C"), exclusiveto, contract] */
                 MIDL_INTERFACE("50A05CEF-63EE-4A96-B7B5-FEE08B9FF90C")
-                IMediaPlaybackCommandManagerShuffleReceivedEventArgs : IInspectable
+                IMediaPlaybackCommandManagerShuffleReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6125,8 +6331,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("047097D2-E4AF-48AB-B283-6929E674ECE2"), exclusiveto, contract] */
                 MIDL_INTERFACE("047097D2-E4AF-48AB-B283-6929E674ECE2")
-                IMediaPlaybackItem : IInspectable
+                IMediaPlaybackItem : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AudioTracksChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -6200,8 +6407,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("D859D171-D7EF-4B81-AC1F-F40493CBB091"), exclusiveto, contract] */
                 MIDL_INTERFACE("D859D171-D7EF-4B81-AC1F-F40493CBB091")
-                IMediaPlaybackItem2 : IInspectable
+                IMediaPlaybackItem2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BreakSchedule(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaBreakSchedule * * value
                         ) = 0;
@@ -6264,8 +6472,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("0D328220-B80A-4D09-9FF8-F87094A1C831"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D328220-B80A-4D09-9FF8-F87094A1C831")
-                IMediaPlaybackItem3 : IInspectable
+                IMediaPlaybackItem3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsDisabledInPlaybackList(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6316,8 +6525,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("69FBEF2B-DCD6-4DF9-A450-DBF4C6F1C2C2"), exclusiveto, contract] */
                 MIDL_INTERFACE("69FBEF2B-DCD6-4DF9-A450-DBF4C6F1C2C2")
-                IMediaPlaybackItemError : IInspectable
+                IMediaPlaybackItemError : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ErrorCode(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Playback::MediaPlaybackItemErrorCode * value
                         ) = 0;
@@ -6359,8 +6569,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("7133FCE1-1769-4FF9-A7C1-38D2C4D42360"), exclusiveto, contract] */
                 MIDL_INTERFACE("7133FCE1-1769-4FF9-A7C1-38D2C4D42360")
-                IMediaPlaybackItemFactory : IInspectable
+                IMediaPlaybackItemFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Core::IMediaSource2 * source,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackItem * * value
@@ -6404,8 +6615,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("D77CDF3A-B947-4972-B35D-ADFB931A71E6"), exclusiveto, contract] */
                 MIDL_INTERFACE("D77CDF3A-B947-4972-B35D-ADFB931A71E6")
-                IMediaPlaybackItemFactory2 : IInspectable
+                IMediaPlaybackItemFactory2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithStartTime(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Core::IMediaSource2 * source,
                         /* [in] */ABI::Windows::Foundation::TimeSpan startTime,
@@ -6452,8 +6664,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("7703134A-E9A7-47C3-862C-C656D30683D4"), exclusiveto, contract] */
                 MIDL_INTERFACE("7703134A-E9A7-47C3-862C-C656D30683D4")
-                IMediaPlaybackItemFailedEventArgs : IInspectable
+                IMediaPlaybackItemFailedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Item(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackItem * * value
                         ) = 0;
@@ -6495,8 +6708,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("CBD9BD82-3037-4FBE-AE8F-39FC39EDF4EF"), exclusiveto, contract] */
                 MIDL_INTERFACE("CBD9BD82-3037-4FBE-AE8F-39FC39EDF4EF")
-                IMediaPlaybackItemOpenedEventArgs : IInspectable
+                IMediaPlaybackItemOpenedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Item(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackItem * * value
                         ) = 0;
@@ -6535,8 +6749,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("4B1BE7F4-4345-403C-8A67-F5DE91DF4C86"), exclusiveto, contract] */
                 MIDL_INTERFACE("4B1BE7F4-4345-403C-8A67-F5DE91DF4C86")
-                IMediaPlaybackItemStatics : IInspectable
+                IMediaPlaybackItemStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindFromMediaSource(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Core::IMediaSource2 * source,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackItem * * value
@@ -6580,8 +6795,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("7F77EE9C-DC42-4E26-A98D-7850DF8EC925"), exclusiveto, contract] */
                 MIDL_INTERFACE("7F77EE9C-DC42-4E26-A98D-7850DF8EC925")
-                IMediaPlaybackList : IInspectable
+                IMediaPlaybackList : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ItemFailed(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -6674,8 +6890,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("0E09B478-600A-4274-A14B-0B6723D0F48B"), exclusiveto, contract] */
                 MIDL_INTERFACE("0E09B478-600A-4274-A14B-0B6723D0F48B")
-                IMediaPlaybackList2 : IInspectable
+                IMediaPlaybackList2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPrefetchTime(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -6735,8 +6952,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("DD24BBA9-BC47-4463-AA90-C18B7E5FFDE1"), exclusiveto, contract] */
                 MIDL_INTERFACE("DD24BBA9-BC47-4463-AA90-C18B7E5FFDE1")
-                IMediaPlaybackList3 : IInspectable
+                IMediaPlaybackList3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPlayedItemsToKeepOpen(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_UINT32 * * value
                         ) = 0;
@@ -6778,8 +6996,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("C32B683D-0407-41BA-8946-8B345A5A5435"), exclusiveto, contract] */
                 MIDL_INTERFACE("C32B683D-0407-41BA-8946-8B345A5A5435")
-                IMediaPlaybackSession : IInspectable
+                IMediaPlaybackSession : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PlaybackStateChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -6939,8 +7158,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("F8BA7C79-1FC8-4097-AD70-C0FA18CC0050"), exclusiveto, contract] */
                 MIDL_INTERFACE("F8BA7C79-1FC8-4097-AD70-C0FA18CC0050")
-                IMediaPlaybackSession2 : IInspectable
+                IMediaPlaybackSession2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_BufferedRangesChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -7008,6 +7228,53 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2
 
 /*
  *
+ * Interface Windows.Media.Playback.IMediaPlaybackSession3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Playback.MediaPlaybackSession
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlaybackSession3[] = L"Windows.Media.Playback.IMediaPlaybackSession3";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                /* [object, uuid("7BA2B41A-A3E2-405F-B77B-A4812C238B66"), exclusiveto, contract] */
+                MIDL_INTERFACE("7BA2B41A-A3E2-405F-B77B-A4812C238B66")
+                IMediaPlaybackSession3 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PlaybackRotation(
+                        /* [retval, out] */__RPC__out ABI::Windows::Media::MediaProperties::MediaRotation * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PlaybackRotation(
+                        /* [in] */ABI::Windows::Media::MediaProperties::MediaRotation value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetOutputDegradationPolicyState(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackSessionOutputDegradationPolicyState * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaPlaybackSession3=_uuidof(IMediaPlaybackSession3);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Playback.IMediaPlaybackSessionBufferingStartedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -7027,8 +7294,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("CD6AAFED-74E2-43B5-B115-76236C33791A"), exclusiveto, contract] */
                 MIDL_INTERFACE("CD6AAFED-74E2-43B5-B115-76236C33791A")
-                IMediaPlaybackSessionBufferingStartedEventArgs : IInspectable
+                IMediaPlaybackSessionBufferingStartedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPlaybackInterruption(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -7044,6 +7312,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Media.Playback.IMediaPlaybackSessionOutputDegradationPolicyState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Playback.MediaPlaybackSessionOutputDegradationPolicyState
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlaybackSessionOutputDegradationPolicyState[] = L"Windows.Media.Playback.IMediaPlaybackSessionOutputDegradationPolicyState";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                /* [object, uuid("558E727D-F633-49F9-965A-ABAA1DB709BE"), exclusiveto, contract] */
+                MIDL_INTERFACE("558E727D-F633-49F9-965A-ABAA1DB709BE")
+                IMediaPlaybackSessionOutputDegradationPolicyState : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VideoConstrictionReason(
+                        /* [retval, out] */__RPC__out ABI::Windows::Media::Playback::MediaPlaybackSessionVideoConstrictionReason * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaPlaybackSessionOutputDegradationPolicyState=_uuidof(IMediaPlaybackSessionOutputDegradationPolicyState);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7064,8 +7373,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("EF9DC2BC-9317-4696-B051-2BAD643177B5"), contract] */
                 MIDL_INTERFACE("EF9DC2BC-9317-4696-B051-2BAD643177B5")
-                IMediaPlaybackSource : IInspectable
+                IMediaPlaybackSource : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -7101,8 +7411,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("D405B37C-6F0E-4661-B8EE-D487BA9752D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("D405B37C-6F0E-4661-B8EE-D487BA9752D5")
-                IMediaPlaybackSphericalVideoProjection : IInspectable
+                IMediaPlaybackSphericalVideoProjection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -7168,8 +7479,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("72B41319-BBFB-46A3-9372-9C9C744B9438"), exclusiveto, contract] */
                 MIDL_INTERFACE("72B41319-BBFB-46A3-9372-9C9C744B9438")
-                IMediaPlaybackTimedMetadataTrackList : IInspectable
+                IMediaPlaybackTimedMetadataTrackList : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PresentationModeChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -7220,8 +7532,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("381A83CB-6FFF-499B-8D64-2885DFC1249E"), exclusiveto, contract] */
                 MIDL_INTERFACE("381A83CB-6FFF-499B-8D64-2885DFC1249E")
-                IMediaPlayer : IInspectable
+                IMediaPlayer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AutoPlay(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -7485,8 +7798,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("3C841218-2123-4FC5-9082-2F883F77BDF5"), exclusiveto, contract] */
                 MIDL_INTERFACE("3C841218-2123-4FC5-9082-2F883F77BDF5")
-                IMediaPlayer2 : IInspectable
+                IMediaPlayer2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SystemMediaTransportControls(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::ISystemMediaTransportControls * * value
                         ) = 0;
@@ -7537,8 +7851,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("EE0660DA-031B-4FEB-BD9B-92E0A0A8D299"), exclusiveto, contract] */
                 MIDL_INTERFACE("EE0660DA-031B-4FEB-BD9B-92E0A0A8D299")
-                IMediaPlayer3 : IInspectable
+                IMediaPlayer3 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_IsMutedChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -7638,8 +7953,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("80035DB0-7448-4770-AFCF-2A57450914C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("80035DB0-7448-4770-AFCF-2A57450914C5")
-                IMediaPlayer4 : IInspectable
+                IMediaPlayer4 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetSurfaceSize(
                         /* [in] */ABI::Windows::Foundation::Size size
                         ) = 0;
@@ -7682,8 +7998,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("CFE537FD-F86A-4446-BF4D-C8E792B7B4B3"), exclusiveto, contract] */
                 MIDL_INTERFACE("CFE537FD-F86A-4446-BF4D-C8E792B7B4B3")
-                IMediaPlayer5 : IInspectable
+                IMediaPlayer5 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_VideoFrameAvailable(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -7743,8 +8060,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("E0CAA086-AE65-414C-B010-8BC55F00E692"), exclusiveto, contract] */
                 MIDL_INTERFACE("E0CAA086-AE65-414C-B010-8BC55F00E692")
-                IMediaPlayer6 : IInspectable
+                IMediaPlayer6 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SubtitleFrameChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -7777,6 +8095,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer6;
 
 /*
  *
+ * Interface Windows.Media.Playback.IMediaPlayer7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Playback.MediaPlayer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlayer7[] = L"Windows.Media.Playback.IMediaPlayer7";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                /* [object, uuid("5D1DC478-4500-4531-B3F4-777A71491F7F"), exclusiveto, contract] */
+                MIDL_INTERFACE("5D1DC478-4500-4531-B3F4-777A71491F7F")
+                IMediaPlayer7 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioStateMonitor(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioStateMonitor * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaPlayer7=_uuidof(IMediaPlayer7);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Playback.IMediaPlayerDataReceivedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7796,8 +8155,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("C75A9405-C801-412A-835B-83FC0E622A8E"), exclusiveto, contract] */
                 MIDL_INTERFACE("C75A9405-C801-412A-835B-83FC0E622A8E")
-                IMediaPlayerDataReceivedEventArgs : IInspectable
+                IMediaPlayerDataReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
                         ) = 0;
@@ -7836,8 +8196,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("85A1DEDA-CAB6-4CC0-8BE3-6035F4DE2591"), exclusiveto, contract] */
                 MIDL_INTERFACE("85A1DEDA-CAB6-4CC0-8BE3-6035F4DE2591")
-                IMediaPlayerEffects : IInspectable
+                IMediaPlayerEffects : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AddAudioEffect(
                         /* [in] */__RPC__in HSTRING activatableClassId,
                         /* [in] */boolean effectOptional,
@@ -7879,8 +8240,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("FA419A79-1BBE-46C5-AE1F-8EE69FB3C2C7"), exclusiveto, contract] */
                 MIDL_INTERFACE("FA419A79-1BBE-46C5-AE1F-8EE69FB3C2C7")
-                IMediaPlayerEffects2 : IInspectable
+                IMediaPlayerEffects2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AddVideoEffect(
                         /* [in] */__RPC__in HSTRING activatableClassId,
                         /* [in] */boolean effectOptional,
@@ -7921,8 +8283,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("2744E9B9-A7E3-4F16-BAC4-7914EBC08301"), exclusiveto, contract] */
                 MIDL_INTERFACE("2744E9B9-A7E3-4F16-BAC4-7914EBC08301")
-                IMediaPlayerFailedEventArgs : IInspectable
+                IMediaPlayerFailedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Playback::MediaPlayerError * value
                         ) = 0;
@@ -7967,8 +8330,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("40600D58-3B61-4BB2-989F-FC65608B6CAB"), exclusiveto, contract] */
                 MIDL_INTERFACE("40600D58-3B61-4BB2-989F-FC65608B6CAB")
-                IMediaPlayerRateChangedEventArgs : IInspectable
+                IMediaPlayerRateChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NewRate(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -8007,8 +8371,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("BD4F8897-1423-4C3E-82C5-0FB1AF94F715"), exclusiveto, contract] */
                 MIDL_INTERFACE("BD4F8897-1423-4C3E-82C5-0FB1AF94F715")
-                IMediaPlayerSource : IInspectable
+                IMediaPlayerSource : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProtectionManager(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Protection::IMediaProtectionManager * * value
                         ) = 0;
@@ -8071,8 +8436,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("82449B9F-7322-4C0B-B03B-3E69A48260C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("82449B9F-7322-4C0B-B03B-3E69A48260C5")
-                IMediaPlayerSource2 : IInspectable
+                IMediaPlayerSource2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Source(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackSource * * value
                         ) = 0;
@@ -8114,8 +8480,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("0ED653BC-B736-49C3-830B-764A3845313A"), exclusiveto, contract] */
                 MIDL_INTERFACE("0ED653BC-B736-49C3-830B-764A3845313A")
-                IMediaPlayerSurface : IInspectable
+                IMediaPlayerSurface : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompositionSurface(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionSurface * * value
                         ) = 0;
@@ -8160,8 +8527,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("C4D22F5C-3C1C-4444-B6B9-778B0422D41A"), exclusiveto, contract] */
                 MIDL_INTERFACE("C4D22F5C-3C1C-4444-B6B9-778B0422D41A")
-                IPlaybackMediaMarker : IInspectable
+                IPlaybackMediaMarker : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Time(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -8206,8 +8574,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("8C530A78-E0AE-4E1A-A8C8-E23F982A937B"), exclusiveto, contract] */
                 MIDL_INTERFACE("8C530A78-E0AE-4E1A-A8C8-E23F982A937B")
-                IPlaybackMediaMarkerFactory : IInspectable
+                IPlaybackMediaMarkerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromTime(
                         /* [in] */ABI::Windows::Foundation::TimeSpan value,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IPlaybackMediaMarker * * marker
@@ -8253,8 +8622,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("578CD1B9-90E2-4E60-ABC4-8740B01F6196"), exclusiveto, contract] */
                 MIDL_INTERFACE("578CD1B9-90E2-4E60-ABC4-8740B01F6196")
-                IPlaybackMediaMarkerReachedEventArgs : IInspectable
+                IPlaybackMediaMarkerReachedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PlaybackMediaMarker(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IPlaybackMediaMarker * * value
                         ) = 0;
@@ -8297,8 +8667,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("F2810CEE-638B-46CF-8817-1D111FE9D8C4"), exclusiveto, contract] */
                 MIDL_INTERFACE("F2810CEE-638B-46CF-8817-1D111FE9D8C4")
-                IPlaybackMediaMarkerSequence : IInspectable
+                IPlaybackMediaMarkerSequence : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Size(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -8341,8 +8712,9 @@ namespace ABI {
             namespace Playback {
                 /* [object, uuid("D1636099-65DF-45AE-8CEF-DC0B53FDC2BB"), exclusiveto, contract] */
                 MIDL_INTERFACE("D1636099-65DF-45AE-8CEF-DC0B53FDC2BB")
-                ITimedMetadataPresentationModeChangedEventArgs : IInspectable
+                ITimedMetadataPresentationModeChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Track(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::ITimedMetadataTrack * * value
                         ) = 0;
@@ -9049,6 +9421,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Playback.IMediaPlaybackSession ** Default Interface **
  *    Windows.Media.Playback.IMediaPlaybackSession2
+ *    Windows.Media.Playback.IMediaPlaybackSession3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -9086,6 +9459,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Playback_MediaPlaybackSessionBufferingStartedEventArgs[] = L"Windows.Media.Playback.MediaPlaybackSessionBufferingStartedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Class Windows.Media.Playback.MediaPlaybackSessionOutputDegradationPolicyState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Playback.IMediaPlaybackSessionOutputDegradationPolicyState ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_DEFINED
+#define RUNTIMECLASS_Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState[] = L"Windows.Media.Playback.MediaPlaybackSessionOutputDegradationPolicyState";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9186,6 +9583,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Playback.IMediaPlayerEffects2
  *    Windows.Media.Playback.IMediaPlayer5
  *    Windows.Media.Playback.IMediaPlayer6
+ *    Windows.Media.Playback.IMediaPlayer7
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -9624,11 +10022,23 @@ typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 __x_
 
 #endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3;
+
+#endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs;
 
 #endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState;
+
+#endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_FWD_DEFINED__
@@ -9683,6 +10093,12 @@ typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 __x_ABI_CWind
 typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer6 __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer6;
 
 #endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer6_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7 __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7;
+
+#endif // ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_FWD_DEFINED__
@@ -10781,6 +11197,7 @@ interface __FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceive
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_INTERFACE_DEFINED__
 
@@ -10828,9 +11245,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__
@@ -10879,9 +11298,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_INTERFACE_DEFINED__
@@ -10930,9 +11351,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_INTERFACE_DEFINED__
@@ -10980,6 +11403,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -11036,6 +11460,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedul
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__
 
@@ -11083,9 +11508,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__
@@ -11134,9 +11561,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__
@@ -11185,9 +11614,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__
@@ -11236,9 +11667,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__
@@ -11287,9 +11720,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__
@@ -11338,9 +11773,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__
@@ -11389,9 +11826,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__
@@ -11440,9 +11879,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__
@@ -11491,9 +11932,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__
@@ -11541,6 +11984,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -11597,6 +12041,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackComm
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__
 
@@ -11644,9 +12089,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__
@@ -11695,9 +12142,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__
@@ -11745,6 +12194,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -12080,6 +12530,7 @@ interface __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__
 
@@ -12126,6 +12577,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTime
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -12182,6 +12634,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInsp
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_INTERFACE_DEFINED__
 
@@ -12229,9 +12682,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__
@@ -12280,9 +12735,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__
@@ -12330,6 +12787,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windo
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -12964,8 +13422,8 @@ typedef interface __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEvent
 #endif // ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_FWD_DEFINED__
 
 
-#if WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_INTERFACE_DEFINED__
 
@@ -13012,8 +13470,8 @@ interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_INTERFACE_DEFINED__
 
-#endif // WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaTrack_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaTrack_FWD_DEFINED__
@@ -13966,6 +14424,16 @@ typedef interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurf
 
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor;
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+
+
+
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CCasting_CICastingSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCasting_CICastingSource_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CCasting_CICastingSource __x_ABI_CWindows_CMedia_CCasting_CICastingSource;
@@ -14010,6 +14478,9 @@ typedef enum __x_ABI_CWindows_CMedia_CMediaPlaybackAutoRepeatMode __x_ABI_CWindo
 typedef enum __x_ABI_CWindows_CMedia_CMediaPlaybackType __x_ABI_CWindows_CMedia_CMediaPlaybackType;
 
 
+
+
+typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CMediaRotation __x_ABI_CWindows_CMedia_CMediaProperties_CMediaRotation;
 
 
 typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat;
@@ -14127,6 +14598,9 @@ typedef enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackItemChangedReason _
 typedef enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackItemErrorCode __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackItemErrorCode;
 
 
+typedef enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackSessionVideoConstrictionReason __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackSessionVideoConstrictionReason;
+
+
 typedef enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackState __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackState;
 
 
@@ -14149,6 +14623,10 @@ typedef enum __x_ABI_CWindows_CMedia_CPlayback_CStereoscopicVideoRenderMode __x_
 
 
 typedef enum __x_ABI_CWindows_CMedia_CPlayback_CTimedMetadataTrackPresentationMode __x_ABI_CWindows_CMedia_CPlayback_CTimedMetadataTrackPresentationMode;
+
+
+
+
 
 
 
@@ -14384,6 +14862,30 @@ enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackItemErrorCode
     MediaPlaybackItemErrorCode_EncryptionError = 5,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Media.Playback.MediaPlaybackSessionVideoConstrictionReason
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackSessionVideoConstrictionReason
+{
+    MediaPlaybackSessionVideoConstrictionReason_None = 0,
+    MediaPlaybackSessionVideoConstrictionReason_VirtualMachine = 1,
+    MediaPlaybackSessionVideoConstrictionReason_UnsupportedDisplayAdapter = 2,
+    MediaPlaybackSessionVideoConstrictionReason_UnsignedDriver = 3,
+    MediaPlaybackSessionVideoConstrictionReason_FrameServerEnabled = 4,
+    MediaPlaybackSessionVideoConstrictionReason_OutputProtectionFailed = 5,
+    MediaPlaybackSessionVideoConstrictionReason_Unknown = 6,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -19764,6 +20266,113 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2
 
 /*
  *
+ * Interface Windows.Media.Playback.IMediaPlaybackSession3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Playback.MediaPlaybackSession
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlaybackSession3[] = L"Windows.Media.Playback.IMediaPlaybackSession3";
+/* [object, uuid("7BA2B41A-A3E2-405F-B77B-A4812C238B66"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PlaybackRotation )(
+        __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CMedia_CMediaProperties_CMediaRotation * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_PlaybackRotation )(
+        __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CMediaProperties_CMediaRotation value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetOutputDegradationPolicyState )(
+        __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_get_PlaybackRotation(This,value) \
+    ( (This)->lpVtbl->get_PlaybackRotation(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_put_PlaybackRotation(This,value) \
+    ( (This)->lpVtbl->put_PlaybackRotation(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_GetOutputDegradationPolicyState(This,value) \
+    ( (This)->lpVtbl->GetOutputDegradationPolicyState(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Playback.IMediaPlaybackSessionBufferingStartedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -19853,6 +20462,99 @@ interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStart
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionBufferingStartedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Media.Playback.IMediaPlaybackSessionOutputDegradationPolicyState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Playback.MediaPlaybackSessionOutputDegradationPolicyState
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlaybackSessionOutputDegradationPolicyState[] = L"Windows.Media.Playback.IMediaPlaybackSessionOutputDegradationPolicyState";
+/* [object, uuid("558E727D-F633-49F9-965A-ABAA1DB709BE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyStateVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_VideoConstrictionReason )(
+        __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackSessionVideoConstrictionReason * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyStateVtbl;
+
+interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyStateVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_get_VideoConstrictionReason(This,value) \
+    ( (This)->lpVtbl->get_VideoConstrictionReason(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSessionOutputDegradationPolicyState_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -21507,6 +22209,99 @@ interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer6
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer6;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer6_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Media.Playback.IMediaPlayer7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Playback.MediaPlayer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlayer7[] = L"Windows.Media.Playback.IMediaPlayer7";
+/* [object, uuid("5D1DC478-4500-4531-B3F4-777A71491F7F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AudioStateMonitor )(
+        __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_get_AudioStateMonitor(This,value) \
+    ( (This)->lpVtbl->get_AudioStateMonitor(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -23554,6 +24349,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Playback.IMediaPlaybackSession ** Default Interface **
  *    Windows.Media.Playback.IMediaPlaybackSession2
+ *    Windows.Media.Playback.IMediaPlaybackSession3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -23591,6 +24387,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Playback_MediaPlaybackSessionBufferingStartedEventArgs[] = L"Windows.Media.Playback.MediaPlaybackSessionBufferingStartedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Class Windows.Media.Playback.MediaPlaybackSessionOutputDegradationPolicyState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Playback.IMediaPlaybackSessionOutputDegradationPolicyState ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_DEFINED
+#define RUNTIMECLASS_Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState[] = L"Windows.Media.Playback.MediaPlaybackSessionOutputDegradationPolicyState";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -23691,6 +24511,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Playback.IMediaPlayerEffects2
  *    Windows.Media.Playback.IMediaPlayer5
  *    Windows.Media.Playback.IMediaPlayer6
+ *    Windows.Media.Playback.IMediaPlayer7
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

@@ -53,6 +53,7 @@
 #define SZ_KEY_LOGCONFIG        TEXT("LogConfig")
 #define SZ_KEY_ADDSERVICE       TEXT("AddService")
 #define SZ_KEY_DELSERVICE       TEXT("DelService")
+#define SZ_KEY_ADDTRIGGER       TEXT("AddTrigger")
 #define SZ_KEY_ADDINTERFACE     TEXT("AddInterface")
 #define SZ_KEY_ADDIME           TEXT("AddIme")
 #define SZ_KEY_DELIME           TEXT("DelIme")
@@ -131,6 +132,11 @@
 #define INFSTR_SECT_CLASS_INSTALL_32    TEXT("ClassInstall32")
 
 //
+// Used to install a primitive INF
+//
+#define INFSTR_SECT_DEFAULT_INSTALL     TEXT("DefaultInstall")
+
+//
 //  Used to install an interface class
 //
 #define INFSTR_SECT_INTERFACE_INSTALL_32 TEXT("InterfaceInstall32")
@@ -193,6 +199,14 @@
 #define INFSTR_KEY_STARTNAME            TEXT("StartName")
 #define INFSTR_KEY_SECURITY             TEXT("Security")
 #define INFSTR_KEY_DESCRIPTION          TEXT("Description")
+
+//
+// Used for Triggers within a Service section.
+//
+#define INFSTR_KEY_TRIGGER_TYPE         TEXT("TriggerType")
+#define INFSTR_KEY_ACTION               TEXT("Action")
+#define INFSTR_KEY_SUB_TYPE             TEXT("SubType")
+#define INFSTR_KEY_DATA_ITEM            TEXT("DataItem")
 
 // The following are the characters to parse IORange and MemRange fields.
 #define CH_SIZE_DELIM                   TEXT('@')

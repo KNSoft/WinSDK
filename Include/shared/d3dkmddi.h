@@ -129,8 +129,8 @@ typedef _Out_         SIZE_T*   CONST       OUT_PSIZE_T_CONST;
 
 typedef struct _DXGKARG_RENDER
 {
-    CONST VOID* CONST           pCommand;
-    CONST UINT                  CommandLength;
+    CONST VOID*                 pCommand;
+    UINT                        CommandLength;
     VOID*                       pDmaBuffer;
     UINT                        DmaSize;
     VOID*                       pDmaBufferPrivateData;
@@ -711,6 +711,12 @@ typedef enum _DXGK_INTERRUPT_TYPE
     DXGK_INTERRUPT_PERIODIC_MONITORED_FENCE_SIGNALED = 14,
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+    DXGK_INTERRUPT_SCHEDULING_LOG_INTERRUPT = 15,
+    DXGK_INTERRUPT_GPU_ENGINE_TIMEOUT = 16,
+    DXGK_INTERRUPT_SUSPEND_CONTEXT_COMPLETED = 17
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
 } DXGK_INTERRUPT_TYPE;
 
 
@@ -901,6 +907,26 @@ typedef struct _DXGKARGCB_NOTIFY_INTERRUPT_DATA
             UINT                              NotificationID;   // in: The notification id as multiple can be attached to one VidPnSource.
         } PeriodicMonitoredFenceSignaled;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+        struct
+        {
+            UINT    NodeOrdinal;            // in: Node ordinal of engine that raised the scheduling log interrupt.
+            UINT    EngineOrdinal;          // in: Engine ordinal of engine that raised the scheduling log interrupt.
+        } SchedulingLogInterrupt;
+
+        struct
+        {
+            UINT    NodeOrdinal;            // in: Node ordinal of engine that timed out and needs the reset.
+            UINT    EngineOrdinal;          // in: Engine ordinal of engine that timed out and needs the reset.
+        } GpuEngineTimeout;
+
+        struct
+        {
+            HANDLE  hContext;               // in: Hardware context that the suspend acknowledgment is for.
+            UINT64  ContextSuspendFence;    // in: Context suspend fence.
+        } SuspendContextCompleted;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 
         struct
         {
@@ -1530,6 +1556,15 @@ typedef enum _DXGK_QUERYADAPTERINFOTYPE
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
     DXGKQAITYPE_DISPLAYID_DESCRIPTOR   = 20,
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+    DXGKQAITYPE_FRAMEBUFFERSAVESIZE    = 21,
+    DXGKQAITYPE_HARDWARERESERVEDRANGES = 22,
+    DXGKQAITYPE_INTEGRATED_DISPLAY_DESCRIPTOR2  = 23,
+    DXGKQAITYPE_NODEPERFDATA            = 24,
+    DXGKQAITYPE_ADAPTERPERFDATA         = 25,
+    DXGKQAITYPE_ADAPTERPERFDATA_CAPS    = 26,
+    DXGKQAITYPE_GPUVERSION              = 27,
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
 } DXGK_QUERYADAPTERINFOTYPE;
 
 typedef struct _DXGK_GAMMARAMPCAPS
@@ -1830,6 +1865,28 @@ typedef struct _DXGK_CPUHOSTAPERTURE
     UINT32  SizeInPages;                // Size in CPU host pages
 } DXGK_CPUHOSTAPERTURE;
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+typedef struct _DXGK_FRAMEBUFFERSAVEAREA
+{
+    SIZE_T MaximumSize;
+} DXGK_FRAMEBUFFERSAVEAREA;
+
+typedef struct _DXGK_PHYSICAL_MEMORY_RANGE
+{
+    PHYSICAL_ADDRESS BaseAddress;
+    LARGE_INTEGER NumberOfBytes;
+} DXGK_PHYSICAL_MEMORY_RANGE;
+
+typedef struct _DXGK_HARDWARERESERVEDRANGES
+{
+    UINT32 NumRanges;
+    _Field_size_(NumRanges)
+    DXGK_PHYSICAL_MEMORY_RANGE *pPhysicalRanges;
+} DXGK_HARDWARERESERVEDRANGES;
+
+#endif // DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4
+
 #endif // DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0
 
 typedef struct _DXGK_VIDMMCAPS
@@ -1853,8 +1910,14 @@ typedef struct _DXGK_VIDMMCAPS
             UINT    NonCpuVisiblePrimary        : 1;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
             UINT    ParavirtualizationSupported : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+            UINT    IoMmuSecureModeSupported    : 1;
+            UINT    DisableSelfRefreshVRAMInS3  : 1;
+            UINT    Reserved                    : 19;
+#else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_4
             UINT    Reserved                    : 21;
-#else
+#endif // DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4
+#else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_2
             UINT    Reserved                    : 22;
 #endif // DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2
 #else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_0
@@ -1934,6 +1997,7 @@ typedef enum _DXGK_WDDMVERSION // _ADVSCH_
      DXGKDDI_WDDMv2_1 = 0x2100,
      DXGKDDI_WDDMv2_2 = 0x2200,
      DXGKDDI_WDDMv2_3 = 0x2300,
+     DXGKDDI_WDDMv2_4 = 0x2400,
 } DXGK_WDDMVERSION;
 #endif // DXGKDDI_INTERFACE_VERSION
 
@@ -1992,6 +2056,18 @@ typedef struct _DXGK_DRIVERCAPS
     BOOLEAN                 HybridAcpiChainingRequired;
     UINT                    MaxQueuedMultiPlaneOverlayFlipVSync;
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_1
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+    union
+    {
+        struct
+        {
+            UINT SupportContextlessPresent : 1;
+            UINT Detachable : 1;
+            UINT Reserved : 30;
+        };
+        UINT Value;
+    } MiscCaps;
+#endif
 
 
 } DXGK_DRIVERCAPS;
@@ -2350,6 +2426,27 @@ typedef struct _DXGK_QUERYDISPLAYIDOUT
 
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+typedef struct _DXGK_QUERYINTEGRATEDDISPLAYOUT2
+{
+    DXGK_INTEGRATEDDISPLAYFLAGS         Flags;
+
+    D3DKMDT_VIDEO_SIGNAL_INFO           NativeTiming;
+
+    DXGK_MONITORLINKINFO_CAPABILITIES   LinkCapabilities;
+
+    DXGK_COLORIMETRY                    Colorimetry;
+
+    DXGK_DISPLAY_TECHNOLOGY             DisplayTechnology;
+    DXGK_DISPLAY_USAGE                  IntendedUsage;
+    BYTE                                Instance;
+    DXGK_DISPLAY_DESCRIPTOR_TYPE        DescriptorType;
+
+    D3DKMDT_WIRE_FORMAT_AND_PREFERENCE  DitheringSupport;
+} DXGK_QUERYINTEGRATEDDISPLAYOUT2, *PDXGK_QUERYINTEGRATEDDISPLAYOUT2;
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
 
 //
 // Defines for runtime power management
@@ -2485,6 +2582,20 @@ typedef struct _DXGK_POWER_COMPONENT_MAPPING
           UINT  SegmentID;		// Zero based memory segment index
       } MemoryDesc;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+      struct DXGK_POWER_COMPONENT_SHARED_DESC
+      {
+          union
+          {
+              struct
+              {
+                  WORD SharedTypeFlag;       // DXGKMT_POWER_SHARED_TYPE
+                  WORD DriverCustomValueSet; // Indicates if custom value, rather than DXGKMT_POWER_SHARED_TYPE
+              };
+              UINT  SharedType;
+          };
+      } SharedDesc;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
    };
 } DXGK_POWER_COMPONENT_MAPPING;
 
@@ -2580,7 +2691,8 @@ typedef struct _DXGK_QUERYADAPTERINFOFLAGS
         struct
         {
             UINT    VirtualMachineData          : 1;    // 0x00000001
-            UINT    Reserved                    :31;    // 0xFFFFFFFE
+            UINT    SecureVirtualMachine        : 1;    // 0x00000002
+            UINT    Reserved                    :30;    // 0xFFFFFFFC
         };
         UINT Value;
     };
@@ -2597,6 +2709,9 @@ typedef struct _DXGKARG_QUERYADAPTERINFO
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
     DXGK_QUERYADAPTERINFOFLAGS  Flags;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+    HANDLE                      hKmdProcessHandle;      // in: driver process handle (maybe NULL)
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 } DXGKARG_QUERYADAPTERINFO;
 
 typedef _In_ CONST DXGKARG_QUERYADAPTERINFO*   IN_CONST_PDXGKARG_QUERYADAPTERINFO;
@@ -3819,13 +3934,18 @@ typedef struct _DXGK_CREATEPROCESSFLAGS
     {
         struct
         {
-            UINT    SystemProcess           : 1;
-            UINT    GdiProcess              : 1;
+            UINT    SystemProcess               : 1;
+            UINT    GdiProcess                  : 1;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
-            UINT    VirtualMachineProcess   : 1;
-            UINT    Reserved                : 29;
+            UINT    VirtualMachineProcess       : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+            UINT    VirtualMachineWorkerProcess : 1;
+            UINT    Reserved                    : 28;
 #else
-            UINT    Reserved                : 30;
+            UINT    Reserved                    : 29;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+#else
+            UINT    Reserved                    : 30;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
         };
         UINT Value;
@@ -3834,12 +3954,18 @@ typedef struct _DXGK_CREATEPROCESSFLAGS
 
 typedef struct _DXGKARG_CREATEPROCESS
 {
-    HANDLE                  hDxgkProcess;   // in
-    HANDLE                  hKmdProcess;    // out
-    DXGK_CREATEPROCESSFLAGS Flags;          // in 
-    UINT                    NumPasid;       // in
+    HANDLE                  hDxgkProcess;       // in
+    HANDLE                  hKmdProcess;        // out
+    DXGK_CREATEPROCESSFLAGS Flags;              // in 
+    UINT                    NumPasid;           // in
     _Field_size_(NumPasid)
-    ULONG*                  pPasid;         // in
+    ULONG*                  pPasid;             // in
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+    HANDLE                  hKmdVmWorkerProcess;// in Driver VM worker process handle when VirtualMachineProcess is set.
+    UINT                    ProcessNameLength;  // in 
+    _Field_size_(ProcessNameLength)
+    WCHAR*                  pProcessName;       // in Maybe NULL
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 } DXGKARG_CREATEPROCESS;
 typedef _Inout_ DXGKARG_CREATEPROCESS*   INOUT_PDXGKARG_CREATEPROCESS;
 
@@ -3905,7 +4031,7 @@ typedef struct _DXGKARG_SUBMITCOMMANDTOHWQUEUE
     UINT                            DmaBufferPrivateDataSize;
     _Field_size_bytes_             (DmaBufferPrivateDataSize)
     VOID*                           pDmaBufferPrivateData;
-    UINT                            DmaBufferUmdPrivateDataSize;
+    DXGK_SUBMITCOMMANDFLAGS         Flags;
 } DXGKARG_SUBMITCOMMANDTOHWQUEUE;
 
 typedef _In_ CONST DXGKARG_SUBMITCOMMANDTOHWQUEUE*   IN_CONST_PDXGKARG_SUBMITCOMMANDTOHWQUEUE;
@@ -3988,10 +4114,252 @@ DXGKDDI_UPDATEHWCONTEXTSTATE(
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+typedef enum _DXGK_SCHEDULING_LOG_OPERATION
+{
+    DXGK_SCHEDULING_LOG_OPERATION_CONTEXT_STATE_CHANGE = 0
+} DXGK_SCHEDULING_LOG_OPERATION;
+
+typedef enum _DXGK_SCHEDULING_LOG_CONTEXT_STATE
+{
+    DXGK_SCHEDULING_LOG_CONTEXT_STATE_IDLE = 0,
+    DXGK_SCHEDULING_LOG_CONTEXT_STATE_RUNNING = 1,
+    DXGK_SCHEDULING_LOG_CONTEXT_STATE_READY = 2,
+    DXGK_SCHEDULING_LOG_CONTEXT_STATE_READY_STANDBY = 3,
+} DXGK_SCHEDULING_LOG_CONTEXT_STATE;
+
+typedef struct _DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE
+{
+    HANDLE                              hKmdContext;
+    DXGK_SCHEDULING_LOG_CONTEXT_STATE   newContextState;
+} DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE;
+
+typedef struct _DXGK_SCHEDULING_LOG_HEADER
+{
+    UINT32          FirstFreeEntryIndex;
+    UINT32          WraparoundCount;
+    UINT64          NumberOfEntries;
+    UINT64          Reserved[2];
+} DXGK_SCHEDULING_LOG_HEADER;
+
+typedef struct _DXGK_SCHEDULING_LOG_ENTRY
+{
+    UINT64                                          GpuTimeStamp;
+
+    // OperationType is of DXGK_SCHEDULING_LOG_OPERATION type
+    // UINT is used because enums as bitfields are not a part of standard C++.
+    UINT                                            OperationType : 32;
+    UINT                                            ReservedOperationTypeBits: 32;
+    union
+    {
+        DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE    ContextStateChange;
+        UINT64                                      ReservedOperationData[2];
+    };
+} DXGK_SCHEDULING_LOG_ENTRY;
+
+typedef struct _DXGK_SCHEDULING_LOG_BUFFER
+{
+    DXGK_SCHEDULING_LOG_HEADER  Header;
+
+    _Field_size_(Header.NumberOfEntries)
+    DXGK_SCHEDULING_LOG_ENTRY   Entries[1];
+} DXGK_SCHEDULING_LOG_BUFFER;
+
+typedef struct _DXGKARG_SETSCHEDULINGLOGBUFFER
+{
+    UINT                        NodeOrdinal;                // in: node ordinal
+    UINT                        EngineOrdinal;              // in: engine ordinal
+    UINT                        NumberOfEntries;            // in: number of entries in the log entries array
+
+    _Field_size_bytes_(32 + 32 * NumberOfEntries)
+    DXGK_SCHEDULING_LOG_BUFFER* LogBufferCpuVa;             // in: kernel mode CPU VA of the log buffer
+
+    D3DGPU_VIRTUAL_ADDRESS      LogBufferGpuVa;             // in: GPU VA of the log buffer
+
+    _Field_range_(0, NumberOfEntries - 1)
+    UINT                        InterruptEntry;             // in: index of entry to raise interrupt when writing to
+} DXGKARG_SETSCHEDULINGLOGBUFFER;
+
+typedef _In_ CONST DXGKARG_SETSCHEDULINGLOGBUFFER*   IN_CONST_PDXGKARG_SETSCHEDULINGLOGBUFFER;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETSCHEDULINGLOGBUFFER)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETSCHEDULINGLOGBUFFER(
+    IN_CONST_HANDLE                             hAdapter,
+    IN_CONST_PDXGKARG_SETSCHEDULINGLOGBUFFER    pSetSchedulingLogBuffer
+    );
+
+typedef enum _DXGK_SCHEDULING_PRIORITY_BAND
+{
+    DXGK_SCHEDULING_PRIORITY_BAND_IDLE = 0,
+    DXGK_SCHEDULING_PRIORITY_BAND_NORMAL = 1,
+    DXGK_SCHEDULING_PRIORITY_BAND_FOCUS = 2,
+    DXGK_SCHEDULING_PRIORITY_BAND_REALTIME = 3,
+    DXGK_SCHEDULING_PRIORITY_BAND_COUNT = 4
+} DXGK_SCHEDULING_PRIORITY_BAND;
+
+typedef struct _DXGKARG_SETUPPRIORITYBANDS
+{
+    // Grace period when preempting another priority band for this priority band.
+    // The value for idle priority band is ignored, as it never preempts other bands.
+    UINT64  gracePeriodForBand[DXGK_SCHEDULING_PRIORITY_BAND_COUNT];
+
+    // Default quantum for scheduling across processes within a priority band.
+    UINT64  processQuantumForBand[DXGK_SCHEDULING_PRIORITY_BAND_COUNT];
+
+    // Default grace period for processes that preempt each other within a priority band.
+    UINT64  processGracePeriodForBand[DXGK_SCHEDULING_PRIORITY_BAND_COUNT];
+
+    // For normal priority band, specifies the target GPU percentage in situations when it's starved by the focus band.
+    // Valid values are between 0 and 50, with the default being 10.
+    UINT    targetNormalBandPercentage;
+} DXGKARG_SETUPPRIORITYBANDS;
+
+typedef _In_ CONST DXGKARG_SETUPPRIORITYBANDS*     IN_CONST_PDXGKARG_SETUPPRIORITYBANDS;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETUPPRIORITYBANDS)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETUPPRIORITYBANDS(
+    IN_CONST_HANDLE                         hAdapter,
+    IN_CONST_PDXGKARG_SETUPPRIORITYBANDS    pSetupPriorityBands
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_NOTIFYFOCUSPRESENT)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_NOTIFYFOCUSPRESENT(
+    IN_CONST_HANDLE                         hAdapter
+    );
+
+typedef struct _DXGKARG_SETCONTEXTSCHEDULINGPROPERTIES
+{
+    HANDLE                          hContext;
+
+    // Priority band this context is assigned to.
+    // Assigning a context to focus and realtime priority bands requires the calling process to have
+    // SE_INC_BASE_PRIORITY_NAME privilege.
+    DXGK_SCHEDULING_PRIORITY_BAND   priorityBand;
+
+    // For contexts assigned to the realtime priority band, specifies priority level relative to other
+    // realtime band contexts. Valid values are between 0 and 31.
+    INT                             realtimeBandPriorityLevel;
+
+    // Specifies context priority relative to other contexts within the same process.
+    // Valid values are between -7 and +7, default value is 0.
+    INT                             inProcessPriority;
+    
+    // Specifies context quantum relative to other contexts of the same priority within the same process.
+    UINT64                          quantum;
+
+    // Specifies context grace period when preempting other contexts of the same priority within the same process.
+    UINT64                          gracePeriodSamePriority;
+
+    // Specifies context grace period when preempting contexts of a lower priority within the same process.
+    UINT64                          gracePeriodLowerPriority;
+} DXGKARG_SETCONTEXTSCHEDULINGPROPERTIES;
+
+typedef _In_ CONST DXGKARG_SETCONTEXTSCHEDULINGPROPERTIES*     IN_CONST_PDXGKARG_SETCONTEXTSCHEDULINGPROPERTIES;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETCONTEXTSCHEDULINGPROPERTIES)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETCONTEXTSCHEDULINGPROPERTIES(
+    IN_CONST_HANDLE                                     hAdapter,
+    IN_CONST_PDXGKARG_SETCONTEXTSCHEDULINGPROPERTIES    pSetContextSchedulingProperties
+    );
+
+typedef struct _DXGKARG_SUSPENDCONTEXT
+{
+    HANDLE                          hContext;
+
+    // A monotonically increasing per context value that will be reported when this
+    // suspend request is completed.
+    UINT64                          contextSuspendFence;
+} DXGKARG_SUSPENDCONTEXT;
+
+typedef _In_ CONST DXGKARG_SUSPENDCONTEXT*     IN_CONST_PDXGKARG_SUSPENDCONTEXT;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SUSPENDCONTEXT)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SUSPENDCONTEXT(
+    IN_CONST_HANDLE                     hAdapter,
+    IN_CONST_PDXGKARG_SUSPENDCONTEXT    pSuspendContext
+    );
+
+typedef struct _DXGKARG_RESUMECONTEXT
+{
+    HANDLE                          hContext;
+} DXGKARG_RESUMECONTEXT;
+
+typedef _In_ CONST DXGKARG_RESUMECONTEXT*     IN_CONST_PDXGKARG_RESUMECONTEXT;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_RESUMECONTEXT)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_RESUMECONTEXT(
+    IN_CONST_HANDLE                 hAdapter,
+    IN_CONST_PDXGKARG_RESUMECONTEXT pResumeContext
+    );
+
+typedef struct _DXGK_VIRTUALMACHINEDATAFLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT    SecureVirtualMachine    : 1;
+        };
+        UINT Value;
+    };
+} DXGK_VIRTUALMACHINEDATAFLAGS;
+
+typedef struct _DXGKARG_SETVIRTUALMACHINEDATA
+{
+    HANDLE                          hKmdVmWorkerProcess;    // in
+    GUID*                           pVmGuid;                // in
+    DXGK_VIRTUALMACHINEDATAFLAGS    Flags;                  // in 
+} DXGKARG_SETVIRTUALMACHINEDATA;
+typedef _In_ CONST DXGKARG_SETVIRTUALMACHINEDATA*   IN_CONST_PDXGKARG_SETVIRTUALMACHINEDATA;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETVIRTUALMACHINEDATA)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETVIRTUALMACHINEDATA(
+    IN_CONST_HANDLE                         hAdapter,
+    IN_CONST_PDXGKARG_SETVIRTUALMACHINEDATA Args
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
 typedef struct _DXGKARG_RENDERGDI
 {
-    CONST VOID* CONST           pCommand;
-    CONST UINT                  CommandLength;
+    CONST VOID*                 pCommand;
+    UINT                        CommandLength;
     VOID*                       pDmaBuffer;
     D3DGPU_VIRTUAL_ADDRESS      DmaBufferGpuVirtualAddress;
     UINT                        DmaSize;
@@ -4107,6 +4475,9 @@ typedef struct _DXGKARG_ESCAPE
     VOID*              pPrivateDriverData;     // in/out: escape data
     UINT               PrivateDriverDataSize;  // in: size of escape data
     HANDLE             hContext;               // in: driver context handle
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    HANDLE             hKmdProcessHandle;      // in: driver process handle (maybe NULL)
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 } DXGKARG_ESCAPE;
 
 typedef _In_ CONST DXGKARG_ESCAPE*   IN_CONST_PDXGKARG_ESCAPE;
@@ -6490,11 +6861,30 @@ DXGKDDI_RESETHWENGINE(
     INOUT_PDXGKARG_RESETHWENGINE    pResetHwEngine
     );
 
+typedef struct _DXGK_INVALIDATEHWCONTEXTFLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT CollateralDamage   : 1;                // 0x00000001
+            // When set to 0, indicates that the context being invalidated was the primary cause of the engine hang.
+            // When set to 1, indicates that the context being invalidated was not the primary cause of the engine hang,
+            // but still needs to be reset because it was affected by the hang.
+
+            UINT Reserved           : 31;               // 0xFFFFFFFE
+        };
+        UINT Value;
+    };
+} DXGK_INVALIDATEHWCONTEXTFLAGS;
+
 typedef struct _DXGKARGCB_INVALIDATEHWCONTEXT
 {
-    HANDLE                              hHwContext; // in: For contexts that were invalidated by HW engine reset operation,
-                                                    // DXG assigned value for the context that was passed to
-                                                    // DxgkDdiCreateHwContext.
+    HANDLE                          hAdapter;           // in: Adapter handle
+    HANDLE                          hHwContext;         // in: For contexts that were invalidated by HW engine reset operation,
+                                                        // DXG assigned value for the context that was passed to
+                                                        // DxgkDdiCreateContext.
+    DXGK_INVALIDATEHWCONTEXTFLAGS   Flags;
 } DXGKARGCB_INVALIDATEHWCONTEXT;
 
 typedef _In_ CONST DXGKARGCB_INVALIDATEHWCONTEXT*   IN_CONST_PDXGKARGCB_INVALIDATEHWCONTEXT;
@@ -7044,7 +7434,8 @@ typedef union _DXGK_MODE_BEHAVIOR_FLAGS
     struct
     {
         UINT    PrioritizeHDR               : 1;    // 0x00000001
-        UINT    Reserved                    :31;    // 0xFFFFFFFE
+        UINT    ColorimetricControl         : 1;    // 0x00000002
+        UINT    Reserved                    :30;    // 0xFFFFFFFC
     };
     UINT    Value;
 } DXGK_MODE_BEHAVIOR_FLAGS;
@@ -7052,6 +7443,7 @@ typedef union _DXGK_MODE_BEHAVIOR_FLAGS
 
 typedef struct _DXGKARG_CONTROLMODEBEHAVIOR
 {
+
     IN  DXGK_MODE_BEHAVIOR_FLAGS                Request;
     OUT DXGK_MODE_BEHAVIOR_FLAGS                Satisfied;
     OUT DXGK_MODE_BEHAVIOR_FLAGS                NotSatisfied;
@@ -7081,6 +7473,10 @@ typedef struct _DXGK_MONITORLINKINFO
 {
     DXGK_MONITORLINKINFO_USAGEHINTS     UsageHints;
     DXGK_MONITORLINKINFO_CAPABILITIES   Capabilities;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+    D3DKMDT_WIRE_FORMAT_AND_PREFERENCE  DitheringSupport;
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
 } DXGK_MONITORLINKINFO;
 
 
@@ -7260,6 +7656,12 @@ typedef enum _DXGK_PATH_UPDATE : UINT
     DXGK_PATH_UPDATE_REMOVED                = 3
 } DXGK_PATH_UPDATE;
 
+typedef enum _DXGK_SYNC_LOCK_STYLE : UINT
+{
+    DXGK_SYNC_LOCK_STYLE_NONE           = 0,
+    DXGK_SYNC_LOCK_STYLE_IDENTICAL      = 1,
+} DXGK_SYNC_LOCK_STYLE;
+
 typedef enum _DXGK_GLITCH_CAUSE : UINT8
 {
     DXGK_GLITCH_CAUSE_DRIVER_ERROR          = 0,
@@ -7294,6 +7696,7 @@ typedef enum _DXGK_GLITCH_DURATION : UINT8
 
 #else
 typedef UINT DXGK_PATH_UPDATE;
+typedef UINT DXGK_SYNC_LOCK_STYLE;
 typedef UINT8 DXGK_GLITCH_CAUSE;
 typedef UINT8 DXGK_GLITCH_EFFECT;
 typedef UINT8 DXGK_GLITCH_DURATION;
@@ -7324,7 +7727,17 @@ typedef struct _DXGK_SET_TIMING_PATH_INFO
             UINT                Active              : 1;    // The host should be driving a signal to the target (timing or training)
             UINT                IgnoreConnectivity  : 1;    // Used to force output to an undetected monitor on an analog target
             UINT                PreserveInherited   : 1;    // Driver should preserve the timings and content inherited from previous driver 
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+            UINT                SyncLockGroup       : 3;
+            DXGK_SYNC_LOCK_STYLE    SyncLockStyle   : 4;
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+            UINT                Reserved            :20;
+#else
             UINT                Reserved            :27;
+#endif // DXGKDDI_INTERFACE_VERSION        
         } Input;
         UINT InputFlags;
     };
@@ -7644,6 +8057,251 @@ NTSTATUS
 
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+typedef enum _DXGK_MEMORY_CACHING_TYPE
+{
+    DXGK_MEMORY_CACHING_TYPE_NON_CACHED,
+    DXGK_MEMORY_CACHING_TYPE_CACHED,
+    DXGK_MEMORY_CACHING_TYPE_WRITE_COMBINED
+} DXGK_MEMORY_CACHING_TYPE;
+
+typedef struct _DXGKARGCB_ALLOCATECONTIGUOUSMEMORY
+{
+    _In_  SIZE_T                   NumberOfBytes;
+    _In_  PHYSICAL_ADDRESS         LowestAcceptableAddress;
+    _In_  PHYSICAL_ADDRESS         HighestAcceptableAddress;
+    _In_  PHYSICAL_ADDRESS         BoundaryAddressMultiple;
+    _In_  DXGK_MEMORY_CACHING_TYPE CacheType;
+    _Out_ HANDLE                   hMemoryHandle;
+    _Out_ PVOID                    pMemory;
+} DXGKARGCB_ALLOCATECONTIGUOUSMEMORY;
+
+typedef struct _DXGKARGCB_FREECONTIGUOUSMEMORY
+{
+    _In_  HANDLE                   hMemoryHandle;
+} DXGKARGCB_FREECONTIGUOUSMEMORY;
+
+typedef struct _DXGKARGCB_ALLOCATEPAGESFORMDL
+{
+    _In_  PHYSICAL_ADDRESS         LowAddress;
+    _In_  PHYSICAL_ADDRESS         HighAddress;
+    _In_  PHYSICAL_ADDRESS         SkipBytes;
+    _In_  SIZE_T                   TotalBytes;
+    _In_  DXGK_MEMORY_CACHING_TYPE CacheType;
+    _In_  ULONG                    Flags;
+    _Out_ HANDLE                   hMemoryHandle;
+    _Out_ PMDL                     pMdl;
+} DXGKARGCB_ALLOCATEPAGESFORMDL;
+
+typedef struct _DXGKARGCB_FREEPAGESFROMMDL
+{
+    _In_  HANDLE                   hMemoryHandle;
+} DXGKARGCB_FREEPAGESFROMMDL;
+
+typedef struct _DXGKARGCB_MAPMDLTOIOMMU
+{
+    _In_  PMDL                     pMdl;
+    _Out_ HANDLE                   hMemoryHandle;
+} DXGKARGCB_MAPMDLTOIOMMU;
+
+typedef struct _DXGKARGCB_UNMAPMDLFROMIOMMU
+{
+    _In_  HANDLE                   hMemoryHandle;
+} DXGKARGCB_UNMAPMDLFROMIOMMU;
+
+typedef struct _DXGKARGCB_PINFRAMEBUFFERFORSAVE
+{
+    _In_  UINT   PhysicalAdapterIndex;
+    _In_  SIZE_T CommitSize;
+    _Out_ PMDL   pMdl;
+} DXGKARGCB_PINFRAMEBUFFERFORSAVE;
+
+typedef struct _DXGKARGCB_UNPINFRAMEBUFFERFORSAVE
+{
+    _In_ UINT PhysicalAdapterIndex;
+} DXGKARGCB_UNPINFRAMEBUFFERFORSAVE;
+
+typedef struct _DXGKARGCB_MAPFRAMEBUFFERPOINTER
+{
+    _In_ UINT PhysicalAdapterIndex;
+    _In_ SIZE_T Size;
+    _Inout_ SIZE_T Offset;
+    _Out_ PVOID pBaseAddress;
+} DXGKARGCB_MAPFRAMEBUFFERPOINTER;
+
+typedef struct _DXGKARGCB_UNMAPFRAMEBUFFERPOINTER
+{
+    _In_ UINT PhysicalAdapterIndex;
+    _In_ PVOID pBaseAddress;
+} DXGKARGCB_UNMAPFRAMEBUFFERPOINTER;
+
+typedef _Inout_ DXGKARGCB_ALLOCATECONTIGUOUSMEMORY* INOUT_PDXGKARGCB_ALLOCATECONTIGUOUSMEMORY;
+typedef _In_ CONST DXGKARGCB_FREECONTIGUOUSMEMORY* IN_CONST_PDXGKARGCB_FREECONTIGUOUSMEMORY;
+typedef _Inout_ DXGKARGCB_ALLOCATEPAGESFORMDL* INOUT_PDXGKARGCB_ALLOCATEPAGESFORMDL;
+typedef _In_ CONST DXGKARGCB_FREEPAGESFROMMDL* IN_CONST_PDXGKARGCB_FREEPAGESFROMMDL;
+typedef _Inout_ DXGKARGCB_MAPMDLTOIOMMU* INOUT_PDXGKARGCB_MAPMDLTOIOMMU;
+typedef _In_ CONST DXGKARGCB_UNMAPMDLFROMIOMMU* IN_CONST_PDXGKARGCB_UNMAPMDLFROMIOMMU;
+typedef _Inout_ DXGKARGCB_PINFRAMEBUFFERFORSAVE* INOUT_PDXGKARGCB_PINFRAMEBUFFERFORSAVE;
+typedef _In_ CONST DXGKARGCB_UNPINFRAMEBUFFERFORSAVE* IN_CONST_PDXGKARGCB_UNPINFRAMEBUFFERFORSAVE;
+typedef _Inout_ DXGKARGCB_MAPFRAMEBUFFERPOINTER* INOUT_PDXGKARGCB_MAPFRAMEBUFFERPOINTER;
+typedef _In_ CONST DXGKARGCB_UNMAPFRAMEBUFFERPOINTER* IN_CONST_PDXGKARGCB_UNMAPFRAMEBUFFERPOINTER;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_ALLOCATECONTIGUOUSMEMORY)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_ALLOCATECONTIGUOUSMEMORY)(
+    IN_CONST_HANDLE                           hAdapter,
+    INOUT_PDXGKARGCB_ALLOCATECONTIGUOUSMEMORY pAllocateContiguousMemory
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_FREECONTIGUOUSMEMORY)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_FREECONTIGUOUSMEMORY)(
+    IN_CONST_HANDLE                          hAdapter,
+    IN_CONST_PDXGKARGCB_FREECONTIGUOUSMEMORY pFreeContiguousMemory
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_ALLOCATEPAGESFORMDL)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_ALLOCATEPAGESFORMDL)(
+    IN_CONST_HANDLE                      hAdapter,
+    INOUT_PDXGKARGCB_ALLOCATEPAGESFORMDL pAllocatePagesForMdl
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_FREEPAGESFROMMDL)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_FREEPAGESFROMMDL)(
+    IN_CONST_HANDLE                       hAdapter,
+    IN_CONST_PDXGKARGCB_FREEPAGESFROMMDL  pFreePagesFromMdl
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_MAPMDLTOIOMMU)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_MAPMDLTOIOMMU)(
+    IN_CONST_HANDLE                hAdapter,
+    INOUT_PDXGKARGCB_MAPMDLTOIOMMU pMapMdlToIoMmu
+    );
+
+typedef
+    _Function_class_DXGK_(DXGKCB_UNMAPMDLFROMIOMMU)
+    _IRQL_requires_(PASSIVE_LEVEL)
+VOID
+(APIENTRY CALLBACK *DXGKCB_UNMAPMDLFROMIOMMU)(
+    IN_CONST_HANDLE                       hAdapter,
+    IN_CONST_PDXGKARGCB_UNMAPMDLFROMIOMMU pUnmapMdlFromIoMmu
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_PINFRAMEBUFFERFORSAVE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_PINFRAMEBUFFERFORSAVE)(
+    IN_CONST_HANDLE                        hAdapter,
+    INOUT_PDXGKARGCB_PINFRAMEBUFFERFORSAVE pPinFrameBufferForSave
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_UNPINFRAMEBUFFERFORSAVE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_UNPINFRAMEBUFFERFORSAVE)(
+    IN_CONST_HANDLE                             hAdapter,
+    IN_CONST_PDXGKARGCB_UNPINFRAMEBUFFERFORSAVE pUnpinFrameBufferForSave
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_MAPFRAMEBUFFERPOINTER)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_MAPFRAMEBUFFERPOINTER)(
+    IN_CONST_HANDLE                        hAdapter,
+    INOUT_PDXGKARGCB_MAPFRAMEBUFFERPOINTER pMapFrameBufferPointer
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_UNMAPFRAMEBUFFERPOINTER)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_UNMAPFRAMEBUFFERPOINTER)(
+    IN_CONST_HANDLE                             hAdapter,
+    IN_CONST_PDXGKARGCB_UNMAPFRAMEBUFFERPOINTER pUnmapFrameBufferPointer
+    );
+
+typedef struct _DXGKARG_BEGINEXCLUSIVEACCESS
+{
+    UINT Reserved;
+} DXGKARG_BEGINEXCLUSIVEACCESS;
+
+typedef struct _DXGKARG_ENDEXCLUSIVEACCESS
+{
+    UINT Reserved;
+} DXGKARG_ENDEXCLUSIVEACCESS;
+
+typedef _In_ DXGKARG_BEGINEXCLUSIVEACCESS* IN_PDXGKARG_BEGINEXCLUSIVEACCESS;
+typedef _In_ DXGKARG_ENDEXCLUSIVEACCESS*   IN_PDXGKARG_ENDEXCLUSIVEACCESS;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_BEGINEXCLUSIVEACCESS)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_BEGINEXCLUSIVEACCESS(
+    IN_CONST_HANDLE                  hAdapter,
+    IN_PDXGKARG_BEGINEXCLUSIVEACCESS pBeginExclusiveAccess
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_ENDEXCLUSIVEACCESS)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_ENDEXCLUSIVEACCESS(
+    IN_CONST_HANDLE                hAdapter,
+    IN_PDXGKARG_ENDEXCLUSIVEACCESS pEndExclusiveAccess
+    );
+
+typedef struct _DXGKARG_RESUMEHWENGINE
+{
+    UINT                NodeOrdinal;            // in: node ordinal
+    UINT                EngineOrdinal;          // in: engine ordinal
+} DXGKARG_RESUMEHWENGINE;
+
+typedef _Inout_ DXGKARG_RESUMEHWENGINE*    INOUT_PDXGKARG_RESUMEHWENGINE;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_RESUMEHWENGINE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_RESUMEHWENGINE(
+    IN_CONST_HANDLE                 hAdapter,
+    INOUT_PDXGKARG_RESUMEHWENGINE   pResumeHwEngine
+    );
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
+
 //
 //     Function pointer typedefs
 //
@@ -7769,6 +8427,21 @@ typedef DXGKDDI_CREATEPROTECTEDSESSION*  PDXGKDDI_CREATEPROTECTEDSESSION;
 typedef DXGKDDI_DESTROYPROTECTEDSESSION* PDXGKDDI_DESTROYPROTECTEDSESSION;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+typedef DXGKDDI_SETSCHEDULINGLOGBUFFER          *PDXGKDDI_SETSCHEDULINGLOGBUFFER;
+typedef DXGKDDI_SETUPPRIORITYBANDS              *PDXGKDDI_SETUPPRIORITYBANDS;
+typedef DXGKDDI_NOTIFYFOCUSPRESENT              *PDXGKDDI_NOTIFYFOCUSPRESENT;
+typedef DXGKDDI_SETCONTEXTSCHEDULINGPROPERTIES  *PDXGKDDI_SETCONTEXTSCHEDULINGPROPERTIES;
+typedef DXGKDDI_SUSPENDCONTEXT                  *PDXGKDDI_SUSPENDCONTEXT;
+typedef DXGKDDI_RESUMECONTEXT                   *PDXGKDDI_RESUMECONTEXT;
+typedef DXGKDDI_SETVIRTUALMACHINEDATA           *PDXGKDDI_SETVIRTUALMACHINEDATA;
+typedef DXGKDDI_BEGINEXCLUSIVEACCESS            *PDXGKDDI_BEGINEXCLUSIVEACCESS;
+typedef DXGKDDI_ENDEXCLUSIVEACCESS              *PDXGKDDI_ENDEXCLUSIVEACCESS;
+typedef DXGKDDI_RESUMEHWENGINE                  *PDXGKDDI_RESUMEHWENGINE;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 
 #pragma warning(pop)
 

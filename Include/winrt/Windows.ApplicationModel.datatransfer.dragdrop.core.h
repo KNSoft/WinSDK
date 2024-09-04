@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.datatransfer.dragdrop.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -452,6 +454,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDragDropManager_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDropOperationTargetRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDragDropManager_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDropOperationTargetRequestedEventArgs_USE
@@ -480,6 +483,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DragDro
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDragDropManager_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDropOperationTargetRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -819,8 +823,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("7D56D344-8464-4FAF-AA49-37EA6E2D7BD1"), exclusiveto, contract] */
                         MIDL_INTERFACE("7D56D344-8464-4FAF-AA49-37EA6E2D7BD1")
-                        ICoreDragDropManager : IInspectable
+                        ICoreDragDropManager : public IInspectable
                         {
+                        public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_TargetRequested(
                                 /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDragDropManager_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDropOperationTargetRequestedEventArgs * value,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * returnValue
@@ -873,8 +878,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("9542FDCA-DA12-4C1C-8D06-041DB29733C3"), exclusiveto, contract] */
                         MIDL_INTERFACE("9542FDCA-DA12-4C1C-8D06-041DB29733C3")
-                        ICoreDragDropManagerStatics : IInspectable
+                        ICoreDragDropManagerStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManager * * value
                                 ) = 0;
@@ -917,8 +923,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("48353A8B-CB50-464E-9575-CD4E3A7AB028"), exclusiveto, contract] */
                         MIDL_INTERFACE("48353A8B-CB50-464E-9575-CD4E3A7AB028")
-                        ICoreDragInfo : IInspectable
+                        ICoreDragInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView * * value
                                 ) = 0;
@@ -971,8 +978,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("C54691E5-E6FB-4D74-B4B1-8A3C17F25E9E"), exclusiveto, contract] */
                         MIDL_INTERFACE("C54691E5-E6FB-4D74-B4B1-8A3C17F25E9E")
-                        ICoreDragInfo2 : IInspectable
+                        ICoreDragInfo2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowedOperations(
                                 /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::DataTransfer::DataPackageOperation * value
                                 ) = 0;
@@ -1015,8 +1023,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("CC06DE4F-6DB0-4E62-AB1B-A74A02DC6D85"), exclusiveto, contract] */
                         MIDL_INTERFACE("CC06DE4F-6DB0-4E62-AB1B-A74A02DC6D85")
-                        ICoreDragOperation : IInspectable
+                        ICoreDragOperation : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackage * * value
                                 ) = 0;
@@ -1082,8 +1091,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("824B1E2C-D99A-4FC3-8507-6C182F33B46A"), exclusiveto, contract] */
                         MIDL_INTERFACE("824B1E2C-D99A-4FC3-8507-6C182F33B46A")
-                        ICoreDragOperation2 : IInspectable
+                        ICoreDragOperation2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowedOperations(
                                 /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::DataTransfer::DataPackageOperation * value
                                 ) = 0;
@@ -1129,8 +1139,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("89A85064-3389-4F4F-8897-7E8A3FFB3C93"), exclusiveto, contract] */
                         MIDL_INTERFACE("89A85064-3389-4F4F-8897-7E8A3FFB3C93")
-                        ICoreDragUIOverride : IInspectable
+                        ICoreDragUIOverride : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE SetContentFromSoftwareBitmap(
                                 /* [in] */__RPC__in_opt ABI::Windows::Graphics::Imaging::ISoftwareBitmap * softwareBitmap
                                 ) = 0;
@@ -1199,8 +1210,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("D9126196-4C5B-417D-BB37-76381DEF8DB4"), contract] */
                         MIDL_INTERFACE("D9126196-4C5B-417D-BB37-76381DEF8DB4")
-                        ICoreDropOperationTarget : IInspectable
+                        ICoreDropOperationTarget : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE EnterAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo * dragInfo,
                                 /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragUIOverride * dragUIOverride,
@@ -1258,8 +1270,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("2ACA929A-5E28-4EA6-829E-29134E665D6D"), exclusiveto, contract] */
                         MIDL_INTERFACE("2ACA929A-5E28-4EA6-829E-29134E665D6D")
-                        ICoreDropOperationTargetRequestedEventArgs : IInspectable
+                        ICoreDropOperationTargetRequestedEventArgs : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE SetTarget(
                                 /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTarget * target
                                 ) = 0;
@@ -1473,6 +1486,7 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CDragDrop_CCo
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDragDropManager_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDropOperationTargetRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDragDropManager_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDropOperationTargetRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -1519,6 +1533,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDr
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDragDropManager_Windows__CApplicationModel__CDataTransfer__CDragDrop__CCore__CCoreDropOperationTargetRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CDataPackageOperation;

@@ -1760,7 +1760,7 @@ struct IDARG_IN_GETDIRTYRECTS
     /// [out] Pointer to the buffer where the OS can copy the dirty rects that indicate which parts of the surface have been
     /// changed since the last present.
     /// </summary>
-    _Field_size_full_(DirtyRectCount) RECT* pDirtyRects;
+    _Field_size_full_(DirtyRectInCount) RECT* pDirtyRects;
 };
 
 
@@ -1975,7 +1975,7 @@ struct IDARG_IN_SET_GAMMARAMP
     /// <summary>
     /// [in] Pointer to gamma ramp data to set.  Set to NULL for IDDCX_GAMMARAMP_TYPE_DEFAULT
     /// </summary>
-    _Field_size_bytes_opt_(DataSizeInBytes) PVOID pGammaRampData;
+    _Field_size_bytes_opt_(GammaRampSizeInBytes) PVOID pGammaRampData;
 };
 
 struct IDARG_IN_I2C_RECEIVE

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.media.imaging.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -886,6 +888,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_USE
@@ -915,6 +918,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourc
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -931,6 +935,7 @@ namespace ABI {
     } /* Imaging */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_USE
@@ -960,6 +965,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourc
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
@@ -1567,8 +1573,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("1ABAEE23-74EE-4CC7-99BA-B171E3CDA61E"), contract] */
                         MIDL_INTERFACE("1ABAEE23-74EE-4CC7-99BA-B171E3CDA61E")
-                        IDownloadProgressEventHandler : IUnknown
+                        IDownloadProgressEventHandler : public IUnknown
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Invoke(
                                 /* [in] */__RPC__in_opt IInspectable * sender,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs * e
@@ -1612,8 +1619,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("31AF3271-E3B4-442D-A341-4C0226B2725B"), exclusiveto, contract] */
                         MIDL_INTERFACE("31AF3271-E3B4-442D-A341-4C0226B2725B")
-                        IBitmapImage : IInspectable
+                        IBitmapImage : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CreateOptions(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions * value
                                 ) = 0;
@@ -1698,8 +1706,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("1069C1B6-8C9B-4762-BE3D-759F5698F2B3"), exclusiveto, contract] */
                         MIDL_INTERFACE("1069C1B6-8C9B-4762-BE3D-759F5698F2B3")
-                        IBitmapImage2 : IInspectable
+                        IBitmapImage2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DecodePixelType(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Imaging::DecodePixelType * value
                                 ) = 0;
@@ -1745,8 +1754,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("F1DE6F26-3C73-453F-A7BA-9B85C18B3733"), exclusiveto, contract] */
                         MIDL_INTERFACE("F1DE6F26-3C73-453F-A7BA-9B85C18B3733")
-                        IBitmapImage3 : IInspectable
+                        IBitmapImage3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAnimatedBitmap(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -1800,8 +1810,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("C9132978-4810-4E5E-8087-03671EE60D85"), exclusiveto, contract] */
                         MIDL_INTERFACE("C9132978-4810-4E5E-8087-03671EE60D85")
-                        IBitmapImageFactory : IInspectable
+                        IBitmapImageFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithUriSource(
                                 /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uriSource,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IBitmapImage * * instance
@@ -1845,8 +1856,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("9E282143-70E8-437C-9FA4-2CBF295CFF84"), exclusiveto, contract] */
                         MIDL_INTERFACE("9E282143-70E8-437C-9FA4-2CBF295CFF84")
-                        IBitmapImageStatics : IInspectable
+                        IBitmapImageStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CreateOptionsProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -1898,8 +1910,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("C5F5576A-75AF-41A4-B893-8FE91FEE2882"), exclusiveto, contract] */
                         MIDL_INTERFACE("C5F5576A-75AF-41A4-B893-8FE91FEE2882")
-                        IBitmapImageStatics2 : IInspectable
+                        IBitmapImageStatics2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DecodePixelTypeProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -1942,8 +1955,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("2B44E30D-F6D5-4411-A8CD-BF7603C4FAA0"), exclusiveto, contract] */
                         MIDL_INTERFACE("2B44E30D-F6D5-4411-A8CD-BF7603C4FAA0")
-                        IBitmapImageStatics3 : IInspectable
+                        IBitmapImageStatics3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAnimatedBitmapProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -1992,8 +2006,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("23D86411-202F-41B2-8C5B-A8A3B333800B"), exclusiveto, contract] */
                         MIDL_INTERFACE("23D86411-202F-41B2-8C5B-A8A3B333800B")
-                        IBitmapSource : IInspectable
+                        IBitmapSource : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PixelWidth(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -2046,8 +2061,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("E240420E-D4A7-49A4-A0B4-A59FDD77E508"), exclusiveto, contract] */
                         MIDL_INTERFACE("E240420E-D4A7-49A4-A0B4-A59FDD77E508")
-                        IBitmapSourceFactory : IInspectable
+                        IBitmapSourceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -2092,8 +2108,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("9A9C9981-827B-4E51-891B-8A15B511842D"), exclusiveto, contract] */
                         MIDL_INTERFACE("9A9C9981-827B-4E51-891B-8A15B511842D")
-                        IBitmapSourceStatics : IInspectable
+                        IBitmapSourceStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PixelWidthProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -2139,8 +2156,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("7311E0D4-FE94-4E70-9B90-CDD47AC23AFB"), exclusiveto, contract] */
                         MIDL_INTERFACE("7311E0D4-FE94-4E70-9B90-CDD47AC23AFB")
-                        IDownloadProgressEventArgs : IInspectable
+                        IDownloadProgressEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Progress(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -2186,8 +2204,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("500DEE81-893C-4C0A-8FEC-4678AC717589"), exclusiveto, contract] */
                         MIDL_INTERFACE("500DEE81-893C-4C0A-8FEC-4678AC717589")
-                        IRenderTargetBitmap : IInspectable
+                        IRenderTargetBitmap : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PixelWidth(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -2246,8 +2265,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("F0A1EFEE-C131-4D40-9C47-F7D7CF2B077F"), exclusiveto, contract] */
                         MIDL_INTERFACE("F0A1EFEE-C131-4D40-9C47-F7D7CF2B077F")
-                        IRenderTargetBitmapStatics : IInspectable
+                        IRenderTargetBitmapStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PixelWidthProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -2293,8 +2313,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("D2DD9ED0-D3C5-4056-91B5-B7C1D1E8130E"), exclusiveto, contract] */
                         MIDL_INTERFACE("D2DD9ED0-D3C5-4056-91B5-B7C1D1E8130E")
-                        ISoftwareBitmapSource : IInspectable
+                        ISoftwareBitmapSource : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE SetBitmapAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Graphics::Imaging::ISoftwareBitmap * softwareBitmap,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
@@ -2338,8 +2359,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("62F7D416-C714-4C4C-8273-F839BC58135C"), exclusiveto, contract] */
                         MIDL_INTERFACE("62F7D416-C714-4C4C-8273-F839BC58135C")
-                        ISurfaceImageSource : IInspectable
+                        ISurfaceImageSource : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -2379,8 +2401,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("3AB2212A-EF65-4A5F-BFAC-73993E8C12C9"), exclusiveto, contract] */
                         MIDL_INTERFACE("3AB2212A-EF65-4A5F-BFAC-73993E8C12C9")
-                        ISurfaceImageSourceFactory : IInspectable
+                        ISurfaceImageSourceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDimensions(
                                 /* [in] */INT32 pixelWidth,
                                 /* [in] */INT32 pixelHeight,
@@ -2435,8 +2458,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("03E1CEC3-0CA8-4A4E-8D7C-C808A0838586"), exclusiveto, contract] */
                         MIDL_INTERFACE("03E1CEC3-0CA8-4A4E-8D7C-C808A0838586")
-                        ISvgImageSource : IInspectable
+                        ISvgImageSource : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UriSource(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                                 ) = 0;
@@ -2512,8 +2536,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("C794E9E7-CF23-4D72-BF1A-DFAA16D8EA52"), exclusiveto, contract] */
                         MIDL_INTERFACE("C794E9E7-CF23-4D72-BF1A-DFAA16D8EA52")
-                        ISvgImageSourceFactory : IInspectable
+                        ISvgImageSourceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -2564,8 +2589,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("68BB3170-3CCC-4035-AC01-9834543D744E"), exclusiveto, contract] */
                         MIDL_INTERFACE("68BB3170-3CCC-4035-AC01-9834543D744E")
-                        ISvgImageSourceFailedEventArgs : IInspectable
+                        ISvgImageSourceFailedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus * value
                                 ) = 0;
@@ -2608,8 +2634,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("85EF4C16-748E-4008-95C7-6A23DD7316DB"), exclusiveto, contract] */
                         MIDL_INTERFACE("85EF4C16-748E-4008-95C7-6A23DD7316DB")
-                        ISvgImageSourceOpenedEventArgs : IInspectable
+                        ISvgImageSourceOpenedEventArgs : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -2649,8 +2676,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("9C6638CE-BED1-4AAB-ACBB-D3E2185D315A"), exclusiveto, contract] */
                         MIDL_INTERFACE("9C6638CE-BED1-4AAB-ACBB-D3E2185D315A")
-                        ISvgImageSourceStatics : IInspectable
+                        ISvgImageSourceStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UriSourceProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -2699,8 +2727,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("4A711FEA-BFAC-11E0-A06A-9DE44724019B"), exclusiveto, contract] */
                         MIDL_INTERFACE("4A711FEA-BFAC-11E0-A06A-9DE44724019B")
-                        IVirtualSurfaceImageSource : IInspectable
+                        IVirtualSurfaceImageSource : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -2740,8 +2769,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("3AB2212A-BFAC-11E0-8A92-69E44724019B"), exclusiveto, contract] */
                         MIDL_INTERFACE("3AB2212A-BFAC-11E0-8A92-69E44724019B")
-                        IVirtualSurfaceImageSourceFactory : IInspectable
+                        IVirtualSurfaceImageSourceFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDimensions(
                                 /* [in] */INT32 pixelWidth,
                                 /* [in] */INT32 pixelHeight,
@@ -2792,8 +2822,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("BF0B7E6F-DF7C-4A85-8413-A1216285835C"), exclusiveto, contract] */
                         MIDL_INTERFACE("BF0B7E6F-DF7C-4A85-8413-A1216285835C")
-                        IWriteableBitmap : IInspectable
+                        IWriteableBitmap : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PixelBuffer(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                                 ) = 0;
@@ -2837,8 +2868,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("5563EBB1-3EF2-42C5-9C6D-1CF5DCC041FF"), exclusiveto, contract] */
                         MIDL_INTERFACE("5563EBB1-3EF2-42C5-9C6D-1CF5DCC041FF")
-                        IWriteableBitmapFactory : IInspectable
+                        IWriteableBitmapFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDimensions(
                                 /* [in] */INT32 pixelWidth,
                                 /* [in] */INT32 pixelHeight,
@@ -2883,8 +2915,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("5D5FE9AA-533E-44B8-A975-FC5F1E3BFF52"), exclusiveto, contract] */
                         MIDL_INTERFACE("5D5FE9AA-533E-44B8-A975-FC5F1E3BFF52")
-                        IXamlRenderingBackgroundTask : IInspectable
+                        IXamlRenderingBackgroundTask : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -2924,8 +2957,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("A3D1BB63-38F8-4DA3-9FCA-FD8128A2CBF9"), exclusiveto, contract] */
                         MIDL_INTERFACE("A3D1BB63-38F8-4DA3-9FCA-FD8128A2CBF9")
-                        IXamlRenderingBackgroundTaskFactory : IInspectable
+                        IXamlRenderingBackgroundTaskFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -2970,8 +3004,9 @@ namespace ABI {
                     namespace Imaging {
                         /* [object, uuid("9C2A6997-A908-4711-B4B2-A960DB3D8E5A"), exclusiveto, contract] */
                         MIDL_INTERFACE("9C2A6997-A908-4711-B4B2-A960DB3D8E5A")
-                        IXamlRenderingBackgroundTaskOverrides : IInspectable
+                        IXamlRenderingBackgroundTaskOverrides : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE OnRun(
                                 /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskInstance * taskInstance
                                 ) = 0;
@@ -3610,6 +3645,7 @@ interface __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageS
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_INTERFACE_DEFINED__
 
@@ -3657,9 +3693,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgIma
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__
@@ -3707,6 +3745,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgIma
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__

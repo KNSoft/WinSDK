@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.media.media3d.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -582,8 +584,9 @@ namespace ABI {
                     namespace Media3D {
                         /* [object, uuid("8977CB01-AF8D-4AF5-B084-C08EB9704ABE"), exclusiveto, contract] */
                         MIDL_INTERFACE("8977CB01-AF8D-4AF5-B084-C08EB9704ABE")
-                        ICompositeTransform3D : IInspectable
+                        ICompositeTransform3D : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterX(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -695,8 +698,9 @@ namespace ABI {
                     namespace Media3D {
                         /* [object, uuid("DDBF4D67-2A25-48F3-9808-C51EC3D55BEC"), exclusiveto, contract] */
                         MIDL_INTERFACE("DDBF4D67-2A25-48F3-9808-C51EC3D55BEC")
-                        ICompositeTransform3DStatics : IInspectable
+                        ICompositeTransform3DStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterXProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -772,8 +776,9 @@ namespace ABI {
                     namespace Media3D {
                         /* [object, uuid("E48C10EF-9927-4C9B-8213-07775512BA04"), exclusiveto, contract] */
                         MIDL_INTERFACE("E48C10EF-9927-4C9B-8213-07775512BA04")
-                        IMatrix3DHelper : IInspectable
+                        IMatrix3DHelper : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -813,8 +818,9 @@ namespace ABI {
                     namespace Media3D {
                         /* [object, uuid("9264545E-E158-4E74-8899-689160BD2F8C"), exclusiveto, contract] */
                         MIDL_INTERFACE("9264545E-E158-4E74-8899-689160BD2F8C")
-                        IMatrix3DHelperStatics : IInspectable
+                        IMatrix3DHelperStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Identity(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D * value
                                 ) = 0;
@@ -893,8 +899,9 @@ namespace ABI {
                     namespace Media3D {
                         /* [object, uuid("9A7B532A-30F9-40A1-96C9-C59D87F95AC3"), exclusiveto, contract] */
                         MIDL_INTERFACE("9A7B532A-30F9-40A1-96C9-C59D87F95AC3")
-                        IPerspectiveTransform3D : IInspectable
+                        IPerspectiveTransform3D : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Depth(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -952,8 +959,9 @@ namespace ABI {
                     namespace Media3D {
                         /* [object, uuid("8E6F6400-620C-48C7-844D-3F0984DA5B17"), exclusiveto, contract] */
                         MIDL_INTERFACE("8E6F6400-620C-48C7-844D-3F0984DA5B17")
-                        IPerspectiveTransform3DStatics : IInspectable
+                        IPerspectiveTransform3DStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DepthProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -1002,8 +1010,9 @@ namespace ABI {
                     namespace Media3D {
                         /* [object, uuid("AE3ED43A-A9FC-4C31-86CD-56D9CA251A69"), exclusiveto, contract] */
                         MIDL_INTERFACE("AE3ED43A-A9FC-4C31-86CD-56D9CA251A69")
-                        ITransform3D : IInspectable
+                        ITransform3D : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -1043,8 +1052,9 @@ namespace ABI {
                     namespace Media3D {
                         /* [object, uuid("052C1F7A-8D73-48CD-BBB8-D00434CAAE5D"), exclusiveto, contract] */
                         MIDL_INTERFACE("052C1F7A-8D73-48CD-BBB8-D00434CAAE5D")
-                        ITransform3DFactory : IInspectable
+                        ITransform3DFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.usb.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1891,6 +1893,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CUsb__CUsbInterruptInPipe_Windows__CDevices__CUsb__CUsbInterruptInEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CUsb__CUsbInterruptInPipe_Windows__CDevices__CUsb__CUsbInterruptInEventArgs_USE
@@ -1919,6 +1922,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Usb::UsbInterruptInPipe*,ABI::
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CUsb__CUsbInterruptInPipe_Windows__CDevices__CUsb__CUsbInterruptInEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2562,8 +2566,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("3C6E4846-06CF-42A9-9DC2-971C1B14B6E3"), exclusiveto, contract] */
                 MIDL_INTERFACE("3C6E4846-06CF-42A9-9DC2-971C1B14B6E3")
-                IUsbBulkInEndpointDescriptor : IInspectable
+                IUsbBulkInEndpointDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPacketSize(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2608,8 +2613,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("F01D2D3B-4548-4D50-B326-D82CDABE1220"), exclusiveto, contract] */
                 MIDL_INTERFACE("F01D2D3B-4548-4D50-B326-D82CDABE1220")
-                IUsbBulkInPipe : IInspectable
+                IUsbBulkInPipe : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxTransferSizeBytes(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2664,8 +2670,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("2820847A-FFEE-4F60-9BE1-956CAC3ECB65"), exclusiveto, contract] */
                 MIDL_INTERFACE("2820847A-FFEE-4F60-9BE1-956CAC3ECB65")
-                IUsbBulkOutEndpointDescriptor : IInspectable
+                IUsbBulkOutEndpointDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPacketSize(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2710,8 +2717,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("A8E9EE6E-0115-45AA-8B21-37B225BCCEE7"), exclusiveto, contract] */
                 MIDL_INTERFACE("A8E9EE6E-0115-45AA-8B21-37B225BCCEE7")
-                IUsbBulkOutPipe : IInspectable
+                IUsbBulkOutPipe : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EndpointDescriptor(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor * * value
                         ) = 0;
@@ -2762,8 +2770,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("68177429-36A9-46D7-B873-FC689251EC30"), exclusiveto, contract] */
                 MIDL_INTERFACE("68177429-36A9-46D7-B873-FC689251EC30")
-                IUsbConfiguration : IInspectable
+                IUsbConfiguration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UsbInterfaces(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CUsb__CUsbInterface * * value
                         ) = 0;
@@ -2808,8 +2817,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("F2176D92-B442-407A-8207-7D646C0385F3"), exclusiveto, contract] */
                 MIDL_INTERFACE("F2176D92-B442-407A-8207-7D646C0385F3")
-                IUsbConfigurationDescriptor : IInspectable
+                IUsbConfigurationDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConfigurationValue(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -2857,8 +2867,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("424CED93-E740-40A1-92BD-DA120EA04914"), exclusiveto, contract] */
                 MIDL_INTERFACE("424CED93-E740-40A1-92BD-DA120EA04914")
-                IUsbConfigurationDescriptorStatics : IInspectable
+                IUsbConfigurationDescriptorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryParse(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Usb::IUsbDescriptor * descriptor,
                         /* [out] */__RPC__deref_out_opt ABI::Windows::Devices::Usb::IUsbConfigurationDescriptor * * parsed,
@@ -2903,8 +2914,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("8E9465A6-D73D-46DE-94BE-AAE7F07C0F5C"), exclusiveto, contract] */
                 MIDL_INTERFACE("8E9465A6-D73D-46DE-94BE-AAE7F07C0F5C")
-                IUsbControlRequestType : IInspectable
+                IUsbControlRequestType : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Direction(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Usb::UsbTransferDirection * value
                         ) = 0;
@@ -2964,8 +2976,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("0A89F216-5F9D-4874-8904-DA9AD3F5528F"), exclusiveto, contract] */
                 MIDL_INTERFACE("0A89F216-5F9D-4874-8904-DA9AD3F5528F")
-                IUsbDescriptor : IInspectable
+                IUsbDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Length(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -3014,8 +3027,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("5249B992-C456-44D5-AD5E-24F5A089F63B"), exclusiveto, contract] */
                 MIDL_INTERFACE("5249B992-C456-44D5-AD5E-24F5A089F63B")
-                IUsbDevice : IInspectable
+                IUsbDevice : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE SendControlOutTransferAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Usb::IUsbSetupPacket * setupPacket,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * buffer,
@@ -3078,8 +3092,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("051942F9-845E-47EB-B12A-38F2F617AFE7"), exclusiveto, contract] */
                 MIDL_INTERFACE("051942F9-845E-47EB-B12A-38F2F617AFE7")
-                IUsbDeviceClass : IInspectable
+                IUsbDeviceClass : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClassCode(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -3133,8 +3148,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("686F955D-9B92-4B30-9781-C22C55AC35CB"), exclusiveto, contract] */
                 MIDL_INTERFACE("686F955D-9B92-4B30-9781-C22C55AC35CB")
-                IUsbDeviceClasses : IInspectable
+                IUsbDeviceClasses : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -3170,8 +3186,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("B20B0527-C580-4599-A165-981B4FD03230"), exclusiveto, contract] */
                 MIDL_INTERFACE("B20B0527-C580-4599-A165-981B4FD03230")
-                IUsbDeviceClassesStatics : IInspectable
+                IUsbDeviceClassesStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CdcControl(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Usb::IUsbDeviceClass * * value
                         ) = 0;
@@ -3234,8 +3251,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("1F48D1F6-BA97-4322-B92C-B5B189216588"), exclusiveto, contract] */
                 MIDL_INTERFACE("1F48D1F6-BA97-4322-B92C-B5B189216588")
-                IUsbDeviceDescriptor : IInspectable
+                IUsbDeviceDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BcdUsb(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -3289,8 +3307,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("066B85A2-09B7-4446-8502-6FE6DCAA7309"), exclusiveto, contract] */
                 MIDL_INTERFACE("066B85A2-09B7-4446-8502-6FE6DCAA7309")
-                IUsbDeviceStatics : IInspectable
+                IUsbDeviceStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [in] */UINT32 vendorId,
                         /* [in] */UINT32 productId,
@@ -3349,8 +3368,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("6B4862D9-8DF7-4B40-AC83-578F139F0575"), exclusiveto, contract] */
                 MIDL_INTERFACE("6B4862D9-8DF7-4B40-AC83-578F139F0575")
-                IUsbEndpointDescriptor : IInspectable
+                IUsbEndpointDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EndpointNumber(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -3407,8 +3427,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("C890B201-9A6A-495E-A82C-295B9E708106"), exclusiveto, contract] */
                 MIDL_INTERFACE("C890B201-9A6A-495E-A82C-295B9E708106")
-                IUsbEndpointDescriptorStatics : IInspectable
+                IUsbEndpointDescriptorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryParse(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Usb::IUsbDescriptor * descriptor,
                         /* [out] */__RPC__deref_out_opt ABI::Windows::Devices::Usb::IUsbEndpointDescriptor * * parsed,
@@ -3453,8 +3474,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("A0322B95-7F47-48AB-A727-678C25BE2112"), exclusiveto, contract] */
                 MIDL_INTERFACE("A0322B95-7F47-48AB-A727-678C25BE2112")
-                IUsbInterface : IInspectable
+                IUsbInterface : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BulkInPipes(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CUsb__CUsbBulkInPipe * * value
                         ) = 0;
@@ -3511,8 +3533,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("199670C7-B7EE-4F90-8CD5-94A2E257598A"), exclusiveto, contract] */
                 MIDL_INTERFACE("199670C7-B7EE-4F90-8CD5-94A2E257598A")
-                IUsbInterfaceDescriptor : IInspectable
+                IUsbInterfaceDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClassCode(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -3563,8 +3586,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("E34A9FF5-77D6-48B6-B0BE-16C6422316FE"), exclusiveto, contract] */
                 MIDL_INTERFACE("E34A9FF5-77D6-48B6-B0BE-16C6422316FE")
-                IUsbInterfaceDescriptorStatics : IInspectable
+                IUsbInterfaceDescriptorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryParse(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Usb::IUsbDescriptor * descriptor,
                         /* [out] */__RPC__deref_out_opt ABI::Windows::Devices::Usb::IUsbInterfaceDescriptor * * parsed,
@@ -3609,8 +3633,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("1827BBA7-8DA7-4AF7-8F4C-7F3032E781F5"), exclusiveto, contract] */
                 MIDL_INTERFACE("1827BBA7-8DA7-4AF7-8F4C-7F3032E781F5")
-                IUsbInterfaceSetting : IInspectable
+                IUsbInterfaceSetting : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BulkInEndpoints(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CUsb__CUsbBulkInEndpointDescriptor * * value
                         ) = 0;
@@ -3670,8 +3695,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("C0528967-C911-4C3A-86B2-419C2DA89039"), exclusiveto, contract] */
                 MIDL_INTERFACE("C0528967-C911-4C3A-86B2-419C2DA89039")
-                IUsbInterruptInEndpointDescriptor : IInspectable
+                IUsbInterruptInEndpointDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPacketSize(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -3719,8 +3745,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("B7B04092-1418-4936-8209-299CF5605583"), exclusiveto, contract] */
                 MIDL_INTERFACE("B7B04092-1418-4936-8209-299CF5605583")
-                IUsbInterruptInEventArgs : IInspectable
+                IUsbInterruptInEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InterruptData(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -3759,8 +3786,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("FA007116-84D7-48C7-8A3F-4C0B235F2EA6"), exclusiveto, contract] */
                 MIDL_INTERFACE("FA007116-84D7-48C7-8A3F-4C0B235F2EA6")
-                IUsbInterruptInPipe : IInspectable
+                IUsbInterruptInPipe : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EndpointDescriptor(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor * * value
                         ) = 0;
@@ -3809,8 +3837,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("CC9FED81-10CA-4533-952D-9E278341E80F"), exclusiveto, contract] */
                 MIDL_INTERFACE("CC9FED81-10CA-4533-952D-9E278341E80F")
-                IUsbInterruptOutEndpointDescriptor : IInspectable
+                IUsbInterruptOutEndpointDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPacketSize(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -3858,8 +3887,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("E984C8A9-AAF9-49D0-B96C-F661AB4A7F95"), exclusiveto, contract] */
                 MIDL_INTERFACE("E984C8A9-AAF9-49D0-B96C-F661AB4A7F95")
-                IUsbInterruptOutPipe : IInspectable
+                IUsbInterruptOutPipe : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EndpointDescriptor(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor * * value
                         ) = 0;
@@ -3910,8 +3940,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("104BA132-C78F-4C51-B654-E49D02F2CB03"), exclusiveto, contract] */
                 MIDL_INTERFACE("104BA132-C78F-4C51-B654-E49D02F2CB03")
-                IUsbSetupPacket : IInspectable
+                IUsbSetupPacket : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequestType(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Usb::IUsbControlRequestType * * value
                         ) = 0;
@@ -3977,8 +4008,9 @@ namespace ABI {
             namespace Usb {
                 /* [object, uuid("C9257D50-1B2E-4A41-A2A7-338F0CEF3C14"), exclusiveto, contract] */
                 MIDL_INTERFACE("C9257D50-1B2E-4A41-A2A7-338F0CEF3C14")
-                IUsbSetupPacketFactory : IInspectable
+                IUsbSetupPacketFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithEightByteBuffer(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * eightByteBuffer,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Usb::IUsbSetupPacket * * value
@@ -7803,6 +7835,7 @@ interface __FIAsyncOperation_1_Windows__CDevices__CUsb__CUsbDevice
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CUsb__CUsbInterruptInPipe_Windows__CDevices__CUsb__CUsbInterruptInEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CUsb__CUsbInterruptInPipe_Windows__CDevices__CUsb__CUsbInterruptInEventArgs_INTERFACE_DEFINED__
 
@@ -7849,6 +7882,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CUsb__CUsbInterruptInPipe_W
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CUsb__CUsbInterruptInPipe_Windows__CDevices__CUsb__CUsbInterruptInEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIAsyncOperationCompletedHandler_1_UINT32_INTERFACE_DEFINED__)

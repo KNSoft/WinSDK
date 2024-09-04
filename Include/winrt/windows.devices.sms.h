@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.sms.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1601,6 +1603,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_USE
@@ -1629,6 +1632,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sms::SmsMessageRegistration*,A
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2896,8 +2900,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("SmsDeviceStatusChangedEventHandler may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsDeviceStatusChangedEventHandler : IUnknown
+                ISmsDeviceStatusChangedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Sms::ISmsDevice * sender
                         ) = 0;
@@ -2936,8 +2941,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("SmsMessageReceivedEventHandler may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsMessageReceivedEventHandler : IUnknown
+                ISmsMessageReceivedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Sms::ISmsDevice * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Sms::ISmsMessageReceivedEventArgs * e
@@ -2981,8 +2987,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("E8BB8494-D3A0-4A0A-86D7-291033A8CF54"), exclusiveto, contract] */
                 MIDL_INTERFACE("E8BB8494-D3A0-4A0A-86D7-291033A8CF54")
-                ISmsAppMessage : IInspectable
+                ISmsAppMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -3089,8 +3096,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsBinaryMessage : IInspectable
+                ISmsBinaryMessage : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
@@ -3160,8 +3168,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("75AEBBF1-E4B7-4874-A09C-2956E592F957"), exclusiveto, contract] */
                 MIDL_INTERFACE("75AEBBF1-E4B7-4874-A09C-2956E592F957")
-                ISmsBroadcastMessage : IInspectable
+                ISmsBroadcastMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -3228,8 +3237,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsDevice : IInspectable
+                ISmsDevice : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
@@ -3339,8 +3349,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("BD8A5C13-E522-46CB-B8D5-9EAD30FB6C47"), exclusiveto, contract] */
                 MIDL_INTERFACE("BD8A5C13-E522-46CB-B8D5-9EAD30FB6C47")
-                ISmsDevice2 : IInspectable
+                ISmsDevice2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SmscAddress(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3412,8 +3423,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("65C78325-1031-491E-8FB6-EF9991AFE363"), exclusiveto, contract] */
                 MIDL_INTERFACE("65C78325-1031-491E-8FB6-EF9991AFE363")
-                ISmsDevice2Statics : IInspectable
+                ISmsDevice2Statics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3467,8 +3479,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsDeviceMessageStore : IInspectable
+                ISmsDeviceMessageStore : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
@@ -3547,8 +3560,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsDeviceStatics : IInspectable
+                ISmsDeviceStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")
@@ -3610,8 +3624,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISmsDeviceStatics2 may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsDeviceStatics2 : IInspectable
+                ISmsDeviceStatics2 : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISmsDeviceStatics2 may be altered or unavailable for releases after Windows 10.")
@@ -3655,8 +3670,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("40E32FAE-B049-4FBC-AFE9-E2A610EFF55C"), exclusiveto, contract] */
                 MIDL_INTERFACE("40E32FAE-B049-4FBC-AFE9-E2A610EFF55C")
-                ISmsFilterRule : IInspectable
+                ISmsFilterRule : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MessageType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sms::SmsMessageType * value
                         ) = 0;
@@ -3734,8 +3750,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("00C36508-6296-4F29-9AAD-8920CEBA3CE8"), exclusiveto, contract] */
                 MIDL_INTERFACE("00C36508-6296-4F29-9AAD-8920CEBA3CE8")
-                ISmsFilterRuleFactory : IInspectable
+                ISmsFilterRuleFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFilterRule(
                         /* [in] */ABI::Windows::Devices::Sms::SmsMessageType messageType,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sms::ISmsFilterRule * * value
@@ -3775,8 +3792,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("4E47EAFB-79CD-4881-9894-55A4135B23FA"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E47EAFB-79CD-4881-9894-55A4135B23FA")
-                ISmsFilterRules : IInspectable
+                ISmsFilterRules : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActionType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sms::SmsFilterActionType * value
                         ) = 0;
@@ -3818,8 +3836,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("A09924ED-6E2E-4530-9FDE-465D02EED00E"), exclusiveto, contract] */
                 MIDL_INTERFACE("A09924ED-6E2E-4530-9FDE-465D02EED00E")
-                ISmsFilterRulesFactory : IInspectable
+                ISmsFilterRulesFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFilterRules(
                         /* [in] */ABI::Windows::Devices::Sms::SmsFilterActionType actionType,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sms::ISmsFilterRules * * value
@@ -3856,8 +3875,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("ED3C5E28-6984-4B07-811D-8D5906ED3CEA"), contract] */
                 MIDL_INTERFACE("ED3C5E28-6984-4B07-811D-8D5906ED3CEA")
-                ISmsMessage : IInspectable
+                ISmsMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -3896,8 +3916,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("2CF0FE30-FE50-4FC6-AA88-4CCFE27A29EA"), contract] */
                 MIDL_INTERFACE("2CF0FE30-FE50-4FC6-AA88-4CCFE27A29EA")
-                ISmsMessageBase : IInspectable
+                ISmsMessageBase : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MessageType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sms::SmsMessageType * value
                         ) = 0;
@@ -3952,8 +3973,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("SmsMessageReceivedEventArgs may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsMessageReceivedEventArgs : IInspectable
+                ISmsMessageReceivedEventArgs : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("SmsMessageReceivedEventArgs may be altered or unavailable for releases after Windows 10.")
@@ -4003,8 +4025,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("2BCFCBD4-2657-4128-AD5F-E3877132BDB1"), exclusiveto, contract] */
                 MIDL_INTERFACE("2BCFCBD4-2657-4128-AD5F-E3877132BDB1")
-                ISmsMessageReceivedTriggerDetails : IInspectable
+                ISmsMessageReceivedTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MessageType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Sms::SmsMessageType * value
                         ) = 0;
@@ -4063,8 +4086,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("1720503E-F34F-446B-83B3-0FF19923B409"), exclusiveto, contract] */
                 MIDL_INTERFACE("1720503E-F34F-446B-83B3-0FF19923B409")
-                ISmsMessageRegistration : IInspectable
+                ISmsMessageRegistration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4111,8 +4135,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("63A05464-2898-4778-A03C-6F994907D63A"), exclusiveto, contract] */
                 MIDL_INTERFACE("63A05464-2898-4778-A03C-6F994907D63A")
-                ISmsMessageRegistrationStatics : IInspectable
+                ISmsMessageRegistrationStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllRegistrations(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CSms__CSmsMessageRegistration * * value
                         ) = 0;
@@ -4160,8 +4185,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsReceivedEventDetails : IInspectable
+                ISmsReceivedEventDetails : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
@@ -4215,8 +4241,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsReceivedEventDetails2 : IInspectable
+                ISmsReceivedEventDetails2 : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
@@ -4266,8 +4293,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("DB139AF2-78C9-4FEB-9622-452328088D62"), exclusiveto, contract] */
                 MIDL_INTERFACE("DB139AF2-78C9-4FEB-9622-452328088D62")
-                ISmsSendMessageResult : IInspectable
+                ISmsSendMessageResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSuccessful(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4328,8 +4356,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("E6D28342-B70B-4677-9379-C9783FDFF8F4"), exclusiveto, contract] */
                 MIDL_INTERFACE("E6D28342-B70B-4677-9379-C9783FDFF8F4")
-                ISmsStatusMessage : IInspectable
+                ISmsStatusMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_To(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4391,8 +4420,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsTextMessage : IInspectable
+                ISmsTextMessage : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
@@ -4524,8 +4554,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("22A0D893-4555-4755-B5A1-E7FD84955F8D"), exclusiveto, contract] */
                 MIDL_INTERFACE("22A0D893-4555-4755-B5A1-E7FD84955F8D")
-                ISmsTextMessage2 : IInspectable
+                ISmsTextMessage2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -4613,8 +4644,9 @@ namespace ABI {
                 #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("ISmsTextMessageStatics may be altered or unavailable for releases after Windows 10.")
                 #endif // WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
-                ISmsTextMessageStatics : IInspectable
+                ISmsTextMessageStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("ISmsTextMessageStatics may be altered or unavailable for releases after Windows 10.")
@@ -4672,8 +4704,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("271AA0A6-95B1-44FF-BCB8-B8FDD7E08BC3"), exclusiveto, contract] */
                 MIDL_INTERFACE("271AA0A6-95B1-44FF-BCB8-B8FDD7E08BC3")
-                ISmsVoicemailMessage : IInspectable
+                ISmsVoicemailMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -4725,8 +4758,9 @@ namespace ABI {
             namespace Sms {
                 /* [object, uuid("CD937743-7A55-4D3B-9021-F22E022D09C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("CD937743-7A55-4D3B-9021-F22E022D09C5")
-                ISmsWapMessage : IInspectable
+                ISmsWapMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -7774,6 +7808,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSms__CSmsDevice2_IInspecta
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_INTERFACE_DEFINED__
 
@@ -7820,6 +7855,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistrati
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.spi.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
@@ -98,8 +96,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -800,8 +802,9 @@ namespace ABI {
             namespace Spi {
                 /* [object, uuid("9929444A-54F2-48C6-B952-9C32FC02C669"), exclusiveto, contract] */
                 MIDL_INTERFACE("9929444A-54F2-48C6-B952-9C32FC02C669")
-                ISpiBusInfo : IInspectable
+                ISpiBusInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChipSelectLineCount(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -849,8 +852,9 @@ namespace ABI {
             namespace Spi {
                 /* [object, uuid("5283A37F-F935-4B9F-A7A7-3A7890AFA5CE"), exclusiveto, contract] */
                 MIDL_INTERFACE("5283A37F-F935-4B9F-A7A7-3A7890AFA5CE")
-                ISpiConnectionSettings : IInspectable
+                ISpiConnectionSettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChipSelectLine(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -916,8 +920,9 @@ namespace ABI {
             namespace Spi {
                 /* [object, uuid("FF99081E-10C4-44B7-9FEA-A748B5A46F31"), exclusiveto, contract] */
                 MIDL_INTERFACE("FF99081E-10C4-44B7-9FEA-A748B5A46F31")
-                ISpiConnectionSettingsFactory : IInspectable
+                ISpiConnectionSettingsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */INT32 chipSelectLine,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Spi::ISpiConnectionSettings * * value
@@ -957,8 +962,9 @@ namespace ABI {
             namespace Spi {
                 /* [object, uuid("A8D3C829-9895-4159-A934-8741F1EE6D27"), exclusiveto, contract] */
                 MIDL_INTERFACE("A8D3C829-9895-4159-A934-8741F1EE6D27")
-                ISpiController : IInspectable
+                ISpiController : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDevice(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Spi::ISpiConnectionSettings * settings,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Spi::ISpiDevice * * device
@@ -998,8 +1004,9 @@ namespace ABI {
             namespace Spi {
                 /* [object, uuid("0D5229E2-138B-4E48-B964-4F2F79B9C5A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D5229E2-138B-4E48-B964-4F2F79B9C5A2")
-                ISpiControllerStatics : IInspectable
+                ISpiControllerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefaultAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSpi__CSpiController * * operation
                         ) = 0;
@@ -1046,8 +1053,9 @@ namespace ABI {
             namespace Spi {
                 /* [object, uuid("05D5356D-11B6-4D39-84D5-95DFB4C9F2CE"), exclusiveto, contract] */
                 MIDL_INTERFACE("05D5356D-11B6-4D39-84D5-95DFB4C9F2CE")
-                ISpiDevice : IInspectable
+                ISpiDevice : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1106,8 +1114,9 @@ namespace ABI {
             namespace Spi {
                 /* [object, uuid("A278E559-5720-4D3F-BD93-56F5FF5A5879"), contract] */
                 MIDL_INTERFACE("A278E559-5720-4D3F-BD93-56F5FF5A5879")
-                ISpiDeviceStatics : IInspectable
+                ISpiDeviceStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;

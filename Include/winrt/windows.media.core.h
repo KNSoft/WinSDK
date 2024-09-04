@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -263,6 +265,7 @@
 #include "Windows.Media.Playback.h"
 #include "Windows.Media.Protection.h"
 #include "Windows.Media.Streaming.Adaptive.h"
+#include "Windows.Networking.BackgroundTransfer.h"
 #include "Windows.Storage.h"
 #include "Windows.Storage.FileProperties.h"
 #include "Windows.Storage.Streams.h"
@@ -299,6 +302,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor2 ABI::Windows::Media::Core::IAudioStreamDescriptor2
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface IAudioStreamDescriptor3;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3 ABI::Windows::Media::Core::IAudioStreamDescriptor3
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptorFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptorFactory_FWD_DEFINED__
@@ -622,6 +639,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface IMediaBindingEventArgs3;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3 ABI::Windows::Media::Core::IMediaBindingEventArgs3
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaCue_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaCue_FWD_DEFINED__
 namespace ABI {
@@ -705,6 +736,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CCore_CIMediaSource4 ABI::Windows::Media::Core::IMediaSource4
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSource4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface IMediaSource5;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSource5 ABI::Windows::Media::Core::IMediaSource5
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceAppServiceConnection_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceAppServiceConnection_FWD_DEFINED__
@@ -817,6 +862,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics3 ABI::Windows::Media::Core::IMediaSourceStatics3
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface IMediaSourceStatics4;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4 ABI::Windows::Media::Core::IMediaSourceStatics4
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
@@ -1294,6 +1353,34 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CISpeechCue_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface ITimedMetadataStreamDescriptor;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor ABI::Windows::Media::Core::ITimedMetadataStreamDescriptor
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface ITimedMetadataStreamDescriptorFactory;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory ABI::Windows::Media::Core::ITimedMetadataStreamDescriptorFactory
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataTrack_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataTrack_FWD_DEFINED__
 namespace ABI {
@@ -1559,6 +1646,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor ABI::Windows::Media::Core::IVideoStreamDescriptor
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface IVideoStreamDescriptor2;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2 ABI::Windows::Media::Core::IVideoStreamDescriptor2
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptorFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptorFactory_FWD_DEFINED__
@@ -2043,6 +2144,79 @@ typedef IIterable<struct ABI::Windows::Media::Core::MseTimeRange> __FIIterable_1
 #endif /* DEF___FIIterable_1_Windows__CMedia__CCore__CMseTimeRange_USE */
 
 
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                class TimedMetadataStreamDescriptor;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#define DEF___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("68475671-f53b-57ff-92ac-28bfd46573d7"))
+IIterator<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*, ABI::Windows::Media::Core::IMediaStreamDescriptor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Media.Core.TimedMetadataStreamDescriptor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t;
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+//#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#define DEF___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("f3d07841-3852-509d-a12b-a9f2ac89da93"))
+IIterable<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*, ABI::Windows::Media::Core::IMediaStreamDescriptor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Media.Core.TimedMetadataStreamDescriptor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t;
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+//#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 namespace ABI {
     namespace Windows {
@@ -2929,6 +3103,38 @@ typedef IVectorView<struct ABI::Windows::Media::Core::MseTimeRange> __FIVectorVi
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#define DEF___FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("62e7b4ed-0c95-5743-a142-054f4bdea0a4"))
+IVectorView<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*, ABI::Windows::Media::Core::IMediaStreamDescriptor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Media.Core.TimedMetadataStreamDescriptor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t;
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+//#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CCore__CTimedTextLine_USE
@@ -3087,6 +3293,38 @@ typedef IVector<ABI::Windows::Media::Core::AudioStreamDescriptor*> __FIVector_1_
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#define DEF___FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("1ebdbbcf-4f75-5645-b8bc-31a716978bcc"))
+IVector<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*, ABI::Windows::Media::Core::IMediaStreamDescriptor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.Media.Core.TimedMetadataStreamDescriptor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVector<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t;
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+//#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -3521,6 +3759,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_USE
@@ -3549,6 +3788,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::FaceDetectionEffect*,ABI::
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3605,6 +3845,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_USE
@@ -3633,6 +3874,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::MediaBinder*,ABI::Windows:
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
@@ -3689,6 +3931,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_USE
@@ -3717,6 +3960,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::MediaSource*,ABI::Windows:
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3784,6 +4028,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_USE
@@ -3812,6 +4057,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::MediaSourceAppServiceConne
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
@@ -3901,6 +4147,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_USE
@@ -3929,6 +4176,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource*,ABI::Wi
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3987,6 +4235,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_USE
@@ -4016,6 +4265,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource*,ABI::Wi
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -4028,6 +4278,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceStartingEventArgs_USE
@@ -4058,6 +4309,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource*,ABI::Wi
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -4070,6 +4322,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_USE
@@ -4099,6 +4352,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource*,ABI::Wi
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -4239,6 +4493,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_USE
@@ -4268,6 +4523,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::SceneAnalysisEffect*,ABI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -4280,6 +4536,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_USE
@@ -4310,6 +4567,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::TimedMetadataTrack*,ABI::W
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -4322,6 +4580,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CTimedMetadataTrackFailedEventArgs_USE
@@ -4352,6 +4611,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::TimedMetadataTrack*,ABI::W
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -4364,6 +4624,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs_USE
@@ -4394,6 +4655,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::TimedTextSource*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -4415,6 +4677,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_USE
@@ -4444,6 +4707,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Core::VideoStabilizationEffect*,
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -5872,6 +6136,30 @@ namespace ABI {
     namespace Windows {
         namespace Media {
             namespace MediaProperties {
+                class TimedMetadataEncodingProperties;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IMediaEncodingProperties;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties ABI::Windows::Media::MediaProperties::IMediaEncodingProperties
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
                 class VideoEncodingProperties;
             } /* Windows */
         } /* Media */
@@ -5991,6 +6279,33 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource_FWD_DEFINED__
 
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace BackgroundTransfer {
+                class DownloadOperation;
+            } /* Windows */
+        } /* Networking */
+    } /* BackgroundTransfer */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace BackgroundTransfer {
+                interface IDownloadOperation;
+            } /* Windows */
+        } /* Networking */
+    } /* BackgroundTransfer */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation ABI::Windows::Networking::BackgroundTransfer::IDownloadOperation
+
+#endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation_FWD_DEFINED__
 
 
 
@@ -6597,6 +6912,13 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Media {
@@ -6841,6 +7163,7 @@ namespace ABI {
             } /* Windows */
         } /* Media */
     } /* Core */} /* ABI */
+
 
 
 
@@ -7870,8 +8193,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("1E3692E4-4027-4847-A70B-DF1D9A2A7B04"), exclusiveto, contract] */
                 MIDL_INTERFACE("1E3692E4-4027-4847-A70B-DF1D9A2A7B04")
-                IAudioStreamDescriptor : IInspectable
+                IAudioStreamDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EncodingProperties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties * * encodingProperties
                         ) = 0;
@@ -7914,8 +8238,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("2E68F1F6-A448-497B-8840-85082665ACF9"), exclusiveto, contract] */
                 MIDL_INTERFACE("2E68F1F6-A448-497B-8840-85082665ACF9")
-                IAudioStreamDescriptor2 : IInspectable
+                IAudioStreamDescriptor2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_LeadingEncoderPadding(
                         /* [in] */__RPC__in_opt __FIReference_1_UINT32 * value
                         ) = 0;
@@ -7944,6 +8269,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor2;
 
 /*
  *
+ * Interface Windows.Media.Core.IAudioStreamDescriptor3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.AudioStreamDescriptor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IAudioStreamDescriptor3[] = L"Windows.Media.Core.IAudioStreamDescriptor3";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                /* [object, uuid("4D220DA1-8E83-44EF-8973-2F63E993F36B"), exclusiveto, contract] */
+                MIDL_INTERFACE("4D220DA1-8E83-44EF-8973-2F63E993F36B")
+                IAudioStreamDescriptor3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Copy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IAudioStreamDescriptor * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAudioStreamDescriptor3=_uuidof(IAudioStreamDescriptor3);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Core.IAudioStreamDescriptorFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7963,8 +8329,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("4A86CE9E-4CB1-4380-8E0C-83504B7F5BF3"), exclusiveto, contract] */
                 MIDL_INTERFACE("4A86CE9E-4CB1-4380-8E0C-83504B7F5BF3")
-                IAudioStreamDescriptorFactory : IInspectable
+                IAudioStreamDescriptorFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties * encodingProperties,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IAudioStreamDescriptor * * result
@@ -8004,8 +8371,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("F23B6E77-3EF7-40DE-B943-068B1321701D"), exclusiveto, contract] */
                 MIDL_INTERFACE("F23B6E77-3EF7-40DE-B943-068B1321701D")
-                IAudioTrack : IInspectable
+                IAudioTrack : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_OpenFailed(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CAudioTrack_Windows__CMedia__CCore__CAudioTrackOpenFailedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -8060,8 +8428,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("EEDDB9B9-BB7C-4112-BF76-9384676F824B"), exclusiveto, contract] */
                 MIDL_INTERFACE("EEDDB9B9-BB7C-4112-BF76-9384676F824B")
-                IAudioTrackOpenFailedEventArgs : IInspectable
+                IAudioTrackOpenFailedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
                         /* [retval, out] */__RPC__out HRESULT * value
                         ) = 0;
@@ -8100,8 +8469,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("178BEFF7-CC39-44A6-B951-4A5653F073FA"), exclusiveto, contract] */
                 MIDL_INTERFACE("178BEFF7-CC39-44A6-B951-4A5653F073FA")
-                IAudioTrackSupportInfo : IInspectable
+                IAudioTrackSupportInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DecoderStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::MediaDecoderStatus * value
                         ) = 0;
@@ -8153,8 +8523,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("72A98001-D38A-4C0A-8FA6-75CDDAF4664C"), exclusiveto, contract] */
                 MIDL_INTERFACE("72A98001-D38A-4C0A-8FA6-75CDDAF4664C")
-                IChapterCue : IInspectable
+                IChapterCue : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Title(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -8196,8 +8567,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("51E89F85-EA97-499C-86AC-4CE5E73F3A42"), exclusiveto, contract] */
                 MIDL_INTERFACE("51E89F85-EA97-499C-86AC-4CE5E73F3A42")
-                ICodecInfo : IInspectable
+                ICodecInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::CodecKind * value
                         ) = 0;
@@ -8248,8 +8620,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("222A953A-AF61-4E04-808A-A4634E2F3AC4"), exclusiveto, contract] */
                 MIDL_INTERFACE("222A953A-AF61-4E04-808A-A4634E2F3AC4")
-                ICodecQuery : IInspectable
+                ICodecQuery : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindAllAsync(
                         /* [in] */ABI::Windows::Media::Core::CodecKind kind,
                         /* [in] */ABI::Windows::Media::Core::CodecCategory category,
@@ -8291,8 +8664,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("A66AC4F2-888B-4224-8CF6-2A8D4EB02382"), exclusiveto, contract] */
                 MIDL_INTERFACE("A66AC4F2-888B-4224-8CF6-2A8D4EB02382")
-                ICodecSubtypesStatics : IInspectable
+                ICodecSubtypesStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VideoFormatDV25(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8485,8 +8859,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("7C7F676D-1FBC-4E2D-9A87-EE38BD1DC637"), exclusiveto, contract] */
                 MIDL_INTERFACE("7C7F676D-1FBC-4E2D-9A87-EE38BD1DC637")
-                IDataCue : IInspectable
+                IDataCue : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Data(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * value
                         ) = 0;
@@ -8533,8 +8908,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("BC561B15-95F2-49E8-96F1-8DD5DAC68D93"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC561B15-95F2-49E8-96F1-8DD5DAC68D93")
-                IDataCue2 : IInspectable
+                IDataCue2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Properties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
                         ) = 0;
@@ -8573,8 +8949,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("19918426-C65B-46BA-85F8-13880576C90A"), exclusiveto, contract] */
                 MIDL_INTERFACE("19918426-C65B-46BA-85F8-13880576C90A")
-                IFaceDetectedEventArgs : IInspectable
+                IFaceDetectedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResultFrame(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IFaceDetectionEffectFrame * * value
                         ) = 0;
@@ -8617,8 +8994,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("AE15EBD2-0542-42A9-BC90-F283A29F46C1"), exclusiveto, contract] */
                 MIDL_INTERFACE("AE15EBD2-0542-42A9-BC90-F283A29F46C1")
-                IFaceDetectionEffect : IInspectable
+                IFaceDetectionEffect : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Enabled(
                         /* [in] */boolean value
                         ) = 0;
@@ -8677,8 +9055,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("43DCA081-B848-4F33-B702-1FD2624FB016"), exclusiveto, contract] */
                 MIDL_INTERFACE("43DCA081-B848-4F33-B702-1FD2624FB016")
-                IFaceDetectionEffectDefinition : IInspectable
+                IFaceDetectionEffectDefinition : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_DetectionMode(
                         /* [in] */ABI::Windows::Media::Core::FaceDetectionMode value
                         ) = 0;
@@ -8731,8 +9110,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("8AB08993-5DC8-447B-A247-5270BD802ECE"), exclusiveto, contract] */
                 MIDL_INTERFACE("8AB08993-5DC8-447B-A247-5270BD802ECE")
-                IFaceDetectionEffectFrame : IInspectable
+                IFaceDetectionEffectFrame : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DetectedFaces(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CFaceAnalysis__CDetectedFace * * value
                         ) = 0;
@@ -8771,8 +9151,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("55F1A7AE-D957-4DC9-9D1C-8553A82A7D99"), exclusiveto, contract] */
                 MIDL_INTERFACE("55F1A7AE-D957-4DC9-9D1C-8553A82A7D99")
-                IHighDynamicRangeControl : IInspectable
+                IHighDynamicRangeControl : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Enabled(
                         /* [in] */boolean value
                         ) = 0;
@@ -8814,8 +9195,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("0F57806B-253B-4119-BB40-3A90E51384F7"), exclusiveto, contract] */
                 MIDL_INTERFACE("0F57806B-253B-4119-BB40-3A90E51384F7")
-                IHighDynamicRangeOutput : IInspectable
+                IHighDynamicRangeOutput : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Certainty(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -8861,8 +9243,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("52828282-367B-440B-9116-3C84570DD270"), exclusiveto, contract] */
                 MIDL_INTERFACE("52828282-367B-440B-9116-3C84570DD270")
-                IImageCue : IInspectable
+                IImageCue : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::TimedTextPoint * value
                         ) = 0;
@@ -8916,8 +9299,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("25BC45E1-9B08-4C2E-A855-4542F1A75DEB"), exclusiveto, contract] */
                 MIDL_INTERFACE("25BC45E1-9B08-4C2E-A855-4542F1A75DEB")
-                IInitializeMediaStreamSourceRequestedEventArgs : IInspectable
+                IInitializeMediaStreamSourceRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Source(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamSource * * value
                         ) = 0;
@@ -8962,8 +9346,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("78EDBE35-27A0-42E0-9CD3-738D2089DE9C"), exclusiveto, contract] */
                 MIDL_INTERFACE("78EDBE35-27A0-42E0-9CD3-738D2089DE9C")
-                ILowLightFusionResult : IInspectable
+                ILowLightFusionResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Frame(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::Imaging::ISoftwareBitmap * * value
                         ) = 0;
@@ -9002,8 +9387,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("5305016D-C29E-40E2-87A9-9E1FD2F192F5"), exclusiveto, contract] */
                 MIDL_INTERFACE("5305016D-C29E-40E2-87A9-9E1FD2F192F5")
-                ILowLightFusionStatics : IInspectable
+                ILowLightFusionStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedBitmapPixelFormats(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CGraphics__CImaging__CBitmapPixelFormat * * value
                         ) = 0;
@@ -9049,8 +9435,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("2B7E40AA-DE07-424F-83F1-F1DE46C4FA2E"), exclusiveto, contract] */
                 MIDL_INTERFACE("2B7E40AA-DE07-424F-83F1-F1DE46C4FA2E")
-                IMediaBinder : IInspectable
+                IMediaBinder : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Binding(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -9102,8 +9489,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("B61CB25A-1B6D-4630-A86D-2F0837F712E5"), exclusiveto, contract] */
                 MIDL_INTERFACE("B61CB25A-1B6D-4630-A86D-2F0837F712E5")
-                IMediaBindingEventArgs : IInspectable
+                IMediaBindingEventArgs : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Canceled(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBindingEventArgs_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -9163,8 +9551,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("0464CCEB-BB5A-482F-B8BA-F0284C696567"), exclusiveto, contract] */
                 MIDL_INTERFACE("0464CCEB-BB5A-482F-B8BA-F0284C696567")
-                IMediaBindingEventArgs2 : IInspectable
+                IMediaBindingEventArgs2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetAdaptiveMediaSource(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource * mediaSource
                         ) = 0;
@@ -9187,6 +9576,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs2;
 
 /*
  *
+ * Interface Windows.Media.Core.IMediaBindingEventArgs3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaBindingEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaBindingEventArgs3[] = L"Windows.Media.Core.IMediaBindingEventArgs3";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                /* [object, uuid("F8EB475E-19BE-44FC-A5ED-7ABA315037F9"), exclusiveto, contract] */
+                MIDL_INTERFACE("F8EB475E-19BE-44FC-A5ED-7ABA315037F9")
+                IMediaBindingEventArgs3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE SetDownloadOperation(
+                        /* [in] */__RPC__in_opt ABI::Windows::Networking::BackgroundTransfer::IDownloadOperation * downloadOperation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaBindingEventArgs3=_uuidof(IMediaBindingEventArgs3);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Core.IMediaCue
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9203,8 +9633,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("C7D15E5D-59DC-431F-A0EE-27744323B36D"), contract] */
                 MIDL_INTERFACE("C7D15E5D-59DC-431F-A0EE-27744323B36D")
-                IMediaCue : IInspectable
+                IMediaCue : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StartTime(
                         /* [in] */ABI::Windows::Foundation::TimeSpan value
                         ) = 0;
@@ -9258,8 +9689,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("D12F47F7-5FA4-4E68-9FE5-32160DCEE57E"), exclusiveto, contract] */
                 MIDL_INTERFACE("D12F47F7-5FA4-4E68-9FE5-32160DCEE57E")
-                IMediaCueEventArgs : IInspectable
+                IMediaCueEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Cue(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaCue * * value
                         ) = 0;
@@ -9295,8 +9727,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("E7BFB599-A09D-4C21-BCDF-20AF4F86B3D9"), contract] */
                 MIDL_INTERFACE("E7BFB599-A09D-4C21-BCDF-20AF4F86B3D9")
-                IMediaSource : IInspectable
+                IMediaSource : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -9337,8 +9770,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("2EB61048-655F-4C37-B813-B4E45DFA0ABE"), exclusiveto, contract] */
                 MIDL_INTERFACE("2EB61048-655F-4C37-B813-B4E45DFA0ABE")
-                IMediaSource2 : IInspectable
+                IMediaSource2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_OpenOperationCompleted(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -9402,8 +9836,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("B59F0D9B-4B6E-41ED-BBB4-7C7509A994AD"), exclusiveto, contract] */
                 MIDL_INTERFACE("B59F0D9B-4B6E-41ED-BBB4-7C7509A994AD")
-                IMediaSource3 : IInspectable
+                IMediaSource3 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_StateChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceStateChangedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -9457,8 +9892,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("BDAFAD57-8EFF-4C63-85A6-84DE0AE3E4F2"), exclusiveto, contract] */
                 MIDL_INTERFACE("BDAFAD57-8EFF-4C63-85A6-84DE0AE3E4F2")
-                IMediaSource4 : IInspectable
+                IMediaSource4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AdaptiveMediaSource(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource * * value
                         ) = 0;
@@ -9490,6 +9926,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaSource4;
 
 /*
  *
+ * Interface Windows.Media.Core.IMediaSource5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaSource5[] = L"Windows.Media.Core.IMediaSource5";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                /* [object, uuid("331A22AE-ED2E-4A22-94C8-B743A92B3022"), exclusiveto, contract] */
+                MIDL_INTERFACE("331A22AE-ED2E-4A22-94C8-B743A92B3022")
+                IMediaSource5 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DownloadOperation(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::BackgroundTransfer::IDownloadOperation * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaSource5=_uuidof(IMediaSource5);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaSource5;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Core.IMediaSourceAppServiceConnection
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -9509,8 +9986,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("61E1EA97-1916-4810-B7F4-B642BE829596"), exclusiveto, contract] */
                 MIDL_INTERFACE("61E1EA97-1916-4810-B7F4-B642BE829596")
-                IMediaSourceAppServiceConnection : IInspectable
+                IMediaSourceAppServiceConnection : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_InitializeMediaStreamSourceRequested(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -9554,8 +10032,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("65B912EB-80B9-44F9-9C1E-E120F6D92838"), exclusiveto, contract] */
                 MIDL_INTERFACE("65B912EB-80B9-44F9-9C1E-E120F6D92838")
-                IMediaSourceAppServiceConnectionFactory : IInspectable
+                IMediaSourceAppServiceConnectionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::AppService::IAppServiceConnection * appServiceConnection,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaSourceAppServiceConnection * * result
@@ -9595,8 +10074,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("5C0A8965-37C5-4E9D-8D21-1CDEE90CECC6"), exclusiveto, contract] */
                 MIDL_INTERFACE("5C0A8965-37C5-4E9D-8D21-1CDEE90CECC6")
-                IMediaSourceError : IInspectable
+                IMediaSourceError : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
                         /* [retval, out] */__RPC__out HRESULT * value
                         ) = 0;
@@ -9635,8 +10115,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("FC682CEB-E281-477C-A8E0-1ACD654114C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("FC682CEB-E281-477C-A8E0-1ACD654114C8")
-                IMediaSourceOpenOperationCompletedEventArgs : IInspectable
+                IMediaSourceOpenOperationCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaSourceError * * value
                         ) = 0;
@@ -9675,8 +10156,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("0A30AF82-9071-4BAC-BC39-CA2A93B717A9"), exclusiveto, contract] */
                 MIDL_INTERFACE("0A30AF82-9071-4BAC-BC39-CA2A93B717A9")
-                IMediaSourceStateChangedEventArgs : IInspectable
+                IMediaSourceStateChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OldState(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::MediaSourceState * value
                         ) = 0;
@@ -9718,8 +10200,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("F77D6FA4-4652-410E-B1D8-E9A5E245A45C"), exclusiveto, contract] */
                 MIDL_INTERFACE("F77D6FA4-4652-410E-B1D8-E9A5E245A45C")
-                IMediaSourceStatics : IInspectable
+                IMediaSourceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromAdaptiveMediaSource(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource * mediaSource,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaSource2 * * result
@@ -9789,8 +10272,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("EEE161A4-7F13-4896-B8CB-DF0DE5BCB9F1"), exclusiveto, contract] */
                 MIDL_INTERFACE("EEE161A4-7F13-4896-B8CB-DF0DE5BCB9F1")
-                IMediaSourceStatics2 : IInspectable
+                IMediaSourceStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromMediaBinder(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Core::IMediaBinder * binder,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaSource2 * * result
@@ -9830,8 +10314,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("453A30D6-2BEA-4122-9F73-EACE04526E35"), exclusiveto, contract] */
                 MIDL_INTERFACE("453A30D6-2BEA-4122-9F73-EACE04526E35")
-                IMediaSourceStatics3 : IInspectable
+                IMediaSourceStatics3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromMediaFrameSource(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Capture::Frames::IMediaFrameSource * frameSource,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaSource2 * * result
@@ -9852,6 +10337,48 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics3;
 
 /*
  *
+ * Interface Windows.Media.Core.IMediaSourceStatics4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaSourceStatics4[] = L"Windows.Media.Core.IMediaSourceStatics4";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                /* [object, uuid("281B3BFC-E50A-4428-A500-9C4ED918D3F0"), exclusiveto, contract] */
+                MIDL_INTERFACE("281B3BFC-E50A-4428-A500-9C4ED918D3F0")
+                IMediaSourceStatics4 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE CreateFromDownloadOperation(
+                        /* [in] */__RPC__in_opt ABI::Windows::Networking::BackgroundTransfer::IDownloadOperation * downloadOperation,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaSource2 * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaSourceStatics4=_uuidof(IMediaSourceStatics4);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Core.IMediaStreamDescriptor
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9868,8 +10395,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("80F16E6E-92F7-451E-97D2-AFD80742DA70"), contract] */
                 MIDL_INTERFACE("80F16E6E-92F7-451E-97D2-AFD80742DA70")
-                IMediaStreamDescriptor : IInspectable
+                IMediaStreamDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSelected(
                         /* [retval, out] */__RPC__out boolean * selected
                         ) = 0;
@@ -9921,8 +10449,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("5073010F-E8B2-4071-B00B-EBF337A76B58"), contract] */
                 MIDL_INTERFACE("5073010F-E8B2-4071-B00B-EBF337A76B58")
-                IMediaStreamDescriptor2 : IInspectable
+                IMediaStreamDescriptor2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Label(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -9964,8 +10493,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("5C8DB627-4B80-4361-9837-6CB7481AD9D6"), exclusiveto, contract] */
                 MIDL_INTERFACE("5C8DB627-4B80-4361-9837-6CB7481AD9D6")
-                IMediaStreamSample : IInspectable
+                IMediaStreamSample : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Processed(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSample_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -10044,8 +10574,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("4EB88292-ECDF-493E-841D-DD4ADD7CACA2"), exclusiveto, contract] */
                 MIDL_INTERFACE("4EB88292-ECDF-493E-841D-DD4ADD7CACA2")
-                IMediaStreamSampleProtectionProperties : IInspectable
+                IMediaStreamSampleProtectionProperties : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetKeyIdentifier(
                         /* [in] */UINT32 __valueSize,
                         /* [size_is(__valueSize), in] */__RPC__in_ecount_full(__valueSize) BYTE * value
@@ -10105,8 +10636,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("DFDF218F-A6CF-4579-BE41-73DD941AD972"), exclusiveto, contract] */
                 MIDL_INTERFACE("DFDF218F-A6CF-4579-BE41-73DD941AD972")
-                IMediaStreamSampleStatics : IInspectable
+                IMediaStreamSampleStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromBuffer(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * buffer,
                         /* [in] */ABI::Windows::Foundation::TimeSpan timestamp,
@@ -10157,8 +10689,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("3712D543-45EB-4138-AA62-C01E26F3843F"), exclusiveto, contract] */
                 MIDL_INTERFACE("3712D543-45EB-4138-AA62-C01E26F3843F")
-                IMediaStreamSource : IInspectable
+                IMediaStreamSource : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -10287,8 +10820,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("EC55D0AD-2E6A-4F74-ADBB-B562D1533849"), exclusiveto, contract] */
                 MIDL_INTERFACE("EC55D0AD-2E6A-4F74-ADBB-B562D1533849")
-                IMediaStreamSource2 : IInspectable
+                IMediaStreamSource2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SampleRendered(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRenderedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -10336,8 +10870,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("6A2A2746-3DDD-4DDF-A121-94045ECF9440"), exclusiveto, contract] */
                 MIDL_INTERFACE("6A2A2746-3DDD-4DDF-A121-94045ECF9440")
-                IMediaStreamSource3 : IInspectable
+                IMediaStreamSource3 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MaxSupportedPlaybackRate(
                         /* [in] */__RPC__in_opt __FIReference_1_double * value
                         ) = 0;
@@ -10384,8 +10919,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("1D0CFCAB-830D-417C-A3A9-2454FD6415C7"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D0CFCAB-830D-417C-A3A9-2454FD6415C7")
-                IMediaStreamSource4 : IInspectable
+                IMediaStreamSource4 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsLive(
                         /* [in] */boolean value
                         ) = 0;
@@ -10427,8 +10963,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("CD8C7EB2-4816-4E24-88F0-491EF7386406"), exclusiveto, contract] */
                 MIDL_INTERFACE("CD8C7EB2-4816-4E24-88F0-491EF7386406")
-                IMediaStreamSourceClosedEventArgs : IInspectable
+                IMediaStreamSourceClosedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamSourceClosedRequest * * value
                         ) = 0;
@@ -10467,8 +11004,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("907C00E9-18A3-4951-887A-2C1EEBD5C69E"), exclusiveto, contract] */
                 MIDL_INTERFACE("907C00E9-18A3-4951-887A-2C1EEBD5C69E")
-                IMediaStreamSourceClosedRequest : IInspectable
+                IMediaStreamSourceClosedRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reason(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::MediaStreamSourceClosedReason * value
                         ) = 0;
@@ -10507,8 +11045,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("EF77E0D9-D158-4B7A-863F-203342FBFD41"), exclusiveto, contract] */
                 MIDL_INTERFACE("EF77E0D9-D158-4B7A-863F-203342FBFD41")
-                IMediaStreamSourceFactory : IInspectable
+                IMediaStreamSourceFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromDescriptor(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Core::IMediaStreamDescriptor * descriptor,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamSource * * result
@@ -10553,8 +11092,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("9D697B05-D4F2-4C7A-9DFE-8D6CD0B3EE84"), exclusiveto, contract] */
                 MIDL_INTERFACE("9D697B05-D4F2-4C7A-9DFE-8D6CD0B3EE84")
-                IMediaStreamSourceSampleRenderedEventArgs : IInspectable
+                IMediaStreamSourceSampleRenderedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SampleLag(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -10593,8 +11133,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("4DB341A9-3501-4D9B-83F9-8F235C822532"), exclusiveto, contract] */
                 MIDL_INTERFACE("4DB341A9-3501-4D9B-83F9-8F235C822532")
-                IMediaStreamSourceSampleRequest : IInspectable
+                IMediaStreamSourceSampleRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StreamDescriptor(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamDescriptor * * value
                         ) = 0;
@@ -10645,8 +11186,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("7895CC02-F982-43C8-9D16-C62D999319BE"), exclusiveto, contract] */
                 MIDL_INTERFACE("7895CC02-F982-43C8-9D16-C62D999319BE")
-                IMediaStreamSourceSampleRequestDeferral : IInspectable
+                IMediaStreamSourceSampleRequestDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -10683,8 +11225,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("10F9BB9E-71C5-492F-847F-0DA1F35E81F8"), exclusiveto, contract] */
                 MIDL_INTERFACE("10F9BB9E-71C5-492F-847F-0DA1F35E81F8")
-                IMediaStreamSourceSampleRequestedEventArgs : IInspectable
+                IMediaStreamSourceSampleRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamSourceSampleRequest * * value
                         ) = 0;
@@ -10723,8 +11266,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("F41468F2-C274-4940-A5BB-28A572452FA7"), exclusiveto, contract] */
                 MIDL_INTERFACE("F41468F2-C274-4940-A5BB-28A572452FA7")
-                IMediaStreamSourceStartingEventArgs : IInspectable
+                IMediaStreamSourceStartingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamSourceStartingRequest * * value
                         ) = 0;
@@ -10763,8 +11307,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("2A9093E4-35C4-4B1B-A791-0D99DB56DD1D"), exclusiveto, contract] */
                 MIDL_INTERFACE("2A9093E4-35C4-4B1B-A791-0D99DB56DD1D")
-                IMediaStreamSourceStartingRequest : IInspectable
+                IMediaStreamSourceStartingRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartPosition(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
                         ) = 0;
@@ -10809,8 +11354,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("3F1356A5-6340-4DC4-9910-068ED9F598F8"), exclusiveto, contract] */
                 MIDL_INTERFACE("3F1356A5-6340-4DC4-9910-068ED9F598F8")
-                IMediaStreamSourceStartingRequestDeferral : IInspectable
+                IMediaStreamSourceStartingRequestDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -10847,8 +11393,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("41B8808E-38A9-4EC3-9BA0-B69B85501E90"), exclusiveto, contract] */
                 MIDL_INTERFACE("41B8808E-38A9-4EC3-9BA0-B69B85501E90")
-                IMediaStreamSourceSwitchStreamsRequest : IInspectable
+                IMediaStreamSourceSwitchStreamsRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OldStreamDescriptor(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamDescriptor * * value
                         ) = 0;
@@ -10893,8 +11440,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("BEE3D835-A505-4F9A-B943-2B8CB1B4BBD9"), exclusiveto, contract] */
                 MIDL_INTERFACE("BEE3D835-A505-4F9A-B943-2B8CB1B4BBD9")
-                IMediaStreamSourceSwitchStreamsRequestDeferral : IInspectable
+                IMediaStreamSourceSwitchStreamsRequestDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -10931,8 +11479,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("42202B72-6EA1-4677-981E-350A0DA412AA"), exclusiveto, contract] */
                 MIDL_INTERFACE("42202B72-6EA1-4677-981E-350A0DA412AA")
-                IMediaStreamSourceSwitchStreamsRequestedEventArgs : IInspectable
+                IMediaStreamSourceSwitchStreamsRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequest * * value
                         ) = 0;
@@ -10968,8 +11517,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("03E1FAFC-C931-491A-B46B-C10EE8C256B7"), contract] */
                 MIDL_INTERFACE("03E1FAFC-C931-491A-B46B-C10EE8C256B7")
-                IMediaTrack : IInspectable
+                IMediaTrack : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -11020,8 +11570,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("0C1AA3E3-DF8D-4079-A3FE-6849184B4E2F"), exclusiveto, contract] */
                 MIDL_INTERFACE("0C1AA3E3-DF8D-4079-A3FE-6849184B4E2F")
-                IMseSourceBuffer : IInspectable
+                IMseSourceBuffer : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_UpdateStarting(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -11137,8 +11688,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("95FAE8E7-A8E7-4EBF-8927-145E940BA511"), exclusiveto, contract] */
                 MIDL_INTERFACE("95FAE8E7-A8E7-4EBF-8927-145E940BA511")
-                IMseSourceBufferList : IInspectable
+                IMseSourceBufferList : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SourceBufferAdded(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -11195,8 +11747,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("B0B4198D-02F4-4923-88DD-81BC3F360FFA"), exclusiveto, contract] */
                 MIDL_INTERFACE("B0B4198D-02F4-4923-88DD-81BC3F360FFA")
-                IMseStreamSource : IInspectable
+                IMseStreamSource : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Opened(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CMseStreamSource_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -11278,8 +11831,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("66F57D37-F9E7-418A-9CDE-A020E956552B"), exclusiveto, contract] */
                 MIDL_INTERFACE("66F57D37-F9E7-418A-9CDE-A020E956552B")
-                IMseStreamSource2 : IInspectable
+                IMseStreamSource2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LiveSeekableRange(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CMedia__CCore__CMseTimeRange * * value
                         ) = 0;
@@ -11321,8 +11875,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("465C679D-D570-43CE-BA21-0BFF5F3FBD0A"), exclusiveto, contract] */
                 MIDL_INTERFACE("465C679D-D570-43CE-BA21-0BFF5F3FBD0A")
-                IMseStreamSourceStatics : IInspectable
+                IMseStreamSourceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsContentTypeSupported(
                         /* [in] */__RPC__in HSTRING contentType,
                         /* [retval, out] */__RPC__out boolean * value
@@ -11366,8 +11921,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("C04BA319-CA41-4813-BFFD-7B08B0ED2557"), exclusiveto, contract] */
                 MIDL_INTERFACE("C04BA319-CA41-4813-BFFD-7B08B0ED2557")
-                ISceneAnalysisEffect : IInspectable
+                ISceneAnalysisEffect : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HighDynamicRangeAnalyzer(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IHighDynamicRangeControl * * value
                         ) = 0;
@@ -11424,8 +11980,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("D8B10E4C-7FD9-42E1-85EB-6572C297C987"), exclusiveto, contract] */
                 MIDL_INTERFACE("D8B10E4C-7FD9-42E1-85EB-6572C297C987")
-                ISceneAnalysisEffectFrame : IInspectable
+                ISceneAnalysisEffectFrame : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameControlValues(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::ICapturedFrameControlValues * * value
                         ) = 0;
@@ -11472,8 +12029,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("2D4E29BE-061F-47AE-9915-02524B5F9A5F"), exclusiveto, contract] */
                 MIDL_INTERFACE("2D4E29BE-061F-47AE-9915-02524B5F9A5F")
-                ISceneAnalysisEffectFrame2 : IInspectable
+                ISceneAnalysisEffectFrame2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnalysisRecommendation(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::SceneAnalysisRecommendation * value
                         ) = 0;
@@ -11512,8 +12070,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("146B9588-2851-45E4-AD55-44CF8DF8DB4D"), exclusiveto, contract] */
                 MIDL_INTERFACE("146B9588-2851-45E4-AD55-44CF8DF8DB4D")
-                ISceneAnalyzedEventArgs : IInspectable
+                ISceneAnalyzedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResultFrame(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::ISceneAnalysisEffectFrame * * value
                         ) = 0;
@@ -11549,8 +12108,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("77206F1F-C34F-494F-8077-2BAD9FF4ECF1"), contract] */
                 MIDL_INTERFACE("77206F1F-C34F-494F-8077-2BAD9FF4ECF1")
-                ISingleSelectMediaTrackList : IInspectable
+                ISingleSelectMediaTrackList : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SelectedIndexChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CISingleSelectMediaTrackList_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -11603,8 +12163,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("AEE254DC-1725-4BAD-8043-A98499B017A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("AEE254DC-1725-4BAD-8043-A98499B017A2")
-                ISpeechCue : IInspectable
+                ISpeechCue : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -11639,6 +12200,92 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CISpeechCue;
 
 /*
  *
+ * Interface Windows.Media.Core.ITimedMetadataStreamDescriptor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.TimedMetadataStreamDescriptor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_ITimedMetadataStreamDescriptor[] = L"Windows.Media.Core.ITimedMetadataStreamDescriptor";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                /* [object, uuid("133336BF-296A-463E-9FF9-01CD25691408"), exclusiveto, contract] */
+                MIDL_INTERFACE("133336BF-296A-463E-9FF9-01CD25691408")
+                ITimedMetadataStreamDescriptor : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EncodingProperties(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProperties * * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Copy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamDescriptor * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ITimedMetadataStreamDescriptor=_uuidof(ITimedMetadataStreamDescriptor);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Media.Core.ITimedMetadataStreamDescriptorFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.TimedMetadataStreamDescriptor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_ITimedMetadataStreamDescriptorFactory[] = L"Windows.Media.Core.ITimedMetadataStreamDescriptorFactory";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                /* [object, uuid("C027DE30-7362-4FF9-98B1-2DFD0B8D1CAE"), exclusiveto, contract] */
+                MIDL_INTERFACE("C027DE30-7362-4FF9-98B1-2DFD0B8D1CAE")
+                ITimedMetadataStreamDescriptorFactory : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Create(
+                        /* [in] */__RPC__in_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProperties * encodingProperties,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamDescriptor * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ITimedMetadataStreamDescriptorFactory=_uuidof(ITimedMetadataStreamDescriptorFactory);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Core.ITimedMetadataTrack
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -11662,8 +12309,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("9E6AED9E-F67A-49A9-B330-CF03B0E9CF07"), exclusiveto, contract] */
                 MIDL_INTERFACE("9E6AED9E-F67A-49A9-B330-CF03B0E9CF07")
-                ITimedMetadataTrack : IInspectable
+                ITimedMetadataTrack : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CueEntered(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -11743,8 +12391,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("21B4B648-9F9D-40BA-A8F3-1A92753AEF0B"), exclusiveto, contract] */
                 MIDL_INTERFACE("21B4B648-9F9D-40BA-A8F3-1A92753AEF0B")
-                ITimedMetadataTrack2 : IInspectable
+                ITimedMetadataTrack2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PlaybackItem(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackItem * * value
                         ) = 0;
@@ -11786,8 +12435,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("B3767915-4114-4819-B9D9-DD76089E72F8"), exclusiveto, contract] */
                 MIDL_INTERFACE("B3767915-4114-4819-B9D9-DD76089E72F8")
-                ITimedMetadataTrackError : IInspectable
+                ITimedMetadataTrackError : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ErrorCode(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::TimedMetadataTrackErrorCode * value
                         ) = 0;
@@ -11829,8 +12479,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("8DD57611-97B3-4E1F-852C-0F482C81AD26"), exclusiveto, contract] */
                 MIDL_INTERFACE("8DD57611-97B3-4E1F-852C-0F482C81AD26")
-                ITimedMetadataTrackFactory : IInspectable
+                ITimedMetadataTrackFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING id,
                         /* [in] */__RPC__in HSTRING language,
@@ -11872,8 +12523,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("A57FC9D1-6789-4D4D-B07F-84B4F31ACB70"), exclusiveto, contract] */
                 MIDL_INTERFACE("A57FC9D1-6789-4D4D-B07F-84B4F31ACB70")
-                ITimedMetadataTrackFailedEventArgs : IInspectable
+                ITimedMetadataTrackFailedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::ITimedMetadataTrackError * * value
                         ) = 0;
@@ -11909,8 +12561,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("3B7F2024-F74E-4ADE-93C5-219DA05B6856"), contract] */
                 MIDL_INTERFACE("3B7F2024-F74E-4ADE-93C5-219DA05B6856")
-                ITimedMetadataTrackProvider : IInspectable
+                ITimedMetadataTrackProvider : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TimedMetadataTracks(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack * * value
                         ) = 0;
@@ -11953,8 +12606,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("51C79E51-3B86-494D-B359-BB2EA7ACA9A9"), exclusiveto, contract] */
                 MIDL_INTERFACE("51C79E51-3B86-494D-B359-BB2EA7ACA9A9")
-                ITimedTextCue : IInspectable
+                ITimedTextCue : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CueRegion(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::ITimedTextRegion * * value
                         ) = 0;
@@ -12005,8 +12659,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("978D7CE2-7308-4C66-BE50-65777289F5DF"), exclusiveto, contract] */
                 MIDL_INTERFACE("978D7CE2-7308-4C66-BE50-65777289F5DF")
-                ITimedTextLine : IInspectable
+                ITimedTextLine : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -12051,8 +12706,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("1ED0881F-8A06-4222-9F59-B21BF40124B4"), exclusiveto, contract] */
                 MIDL_INTERFACE("1ED0881F-8A06-4222-9F59-B21BF40124B4")
-                ITimedTextRegion : IInspectable
+                ITimedTextRegion : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -12160,8 +12816,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("C4ED9BA6-101F-404D-A949-82F33FCD93B7"), exclusiveto, contract] */
                 MIDL_INTERFACE("C4ED9BA6-101F-404D-A949-82F33FCD93B7")
-                ITimedTextSource : IInspectable
+                ITimedTextSource : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Resolved(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -12204,8 +12861,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("48907C9C-DCD8-4C33-9AD3-6CDCE7B1C566"), exclusiveto, contract] */
                 MIDL_INTERFACE("48907C9C-DCD8-4C33-9AD3-6CDCE7B1C566")
-                ITimedTextSourceResolveResultEventArgs : IInspectable
+                ITimedTextSourceResolveResultEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::ITimedMetadataTrackError * * value
                         ) = 0;
@@ -12247,8 +12905,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("7E311853-9ABA-4AC4-BB98-2FB176C3BFDD"), exclusiveto, contract] */
                 MIDL_INTERFACE("7E311853-9ABA-4AC4-BB98-2FB176C3BFDD")
-                ITimedTextSourceStatics : IInspectable
+                ITimedTextSourceStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromStream(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * stream,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::ITimedTextSource * * value
@@ -12302,8 +12961,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("B66B7602-923E-43FA-9633-587075812DB5"), exclusiveto, contract] */
                 MIDL_INTERFACE("B66B7602-923E-43FA-9633-587075812DB5")
-                ITimedTextSourceStatics2 : IInspectable
+                ITimedTextSourceStatics2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromStreamWithIndex(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * stream,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * indexStream,
@@ -12361,8 +13021,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("1BB2384D-A825-40C2-A7F5-281EAEDF3B55"), exclusiveto, contract] */
                 MIDL_INTERFACE("1BB2384D-A825-40C2-A7F5-281EAEDF3B55")
-                ITimedTextStyle : IInspectable
+                ITimedTextStyle : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -12470,8 +13131,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("655F492D-6111-4787-89CC-686FECE57E14"), exclusiveto, contract] */
                 MIDL_INTERFACE("655F492D-6111-4787-89CC-686FECE57E14")
-                ITimedTextStyle2 : IInspectable
+                ITimedTextStyle2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FontStyle(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::TimedTextFontStyle * value
                         ) = 0;
@@ -12531,8 +13193,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("D713502F-3261-4722-A0C2-B937B2390F14"), exclusiveto, contract] */
                 MIDL_INTERFACE("D713502F-3261-4722-A0C2-B937B2390F14")
-                ITimedTextSubformat : IInspectable
+                ITimedTextSubformat : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartIndex(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -12590,8 +13253,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("0808A650-9698-4E57-877B-BD7CB2EE0F8A"), exclusiveto, contract] */
                 MIDL_INTERFACE("0808A650-9698-4E57-877B-BD7CB2EE0F8A")
-                IVideoStabilizationEffect : IInspectable
+                IVideoStabilizationEffect : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Enabled(
                         /* [in] */boolean value
                         ) = 0;
@@ -12645,8 +13309,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("187EFF28-67BB-4713-B900-4168DA164529"), exclusiveto, contract] */
                 MIDL_INTERFACE("187EFF28-67BB-4713-B900-4168DA164529")
-                IVideoStabilizationEffectEnabledChangedEventArgs : IInspectable
+                IVideoStabilizationEffectEnabledChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reason(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::VideoStabilizationEffectEnabledChangedReason * value
                         ) = 0;
@@ -12689,8 +13354,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("12EE0D55-9C2B-4440-8057-2C7A90F0CBEC"), exclusiveto, contract] */
                 MIDL_INTERFACE("12EE0D55-9C2B-4440-8057-2C7A90F0CBEC")
-                IVideoStreamDescriptor : IInspectable
+                IVideoStreamDescriptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EncodingProperties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IVideoEncodingProperties * * encodingProperties
                         ) = 0;
@@ -12706,6 +13372,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.Core.IVideoStreamDescriptor2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.VideoStreamDescriptor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IVideoStreamDescriptor2[] = L"Windows.Media.Core.IVideoStreamDescriptor2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                /* [object, uuid("8B306E10-453E-4088-832D-C36FA4F94AF3"), exclusiveto, contract] */
+                MIDL_INTERFACE("8B306E10-453E-4088-832D-C36FA4F94AF3")
+                IVideoStreamDescriptor2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Copy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IVideoStreamDescriptor * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IVideoStreamDescriptor2=_uuidof(IVideoStreamDescriptor2);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -12729,8 +13436,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("494EF6D1-BB75-43D2-9E5E-7B79A3AFCED4"), exclusiveto, contract] */
                 MIDL_INTERFACE("494EF6D1-BB75-43D2-9E5E-7B79A3AFCED4")
-                IVideoStreamDescriptorFactory : IInspectable
+                IVideoStreamDescriptorFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::MediaProperties::IVideoEncodingProperties * encodingProperties,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IVideoStreamDescriptor * * result
@@ -12770,8 +13478,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("99F3B7F3-E298-4396-BB6A-A51BE6A2A20A"), exclusiveto, contract] */
                 MIDL_INTERFACE("99F3B7F3-E298-4396-BB6A-A51BE6A2A20A")
-                IVideoTrack : IInspectable
+                IVideoTrack : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_OpenFailed(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCore__CVideoTrack_Windows__CMedia__CCore__CVideoTrackOpenFailedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -12826,8 +13535,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("7679E231-04F9-4C82-A4EE-8602C8BB4754"), exclusiveto, contract] */
                 MIDL_INTERFACE("7679E231-04F9-4C82-A4EE-8602C8BB4754")
-                IVideoTrackOpenFailedEventArgs : IInspectable
+                IVideoTrackOpenFailedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
                         /* [retval, out] */__RPC__out HRESULT * value
                         ) = 0;
@@ -12866,8 +13576,9 @@ namespace ABI {
             namespace Core {
                 /* [object, uuid("4BB534A0-FC5F-450D-8FF0-778D590486DE"), exclusiveto, contract] */
                 MIDL_INTERFACE("4BB534A0-FC5F-450D-8FF0-778D590486DE")
-                IVideoTrackSupportInfo : IInspectable
+                IVideoTrackSupportInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DecoderStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Core::MediaDecoderStatus * value
                         ) = 0;
@@ -12903,6 +13614,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIVideoTrackSupportInfo;
  *    Windows.Media.Core.IMediaStreamDescriptor
  *    Windows.Media.Core.IAudioStreamDescriptor2
  *    Windows.Media.Core.IMediaStreamDescriptor2
+ *    Windows.Media.Core.IAudioStreamDescriptor3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -13410,6 +14122,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Core.IMediaBindingEventArgs ** Default Interface **
  *    Windows.Media.Core.IMediaBindingEventArgs2
+ *    Windows.Media.Core.IMediaBindingEventArgs3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -13457,6 +14170,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.Core.IMediaSourceStatics4 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Core.IMediaSourceStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Core.IMediaSourceStatics2 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Core.IMediaSourceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -13467,6 +14181,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Playback.IMediaPlaybackSource
  *    Windows.Media.Core.IMediaSource3
  *    Windows.Media.Core.IMediaSource4
+ *    Windows.Media.Core.IMediaSource5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14183,6 +14898,35 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Media.Core.TimedMetadataStreamDescriptor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Media.Core.ITimedMetadataStreamDescriptorFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Core.ITimedMetadataStreamDescriptor
+ *    Windows.Media.Core.IMediaStreamDescriptor2
+ *    Windows.Media.Core.IMediaStreamDescriptor ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Core_TimedMetadataStreamDescriptor_DEFINED
+#define RUNTIMECLASS_Windows_Media_Core_TimedMetadataStreamDescriptor_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Core_TimedMetadataStreamDescriptor[] = L"Windows.Media.Core.TimedMetadataStreamDescriptor";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.Core.TimedMetadataTrack
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -14537,6 +15281,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Core.IVideoStreamDescriptor ** Default Interface **
  *    Windows.Media.Core.IMediaStreamDescriptor
  *    Windows.Media.Core.IMediaStreamDescriptor2
+ *    Windows.Media.Core.IVideoStreamDescriptor2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14640,6 +15385,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor __x_ABI_
 typedef interface __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor2 __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor2;
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3 __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptorFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptorFactory_FWD_DEFINED__
@@ -14779,6 +15530,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs2 __x_ABI
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3 __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaCue_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaCue_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaCue __x_ABI_CWindows_CMedia_CCore_CIMediaCue;
@@ -14814,6 +15571,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaSource3 __x_ABI_CWindows_
 typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaSource4 __x_ABI_CWindows_CMedia_CCore_CIMediaSource4;
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSource4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaSource5 __x_ABI_CWindows_CMedia_CCore_CIMediaSource5;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceAppServiceConnection_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceAppServiceConnection_FWD_DEFINED__
@@ -14862,6 +15625,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics2 __x_ABI_CW
 typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics3 __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics3;
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4 __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
@@ -15067,6 +15836,18 @@ typedef interface __x_ABI_CWindows_CMedia_CCore_CISpeechCue __x_ABI_CWindows_CMe
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CISpeechCue_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataTrack_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataTrack_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CCore_CITimedMetadataTrack __x_ABI_CWindows_CMedia_CCore_CITimedMetadataTrack;
@@ -15180,6 +15961,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCore_CIVideoStabilizationEffectEnable
 typedef interface __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor;
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2 __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptorFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptorFactory_FWD_DEFINED__
@@ -16176,6 +16963,168 @@ interface __FIIterable_1_Windows__CMedia__CCore__CMseTimeRange
 
 #endif // ____FIIterable_1_Windows__CMedia__CCore__CMseTimeRange_INTERFACE_DEFINED__
 
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+typedef struct __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl;
+
+interface __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+typedef  struct __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl;
+
+interface __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -18554,6 +19503,117 @@ interface __FIVectorView_1_Windows__CMedia__CCore__CMseTimeRange
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+typedef struct __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [in] */ __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl;
+
+interface __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIVectorView_1_Windows__CMedia__CCore__CTimedTextLine_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CMedia__CCore__CTimedTextLine_INTERFACE_DEFINED__
@@ -19139,6 +20199,149 @@ interface __FIVector_1_Windows__CMedia__CCore__CAudioStreamDescriptor
 #endif // ____FIVector_1_Windows__CMedia__CCore__CAudioStreamDescriptor_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+typedef interface __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+typedef struct __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [in] */ __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl;
+
+interface __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor
+{
+    CONST_VTBL struct __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -20085,6 +21288,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CAudioTrack_Windows__C
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_INTERFACE_DEFINED__
 
@@ -20131,6 +21335,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_W
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -20187,6 +21392,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CISingleSelectMediaTra
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_INTERFACE_DEFINED__
 
@@ -20233,6 +21439,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
@@ -20289,6 +21496,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBindingEventArgs
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_INTERFACE_DEFINED__
 
@@ -20335,6 +21543,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -20393,6 +21602,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -20439,6 +21649,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppService
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
@@ -20546,6 +21757,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_IIn
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_INTERFACE_DEFINED__
 
@@ -20592,6 +21804,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Win
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -20650,6 +21863,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Win
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -20697,9 +21911,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Win
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceStartingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceStartingEventArgs_INTERFACE_DEFINED__
@@ -20748,9 +21964,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Win
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceStartingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_INTERFACE_DEFINED__
@@ -20798,6 +22016,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Win
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -20956,6 +22175,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CMseStreamSource_IInsp
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_INTERFACE_DEFINED__
 
@@ -21003,9 +22223,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_W
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_INTERFACE_DEFINED__
@@ -21054,9 +22276,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Wi
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CTimedMetadataTrackFailedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CTimedMetadataTrackFailedEventArgs_INTERFACE_DEFINED__
@@ -21105,9 +22329,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Wi
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CTimedMetadataTrackFailedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs_INTERFACE_DEFINED__
@@ -21156,9 +22382,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windo
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_INTERFACE_DEFINED__
@@ -21206,6 +22434,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEff
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -23846,6 +25075,13 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProper
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties_FWD_DEFINED__
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties;
@@ -23889,6 +25125,16 @@ typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSo
 
 #endif // ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource_FWD_DEFINED__
 
+
+
+
+
+
+#ifndef ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation;
+
+#endif // ____x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation_FWD_DEFINED__
 
 
 
@@ -24052,6 +25298,14 @@ typedef struct __x_ABI_CWindows_CMedia_CCore_CTimedTextPoint __x_ABI_CWindows_CM
 
 
 typedef struct __x_ABI_CWindows_CMedia_CCore_CTimedTextSize __x_ABI_CWindows_CMedia_CCore_CTimedTextSize;
+
+
+
+
+
+
+
+
 
 
 
@@ -25105,6 +26359,99 @@ interface __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor2
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor2;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Media.Core.IAudioStreamDescriptor3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.AudioStreamDescriptor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IAudioStreamDescriptor3[] = L"Windows.Media.Core.IAudioStreamDescriptor3";
+/* [object, uuid("4D220DA1-8E83-44EF-8973-2F63E993F36B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Copy )(
+        __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_Copy(This,result) \
+    ( (This)->lpVtbl->Copy(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIAudioStreamDescriptor3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -27947,6 +29294,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs2;
 
 /*
  *
+ * Interface Windows.Media.Core.IMediaBindingEventArgs3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaBindingEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaBindingEventArgs3[] = L"Windows.Media.Core.IMediaBindingEventArgs3";
+/* [object, uuid("F8EB475E-19BE-44FC-A5ED-7ABA315037F9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *SetDownloadOperation )(
+        __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation * downloadOperation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_SetDownloadOperation(This,downloadOperation) \
+    ( (This)->lpVtbl->SetDownloadOperation(This,downloadOperation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaBindingEventArgs3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Core.IMediaCue
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -28633,6 +30073,99 @@ interface __x_ABI_CWindows_CMedia_CCore_CIMediaSource4
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaSource4;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSource4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Media.Core.IMediaSource5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaSource5[] = L"Windows.Media.Core.IMediaSource5";
+/* [object, uuid("331A22AE-ED2E-4A22-94C8-B743A92B3022"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCore_CIMediaSource5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSource5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSource5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSource5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSource5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSource5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSource5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DownloadOperation )(
+        __x_ABI_CWindows_CMedia_CCore_CIMediaSource5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCore_CIMediaSource5Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCore_CIMediaSource5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCore_CIMediaSource5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSource5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSource5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSource5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSource5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSource5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSource5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSource5_get_DownloadOperation(This,value) \
+    ( (This)->lpVtbl->get_DownloadOperation(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaSource5;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSource5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -29460,6 +30993,100 @@ interface __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics3
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics3;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Media.Core.IMediaSourceStatics4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaSourceStatics4[] = L"Windows.Media.Core.IMediaSourceStatics4";
+/* [object, uuid("281B3BFC-E50A-4428-A500-9C4ED918D3F0"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateFromDownloadOperation )(
+        __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CNetworking_CBackgroundTransfer_CIDownloadOperation * downloadOperation,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIMediaSource2 * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_CreateFromDownloadOperation(This,downloadOperation,result) \
+    ( (This)->lpVtbl->CreateFromDownloadOperation(This,downloadOperation,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaSourceStatics4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -33537,6 +35164,200 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CISpeechCue;
 
 /*
  *
+ * Interface Windows.Media.Core.ITimedMetadataStreamDescriptor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.TimedMetadataStreamDescriptor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_ITimedMetadataStreamDescriptor[] = L"Windows.Media.Core.ITimedMetadataStreamDescriptor";
+/* [object, uuid("133336BF-296A-463E-9FF9-01CD25691408"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_EncodingProperties )(
+        __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *Copy )(
+        __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorVtbl;
+
+interface __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_get_EncodingProperties(This,value) \
+    ( (This)->lpVtbl->get_EncodingProperties(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_Copy(This,result) \
+    ( (This)->lpVtbl->Copy(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptor_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Media.Core.ITimedMetadataStreamDescriptorFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.TimedMetadataStreamDescriptor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_ITimedMetadataStreamDescriptorFactory[] = L"Windows.Media.Core.ITimedMetadataStreamDescriptorFactory";
+/* [object, uuid("C027DE30-7362-4FF9-98B1-2DFD0B8D1CAE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Create )(
+        __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties * encodingProperties,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactoryVtbl;
+
+interface __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_Create(This,encodingProperties,result) \
+    ( (This)->lpVtbl->Create(This,encodingProperties,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CITimedMetadataStreamDescriptorFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Core.ITimedMetadataTrack
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -35971,6 +37792,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor;
 
 /*
  *
+ * Interface Windows.Media.Core.IVideoStreamDescriptor2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.VideoStreamDescriptor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IVideoStreamDescriptor2[] = L"Windows.Media.Core.IVideoStreamDescriptor2";
+/* [object, uuid("8B306E10-453E-4088-832D-C36FA4F94AF3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Copy )(
+        __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_Copy(This,result) \
+    ( (This)->lpVtbl->Copy(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIVideoStreamDescriptor2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Core.IVideoStreamDescriptorFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -36400,6 +38314,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIVideoTrackSupportInfo;
  *    Windows.Media.Core.IMediaStreamDescriptor
  *    Windows.Media.Core.IAudioStreamDescriptor2
  *    Windows.Media.Core.IMediaStreamDescriptor2
+ *    Windows.Media.Core.IAudioStreamDescriptor3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -36907,6 +38822,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Core.IMediaBindingEventArgs ** Default Interface **
  *    Windows.Media.Core.IMediaBindingEventArgs2
+ *    Windows.Media.Core.IMediaBindingEventArgs3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -36954,6 +38870,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.Core.IMediaSourceStatics4 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Core.IMediaSourceStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Core.IMediaSourceStatics2 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Core.IMediaSourceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -36964,6 +38881,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Playback.IMediaPlaybackSource
  *    Windows.Media.Core.IMediaSource3
  *    Windows.Media.Core.IMediaSource4
+ *    Windows.Media.Core.IMediaSource5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -37680,6 +39598,35 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Media.Core.TimedMetadataStreamDescriptor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Media.Core.ITimedMetadataStreamDescriptorFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Core.ITimedMetadataStreamDescriptor
+ *    Windows.Media.Core.IMediaStreamDescriptor2
+ *    Windows.Media.Core.IMediaStreamDescriptor ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Core_TimedMetadataStreamDescriptor_DEFINED
+#define RUNTIMECLASS_Windows_Media_Core_TimedMetadataStreamDescriptor_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Core_TimedMetadataStreamDescriptor[] = L"Windows.Media.Core.TimedMetadataStreamDescriptor";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.Core.TimedMetadataTrack
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -38034,6 +39981,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Core.IVideoStreamDescriptor ** Default Interface **
  *    Windows.Media.Core.IMediaStreamDescriptor
  *    Windows.Media.Core.IMediaStreamDescriptor2
+ *    Windows.Media.Core.IVideoStreamDescriptor2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

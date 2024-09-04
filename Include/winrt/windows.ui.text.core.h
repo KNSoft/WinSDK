@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.text.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -714,6 +716,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_USE
@@ -743,6 +746,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -757,6 +761,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionStartedEventArgs_USE
@@ -787,6 +792,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -801,6 +807,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextFormatUpdatingEventArgs_USE
@@ -831,6 +838,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -845,6 +853,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextLayoutRequestedEventArgs_USE
@@ -875,6 +884,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -889,6 +899,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionRequestedEventArgs_USE
@@ -919,6 +930,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -933,6 +945,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionUpdatingEventArgs_USE
@@ -963,6 +976,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -977,6 +991,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextRequestedEventArgs_USE
@@ -1007,6 +1022,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1021,6 +1037,7 @@ namespace ABI {
     } /* Core */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_USE
@@ -1050,6 +1067,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext*,AB
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -1744,8 +1762,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("1F34EBB6-B79F-4121-A5E7-FDA9B8616E30"), exclusiveto, contract] */
                     MIDL_INTERFACE("1F34EBB6-B79F-4121-A5E7-FDA9B8616E30")
-                    ICoreTextCompositionCompletedEventArgs : IInspectable
+                    ICoreTextCompositionCompletedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsCanceled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1792,8 +1811,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("776C6BD9-4EAD-4DA7-8F47-3A88B523CC34"), exclusiveto, contract] */
                     MIDL_INTERFACE("776C6BD9-4EAD-4DA7-8F47-3A88B523CC34")
-                    ICoreTextCompositionSegment : IInspectable
+                    ICoreTextCompositionSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PreconversionString(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1837,8 +1857,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("276B16A9-64E7-4AB0-BC4B-A02D73835BFB"), exclusiveto, contract] */
                     MIDL_INTERFACE("276B16A9-64E7-4AB0-BC4B-A02D73835BFB")
-                    ICoreTextCompositionStartedEventArgs : IInspectable
+                    ICoreTextCompositionStartedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsCanceled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1882,8 +1903,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("BF6608AF-4041-47C3-B263-A918EB5EAEF2"), exclusiveto, contract] */
                     MIDL_INTERFACE("BF6608AF-4041-47C3-B263-A918EB5EAEF2")
-                    ICoreTextEditContext : IInspectable
+                    ICoreTextEditContext : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2019,8 +2041,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("B1867DBB-083B-49E1-B281-2B35D62BF466"), exclusiveto, contract] */
                     MIDL_INTERFACE("B1867DBB-083B-49E1-B281-2B35D62BF466")
-                    ICoreTextEditContext2 : IInspectable
+                    ICoreTextEditContext2 : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_NotifyFocusLeaveCompleted(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -2065,8 +2088,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("7310BD33-B4A8-43B1-B37B-0724D4ACA7AB"), exclusiveto, contract] */
                     MIDL_INTERFACE("7310BD33-B4A8-43B1-B37B-0724D4ACA7AB")
-                    ICoreTextFormatUpdatingEventArgs : IInspectable
+                    ICoreTextFormatUpdatingEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Range(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Text::Core::CoreTextRange * value
                             ) = 0;
@@ -2134,8 +2158,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("E972C974-4436-4917-80D0-A525E4CA6780"), exclusiveto, contract] */
                     MIDL_INTERFACE("E972C974-4436-4917-80D0-A525E4CA6780")
-                    ICoreTextLayoutBounds : IInspectable
+                    ICoreTextLayoutBounds : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextBounds(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                             ) = 0;
@@ -2185,8 +2210,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("2555A8CC-51FD-4F03-98BF-AC78174D68E0"), exclusiveto, contract] */
                     MIDL_INTERFACE("2555A8CC-51FD-4F03-98BF-AC78174D68E0")
-                    ICoreTextLayoutRequest : IInspectable
+                    ICoreTextLayoutRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Range(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Text::Core::CoreTextRange * value
                             ) = 0;
@@ -2236,8 +2262,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("B1DC6AE0-9A7B-4E9E-A566-4A6B5F8AD676"), exclusiveto, contract] */
                     MIDL_INTERFACE("B1DC6AE0-9A7B-4E9E-A566-4A6B5F8AD676")
-                    ICoreTextLayoutRequestedEventArgs : IInspectable
+                    ICoreTextLayoutRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::Core::ICoreTextLayoutRequest * * value
                             ) = 0;
@@ -2278,8 +2305,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("F0A70403-208B-4301-883C-74CA7485FD8D"), exclusiveto, contract] */
                     MIDL_INTERFACE("F0A70403-208B-4301-883C-74CA7485FD8D")
-                    ICoreTextSelectionRequest : IInspectable
+                    ICoreTextSelectionRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Selection(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Text::Core::CoreTextRange * value
                             ) = 0;
@@ -2329,8 +2357,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("13C6682B-F614-421A-8F4B-9EC8A5A37FCD"), exclusiveto, contract] */
                     MIDL_INTERFACE("13C6682B-F614-421A-8F4B-9EC8A5A37FCD")
-                    ICoreTextSelectionRequestedEventArgs : IInspectable
+                    ICoreTextSelectionRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::Core::ICoreTextSelectionRequest * * value
                             ) = 0;
@@ -2371,8 +2400,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("D445839F-FE7F-4BD5-8A26-0922C1B3E639"), exclusiveto, contract] */
                     MIDL_INTERFACE("D445839F-FE7F-4BD5-8A26-0922C1B3E639")
-                    ICoreTextSelectionUpdatingEventArgs : IInspectable
+                    ICoreTextSelectionUpdatingEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Selection(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Text::Core::CoreTextRange * value
                             ) = 0;
@@ -2425,8 +2455,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("C2507D83-6E0A-4A8A-BDF8-1948874854BA"), exclusiveto, contract] */
                     MIDL_INTERFACE("C2507D83-6E0A-4A8A-BDF8-1948874854BA")
-                    ICoreTextServicesManager : IInspectable
+                    ICoreTextServicesManager : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputLanguage(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::ILanguage * * value
                             ) = 0;
@@ -2477,8 +2508,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("1520A388-E2CF-4D65-AEB9-B32D86FE39B9"), exclusiveto, contract] */
                     MIDL_INTERFACE("1520A388-E2CF-4D65-AEB9-B32D86FE39B9")
-                    ICoreTextServicesManagerStatics : IInspectable
+                    ICoreTextServicesManagerStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::Core::ICoreTextServicesManager * * value
                             ) = 0;
@@ -2519,8 +2551,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("91859A46-ECCF-47A4-8AE7-098A9C6FBB15"), exclusiveto, contract] */
                     MIDL_INTERFACE("91859A46-ECCF-47A4-8AE7-098A9C6FBB15")
-                    ICoreTextServicesStatics : IInspectable
+                    ICoreTextServicesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HiddenCharacter(
                             /* [retval, out] */__RPC__out WCHAR * value
                             ) = 0;
@@ -2561,8 +2594,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("50D950A9-F51E-4CC1-8CA1-E6346D1A61BE"), exclusiveto, contract] */
                     MIDL_INTERFACE("50D950A9-F51E-4CC1-8CA1-E6346D1A61BE")
-                    ICoreTextTextRequest : IInspectable
+                    ICoreTextTextRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Range(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Text::Core::CoreTextRange * value
                             ) = 0;
@@ -2615,8 +2649,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("F096A2D0-41C6-4C02-8B1A-D953B00CABB3"), exclusiveto, contract] */
                     MIDL_INTERFACE("F096A2D0-41C6-4C02-8B1A-D953B00CABB3")
-                    ICoreTextTextRequestedEventArgs : IInspectable
+                    ICoreTextTextRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::Core::ICoreTextTextRequest * * value
                             ) = 0;
@@ -2657,8 +2692,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("EEA7918D-CC2B-4F03-8FF6-02FD217DB450"), exclusiveto, contract] */
                     MIDL_INTERFACE("EEA7918D-CC2B-4F03-8FF6-02FD217DB450")
-                    ICoreTextTextUpdatingEventArgs : IInspectable
+                    ICoreTextTextUpdatingEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Range(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Text::Core::CoreTextRange * value
                             ) = 0;
@@ -3496,6 +3532,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditConte
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_INTERFACE_DEFINED__
 
@@ -3543,9 +3580,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditConte
 #endif // ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionStartedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionStartedEventArgs_INTERFACE_DEFINED__
@@ -3594,9 +3633,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditConte
 #endif // ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionStartedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextFormatUpdatingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextFormatUpdatingEventArgs_INTERFACE_DEFINED__
@@ -3645,9 +3686,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditConte
 #endif // ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextFormatUpdatingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextLayoutRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextLayoutRequestedEventArgs_INTERFACE_DEFINED__
@@ -3696,9 +3739,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditConte
 #endif // ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextLayoutRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionRequestedEventArgs_INTERFACE_DEFINED__
@@ -3747,9 +3792,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditConte
 #endif // ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionUpdatingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionUpdatingEventArgs_INTERFACE_DEFINED__
@@ -3798,9 +3845,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditConte
 #endif // ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionUpdatingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextRequestedEventArgs_INTERFACE_DEFINED__
@@ -3849,9 +3898,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditConte
 #endif // ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_INTERFACE_DEFINED__
@@ -3899,6 +3950,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditConte
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

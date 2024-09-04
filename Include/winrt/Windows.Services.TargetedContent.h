@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.services.targetedcontent.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -226,11 +228,11 @@
 #endif // defined(WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1307,6 +1309,7 @@ namespace ABI {
 
 
 #if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
+#if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentAvailabilityChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentAvailabilityChangedEventArgs_USE
@@ -1336,6 +1339,7 @@ typedef ITypedEventHandler<ABI::Windows::Services::TargetedContent::TargetedCont
 
 
 #endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1348,6 +1352,7 @@ namespace ABI {
     } /* TargetedContent */} /* ABI */
 
 
+#if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 #if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentChangedEventArgs_USE
@@ -1378,6 +1383,7 @@ typedef ITypedEventHandler<ABI::Windows::Services::TargetedContent::TargetedCont
 
 
 #endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1390,6 +1396,7 @@ namespace ABI {
     } /* TargetedContent */} /* ABI */
 
 
+#if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 #if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentStateChangedEventArgs_USE
@@ -1419,6 +1426,7 @@ typedef ITypedEventHandler<ABI::Windows::Services::TargetedContent::TargetedCont
 #endif /* DEF___FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentStateChangedEventArgs_USE */
 
 
+#endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 
 
@@ -2327,8 +2335,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("D75B691E-6CD6-4CA0-9D8F-4728B0B7E6B6"), exclusiveto, contract] */
                 MIDL_INTERFACE("D75B691E-6CD6-4CA0-9D8F-4728B0B7E6B6")
-                ITargetedContentAction : IInspectable
+                ITargetedContentAction : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE InvokeAsync(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncAction
                         ) = 0;
@@ -2367,8 +2376,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("E0F59D26-5927-4450-965C-1CEB7BECDE65"), exclusiveto, contract] */
                 MIDL_INTERFACE("E0F59D26-5927-4450-965C-1CEB7BECDE65")
-                ITargetedContentAvailabilityChangedEventArgs : IInspectable
+                ITargetedContentAvailabilityChangedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * value
                         ) = 0;
@@ -2407,8 +2417,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("99D488C9-587E-4586-8EF7-B54CA9453A16"), exclusiveto, contract] */
                 MIDL_INTERFACE("99D488C9-587E-4586-8EF7-B54CA9453A16")
-                ITargetedContentChangedEventArgs : IInspectable
+                ITargetedContentChangedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * value
                         ) = 0;
@@ -2450,8 +2461,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("2D4B66C5-F163-44BA-9F6E-E1A4C2BB559D"), exclusiveto, contract] */
                 MIDL_INTERFACE("2D4B66C5-F163-44BA-9F6E-E1A4C2BB559D")
-                ITargetedContentCollection : IInspectable
+                ITargetedContentCollection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2508,8 +2520,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("BC2494C9-8837-47C2-850F-D79D64595926"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC2494C9-8837-47C2-850F-D79D64595926")
-                ITargetedContentContainer : IInspectable
+                ITargetedContentContainer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2561,8 +2574,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("5B47E7FB-2140-4C1F-A736-C59583F227D8"), exclusiveto, contract] */
                 MIDL_INTERFACE("5B47E7FB-2140-4C1F-A736-C59583F227D8")
-                ITargetedContentContainerStatics : IInspectable
+                ITargetedContentContainerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAsync(
                         /* [in] */__RPC__in HSTRING contentId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CTargetedContent__CTargetedContentContainer * * asyncOperation
@@ -2606,8 +2620,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("A7A585D9-779F-4B1E-BBB1-8EAF53FBEAB2"), exclusiveto, contract] */
                 MIDL_INTERFACE("A7A585D9-779F-4B1E-BBB1-8EAF53FBEAB2")
-                ITargetedContentImage : IInspectable
+                ITargetedContentImage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Height(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2649,8 +2664,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("38168DC4-276C-4C32-96BA-565C6E406E74"), exclusiveto, contract] */
                 MIDL_INTERFACE("38168DC4-276C-4C32-96BA-565C6E406E74")
-                ITargetedContentItem : IInspectable
+                ITargetedContentItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Path(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2704,8 +2720,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("73935454-4C65-4B47-A441-472DE53C79B6"), exclusiveto, contract] */
                 MIDL_INTERFACE("73935454-4C65-4B47-A441-472DE53C79B6")
-                ITargetedContentItemState : IInspectable
+                ITargetedContentItemState : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShouldDisplay(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2747,8 +2764,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("041D7969-2212-42D1-9DFA-88A8E3033AA3"), exclusiveto, contract] */
                 MIDL_INTERFACE("041D7969-2212-42D1-9DFA-88A8E3033AA3")
-                ITargetedContentObject : IInspectable
+                ITargetedContentObject : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ObjectKind(
                         /* [retval, out] */__RPC__out ABI::Windows::Services::TargetedContent::TargetedContentObjectKind * value
                         ) = 0;
@@ -2796,8 +2814,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("9A1CEF3D-8073-4416-8DF2-546835A6414F"), exclusiveto, contract] */
                 MIDL_INTERFACE("9A1CEF3D-8073-4416-8DF2-546835A6414F")
-                ITargetedContentStateChangedEventArgs : IInspectable
+                ITargetedContentStateChangedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * value
                         ) = 0;
@@ -2836,8 +2855,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("882C2C49-C652-4C7A-ACAD-1F7FA2986C73"), exclusiveto, contract] */
                 MIDL_INTERFACE("882C2C49-C652-4C7A-ACAD-1F7FA2986C73")
-                ITargetedContentSubscription : IInspectable
+                ITargetedContentSubscription : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2900,8 +2920,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("61EE6AD0-2C83-421B-8467-413EAF1AEB97"), exclusiveto, contract] */
                 MIDL_INTERFACE("61EE6AD0-2C83-421B-8467-413EAF1AEB97")
-                ITargetedContentSubscriptionOptions : IInspectable
+                ITargetedContentSubscriptionOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SubscriptionId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2953,8 +2974,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("FADDFE80-360D-4916-B53C-7EA27090D02A"), exclusiveto, contract] */
                 MIDL_INTERFACE("FADDFE80-360D-4916-B53C-7EA27090D02A")
-                ITargetedContentSubscriptionStatics : IInspectable
+                ITargetedContentSubscriptionStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAsync(
                         /* [in] */__RPC__in HSTRING subscriptionId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CTargetedContent__CTargetedContentSubscription * * asyncOperation
@@ -2998,8 +3020,9 @@ namespace ABI {
             namespace TargetedContent {
                 /* [object, uuid("AAFDE4B3-4215-4BF8-867F-43F04865F9BF"), exclusiveto, contract] */
                 MIDL_INTERFACE("AAFDE4B3-4215-4BF8-867F-43F04865F9BF")
-                ITargetedContentValue : IInspectable
+                ITargetedContentValue : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ValueKind(
                         /* [retval, out] */__RPC__out ABI::Windows::Services::TargetedContent::TargetedContentValueKind * value
                         ) = 0;
@@ -5411,6 +5434,7 @@ interface __FIAsyncOperation_1_Windows__CServices__CTargetedContent__CTargetedCo
 
 
 #if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
+#if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentAvailabilityChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentAvailabilityChangedEventArgs_INTERFACE_DEFINED__
 
@@ -5458,9 +5482,11 @@ interface __FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargete
 #endif // ____FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentAvailabilityChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 #if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentChangedEventArgs_INTERFACE_DEFINED__
@@ -5509,9 +5535,11 @@ interface __FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargete
 #endif // ____FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 #if WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentStateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentStateChangedEventArgs_INTERFACE_DEFINED__
@@ -5559,6 +5587,7 @@ interface __FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargete
 
 #endif // ____FITypedEventHandler_2_Windows__CServices__CTargetedContent__CTargetedContentSubscription_Windows__CServices__CTargetedContent__CTargetedContentStateChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_SERVICES_TARGETEDCONTENT_TARGETEDCONTENTCONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__)

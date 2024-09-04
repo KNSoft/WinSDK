@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.email.dataprovider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -797,6 +799,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxCreateFolderRequestEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxCreateFolderRequestEventArgs_USE
@@ -826,6 +829,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -840,6 +844,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDeleteFolderRequestEventArgs_USE
@@ -870,6 +875,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -884,6 +890,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDownloadAttachmentRequestEventArgs_USE
@@ -914,6 +921,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -928,6 +936,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDownloadMessageRequestEventArgs_USE
@@ -958,6 +967,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -972,6 +982,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxEmptyFolderRequestEventArgs_USE
@@ -1002,6 +1013,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1016,6 +1028,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxForwardMeetingRequestEventArgs_USE
@@ -1046,6 +1059,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1060,6 +1074,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxGetAutoReplySettingsRequestEventArgs_USE
@@ -1090,6 +1105,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1104,6 +1120,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxMoveFolderRequestEventArgs_USE
@@ -1134,6 +1151,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1148,6 +1166,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxProposeNewTimeForMeetingRequestEventArgs_USE
@@ -1178,6 +1197,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1192,6 +1212,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxResolveRecipientsRequestEventArgs_USE
@@ -1222,6 +1243,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1236,6 +1258,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxServerSearchReadBatchRequestEventArgs_USE
@@ -1266,6 +1289,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1280,6 +1304,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxSetAutoReplySettingsRequestEventArgs_USE
@@ -1310,6 +1335,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1324,6 +1350,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxSyncManagerSyncRequestEventArgs_USE
@@ -1354,6 +1381,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1368,6 +1396,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxUpdateMeetingResponseRequestEventArgs_USE
@@ -1398,6 +1427,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1412,6 +1442,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxValidateCertificatesRequestEventArgs_USE
@@ -1441,6 +1472,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Email::DataProvider::
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxValidateCertificatesRequestEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 namespace ABI {
@@ -2449,8 +2481,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("3B9C9DC7-37B2-4BF0-AE30-7B644A1C96E1"), exclusiveto, contract] */
                     MIDL_INTERFACE("3B9C9DC7-37B2-4BF0-AE30-7B644A1C96E1")
-                    IEmailDataProviderConnection : IInspectable
+                    IEmailDataProviderConnection : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MailboxSyncRequested(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxSyncManagerSyncRequestEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -2594,8 +2627,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("8F3E4E50-341E-45F3-BBA0-84A005E1319A"), exclusiveto, contract] */
                     MIDL_INTERFACE("8F3E4E50-341E-45F3-BBA0-84A005E1319A")
-                    IEmailDataProviderTriggerDetails : IInspectable
+                    IEmailDataProviderTriggerDetails : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Connection(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailDataProviderConnection * * value
                             ) = 0;
@@ -2636,8 +2670,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("184D3775-C921-4C39-A309-E16C9F22B04B"), exclusiveto, contract] */
                     MIDL_INTERFACE("184D3775-C921-4C39-A309-E16C9F22B04B")
-                    IEmailMailboxCreateFolderRequest : IInspectable
+                    IEmailMailboxCreateFolderRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2692,8 +2727,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("03E4C02C-241C-4EA9-A68F-FF20BC5AFC85"), exclusiveto, contract] */
                     MIDL_INTERFACE("03E4C02C-241C-4EA9-A68F-FF20BC5AFC85")
-                    IEmailMailboxCreateFolderRequestEventArgs : IInspectable
+                    IEmailMailboxCreateFolderRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxCreateFolderRequest * * value
                             ) = 0;
@@ -2737,8 +2773,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("9469E88A-A931-4779-923D-09A3EA292E29"), exclusiveto, contract] */
                     MIDL_INTERFACE("9469E88A-A931-4779-923D-09A3EA292E29")
-                    IEmailMailboxDeleteFolderRequest : IInspectable
+                    IEmailMailboxDeleteFolderRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2789,8 +2826,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("B4D32D06-2332-4678-8378-28B579336846"), exclusiveto, contract] */
                     MIDL_INTERFACE("B4D32D06-2332-4678-8378-28B579336846")
-                    IEmailMailboxDeleteFolderRequestEventArgs : IInspectable
+                    IEmailMailboxDeleteFolderRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDeleteFolderRequest * * value
                             ) = 0;
@@ -2834,8 +2872,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("0B1DBBB4-750C-48E1-BCE4-8D589684FFBC"), exclusiveto, contract] */
                     MIDL_INTERFACE("0B1DBBB4-750C-48E1-BCE4-8D589684FFBC")
-                    IEmailMailboxDownloadAttachmentRequest : IInspectable
+                    IEmailMailboxDownloadAttachmentRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2888,8 +2927,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("CCDDC46D-FFA8-4877-9F9D-FED7BCAF4104"), exclusiveto, contract] */
                     MIDL_INTERFACE("CCDDC46D-FFA8-4877-9F9D-FED7BCAF4104")
-                    IEmailMailboxDownloadAttachmentRequestEventArgs : IInspectable
+                    IEmailMailboxDownloadAttachmentRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDownloadAttachmentRequest * * value
                             ) = 0;
@@ -2933,8 +2973,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("497B4187-5B4D-4B23-816C-F3842BEB753E"), exclusiveto, contract] */
                     MIDL_INTERFACE("497B4187-5B4D-4B23-816C-F3842BEB753E")
-                    IEmailMailboxDownloadMessageRequest : IInspectable
+                    IEmailMailboxDownloadMessageRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2984,8 +3025,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("470409AD-D0A0-4A5B-BB2A-37621039C53E"), exclusiveto, contract] */
                     MIDL_INTERFACE("470409AD-D0A0-4A5B-BB2A-37621039C53E")
-                    IEmailMailboxDownloadMessageRequestEventArgs : IInspectable
+                    IEmailMailboxDownloadMessageRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDownloadMessageRequest * * value
                             ) = 0;
@@ -3029,8 +3071,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("FE4B03AB-F86D-46D9-B4CE-BC8A6D9E9268"), exclusiveto, contract] */
                     MIDL_INTERFACE("FE4B03AB-F86D-46D9-B4CE-BC8A6D9E9268")
-                    IEmailMailboxEmptyFolderRequest : IInspectable
+                    IEmailMailboxEmptyFolderRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3081,8 +3124,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("7183F484-985A-4AC0-B33F-EE0E2627A3C0"), exclusiveto, contract] */
                     MIDL_INTERFACE("7183F484-985A-4AC0-B33F-EE0E2627A3C0")
-                    IEmailMailboxEmptyFolderRequestEventArgs : IInspectable
+                    IEmailMailboxEmptyFolderRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxEmptyFolderRequest * * value
                             ) = 0;
@@ -3126,8 +3170,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("616D6AF1-70D4-4832-B869-B80542AE9BE8"), exclusiveto, contract] */
                     MIDL_INTERFACE("616D6AF1-70D4-4832-B869-B80542AE9BE8")
-                    IEmailMailboxForwardMeetingRequest : IInspectable
+                    IEmailMailboxForwardMeetingRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3192,8 +3237,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("2BD8F33A-2974-4759-A5A5-58F44D3C0275"), exclusiveto, contract] */
                     MIDL_INTERFACE("2BD8F33A-2974-4759-A5A5-58F44D3C0275")
-                    IEmailMailboxForwardMeetingRequestEventArgs : IInspectable
+                    IEmailMailboxForwardMeetingRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxForwardMeetingRequest * * value
                             ) = 0;
@@ -3237,8 +3283,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("9B380789-1E88-4E01-84CC-1386AD9A2C2F"), exclusiveto, contract] */
                     MIDL_INTERFACE("9B380789-1E88-4E01-84CC-1386AD9A2C2F")
-                    IEmailMailboxGetAutoReplySettingsRequest : IInspectable
+                    IEmailMailboxGetAutoReplySettingsRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3289,8 +3336,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("D79F55C2-FD45-4004-8A91-9BACF38B7022"), exclusiveto, contract] */
                     MIDL_INTERFACE("D79F55C2-FD45-4004-8A91-9BACF38B7022")
-                    IEmailMailboxGetAutoReplySettingsRequestEventArgs : IInspectable
+                    IEmailMailboxGetAutoReplySettingsRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxGetAutoReplySettingsRequest * * value
                             ) = 0;
@@ -3334,8 +3382,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("10BA2856-4A95-4068-91CC-67CC7ACF454F"), exclusiveto, contract] */
                     MIDL_INTERFACE("10BA2856-4A95-4068-91CC-67CC7ACF454F")
-                    IEmailMailboxMoveFolderRequest : IInspectable
+                    IEmailMailboxMoveFolderRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3391,8 +3440,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("38623020-14BA-4C88-8698-7239E3C8AAA7"), exclusiveto, contract] */
                     MIDL_INTERFACE("38623020-14BA-4C88-8698-7239E3C8AAA7")
-                    IEmailMailboxMoveFolderRequestEventArgs : IInspectable
+                    IEmailMailboxMoveFolderRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxMoveFolderRequest * * value
                             ) = 0;
@@ -3436,8 +3486,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("5AEFF152-9799-4F9F-A399-FF07F3EEF04E"), exclusiveto, contract] */
                     MIDL_INTERFACE("5AEFF152-9799-4F9F-A399-FF07F3EEF04E")
-                    IEmailMailboxProposeNewTimeForMeetingRequest : IInspectable
+                    IEmailMailboxProposeNewTimeForMeetingRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3499,8 +3550,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("FB480B98-33AD-4A67-8251-0F9C249B6A20"), exclusiveto, contract] */
                     MIDL_INTERFACE("FB480B98-33AD-4A67-8251-0F9C249B6A20")
-                    IEmailMailboxProposeNewTimeForMeetingRequestEventArgs : IInspectable
+                    IEmailMailboxProposeNewTimeForMeetingRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxProposeNewTimeForMeetingRequest * * value
                             ) = 0;
@@ -3544,8 +3596,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("EFA4CF70-7B39-4C9B-811E-41EAF43A332D"), exclusiveto, contract] */
                     MIDL_INTERFACE("EFA4CF70-7B39-4C9B-811E-41EAF43A332D")
-                    IEmailMailboxResolveRecipientsRequest : IInspectable
+                    IEmailMailboxResolveRecipientsRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3596,8 +3649,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("260F9E02-B2CF-40F8-8C28-E3ED43B1E89A"), exclusiveto, contract] */
                     MIDL_INTERFACE("260F9E02-B2CF-40F8-8C28-E3ED43B1E89A")
-                    IEmailMailboxResolveRecipientsRequestEventArgs : IInspectable
+                    IEmailMailboxResolveRecipientsRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxResolveRecipientsRequest * * value
                             ) = 0;
@@ -3641,8 +3695,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("090EEBDF-5A96-41D3-8AD8-34912F9AA60E"), exclusiveto, contract] */
                     MIDL_INTERFACE("090EEBDF-5A96-41D3-8AD8-34912F9AA60E")
-                    IEmailMailboxServerSearchReadBatchRequest : IInspectable
+                    IEmailMailboxServerSearchReadBatchRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SessionId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3706,8 +3761,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("14101B4E-ED9E-45D1-AD7A-CC9B7F643AE2"), exclusiveto, contract] */
                     MIDL_INTERFACE("14101B4E-ED9E-45D1-AD7A-CC9B7F643AE2")
-                    IEmailMailboxServerSearchReadBatchRequestEventArgs : IInspectable
+                    IEmailMailboxServerSearchReadBatchRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxServerSearchReadBatchRequest * * value
                             ) = 0;
@@ -3751,8 +3807,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("75A422D0-A88E-4E54-8DC7-C243186B774E"), exclusiveto, contract] */
                     MIDL_INTERFACE("75A422D0-A88E-4E54-8DC7-C243186B774E")
-                    IEmailMailboxSetAutoReplySettingsRequest : IInspectable
+                    IEmailMailboxSetAutoReplySettingsRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3802,8 +3859,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("09DA11AD-D7CA-4087-AC86-53FA67F76246"), exclusiveto, contract] */
                     MIDL_INTERFACE("09DA11AD-D7CA-4087-AC86-53FA67F76246")
-                    IEmailMailboxSetAutoReplySettingsRequestEventArgs : IInspectable
+                    IEmailMailboxSetAutoReplySettingsRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxSetAutoReplySettingsRequest * * value
                             ) = 0;
@@ -3847,8 +3905,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("4E10E8E4-7E67-405A-B673-DC60C91090FC"), exclusiveto, contract] */
                     MIDL_INTERFACE("4E10E8E4-7E67-405A-B673-DC60C91090FC")
-                    IEmailMailboxSyncManagerSyncRequest : IInspectable
+                    IEmailMailboxSyncManagerSyncRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3895,8 +3954,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("439A031A-8FCC-4AE5-B9B5-D434E0A65AA8"), exclusiveto, contract] */
                     MIDL_INTERFACE("439A031A-8FCC-4AE5-B9B5-D434E0A65AA8")
-                    IEmailMailboxSyncManagerSyncRequestEventArgs : IInspectable
+                    IEmailMailboxSyncManagerSyncRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxSyncManagerSyncRequest * * value
                             ) = 0;
@@ -3940,8 +4000,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("5B99AC93-B2CF-4888-BA4F-306B6B66DF30"), exclusiveto, contract] */
                     MIDL_INTERFACE("5B99AC93-B2CF-4888-BA4F-306B6B66DF30")
-                    IEmailMailboxUpdateMeetingResponseRequest : IInspectable
+                    IEmailMailboxUpdateMeetingResponseRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4003,8 +4064,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("6898D761-56C9-4F17-BE31-66FDA94BA159"), exclusiveto, contract] */
                     MIDL_INTERFACE("6898D761-56C9-4F17-BE31-66FDA94BA159")
-                    IEmailMailboxUpdateMeetingResponseRequestEventArgs : IInspectable
+                    IEmailMailboxUpdateMeetingResponseRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxUpdateMeetingResponseRequest * * value
                             ) = 0;
@@ -4048,8 +4110,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("A94D3931-E11A-4F97-B81A-187A70A8F41A"), exclusiveto, contract] */
                     MIDL_INTERFACE("A94D3931-E11A-4F97-B81A-187A70A8F41A")
-                    IEmailMailboxValidateCertificatesRequest : IInspectable
+                    IEmailMailboxValidateCertificatesRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EmailMailboxId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4100,8 +4163,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("2583BF17-02FF-49FE-A73C-03F37566C691"), exclusiveto, contract] */
                     MIDL_INTERFACE("2583BF17-02FF-49FE-A73C-03F37566C691")
-                    IEmailMailboxValidateCertificatesRequestEventArgs : IInspectable
+                    IEmailMailboxValidateCertificatesRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::DataProvider::IEmailMailboxValidateCertificatesRequest * * value
                             ) = 0;
@@ -5094,6 +5158,7 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CEmail_CDataProvider_CIEmai
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxCreateFolderRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxCreateFolderRequestEventArgs_INTERFACE_DEFINED__
 
@@ -5141,9 +5206,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxCreateFolderRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDeleteFolderRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDeleteFolderRequestEventArgs_INTERFACE_DEFINED__
@@ -5192,9 +5259,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDeleteFolderRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDownloadAttachmentRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDownloadAttachmentRequestEventArgs_INTERFACE_DEFINED__
@@ -5243,9 +5312,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDownloadAttachmentRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDownloadMessageRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDownloadMessageRequestEventArgs_INTERFACE_DEFINED__
@@ -5294,9 +5365,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxDownloadMessageRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxEmptyFolderRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxEmptyFolderRequestEventArgs_INTERFACE_DEFINED__
@@ -5345,9 +5418,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxEmptyFolderRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxForwardMeetingRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxForwardMeetingRequestEventArgs_INTERFACE_DEFINED__
@@ -5396,9 +5471,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxForwardMeetingRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxGetAutoReplySettingsRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxGetAutoReplySettingsRequestEventArgs_INTERFACE_DEFINED__
@@ -5447,9 +5524,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxGetAutoReplySettingsRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxMoveFolderRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxMoveFolderRequestEventArgs_INTERFACE_DEFINED__
@@ -5498,9 +5577,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxMoveFolderRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxProposeNewTimeForMeetingRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxProposeNewTimeForMeetingRequestEventArgs_INTERFACE_DEFINED__
@@ -5549,9 +5630,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxProposeNewTimeForMeetingRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxResolveRecipientsRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxResolveRecipientsRequestEventArgs_INTERFACE_DEFINED__
@@ -5600,9 +5683,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxResolveRecipientsRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxServerSearchReadBatchRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxServerSearchReadBatchRequestEventArgs_INTERFACE_DEFINED__
@@ -5651,9 +5736,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxServerSearchReadBatchRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxSetAutoReplySettingsRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxSetAutoReplySettingsRequestEventArgs_INTERFACE_DEFINED__
@@ -5702,9 +5789,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxSetAutoReplySettingsRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__
@@ -5753,9 +5842,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxUpdateMeetingResponseRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxUpdateMeetingResponseRequestEventArgs_INTERFACE_DEFINED__
@@ -5804,9 +5895,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxUpdateMeetingResponseRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxValidateCertificatesRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxValidateCertificatesRequestEventArgs_INTERFACE_DEFINED__
@@ -5854,6 +5947,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvi
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CEmail__CDataProvider__CEmailDataProviderConnection_Windows__CApplicationModel__CEmail__CDataProvider__CEmailMailboxValidateCertificatesRequestEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipient_FWD_DEFINED__

@@ -1453,6 +1453,26 @@ WlanSaveTemporaryProfile(
     _Reserved_ PVOID pReserved
 );
 
+DWORD WINAPI
+WlanDeviceServiceCommand(
+    _In_ HANDLE hClientHandle,
+    _In_ CONST GUID *pInterfaceGuid,
+    _In_ LPGUID pDeviceServiceGuid,
+    _In_ DWORD dwOpCode,
+    _In_ DWORD dwInBufferSize,
+    _In_reads_bytes_opt_(dwInBufferSize) PVOID pInBuffer,
+    _In_ DWORD dwOutBufferSize,
+    _Inout_updates_bytes_opt_(dwOutBufferSize) PVOID pOutBuffer,
+    _Out_ PDWORD pdwBytesReturned
+);
+
+DWORD WINAPI
+WlanGetSupportedDeviceServices(
+    _In_ HANDLE hClientHandle,
+    _In_ CONST GUID *pInterfaceGuid,
+    _Outptr_ PWLAN_DEVICE_SERVICE_GUID_LIST *ppDevSvcGuidList
+);
+
 #if !defined(__midl)
 
 // client side APIs
@@ -2188,52 +2208,52 @@ DEFINE_DEVPROPKEY(
     );
 
 //
-// Property: DEVPKEY_WiFiDirect_IsInfraCastSupported
+// Property: DEVPKEY_InfraCast_Supported
 // Description: A value indicating if the remote Miracast Sink supports infrastructure connections
 // Type: DEVPROP_TYPE_BOOLEAN
 // Availability: If remote device is a Miracast sink and supports infrastructure connections, then this is set to DEVPROP_TRUE,
 //               otherwise set to DEVPROP_FALSE, or empty.
 //
 DEFINE_DEVPROPKEY(
-    DEVPKEY_WiFiDirect_IsInfraCastSupported,
+    DEVPKEY_InfraCast_Supported,
     0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
     0x11
     );
 
 //
-// Property: DEVPKEY_WiFiDirect_IsInfraCastStreamSecuritySupported
+// Property: DEVPKEY_InfraCast_StreamSecuritySupported
 // Description: A value indicating if the remote Miracast Sink supports stream security
 // Type: DEVPROP_TYPE_BOOLEAN
 // Availability: If remote device is a Miracast sink and supports stream security, then this is set to DEVPROP_TRUE,
 //               otherwise set to DEVPROP_FALSE, or empty.
 //
 DEFINE_DEVPROPKEY(
-    DEVPKEY_WiFiDirect_IsInfraCastStreamSecuritySupported,
+    DEVPKEY_InfraCast_StreamSecuritySupported,
     0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
     0x12
     );
 
 //
-// Property: DEVPKEY_WiFiDirect_InfraCastAccessPointBssid
+// Property: DEVPKEY_InfraCast_AccessPointBssid
 // Description: A value indicating the BSSID of the Access Point the Miracast Sink is connected to, if the network is secure.
 // Type: DEVPROP_TYPE_BINARY
 // Binary Data: DOT11_MAC_ADDRESS (UCHAR[6])
 // Availability: If the Miracast Sink connection to an Access Point is secure, this value is set else is empty.
 //
 DEFINE_DEVPROPKEY(
-    DEVPKEY_WiFiDirect_InfraCastAccessPointBssid,
+    DEVPKEY_InfraCast_AccessPointBssid,
     0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
     0x13
     );
 
 //
-// Property: DEVPKEY_WiFiDirect_InfraCastSinkHostName
-// Description: A value indicating the BSSID of the Access Point the Miracast Sink is connected to, if the network is secure.
+// Property: DEVPKEY_InfraCast_SinkHostName
+// Description: A value indicating the DNS hostname of the Miracast Sink.
 // Type: DEVPROP_TYPE_STRING
-// Availability: If the Miracast Sink support connection over infrastructure, this value is set else is empty.
+// Availability: If the Miracast Sink supports connection over infrastructure, this value is set else is empty.
 //
 DEFINE_DEVPROPKEY(
-    DEVPKEY_WiFiDirect_InfraCastSinkHostName,
+    DEVPKEY_InfraCast_SinkHostName,
     0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
     0x14
     );
@@ -2298,6 +2318,33 @@ DEFINE_DEVPROPKEY(
     0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
     0x19
 );
+
+//
+// Property: DEVPKEY_InfraCast_SinkIpAddress
+// Description: A value containing an IPv4 or IPV6 IP address of the Miracast Sink.
+// Type: DEVPROP_TYPE_STRING
+// Availability: If the Miracast Sink supports connection over infrastructure, this value maybe set, else is empty.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_InfraCast_SinkIpAddress,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x1A
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_TransientAssociation
+// Description: Set when the association should not be persisted. Tells the DAF provider to remove the association
+//              when the devnode goes offline
+// Type: DEVPROP_TYPE_BOOLEAN
+// Availability: If the pairing result indicated that the persistent group is not supported, set to DEVPROP_TRUE,
+//               otherwise set to DEVPROP_FALSE,
+//               or empty.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_TransientAssociation,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x1B
+    );
 
 //
 // Wi-Fi Direct Services Property Key Definitions

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.threading.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -320,8 +322,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("923C402E-4721-440E-9DDA-55B6F2E07710"), contract] */
                     MIDL_INTERFACE("923C402E-4721-440E-9DDA-55B6F2E07710")
-                    ISignalHandler : IUnknown
+                    ISignalHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt ABI::Windows::System::Threading::Core::ISignalNotifier * signalNotifier,
                             /* [in] */boolean timedOut
@@ -363,8 +366,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("B6DAA9FC-BC5B-401A-A8B2-6E754D14DAA6"), exclusiveto, contract] */
                     MIDL_INTERFACE("B6DAA9FC-BC5B-401A-A8B2-6E754D14DAA6")
-                    IPreallocatedWorkItem : IInspectable
+                    IPreallocatedWorkItem : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE RunAsync(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                             ) = 0;
@@ -405,8 +409,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("E3D32B45-DFEA-469B-82C5-F6E3CEFDEAFB"), exclusiveto, contract] */
                     MIDL_INTERFACE("E3D32B45-DFEA-469B-82C5-F6E3CEFDEAFB")
-                    IPreallocatedWorkItemFactory : IInspectable
+                    IPreallocatedWorkItemFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateWorkItem(
                             /* [in] */__RPC__in_opt ABI::Windows::System::Threading::IWorkItemHandler  * handler,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Threading::Core::IPreallocatedWorkItem * * workItem
@@ -459,8 +464,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("14285E06-63A7-4713-B6D9-62F64B56FB8B"), exclusiveto, contract] */
                     MIDL_INTERFACE("14285E06-63A7-4713-B6D9-62F64B56FB8B")
-                    ISignalNotifier : IInspectable
+                    ISignalNotifier : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Enable(void) = 0;
                         virtual HRESULT STDMETHODCALLTYPE Terminate(void) = 0;
                         
@@ -500,8 +506,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("1C4E4566-8400-46D3-A115-7D0C0DFC9F62"), exclusiveto, contract] */
                     MIDL_INTERFACE("1C4E4566-8400-46D3-A115-7D0C0DFC9F62")
-                    ISignalNotifierStatics : IInspectable
+                    ISignalNotifierStatics : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE AttachToEvent(
                             /* [in] */__RPC__in HSTRING name,
                             /* [in] */__RPC__in_opt ABI::Windows::System::Threading::Core::ISignalHandler  * handler,

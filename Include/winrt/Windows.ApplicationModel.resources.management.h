@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.resources.management.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION)
@@ -98,8 +96,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -730,8 +732,9 @@ namespace ABI {
                 namespace Management {
                     /* [object, uuid("0E619EF3-FAEC-4414-A9D7-54ACD5953F29"), exclusiveto, contract] */
                     MIDL_INTERFACE("0E619EF3-FAEC-4414-A9D7-54ACD5953F29")
-                    IIndexedResourceCandidate : IInspectable
+                    IIndexedResourceCandidate : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                             /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Resources::Management::IndexedResourceType * value
                             ) = 0;
@@ -788,8 +791,9 @@ namespace ABI {
                 namespace Management {
                     /* [object, uuid("DAE3BB9B-D304-497F-A168-A340042C8ADB"), exclusiveto, contract] */
                     MIDL_INTERFACE("DAE3BB9B-D304-497F-A168-A340042C8ADB")
-                    IIndexedResourceQualifier : IInspectable
+                    IIndexedResourceQualifier : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_QualifierName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -833,8 +837,9 @@ namespace ABI {
                 namespace Management {
                     /* [object, uuid("2D4CF9A5-E32F-4AB2-8748-96350A016DA3"), exclusiveto, contract] */
                     MIDL_INTERFACE("2D4CF9A5-E32F-4AB2-8748-96350A016DA3")
-                    IResourceIndexer : IInspectable
+                    IResourceIndexer : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE IndexFilePath(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * filePath,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Management::IIndexedResourceCandidate * * candidate
@@ -880,8 +885,9 @@ namespace ABI {
                 namespace Management {
                     /* [object, uuid("B8DE3F09-31CD-4D97-BD30-8D39F742BC61"), exclusiveto, contract] */
                     MIDL_INTERFACE("B8DE3F09-31CD-4D97-BD30-8D39F742BC61")
-                    IResourceIndexerFactory : IInspectable
+                    IResourceIndexerFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateResourceIndexer(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * projectRoot,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Management::IResourceIndexer * * indexer
@@ -923,8 +929,9 @@ namespace ABI {
                 namespace Management {
                     /* [object, uuid("6040F18D-D5E5-4B60-9201-CD279CBCFED9"), exclusiveto, contract] */
                     MIDL_INTERFACE("6040F18D-D5E5-4B60-9201-CD279CBCFED9")
-                    IResourceIndexerFactory2 : IInspectable
+                    IResourceIndexerFactory2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateResourceIndexerWithExtension(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * projectRoot,
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * extensionDllPath,

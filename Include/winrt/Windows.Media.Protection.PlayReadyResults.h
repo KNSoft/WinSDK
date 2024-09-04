@@ -45,7 +45,7 @@
 *   The range from 8004c000 to 8004dfff is reserved for PlayReady PK error codes.
 *       Exceptions:
 *            The sub-range 8004c600 to 8004c6ff is reserved for PlayReady Server and Services error codes.
-*            The sub-range 8004dd00 to 8004ddff is reserved for OEM-defined PlayReady PK error codes.
+*            The sub-range 8004dc80 to 8004ddff is reserved for OEM-defined PlayReady PK error codes.
 *
 *   There's a range of error codes that is only applicable to the PC and should
 *   not be included here. These errors are in common\include, files:
@@ -4447,14 +4447,14 @@
 #define DRM_E_TEE_PROVISIONING_REQUIRED  ((DRM_RESULT)0x8004CD11L)
 
 /*
- * MessageId: DRM_E_TEE_INVALID_CONTEXT
+ * MessageId: DRM_E_TEE_INVALID_HWDRM_STATE
  *
  * MessageText:
  *
- * The TEE context is invalid.
+ * The HWDRM state is invalid, e.g. the TEE context is invalid.  Reinitialization is required.
  *
  */
-#define DRM_E_TEE_INVALID_CONTEXT        ((DRM_RESULT)0x8004CD12L)
+#define DRM_E_TEE_INVALID_HWDRM_STATE    ((DRM_RESULT)0x8004CD12L)
 
 /*
  * MessageId: DRM_E_TEE_PROVISIONING_REQUEST_EXPIRED
@@ -4471,7 +4471,7 @@
  *
  * MessageText:
  *
- * Provisioning request expired.
+ * The TEE secure clock needs to be reset.
  *
  */
 #define DRM_E_TEE_CLOCK_NOT_SET          ((DRM_RESULT)0x8004CD14L)
@@ -5951,13 +5951,13 @@
 /* ============================================================
 **
 ** Secure stop errors: error codes from DRM_E_BASECODE + 0x1C00 to
-** DRM_E_BASECODE + 0x1CFF, 0x8004dc00-0x8004dcff.
+** DRM_E_BASECODE + 0x1CFF, 0x8004dc00-0x8004dc7f.
 **
 ** ============================================================
 */
 
 #define DRM_E_SECURESTOP_BASECODE  (DRM_E_BASECODE + 0x1C00)
-#define DRM_E_SECURESTOP_FINALCODE (DRM_E_BASECODE + 0x1CFF)
+#define DRM_E_SECURESTOP_FINALCODE (DRM_E_BASECODE + 0x1C7F)
 
 /*
  * MessageId: DRM_E_SECURESTOP_STORE_CORRUPT
@@ -6061,7 +6061,7 @@
 
 /* ============================================================
 **
-** 0x8004dd00 to 0x8004ddff are reserved for OEM-defined errors
+** 0x8004dc80 to 0x8004ddff are reserved for OEM-defined errors
 **
 ** ============================================================
 */
@@ -6123,74 +6123,74 @@
 
 /* ============================================================
 **
-** HDS Anti Rollback errors: error codes from DRM_E_BASECODE + 0x1F00 to
+** LSRD errors: error codes from DRM_E_BASECODE + 0x1F00 to
 ** DRM_E_BASECODE + 0x1F05, 0x8004df00-0x8004df05.
 **
 ** ============================================================
 */
 
-#define DRM_E_HDSANTIROLLBACK_BASECODE  (DRM_E_BASECODE + 0x1F00)
-#define DRM_E_HDSANTIROLLBACK_FINALCODE (DRM_E_BASECODE + 0x1F05)
+#define DRM_E_LSRD_BASECODE  (DRM_E_BASECODE + 0x1F00)
+#define DRM_E_LSRD_FINALCODE (DRM_E_BASECODE + 0x1F05)
 
 /*
- * MessageId: DRM_E_HDSANTIROLLBACK_DETECTED
+ * MessageId: DRM_E_LSRD_DETECTED
  *
  * MessageText:
  *
  * HDS file rollback is detected.
  *
  */
-#define DRM_E_HDSANTIROLLBACK_DETECTED   ((DRM_RESULT)0x8004DF00L)
+#define DRM_E_LSRD_DETECTED              ((DRM_RESULT)0x8004DF00L)
 
 /*
- * MessageId: DRM_E_HDSANTIROLLBACK_INVALID_ACL
+ * MessageId: DRM_E_LSRD_INVALID_ACL
  *
  * MessageText:
  *
  * The ACL of the HDS Registry Subkey is invalid.
  *
  */
-#define DRM_E_HDSANTIROLLBACK_INVALID_ACL ((DRM_RESULT)0x8004DF01L)
+#define DRM_E_LSRD_INVALID_ACL           ((DRM_RESULT)0x8004DF01L)
 
 /*
- * MessageId: DRM_E_HDSANTIROLLBACK_DETECTION_IN_PROGRESS
+ * MessageId: DRM_E_LSRD_DETECTION_IN_PROGRESS
  *
  * MessageText:
  *
- * The client is currently processing HDS Anti Rollback check operation. Concurrent operations are not allowed.
+ * The client is currently processing LSRD check operation. Concurrent operations are not allowed.
  *
  */
-#define DRM_E_HDSANTIROLLBACK_DETECTION_IN_PROGRESS ((DRM_RESULT)0x8004DF02L)
+#define DRM_E_LSRD_DETECTION_IN_PROGRESS ((DRM_RESULT)0x8004DF02L)
 
 /*
- * MessageId: DRM_E_HDSANTIROLLBACK_ACL_NOT_PRESENT
+ * MessageId: DRM_E_LSRD_ACL_NOT_PRESENT
  *
  * MessageText:
  *
  * The security descriptor does not contain an ACL.
  *
  */
-#define DRM_E_HDSANTIROLLBACK_ACL_NOT_PRESENT ((DRM_RESULT)0x8004DF03L)
+#define DRM_E_LSRD_ACL_NOT_PRESENT       ((DRM_RESULT)0x8004DF03L)
 
 /*
- * MessageId: DRM_E_HDSANTIROLLBACK_INVALID_COMMAND
+ * MessageId: DRM_E_LSRD_INVALID_COMMAND
  *
  * MessageText:
  *
  * The PlayReady Process received an invalid command.
  *
  */
-#define DRM_E_HDSANTIROLLBACK_INVALID_COMMAND ((DRM_RESULT)0x8004DF04L)
+#define DRM_E_LSRD_INVALID_COMMAND       ((DRM_RESULT)0x8004DF04L)
 
 /*
- * MessageId: DRM_E_HDSANTIROLLBACK_SEQUENCE_NUMBER_IS_AT_MAX_LIMIT
+ * MessageId: DRM_E_LSRD_SEQUENCE_NUMBER_IS_AT_MAX_LIMIT
  *
  * MessageText:
  *
- * The HDS Anti Rollback sequence number has reached its maximum limit.
+ * The LSRD sequence number has reached its maximum limit.
  *
  */
-#define DRM_E_HDSANTIROLLBACK_SEQUENCE_NUMBER_IS_AT_MAX_LIMIT ((DRM_RESULT)0x8004DF05L)
+#define DRM_E_LSRD_SEQUENCE_NUMBER_IS_AT_MAX_LIMIT ((DRM_RESULT)0x8004DF05L)
 
 
 /* ============================================================

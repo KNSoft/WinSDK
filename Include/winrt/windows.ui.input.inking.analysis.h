@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.input.inking.analysis.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1435,8 +1437,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("EE049368-6110-4136-95F9-EE809FC20030"), exclusiveto, contract] */
                         MIDL_INTERFACE("EE049368-6110-4136-95F9-EE809FC20030")
-                        IInkAnalysisInkBullet : IInspectable
+                        IInkAnalysisInkBullet : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecognizedText(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1483,8 +1486,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("6A85ED1F-1FE4-4E15-898C-8E112377E021"), exclusiveto, contract] */
                         MIDL_INTERFACE("6A85ED1F-1FE4-4E15-898C-8E112377E021")
-                        IInkAnalysisInkDrawing : IInspectable
+                        IInkAnalysisInkDrawing : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DrawingKind(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Inking::Analysis::InkAnalysisDrawingKind * value
                                 ) = 0;
@@ -1537,8 +1541,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("4BD228AD-83AF-4034-8F3B-F8687DFFF436"), exclusiveto, contract] */
                         MIDL_INTERFACE("4BD228AD-83AF-4034-8F3B-F8687DFFF436")
-                        IInkAnalysisInkWord : IInspectable
+                        IInkAnalysisInkWord : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecognizedText(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1588,8 +1593,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("A06D048D-2B8D-4754-AD5A-D0871193A956"), exclusiveto, contract] */
                         MIDL_INTERFACE("A06D048D-2B8D-4754-AD5A-D0871193A956")
-                        IInkAnalysisLine : IInspectable
+                        IInkAnalysisLine : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecognizedText(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1639,8 +1645,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("B4E3C23F-C4C3-4C3A-A1A6-9D85547EE586"), exclusiveto, contract] */
                         MIDL_INTERFACE("B4E3C23F-C4C3-4C3A-A1A6-9D85547EE586")
-                        IInkAnalysisListItem : IInspectable
+                        IInkAnalysisListItem : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecognizedText(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1680,8 +1687,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("30831F05-5F64-4A2C-BA37-4F4887879574"), contract] */
                         MIDL_INTERFACE("30831F05-5F64-4A2C-BA37-4F4887879574")
-                        IInkAnalysisNode : IInspectable
+                        IInkAnalysisNode : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                                 /* [retval, out] */__RPC__out UINT32 * value
                                 ) = 0;
@@ -1746,8 +1754,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("D9AD045C-0CD1-4DD4-A68B-EB1F12B3D727"), exclusiveto, contract] */
                         MIDL_INTERFACE("D9AD045C-0CD1-4DD4-A68B-EB1F12B3D727")
-                        IInkAnalysisParagraph : IInspectable
+                        IInkAnalysisParagraph : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecognizedText(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1790,8 +1799,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("8948BA79-A243-4AA3-A294-1F98BD0FF580"), exclusiveto, contract] */
                         MIDL_INTERFACE("8948BA79-A243-4AA3-A294-1F98BD0FF580")
-                        IInkAnalysisResult : IInspectable
+                        IInkAnalysisResult : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Inking::Analysis::InkAnalysisStatus * value
                                 ) = 0;
@@ -1838,8 +1848,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("3FB6A3C4-2FDE-4061-8502-A90F32545B84"), exclusiveto, contract] */
                         MIDL_INTERFACE("3FB6A3C4-2FDE-4061-8502-A90F32545B84")
-                        IInkAnalysisRoot : IInspectable
+                        IInkAnalysisRoot : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecognizedText(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1890,8 +1901,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("DD6D6231-BD16-4663-B5AE-941D3043EF5B"), exclusiveto, contract] */
                         MIDL_INTERFACE("DD6D6231-BD16-4663-B5AE-941D3043EF5B")
-                        IInkAnalysisWritingRegion : IInspectable
+                        IInkAnalysisWritingRegion : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecognizedText(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1934,8 +1946,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("F12B8F95-0866-4DC5-8C77-F88614DFE38C"), exclusiveto, contract] */
                         MIDL_INTERFACE("F12B8F95-0866-4DC5-8C77-F88614DFE38C")
-                        IInkAnalyzer : IInspectable
+                        IInkAnalyzer : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnalysisRoot(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::Analysis::IInkAnalysisRoot * * value
                                 ) = 0;
@@ -2001,8 +2014,9 @@ namespace ABI {
                     namespace Analysis {
                         /* [object, uuid("29138686-1963-49D8-9589-E14384C769E3"), contract] */
                         MIDL_INTERFACE("29138686-1963-49D8-9589-E14384C769E3")
-                        IInkAnalyzerFactory : IInspectable
+                        IInkAnalyzerFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateAnalyzer(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::Analysis::IInkAnalyzer * * result
                                 ) = 0;

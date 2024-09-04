@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.enterprisedata.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2278,8 +2280,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("47995EDC-6CEC-4E3A-B251-9E7485D79E7A"), exclusiveto, contract] */
                 MIDL_INTERFACE("47995EDC-6CEC-4E3A-B251-9E7485D79E7A")
-                IBufferProtectUnprotectResult : IInspectable
+                IBufferProtectUnprotectResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Buffer(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -2321,8 +2324,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("8420B0C1-5E31-4405-9540-3F943AF0CB26"), exclusiveto, contract] */
                 MIDL_INTERFACE("8420B0C1-5E31-4405-9540-3F943AF0CB26")
-                IDataProtectionInfo : IInspectable
+                IDataProtectionInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Security::EnterpriseData::DataProtectionStatus * value
                         ) = 0;
@@ -2364,8 +2368,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("B6149B74-9144-4EE4-8A8A-30B5F361430E"), exclusiveto, contract] */
                 MIDL_INTERFACE("B6149B74-9144-4EE4-8A8A-30B5F361430E")
-                IDataProtectionManagerStatics : IInspectable
+                IDataProtectionManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ProtectAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
                         /* [in] */__RPC__in HSTRING identity,
@@ -2429,8 +2434,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("4EE96486-147E-4DD0-8FAF-5253ED91AD0C"), exclusiveto, contract] */
                 MIDL_INTERFACE("4EE96486-147E-4DD0-8FAF-5253ED91AD0C")
-                IFileProtectionInfo : IInspectable
+                IFileProtectionInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Security::EnterpriseData::FileProtectionStatus * value
                         ) = 0;
@@ -2475,8 +2481,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("82123A4C-557A-498D-8E94-944CD5836432"), exclusiveto, contract] */
                 MIDL_INTERFACE("82123A4C-557A-498D-8E94-944CD5836432")
-                IFileProtectionInfo2 : IInspectable
+                IFileProtectionInfo2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsProtectWhileOpenSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2515,8 +2522,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("5846FC9B-E613-426B-BB38-88CBA1DC9ADB"), exclusiveto, contract] */
                 MIDL_INTERFACE("5846FC9B-E613-426B-BB38-88CBA1DC9ADB")
-                IFileProtectionManagerStatics : IInspectable
+                IFileProtectionManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ProtectAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageItem * target,
                         /* [in] */__RPC__in HSTRING identity,
@@ -2586,8 +2594,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("83D2A745-0483-41AB-B2D5-BC7F23D74EBB"), exclusiveto, contract] */
                 MIDL_INTERFACE("83D2A745-0483-41AB-B2D5-BC7F23D74EBB")
-                IFileProtectionManagerStatics2 : IInspectable
+                IFileProtectionManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsContainerAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
@@ -2638,8 +2647,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("6918849A-624F-46D6-B241-E9CD5FDF3E3F"), exclusiveto, contract] */
                 MIDL_INTERFACE("6918849A-624F-46D6-B241-E9CD5FDF3E3F")
-                IFileProtectionManagerStatics3 : IInspectable
+                IFileProtectionManagerStatics3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE UnprotectAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageItem * target,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo * * result
@@ -2688,8 +2698,9 @@ namespace ABI {
                 #if WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION >= 0x10000
                 DEPRECATED("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
                 #endif // WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION >= 0x10000
-                IFileRevocationManagerStatics : IInspectable
+                IFileRevocationManagerStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION >= 0x10000
                     DEPRECATED("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
@@ -2758,8 +2769,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("7D1312F1-3B0D-4DD8-A1F8-1EC53822E2F3"), exclusiveto, contract] */
                 MIDL_INTERFACE("7D1312F1-3B0D-4DD8-A1F8-1EC53822E2F3")
-                IFileUnprotectOptions : IInspectable
+                IFileUnprotectOptions : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Audit(
                         /* [in] */boolean value
                         ) = 0;
@@ -2801,8 +2813,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("51AEB39C-DA8C-4C3F-9BFB-CB73A7CCE0DD"), exclusiveto, contract] */
                 MIDL_INTERFACE("51AEB39C-DA8C-4C3F-9BFB-CB73A7CCE0DD")
-                IFileUnprotectOptionsFactory : IInspectable
+                IFileUnprotectOptionsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */boolean audit,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::EnterpriseData::IFileUnprotectOptions * * result
@@ -2842,8 +2855,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("AC4DCA59-5D80-4E95-8C5F-8539450EEBE0"), exclusiveto, contract] */
                 MIDL_INTERFACE("AC4DCA59-5D80-4E95-8C5F-8539450EEBE0")
-                IProtectedAccessResumedEventArgs : IInspectable
+                IProtectedAccessResumedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Identities(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -2882,8 +2896,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("75A193E0-A344-429F-B975-04FC1F88C185"), exclusiveto, contract] */
                 MIDL_INTERFACE("75A193E0-A344-429F-B975-04FC1F88C185")
-                IProtectedAccessSuspendingEventArgs : IInspectable
+                IProtectedAccessSuspendingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Identities(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -2928,8 +2943,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("3948EF95-F7FB-4B42-AFB0-DF70B41543C1"), exclusiveto, contract] */
                 MIDL_INTERFACE("3948EF95-F7FB-4B42-AFB0-DF70B41543C1")
-                IProtectedContainerExportResult : IInspectable
+                IProtectedContainerExportResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Security::EnterpriseData::ProtectedImportExportStatus * value
                         ) = 0;
@@ -2971,8 +2987,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("CDB780D1-E7BB-4D1A-9339-34DC41149F9B"), exclusiveto, contract] */
                 MIDL_INTERFACE("CDB780D1-E7BB-4D1A-9339-34DC41149F9B")
-                IProtectedContainerImportResult : IInspectable
+                IProtectedContainerImportResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Security::EnterpriseData::ProtectedImportExportStatus * value
                         ) = 0;
@@ -3014,8 +3031,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("63686821-58B9-47EE-93D9-F0F741CF43F0"), exclusiveto, contract] */
                 MIDL_INTERFACE("63686821-58B9-47EE-93D9-F0F741CF43F0")
-                IProtectedContentRevokedEventArgs : IInspectable
+                IProtectedContentRevokedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Identities(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -3054,8 +3072,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("28E3ED6A-E9E7-4A03-9F53-BDB16172699B"), exclusiveto, contract] */
                 MIDL_INTERFACE("28E3ED6A-E9E7-4A03-9F53-BDB16172699B")
-                IProtectedFileCreateResult : IInspectable
+                IProtectedFileCreateResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_File(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFile * * value
                         ) = 0;
@@ -3100,8 +3119,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("425AB7E4-FEB7-44FC-B3BB-C3C4D7ECBEBB"), exclusiveto, contract] */
                 MIDL_INTERFACE("425AB7E4-FEB7-44FC-B3BB-C3C4D7ECBEBB")
-                IProtectionPolicyAuditInfo : IInspectable
+                IProtectionPolicyAuditInfo : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Action(
                         /* [in] */ABI::Windows::Security::EnterpriseData::ProtectionPolicyAuditAction value
                         ) = 0;
@@ -3161,8 +3181,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("7ED4180B-92E8-42D5-83D4-25440B423549"), exclusiveto, contract] */
                 MIDL_INTERFACE("7ED4180B-92E8-42D5-83D4-25440B423549")
-                IProtectionPolicyAuditInfoFactory : IInspectable
+                IProtectionPolicyAuditInfoFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Security::EnterpriseData::ProtectionPolicyAuditAction action,
                         /* [in] */__RPC__in HSTRING dataDescription,
@@ -3210,8 +3231,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("D5703E18-A08D-47E6-A240-9934D7165EB5"), exclusiveto, contract] */
                 MIDL_INTERFACE("D5703E18-A08D-47E6-A240-9934D7165EB5")
-                IProtectionPolicyManager : IInspectable
+                IProtectionPolicyManager : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Identity(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -3253,8 +3275,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("ABF7527A-8435-417F-99B6-51BEAF365888"), exclusiveto, contract] */
                 MIDL_INTERFACE("ABF7527A-8435-417F-99B6-51BEAF365888")
-                IProtectionPolicyManager2 : IInspectable
+                IProtectionPolicyManager2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ShowEnterpriseIndicator(
                         /* [in] */boolean value
                         ) = 0;
@@ -3296,8 +3319,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("C0BFFC66-8C3D-4D56-8804-C68F0AD32EC5"), exclusiveto, contract] */
                 MIDL_INTERFACE("C0BFFC66-8C3D-4D56-8804-C68F0AD32EC5")
-                IProtectionPolicyManagerStatics : IInspectable
+                IProtectionPolicyManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsIdentityManaged(
                         /* [in] */__RPC__in HSTRING identity,
                         /* [retval, out] */__RPC__out boolean * result
@@ -3387,8 +3411,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("B68F9A8C-39E0-4649-B2E4-070AB8A579B3"), exclusiveto, contract] */
                 MIDL_INTERFACE("B68F9A8C-39E0-4649-B2E4-070AB8A579B3")
-                IProtectionPolicyManagerStatics2 : IInspectable
+                IProtectionPolicyManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE HasContentBeenRevokedSince(
                         /* [in] */__RPC__in HSTRING identity,
                         /* [in] */ABI::Windows::Foundation::DateTime since,
@@ -3461,8 +3486,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("48FF9E8C-6A6F-4D9F-BCED-18AB537AA015"), exclusiveto, contract] */
                 MIDL_INTERFACE("48FF9E8C-6A6F-4D9F-BCED-18AB537AA015")
-                IProtectionPolicyManagerStatics3 : IInspectable
+                IProtectionPolicyManagerStatics3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestAccessWithAuditingInfoAsync(
                         /* [in] */__RPC__in HSTRING sourceIdentity,
                         /* [in] */__RPC__in HSTRING targetIdentity,
@@ -3529,8 +3555,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("20B794DB-CCBD-490F-8C83-49CCB77AEA6C"), exclusiveto, contract] */
                 MIDL_INTERFACE("20B794DB-CCBD-490F-8C83-49CCB77AEA6C")
-                IProtectionPolicyManagerStatics4 : IInspectable
+                IProtectionPolicyManagerStatics4 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsRoamableProtectionEnabled(
                         /* [in] */__RPC__in HSTRING identity,
                         /* [retval, out] */__RPC__out boolean * value
@@ -3632,8 +3659,9 @@ namespace ABI {
             namespace EnterpriseData {
                 /* [object, uuid("FA4EA8E9-EF13-405A-B12C-D7348C6F41FC"), exclusiveto, contract] */
                 MIDL_INTERFACE("FA4EA8E9-EF13-405A-B12C-D7348C6F41FC")
-                IThreadNetworkContext : IInspectable
+                IThreadNetworkContext : public IInspectable
                 {
+                public:
                     
                 };
 

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.devices.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -412,6 +414,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 ABI::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5
 
 #endif // ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IAdvancedVideoCaptureDeviceController6;
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6 ABI::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController6
+
+#endif // ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
@@ -944,6 +960,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult ABI::Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult
 
 #endif // ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IVideoTemporalDenoisingControl;
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl ABI::Windows::Media::Devices::IVideoTemporalDenoisingControl
+
+#endif // ____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_FWD_DEFINED__
@@ -1766,6 +1796,74 @@ namespace ABI {
     namespace Windows {
         namespace Media {
             namespace Devices {
+                enum VideoTemporalDenoisingMode : int;
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+
+
+#ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_USE
+#define DEF___FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("9b062552-e75c-515e-a2a4-1b081b640614"))
+IIterator<enum ABI::Windows::Media::Devices::VideoTemporalDenoisingMode> : IIterator_impl<enum ABI::Windows::Media::Devices::VideoTemporalDenoisingMode> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Media.Devices.VideoTemporalDenoisingMode>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<enum ABI::Windows::Media::Devices::VideoTemporalDenoisingMode> __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_t;
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::VideoTemporalDenoisingMode>
+//#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::VideoTemporalDenoisingMode>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_USE */
+
+
+
+
+
+#ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_USE
+#define DEF___FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("caf26629-ee84-5d4c-ae37-9dc4b26978eb"))
+IIterable<enum ABI::Windows::Media::Devices::VideoTemporalDenoisingMode> : IIterable_impl<enum ABI::Windows::Media::Devices::VideoTemporalDenoisingMode> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Media.Devices.VideoTemporalDenoisingMode>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<enum ABI::Windows::Media::Devices::VideoTemporalDenoisingMode> __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_t;
+#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::VideoTemporalDenoisingMode>
+//#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::VideoTemporalDenoisingMode>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_USE */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
                 enum ZoomTransitionMode : int;
             } /* Windows */
         } /* Media */
@@ -2134,6 +2232,36 @@ typedef IVectorView<enum ABI::Windows::Media::Devices::OpticalImageStabilization
 
 
 
+#ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_USE
+#define DEF___FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("094d5da9-91cc-55d8-b7b7-52e597156987"))
+IVectorView<enum ABI::Windows::Media::Devices::VideoTemporalDenoisingMode> : IVectorView_impl<enum ABI::Windows::Media::Devices::VideoTemporalDenoisingMode> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Media.Devices.VideoTemporalDenoisingMode>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<enum ABI::Windows::Media::Devices::VideoTemporalDenoisingMode> __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_t;
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::VideoTemporalDenoisingMode>
+//#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::VideoTemporalDenoisingMode>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_USE */
+
+
+
+
+
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_USE
 #define DEF___FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -2438,6 +2566,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_USE
@@ -2466,6 +2595,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Devices::AudioDeviceModulesManag
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -3005,11 +3135,24 @@ namespace ABI {
         namespace Media {
             namespace Devices {
                 
+                typedef enum VideoTemporalDenoisingMode : int VideoTemporalDenoisingMode;
+                
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                
                 typedef enum ZoomTransitionMode : int ZoomTransitionMode;
                 
             } /* Windows */
         } /* Media */
     } /* Devices */} /* ABI */
+
+
 
 
 
@@ -3327,6 +3470,16 @@ namespace ABI {
         namespace Media {
             namespace Devices {
                 class VideoDeviceControllerGetDevicePropertyResult;
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                class VideoTemporalDenoisingControl;
             } /* Windows */
         } /* Media */
     } /* Devices */} /* ABI */
@@ -4021,6 +4174,34 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Media.Devices.VideoTemporalDenoisingMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                /* [v1_enum, contract] */
+                enum VideoTemporalDenoisingMode : int
+                {
+                    VideoTemporalDenoisingMode_Off = 0,
+                    VideoTemporalDenoisingMode_On = 1,
+                    VideoTemporalDenoisingMode_Auto = 2,
+                };
+                
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Struct Windows.Media.Devices.ZoomTransitionMode
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4064,8 +4245,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("596F759F-50DF-4454-BC63-4D3D01B61958"), contract] */
                 MIDL_INTERFACE("596F759F-50DF-4454-BC63-4D3D01B61958")
-                ICallControlEventHandler : IUnknown
+                ICallControlEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Devices::ICallControl * sender
                         ) = 0;
@@ -4100,8 +4282,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("5ABBFFDB-C21F-4BC4-891B-257E28C1B1A4"), contract] */
                 MIDL_INTERFACE("5ABBFFDB-C21F-4BC4-891B-257E28C1B1A4")
-                IDialRequestedEventHandler : IUnknown
+                IDialRequestedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Devices::ICallControl * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Devices::IDialRequestedEventArgs * e
@@ -4137,8 +4320,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("E637A454-C527-422C-8926-C9AF83B559A0"), contract] */
                 MIDL_INTERFACE("E637A454-C527-422C-8926-C9AF83B559A0")
-                IKeypadPressedEventHandler : IUnknown
+                IKeypadPressedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Devices::ICallControl * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Devices::IKeypadPressedEventArgs * e
@@ -4174,8 +4358,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("BAF257D1-4EBD-4B84-9F47-6EC43D75D8B1"), contract] */
                 MIDL_INTERFACE("BAF257D1-4EBD-4B84-9F47-6EC43D75D8B1")
-                IRedialRequestedEventHandler : IUnknown
+                IRedialRequestedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Devices::ICallControl * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Devices::IRedialRequestedEventArgs * e
@@ -4215,8 +4400,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("08F3863A-0018-445B-93D2-646D1C5ED05C"), exclusiveto, contract] */
                 MIDL_INTERFACE("08F3863A-0018-445B-93D2-646D1C5ED05C")
-                IAdvancedPhotoCaptureSettings : IInspectable
+                IAdvancedPhotoCaptureSettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Devices::AdvancedPhotoMode * value
                         ) = 0;
@@ -4258,8 +4444,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("C5B15486-9001-4682-9309-68EAE0080EEC"), exclusiveto, contract] */
                 MIDL_INTERFACE("C5B15486-9001-4682-9309-68EAE0080EEC")
-                IAdvancedPhotoControl : IInspectable
+                IAdvancedPhotoControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4307,8 +4494,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("DE6FF4D3-2B96-4583-80AB-B5B01DC6A8D7"), exclusiveto, contract] */
                 MIDL_INTERFACE("DE6FF4D3-2B96-4583-80AB-B5B01DC6A8D7")
-                IAdvancedVideoCaptureDeviceController : IInspectable
+                IAdvancedVideoCaptureDeviceController : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetDeviceProperty(
                         /* [in] */__RPC__in HSTRING propertyId,
                         /* [in] */__RPC__in_opt IInspectable * propertyValue
@@ -4352,8 +4540,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("8BB94F8F-F11A-43DB-B402-11930B80AE56"), exclusiveto, contract] */
                 MIDL_INTERFACE("8BB94F8F-F11A-43DB-B402-11930B80AE56")
-                IAdvancedVideoCaptureDeviceController2 : IInspectable
+                IAdvancedVideoCaptureDeviceController2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LowLagPhotoSequence(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::ILowLagPhotoSequenceControl * * value
                         ) = 0;
@@ -4428,8 +4617,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("A98B8F34-EE0D-470C-B9F0-4229C4BBD089"), exclusiveto, contract] */
                 MIDL_INTERFACE("A98B8F34-EE0D-470C-B9F0-4229C4BBD089")
-                IAdvancedVideoCaptureDeviceController3 : IInspectable
+                IAdvancedVideoCaptureDeviceController3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VariablePhotoSequenceController(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::Core::IVariablePhotoSequenceController * * value
                         ) = 0;
@@ -4474,8 +4664,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("EA9FBFAF-D371-41C3-9A17-824A87EBDFD2"), exclusiveto, contract] */
                 MIDL_INTERFACE("EA9FBFAF-D371-41C3-9A17-824A87EBDFD2")
-                IAdvancedVideoCaptureDeviceController4 : IInspectable
+                IAdvancedVideoCaptureDeviceController4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExposurePriorityVideoControl(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::IExposurePriorityVideoControl * * value
                         ) = 0;
@@ -4529,8 +4720,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("33512B17-B9CB-4A23-B875-F9EAAB535492"), exclusiveto, contract] */
                 MIDL_INTERFACE("33512B17-B9CB-4A23-B875-F9EAAB535492")
-                IAdvancedVideoCaptureDeviceController5 : IInspectable
+                IAdvancedVideoCaptureDeviceController5 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4573,6 +4765,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDe
 
 /*
  *
+ * Interface Windows.Media.Devices.IAdvancedVideoCaptureDeviceController6
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Devices.VideoDeviceController
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IAdvancedVideoCaptureDeviceController6[] = L"Windows.Media.Devices.IAdvancedVideoCaptureDeviceController6";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                /* [object, uuid("B6563A53-68A1-44B7-9F89-B5FA97AC0CBE"), exclusiveto, contract] */
+                MIDL_INTERFACE("B6563A53-68A1-44B7-9F89-B5FA97AC0CBE")
+                IAdvancedVideoCaptureDeviceController6 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VideoTemporalDenoisingControl(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::IVideoTemporalDenoisingControl * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAdvancedVideoCaptureDeviceController6=_uuidof(IAdvancedVideoCaptureDeviceController6);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Devices.IAudioDeviceController
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4596,8 +4829,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("EDD4A388-79C7-4F7C-90E8-EF934B21580A"), exclusiveto, contract] */
                 MIDL_INTERFACE("EDD4A388-79C7-4F7C-90E8-EF934B21580A")
-                IAudioDeviceController : IInspectable
+                IAudioDeviceController : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Muted(
                         /* [in] */boolean value
                         ) = 0;
@@ -4645,8 +4879,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("86CFAC36-47C1-4B33-9852-8773EC4BE123"), exclusiveto, contract] */
                 MIDL_INTERFACE("86CFAC36-47C1-4B33-9852-8773EC4BE123")
-                IAudioDeviceModule : IInspectable
+                IAudioDeviceModule : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClassId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4701,8 +4936,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("E3E3CCAF-224C-48BE-956B-9A13134E96E8"), exclusiveto, contract] */
                 MIDL_INTERFACE("E3E3CCAF-224C-48BE-956B-9A13134E96E8")
-                IAudioDeviceModuleNotificationEventArgs : IInspectable
+                IAudioDeviceModuleNotificationEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Module(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::IAudioDeviceModule * * value
                         ) = 0;
@@ -4744,8 +4980,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("6AA40C4D-960A-4D1C-B318-0022604547ED"), exclusiveto, contract] */
                 MIDL_INTERFACE("6AA40C4D-960A-4D1C-B318-0022604547ED")
-                IAudioDeviceModulesManager : IInspectable
+                IAudioDeviceModulesManager : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ModuleNotificationReceived(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -4795,8 +5032,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("8DB03670-E64D-4773-96C0-BC7EBF0E063F"), exclusiveto, contract] */
                 MIDL_INTERFACE("8DB03670-E64D-4773-96C0-BC7EBF0E063F")
-                IAudioDeviceModulesManagerFactory : IInspectable
+                IAudioDeviceModulesManagerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::IAudioDeviceModulesManager * * result
@@ -4836,8 +5074,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("A520D0D6-AE8D-45DB-8011-CA49D3B3E578"), exclusiveto, contract] */
                 MIDL_INTERFACE("A520D0D6-AE8D-45DB-8011-CA49D3B3E578")
-                ICallControl : IInspectable
+                ICallControl : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IndicateNewIncomingCall(
                         /* [in] */boolean enableRinger,
                         /* [in] */__RPC__in HSTRING callerId,
@@ -4932,8 +5171,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("03945AD5-85AB-40E1-AF19-56C94303B019"), exclusiveto, contract] */
                 MIDL_INTERFACE("03945AD5-85AB-40E1-AF19-56C94303B019")
-                ICallControlStatics : IInspectable
+                ICallControlStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::ICallControl * * callControl
                         ) = 0;
@@ -4973,8 +5213,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("110F882F-1C05-4657-A18E-47C9B69F07AB"), contract] */
                 MIDL_INTERFACE("110F882F-1C05-4657-A18E-47C9B69F07AB")
-                IDefaultAudioDeviceChangedEventArgs : IInspectable
+                IDefaultAudioDeviceChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5016,8 +5257,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("037B929E-953C-4286-8866-4F0F376C855A"), exclusiveto, contract] */
                 MIDL_INTERFACE("037B929E-953C-4286-8866-4F0F376C855A")
-                IDialRequestedEventArgs : IInspectable
+                IDialRequestedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Handled(void) = 0;
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
                         /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
@@ -5057,8 +5299,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("81C8E834-DCEC-4011-A610-1F3847E64ACA"), exclusiveto, contract] */
                 MIDL_INTERFACE("81C8E834-DCEC-4011-A610-1F3847E64ACA")
-                IExposureCompensationControl : IInspectable
+                IExposureCompensationControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5113,8 +5356,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("09E8CBE2-AD96-4F28-A0E0-96ED7E1B5FD2"), exclusiveto, contract] */
                 MIDL_INTERFACE("09E8CBE2-AD96-4F28-A0E0-96ED7E1B5FD2")
-                IExposureControl : IInspectable
+                IExposureControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5176,8 +5420,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("2CB240A3-5168-4271-9EA5-47621A98A352"), exclusiveto, contract] */
                 MIDL_INTERFACE("2CB240A3-5168-4271-9EA5-47621A98A352")
-                IExposurePriorityVideoControl : IInspectable
+                IExposurePriorityVideoControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5222,8 +5467,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("DEF41DBE-7D68-45E3-8C0F-BE7BB32837D0"), exclusiveto, contract] */
                 MIDL_INTERFACE("DEF41DBE-7D68-45E3-8C0F-BE7BB32837D0")
-                IFlashControl : IInspectable
+                IFlashControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5292,8 +5538,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("7D29CC9E-75E1-4AF7-BD7D-4E38E1C06CD6"), exclusiveto, contract] */
                 MIDL_INTERFACE("7D29CC9E-75E1-4AF7-BD7D-4E38E1C06CD6")
-                IFlashControl2 : IInspectable
+                IFlashControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AssistantLightSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5338,8 +5585,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("C0D889F6-5228-4453-B153-85606592B238"), exclusiveto, contract] */
                 MIDL_INTERFACE("C0D889F6-5228-4453-B153-85606592B238")
-                IFocusControl : IInspectable
+                IFocusControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5412,8 +5660,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("3F7CFF48-C534-4E9E-94C3-52EF2AFD5D07"), exclusiveto, contract] */
                 MIDL_INTERFACE("3F7CFF48-C534-4E9E-94C3-52EF2AFD5D07")
-                IFocusControl2 : IInspectable
+                IFocusControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FocusChangedSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5479,8 +5728,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("79958F6B-3263-4275-85D6-AEAE891C96EE"), exclusiveto, contract] */
                 MIDL_INTERFACE("79958F6B-3263-4275-85D6-AEAE891C96EE")
-                IFocusSettings : IInspectable
+                IFocusSettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Devices::FocusMode * value
                         ) = 0;
@@ -5552,8 +5802,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("55D8E2D0-30C0-43BF-9B9A-9799D70CED94"), exclusiveto, contract] */
                 MIDL_INTERFACE("55D8E2D0-30C0-43BF-9B9A-9799D70CED94")
-                IHdrVideoControl : IInspectable
+                IHdrVideoControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5601,8 +5852,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("27B6C322-25AD-4F1B-AAAB-524AB376CA33"), exclusiveto, contract] */
                 MIDL_INTERFACE("27B6C322-25AD-4F1B-AAAB-524AB376CA33")
-                IIsoSpeedControl : IInspectable
+                IIsoSpeedControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5663,8 +5915,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("6F1578F2-6D77-4F8A-8C2F-6130B6395053"), exclusiveto, contract] */
                 MIDL_INTERFACE("6F1578F2-6D77-4F8A-8C2F-6130B6395053")
-                IIsoSpeedControl2 : IInspectable
+                IIsoSpeedControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Min(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -5722,8 +5975,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("D3A43900-B4FA-49CD-9442-89AF6568F601"), exclusiveto, contract] */
                 MIDL_INTERFACE("D3A43900-B4FA-49CD-9442-89AF6568F601")
-                IKeypadPressedEventArgs : IInspectable
+                IKeypadPressedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TelephonyKey(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Devices::TelephonyKey * telephonyKey
                         ) = 0;
@@ -5762,8 +6016,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("6D5C4DD0-FADF-415D-AEE6-3BAA529300C9"), exclusiveto, contract] */
                 MIDL_INTERFACE("6D5C4DD0-FADF-415D-AEE6-3BAA529300C9")
-                ILowLagPhotoControl : IInspectable
+                ILowLagPhotoControl : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetHighestConcurrentFrameRate(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProperties * captureProperties,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IMediaRatio * * value
@@ -5827,8 +6082,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("3DCF909D-6D16-409C-BAFE-B9A594C6FDE6"), exclusiveto, contract] */
                 MIDL_INTERFACE("3DCF909D-6D16-409C-BAFE-B9A594C6FDE6")
-                ILowLagPhotoSequenceControl : IInspectable
+                ILowLagPhotoSequenceControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5913,8 +6169,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("EFA8DFA9-6F75-4863-BA0B-583F3036B4DE"), exclusiveto, contract] */
                 MIDL_INTERFACE("EFA8DFA9-6F75-4863-BA0B-583F3036B4DE")
-                IMediaDeviceControl : IInspectable
+                IMediaDeviceControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Capabilities(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::IMediaDeviceControlCapabilities * * value
                         ) = 0;
@@ -5969,8 +6226,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("23005816-EB85-43E2-B92B-8240D5EE70EC"), exclusiveto, contract] */
                 MIDL_INTERFACE("23005816-EB85-43E2-B92B-8240D5EE70EC")
-                IMediaDeviceControlCapabilities : IInspectable
+                IMediaDeviceControlCapabilities : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6021,8 +6279,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("F6F8F5CE-209A-48FB-86FC-D44578F317E6"), contract] */
                 MIDL_INTERFACE("F6F8F5CE-209A-48FB-86FC-D44578F317E6")
-                IMediaDeviceController : IInspectable
+                IMediaDeviceController : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAvailableMediaStreamProperties(
                         /* [in] */ABI::Windows::Media::Capture::MediaStreamType mediaStreamType,
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties * * value
@@ -6071,8 +6330,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("AA2D9A40-909F-4BBA-BF8B-0C0D296F14F0"), exclusiveto, contract] */
                 MIDL_INTERFACE("AA2D9A40-909F-4BBA-BF8B-0C0D296F14F0")
-                IMediaDeviceStatics : IInspectable
+                IMediaDeviceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAudioCaptureSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * selector
                         ) = 0;
@@ -6139,8 +6399,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("520D1EB4-1374-4C7D-B1E4-39DCDF3EAE4E"), exclusiveto, contract] */
                 MIDL_INTERFACE("520D1EB4-1374-4C7D-B1E4-39DCDF3EAE4E")
-                IModuleCommandResult : IInspectable
+                IModuleCommandResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Devices::SendCommandStatus * value
                         ) = 0;
@@ -6182,8 +6443,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("BFAD9C1D-00BC-423B-8EB2-A0178CA94247"), exclusiveto, contract] */
                 MIDL_INTERFACE("BFAD9C1D-00BC-423B-8EB2-A0178CA94247")
-                IOpticalImageStabilizationControl : IInspectable
+                IOpticalImageStabilizationControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6231,8 +6493,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("C8F3F363-FF5E-4582-A9A8-0550F85A4A76"), exclusiveto, contract] */
                 MIDL_INTERFACE("C8F3F363-FF5E-4582-A9A8-0550F85A4A76")
-                IPhotoConfirmationControl : IInspectable
+                IPhotoConfirmationControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * pbSupported
                         ) = 0;
@@ -6283,8 +6546,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("7EB55209-76AB-4C31-B40E-4B58379D580C"), exclusiveto, contract] */
                 MIDL_INTERFACE("7EB55209-76AB-4C31-B40E-4B58379D580C")
-                IRedialRequestedEventArgs : IInspectable
+                IRedialRequestedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Handled(void) = 0;
                     
                 };
@@ -6321,8 +6585,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("E5ECC834-CE66-4E05-A78F-CF391A5EC2D1"), exclusiveto, contract] */
                 MIDL_INTERFACE("E5ECC834-CE66-4E05-A78F-CF391A5EC2D1")
-                IRegionOfInterest : IInspectable
+                IRegionOfInterest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AutoFocusEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6382,8 +6647,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("19FE2A91-73AA-4D51-8A9D-56CCF7DB7F54"), exclusiveto, contract] */
                 MIDL_INTERFACE("19FE2A91-73AA-4D51-8A9D-56CCF7DB7F54")
-                IRegionOfInterest2 : IInspectable
+                IRegionOfInterest2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Devices::RegionOfInterestType * value
                         ) = 0;
@@ -6437,8 +6703,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("C323F527-AB0B-4558-8B5B-DF5693DB0378"), exclusiveto, contract] */
                 MIDL_INTERFACE("C323F527-AB0B-4558-8B5B-DF5693DB0378")
-                IRegionsOfInterestControl : IInspectable
+                IRegionsOfInterestControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxRegions(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -6498,8 +6765,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("D48E5AF7-8D59-4854-8C62-12C70BA89B7C"), exclusiveto, contract] */
                 MIDL_INTERFACE("D48E5AF7-8D59-4854-8C62-12C70BA89B7C")
-                ISceneModeControl : IInspectable
+                ISceneModeControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedModes(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CDevices__CCaptureSceneMode * * value
                         ) = 0;
@@ -6545,8 +6813,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("A6053665-8250-416C-919A-724296AFA306"), exclusiveto, contract] */
                 MIDL_INTERFACE("A6053665-8250-416C-919A-724296AFA306")
-                ITorchControl : IInspectable
+                ITorchControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6604,8 +6873,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("99555575-2E2E-40B8-B6C7-F82D10013210"), exclusiveto, contract] */
                 MIDL_INTERFACE("99555575-2E2E-40B8-B6C7-F82D10013210")
-                IVideoDeviceController : IInspectable
+                IVideoDeviceController : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Brightness(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::IMediaDeviceControl * * value
                         ) = 0;
@@ -6682,8 +6952,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("C5D88395-6ED5-4790-8B5D-0EF13935D0F8"), exclusiveto, contract] */
                 MIDL_INTERFACE("C5D88395-6ED5-4790-8B5D-0EF13935D0F8")
-                IVideoDeviceControllerGetDevicePropertyResult : IInspectable
+                IVideoDeviceControllerGetDevicePropertyResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus * value
                         ) = 0;
@@ -6702,6 +6973,56 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Media.Devices.IVideoTemporalDenoisingControl
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Devices.VideoTemporalDenoisingControl
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IVideoTemporalDenoisingControl[] = L"Windows.Media.Devices.IVideoTemporalDenoisingControl";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                /* [object, uuid("7AB34735-3E2A-4A32-BAFF-4358C4FBDD57"), exclusiveto, contract] */
+                MIDL_INTERFACE("7AB34735-3E2A-4A32-BAFF-4358C4FBDD57")
+                IVideoTemporalDenoisingControl : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedModes(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
+                        /* [retval, out] */__RPC__out ABI::Windows::Media::Devices::VideoTemporalDenoisingMode * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Mode(
+                        /* [in] */ABI::Windows::Media::Devices::VideoTemporalDenoisingMode value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IVideoTemporalDenoisingControl=_uuidof(IVideoTemporalDenoisingControl);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6725,8 +7046,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("781F047E-7162-49C8-A8F9-9481C565363E"), exclusiveto, contract] */
                 MIDL_INTERFACE("781F047E-7162-49C8-A8F9-9481C565363E")
-                IWhiteBalanceControl : IInspectable
+                IWhiteBalanceControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6788,8 +7110,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("3A1E0B12-32DA-4C17-BFD7-8D0C73C8F5A5"), exclusiveto, contract] */
                 MIDL_INTERFACE("3A1E0B12-32DA-4C17-BFD7-8D0C73C8F5A5")
-                IZoomControl : IInspectable
+                IZoomControl : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Supported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6843,8 +7166,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("69843DB0-2E99-4641-8529-184F319D1671"), exclusiveto, contract] */
                 MIDL_INTERFACE("69843DB0-2E99-4641-8529-184F319D1671")
-                IZoomControl2 : IInspectable
+                IZoomControl2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedModes(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode * * value
                         ) = 0;
@@ -6889,8 +7213,9 @@ namespace ABI {
             namespace Devices {
                 /* [object, uuid("6AD66B24-14B4-4BFD-B18F-88FE24463B52"), exclusiveto, contract] */
                 MIDL_INTERFACE("6AD66B24-14B4-4BFD-B18F-88FE24463B52")
-                IZoomSettings : IInspectable
+                IZoomSettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Devices::ZoomTransitionMode * value
                         ) = 0;
@@ -7705,6 +8030,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Devices.IAdvancedVideoCaptureDeviceController3
  *    Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4
  *    Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5
+ *    Windows.Media.Devices.IAdvancedVideoCaptureDeviceController6
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
@@ -7742,6 +8068,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_VideoDeviceControllerGetDevicePropertyResult[] = L"Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Class Windows.Media.Devices.VideoTemporalDenoisingControl
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Devices.IVideoTemporalDenoisingControl ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Devices_VideoTemporalDenoisingControl_DEFINED
+#define RUNTIMECLASS_Windows_Media_Devices_VideoTemporalDenoisingControl_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_VideoTemporalDenoisingControl[] = L"Windows.Media.Devices.VideoTemporalDenoisingControl";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7889,6 +8239,12 @@ typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceC
 typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5;
 
 #endif // ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6 __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6;
+
+#endif // ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
@@ -8117,6 +8473,12 @@ typedef interface __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceController __x_A
 typedef interface __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult;
 
 #endif // ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl;
+
+#endif // ____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_FWD_DEFINED__
@@ -9891,6 +10253,164 @@ interface __FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+enum __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode;
+#if !defined(____FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode;
+
+typedef struct __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingModeVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This, /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) enum __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingModeVtbl;
+
+interface __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingModeVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode;
+
+typedef  struct __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingModeVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingModeVtbl;
+
+interface __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingModeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_INTERFACE_DEFINED__
+
+
 enum __x_ABI_CWindows_CMedia_CDevices_CZoomTransitionMode;
 #if !defined(____FIIterator_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__
@@ -11142,6 +11662,115 @@ interface __FIVectorView_1_Windows__CMedia__CDevices__COpticalImageStabilization
 
 
 
+#if !defined(____FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode;
+
+typedef struct __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingModeVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+            /* [in] */ enum __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) enum __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingModeVtbl;
+
+interface __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingModeVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode_INTERFACE_DEFINED__
+
+
+
 #if !defined(____FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__
 
@@ -11641,6 +12270,7 @@ interface __FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefau
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__
 
@@ -11687,6 +12317,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModules
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #if !defined(____FIReference_1_UINT32_INTERFACE_DEFINED__)
@@ -12153,7 +12784,13 @@ typedef enum __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerGetDevicePro
 typedef enum __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerSetDevicePropertyStatus __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerSetDevicePropertyStatus;
 
 
+typedef enum __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode;
+
+
 typedef enum __x_ABI_CWindows_CMedia_CDevices_CZoomTransitionMode __x_ABI_CWindows_CMedia_CDevices_CZoomTransitionMode;
+
+
+
 
 
 
@@ -12732,6 +13369,26 @@ enum __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerSetDevicePropertySta
     VideoDeviceControllerSetDevicePropertyStatus_NotInControl = 5,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Struct Windows.Media.Devices.VideoTemporalDenoisingMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode
+{
+    VideoTemporalDenoisingMode_Off = 0,
+    VideoTemporalDenoisingMode_On = 1,
+    VideoTemporalDenoisingMode_Auto = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -13859,6 +14516,99 @@ interface __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceControlle
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Media.Devices.IAdvancedVideoCaptureDeviceController6
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Devices.VideoDeviceController
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IAdvancedVideoCaptureDeviceController6[] = L"Windows.Media.Devices.IAdvancedVideoCaptureDeviceController6";
+/* [object, uuid("B6563A53-68A1-44B7-9F89-B5FA97AC0CBE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_VideoTemporalDenoisingControl )(
+        __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_get_VideoTemporalDenoisingControl(This,value) \
+    ( (This)->lpVtbl->get_VideoTemporalDenoisingControl(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController6_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -18772,6 +19522,120 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerG
 
 /*
  *
+ * Interface Windows.Media.Devices.IVideoTemporalDenoisingControl
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Devices.VideoTemporalDenoisingControl
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IVideoTemporalDenoisingControl[] = L"Windows.Media.Devices.IVideoTemporalDenoisingControl";
+/* [object, uuid("7AB34735-3E2A-4A32-BAFF-4358C4FBDD57"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControlVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Supported )(
+        __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SupportedModes )(
+        __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CDevices__CVideoTemporalDenoisingMode * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Mode )(
+        __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Mode )(
+        __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CDevices_CVideoTemporalDenoisingMode value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControlVtbl;
+
+interface __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControlVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_get_Supported(This,value) \
+    ( (This)->lpVtbl->get_Supported(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_get_SupportedModes(This,value) \
+    ( (This)->lpVtbl->get_SupportedModes(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_get_Mode(This,value) \
+    ( (This)->lpVtbl->get_Mode(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_put_Mode(This,value) \
+    ( (This)->lpVtbl->put_Mode(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIVideoTemporalDenoisingControl_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Devices.IWhiteBalanceControl
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -20051,6 +20915,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Devices.IAdvancedVideoCaptureDeviceController3
  *    Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4
  *    Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5
+ *    Windows.Media.Devices.IAdvancedVideoCaptureDeviceController6
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
@@ -20088,6 +20953,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_VideoDeviceControllerGetDevicePropertyResult[] = L"Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Class Windows.Media.Devices.VideoTemporalDenoisingControl
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Devices.IVideoTemporalDenoisingControl ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Devices_VideoTemporalDenoisingControl_DEFINED
+#define RUNTIMECLASS_Windows_Media_Devices_VideoTemporalDenoisingControl_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_VideoTemporalDenoisingControl[] = L"Windows.Media.Devices.VideoTemporalDenoisingControl";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

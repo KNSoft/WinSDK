@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.management.deployment.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -367,6 +369,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager6 ABI::Windows::Management::Deployment::IPackageManager6
 
 #endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager6_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                interface IPackageManager7;
+            } /* Windows */
+        } /* Management */
+    } /* Deployment */} /* ABI */
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 ABI::Windows::Management::Deployment::IPackageManager7
+
+#endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
@@ -1339,6 +1355,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace Management {
@@ -1685,8 +1702,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("2563B9AE-B77D-4C1F-8A7B-20E6AD515EF3"), exclusiveto, contract] */
                 MIDL_INTERFACE("2563B9AE-B77D-4C1F-8A7B-20E6AD515EF3")
-                IDeploymentResult : IInspectable
+                IDeploymentResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ErrorText(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1731,8 +1749,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("FC0E715C-5A01-4BD7-BCF1-381C8C82E04A"), exclusiveto, contract] */
                 MIDL_INTERFACE("FC0E715C-5A01-4BD7-BCF1-381C8C82E04A")
-                IDeploymentResult2 : IInspectable
+                IDeploymentResult2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsRegistered(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1771,8 +1790,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("9A7D4B65-5E8F-4FC7-A2E5-7F6925CB8B53"), exclusiveto, contract] */
                 MIDL_INTERFACE("9A7D4B65-5E8F-4FC7-A2E5-7F6925CB8B53")
-                IPackageManager : IInspectable
+                IPackageManager : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE AddPackageAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * packageUri,
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri * dependencyPackageUris,
@@ -1884,8 +1904,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("F7AAD08D-0840-46F2-B5D8-CAD47693A095"), exclusiveto, contract] */
                 MIDL_INTERFACE("F7AAD08D-0840-46F2-B5D8-CAD47693A095")
-                IPackageManager2 : IInspectable
+                IPackageManager2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RemovePackageWithOptionsAsync(
                         /* [in] */__RPC__in HSTRING packageFullName,
                         /* [in] */ABI::Windows::Management::Deployment::RemovalOptions removalOptions,
@@ -1975,8 +1996,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("DAAD9948-36F1-41A7-9188-BC263E0DCB72"), exclusiveto, contract] */
                 MIDL_INTERFACE("DAAD9948-36F1-41A7-9188-BC263E0DCB72")
-                IPackageManager3 : IInspectable
+                IPackageManager3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AddPackageVolumeAsync(
                         /* [in] */__RPC__in HSTRING packageStorePath,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CManagement__CDeployment__CPackageVolume * * packageVolume
@@ -2081,8 +2103,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("3C719963-BAB6-46BF-8FF7-DA4719230AE6"), exclusiveto, contract] */
                 MIDL_INTERFACE("3C719963-BAB6-46BF-8FF7-DA4719230AE6")
-                IPackageManager4 : IInspectable
+                IPackageManager4 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetPackageVolumesAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CManagement__CDeployment__CPackageVolume * * operation
                         ) = 0;
@@ -2121,8 +2144,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("711F3117-1AFD-4313-978C-9BB6E1B864A7"), exclusiveto, contract] */
                 MIDL_INTERFACE("711F3117-1AFD-4313-978C-9BB6E1B864A7")
-                IPackageManager5 : IInspectable
+                IPackageManager5 : public IInspectable
                 {
+                public:
                     /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE AddPackageToVolumeAndOptionalPackagesAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * packageUri,
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri * dependencyPackageUris,
@@ -2187,8 +2211,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("0847E909-53CD-4E4F-832E-57D180F6E447"), exclusiveto, contract] */
                 MIDL_INTERFACE("0847E909-53CD-4E4F-832E-57D180F6E447")
-                IPackageManager6 : IInspectable
+                IPackageManager6 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ProvisionPackageForAllUsersAsync(
                         /* [in] */__RPC__in HSTRING packageFamilyName,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress * * operation
@@ -2250,6 +2275,54 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 
 /*
  *
+ * Interface Windows.Management.Deployment.IPackageManager7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Management.Deployment.PackageManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManager7[] = L"Windows.Management.Deployment.IPackageManager7";
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                /* [object, uuid("F28654F4-2BA7-4B80-88D6-BE15F9A23FBA"), exclusiveto, contract] */
+                MIDL_INTERFACE("F28654F4-2BA7-4B80-88D6-BE15F9A23FBA")
+                IPackageManager7 : public IInspectable
+                {
+                public:
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestAddPackageAndRelatedSetAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * packageUri,
+                        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri * dependencyPackageUris,
+                        /* [in] */ABI::Windows::Management::Deployment::DeploymentOptions deploymentOptions,
+                        /* [in] */__RPC__in_opt ABI::Windows::Management::Deployment::IPackageVolume * targetVolume,
+                        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * optionalPackageFamilyNames,
+                        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri * relatedPackageUris,
+                        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri * packageUrisToInstall,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPackageManager7=_uuidof(IPackageManager7);
+                
+            } /* Windows */
+        } /* Management */
+    } /* Deployment */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7;
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Management.Deployment.IPackageManagerDebugSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -2269,8 +2342,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("1A611683-A988-4FCF-8F0F-CE175898E8EB"), exclusiveto, contract] */
                 MIDL_INTERFACE("1A611683-A988-4FCF-8F0F-CE175898E8EB")
-                IPackageManagerDebugSettings : IInspectable
+                IPackageManagerDebugSettings : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE SetContentGroupStateAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::IPackage * package,
                         /* [in] */__RPC__in HSTRING contentGroupName,
@@ -2319,8 +2393,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("F6383423-FA09-4CBC-9055-15CA275E2E7E"), exclusiveto, contract] */
                 MIDL_INTERFACE("F6383423-FA09-4CBC-9055-15CA275E2E7E")
-                IPackageUserInformation : IInspectable
+                IPackageUserInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UserSecurityId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2362,8 +2437,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("CF2672C3-1A40-4450-9739-2ACE2E898853"), exclusiveto, contract] */
                 MIDL_INTERFACE("CF2672C3-1A40-4450-9739-2ACE2E898853")
-                IPackageVolume : IInspectable
+                IPackageVolume : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsOffline(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2486,8 +2562,9 @@ namespace ABI {
             namespace Deployment {
                 /* [object, uuid("46ABCF2E-9DD4-47A2-AB8C-C6408349BCD8"), exclusiveto, contract] */
                 MIDL_INTERFACE("46ABCF2E-9DD4-47A2-AB8C-C6408349BCD8")
-                IPackageVolume2 : IInspectable
+                IPackageVolume2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsFullTrustPackageSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2551,6 +2628,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Management.Deployment.IPackageManager4
  *    Windows.Management.Deployment.IPackageManager5
  *    Windows.Management.Deployment.IPackageManager6
+ *    Windows.Management.Deployment.IPackageManager7
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -2688,6 +2766,12 @@ typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 __x
 typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager6 __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager6;
 
 #endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager6_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7;
+
+#endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
@@ -4483,6 +4567,7 @@ typedef struct __x_ABI_CWindows_CManagement_CDeployment_CDeploymentProgress __x_
 
 
 
+
 /*
  *
  * Struct Windows.Management.Deployment.AddPackageByAppInstallerOptions
@@ -5898,6 +5983,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 
 /*
  *
+ * Interface Windows.Management.Deployment.IPackageManager7
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Management.Deployment.PackageManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManager7[] = L"Windows.Management.Deployment.IPackageManager7";
+/* [object, uuid("F28654F4-2BA7-4B80-88D6-BE15F9A23FBA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *RequestAddPackageAndRelatedSetAsync )(
+        __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * packageUri,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri * dependencyPackageUris,
+        /* [in] */__x_ABI_CWindows_CManagement_CDeployment_CDeploymentOptions deploymentOptions,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume * targetVolume,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * optionalPackageFamilyNames,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri * relatedPackageUris,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri * packageUrisToInstall,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7Vtbl;
+
+interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7
+{
+    CONST_VTBL struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_RequestAddPackageAndRelatedSetAsync(This,packageUri,dependencyPackageUris,deploymentOptions,targetVolume,optionalPackageFamilyNames,relatedPackageUris,packageUrisToInstall,operation) \
+    ( (This)->lpVtbl->RequestAddPackageAndRelatedSetAsync(This,packageUri,dependencyPackageUris,deploymentOptions,targetVolume,optionalPackageFamilyNames,relatedPackageUris,packageUrisToInstall,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7;
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Management.Deployment.IPackageManagerDebugSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -6503,6 +6688,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Management.Deployment.IPackageManager4
  *    Windows.Management.Deployment.IPackageManager5
  *    Windows.Management.Deployment.IPackageManager6
+ *    Windows.Management.Deployment.IPackageManager7
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

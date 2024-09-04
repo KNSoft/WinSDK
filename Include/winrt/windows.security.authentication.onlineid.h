@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.authentication.onlineid.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -967,8 +969,9 @@ namespace ABI {
                 namespace OnlineId {
                     /* [object, uuid("A003F58A-29AB-4817-B884-D7516DAD18B9"), exclusiveto, contract] */
                     MIDL_INTERFACE("A003F58A-29AB-4817-B884-D7516DAD18B9")
-                    IOnlineIdAuthenticator : IInspectable
+                    IOnlineIdAuthenticator : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE AuthenticateUserAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest * request,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity * * authenticationOperation
@@ -1030,8 +1033,9 @@ namespace ABI {
                 namespace OnlineId {
                     /* [object, uuid("C95C547F-D781-4A94-ACB8-C59874238C26"), exclusiveto, contract] */
                     MIDL_INTERFACE("C95C547F-D781-4A94-ACB8-C59874238C26")
-                    IOnlineIdServiceTicket : IInspectable
+                    IOnlineIdServiceTicket : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Value(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1078,8 +1082,9 @@ namespace ABI {
                 namespace OnlineId {
                     /* [object, uuid("297445D3-FB63-4135-8909-4E354C061466"), exclusiveto, contract] */
                     MIDL_INTERFACE("297445D3-FB63-4135-8909-4E354C061466")
-                    IOnlineIdServiceTicketRequest : IInspectable
+                    IOnlineIdServiceTicketRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Service(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1123,8 +1128,9 @@ namespace ABI {
                 namespace OnlineId {
                     /* [object, uuid("BEBB0A08-9E73-4077-9614-08614C0BC245"), exclusiveto, contract] */
                     MIDL_INTERFACE("BEBB0A08-9E73-4077-9614-08614C0BC245")
-                    IOnlineIdServiceTicketRequestFactory : IInspectable
+                    IOnlineIdServiceTicketRequestFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateOnlineIdServiceTicketRequest(
                             /* [in] */__RPC__in HSTRING service,
                             /* [in] */__RPC__in HSTRING policy,
@@ -1171,8 +1177,9 @@ namespace ABI {
                 namespace OnlineId {
                     /* [object, uuid("5798BEFB-1DE4-4186-A2E6-B563F86AAF44"), exclusiveto, contract] */
                     MIDL_INTERFACE("5798BEFB-1DE4-4186-A2E6-B563F86AAF44")
-                    IOnlineIdSystemAuthenticatorForUser : IInspectable
+                    IOnlineIdSystemAuthenticatorForUser : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetTicketAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest * request,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * * operation
@@ -1223,8 +1230,9 @@ namespace ABI {
                 namespace OnlineId {
                     /* [object, uuid("85047792-F634-41E3-96A4-5164E902C740"), exclusiveto, contract] */
                     MIDL_INTERFACE("85047792-F634-41E3-96A4-5164E902C740")
-                    IOnlineIdSystemAuthenticatorStatics : IInspectable
+                    IOnlineIdSystemAuthenticatorStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Default(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser * * value
                             ) = 0;
@@ -1269,8 +1277,9 @@ namespace ABI {
                 namespace OnlineId {
                     /* [object, uuid("743CD20D-B6CA-434D-8124-53EA12685307"), exclusiveto, contract] */
                     MIDL_INTERFACE("743CD20D-B6CA-434D-8124-53EA12685307")
-                    IOnlineIdSystemIdentity : IInspectable
+                    IOnlineIdSystemIdentity : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Ticket(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket * * value
                             ) = 0;
@@ -1314,8 +1323,9 @@ namespace ABI {
                 namespace OnlineId {
                     /* [object, uuid("DB0A5FF8-B098-4ACD-9D13-9E640652B5B6"), exclusiveto, contract] */
                     MIDL_INTERFACE("DB0A5FF8-B098-4ACD-9D13-9E640652B5B6")
-                    IOnlineIdSystemTicketResult : IInspectable
+                    IOnlineIdSystemTicketResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Identity(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity * * value
                             ) = 0;
@@ -1362,8 +1372,9 @@ namespace ABI {
                 namespace OnlineId {
                     /* [object, uuid("2146D9CD-0742-4BE3-8A1C-7C7AE679AA88"), exclusiveto, contract] */
                     MIDL_INTERFACE("2146D9CD-0742-4BE3-8A1C-7C7AE679AA88")
-                    IUserIdentity : IInspectable
+                    IUserIdentity : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Tickets(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket * * value
                             ) = 0;

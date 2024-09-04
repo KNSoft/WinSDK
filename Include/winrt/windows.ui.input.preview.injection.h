@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.input.preview.injection.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1404,8 +1406,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("20AE9A3F-DF11-4572-A9AB-D75B8A5E48AD"), exclusiveto, contract] */
                         MIDL_INTERFACE("20AE9A3F-DF11-4572-A9AB-D75B8A5E48AD")
-                        IInjectedInputGamepadInfo : IInspectable
+                        IInjectedInputGamepadInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Buttons(
                                 /* [retval, out] */__RPC__out ABI::Windows::Gaming::Input::GamepadButtons * value
                                 ) = 0;
@@ -1487,8 +1490,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("59596876-6C39-4EC4-8B2A-29EF7DE18ACA"), exclusiveto, contract] */
                         MIDL_INTERFACE("59596876-6C39-4EC4-8B2A-29EF7DE18ACA")
-                        IInjectedInputGamepadInfoFactory : IInspectable
+                        IInjectedInputGamepadInfoFactory : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateInstanceFromGamepadReading(
                                 /* [in] */ABI::Windows::Gaming::Input::GamepadReading reading,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfo * * value
@@ -1532,8 +1536,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("4B46D140-2B6A-5FFA-7EAE-BD077B052ACD"), exclusiveto, contract] */
                         MIDL_INTERFACE("4B46D140-2B6A-5FFA-7EAE-BD077B052ACD")
-                        IInjectedInputKeyboardInfo : IInspectable
+                        IInjectedInputKeyboardInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyOptions(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions * value
                                 ) = 0;
@@ -1591,8 +1596,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("96F56E6B-E47A-5CF4-418D-8A5FB9670C7D"), exclusiveto, contract] */
                         MIDL_INTERFACE("96F56E6B-E47A-5CF4-418D-8A5FB9670C7D")
-                        IInjectedInputMouseInfo : IInspectable
+                        IInjectedInputMouseInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MouseOptions(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions * value
                                 ) = 0;
@@ -1662,8 +1668,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("6B40AD03-CA1E-5527-7E02-2828540BB1D4"), exclusiveto, contract] */
                         MIDL_INTERFACE("6B40AD03-CA1E-5527-7E02-2828540BB1D4")
-                        IInjectedInputPenInfo : IInspectable
+                        IInjectedInputPenInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerInfo(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo * value
                                 ) = 0;
@@ -1745,8 +1752,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("224FD1DF-43E8-5EF5-510A-69CA8C9B4C28"), exclusiveto, contract] */
                         MIDL_INTERFACE("224FD1DF-43E8-5EF5-510A-69CA8C9B4C28")
-                        IInjectedInputTouchInfo : IInspectable
+                        IInjectedInputTouchInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Preview::Injection::InjectedInputRectangle * value
                                 ) = 0;
@@ -1816,8 +1824,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("8EC26F84-0B02-4BD2-AD7A-3D4658BE3E18"), exclusiveto, contract] */
                         MIDL_INTERFACE("8EC26F84-0B02-4BD2-AD7A-3D4658BE3E18")
-                        IInputInjector : IInspectable
+                        IInputInjector : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE InjectKeyboardInput(
                                 /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CInput__CPreview__CInjection__CInjectedInputKeyboardInfo * input
                                 ) = 0;
@@ -1884,8 +1893,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("8E7A905D-1453-43A7-9BCB-06D6D7B305F7"), exclusiveto, contract] */
                         MIDL_INTERFACE("8E7A905D-1453-43A7-9BCB-06D6D7B305F7")
-                        IInputInjector2 : IInspectable
+                        IInputInjector2 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE InitializeGamepadInjection(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE InjectGamepadInput(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfo * input
@@ -1930,8 +1940,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("DEAE6943-7402-4141-A5C6-0C01AA57B16A"), exclusiveto, contract] */
                         MIDL_INTERFACE("DEAE6943-7402-4141-A5C6-0C01AA57B16A")
-                        IInputInjectorStatics : IInspectable
+                        IInputInjectorStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE TryCreate(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Preview::Injection::IInputInjector * * instance
                                 ) = 0;
@@ -1978,8 +1989,9 @@ namespace ABI {
                     namespace Injection {
                         /* [object, uuid("A4DB38FB-DD8C-414F-95EA-F87EF4C0AE6C"), exclusiveto, contract] */
                         MIDL_INTERFACE("A4DB38FB-DD8C-414F-95EA-F87EF4C0AE6C")
-                        IInputInjectorStatics2 : IInspectable
+                        IInputInjectorStatics2 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE TryCreateForAppBroadcastOnly(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Preview::Injection::IInputInjector * * instance
                                 ) = 0;

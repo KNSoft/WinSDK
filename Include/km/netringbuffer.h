@@ -12,22 +12,22 @@ Abstract:
 
 Notes:
 
-    Do not include this header directly. This is to be used together with NetAdapterCx 1.0.
+    Do not include this header directly. This is to be used together with NetAdapterCx.
     
-    NetAdapterCx 1.0 is preview only, any files related to it may be substantially modified 
+    NetAdapterCx is preview only, any files related to it may be substantially modified 
     or removed in future releases of Windows.
 
  --*/
 
 #pragma once
 
-#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
-#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1)
-#        error NetPacket.h can be used only with NetAdapterCx 1.0 or 1.1
+#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2))
+#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1 && NET_ADAPTER_CX_1_2 != 1)
+#        error NetPacket.h can be used only with NetAdapterCx
 #    endif
 #else
 #    error Include NetAdapterCx.h
-#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
+#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2)
 
 // This structure holds opaque elements in a ring buffer.
 typedef struct DECLSPEC_CACHEALIGN _NET_RING_BUFFER
@@ -71,6 +71,7 @@ typedef struct DECLSPEC_CACHEALIGN _NET_RING_BUFFER
 
 C_ASSERT(FIELD_OFFSET(NET_RING_BUFFER, Buffer) == 64);
 
+
 __inline
 VOID *
 NetRingBufferGetElementAtIndex(
@@ -106,7 +107,7 @@ Return Value:
 __inline
 UINT32
 NetRingBufferIncrementIndex(
-    _In_ NET_RING_BUFFER *RingBuffer,
+    _In_ NET_RING_BUFFER CONST *RingBuffer,
     _In_ UINT32 Index
     )
 
@@ -136,7 +137,7 @@ Return Value:
 __inline
 UINT32
 NetRingBufferGetNumberOfElementsInRange(
-    _In_ NET_RING_BUFFER *RingBuffer,
+    _In_ NET_RING_BUFFER CONST *RingBuffer,
     _In_ UINT32 StartIndex,
     _In_ UINT32 EndIndex
     )

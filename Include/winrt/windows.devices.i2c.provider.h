@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.i2c.provider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
@@ -98,8 +96,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -589,8 +591,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("61C2BB82-4510-4163-A87C-4E15A9558980"), contract] */
                     MIDL_INTERFACE("61C2BB82-4510-4163-A87C-4E15A9558980")
-                    II2cControllerProvider : IInspectable
+                    II2cControllerProvider : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetDeviceProvider(
                             /* [in] */__RPC__in_opt ABI::Windows::Devices::I2c::Provider::IProviderI2cConnectionSettings * settings,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::I2c::Provider::II2cDeviceProvider * * device
@@ -633,8 +636,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("AD342654-57E8-453E-8329-D1E447D103A9"), contract] */
                     MIDL_INTERFACE("AD342654-57E8-453E-8329-D1E447D103A9")
-                    II2cDeviceProvider : IInspectable
+                    II2cDeviceProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -703,8 +707,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("6F13083E-BF62-4FE2-A95A-F08999669818"), contract] */
                     MIDL_INTERFACE("6F13083E-BF62-4FE2-A95A-F08999669818")
-                    II2cProvider : IInspectable
+                    II2cProvider : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetControllersAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CI2c__CProvider__CII2cControllerProvider * * operation
                             ) = 0;
@@ -745,8 +750,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("E9DB4E34-E510-44B7-809D-F2F85B555339"), exclusiveto, contract] */
                     MIDL_INTERFACE("E9DB4E34-E510-44B7-809D-F2F85B555339")
-                    IProviderI2cConnectionSettings : IInspectable
+                    IProviderI2cConnectionSettings : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SlaveAddress(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;

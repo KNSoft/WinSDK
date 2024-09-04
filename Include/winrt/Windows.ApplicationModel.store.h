@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.store.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1618,8 +1620,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("D4A50255-1369-4C36-832F-6F2D88E3659B"), contract] */
                 MIDL_INTERFACE("D4A50255-1369-4C36-832F-6F2D88E3659B")
-                ILicenseChangedEventHandler : IUnknown
+                ILicenseChangedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(void) = 0;
                     
                 };
@@ -1656,8 +1659,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("D52DC065-DA3F-4685-995E-9B482EB5E603"), exclusiveto, contract] */
                 MIDL_INTERFACE("D52DC065-DA3F-4685-995E-9B482EB5E603")
-                ICurrentApp : IInspectable
+                ICurrentApp : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LicenseInformation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Store::ILicenseInformation * * value
                         ) = 0;
@@ -1725,8 +1729,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("DF4E6E2D-3171-4AD3-8614-2C61244373CB"), exclusiveto, contract] */
                 MIDL_INTERFACE("DF4E6E2D-3171-4AD3-8614-2C61244373CB")
-                ICurrentApp2Statics : IInspectable
+                ICurrentApp2Statics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCustomerPurchaseIdAsync(
                         /* [in] */__RPC__in HSTRING serviceTicket,
                         /* [in] */__RPC__in HSTRING publisherUserId,
@@ -1772,8 +1777,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("F17F9DB1-74CD-4787-9787-19866E9A5559"), exclusiveto, contract] */
                 MIDL_INTERFACE("F17F9DB1-74CD-4787-9787-19866E9A5559")
-                ICurrentAppSimulator : IInspectable
+                ICurrentAppSimulator : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LicenseInformation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Store::ILicenseInformation * * value
                         ) = 0;
@@ -1845,8 +1851,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("617E70E2-F86F-4B54-9666-DDE285092C68"), exclusiveto, contract] */
                 MIDL_INTERFACE("617E70E2-F86F-4B54-9666-DDE285092C68")
-                ICurrentAppSimulatorStaticsWithFiltering : IInspectable
+                ICurrentAppSimulatorStaticsWithFiltering : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE LoadListingInformationByProductIdsAsync(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * productIds,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CListingInformation * * loadListingOperation
@@ -1890,8 +1897,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("84678A43-DF00-4672-A43F-B25B1441CFCF"), exclusiveto, contract] */
                 MIDL_INTERFACE("84678A43-DF00-4672-A43F-B25B1441CFCF")
-                ICurrentAppSimulatorWithCampaignId : IInspectable
+                ICurrentAppSimulatorWithCampaignId : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAppPurchaseCampaignIdAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
                         ) = 0;
@@ -1930,8 +1938,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("4E51F0AB-20E7-4412-9B85-59BB78388667"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E51F0AB-20E7-4412-9B85-59BB78388667")
-                ICurrentAppSimulatorWithConsumables : IInspectable
+                ICurrentAppSimulatorWithConsumables : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReportConsumableFulfillmentAsync(
                         /* [in] */__RPC__in HSTRING productId,
                         /* [in] */GUID transactionId,
@@ -1985,8 +1994,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("D36D6542-9085-438E-97BA-A25C976BE2FD"), exclusiveto, contract] */
                 MIDL_INTERFACE("D36D6542-9085-438E-97BA-A25C976BE2FD")
-                ICurrentAppStaticsWithFiltering : IInspectable
+                ICurrentAppStaticsWithFiltering : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE LoadListingInformationByProductIdsAsync(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * productIds,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CListingInformation * * loadListingOperation
@@ -2033,8 +2043,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("312F4CD0-36C1-44A6-B32B-432D608E4DD6"), exclusiveto, contract] */
                 MIDL_INTERFACE("312F4CD0-36C1-44A6-B32B-432D608E4DD6")
-                ICurrentAppWithCampaignId : IInspectable
+                ICurrentAppWithCampaignId : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAppPurchaseCampaignIdAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
                         ) = 0;
@@ -2073,8 +2084,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("844E0071-9E4F-4F79-995A-5F91172E6CEF"), exclusiveto, contract] */
                 MIDL_INTERFACE("844E0071-9E4F-4F79-995A-5F91172E6CEF")
-                ICurrentAppWithConsumables : IInspectable
+                ICurrentAppWithConsumables : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReportConsumableFulfillmentAsync(
                         /* [in] */__RPC__in HSTRING productId,
                         /* [in] */GUID transactionId,
@@ -2128,8 +2140,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("8EB7DC30-F170-4ED5-8E21-1516DA3FD367"), exclusiveto, contract] */
                 MIDL_INTERFACE("8EB7DC30-F170-4ED5-8E21-1516DA3FD367")
-                ILicenseInformation : IInspectable
+                ILicenseInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductLicenses(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CProductLicense * * value
                         ) = 0;
@@ -2184,8 +2197,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("588B4ABF-BC74-4383-B78C-99606323DECE"), exclusiveto, contract] */
                 MIDL_INTERFACE("588B4ABF-BC74-4383-B78C-99606323DECE")
-                IListingInformation : IInspectable
+                IListingInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentMarket(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2239,8 +2253,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("C0FD2C1D-B30E-4384-84EA-72FEFA82223E"), exclusiveto, contract] */
                 MIDL_INTERFACE("C0FD2C1D-B30E-4384-84EA-72FEFA82223E")
-                IListingInformation2 : IInspectable
+                IListingInformation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FormattedBasePrice(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2288,8 +2303,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("363308C7-2BCF-4C0E-8F2F-E808AAA8F99D"), exclusiveto, contract] */
                 MIDL_INTERFACE("363308C7-2BCF-4C0E-8F2F-E808AAA8F99D")
-                IProductLicense : IInspectable
+                IProductLicense : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2338,8 +2354,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("FC535C8A-F667-40F3-BA3C-045A63ABB3AC"), exclusiveto, contract] */
                 MIDL_INTERFACE("FC535C8A-F667-40F3-BA3C-045A63ABB3AC")
-                IProductLicenseWithFulfillment : IInspectable
+                IProductLicenseWithFulfillment : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsConsumable(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2378,8 +2395,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("45A7D6AD-C750-4D9C-947C-B00DCBF9E9C2"), exclusiveto, contract] */
                 MIDL_INTERFACE("45A7D6AD-C750-4D9C-947C-B00DCBF9E9C2")
-                IProductListing : IInspectable
+                IProductListing : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2424,8 +2442,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("F89E290F-73FE-494D-A939-08A9B2495ABE"), exclusiveto, contract] */
                 MIDL_INTERFACE("F89E290F-73FE-494D-A939-08A9B2495ABE")
-                IProductListing2 : IInspectable
+                IProductListing2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FormattedBasePrice(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2473,8 +2492,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("EB9E9790-8F6B-481F-93A7-5C3A63068149"), exclusiveto, contract] */
                 MIDL_INTERFACE("EB9E9790-8F6B-481F-93A7-5C3A63068149")
-                IProductListingWithConsumables : IInspectable
+                IProductListingWithConsumables : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductType(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Store::ProductType * value
                         ) = 0;
@@ -2517,8 +2537,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("124DA567-23F8-423E-9532-189943C40ACE"), exclusiveto, contract] */
                 MIDL_INTERFACE("124DA567-23F8-423E-9532-189943C40ACE")
-                IProductListingWithMetadata : IInspectable
+                IProductListingWithMetadata : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Description(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2569,8 +2590,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("D70B7420-BC92-401B-A809-C9B2E5DBBDAF"), exclusiveto, contract] */
                 MIDL_INTERFACE("D70B7420-BC92-401B-A809-C9B2E5DBBDAF")
-                IProductPurchaseDisplayProperties : IInspectable
+                IProductPurchaseDisplayProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2624,8 +2646,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("6F491DF4-32D6-4B40-B474-B83038A4D9CF"), exclusiveto, contract] */
                 MIDL_INTERFACE("6F491DF4-32D6-4B40-B474-B83038A4D9CF")
-                IProductPurchaseDisplayPropertiesFactory : IInspectable
+                IProductPurchaseDisplayPropertiesFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateProductPurchaseDisplayProperties(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Store::IProductPurchaseDisplayProperties * * displayProperties
@@ -2665,8 +2688,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("ED50B37E-8656-4F65-B8C8-AC7E0CB1A1C2"), exclusiveto, contract] */
                 MIDL_INTERFACE("ED50B37E-8656-4F65-B8C8-AC7E0CB1A1C2")
-                IPurchaseResults : IInspectable
+                IPurchaseResults : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Store::ProductPurchaseStatus * value
                         ) = 0;
@@ -2714,8 +2738,9 @@ namespace ABI {
             namespace Store {
                 /* [object, uuid("2DF7FBBB-1CDD-4CB8-A014-7B9CF8986927"), exclusiveto, contract] */
                 MIDL_INTERFACE("2DF7FBBB-1CDD-4CB8-A014-7B9CF8986927")
-                IUnfulfilledConsumable : IInspectable
+                IUnfulfilledConsumable : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;

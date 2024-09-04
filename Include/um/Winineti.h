@@ -458,7 +458,10 @@ BOOLAPI InternetWriteFileExW(
 #define INTERNET_OPTION_CANCEL_CACHE_WRITE           182
 #define INTERNET_OPTION_AUTH_SCHEME_SELECTED         183
 #define INTERNET_OPTION_NOCACHE_WRITE_IN_PRIVATE     184
-#define INTERNET_LAST_OPTION_INTERNAL           INTERNET_OPTION_NOCACHE_WRITE_IN_PRIVATE
+#define INTERNET_OPTION_REQUEST_TIMES                186
+#define INTERNET_OPTION_ACTIVITY_ID                  185
+
+#define INTERNET_LAST_OPTION_INTERNAL           INTERNET_OPTION_ACTIVITY_ID
 
 #define INTERNET_OPTION_OFFLINE_TIMEOUT INTERNET_OPTION_DISCONNECTED_TIMEOUT
 #define INTERNET_OPTION_LINE_STATE      INTERNET_OPTION_CONNECTED_STATE
@@ -475,6 +478,24 @@ typedef struct _INTERNET_DOWNLOAD_MODE_HANDLE
     PCWSTR pcwszFileName;
     HANDLE *phFile;
 } INTERNET_DOWNLOAD_MODE_HANDLE, *PINTERNET_DOWNLOAD_MODE_HANDLE;
+
+typedef enum _REQUEST_TIMES
+{
+    NameResolutionStart = 0,
+    NameResolutionEnd,
+    ConnectionEstablishmentStart,
+    ConnectionEstablishmentEnd,
+    TLSHandshakeStart,
+    TLSHandshakeEnd,
+    HttpRequestTimeMax = 32
+} REQUEST_TIMES;
+
+typedef struct _HTTP_REQUEST_TIMES
+{
+    ULONG cTimes;
+    ULONGLONG rgTimes[HttpRequestTimeMax];
+} HTTP_REQUEST_TIMES;
+
 #define AUTH_FLAG_RESET                         0x00000000 /* let registry decide */
 
 //
@@ -1168,12 +1189,12 @@ DWORD UrlCacheGetGlobalCacheSize(
 #define CACHE_CONFIG_DISK_SPACE_VERYLOW_IE                        26214400ULL  //  25 MB
 #define CACHE_CONFIG_DISK_SPACE_LOW_IE                            52428800ULL  //  50 MB
 #define CACHE_CONFIG_DISK_SPACE_BELOWNORMAL_IE                   104857600ULL  // 100 MB
-#define CACHE_CONFIG_DISK_SPACE_NORMAL_IE                        262144000ULL  // 250 MB
+#define CACHE_CONFIG_DISK_SPACE_NORMAL_IE                        346030080ULL  // 330 MB
 
 #define CACHE_CONFIG_DISK_SPACE_VERYLOW_IE_TOTAL                  36700160ULL  //  35 MB
 #define CACHE_CONFIG_DISK_SPACE_LOW_IE_TOTAL                      78643200ULL  //  75 MB
 #define CACHE_CONFIG_DISK_SPACE_BELOWNORMAL_IE_TOTAL             157286400ULL  // 150 MB
-#define CACHE_CONFIG_DISK_SPACE_NORMAL_IE_TOTAL                  393216000ULL  // 375 MB
+#define CACHE_CONFIG_DISK_SPACE_NORMAL_IE_TOTAL                  519045120ULL  // 495 MB
 
 #define CACHE_CONFIG_DISK_SPACE_VERYLOW_APPCONTAINER              15728640ULL  //  15 MB
 #define CACHE_CONFIG_DISK_SPACE_LOW_APPCONTAINER                  26214400ULL  //  25 MB
@@ -1545,6 +1566,11 @@ INTERNETAPI_(DWORD)
 HttpDuplicateDependencyHandle(
     _In_ HTTP_DEPENDENCY_HANDLE hDependencyHandle,
     _Outptr_ HTTP_DEPENDENCY_HANDLE *phDuplicatedDependencyHandle
+);
+
+INTERNETAPI_(DWORD)
+HttpIndicatePageLoadComplete(
+    _In_ HTTP_DEPENDENCY_HANDLE hDependencyHandle
 );
 
 //

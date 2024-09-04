@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.gpio.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
@@ -98,8 +96,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -641,6 +643,7 @@ namespace ABI {
 
 
 #if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CGpio__CGpioPin_Windows__CDevices__CGpio__CGpioPinValueChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CGpio__CGpioPin_Windows__CDevices__CGpio__CGpioPinValueChangedEventArgs_USE
@@ -669,6 +672,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Gpio::GpioPin*,ABI::Windows::D
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CGpio__CGpioPin_Windows__CDevices__CGpio__CGpioPinValueChangedEventArgs_USE */
 
 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
@@ -1113,8 +1117,9 @@ namespace ABI {
             namespace Gpio {
                 /* [object, uuid("CB5EC0DE-6801-43FF-803D-4576628A8B26"), exclusiveto, contract] */
                 MIDL_INTERFACE("CB5EC0DE-6801-43FF-803D-4576628A8B26")
-                IGpioChangeCounter : IInspectable
+                IGpioChangeCounter : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Polarity(
                         /* [in] */ABI::Windows::Devices::Gpio::GpioChangePolarity value
                         ) = 0;
@@ -1167,8 +1172,9 @@ namespace ABI {
             namespace Gpio {
                 /* [object, uuid("147D94B6-0A9E-410C-B4FA-F89F4052084D"), exclusiveto, contract] */
                 MIDL_INTERFACE("147D94B6-0A9E-410C-B4FA-F89F4052084D")
-                IGpioChangeCounterFactory : IInspectable
+                IGpioChangeCounterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Gpio::IGpioPin * pin,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Gpio::IGpioChangeCounter * * value
@@ -1212,8 +1218,9 @@ namespace ABI {
             namespace Gpio {
                 /* [object, uuid("0ABC885F-E031-48E8-8590-70DE78363C6D"), exclusiveto, contract] */
                 MIDL_INTERFACE("0ABC885F-E031-48E8-8590-70DE78363C6D")
-                IGpioChangeReader : IInspectable
+                IGpioChangeReader : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Capacity(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -1286,8 +1293,9 @@ namespace ABI {
             namespace Gpio {
                 /* [object, uuid("A9598EF3-390E-441A-9D1C-E8DE0B2DF0DF"), exclusiveto, contract] */
                 MIDL_INTERFACE("A9598EF3-390E-441A-9D1C-E8DE0B2DF0DF")
-                IGpioChangeReaderFactory : IInspectable
+                IGpioChangeReaderFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Gpio::IGpioPin * pin,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Gpio::IGpioChangeReader * * value
@@ -1332,8 +1340,9 @@ namespace ABI {
             namespace Gpio {
                 /* [object, uuid("284012E3-7461-469C-A8BC-61D69D08A53C"), exclusiveto, contract] */
                 MIDL_INTERFACE("284012E3-7461-469C-A8BC-61D69D08A53C")
-                IGpioController : IInspectable
+                IGpioController : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PinCount(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -1388,8 +1397,9 @@ namespace ABI {
             namespace Gpio {
                 /* [object, uuid("2ED6F42E-7AF7-4116-9533-C43D99A1FB64"), exclusiveto, contract] */
                 MIDL_INTERFACE("2ED6F42E-7AF7-4116-9533-C43D99A1FB64")
-                IGpioControllerStatics : IInspectable
+                IGpioControllerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Gpio::IGpioController * * value
                         ) = 0;
@@ -1428,8 +1438,9 @@ namespace ABI {
             namespace Gpio {
                 /* [object, uuid("912B7D20-6CA4-4106-A373-FFFD346B0E5B"), exclusiveto, contract] */
                 MIDL_INTERFACE("912B7D20-6CA4-4106-A373-FFFD346B0E5B")
-                IGpioControllerStatics2 : IInspectable
+                IGpioControllerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetControllersAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Gpio::Provider::IGpioProvider * provider,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGpio__CGpioController * * operation
@@ -1476,8 +1487,9 @@ namespace ABI {
             namespace Gpio {
                 /* [object, uuid("11D9B087-AFAE-4790-9EE9-E0EAC942D201"), exclusiveto, contract] */
                 MIDL_INTERFACE("11D9B087-AFAE-4790-9EE9-E0EAC942D201")
-                IGpioPin : IInspectable
+                IGpioPin : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ValueChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CGpio__CGpioPin_Windows__CDevices__CGpio__CGpioPinValueChangedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1548,8 +1560,9 @@ namespace ABI {
             namespace Gpio {
                 /* [object, uuid("3137AAE1-703D-4059-BD24-B5B25DFFB84E"), exclusiveto, contract] */
                 MIDL_INTERFACE("3137AAE1-703D-4059-BD24-B5B25DFFB84E")
-                IGpioPinValueChangedEventArgs : IInspectable
+                IGpioPinValueChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Edge(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Gpio::GpioPinEdge * value
                         ) = 0;
@@ -2666,6 +2679,7 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGpio__CGpioC
 
 
 #if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CGpio__CGpioPin_Windows__CDevices__CGpio__CGpioPinValueChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CGpio__CGpioPin_Windows__CDevices__CGpio__CGpioPinValueChangedEventArgs_INTERFACE_DEFINED__
 
@@ -2712,6 +2726,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CGpio__CGpioPin_Windows__CD
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CGpio__CGpioPin_Windows__CDevices__CGpio__CGpioPinValueChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 

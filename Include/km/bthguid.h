@@ -39,7 +39,7 @@ DEFINE_GUID(GUID_BTH_DEVICE_INTERFACE, 0x00F40965,0xE89D, 0x4487, 0x98, 0x90, 0x
 
 #include <devpropdef.h>
 
-// Device properties, these properties are stored in bluetooth device objects for both BR/EDR and LE devices.
+// Device properties, these properties are stored in Bluetooth device objects for both BR/EDR and LE devices.
 //  {2BD67D8B-8BEB-48D5-87E0-6CDA3428040A}
 DEFINE_DEVPROPKEY(DEVPKEY_Bluetooth_DeviceAddress,                      0x2bd67d8b, 0x8beb, 0x48d5, 0x87, 0xe0, 0x6c, 0xda, 0x34, 0x28, 0x04, 0x0a, 1);     // DEVPROP_TYPE_STRING
 DEFINE_DEVPROPKEY(DEVPKEY_Bluetooth_ServiceGUID,                        0x2bd67d8b, 0x8beb, 0x48d5, 0x87, 0xe0, 0x6c, 0xda, 0x34, 0x28, 0x04, 0x0a, 2);     // DEVPROP_TYPE_GUID

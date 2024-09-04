@@ -3860,6 +3860,11 @@ WriteNoFence64 (
           ((crm & 15) << 3) | \
           ((op2 & 7) << 0) )
 
+#define ARM64_SYSREG_OP1(_Reg_) (((_Reg_) >> 11) & 7)
+#define ARM64_SYSREG_CRN(_Reg_) (((_Reg_) >> 7) & 15)
+#define ARM64_SYSREG_CRM(_Reg_) (((_Reg_) >> 3) & 15)
+#define ARM64_SYSREG_OP2(_Reg_) ((_Reg_) & 7)
+
 #define ARM64_CNTVCT            ARM64_SYSREG(3,3,14, 0,2)  // Generic Timer counter register
 #define ARM64_PMCCNTR_EL0       ARM64_SYSREG(3,3, 9,13,0)  // Cycle Count Register [CP15_PMCCNTR]
 #define ARM64_PMSELR_EL0        ARM64_SYSREG(3,3, 9,12,5)  // Event Counter Selection Register [CP15_PMSELR]
@@ -3895,7 +3900,7 @@ extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
 
 #if defined(_M_HYBRID_X86_ARM64)
 
-DECLSPEC_GUARDNOCF 
+DECLSPEC_GUARDNOCF
 
 #endif
 
@@ -6464,6 +6469,17 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_EXISTS                     0x00000004
 #define FILE_DOES_NOT_EXIST             0x00000005
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+//
+// Define the QueryFlags values for NtQueryDirectoryFileEx.
+//
+
+#define FILE_QUERY_RESTART_SCAN                 0x00000001
+#define FILE_QUERY_RETURN_SINGLE_ENTRY          0x00000002
+#define FILE_QUERY_INDEX_SPECIFIED              0x00000004
+#define FILE_QUERY_RETURN_ON_DISK_ENTRIES_ONLY  0x00000008
+#endif
+
 //
 // Define special ByteOffset parameters for read and write operations
 //
@@ -6698,6 +6714,8 @@ typedef enum _FILE_INFORMATION_CLASS {
     FileDesiredStorageClassInformation,      // 67
     FileStatInformation,                     // 68
     FileMemoryPartitionInformation,          // 69
+    FileStatLxInformation,                   // 70
+    FileCaseSensitiveInformation,            // 71
     FileMaximumInformation
 } FILE_INFORMATION_CLASS, *PFILE_INFORMATION_CLASS;
 
@@ -7538,31 +7556,32 @@ typedef enum _SECTION_INHERIT {
 // into the working set are unlocked as well.
 //
 
-#define PAGE_REVERT_TO_FILE_MAP     0x80000000  
 #define PAGE_ENCLAVE_THREAD_CONTROL 0x80000000  
+#define PAGE_REVERT_TO_FILE_MAP     0x80000000  
 #define PAGE_TARGETS_NO_UPDATE      0x40000000  
 #define PAGE_TARGETS_INVALID        0x40000000  
 #define PAGE_ENCLAVE_UNVALIDATED    0x20000000  
 #define PAGE_ENCLAVE_NO_CHANGE      0x20000000
+#define PAGE_ENCLAVE_DECOMMIT       0x10000000  
 
-#define MEM_COMMIT                  0x00001000  
-#define MEM_RESERVE                 0x00002000  
-#define MEM_DECOMMIT                0x00004000  
-#define MEM_RELEASE                 0x00008000  
-#define MEM_FREE                    0x00010000  
-#define MEM_PRIVATE                 0x00020000  
-#define MEM_MAPPED                  0x00040000  
-#define MEM_RESET                   0x00080000  
-#define MEM_TOP_DOWN                0x00100000  
-#define MEM_RESET_UNDO              0x01000000  
-#define MEM_LARGE_PAGES             0x20000000  
-#define MEM_4MB_PAGES               0x80000000  
-#define MEM_64K_PAGES               (MEM_LARGE_PAGES | MEM_PHYSICAL)  
+#define MEM_COMMIT                      0x00001000  
+#define MEM_RESERVE                     0x00002000  
+#define MEM_RESET                       0x00080000  
+#define MEM_TOP_DOWN                    0x00100000  
+#define MEM_RESET_UNDO                  0x01000000  
+#define MEM_LARGE_PAGES                 0x20000000  
+#define MEM_4MB_PAGES                   0x80000000  
+#define MEM_64K_PAGES                   (MEM_LARGE_PAGES | MEM_PHYSICAL)  
+#define MEM_DECOMMIT                    0x00004000  
+#define MEM_RELEASE                     0x00008000  
+#define MEM_FREE                        0x00010000  
 #define SEC_64K_PAGES               0x00080000  
 #define SEC_FILE                    0x00800000  
 #define SEC_RESERVE                 0x04000000  
 #define SEC_COMMIT                  0x08000000  
 #define SEC_LARGE_PAGES             0x80000000  
+#define MEM_PRIVATE                 0x00020000  
+#define MEM_MAPPED                  0x00040000  
 
 
 
@@ -9105,6 +9124,22 @@ DEFINE_GUID(GUID_INTSTEER_LOAD_PER_PROC_TRIGGER,
 DEFINE_GUID(GUID_INTSTEER_TIME_UNPARK_TRIGGER,
 0xd6ba4903, 0x386f, 0x4c2c, 0x8a, 0xdb, 0x5c, 0x21, 0xb3, 0x32, 0x8d, 0x25);
 
+// Graphics power settings
+// ------------------------
+//
+
+// Specified the subgroup which contains all inbox graphics settings.
+//
+// {5FB4938D-1EE8-4b0f-9A3C-5036B0AB995C}
+//
+DEFINE_GUID(GUID_GRAPHICS_SUBGROUP, 0x5fb4938d, 0x1ee8, 0x4b0f, 0x9a, 0x3c, 0x50, 0x36, 0xb0, 0xab, 0x99, 0x5c);
+
+// Specifies the GPU preference policy.
+//
+// {DD848B2A-8A5D-4451-9AE2-39CD41658F6C}
+//
+DEFINE_GUID(GUID_GPU_PREFERENCE_POLICY, 0xdd848b2a, 0x8a5d, 0x4451, 0x9a, 0xe2, 0x39, 0xcd, 0x41, 0x65, 0x8f, 0x6c);
+
 // Other miscellaneous power notification GUIDs
 // ------------------------
 //
@@ -9116,6 +9151,14 @@ DEFINE_GUID(GUID_INTSTEER_TIME_UNPARK_TRIGGER,
 
 DEFINE_GUID(GUID_MIXED_REALITY_MODE,
 0x1e626b4e, 0xcf04, 0x4f8d, 0x9c, 0xc7, 0xc9, 0x7c, 0x5b, 0xf, 0x23, 0x91);
+
+// Specifies a change (start/end) in System Power Report's Active Session.
+//
+// {0E24CE38-C393-4742-BDB1-744F4B9EE08E}
+//
+
+DEFINE_GUID(GUID_SPR_ACTIVE_SESSION_CHANGE,
+0xe24ce38, 0xc393, 0x4742, 0xbd, 0xb1, 0x74, 0x4f, 0x4b, 0x9e, 0xe0, 0x8e);
 
 
 #ifndef _PO_DDK_
@@ -9469,6 +9512,8 @@ typedef struct _POWER_IDLE_RESILIENCY {
 //
 // Monitor on/off reasons
 //
+// N.B. Update power-event mapping when adding new events.
+//
 typedef enum {
     MonitorRequestReasonUnknown,
     MonitorRequestReasonPowerButton,
@@ -9516,6 +9561,7 @@ typedef enum {
     MonitorRequestReasonPdcSignalWindowsMobileShell,            // PDC_SIGNAL_PROVIDER_UM_CS_CONTROL
     MonitorRequestReasonPdcSignalHeyCortana,                    // PDC_SIGNAL_PROVIDER_HEY_CORTANA
     MonitorRequestReasonPdcSignalHolographicShell,              // PDC_SIGNAL_PROVIDER_HOLOSI_CRITICAL_BATTERY_WAKE
+    MonitorRequestReasonPdcSignalFingerprint,                   // PDC_SIGNAL_PROVIDER_WINBIO
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -11075,6 +11121,10 @@ RtlAssert(
 //       for compatibility with previous handling of the
 //       STATUS_STACK_BUFFER_OVERRUN exception status code.
 //
+
+// When updating failure codes here, please also update references in
+// the debugger codebase (currently onecore\sdktools\debuggers\ntsd64\util.cpp)
+
 #define FAST_FAIL_LEGACY_GS_VIOLATION               0
 #define FAST_FAIL_VTGUARD_CHECK_FAILURE             1
 #define FAST_FAIL_STACK_COOKIE_CHECK_FAILURE        2
@@ -11127,6 +11177,8 @@ RtlAssert(
 #define FAST_FAIL_LOW_LABEL_ACCESS_DENIED           52         // Telemetry, nonfatal
 #define FAST_FAIL_ENCLAVE_CALL_FAILURE              53
 #define FAST_FAIL_UNHANDLED_LSS_EXCEPTON            54
+#define FAST_FAIL_ADMINLESS_ACCESS_DENIED           55         // Telemetry, nonfatal
+#define FAST_FAIL_UNEXPECTED_CALL                   56
 #define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
@@ -11754,6 +11806,7 @@ RtlInitAnsiString(
 
 
 
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 _At_(DestinationString->Buffer, _Post_equal_to_(SourceString))
 _At_(DestinationString->Length, _Post_equal_to_(_String_length_(SourceString) * sizeof(WCHAR)))
@@ -11903,6 +11956,7 @@ typedef struct _RTL_QUERY_REGISTRY_TABLE {
 #define RTL_QUERY_REGISTRY_TYPECHECK_MASK       (0xff << RTL_QUERY_REGISTRY_TYPECHECK_SHIFT)
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+////@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -11916,6 +11970,7 @@ RtlQueryRegistryValues(
     _In_opt_ PVOID Environment
     );
 #endif
+
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN8) && !defined(MIDL_PASS)
@@ -12821,6 +12876,7 @@ RtlEnlargedUnsignedDivide (
 // Large integer negation - -(64-bits)
 //
 
+////@[comment("MVI_tracked")]
 DECLSPEC_DEPRECATED_DDK         // Use native __int64 math
 __drv_preferredFunction("compiler support for 64 bit", "Obsolete")
 __inline
@@ -13511,6 +13567,7 @@ RtlTimeFieldsToTime (
 
 #endif
 
+
 //
 //  BitMap routines.  The following structure, routines, and macros are
 //  for manipulating bitmaps.  The user is responsible for allocating a bitmap
@@ -13523,6 +13580,9 @@ typedef struct _RTL_BITMAP {
     PULONG Buffer;                          // Pointer to the bit map itself
 } RTL_BITMAP;
 typedef RTL_BITMAP *PRTL_BITMAP;
+
+
+// begin_ntoshvbootp
 
 //
 //  The following routine initializes a new bitmap.  It does not alter the
@@ -14061,6 +14121,7 @@ RtlSetDaclSecurityDescriptor (
 #define SEF_MACL_NO_EXECUTE_UP            0x400
 #define SEF_AI_USE_EXTRA_PARAMS           0x800
 #define SEF_AVOID_OWNER_RESTRICTION       0x1000
+#define SEF_FORCE_USER_MODE               0x2000
 
 #define SEF_MACL_VALID_FLAGS              (SEF_MACL_NO_WRITE_UP   | \
                                            SEF_MACL_NO_READ_UP    | \
@@ -14273,6 +14334,8 @@ VerSetConditionMask(
 //
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+
+////@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -14587,6 +14650,7 @@ typedef enum _IMAGE_POLICY_ENTRY_TYPE {
     ImagePolicyEntryTypeUInt64,
     ImagePolicyEntryTypeAnsiString,
     ImagePolicyEntryTypeUnicodeString,
+    ImagePolicyEntryTypeOverride,
     ImagePolicyEntryTypeMaximum
 } IMAGE_POLICY_ENTRY_TYPE;
 
@@ -14685,15 +14749,13 @@ __pragma(const_seg(pop))
 #define IMAGE_POLICY_UNICODE_STRING(_PolicyId_, _Value_)   \
     {ImagePolicyEntryTypeUnicodeString, _PolicyId_, _Value_},
 
+#define IMAGE_POLICY_OVERRIDE(_PolicyId_)   \
+    {ImagePolicyEntryTypeOverride, _PolicyId_, 0},
+
 #include <apiset.h>
 
 #pragma region Desktop Family or OneCore Family
-
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-
-#if !(defined(_CONTRACT_GEN) && (_APISET_RTLSUPPORT_VER <= 0x0100) && defined(_X86_))
-
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 
@@ -14702,15 +14764,13 @@ NTSYSAPI
 SIZE_T
 NTAPI
 RtlCompareMemory(
-    _In_ const VOID * Source1,
-    _In_ const VOID * Source2,
+    _In_ const VOID* Source1,
+    _In_ const VOID* Source2,
     _In_ SIZE_T Length
     );
 
 
 #endif
-
-#endif // !(defined(_CONTRACT_GEN) && (_APISET_RTLSUPPORT_VER <= 0x0100) && defined(_X86_))
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
@@ -16423,7 +16483,9 @@ typedef struct _DISPATCHER_HEADER {
 
         struct {                            // Thread
             UCHAR ThreadType;
+
             UCHAR ThreadReserved;
+
             union {
                 UCHAR ThreadControlFlags;
                 struct {
@@ -16433,15 +16495,15 @@ typedef struct _DISPATCHER_HEADER {
                     UCHAR AffinitySet : 1;
                     UCHAR Tagged : 1;
                     UCHAR EnergyProfiling: 1;
+                    UCHAR SchedulerAssist: 1;
 
 #if !defined(_X86_)
 
-                    UCHAR ThreadReservedControlFlags : 2;
+                    UCHAR ThreadReservedControlFlags : 1;
 
 #else
 
                     UCHAR Instrumented : 1;
-                    UCHAR ThreadReservedControlFlags : 1;
 
 #endif
 
@@ -19919,7 +19981,12 @@ _Struct_size_bytes_(Size) struct _SYSTEM_CPU_SET_INFORMATION {
                     UCHAR ReservedFlags : 4;
                 } DUMMYSTRUCTNAME;
             } DUMMYUNIONNAME2;
-            ULONG Reserved;
+
+            union {
+                ULONG Reserved;
+                UCHAR SchedulingClass;
+            };
+
             ULONG64 AllocationTag;
         } CpuSet;
     } DUMMYUNIONNAME;
@@ -21322,6 +21389,15 @@ KeQueryDpcWatchdogInformation (
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+NTKERNELAPI
+_IRQL_requires_same_
+LOGICAL
+KeIsExecutingDpc (
+    VOID
+    );
+#endif
+
 typedef enum _KBUGCHECK_BUFFER_DUMP_STATE {
     BufferEmpty,
     BufferInserted,
@@ -21382,7 +21458,8 @@ typedef enum _KBUGCHECK_CALLBACK_REASON {
     KbCallbackDumpIo,
     KbCallbackAddPages,
     KbCallbackSecondaryMultiPartDumpData,
-    KbCallbackRemovePages
+    KbCallbackRemovePages,
+    KbCallbackTriageDumpData
 } KBUGCHECK_CALLBACK_REASON;
 
 typedef
@@ -21483,6 +21560,68 @@ typedef struct _KBUGCHECK_REMOVE_PAGES {
     _Out_ ULONG_PTR Address;
     _Out_ ULONG_PTR Count;
 } KBUGCHECK_REMOVE_PAGES, *PKBUGCHECK_REMOVE_PAGES;
+
+//
+// Define simple address range structure.
+//
+
+typedef struct _KADDRESS_RANGE {
+    _Field_size_bytes_(Size) PVOID Address;
+    SIZE_T Size;
+} KADDRESS_RANGE, *PKADDRESS_RANGE;
+
+typedef struct _KADDRESS_RANGE_DESCRIPTOR {
+    _Field_size_(AddressRangeCount) CONST KADDRESS_RANGE *AddressRanges;
+    SIZE_T AddressRangeCount;
+} KADDRESS_RANGE_DESCRIPTOR, *PKADDRESS_RANGE_DESCRIPTOR;
+
+//
+// KbCallbackTriageDumpData related definitions
+//
+
+typedef
+_Struct_size_bytes_(FIELD_OFFSET(KTRIAGE_DUMP_DATA_ARRAY, Blocks) +
+                    NumBlocksTotal * sizeof(KADDRESS_RANGE))
+struct _KTRIAGE_DUMP_DATA_ARRAY {
+    LIST_ENTRY List;
+    ULONG NumBlocksUsed;
+    ULONG NumBlocksTotal;
+    ULONG VirtMemSize;
+    ULONG ComponentNameBufferLength;
+    PUCHAR ComponentName;
+    _Field_size_(NumBlocksUsed)
+    KADDRESS_RANGE Blocks[ANYSIZE_ARRAY];
+} KTRIAGE_DUMP_DATA_ARRAY, *PKTRIAGE_DUMP_DATA_ARRAY;
+
+#define KB_TRIAGE_DUMP_DATA_FLAG_BUGCHECK_ACTIVE 0x00000001ul
+
+typedef struct _KBUGCHECK_TRIAGE_DUMP_DATA {
+    _Out_opt_ PKTRIAGE_DUMP_DATA_ARRAY DataArray;
+    _In_ ULONG Flags; // KB_TRIAGE_DUMP_DATA_FLAG_xxx
+    _In_ ULONG MaxVirtMemSize;
+    _In_ ULONG BugCheckCode;
+    _In_ ULONG_PTR BugCheckParameter1;
+    _In_ ULONG_PTR BugCheckParameter2;
+    _In_ ULONG_PTR BugCheckParameter3;
+    _In_ ULONG_PTR BugCheckParameter4;
+} KBUGCHECK_TRIAGE_DUMP_DATA, *PKBUGCHECK_TRIAGE_DUMP_DATA;
+
+_Success_(NT_SUCCESS(return))
+_IRQL_requires_same_
+NTSTATUS
+KeInitializeTriageDumpDataArray (
+    _Out_writes_bytes_(Size) PKTRIAGE_DUMP_DATA_ARRAY KtriageDumpDataArray,
+    _In_ ULONG Size
+    );
+
+_Success_(NT_SUCCESS(return))
+_IRQL_requires_same_
+NTSTATUS
+KeAddTriageDumpDataBlock (
+    _Inout_ PKTRIAGE_DUMP_DATA_ARRAY KtriageDumpDataArray,
+    _In_ PVOID Address,
+    _In_ SIZE_T Size
+    );
 
 //
 // Equates for exceptions which cause system fatal error
@@ -25851,6 +25990,7 @@ MmProbeAndLockSelectedPages (
     );
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 VOID
@@ -26927,6 +27067,7 @@ typedef enum _SE_IMAGE_TYPE
   SeImageTypeElamDriver = 0,
   SeImageTypeDriver,
   SeImageTypePlatformSecureFile,
+  SeImageTypeDynamicCodeFile,
   SeImageTypeMax
 } SE_IMAGE_TYPE, *PSE_IMAGE_TYPE;
 
@@ -28913,7 +29054,9 @@ typedef _Struct_size_bytes_(Size) struct _DEVICE_CAPABILITIES {
     ULONG Reserved1:1;
     ULONG WakeFromInterrupt:1;
     ULONG SecureDevice:1;
-    ULONG Reserved:11;
+    ULONG ChildOfVgaEnabledBridge:1;
+    ULONG DecodeIoOnBoot:1;
+    ULONG Reserved:9;
 
     ULONG Address;
     ULONG UINumber;
@@ -29769,6 +29912,7 @@ IoBuildSynchronousFsdRequest(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 _Success_(TRUE)
 NTKERNELAPI
@@ -29826,7 +29970,7 @@ NTSTATUS
 IoCheckLinkShareAccess(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ ULONG DesiredShareAccess,
-    _Inout_ PFILE_OBJECT FileObject,
+    _Inout_opt_ PFILE_OBJECT FileObject,
     _Inout_ PSHARE_ACCESS ShareAccess,
     _Inout_opt_ PLINK_SHARE_ACCESS LinkShareAccess,
     _In_ ULONG IoShareAccessFlags
@@ -29842,22 +29986,36 @@ IoCheckLinkShareAccess(
 //
 // Common Flag
 //
-// Specifies the user has no write permission for the file; 
-// this is used to prevent opening a file for exclusive read access 
+
+//
+// Specifies the user has no write permission for the file;
+// this is used to prevent opening a file for exclusive read access
 // when the user does not have appropriate permission. Used when
 // calling IoSetShareAccess and IoCheckShareAccess routines.
 //
 
-#define IO_SHARE_ACCESS_NO_WRITE_PERMISSION        0x80000000  // has no write access to the file
+#define IO_SHARE_ACCESS_NO_WRITE_PERMISSION             0x80000000  // has no write access to the file
 
 //
 // Function specific flag
 //
-// Indicates whether we're going to update the SHARE_ACCESS structure
+
+//
+// Indicates whether we're going to update following structure
 // or not when calling IoCheckLinkShareAccess.
 //
 
-#define IO_CHECK_SHARE_ACCESS_UPDATE_SHARE_ACCESS  0x00000001  // update SHARE_ACCESS structure
+#define IO_CHECK_SHARE_ACCESS_UPDATE_SHARE_ACCESS       0x00000001  // update SHARE_ACCESS structure
+#define IO_CHECK_SHARE_ACCESS_DONT_UPDATE_FILE_OBJECT   0x00000002  // Don't update FILE_OBJECT structure
+
+//
+// Indicate which part (read/write/delete) of SHARE_ACCESS we're checking
+//
+
+#define IO_CHECK_SHARE_ACCESS_DONT_CHECK_READ           0x00000004  // Don't check read share access
+#define IO_CHECK_SHARE_ACCESS_DONT_CHECK_WRITE          0x00000008  // Don't check write share access
+#define IO_CHECK_SHARE_ACCESS_DONT_CHECK_DELETE         0x00000010  // Don't check delete share access
+#define IO_CHECK_SHARE_ACCESS_FORCE_CHECK               0x00000020  // Force check share access
 
 //
 // This value should be returned from completion routines to continue
@@ -29877,6 +30035,7 @@ typedef enum _IO_COMPLETION_ROUTINE_RESULT {
 } IO_COMPLETION_ROUTINE_RESULT, *PIO_COMPLETION_ROUTINE_RESULT;
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 VOID
@@ -30753,6 +30912,21 @@ IoGetDmaAdapter(
     _Out_ _When_(return!=0, _Kernel_IoGetDmaAdapter_ _At_(*NumberOfMapRegisters, _Must_inspect_result_))
     PULONG NumberOfMapRegisters
     );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+typedef struct _DMA_IOMMU_INTERFACE DMA_IOMMU_INTERFACE, *PDMA_IOMMU_INTERFACE;
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoGetIommuInterface (
+    _In_ ULONG Version,
+    _Out_ PDMA_IOMMU_INTERFACE InterfaceOut
+    );
+
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
@@ -31682,6 +31856,7 @@ IoStartNextPacketByKey(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 VOID
@@ -33296,6 +33471,110 @@ typedef struct _D3COLD_SUPPORT_INTERFACE {
 
 } D3COLD_SUPPORT_INTERFACE, *PD3COLD_SUPPORT_INTERFACE;
 
+typedef
+_Function_class_(D3COLD_REQUEST_CORE_POWER_RAIL)
+_IRQL_requires_(PASSIVE_LEVEL)
+VOID
+D3COLD_REQUEST_CORE_POWER_RAIL (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _In_ BOOLEAN CorePowerRailNeeded
+    );
+
+typedef D3COLD_REQUEST_CORE_POWER_RAIL *PD3COLD_REQUEST_CORE_POWER_RAIL;
+
+typedef
+_Function_class_(D3COLD_REQUEST_AUX_POWER)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+D3COLD_REQUEST_AUX_POWER (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _In_ ULONG AuxPowerInMilliWatts,
+    _Out_ PULONG RetryInSeconds
+    );
+
+typedef D3COLD_REQUEST_AUX_POWER *PD3COLD_REQUEST_AUX_POWER;
+
+typedef
+_Function_class_(D3COLD_REQUEST_PERST_DELAY)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+D3COLD_REQUEST_PERST_DELAY (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _In_ ULONG DelayInMicroSeconds
+    );
+
+typedef D3COLD_REQUEST_PERST_DELAY *PD3COLD_REQUEST_PERST_DELAY;
+
+typedef struct _D3COLD_AUX_POWER_AND_TIMING_INTERFACE {
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    PD3COLD_REQUEST_CORE_POWER_RAIL     RequestCorePowerRail;
+    PD3COLD_REQUEST_AUX_POWER           RequestAuxPower;
+    PD3COLD_REQUEST_PERST_DELAY         RequestPerstDelay;
+} D3COLD_AUX_POWER_AND_TIMING_INTERFACE, *PD3COLD_AUX_POWER_AND_TIMING_INTERFACE;
+
+typedef
+_Function_class_(FPGA_BUS_SCAN)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+VOID
+FPGA_BUS_SCAN (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context
+    );
+
+typedef FPGA_BUS_SCAN *PFPGA_BUS_SCAN;
+
+typedef
+_Function_class_(FPGA_CONTROL_LINK)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+FPGA_CONTROL_LINK (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _In_ BOOLEAN Enable
+    );
+
+typedef FPGA_CONTROL_LINK *PFPGA_CONTROL_LINK;
+
+typedef
+_Function_class_(FPGA_CONTROL_CONFIG_SPACE)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+FPGA_CONTROL_CONFIG_SPACE (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _In_ BOOLEAN Enable
+    );
+
+typedef FPGA_CONTROL_CONFIG_SPACE *PFPGA_CONTROL_CONFIG_SPACE;
+
+typedef
+_Function_class_(FPGA_CONTROL_ERROR_REPORTING)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+FPGA_CONTROL_ERROR_REPORTING (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _In_ ULONG UncorrectableMask,
+    _In_ ULONG CorrectableMask,
+    _In_ BOOLEAN DisableErrorReporting
+    );
+
+typedef FPGA_CONTROL_ERROR_REPORTING *PFPGA_CONTROL_ERROR_REPORTING;
+
+typedef struct _FPGA_CONTROL_INTERFACE {
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    PFPGA_BUS_SCAN                      BusScan;
+    PFPGA_CONTROL_LINK                  ControlLink;
+    PFPGA_CONTROL_CONFIG_SPACE          ControlConfigSpace;
+    PFPGA_CONTROL_ERROR_REPORTING       ControlErrorReporting;
+} FPGA_CONTROL_INTERFACE, *PFPGA_CONTROL_INTERFACE;
+
 
 //
 // The following definitions are used in ACPI QueryInterface
@@ -33574,7 +33853,7 @@ IoOpenDeviceRegistryKey(
     _In_ PDEVICE_OBJECT DeviceObject,
     _In_ ULONG DevInstKeyType,
     _In_ ACCESS_MASK DesiredAccess,
-    _Out_ PHANDLE DevInstRegKey
+    _Out_ PHANDLE DeviceRegKey
     );
 #endif
 
@@ -33602,7 +33881,7 @@ NTSTATUS
 IoOpenDeviceInterfaceRegistryKey(
     _In_ PUNICODE_STRING SymbolicLinkName,
     _In_ ACCESS_MASK DesiredAccess,
-    _Out_ PHANDLE DeviceInterfaceKey
+    _Out_ PHANDLE DeviceInterfaceRegKey
     );
 #endif
 
@@ -33764,6 +34043,61 @@ IoReportTargetDeviceChangeAsynchronous(
     _In_ PVOID NotificationStructure,  // always begins with a PLUGPLAY_NOTIFICATION_HEADER
     _In_opt_ PDEVICE_CHANGE_COMPLETE_CALLBACK Callback,
     _In_opt_ PVOID Context
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+typedef enum _DRIVER_DIRECTORY_TYPE {
+    DriverDirectoryImage = 0,
+    DriverDirectoryData = 1,
+} DRIVER_DIRECTORY_TYPE, *PDRIVER_DIRECTORY_TYPE;
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_Must_inspect_result_
+NTKERNELAPI
+NTSTATUS
+IoGetDriverDirectory(
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_ DRIVER_DIRECTORY_TYPE DirectoryType,
+    _In_ ULONG Flags,
+    _Out_ PHANDLE DriverDirectoryHandle
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+typedef enum _DEVICE_DIRECTORY_TYPE {
+    DeviceDirectoryData = 0,
+} DEVICE_DIRECTORY_TYPE, *PDEVICE_DIRECTORY_TYPE;
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_Must_inspect_result_
+NTKERNELAPI
+NTSTATUS
+IoGetDeviceDirectory(
+    _In_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_ DEVICE_DIRECTORY_TYPE DirectoryType,
+    _In_ ULONG Flags,
+    _In_ PVOID Reserved,
+    _Out_ PHANDLE DeviceDirectoryHandle
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+typedef enum _DRIVER_REGKEY_TYPE {
+    DriverRegKeyParameters = 0,
+    DriverRegKeyPersistentState = 1,
+} DRIVER_REGKEY_TYPE, *PDRIVER_REGKEY_TYPE;
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_Must_inspect_result_
+NTKERNELAPI
+NTSTATUS
+IoOpenDriverRegistryKey(
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_ DRIVER_REGKEY_TYPE RegKeyType,
+    _In_ ACCESS_MASK DesiredAccess,
+    _In_ ULONG Flags,
+    _Out_ PHANDLE DriverRegKey
     );
 #endif
 
@@ -34816,6 +35150,18 @@ typedef NTSTATUS
     _Out_ PVOID *VirtualAddress
     );
 
+typedef PVOID
+(*PALLOCATE_COMMON_BUFFER_WITH_BOUNDS)(
+    _In_ PDMA_ADAPTER DmaAdapter,
+    _In_opt_ PPHYSICAL_ADDRESS MinimumAddress,
+    _In_opt_ PPHYSICAL_ADDRESS MaximumAddress,
+    _In_ ULONG Length,
+    _In_ ULONG Flags,
+    _In_opt_ MEMORY_CACHING_TYPE *CacheType,
+    _In_ NODE_REQUIREMENT PreferredNode,
+    _Out_ PPHYSICAL_ADDRESS LogicalAddress
+    );
+
 //
 // Define the bits in the allocate domain common buffer flags.
 //
@@ -34882,6 +35228,7 @@ typedef struct _DMA_OPERATIONS {
     PJOIN_DMA_DOMAIN JoinDmaDomain;
     PLEAVE_DMA_DOMAIN LeaveDmaDomain;
     PGET_DMA_DOMAIN GetDmaDomain;
+    PALLOCATE_COMMON_BUFFER_WITH_BOUNDS AllocateCommonBufferWithBounds;
 } DMA_OPERATIONS;
 
 
@@ -35098,6 +35445,523 @@ HalReadDmaCounter(
 }
 
 #endif // USE_DMA_MACROS && (_NTDDK_ || _NTDRIVER_)
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+//
+// Permission types.
+//
+
+#define IOMMU_ACCESS_NONE 0x00
+#define IOMMU_ACCESS_READ 0x01
+#define IOMMU_ACCESS_WRITE 0x02
+
+//
+// Opaque types.
+//
+
+typedef struct _IOMMU_DMA_DOMAIN IOMMU_DMA_DOMAIN, *PIOMMU_DMA_DOMAIN;
+
+//
+// Types for domain configuration.
+//
+
+typedef enum _DOMAIN_CONFIGURATION_ARCH {
+    DomainConfigurationArm64,
+    DomainConfigurationInvalid,
+} DOMAIN_CONFIGURATION_ARCH, *PDOMAIN_CONFIGURATION_ARCH;
+
+typedef struct _DOMAIN_CONFIGURATION_ARM64 {
+    PHYSICAL_ADDRESS Ttbr0;
+    PHYSICAL_ADDRESS Ttbr1;
+    ULONG Mair0;
+    ULONG Mair1;
+    UCHAR InputSize0;
+    UCHAR InputSize1;
+} DOMAIN_CONFIGURATION_ARM64, *PDOMAIN_CONFIGURATION_ARM64;
+
+typedef struct _DOMAIN_CONFIGURATION {
+    DOMAIN_CONFIGURATION_ARCH Type;
+    union {
+        DOMAIN_CONFIGURATION_ARM64 Arm64;
+    };
+} DOMAIN_CONFIGURATION, *PDOMAIN_CONFIGURATION;
+
+//
+// Types for fault information.
+//
+
+typedef enum _FAULT_INFORMATION_ARCH {
+    FaultInformationInvalid,
+    FaultInformationArm64,
+} FAULT_INFORMATION_ARCH, *PFAULT_INFORMATION_ARCH;
+
+typedef struct _FAULT_INFORMATION_ARM64 {
+    PVOID DomainHandle;
+    PVOID FaultAddress;
+    PDEVICE_OBJECT PhysicalDeviceObject;
+    ULONG InputMappingId;
+    struct {
+        ULONG WriteNotRead : 1;
+        ULONG InstructionNotData : 1;
+        ULONG Privileged : 1;
+        ULONG Multi : 1;
+        ULONG Asynchronous : 1;
+        ULONG PageTableWalkFault : 1;
+        ULONG Reserved : 26;
+    } Flags;
+    enum {
+        UnsupportedUpstreamTransaction,
+        AddressSizeFault,
+        TlbMatchConflict,
+        ExternalFault,
+        PermissionFault,
+        AccessFlagFault,
+        TranslationFault,
+    } Type;
+} FAULT_INFORMATION_ARM64, *PFAULT_INFORMATION_ARM64;
+
+typedef struct _FAULT_INFORMATION {
+    FAULT_INFORMATION_ARCH Type;
+    union {
+        FAULT_INFORMATION_ARM64 Arm64;
+    };
+} FAULT_INFORMATION, *PFAULT_INFORMATION;
+
+typedef VOID IOMMU_DOMAIN_FAULT_HANDLER (
+            PVOID Context,
+            PFAULT_INFORMATION FaultInformation
+        );
+
+typedef IOMMU_DOMAIN_FAULT_HANDLER *PIOMMU_DOMAIN_FAULT_HANDLER;
+
+typedef _Function_class_(IOMMU_DOMAIN_CREATE)
+NTSTATUS
+IOMMU_DOMAIN_CREATE (
+    _In_ BOOLEAN OsManagedPageTable,
+    _Out_ PIOMMU_DMA_DOMAIN *DomainOut
+    );
+
+/*++
+
+Routine Description:
+
+    This routine creates a new DMA remapping device domain
+    (effectively a container for a set of page tables).
+
+Arguments:
+
+    OsManagedPageTable - Supplies a boolean indicating whether the page table
+        will be managed by the caller or by the HAL.
+        TRUE indicates the HAL owns the page table.
+             Map/Unmap are available.
+             Configure/Flush are unavailable.
+        FALSE indicates that the caller owns the page table.
+             Map/Unmap are unavailable.
+             Configure/Flush are available.
+
+    DomainOut - Supplies a pointer to receive an opaque handle
+        used to reference the domain.
+
+Return Value:
+
+    NTSTATUS code.
+
+--*/
+
+typedef IOMMU_DOMAIN_CREATE *PIOMMU_DOMAIN_CREATE;
+
+typedef _Function_class_(IOMMU_DOMAIN_DELETE)
+NTSTATUS
+IOMMU_DOMAIN_DELETE (
+    _In_ PIOMMU_DMA_DOMAIN Domain
+    );
+
+/*++
+
+Routine Description:
+
+    This routine deletes an existing domain. The domain must
+    contain no devices in order to be successfully deleted.
+
+Arguments:
+
+    Domain - Supplies a handle to the domain to delete.
+
+Return Value:
+
+    NTSTATUS code.
+
+--*/
+
+typedef IOMMU_DOMAIN_DELETE *PIOMMU_DOMAIN_DELETE;
+
+typedef _Function_class_(IOMMU_DOMAIN_ATTACH_DEVICE)
+NTSTATUS
+IOMMU_DOMAIN_ATTACH_DEVICE (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_ ULONG InputMappingIdBase,
+    _In_ ULONG MappingCount
+    );
+
+/*++
+
+Routine Description:
+
+    This routine attaches a device to an existing domain.
+
+Arguments:
+
+    Domain - Supplies a handle to the domain.
+
+    PhysicalDeviceObject - Supplies the device object.
+
+    InputMappingIdBase - Supplies the input mapping base for the device's
+        desired stream.
+
+    MappingCount - Supplies the count of mappings beginning at the base.
+
+    N.B. InputMappingIdBase and MappingCount are intended only to accommodate
+         ACPI enumerated devices which support multiple stream IDs on ARM64.
+         For any other device or architecture, these values must be:
+         InputMappingIdBase = 0
+         MappingCount = 1
+
+Return Value:
+
+    NTSTATUS code.
+
+--*/
+
+typedef IOMMU_DOMAIN_ATTACH_DEVICE *PIOMMU_DOMAIN_ATTACH_DEVICE;
+
+typedef _Function_class_(IOMMU_DOMAIN_DETACH_DEVICE)
+NTSTATUS
+IOMMU_DOMAIN_DETACH_DEVICE (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_ ULONG InputMappingId
+    );
+
+/*++
+
+Routine Description:
+
+    This routine detaches a device from an existing domain.
+
+Arguments:
+
+    Domain - Supplies a handle to the domain.
+
+    PhysicalDeviceObject - Supplies a pointer to the device
+        object representing the device.
+
+    InputMappingId - Supplies the input mapping for the device's desired
+        stream.
+
+    N.B. InputMappingId is used only for ACPI enumerated devices on ARM64.
+         In all other cases this value must be zero.
+
+    N.B. If multiple devices are simultaneously attached using MappingCount,
+         then those devices can only be detached as a group by specifying
+         an InputMappingId equal to the InputMappingIdBase used when attaching.
+
+Return Value:
+
+    NTSTATUS code.
+
+--*/
+
+typedef IOMMU_DOMAIN_DETACH_DEVICE *PIOMMU_DOMAIN_DETACH_DEVICE;
+
+typedef _Function_class_(IOMMU_DOMAIN_CONFIGURE)
+NTSTATUS
+IOMMU_DOMAIN_CONFIGURE (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ PDOMAIN_CONFIGURATION Configuration
+    );
+
+/*++
+
+Routine Description:
+
+    This routine configures a domain for use. A domain will have
+    all DMA blocked until it is configured.
+
+Arguments:
+
+    Domain - Supplies a pointer to the domain.
+
+    Configuration - Supplies a new configuration for the domain.
+
+Return Value:
+
+    NTSTATUS code.
+
+--*/
+
+typedef IOMMU_DOMAIN_CONFIGURE *PIOMMU_DOMAIN_CONFIGURE;
+
+typedef _Function_class_(IOMMU_FLUSH_DOMAIN)
+NTSTATUS
+IOMMU_FLUSH_DOMAIN (
+    _In_ PIOMMU_DMA_DOMAIN Domain
+    );
+
+/*++
+
+Routine Description:
+
+    This routine flushes the TLB for all entries which match this domain.
+
+Arguments:
+
+    Domain - Supplies a handle to the domain.
+
+Return Value:
+
+    NTSTATUS code.
+
+--*/
+
+typedef IOMMU_FLUSH_DOMAIN *PIOMMU_FLUSH_DOMAIN;
+
+typedef _Function_class_(IOMMU_FLUSH_DOMAIN_VA_LIST)
+NTSTATUS
+IOMMU_FLUSH_DOMAIN_VA_LIST (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ BOOLEAN LastLevel,
+    _In_ ULONG Number,
+    _In_ PVOID VaList
+    );
+
+/*++
+
+Routine Description:
+
+    This routine flushes the TLB for all entries which match this domain's
+    ASID and one of the addresses in the provided list.
+
+Arguments:
+
+    Domain - Supplies a pointer to the domain.
+
+    LastLevel - Supplies whether only entries pertaining to the last
+        level of translation require flushing.
+
+    Number - Supplies the number of entries in the VA list.
+
+    VaList - Supplies a list of flush addresses.
+
+Return Value:
+
+    NTSTATUS code.
+
+--*/
+
+typedef IOMMU_FLUSH_DOMAIN_VA_LIST *PIOMMU_FLUSH_DOMAIN_VA_LIST;
+
+typedef struct _INPUT_MAPPING_ELEMENT {
+    ULONG InputMappingId;
+} INPUT_MAPPING_ELEMENT, *PINPUT_MAPPING_ELEMENT;
+
+typedef _Function_class_(IOMMU_QUERY_INPUT_MAPPINGS)
+NTSTATUS
+IOMMU_QUERY_INPUT_MAPPINGS (
+    _In_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _Inout_ PINPUT_MAPPING_ELEMENT Buffer,
+    _In_ ULONG BufferLength,
+    _Out_opt_ PULONG ReturnLength
+    );
+
+/*++
+
+Routine Description:
+
+    This routine will attempt to find input mapping IDs which are valid for
+    the given device and populate the provied buffer with those IDs.
+
+    If the buffer is of insufficient length, no IDs will be written and
+    ReturnLength (if provided) will be populated with the required buffer size.
+
+    This routine is currently only supported on ARM64 architectures.
+
+Arguments:
+
+    PhysicalDeviceObject - Supplies the device object to query.
+
+    Buffer - Supplies a pointer to the buffer to populate.
+
+    BufferLength - Supplies the length of the buffer.
+
+    ReturnLength - Supplies an optional pointer to store the amount of data
+        written (or data that would be written if a buffer of sufficient
+        size was provided).
+
+Return Value:
+
+    STATUS_BUFFER_TOO_SMALL if the provided buffer is of insufficient size.
+    STATUS_UNSUCCESSFUL if the request cannot be satisfied.
+    STATUS_SUCCESS if the buffer has been populated correctly.
+
+--*/
+
+typedef IOMMU_QUERY_INPUT_MAPPINGS *PIOMMU_QUERY_INPUT_MAPPINGS;
+
+typedef _Function_class_(IOMMU_MAP_LOGICAL_RANGE)
+NTSTATUS
+IOMMU_MAP_LOGICAL_RANGE (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ ULONG Permissions,
+    _In_ PMDL Mdl,
+    _In_ ULONGLONG LogicalAddress
+    );
+
+/*++
+
+Routine Description:
+
+    This routine maps a range of pages into the address space of a domain.
+
+    N.B. The provided MDL must specify a whole number of pages and the
+         logical address must be page aligned.
+
+Arguments:
+
+    Domain - Supplies a pointer to the domain.
+
+    Permissions - Supplies the permissions to map the pages with.
+
+    Mdl - Supplies the MDL to map.
+
+    LogicalAddress - Supplies the logical address to begin mapping at.
+
+Return Value:
+
+    NTSTATUS.
+
+--*/
+
+typedef IOMMU_MAP_LOGICAL_RANGE *PIOMMU_MAP_LOGICAL_RANGE;
+
+typedef _Function_class_(IOMMU_UNMAP_LOGICAL_RANGE)
+NTSTATUS
+IOMMU_UNMAP_LOGICAL_RANGE (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ ULONGLONG LogicalAddress,
+    _In_ ULONGLONG NumberOfPages
+    );
+
+/*++
+
+Routine Description:
+
+    This routine unmaps a linear range from a domain.
+
+    N.B. The supplied logical address must be page aligned.
+
+Arguments:
+
+    Domain - Supplies a pointer to the domain.
+
+    LogicalAddress - Supplies the beginning address to unmap.
+
+    NumberOfPages - Supplies the number of pages to unmap.
+
+Return Value:
+
+    NTSTATUS.
+
+--*/
+
+typedef IOMMU_UNMAP_LOGICAL_RANGE *PIOMMU_UNMAP_LOGICAL_RANGE;
+
+typedef _Function_class_(IOMMU_MAP_IDENTITY_RANGE)
+NTSTATUS
+IOMMU_MAP_IDENTITY_RANGE (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ ULONG Permissions,
+    _In_ PMDL Mdl
+    );
+
+/*++
+
+Routine Description:
+
+    This routine creates an identity mapping for the provided MDL in the
+    provided domain.
+
+Arguments:
+
+    Domain - Supplies a pointer to the domain.
+
+    Permissions - Supplies the permissions for the mapping.
+
+    Mdl - Supplies the MDL to map.
+
+Return Value:
+
+    NTSTATUS.
+
+--*/
+
+typedef IOMMU_MAP_IDENTITY_RANGE *PIOMMU_MAP_IDENTITY_RANGE;
+
+typedef _Function_class_(IOMMU_UNMAP_IDENTITY_RANGE)
+NTSTATUS
+IOMMU_UNMAP_IDENTITY_RANGE (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ PMDL Mdl
+    );
+
+/*++
+
+Routine Description:
+
+    This routine deletes an identity mapping for the specified MDL.
+
+Arguments:
+
+    Domain - Supplies a pointer to the domain.
+
+    Mdl - Supplies a pointer to the MDL to unmap.
+
+Return Value:
+
+    NTSTATUS.
+
+--*/
+
+typedef IOMMU_UNMAP_IDENTITY_RANGE *PIOMMU_UNMAP_IDENTITY_RANGE;
+
+#define DMA_IOMMU_INTERFACE_VERSION_1 (1UL)
+
+#define DMA_IOMMU_INTERFACE_VERSION DMA_IOMMU_INTERFACE_VERSION_1
+
+typedef struct _DMA_IOMMU_INTERFACE {
+    ULONG Version;
+
+    //
+    // Version 1 routines.
+    //
+
+    PIOMMU_DOMAIN_CREATE CreateDomain;
+    PIOMMU_DOMAIN_DELETE DeleteDomain;
+    PIOMMU_DOMAIN_ATTACH_DEVICE AttachDevice;
+    PIOMMU_DOMAIN_DETACH_DEVICE DetachDevice;
+    PIOMMU_DOMAIN_CONFIGURE ConfigureDomain;
+    PIOMMU_FLUSH_DOMAIN FlushDomain;
+    PIOMMU_FLUSH_DOMAIN_VA_LIST FlushDomainByVaList;
+    PIOMMU_QUERY_INPUT_MAPPINGS QueryInputMappings;
+    PIOMMU_MAP_LOGICAL_RANGE MapLogicalRange;
+    PIOMMU_UNMAP_LOGICAL_RANGE UnmapLogicalRange;
+    PIOMMU_MAP_IDENTITY_RANGE MapIdentityRange;
+    PIOMMU_UNMAP_IDENTITY_RANGE UnmapIdentityRange;
+} DMA_IOMMU_INTERFACE, *PDMA_IOMMU_INTERFACE;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 
 
 NTKERNELAPI
@@ -35331,6 +36195,7 @@ POWER_SETTING_CALLBACK (
 typedef POWER_SETTING_CALLBACK *PPOWER_SETTING_CALLBACK;
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -35973,6 +36838,7 @@ ObReferenceObjectSafeWithTag (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
+//@[comment("MVI_tracked")]
 NTKERNELAPI
 NTSTATUS
 ObCloseHandle (
@@ -36232,6 +37098,7 @@ ObUnRegisterCallbacks (
     _In_ PVOID RegistrationHandle
     );
 
+//@[comment("MVI_tracked")]
 NTKERNELAPI
 USHORT
 ObGetFilterVersion (
@@ -36666,6 +37533,7 @@ typedef struct {
 #define PCI_EXPRESS_MPCIE_CAP_ID                                        0x0020
 #define PCI_EXPRESS_FRS_QUEUEING_CAP_ID                                 0x0021
 #define PCI_EXPRESS_READINESS_TIME_REPORTING_CAP_ID                     0x0022
+#define PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_CAP_ID                   0x0023
 
 
 //
@@ -37867,6 +38735,7 @@ typedef struct _PCI_MSIX_TABLE_CONFIG_INTERFACE {
         RTL_SIZEOF_THROUGH_FIELD(PCI_MSIX_TABLE_CONFIG_INTERFACE, UnmaskTableEntry)
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -37887,6 +38756,7 @@ ZwCreateFile(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -37922,6 +38792,7 @@ ZwUnloadDriver(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -37936,6 +38807,7 @@ ZwQueryInformationFile(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -37950,6 +38822,7 @@ ZwSetInformationFile(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -37968,6 +38841,7 @@ ZwReadFile(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -37986,6 +38860,7 @@ ZwWriteFile(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38018,6 +38893,7 @@ ZwMakeTemporaryObject(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38034,6 +38910,7 @@ ZwCreateSection (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38046,6 +38923,7 @@ ZwOpenSection(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _Must_inspect_result_
 _Post_satisfies_(*ViewSize >= _Old_(*ViewSize))
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -38067,6 +38945,7 @@ ZwMapViewOfSection(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38078,6 +38957,7 @@ ZwUnmapViewOfSection(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38159,6 +39039,7 @@ NtRollbackRegistryTransaction (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38216,6 +39097,7 @@ ZwOpenKeyTransactedEx(
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38322,6 +39204,7 @@ ZwQueryValueKey(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38351,6 +39234,7 @@ ZwSaveKeyEx (
     _In_ ULONG  Format
     );
 
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38376,6 +39260,7 @@ ZwSetInformationKey (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -38937,6 +39822,11 @@ ZwQueryFullAttributesFile(
 #define CLFS_FLAG_MINIFILTER_LEVEL      0x00000100      // Kernel mode create flag indicating mini-filter target.
 #define CLFS_FLAG_HIDDEN_SYSTEM_LOG     0x00000200      // Kernel mode create flag indicating the log and containers should be marked hidden & system.
 
+// 
+// Marshalling Context Flag
+//
+#define CLFS_MARSHALLING_FLAG_NONE                0x00000000     // No flags
+#define CLFS_MARSHALLING_FLAG_DISABLE_BUFF_INIT   0x00000001     // Flag to disable mashalling buffer intialization
 
 //
 // Flag indicating all CLFS I/O will be targeted to an intermediate level of the I/O stack
@@ -40902,6 +41792,29 @@ NTSTATUS ClfsCreateMarshallingArea (
                     _In_ ULONG cbMarshallingBuffer,
                     _In_ ULONG cMaxWriteBuffers,
                     _In_ ULONG cMaxReadBuffers,
+                    _Outptr_ PVOID *ppvMarshalContext
+                    );
+#endif /* NTDDI_VERSION */
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN8)
+//------------------------------------------------------------------------------
+// ClfsCreateMarshallingAreaEx
+//
+// Extended version of ClfsCreateMarshallingArea to Initialize a marshaling area.
+//------------------------------------------------------------------------------
+
+CLFSUSER_API
+NTSTATUS ClfsCreateMarshallingAreaEx (
+                    _In_ PLOG_FILE_OBJECT plfoLog,
+                    _In_ POOL_TYPE ePoolType,
+                    _In_opt_ PALLOCATE_FUNCTION pfnAllocBuffer,
+                    _In_opt_ PFREE_FUNCTION pfnFreeBuffer,
+                    _In_ ULONG cbMarshallingBuffer,
+                    _In_ ULONG cMaxWriteBuffers,
+                    _In_ ULONG cMaxReadBuffers,
+                    _In_ ULONG cAlignmentSize,
+                    _In_ ULONGLONG fFlags,
                     _Outptr_ PVOID *ppvMarshalContext
                     );
 #endif /* NTDDI_VERSION */

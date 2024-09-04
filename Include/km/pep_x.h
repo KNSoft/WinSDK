@@ -406,7 +406,7 @@ typedef enum _PEP_DEVICE_ACCEPTANCE_TYPE {
 #endif
 
 // END_PEPFX
-#if (NTDDI_VERSION <= NTDDI_WIN10_RS3) //ABRACADABRA_NTDDI_WIN10_RS3
+#if (NTDDI_VERSION <= NTDDI_WIN10_RS4) //ABRACADABRA_NTDDI_WIN10_RS4
 
 #define PepDeviceAcceptedMini PepDeviceAccepted
 
@@ -482,6 +482,11 @@ typedef struct _PEP_WORK_INFORMATION {
     PEP_WORK_TYPE WorkType;
     union {
         // END_PEPFX
+
+        //
+        // N.B. PoHandle should be first element for any PEP_WORK_* structures.
+        //
+        
         PEP_WORK_ACTIVE_COMPLETE ActiveComplete;                              // Deprecated: see below
         PEP_WORK_IDLE_STATE IdleState;                                        // Deprecated: see below
         PEP_WORK_DEVICE_POWER DevicePower;                                    // Deprecated: see below
@@ -1519,6 +1524,10 @@ typedef struct _PEP_PPM_QUERY_DISCRETE_PERF_STATES {
     _Field_size_full_(Count) PPEP_PROCESSOR_PERF_STATE States;
 } PEP_PPM_QUERY_DISCRETE_PERF_STATES, *PPEP_PPM_QUERY_DISCRETE_PERF_STATES;
 
+#define PROCESSOR_DOMAIN_COORDINATION_SW_ALL     0x00
+#define PROCESSOR_DOMAIN_COORDINATION_SW_ANY     0x01
+#define PROCESSOR_DOMAIN_COORDINATION_HW_ALL     0x02
+
 #define PROCESSOR_DOMAIN_COORDIANTION_SW_ALL     0x00
 #define PROCESSOR_DOMAIN_COORDIANTION_SW_ANY     0x01
 #define PROCESSOR_DOMAIN_COORDIANTION_HW_ALL     0x02
@@ -1528,6 +1537,7 @@ typedef struct _PEP_PPM_QUERY_DOMAIN_INFO {
     UCHAR CoordinationType;
     BOOLEAN IdleProcessorsDiscounted;
     BOOLEAN SchedulerDirectedTransitionsSupported;
+    BOOLEAN AffinitizePerfSet;
     ULONG WorstCaseTransitionLatency;
     ULONG WorstCaseTransitionOverhead;
 } PEP_PPM_QUERY_DOMAIN_INFO, *PPEP_PPM_QUERY_DOMAIN_INFO;

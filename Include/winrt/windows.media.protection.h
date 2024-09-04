@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.protection.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1299,8 +1301,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("95DA643C-6DB9-424B-86CA-091AF432081C"), contract] */
                 MIDL_INTERFACE("95DA643C-6DB9-424B-86CA-091AF432081C")
-                IComponentLoadFailedEventHandler : IUnknown
+                IComponentLoadFailedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::IMediaProtectionManager * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::IComponentLoadFailedEventArgs * e
@@ -1336,8 +1339,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("64E12A45-973B-4A3A-B260-91898A49A82C"), contract] */
                 MIDL_INTERFACE("64E12A45-973B-4A3A-B260-91898A49A82C")
-                IRebootNeededEventHandler : IUnknown
+                IRebootNeededEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::IMediaProtectionManager * sender
                         ) = 0;
@@ -1372,8 +1376,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("D2D690BA-CAC9-48E1-95C0-D38495A84055"), contract] */
                 MIDL_INTERFACE("D2D690BA-CAC9-48E1-95C0-D38495A84055")
-                IServiceRequestedEventHandler : IUnknown
+                IServiceRequestedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::IMediaProtectionManager * sender,
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::IServiceRequestedEventArgs * e
@@ -1413,8 +1418,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("95972E93-7746-417E-8495-F031BBC5862C"), exclusiveto, contract] */
                 MIDL_INTERFACE("95972E93-7746-417E-8495-F031BBC5862C")
-                IComponentLoadFailedEventArgs : IInspectable
+                IComponentLoadFailedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Information(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Protection::IRevocationAndRenewalInformation * * value
                         ) = 0;
@@ -1456,8 +1462,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("6FFBCD67-B795-48C5-8B7B-A7C4EFE202E3"), exclusiveto, contract] */
                 MIDL_INTERFACE("6FFBCD67-B795-48C5-8B7B-A7C4EFE202E3")
-                IComponentRenewalStatics : IInspectable
+                IComponentRenewalStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RenewSystemComponentsAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::IRevocationAndRenewalInformation * information,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CMedia__CProtection__CRenewalStatus_UINT32 * * operation
@@ -1501,8 +1508,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("718845E9-64D7-426D-809B-1BE461941A2A"), exclusiveto, contract] */
                 MIDL_INTERFACE("718845E9-64D7-426D-809B-1BE461941A2A")
-                IHdcpSession : IInspectable
+                IHdcpSession : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsEffectiveProtectionAtLeast(
                         /* [in] */ABI::Windows::Media::Protection::HdcpProtection protection,
                         /* [retval, out] */__RPC__out boolean * value
@@ -1556,8 +1564,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("45694947-C741-434B-A79E-474C12D93D2F"), exclusiveto, contract] */
                 MIDL_INTERFACE("45694947-C741-434B-A79E-474C12D93D2F")
-                IMediaProtectionManager : IInspectable
+                IMediaProtectionManager : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ServiceRequested(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Protection::IServiceRequestedEventHandler  * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -1617,8 +1626,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("0C111226-7B26-4D31-95BB-9C1B08EF7FC0"), exclusiveto, contract] */
                 MIDL_INTERFACE("0C111226-7B26-4D31-95BB-9C1B08EF7FC0")
-                IMediaProtectionPMPServer : IInspectable
+                IMediaProtectionPMPServer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Properties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * ppProperties
                         ) = 0;
@@ -1657,8 +1667,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("602C8E5E-F7D2-487E-AF91-DBC4252B2182"), exclusiveto, contract] */
                 MIDL_INTERFACE("602C8E5E-F7D2-487E-AF91-DBC4252B2182")
-                IMediaProtectionPMPServerFactory : IInspectable
+                IMediaProtectionPMPServerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreatePMPServer(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::Collections::IPropertySet * pProperties,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Protection::IMediaProtectionPMPServer * * ppObject
@@ -1698,8 +1709,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("8B5CCA18-CFD5-44EE-A2ED-DF76010C14B5"), exclusiveto, contract] */
                 MIDL_INTERFACE("8B5CCA18-CFD5-44EE-A2ED-DF76010C14B5")
-                IMediaProtectionServiceCompletion : IInspectable
+                IMediaProtectionServiceCompletion : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(
                         /* [in] */boolean success
                         ) = 0;
@@ -1735,8 +1747,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("B1DE0EA6-2094-478D-87A4-8B95200F85C6"), contract] */
                 MIDL_INTERFACE("B1DE0EA6-2094-478D-87A4-8B95200F85C6")
-                IMediaProtectionServiceRequest : IInspectable
+                IMediaProtectionServiceRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProtectionSystem(
                         /* [retval, out] */__RPC__out GUID * system
                         ) = 0;
@@ -1778,8 +1791,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("C7AC5D7E-7480-4D29-A464-7BCD913DD8E4"), exclusiveto, contract] */
                 MIDL_INTERFACE("C7AC5D7E-7480-4D29-A464-7BCD913DD8E4")
-                IProtectionCapabilities : IInspectable
+                IProtectionCapabilities : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsTypeSupported(
                         /* [in] */__RPC__in HSTRING type,
                         /* [in] */__RPC__in HSTRING keySystem,
@@ -1820,8 +1834,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("F3A1937B-2501-439E-A6E7-6FC95E175FCF"), exclusiveto, contract] */
                 MIDL_INTERFACE("F3A1937B-2501-439E-A6E7-6FC95E175FCF")
-                IRevocationAndRenewalInformation : IInspectable
+                IRevocationAndRenewalInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Items(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CMedia__CProtection__CRevocationAndRenewalItem * * items
                         ) = 0;
@@ -1860,8 +1875,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("3099C20C-3CF0-49EA-902D-CAF32D2DDE2C"), exclusiveto, contract] */
                 MIDL_INTERFACE("3099C20C-3CF0-49EA-902D-CAF32D2DDE2C")
-                IRevocationAndRenewalItem : IInspectable
+                IRevocationAndRenewalItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reasons(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Protection::RevocationAndRenewalReasons * reasons
                         ) = 0;
@@ -1912,8 +1928,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("34283BAF-ABB4-4FC1-BD89-93F106573A49"), exclusiveto, contract] */
                 MIDL_INTERFACE("34283BAF-ABB4-4FC1-BD89-93F106573A49")
-                IServiceRequestedEventArgs : IInspectable
+                IServiceRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Protection::IMediaProtectionServiceRequest * * value
                         ) = 0;
@@ -1955,8 +1972,9 @@ namespace ABI {
             namespace Protection {
                 /* [object, uuid("553C69D6-FAFE-4128-8DFA-130E398A13A7"), exclusiveto, contract] */
                 MIDL_INTERFACE("553C69D6-FAFE-4128-8DFA-130E398A13A7")
-                IServiceRequestedEventArgs2 : IInspectable
+                IServiceRequestedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MediaPlaybackItem(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackItem * * value
                         ) = 0;

@@ -886,6 +886,10 @@ public:
                 hr = Set(str, length);
             }
         }
+        else
+        {
+            hr = Set(L"", 0);
+        }
         return hr;
     }
 

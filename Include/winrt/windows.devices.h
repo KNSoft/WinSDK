@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
@@ -98,8 +96,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -326,8 +328,9 @@ namespace ABI {
         namespace Devices {
             /* [object, uuid("A73E561C-AAC1-4EC7-A852-479F7060D01F"), contract] */
             MIDL_INTERFACE("A73E561C-AAC1-4EC7-A852-479F7060D01F")
-            ILowLevelDevicesAggregateProvider : IInspectable
+            ILowLevelDevicesAggregateProvider : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AdcControllerProvider(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider * * value
                     ) = 0;
@@ -376,8 +379,9 @@ namespace ABI {
         namespace Devices {
             /* [object, uuid("9AC4AAF6-3473-465E-96D5-36281A2C57AF"), exclusiveto, contract] */
             MIDL_INTERFACE("9AC4AAF6-3473-465E-96D5-36281A2C57AF")
-            ILowLevelDevicesAggregateProviderFactory : IInspectable
+            ILowLevelDevicesAggregateProviderFactory : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Create(
                     /* [in] */__RPC__in_opt ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider * adc,
                     /* [in] */__RPC__in_opt ABI::Windows::Devices::Pwm::Provider::IPwmControllerProvider * pwm,
@@ -419,8 +423,9 @@ namespace ABI {
         namespace Devices {
             /* [object, uuid("2EC23DD4-179B-45DE-9B39-3AE02527DE52"), exclusiveto, contract] */
             MIDL_INTERFACE("2EC23DD4-179B-45DE-9B39-3AE02527DE52")
-            ILowLevelDevicesController : IInspectable
+            ILowLevelDevicesController : public IInspectable
             {
+            public:
                 
             };
 
@@ -454,8 +459,9 @@ namespace ABI {
         namespace Devices {
             /* [object, uuid("093E926A-FCCB-4394-A697-19DE637C2DB3"), exclusiveto, contract] */
             MIDL_INTERFACE("093E926A-FCCB-4394-A697-19DE637C2DB3")
-            ILowLevelDevicesControllerStatics : IInspectable
+            ILowLevelDevicesControllerStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DefaultProvider(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::ILowLevelDevicesAggregateProvider * * value
                     ) = 0;

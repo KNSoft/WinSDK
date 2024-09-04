@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.speechrecognition.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -251,6 +253,7 @@
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
 #include "Windows.Globalization.h"
+#include "Windows.Phone.h"
 #include "Windows.Storage.h"
 // Importing Collections header
 #include <windows.foundation.collections.h>
@@ -621,9 +624,142 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CSpeechRecognition_CISpeechRecognizerUIOptions_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechRecognition {
+                interface IVoiceCommandManager;
+            } /* Windows */
+        } /* Media */
+    } /* SpeechRecognition */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager ABI::Windows::Media::SpeechRecognition::IVoiceCommandManager
+
+#endif // ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechRecognition {
+                interface IVoiceCommandSet;
+            } /* Windows */
+        } /* Media */
+    } /* SpeechRecognition */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet
+
+#endif // ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_FWD_DEFINED__
+
 // Parameterized interface forward declarations (C++)
 
 // Collection interface definitions
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechRecognition {
+                class VoiceCommandSet;
+            } /* Windows */
+        } /* Media */
+    } /* SpeechRecognition */} /* ABI */
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE
+#define DEF___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("2bda6840-c39e-5534-8099-22004ab33fc2"))
+IKeyValuePair<HSTRING,ABI::Windows::Media::SpeechRecognition::VoiceCommandSet*> : IKeyValuePair_impl<HSTRING,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::SpeechRecognition::VoiceCommandSet*, ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.Media.SpeechRecognition.VoiceCommandSet>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IKeyValuePair<HSTRING,ABI::Windows::Media::SpeechRecognition::VoiceCommandSet*> __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t;
+#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet ABI::Windows::Foundation::Collections::__FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>
+//#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE */
+
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE
+#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("d19b13f3-9058-53bd-8d53-3ee1ea84389b"))
+IIterator<__FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet*> : IIterator_impl<__FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.Media.SpeechRecognition.VoiceCommandSet>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<__FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet*> __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t;
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet ABI::Windows::Foundation::Collections::__FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>*>
+//#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE */
+
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE
+#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("86e4878a-45de-5203-be77-81c04c9b44e6"))
+IIterable<__FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet*> : IIterable_impl<__FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.Media.SpeechRecognition.VoiceCommandSet>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<__FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet*> __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t;
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>*>
+//#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE */
+
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -760,6 +896,38 @@ typedef IIterable<ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResul
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE
+#define DEF___FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("121115fd-3858-5888-8626-b69ded969bd6"))
+IMapView<HSTRING,ABI::Windows::Media::SpeechRecognition::VoiceCommandSet*> : IMapView_impl<HSTRING,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::SpeechRecognition::VoiceCommandSet*, ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IMapView`2<String, Windows.Media.SpeechRecognition.VoiceCommandSet>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IMapView<HSTRING,ABI::Windows::Media::SpeechRecognition::VoiceCommandSet*> __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t;
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet ABI::Windows::Foundation::Collections::IMapView<HSTRING,ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>
+//#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t ABI::Windows::Foundation::Collections::IMapView<HSTRING,ABI::Windows::Media::SpeechRecognition::IVoiceCommandSet*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_USE */
+
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -1015,6 +1183,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_USE
@@ -1044,6 +1213,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechContinu
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1056,6 +1226,7 @@ namespace ABI {
     } /* SpeechRecognition */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionResultGeneratedEventArgs_USE
@@ -1086,6 +1257,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechContinu
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -1107,6 +1279,7 @@ namespace ABI {
     } /* SpeechRecognition */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionHypothesisGeneratedEventArgs_USE
@@ -1137,6 +1310,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechRecogni
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1149,6 +1323,7 @@ namespace ABI {
     } /* SpeechRecognition */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionQualityDegradingEventArgs_USE
@@ -1179,6 +1354,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechRecogni
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1191,6 +1367,7 @@ namespace ABI {
     } /* SpeechRecognition */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_USE
@@ -1220,6 +1397,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechRecogni
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1683,6 +1861,9 @@ namespace ABI {
 
 
 
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -1823,6 +2004,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace Media {
@@ -1906,6 +2089,8 @@ namespace ABI {
             } /* Windows */
         } /* Media */
     } /* SpeechRecognition */} /* ABI */
+
+
 
 
 
@@ -2206,8 +2391,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("E3D069BB-E30C-5E18-424B-7FBE81F8FBD0"), exclusiveto, contract] */
                 MIDL_INTERFACE("E3D069BB-E30C-5E18-424B-7FBE81F8FBD0")
-                ISpeechContinuousRecognitionCompletedEventArgs : IInspectable
+                ISpeechContinuousRecognitionCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus * value
                         ) = 0;
@@ -2246,8 +2432,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("19091E1E-6E7E-5A46-40FB-76594F786504"), exclusiveto, contract] */
                 MIDL_INTERFACE("19091E1E-6E7E-5A46-40FB-76594F786504")
-                ISpeechContinuousRecognitionResultGeneratedEventArgs : IInspectable
+                ISpeechContinuousRecognitionResultGeneratedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Result(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionResult * * value
                         ) = 0;
@@ -2286,8 +2473,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("6A213C04-6614-49F8-99A2-B5E9B3A085C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("6A213C04-6614-49F8-99A2-B5E9B3A085C8")
-                ISpeechContinuousRecognitionSession : IInspectable
+                ISpeechContinuousRecognitionSession : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AutoStopSilenceTimeout(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -2360,8 +2548,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("407E6C5D-6AC7-4DA4-9CC1-2FCE32CF7489"), exclusiveto, contract] */
                 MIDL_INTERFACE("407E6C5D-6AC7-4DA4-9CC1-2FCE32CF7489")
-                ISpeechRecognitionCompilationResult : IInspectable
+                ISpeechRecognitionCompilationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus * value
                         ) = 0;
@@ -2397,8 +2586,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("79AC1628-4D68-43C4-8911-40DC4101B55B"), contract] */
                 MIDL_INTERFACE("79AC1628-4D68-43C4-8911-40DC4101B55B")
-                ISpeechRecognitionConstraint : IInspectable
+                ISpeechRecognitionConstraint : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2459,8 +2649,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("B5031A8F-85CA-4FA4-B11A-474FC41B3835"), exclusiveto, contract] */
                 MIDL_INTERFACE("B5031A8F-85CA-4FA4-B11A-474FC41B3835")
-                ISpeechRecognitionGrammarFileConstraint : IInspectable
+                ISpeechRecognitionGrammarFileConstraint : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GrammarFile(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFile * * value
                         ) = 0;
@@ -2499,8 +2690,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("3DA770EB-C479-4C27-9F19-89974EF392D1"), exclusiveto, contract] */
                 MIDL_INTERFACE("3DA770EB-C479-4C27-9F19-89974EF392D1")
-                ISpeechRecognitionGrammarFileConstraintFactory : IInspectable
+                ISpeechRecognitionGrammarFileConstraintFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint * * constraint
@@ -2545,8 +2737,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("7A7B25B0-99C5-4F7D-BF84-10AA1302B634"), exclusiveto, contract] */
                 MIDL_INTERFACE("7A7B25B0-99C5-4F7D-BF84-10AA1302B634")
-                ISpeechRecognitionHypothesis : IInspectable
+                ISpeechRecognitionHypothesis : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2585,8 +2778,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("55161A7A-8023-5866-411D-1213BB271476"), exclusiveto, contract] */
                 MIDL_INTERFACE("55161A7A-8023-5866-411D-1213BB271476")
-                ISpeechRecognitionHypothesisGeneratedEventArgs : IInspectable
+                ISpeechRecognitionHypothesisGeneratedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Hypothesis(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesis * * value
                         ) = 0;
@@ -2629,8 +2823,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("09C487E9-E4AD-4526-81F2-4946FB481D98"), exclusiveto, contract] */
                 MIDL_INTERFACE("09C487E9-E4AD-4526-81F2-4946FB481D98")
-                ISpeechRecognitionListConstraint : IInspectable
+                ISpeechRecognitionListConstraint : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Commands(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                         ) = 0;
@@ -2669,8 +2864,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("40F3CDC7-562A-426A-9F3B-3B4E282BE1D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("40F3CDC7-562A-426A-9F3B-3B4E282BE1D5")
-                ISpeechRecognitionListConstraintFactory : IInspectable
+                ISpeechRecognitionListConstraintFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * commands,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint * * constraint
@@ -2715,8 +2911,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("4FE24105-8C3A-4C7E-8D0A-5BD4F5B14AD8"), exclusiveto, contract] */
                 MIDL_INTERFACE("4FE24105-8C3A-4C7E-8D0A-5BD4F5B14AD8")
-                ISpeechRecognitionQualityDegradingEventArgs : IInspectable
+                ISpeechRecognitionQualityDegradingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Problem(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::SpeechRecognition::SpeechRecognitionAudioProblem * value
                         ) = 0;
@@ -2755,8 +2952,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("4E303157-034E-4652-857E-D0454CC4BEEC"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E303157-034E-4652-857E-D0454CC4BEEC")
-                ISpeechRecognitionResult : IInspectable
+                ISpeechRecognitionResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus * value
                         ) = 0;
@@ -2817,8 +3015,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("AF7ED1BA-451B-4166-A0C1-1FFE84032D03"), exclusiveto, contract] */
                 MIDL_INTERFACE("AF7ED1BA-451B-4166-A0C1-1FFE84032D03")
-                ISpeechRecognitionResult2 : IInspectable
+                ISpeechRecognitionResult2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PhraseStartTime(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -2860,8 +3059,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("AAE1DA9B-7E32-4C1F-89FE-0C65F486F52E"), exclusiveto, contract] */
                 MIDL_INTERFACE("AAE1DA9B-7E32-4C1F-89FE-0C65F486F52E")
-                ISpeechRecognitionSemanticInterpretation : IInspectable
+                ISpeechRecognitionSemanticInterpretation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Properties(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING___FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -2904,8 +3104,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("BF6FDF19-825D-4E69-A681-36E48CF1C93E"), exclusiveto, contract] */
                 MIDL_INTERFACE("BF6FDF19-825D-4E69-A681-36E48CF1C93E")
-                ISpeechRecognitionTopicConstraint : IInspectable
+                ISpeechRecognitionTopicConstraint : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Scenario(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::SpeechRecognition::SpeechRecognitionScenario * value
                         ) = 0;
@@ -2947,8 +3148,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("6E6863DF-EC05-47D7-A5DF-56A3431E58D2"), exclusiveto, contract] */
                 MIDL_INTERFACE("6E6863DF-EC05-47D7-A5DF-56A3431E58D2")
-                ISpeechRecognitionTopicConstraintFactory : IInspectable
+                ISpeechRecognitionTopicConstraintFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario,
                         /* [in] */__RPC__in HSTRING topicHint,
@@ -2999,8 +3201,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("F2791C2B-1EF4-4AE7-9D77-B6FF10B8A3C2"), exclusiveto, contract] */
                 MIDL_INTERFACE("F2791C2B-1EF4-4AE7-9D77-B6FF10B8A3C2")
-                ISpeechRecognitionVoiceCommandDefinitionConstraint : IInspectable
+                ISpeechRecognitionVoiceCommandDefinitionConstraint : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -3040,8 +3243,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("0BC3C9CB-C26A-40F2-AEB5-8096B2E48073"), exclusiveto, contract] */
                 MIDL_INTERFACE("0BC3C9CB-C26A-40F2-AEB5-8096B2E48073")
-                ISpeechRecognizer : IInspectable
+                ISpeechRecognizer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentLanguage(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::ILanguage * * language
                         ) = 0;
@@ -3112,8 +3316,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("63C9BAF1-91E3-4EA4-86A1-7C3867D084A6"), exclusiveto, contract] */
                 MIDL_INTERFACE("63C9BAF1-91E3-4EA4-86A1-7C3867D084A6")
-                ISpeechRecognizer2 : IInspectable
+                ISpeechRecognizer2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContinuousRecognitionSession(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession * * value
                         ) = 0;
@@ -3165,8 +3370,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("60C488DD-7FB8-4033-AC70-D046F64818E1"), exclusiveto, contract] */
                 MIDL_INTERFACE("60C488DD-7FB8-4033-AC70-D046F64818E1")
-                ISpeechRecognizerFactory : IInspectable
+                ISpeechRecognizerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Globalization::ILanguage * language,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::SpeechRecognition::ISpeechRecognizer * * recognizer
@@ -3206,8 +3412,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("563D4F09-BA03-4BAD-AD81-DDC6C4DAB0C3"), exclusiveto, contract] */
                 MIDL_INTERFACE("563D4F09-BA03-4BAD-AD81-DDC6C4DAB0C3")
-                ISpeechRecognizerStateChangedEventArgs : IInspectable
+                ISpeechRecognizerStateChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::SpeechRecognition::SpeechRecognizerState * value
                         ) = 0;
@@ -3246,8 +3453,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("87A35EAC-A7DC-4B0B-BCC9-24F47C0B7EBF"), exclusiveto, contract] */
                 MIDL_INTERFACE("87A35EAC-A7DC-4B0B-BCC9-24F47C0B7EBF")
-                ISpeechRecognizerStatics : IInspectable
+                ISpeechRecognizerStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SystemSpeechLanguage(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::ILanguage * * language
                         ) = 0;
@@ -3292,8 +3500,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("1D1B0D95-7565-4EF9-A2F3-BA15162A96CF"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D1B0D95-7565-4EF9-A2F3-BA15162A96CF")
-                ISpeechRecognizerStatics2 : IInspectable
+                ISpeechRecognizerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TrySetSystemSpeechLanguageAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Globalization::ILanguage * speechLanguage,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
@@ -3333,8 +3542,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("2EF76FCA-6A3C-4DCA-A153-DF1BC88A79AF"), exclusiveto, contract] */
                 MIDL_INTERFACE("2EF76FCA-6A3C-4DCA-A153-DF1BC88A79AF")
-                ISpeechRecognizerTimeouts : IInspectable
+                ISpeechRecognizerTimeouts : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InitialSilenceTimeout(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -3388,8 +3598,9 @@ namespace ABI {
             namespace SpeechRecognition {
                 /* [object, uuid("7888D641-B92B-44BA-A25F-D1864630641F"), exclusiveto, contract] */
                 MIDL_INTERFACE("7888D641-B92B-44BA-A25F-D1864630641F")
-                ISpeechRecognizerUIOptions : IInspectable
+                ISpeechRecognizerUIOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExampleText(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3426,6 +3637,128 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechRecognition_CISpeechRecognizerUIOptions;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechRecognition_CISpeechRecognizerUIOptions_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.SpeechRecognition.IVoiceCommandManager
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.SpeechRecognition.VoiceCommandManager
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechRecognition_IVoiceCommandManager[] = L"Windows.Media.SpeechRecognition.IVoiceCommandManager";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechRecognition {
+                /* [object, uuid("AA3A8DD5-B6E7-4EE2-BAA9-DD6BACED0A2B"), exclusiveto, deprecated, contract] */
+                MIDL_INTERFACE("AA3A8DD5-B6E7-4EE2-BAA9-DD6BACED0A2B")
+                
+                #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+                #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                IVoiceCommandManager : public IInspectable
+                {
+                public:
+                    
+                    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+                    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE InstallCommandSetsFromStorageFileAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * installAction
+                        ) = 0;
+                    
+                    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+                    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_InstalledCommandSets(
+                        /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * * voiceCommandSets
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IVoiceCommandManager=_uuidof(IVoiceCommandManager);
+                
+            } /* Windows */
+        } /* Media */
+    } /* SpeechRecognition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.SpeechRecognition.IVoiceCommandSet
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.SpeechRecognition.VoiceCommandSet
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechRecognition_IVoiceCommandSet[] = L"Windows.Media.SpeechRecognition.IVoiceCommandSet";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechRecognition {
+                /* [object, uuid("0BEDDA75-46E6-4B11-A088-5C68632899B5"), exclusiveto, deprecated, contract] */
+                MIDL_INTERFACE("0BEDDA75-46E6-4B11-A088-5C68632899B5")
+                
+                #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+                #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                IVoiceCommandSet : public IInspectable
+                {
+                public:
+                    
+                    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+                    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Language(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    
+                    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+                    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Name(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    
+                    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+                    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE SetPhraseListAsync(
+                        /* [in] */__RPC__in HSTRING phraseListName,
+                        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * phraseList,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * updateAction
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IVoiceCommandSet=_uuidof(IVoiceCommandSet);
+                
+            } /* Windows */
+        } /* Media */
+    } /* SpeechRecognition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -3836,6 +4169,57 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+/*
+ *
+ * Class Windows.Media.SpeechRecognition.VoiceCommandManager
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.SpeechRecognition.IVoiceCommandManager interface starting with version 1.0 of the Windows.Phone.PhoneContract API contract
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_Media_SpeechRecognition_VoiceCommandManager_DEFINED
+#define RUNTIMECLASS_Windows_Media_SpeechRecognition_VoiceCommandManager_DEFINED
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_SpeechRecognition_VoiceCommandManager[] = L"Windows.Media.SpeechRecognition.VoiceCommandManager";
+#endif
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Media.SpeechRecognition.VoiceCommandSet
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.SpeechRecognition.IVoiceCommandSet ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_Media_SpeechRecognition_VoiceCommandSet_DEFINED
+#define RUNTIMECLASS_Windows_Media_SpeechRecognition_VoiceCommandSet_DEFINED
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_SpeechRecognition_VoiceCommandSet[] = L"Windows.Media.SpeechRecognition.VoiceCommandSet";
+#endif
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
 
 
 #else // !defined(__cplusplus)
@@ -3996,9 +4380,252 @@ typedef interface __x_ABI_CWindows_CMedia_CSpeechRecognition_CISpeechRecognizerU
 
 #endif // ____x_ABI_CWindows_CMedia_CSpeechRecognition_CISpeechRecognizerUIOptions_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager;
+
+#endif // ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet;
+
+#endif // ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_FWD_DEFINED__
+
 // Parameterized interface forward declarations (C)
 
 // Collection interface definitions
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__)
+#define ____FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__
+
+typedef interface __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet;
+
+typedef struct __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Key )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [retval][out] */ __RPC__out HSTRING *key);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * *value);
+    END_INTERFACE
+} __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl;
+
+interface __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet
+{
+    CONST_VTBL struct __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_get_Key(This,key)	\
+    ( (This)->lpVtbl -> get_Key(This,key) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__)
+#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet;
+
+typedef struct __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [retval][out] */ __RPC__out __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl;
+
+interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet
+{
+    CONST_VTBL struct __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__)
+#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet;
+
+typedef  struct __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet **first);
+
+    END_INTERFACE
+} __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl;
+
+interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet
+{
+    CONST_VTBL struct __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIIterator_1_Windows__CMedia__CSpeechRecognition__CISpeechRecognitionConstraint_INTERFACE_DEFINED__)
@@ -4322,6 +4949,80 @@ interface __FIIterable_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognition
 #endif // ____FIIterable_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__)
+#define ____FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__
+
+typedef interface __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet;
+
+typedef struct __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,/* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *Lookup )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,
+        /* [in] */ __RPC__in HSTRING key,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * *value);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [retval][out] */ __RPC__out unsigned int *size);
+    HRESULT ( STDMETHODCALLTYPE *HasKey )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This, /* [in] */ __RPC__in HSTRING key, /* [retval][out] */ __RPC__out boolean *found);
+    HRESULT ( STDMETHODCALLTYPE *Split )(__RPC__in __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * This,/* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet **firstPartition,
+        /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet **secondPartition);
+    END_INTERFACE
+} __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl;
+
+interface __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet
+{
+    CONST_VTBL struct __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSetVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_Lookup(This,key,value)	\
+    ( (This)->lpVtbl -> Lookup(This,key,value) ) 
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_HasKey(This,key,found)	\
+    ( (This)->lpVtbl -> HasKey(This,key,found) ) 
+#define __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_Split(This,firstPartition,secondPartition)	\
+    ( (This)->lpVtbl -> Split(This,firstPartition,secondPartition) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_INTERFACE_DEFINED__
+
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -4921,6 +5622,7 @@ interface __FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecog
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_INTERFACE_DEFINED__
 
@@ -4968,9 +5670,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechCo
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionResultGeneratedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionResultGeneratedEventArgs_INTERFACE_DEFINED__
@@ -5019,9 +5723,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechCo
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionResultGeneratedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionHypothesisGeneratedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionHypothesisGeneratedEventArgs_INTERFACE_DEFINED__
@@ -5070,9 +5776,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRe
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionHypothesisGeneratedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionQualityDegradingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionQualityDegradingEventArgs_INTERFACE_DEFINED__
@@ -5121,9 +5829,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRe
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionQualityDegradingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_INTERFACE_DEFINED__
@@ -5171,6 +5881,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRe
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
@@ -6289,6 +7000,9 @@ typedef struct __x_ABI_CWindows_CFoundation_CTimeSpan __x_ABI_CWindows_CFoundati
 
 
 
+
+
+
 #ifndef ____x_ABI_CWindows_CStorage_CIStorageFile_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIStorageFile_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CIStorageFile __x_ABI_CWindows_CStorage_CIStorageFile;
@@ -6321,6 +7035,10 @@ typedef enum __x_ABI_CWindows_CMedia_CSpeechRecognition_CSpeechRecognitionScenar
 
 
 typedef enum __x_ABI_CWindows_CMedia_CSpeechRecognition_CSpeechRecognizerState __x_ABI_CWindows_CMedia_CSpeechRecognition_CSpeechRecognizerState;
+
+
+
+
 
 
 
@@ -9426,6 +10144,264 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechRecognition_CISpeechRecogn
 
 /*
  *
+ * Interface Windows.Media.SpeechRecognition.IVoiceCommandManager
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.SpeechRecognition.VoiceCommandManager
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechRecognition_IVoiceCommandManager[] = L"Windows.Media.SpeechRecognition.IVoiceCommandManager";
+/* [object, uuid("AA3A8DD5-B6E7-4EE2-BAA9-DD6BACED0A2B"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+__x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManagerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+
+    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *InstallCommandSetsFromStorageFileAsync )(
+        __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageFile * file,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * installAction
+        );
+    
+    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_InstalledCommandSets )(
+        __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet * * voiceCommandSets
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManagerVtbl;
+
+interface __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManagerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_InstallCommandSetsFromStorageFileAsync(This,file,installAction) \
+    ( (This)->lpVtbl->InstallCommandSetsFromStorageFileAsync(This,file,installAction) )
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_get_InstalledCommandSets(This,voiceCommandSets) \
+    ( (This)->lpVtbl->get_InstalledCommandSets(This,voiceCommandSets) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandManager_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.SpeechRecognition.IVoiceCommandSet
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.SpeechRecognition.VoiceCommandSet
+ *
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechRecognition_IVoiceCommandSet[] = L"Windows.Media.SpeechRecognition.IVoiceCommandSet";
+/* [object, uuid("0BEDDA75-46E6-4B11-A088-5C68632899B5"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+__x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSetVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+
+    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Language )(
+        __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    
+    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Name )(
+        __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    
+    #if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+    #endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *SetPhraseListAsync )(
+        __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet * This,
+        /* [in] */__RPC__in HSTRING phraseListName,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * phraseList,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * updateAction
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSetVtbl;
+
+interface __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSetVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_get_Language(This,value) \
+    ( (This)->lpVtbl->get_Language(This,value) )
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_get_Name(This,value) \
+    ( (This)->lpVtbl->get_Name(This,value) )
+
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_SetPhraseListAsync(This,phraseListName,phraseList,updateAction) \
+    ( (This)->lpVtbl->SetPhraseListAsync(This,phraseListName,phraseList,updateAction) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechRecognition_CIVoiceCommandSet_INTERFACE_DEFINED__) */
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Class Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9830,6 +10806,57 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_SpeechRecognition_SpeechRecognizerUIOptions[] = L"Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Media.SpeechRecognition.VoiceCommandManager
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.SpeechRecognition.IVoiceCommandManager interface starting with version 1.0 of the Windows.Phone.PhoneContract API contract
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_Media_SpeechRecognition_VoiceCommandManager_DEFINED
+#define RUNTIMECLASS_Windows_Media_SpeechRecognition_VoiceCommandManager_DEFINED
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_SpeechRecognition_VoiceCommandManager[] = L"Windows.Media.SpeechRecognition.VoiceCommandManager";
+#endif
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Media.SpeechRecognition.VoiceCommandSet
+ *
+ * Introduced to Windows.Phone.PhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.SpeechRecognition.IVoiceCommandSet ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_Media_SpeechRecognition_VoiceCommandSet_DEFINED
+#define RUNTIMECLASS_Windows_Media_SpeechRecognition_VoiceCommandSet_DEFINED
+
+#if WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+DEPRECATED("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_SpeechRecognition_VoiceCommandSet[] = L"Windows.Media.SpeechRecognition.VoiceCommandSet";
+#endif
+#endif // WINDOWS_PHONE_PHONECONTRACT_VERSION >= 0x10000
 
 
 

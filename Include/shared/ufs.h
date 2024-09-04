@@ -50,6 +50,13 @@ Revision:
 #define UFS_DESC_MAX_IDN                    0x10
 
 //
+// bBootLunEn/bBootLunID Values
+//
+
+#define UFS_BOOT_LUN_A                      0x01
+#define UFS_BOOT_LUN_B                      0x02
+
+//
 // The Device Descriptor
 //
 

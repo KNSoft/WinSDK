@@ -1,4 +1,5 @@
 
+
 //
 // Pointer size in bytes
 //
@@ -411,6 +412,7 @@
 #define InMode 0x40
 #define InServiceCount 0x48
 #define InDispatchCount 0x4c
+#define InTrapFrame 0x54
 #define InterruptObjectLength 0xb0
 
 //
@@ -436,7 +438,7 @@
 #define PrUserTime 0x9c
 #define PrInstrumentationCallback 0xa4
 #define KernelProcessObjectLength 0xb0
-#define ExecutiveProcessObjectLength 0x3e8
+#define ExecutiveProcessObjectLength 0x400
 #define Win32BatchFlushCallout 0x7
 
 //
@@ -487,7 +489,7 @@
 #define THREAD_FLAGS_GROUP_SCHEDULING 0x4
 #define THREAD_FLAGS_AFFINITY_SET 0x8
 #define THREAD_FLAGS_ACCOUNTING_CSWITCH 0x36
-#define THREAD_FLAGS_ACCOUNTING_INTERRUPT 0x32
+#define THREAD_FLAGS_ACCOUNTING_INTERRUPT 0x72
 #define THREAD_FLAGS_ACCOUNTING_ANY 0x3e
 #define ThDebugActive 0x3
 #define ThThreadControlFlags 0x2
@@ -500,6 +502,7 @@
 #define ThKernelStack 0x40
 #define ThThreadLock 0x2c
 #define ThApcState 0x64
+#define ThProcess 0x150
 #define ThNextProcessor 0x148
 #define ThAdjustReason 0x15e
 #define ThAdjustIncrement 0x15f
@@ -531,7 +534,6 @@
 #define ThFirstArgument 0x5c
 #define ThApcStateIndex 0x16a
 #define ThSystemCallNumber 0x58
-#define ThProcess 0x150
 #define ThWin32Thread 0x11c
 #define ThStackBase 0x28
 #define ThLegoData 0x1b8
@@ -587,7 +589,7 @@
 #define PeBeingDebugged 0x2
 #define PeProcessParameters 0x10
 #define PeKernelCallbackTable 0x2c
-#define ProcessEnvironmentBlockLength 0x468
+#define ProcessEnvironmentBlockLength 0x470
 
 //
 // Process Parameters Block Structure Offset Definitions
@@ -701,7 +703,7 @@
 #define PERF_SYSCALL_OFFSET 0x8
 #define PERF_SYSCALL_FLAG 0x40
 #define NTOS_YIELD_MACRO 0x1
-#define EtwTSLength 0x18
+#define EtwTSLength 0x20
 
 //
 // Extended context structure offset definitions
@@ -718,8 +720,8 @@
 
 #define AfCount 0x0
 #define AfBitmap 0x8
-#define PbEntropyCount 0x978
-#define PbEntropyBuffer 0x97c
+#define PbEntropyCount 0x97c
+#define PbEntropyBuffer 0x980
 #define KENTROPY_TIMING_INTERRUPTS_PER_BUFFER 0x400
 #define KENTROPY_TIMING_BUFFER_MASK 0x7ff
 #define KENTROPY_TIMING_ANALYSIS 0x0
@@ -934,11 +936,11 @@
 #define PbAdjustDpcThreshold 0x914
 #define PbParentNode 0x938
 #define PbStartCycles 0x948
-#define PbPageColor 0xaa8
-#define PbNodeColor 0xaac
-#define PbNodeShiftedColor 0xab0
-#define PbSecondaryColorMask 0xab4
-#define PbCycleTime 0xab8
+#define PbPageColor 0xaac
+#define PbNodeColor 0xab0
+#define PbNodeShiftedColor 0xab4
+#define PbSecondaryColorMask 0xab8
+#define PbCycleTime 0xac0
 #define PbFastReadNoWait 0x638
 #define PbFastReadWait 0x63c
 #define PbFastReadNotPossible 0x640
@@ -981,7 +983,7 @@
 #define IPI_APC 0x1
 #define IPI_DPC 0x2
 #define IPI_FREEZE 0x4
-#define IPI_PACKET_READY 0x6
+#define IPI_PACKET_READY 0x5
 
 //
 // Processor Idle Times Offset Definitions
@@ -994,7 +996,7 @@
 // Immediate Interprocessor Command Definitions
 //
 
-#define IPI_PACKET_READY 0x6
+#define IPI_PACKET_READY 0x5
 
 //
 // Time Fields (TIME_FIELDS) Structure Offset Definitions
@@ -1784,3 +1786,4 @@
 
 #define AffinityExLength 0xc
 #include "kxarm.h"
+;

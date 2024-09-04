@@ -166,20 +166,15 @@ C_ASSERT(NTSTRSAFE_UNICODE_STRING_MAX_CCH > 1);
 #define STRSAFE_GET_FILL_PATTERN(dwFlags)       ((int)(dwFlags & 0x000000FF))
 
 
-//
-// These typedefs are used in places where the string is guaranteed to
-// be null terminated.
-//
+// Deprecated, use the non STRSAFE_ prefixed types instead (e.g. LPSTR or PSTR) as they are the same as these.
 typedef _Null_terminated_ char* NTSTRSAFE_PSTR;
 typedef _Null_terminated_ const char* NTSTRSAFE_PCSTR;
 typedef _Null_terminated_ wchar_t* NTSTRSAFE_PWSTR;
 typedef _Null_terminated_ const wchar_t* NTSTRSAFE_PCWSTR;
 typedef _Null_terminated_ const wchar_t UNALIGNED* NTSTRSAFE_PCUWSTR;
 
-//
-// These typedefs are used in places where the string is NOT guaranteed to
-// be null terminated.
-//
+// Deprecated, use the base types instead.
+// RtlStrings where the string is NOT guaranteed to be null terminated (does not have _Null_terminated_).
 typedef  const char* STRSAFE_PCNZCH;
 typedef  const wchar_t* STRSAFE_PCNZWCH;
 typedef  const wchar_t UNALIGNED* STRSAFE_PCUNZWCH;

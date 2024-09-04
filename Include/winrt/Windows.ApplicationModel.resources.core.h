@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.resources.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1970,8 +1972,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("1C98C219-0B13-4240-89A5-D495DC189A00"), exclusiveto, contract] */
                     MIDL_INTERFACE("1C98C219-0B13-4240-89A5-D495DC189A00")
-                    INamedResource : IInspectable
+                    INamedResource : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * uri
                             ) = 0;
@@ -2037,8 +2040,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("AF5207D9-C433-4764-B3FD-8FA6BFBCBADC"), exclusiveto, contract] */
                     MIDL_INTERFACE("AF5207D9-C433-4764-B3FD-8FA6BFBCBADC")
-                    IResourceCandidate : IInspectable
+                    IResourceCandidate : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Qualifiers(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CResources__CCore__CResourceQualifier * * value
                             ) = 0;
@@ -2098,8 +2102,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("69E5B468-F6FC-4013-AAA2-D53F1757D3B5"), exclusiveto, contract] */
                     MIDL_INTERFACE("69E5B468-F6FC-4013-AAA2-D53F1757D3B5")
-                    IResourceCandidate2 : IInspectable
+                    IResourceCandidate2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetValueAsStreamAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream * * operation
                             ) = 0;
@@ -2140,8 +2145,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("2FA22F4B-707E-4B27-AD0D-D0D8CD468FD2"), exclusiveto, contract] */
                     MIDL_INTERFACE("2FA22F4B-707E-4B27-AD0D-D0D8CD468FD2")
-                    IResourceContext : IInspectable
+                    IResourceContext : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_QualifierValues(
                             /* [retval, out] */__RPC__deref_out_opt __FIObservableMap_2_HSTRING_HSTRING * * value
                             ) = 0;
@@ -2202,8 +2208,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                    IResourceContextStatics : IInspectable
+                    IResourceContextStatics : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                         DEPRECATED("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")
@@ -2249,8 +2256,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("41F752EF-12AF-41B9-AB36-B1EB4B512460"), exclusiveto, contract] */
                     MIDL_INTERFACE("41F752EF-12AF-41B9-AB36-B1EB4B512460")
-                    IResourceContextStatics2 : IInspectable
+                    IResourceContextStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Core::IResourceContext * * value
                             ) = 0;
@@ -2302,8 +2310,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("20CF492C-AF0F-450B-9DA6-106DD0C29A39"), exclusiveto, contract] */
                     MIDL_INTERFACE("20CF492C-AF0F-450B-9DA6-106DD0C29A39")
-                    IResourceContextStatics3 : IInspectable
+                    IResourceContextStatics3 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE SetGlobalQualifierValueWithPersistence(
                             /* [in] */__RPC__in HSTRING key,
                             /* [in] */__RPC__in HSTRING value,
@@ -2346,8 +2355,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("F744D97B-9988-44FB-ABD6-5378844CFA8B"), exclusiveto, contract] */
                     MIDL_INTERFACE("F744D97B-9988-44FB-ABD6-5378844CFA8B")
-                    IResourceManager : IInspectable
+                    IResourceManager : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MainResourceMap(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Core::IResourceMap * * value
                             ) = 0;
@@ -2404,8 +2414,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("9D66FE6C-A4D7-4C23-9E85-675F304C252D"), exclusiveto, contract] */
                     MIDL_INTERFACE("9D66FE6C-A4D7-4C23-9E85-675F304C252D")
-                    IResourceManager2 : IInspectable
+                    IResourceManager2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetAllNamedResourcesForPackage(
                             /* [in] */__RPC__in HSTRING packageName,
                             /* [in] */ABI::Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo resourceLayoutInfo,
@@ -2453,8 +2464,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("1CC0FDFC-69EE-4E43-9901-47F12687BAF7"), exclusiveto, contract] */
                     MIDL_INTERFACE("1CC0FDFC-69EE-4E43-9901-47F12687BAF7")
-                    IResourceManagerStatics : IInspectable
+                    IResourceManagerStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Core::IResourceManager * * value
                             ) = 0;
@@ -2504,8 +2516,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("72284824-DB8C-42F8-B08C-53FF357DAD82"), exclusiveto, contract] */
                     MIDL_INTERFACE("72284824-DB8C-42F8-B08C-53FF357DAD82")
-                    IResourceMap : IInspectable
+                    IResourceMap : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * uri
                             ) = 0;
@@ -2563,8 +2576,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("785DA5B2-4AFD-4376-A888-C5F9A6B7A05C"), exclusiveto, contract] */
                     MIDL_INTERFACE("785DA5B2-4AFD-4376-A888-C5F9A6B7A05C")
-                    IResourceQualifier : IInspectable
+                    IResourceQualifier : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_QualifierName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;

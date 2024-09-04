@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.voicecommands.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -944,6 +946,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandServiceConnection_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandCompletedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandServiceConnection_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandCompletedEventArgs_USE
@@ -972,6 +975,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::VoiceCommands::VoiceC
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandServiceConnection_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandCompletedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1454,8 +1458,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("936F5273-EC82-42A6-A55C-D2D79EC6F920"), exclusiveto, contract] */
                 MIDL_INTERFACE("936F5273-EC82-42A6-A55C-D2D79EC6F920")
-                IVoiceCommand : IInspectable
+                IVoiceCommand : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CommandName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1500,8 +1505,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("C85E675D-FE42-432C-9907-09DF9FCF64E8"), exclusiveto, contract] */
                 MIDL_INTERFACE("C85E675D-FE42-432C-9907-09DF9FCF64E8")
-                IVoiceCommandCompletedEventArgs : IInspectable
+                IVoiceCommandCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reason(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletionReason * value
                         ) = 0;
@@ -1540,8 +1546,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("A022593E-8221-4526-B083-840972262247"), exclusiveto, contract] */
                 MIDL_INTERFACE("A022593E-8221-4526-B083-840972262247")
-                IVoiceCommandConfirmationResult : IInspectable
+                IVoiceCommandConfirmationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Confirmed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1580,8 +1587,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("3EEFE9F0-B8C7-4C76-A0DE-1607895EE327"), exclusiveto, contract] */
                 MIDL_INTERFACE("3EEFE9F0-B8C7-4C76-A0DE-1607895EE327")
-                IVoiceCommandContentTile : IInspectable
+                IVoiceCommandContentTile : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Title(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1665,8 +1673,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("7972AAD0-0974-4979-984B-CB8959CD61AE"), exclusiveto, contract] */
                 MIDL_INTERFACE("7972AAD0-0974-4979-984B-CB8959CD61AE")
-                IVoiceCommandDefinition : IInspectable
+                IVoiceCommandDefinition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Language(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1713,8 +1722,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("8FE7A69E-067E-4F16-A18C-5B17E9499940"), exclusiveto, contract] */
                 MIDL_INTERFACE("8FE7A69E-067E-4F16-A18C-5B17E9499940")
-                IVoiceCommandDefinitionManagerStatics : IInspectable
+                IVoiceCommandDefinitionManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE InstallCommandDefinitionsFromStorageFileAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * installAction
@@ -1757,8 +1767,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("ECC68CFE-C9AC-45DF-A8EA-FEEA08EF9C5E"), exclusiveto, contract] */
                 MIDL_INTERFACE("ECC68CFE-C9AC-45DF-A8EA-FEEA08EF9C5E")
-                IVoiceCommandDisambiguationResult : IInspectable
+                IVoiceCommandDisambiguationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectedItem(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::VoiceCommands::IVoiceCommandContentTile * * value
                         ) = 0;
@@ -1797,8 +1808,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("0284B30E-8A3B-4CC4-A6A1-CAD5BE2716B5"), exclusiveto, contract] */
                 MIDL_INTERFACE("0284B30E-8A3B-4CC4-A6A1-CAD5BE2716B5")
-                IVoiceCommandResponse : IInspectable
+                IVoiceCommandResponse : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Message(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage * * value
                         ) = 0;
@@ -1855,8 +1867,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("2932F813-0D3B-49F2-96DD-625019BD3B5D"), exclusiveto, contract] */
                 MIDL_INTERFACE("2932F813-0D3B-49F2-96DD-625019BD3B5D")
-                IVoiceCommandResponseStatics : IInspectable
+                IVoiceCommandResponseStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxSupportedVoiceCommandContentTiles(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -1915,8 +1928,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("D894BB9F-21DA-44A4-98A2-FB131920A9CC"), exclusiveto, contract] */
                 MIDL_INTERFACE("D894BB9F-21DA-44A4-98A2-FB131920A9CC")
-                IVoiceCommandServiceConnection : IInspectable
+                IVoiceCommandServiceConnection : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetVoiceCommandAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CVoiceCommands__CVoiceCommand * * operation
                         ) = 0;
@@ -1989,8 +2003,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("370EBFFB-2D34-42DF-8770-074D0F334697"), exclusiveto, contract] */
                 MIDL_INTERFACE("370EBFFB-2D34-42DF-8770-074D0F334697")
-                IVoiceCommandServiceConnectionStatics : IInspectable
+                IVoiceCommandServiceConnectionStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromAppServiceTriggerDetails(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::AppService::IAppServiceTriggerDetails * triggerDetails,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection * * value
@@ -2030,8 +2045,9 @@ namespace ABI {
             namespace VoiceCommands {
                 /* [object, uuid("674EB3C0-44F6-4F07-B979-4C723FC08597"), exclusiveto, contract] */
                 MIDL_INTERFACE("674EB3C0-44F6-4F07-B979-4C723FC08597")
-                IVoiceCommandUserMessage : IInspectable
+                IVoiceCommandUserMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayMessage(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3437,6 +3453,7 @@ interface __FIAsyncOperation_1_Windows__CApplicationModel__CVoiceCommands__CVoic
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandServiceConnection_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandServiceConnection_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandCompletedEventArgs_INTERFACE_DEFINED__
 
@@ -3483,6 +3500,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CVoiceCommands__CV
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandServiceConnection_Windows__CApplicationModel__CVoiceCommands__CVoiceCommandCompletedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)

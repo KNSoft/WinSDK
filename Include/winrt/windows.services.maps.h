@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.services.maps.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -343,6 +345,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IMapRouteDrivingOptions2;
+            } /* Windows */
+        } /* Services */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 ABI::Windows::Services::Maps::IMapRouteDrivingOptions2
+
+#endif // ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult_FWD_DEFINED__
 namespace ABI {
@@ -580,6 +596,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics ABI::Windows::Services::Maps::IPlaceInfoStatics
 
 #endif // ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IPlaceInfoStatics2;
+            } /* Windows */
+        } /* Services */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 ABI::Windows::Services::Maps::IPlaceInfoStatics2
+
+#endif // ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -1359,6 +1389,43 @@ typedef IReference<double> __FIReference_1_double_t;
 
 namespace ABI {
     namespace Windows {
+        namespace Foundation {
+            struct DateTime;
+            
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#define DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c"))
+IReference<struct ABI::Windows::Foundation::DateTime> : IReference_impl<struct ABI::Windows::Foundation::DateTime> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Windows.Foundation.DateTime>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<struct ABI::Windows::Foundation::DateTime> __FIReference_1_Windows__CFoundation__CDateTime_t;
+#define __FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::DateTime>
+//#define __FIReference_1_Windows__CFoundation__CDateTime_t ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::DateTime>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_Windows__CFoundation__CDateTime_USE */
+
+
+
+namespace ABI {
+    namespace Windows {
         namespace Devices {
             namespace Geolocation {
                 class Geopoint;
@@ -1512,6 +1579,15 @@ namespace ABI {
 
 
 
+
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            
+            typedef struct DateTime DateTime;
+            
+        } /* Windows */
+    } /* Foundation */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1681,6 +1757,8 @@ namespace ABI {
             } /* Windows */
         } /* Services */
     } /* Maps */} /* ABI */
+
+
 
 
 
@@ -2225,8 +2303,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("ED268C74-5913-11E6-8B77-86F30CA893D3"), exclusiveto, contract] */
                 MIDL_INTERFACE("ED268C74-5913-11E6-8B77-86F30CA893D3")
-                IEnhancedWaypoint : IInspectable
+                IEnhancedWaypoint : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Point(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                         ) = 0;
@@ -2268,8 +2347,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("AF868477-A2AA-46DD-B645-23B31B8AA6C7"), exclusiveto, contract] */
                 MIDL_INTERFACE("AF868477-A2AA-46DD-B645-23B31B8AA6C7")
-                IEnhancedWaypointFactory : IInspectable
+                IEnhancedWaypointFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * point,
                         /* [in] */ABI::Windows::Services::Maps::WaypointKind kind,
@@ -2310,8 +2390,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("C1A36D8A-2630-4378-9E4A-6E44253DCEBA"), exclusiveto, contract] */
                 MIDL_INTERFACE("C1A36D8A-2630-4378-9E4A-6E44253DCEBA")
-                IManeuverWarning : IInspectable
+                IManeuverWarning : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::Services::Maps::ManeuverWarningKind * value
                         ) = 0;
@@ -2353,8 +2434,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("CFA7A973-A3B4-4494-B3FF-CBA94DB69699"), exclusiveto, contract] */
                 MIDL_INTERFACE("CFA7A973-A3B4-4494-B3FF-CBA94DB69699")
-                IMapAddress : IInspectable
+                IMapAddress : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BuildingName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2435,8 +2517,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("75CD6DF1-E5AD-45A9-BF40-6CF256C1DD13"), exclusiveto, contract] */
                 MIDL_INTERFACE("75CD6DF1-E5AD-45A9-BF40-6CF256C1DD13")
-                IMapAddress2 : IInspectable
+                IMapAddress2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FormattedAddress(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2475,8 +2558,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("3C073F57-0DA4-42E8-9EE2-A96FCF2371DC"), exclusiveto, contract] */
                 MIDL_INTERFACE("3C073F57-0DA4-42E8-9EE2-A96FCF2371DC")
-                IMapLocation : IInspectable
+                IMapLocation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Point(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                         ) = 0;
@@ -2524,8 +2608,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("43F1F179-E8CC-45F6-BED2-54CCBF965D9A"), exclusiveto, contract] */
                 MIDL_INTERFACE("43F1F179-E8CC-45F6-BED2-54CCBF965D9A")
-                IMapLocationFinderResult : IInspectable
+                IMapLocationFinderResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Locations(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CMaps__CMapLocation * * value
                         ) = 0;
@@ -2567,8 +2652,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("318ADB5D-1C5D-4F35-A2DF-AACA94959517"), exclusiveto, contract] */
                 MIDL_INTERFACE("318ADB5D-1C5D-4F35-A2DF-AACA94959517")
-                IMapLocationFinderStatics : IInspectable
+                IMapLocationFinderStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindLocationsAtAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * queryPoint,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CMaps__CMapLocationFinderResult * * result
@@ -2619,8 +2705,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("959A8B96-6485-4DFD-851A-33AC317E3AF6"), exclusiveto, contract] */
                 MIDL_INTERFACE("959A8B96-6485-4DFD-851A-33AC317E3AF6")
-                IMapLocationFinderStatics2 : IInspectable
+                IMapLocationFinderStatics2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindLocationsAtWithAccuracyAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * queryPoint,
                         /* [in] */ABI::Windows::Services::Maps::MapLocationDesiredAccuracy accuracy,
@@ -2661,8 +2748,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("37E3E515-82B4-4D54-8FD9-AF2624B3011C"), exclusiveto, contract] */
                 MIDL_INTERFACE("37E3E515-82B4-4D54-8FD9-AF2624B3011C")
-                IMapManagerStatics : IInspectable
+                IMapManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ShowDownloadedMapsUI(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE ShowMapsUpdateUI(void) = 0;
                     
@@ -2700,8 +2788,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("FB07B732-584D-4583-9C60-641FEA274349"), exclusiveto, contract] */
                 MIDL_INTERFACE("FB07B732-584D-4583-9C60-641FEA274349")
-                IMapRoute : IInspectable
+                IMapRoute : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BoundingBox(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeoboundingBox * * value
                         ) = 0;
@@ -2755,8 +2844,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("D1C5D40C-2213-4AB0-A260-46B38169BEAC"), exclusiveto, contract] */
                 MIDL_INTERFACE("D1C5D40C-2213-4AB0-A260-46B38169BEAC")
-                IMapRoute2 : IInspectable
+                IMapRoute2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViolatedRestrictions(
                         /* [retval, out] */__RPC__out ABI::Windows::Services::Maps::MapRouteRestrictions * value
                         ) = 0;
@@ -2798,8 +2888,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("858D1EAE-F2AD-429F-BB37-CD21094FFC92"), exclusiveto, contract] */
                 MIDL_INTERFACE("858D1EAE-F2AD-429F-BB37-CD21094FFC92")
-                IMapRoute3 : IInspectable
+                IMapRoute3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DurationWithoutTraffic(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -2841,8 +2932,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("366C8CA5-3053-4FA1-80FF-D475F3ED1E6E"), exclusiveto, contract] */
                 MIDL_INTERFACE("366C8CA5-3053-4FA1-80FF-D475F3ED1E6E")
-                IMapRoute4 : IInspectable
+                IMapRoute4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsScenic(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2881,8 +2973,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("6815364D-C6DC-4697-A452-B18F8F0B67A1"), exclusiveto, contract] */
                 MIDL_INTERFACE("6815364D-C6DC-4697-A452-B18F8F0B67A1")
-                IMapRouteDrivingOptions : IInspectable
+                IMapRouteDrivingOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxAlternateRouteCount(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2923,6 +3016,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions
 
 /*
  *
+ * Interface Windows.Services.Maps.IMapRouteDrivingOptions2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Maps.MapRouteDrivingOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IMapRouteDrivingOptions2[] = L"Windows.Services.Maps.IMapRouteDrivingOptions2";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                /* [object, uuid("35DC8670-C298-48D0-B5AD-825460645603"), exclusiveto, contract] */
+                MIDL_INTERFACE("35DC8670-C298-48D0-B5AD-825460645603")
+                IMapRouteDrivingOptions2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DepartureTime(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_DepartureTime(
+                        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMapRouteDrivingOptions2=_uuidof(IMapRouteDrivingOptions2);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2;
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Services.Maps.IMapRouteFinderResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2942,8 +3079,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("A868A31A-9422-46AC-8CA1-B1614D4BFBE2"), exclusiveto, contract] */
                 MIDL_INTERFACE("A868A31A-9422-46AC-8CA1-B1614D4BFBE2")
-                IMapRouteFinderResult : IInspectable
+                IMapRouteFinderResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Route(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Maps::IMapRoute * * value
                         ) = 0;
@@ -2985,8 +3123,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("20709C6D-D90C-46C8-91C6-7D4BE4EFB215"), exclusiveto, contract] */
                 MIDL_INTERFACE("20709C6D-D90C-46C8-91C6-7D4BE4EFB215")
-                IMapRouteFinderResult2 : IInspectable
+                IMapRouteFinderResult2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlternateRoutes(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CMaps__CMapRoute * * value
                         ) = 0;
@@ -3025,8 +3164,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("B8A5C50F-1C64-4C3A-81EB-1F7C152AFBBB"), exclusiveto, contract] */
                 MIDL_INTERFACE("B8A5C50F-1C64-4C3A-81EB-1F7C152AFBBB")
-                IMapRouteFinderStatics : IInspectable
+                IMapRouteFinderStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDrivingRouteAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * startPoint,
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * endPoint,
@@ -3119,8 +3259,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("AFCC2C73-7760-49AF-B3BD-BAF135B703E1"), exclusiveto, contract] */
                 MIDL_INTERFACE("AFCC2C73-7760-49AF-B3BD-BAF135B703E1")
-                IMapRouteFinderStatics2 : IInspectable
+                IMapRouteFinderStatics2 : public IInspectable
                 {
+                public:
                     /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE GetDrivingRouteWithOptionsAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * startPoint,
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * endPoint,
@@ -3162,8 +3303,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("F6098134-5913-11E6-8B77-86F30CA893D3"), exclusiveto, contract] */
                 MIDL_INTERFACE("F6098134-5913-11E6-8B77-86F30CA893D3")
-                IMapRouteFinderStatics3 : IInspectable
+                IMapRouteFinderStatics3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDrivingRouteFromEnhancedWaypointsAsync(
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint * waypoints,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult * * result
@@ -3208,8 +3350,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("96F8B2F6-5BBA-4D17-9DB6-1A263FEC7471"), exclusiveto, contract] */
                 MIDL_INTERFACE("96F8B2F6-5BBA-4D17-9DB6-1A263FEC7471")
-                IMapRouteLeg : IInspectable
+                IMapRouteLeg : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BoundingBox(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeoboundingBox * * value
                         ) = 0;
@@ -3260,8 +3403,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("02E2062D-C9C6-45B8-8E54-1A10B57A17E8"), exclusiveto, contract] */
                 MIDL_INTERFACE("02E2062D-C9C6-45B8-8E54-1A10B57A17E8")
-                IMapRouteLeg2 : IInspectable
+                IMapRouteLeg2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DurationWithoutTraffic(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -3303,8 +3447,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("ED5C17F0-A6AB-4D65-A086-FA8A7E340DF2"), exclusiveto, contract] */
                 MIDL_INTERFACE("ED5C17F0-A6AB-4D65-A086-FA8A7E340DF2")
-                IMapRouteManeuver : IInspectable
+                IMapRouteManeuver : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartingPoint(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                         ) = 0;
@@ -3358,8 +3503,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("5D7BCD9C-7C9B-41DF-838B-EAE21E4B05A9"), exclusiveto, contract] */
                 MIDL_INTERFACE("5D7BCD9C-7C9B-41DF-838B-EAE21E4B05A9")
-                IMapRouteManeuver2 : IInspectable
+                IMapRouteManeuver2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartHeading(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -3404,8 +3550,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("A6A138DF-0483-4166-85BE-B99336C11875"), exclusiveto, contract] */
                 MIDL_INTERFACE("A6A138DF-0483-4166-85BE-B99336C11875")
-                IMapRouteManeuver3 : IInspectable
+                IMapRouteManeuver3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Warnings(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * * value
                         ) = 0;
@@ -3444,8 +3591,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("0144AD85-C04C-4CDD-871A-A0726D097CD4"), exclusiveto, contract] */
                 MIDL_INTERFACE("0144AD85-C04C-4CDD-871A-A0726D097CD4")
-                IMapServiceStatics : IInspectable
+                IMapServiceStatics : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ServiceToken(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -3487,8 +3635,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("F8193EED-9C85-40A9-8896-0FC3FD2B7C2A"), exclusiveto, contract] */
                 MIDL_INTERFACE("F8193EED-9C85-40A9-8896-0FC3FD2B7C2A")
-                IMapServiceStatics2 : IInspectable
+                IMapServiceStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WorldViewRegionCode(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3527,8 +3676,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("0A11CE20-63A7-4854-B355-D6DCDA223D1B"), exclusiveto, contract] */
                 MIDL_INTERFACE("0A11CE20-63A7-4854-B355-D6DCDA223D1B")
-                IMapServiceStatics3 : IInspectable
+                IMapServiceStatics3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataAttributions(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3567,8 +3717,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("088A2862-6ABC-420E-945F-4CFD89C67356"), exclusiveto, contract] */
                 MIDL_INTERFACE("088A2862-6ABC-420E-945F-4CFD89C67356")
-                IMapServiceStatics4 : IInspectable
+                IMapServiceStatics4 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_DataUsagePreference(
                         /* [in] */ABI::Windows::Services::Maps::MapServiceDataUsagePreference value
                         ) = 0;
@@ -3610,8 +3761,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("9A0810B6-31C8-4F6A-9F18-950B4C38951A"), exclusiveto, contract] */
                 MIDL_INTERFACE("9A0810B6-31C8-4F6A-9F18-950B4C38951A")
-                IPlaceInfo : IInspectable
+                IPlaceInfo : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE Show(
                         /* [in] */ABI::Windows::Foundation::Rect selection
                         ) = 0;
@@ -3666,8 +3818,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("CD33C125-67F1-4BB3-9907-ECCE939B0399"), exclusiveto, contract] */
                 MIDL_INTERFACE("CD33C125-67F1-4BB3-9907-ECCE939B0399")
-                IPlaceInfoCreateOptions : IInspectable
+                IPlaceInfoCreateOptions : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_DisplayName(
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
@@ -3715,8 +3868,9 @@ namespace ABI {
             namespace Maps {
                 /* [object, uuid("82B9FF71-6CD0-48A4-AFD9-5ED82097936B"), exclusiveto, contract] */
                 MIDL_INTERFACE("82B9FF71-6CD0-48A4-AFD9-5ED82097936B")
-                IPlaceInfoStatics : IInspectable
+                IPlaceInfoStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * referencePoint,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Maps::IPlaceInfo * * resultValue
@@ -3755,6 +3909,53 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics;
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Services.Maps.IPlaceInfoStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Maps.PlaceInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IPlaceInfoStatics2[] = L"Windows.Services.Maps.IPlaceInfoStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                /* [object, uuid("730F0249-4047-44A3-8F81-2550A5216370"), exclusiveto, contract] */
+                MIDL_INTERFACE("730F0249-4047-44A3-8F81-2550A5216370")
+                IPlaceInfoStatics2 : public IInspectable
+                {
+                public:
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromAddress(
+                        /* [in] */__RPC__in HSTRING displayAddress,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Maps::IPlaceInfo * * resultValue
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromAddressWithName(
+                        /* [in] */__RPC__in HSTRING displayAddress,
+                        /* [in] */__RPC__in HSTRING displayName,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Maps::IPlaceInfo * * resultValue
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPlaceInfoStatics2=_uuidof(IPlaceInfoStatics2);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2;
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3967,6 +4168,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Services.Maps.IMapRouteDrivingOptions ** Default Interface **
+ *    Windows.Services.Maps.IMapRouteDrivingOptions2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -4117,6 +4319,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Services.Maps.IPlaceInfoStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Services.Maps.IPlaceInfoStatics interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -4257,6 +4460,12 @@ typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions __x_
 
 #endif // ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2;
+
+#endif // ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult;
@@ -4358,6 +4567,12 @@ typedef interface __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoCreateOptions __x_
 typedef interface __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics;
 
 #endif // ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2;
+
+#endif // ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -6175,6 +6390,64 @@ interface __FIReference_1_double
 #endif // ____FIReference_1_double_INTERFACE_DEFINED__
 
 
+struct __x_ABI_CWindows_CFoundation_CDateTime;
+
+#if !defined(____FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__)
+#define ____FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_Windows__CFoundation__CDateTime __FIReference_1_Windows__CFoundation__CDateTime;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CDateTime;
+
+typedef struct __FIReference_1_Windows__CFoundation__CDateTimeVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CFoundation__CDateTime * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CFoundation__CDateTime * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CFoundation__CDateTime * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CFoundation__CDateTime * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CFoundation__CDateTime * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CFoundation__CDateTime * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CFoundation__CDateTime * This, /* [retval][out] */ __RPC__out struct __x_ABI_CWindows_CFoundation_CDateTime *value);
+    END_INTERFACE
+} __FIReference_1_Windows__CFoundation__CDateTimeVtbl;
+
+interface __FIReference_1_Windows__CFoundation__CDateTime
+{
+    CONST_VTBL struct __FIReference_1_Windows__CFoundation__CDateTimeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_Windows__CFoundation__CDateTime_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_Windows__CFoundation__CDateTime_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_Windows__CFoundation__CDateTime_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_Windows__CFoundation__CDateTime_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_Windows__CFoundation__CDateTime_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_Windows__CFoundation__CDateTime_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_Windows__CFoundation__CDateTime_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint;
@@ -6370,6 +6643,9 @@ typedef interface __x_ABI_CWindows_CDevices_CGeolocation_CIGeoshape __x_ABI_CWin
 
 
 
+typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
+
+
 typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_CRect;
 
 
@@ -6421,6 +6697,8 @@ typedef enum __x_ABI_CWindows_CServices_CMaps_CTrafficCongestion __x_ABI_CWindow
 
 
 typedef enum __x_ABI_CWindows_CServices_CMaps_CWaypointKind __x_ABI_CWindows_CServices_CMaps_CWaypointKind;
+
+
 
 
 
@@ -8472,6 +8750,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions
 
 /*
  *
+ * Interface Windows.Services.Maps.IMapRouteDrivingOptions2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Maps.MapRouteDrivingOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IMapRouteDrivingOptions2[] = L"Windows.Services.Maps.IMapRouteDrivingOptions2";
+/* [object, uuid("35DC8670-C298-48D0-B5AD-825460645603"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DepartureTime )(
+        __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_DepartureTime )(
+        __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2 * This,
+        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2Vtbl;
+
+interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_get_DepartureTime(This,value) \
+    ( (This)->lpVtbl->get_DepartureTime(This,value) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_put_DepartureTime(This,value) \
+    ( (This)->lpVtbl->put_DepartureTime(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2;
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Services.Maps.IMapRouteFinderResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10361,6 +10739,109 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics;
 
 /*
  *
+ * Interface Windows.Services.Maps.IPlaceInfoStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Maps.PlaceInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IPlaceInfoStatics2[] = L"Windows.Services.Maps.IPlaceInfoStatics2";
+/* [object, uuid("730F0249-4047-44A3-8F81-2550A5216370"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromAddress )(
+        __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 * This,
+        /* [in] */__RPC__in HSTRING displayAddress,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CServices_CMaps_CIPlaceInfo * * resultValue
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromAddressWithName )(
+        __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2 * This,
+        /* [in] */__RPC__in HSTRING displayAddress,
+        /* [in] */__RPC__in HSTRING displayName,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CServices_CMaps_CIPlaceInfo * * resultValue
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2Vtbl;
+
+interface __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_CreateFromAddress(This,displayAddress,resultValue) \
+    ( (This)->lpVtbl->CreateFromAddress(This,displayAddress,resultValue) )
+
+#define __x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_CreateFromAddressWithName(This,displayAddress,displayName,resultValue) \
+    ( (This)->lpVtbl->CreateFromAddressWithName(This,displayAddress,displayName,resultValue) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2;
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIPlaceInfoStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Services.Maps.EnhancedWaypoint
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -10569,6 +11050,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Services.Maps.IMapRouteDrivingOptions ** Default Interface **
+ *    Windows.Services.Maps.IMapRouteDrivingOptions2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -10719,6 +11201,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Services.Maps.IPlaceInfoStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Services.Maps.IPlaceInfoStatics interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:

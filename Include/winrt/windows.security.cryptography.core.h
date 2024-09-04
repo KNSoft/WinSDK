@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.cryptography.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1372,8 +1374,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("CAF6FCE4-67C0-46AA-84F9-752E77449F9B"), exclusiveto, contract] */
                     MIDL_INTERFACE("CAF6FCE4-67C0-46AA-84F9-752E77449F9B")
-                    IAsymmetricAlgorithmNamesStatics : IInspectable
+                    IAsymmetricAlgorithmNamesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RsaPkcs1(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1465,8 +1468,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("F141C0D6-4BFF-4F23-BA66-6045B137D5DF"), exclusiveto, contract] */
                     MIDL_INTERFACE("F141C0D6-4BFF-4F23-BA66-6045B137D5DF")
-                    IAsymmetricAlgorithmNamesStatics2 : IInspectable
+                    IAsymmetricAlgorithmNamesStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EcdsaSha256(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1513,8 +1517,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("E8D2FF37-6259-4E88-B7E0-94191FDE699E"), exclusiveto, contract] */
                     MIDL_INTERFACE("E8D2FF37-6259-4E88-B7E0-94191FDE699E")
-                    IAsymmetricKeyAlgorithmProvider : IInspectable
+                    IAsymmetricKeyAlgorithmProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlgorithmName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1577,8 +1582,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("4E322A7E-7C4D-4997-AC4F-1B848B36306E"), exclusiveto, contract] */
                     MIDL_INTERFACE("4E322A7E-7C4D-4997-AC4F-1B848B36306E")
-                    IAsymmetricKeyAlgorithmProvider2 : IInspectable
+                    IAsymmetricKeyAlgorithmProvider2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateKeyPairWithCurveName(
                             /* [in] */__RPC__in HSTRING curveName,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Core::ICryptographicKey * * key
@@ -1625,8 +1631,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("425BDE18-A7F3-47A6-A8D2-C48D6033A65C"), exclusiveto, contract] */
                     MIDL_INTERFACE("425BDE18-A7F3-47A6-A8D2-C48D6033A65C")
-                    IAsymmetricKeyAlgorithmProviderStatics : IInspectable
+                    IAsymmetricKeyAlgorithmProviderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OpenAlgorithm(
                             /* [in] */__RPC__in HSTRING algorithm,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider * * provider
@@ -1668,8 +1675,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("9FEA0639-6FF7-4C85-A095-95EB31715EB9"), exclusiveto, contract] */
                     MIDL_INTERFACE("9FEA0639-6FF7-4C85-A095-95EB31715EB9")
-                    ICryptographicEngineStatics : IInspectable
+                    ICryptographicEngineStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Encrypt(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Cryptography::Core::ICryptographicKey * key,
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
@@ -1751,8 +1759,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("675948FE-DF9F-4191-92C7-6CE6F58420E0"), exclusiveto, contract] */
                     MIDL_INTERFACE("675948FE-DF9F-4191-92C7-6CE6F58420E0")
-                    ICryptographicEngineStatics2 : IInspectable
+                    ICryptographicEngineStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SignHashedData(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Cryptography::Core::ICryptographicKey * key,
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
@@ -1817,8 +1826,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("ED2A3B70-8E7B-4009-8401-FFD1A62EEB27"), exclusiveto, contract] */
                     MIDL_INTERFACE("ED2A3B70-8E7B-4009-8401-FFD1A62EEB27")
-                    ICryptographicKey : IInspectable
+                    ICryptographicKey : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeySize(
                             /* [retval, out] */__RPC__out UINT32 * value
                             ) = 0;
@@ -1873,8 +1883,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("B3FF930C-AEEB-409E-B7D4-9B95295AAECF"), exclusiveto, contract] */
                     MIDL_INTERFACE("B3FF930C-AEEB-409E-B7D4-9B95295AAECF")
-                    IEccCurveNamesStatics : IInspectable
+                    IEccCurveNamesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BrainpoolP160r1(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2050,8 +2061,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("6FA42FE7-1ECB-4B00-BEA5-60B83F862F17"), exclusiveto, contract] */
                     MIDL_INTERFACE("6FA42FE7-1ECB-4B00-BEA5-60B83F862F17")
-                    IEncryptedAndAuthenticatedData : IInspectable
+                    IEncryptedAndAuthenticatedData : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EncryptedData(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                             ) = 0;
@@ -2095,8 +2107,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("6B5E0516-DE96-4F0A-8D57-DCC9DAE36C76"), exclusiveto, contract] */
                     MIDL_INTERFACE("6B5E0516-DE96-4F0A-8D57-DCC9DAE36C76")
-                    IHashAlgorithmNamesStatics : IInspectable
+                    IHashAlgorithmNamesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Md5(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2149,8 +2162,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("BE9B3080-B2C3-422B-BCE1-EC90EFB5D7B5"), exclusiveto, contract] */
                     MIDL_INTERFACE("BE9B3080-B2C3-422B-BCE1-EC90EFB5D7B5")
-                    IHashAlgorithmProvider : IInspectable
+                    IHashAlgorithmProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlgorithmName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2201,8 +2215,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("9FAC9741-5CC4-4336-AE38-6212B75A915A"), exclusiveto, contract] */
                     MIDL_INTERFACE("9FAC9741-5CC4-4336-AE38-6212B75A915A")
-                    IHashAlgorithmProviderStatics : IInspectable
+                    IHashAlgorithmProviderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OpenAlgorithm(
                             /* [in] */__RPC__in HSTRING algorithm,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Core::IHashAlgorithmProvider * * provider
@@ -2244,8 +2259,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("5904D1B6-AD31-4603-A3A4-B1BDA98E2562"), exclusiveto, contract] */
                     MIDL_INTERFACE("5904D1B6-AD31-4603-A3A4-B1BDA98E2562")
-                    IHashComputation : IInspectable
+                    IHashComputation : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Append(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data
                             ) = 0;
@@ -2289,8 +2305,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("7B6E363E-94D2-4739-A57B-022E0C3A402A"), exclusiveto, contract] */
                     MIDL_INTERFACE("7B6E363E-94D2-4739-A57B-022E0C3A402A")
-                    IKeyDerivationAlgorithmNamesStatics : IInspectable
+                    IKeyDerivationAlgorithmNamesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Pbkdf2Md5(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2373,8 +2390,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("57953FAB-6044-466F-97F4-337B7808384D"), exclusiveto, contract] */
                     MIDL_INTERFACE("57953FAB-6044-466F-97F4-337B7808384D")
-                    IKeyDerivationAlgorithmNamesStatics2 : IInspectable
+                    IKeyDerivationAlgorithmNamesStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CapiKdfMd5(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2427,8 +2445,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("E1FBA83B-4671-43B7-9158-763AAA98B6BF"), exclusiveto, contract] */
                     MIDL_INTERFACE("E1FBA83B-4671-43B7-9158-763AAA98B6BF")
-                    IKeyDerivationAlgorithmProvider : IInspectable
+                    IKeyDerivationAlgorithmProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlgorithmName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2473,8 +2492,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("0A22097A-0A1C-443B-9418-B9498AEB1603"), exclusiveto, contract] */
                     MIDL_INTERFACE("0A22097A-0A1C-443B-9418-B9498AEB1603")
-                    IKeyDerivationAlgorithmProviderStatics : IInspectable
+                    IKeyDerivationAlgorithmProviderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OpenAlgorithm(
                             /* [in] */__RPC__in HSTRING algorithm,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProvider * * provider
@@ -2516,8 +2536,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("7BF05967-047B-4A8C-964A-469FFD5522E2"), exclusiveto, contract] */
                     MIDL_INTERFACE("7BF05967-047B-4A8C-964A-469FFD5522E2")
-                    IKeyDerivationParameters : IInspectable
+                    IKeyDerivationParameters : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KdfGenericBinary(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                             ) = 0;
@@ -2564,8 +2585,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("CD4166D1-417E-4F4C-B666-C0D879F3F8E0"), exclusiveto, contract] */
                     MIDL_INTERFACE("CD4166D1-417E-4F4C-B666-C0D879F3F8E0")
-                    IKeyDerivationParameters2 : IInspectable
+                    IKeyDerivationParameters2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Capi1KdfTargetAlgorithm(
                             /* [retval, out] */__RPC__out ABI::Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm * value
                             ) = 0;
@@ -2609,8 +2631,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("EA961FBE-F37F-4146-9DFE-A456F1735F4B"), exclusiveto, contract] */
                     MIDL_INTERFACE("EA961FBE-F37F-4146-9DFE-A456F1735F4B")
-                    IKeyDerivationParametersStatics : IInspectable
+                    IKeyDerivationParametersStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE BuildForPbkdf2(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * pbkdf2Salt,
                             /* [in] */UINT32 iterationCount,
@@ -2666,8 +2689,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("A5783DD5-58E3-4EFB-B283-A1653126E1BE"), exclusiveto, contract] */
                     MIDL_INTERFACE("A5783DD5-58E3-4EFB-B283-A1653126E1BE")
-                    IKeyDerivationParametersStatics2 : IInspectable
+                    IKeyDerivationParametersStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE BuildForCapi1Kdf(
                             /* [in] */ABI::Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm capi1KdfTargetAlgorithm,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Core::IKeyDerivationParameters * * value
@@ -2709,8 +2733,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("41412678-FB1E-43A4-895E-A9026E4390A3"), exclusiveto, contract] */
                     MIDL_INTERFACE("41412678-FB1E-43A4-895E-A9026E4390A3")
-                    IMacAlgorithmNamesStatics : IInspectable
+                    IMacAlgorithmNamesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HmacMd5(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2766,8 +2791,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("4A3FC5C3-1CBD-41CE-A092-AA0BC5D2D2F5"), exclusiveto, contract] */
                     MIDL_INTERFACE("4A3FC5C3-1CBD-41CE-A092-AA0BC5D2D2F5")
-                    IMacAlgorithmProvider : IInspectable
+                    IMacAlgorithmProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlgorithmName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2815,8 +2841,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("6DA32A15-D931-42ED-8E7E-C301CAEE119C"), exclusiveto, contract] */
                     MIDL_INTERFACE("6DA32A15-D931-42ED-8E7E-C301CAEE119C")
-                    IMacAlgorithmProvider2 : IInspectable
+                    IMacAlgorithmProvider2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateHash(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * keyMaterial,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Core::IHashComputation * * value
@@ -2858,8 +2885,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("C9BDC147-CC77-4DF0-9E4E-B921E080644C"), exclusiveto, contract] */
                     MIDL_INTERFACE("C9BDC147-CC77-4DF0-9E4E-B921E080644C")
-                    IMacAlgorithmProviderStatics : IInspectable
+                    IMacAlgorithmProviderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OpenAlgorithm(
                             /* [in] */__RPC__in HSTRING algorithm,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Core::IMacAlgorithmProvider * * provider
@@ -2901,8 +2929,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("77274814-D9D4-4CF5-B668-E0457DF30894"), exclusiveto, contract] */
                     MIDL_INTERFACE("77274814-D9D4-4CF5-B668-E0457DF30894")
-                    IPersistedKeyProviderStatics : IInspectable
+                    IPersistedKeyProviderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OpenKeyPairFromCertificateAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificate * certificate,
                             /* [in] */__RPC__in HSTRING hashAlgorithmName,
@@ -2952,8 +2981,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("6870727B-C996-4EAE-84D7-79B2AEB73B9C"), exclusiveto, contract] */
                     MIDL_INTERFACE("6870727B-C996-4EAE-84D7-79B2AEB73B9C")
-                    ISymmetricAlgorithmNamesStatics : IInspectable
+                    ISymmetricAlgorithmNamesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesCbc(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3048,8 +3078,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("3D7E4A33-3BD0-4902-8AC8-470D50D21376"), exclusiveto, contract] */
                     MIDL_INTERFACE("3D7E4A33-3BD0-4902-8AC8-470D50D21376")
-                    ISymmetricKeyAlgorithmProvider : IInspectable
+                    ISymmetricKeyAlgorithmProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlgorithmName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3097,8 +3128,9 @@ namespace ABI {
                 namespace Core {
                     /* [object, uuid("8D3B2326-1F37-491F-B60E-F5431B26B483"), exclusiveto, contract] */
                     MIDL_INTERFACE("8D3B2326-1F37-491F-B60E-F5431B26B483")
-                    ISymmetricKeyAlgorithmProviderStatics : IInspectable
+                    ISymmetricKeyAlgorithmProviderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OpenAlgorithm(
                             /* [in] */__RPC__in HSTRING algorithm,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProvider * * provider

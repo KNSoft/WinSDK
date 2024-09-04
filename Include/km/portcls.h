@@ -161,7 +161,7 @@ DEFINE_GUID(IID_IPortClsEtwHelper,
 
 #endif
 
-#if (NTDDI_VERSION >= NTDDI_THRESHOLD)
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 // {CD8E756A-5FC7-4624-984B-2AF02925B91F}
 DEFINE_GUID(IID_IMiniportWaveRTInputStream,
@@ -536,7 +536,7 @@ DEFINE_GUID(CLSID_MiniportDriverFmSynthWithVol,
 
 #endif // !defined(DEFINE_ABSTRACT_MINIPORTWAVERTSTREAMNOTIFICATION)
 
-#if (NTDDI_VERSION >= NTDDI_THRESHOLD)
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 #if !defined(DEFINE_ABSTRACT_MINIPORTWAVERTINPUTSTREAM)
 
@@ -688,7 +688,7 @@ DECLARE_INTERFACE_(IPortClsPnp,IUnknown)
 
 typedef IPortClsPnp *PPORTCLSPNP;
 
-#endif // (NTDDI_VERSION >= NTDDI_THRESHOLD)
+#endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 #if !defined(DEFINE_ABSTRACT_ADAPTERPOWERMANAGEMENT)
 
@@ -2594,7 +2594,7 @@ typedef IMiniportWaveRTStreamNotification *PMINIPORTWAVERTSTREAMNOTIFICATION;
         _In_      PKEVENT                 NotificationEvent\
     )
 
-#if (NTDDI_VERSION >= NTDDI_THRESHOLD)
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 /*****************************************************************************
  * IMiniportWaveRTInputStream
@@ -4440,7 +4440,7 @@ PcGetContentRights
 );
 #endif
 
-#if (NTDDI_VERSION >= NTDDI_THRESHOLD)
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 typedef
 _Function_class_(EVT_PC_POST_PO_FX_REGISTER_DEVICE)
 _IRQL_requires_same_
@@ -4646,7 +4646,7 @@ PcUnregisterAdapterPnpManagement
     _In_      PDEVICE_OBJECT    DeviceObject
 );
 
-#endif // (NTDDI_VERSION >= NTDDI_THRESHOLD)
+#endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 #ifdef PC_OLD_NAMES
 

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.dialprotocol.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -397,6 +399,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp ABI::Windows::Media::DialProtocol::IDialReceiverApp
 
 #endif // ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace DialProtocol {
+                interface IDialReceiverApp2;
+            } /* Windows */
+        } /* Media */
+    } /* DialProtocol */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2 ABI::Windows::Media::DialProtocol::IDialReceiverApp2
+
+#endif // ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverAppStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverAppStatics_FWD_DEFINED__
@@ -751,6 +767,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDeviceSelectedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDeviceSelectedEventArgs_USE
@@ -780,6 +797,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::DialProtocol::DialDevicePicker*,
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -792,6 +810,7 @@ namespace ABI {
     } /* DialProtocol */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDisconnectButtonClickedEventArgs_USE
@@ -821,6 +840,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::DialProtocol::DialDevicePicker*,
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDisconnectButtonClickedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1205,6 +1225,64 @@ typedef IAsyncOperation<__FIMap_2_HSTRING_HSTRING*> __FIAsyncOperation_1___FIMap
 
 
 
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41"))
+IAsyncOperationCompletedHandler<HSTRING> : IAsyncOperationCompletedHandler_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<String>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<HSTRING> __FIAsyncOperationCompletedHandler_1_HSTRING_t;
+#define __FIAsyncOperationCompletedHandler_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_HSTRING ABI::Windows::Foundation::IAsyncOperationCompletedHandler<HSTRING>
+//#define __FIAsyncOperationCompletedHandler_1_HSTRING_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperation_1_HSTRING_USE
+#define DEF___FIAsyncOperation_1_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79"))
+IAsyncOperation<HSTRING> : IAsyncOperation_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<String>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<HSTRING> __FIAsyncOperation_1_HSTRING_t;
+#define __FIAsyncOperation_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_HSTRING ABI::Windows::Foundation::IAsyncOperation<HSTRING>
+//#define __FIAsyncOperation_1_HSTRING_t ABI::Windows::Foundation::IAsyncOperation<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_HSTRING_USE */
+
+
+
+
 
 namespace ABI {
     namespace Windows {
@@ -1357,6 +1435,7 @@ namespace ABI {
             } /* Windows */
         } /* Media */
     } /* DialProtocol */} /* ABI */
+
 
 
 
@@ -1551,8 +1630,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("555FFBD3-45B7-49F3-BBD7-302DB6084646"), exclusiveto, contract] */
                 MIDL_INTERFACE("555FFBD3-45B7-49F3-BBD7-302DB6084646")
-                IDialApp : IInspectable
+                IDialApp : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1601,8 +1681,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("DDC4A4A1-F5DE-400D-BEA4-8C8466BB2961"), exclusiveto, contract] */
                 MIDL_INTERFACE("DDC4A4A1-F5DE-400D-BEA4-8C8466BB2961")
-                IDialAppStateDetails : IInspectable
+                IDialAppStateDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::DialProtocol::DialAppState * value
                         ) = 0;
@@ -1644,8 +1725,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("FFF0EDAF-759F-41D2-A20A-7F29CE0B3784"), exclusiveto, contract] */
                 MIDL_INTERFACE("FFF0EDAF-759F-41D2-A20A-7F29CE0B3784")
-                IDialDevice : IInspectable
+                IDialDevice : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1688,8 +1770,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("BAB7F3D5-5BFB-4EBA-8B32-B57C5C5EE5C9"), exclusiveto, contract] */
                 MIDL_INTERFACE("BAB7F3D5-5BFB-4EBA-8B32-B57C5C5EE5C9")
-                IDialDevice2 : IInspectable
+                IDialDevice2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FriendlyName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1731,8 +1814,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("BA7E520A-FF59-4F4B-BDAC-D89F495AD6E1"), exclusiveto, contract] */
                 MIDL_INTERFACE("BA7E520A-FF59-4F4B-BDAC-D89F495AD6E1")
-                IDialDevicePicker : IInspectable
+                IDialDevicePicker : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Filter(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::DialProtocol::IDialDevicePickerFilter * * value
                         ) = 0;
@@ -1816,8 +1900,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("C17C93BA-86C0-485D-B8D6-0F9A8F641590"), exclusiveto, contract] */
                 MIDL_INTERFACE("C17C93BA-86C0-485D-B8D6-0F9A8F641590")
-                IDialDevicePickerFilter : IInspectable
+                IDialDevicePickerFilter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedAppNames(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                         ) = 0;
@@ -1856,8 +1941,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("480B92AD-AC76-47EB-9C06-A19304DA0247"), exclusiveto, contract] */
                 MIDL_INTERFACE("480B92AD-AC76-47EB-9C06-A19304DA0247")
-                IDialDeviceSelectedEventArgs : IInspectable
+                IDialDeviceSelectedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectedDialDevice(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::DialProtocol::IDialDevice * * value
                         ) = 0;
@@ -1896,8 +1982,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("AA69CC95-01F8-4758-8461-2BBD1CDC3CF3"), exclusiveto, contract] */
                 MIDL_INTERFACE("AA69CC95-01F8-4758-8461-2BBD1CDC3CF3")
-                IDialDeviceStatics : IInspectable
+                IDialDeviceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [in] */__RPC__in HSTRING appName,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * selector
@@ -1945,8 +2032,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("52765152-9C81-4E55-ADC2-0EBE99CDE3B6"), exclusiveto, contract] */
                 MIDL_INTERFACE("52765152-9C81-4E55-ADC2-0EBE99CDE3B6")
-                IDialDisconnectButtonClickedEventArgs : IInspectable
+                IDialDisconnectButtonClickedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Device(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::DialProtocol::IDialDevice * * value
                         ) = 0;
@@ -1985,8 +2073,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("FD3E7C57-5045-470E-B304-4DD9B13E7D11"), exclusiveto, contract] */
                 MIDL_INTERFACE("FD3E7C57-5045-470E-B304-4DD9B13E7D11")
-                IDialReceiverApp : IInspectable
+                IDialReceiverApp : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAdditionalDataAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIMap_2_HSTRING_HSTRING * * operation
                         ) = 0;
@@ -2010,6 +2099,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp;
 
 /*
  *
+ * Interface Windows.Media.DialProtocol.IDialReceiverApp2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.DialProtocol.DialReceiverApp
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_DialProtocol_IDialReceiverApp2[] = L"Windows.Media.DialProtocol.IDialReceiverApp2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace DialProtocol {
+                /* [object, uuid("530C5805-9130-42AC-A504-1977DCB2EA8A"), exclusiveto, contract] */
+                MIDL_INTERFACE("530C5805-9130-42AC-A504-1977DCB2EA8A")
+                IDialReceiverApp2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetUniqueDeviceNameAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IDialReceiverApp2=_uuidof(IDialReceiverApp2);
+                
+            } /* Windows */
+        } /* Media */
+    } /* DialProtocol */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.DialProtocol.IDialReceiverAppStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -2029,8 +2159,9 @@ namespace ABI {
             namespace DialProtocol {
                 /* [object, uuid("53183A3C-4C36-4D02-B28A-F2A9DA38EC52"), exclusiveto, contract] */
                 MIDL_INTERFACE("53183A3C-4C36-4D02-B28A-F2A9DA38EC52")
-                IDialReceiverAppStatics : IInspectable
+                IDialReceiverAppStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::DialProtocol::IDialReceiverApp * * value
                         ) = 0;
@@ -2235,6 +2366,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Media.DialProtocol.IDialReceiverApp ** Default Interface **
+ *    Windows.Media.DialProtocol.IDialReceiverApp2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -2313,6 +2445,12 @@ typedef interface __x_ABI_CWindows_CMedia_CDialProtocol_CIDialDisconnectButtonCl
 typedef interface __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp;
 
 #endif // ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2 __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2;
+
+#endif // ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverAppStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverAppStatics_FWD_DEFINED__
@@ -2829,6 +2967,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePic
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDeviceSelectedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDeviceSelectedEventArgs_INTERFACE_DEFINED__
 
@@ -2876,9 +3015,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePic
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDeviceSelectedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDisconnectButtonClickedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDisconnectButtonClickedEventArgs_INTERFACE_DEFINED__
@@ -2926,6 +3067,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePic
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CDialProtocol__CDialDevicePicker_Windows__CMedia__CDialProtocol__CDialDisconnectButtonClickedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
@@ -3939,6 +4081,115 @@ interface __FIAsyncOperation_1___FIMap_2_HSTRING_HSTRING
 #endif // ____FIAsyncOperation_1___FIMap_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 
 
+#if !defined(____FIAsyncOperationCompletedHandler_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_HSTRING __FIAsyncOperationCompletedHandler_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_HSTRING;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_HSTRING __FIAsyncOperation_1_HSTRING;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_HSTRING * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_HSTRING * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_HSTRING * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_HSTRING *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_HSTRINGVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_HSTRING
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_HSTRINGVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_HSTRING_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_HSTRING_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperation_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_HSTRING __FIAsyncOperation_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_HSTRING;
+
+typedef struct __FIAsyncOperation_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_HSTRING * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_HSTRING * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_HSTRING * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_HSTRING * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_HSTRING *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_HSTRING * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_HSTRING **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_HSTRING * This, /* [retval][out] */ __RPC__out HSTRING *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_HSTRINGVtbl;
+
+interface __FIAsyncOperation_1_HSTRING
+{
+    CONST_VTBL struct __FIAsyncOperation_1_HSTRINGVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_HSTRING_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_HSTRING_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_HSTRING_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_HSTRING_INTERFACE_DEFINED__
+
+
 
 #ifndef ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation_FWD_DEFINED__
@@ -3997,6 +4248,7 @@ typedef enum __x_ABI_CWindows_CMedia_CDialProtocol_CDialAppStopResult __x_ABI_CW
 
 
 typedef enum __x_ABI_CWindows_CMedia_CDialProtocol_CDialDeviceDisplayStatus __x_ABI_CWindows_CMedia_CDialProtocol_CDialDeviceDisplayStatus;
+
 
 
 
@@ -5210,6 +5462,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp;
 
 /*
  *
+ * Interface Windows.Media.DialProtocol.IDialReceiverApp2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.DialProtocol.DialReceiverApp
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_DialProtocol_IDialReceiverApp2[] = L"Windows.Media.DialProtocol.IDialReceiverApp2";
+/* [object, uuid("530C5805-9130-42AC-A504-1977DCB2EA8A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetUniqueDeviceNameAsync )(
+        __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_GetUniqueDeviceNameAsync(This,operation) \
+    ( (This)->lpVtbl->GetUniqueDeviceNameAsync(This,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDialProtocol_CIDialReceiverApp2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.DialProtocol.IDialReceiverAppStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -5488,6 +5833,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Media.DialProtocol.IDialReceiverApp ** Default Interface **
+ *    Windows.Media.DialProtocol.IDialReceiverApp2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

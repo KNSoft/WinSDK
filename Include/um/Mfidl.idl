@@ -2167,6 +2167,125 @@ interface IMFVideoProcessorControl2 : IMFVideoProcessorControl
     HRESULT GetSupportedHardwareEffects([out, retval, annotation("_Out_")] UINT *puiSupport);
 };
 
+cpp_quote("#if (WINVER >= _WIN32_WINNT_WIN10) ")
+
+// Enum describing the packing for spherical video frames
+typedef enum _MFVideoSphericalFormat {
+    MFVideoSphericalFormat_Unsupported = 0,
+    MFVideoSphericalFormat_Equirectangular = 1
+} MFVideoSphericalFormat;
+
+cpp_quote("#endif /* (WINVER >= _WIN32_WINNT_WIN10) */ ")
+
+// TODO: NTDDI_WIN10_RS4
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS3) ")
+
+// MF_XVP_SAMPLE_LOCK_TIMEOUT 
+// Data type: UINT32  
+// Timeout value used for sample locking operations in XVP.  Value is in milliseconds. 
+// The timeout applies to an IMFSample that uses a lock to protect access to the buffer.  
+// For example, if the IMFSample references a shared D3D texture that is protected by 
+// IDXGIKeyedMutex, then the timeout is used when trying to acquire the IDXGIKeyedMutex. 
+// After failing to acquire the lock due to a timeout, XVP will return E_TIMEOUT from ProcessOutput. 
+// {AA4DDB29-5134-4363-AC72-83EC4BC10426} 
+cpp_quote("EXTERN_GUID( MF_XVP_SAMPLE_LOCK_TIMEOUT, 0xaa4ddb29, 0x5134, 0x4363, 0xac, 0x72, 0x83, 0xec, 0x4b, 0xc1, 0x4, 0x26);")
+
+// This enumeration describes different types of  
+// spherical projection modes used when projecting 
+// from a stream representation to a 3D representation. 
+typedef enum MFVideoSphericalProjectionMode
+{
+    // The current view should be projected onto a sphere in 3D space. 
+    MFVideoSphericalProjectionMode_Spherical = 0,
+    // The current view should be projected onto a flat surface. 
+    MFVideoSphericalProjectionMode_Flat
+} MFVideoSphericalProjectionMode;
+
+[
+    object,
+    local,
+    uuid(2424B3F2-EB23-40f1-91AA-74BDDEEA0883)
+]
+/// <summary>  
+///     Configuration interface for Video Processors (version 3)  
+/// </summary>  
+interface IMFVideoProcessorControl3 : IMFVideoProcessorControl2
+{
+    /// <summary> 
+    ///     For a given input type, returns the "natural output type" of the video. 
+    ///     The natural type is defined as: 
+    ///       * no scaling applied 
+    ///       * no color conversions applied 
+    ///     This accounts for any rotation / cropping / pixel aspect applied to the video. 
+    /// </summary> 
+    /// <param name=ppType> 
+    ///     Returns a media type containing the natural output type. 
+    /// </param> 
+    HRESULT GetNaturalOutputType([out, annotation("_Outptr_")] IMFMediaType **ppType);
+
+    // Sets spherical video processing properties 
+    /// <summary> 
+    ///     Enables spherical video rendering (360 video). 
+    /// </summary> 
+    /// <param name=fEnable> 
+    ///     Whether rendering is enabled. 
+    /// </param> 
+    /// <param name=eFormat> 
+    ///     The type of spherical video to render. 
+    /// </param> 
+    /// <param name=eProjectionMode> 
+    ///     How the spherical video should be projected. 
+    /// </param> 
+    HRESULT EnableSphericalVideoProcessing(
+        [in, annotation("_In_")] BOOL fEnable,
+        [in, annotation("_In_")] MFVideoSphericalFormat eFormat,
+        [in, annotation("_In_")] MFVideoSphericalProjectionMode eProjectionMode
+    );
+
+    // Sets spherical video processing properties 
+    /// <summary> 
+    ///     When rendering spherical video (360 video) this sets the view 
+    ///     direction of the camera.  X,Y,Z,W are the components of the 
+    ///     camera's view direction quaternion.  This quaternion can be  
+    ///     left un-normalized, or normalized. 
+    /// </summary> 
+    /// <param name=X> 
+    ///     X component of view direction quaternion. 
+    /// </param> 
+    /// <param name=Y> 
+    ///     Y component of view direction quaternion. 
+    /// </param> 
+    /// <param name=Z> 
+    ///     Z component of view direction quaternion. 
+    /// </param> 
+    /// <param name=W> 
+    ///     W component of view direction quaternion. 
+    /// </param> 
+    /// <param name=fieldOfView> 
+    ///     Field of view in degrees. 
+    /// </param> 
+    HRESULT SetSphericalVideoProperties(
+        [in, annotation("_In_")] float X,
+        [in, annotation("_In_")] float Y,
+        [in, annotation("_In_")] float Z,
+        [in, annotation("_In_")] float W,
+        [in, annotation("_In_")] float fieldOfView
+    );
+
+    /// <summary> 
+    ///     When the video processor is used as part of a renderer and the renderer 
+    ///     has knowledge of the output device; the output device is passed to the video 
+    ///     processor with SetOutputDevice. 
+    /// </summary> 
+    /// <param name=pOutputDevice> 
+    ///     IUnknown of the output device.  This may be either a IDXGIOutput or  
+    ///     Windows.Graphics.Display.IDisplayInformation depending on the renderer. 
+    /// </param> 
+    HRESULT SetOutputDevice([in, annotation("_In_")] IUnknown *pOutputDevice);
+};
+
+cpp_quote("#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS3) */ ")
+
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINBLUE) ")
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
@@ -12672,12 +12791,6 @@ typedef enum MF_MEDIASOURCE_STATUS_INFO
 // {1913678B-FC0F-44DA-8F43-1BA3B526F4AE}
 cpp_quote("EXTERN_GUID(MF_SD_MEDIASOURCE_STATUS, 0x1913678b, 0xfc0f, 0x44da, 0x8f, 0x43, 0x1b, 0xa3, 0xb5, 0x26, 0xf4, 0xae);")
 
-// Enum describing the packing for spherical video frames
-typedef enum _MFVideoSphericalFormat {
-    MFVideoSphericalFormat_Unsupported = 0,
-    MFVideoSphericalFormat_Equirectangular = 1
-} MFVideoSphericalFormat;
-
 // Struct describing the view direction for spherical video
 typedef struct _MF_VIDEO_SPHERICAL_VIEWDIRECTION
 {
@@ -12808,6 +12921,22 @@ cpp_quote( "EXTERN_GUID( MF_DEVICESTREAM_REQUIRED_CAPABILITIES, 0x6D8B957E, 0x7C
 // Transform stream, the Sensor Transform can specify SDDL on
 // the stream.
 cpp_quote( "EXTERN_GUID( MF_DEVICESTREAM_REQUIRED_SDDL, 0x331AE85D, 0xC0D3, 0x49BA, 0x83, 0xBA, 0x82, 0xA1, 0x2D, 0x63, 0xCD, 0xD6);" )
+
+// MF_DEVICEMFT_SENSORPROFILE_COLLECTION
+// Data type: IUnknown
+// IMFSensorProfileCollection interface that SGT Factory can provide to indicate new
+// profiles available to the SG generation.
+cpp_quote("EXTERN_GUID(MF_DEVICEMFT_SENSORPROFILE_COLLECTION, 0x36EBDC44, 0xB12C, 0x441B, 0x89, 0xF4, 0x08, 0xB2, 0xF4, 0x1A, 0x9C, 0xFC );")
+
+// MF_DEVICESTREAM_SENSORSTREAM_ID
+// Data type: UINT32
+// When device streams are marked as hidden due to new profile logic, we still need to
+// match the device stream to the sensor stream.  The sensor group contains all the
+// streams, including the hidden ones.  The device stream IDs get translated based on
+// what is hidden and what is not hidden, so we need to add an attribute to the device
+// stream showing the "original" sensor stream ID.  We want to avoid overloading the
+// device stream ID since that may be used by multiple components in the pipeline.
+cpp_quote("EXTERN_GUID(MF_DEVICESTREAM_SENSORSTREAM_ID, 0xE35B9FE4, 0x0659, 0x4CAD, 0xBB, 0x51, 0x33, 0x16, 0x0B, 0xE7, 0xE4, 0x13 );")
 
 typedef enum
 {
@@ -12998,6 +13127,89 @@ cpp_quote("    _In_ IMFCollection* pMediaTypeCollection,")
 cpp_quote("    _COM_Outptr_ IMFSensorStream** ppStream")
 cpp_quote("    );")
 cpp_quote("")
+
+typedef struct
+{
+    GUID    Type;
+    UINT32  Index;
+    UINT32  Unused;
+} SENSORPROFILEID;
+
+[
+    object,
+    uuid(22F765D1-8DAB-4107-846D-56BAF72215E7),
+    helpstring("IMFSensorProfile Interface"),
+    local
+]
+interface IMFSensorProfile : IUnknown
+{
+    HRESULT GetProfileId(
+        [out, annotation("_Out_")] SENSORPROFILEID* pId
+        );
+
+    HRESULT AddProfileFilter(
+        [in, annotation("_In_")] UINT32 StreamId, 
+        [in, annotation("_In_z_")] LPCWSTR wzFilterSetString
+        );
+
+    HRESULT IsMediaTypeSupported(
+        [in, annotation("_In_")] UINT32 StreamId, 
+        [in, annotation("_In_")] IMFMediaType* pMediaType, 
+        [out, annotation("_Out_")] BOOL* pfSupported
+        );
+
+    HRESULT AddBlockedControl(
+        [in, annotation("_In_z_")] LPCWSTR wzBlockedControl
+        );
+};
+
+[
+    object,
+    uuid(C95EA55B-0187-48BE-9353-8D2507662351),
+    helpstring("IMFSensorProfileCollection Interface"),
+    local
+]
+interface IMFSensorProfileCollection : IUnknown
+{
+    DWORD GetProfileCount(
+        );
+
+    HRESULT GetProfile(
+        [in, annotation("_In_")] DWORD Index,
+        [out, annotation("_COM_Outptr_")] IMFSensorProfile** ppProfile
+        );
+
+    HRESULT AddProfile(
+        [in, annotation("_In_")] IMFSensorProfile* pProfile
+        );
+
+    HRESULT FindProfile(
+        [in, annotation("_In_")] SENSORPROFILEID* ProfileId, 
+        [out, annotation("_COM_Outptr_")] IMFSensorProfile** ppProfile
+        );
+
+    void RemoveProfileByIndex(
+        [in, annotation("_In_")] DWORD Index
+        );
+
+    void RemoveProfile(
+        [in, annotation("_In_")] SENSORPROFILEID* ProfileId
+        );
+};
+
+cpp_quote("STDAPI")
+cpp_quote("MFCreateSensorProfile(")
+cpp_quote("    _In_ REFGUID ProfileType,")
+cpp_quote("    _In_ UINT32 ProfileIndex,")
+cpp_quote("    _In_opt_z_ LPCWSTR Constraints,")
+cpp_quote("    _COM_Outptr_ IMFSensorProfile** ppProfile")
+cpp_quote("    );")
+
+cpp_quote("STDAPI")
+cpp_quote("MFCreateSensorProfileCollection(")
+cpp_quote("    _COM_Outptr_ IMFSensorProfileCollection** ppSensorProfile")
+cpp_quote("    );")
+
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion

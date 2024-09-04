@@ -15,10 +15,17 @@ Abstract:
 
 --*/
 
+#ifndef _AFUNIX_
+#define _AFUNIX_
+
 #pragma once
 
-typedef struct _SOCKADDR_UN
+#define UNIX_PATH_MAX 108
+
+typedef struct sockaddr_un
 {
-     ADDRESS_FAMILY Family;
-     wchar_t Path[63];
+     ADDRESS_FAMILY sun_family;     /* AF_UNIX */
+     char sun_path[UNIX_PATH_MAX];  /* pathname */
 } SOCKADDR_UN, *PSOCKADDR_UN;
+
+#endif /* _AFUNIX_ */

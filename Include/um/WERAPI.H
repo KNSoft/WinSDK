@@ -503,6 +503,7 @@ WerReportSubmit(
 //
 typedef enum _WER_DUMP_TYPE
 {
+    WerDumpTypeNone = 0,
     WerDumpTypeMicroDump = 1,
     WerDumpTypeMiniDump = 2,
     WerDumpTypeHeapDump = 3,

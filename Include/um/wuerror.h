@@ -211,6 +211,15 @@
 //
 #define WU_S_METADATA_IGNORED_SIGNATURE_VERIFICATION _HRESULT_TYPEDEF_(0x00247102L)
 
+//
+// MessageId: WU_S_SEARCH_LOAD_SHEDDING
+//
+// MessageText:
+//
+// Search operation completed successfully but one or more services were shedding load.
+//
+#define WU_S_SEARCH_LOAD_SHEDDING        _HRESULT_TYPEDEF_(0x00248001L)
+
 ///////////////////////////////////////////////////////////////////////////////
 // Windows Update Error Codes
 ///////////////////////////////////////////////////////////////////////////////
@@ -1508,6 +1517,15 @@
 // Same as ERROR_WINHTTP_NAME_NOT_RESOLVED - the proxy server or target server name cannot be resolved.
 //
 #define WU_E_PT_WINHTTP_NAME_NOT_RESOLVED _HRESULT_TYPEDEF_(0x8024402CL)
+
+//
+// MessageId: WU_E_PT_LOAD_SHEDDING
+//
+// MessageText:
+//
+// The server is shedding load.
+//
+#define WU_E_PT_LOAD_SHEDDING            _HRESULT_TYPEDEF_(0x8024402DL)
 
 //
 // MessageId: WU_E_PT_SAME_REDIR_ID

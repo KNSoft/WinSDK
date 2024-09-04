@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.storage.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -607,6 +609,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CStorage_CIStorageFolder2 ABI::Windows::Storage::IStorageFolder2
 
 #endif // ____x_ABI_CWindows_CStorage_CIStorageFolder2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageFolder3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageFolder3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            interface IStorageFolder3;
+        } /* Windows */
+    } /* Storage */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CIStorageFolder3 ABI::Windows::Storage::IStorageFolder3
+
+#endif // ____x_ABI_CWindows_CStorage_CIStorageFolder3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CStorage_CIStorageFolderStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIStorageFolderStatics_FWD_DEFINED__
@@ -3875,6 +3889,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -4437,8 +4452,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("A05791E6-CC9F-4687-ACAB-A364FD785463"), contract] */
             MIDL_INTERFACE("A05791E6-CC9F-4687-ACAB-A364FD785463")
-            IApplicationDataSetVersionHandler : IUnknown
+            IApplicationDataSetVersionHandler : public IUnknown
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Invoke(
                     /* [in] */__RPC__in_opt ABI::Windows::Storage::ISetVersionRequest * setVersionRequest
                     ) = 0;
@@ -4471,8 +4487,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("FEF6A824-2FE1-4D07-A35B-B77C50B5F4CC"), contract] */
             MIDL_INTERFACE("FEF6A824-2FE1-4D07-A35B-B77C50B5F4CC")
-            IStreamedFileDataRequestedHandler : IUnknown
+            IStreamedFileDataRequestedHandler : public IUnknown
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Invoke(
                     /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IOutputStream * stream
                     ) = 0;
@@ -4509,8 +4526,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("7301D60A-79A2-48C9-9EC0-3FDA092F79E1"), exclusiveto, contract] */
             MIDL_INTERFACE("7301D60A-79A2-48C9-9EC0-3FDA092F79E1")
-            IAppDataPaths : IInspectable
+            IAppDataPaths : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Cookies(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -4571,8 +4589,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("D8EB2AFE-A9D9-4B14-B999-E3921379D903"), exclusiveto, contract] */
             MIDL_INTERFACE("D8EB2AFE-A9D9-4B14-B999-E3921379D903")
-            IAppDataPathsStatics : IInspectable
+            IAppDataPathsStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetForUser(
                     /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IAppDataPaths * * result
@@ -4613,8 +4632,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("C3DA6FB7-B744-4B45-B0B8-223A0938D0DC"), exclusiveto, contract] */
             MIDL_INTERFACE("C3DA6FB7-B744-4B45-B0B8-223A0938D0DC")
-            IApplicationData : IInspectable
+            IApplicationData : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Version(
                     /* [retval, out] */__RPC__out UINT32 * value
                     ) = 0;
@@ -4689,8 +4709,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("9E65CD69-0BA3-4E32-BE29-B02DE6607638"), exclusiveto, contract] */
             MIDL_INTERFACE("9E65CD69-0BA3-4E32-BE29-B02DE6607638")
-            IApplicationData2 : IInspectable
+            IApplicationData2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalCacheFolder(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
                     ) = 0;
@@ -4727,8 +4748,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("DC222CF4-2772-4C1D-AA2C-C9F743ADE8D1"), exclusiveto, contract] */
             MIDL_INTERFACE("DC222CF4-2772-4C1D-AA2C-C9F743ADE8D1")
-            IApplicationData3 : IInspectable
+            IApplicationData3 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetPublisherCacheFolder(
                     /* [in] */__RPC__in HSTRING folderName,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
@@ -4773,8 +4795,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("C5AEFD1E-F467-40BA-8566-AB640A441E1D"), exclusiveto, contract] */
             MIDL_INTERFACE("C5AEFD1E-F467-40BA-8566-AB640A441E1D")
-            IApplicationDataContainer : IInspectable
+            IApplicationDataContainer : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -4828,8 +4851,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("5612147B-E843-45E3-94D8-06169E3C8E17"), exclusiveto, contract] */
             MIDL_INTERFACE("5612147B-E843-45E3-94D8-06169E3C8E17")
-            IApplicationDataStatics : IInspectable
+            IApplicationDataStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IApplicationData * * value
                     ) = 0;
@@ -4866,8 +4890,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("CD606211-CF49-40A4-A47C-C7F0DBBA8107"), exclusiveto, contract] */
             MIDL_INTERFACE("CD606211-CF49-40A4-A47C-C7F0DBBA8107")
-            IApplicationDataStatics2 : IInspectable
+            IApplicationDataStatics2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetForUserAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CApplicationData * * getForUserOperation
@@ -4905,8 +4930,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("8FFC224A-E782-495D-B614-654C4F0B2370"), exclusiveto, contract] */
             MIDL_INTERFACE("8FFC224A-E782-495D-B614-654C4F0B2370")
-            ICachedFileManagerStatics : IInspectable
+            ICachedFileManagerStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE DeferUpdates(
                     /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file
                     ) = 0;
@@ -4947,8 +4973,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("27862ED0-404E-47DF-A1E2-E37308BE7B37"), exclusiveto, contract] */
             MIDL_INTERFACE("27862ED0-404E-47DF-A1E2-E37308BE7B37")
-            IDownloadsFolderStatics : IInspectable
+            IDownloadsFolderStatics : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFileAsync(
                     /* [in] */__RPC__in HSTRING desiredName,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFile * * operation
@@ -5000,8 +5027,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("E93045BD-8EF8-4F8E-8D15-AC0E265F390D"), exclusiveto, contract] */
             MIDL_INTERFACE("E93045BD-8EF8-4F8E-8D15-AC0E265F390D")
-            IDownloadsFolderStatics2 : IInspectable
+            IDownloadsFolderStatics2 : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFileForUserAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                     /* [in] */__RPC__in HSTRING desiredName,
@@ -5057,8 +5085,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("887411EB-7F54-4732-A5F0-5E43E3B8C2F5"), exclusiveto, contract] */
             MIDL_INTERFACE("887411EB-7F54-4732-A5F0-5E43E3B8C2F5")
-            IFileIOStatics : IInspectable
+            IFileIOStatics : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE ReadTextAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * textOperation
@@ -5169,8 +5198,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("5D115E66-27E8-492F-B8E5-2F90896CD4CD"), exclusiveto, contract] */
             MIDL_INTERFACE("5D115E66-27E8-492F-B8E5-2F90896CD4CD")
-            IKnownFoldersCameraRollStatics : IInspectable
+            IKnownFoldersCameraRollStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CameraRoll(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
                     ) = 0;
@@ -5207,8 +5237,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("DAD5ECD6-306F-4D6A-B496-46BA8EB106CE"), exclusiveto, contract] */
             MIDL_INTERFACE("DAD5ECD6-306F-4D6A-B496-46BA8EB106CE")
-            IKnownFoldersPlaylistsStatics : IInspectable
+            IKnownFoldersPlaylistsStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Playlists(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
                     ) = 0;
@@ -5245,8 +5276,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("055C93EA-253D-467C-B6CA-A97DA1E9A18D"), exclusiveto, contract] */
             MIDL_INTERFACE("055C93EA-253D-467C-B6CA-A97DA1E9A18D")
-            IKnownFoldersSavedPicturesStatics : IInspectable
+            IKnownFoldersSavedPicturesStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SavedPictures(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
                     ) = 0;
@@ -5283,8 +5315,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("5A2A7520-4802-452D-9AD9-4351ADA7EC35"), exclusiveto, contract] */
             MIDL_INTERFACE("5A2A7520-4802-452D-9AD9-4351ADA7EC35")
-            IKnownFoldersStatics : IInspectable
+            IKnownFoldersStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MusicLibrary(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
                     ) = 0;
@@ -5339,8 +5372,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("194BD0CD-CF6E-4D07-9D53-E9163A2536E9"), exclusiveto, contract] */
             MIDL_INTERFACE("194BD0CD-CF6E-4D07-9D53-E9163A2536E9")
-            IKnownFoldersStatics2 : IInspectable
+            IKnownFoldersStatics2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Objects3D(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
                     ) = 0;
@@ -5383,8 +5417,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("C5194341-9742-4ED5-823D-FC1401148764"), exclusiveto, contract] */
             MIDL_INTERFACE("C5194341-9742-4ED5-823D-FC1401148764")
-            IKnownFoldersStatics3 : IInspectable
+            IKnownFoldersStatics3 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetFolderForUserAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                     /* [in] */ABI::Windows::Storage::KnownFolderId folderId,
@@ -5423,8 +5458,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("0F2F3758-8EC7-4381-922B-8F6C07D288F3"), exclusiveto, contract] */
             MIDL_INTERFACE("0F2F3758-8EC7-4381-922B-8F6C07D288F3")
-            IPathIOStatics : IInspectable
+            IPathIOStatics : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE ReadTextAsync(
                     /* [in] */__RPC__in HSTRING absolutePath,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * textOperation
@@ -5535,8 +5571,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("033508A2-781A-437A-B078-3F32BADCFE47"), exclusiveto, contract] */
             MIDL_INTERFACE("033508A2-781A-437A-B078-3F32BADCFE47")
-            ISetVersionDeferral : IInspectable
+            ISetVersionDeferral : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                 
             };
@@ -5571,8 +5608,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("B9C76B9B-1056-4E69-8330-162619956F9B"), exclusiveto, contract] */
             MIDL_INTERFACE("B9C76B9B-1056-4E69-8330-162619956F9B")
-            ISetVersionRequest : IInspectable
+            ISetVersionRequest : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentVersion(
                     /* [retval, out] */__RPC__out UINT32 * currentVersion
                     ) = 0;
@@ -5618,8 +5656,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("FA3F6186-4214-428C-A64C-14C9AC7315EA"), contract] */
             MIDL_INTERFACE("FA3F6186-4214-428C-A64C-14C9AC7315EA")
-            IStorageFile : IInspectable
+            IStorageFile : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FileType(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -5701,8 +5740,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("954E4BCF-0A77-42FB-B777-C2ED58A52E44"), contract] */
             MIDL_INTERFACE("954E4BCF-0A77-42FB-B777-C2ED58A52E44")
-            IStorageFile2 : IInspectable
+            IStorageFile2 : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE OpenWithOptionsAsync(
                     /* [in] */ABI::Windows::Storage::FileAccessMode accessMode,
                     /* [in] */ABI::Windows::Storage::StorageOpenOptions options,
@@ -5742,8 +5782,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("AFCBBE9B-582B-4133-9648-E44CA46EE491"), contract] */
             MIDL_INTERFACE("AFCBBE9B-582B-4133-9648-E44CA46EE491")
-            IStorageFilePropertiesWithAvailability : IInspectable
+            IStorageFilePropertiesWithAvailability : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAvailable(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -5780,8 +5821,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("5984C710-DAF2-43C8-8BB4-A4D3EACFD03F"), exclusiveto, contract] */
             MIDL_INTERFACE("5984C710-DAF2-43C8-8BB4-A4D3EACFD03F")
-            IStorageFileStatics : IInspectable
+            IStorageFileStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetFileFromPathAsync(
                     /* [in] */__RPC__in HSTRING path,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFile * * operation
@@ -5848,8 +5890,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("72D1CB78-B3EF-4F75-A80B-6FD9DAE2944B"), contract] */
             MIDL_INTERFACE("72D1CB78-B3EF-4F75-A80B-6FD9DAE2944B")
-            IStorageFolder : IInspectable
+            IStorageFolder : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFileAsyncOverloadDefaultOptions(
                     /* [in] */__RPC__in HSTRING desiredName,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFile * * operation
@@ -5919,8 +5962,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("E827E8B9-08D9-4A8E-A0AC-FE5ED3CBBBD3"), contract] */
             MIDL_INTERFACE("E827E8B9-08D9-4A8E-A0AC-FE5ED3CBBBD3")
-            IStorageFolder2 : IInspectable
+            IStorageFolder2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE TryGetItemAsync(
                     /* [in] */__RPC__in HSTRING name,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CIStorageItem * * operation
@@ -5936,6 +5980,45 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CIStorageFolder2;
 #endif /* !defined(____x_ABI_CWindows_CStorage_CIStorageFolder2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Storage.IStorageFolder3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Storage.StorageFolder
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CStorage_CIStorageFolder3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CIStorageFolder3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_IStorageFolder3[] = L"Windows.Storage.IStorageFolder3";
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            /* [object, uuid("9F617899-BDE1-4124-AEB3-B06AD96F98D4"), exclusiveto, contract] */
+            MIDL_INTERFACE("9F617899-BDE1-4124-AEB3-B06AD96F98D4")
+            IStorageFolder3 : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE TryGetChangeTracker(
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageLibraryChangeTracker * * result
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IStorageFolder3=_uuidof(IStorageFolder3);
+            
+        } /* Windows */
+    } /* Storage */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CIStorageFolder3;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CIStorageFolder3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5958,8 +6041,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("08F327FF-85D5-48B9-AEE9-28511E339F9F"), exclusiveto, contract] */
             MIDL_INTERFACE("08F327FF-85D5-48B9-AEE9-28511E339F9F")
-            IStorageFolderStatics : IInspectable
+            IStorageFolderStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetFolderFromPathAsync(
                     /* [in] */__RPC__in HSTRING path,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFolder * * operation
@@ -5994,8 +6078,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("4207A996-CA2F-42F7-BDE8-8B10457A7F30"), contract] */
             MIDL_INTERFACE("4207A996-CA2F-42F7-BDE8-8B10457A7F30")
-            IStorageItem : IInspectable
+            IStorageItem : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE RenameAsyncOverloadDefaultOptions(
                     /* [in] */__RPC__in HSTRING desiredName,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
@@ -6065,8 +6150,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("53F926D2-083C-4283-B45B-81C007237E44"), contract] */
             MIDL_INTERFACE("53F926D2-083C-4283-B45B-81C007237E44")
-            IStorageItem2 : IInspectable
+            IStorageItem2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetParentAsync(
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFolder * * operation
                     ) = 0;
@@ -6104,8 +6190,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("86664478-8029-46FE-A789-1C2F3E2FFB5C"), contract] */
             MIDL_INTERFACE("86664478-8029-46FE-A789-1C2F3E2FFB5C")
-            IStorageItemProperties : IInspectable
+            IStorageItemProperties : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(
                     /* [in] */ABI::Windows::Storage::FileProperties::ThumbnailMode mode,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail * * operation
@@ -6167,8 +6254,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("8E86A951-04B9-4BD2-929D-FEF3F71621D0"), contract] */
             MIDL_INTERFACE("8E86A951-04B9-4BD2-929D-FEF3F71621D0")
-            IStorageItemProperties2 : IInspectable
+            IStorageItemProperties2 : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(
                     /* [in] */ABI::Windows::Storage::FileProperties::ThumbnailMode mode,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail * * operation
@@ -6218,8 +6306,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("861BF39B-6368-4DEE-B40E-74684A5CE714"), contract] */
             MIDL_INTERFACE("861BF39B-6368-4DEE-B40E-74684A5CE714")
-            IStorageItemPropertiesWithProvider : IInspectable
+            IStorageItemPropertiesWithProvider : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Provider(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageProvider * * value
                     ) = 0;
@@ -6256,8 +6345,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("1EDD7103-0E5E-4D6C-B5E8-9318983D6A03"), exclusiveto, contract] */
             MIDL_INTERFACE("1EDD7103-0E5E-4D6C-B5E8-9318983D6A03")
-            IStorageLibrary : IInspectable
+            IStorageLibrary : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE RequestAddFolderAsync(
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFolder * * operation
                     ) = 0;
@@ -6311,8 +6401,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("5B0CE348-FCB3-4031-AFB0-A68D7BD44534"), exclusiveto, contract] */
             MIDL_INTERFACE("5B0CE348-FCB3-4031-AFB0-A68D7BD44534")
-            IStorageLibrary2 : IInspectable
+            IStorageLibrary2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeTracker(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageLibraryChangeTracker * * value
                     ) = 0;
@@ -6349,8 +6440,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("8A281291-2154-4201-8113-D2C05CE1AD23"), exclusiveto, contract] */
             MIDL_INTERFACE("8A281291-2154-4201-8113-D2C05CE1AD23")
-            IStorageLibrary3 : IInspectable
+            IStorageLibrary3 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE AreFolderSuggestionsAvailableAsync(
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                     ) = 0;
@@ -6387,8 +6479,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("00980B23-2BE2-4909-AA48-159F5203A51E"), exclusiveto, contract] */
             MIDL_INTERFACE("00980B23-2BE2-4909-AA48-159F5203A51E")
-            IStorageLibraryChange : IInspectable
+            IStorageLibraryChange : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeType(
                     /* [retval, out] */__RPC__out ABI::Windows::Storage::StorageLibraryChangeType * value
                     ) = 0;
@@ -6438,8 +6531,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("F205BC83-FCA2-41F9-8954-EE2E991EB96F"), exclusiveto, contract] */
             MIDL_INTERFACE("F205BC83-FCA2-41F9-8954-EE2E991EB96F")
-            IStorageLibraryChangeReader : IInspectable
+            IStorageLibraryChangeReader : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE ReadBatchAsync(
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageLibraryChange * * operation
                     ) = 0;
@@ -6479,8 +6573,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("9E157316-6073-44F6-9681-7492D1286C90"), exclusiveto, contract] */
             MIDL_INTERFACE("9E157316-6073-44F6-9681-7492D1286C90")
-            IStorageLibraryChangeTracker : IInspectable
+            IStorageLibraryChangeTracker : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetChangeReader(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageLibraryChangeReader * * value
                     ) = 0;
@@ -6519,8 +6614,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("4208A6DB-684A-49C6-9E59-90121EE050D6"), exclusiveto, contract] */
             MIDL_INTERFACE("4208A6DB-684A-49C6-9E59-90121EE050D6")
-            IStorageLibraryStatics : IInspectable
+            IStorageLibraryStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetLibraryAsync(
                     /* [in] */ABI::Windows::Storage::KnownLibraryId libraryId,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageLibrary * * operation
@@ -6558,8 +6654,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("FFB08DDC-FA75-4695-B9D1-7F81F97832E3"), exclusiveto, contract] */
             MIDL_INTERFACE("FFB08DDC-FA75-4695-B9D1-7F81F97832E3")
-            IStorageLibraryStatics2 : IInspectable
+            IStorageLibraryStatics2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetLibraryForUserAsync(
                     /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                     /* [in] */ABI::Windows::Storage::KnownLibraryId libraryId,
@@ -6598,8 +6695,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("E705EED4-D478-47D6-BA46-1A8EBE114A20"), exclusiveto, contract] */
             MIDL_INTERFACE("E705EED4-D478-47D6-BA46-1A8EBE114A20")
-            IStorageProvider : IInspectable
+            IStorageProvider : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6643,8 +6741,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("010D1917-3404-414B-9FD7-CD44472EAA39"), exclusiveto, contract] */
             MIDL_INTERFACE("010D1917-3404-414B-9FD7-CD44472EAA39")
-            IStorageProvider2 : IInspectable
+            IStorageProvider2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE IsPropertySupportedForPartialFileAsync(
                     /* [in] */__RPC__in HSTRING propertyCanonicalName,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
@@ -6686,8 +6785,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("F67CF363-A53D-4D94-AE2C-67232D93ACDD"), exclusiveto, contract] */
             MIDL_INTERFACE("F67CF363-A53D-4D94-AE2C-67232D93ACDD")
-            IStorageStreamTransaction : IInspectable
+            IStorageStreamTransaction : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Stream(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStream * * value
                     ) = 0;
@@ -6724,8 +6824,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("1673FCCE-DABD-4D50-BEEE-180B8A8191B6"), contract] */
             MIDL_INTERFACE("1673FCCE-DABD-4D50-BEEE-180B8A8191B6")
-            IStreamedFileDataRequest : IInspectable
+            IStreamedFileDataRequest : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE FailAndClose(
                     /* [in] */ABI::Windows::Storage::StreamedFileFailureMode failureMode
                     ) = 0;
@@ -6762,8 +6863,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("3F8F38B7-308C-47E1-924D-8645348E5DB7"), exclusiveto, contract] */
             MIDL_INTERFACE("3F8F38B7-308C-47E1-924D-8645348E5DB7")
-            ISystemAudioProperties : IInspectable
+            ISystemAudioProperties : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EncodingBitrate(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6800,8 +6902,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("E32ABF70-D8FA-45EC-A942-D2E26FB60BA5"), exclusiveto, contract] */
             MIDL_INTERFACE("E32ABF70-D8FA-45EC-A942-D2E26FB60BA5")
-            ISystemDataPaths : IInspectable
+            ISystemDataPaths : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Fonts(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6883,8 +6986,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("E0F96FD0-9920-4BCA-B379-F96FDF7CAAD8"), exclusiveto, contract] */
             MIDL_INTERFACE("E0F96FD0-9920-4BCA-B379-F96FDF7CAAD8")
-            ISystemDataPathsStatics : IInspectable
+            ISystemDataPathsStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetDefault(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::ISystemDataPaths * * result
                     ) = 0;
@@ -6921,8 +7025,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("C0F46EB4-C174-481A-BC25-921986F6A6F3"), exclusiveto, contract] */
             MIDL_INTERFACE("C0F46EB4-C174-481A-BC25-921986F6A6F3")
-            ISystemGPSProperties : IInspectable
+            ISystemGPSProperties : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LatitudeDecimal(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6962,8 +7067,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("011B2E30-8B39-4308-BEA1-E8AA61E47826"), exclusiveto, contract] */
             MIDL_INTERFACE("011B2E30-8B39-4308-BEA1-E8AA61E47826")
-            ISystemImageProperties : IInspectable
+            ISystemImageProperties : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalSize(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -7003,8 +7109,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("A42B3316-8415-40DC-8C44-98361D235430"), exclusiveto, contract] */
             MIDL_INTERFACE("A42B3316-8415-40DC-8C44-98361D235430")
-            ISystemMediaProperties : IInspectable
+            ISystemMediaProperties : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Duration(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -7056,8 +7163,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("B47988D5-67AF-4BC3-8D39-5B89022026A1"), exclusiveto, contract] */
             MIDL_INTERFACE("B47988D5-67AF-4BC3-8D39-5B89022026A1")
-            ISystemMusicProperties : IInspectable
+            ISystemMusicProperties : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlbumArtist(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -7115,8 +7223,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("4734FC3D-AB21-4424-B735-F4353A56C8FC"), exclusiveto, contract] */
             MIDL_INTERFACE("4734FC3D-AB21-4424-B735-F4353A56C8FC")
-            ISystemPhotoProperties : IInspectable
+            ISystemPhotoProperties : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CameraManufacturer(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -7165,8 +7274,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("917A71C1-85F3-4DD1-B001-A50BFD21C8D2"), exclusiveto, contract] */
             MIDL_INTERFACE("917A71C1-85F3-4DD1-B001-A50BFD21C8D2")
-            ISystemProperties : IInspectable
+            ISystemProperties : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Author(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -7239,8 +7349,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("2040F715-67F8-4322-9B80-4FA9FEFB83E8"), exclusiveto, contract] */
             MIDL_INTERFACE("2040F715-67F8-4322-9B80-4FA9FEFB83E8")
-            ISystemVideoProperties : IInspectable
+            ISystemVideoProperties : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Director(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -7289,8 +7400,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("F9C53912-ABC4-46FF-8A2B-DC9D7FA6E52F"), exclusiveto, contract] */
             MIDL_INTERFACE("F9C53912-ABC4-46FF-8A2B-DC9D7FA6E52F")
-            IUserDataPaths : IInspectable
+            IUserDataPaths : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CameraRoll(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -7381,8 +7493,9 @@ namespace ABI {
         namespace Storage {
             /* [object, uuid("01B29DEF-E062-48A1-8B0C-F2C7A9CA56C0"), exclusiveto, contract] */
             MIDL_INTERFACE("01B29DEF-E062-48A1-8B0C-F2C7A9CA56C0")
-            IUserDataPathsStatics : IInspectable
+            IUserDataPathsStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetForUser(
                     /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IUserDataPaths * * result
@@ -7745,6 +7858,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Storage.IStorageItem2
  *    Windows.Storage.IStorageFolder2
  *    Windows.Storage.IStorageItemPropertiesWithProvider
+ *    Windows.Storage.IStorageFolder3
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -8325,6 +8439,12 @@ typedef interface __x_ABI_CWindows_CStorage_CIStorageFolder __x_ABI_CWindows_CSt
 typedef interface __x_ABI_CWindows_CStorage_CIStorageFolder2 __x_ABI_CWindows_CStorage_CIStorageFolder2;
 
 #endif // ____x_ABI_CWindows_CStorage_CIStorageFolder2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageFolder3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageFolder3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CIStorageFolder3 __x_ABI_CWindows_CStorage_CIStorageFolder3;
+
+#endif // ____x_ABI_CWindows_CStorage_CIStorageFolder3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CStorage_CIStorageFolderStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIStorageFolderStatics_FWD_DEFINED__
@@ -14166,6 +14286,7 @@ typedef enum __x_ABI_CWindows_CStorage_CStreamedFileFailureMode __x_ABI_CWindows
 
 
 
+
 /*
  *
  * Struct Windows.Storage.ApplicationDataCreateDisposition
@@ -17917,6 +18038,99 @@ interface __x_ABI_CWindows_CStorage_CIStorageFolder2
 EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CIStorageFolder2;
 #endif /* !defined(____x_ABI_CWindows_CStorage_CIStorageFolder2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Storage.IStorageFolder3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Storage.StorageFolder
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CStorage_CIStorageFolder3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CIStorageFolder3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_IStorageFolder3[] = L"Windows.Storage.IStorageFolder3";
+/* [object, uuid("9F617899-BDE1-4124-AEB3-B06AD96F98D4"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CStorage_CIStorageFolder3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CStorage_CIStorageFolder3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CStorage_CIStorageFolder3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CStorage_CIStorageFolder3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CStorage_CIStorageFolder3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CStorage_CIStorageFolder3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CStorage_CIStorageFolder3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *TryGetChangeTracker )(
+        __x_ABI_CWindows_CStorage_CIStorageFolder3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CStorage_CIStorageFolder3Vtbl;
+
+interface __x_ABI_CWindows_CStorage_CIStorageFolder3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CStorage_CIStorageFolder3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CStorage_CIStorageFolder3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CStorage_CIStorageFolder3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CStorage_CIStorageFolder3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CStorage_CIStorageFolder3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CStorage_CIStorageFolder3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CStorage_CIStorageFolder3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CStorage_CIStorageFolder3_TryGetChangeTracker(This,result) \
+    ( (This)->lpVtbl->TryGetChangeTracker(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CIStorageFolder3;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CIStorageFolder3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -21778,6 +21992,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Storage.IStorageItem2
  *    Windows.Storage.IStorageFolder2
  *    Windows.Storage.IStorageItemPropertiesWithProvider
+ *    Windows.Storage.IStorageFolder3
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.storage.search.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -440,6 +442,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResult ABI::Windows::Storage::Search::IStorageItemQueryResult
 
 #endif // ____x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Search {
+                interface IStorageLibraryChangeTrackerTriggerDetails;
+            } /* Windows */
+        } /* Storage */
+    } /* Search */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails ABI::Windows::Storage::Search::IStorageLibraryChangeTrackerTriggerDetails
+
+#endif // ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryContentChangedTriggerDetails_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryContentChangedTriggerDetails_FWD_DEFINED__
@@ -2269,6 +2285,26 @@ namespace ABI {
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            class StorageLibraryChangeTracker;
+        } /* Windows */
+    } /* Storage */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            interface IStorageLibraryChangeTracker;
+        } /* Windows */
+    } /* Storage */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker ABI::Windows::Storage::IStorageLibraryChangeTracker
+
+#endif // ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+
+
 
 
 #ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream_FWD_DEFINED__
@@ -2382,6 +2418,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -2457,6 +2494,16 @@ namespace ABI {
         namespace Storage {
             namespace Search {
                 class StorageItemQueryResult;
+            } /* Windows */
+        } /* Storage */
+    } /* Search */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Search {
+                class StorageLibraryChangeTrackerTriggerDetails;
             } /* Windows */
         } /* Storage */
     } /* Search */} /* ABI */
@@ -2724,8 +2771,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("B1767F8D-F698-4982-B05F-3A6E8CAB01A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("B1767F8D-F698-4982-B05F-3A6E8CAB01A2")
-                IContentIndexer : IInspectable
+                IContentIndexer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AddAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Search::IIndexableContent * indexableContent,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
@@ -2788,8 +2836,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("70E3B0F8-4BFC-428A-8889-CC51DA9A7B9D"), exclusiveto, contract] */
                 MIDL_INTERFACE("70E3B0F8-4BFC-428A-8889-CC51DA9A7B9D")
-                IContentIndexerQuery : IInspectable
+                IContentIndexerQuery : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCountAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_UINT32 * * operation
                         ) = 0;
@@ -2847,8 +2896,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("28823E10-4786-42F1-9730-792B3566B150"), exclusiveto, contract] */
                 MIDL_INTERFACE("28823E10-4786-42F1-9730-792B3566B150")
-                IContentIndexerQueryOperations : IInspectable
+                IContentIndexerQueryOperations : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateQueryWithSortOrderAndLanguage(
                         /* [in] */__RPC__in HSTRING searchFilter,
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * propertiesToRetrieve,
@@ -2902,8 +2952,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("8C488375-B37E-4C60-9BA8-B760FDA3E59D"), exclusiveto, contract] */
                 MIDL_INTERFACE("8C488375-B37E-4C60-9BA8-B760FDA3E59D")
-                IContentIndexerStatics : IInspectable
+                IContentIndexerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetIndexerWithName(
                         /* [in] */__RPC__in HSTRING indexName,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Search::IContentIndexer * * index
@@ -2943,8 +2994,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("CCF1A05F-D4B5-483A-B06E-E0DB1EC420E4"), contract] */
                 MIDL_INTERFACE("CCF1A05F-D4B5-483A-B06E-E0DB1EC420E4")
-                IIndexableContent : IInspectable
+                IIndexableContent : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3001,8 +3053,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("1E5E46EE-0F45-4838-A8E9-D0479D446C30"), exclusiveto, contract] */
                 MIDL_INTERFACE("1E5E46EE-0F45-4838-A8E9-D0479D446C30")
-                IQueryOptions : IInspectable
+                IQueryOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FileTypeFilter(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                         ) = 0;
@@ -3095,8 +3148,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("032E1F8C-A9C1-4E71-8011-0DEE9D4811A3"), exclusiveto, contract] */
                 MIDL_INTERFACE("032E1F8C-A9C1-4E71-8011-0DEE9D4811A3")
-                IQueryOptionsFactory : IInspectable
+                IQueryOptionsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateCommonFileQuery(
                         /* [in] */ABI::Windows::Storage::Search::CommonFileQuery query,
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * fileTypeFilter,
@@ -3141,8 +3195,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("5B9D1026-15C4-44DD-B89A-47A59B7D7C4F"), exclusiveto, contract] */
                 MIDL_INTERFACE("5B9D1026-15C4-44DD-B89A-47A59B7D7C4F")
-                IQueryOptionsWithProviderFilter : IInspectable
+                IQueryOptionsWithProviderFilter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StorageProviderIdFilter(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                         ) = 0;
@@ -3185,8 +3240,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("52FDA447-2BAA-412C-B29F-D4B1778EFA1E"), exclusiveto, contract] */
                 MIDL_INTERFACE("52FDA447-2BAA-412C-B29F-D4B1778EFA1E")
-                IStorageFileQueryResult : IInspectable
+                IStorageFileQueryResult : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetFilesAsync(
                         /* [in] */UINT32 startIndex,
                         /* [in] */UINT32 maxNumberOfItems,
@@ -3234,8 +3290,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("4E5DB9DD-7141-46C4-8BE3-E9DC9E27275C"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E5DB9DD-7141-46C4-8BE3-E9DC9E27275C")
-                IStorageFileQueryResult2 : IInspectable
+                IStorageFileQueryResult2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetMatchingPropertiesWithRanges(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                         /* [retval, out] */__RPC__deref_out_opt __FIMap_2_HSTRING___FIVectorView_1_Windows__CData__CText__CTextSegment * * result
@@ -3272,8 +3329,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("CB43CCC9-446B-4A4F-BE97-757771BE5203"), contract] */
                 MIDL_INTERFACE("CB43CCC9-446B-4A4F-BE97-757771BE5203")
-                IStorageFolderQueryOperations : IInspectable
+                IStorageFolderQueryOperations : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetIndexedStateAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CSearch__CIndexedState * * operation
                         ) = 0;
@@ -3382,8 +3440,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("6654C911-7D66-46FA-AECF-E4A4BAA93AB8"), exclusiveto, contract] */
                 MIDL_INTERFACE("6654C911-7D66-46FA-AECF-E4A4BAA93AB8")
-                IStorageFolderQueryResult : IInspectable
+                IStorageFolderQueryResult : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetFoldersAsync(
                         /* [in] */UINT32 startIndex,
                         /* [in] */UINT32 maxNumberOfItems,
@@ -3431,8 +3490,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("E8948079-9D58-47B8-B2B2-41B07F4795F9"), exclusiveto, contract] */
                 MIDL_INTERFACE("E8948079-9D58-47B8-B2B2-41B07F4795F9")
-                IStorageItemQueryResult : IInspectable
+                IStorageItemQueryResult : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetItemsAsync(
                         /* [in] */UINT32 startIndex,
                         /* [in] */UINT32 maxNumberOfItems,
@@ -3457,6 +3517,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResul
 
 /*
  *
+ * Interface Windows.Storage.Search.IStorageLibraryChangeTrackerTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Storage.Search.StorageLibraryChangeTrackerTriggerDetails
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Search_IStorageLibraryChangeTrackerTriggerDetails[] = L"Windows.Storage.Search.IStorageLibraryChangeTrackerTriggerDetails";
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Search {
+                /* [object, uuid("1DC7A369-B7A3-4DF2-9D61-EBA85A0343D2"), exclusiveto, contract] */
+                MIDL_INTERFACE("1DC7A369-B7A3-4DF2-9D61-EBA85A0343D2")
+                IStorageLibraryChangeTrackerTriggerDetails : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Folder(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeTracker(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageLibraryChangeTracker * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStorageLibraryChangeTrackerTriggerDetails=_uuidof(IStorageLibraryChangeTrackerTriggerDetails);
+                
+            } /* Windows */
+        } /* Storage */
+    } /* Search */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Storage.Search.IStorageLibraryContentChangedTriggerDetails
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3476,8 +3580,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("2A371977-ABBF-4E1D-8AA5-6385D8884799"), exclusiveto, contract] */
                 MIDL_INTERFACE("2A371977-ABBF-4E1D-8AA5-6385D8884799")
-                IStorageLibraryContentChangedTriggerDetails : IInspectable
+                IStorageLibraryContentChangedTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Folder(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFolder * * value
                         ) = 0;
@@ -3517,8 +3622,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("C297D70D-7353-47AB-BA58-8C61425DC54B"), contract] */
                 MIDL_INTERFACE("C297D70D-7353-47AB-BA58-8C61425DC54B")
-                IStorageQueryResultBase : IInspectable
+                IStorageQueryResultBase : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetItemCountAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_UINT32 * * operation
                         ) = 0;
@@ -3584,8 +3690,9 @@ namespace ABI {
             namespace Search {
                 /* [object, uuid("B9914881-A1EE-4BC4-92A5-466968E30436"), exclusiveto, contract] */
                 MIDL_INTERFACE("B9914881-A1EE-4BC4-92A5-466968E30436")
-                IValueAndLanguage : IInspectable
+                IValueAndLanguage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Language(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3799,6 +3906,26 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Storage.Search.StorageLibraryChangeTrackerTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.Search.IStorageLibraryChangeTrackerTriggerDetails ** Default Interface **
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Storage_Search_StorageLibraryChangeTrackerTriggerDetails_DEFINED
+#define RUNTIMECLASS_Windows_Storage_Search_StorageLibraryChangeTrackerTriggerDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Storage_Search_StorageLibraryChangeTrackerTriggerDetails[] = L"Windows.Storage.Search.StorageLibraryChangeTrackerTriggerDetails";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Storage.Search.StorageLibraryContentChangedTriggerDetails
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3923,6 +4050,12 @@ typedef interface __x_ABI_CWindows_CStorage_CSearch_CIStorageFolderQueryResult _
 typedef interface __x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResult __x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResult;
 
 #endif // ____x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails;
+
+#endif // ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryContentChangedTriggerDetails_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryContentChangedTriggerDetails_FWD_DEFINED__
@@ -8171,6 +8304,13 @@ typedef enum __x_ABI_CWindows_CStorage_CFileProperties_CThumbnailOptions __x_ABI
 
 
 
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker;
+
+#endif // ____x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker_FWD_DEFINED__
+
+
 
 
 #ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream_FWD_DEFINED__
@@ -8203,6 +8343,8 @@ typedef enum __x_ABI_CWindows_CStorage_CSearch_CIndexerOption __x_ABI_CWindows_C
 
 
 typedef struct __x_ABI_CWindows_CStorage_CSearch_CSortEntry __x_ABI_CWindows_CStorage_CSearch_CSortEntry;
+
+
 
 
 
@@ -10066,6 +10208,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResul
 
 /*
  *
+ * Interface Windows.Storage.Search.IStorageLibraryChangeTrackerTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Storage.Search.StorageLibraryChangeTrackerTriggerDetails
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Search_IStorageLibraryChangeTrackerTriggerDetails[] = L"Windows.Storage.Search.IStorageLibraryChangeTrackerTriggerDetails";
+/* [object, uuid("1DC7A369-B7A3-4DF2-9D61-EBA85A0343D2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetailsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Folder )(
+        __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CIStorageFolder * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ChangeTracker )(
+        __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetailsVtbl;
+
+interface __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails
+{
+    CONST_VTBL struct __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetailsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_get_Folder(This,value) \
+    ( (This)->lpVtbl->get_Folder(This,value) )
+
+#define __x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_get_ChangeTracker(This,value) \
+    ( (This)->lpVtbl->get_ChangeTracker(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CSearch_CIStorageLibraryChangeTrackerTriggerDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Storage.Search.IStorageLibraryContentChangedTriggerDetails
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10611,6 +10853,26 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Storage_Search_StorageItemQueryResult[] = L"Windows.Storage.Search.StorageItemQueryResult";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Storage.Search.StorageLibraryChangeTrackerTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.Search.IStorageLibraryChangeTrackerTriggerDetails ** Default Interface **
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Storage_Search_StorageLibraryChangeTrackerTriggerDetails_DEFINED
+#define RUNTIMECLASS_Windows_Storage_Search_StorageLibraryChangeTrackerTriggerDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Storage_Search_StorageLibraryChangeTrackerTriggerDetails[] = L"Windows.Storage.Search.StorageLibraryChangeTrackerTriggerDetails";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

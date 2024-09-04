@@ -740,6 +740,43 @@ interface IMFDeviceTransform : IUnknown
 
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD ) ")
 
+cpp_quote("#if (WINVER >= _WIN32_WINNT_WIN10) ")
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// IMFDeviceTransformCallback Interface
+//
+///////////////////////////////////////////////////////////////////////////////
+
+// MF_DMFT_FRAME_BUFFER_INFO
+// Data type: BLOB
+// Always part of IMFDeviceTransformCallback::OnBufferSent pCallbackAttributes
+// 396CE1C9-67A9-454C-8797-95A45799D804
+cpp_quote( "EXTERN_GUID( MF_DMFT_FRAME_BUFFER_INFO,  0x396CE1C9, 0x67A9, 0x454C, 0x87, 0x97, 0x95, 0xA4, 0x57, 0x99, 0xD8, 0x04);" )
+
+[
+    object,
+    uuid(6D5CB646-29EC-41FB-8179-8C4C6D750811),
+    helpstring("IMFDeviceTransformCallback"),
+    local
+]
+interface IMFDeviceTransformCallback  : IUnknown
+{
+    // Provides information of buffers allocated and sent to driver
+    //
+    // PKSSTREAM_HEADER that is inside pInfo is meant only for READ-ONLY usage
+    // i.e., user shouldn't try to allocate/deallocate, open/close 
+    // anything within the header
+    //
+    HRESULT OnBufferSent(
+        [in, annotation("_In_")] IMFAttributes* pCallbackAttributes,
+        [in, annotation("_In_")] DWORD pinId
+    );
+};
+
+cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WIN10 ) ")
+
+
 cpp_quote("#if (WINVER >= _WIN32_WINNT_WIN8) ")
 
 #pragma region Application Family

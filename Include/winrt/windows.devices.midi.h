@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.midi.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -888,6 +890,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CMidi__CMidiInPort_Windows__CDevices__CMidi__CMidiMessageReceivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CMidi__CMidiInPort_Windows__CDevices__CMidi__CMidiMessageReceivedEventArgs_USE
@@ -916,6 +919,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Midi::MidiInPort*,ABI::Windows
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CMidi__CMidiInPort_Windows__CDevices__CMidi__CMidiMessageReceivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1301,8 +1305,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("BE1FA860-62B4-4D52-A37E-92E54D35B909"), exclusiveto, contract] */
                 MIDL_INTERFACE("BE1FA860-62B4-4D52-A37E-92E54D35B909")
-                IMidiChannelPressureMessage : IInspectable
+                IMidiChannelPressureMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Channel(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -1344,8 +1349,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("6218ED2F-2284-412A-94CF-10FB04842C6C"), exclusiveto, contract] */
                 MIDL_INTERFACE("6218ED2F-2284-412A-94CF-10FB04842C6C")
-                IMidiChannelPressureMessageFactory : IInspectable
+                IMidiChannelPressureMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiChannelPressureMessage(
                         /* [in] */BYTE channel,
                         /* [in] */BYTE pressure,
@@ -1390,8 +1396,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("B7E15F83-780D-405F-B781-3E1598C97F40"), exclusiveto, contract] */
                 MIDL_INTERFACE("B7E15F83-780D-405F-B781-3E1598C97F40")
-                IMidiControlChangeMessage : IInspectable
+                IMidiControlChangeMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Channel(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -1436,8 +1443,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("2AB14321-956C-46AD-9752-F87F55052FE3"), exclusiveto, contract] */
                 MIDL_INTERFACE("2AB14321-956C-46AD-9752-F87F55052FE3")
-                IMidiControlChangeMessageFactory : IInspectable
+                IMidiControlChangeMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiControlChangeMessage(
                         /* [in] */BYTE channel,
                         /* [in] */BYTE controller,
@@ -1483,8 +1491,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("D5C1D9DB-971A-4EAF-A23D-EA19FE607FF9"), exclusiveto, contract] */
                 MIDL_INTERFACE("D5C1D9DB-971A-4EAF-A23D-EA19FE607FF9")
-                IMidiInPort : IInspectable
+                IMidiInPort : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MessageReceived(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CMidi__CMidiInPort_Windows__CDevices__CMidi__CMidiMessageReceivedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1530,8 +1539,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("44C439DC-67FF-4A6E-8BAC-FDB6610CF296"), exclusiveto, contract] */
                 MIDL_INTERFACE("44C439DC-67FF-4A6E-8BAC-FDB6610CF296")
-                IMidiInPortStatics : IInspectable
+                IMidiInPortStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CMidi__CMidiInPort * * value
@@ -1571,8 +1581,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("79767945-1094-4283-9BE0-289FC0EE8334"), contract] */
                 MIDL_INTERFACE("79767945-1094-4283-9BE0-289FC0EE8334")
-                IMidiMessage : IInspectable
+                IMidiMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -1617,8 +1628,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("76566E56-F328-4B51-907D-B3A8CE96BF80"), exclusiveto, contract] */
                 MIDL_INTERFACE("76566E56-F328-4B51-907D-B3A8CE96BF80")
-                IMidiMessageReceivedEventArgs : IInspectable
+                IMidiMessageReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Message(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Midi::IMidiMessage * * value
                         ) = 0;
@@ -1661,8 +1673,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("16FD8AF4-198E-4D8F-A654-D305A293548F"), exclusiveto, contract] */
                 MIDL_INTERFACE("16FD8AF4-198E-4D8F-A654-D305A293548F")
-                IMidiNoteOffMessage : IInspectable
+                IMidiNoteOffMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Channel(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -1707,8 +1720,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("A6B240E0-A749-425F-8AF4-A4D979CC15B5"), exclusiveto, contract] */
                 MIDL_INTERFACE("A6B240E0-A749-425F-8AF4-A4D979CC15B5")
-                IMidiNoteOffMessageFactory : IInspectable
+                IMidiNoteOffMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiNoteOffMessage(
                         /* [in] */BYTE channel,
                         /* [in] */BYTE note,
@@ -1754,8 +1768,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("E0224AF5-6181-46DD-AFA2-410004C057AA"), exclusiveto, contract] */
                 MIDL_INTERFACE("E0224AF5-6181-46DD-AFA2-410004C057AA")
-                IMidiNoteOnMessage : IInspectable
+                IMidiNoteOnMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Channel(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -1800,8 +1815,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("9B4280A0-59C1-420E-B517-15A10AA9606B"), exclusiveto, contract] */
                 MIDL_INTERFACE("9B4280A0-59C1-420E-B517-15A10AA9606B")
-                IMidiNoteOnMessageFactory : IInspectable
+                IMidiNoteOnMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiNoteOnMessage(
                         /* [in] */BYTE channel,
                         /* [in] */BYTE note,
@@ -1844,8 +1860,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("931D6D9F-57A2-4A3A-ADB8-4640886F6693"), contract] */
                 MIDL_INTERFACE("931D6D9F-57A2-4A3A-ADB8-4640886F6693")
-                IMidiOutPort : IInspectable
+                IMidiOutPort : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SendMessage(
                         /* [in] */__RPC__in_opt ABI::Windows::Devices::Midi::IMidiMessage * midiMessage
                         ) = 0;
@@ -1890,8 +1907,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("065CC3E9-0F88-448B-9B64-A95826C65B8F"), exclusiveto, contract] */
                 MIDL_INTERFACE("065CC3E9-0F88-448B-9B64-A95826C65B8F")
-                IMidiOutPortStatics : IInspectable
+                IMidiOutPortStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CMidi__CIMidiOutPort * * value
@@ -1938,8 +1956,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("29DF4CB1-2E9F-4FAF-8C2B-9CB82A9079CA"), exclusiveto, contract] */
                 MIDL_INTERFACE("29DF4CB1-2E9F-4FAF-8C2B-9CB82A9079CA")
-                IMidiPitchBendChangeMessage : IInspectable
+                IMidiPitchBendChangeMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Channel(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -1981,8 +2000,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("F5EEDF55-CFC8-4926-B30E-A3622393306C"), exclusiveto, contract] */
                 MIDL_INTERFACE("F5EEDF55-CFC8-4926-B30E-A3622393306C")
-                IMidiPitchBendChangeMessageFactory : IInspectable
+                IMidiPitchBendChangeMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiPitchBendChangeMessage(
                         /* [in] */BYTE channel,
                         /* [in] */UINT16 bend,
@@ -2027,8 +2047,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("1F7337FE-ACE8-48A0-868E-7CDBF20F04D6"), exclusiveto, contract] */
                 MIDL_INTERFACE("1F7337FE-ACE8-48A0-868E-7CDBF20F04D6")
-                IMidiPolyphonicKeyPressureMessage : IInspectable
+                IMidiPolyphonicKeyPressureMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Channel(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -2073,8 +2094,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("E98F483E-C4B3-4DD2-917C-E349815A1B3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("E98F483E-C4B3-4DD2-917C-E349815A1B3B")
-                IMidiPolyphonicKeyPressureMessageFactory : IInspectable
+                IMidiPolyphonicKeyPressureMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiPolyphonicKeyPressureMessage(
                         /* [in] */BYTE channel,
                         /* [in] */BYTE note,
@@ -2120,8 +2142,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("9CBB3C78-7A3E-4327-AA98-20B8E4485AF8"), exclusiveto, contract] */
                 MIDL_INTERFACE("9CBB3C78-7A3E-4327-AA98-20B8E4485AF8")
-                IMidiProgramChangeMessage : IInspectable
+                IMidiProgramChangeMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Channel(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -2163,8 +2186,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("D6B04387-524B-4104-9C99-6572BFD2E261"), exclusiveto, contract] */
                 MIDL_INTERFACE("D6B04387-524B-4104-9C99-6572BFD2E261")
-                IMidiProgramChangeMessageFactory : IInspectable
+                IMidiProgramChangeMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiProgramChangeMessage(
                         /* [in] */BYTE channel,
                         /* [in] */BYTE program,
@@ -2209,8 +2233,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("4CA50C56-EC5E-4AE4-A115-88DC57CC2B79"), exclusiveto, contract] */
                 MIDL_INTERFACE("4CA50C56-EC5E-4AE4-A115-88DC57CC2B79")
-                IMidiSongPositionPointerMessage : IInspectable
+                IMidiSongPositionPointerMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Beats(
                         /* [retval, out] */__RPC__out UINT16 * value
                         ) = 0;
@@ -2249,8 +2274,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("9C00E996-F10B-4FEA-B395-F5D6CF80F64E"), exclusiveto, contract] */
                 MIDL_INTERFACE("9C00E996-F10B-4FEA-B395-F5D6CF80F64E")
-                IMidiSongPositionPointerMessageFactory : IInspectable
+                IMidiSongPositionPointerMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiSongPositionPointerMessage(
                         /* [in] */UINT16 beats,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Midi::IMidiSongPositionPointerMessage * * value
@@ -2294,8 +2320,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("49F0F27F-6D83-4741-A5BF-4629F6BE974F"), exclusiveto, contract] */
                 MIDL_INTERFACE("49F0F27F-6D83-4741-A5BF-4629F6BE974F")
-                IMidiSongSelectMessage : IInspectable
+                IMidiSongSelectMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Song(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -2334,8 +2361,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("848878E4-8748-4129-A66C-A05493F75DAA"), exclusiveto, contract] */
                 MIDL_INTERFACE("848878E4-8748-4129-A66C-A05493F75DAA")
-                IMidiSongSelectMessageFactory : IInspectable
+                IMidiSongSelectMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiSongSelectMessage(
                         /* [in] */BYTE song,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Midi::IMidiSongSelectMessage * * value
@@ -2380,8 +2408,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("F0DA155E-DB90-405F-B8AE-21D2E17F2E45"), exclusiveto, contract] */
                 MIDL_INTERFACE("F0DA155E-DB90-405F-B8AE-21D2E17F2E45")
-                IMidiSynthesizer : IInspectable
+                IMidiSynthesizer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioDevice(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceInformation * * value
                         ) = 0;
@@ -2426,8 +2455,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("4224EAA8-6629-4D6B-AA8F-D4521A5A31CE"), exclusiveto, contract] */
                 MIDL_INTERFACE("4224EAA8-6629-4D6B-AA8F-D4521A5A31CE")
-                IMidiSynthesizerStatics : IInspectable
+                IMidiSynthesizerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CMidi__CMidiSynthesizer * * value
                         ) = 0;
@@ -2474,8 +2504,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("083DE222-3B74-4320-9B42-0CA8545F8A24"), exclusiveto, contract] */
                 MIDL_INTERFACE("083DE222-3B74-4320-9B42-0CA8545F8A24")
-                IMidiSystemExclusiveMessageFactory : IInspectable
+                IMidiSystemExclusiveMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiSystemExclusiveMessage(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * rawData,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Midi::IMidiMessage * * value
@@ -2519,8 +2550,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("0BF7087D-FA63-4A1C-8DEB-C0E87796A6D7"), exclusiveto, contract] */
                 MIDL_INTERFACE("0BF7087D-FA63-4A1C-8DEB-C0E87796A6D7")
-                IMidiTimeCodeMessage : IInspectable
+                IMidiTimeCodeMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameType(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -2562,8 +2594,9 @@ namespace ABI {
             namespace Midi {
                 /* [object, uuid("EB3099C5-771C-40DE-B961-175A7489A85E"), exclusiveto, contract] */
                 MIDL_INTERFACE("EB3099C5-771C-40DE-B961-175A7489A85E")
-                IMidiTimeCodeMessageFactory : IInspectable
+                IMidiTimeCodeMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMidiTimeCodeMessage(
                         /* [in] */BYTE frameType,
                         /* [in] */BYTE values,
@@ -3717,6 +3750,7 @@ interface __FIAsyncOperation_1_Windows__CDevices__CMidi__CMidiSynthesizer
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CMidi__CMidiInPort_Windows__CDevices__CMidi__CMidiMessageReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CMidi__CMidiInPort_Windows__CDevices__CMidi__CMidiMessageReceivedEventArgs_INTERFACE_DEFINED__
 
@@ -3763,6 +3797,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CMidi__CMidiInPort_Windows_
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CMidi__CMidiInPort_Windows__CDevices__CMidi__CMidiMessageReceivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

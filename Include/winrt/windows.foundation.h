@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.foundation.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -785,6 +787,64 @@ typedef IIterable<int> __FIIterable_1_int_t;
 //#define __FIIterable_1_int_t ABI::Windows::Foundation::Collections::IIterable<INT32>
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_int_USE */
+
+
+
+
+#ifndef DEF___FIIterator_1___z__zint64_USE
+#define DEF___FIIterator_1___z__zint64_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("fb98034c-86b7-581f-8cd9-5ad0692201a9"))
+IIterator<__int64> : IIterator_impl<__int64> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Int64>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<__int64> __FIIterator_1___z__zint64_t;
+#define __FIIterator_1___z__zint64 ABI::Windows::Foundation::Collections::__FIIterator_1___z__zint64_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1___z__zint64 ABI::Windows::Foundation::Collections::IIterator<INT64>
+//#define __FIIterator_1___z__zint64_t ABI::Windows::Foundation::Collections::IIterator<INT64>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1___z__zint64_USE */
+
+
+
+
+#ifndef DEF___FIIterable_1___z__zint64_USE
+#define DEF___FIIterable_1___z__zint64_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("7784427e-f9cc-518d-964b-e50d5ce727f1"))
+IIterable<__int64> : IIterable_impl<__int64> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Int64>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<__int64> __FIIterable_1___z__zint64_t;
+#define __FIIterable_1___z__zint64 ABI::Windows::Foundation::Collections::__FIIterable_1___z__zint64_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1___z__zint64 ABI::Windows::Foundation::Collections::IIterable<INT64>
+//#define __FIIterable_1___z__zint64_t ABI::Windows::Foundation::Collections::IIterable<INT64>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1___z__zint64_USE */
 
 
 
@@ -4208,6 +4268,66 @@ typedef IAsyncOperation<UINT64> __FIAsyncOperation_1_UINT64_t;
 
 
 
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("75e3182c-e6e1-589c-ab73-e8644bc285bf"))
+IAsyncOperationCompletedHandler<__FIMapView_2_HSTRING_HSTRING*> : IAsyncOperationCompletedHandler_impl<__FIMapView_2_HSTRING_HSTRING*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IMapView`2<String, String>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<__FIMapView_2_HSTRING_HSTRING*> __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_t;
+#define __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IMapView<HSTRING,HSTRING>*>
+//#define __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IMapView<HSTRING,HSTRING>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_USE */
+
+
+
+
+
+#ifndef DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_USE
+#define DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("817944b6-f046-5391-bb0b-4cc34d8040f3"))
+IAsyncOperation<__FIMapView_2_HSTRING_HSTRING*> : IAsyncOperation_impl<__FIMapView_2_HSTRING_HSTRING*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IMapView`2<String, String>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<__FIMapView_2_HSTRING_HSTRING*> __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_t;
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IMapView<HSTRING,HSTRING>*>
+//#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IMapView<HSTRING,HSTRING>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_USE */
+
+
+
+
+
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_USE
 #define DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -5317,6 +5437,36 @@ typedef IReference<struct ABI::Windows::Foundation::Rect> __FIReference_1_Window
 
 
 
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CSize_USE
+#define DEF___FIReference_1_Windows__CFoundation__CSize_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("61723086-8e53-5276-9f36-2a4bb93e2b75"))
+IReference<struct ABI::Windows::Foundation::Size> : IReference_impl<struct ABI::Windows::Foundation::Size> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Windows.Foundation.Size>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<struct ABI::Windows::Foundation::Size> __FIReference_1_Windows__CFoundation__CSize_t;
+#define __FIReference_1_Windows__CFoundation__CSize ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CSize_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_Windows__CFoundation__CSize ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Size>
+//#define __FIReference_1_Windows__CFoundation__CSize_t ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Size>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_Windows__CFoundation__CSize_USE */
+
+
+
+
 #ifndef DEF___FIReference_1_boolean_USE
 #define DEF___FIReference_1_boolean_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -5770,8 +5920,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("A4ED5C81-76C9-40BD-8BE6-B1D90FB20AE7"), contract] */
             MIDL_INTERFACE("A4ED5C81-76C9-40BD-8BE6-B1D90FB20AE7")
-            IAsyncActionCompletedHandler : IUnknown
+            IAsyncActionCompletedHandler : public IUnknown
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Invoke(
                     /* [in] */__RPC__in_opt ABI::Windows::Foundation::IAsyncAction * asyncInfo,
                     /* [in] */AsyncStatus asyncStatus
@@ -5805,8 +5956,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("ED32A372-F3C8-4FAA-9CFB-470148DA3888"), contract] */
             MIDL_INTERFACE("ED32A372-F3C8-4FAA-9CFB-470148DA3888")
-            IDeferralCompletedHandler : IUnknown
+            IDeferralCompletedHandler : public IUnknown
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Invoke(void) = 0;
                 
             };
@@ -5845,8 +5997,9 @@ namespace ABI {
             namespace Collections {
                 /* [object, uuid("8A43ED9F-F4E6-4421-ACF9-1DAB2986820C"), contract] */
                 MIDL_INTERFACE("8A43ED9F-F4E6-4421-ACF9-1DAB2986820C")
-                IPropertySet : IInspectable
+                IPropertySet : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5883,8 +6036,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("5A648006-843A-4DA9-865B-9D26E5DFAD7B"), contract] */
             MIDL_INTERFACE("5A648006-843A-4DA9-865B-9D26E5DFAD7B")
-            IAsyncAction : IInspectable
+            IAsyncAction : public IInspectable
             {
+            public:
                 /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Completed(
                     /* [in] */__RPC__in_opt ABI::Windows::Foundation::IAsyncActionCompletedHandler  * handler
                     ) = 0;
@@ -5922,8 +6076,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("30D5A829-7FA4-4026-83BB-D75BAE4EA99E"), contract] */
             MIDL_INTERFACE("30D5A829-7FA4-4026-83BB-D75BAE4EA99E")
-            IClosable : IInspectable
+            IClosable : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Close(void) = 0;
                 
             };
@@ -5962,8 +6117,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("D6269732-3B7F-46A7-B40B-4FDCA2A2C693"), exclusiveto, contract] */
             MIDL_INTERFACE("D6269732-3B7F-46A7-B40B-4FDCA2A2C693")
-            IDeferral : IInspectable
+            IDeferral : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                 
             };
@@ -5998,8 +6154,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("65A1ECC5-3FB5-4832-8CA9-F061B281D13A"), exclusiveto, contract] */
             MIDL_INTERFACE("65A1ECC5-3FB5-4832-8CA9-F061B281D13A")
-            IDeferralFactory : IInspectable
+            IDeferralFactory : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Create(
                     /* [in] */__RPC__in_opt ABI::Windows::Foundation::IDeferralCompletedHandler  * handler,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * result
@@ -6034,8 +6191,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("4EDB8EE2-96DD-49A7-94F7-4607DDAB8E3C"), contract] */
             MIDL_INTERFACE("4EDB8EE2-96DD-49A7-94F7-4607DDAB8E3C")
-            IGetActivationFactory : IInspectable
+            IGetActivationFactory : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetActivationFactory(
                     /* [in] */__RPC__in HSTRING activatableClassId,
                     /* [retval, out] */__RPC__deref_out_opt IInspectable * * factory
@@ -6074,8 +6232,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("FBC4DD2A-245B-11E4-AF98-689423260CF8"), contract] */
             MIDL_INTERFACE("FBC4DD2A-245B-11E4-AF98-689423260CF8")
-            IMemoryBuffer : IInspectable
+            IMemoryBuffer : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateReference(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IMemoryBufferReference * * reference
                     ) = 0;
@@ -6112,8 +6271,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("FBC4DD2B-245B-11E4-AF98-689423260CF8"), exclusiveto, contract] */
             MIDL_INTERFACE("FBC4DD2B-245B-11E4-AF98-689423260CF8")
-            IMemoryBufferFactory : IInspectable
+            IMemoryBufferFactory : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Create(
                     /* [range(0, 2147483647), in] */__RPC__in_range(0,0x7fffffff) UINT32 capacity,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IMemoryBuffer * * value
@@ -6152,8 +6312,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("FBC4DD29-245B-11E4-AF98-689423260CF8"), contract] */
             MIDL_INTERFACE("FBC4DD29-245B-11E4-AF98-689423260CF8")
-            IMemoryBufferReference : IInspectable
+            IMemoryBufferReference : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Capacity(
                     /* [retval, out] */__RPC__out UINT32 * value
                     ) = 0;
@@ -6194,8 +6355,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("4BD682DD-7554-40E9-9A9B-82654EDE7E62"), contract] */
             MIDL_INTERFACE("4BD682DD-7554-40E9-9A9B-82654EDE7E62")
-            IPropertyValue : IInspectable
+            IPropertyValue : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                     /* [retval, out] */__RPC__out ABI::Windows::Foundation::PropertyType * value
                     ) = 0;
@@ -6365,8 +6527,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("629BDBC8-D932-4FF4-96B9-8D96C5C1E858"), exclusiveto, contract] */
             MIDL_INTERFACE("629BDBC8-D932-4FF4-96B9-8D96C5C1E858")
-            IPropertyValueStatics : IInspectable
+            IPropertyValueStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateEmpty(
                     /* [retval, out] */__RPC__deref_out_opt IInspectable * * propertyValue
                     ) = 0;
@@ -6571,8 +6734,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("96369F54-8EB6-48F0-ABCE-C1B211E627C3"), contract] */
             MIDL_INTERFACE("96369F54-8EB6-48F0-ABCE-C1B211E627C3")
-            IStringable : IInspectable
+            IStringable : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE ToString(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6609,8 +6773,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("C1D432BA-C824-4452-A7FD-512BC3BBE9A1"), exclusiveto, contract] */
             MIDL_INTERFACE("C1D432BA-C824-4452-A7FD-512BC3BBE9A1")
-            IUriEscapeStatics : IInspectable
+            IUriEscapeStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE UnescapeComponent(
                     /* [in] */__RPC__in HSTRING toUnescape,
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
@@ -6652,8 +6817,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("9E365E57-48B2-4160-956F-C7385120BBFC"), exclusiveto, contract] */
             MIDL_INTERFACE("9E365E57-48B2-4160-956F-C7385120BBFC")
-            IUriRuntimeClass : IInspectable
+            IUriRuntimeClass : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AbsoluteUri(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6740,8 +6906,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("44A9796F-723E-4FDF-A218-033E75B0C084"), exclusiveto, contract] */
             MIDL_INTERFACE("44A9796F-723E-4FDF-A218-033E75B0C084")
-            IUriRuntimeClassFactory : IInspectable
+            IUriRuntimeClassFactory : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateUri(
                     /* [in] */__RPC__in HSTRING uri,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * instance
@@ -6784,8 +6951,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("758D9661-221C-480F-A339-50656673F46F"), exclusiveto, contract] */
             MIDL_INTERFACE("758D9661-221C-480F-A339-50656673F46F")
-            IUriRuntimeClassWithAbsoluteCanonicalUri : IInspectable
+            IUriRuntimeClassWithAbsoluteCanonicalUri : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AbsoluteCanonicalUri(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6822,8 +6990,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("125E7431-F678-4E8E-B670-20A9B06C512D"), contract] */
             MIDL_INTERFACE("125E7431-F678-4E8E-B670-20A9B06C512D")
-            IWwwFormUrlDecoderEntry : IInspectable
+            IWwwFormUrlDecoderEntry : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -6868,8 +7037,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("D45A0451-F225-4542-9296-0E1DF5D254DF"), exclusiveto, contract] */
             MIDL_INTERFACE("D45A0451-F225-4542-9296-0E1DF5D254DF")
-            IWwwFormUrlDecoderRuntimeClass : IInspectable
+            IWwwFormUrlDecoderRuntimeClass : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetFirstValueByName(
                     /* [in] */__RPC__in HSTRING name,
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * phstrValue
@@ -6907,8 +7077,9 @@ namespace ABI {
         namespace Foundation {
             /* [object, uuid("5B8C6B3D-24AE-41B5-A1BF-F0C3D544845B"), exclusiveto, contract] */
             MIDL_INTERFACE("5B8C6B3D-24AE-41B5-A1BF-F0C3D544845B")
-            IWwwFormUrlDecoderRuntimeClassFactory : IInspectable
+            IWwwFormUrlDecoderRuntimeClassFactory : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateWwwFormUrlDecoder(
                     /* [in] */__RPC__in HSTRING query,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IWwwFormUrlDecoderRuntimeClass * * instance
@@ -8404,6 +8575,162 @@ interface __FIIterable_1_int
 
 
 #endif // ____FIIterable_1_int_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterator_1___z__zint64_INTERFACE_DEFINED__)
+#define ____FIIterator_1___z__zint64_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1___z__zint64 __FIIterator_1___z__zint64;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1___z__zint64;
+
+typedef struct __FIIterator_1___z__zint64Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1___z__zint64 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1___z__zint64 * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1___z__zint64 * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1___z__zint64 * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1___z__zint64 * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1___z__zint64 * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1___z__zint64 * This, /* [retval][out] */ __RPC__out __int64 *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1___z__zint64 * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1___z__zint64 * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1___z__zint64 * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __int64 *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1___z__zint64Vtbl;
+
+interface __FIIterator_1___z__zint64
+{
+    CONST_VTBL struct __FIIterator_1___z__zint64Vtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1___z__zint64_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1___z__zint64_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1___z__zint64_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1___z__zint64_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1___z__zint64_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1___z__zint64_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1___z__zint64_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1___z__zint64_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1___z__zint64_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1___z__zint64_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1___z__zint64_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterable_1___z__zint64_INTERFACE_DEFINED__)
+#define ____FIIterable_1___z__zint64_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1___z__zint64 __FIIterable_1___z__zint64;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1___z__zint64;
+
+typedef  struct __FIIterable_1___z__zint64Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1___z__zint64 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1___z__zint64 * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1___z__zint64 * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1___z__zint64 * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1___z__zint64 * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1___z__zint64 * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1___z__zint64 * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___z__zint64 **first);
+
+    END_INTERFACE
+} __FIIterable_1___z__zint64Vtbl;
+
+interface __FIIterable_1___z__zint64
+{
+    CONST_VTBL struct __FIIterable_1___z__zint64Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1___z__zint64_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1___z__zint64_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1___z__zint64_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1___z__zint64_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1___z__zint64_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1___z__zint64_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1___z__zint64_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1___z__zint64_INTERFACE_DEFINED__
 
 
 #if !defined(____FIIterator_1_UINT32_INTERFACE_DEFINED__)
@@ -17462,6 +17789,117 @@ interface __FIAsyncOperation_1_UINT64
 
 
 
+#if !defined(____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING;
+
+typedef struct __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRINGVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRINGVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING;
+
+typedef struct __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_HSTRING **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING * This, /* [retval][out] */ __RPC__out __FIMapView_2_HSTRING_HSTRING * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRINGVtbl;
+
+interface __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING
+{
+    CONST_VTBL struct __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRINGVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1___FIMapView_2_HSTRING_HSTRING_INTERFACE_DEFINED__
+
+
+
 #if !defined(____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 
@@ -19526,6 +19964,63 @@ interface __FIReference_1_Windows__CFoundation__CRect
 
 
 #endif // ____FIReference_1_Windows__CFoundation__CRect_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIReference_1_Windows__CFoundation__CSize_INTERFACE_DEFINED__)
+#define ____FIReference_1_Windows__CFoundation__CSize_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_Windows__CFoundation__CSize __FIReference_1_Windows__CFoundation__CSize;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CSize;
+
+typedef struct __FIReference_1_Windows__CFoundation__CSizeVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CFoundation__CSize * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CFoundation__CSize * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CFoundation__CSize * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CFoundation__CSize * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CFoundation__CSize * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CFoundation__CSize * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CFoundation__CSize * This, /* [retval][out] */ __RPC__out struct __x_ABI_CWindows_CFoundation_CSize *value);
+    END_INTERFACE
+} __FIReference_1_Windows__CFoundation__CSizeVtbl;
+
+interface __FIReference_1_Windows__CFoundation__CSize
+{
+    CONST_VTBL struct __FIReference_1_Windows__CFoundation__CSizeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_Windows__CFoundation__CSize_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_Windows__CFoundation__CSize_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_Windows__CFoundation__CSize_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_Windows__CFoundation__CSize_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_Windows__CFoundation__CSize_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_Windows__CFoundation__CSize_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_Windows__CFoundation__CSize_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_Windows__CFoundation__CSize_INTERFACE_DEFINED__
 
 
 #if !defined(____FIReference_1_boolean_INTERFACE_DEFINED__)

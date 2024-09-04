@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.storage.streams.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2920,8 +2922,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("905A0FE0-BC53-11DF-8C49-001E4FC686DA"), contract] */
                 MIDL_INTERFACE("905A0FE0-BC53-11DF-8C49-001E4FC686DA")
-                IBuffer : IInspectable
+                IBuffer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Capacity(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -2966,8 +2969,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("71AF914D-C10F-484B-BC50-14BC623B3A27"), exclusiveto, contract] */
                 MIDL_INTERFACE("71AF914D-C10F-484B-BC50-14BC623B3A27")
-                IBufferFactory : IInspectable
+                IBufferFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [range(0, 2147483647), in] */__RPC__in_range(0,0x7fffffff) UINT32 capacity,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
@@ -3007,8 +3011,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("E901E65B-D716-475A-A90A-AF7229B1E741"), exclusiveto, contract] */
                 MIDL_INTERFACE("E901E65B-D716-475A-A90A-AF7229B1E741")
-                IBufferStatics : IInspectable
+                IBufferStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateCopyFromMemoryBuffer(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IMemoryBuffer * input,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
@@ -3049,8 +3054,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("97D098A5-3B99-4DE9-88A5-E11D2F50C795"), contract] */
                 MIDL_INTERFACE("97D098A5-3B99-4DE9-88A5-E11D2F50C795")
-                IContentTypeProvider : IInspectable
+                IContentTypeProvider : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentType(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3086,8 +3092,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("E2B50029-B4C1-4314-A4B8-FB813A2F275E"), contract] */
                 MIDL_INTERFACE("E2B50029-B4C1-4314-A4B8-FB813A2F275E")
-                IDataReader : IInspectable
+                IDataReader : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnconsumedBufferLength(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -3205,8 +3212,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("D7527847-57DA-4E15-914C-06806699A098"), exclusiveto, contract] */
                 MIDL_INTERFACE("D7527847-57DA-4E15-914C-06806699A098")
-                IDataReaderFactory : IInspectable
+                IDataReaderFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateDataReader(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IInputStream * inputStream,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IDataReader * * dataReader
@@ -3246,8 +3254,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("11FCBFC8-F93A-471B-B121-F379E349313C"), exclusiveto, contract] */
                 MIDL_INTERFACE("11FCBFC8-F93A-471B-B121-F379E349313C")
-                IDataReaderStatics : IInspectable
+                IDataReaderStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromBuffer(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * buffer,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IDataReader * * dataReader
@@ -3284,8 +3293,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("64B89265-D341-4922-B38A-DD4AF8808C4E"), contract] */
                 MIDL_INTERFACE("64B89265-D341-4922-B38A-DD4AF8808C4E")
-                IDataWriter : IInspectable
+                IDataWriter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnstoredBufferLength(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -3407,8 +3417,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("338C67C2-8B84-4C2B-9C50-7B8767847A1F"), exclusiveto, contract] */
                 MIDL_INTERFACE("338C67C2-8B84-4C2B-9C50-7B8767847A1F")
-                IDataWriterFactory : IInspectable
+                IDataWriterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateDataWriter(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IOutputStream * outputStream,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IDataWriter * * dataWriter
@@ -3448,8 +3459,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("73550107-3B57-4B5D-8345-554D2FC621F0"), exclusiveto, contract] */
                 MIDL_INTERFACE("73550107-3B57-4B5D-8345-554D2FC621F0")
-                IFileRandomAccessStreamStatics : IInspectable
+                IFileRandomAccessStreamStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE OpenAsync(
                         /* [in] */__RPC__in HSTRING filePath,
                         /* [in] */ABI::Windows::Storage::FileAccessMode accessMode,
@@ -3534,8 +3546,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("905A0FE2-BC53-11DF-8C49-001E4FC686DA"), contract] */
                 MIDL_INTERFACE("905A0FE2-BC53-11DF-8C49-001E4FC686DA")
-                IInputStream : IInspectable
+                IInputStream : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReadAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * buffer,
                         /* [in] */UINT32 count,
@@ -3574,8 +3587,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("43929D18-5EC9-4B5A-919C-4205B0C804B6"), contract] */
                 MIDL_INTERFACE("43929D18-5EC9-4B5A-919C-4205B0C804B6")
-                IInputStreamReference : IInspectable
+                IInputStreamReference : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE OpenSequentialReadAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream * * operation
                         ) = 0;
@@ -3615,8 +3629,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("905A0FE6-BC53-11DF-8C49-001E4FC686DA"), contract] */
                 MIDL_INTERFACE("905A0FE6-BC53-11DF-8C49-001E4FC686DA")
-                IOutputStream : IInspectable
+                IOutputStream : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE WriteAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * buffer,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_UINT32_UINT32 * * operation
@@ -3662,8 +3677,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("905A0FE1-BC53-11DF-8C49-001E4FC686DA"), contract] */
                 MIDL_INTERFACE("905A0FE1-BC53-11DF-8C49-001E4FC686DA")
-                IRandomAccessStream : IInspectable
+                IRandomAccessStream : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Size(
                         /* [retval, out] */__RPC__out UINT64 * value
                         ) = 0;
@@ -3725,8 +3741,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("33EE3134-1DD6-4E3A-8067-D1C162E8642B"), contract] */
                 MIDL_INTERFACE("33EE3134-1DD6-4E3A-8067-D1C162E8642B")
-                IRandomAccessStreamReference : IInspectable
+                IRandomAccessStreamReference : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE OpenReadAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType * * operation
                         ) = 0;
@@ -3765,8 +3782,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("857309DC-3FBF-4E7D-986F-EF3B1A07A964"), exclusiveto, contract] */
                 MIDL_INTERFACE("857309DC-3FBF-4E7D-986F-EF3B1A07A964")
-                IRandomAccessStreamReferenceStatics : IInspectable
+                IRandomAccessStreamReferenceStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromFile(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * * streamReference
@@ -3814,8 +3832,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("524CEDCF-6E29-4CE5-9573-6B753DB66C3A"), exclusiveto, contract] */
                 MIDL_INTERFACE("524CEDCF-6E29-4CE5-9573-6B753DB66C3A")
-                IRandomAccessStreamStatics : IInspectable
+                IRandomAccessStreamStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CopyAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IInputStream * source,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IOutputStream * destination,
@@ -3872,8 +3891,9 @@ namespace ABI {
             namespace Streams {
                 /* [object, uuid("CC254827-4B3D-438F-9232-10C76BC7E038"), contract] */
                 MIDL_INTERFACE("CC254827-4B3D-438F-9232-10C76BC7E038")
-                IRandomAccessStreamWithContentType : IInspectable
+                IRandomAccessStreamWithContentType : public IInspectable
                 {
+                public:
                     
                 };
 

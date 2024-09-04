@@ -12,6 +12,10 @@ Abstract:
 
 --*/
 
+#ifdef _MSC_VER
+#pragma once
+#endif // _MSC_VER
+
 #ifndef __TDH_H__
 #define __TDH_H__
 #include <winapifamily.h>
@@ -19,6 +23,9 @@ Abstract:
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
+#ifndef TDH_INLINE
+#define TDH_INLINE __inline
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -980,7 +987,7 @@ TdhGetManifestEventInformation (
 //  Helper macros to access strings from variable length Tdh structures.
 //
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 EMI_MAP_NAME(
     _In_ PEVENT_MAP_INFO MapInfo
@@ -991,7 +998,7 @@ EMI_MAP_NAME(
            (PWSTR)((PBYTE)MapInfo + MapInfo->NameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 EMI_MAP_FORMAT(
     _In_ PEVENT_MAP_INFO MapInfo
@@ -1005,7 +1012,7 @@ EMI_MAP_FORMAT(
     }
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 EMI_MAP_OUTPUT(
     _In_ PEVENT_MAP_INFO MapInfo,
@@ -1017,7 +1024,7 @@ EMI_MAP_OUTPUT(
            (PWSTR)((PBYTE)MapInfo + Map->OutputOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 EMI_MAP_INPUT(
     _In_ PEVENT_MAP_INFO MapInfo,
@@ -1032,7 +1039,7 @@ EMI_MAP_INPUT(
     }
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_MAP_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo,
@@ -1044,7 +1051,7 @@ TEI_MAP_NAME(
            (PWSTR)((PBYTE)EventInfo + Property->nonStructType.MapNameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_PROPERTY_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo,
@@ -1056,7 +1063,7 @@ TEI_PROPERTY_NAME(
            (PWSTR)((PBYTE)EventInfo + Property->NameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_PROVIDER_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1067,7 +1074,7 @@ TEI_PROVIDER_NAME(
            (PWSTR)((PBYTE)EventInfo + EventInfo->ProviderNameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_LEVEL_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1078,7 +1085,7 @@ TEI_LEVEL_NAME(
            (PWSTR)((PBYTE)EventInfo + EventInfo->LevelNameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_CHANNEL_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1089,7 +1096,7 @@ TEI_CHANNEL_NAME(
            (PWSTR)((PBYTE)EventInfo + EventInfo->ChannelNameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_KEYWORDS_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1100,7 +1107,7 @@ TEI_KEYWORDS_NAME(
            (PWSTR)((PBYTE)EventInfo + EventInfo->KeywordsNameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_TASK_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1111,7 +1118,7 @@ TEI_TASK_NAME(
            (PWSTR)((PBYTE)EventInfo + EventInfo->TaskNameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_OPCODE_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1122,7 +1129,7 @@ TEI_OPCODE_NAME(
            (PWSTR)((PBYTE)EventInfo + EventInfo->OpcodeNameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_EVENT_MESSAGE(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1133,7 +1140,7 @@ TEI_EVENT_MESSAGE(
            (PWSTR)((PBYTE)EventInfo + EventInfo->EventMessageOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_PROVIDER_MESSAGE(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1144,7 +1151,7 @@ TEI_PROVIDER_MESSAGE(
            (PWSTR)((PBYTE)EventInfo + EventInfo->ProviderMessageOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_ACTIVITYID_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1155,7 +1162,7 @@ TEI_ACTIVITYID_NAME(
            (PWSTR)((PBYTE)EventInfo + EventInfo->ActivityIDNameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 TEI_RELATEDACTIVITYID_NAME(
     _In_ PTRACE_EVENT_INFO EventInfo
@@ -1173,7 +1180,7 @@ TEI_RELATEDACTIVITYID_NAME(
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 #if (WINVER >= _WIN32_WINNT_WIN7)
-FORCEINLINE
+TDH_INLINE
 PWSTR
 PFI_FILTER_MESSAGE(
     _In_ PPROVIDER_FILTER_INFO FilterInfo
@@ -1186,7 +1193,7 @@ PFI_FILTER_MESSAGE(
 #endif
 
 #if (WINVER >= _WIN32_WINNT_WIN7)
-FORCEINLINE
+TDH_INLINE
 PWSTR
 PFI_PROPERTY_NAME(
     _In_ PPROVIDER_FILTER_INFO FilterInfo,
@@ -1205,7 +1212,7 @@ PFI_PROPERTY_NAME(
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 PFI_FIELD_NAME(
     _In_ PPROVIDER_FIELD_INFOARRAY FieldInfoArray,
@@ -1217,7 +1224,7 @@ PFI_FIELD_NAME(
            (PWSTR)((PBYTE)FieldInfoArray + FieldInfo->NameOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 PFI_FIELD_MESSAGE(
     _In_ PPROVIDER_FIELD_INFOARRAY FieldInfoArray,
@@ -1229,7 +1236,7 @@ PFI_FIELD_MESSAGE(
            (PWSTR)((PBYTE)FieldInfoArray + FieldInfo->DescriptionOffset);
 }
 
-FORCEINLINE
+TDH_INLINE
 PWSTR
 PEI_PROVIDER_NAME(
     _In_ PPROVIDER_ENUMERATION_INFO ProviderEnum,

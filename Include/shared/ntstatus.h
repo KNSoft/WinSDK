@@ -145,7 +145,8 @@ Notes:
 #define FACILITY_SYSTEM_INTEGRITY        0xE9
 #define FACILITY_LICENSING               0xEA
 #define FACILITY_PLATFORM_MANIFEST       0xEB
-#define FACILITY_MAXIMUM_VALUE           0xEC
+#define FACILITY_APP_EXEC                0xEC
+#define FACILITY_MAXIMUM_VALUE           0xED
 
 
 //
@@ -624,6 +625,15 @@ Notes:
 // At least a portion of IO range intersects with a ghosted file range.
 //
 #define STATUS_GHOSTED                   ((NTSTATUS)0x0000012FL)
+
+//
+// MessageId: STATUS_DATA_OVERWRITTEN
+//
+// MessageText:
+//
+// A completed operation may have overwritten previous data.
+//
+#define STATUS_DATA_OVERWRITTEN          ((NTSTATUS)0x00000130L)
 
 //
 // MessageId: STATUS_RESOURCEMANAGER_READ_ONLY
@@ -1928,7 +1938,7 @@ Notes:
 
 /*++
 
- MessageId's 0xcf00 - 0xcfff (inclusive) are for Cloud Files specific messages.
+ MessageId's 0xcf00 - 0xcfff (inclusive) are for Cloud Files specific warning messages.
 
 --*/
 //
@@ -1942,7 +1952,7 @@ Notes:
 
 /*++
 
- End of Cloud Files specific messages.
+ End of Cloud Files specific warning messages.
 
 --*/
 /////////////////////////////////////////////////////////////////////////
@@ -9921,6 +9931,87 @@ Notes:
 //
 #define STATUS_EXTERNAL_SYSKEY_NOT_SUPPORTED ((NTSTATUS)0xC00004A1L)
 
+//
+// MessageId: STATUS_ENCLAVE_VIOLATION
+//
+// MessageText:
+//
+// An attempt was made to access protected memory in violation of its secure access policy.
+//
+#define STATUS_ENCLAVE_VIOLATION         ((NTSTATUS)0xC00004A2L)    // winnt
+
+//
+// MessageId: STATUS_FILE_PROTECTED_UNDER_DPL
+//
+// MessageText:
+//
+// File is not accessible because it's currently protected under DPL.
+//
+#define STATUS_FILE_PROTECTED_UNDER_DPL  ((NTSTATUS)0xC00004A3L)
+
+//
+// MessageId: STATUS_VOLUME_NOT_CLUSTER_ALIGNED
+//
+// MessageText:
+//
+// The volume is not cluster aligned on the disk.
+//
+#define STATUS_VOLUME_NOT_CLUSTER_ALIGNED ((NTSTATUS)0xC00004A4L)
+
+//
+// MessageId: STATUS_NO_PHYSICALLY_ALIGNED_FREE_SPACE_FOUND
+//
+// MessageText:
+//
+// No physically aligned free space was found on the volume.
+//
+#define STATUS_NO_PHYSICALLY_ALIGNED_FREE_SPACE_FOUND ((NTSTATUS)0xC00004A5L)
+
+//
+// MessageId: STATUS_APPX_FILE_NOT_ENCRYPTED
+//
+// MessageText:
+//
+// The APPX file can not be accessed because it is not encrypted as expected.
+//
+#define STATUS_APPX_FILE_NOT_ENCRYPTED   ((NTSTATUS)0xC00004A6L)
+
+//
+// MessageId: STATUS_RWRAW_ENCRYPTED_FILE_NOT_ENCRYPTED
+//
+// MessageText:
+//
+// A read or write of raw encrypted data cannot be performed because the file is not encrypted.
+//
+#define STATUS_RWRAW_ENCRYPTED_FILE_NOT_ENCRYPTED ((NTSTATUS)0xC00004A7L)
+
+//
+// MessageId: STATUS_RWRAW_ENCRYPTED_INVALID_EDATAINFO_FILEOFFSET
+//
+// MessageText:
+//
+// An invalid file offset in the encrypted data info block was passed for read or write operation of file's raw encrypted data.
+//
+#define STATUS_RWRAW_ENCRYPTED_INVALID_EDATAINFO_FILEOFFSET ((NTSTATUS)0xC00004A8L)
+
+//
+// MessageId: STATUS_RWRAW_ENCRYPTED_INVALID_EDATAINFO_FILERANGE
+//
+// MessageText:
+//
+// An invalid offset and length combination in the encrypted data info was passed for read or write operation of file's raw encrypted data.
+//
+#define STATUS_RWRAW_ENCRYPTED_INVALID_EDATAINFO_FILERANGE ((NTSTATUS)0xC00004A9L)
+
+//
+// MessageId: STATUS_RWRAW_ENCRYPTED_INVALID_EDATAINFO_PARAMETER
+//
+// MessageText:
+//
+// An invalid parameter in the encrypted data info was passed for read or write operation of file's raw encrypted data.
+//
+#define STATUS_RWRAW_ENCRYPTED_INVALID_EDATAINFO_PARAMETER ((NTSTATUS)0xC00004AAL)
+
 
 //     **** New SYSTEM error codes can be inserted here ****
 
@@ -11250,6 +11341,15 @@ Notes:
 //
 #define STATUS_LPAC_ACCESS_DENIED        ((NTSTATUS)0xC000A203L)
 
+//
+// MessageId: STATUS_ADMINLESS_ACCESS_DENIED
+//
+// MessageText:
+//
+// Access to the specified resource has been denied for an adminless system.
+//
+#define STATUS_ADMINLESS_ACCESS_DENIED   ((NTSTATUS)0xC000A204L)
+
 /*++
 
  MessageId's 0xa281 - 0xa2a0 (inclusive) are reserved for Fast Cache specific messages.
@@ -11302,7 +11402,7 @@ Notes:
 
 /*++
 
- MessageId's 0xa2a1 - 0xa300 (inclusive) are for File System Filters Supported Features specific messages.
+ MessageId's 0xa2a1 - 0xa300 (inclusive) are for File System specific messages.
 
 --*/
 //
@@ -11340,6 +11440,33 @@ Notes:
 // The copy offload write operation is not supported for the file.
 //
 #define STATUS_OFFLOAD_WRITE_FILE_NOT_SUPPORTED ((NTSTATUS)0xC000A2A4L)
+
+//
+// MessageId: STATUS_WOF_WIM_HEADER_CORRUPT
+//
+// MessageText:
+//
+// The WOF driver encountered a corruption in WIM image's Header.
+//
+#define STATUS_WOF_WIM_HEADER_CORRUPT    ((NTSTATUS)0xC000A2A5L)
+
+//
+// MessageId: STATUS_WOF_WIM_RESOURCE_TABLE_CORRUPT
+//
+// MessageText:
+//
+// The WOF driver encountered a corruption in WIM image's Resource Table.
+//
+#define STATUS_WOF_WIM_RESOURCE_TABLE_CORRUPT ((NTSTATUS)0xC000A2A6L)
+
+//
+// MessageId: STATUS_WOF_FILE_RESOURCE_TABLE_CORRUPT
+//
+// MessageText:
+//
+// The WOF driver encountered a corruption in the compressed file's Resource Table.
+//
+#define STATUS_WOF_FILE_RESOURCE_TABLE_CORRUPT ((NTSTATUS)0xC000A2A7L)
 
 /*++
 
@@ -11482,7 +11609,7 @@ Notes:
 //
 // MessageText:
 //
-// The cloud sync root is already connected with another cloud sync engine.
+// The cloud sync root is already connected with another cloud sync provider.
 //
 #define STATUS_CLOUD_FILE_ALREADY_CONNECTED ((NTSTATUS)0xC000CF09L)
 
@@ -11491,7 +11618,7 @@ Notes:
 //
 // MessageText:
 //
-// The operation is not supported by the cloud sync engine.
+// The operation is not supported by the cloud sync provider.
 //
 #define STATUS_CLOUD_FILE_NOT_SUPPORTED  ((NTSTATUS)0xC000CF0AL)
 
@@ -11518,7 +11645,7 @@ Notes:
 //
 // MessageText:
 //
-// The operation is reserved for a connected cloud sync engine.
+// The operation is reserved for a connected cloud sync provider.
 //
 #define STATUS_CLOUD_FILE_CONNECTED_PROVIDER_ONLY ((NTSTATUS)0xC000CF0DL)
 
@@ -11527,7 +11654,7 @@ Notes:
 //
 // MessageText:
 //
-// The cloud sync engine failed to validate the downloaded data.
+// The cloud sync provider failed to validate the downloaded data.
 //
 #define STATUS_CLOUD_FILE_VALIDATION_FAILED ((NTSTATUS)0xC000CF0EL)
 
@@ -11536,7 +11663,7 @@ Notes:
 //
 // MessageText:
 //
-// The cloud sync engine failed user authentication.
+// The cloud sync provider failed user authentication.
 //
 #define STATUS_CLOUD_FILE_AUTHENTICATION_FAILED ((NTSTATUS)0xC000CF0FL)
 
@@ -11545,7 +11672,7 @@ Notes:
 //
 // MessageText:
 //
-// The cloud sync engine failed to perform the operation due to low system resources.
+// The cloud sync provider failed to perform the operation due to low system resources.
 //
 #define STATUS_CLOUD_FILE_INSUFFICIENT_RESOURCES ((NTSTATUS)0xC000CF10L)
 
@@ -11554,7 +11681,7 @@ Notes:
 //
 // MessageText:
 //
-// The cloud sync engine failed to perform the operation due to network being unavailable.
+// The cloud sync provider failed to perform the operation due to network being unavailable.
 //
 #define STATUS_CLOUD_FILE_NETWORK_UNAVAILABLE ((NTSTATUS)0xC000CF11L)
 
@@ -11647,6 +11774,24 @@ Notes:
 // The cloud operation was canceled by user.
 //
 #define STATUS_CLOUD_FILE_REQUEST_CANCELED ((NTSTATUS)0xC000CF1BL)
+
+//
+// MessageId: STATUS_CLOUD_FILE_PROVIDER_TERMINATED
+//
+// MessageText:
+//
+// The cloud file provider exited unexpectedly.
+//
+#define STATUS_CLOUD_FILE_PROVIDER_TERMINATED ((NTSTATUS)0xC000CF1DL)
+
+//
+// MessageId: STATUS_NOT_A_CLOUD_SYNC_ROOT
+//
+// MessageText:
+//
+// The file is not a cloud sync root.
+//
+#define STATUS_NOT_A_CLOUD_SYNC_ROOT     ((NTSTATUS)0xC000CF1EL)
 
 /*++
 
@@ -20445,6 +20590,24 @@ Notes:
 //
 #define STATUS_PCP_IFX_RSA_KEY_CREATION_BLOCKED ((NTSTATUS)0xC029201FL)
 
+//
+// MessageId: STATUS_PCP_TICKET_MISSING
+//
+// MessageText:
+//
+// A ticket required to use a key was not provided.
+//
+#define STATUS_PCP_TICKET_MISSING        ((NTSTATUS)0xC0292020L)
+
+//
+// MessageId: STATUS_PCP_RAW_POLICY_NOT_SUPPORTED
+//
+// MessageText:
+//
+// This key has a raw policy so the KSP can't authenticate against it.
+//
+#define STATUS_PCP_RAW_POLICY_NOT_SUPPORTED ((NTSTATUS)0xC0292021L)
+
 
 //
 // Remote TPM Error Codes
@@ -22883,6 +23046,15 @@ Notes:
 #define STATUS_RDBSS_POST_OPERATION      ((NTSTATUS)0xC0410003L)
 
 //
+// MessageId: STATUS_RDBSS_RETRY_LOOKUP
+//
+// MessageText:
+//
+// The caller must retry by looking up the object in the name table.
+//
+#define STATUS_RDBSS_RETRY_LOOKUP        ((NTSTATUS)0xC0410004L)
+
+//
 // Bluetooth Attribute Protocol Warnings
 //
 
@@ -23944,6 +24116,72 @@ Notes:
 // The hypervisor is not protecting DMA because an IOMMU is not present or not enabled in the BIOS.
 //
 #define STATUS_VSM_DMA_PROTECTION_NOT_IN_USE ((NTSTATUS)0xC0450001L)
+
+//
+// Application Execution (AppExec)
+//
+//
+// MessageId: STATUS_APPEXEC_CONDITION_NOT_SATISFIED
+//
+// MessageText:
+//
+// The condition supplied for the app execution request was not satisfied, so the request was not performed.
+//
+#define STATUS_APPEXEC_CONDITION_NOT_SATISFIED ((NTSTATUS)0xC0EC0000L)
+
+//
+// MessageId: STATUS_APPEXEC_HANDLE_INVALIDATED
+//
+// MessageText:
+//
+// The supplied handle has been invalidated and may not be used for the requested operation.
+//
+#define STATUS_APPEXEC_HANDLE_INVALIDATED ((NTSTATUS)0xC0EC0001L)
+
+//
+// MessageId: STATUS_APPEXEC_INVALID_HOST_GENERATION
+//
+// MessageText:
+//
+// The supplied host generation has been invalidated and may not be used for the requested operation.
+//
+#define STATUS_APPEXEC_INVALID_HOST_GENERATION ((NTSTATUS)0xC0EC0002L)
+
+//
+// MessageId: STATUS_APPEXEC_UNEXPECTED_PROCESS_REGISTRATION
+//
+// MessageText:
+//
+// An attempt to register a process failed because the target host was not in a valid state to receive process registrations.
+//
+#define STATUS_APPEXEC_UNEXPECTED_PROCESS_REGISTRATION ((NTSTATUS)0xC0EC0003L)
+
+//
+// MessageId: STATUS_APPEXEC_INVALID_HOST_STATE
+//
+// MessageText:
+//
+// The host is not in a valid state to support the execution request.
+//
+#define STATUS_APPEXEC_INVALID_HOST_STATE ((NTSTATUS)0xC0EC0004L)
+
+//
+// MessageId: STATUS_APPEXEC_NO_DONOR
+//
+// MessageText:
+//
+// The operation was not completed because a required resource donor was not found for the host.
+//
+#define STATUS_APPEXEC_NO_DONOR          ((NTSTATUS)0xC0EC0005L)
+
+//
+// MessageId: STATUS_APPEXEC_HOST_ID_MISMATCH
+//
+// MessageText:
+//
+// The operation was not completed because an unexpected host ID was encountered.
+//
+#define STATUS_APPEXEC_HOST_ID_MISMATCH  ((NTSTATUS)0xC0EC0006L)
 
 //
 // Map a WIN32 error value into an NTSTATUS

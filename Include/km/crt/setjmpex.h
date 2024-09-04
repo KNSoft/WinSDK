@@ -38,10 +38,7 @@
 
 #else
 
-#ifdef setjmp
 #undef setjmp
-#endif
-
 #define setjmp _setjmpex
 
 #endif

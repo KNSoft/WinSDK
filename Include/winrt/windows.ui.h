@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -371,8 +373,9 @@ namespace ABI {
         namespace UI {
             /* [object, uuid("193CFBE7-65C7-4540-AD08-6283BA76879A"), exclusiveto, contract] */
             MIDL_INTERFACE("193CFBE7-65C7-4540-AD08-6283BA76879A")
-            IColorHelper : IInspectable
+            IColorHelper : public IInspectable
             {
+            public:
                 
             };
 
@@ -406,8 +409,9 @@ namespace ABI {
         namespace UI {
             /* [object, uuid("8504DBEA-FB6A-4144-A6C2-33499C9284F5"), exclusiveto, contract] */
             MIDL_INTERFACE("8504DBEA-FB6A-4144-A6C2-33499C9284F5")
-            IColorHelperStatics : IInspectable
+            IColorHelperStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE FromArgb(
                     /* [in] */BYTE a,
                     /* [in] */BYTE r,
@@ -448,8 +452,9 @@ namespace ABI {
         namespace UI {
             /* [object, uuid("24D9AF02-6EB0-4B94-855C-FCF0818D9A16"), exclusiveto, contract] */
             MIDL_INTERFACE("24D9AF02-6EB0-4B94-855C-FCF0818D9A16")
-            IColorHelperStatics2 : IInspectable
+            IColorHelperStatics2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE ToDisplayName(
                     /* [in] */ABI::Windows::UI::Color color,
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
@@ -487,8 +492,9 @@ namespace ABI {
         namespace UI {
             /* [object, uuid("9B8C9326-4CA6-4CE5-8994-9EFF65CABDCC"), exclusiveto, contract] */
             MIDL_INTERFACE("9B8C9326-4CA6-4CE5-8994-9EFF65CABDCC")
-            IColors : IInspectable
+            IColors : public IInspectable
             {
+            public:
                 
             };
 
@@ -522,8 +528,9 @@ namespace ABI {
         namespace UI {
             /* [object, uuid("CFF52E04-CCA6-4614-A17E-754910C84A99"), exclusiveto, contract] */
             MIDL_INTERFACE("CFF52E04-CCA6-4614-A17E-754910C84A99")
-            IColorsStatics : IInspectable
+            IColorsStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AliceBlue(
                     /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                     ) = 0;

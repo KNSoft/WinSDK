@@ -1810,9 +1810,10 @@ typedef struct _DXGK_BRIGHTNESS_CAPS
     {
         struct
         {
-            UINT SmoothBrightness   :    1; // 0x00000001
-            UINT AdaptiveBrightness :    1; // 0x00000002
-            UINT Reserved           :   30; // 0xFFFFFFFC
+            UINT SmoothBrightness   :    1;  // 0x00000001
+            UINT AdaptiveBrightness :    1;  // 0x00000002
+            UINT NitsBrightness     :    1;  // 0x00000004
+            UINT Reserved           :    29; // 0xFFFFFFF8
         };
 
         UINT  Value;
@@ -1851,6 +1852,62 @@ typedef struct _DXGK_BACKLIGHT_INFO
     OUT D3DDDI_GAMMA_RAMP_RGB256x3x16   GammaRamp;
 } DXGK_BACKLIGHT_INFO;
 
+typedef struct _DXGK_BRIGHTNESS_SENSOR_DATA_CHROMATICITY
+{
+    float ChromaticityX;
+    float ChromaticityY;
+} DXGK_BRIGHTNESS_SENSOR_DATA_CHROMATICITY;
+
+typedef struct _DXGK_BRIGHTNESS_SENSOR_DATA
+{
+    UINT32    Size;
+    union
+    {
+        struct
+        {
+            UINT AlsReadingValid : 1;
+            UINT ChromaticityValid : 1;
+            UINT ColorTemperatureValid : 1;
+            UINT Reserved : 29;
+        } Flags;
+        UINT ValidSensorValues;
+    };
+    float  AlsReading;
+    DXGK_BRIGHTNESS_SENSOR_DATA_CHROMATICITY Chromaticity;
+    float ColorTemperature;
+} DXGK_BRIGHTNESS_SENSOR_DATA;
+
+
+typedef struct _DXGK_BRIGHTNESS_SET_IN
+{
+    UINT32                             BrightnessMillinits;
+    UINT32                             TransitionTimeMs;
+    DXGK_BRIGHTNESS_SENSOR_DATA        SensorReadings;
+} DXGK_BRIGHTNESS_SET_IN, *PDXGK_BRIGHTNESS_SET_IN;
+
+typedef struct _DXGK_BRIGHTNESS_GET_OUT
+{
+    UINT32 CurrentBrightnessMillinits;
+    UINT32 TargetBrightnessMillinits;
+} DXGK_BRIGHTNESS_GET_OUT, *PDXGK_BRIGHTNESS_GET_OUT;
+
+typedef struct _DXGK_BRIGHTNESS_NIT_RANGE
+{
+    UINT32 MinimumLevelMillinit;
+    UINT32 MaximumLevelMillinit;
+    UINT32 StepSizeMillinit;
+} DXGK_BRIGHTNESS_NIT_RANGE;
+
+#define DXGK_BRIGHTNESS_MAXIMUM_NIT_RANGE_COUNT 16
+
+typedef struct _DXGK_BRIGHTNESS_GET_NIT_RANGES_OUT
+{
+    UINT32                      NormalRangeCount;
+    UINT32                      RangeCount;
+    UINT32                      PreferredMaximumBrightness;
+    DXGK_BRIGHTNESS_NIT_RANGE   SupportedRanges[DXGK_BRIGHTNESS_MAXIMUM_NIT_RANGE_COUNT];
+} DXGK_BRIGHTNESS_GET_NIT_RANGES_OUT, *PDXGK_BRIGHTNESS_GET_NIT_RANGES_OUT;
+
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
 
 typedef struct _D3DKMT_WDDM_1_3_CAPS
@@ -1864,7 +1921,8 @@ typedef struct _D3DKMT_WDDM_1_3_CAPS
             UINT IsHybridDiscreteGPU : 1;
             UINT SupportPowerManagementPStates : 1;
             UINT SupportVirtualModes : 1;
-            UINT Reserved : 27;
+            UINT SupportCrossAdapterResource : 1;
+            UINT Reserved : 26;
         };
         UINT Value;
     };
@@ -1921,11 +1979,71 @@ typedef struct _DXGK_NODEMETADATA
 
 typedef DXGK_NODEMETADATA DXGKARG_GETNODEMETADATA;
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+typedef struct _DXGK_GPUCLOCKDATA_FLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT ContextManagementProcessor :  1;
+            UINT Reserved                   : 31;
+        };
+        UINT32 Value;
+    };
+} DXGK_GPUCLOCKDATA_FLAGS;
+
+typedef struct _DXGK_NODE_PERFDATA
+{
+    ULONGLONG       Frequency;              // out: Clock frequency of the engine in hertz
+    ULONGLONG       MaxFrequency;           // out: Max engine clock frequency
+    ULONGLONG       MaxFrequencyOC;         // out: Max engine over clock frequency
+    ULONG           Voltage;                // out: Voltage of the engine in milli volts mV
+    ULONG           VoltageMax;             // out: Max voltage levels in milli volts.
+    ULONG           VoltageMaxOC;           // out: Max voltage level while overclocked in milli volts.
+} DXGK_NODE_PERFDATA;
+
+typedef struct _DXGK_ADAPTER_PERFDATA
+{
+    ULONGLONG       MemoryFrequency;        // out: Clock frequency of the memory in hertz
+    ULONGLONG       MaxMemoryFrequency;     // out: Max memory clock frequency
+    ULONGLONG       MaxMemoryFrequencyOC;   // out: Clock frequency of the memory while overclocked in hertz.
+    ULONGLONG       MemoryBandwidth;        // out: Amount of memory transferred in bytes
+    ULONGLONG       PCIEBandwidth;          // out: Amount of memory transferred over PCI-E in bytes
+    ULONG           FanRPM;                 // out: Fan rpm
+    ULONG           Power;                  // out: Power draw of the adapter in tenths of a percentage
+    ULONG           Temperature;            // out: Temperature in deci-Celsius 1 = 0.1C
+    UCHAR           PowerStateOverride;     // out: Overrides dxgkrnls power view of linked adapters.
+} DXGK_ADAPTER_PERFDATA;
+
+typedef struct _DXGK_ADAPTER_PERFDATACAPS
+{
+    ULONGLONG   MaxMemoryBandwidth;     // out: Max memory bandwidth in bytes for 1 second
+    ULONGLONG   MaxPCIEBandwidth;       // out: Max pcie bandwidth in bytes for 1 second
+    ULONG       MaxFanRPM;              // out: Max fan rpm
+    ULONG       TemperatureMax;         // out: Max temperature before damage levels
+    ULONG       TemperatureWarning;     // out: The temperature level where throttling begins.
+} DXGK_ADAPTER_PERFDATACAPS;
+
+#define DXGK_MAX_GPUVERSION_NAME_LENGTH 32
+typedef struct _DXGK_GPUVERSION
+{
+    WCHAR           BiosVersion[DXGK_MAX_GPUVERSION_NAME_LENGTH];     //out: The gpu bios version
+    WCHAR           GpuArchitecture[DXGK_MAX_GPUVERSION_NAME_LENGTH]; //out: The gpu architectures name.
+} DXGK_GPUVERSION;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
 typedef struct _DXGK_GPUCLOCKDATA
 {
-    ULONGLONG GpuFrequency;
-    ULONGLONG GpuClockCounter;
-    ULONGLONG CpuClockCounter;
+    ULONGLONG               GpuFrequency;
+    ULONGLONG               GpuClockCounter;
+    ULONGLONG               CpuClockCounter;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+    DXGK_GPUCLOCKDATA_FLAGS Flags;        
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 } DXGK_GPUCLOCKDATA;
 
 typedef DXGK_GPUCLOCKDATA DXGKARG_CALIBRATEGPUCLOCK;
@@ -1940,10 +2058,17 @@ typedef struct _D3DKMT_WDDM_2_0_CAPS
     {
         struct
         {
-            UINT Support64BitAtomics    : 1;
-            UINT GpuMmuSupported        : 1;
-            UINT IoMmuSupported         : 1;
-            UINT Reserved               : 29;
+            UINT Support64BitAtomics       : 1;
+            UINT GpuMmuSupported           : 1;
+            UINT IoMmuSupported            : 1;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+            UINT FlipOverwriteSupported    : 1;
+            UINT SupportContextlessPresent : 1;
+            UINT Reserved                  : 27;
+#else
+            UINT Reserved                  : 29;
+#endif // !(DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
         };
         UINT Value;
     };
@@ -2061,17 +2186,27 @@ typedef union _DXGK_MONITORLINKINFO_CAPABILITIES
         UINT Stereo                     : 1;    // 0x00000001
         UINT WideColorSpace             : 1;    // 0x00000002
         UINT HighColorSpace             : 1;    // 0x00000004
-#if (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_2)
-        UINT Reserved                   :29;    // 0xFFFFFFF8
-#else // (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
         UINT DynamicColorSpace          : 1;    // 0x00000008
         UINT DynamicBitsPerColorChannel : 1;    // 0x00000010
         UINT DynamicColorEncodingFormat : 1;    // 0x00000020
-        
         UINT DedicatedTimingGeneration  : 1;    // 0x00000040
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+        UINT TargetIndependentPrimary   : 1;    // 0x00000080
+        UINT SyncLockIdentical          : 1;    // 0x00000100
+        UINT Hdr10Plus                  : 1;    // 0x00000200
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+        UINT Reserved                   :22;    // 0xFFFFFC00
+#elif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
         UINT Reserved                   :25;    // 0xFFFFFF80
-#endif // (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+#else
+        UINT Reserved                   :29;    // 0xFFFFFFF8
+#endif // DXGKDDI_INTERFACE_VERSION
     };
     UINT Value;
 } DXGK_MONITORLINKINFO_CAPABILITIES, *PDXGK_MONITORLINKINFO_CAPABILITIES;
@@ -2089,7 +2224,9 @@ typedef enum _DXGK_DISPLAY_USAGE : BYTE
     DXGK_DU_GENERIC     = 1,
     DXGK_DU_AR          = 2,
     DXGK_DU_VR          = 3,
-    DXGK_DU_MAX         = 4
+    DXGK_DU_MEDICAL_IMAGING = 4,
+    DXGK_DU_ACCESSORY   = 5,
+    DXGK_DU_MAX         = 6
 } DXGK_DISPLAY_USAGE, *PDXGK_DISPLAY_USAGE;
 
 typedef enum _DXGK_DISPLAY_TECHNOLOGY : BYTE

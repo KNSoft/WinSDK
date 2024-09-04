@@ -1150,14 +1150,25 @@ typedef struct _DEBUG_DEVICE_INFORMATION {
 #define DEBUG_DEVICE_PORT_NET 0x8003
 #define DEBUG_DEVICE_PORT_LOCAL 0x8004
 
-#define DEBUG_DEVICE_PORT_SUBTYPE_16550 0x0000
-#define DEBUG_DEVICE_PORT_SUBTYPE_16450 0x0001
-#define DEBUG_DEVICE_PORT_SUBTYPE_PL011 0x0003
-#define DEBUG_DEVICE_PORT_SUBTYPE_UEFI 0x0007
-#define DEBUG_DEVICE_PORT_SUBTYPE_IMX6 0x000C
-#define DEBUG_DEVICE_PORT_SUBTYPE_SBSA32 0x000D
-#define DEBUG_DEVICE_PORT_SUBTYPE_SBSA 0x000E
-#define DEBUG_DEVICE_PORT_SUBTYPE_MM16550 0x0012
+#define DEBUG_DEVICE_SERIAL_LEGACY_16550 0x0
+#define DEBUG_DEVICE_SERIAL_GEN_16550 0x1
+#define DEBUG_DEVICE_SERIAL_SPI_MAX311XE 0x2
+#define DEBUG_DEVICE_SERIAL_PL011 0x3
+#define DEBUG_DEVICE_SERIAL_Q8X60 0x4
+#define DEBUG_DEVICE_SERIAL_NVIDIA 0x5
+#define DEBUG_DEVICE_SERIAL_OMAP 0x6
+#define DEBUG_DEVICE_SERIAL_UEFI_DBGPORT 0x7
+#define DEBUG_DEVICE_SERIAL_APM88XXXX 0x8
+#define DEBUG_DEVICE_SERIAL_Q8X74 0x9
+#define DEBUG_DEVICE_SERIAL_SAM5250 0xA
+#define DEBUG_DEVICE_SERIAL_USIF 0xB
+#define DEBUG_DEVICE_SERIAL_IMX6 0xC
+#define DEBUG_DEVICE_SERIAL_SBSA32 0xD
+#define DEBUG_DEVICE_SERIAL_SBSA 0xE
+#define DEBUG_DEVICE_SERIAL_ARM_DCC 0xF
+#define DEBUG_DEVICE_SERIAL_BCM2835 0x10
+#define DEBUG_DEVICE_SERIAL_SDM845 0x11
+#define DEBUG_DEVICE_SERIAL_MM_16550 0x12
 
 //
 // v2 Debug Device Information Structure.
@@ -1759,6 +1770,7 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 
 #define IORT_SIGNATURE          0x54524f49      // "IORT"
 #define IORT_MIN_SIZE           0x30
+#define IORT_TABLE_REVISION     0
 
 //
 // Node types.
@@ -1781,6 +1793,11 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 
 #define IORT_SMMUV3_NODE_REVISION 0
 #define IORT_TYPE_GENERIC_SMMUV3 0
+
+// TODO: Update to 1.
+#define IORT_NAMED_COMPONENT_NODE_REVISION 0
+
+#define IORT_ROOT_COMPLEX_NODE_REVISION 0
 
 #if _MSC_VER >= 1200
 #pragma warning(push)
@@ -2031,6 +2048,7 @@ typedef struct _IORT_ROOT_COMPLEX_NODE {
 #define DMAR_RHSA               3
 #define DMAR_ANDD               4
 #define DMAR_FLAG_INT_REMAPPING 1
+#define DMAR_FLAG_DMA_CTRL_PLATFORM_OPT_IN 4
 #define ARIR_SIOAPIC            0x1
 #define ARIR_PCI_ENUMERABLE     0x2
 #define ATSR_FLAG_ALL_PORTS     1
@@ -2983,8 +3001,7 @@ typedef struct _ACPI_PLD_V2_BUFFER {
 #define ACPI_PLD_COLOR_BLUE(c)       ((BYTE)(((c) >> 16) & 0xFF))
 
 // Panel surface bits 67:69
-enum AcpiPldPanel
-{
+typedef enum _ACPI_PLD_PANEL {
     AcpiPldPanelTop     = 0,
     AcpiPldPanelBottom  = 1,
     AcpiPldPanelLeft    = 2,
@@ -2992,27 +3009,30 @@ enum AcpiPldPanel
     AcpiPldPanelFront   = 4,
     AcpiPldPanelBack    = 5,
     AcpiPldPanelUnknown = 6,
-};
+} ACPI_PLD_PANEL, *PACPI_PLD_PANEL;
 
-// Vertical position 70:71
-enum AcpiPldVPos
-{
+typedef ACPI_PLD_PANEL AcpiPldPanel;
+
+// Vertical position bits 70:71
+typedef enum _ACPI_PLD_VERTICAL_POSITION {
     AcpiPldVPosUpper    = 0,
     AcpiPldVPosCenter   = 1,
     AcpiPldVPosLower    = 2,
-};
+} ACPI_PLD_VERTICAL_POSITION, *PACPI_PLD_VERTICAL_POSITION;
 
-// Horizontal position 72:73
-enum AcpiPldHPos
-{
+typedef ACPI_PLD_VERTICAL_POSITION AcpiPldVPos;
+
+// Horizontal position bits 72:73
+typedef enum _ACPI_PLD_HORIZONTAL_POSITION {
     AcpiPldHPosLeft     = 0,
     AcpiPldHPosCenter   = 1,
     AcpiPldHPosRight    = 2,
-};
+} ACPI_PLD_HORIZONTAL_POSITION, *PACPI_PLD_HORIZONTAL_POSITION;
+
+typedef ACPI_PLD_HORIZONTAL_POSITION AcpiPldHPos;
 
 // Shape bits 74:77
-enum AcpiPldShape
-{
+typedef enum _ACPI_PLD_SHAPE {
     AcpiPldShapeRound     = 0,
     AcpiPldShapeOval      = 1,
     AcpiPldShapeSquare    = 2,
@@ -3022,11 +3042,18 @@ enum AcpiPldShape
     AcpiPldShapeHTrap     = 6,
     AcpiPldShapeUnknown   = 7,
     AcpiPldShapeChamfered = 8,
-};
+} ACPI_PLD_SHAPE, *PACPI_PLD_SHAPE;
+
+typedef ACPI_PLD_SHAPE AcpiPldShape;
+
+// Orientation bit 78
+typedef enum _ACPI_PLD_ORIENTATION {
+    AcpiPldOrientationHorizontal = 0,
+    AcpiPldOrientationVertical   = 1,
+} ACPI_PLD_ORIENTATION, *PACPI_PLD_ORIENTATION;
 
 // Rotation bits 115:118
-enum AcpiPldRotation
-{
+typedef enum _ACPI_PLD_ROTATION {
     AcpiPldRotation0      = 0,
     AcpiPldRotation45     = 1,
     AcpiPldRotation90     = 2,
@@ -3035,7 +3062,115 @@ enum AcpiPldRotation
     AcpiPldRotation225    = 5,
     AcpiPldRotation270    = 6,
     AcpiPldRotation315    = 7,
-};
+} ACPI_PLD_ROTATION, *PACPI_PLD_ROTATION;
+
+typedef ACPI_PLD_ROTATION AcpiPldRotation;
+
+// Offset bits 128:160 (Vertical 128:143, Horizontal 144:159)
+#define ACPI_PLD_OFFSET_NONE    0xFFFF
+
+//
+// ACPI PLD Joint Descriptor Buffer, Revision 1
+// (MSFT custom PLD buffer extension, 128-bits)
+//
+
+typedef struct _ACPI_PLD_JOINT_BUFFER {
+    UINT32 Revision:5;
+    UINT32 JointType:4;
+    UINT32 SourceEdge:3;
+    UINT32 TargetCabinetNumber:8;
+    UINT32 TargetPanel:3;
+    UINT32 TargetEdge:3;
+    UINT32 Reserved1:5;
+    UINT32 MovementOrientation:1;
+    UINT32 ForwardMovementRange:16;
+    UINT32 BackwardMovementRange:16;
+    UINT32 HorizontalOffset:16;
+    UINT32 VerticalOffset:16;
+    UINT32 GapOffset:16;
+    UINT32 Rotation:9;
+    UINT32 Reserved2:7;
+} ACPI_PLD_JOINT_BUFFER, *PACPI_PLD_JOINT_BUFFER;
+
+DEFINE_GUID(ACPI_PLD_JOINT_BUFFER_GUID,
+    0xf01cfc40, 0x3c75, 0x4523, 0x9e, 0x44, 0x21, 0x5c, 0xb1, 0x54, 0xbd, 0xa6);
+
+// Joint type bits 6:9
+typedef enum _ACPI_PLD_JOINT_TYPE {
+    AcpiPldJointTypeFixed  = 0,
+    AcpiPldJointTypePlanar = 1,
+    AcpiPldJointTypeHinge  = 2,
+    AcpiPldJointTypePivot  = 3,
+    AcpiPldJointTypeSwivel = 4,
+} ACPI_PLD_JOINT_TYPE, *PACPI_PLD_JOINT_TYPE;
+
+// Joint edge bits 10:12,24:26
+typedef enum _ACPI_PLD_EDGE {
+    AcpiPldEdgeTop     = 0,
+    AcpiPldEdgeBottom  = 1,
+    AcpiPldEdgeLeft    = 2,
+    AcpiPldEdgeRight   = 3,
+    AcpiPldEdgeUnknown = 4,
+} ACPI_PLD_EDGE, *PACPI_PLD_EDGE;
+
+//
+// ACPI PLD Spatial Descriptor Buffer, Revision 1
+// (MSFT custom PLD buffer extension, 128-bits)
+//
+
+typedef struct _ACPI_PLD_SPATIAL_BUFFER {
+    UINT32 Revision:5;
+    UINT32 RollRotation:9;
+    UINT32 PitchRotation:9;
+    UINT32 YawRotation:9;
+    UINT32 Width:16;
+    UINT32 Height:16;
+    UINT32 Length:16;
+    UINT32 HorizontalOffset:16;
+    UINT32 VerticalOffset:16;
+    UINT32 DepthOffset:16;
+} ACPI_PLD_SPATIAL_BUFFER, *PACPI_PLD_SPATIAL_BUFFER;
+
+DEFINE_GUID(ACPI_PLD_SPATIAL_BUFFER_GUID,
+    0x59af1a1f, 0xaba4, 0x4bb8, 0x81, 0xef, 0x55, 0x93, 0x8e, 0x9b, 0xc5, 0x3a);
+
+//
+// ACPI PLD Interface Class Descriptor Buffer, Revision 1
+// (MSFT custom PLD buffer extension, 128-bits)
+//
+
+typedef struct _ACPI_PLD_INTERFACE_CLASS_BUFFER {
+    GUID ClassGuid;
+} ACPI_PLD_INTERFACE_CLASS_BUFFER, *PACPI_PLD_INTERFACE_CLASS_BUFFER;
+
+DEFINE_GUID(ACPI_PLD_INTERFACE_CLASS_BUFFER_GUID,
+    0x1facec76, 0x96a8, 0x4d9e, 0x84, 0x6e, 0x3a, 0x6d, 0x68, 0x7c, 0x32, 0xfc);
+
+//
+// ACPI PLD Interface Instance ANSI/Unicode/GUID Descriptor Buffers, Revision 1
+// (MSFT custom PLD buffer extension, 128-bits)
+//
+
+typedef struct _ACPI_PLD_INTERFACE_INSTANCE_ANSI_BUFFER {
+    CHAR ReferenceString[16];
+} ACPI_PLD_INTERFACE_INSTANCE_ANSI_BUFFER, *PACPI_PLD_INTERFACE_INSTANCE_ANSI_BUFFER;
+
+typedef struct _ACPI_PLD_INTERFACE_INSTANCE_UNICODE_BUFFER {
+    WCHAR ReferenceString[8];
+} ACPI_PLD_INTERFACE_INSTANCE_UNICODE_BUFFER, *PACPI_PLD_INTERFACE_INSTANCE_UNICODE_BUFFER;
+
+typedef struct _ACPI_PLD_INTERFACE_INSTANCE_GUID_BUFFER {
+    GUID ReferenceGuid;
+} ACPI_PLD_INTERFACE_INSTANCE_GUID_BUFFER, *PACPI_PLD_INTERFACE_INSTANCE_GUID_BUFFER;
+
+DEFINE_GUID(ACPI_PLD_INTERFACE_INSTANCE_ANSI_BUFFER_GUID,
+    0x1facea4b, 0xda66, 0x484c, 0xba, 0x5b, 0x51, 0x27, 0xe0, 0x5f, 0x95, 0xb2);
+
+DEFINE_GUID(ACPI_PLD_INTERFACE_INSTANCE_UNICODE_BUFFER_GUID,
+    0x1face3f6, 0x1a60, 0x4686, 0x98, 0x33, 0xec, 0x84, 0x02, 0xd4, 0x3b, 0x04);
+
+DEFINE_GUID(ACPI_PLD_INTERFACE_INSTANCE_GUID_BUFFER_GUID,
+    0x1face9db, 0x2530, 0x4248, 0x8e, 0xe3, 0x51, 0x05, 0x3a, 0xef, 0x47, 0xc2);
 
 //
 // NFIT ACPI table (ACPI 6.0 section 5.2.25)
@@ -3071,6 +3206,7 @@ typedef enum _NFIT_STRUCTURE_TYPE {
     NfitNvdimmControlRegion                 = 4,
     NfitNvdimmBlockDataWindowRegion         = 5,
     NfitFlushHintAddress                    = 6,
+    NfitPlatformCapabilities                = 7,
     NfitMaximum
 } NFIT_STRUCTURE_TYPE, *PNFIT_STRUCTURE_TYPE;
 
@@ -3341,10 +3477,6 @@ typedef struct _NFIT_NVDIMM_CONTROL_REGION {
 #define NVDIMM_CONTROL_REGION_BASE_SIZE        (FIELD_OFFSET(NFIT_NVDIMM_CONTROL_REGION, BCWSize))
 #define NVDIMM_CONTROL_REGION_EXTENDED_SIZE    (sizeof(NFIT_NVDIMM_CONTROL_REGION))
 
-#if _MSC_VER >= 1200
-#pragma warning(pop)
-#endif
-
 //
 // NFIT Block Data Window Region Structure
 //
@@ -3370,6 +3502,29 @@ typedef struct _NFIT_FLUSH_HINT_ADDRESS {
     UCHAR Reserved[6];
     ULONG64 FlushHintAddress[ANYSIZE_ARRAY];
 } NFIT_FLUSH_HINT_ADDRESS, *PNFIT_FLUSH_HINT_ADDRESS;
+
+//
+// NFIT Platform Capabilities Structure
+// Originally defined in ACPI 6.2 Errata A.
+//
+typedef struct _NFIT_PLATFORM_CAPABILITIES {
+    NFIT_STRUCT_HEADER Header;
+    UCHAR HighestValidCapability;
+    UCHAR Reserved[3];
+    union {
+        ULONG AsUlong;
+        struct {
+            ULONG CpuCacheFlushOnPowerLoss : 1;
+            ULONG MemCtrlrFlushOnPowerLoss : 1;
+            ULONG PmemHardwareMirroring : 1;
+        } u;
+    } Capabilities;
+    UCHAR Reserved1[4];
+} NFIT_PLATFORM_CAPABILITIES, *PNFIT_PLATFORM_CAPABILITIES;
+
+#if _MSC_VER >= 1200
+#pragma warning(pop)
+#endif
 
 //
 // WSMT ACPI Table definition

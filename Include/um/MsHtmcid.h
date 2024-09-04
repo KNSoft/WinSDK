@@ -554,6 +554,7 @@
 #define IDM_YELLOWHIGHLIGHT         15218
 #define IDM_NONEHIGHLIGHT           15219
 #define IDM_PDFREADALOUD            15220
+#define IDM_SHAREPDF                15221
 
 // Defines for IDM_ZOOMPERCENT
 #define CMD_ZOOM_PAGEWIDTH -1
@@ -627,7 +628,7 @@
 #define IDM_SHAREAPPCACHEEVENT          15033
 // UNUSED :                             15034
 // Diagnostics mode commands
-// UNUSED:                              15035
+#define IDM_GETDIAGNOSTICSTARGETID      15035
 // UNUSED:                              15036
 // 15037 unused. Repurpose as needed.
 // PrintManager Printing Support

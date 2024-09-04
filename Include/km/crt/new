@@ -3,11 +3,7 @@
 #elif defined _STL100_
 #include "_100_new"
 #elif defined _STL110_
-#if defined _STLFKG_
-#include "_fkg_new"
-#else
 #include "_110_new"
-#endif
 #else
 
 // new standard header
@@ -58,7 +54,8 @@ protected:
 	};
 		// SUPPORT TYPES
 #ifndef __NOTHROW_T_DEFINED
-struct nothrow_t {};
+struct nothrow_t { };
+
 extern const nothrow_t nothrow;
 #endif  /* __NOTHROW_T_DEFINED */
 _STD_END

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.power.diagnostics.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -186,17 +188,34 @@ namespace ABI {
         namespace System {
             namespace Power {
                 namespace Diagnostics {
-                    /* [object, uuid("D7663702-D3A6-46E0-8F9B-50B95BB4F9C5"), exclusiveto, contract] */
+                    /* [object, uuid("D7663702-D3A6-46E0-8F9B-50B95BB4F9C5"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("D7663702-D3A6-46E0-8F9B-50B95BB4F9C5")
-                    IBackgroundEnergyDiagnosticsStatics : IInspectable
+                    
+                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    IBackgroundEnergyDiagnosticsStatics : public IInspectable
                     {
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceSpecificConversionFactor(
+                    public:
+                        
+                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_DeviceSpecificConversionFactor(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
-                        virtual HRESULT STDMETHODCALLTYPE ComputeTotalEnergyUsage(
+                        
+                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE ComputeTotalEnergyUsage(
                             /* [retval, out] */__RPC__out UINT64 * value
                             ) = 0;
-                        virtual HRESULT STDMETHODCALLTYPE ResetTotalEnergyUsage(void) = 0;
+                        
+                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE ResetTotalEnergyUsage(void) = 0;
                         
                     };
 
@@ -232,17 +251,34 @@ namespace ABI {
         namespace System {
             namespace Power {
                 namespace Diagnostics {
-                    /* [object, uuid("23CA0917-CD07-4609-BE15-8FE894C5E41E"), exclusiveto, contract] */
+                    /* [object, uuid("23CA0917-CD07-4609-BE15-8FE894C5E41E"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("23CA0917-CD07-4609-BE15-8FE894C5E41E")
-                    IForegroundEnergyDiagnosticsStatics : IInspectable
+                    
+                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    IForegroundEnergyDiagnosticsStatics : public IInspectable
                     {
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceSpecificConversionFactor(
+                    public:
+                        
+                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_DeviceSpecificConversionFactor(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
-                        virtual HRESULT STDMETHODCALLTYPE ComputeTotalEnergyUsage(
+                        
+                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE ComputeTotalEnergyUsage(
                             /* [retval, out] */__RPC__out UINT64 * value
                             ) = 0;
-                        virtual HRESULT STDMETHODCALLTYPE ResetTotalEnergyUsage(void) = 0;
+                        
+                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE ResetTotalEnergyUsage(void) = 0;
                         
                     };
 
@@ -274,6 +310,10 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForeground
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_System_Power_Diagnostics_BackgroundEnergyDiagnostics_DEFINED
 #define RUNTIMECLASS_Windows_System_Power_Diagnostics_BackgroundEnergyDiagnostics_DEFINED
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Power_Diagnostics_BackgroundEnergyDiagnostics[] = L"Windows.System.Power.Diagnostics.BackgroundEnergyDiagnostics";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -295,6 +335,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_System_Power_Diagnostics_ForegroundEnergyDiagnostics_DEFINED
 #define RUNTIMECLASS_Windows_System_Power_Diagnostics_ForegroundEnergyDiagnostics_DEFINED
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Foreground Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Power_Diagnostics_ForegroundEnergyDiagnostics[] = L"Windows.System.Power.Diagnostics.ForegroundEnergyDiagnostics";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -344,8 +388,12 @@ typedef interface __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnerg
 #if !defined(____x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Power_Diagnostics_IBackgroundEnergyDiagnosticsStatics[] = L"Windows.System.Power.Diagnostics.IBackgroundEnergyDiagnosticsStatics";
-/* [object, uuid("D7663702-D3A6-46E0-8F9B-50B95BB4F9C5"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStaticsVtbl
+/* [object, uuid("D7663702-D3A6-46E0-8F9B-50B95BB4F9C5"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+__x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStaticsVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -378,15 +426,27 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DeviceSpecificConversionFactor )(
+
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_DeviceSpecificConversionFactor )(
         __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics * This,
         /* [retval, out] */__RPC__out DOUBLE * value
         );
-    HRESULT ( STDMETHODCALLTYPE *ComputeTotalEnergyUsage )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *ComputeTotalEnergyUsage )(
         __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics * This,
         /* [retval, out] */__RPC__out UINT64 * value
         );
-    HRESULT ( STDMETHODCALLTYPE *ResetTotalEnergyUsage )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *ResetTotalEnergyUsage )(
         __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics * This
         );
     END_INTERFACE
@@ -417,12 +477,24 @@ interface __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnos
 #define __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #define __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics_get_DeviceSpecificConversionFactor(This,value) \
     ( (This)->lpVtbl->get_DeviceSpecificConversionFactor(This,value) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #define __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics_ComputeTotalEnergyUsage(This,value) \
     ( (This)->lpVtbl->ComputeTotalEnergyUsage(This,value) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #define __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackgroundEnergyDiagnosticsStatics_ResetTotalEnergyUsage(This) \
     ( (This)->lpVtbl->ResetTotalEnergyUsage(This) )
 
@@ -450,8 +522,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIBackground
 #if !defined(____x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Power_Diagnostics_IForegroundEnergyDiagnosticsStatics[] = L"Windows.System.Power.Diagnostics.IForegroundEnergyDiagnosticsStatics";
-/* [object, uuid("23CA0917-CD07-4609-BE15-8FE894C5E41E"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStaticsVtbl
+/* [object, uuid("23CA0917-CD07-4609-BE15-8FE894C5E41E"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+__x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStaticsVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -484,15 +560,27 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DeviceSpecificConversionFactor )(
+
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_DeviceSpecificConversionFactor )(
         __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics * This,
         /* [retval, out] */__RPC__out DOUBLE * value
         );
-    HRESULT ( STDMETHODCALLTYPE *ComputeTotalEnergyUsage )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *ComputeTotalEnergyUsage )(
         __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics * This,
         /* [retval, out] */__RPC__out UINT64 * value
         );
-    HRESULT ( STDMETHODCALLTYPE *ResetTotalEnergyUsage )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *ResetTotalEnergyUsage )(
         __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics * This
         );
     END_INTERFACE
@@ -523,12 +611,24 @@ interface __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnos
 #define __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #define __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics_get_DeviceSpecificConversionFactor(This,value) \
     ( (This)->lpVtbl->get_DeviceSpecificConversionFactor(This,value) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #define __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics_ComputeTotalEnergyUsage(This,value) \
     ( (This)->lpVtbl->ComputeTotalEnergyUsage(This,value) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #define __x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForegroundEnergyDiagnosticsStatics_ResetTotalEnergyUsage(This) \
     ( (This)->lpVtbl->ResetTotalEnergyUsage(This) )
 
@@ -557,6 +657,10 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CPower_CDiagnostics_CIForeground
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_System_Power_Diagnostics_BackgroundEnergyDiagnostics_DEFINED
 #define RUNTIMECLASS_Windows_System_Power_Diagnostics_BackgroundEnergyDiagnostics_DEFINED
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Power_Diagnostics_BackgroundEnergyDiagnostics[] = L"Windows.System.Power.Diagnostics.BackgroundEnergyDiagnostics";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -578,6 +682,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_System_Power_Diagnostics_ForegroundEnergyDiagnostics_DEFINED
 #define RUNTIMECLASS_Windows_System_Power_Diagnostics_ForegroundEnergyDiagnostics_DEFINED
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+DEPRECATED("Foreground Energy Diagnostics has been deprecated. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Power_Diagnostics_ForegroundEnergyDiagnostics[] = L"Windows.System.Power.Diagnostics.ForegroundEnergyDiagnostics";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000

@@ -707,6 +707,11 @@ typedef struct _SCHANNEL_CLIENT_SIGNATURE
 #define SP_PROT_TLS1_1PLUS              (SP_PROT_TLS1_1PLUS_SERVER | \
                                          SP_PROT_TLS1_1PLUS_CLIENT)
 
+#define SP_PROT_TLS1_3PLUS_SERVER       SP_PROT_TLS1_3_SERVER
+#define SP_PROT_TLS1_3PLUS_CLIENT       SP_PROT_TLS1_3_CLIENT
+#define SP_PROT_TLS1_3PLUS              (SP_PROT_TLS1_3PLUS_SERVER | \
+                                         SP_PROT_TLS1_3PLUS_CLIENT)
+
 #define SP_PROT_TLS1_X_SERVER           (SP_PROT_TLS1_0_SERVER | \
                                          SP_PROT_TLS1_1_SERVER | \
                                          SP_PROT_TLS1_2_SERVER | \

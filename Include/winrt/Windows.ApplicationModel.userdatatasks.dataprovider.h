@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.userdatatasks.dataprovider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -476,6 +478,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCompleteTaskRequestEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCompleteTaskRequestEventArgs_USE
@@ -505,6 +508,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::UserDataTasks::DataPr
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -519,6 +523,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCreateOrUpdateTaskRequestEventArgs_USE
@@ -549,6 +554,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::UserDataTasks::DataPr
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -563,6 +569,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListDeleteTaskRequestEventArgs_USE
@@ -593,6 +600,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::UserDataTasks::DataPr
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -607,6 +615,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListSkipOccurrenceRequestEventArgs_USE
@@ -637,6 +646,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::UserDataTasks::DataPr
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -651,6 +661,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListSyncManagerSyncRequestEventArgs_USE
@@ -680,6 +691,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::UserDataTasks::DataPr
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListSyncManagerSyncRequestEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -869,8 +881,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("9FF39D1D-A447-428B-AFE9-E5402BDEB041"), exclusiveto, contract] */
                     MIDL_INTERFACE("9FF39D1D-A447-428B-AFE9-E5402BDEB041")
-                    IUserDataTaskDataProviderConnection : IInspectable
+                    IUserDataTaskDataProviderConnection : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CreateOrUpdateTaskRequested(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCreateOrUpdateTaskRequestEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -944,8 +957,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("AE273202-B1C9-453E-AFC5-B30AF3BD217D"), exclusiveto, contract] */
                     MIDL_INTERFACE("AE273202-B1C9-453E-AFC5-B30AF3BD217D")
-                    IUserDataTaskDataProviderTriggerDetails : IInspectable
+                    IUserDataTaskDataProviderTriggerDetails : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Connection(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection * * value
                             ) = 0;
@@ -986,8 +1000,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("F65E14A3-1A42-49DA-8552-2873E52C55EB"), exclusiveto, contract] */
                     MIDL_INTERFACE("F65E14A3-1A42-49DA-8552-2873E52C55EB")
-                    IUserDataTaskListCompleteTaskRequest : IInspectable
+                    IUserDataTaskListCompleteTaskRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskListId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1038,8 +1053,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("D77C393D-4CF2-48AD-87FD-963F0EAA7A95"), exclusiveto, contract] */
                     MIDL_INTERFACE("D77C393D-4CF2-48AD-87FD-963F0EAA7A95")
-                    IUserDataTaskListCompleteTaskRequestEventArgs : IInspectable
+                    IUserDataTaskListCompleteTaskRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequest * * value
                             ) = 0;
@@ -1083,8 +1099,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("2133772C-55C2-4300-8279-04326E07CCE4"), exclusiveto, contract] */
                     MIDL_INTERFACE("2133772C-55C2-4300-8279-04326E07CCE4")
-                    IUserDataTaskListCreateOrUpdateTaskRequest : IInspectable
+                    IUserDataTaskListCreateOrUpdateTaskRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskListId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1135,8 +1152,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("12C55A52-E378-419B-AE38-A5E9E604476E"), exclusiveto, contract] */
                     MIDL_INTERFACE("12C55A52-E378-419B-AE38-A5E9E604476E")
-                    IUserDataTaskListCreateOrUpdateTaskRequestEventArgs : IInspectable
+                    IUserDataTaskListCreateOrUpdateTaskRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCreateOrUpdateTaskRequest * * value
                             ) = 0;
@@ -1180,8 +1198,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("4B863C68-7657-4F3D-B074-D47EC8DF07E7"), exclusiveto, contract] */
                     MIDL_INTERFACE("4B863C68-7657-4F3D-B074-D47EC8DF07E7")
-                    IUserDataTaskListDeleteTaskRequest : IInspectable
+                    IUserDataTaskListDeleteTaskRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskListId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1231,8 +1250,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("6063DAD9-F562-4145-8EFE-D50078C92B7F"), exclusiveto, contract] */
                     MIDL_INTERFACE("6063DAD9-F562-4145-8EFE-D50078C92B7F")
-                    IUserDataTaskListDeleteTaskRequestEventArgs : IInspectable
+                    IUserDataTaskListDeleteTaskRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListDeleteTaskRequest * * value
                             ) = 0;
@@ -1276,8 +1296,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("AB87E34D-1CD3-431C-9F58-089AA4338D85"), exclusiveto, contract] */
                     MIDL_INTERFACE("AB87E34D-1CD3-431C-9F58-089AA4338D85")
-                    IUserDataTaskListSkipOccurrenceRequest : IInspectable
+                    IUserDataTaskListSkipOccurrenceRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskListId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1327,8 +1348,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("7A3B924A-CC2F-4E7B-AACD-A5B9D29CFA4E"), exclusiveto, contract] */
                     MIDL_INTERFACE("7A3B924A-CC2F-4E7B-AACD-A5B9D29CFA4E")
-                    IUserDataTaskListSkipOccurrenceRequestEventArgs : IInspectable
+                    IUserDataTaskListSkipOccurrenceRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSkipOccurrenceRequest * * value
                             ) = 0;
@@ -1372,8 +1394,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("40A73807-7590-4149-AE19-B211431A9F48"), exclusiveto, contract] */
                     MIDL_INTERFACE("40A73807-7590-4149-AE19-B211431A9F48")
-                    IUserDataTaskListSyncManagerSyncRequest : IInspectable
+                    IUserDataTaskListSyncManagerSyncRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TaskListId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1420,8 +1443,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("8EAD1C12-768E-43BD-8385-5CDC351FFDEA"), exclusiveto, contract] */
                     MIDL_INTERFACE("8EAD1C12-768E-43BD-8385-5CDC351FFDEA")
-                    IUserDataTaskListSyncManagerSyncRequestEventArgs : IInspectable
+                    IUserDataTaskListSyncManagerSyncRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequest * * value
                             ) = 0;
@@ -1814,6 +1838,7 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CUserDataTasks_CDataProvide
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCompleteTaskRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCompleteTaskRequestEventArgs_INTERFACE_DEFINED__
 
@@ -1861,9 +1886,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CD
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCompleteTaskRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCreateOrUpdateTaskRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCreateOrUpdateTaskRequestEventArgs_INTERFACE_DEFINED__
@@ -1912,9 +1939,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CD
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListCreateOrUpdateTaskRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListDeleteTaskRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListDeleteTaskRequestEventArgs_INTERFACE_DEFINED__
@@ -1963,9 +1992,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CD
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListDeleteTaskRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListSkipOccurrenceRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListSkipOccurrenceRequestEventArgs_INTERFACE_DEFINED__
@@ -2014,9 +2045,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CD
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListSkipOccurrenceRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__
@@ -2064,6 +2097,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CD
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskDataProviderConnection_Windows__CApplicationModel__CUserDataTasks__CDataProvider__CUserDataTaskListSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.contacts.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -4989,6 +4991,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_USE
@@ -5017,6 +5020,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactList
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -5082,6 +5086,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_USE
@@ -5111,6 +5116,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactPane
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 namespace ABI {
@@ -5123,6 +5129,7 @@ namespace ABI {
     } /* Contacts */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_USE
@@ -5153,9 +5160,11 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactPane
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_USE
@@ -5185,6 +5194,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactStor
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -7595,8 +7605,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("0379D5DD-DB5A-4FD3-B54E-4DF17917A212"), exclusiveto, contract] */
                 MIDL_INTERFACE("0379D5DD-DB5A-4FD3-B54E-4DF17917A212")
-                IAggregateContactManager : IInspectable
+                IAggregateContactManager : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindRawContactsAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact * contact,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact * * value
@@ -7650,8 +7661,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("5E8CC2D8-A9CD-4430-9C4B-01348DB2CA50"), exclusiveto, contract] */
                 MIDL_INTERFACE("5E8CC2D8-A9CD-4430-9C4B-01348DB2CA50")
-                IAggregateContactManager2 : IInspectable
+                IAggregateContactManager2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetRemoteIdentificationInformationAsync(
                         /* [in] */__RPC__in HSTRING contactListId,
                         /* [in] */__RPC__in HSTRING remoteSourceId,
@@ -7693,8 +7705,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("EC0072F3-2118-4049-9EBC-17F0AB692B64"), exclusiveto, contract] */
                 MIDL_INTERFACE("EC0072F3-2118-4049-9EBC-17F0AB692B64")
-                IContact : IInspectable
+                IContact : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7749,8 +7762,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("F312F365-BB77-4C94-802D-8328CEE40C08"), exclusiveto, contract] */
                 MIDL_INTERFACE("F312F365-BB77-4C94-802D-8328CEE40C08")
-                IContact2 : IInspectable
+                IContact2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7833,8 +7847,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("48201E67-E08E-42A4-B561-41D08CA9575D"), exclusiveto, contract] */
                 MIDL_INTERFACE("48201E67-E08E-42A4-B561-41D08CA9575D")
-                IContact3 : IInspectable
+                IContact3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactListId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7939,8 +7954,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("9739D39A-42CE-4872-8D70-3063AA584B70"), exclusiveto, contract] */
                 MIDL_INTERFACE("9739D39A-42CE-4872-8D70-3063AA584B70")
-                IContactAddress : IInspectable
+                IContactAddress : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StreetAddress(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8018,8 +8034,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("821FC2EF-7D41-44A2-84C3-60A281DD7B86"), exclusiveto, contract] */
                 MIDL_INTERFACE("821FC2EF-7D41-44A2-84C3-60A281DD7B86")
-                IContactAnnotation : IInspectable
+                IContactAnnotation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8085,8 +8102,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("B691ECF3-4AB7-4A1F-9941-0C9CF3171B75"), exclusiveto, contract] */
                 MIDL_INTERFACE("B691ECF3-4AB7-4A1F-9941-0C9CF3171B75")
-                IContactAnnotation2 : IInspectable
+                IContactAnnotation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactListId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8128,8 +8146,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("92A486AA-5C88-45B9-AAD0-461888E68D8A"), exclusiveto, contract] */
                 MIDL_INTERFACE("92A486AA-5C88-45B9-AAD0-461888E68D8A")
-                IContactAnnotationList : IInspectable
+                IContactAnnotationList : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8196,8 +8215,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("23ACF4AA-7A77-457D-8203-987F4B31AF09"), exclusiveto, contract] */
                 MIDL_INTERFACE("23ACF4AA-7A77-457D-8203-987F4B31AF09")
-                IContactAnnotationStore : IInspectable
+                IContactAnnotationStore : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindContactIdsByEmailAsync(
                         /* [in] */__RPC__in HSTRING emailAddress,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_HSTRING * * contactIds
@@ -8263,8 +8283,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("7EDE23FD-61E7-4967-8EC5-BDF280A24063"), exclusiveto, contract] */
                 MIDL_INTERFACE("7EDE23FD-61E7-4967-8EC5-BDF280A24063")
-                IContactAnnotationStore2 : IInspectable
+                IContactAnnotationStore2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindAnnotationsForContactListAsync(
                         /* [in] */__RPC__in HSTRING contactListId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation * * annotations
@@ -8304,8 +8325,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("35D1972D-BFCE-46BB-93F8-A5B06EC5E201"), exclusiveto, contract] */
                 MIDL_INTERFACE("35D1972D-BFCE-46BB-93F8-A5B06EC5E201")
-                IContactBatch : IInspectable
+                IContactBatch : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contacts(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CContacts__CContact * * value
                         ) = 0;
@@ -8351,8 +8373,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("B60AF902-1546-434D-869C-6E3520760EF3"), exclusiveto, contract] */
                 MIDL_INTERFACE("B60AF902-1546-434D-869C-6E3520760EF3")
-                IContactCardDelayedDataLoader : IInspectable
+                IContactCardDelayedDataLoader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetData(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact * contact
                         ) = 0;
@@ -8391,8 +8414,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("8C0A4F7E-6AB6-4F3F-BE72-817236EEEA5B"), exclusiveto, contract] */
                 MIDL_INTERFACE("8C0A4F7E-6AB6-4F3F-BE72-817236EEEA5B")
-                IContactCardOptions : IInspectable
+                IContactCardOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HeaderKind(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Contacts::ContactCardHeaderKind * value
                         ) = 0;
@@ -8444,8 +8468,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("8F271BA0-D74B-4CC6-9F53-1B0EB5D1273C"), exclusiveto, contract] */
                 MIDL_INTERFACE("8F271BA0-D74B-4CC6-9F53-1B0EB5D1273C")
-                IContactCardOptions2 : IInspectable
+                IContactCardOptions2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServerSearchContactListIds(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                         ) = 0;
@@ -8484,8 +8509,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("951D4B10-6A59-4720-A4E1-363D98C135D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("951D4B10-6A59-4720-A4E1-363D98C135D5")
-                IContactChange : IInspectable
+                IContactChange : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeType(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Contacts::ContactChangeType * value
                         ) = 0;
@@ -8527,8 +8553,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("217319FA-2D0C-42E0-A9DA-3ECD56A78A47"), exclusiveto, contract] */
                 MIDL_INTERFACE("217319FA-2D0C-42E0-A9DA-3ECD56A78A47")
-                IContactChangeReader : IInspectable
+                IContactChangeReader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AcceptChanges(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE AcceptChangesThrough(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContactChange * lastChangeToAccept
@@ -8571,8 +8598,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("6E992952-309B-404D-9712-B37BD30278AA"), exclusiveto, contract] */
                 MIDL_INTERFACE("6E992952-309B-404D-9712-B37BD30278AA")
-                IContactChangeTracker : IInspectable
+                IContactChangeTracker : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Enable(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetChangeReader(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactChangeReader * * value
@@ -8613,8 +8641,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("7F8AD0FC-9321-4D18-9C09-D708C63FCD31"), exclusiveto, contract] */
                 MIDL_INTERFACE("7F8AD0FC-9321-4D18-9C09-D708C63FCD31")
-                IContactChangeTracker2 : IInspectable
+                IContactChangeTracker2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTracking(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -8653,8 +8682,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("C5143AE8-1B03-46F8-B694-A523E83CFCB6"), exclusiveto, contract] */
                 MIDL_INTERFACE("C5143AE8-1B03-46F8-B694-A523E83CFCB6")
-                IContactChangedDeferral : IInspectable
+                IContactChangedDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -8691,8 +8721,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("525E7FD1-73F3-4B7D-A918-580BE4366121"), exclusiveto, contract] */
                 MIDL_INTERFACE("525E7FD1-73F3-4B7D-A918-580BE4366121")
-                IContactChangedEventArgs : IInspectable
+                IContactChangedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactChangedDeferral * * value
                         ) = 0;
@@ -8731,8 +8762,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("F6F83553-AA27-4731-8E4A-3DEC5CE9EEC9"), exclusiveto, contract] */
                 MIDL_INTERFACE("F6F83553-AA27-4731-8E4A-3DEC5CE9EEC9")
-                IContactConnectedServiceAccount : IInspectable
+                IContactConnectedServiceAccount : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8780,8 +8812,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("FE98AE66-B205-4934-9174-0FF2B0565707"), exclusiveto, contract] */
                 MIDL_INTERFACE("FE98AE66-B205-4934-9174-0FF2B0565707")
-                IContactDate : IInspectable
+                IContactDate : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Day(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_UINT32 * * value
                         ) = 0;
@@ -8847,8 +8880,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("90A219A9-E3D3-4D63-993B-05B9A5393ABF"), exclusiveto, contract] */
                 MIDL_INTERFACE("90A219A9-E3D3-4D63-993B-05B9A5393ABF")
-                IContactEmail : IInspectable
+                IContactEmail : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Address(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8899,8 +8933,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("B176486A-D293-492C-A058-DB575B3E3C0F"), contract] */
                 MIDL_INTERFACE("B176486A-D293-492C-A058-DB575B3E3C0F")
-                IContactField : IInspectable
+                IContactField : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Contacts::ContactFieldType * value
                         ) = 0;
@@ -8945,8 +8980,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("85E2913F-0E4A-4A3E-8994-406AE7ED646E"), contract] */
                 MIDL_INTERFACE("85E2913F-0E4A-4A3E-8994-406AE7ED646E")
-                IContactFieldFactory : IInspectable
+                IContactFieldFactory : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateField_Default(
                         /* [in] */__RPC__in HSTRING value,
                         /* [in] */ABI::Windows::ApplicationModel::Contacts::ContactFieldType type,
@@ -9000,8 +9036,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("59BDEB01-9E9A-475D-BFE5-A37B806D852C"), exclusiveto, contract] */
                 MIDL_INTERFACE("59BDEB01-9E9A-475D-BFE5-A37B806D852C")
-                IContactGroup : IInspectable
+                IContactGroup : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -9037,8 +9074,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("275EB6D4-6A2E-4278-A914-E460D5F088F6"), exclusiveto, contract] */
                 MIDL_INTERFACE("275EB6D4-6A2E-4278-A914-E460D5F088F6")
-                IContactInformation : IInspectable
+                IContactInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9103,8 +9141,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("CCE33B37-0D85-41FA-B43D-DA599C3EB009"), exclusiveto, contract] */
                 MIDL_INTERFACE("CCE33B37-0D85-41FA-B43D-DA599C3EB009")
-                IContactInstantMessageField : IInspectable
+                IContactInstantMessageField : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UserName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9149,8 +9188,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("BA0B6794-91A3-4BB2-B1B9-69A5DFF0BA09"), contract] */
                 MIDL_INTERFACE("BA0B6794-91A3-4BB2-B1B9-69A5DFF0BA09")
-                IContactInstantMessageFieldFactory : IInspectable
+                IContactInstantMessageFieldFactory : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateInstantMessage_Default(
                         /* [in] */__RPC__in HSTRING userName,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactInstantMessageField * * field
@@ -9203,8 +9243,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("6D117B4C-CE50-4B43-9E69-B18258EA5315"), exclusiveto, contract] */
                 MIDL_INTERFACE("6D117B4C-CE50-4B43-9E69-B18258EA5315")
-                IContactJobInfo : IInspectable
+                IContactJobInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompanyName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9288,8 +9329,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("FB1232D6-EE73-46E7-8761-11CD0157728F"), exclusiveto, contract] */
                 MIDL_INTERFACE("FB1232D6-EE73-46E7-8761-11CD0157728F")
-                IContactLaunchActionVerbsStatics : IInspectable
+                IContactLaunchActionVerbsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Call(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9340,8 +9382,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("16DDEC75-392C-4845-9DFB-51A3E7EF3E42"), exclusiveto, contract] */
                 MIDL_INTERFACE("16DDEC75-392C-4845-9DFB-51A3E7EF3E42")
-                IContactList : IInspectable
+                IContactList : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9458,8 +9501,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("CB3943B4-4550-4DCB-9229-40FF91FB0203"), exclusiveto, contract] */
                 MIDL_INTERFACE("CB3943B4-4550-4DCB-9229-40FF91FB0203")
-                IContactList2 : IInspectable
+                IContactList2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RegisterSyncManagerAsync(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * result
                         ) = 0;
@@ -9504,8 +9548,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("1578EE57-26FC-41E8-A850-5AA32514ACA9"), exclusiveto, contract] */
                 MIDL_INTERFACE("1578EE57-26FC-41E8-A850-5AA32514ACA9")
-                IContactList3 : IInspectable
+                IContactList3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LimitedWriteOperations(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactListLimitedWriteOperations * * value
                         ) = 0;
@@ -9548,8 +9593,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("E19813DA-4A0B-44B8-9A1F-A0F3D218175F"), exclusiveto, contract] */
                 MIDL_INTERFACE("E19813DA-4A0B-44B8-9A1F-A0F3D218175F")
-                IContactListLimitedWriteOperations : IInspectable
+                IContactListLimitedWriteOperations : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryCreateOrUpdateContactAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact * contact,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
@@ -9593,8 +9639,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("B2B0BF01-3062-4E2E-969D-018D1987F314"), exclusiveto, contract] */
                 MIDL_INTERFACE("B2B0BF01-3062-4E2E-969D-018D1987F314")
-                IContactListSyncConstraints : IInspectable
+                IContactListSyncConstraints : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanSyncDescriptions(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -9798,8 +9845,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("146E83BE-7925-4ACC-9DE5-21DDD06F8674"), exclusiveto, contract] */
                 MIDL_INTERFACE("146E83BE-7925-4ACC-9DE5-21DDD06F8674")
-                IContactListSyncManager : IInspectable
+                IContactListSyncManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Contacts::ContactListSyncStatus * value
                         ) = 0;
@@ -9854,8 +9902,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("A9591247-BB55-4E23-8128-370134A85D0D"), exclusiveto, contract] */
                 MIDL_INTERFACE("A9591247-BB55-4E23-8128-370134A85D0D")
-                IContactListSyncManager2 : IInspectable
+                IContactListSyncManager2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Status(
                         /* [in] */ABI::Windows::ApplicationModel::Contacts::ContactListSyncStatus value
                         ) = 0;
@@ -9904,8 +9953,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("9EC00F82-AB6E-4B36-89E3-B23BC0A1DACC"), exclusiveto, contract] */
                 MIDL_INTERFACE("9EC00F82-AB6E-4B36-89E3-B23BC0A1DACC")
-                IContactLocationField : IInspectable
+                IContactLocationField : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnstructuredAddress(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -9956,8 +10006,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("F79932D7-2FDF-43FE-8F18-41897390BCFE"), contract] */
                 MIDL_INTERFACE("F79932D7-2FDF-43FE-8F18-41897390BCFE")
-                IContactLocationFieldFactory : IInspectable
+                IContactLocationFieldFactory : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateLocation_Default(
                         /* [in] */__RPC__in HSTRING unstructuredAddress,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactLocationField * * field
@@ -10012,8 +10063,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("B74BBA57-1076-4BEF-AEF3-54686D18387D"), exclusiveto, contract] */
                 MIDL_INTERFACE("B74BBA57-1076-4BEF-AEF3-54686D18387D")
-                IContactManagerForUser : IInspectable
+                IContactManagerForUser : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ConvertContactToVCardAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact * contact,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference * * result
@@ -10085,8 +10137,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("4D469C2E-3B75-4A73-BB30-736645472256"), exclusiveto, contract] */
                 MIDL_INTERFACE("4D469C2E-3B75-4A73-BB30-736645472256")
-                IContactManagerForUser2 : IInspectable
+                IContactManagerForUser2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ShowFullContactCard(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact * contact,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IFullContactCardOptions * fullContactCardOptions
@@ -10126,8 +10179,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("81F21AC0-F661-4708-BA4F-D386BD0D622E"), exclusiveto, contract] */
                 MIDL_INTERFACE("81F21AC0-F661-4708-BA4F-D386BD0D622E")
-                IContactManagerStatics : IInspectable
+                IContactManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowContactCard(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact * contact,
                         /* [in] */ABI::Windows::Foundation::Rect selection
@@ -10182,8 +10236,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("A178E620-47D8-48CC-963C-9592B6E510C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("A178E620-47D8-48CC-963C-9592B6E510C6")
-                IContactManagerStatics2 : IInspectable
+                IContactManagerStatics2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestStoreAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore * * store
                         ) = 0;
@@ -10227,8 +10282,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("C4CC3D42-7586-492A-930B-7BC138FC2139"), exclusiveto, contract] */
                 MIDL_INTERFACE("C4CC3D42-7586-492A-930B-7BC138FC2139")
-                IContactManagerStatics3 : IInspectable
+                IContactManagerStatics3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ConvertContactToVCardAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact * contact,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference * * vCard
@@ -10320,8 +10376,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("24982272-347B-46DC-8D95-51BD41E15AAF"), exclusiveto, contract] */
                 MIDL_INTERFACE("24982272-347B-46DC-8D95-51BD41E15AAF")
-                IContactManagerStatics4 : IInspectable
+                IContactManagerStatics4 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactManagerForUser * * result
@@ -10361,8 +10418,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("F7591A87-ACB7-4FAD-90F2-A8AB64CDBBA4"), exclusiveto, contract] */
                 MIDL_INTERFACE("F7591A87-ACB7-4FAD-90F2-A8AB64CDBBA4")
-                IContactManagerStatics5 : IInspectable
+                IContactManagerStatics5 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsShowFullContactCardSupportedAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
                         ) = 0;
@@ -10407,8 +10465,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("BC922504-E7D8-413E-95F4-B75C54C74077"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC922504-E7D8-413E-95F4-B75C54C74077")
-                IContactMatchReason : IInspectable
+                IContactMatchReason : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Field(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Contacts::ContactMatchReasonKind * value
                         ) = 0;
@@ -10453,8 +10512,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("F404E97B-9034-453C-8EBF-140A38C86F1D"), exclusiveto, contract] */
                 MIDL_INTERFACE("F404E97B-9034-453C-8EBF-140A38C86F1D")
-                IContactName : IInspectable
+                IContactName : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FirstName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -10538,8 +10598,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("41BF1265-D2EE-4B97-A80A-7D8D64CCA6F5"), exclusiveto, contract] */
                 MIDL_INTERFACE("41BF1265-D2EE-4B97-A80A-7D8D64CCA6F5")
-                IContactPanel : IInspectable
+                IContactPanel : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ClosePanel(void) = 0;
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HeaderColor(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CUI__CColor * * value
@@ -10596,8 +10657,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("222174D3-CF4B-46D7-B739-6EDC16110BFB"), exclusiveto, contract] */
                 MIDL_INTERFACE("222174D3-CF4B-46D7-B739-6EDC16110BFB")
-                IContactPanelClosingEventArgs : IInspectable
+                IContactPanelClosingEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * deferral
                         ) = 0;
@@ -10636,8 +10698,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("88D61C0E-23B4-4BE8-8AFC-072C25A4190D"), exclusiveto, contract] */
                 MIDL_INTERFACE("88D61C0E-23B4-4BE8-8AFC-072C25A4190D")
-                IContactPanelLaunchFullAppRequestedEventArgs : IInspectable
+                IContactPanelLaunchFullAppRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -10679,8 +10742,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("467DAB65-2712-4F52-B783-9EA8111C63CD"), exclusiveto, contract] */
                 MIDL_INTERFACE("467DAB65-2712-4F52-B783-9EA8111C63CD")
-                IContactPhone : IInspectable
+                IContactPhone : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Number(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -10734,8 +10798,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("0E09FD91-42F8-4055-90A0-896F96738936"), exclusiveto, contract] */
                 MIDL_INTERFACE("0E09FD91-42F8-4055-90A0-896F96738936")
-                IContactPicker : IInspectable
+                IContactPicker : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CommitButtonText(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -10792,8 +10857,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("B35011CF-5CEF-4D24-AA0C-340C5208725D"), exclusiveto, contract] */
                 MIDL_INTERFACE("B35011CF-5CEF-4D24-AA0C-340C5208725D")
-                IContactPicker2 : IInspectable
+                IContactPicker2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredFieldsWithContactFieldType(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CApplicationModel__CContacts__CContactFieldType * * value
                         ) = 0;
@@ -10838,8 +10904,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("0E723315-B243-4BED-8516-22B1A7AC0ACE"), exclusiveto, contract] */
                 MIDL_INTERFACE("0E723315-B243-4BED-8516-22B1A7AC0ACE")
-                IContactPicker3 : IInspectable
+                IContactPicker3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
                         ) = 0;
@@ -10878,8 +10945,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("7488C029-6A53-4258-A3E9-62DFF6784B6C"), exclusiveto, contract] */
                 MIDL_INTERFACE("7488C029-6A53-4258-A3E9-62DFF6784B6C")
-                IContactPickerStatics : IInspectable
+                IContactPickerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactPicker * * result
@@ -10922,8 +10990,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("4408CC9E-7D7C-42F0-8AC7-F50733ECDBC1"), exclusiveto, contract] */
                 MIDL_INTERFACE("4408CC9E-7D7C-42F0-8AC7-F50733ECDBC1")
-                IContactQueryOptions : IInspectable
+                IContactQueryOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TextSearch(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactQueryTextSearch * * value
                         ) = 0;
@@ -10986,8 +11055,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("543FBA47-8CE7-46CB-9DAC-9AA42A1BC8E2"), exclusiveto, contract] */
                 MIDL_INTERFACE("543FBA47-8CE7-46CB-9DAC-9AA42A1BC8E2")
-                IContactQueryOptionsFactory : IInspectable
+                IContactQueryOptionsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithText(
                         /* [in] */__RPC__in HSTRING text,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactQueryOptions * * result
@@ -11032,8 +11102,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("F7E3F9CB-A957-439B-A0B7-1C02A1963FF0"), exclusiveto, contract] */
                 MIDL_INTERFACE("F7E3F9CB-A957-439B-A0B7-1C02A1963FF0")
-                IContactQueryTextSearch : IInspectable
+                IContactQueryTextSearch : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Fields(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Contacts::ContactQuerySearchFields * value
                         ) = 0;
@@ -11087,8 +11158,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("D397E42E-1488-42F2-BF64-253F4884BFED"), exclusiveto, contract] */
                 MIDL_INTERFACE("D397E42E-1488-42F2-BF64-253F4884BFED")
-                IContactReader : IInspectable
+                IContactReader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReadBatchAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch * * value
                         ) = 0;
@@ -11131,8 +11203,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("8873B5AB-C5FB-46D8-93FE-DA3FF1934054"), exclusiveto, contract] */
                 MIDL_INTERFACE("8873B5AB-C5FB-46D8-93FE-DA3FF1934054")
-                IContactSignificantOther : IInspectable
+                IContactSignificantOther : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -11184,8 +11257,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("8D7BD474-3F03-45F8-BA0F-C4ED37D64219"), exclusiveto, contract] */
                 MIDL_INTERFACE("8D7BD474-3F03-45F8-BA0F-C4ED37D64219")
-                IContactSignificantOther2 : IInspectable
+                IContactSignificantOther2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Relationship(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Contacts::ContactRelationship * value
                         ) = 0;
@@ -11227,8 +11301,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("2C220B10-3A6C-4293-B9BC-FE987F6E0D52"), exclusiveto, contract] */
                 MIDL_INTERFACE("2C220B10-3A6C-4293-B9BC-FE987F6E0D52")
-                IContactStore : IInspectable
+                IContactStore : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindContactsAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact * * contacts
                         ) = 0;
@@ -11279,8 +11354,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("18CE1C22-EBD5-4BFB-B690-5F4F27C4F0E8"), exclusiveto, contract] */
                 MIDL_INTERFACE("18CE1C22-EBD5-4BFB-B690-5F4F27C4F0E8")
-                IContactStore2 : IInspectable
+                IContactStore2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeTracker(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactChangeTracker * * value
                         ) = 0;
@@ -11355,8 +11431,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("CB882C6C-004E-4050-87F0-840407EE6818"), exclusiveto, contract] */
                 MIDL_INTERFACE("CB882C6C-004E-4050-87F0-840407EE6818")
-                IContactStore3 : IInspectable
+                IContactStore3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetChangeTracker(
                         /* [in] */__RPC__in HSTRING identity,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactChangeTracker * * result
@@ -11396,8 +11473,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("ABB298D6-878A-4F8B-A9CE-46BB7D1C84CE"), exclusiveto, contract] */
                 MIDL_INTERFACE("ABB298D6-878A-4F8B-A9CE-46BB7D1C84CE")
-                IContactStoreNotificationTriggerDetails : IInspectable
+                IContactStoreNotificationTriggerDetails : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -11433,8 +11511,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("9F130176-DC1B-4055-AD66-652F39D990E8"), exclusiveto, contract] */
                 MIDL_INTERFACE("9F130176-DC1B-4055-AD66-652F39D990E8")
-                IContactWebsite : IInspectable
+                IContactWebsite : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                         ) = 0;
@@ -11486,8 +11565,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("F87EE91E-5647-4068-BB5E-4B6F437CE308"), exclusiveto, contract] */
                 MIDL_INTERFACE("F87EE91E-5647-4068-BB5E-4B6F437CE308")
-                IContactWebsite2 : IInspectable
+                IContactWebsite2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RawValue(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -11529,8 +11609,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("8744436C-5CF9-4683-BDCA-A1FDEBF8DBCE"), exclusiveto, contract] */
                 MIDL_INTERFACE("8744436C-5CF9-4683-BDCA-A1FDEBF8DBCE")
-                IFullContactCardOptions : IInspectable
+                IFullContactCardOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredRemainingView(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::ViewManagement::ViewSizePreference * value
                         ) = 0;
@@ -11576,8 +11657,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                IKnownContactFieldStatics : IInspectable
+                IKnownContactFieldStatics : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
@@ -11657,8 +11739,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("7D9B2552-1579-4DDC-871F-A30A3AEA9BA1"), exclusiveto, contract] */
                 MIDL_INTERFACE("7D9B2552-1579-4DDC-871F-A30A3AEA9BA1")
-                IPinnedContactIdsQueryResult : IInspectable
+                IPinnedContactIdsQueryResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactIds(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                         ) = 0;
@@ -11697,8 +11780,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("FCBC740C-E1D6-45C3-B8B6-A35604E167A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("FCBC740C-E1D6-45C3-B8B6-A35604E167A0")
-                IPinnedContactManager : IInspectable
+                IPinnedContactManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * user
                         ) = 0;
@@ -11767,8 +11851,9 @@ namespace ABI {
             namespace Contacts {
                 /* [object, uuid("F65CCC7E-FDF9-486A-ACE9-BC311D0AE7F0"), exclusiveto, contract] */
                 MIDL_INTERFACE("F65CCC7E-FDF9-486A-ACE9-BC311D0AE7F0")
-                IPinnedContactManagerStatics : IInspectable
+                IPinnedContactManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IPinnedContactManager * * result
                         ) = 0;
@@ -22673,6 +22758,7 @@ interface __FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContact
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__
 
@@ -22719,6 +22805,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContac
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -22775,6 +22862,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContac
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_INTERFACE_DEFINED__
 
@@ -22822,9 +22910,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContac
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__
@@ -22873,9 +22963,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContac
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__
@@ -22923,6 +23015,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContac
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)

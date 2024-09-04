@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.wallet.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1912,8 +1914,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("4F857B29-DE80-4EA4-A1CD-81CD084DAC27"), exclusiveto, contract] */
                 MIDL_INTERFACE("4F857B29-DE80-4EA4-A1CD-81CD084DAC27")
-                IWalletBarcode : IInspectable
+                IWalletBarcode : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Symbology(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Wallet::WalletBarcodeSymbology * value
                         ) = 0;
@@ -1958,8 +1961,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("30117161-ED9C-469E-BBFD-306C95EA7108"), exclusiveto, contract] */
                 MIDL_INTERFACE("30117161-ED9C-469E-BBFD-306C95EA7108")
-                IWalletBarcodeFactory : IInspectable
+                IWalletBarcodeFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWalletBarcode(
                         /* [in] */ABI::Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology,
                         /* [in] */__RPC__in HSTRING value,
@@ -2004,8 +2008,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("20B54BE8-118D-4EC4-996C-B963E7BD3E74"), exclusiveto, contract] */
                 MIDL_INTERFACE("20B54BE8-118D-4EC4-996C-B963E7BD3E74")
-                IWalletItem : IInspectable
+                IWalletItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2197,8 +2202,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("B94B40F3-FA00-40FD-98DC-9DE46697F1E7"), exclusiveto, contract] */
                 MIDL_INTERFACE("B94B40F3-FA00-40FD-98DC-9DE46697F1E7")
-                IWalletItemCustomProperty : IInspectable
+                IWalletItemCustomProperty : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2264,8 +2270,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("D0046A44-61A1-41AA-B259-A5610AB5D575"), exclusiveto, contract] */
                 MIDL_INTERFACE("D0046A44-61A1-41AA-B259-A5610AB5D575")
-                IWalletItemCustomPropertyFactory : IInspectable
+                IWalletItemCustomPropertyFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWalletItemCustomProperty(
                         /* [in] */__RPC__in HSTRING name,
                         /* [in] */__RPC__in HSTRING value,
@@ -2306,8 +2313,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("53E27470-4F0B-4A3E-99E5-0BBB1EAB38D4"), exclusiveto, contract] */
                 MIDL_INTERFACE("53E27470-4F0B-4A3E-99E5-0BBB1EAB38D4")
-                IWalletItemFactory : IInspectable
+                IWalletItemFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWalletItem(
                         /* [in] */ABI::Windows::ApplicationModel::Wallet::WalletItemKind kind,
                         /* [in] */__RPC__in HSTRING displayName,
@@ -2348,8 +2356,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("7160484B-6D49-48F8-91A9-40A1D0F13EF4"), exclusiveto, contract] */
                 MIDL_INTERFACE("7160484B-6D49-48F8-91A9-40A1D0F13EF4")
-                IWalletItemStore : IInspectable
+                IWalletItemStore : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AddAsync(
                         /* [in] */__RPC__in HSTRING id,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Wallet::IWalletItem * item,
@@ -2423,8 +2432,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("65E682F0-7009-4A15-BD54-4FFF379BFFE2"), exclusiveto, contract] */
                 MIDL_INTERFACE("65E682F0-7009-4A15-BD54-4FFF379BFFE2")
-                IWalletItemStore2 : IInspectable
+                IWalletItemStore2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ItemsChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CWallet__CWalletItemStore_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -2467,8 +2477,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("5111D6B8-C9A4-4C64-B4DD-E1E548001C0D"), exclusiveto, contract] */
                 MIDL_INTERFACE("5111D6B8-C9A4-4C64-B4DD-E1E548001C0D")
-                IWalletManagerStatics : IInspectable
+                IWalletManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestStoreAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItemStore * * operation
                         ) = 0;
@@ -2507,8 +2518,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("9FD8782A-E3F9-4DE1-BAB3-BB192E46B3F3"), exclusiveto, contract] */
                 MIDL_INTERFACE("9FD8782A-E3F9-4DE1-BAB3-BB192E46B3F3")
-                IWalletRelevantLocation : IInspectable
+                IWalletRelevantLocation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Geolocation::BasicGeoposition * value
                         ) = 0;
@@ -2556,8 +2568,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("40E1E940-2606-4519-81CB-BFF1C60D1F79"), exclusiveto, contract] */
                 MIDL_INTERFACE("40E1E940-2606-4519-81CB-BFF1C60D1F79")
-                IWalletTransaction : IInspectable
+                IWalletTransaction : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Description(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2629,8 +2642,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("17B826D6-E3C1-4C74-8A94-217AADBC4884"), exclusiveto, contract] */
                 MIDL_INTERFACE("17B826D6-E3C1-4C74-8A94-217AADBC4884")
-                IWalletVerb : IInspectable
+                IWalletVerb : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2672,8 +2686,9 @@ namespace ABI {
             namespace Wallet {
                 /* [object, uuid("76012771-BE58-4D5E-83ED-58B1669C7AD9"), exclusiveto, contract] */
                 MIDL_INTERFACE("76012771-BE58-4D5E-83ED-58B1669C7AD9")
-                IWalletVerbFactory : IInspectable
+                IWalletVerbFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWalletVerb(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Wallet::IWalletVerb * * WalletVerb

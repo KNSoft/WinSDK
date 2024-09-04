@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.foundation.diagnostics.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -707,6 +709,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CFoundation__CDiagnostics__CIFileLoggingSession_Windows__CFoundation__CDiagnostics__CLogFileGeneratedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CFoundation__CDiagnostics__CIFileLoggingSession_Windows__CFoundation__CDiagnostics__CLogFileGeneratedEventArgs_USE
@@ -735,6 +738,7 @@ typedef ITypedEventHandler<ABI::Windows::Foundation::Diagnostics::IFileLoggingSe
 #endif /* DEF___FITypedEventHandler_2_Windows__CFoundation__CDiagnostics__CIFileLoggingSession_Windows__CFoundation__CDiagnostics__CLogFileGeneratedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1428,8 +1432,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("50850B26-267E-451B-A890-AB6A370245EE"), exclusiveto, contract] */
                 MIDL_INTERFACE("50850B26-267E-451B-A890-AB6A370245EE")
-                IAsyncCausalityTracerStatics : IInspectable
+                IAsyncCausalityTracerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TraceOperationCreation(
                         /* [in] */ABI::Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel,
                         /* [in] */ABI::Windows::Foundation::Diagnostics::CausalitySource source,
@@ -1506,8 +1511,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("378CBB01-2CC9-428F-8C55-2C990D463E8F"), exclusiveto, contract] */
                 MIDL_INTERFACE("378CBB01-2CC9-428F-8C55-2C990D463E8F")
-                IErrorDetails : IInspectable
+                IErrorDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Description(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1552,8 +1558,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("B7703750-0B1D-46C8-AA0E-4B8178E4FCE9"), exclusiveto, contract] */
                 MIDL_INTERFACE("B7703750-0B1D-46C8-AA0E-4B8178E4FCE9")
-                IErrorDetailsStatics : IInspectable
+                IErrorDetailsStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromHResultAsync(
                         /* [in] */INT32 errorCode,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CFoundation__CDiagnostics__CErrorDetails * * operation
@@ -1590,8 +1597,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("16369792-B03E-4BA1-8BB8-D28F4AB4D2C0"), contract] */
                 MIDL_INTERFACE("16369792-B03E-4BA1-8BB8-D28F4AB4D2C0")
-                IErrorReportingSettings : IInspectable
+                IErrorReportingSettings : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetErrorOptions(
                         /* [in] */ABI::Windows::Foundation::Diagnostics::ErrorOptions value
                         ) = 0;
@@ -1634,8 +1642,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("24C74216-FED2-404C-895F-1F9699CB02F7"), contract] */
                 MIDL_INTERFACE("24C74216-FED2-404C-895F-1F9699CB02F7")
-                IFileLoggingSession : IInspectable
+                IFileLoggingSession : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1694,8 +1703,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("EEA08DCE-8447-4DAA-9133-12EB46F697D4"), exclusiveto, contract] */
                 MIDL_INTERFACE("EEA08DCE-8447-4DAA-9133-12EB46F697D4")
-                IFileLoggingSessionFactory : IInspectable
+                IFileLoggingSessionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Diagnostics::IFileLoggingSession * * result
@@ -1735,8 +1745,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("269E976F-0D38-4C1A-B53F-B395D881DF84"), exclusiveto, contract] */
                 MIDL_INTERFACE("269E976F-0D38-4C1A-B53F-B395D881DF84")
-                ILogFileGeneratedEventArgs : IInspectable
+                ILogFileGeneratedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_File(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFile * * value
                         ) = 0;
@@ -1779,8 +1790,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("BC032941-B766-4CB5-9848-97AC6BA6D60C"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC032941-B766-4CB5-9848-97AC6BA6D60C")
-                ILoggingActivity : IInspectable
+                ILoggingActivity : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1828,8 +1840,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("26C29808-6322-456A-AF82-80C8642F178B"), exclusiveto, contract] */
                 MIDL_INTERFACE("26C29808-6322-456A-AF82-80C8642F178B")
-                ILoggingActivity2 : IInspectable
+                ILoggingActivity2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Channel(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Diagnostics::ILoggingChannel * * value
                         ) = 0;
@@ -1880,8 +1893,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("6B33B483-E10A-4C58-97D5-10FB451074FB"), exclusiveto, contract] */
                 MIDL_INTERFACE("6B33B483-E10A-4C58-97D5-10FB451074FB")
-                ILoggingActivityFactory : IInspectable
+                ILoggingActivityFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateLoggingActivity(
                         /* [in] */__RPC__in HSTRING activityName,
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::Diagnostics::ILoggingChannel * loggingChannel,
@@ -1929,8 +1943,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("E9A50343-11D7-4F01-B5CA-CF495278C0A8"), contract] */
                 MIDL_INTERFACE("E9A50343-11D7-4F01-B5CA-CF495278C0A8")
-                ILoggingChannel : IInspectable
+                ILoggingChannel : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2004,8 +2019,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("9F4C3CF3-0BAC-45A5-9E33-BAF3F3A246A5"), exclusiveto, contract] */
                 MIDL_INTERFACE("9F4C3CF3-0BAC-45A5-9E33-BAF3F3A246A5")
-                ILoggingChannel2 : IInspectable
+                ILoggingChannel2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -2044,8 +2060,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("4EDC5B9C-AF80-4A9B-B0DC-398F9AE5207B"), exclusiveto, contract] */
                 MIDL_INTERFACE("4EDC5B9C-AF80-4A9B-B0DC-398F9AE5207B")
-                ILoggingChannelFactory : IInspectable
+                ILoggingChannelFactory : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("This constructor creates a LoggingChannel in Windows 8.1 compatibility mode. Prefer the two-parameter constructor.")
@@ -2089,8 +2106,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("4C6EF5DD-3B27-4DC9-99F0-299C6E4603A1"), exclusiveto, contract] */
                 MIDL_INTERFACE("4C6EF5DD-3B27-4DC9-99F0-299C6E4603A1")
-                ILoggingChannelFactory2 : IInspectable
+                ILoggingChannelFactory2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithOptions(
                         /* [in] */__RPC__in HSTRING name,
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::Diagnostics::ILoggingChannelOptions * options,
@@ -2137,8 +2155,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("C3E847FF-0EBB-4A53-8C54-DEC24926CB2C"), exclusiveto, contract] */
                 MIDL_INTERFACE("C3E847FF-0EBB-4A53-8C54-DEC24926CB2C")
-                ILoggingChannelOptions : IInspectable
+                ILoggingChannelOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Group(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -2180,8 +2199,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("A93151DA-7FAF-4191-8755-5E86DC65D896"), exclusiveto, contract] */
                 MIDL_INTERFACE("A93151DA-7FAF-4191-8755-5E86DC65D896")
-                ILoggingChannelOptionsFactory : IInspectable
+                ILoggingChannelOptionsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */GUID group,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Diagnostics::ILoggingChannelOptions * * result
@@ -2221,8 +2241,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("D7F6B7AF-762D-4579-83BD-52C23BC333BC"), exclusiveto, contract] */
                 MIDL_INTERFACE("D7F6B7AF-762D-4579-83BD-52C23BC333BC")
-                ILoggingFields : IInspectable
+                ILoggingFields : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Clear(void) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE BeginStruct(
                         /* [in] */__RPC__in HSTRING name
@@ -2873,8 +2894,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("90BC7850-0192-4F5D-AC26-006ADACA12D8"), exclusiveto, contract] */
                 MIDL_INTERFACE("90BC7850-0192-4F5D-AC26-006ADACA12D8")
-                ILoggingOptions : IInspectable
+                ILoggingOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Keywords(
                         /* [retval, out] */__RPC__out INT64 * value
                         ) = 0;
@@ -2946,8 +2968,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("D713C6CB-98AB-464B-9F22-A3268478368A"), exclusiveto, contract] */
                 MIDL_INTERFACE("D713C6CB-98AB-464B-9F22-A3268478368A")
-                ILoggingOptionsFactory : IInspectable
+                ILoggingOptionsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithKeywords(
                         /* [in] */INT64 keywords,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Diagnostics::ILoggingOptions * * result
@@ -2988,8 +3011,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("6221F306-9380-4AD7-BAF5-41EA9310D768"), contract] */
                 MIDL_INTERFACE("6221F306-9380-4AD7-BAF5-41EA9310D768")
-                ILoggingSession : IInspectable
+                ILoggingSession : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3043,8 +3067,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("4E937EE5-58FD-45E0-8C2F-A132EFF95C1E"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E937EE5-58FD-45E0-8C2F-A132EFF95C1E")
-                ILoggingSessionFactory : IInspectable
+                ILoggingSessionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Diagnostics::ILoggingSession * * result
@@ -3081,8 +3106,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("65F16C35-E388-4E26-B17A-F51CD3A83916"), contract] */
                 MIDL_INTERFACE("65F16C35-E388-4E26-B17A-F51CD3A83916")
-                ILoggingTarget : IInspectable
+                ILoggingTarget : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE IsEnabled(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -3170,8 +3196,9 @@ namespace ABI {
             namespace Diagnostics {
                 /* [object, uuid("410B7711-FF3B-477F-9C9A-D2EFDA302DC3"), exclusiveto, contract] */
                 MIDL_INTERFACE("410B7711-FF3B-477F-9C9A-D2EFDA302DC3")
-                ITracingStatusChangedEventArgs : IInspectable
+                ITracingStatusChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Enabled(
                         /* [retval, out] */__RPC__out boolean * enabled
                         ) = 0;
@@ -3822,6 +3849,7 @@ interface __FIAsyncOperation_1_Windows__CFoundation__CDiagnostics__CErrorDetails
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CFoundation__CDiagnostics__CIFileLoggingSession_Windows__CFoundation__CDiagnostics__CLogFileGeneratedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CFoundation__CDiagnostics__CIFileLoggingSession_Windows__CFoundation__CDiagnostics__CLogFileGeneratedEventArgs_INTERFACE_DEFINED__
 
@@ -3868,6 +3896,7 @@ interface __FITypedEventHandler_2_Windows__CFoundation__CDiagnostics__CIFileLogg
 
 #endif // ____FITypedEventHandler_2_Windows__CFoundation__CDiagnostics__CIFileLoggingSession_Windows__CFoundation__CDiagnostics__CLogFileGeneratedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

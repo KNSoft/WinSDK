@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.management.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -521,8 +523,9 @@ namespace ABI {
         namespace Management {
             /* [object, uuid("B0FBC327-28C1-4B52-A548-C5807CAF70B6"), exclusiveto, contract] */
             MIDL_INTERFACE("B0FBC327-28C1-4B52-A548-C5807CAF70B6")
-            IMdmAlert : IInspectable
+            IMdmAlert : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -595,8 +598,9 @@ namespace ABI {
         namespace Management {
             /* [object, uuid("FE89314C-8F64-4797-A9D7-9D88F86AE166"), exclusiveto, contract] */
             MIDL_INTERFACE("FE89314C-8F64-4797-A9D7-9D88F86AE166")
-            IMdmSession : IInspectable
+            IMdmSession : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Alerts(
                     /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CManagement__CMdmAlert * * value
                     ) = 0;
@@ -653,8 +657,9 @@ namespace ABI {
         namespace Management {
             /* [object, uuid("CF4AD959-F745-4B79-9B5C-DE0BF8EFE44B"), exclusiveto, contract] */
             MIDL_INTERFACE("CF4AD959-F745-4B79-9B5C-DE0BF8EFE44B")
-            IMdmSessionManagerStatics : IInspectable
+            IMdmSessionManagerStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SessionIds(
                     /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                     ) = 0;

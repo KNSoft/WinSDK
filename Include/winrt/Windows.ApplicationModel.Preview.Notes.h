@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.preview.notes.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -134,7 +136,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -162,7 +164,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -206,11 +208,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -226,11 +228,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -418,6 +420,7 @@ namespace ABI {
 
 
 #if WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
+#if WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNotePlacementChangedPreviewEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNotePlacementChangedPreviewEventArgs_USE
@@ -447,6 +450,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Preview::Notes::Notes
 
 
 #endif // WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -461,6 +465,7 @@ namespace ABI {
     } /* Notes */} /* ABI */
 
 
+#if WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNoteVisibilityChangedPreviewEventArgs_USE
@@ -490,6 +495,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Preview::Notes::Notes
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNoteVisibilityChangedPreviewEventArgs_USE */
 
 
+#endif // WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 
 
@@ -618,8 +624,9 @@ namespace ABI {
                 namespace Notes {
                     /* [object, uuid("491D57B7-F780-4E7F-A939-9A4CAF965214"), exclusiveto, contract] */
                     MIDL_INTERFACE("491D57B7-F780-4E7F-A939-9A4CAF965214")
-                    INotePlacementChangedPreviewEventArgs : IInspectable
+                    INotePlacementChangedPreviewEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewId(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -660,8 +667,9 @@ namespace ABI {
                 namespace Notes {
                     /* [object, uuid("0E34649E-3815-4FF6-83B3-A14D17120E24"), exclusiveto, contract] */
                     MIDL_INTERFACE("0E34649E-3815-4FF6-83B3-A14D17120E24")
-                    INoteVisibilityChangedPreviewEventArgs : IInspectable
+                    INoteVisibilityChangedPreviewEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewId(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -705,8 +713,9 @@ namespace ABI {
                 namespace Notes {
                     /* [object, uuid("DC2AC23E-4850-4F13-9CC7-FF487EFDFCDE"), exclusiveto, contract] */
                     MIDL_INTERFACE("DC2AC23E-4850-4F13-9CC7-FF487EFDFCDE")
-                    INotesWindowManagerPreview : IInspectable
+                    INotesWindowManagerPreview : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsScreenLocked(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -796,8 +805,9 @@ namespace ABI {
                 namespace Notes {
                     /* [object, uuid("EDFE864A-1F54-4B09-9823-FF477F6FA3BC"), exclusiveto, contract] */
                     MIDL_INTERFACE("EDFE864A-1F54-4B09-9823-FF477F6FA3BC")
-                    INotesWindowManagerPreview2 : IInspectable
+                    INotesWindowManagerPreview2 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowNoteRelativeToWithOptions(
                             /* [in] */INT32 noteViewId,
                             /* [in] */INT32 anchorNoteViewId,
@@ -850,8 +860,9 @@ namespace ABI {
                 namespace Notes {
                     /* [object, uuid("886B09D6-A6AE-4007-A56D-1CA70C84C0D2"), exclusiveto, contract] */
                     MIDL_INTERFACE("886B09D6-A6AE-4007-A56D-1CA70C84C0D2")
-                    INotesWindowManagerPreviewShowNoteOptions : IInspectable
+                    INotesWindowManagerPreviewShowNoteOptions : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShowWithFocus(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -895,8 +906,9 @@ namespace ABI {
                 namespace Notes {
                     /* [object, uuid("6668CC88-0A8E-4127-A38E-995445868A78"), exclusiveto, contract] */
                     MIDL_INTERFACE("6668CC88-0A8E-4127-A38E-995445868A78")
-                    INotesWindowManagerPreviewStatics : IInspectable
+                    INotesWindowManagerPreviewStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetForCurrentApp(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Preview::Notes::INotesWindowManagerPreview * * current
                             ) = 0;
@@ -1116,6 +1128,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__
 
 
 #if WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
+#if WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNotePlacementChangedPreviewEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNotePlacementChangedPreviewEventArgs_INTERFACE_DEFINED__
 
@@ -1163,9 +1176,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNotePlacementChangedPreviewEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNoteVisibilityChangedPreviewEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNoteVisibilityChangedPreviewEventArgs_INTERFACE_DEFINED__
@@ -1213,6 +1228,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CPreview__CNotes__CNotesWindowManagerPreview_Windows__CApplicationModel__CPreview__CNotes__CNoteVisibilityChangedPreviewEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_APPLICATIONMODEL_PREVIEW_NOTES_PREVIEWNOTESCONTRACT_VERSION >= 0x10000
 
 

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.globalization.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,30 +77,139 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
+
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
+#define WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 #define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
+#define WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
 
 #if !defined(WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION)
 #define WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION 0x40000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION)
+#define WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION)
+#define WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
+#define WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -108,6 +218,26 @@
 #if !defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
+#define WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
+
+#if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+#define WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
+#define WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
 #define WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION 0x10000
@@ -122,6 +252,7 @@
 #include "EventToken.h"
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
+#include "Windows.System.h"
 // Importing Collections header
 #include <windows.foundation.collections.h>
 
@@ -138,6 +269,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics ABI::Windows::Globalization::IApplicationLanguagesStatics
 
 #endif // ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            interface IApplicationLanguagesStatics2;
+        } /* Windows */
+    } /* Globalization */} /* ABI */
+#define __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2 ABI::Windows::Globalization::IApplicationLanguagesStatics2
+
+#endif // ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CICalendar_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CICalendar_FWD_DEFINED__
@@ -318,6 +461,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CGlobalization_CILanguage ABI::Windows::Globalization::ILanguage
 
 #endif // ____x_ABI_CWindows_CGlobalization_CILanguage_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGlobalization_CILanguage2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CILanguage2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            interface ILanguage2;
+        } /* Windows */
+    } /* Globalization */} /* ABI */
+#define __x_ABI_CWindows_CGlobalization_CILanguage2 ABI::Windows::Globalization::ILanguage2
+
+#endif // ____x_ABI_CWindows_CGlobalization_CILanguage2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtags_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtags_FWD_DEFINED__
@@ -745,6 +900,28 @@ namespace ABI {
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            class User;
+        } /* Windows */
+    } /* System */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IUser;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIUser ABI::Windows::System::IUser
+
+#endif // ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+
+
+
+
 
 namespace ABI {
     namespace Windows {
@@ -754,6 +931,17 @@ namespace ABI {
             
         } /* Windows */
     } /* Globalization */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            
+            typedef enum LanguageLayoutDirection : int LanguageLayoutDirection;
+            
+        } /* Windows */
+    } /* Globalization */} /* ABI */
+
+
 
 
 
@@ -841,6 +1029,33 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Globalization.LanguageLayoutDirection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            /* [v1_enum, contract] */
+            enum LanguageLayoutDirection : int
+            {
+                LanguageLayoutDirection_Ltr = 0,
+                LanguageLayoutDirection_Rtl = 1,
+                LanguageLayoutDirection_TtbLtr = 2,
+                LanguageLayoutDirection_TtbRtl = 3,
+            };
+            
+        } /* Windows */
+    } /* Globalization */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Globalization.IApplicationLanguagesStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -859,8 +1074,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("75B40847-0A4C-4A92-9565-FD63C95F7AED"), exclusiveto, contract] */
             MIDL_INTERFACE("75B40847-0A4C-4A92-9565-FD63C95F7AED")
-            IApplicationLanguagesStatics : IInspectable
+            IApplicationLanguagesStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PrimaryLanguageOverride(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -888,6 +1104,46 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CIApplicationLanguagesSta
 
 /*
  *
+ * Interface Windows.Globalization.IApplicationLanguagesStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.ApplicationLanguages
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_IApplicationLanguagesStatics2[] = L"Windows.Globalization.IApplicationLanguagesStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            /* [object, uuid("1DF0DE4F-072B-4D7B-8F06-CB2DB40F2BB5"), exclusiveto, contract] */
+            MIDL_INTERFACE("1DF0DE4F-072B-4D7B-8F06-CB2DB40F2BB5")
+            IApplicationLanguagesStatics2 : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE GetLanguagesForUser(
+                    /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                    /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IApplicationLanguagesStatics2=_uuidof(IApplicationLanguagesStatics2);
+            
+        } /* Windows */
+    } /* Globalization */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2;
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Globalization.ICalendar
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -906,8 +1162,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("CA30221D-86D9-40FB-A26B-D44EB7CF08EA"), exclusiveto, contract] */
             MIDL_INTERFACE("CA30221D-86D9-40FB-A26B-D44EB7CF08EA")
-            ICalendar : IInspectable
+            ICalendar : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Clone(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::ICalendar * * value
                     ) = 0;
@@ -1245,8 +1502,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("83F58412-E56B-4C75-A66E-0F63D57758A6"), exclusiveto, contract] */
             MIDL_INTERFACE("83F58412-E56B-4C75-A66E-0F63D57758A6")
-            ICalendarFactory : IInspectable
+            ICalendarFactory : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateCalendarDefaultCalendarAndClock(
                     /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * languages,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::ICalendar * * result
@@ -1290,8 +1548,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("B44B378C-CA7E-4590-9E72-EA2BEC1A5115"), exclusiveto, contract] */
             MIDL_INTERFACE("B44B378C-CA7E-4590-9E72-EA2BEC1A5115")
-            ICalendarFactory2 : IInspectable
+            ICalendarFactory2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateCalendarWithTimeZone(
                     /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * languages,
                     /* [in] */__RPC__in HSTRING calendar,
@@ -1332,8 +1591,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("80653F68-2CB2-4C1F-B590-F0F52BF4FD1A"), exclusiveto, contract] */
             MIDL_INTERFACE("80653F68-2CB2-4C1F-B590-F0F52BF4FD1A")
-            ICalendarIdentifiersStatics : IInspectable
+            ICalendarIdentifiersStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Gregorian(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -1394,8 +1654,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("7DF4D488-5FD0-42A7-95B5-7D98D823075F"), exclusiveto, contract] */
             MIDL_INTERFACE("7DF4D488-5FD0-42A7-95B5-7D98D823075F")
-            ICalendarIdentifiersStatics2 : IInspectable
+            ICalendarIdentifiersStatics2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Persian(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -1432,8 +1693,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("2C225423-1FAD-40C0-9334-A8EB90DB04F5"), exclusiveto, contract] */
             MIDL_INTERFACE("2C225423-1FAD-40C0-9334-A8EB90DB04F5")
-            ICalendarIdentifiersStatics3 : IInspectable
+            ICalendarIdentifiersStatics3 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChineseLunar(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -1482,8 +1744,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("523805BB-12EC-4F83-BC31-B1B4376B0808"), exclusiveto, contract] */
             MIDL_INTERFACE("523805BB-12EC-4F83-BC31-B1B4376B0808")
-            IClockIdentifiersStatics : IInspectable
+            IClockIdentifiersStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TwelveHour(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -1523,8 +1786,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("9F1D091B-D586-4913-9B6A-A9BD2DC12874"), exclusiveto, contract] */
             MIDL_INTERFACE("9F1D091B-D586-4913-9B6A-A9BD2DC12874")
-            ICurrencyIdentifiersStatics : IInspectable
+            ICurrencyIdentifiersStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AED(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2029,8 +2293,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("1814797F-C3B2-4C33-9591-980011950D37"), exclusiveto, contract] */
             MIDL_INTERFACE("1814797F-C3B2-4C33-9591-980011950D37")
-            ICurrencyIdentifiersStatics2 : IInspectable
+            ICurrencyIdentifiersStatics2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BYN(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2067,8 +2332,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("01E9A621-4A64-4ED9-954F-9EDEB07BD903"), exclusiveto, contract] */
             MIDL_INTERFACE("01E9A621-4A64-4ED9-954F-9EDEB07BD903")
-            IGeographicRegion : IInspectable
+            IGeographicRegion : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Code(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2123,8 +2389,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("53425270-77B4-426B-859F-81E19D512546"), exclusiveto, contract] */
             MIDL_INTERFACE("53425270-77B4-426B-859F-81E19D512546")
-            IGeographicRegionFactory : IInspectable
+            IGeographicRegionFactory : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateGeographicRegion(
                     /* [in] */__RPC__in HSTRING geographicRegionCode,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::IGeographicRegion * * result
@@ -2162,8 +2429,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("29E28974-7AD9-4EF4-8799-B3B44FADEC08"), exclusiveto, contract] */
             MIDL_INTERFACE("29E28974-7AD9-4EF4-8799-B3B44FADEC08")
-            IGeographicRegionStatics : IInspectable
+            IGeographicRegionStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE IsSupported(
                     /* [in] */__RPC__in HSTRING geographicRegionCode,
                     /* [retval, out] */__RPC__out boolean * result
@@ -2201,8 +2469,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("2F6A9300-E85B-43E6-897D-5D82F862DF21"), exclusiveto, contract] */
             MIDL_INTERFACE("2F6A9300-E85B-43E6-897D-5D82F862DF21")
-            IJapanesePhoneme : IInspectable
+            IJapanesePhoneme : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayText(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2245,8 +2514,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("88AB9E90-93DE-41B2-B4D5-8EDB227FD1C2"), exclusiveto, contract] */
             MIDL_INTERFACE("88AB9E90-93DE-41B2-B4D5-8EDB227FD1C2")
-            IJapanesePhoneticAnalyzerStatics : IInspectable
+            IJapanesePhoneticAnalyzerStatics : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetWords(
                     /* [in] */__RPC__in HSTRING input,
                     /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme * * result
@@ -2289,8 +2559,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("EA79A752-F7C2-4265-B1BD-C4DEC4E4F080"), exclusiveto, contract] */
             MIDL_INTERFACE("EA79A752-F7C2-4265-B1BD-C4DEC4E4F080")
-            ILanguage : IInspectable
+            ILanguage : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LanguageTag(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2318,6 +2589,45 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CILanguage;
 
 /*
  *
+ * Interface Windows.Globalization.ILanguage2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.Language
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGlobalization_CILanguage2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGlobalization_CILanguage2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_ILanguage2[] = L"Windows.Globalization.ILanguage2";
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            /* [object, uuid("6A47E5B5-D94D-4886-A404-A5A5B9D5B494"), exclusiveto, contract] */
+            MIDL_INTERFACE("6A47E5B5-D94D-4886-A404-A5A5B9D5B494")
+            ILanguage2 : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LayoutDirection(
+                    /* [retval, out] */__RPC__out ABI::Windows::Globalization::LanguageLayoutDirection * value
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_ILanguage2=_uuidof(ILanguage2);
+            
+        } /* Windows */
+    } /* Globalization */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CILanguage2;
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CILanguage2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Globalization.ILanguageExtensionSubtags
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2336,8 +2646,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("7D7DAF45-368D-4364-852B-DEC927037B85"), exclusiveto, contract] */
             MIDL_INTERFACE("7D7DAF45-368D-4364-852B-DEC927037B85")
-            ILanguageExtensionSubtags : IInspectable
+            ILanguageExtensionSubtags : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetExtensionSubtags(
                     /* [in] */__RPC__in HSTRING singleton,
                     /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
@@ -2375,8 +2686,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("9B0252AC-0C27-44F8-B792-9793FB66C63E"), exclusiveto, contract] */
             MIDL_INTERFACE("9B0252AC-0C27-44F8-B792-9793FB66C63E")
-            ILanguageFactory : IInspectable
+            ILanguageFactory : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE CreateLanguage(
                     /* [in] */__RPC__in HSTRING languageTag,
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::ILanguage * * result
@@ -2414,8 +2726,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("B23CD557-0865-46D4-89B8-D59BE8990F0D"), exclusiveto, contract] */
             MIDL_INTERFACE("B23CD557-0865-46D4-89B8-D59BE8990F0D")
-            ILanguageStatics : IInspectable
+            ILanguageStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE IsWellFormed(
                     /* [in] */__RPC__in HSTRING languageTag,
                     /* [retval, out] */__RPC__out boolean * result
@@ -2456,8 +2769,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("30199F6E-914B-4B2A-9D6E-E3B0E27DBE4F"), exclusiveto, contract] */
             MIDL_INTERFACE("30199F6E-914B-4B2A-9D6E-E3B0E27DBE4F")
-            ILanguageStatics2 : IInspectable
+            ILanguageStatics2 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE TrySetInputMethodLanguageTag(
                     /* [in] */__RPC__in HSTRING languageTag,
                     /* [retval, out] */__RPC__out boolean * result
@@ -2495,8 +2809,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("A5C662C3-68C9-4D3D-B765-972029E21DEC"), exclusiveto, contract] */
             MIDL_INTERFACE("A5C662C3-68C9-4D3D-B765-972029E21DEC")
-            INumeralSystemIdentifiersStatics : IInspectable
+            INumeralSystemIdentifiersStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Arab(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2638,8 +2953,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("7F003228-9DDB-4A34-9104-0260C091A7C7"), exclusiveto, contract] */
             MIDL_INTERFACE("7F003228-9DDB-4A34-9104-0260C091A7C7")
-            INumeralSystemIdentifiersStatics2 : IInspectable
+            INumeralSystemIdentifiersStatics2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Brah(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2709,8 +3025,9 @@ namespace ABI {
         namespace Globalization {
             /* [object, uuid("BB3C25E5-46CF-4317-A3F5-02621AD54478"), exclusiveto, contract] */
             MIDL_INTERFACE("BB3C25E5-46CF-4317-A3F5-02621AD54478")
-            ITimeZoneOnCalendar : IInspectable
+            ITimeZoneOnCalendar : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetTimeZone(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2745,6 +3062,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CITimeZoneOnCalendar;
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Globalization.IApplicationLanguagesStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Globalization.IApplicationLanguagesStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -2957,6 +3275,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Globalization.ILanguage ** Default Interface **
  *    Windows.Globalization.ILanguageExtensionSubtags
+ *    Windows.Globalization.ILanguage2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3004,6 +3323,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 typedef interface __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics;
 
 #endif // ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2 __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2;
+
+#endif // ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CICalendar_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CICalendar_FWD_DEFINED__
@@ -3094,6 +3419,12 @@ typedef interface __x_ABI_CWindows_CGlobalization_CIJapanesePhoneticAnalyzerStat
 typedef interface __x_ABI_CWindows_CGlobalization_CILanguage __x_ABI_CWindows_CGlobalization_CILanguage;
 
 #endif // ____x_ABI_CWindows_CGlobalization_CILanguage_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGlobalization_CILanguage2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CILanguage2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGlobalization_CILanguage2 __x_ABI_CWindows_CGlobalization_CILanguage2;
+
+#endif // ____x_ABI_CWindows_CGlobalization_CILanguage2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtags_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtags_FWD_DEFINED__
@@ -4100,9 +4431,23 @@ typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundati
 
 
 
+#ifndef ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIUser __x_ABI_CWindows_CSystem_CIUser;
+
+#endif // ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+
+
+
+
 
 
 typedef enum __x_ABI_CWindows_CGlobalization_CDayOfWeek __x_ABI_CWindows_CGlobalization_CDayOfWeek;
+
+
+typedef enum __x_ABI_CWindows_CGlobalization_CLanguageLayoutDirection __x_ABI_CWindows_CGlobalization_CLanguageLayoutDirection;
+
+
 
 
 
@@ -4166,6 +4511,27 @@ enum __x_ABI_CWindows_CGlobalization_CDayOfWeek
     DayOfWeek_Saturday = 6,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Globalization.LanguageLayoutDirection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CGlobalization_CLanguageLayoutDirection
+{
+    LanguageLayoutDirection_Ltr = 0,
+    LanguageLayoutDirection_Rtl = 1,
+    LanguageLayoutDirection_TtbLtr = 2,
+    LanguageLayoutDirection_TtbRtl = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4280,6 +4646,100 @@ interface __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics;
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Globalization.IApplicationLanguagesStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.ApplicationLanguages
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_IApplicationLanguagesStatics2[] = L"Windows.Globalization.IApplicationLanguagesStatics2";
+/* [object, uuid("1DF0DE4F-072B-4D7B-8F06-CB2DB40F2BB5"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetLanguagesForUser )(
+        __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2Vtbl;
+
+interface __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_GetLanguagesForUser(This,user,value) \
+    ( (This)->lpVtbl->GetLanguagesForUser(This,user,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2;
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CIApplicationLanguagesStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7658,6 +8118,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CILanguage;
 
 /*
  *
+ * Interface Windows.Globalization.ILanguage2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.Language
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CGlobalization_CILanguage2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGlobalization_CILanguage2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_ILanguage2[] = L"Windows.Globalization.ILanguage2";
+/* [object, uuid("6A47E5B5-D94D-4886-A404-A5A5B9D5B494"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGlobalization_CILanguage2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CILanguage2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CILanguage2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CILanguage2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CILanguage2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CILanguage2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CILanguage2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LayoutDirection )(
+        __x_ABI_CWindows_CGlobalization_CILanguage2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CGlobalization_CLanguageLayoutDirection * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGlobalization_CILanguage2Vtbl;
+
+interface __x_ABI_CWindows_CGlobalization_CILanguage2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CILanguage2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGlobalization_CILanguage2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGlobalization_CILanguage2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGlobalization_CILanguage2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGlobalization_CILanguage2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGlobalization_CILanguage2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGlobalization_CILanguage2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGlobalization_CILanguage2_get_LayoutDirection(This,value) \
+    ( (This)->lpVtbl->get_LayoutDirection(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CILanguage2;
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CILanguage2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Globalization.ILanguageExtensionSubtags
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -8670,6 +9223,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CITimeZoneOnCalendar;
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Globalization.IApplicationLanguagesStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Globalization.IApplicationLanguagesStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -8882,6 +9436,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Globalization.ILanguage ** Default Interface **
  *    Windows.Globalization.ILanguageExtensionSubtags
+ *    Windows.Globalization.ILanguage2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

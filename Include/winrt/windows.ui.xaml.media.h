@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.media.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -566,6 +568,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics ABI::Windows::UI::Xaml::Media::ICompositionTargetStatics
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    interface ICompositionTargetStatics3;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Media */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 ABI::Windows::UI::Xaml::Media::ICompositionTargetStatics3
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIEllipseGeometry_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIEllipseGeometry_FWD_DEFINED__
@@ -1558,6 +1576,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRectangleGeometryStatics ABI::Windows::UI::Xaml::Media::IRectangleGeometryStatics
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRectangleGeometryStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    interface IRenderedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Media */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs ABI::Windows::UI::Xaml::Media::IRenderedEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderingEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderingEventArgs_FWD_DEFINED__
@@ -3350,6 +3384,49 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
+                namespace Media {
+                    class RenderedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Media */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_USE
+#define DEF___FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("d1780676-8ac2-5aee-ab99-10422db51c29"))
+IEventHandler<ABI::Windows::UI::Xaml::Media::RenderedEventArgs*> : IEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Media::RenderedEventArgs*, ABI::Windows::UI::Xaml::Media::IRenderedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Windows.UI.Xaml.Media.RenderedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<ABI::Windows::UI::Xaml::Media::RenderedEventArgs*> __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_t;
+#define __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Media::IRenderedEventArgs*>
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_t ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Media::IRenderedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
                 namespace Controls {
                     class MediaElement;
                 } /* Windows */
@@ -3387,6 +3464,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMediaElement_Windows__CUI__CXaml__CMedia__CPartialMediaFailureDetectedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMediaElement_Windows__CUI__CXaml__CMedia__CPartialMediaFailureDetectedEventArgs_USE
@@ -3415,6 +3493,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::MediaElement*,ABI::
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMediaElement_Windows__CUI__CXaml__CMedia__CPartialMediaFailureDetectedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -3515,6 +3594,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs_USE
@@ -3543,6 +3623,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Media::LoadedImageSurface*,AB
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -4827,6 +4908,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -5266,6 +5349,7 @@ namespace ABI {
             } /* UI */
         } /* Xaml */
     } /* Media */} /* ABI */
+
 
 
 namespace ABI {
@@ -6218,8 +6302,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("08E9A257-AE05-489B-8839-28C6225D2349"), contract] */
                     MIDL_INTERFACE("08E9A257-AE05-489B-8839-28C6225D2349")
-                    IRateChangedRoutedEventHandler : IUnknown
+                    IRateChangedRoutedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs * e
@@ -6257,8 +6342,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("72E2FA9C-6DEA-4CBE-A159-06CE95FBECED"), contract] */
                     MIDL_INTERFACE("72E2FA9C-6DEA-4CBE-A159-06CE95FBECED")
-                    ITimelineMarkerRoutedEventHandler : IUnknown
+                    ITimelineMarkerRoutedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs * e
@@ -6300,8 +6386,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("79BBCF4E-CD66-4F1B-A8B6-CD6D2977C18D"), exclusiveto, contract] */
                     MIDL_INTERFACE("79BBCF4E-CD66-4F1B-A8B6-CD6D2977C18D")
-                    IAcrylicBrush : IInspectable
+                    IAcrylicBrush : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BackgroundSource(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::AcrylicBackgroundSource * value
                             ) = 0;
@@ -6369,8 +6456,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("81A32568-F6CC-4013-8363-928AE23B7A61"), exclusiveto, contract] */
                     MIDL_INTERFACE("81A32568-F6CC-4013-8363-928AE23B7A61")
-                    IAcrylicBrushFactory : IInspectable
+                    IAcrylicBrushFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -6413,8 +6501,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("2787FD79-A3DA-423F-B81A-599147971523"), exclusiveto, contract] */
                     MIDL_INTERFACE("2787FD79-A3DA-423F-B81A-599147971523")
-                    IAcrylicBrushStatics : IInspectable
+                    IAcrylicBrushStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BackgroundSourceProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -6467,8 +6556,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("07940C5F-63FB-4469-91BE-F1097C168052"), exclusiveto, contract] */
                     MIDL_INTERFACE("07940C5F-63FB-4469-91BE-F1097C168052")
-                    IArcSegment : IInspectable
+                    IArcSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Point(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                             ) = 0;
@@ -6536,8 +6626,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("82348F6E-8A69-4204-9C12-7207DF317643"), exclusiveto, contract] */
                     MIDL_INTERFACE("82348F6E-8A69-4204-9C12-7207DF317643")
-                    IArcSegmentStatics : IInspectable
+                    IArcSegmentStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -6590,8 +6681,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("AF4BB9EE-8984-49B7-81DF-3F35994B95EB"), exclusiveto, contract] */
                     MIDL_INTERFACE("AF4BB9EE-8984-49B7-81DF-3F35994B95EB")
-                    IBezierSegment : IInspectable
+                    IBezierSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Point1(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                             ) = 0;
@@ -6647,8 +6739,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("C0287BAC-1410-4530-8452-1C9D0AD1F341"), exclusiveto, contract] */
                     MIDL_INTERFACE("C0287BAC-1410-4530-8452-1C9D0AD1F341")
-                    IBezierSegmentStatics : IInspectable
+                    IBezierSegmentStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Point1Property(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -6695,8 +6788,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("79C2219E-44D2-4610-9735-9BEC83809ECF"), exclusiveto, contract] */
                     MIDL_INTERFACE("79C2219E-44D2-4610-9735-9BEC83809ECF")
-                    IBitmapCache : IInspectable
+                    IBitmapCache : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -6734,8 +6828,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("8806A321-1E06-422C-A1CC-01696559E021"), exclusiveto, contract] */
                     MIDL_INTERFACE("8806A321-1E06-422C-A1CC-01696559E021")
-                    IBrush : IInspectable
+                    IBrush : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Opacity(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -6791,8 +6886,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("399658A2-14FB-4B8F-83E6-6E3DAB12069B"), exclusiveto, contract] */
                     MIDL_INTERFACE("399658A2-14FB-4B8F-83E6-6E3DAB12069B")
-                    IBrushFactory : IInspectable
+                    IBrushFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -6835,8 +6931,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("E70C3102-0225-47F5-B22E-0467619F6A22"), exclusiveto, contract] */
                     MIDL_INTERFACE("E70C3102-0225-47F5-B22E-0467619F6A22")
-                    IBrushStatics : IInspectable
+                    IBrushStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OpacityProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -6883,8 +6980,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("98DC8B11-C6F9-4DAB-B838-5FD5EC8C7350"), exclusiveto, contract] */
                     MIDL_INTERFACE("98DC8B11-C6F9-4DAB-B838-5FD5EC8C7350")
-                    ICacheMode : IInspectable
+                    ICacheMode : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -6922,8 +7020,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("EB1F8C5B-0ABB-4E70-B8A8-620D0D953AB2"), exclusiveto, contract] */
                     MIDL_INTERFACE("EB1F8C5B-0ABB-4E70-B8A8-620D0D953AB2")
-                    ICacheModeFactory : IInspectable
+                    ICacheModeFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -6966,8 +7065,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("C8A4385B-F24A-4701-A265-A78846F142B9"), exclusiveto, contract] */
                     MIDL_INTERFACE("C8A4385B-F24A-4701-A265-A78846F142B9")
-                    ICompositeTransform : IInspectable
+                    ICompositeTransform : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterX(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -7059,8 +7159,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("2F190C08-8266-496F-9653-A18BD4F836AA"), exclusiveto, contract] */
                     MIDL_INTERFACE("2F190C08-8266-496F-9653-A18BD4F836AA")
-                    ICompositeTransformStatics : IInspectable
+                    ICompositeTransformStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterXProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -7125,8 +7226,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("26CFBFF0-713C-4BEC-8803-E101F7B14ED3"), exclusiveto, contract] */
                     MIDL_INTERFACE("26CFBFF0-713C-4BEC-8803-E101F7B14ED3")
-                    ICompositionTarget : IInspectable
+                    ICompositionTarget : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -7164,8 +7266,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("2B1AF03D-1ED2-4B59-BD00-7594EE92832B"), exclusiveto, contract] */
                     MIDL_INTERFACE("2B1AF03D-1ED2-4B59-BD00-7594EE92832B")
-                    ICompositionTargetStatics : IInspectable
+                    ICompositionTargetStatics : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Rendering(
                             /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -7197,6 +7300,53 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStat
 
 /*
  *
+ * Interface Windows.UI.Xaml.Media.ICompositionTargetStatics3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.CompositionTarget
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_ICompositionTargetStatics3[] = L"Windows.UI.Xaml.Media.ICompositionTargetStatics3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    /* [object, uuid("BC0A7CD9-6750-4708-994C-2028E0312AC8"), exclusiveto, contract] */
+                    MIDL_INTERFACE("BC0A7CD9-6750-4708-994C-2028E0312AC8")
+                    ICompositionTargetStatics3 : public IInspectable
+                    {
+                    public:
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Rendered(
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * value,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Rendered(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ICompositionTargetStatics3=_uuidof(ICompositionTargetStatics3);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Media */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Media.IEllipseGeometry
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7217,8 +7367,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("D4F61BBA-4EA2-40D6-AA6C-8D38AA87651F"), exclusiveto, contract] */
                     MIDL_INTERFACE("D4F61BBA-4EA2-40D6-AA6C-8D38AA87651F")
-                    IEllipseGeometry : IInspectable
+                    IEllipseGeometry : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Center(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                             ) = 0;
@@ -7274,8 +7425,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("1744DB47-F635-4B16-AEE6-E052A65DEFB2"), exclusiveto, contract] */
                     MIDL_INTERFACE("1744DB47-F635-4B16-AEE6-E052A65DEFB2")
-                    IEllipseGeometryStatics : IInspectable
+                    IEllipseGeometryStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -7322,8 +7474,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("92467E64-D66A-4CF4-9322-3D23B3C0C361"), exclusiveto, contract] */
                     MIDL_INTERFACE("92467E64-D66A-4CF4-9322-3D23B3C0C361")
-                    IFontFamily : IInspectable
+                    IFontFamily : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Source(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -7364,8 +7517,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("D5603377-3DAE-4DCD-AF09-F9498E9EC659"), exclusiveto, contract] */
                     MIDL_INTERFACE("D5603377-3DAE-4DCD-AF09-F9498E9EC659")
-                    IFontFamilyFactory : IInspectable
+                    IFontFamilyFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithName(
                             /* [in] */__RPC__in HSTRING familyName,
                             /* [in] */__RPC__in_opt IInspectable * outer,
@@ -7409,8 +7563,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("52AD7AF9-37E6-4297-A238-97FB6A408D9E"), exclusiveto, contract] */
                     MIDL_INTERFACE("52AD7AF9-37E6-4297-A238-97FB6A408D9E")
-                    IFontFamilyStatics2 : IInspectable
+                    IFontFamilyStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XamlAutoFontFamily(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IFontFamily * * value
                             ) = 0;
@@ -7451,8 +7606,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("A06798B7-A2EC-415F-ADE2-EADE9333F2C7"), exclusiveto, contract] */
                     MIDL_INTERFACE("A06798B7-A2EC-415F-ADE2-EADE9333F2C7")
-                    IGeneralTransform : IInspectable
+                    IGeneralTransform : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Inverse(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IGeneralTransform * * value
                             ) = 0;
@@ -7506,8 +7662,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("7A25C930-29C4-4E31-B6F9-DEDD52E4DF1B"), exclusiveto, contract] */
                     MIDL_INTERFACE("7A25C930-29C4-4E31-B6F9-DEDD52E4DF1B")
-                    IGeneralTransformFactory : IInspectable
+                    IGeneralTransformFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -7550,8 +7707,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("4F121083-24CF-4524-90AD-8A42B1C12783"), exclusiveto, contract] */
                     MIDL_INTERFACE("4F121083-24CF-4524-90AD-8A42B1C12783")
-                    IGeneralTransformOverrides : IInspectable
+                    IGeneralTransformOverrides : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InverseCore(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IGeneralTransform * * value
                             ) = 0;
@@ -7601,8 +7759,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("FA123889-0ACD-417B-B62D-5CA1BF4DFC0E"), exclusiveto, contract] */
                     MIDL_INTERFACE("FA123889-0ACD-417B-B62D-5CA1BF4DFC0E")
-                    IGeometry : IInspectable
+                    IGeometry : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Transform(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ITransform * * value
                             ) = 0;
@@ -7649,8 +7808,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("F65DAF23-D5FD-42F9-B32A-929C5A4B54E1"), exclusiveto, contract] */
                     MIDL_INTERFACE("F65DAF23-D5FD-42F9-B32A-929C5A4B54E1")
-                    IGeometryFactory : IInspectable
+                    IGeometryFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -7688,8 +7848,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("55225A61-8677-4C8C-8E46-EE3DC355114B"), exclusiveto, contract] */
                     MIDL_INTERFACE("55225A61-8677-4C8C-8E46-EE3DC355114B")
-                    IGeometryGroup : IInspectable
+                    IGeometryGroup : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillRule(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::FillRule * value
                             ) = 0;
@@ -7739,8 +7900,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("56C955F4-8496-4BB6-ABF0-617B1FE78B45"), exclusiveto, contract] */
                     MIDL_INTERFACE("56C955F4-8496-4BB6-ABF0-617B1FE78B45")
-                    IGeometryGroupStatics : IInspectable
+                    IGeometryGroupStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillRuleProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -7784,8 +7946,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("7A70AA8C-0B06-465F-B637-9A47E5A70111"), exclusiveto, contract] */
                     MIDL_INTERFACE("7A70AA8C-0B06-465F-B637-9A47E5A70111")
-                    IGeometryStatics : IInspectable
+                    IGeometryStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Empty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IGeometry * * value
                             ) = 0;
@@ -7832,8 +7995,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("2166E69F-935A-4191-8E3C-1C8DFDFCDC78"), exclusiveto, contract] */
                     MIDL_INTERFACE("2166E69F-935A-4191-8E3C-1C8DFDFCDC78")
-                    IGradientBrush : IInspectable
+                    IGradientBrush : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SpreadMethod(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::GradientSpreadMethod * value
                             ) = 0;
@@ -7895,8 +8059,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("ED4779CA-45BD-4131-B625-BE86E07C6112"), exclusiveto, contract] */
                     MIDL_INTERFACE("ED4779CA-45BD-4131-B625-BE86E07C6112")
-                    IGradientBrushFactory : IInspectable
+                    IGradientBrushFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -7939,8 +8104,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("961661F9-8BB4-4E6C-B923-B5D787E0F1A9"), exclusiveto, contract] */
                     MIDL_INTERFACE("961661F9-8BB4-4E6C-B923-B5D787E0F1A9")
-                    IGradientBrushStatics : IInspectable
+                    IGradientBrushStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SpreadMethodProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -7990,8 +8156,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("665F44FE-2E59-4C4A-AB53-076A100CCD81"), exclusiveto, contract] */
                     MIDL_INTERFACE("665F44FE-2E59-4C4A-AB53-076A100CCD81")
-                    IGradientStop : IInspectable
+                    IGradientStop : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                             ) = 0;
@@ -8041,8 +8208,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("602A6D75-6193-4FE5-8E82-C7C6F6FEBAFD"), exclusiveto, contract] */
                     MIDL_INTERFACE("602A6D75-6193-4FE5-8E82-C7C6F6FEBAFD")
-                    IGradientStopStatics : IInspectable
+                    IGradientStopStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColorProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -8086,8 +8254,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("9FD11377-C12A-4493-BF7D-F3A8AD74B554"), exclusiveto, contract] */
                     MIDL_INTERFACE("9FD11377-C12A-4493-BF7D-F3A8AD74B554")
-                    IImageBrush : IInspectable
+                    IImageBrush : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ImageSource(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IImageSource * * value
                             ) = 0;
@@ -8145,8 +8314,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("1255B1B2-DD18-42E5-892C-EAE30C305B8C"), exclusiveto, contract] */
                     MIDL_INTERFACE("1255B1B2-DD18-42E5-892C-EAE30C305B8C")
-                    IImageBrushStatics : IInspectable
+                    IImageBrushStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ImageSourceProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -8187,8 +8357,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("737EF309-EA41-4D96-A71C-98E98EFCAB07"), exclusiveto, contract] */
                     MIDL_INTERFACE("737EF309-EA41-4D96-A71C-98E98EFCAB07")
-                    IImageSource : IInspectable
+                    IImageSource : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -8226,8 +8397,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("297EC001-2540-4E5A-AB66-88035DD3DDB5"), exclusiveto, contract] */
                     MIDL_INTERFACE("297EC001-2540-4E5A-AB66-88035DD3DDB5")
-                    IImageSourceFactory : IInspectable
+                    IImageSourceFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -8265,8 +8437,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("30EDD4A2-8FC5-40AF-A7A2-C27FE7AA1363"), exclusiveto, contract] */
                     MIDL_INTERFACE("30EDD4A2-8FC5-40AF-A7A2-C27FE7AA1363")
-                    ILineGeometry : IInspectable
+                    ILineGeometry : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartPoint(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                             ) = 0;
@@ -8316,8 +8489,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("578AE763-5562-4EE4-8703-EA4036D891E3"), exclusiveto, contract] */
                     MIDL_INTERFACE("578AE763-5562-4EE4-8703-EA4036D891E3")
-                    ILineGeometryStatics : IInspectable
+                    ILineGeometryStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartPointProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -8361,8 +8535,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("EF6A2E25-3FF0-4420-A411-7182A4CECB15"), exclusiveto, contract] */
                     MIDL_INTERFACE("EF6A2E25-3FF0-4420-A411-7182A4CECB15")
-                    ILineSegment : IInspectable
+                    ILineSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Point(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                             ) = 0;
@@ -8406,8 +8581,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("9FCAB141-04C0-4AFB-87B3-E800B969B894"), exclusiveto, contract] */
                     MIDL_INTERFACE("9FCAB141-04C0-4AFB-87B3-E800B969B894")
-                    ILineSegmentStatics : IInspectable
+                    ILineSegmentStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -8448,8 +8624,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("8E96D16B-BB84-4C6F-9DBF-9D6C5C6D9C39"), exclusiveto, contract] */
                     MIDL_INTERFACE("8E96D16B-BB84-4C6F-9DBF-9D6C5C6D9C39")
-                    ILinearGradientBrush : IInspectable
+                    ILinearGradientBrush : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartPoint(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                             ) = 0;
@@ -8499,8 +8676,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("0AE0861C-1E7A-4FED-9857-EA8CAA798490"), exclusiveto, contract] */
                     MIDL_INTERFACE("0AE0861C-1E7A-4FED-9857-EA8CAA798490")
-                    ILinearGradientBrushFactory : IInspectable
+                    ILinearGradientBrushFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithGradientStopCollectionAndAngle(
                             /* [in] */__RPC__in_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CGradientStop * gradientStopCollection,
                             /* [in] */DOUBLE angle,
@@ -8543,8 +8721,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("7AF6E504-2DC3-40E3-BE0B-B314C13CB991"), exclusiveto, contract] */
                     MIDL_INTERFACE("7AF6E504-2DC3-40E3-BE0B-B314C13CB991")
-                    ILinearGradientBrushStatics : IInspectable
+                    ILinearGradientBrushStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartPointProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -8588,8 +8767,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("1AC60B1E-7837-4489-B3E5-D0D5AD0A56C4"), exclusiveto, contract] */
                     MIDL_INTERFACE("1AC60B1E-7837-4489-B3E5-D0D5AD0A56C4")
-                    ILoadedImageSourceLoadCompletedEventArgs : IInspectable
+                    ILoadedImageSourceLoadCompletedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus * value
                             ) = 0;
@@ -8630,8 +8810,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("050C8313-6737-45BA-8531-33094FEBEF55"), exclusiveto, contract] */
                     MIDL_INTERFACE("050C8313-6737-45BA-8531-33094FEBEF55")
-                    ILoadedImageSurface : IInspectable
+                    ILoadedImageSurface : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DecodedPhysicalSize(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * value
                             ) = 0;
@@ -8685,8 +8866,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("22B8EDF6-84AD-40AB-937D-4871613E765D"), exclusiveto, contract] */
                     MIDL_INTERFACE("22B8EDF6-84AD-40AB-937D-4871613E765D")
-                    ILoadedImageSurfaceStatics : IInspectable
+                    ILoadedImageSurfaceStatics : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartLoadFromUriWithSize(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                             /* [in] */ABI::Windows::Foundation::Size desiredMaxSize,
@@ -8742,8 +8924,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("6F03E149-BFC9-4C01-B578-50338CEC97FC"), exclusiveto, contract] */
                     MIDL_INTERFACE("6F03E149-BFC9-4C01-B578-50338CEC97FC")
-                    IMatrix3DProjection : IInspectable
+                    IMatrix3DProjection : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProjectionMatrix(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D * value
                             ) = 0;
@@ -8787,8 +8970,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("AE9D5895-41EC-4E37-ABAA-69F41D2F876B"), exclusiveto, contract] */
                     MIDL_INTERFACE("AE9D5895-41EC-4E37-ABAA-69F41D2F876B")
-                    IMatrix3DProjectionStatics : IInspectable
+                    IMatrix3DProjectionStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProjectionMatrixProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -8829,8 +9013,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("F3CF4882-06B5-48C8-9EB2-1763E9364038"), exclusiveto, contract] */
                     MIDL_INTERFACE("F3CF4882-06B5-48C8-9EB2-1763E9364038")
-                    IMatrixHelper : IInspectable
+                    IMatrixHelper : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -8868,8 +9053,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("C18606A6-39F4-4B8A-8403-28E5E5F033B4"), exclusiveto, contract] */
                     MIDL_INTERFACE("C18606A6-39F4-4B8A-8403-28E5E5F033B4")
-                    IMatrixHelperStatics : IInspectable
+                    IMatrixHelperStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Identity(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Matrix * value
                             ) = 0;
@@ -8928,8 +9114,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("EDFDD551-5FED-45FC-AE62-92A4B6CF9707"), exclusiveto, contract] */
                     MIDL_INTERFACE("EDFDD551-5FED-45FC-AE62-92A4B6CF9707")
-                    IMatrixTransform : IInspectable
+                    IMatrixTransform : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Matrix(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Matrix * value
                             ) = 0;
@@ -8973,8 +9160,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("43E02E47-15B8-4758-BB97-7D52420ACC5B"), exclusiveto, contract] */
                     MIDL_INTERFACE("43E02E47-15B8-4758-BB97-7D52420ACC5B")
-                    IMatrixTransformStatics : IInspectable
+                    IMatrixTransformStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MatrixProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -9015,8 +9203,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("E4A8B21C-E3C2-485C-AE69-F1537B76755A"), exclusiveto, contract] */
                     MIDL_INTERFACE("E4A8B21C-E3C2-485C-AE69-F1537B76755A")
-                    IMediaTransportControlsThumbnailRequestedEventArgs : IInspectable
+                    IMediaTransportControlsThumbnailRequestedEventArgs : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SetThumbnailImage(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IInputStream * source
                             ) = 0;
@@ -9060,8 +9249,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("02B65A91-E5A1-442B-88D3-2DC127BFC59B"), exclusiveto, contract] */
                     MIDL_INTERFACE("02B65A91-E5A1-442B-88D3-2DC127BFC59B")
-                    IPartialMediaFailureDetectedEventArgs : IInspectable
+                    IPartialMediaFailureDetectedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StreamKind(
                             /* [retval, out] */__RPC__out ABI::Windows::Media::Playback::FailedMediaStreamKind * value
                             ) = 0;
@@ -9102,8 +9292,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("73074875-890D-416B-B9AE-E84DFD9C4B1B"), exclusiveto, contract] */
                     MIDL_INTERFACE("73074875-890D-416B-B9AE-E84DFD9C4B1B")
-                    IPartialMediaFailureDetectedEventArgs2 : IInspectable
+                    IPartialMediaFailureDetectedEventArgs2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
                             /* [retval, out] */__RPC__out HRESULT * value
                             ) = 0;
@@ -9144,8 +9335,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("5D955C8C-5FA9-4DDA-A3CC-10FCDCAA20D7"), exclusiveto, contract] */
                     MIDL_INTERFACE("5D955C8C-5FA9-4DDA-A3CC-10FCDCAA20D7")
-                    IPathFigure : IInspectable
+                    IPathFigure : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Segments(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CPathSegment * * value
                             ) = 0;
@@ -9207,8 +9399,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("B60591D9-2395-4317-9552-3A58526F8C7B"), exclusiveto, contract] */
                     MIDL_INTERFACE("B60591D9-2395-4317-9552-3A58526F8C7B")
-                    IPathFigureStatics : IInspectable
+                    IPathFigureStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SegmentsProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -9258,8 +9451,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("081B9DF8-BAE6-4BCB-813C-BDE0E46DC8B7"), exclusiveto, contract] */
                     MIDL_INTERFACE("081B9DF8-BAE6-4BCB-813C-BDE0E46DC8B7")
-                    IPathGeometry : IInspectable
+                    IPathGeometry : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillRule(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::FillRule * value
                             ) = 0;
@@ -9309,8 +9503,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("D9E58BBA-2CBA-4741-8F8D-3198CF5186B9"), exclusiveto, contract] */
                     MIDL_INTERFACE("D9E58BBA-2CBA-4741-8F8D-3198CF5186B9")
-                    IPathGeometryStatics : IInspectable
+                    IPathGeometryStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillRuleProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -9354,8 +9549,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("FCFA71CF-9CE3-474F-8157-10B6435A616B"), exclusiveto, contract] */
                     MIDL_INTERFACE("FCFA71CF-9CE3-474F-8157-10B6435A616B")
-                    IPathSegment : IInspectable
+                    IPathSegment : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -9393,8 +9589,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("2A1C0AAE-ECCD-4464-A148-6FFDB3AA281F"), exclusiveto, contract] */
                     MIDL_INTERFACE("2A1C0AAE-ECCD-4464-A148-6FFDB3AA281F")
-                    IPathSegmentFactory : IInspectable
+                    IPathSegmentFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -9432,8 +9629,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("E6F82BFA-6726-469A-B259-A5188347CA8F"), exclusiveto, contract] */
                     MIDL_INTERFACE("E6F82BFA-6726-469A-B259-A5188347CA8F")
-                    IPlaneProjection : IInspectable
+                    IPlaneProjection : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalOffsetX(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -9546,8 +9744,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("AD919C67-3BDC-4855-8969-D1F9A3ADC27D"), exclusiveto, contract] */
                     MIDL_INTERFACE("AD919C67-3BDC-4855-8969-D1F9A3ADC27D")
-                    IPlaneProjectionStatics : IInspectable
+                    IPlaneProjectionStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalOffsetXProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -9624,8 +9823,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("36805271-38C4-4BCF-96CD-028A6D38AF25"), exclusiveto, contract] */
                     MIDL_INTERFACE("36805271-38C4-4BCF-96CD-028A6D38AF25")
-                    IPolyBezierSegment : IInspectable
+                    IPolyBezierSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Points(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CFoundation__CPoint * * value
                             ) = 0;
@@ -9669,8 +9869,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("1D91A6DA-1492-4ACC-BD66-A496F3D829D6"), exclusiveto, contract] */
                     MIDL_INTERFACE("1D91A6DA-1492-4ACC-BD66-A496F3D829D6")
-                    IPolyBezierSegmentStatics : IInspectable
+                    IPolyBezierSegmentStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointsProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -9711,8 +9912,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("4B397F87-A2E6-479D-BDC8-6F4464646887"), exclusiveto, contract] */
                     MIDL_INTERFACE("4B397F87-A2E6-479D-BDC8-6F4464646887")
-                    IPolyLineSegment : IInspectable
+                    IPolyLineSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Points(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CFoundation__CPoint * * value
                             ) = 0;
@@ -9756,8 +9958,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("D64A2C87-33F1-4E70-A47F-B4981EF648A2"), exclusiveto, contract] */
                     MIDL_INTERFACE("D64A2C87-33F1-4E70-A47F-B4981EF648A2")
-                    IPolyLineSegmentStatics : IInspectable
+                    IPolyLineSegmentStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointsProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -9798,8 +10001,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("DD5CED7D-E6DB-4C96-B6A1-3FCE96E987A6"), exclusiveto, contract] */
                     MIDL_INTERFACE("DD5CED7D-E6DB-4C96-B6A1-3FCE96E987A6")
-                    IPolyQuadraticBezierSegment : IInspectable
+                    IPolyQuadraticBezierSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Points(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CFoundation__CPoint * * value
                             ) = 0;
@@ -9843,8 +10047,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("FDF5EB75-7AD5-4C89-8169-8C9786ABD9EB"), exclusiveto, contract] */
                     MIDL_INTERFACE("FDF5EB75-7AD5-4C89-8169-8C9786ABD9EB")
-                    IPolyQuadraticBezierSegmentStatics : IInspectable
+                    IPolyQuadraticBezierSegmentStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointsProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -9885,8 +10090,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("B3443557-7F39-4D04-A89C-844338CAC897"), exclusiveto, contract] */
                     MIDL_INTERFACE("B3443557-7F39-4D04-A89C-844338CAC897")
-                    IProjection : IInspectable
+                    IProjection : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -9924,8 +10130,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("C4F29CAB-60AD-4F24-BD27-9D69C3127C9A"), exclusiveto, contract] */
                     MIDL_INTERFACE("C4F29CAB-60AD-4F24-BD27-9D69C3127C9A")
-                    IProjectionFactory : IInspectable
+                    IProjectionFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -9968,8 +10175,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("2C509A5B-BF18-455A-A078-914B5232D8AF"), exclusiveto, contract] */
                     MIDL_INTERFACE("2C509A5B-BF18-455A-A078-914B5232D8AF")
-                    IQuadraticBezierSegment : IInspectable
+                    IQuadraticBezierSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Point1(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                             ) = 0;
@@ -10019,8 +10227,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("69C78278-3C0B-4B4F-B7A2-F003DED41BB0"), exclusiveto, contract] */
                     MIDL_INTERFACE("69C78278-3C0B-4B4F-B7A2-F003DED41BB0")
-                    IQuadraticBezierSegmentStatics : IInspectable
+                    IQuadraticBezierSegmentStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Point1Property(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -10064,8 +10273,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("9016AA6F-3CA8-4C80-8E2F-8851A68F131F"), exclusiveto, contract] */
                     MIDL_INTERFACE("9016AA6F-3CA8-4C80-8E2F-8851A68F131F")
-                    IRateChangedRoutedEventArgs : IInspectable
+                    IRateChangedRoutedEventArgs : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -10103,8 +10313,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("A25A1F58-C575-4196-91CF-9FDFB10445C3"), exclusiveto, contract] */
                     MIDL_INTERFACE("A25A1F58-C575-4196-91CF-9FDFB10445C3")
-                    IRectangleGeometry : IInspectable
+                    IRectangleGeometry : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Rect(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                             ) = 0;
@@ -10148,8 +10359,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("377F8DBA-7902-48E3-83BE-7C8002A6653C"), exclusiveto, contract] */
                     MIDL_INTERFACE("377F8DBA-7902-48E3-83BE-7C8002A6653C")
-                    IRectangleGeometryStatics : IInspectable
+                    IRectangleGeometryStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RectProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -10166,6 +10378,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CIRectangleGeometryStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIRectangleGeometryStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.IRenderedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.RenderedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_IRenderedEventArgs[] = L"Windows.UI.Xaml.Media.IRenderedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    /* [object, uuid("E349817D-81C7-4938-828C-A7E2797B35A6"), exclusiveto, contract] */
+                    MIDL_INTERFACE("E349817D-81C7-4938-828C-A7E2797B35A6")
+                    IRenderedEventArgs : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameDuration(
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IRenderedEventArgs=_uuidof(IRenderedEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Media */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10190,8 +10445,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("5BF7D30D-9748-4AED-8380-D7890EB776A0"), exclusiveto, contract] */
                     MIDL_INTERFACE("5BF7D30D-9748-4AED-8380-D7890EB776A0")
-                    IRenderingEventArgs : IInspectable
+                    IRenderingEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RenderingTime(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                             ) = 0;
@@ -10232,8 +10488,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("261DCC0E-1991-4CDF-AEE0-6350A3F90BB9"), exclusiveto, contract] */
                     MIDL_INTERFACE("261DCC0E-1991-4CDF-AEE0-6350A3F90BB9")
-                    IRevealBackgroundBrush : IInspectable
+                    IRevealBackgroundBrush : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -10271,8 +10528,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("8C56BCAA-02A5-4F45-8506-8D39228F5D3F"), exclusiveto, contract] */
                     MIDL_INTERFACE("8C56BCAA-02A5-4F45-8506-8D39228F5D3F")
-                    IRevealBackgroundBrushFactory : IInspectable
+                    IRevealBackgroundBrushFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10315,8 +10573,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("060BA115-C542-483C-8202-5F03331866C9"), exclusiveto, contract] */
                     MIDL_INTERFACE("060BA115-C542-483C-8202-5F03331866C9")
-                    IRevealBorderBrush : IInspectable
+                    IRevealBorderBrush : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -10354,8 +10613,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("94C25298-F5F8-4482-A25C-6758501A8626"), exclusiveto, contract] */
                     MIDL_INTERFACE("94C25298-F5F8-4482-A25C-6758501A8626")
-                    IRevealBorderBrushFactory : IInspectable
+                    IRevealBorderBrushFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10398,8 +10658,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("2036A0ED-8271-4398-9019-25872093F13F"), exclusiveto, contract] */
                     MIDL_INTERFACE("2036A0ED-8271-4398-9019-25872093F13F")
-                    IRevealBrush : IInspectable
+                    IRevealBrush : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Color * result
                             ) = 0;
@@ -10455,8 +10716,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("9D9379CE-E3A0-4AAF-BE37-EA9D9DD43105"), exclusiveto, contract] */
                     MIDL_INTERFACE("9D9379CE-E3A0-4AAF-BE37-EA9D9DD43105")
-                    IRevealBrushFactory : IInspectable
+                    IRevealBrushFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10499,8 +10761,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("190F2625-7209-4D42-A847-1AC4BBBB3499"), exclusiveto, contract] */
                     MIDL_INTERFACE("190F2625-7209-4D42-A847-1AC4BBBB3499")
-                    IRevealBrushStatics : IInspectable
+                    IRevealBrushStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColorProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -10558,8 +10821,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("688EA9B9-1E4E-4596-86E3-428B27334FAF"), exclusiveto, contract] */
                     MIDL_INTERFACE("688EA9B9-1E4E-4596-86E3-428B27334FAF")
-                    IRotateTransform : IInspectable
+                    IRotateTransform : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterX(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -10615,8 +10879,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("A131EB8A-51A3-41B6-B9D3-A10E429054AB"), exclusiveto, contract] */
                     MIDL_INTERFACE("A131EB8A-51A3-41B6-B9D3-A10E429054AB")
-                    IRotateTransformStatics : IInspectable
+                    IRotateTransformStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterXProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -10663,8 +10928,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("ED67F18D-936E-43AB-929A-E9CD0A511E52"), exclusiveto, contract] */
                     MIDL_INTERFACE("ED67F18D-936E-43AB-929A-E9CD0A511E52")
-                    IScaleTransform : IInspectable
+                    IScaleTransform : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterX(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -10726,8 +10992,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("9D9436F4-40A7-46DD-975A-07D337CD852E"), exclusiveto, contract] */
                     MIDL_INTERFACE("9D9436F4-40A7-46DD-975A-07D337CD852E")
-                    IScaleTransformStatics : IInspectable
+                    IScaleTransformStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterXProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -10777,8 +11044,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("4E8A3B15-7A0F-4617-9E98-1E65BDC92115"), exclusiveto, contract] */
                     MIDL_INTERFACE("4E8A3B15-7A0F-4617-9E98-1E65BDC92115")
-                    ISkewTransform : IInspectable
+                    ISkewTransform : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterX(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -10840,8 +11108,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("ECD11D73-5614-4B31-B6AF-BEAE10105624"), exclusiveto, contract] */
                     MIDL_INTERFACE("ECD11D73-5614-4B31-B6AF-BEAE10105624")
-                    ISkewTransformStatics : IInspectable
+                    ISkewTransformStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterXProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -10891,8 +11160,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("9D850850-66F3-48DF-9A8F-824BD5E070AF"), exclusiveto, contract] */
                     MIDL_INTERFACE("9D850850-66F3-48DF-9A8F-824BD5E070AF")
-                    ISolidColorBrush : IInspectable
+                    ISolidColorBrush : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                             ) = 0;
@@ -10936,8 +11206,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("D935CE0C-86F5-4DA6-8A27-B1619EF7F92B"), exclusiveto, contract] */
                     MIDL_INTERFACE("D935CE0C-86F5-4DA6-8A27-B1619EF7F92B")
-                    ISolidColorBrushFactory : IInspectable
+                    ISolidColorBrushFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithColor(
                             /* [in] */ABI::Windows::UI::Color color,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ISolidColorBrush * * instance
@@ -10979,8 +11250,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("E1A65EFA-2B23-41BA-B9BA-7094EC8E4E9F"), exclusiveto, contract] */
                     MIDL_INTERFACE("E1A65EFA-2B23-41BA-B9BA-7094EC8E4E9F")
-                    ISolidColorBrushStatics : IInspectable
+                    ISolidColorBrushStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColorProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -11021,8 +11293,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("C201CF06-CD84-48A5-9607-664D7361CD61"), exclusiveto, contract] */
                     MIDL_INTERFACE("C201CF06-CD84-48A5-9607-664D7361CD61")
-                    ITileBrush : IInspectable
+                    ITileBrush : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlignmentX(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::AlignmentX * value
                             ) = 0;
@@ -11078,8 +11351,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("AA159F7C-ED6A-4FB3-B014-B5C7E379A4DE"), exclusiveto, contract] */
                     MIDL_INTERFACE("AA159F7C-ED6A-4FB3-B014-B5C7E379A4DE")
-                    ITileBrushFactory : IInspectable
+                    ITileBrushFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -11122,8 +11396,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("3497C25B-B562-4E68-8435-2399F6EB94D5"), exclusiveto, contract] */
                     MIDL_INTERFACE("3497C25B-B562-4E68-8435-2399F6EB94D5")
-                    ITileBrushStatics : IInspectable
+                    ITileBrushStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlignmentXProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -11170,8 +11445,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("A68EF02D-45BA-4E50-8CAD-AAEA3A227AF5"), exclusiveto, contract] */
                     MIDL_INTERFACE("A68EF02D-45BA-4E50-8CAD-AAEA3A227AF5")
-                    ITimelineMarker : IInspectable
+                    ITimelineMarker : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Time(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                             ) = 0;
@@ -11227,8 +11503,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("7C3B3EF3-2C88-4D9C-99B6-46CDBD48D4C1"), exclusiveto, contract] */
                     MIDL_INTERFACE("7C3B3EF3-2C88-4D9C-99B6-46CDBD48D4C1")
-                    ITimelineMarkerRoutedEventArgs : IInspectable
+                    ITimelineMarkerRoutedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Marker(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ITimelineMarker * * value
                             ) = 0;
@@ -11272,8 +11549,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("C4AEF0C6-16A3-484B-87F5-6528B8F04A47"), exclusiveto, contract] */
                     MIDL_INTERFACE("C4AEF0C6-16A3-484B-87F5-6528B8F04A47")
-                    ITimelineMarkerStatics : IInspectable
+                    ITimelineMarkerStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TimeProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -11320,8 +11598,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("4DF74078-BFD6-4ED1-9682-D2FD8BF2FE6F"), exclusiveto, contract] */
                     MIDL_INTERFACE("4DF74078-BFD6-4ED1-9682-D2FD8BF2FE6F")
-                    ITransform : IInspectable
+                    ITransform : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -11359,8 +11638,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("1A955A66-7CF4-4320-B416-6181192FCC6D"), exclusiveto, contract] */
                     MIDL_INTERFACE("1A955A66-7CF4-4320-B416-6181192FCC6D")
-                    ITransformFactory : IInspectable
+                    ITransformFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -11398,8 +11678,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("63418CCC-8D2D-4737-B951-2AFCE1DDC4C4"), exclusiveto, contract] */
                     MIDL_INTERFACE("63418CCC-8D2D-4737-B951-2AFCE1DDC4C4")
-                    ITransformGroup : IInspectable
+                    ITransformGroup : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Children(
                             /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CTransform * * value
                             ) = 0;
@@ -11446,8 +11727,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("25312F2A-CFAB-4B24-9713-5BDEAD1929C0"), exclusiveto, contract] */
                     MIDL_INTERFACE("25312F2A-CFAB-4B24-9713-5BDEAD1929C0")
-                    ITransformGroupStatics : IInspectable
+                    ITransformGroupStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChildrenProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -11488,8 +11770,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("C975905C-3C36-4229-817B-178F64C0E113"), exclusiveto, contract] */
                     MIDL_INTERFACE("C975905C-3C36-4229-817B-178F64C0E113")
-                    ITranslateTransform : IInspectable
+                    ITranslateTransform : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_X(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -11539,8 +11822,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("F419AA91-E042-4111-9C2F-D201304123DD"), exclusiveto, contract] */
                     MIDL_INTERFACE("F419AA91-E042-4111-9C2F-D201304123DD")
-                    ITranslateTransformStatics : IInspectable
+                    ITranslateTransformStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_XProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -11584,8 +11868,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("24B935E3-52C7-4141-8BAC-A73D06130569"), exclusiveto, contract] */
                     MIDL_INTERFACE("24B935E3-52C7-4141-8BAC-A73D06130569")
-                    IVisualTreeHelper : IInspectable
+                    IVisualTreeHelper : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -11623,8 +11908,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("E75758C4-D25D-4B1D-971F-596F17F12BAA"), exclusiveto, contract] */
                     MIDL_INTERFACE("E75758C4-D25D-4B1D-971F-596F17F12BAA")
-                    IVisualTreeHelperStatics : IInspectable
+                    IVisualTreeHelperStatics : public IInspectable
                     {
+                    public:
                         /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE FindElementsInHostCoordinatesPoint(
                             /* [in] */ABI::Windows::Foundation::Point intersectingPoint,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * subtree,
@@ -11700,8 +11986,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("07BCD176-869F-44A7-8797-2103A4C3E47A"), exclusiveto, contract] */
                     MIDL_INTERFACE("07BCD176-869F-44A7-8797-2103A4C3E47A")
-                    IVisualTreeHelperStatics2 : IInspectable
+                    IVisualTreeHelperStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetOpenPopups(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IWindow * window,
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CPrimitives__CPopup * * popups
@@ -11743,8 +12030,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("03E432D9-B35C-4A79-811C-C5652004DA0E"), exclusiveto, contract] */
                     MIDL_INTERFACE("03E432D9-B35C-4A79-811C-C5652004DA0E")
-                    IXamlCompositionBrushBase : IInspectable
+                    IXamlCompositionBrushBase : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FallbackColor(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                             ) = 0;
@@ -11788,8 +12076,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("394F0823-2451-4ED8-BD24-488149B3428D"), exclusiveto, contract] */
                     MIDL_INTERFACE("394F0823-2451-4ED8-BD24-488149B3428D")
-                    IXamlCompositionBrushBaseFactory : IInspectable
+                    IXamlCompositionBrushBaseFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -11832,8 +12121,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("D19127F1-38B4-4EA1-8F33-849629A4C9C1"), exclusiveto, contract] */
                     MIDL_INTERFACE("D19127F1-38B4-4EA1-8F33-849629A4C9C1")
-                    IXamlCompositionBrushBaseOverrides : IInspectable
+                    IXamlCompositionBrushBaseOverrides : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE OnConnected(void) = 0;
                         virtual HRESULT STDMETHODCALLTYPE OnDisconnected(void) = 0;
                         
@@ -11873,8 +12163,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("1513F3D8-0457-4E1C-AD77-11C1D9879743"), exclusiveto, contract] */
                     MIDL_INTERFACE("1513F3D8-0457-4E1C-AD77-11C1D9879743")
-                    IXamlCompositionBrushBaseProtected : IInspectable
+                    IXamlCompositionBrushBaseProtected : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompositionBrush(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionBrush * * value
                             ) = 0;
@@ -11918,8 +12209,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("4FD49B06-061A-441F-B97A-ADFBD41AE681"), exclusiveto, contract] */
                     MIDL_INTERFACE("4FD49B06-061A-441F-B97A-ADFBD41AE681")
-                    IXamlCompositionBrushBaseStatics : IInspectable
+                    IXamlCompositionBrushBaseStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FallbackColorProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -11960,8 +12252,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("0CC3FC1F-B327-4A18-9648-7C84DB26CE22"), exclusiveto, contract] */
                     MIDL_INTERFACE("0CC3FC1F-B327-4A18-9648-7C84DB26CE22")
-                    IXamlLight : IInspectable
+                    IXamlLight : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -11999,8 +12292,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("87DED768-3055-43B8-8EF6-798DC4C2329A"), exclusiveto, contract] */
                     MIDL_INTERFACE("87DED768-3055-43B8-8EF6-798DC4C2329A")
-                    IXamlLightFactory : IInspectable
+                    IXamlLightFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -12043,8 +12337,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("7C6296C7-0173-48E1-B73D-7FA216A9AC28"), exclusiveto, contract] */
                     MIDL_INTERFACE("7C6296C7-0173-48E1-B73D-7FA216A9AC28")
-                    IXamlLightOverrides : IInspectable
+                    IXamlLightOverrides : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
                             ) = 0;
@@ -12091,8 +12386,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("5ECF220B-1252-43D0-9729-6EA692046838"), exclusiveto, contract] */
                     MIDL_INTERFACE("5ECF220B-1252-43D0-9729-6EA692046838")
-                    IXamlLightProtected : IInspectable
+                    IXamlLightProtected : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompositionLight(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionLight * * value
                             ) = 0;
@@ -12136,8 +12432,9 @@ namespace ABI {
                 namespace Media {
                     /* [object, uuid("B5EA9D69-B508-4E9C-BD27-6B044B5F78A0"), exclusiveto, contract] */
                     MIDL_INTERFACE("B5EA9D69-B508-4E9C-BD27-6B044B5F78A0")
-                    IXamlLightStatics : IInspectable
+                    IXamlLightStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE AddTargetElement(
                             /* [in] */__RPC__in HSTRING lightId,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element
@@ -12400,6 +12697,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Media.ICompositionTargetStatics3 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Media.ICompositionTargetStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -13437,6 +13735,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Media.RenderedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.IRenderedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_RenderedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_RenderedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_RenderedEventArgs[] = L"Windows.UI.Xaml.Media.RenderedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Media.RenderingEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -14084,6 +14406,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics _
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIEllipseGeometry_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIEllipseGeometry_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIEllipseGeometry __x_ABI_CWindows_CUI_CXaml_CMedia_CIEllipseGeometry;
@@ -14455,6 +14783,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIRectangleGeometry __x_ABI_
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIRectangleGeometryStatics __x_ABI_CWindows_CUI_CXaml_CMedia_CIRectangleGeometryStatics;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRectangleGeometryStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderingEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderingEventArgs_FWD_DEFINED__
@@ -18039,6 +18373,52 @@ interface __FIVector_1_Windows__CUI__CXaml__CMedia__CXamlLight
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs;
+
+typedef struct __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs * *e);
+    END_INTERFACE
+} __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgsVtbl;
+
+interface __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs
+{
+    CONST_VTBL struct __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIMediaElement_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CIMediaElement_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIMediaElement __x_ABI_CWindows_CUI_CXaml_CControls_CIMediaElement;
@@ -18047,6 +18427,7 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIMediaElement __x_ABI_CW
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMediaElement_Windows__CUI__CXaml__CMedia__CPartialMediaFailureDetectedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMediaElement_Windows__CUI__CXaml__CMedia__CPartialMediaFailureDetectedEventArgs_INTERFACE_DEFINED__
@@ -18094,6 +18475,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMediaElement_
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMediaElement_Windows__CUI__CXaml__CMedia__CPartialMediaFailureDetectedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIMediaTransportControls_FWD_DEFINED__
@@ -18158,6 +18540,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMediaTranspor
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs_INTERFACE_DEFINED__
 
@@ -18204,6 +18587,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurfa
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -19735,6 +20119,9 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CMedia_CSweepDirection __x_ABI_CWindows_
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CMatrix __x_ABI_CWindows_CUI_CXaml_CMedia_CMatrix;
+
+
+
 
 
 
@@ -22596,6 +22983,107 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.ICompositionTargetStatics3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.CompositionTarget
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_ICompositionTargetStatics3[] = L"Windows.UI.Xaml.Media.ICompositionTargetStatics3";
+/* [object, uuid("BC0A7CD9-6750-4708-994C-2028E0312AC8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Rendered )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * value,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Rendered )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_add_Rendered(This,value,token) \
+    ( (This)->lpVtbl->add_Rendered(This,value,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_remove_Rendered(This,token) \
+    ( (This)->lpVtbl->remove_Rendered(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -29179,6 +29667,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CIRectangleGeometryStat
 
 /*
  *
+ * Interface Windows.UI.Xaml.Media.IRenderedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.RenderedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_IRenderedEventArgs[] = L"Windows.UI.Xaml.Media.IRenderedEventArgs";
+/* [object, uuid("E349817D-81C7-4938-828C-A7E2797B35A6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FrameDuration )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_get_FrameDuration(This,value) \
+    ( (This)->lpVtbl->get_FrameDuration(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIRenderedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Media.IRenderingEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -33829,6 +34410,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Media.ICompositionTargetStatics3 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Media.ICompositionTargetStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -34862,6 +35444,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_RectangleGeometry[] = L"Windows.UI.Xaml.Media.RectangleGeometry";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Media.RenderedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.IRenderedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_RenderedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_RenderedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_RenderedEventArgs[] = L"Windows.UI.Xaml.Media.RenderedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

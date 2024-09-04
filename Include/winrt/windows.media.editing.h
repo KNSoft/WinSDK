@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.editing.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2500,8 +2502,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("4B91B3BD-9E21-4266-A9C2-67DD011A2357"), exclusiveto, contract] */
                 MIDL_INTERFACE("4B91B3BD-9E21-4266-A9C2-67DD011A2357")
-                IBackgroundAudioTrack : IInspectable
+                IBackgroundAudioTrack : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TrimTimeFromStart(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -2579,8 +2582,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("D9B1C0D7-D018-42A8-A559-CB4D9E97E664"), exclusiveto, contract] */
                 MIDL_INTERFACE("D9B1C0D7-D018-42A8-A559-CB4D9E97E664")
-                IBackgroundAudioTrackStatics : IInspectable
+                IBackgroundAudioTrackStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromEmbeddedAudioTrack(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Editing::IEmbeddedAudioTrack * embeddedAudioTrack,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Editing::IBackgroundAudioTrack * * value
@@ -2624,8 +2628,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("55EE5A7A-2D30-3FBA-A190-4F1A6454F88F"), exclusiveto, contract] */
                 MIDL_INTERFACE("55EE5A7A-2D30-3FBA-A190-4F1A6454F88F")
-                IEmbeddedAudioTrack : IInspectable
+                IEmbeddedAudioTrack : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAudioEncodingProperties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties * * value
                         ) = 0;
@@ -2664,8 +2669,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("53F25366-5FBA-3EA4-8693-24761811140A"), exclusiveto, contract] */
                 MIDL_INTERFACE("53F25366-5FBA-3EA4-8693-24761811140A")
-                IMediaClip : IInspectable
+                IMediaClip : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TrimTimeFromStart(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -2755,8 +2761,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("FA402B68-928F-43C4-BC6E-783A1A359656"), exclusiveto, contract] */
                 MIDL_INTERFACE("FA402B68-928F-43C4-BC6E-783A1A359656")
-                IMediaClipStatics : IInspectable
+                IMediaClipStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromColor(
                         /* [in] */ABI::Windows::UI::Color color,
                         /* [in] */ABI::Windows::Foundation::TimeSpan originalDuration,
@@ -2806,8 +2813,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("5B1DD7B3-854E-4D9B-877D-4774A556CD12"), exclusiveto, contract] */
                 MIDL_INTERFACE("5B1DD7B3-854E-4D9B-877D-4774A556CD12")
-                IMediaClipStatics2 : IInspectable
+                IMediaClipStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromSurface(
                         /* [in] */__RPC__in_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface * surface,
                         /* [in] */ABI::Windows::Foundation::TimeSpan originalDuration,
@@ -2848,8 +2856,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("2E06E605-DC71-41D6-B837-2D2BC14A2947"), exclusiveto, contract] */
                 MIDL_INTERFACE("2E06E605-DC71-41D6-B837-2D2BC14A2947")
-                IMediaComposition : IInspectable
+                IMediaComposition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Duration(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -2948,8 +2957,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("A59E5372-2366-492C-BEC8-E6DFBA6D0281"), exclusiveto, contract] */
                 MIDL_INTERFACE("A59E5372-2366-492C-BEC8-E6DFBA6D0281")
-                IMediaComposition2 : IInspectable
+                IMediaComposition2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OverlayLayers(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CMedia__CEditing__CMediaOverlayLayer * * value
                         ) = 0;
@@ -2988,8 +2998,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("87A08F04-E32A-45CE-8F66-A30DF0766224"), exclusiveto, contract] */
                 MIDL_INTERFACE("87A08F04-E32A-45CE-8F66-A30DF0766224")
-                IMediaCompositionStatics : IInspectable
+                IMediaCompositionStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE LoadAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaComposition * * operation
@@ -3029,8 +3040,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("A902AE5D-7869-4830-8AB1-94DC01C05FA4"), exclusiveto, contract] */
                 MIDL_INTERFACE("A902AE5D-7869-4830-8AB1-94DC01C05FA4")
-                IMediaOverlay : IInspectable
+                IMediaOverlay : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                         ) = 0;
@@ -3096,8 +3108,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("B584828A-6188-4F8F-A2E0-AA552D598E18"), exclusiveto, contract] */
                 MIDL_INTERFACE("B584828A-6188-4F8F-A2E0-AA552D598E18")
-                IMediaOverlayFactory : IInspectable
+                IMediaOverlayFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Editing::IMediaClip * clip,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Editing::IMediaOverlay * * mediaOverlay
@@ -3143,8 +3156,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("A6D9BA57-EEDA-46C6-BBE5-E398C84168AC"), exclusiveto, contract] */
                 MIDL_INTERFACE("A6D9BA57-EEDA-46C6-BBE5-E398C84168AC")
-                IMediaOverlayLayer : IInspectable
+                IMediaOverlayLayer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Clone(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Editing::IMediaOverlayLayer * * result
                         ) = 0;
@@ -3189,8 +3203,9 @@ namespace ABI {
             namespace Editing {
                 /* [object, uuid("947CB473-A39E-4362-ABBF-9F8B5070A062"), exclusiveto, contract] */
                 MIDL_INTERFACE("947CB473-A39E-4362-ABBF-9F8B5070A062")
-                IMediaOverlayLayerFactory : IInspectable
+                IMediaOverlayLayerFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithCompositorDefinition(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Effects::IVideoCompositorDefinition * compositorDefinition,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Editing::IMediaOverlayLayer * * mediaOverlayLayer

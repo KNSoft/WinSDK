@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.speechsynthesis.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -355,6 +357,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions2 ABI::Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions2
 
 #endif // ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechSynthesis {
+                interface ISpeechSynthesizerOptions3;
+            } /* Windows */
+        } /* Media */
+    } /* SpeechSynthesis */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 ABI::Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions3
+
+#endif // ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_FWD_DEFINED__
@@ -839,11 +855,34 @@ namespace ABI {
         namespace Media {
             namespace SpeechSynthesis {
                 
+                typedef enum SpeechAppendedSilence : int SpeechAppendedSilence;
+                
+            } /* Windows */
+        } /* Media */
+    } /* SpeechSynthesis */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechSynthesis {
+                
+                typedef enum SpeechPunctuationSilence : int SpeechPunctuationSilence;
+                
+            } /* Windows */
+        } /* Media */
+    } /* SpeechSynthesis */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechSynthesis {
+                
                 typedef enum VoiceGender : int VoiceGender;
                 
             } /* Windows */
         } /* Media */
     } /* SpeechSynthesis */} /* ABI */
+
 
 
 
@@ -881,6 +920,60 @@ namespace ABI {
 
 
 
+
+
+/*
+ *
+ * Struct Windows.Media.SpeechSynthesis.SpeechAppendedSilence
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechSynthesis {
+                /* [v1_enum, contract] */
+                enum SpeechAppendedSilence : int
+                {
+                    SpeechAppendedSilence_Default = 0,
+                    SpeechAppendedSilence_Min = 1,
+                };
+                
+            } /* Windows */
+        } /* Media */
+    } /* SpeechSynthesis */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Media.SpeechSynthesis.SpeechPunctuationSilence
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechSynthesis {
+                /* [v1_enum, contract] */
+                enum SpeechPunctuationSilence : int
+                {
+                    SpeechPunctuationSilence_Default = 0,
+                    SpeechPunctuationSilence_Min = 1,
+                };
+                
+            } /* Windows */
+        } /* Media */
+    } /* SpeechSynthesis */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -931,8 +1024,9 @@ namespace ABI {
             namespace SpeechSynthesis {
                 /* [object, uuid("7D526ECC-7533-4C3F-85BE-888C2BAEEBDC"), exclusiveto, contract] */
                 MIDL_INTERFACE("7D526ECC-7533-4C3F-85BE-888C2BAEEBDC")
-                IInstalledVoicesStatic : IInspectable
+                IInstalledVoicesStatic : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllVoices(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CSpeechSynthesis__CVoiceInformation * * value
                         ) = 0;
@@ -974,8 +1068,9 @@ namespace ABI {
             namespace SpeechSynthesis {
                 /* [object, uuid("64255F2E-358D-4058-BE9A-FD3FCB423530"), exclusiveto, contract] */
                 MIDL_INTERFACE("64255F2E-358D-4058-BE9A-FD3FCB423530")
-                IInstalledVoicesStatic2 : IInspectable
+                IInstalledVoicesStatic2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TrySetDefaultVoiceAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::SpeechSynthesis::IVoiceInformation * voice,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
@@ -1024,8 +1119,9 @@ namespace ABI {
             namespace SpeechSynthesis {
                 /* [object, uuid("83E46E93-244C-4622-BA0B-6229C4D0D65D"), exclusiveto, contract] */
                 MIDL_INTERFACE("83E46E93-244C-4622-BA0B-6229C4D0D65D")
-                ISpeechSynthesisStream : IInspectable
+                ISpeechSynthesisStream : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Markers(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CIMediaMarker * * value
                         ) = 0;
@@ -1064,8 +1160,9 @@ namespace ABI {
             namespace SpeechSynthesis {
                 /* [object, uuid("CE9F7C76-97F4-4CED-AD68-D51C458E45C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("CE9F7C76-97F4-4CED-AD68-D51C458E45C6")
-                ISpeechSynthesizer : IInspectable
+                ISpeechSynthesizer : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SynthesizeTextToStreamAsync(
                         /* [in] */__RPC__in HSTRING text,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CSpeechSynthesis__CSpeechSynthesisStream * * operation
@@ -1115,8 +1212,9 @@ namespace ABI {
             namespace SpeechSynthesis {
                 /* [object, uuid("A7C5ECB2-4339-4D6A-BBF8-C7A4F1544C2E"), exclusiveto, contract] */
                 MIDL_INTERFACE("A7C5ECB2-4339-4D6A-BBF8-C7A4F1544C2E")
-                ISpeechSynthesizer2 : IInspectable
+                ISpeechSynthesizer2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Options(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions * * value
                         ) = 0;
@@ -1155,8 +1253,9 @@ namespace ABI {
             namespace SpeechSynthesis {
                 /* [object, uuid("A0E23871-CC3D-43C9-91B1-EE185324D83D"), exclusiveto, contract] */
                 MIDL_INTERFACE("A0E23871-CC3D-43C9-91B1-EE185324D83D")
-                ISpeechSynthesizerOptions : IInspectable
+                ISpeechSynthesizerOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IncludeWordBoundaryMetadata(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1204,8 +1303,9 @@ namespace ABI {
             namespace SpeechSynthesis {
                 /* [object, uuid("1CBEF60E-119C-4BED-B118-D250C3A25793"), exclusiveto, contract] */
                 MIDL_INTERFACE("1CBEF60E-119C-4BED-B118-D250C3A25793")
-                ISpeechSynthesizerOptions2 : IInspectable
+                ISpeechSynthesizerOptions2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioVolume(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -1240,6 +1340,56 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesi
 
 /*
  *
+ * Interface Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.SpeechSynthesis.SpeechSynthesizerOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechSynthesis_ISpeechSynthesizerOptions3[] = L"Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions3";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechSynthesis {
+                /* [object, uuid("401ED877-902C-4814-A582-A5D0C0769FA8"), exclusiveto, contract] */
+                MIDL_INTERFACE("401ED877-902C-4814-A582-A5D0C0769FA8")
+                ISpeechSynthesizerOptions3 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppendedSilence(
+                        /* [retval, out] */__RPC__out ABI::Windows::Media::SpeechSynthesis::SpeechAppendedSilence * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AppendedSilence(
+                        /* [in] */ABI::Windows::Media::SpeechSynthesis::SpeechAppendedSilence value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PunctuationSilence(
+                        /* [retval, out] */__RPC__out ABI::Windows::Media::SpeechSynthesis::SpeechPunctuationSilence * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PunctuationSilence(
+                        /* [in] */ABI::Windows::Media::SpeechSynthesis::SpeechPunctuationSilence value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISpeechSynthesizerOptions3=_uuidof(ISpeechSynthesizerOptions3);
+                
+            } /* Windows */
+        } /* Media */
+    } /* SpeechSynthesis */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.SpeechSynthesis.IVoiceInformation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -1259,8 +1409,9 @@ namespace ABI {
             namespace SpeechSynthesis {
                 /* [object, uuid("B127D6A4-1291-4604-AA9C-83134083352C"), exclusiveto, contract] */
                 MIDL_INTERFACE("B127D6A4-1291-4604-AA9C-83134083352C")
-                IVoiceInformation : IInspectable
+                IVoiceInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1360,6 +1511,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions ** Default Interface **
  *    Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions2
+ *    Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -1440,6 +1592,12 @@ typedef interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOp
 typedef interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions2 __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions2;
 
 #endif // ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3;
+
+#endif // ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_FWD_DEFINED__
@@ -2289,6 +2447,12 @@ typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithCon
 
 
 
+typedef enum __x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechAppendedSilence __x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechAppendedSilence;
+
+
+typedef enum __x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechPunctuationSilence __x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechPunctuationSilence;
+
+
 typedef enum __x_ABI_CWindows_CMedia_CSpeechSynthesis_CVoiceGender __x_ABI_CWindows_CMedia_CSpeechSynthesis_CVoiceGender;
 
 
@@ -2309,6 +2473,45 @@ typedef enum __x_ABI_CWindows_CMedia_CSpeechSynthesis_CVoiceGender __x_ABI_CWind
 
 
 
+
+
+
+/*
+ *
+ * Struct Windows.Media.SpeechSynthesis.SpeechAppendedSilence
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechAppendedSilence
+{
+    SpeechAppendedSilence_Default = 0,
+    SpeechAppendedSilence_Min = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Media.SpeechSynthesis.SpeechPunctuationSilence
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechPunctuationSilence
+{
+    SpeechPunctuationSilence_Default = 0,
+    SpeechPunctuationSilence_Min = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3079,6 +3282,120 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesi
 
 /*
  *
+ * Interface Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.SpeechSynthesis.SpeechSynthesizerOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechSynthesis_ISpeechSynthesizerOptions3[] = L"Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions3";
+/* [object, uuid("401ED877-902C-4814-A582-A5D0C0769FA8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AppendedSilence )(
+        __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechAppendedSilence * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AppendedSilence )(
+        __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechAppendedSilence value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PunctuationSilence )(
+        __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechPunctuationSilence * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_PunctuationSilence )(
+        __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3 * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CSpeechSynthesis_CSpeechPunctuationSilence value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_get_AppendedSilence(This,value) \
+    ( (This)->lpVtbl->get_AppendedSilence(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_put_AppendedSilence(This,value) \
+    ( (This)->lpVtbl->put_AppendedSilence(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_get_PunctuationSilence(This,value) \
+    ( (This)->lpVtbl->get_PunctuationSilence(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_put_PunctuationSilence(This,value) \
+    ( (This)->lpVtbl->put_PunctuationSilence(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.SpeechSynthesis.IVoiceInformation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3268,6 +3585,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions ** Default Interface **
  *    Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions2
+ *    Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

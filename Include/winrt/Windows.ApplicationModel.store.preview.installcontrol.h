@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.store.preview.installcontrol.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -35,11 +35,8 @@
 #pragma once
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -65,11 +62,11 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -89,7 +86,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -117,7 +114,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -157,11 +154,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -177,11 +174,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
@@ -261,6 +258,24 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem3 ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        interface IAppInstallItem4;
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem4
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager_FWD_DEFINED__
@@ -352,6 +367,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager5_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        interface IAppInstallManager6;
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager6
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -369,6 +402,24 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        interface IAppInstallOptions;
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus_FWD_DEFINED__
@@ -405,6 +456,42 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus2 ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        interface IAppInstallStatus3;
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3 ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus3
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        interface IAppUpdateOptions;
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIGetEntitlementResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIGetEntitlementResult_FWD_DEFINED__
@@ -803,6 +890,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManager_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManagerItemEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManager_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManagerItemEventArgs_USE
@@ -831,6 +919,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Store::Preview::Insta
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManager_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManagerItemEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1020,6 +1109,25 @@ namespace ABI {
 
 
 
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        class AppInstallOptions;
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
@@ -1027,6 +1135,20 @@ namespace ABI {
                 namespace Preview {
                     namespace InstallControl {
                         class AppInstallStatus;
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        class AppUpdateOptions;
                     } /* Windows */
                 } /* ApplicationModel */
             } /* Store */
@@ -1211,8 +1333,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("49D3DFAB-168A-4CBF-A93A-9E448C82737D"), exclusiveto, contract] */
                         MIDL_INTERFACE("49D3DFAB-168A-4CBF-A93A-9E448C82737D")
-                        IAppInstallItem : IInspectable
+                        IAppInstallItem : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductId(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1284,8 +1407,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("D3972AF8-40C0-4FD7-AA6C-0AA13CA6188C"), exclusiveto, contract] */
                         MIDL_INTERFACE("D3972AF8-40C0-4FD7-AA6C-0AA13CA6188C")
-                        IAppInstallItem2 : IInspectable
+                        IAppInstallItem2 : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CancelWithTelemetry(
                                 /* [in] */__RPC__in HSTRING correlationVector
                                 ) = 0;
@@ -1334,8 +1458,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("6F3DC998-DD47-433C-9234-560172D67A45"), exclusiveto, contract] */
                         MIDL_INTERFACE("6F3DC998-DD47-433C-9234-560172D67A45")
-                        IAppInstallItem3 : IInspectable
+                        IAppInstallItem3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Children(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * value
                                 ) = 0;
@@ -1356,6 +1481,54 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem3;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallItem
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem4[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem4";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        /* [object, uuid("C2D1CE12-71FF-4FC8-B540-453D4B37E1D1"), exclusiveto, contract] */
+                        MIDL_INTERFACE("C2D1CE12-71FF-4FC8-B540-453D4B37E1D1")
+                        IAppInstallItem4 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LaunchAfterInstall(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_LaunchAfterInstall(
+                                /* [in] */boolean value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAppInstallItem4=_uuidof(IAppInstallItem4);
+                        
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -1381,8 +1554,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("9353E170-8441-4B45-BD72-7C2FA925BEEE"), exclusiveto, contract] */
                         MIDL_INTERFACE("9353E170-8441-4B45-BD72-7C2FA925BEEE")
-                        IAppInstallManager : IInspectable
+                        IAppInstallManager : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppInstallItems(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * value
                                 ) = 0;
@@ -1493,8 +1667,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("16937851-ED37-480D-8314-52E27C03F04A"), exclusiveto, contract] */
                         MIDL_INTERFACE("16937851-ED37-480D-8314-52E27C03F04A")
-                        IAppInstallManager2 : IInspectable
+                        IAppInstallManager2 : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartAppInstallWithTelemetryAsync(
                                 /* [in] */__RPC__in HSTRING productId,
                                 /* [in] */__RPC__in HSTRING skuId,
@@ -1579,8 +1754,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("95B24B17-E96A-4D0E-84E1-C8CB417A0178"), exclusiveto, contract] */
                         MIDL_INTERFACE("95B24B17-E96A-4D0E-84E1-C8CB417A0178")
-                        IAppInstallManager3 : IInspectable
+                        IAppInstallManager3 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE StartProductInstallAsync(
                                 /* [in] */__RPC__in HSTRING productId,
                                 /* [in] */__RPC__in HSTRING catalogId,
@@ -1680,8 +1856,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("260A2A16-5A9E-4EBD-B944-F2BA75C31159"), exclusiveto, contract] */
                         MIDL_INTERFACE("260A2A16-5A9E-4EBD-B944-F2BA75C31159")
-                        IAppInstallManager4 : IInspectable
+                        IAppInstallManager4 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetFreeUserEntitlementAsync(
                                 /* [in] */__RPC__in HSTRING storeId,
                                 /* [in] */__RPC__in HSTRING campaignId,
@@ -1740,8 +1917,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("3CD7BE4C-1BE9-4F7F-B675-AA1D64A529B2"), exclusiveto, contract] */
                         MIDL_INTERFACE("3CD7BE4C-1BE9-4F7F-B675-AA1D64A529B2")
-                        IAppInstallManager5 : IInspectable
+                        IAppInstallManager5 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppInstallItemsWithGroupSupport(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * value
                                 ) = 0;
@@ -1759,6 +1937,108 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager5;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager5_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager6
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager6[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager6";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        /* [object, uuid("C9E7D408-F27A-4471-B2F4-E76EFCBEBCCA"), exclusiveto, contract] */
+                        MIDL_INTERFACE("C9E7D408-F27A-4471-B2F4-E76EFCBEBCCA")
+                        IAppInstallManager6 : public IInspectable
+                        {
+                        public:
+                            /* [overload] */virtual HRESULT STDMETHODCALLTYPE SearchForAllUpdatesWithUpdateOptionsAsync(
+                                /* [in] */__RPC__in HSTRING correlationVector,
+                                /* [in] */__RPC__in HSTRING clientId,
+                                /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions * updateOptions,
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+                                ) = 0;
+                            /* [overload] */virtual HRESULT STDMETHODCALLTYPE SearchForAllUpdatesWithUpdateOptionsForUserAsync(
+                                /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                                /* [in] */__RPC__in HSTRING correlationVector,
+                                /* [in] */__RPC__in HSTRING clientId,
+                                /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions * updateOptions,
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+                                ) = 0;
+                            /* [overload] */virtual HRESULT STDMETHODCALLTYPE SearchForUpdatesWithUpdateOptionsAsync(
+                                /* [in] */__RPC__in HSTRING productId,
+                                /* [in] */__RPC__in HSTRING skuId,
+                                /* [in] */__RPC__in HSTRING correlationVector,
+                                /* [in] */__RPC__in HSTRING clientId,
+                                /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions * updateOptions,
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+                                ) = 0;
+                            /* [overload] */virtual HRESULT STDMETHODCALLTYPE SearchForUpdatesWithUpdateOptionsForUserAsync(
+                                /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                                /* [in] */__RPC__in HSTRING productId,
+                                /* [in] */__RPC__in HSTRING skuId,
+                                /* [in] */__RPC__in HSTRING correlationVector,
+                                /* [in] */__RPC__in HSTRING clientId,
+                                /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions * updateOptions,
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+                                ) = 0;
+                            /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartProductInstallWithOptionsAsync(
+                                /* [in] */__RPC__in HSTRING productId,
+                                /* [in] */__RPC__in HSTRING flightId,
+                                /* [in] */__RPC__in HSTRING clientId,
+                                /* [in] */__RPC__in HSTRING correlationVector,
+                                /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions * installOptions,
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+                                ) = 0;
+                            /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartProductInstallWithOptionsForUserAsync(
+                                /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                                /* [in] */__RPC__in HSTRING productId,
+                                /* [in] */__RPC__in HSTRING flightId,
+                                /* [in] */__RPC__in HSTRING clientId,
+                                /* [in] */__RPC__in HSTRING correlationVector,
+                                /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions * installOptions,
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+                                ) = 0;
+                            virtual HRESULT STDMETHODCALLTYPE GetIsPackageIdentityAllowedToInstallAsync(
+                                /* [in] */__RPC__in HSTRING correlationVector,
+                                /* [in] */__RPC__in HSTRING packageIdentityName,
+                                /* [in] */__RPC__in HSTRING publisherCertificateName,
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                                ) = 0;
+                            virtual HRESULT STDMETHODCALLTYPE GetIsPackageIdentityAllowedToInstallForUserAsync(
+                                /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                                /* [in] */__RPC__in HSTRING correlationVector,
+                                /* [in] */__RPC__in HSTRING packageIdentityName,
+                                /* [in] */__RPC__in HSTRING publisherCertificateName,
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAppInstallManager6=_uuidof(IAppInstallManager6);
+                        
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -1784,8 +2064,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("BC505743-4674-4DD1-957E-C25682086A14"), exclusiveto, contract] */
                         MIDL_INTERFACE("BC505743-4674-4DD1-957E-C25682086A14")
-                        IAppInstallManagerItemEventArgs : IInspectable
+                        IAppInstallManagerItemEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Item(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem * * value
                                 ) = 0;
@@ -1803,6 +2084,84 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallOptions";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        /* [object, uuid("C9808300-1CB8-4EB6-8C9F-6A30C64A5B51"), exclusiveto, contract] */
+                        MIDL_INTERFACE("C9808300-1CB8-4EB6-8C9F-6A30C64A5B51")
+                        IAppInstallOptions : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CatalogId(
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_CatalogId(
+                                /* [in] */__RPC__in HSTRING value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ForceUseOfNonRemovableStorage(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ForceUseOfNonRemovableStorage(
+                                /* [in] */boolean value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowForcedAppRestart(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AllowForcedAppRestart(
+                                /* [in] */boolean value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Repair(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Repair(
+                                /* [in] */boolean value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetVolume(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Management::Deployment::IPackageVolume * * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TargetVolume(
+                                /* [in] */__RPC__in_opt ABI::Windows::Management::Deployment::IPackageVolume * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LaunchAfterInstall(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_LaunchAfterInstall(
+                                /* [in] */boolean value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAppInstallOptions=_uuidof(IAppInstallOptions);
+                        
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -1828,8 +2187,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("936DCCFA-2450-4126-88B1-6127A644DD5C"), exclusiveto, contract] */
                         MIDL_INTERFACE("936DCCFA-2450-4126-88B1-6127A644DD5C")
-                        IAppInstallStatus : IInspectable
+                        IAppInstallStatus : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InstallState(
                                 /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState * value
                                 ) = 0;
@@ -1884,8 +2244,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("96E7818A-5E92-4AA9-8EDC-58FED4B87E00"), exclusiveto, contract] */
                         MIDL_INTERFACE("96E7818A-5E92-4AA9-8EDC-58FED4B87E00")
-                        IAppInstallStatus2 : IInspectable
+                        IAppInstallStatus2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
                                 ) = 0;
@@ -1906,6 +2267,105 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus2;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallStatus
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallStatus3[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus3";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        /* [object, uuid("CB880C56-837B-4B4C-9EBB-6D44A0A96307"), exclusiveto, contract] */
+                        MIDL_INTERFACE("CB880C56-837B-4B4C-9EBB-6D44A0A96307")
+                        IAppInstallStatus3 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsStaged(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAppInstallStatus3=_uuidof(IAppInstallStatus3);
+                        
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppUpdateOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppUpdateOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppUpdateOptions[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppUpdateOptions";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    namespace InstallControl {
+                        /* [object, uuid("26F0B02F-C2F3-4AEA-AF8C-6308DD9DB85F"), exclusiveto, contract] */
+                        MIDL_INTERFACE("26F0B02F-C2F3-4AEA-AF8C-6308DD9DB85F")
+                        IAppUpdateOptions : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CatalogId(
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_CatalogId(
+                                /* [in] */__RPC__in HSTRING value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowForcedAppRestart(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AllowForcedAppRestart(
+                                /* [in] */boolean value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAppUpdateOptions=_uuidof(IAppUpdateOptions);
+                        
+                    } /* Windows */
+                } /* ApplicationModel */
+            } /* Store */
+        } /* Preview */
+    } /* InstallControl */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -1931,8 +2391,9 @@ namespace ABI {
                     namespace InstallControl {
                         /* [object, uuid("74FC843F-1A9E-4609-8E4D-819086D08A3D"), exclusiveto, contract] */
                         MIDL_INTERFACE("74FC843F-1A9E-4609-8E4D-819086D08A3D")
-                        IGetEntitlementResult : IInspectable
+                        IGetEntitlementResult : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                                 /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus * value
                                 ) = 0;
@@ -1963,6 +2424,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInsta
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem ** Default Interface **
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem2
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem3
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem4
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -1992,6 +2454,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager3
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager4
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager5
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager6
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -2029,6 +2492,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_InstallControl_AppInstallOptions_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_InstallControl_AppInstallOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_InstallControl_AppInstallOptions[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallStatus
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2037,6 +2527,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus ** Default Interface **
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus2
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -2048,6 +2539,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_InstallControl_AppInstallStatus[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallStatus";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Store.Preview.InstallControl.AppUpdateOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppUpdateOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_InstallControl_AppUpdateOptions_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_InstallControl_AppUpdateOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_InstallControl_AppUpdateOptions[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.AppUpdateOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2096,6 +2614,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallCon
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager;
@@ -2126,11 +2650,23 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallCon
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager5_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus_FWD_DEFINED__
@@ -2143,6 +2679,18 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallCon
 typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus2 __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus2;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3 __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIGetEntitlementResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIGetEntitlementResult_FWD_DEFINED__
@@ -2825,6 +3373,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CStore__CPreview__
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManager_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManagerItemEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManager_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManagerItemEventArgs_INTERFACE_DEFINED__
 
@@ -2871,6 +3420,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CStore__CPreview__
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManager_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallManagerItemEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)
@@ -3016,6 +3566,13 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CGetEntitlementStatus __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CGetEntitlementStatus;
+
+
+
+
+
+
+
 
 
 
@@ -3513,6 +4070,106 @@ interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIA
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem3;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallItem
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem4[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem4";
+/* [object, uuid("C2D1CE12-71FF-4FC8-B540-453D4B37E1D1"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LaunchAfterInstall )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_LaunchAfterInstall )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4 * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_get_LaunchAfterInstall(This,value) \
+    ( (This)->lpVtbl->get_LaunchAfterInstall(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_put_LaunchAfterInstall(This,value) \
+    ( (This)->lpVtbl->put_LaunchAfterInstall(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallItem4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4301,6 +4958,184 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInsta
 
 /*
  *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager6
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager6[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager6";
+/* [object, uuid("C9E7D408-F27A-4471-B2F4-E76EFCBEBCCA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *SearchForAllUpdatesWithUpdateOptionsAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+        /* [in] */__RPC__in HSTRING correlationVector,
+        /* [in] */__RPC__in HSTRING clientId,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * updateOptions,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *SearchForAllUpdatesWithUpdateOptionsForUserAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [in] */__RPC__in HSTRING correlationVector,
+        /* [in] */__RPC__in HSTRING clientId,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * updateOptions,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *SearchForUpdatesWithUpdateOptionsAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+        /* [in] */__RPC__in HSTRING productId,
+        /* [in] */__RPC__in HSTRING skuId,
+        /* [in] */__RPC__in HSTRING correlationVector,
+        /* [in] */__RPC__in HSTRING clientId,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * updateOptions,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *SearchForUpdatesWithUpdateOptionsForUserAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [in] */__RPC__in HSTRING productId,
+        /* [in] */__RPC__in HSTRING skuId,
+        /* [in] */__RPC__in HSTRING correlationVector,
+        /* [in] */__RPC__in HSTRING clientId,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * updateOptions,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *StartProductInstallWithOptionsAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+        /* [in] */__RPC__in HSTRING productId,
+        /* [in] */__RPC__in HSTRING flightId,
+        /* [in] */__RPC__in HSTRING clientId,
+        /* [in] */__RPC__in HSTRING correlationVector,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * installOptions,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *StartProductInstallWithOptionsForUserAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [in] */__RPC__in HSTRING productId,
+        /* [in] */__RPC__in HSTRING flightId,
+        /* [in] */__RPC__in HSTRING clientId,
+        /* [in] */__RPC__in HSTRING correlationVector,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * installOptions,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CInstallControl__CAppInstallItem * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetIsPackageIdentityAllowedToInstallAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+        /* [in] */__RPC__in HSTRING correlationVector,
+        /* [in] */__RPC__in HSTRING packageIdentityName,
+        /* [in] */__RPC__in HSTRING publisherCertificateName,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetIsPackageIdentityAllowedToInstallForUserAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [in] */__RPC__in HSTRING correlationVector,
+        /* [in] */__RPC__in HSTRING packageIdentityName,
+        /* [in] */__RPC__in HSTRING publisherCertificateName,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_SearchForAllUpdatesWithUpdateOptionsAsync(This,correlationVector,clientId,updateOptions,operation) \
+    ( (This)->lpVtbl->SearchForAllUpdatesWithUpdateOptionsAsync(This,correlationVector,clientId,updateOptions,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_SearchForAllUpdatesWithUpdateOptionsForUserAsync(This,user,correlationVector,clientId,updateOptions,operation) \
+    ( (This)->lpVtbl->SearchForAllUpdatesWithUpdateOptionsForUserAsync(This,user,correlationVector,clientId,updateOptions,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_SearchForUpdatesWithUpdateOptionsAsync(This,productId,skuId,correlationVector,clientId,updateOptions,operation) \
+    ( (This)->lpVtbl->SearchForUpdatesWithUpdateOptionsAsync(This,productId,skuId,correlationVector,clientId,updateOptions,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_SearchForUpdatesWithUpdateOptionsForUserAsync(This,user,productId,skuId,correlationVector,clientId,updateOptions,operation) \
+    ( (This)->lpVtbl->SearchForUpdatesWithUpdateOptionsForUserAsync(This,user,productId,skuId,correlationVector,clientId,updateOptions,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_StartProductInstallWithOptionsAsync(This,productId,flightId,clientId,correlationVector,installOptions,operation) \
+    ( (This)->lpVtbl->StartProductInstallWithOptionsAsync(This,productId,flightId,clientId,correlationVector,installOptions,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_StartProductInstallWithOptionsForUserAsync(This,user,productId,flightId,clientId,correlationVector,installOptions,operation) \
+    ( (This)->lpVtbl->StartProductInstallWithOptionsForUserAsync(This,user,productId,flightId,clientId,correlationVector,installOptions,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_GetIsPackageIdentityAllowedToInstallAsync(This,correlationVector,packageIdentityName,publisherCertificateName,operation) \
+    ( (This)->lpVtbl->GetIsPackageIdentityAllowedToInstallAsync(This,correlationVector,packageIdentityName,publisherCertificateName,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_GetIsPackageIdentityAllowedToInstallForUserAsync(This,user,correlationVector,packageIdentityName,publisherCertificateName,operation) \
+    ( (This)->lpVtbl->GetIsPackageIdentityAllowedToInstallForUserAsync(This,user,correlationVector,packageIdentityName,publisherCertificateName,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManager6_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManagerItemEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4390,6 +5225,176 @@ interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIA
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallManagerItemEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallOptions";
+/* [object, uuid("C9808300-1CB8-4EB6-8C9F-6A30C64A5B51"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptionsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CatalogId )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_CatalogId )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ForceUseOfNonRemovableStorage )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ForceUseOfNonRemovableStorage )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AllowForcedAppRestart )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AllowForcedAppRestart )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Repair )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Repair )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TargetVolume )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_TargetVolume )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LaunchAfterInstall )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_LaunchAfterInstall )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptionsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptionsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_get_CatalogId(This,value) \
+    ( (This)->lpVtbl->get_CatalogId(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_put_CatalogId(This,value) \
+    ( (This)->lpVtbl->put_CatalogId(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_get_ForceUseOfNonRemovableStorage(This,value) \
+    ( (This)->lpVtbl->get_ForceUseOfNonRemovableStorage(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_put_ForceUseOfNonRemovableStorage(This,value) \
+    ( (This)->lpVtbl->put_ForceUseOfNonRemovableStorage(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_get_AllowForcedAppRestart(This,value) \
+    ( (This)->lpVtbl->get_AllowForcedAppRestart(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_put_AllowForcedAppRestart(This,value) \
+    ( (This)->lpVtbl->put_AllowForcedAppRestart(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_get_Repair(This,value) \
+    ( (This)->lpVtbl->get_Repair(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_put_Repair(This,value) \
+    ( (This)->lpVtbl->put_Repair(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_get_TargetVolume(This,value) \
+    ( (This)->lpVtbl->get_TargetVolume(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_put_TargetVolume(This,value) \
+    ( (This)->lpVtbl->put_TargetVolume(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_get_LaunchAfterInstall(This,value) \
+    ( (This)->lpVtbl->get_LaunchAfterInstall(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_put_LaunchAfterInstall(This,value) \
+    ( (This)->lpVtbl->put_LaunchAfterInstall(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4615,6 +5620,213 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInsta
 
 /*
  *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallStatus
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallStatus3[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus3";
+/* [object, uuid("CB880C56-837B-4B4C-9EBB-6D44A0A96307"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsStaged )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_get_IsStaged(This,value) \
+    ( (This)->lpVtbl->get_IsStaged(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppInstallStatus3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppUpdateOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.InstallControl.AppUpdateOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_InstallControl_IAppUpdateOptions[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.IAppUpdateOptions";
+/* [object, uuid("26F0B02F-C2F3-4AEA-AF8C-6308DD9DB85F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptionsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CatalogId )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_CatalogId )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AllowForcedAppRestart )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AllowForcedAppRestart )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptionsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptionsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_get_CatalogId(This,value) \
+    ( (This)->lpVtbl->get_CatalogId(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_put_CatalogId(This,value) \
+    ( (This)->lpVtbl->put_CatalogId(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_get_AllowForcedAppRestart(This,value) \
+    ( (This)->lpVtbl->get_AllowForcedAppRestart(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_put_AllowForcedAppRestart(This,value) \
+    ( (This)->lpVtbl->put_AllowForcedAppRestart(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInstallControl_CIAppUpdateOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Store.Preview.InstallControl.IGetEntitlementResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -4717,6 +5929,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CInsta
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem ** Default Interface **
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem2
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem3
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem4
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -4746,6 +5959,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager3
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager4
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager5
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager6
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -4783,6 +5997,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_InstallControl_AppInstallOptions_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_InstallControl_AppInstallOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_InstallControl_AppInstallOptions[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallStatus
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4791,6 +6032,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus ** Default Interface **
  *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus2
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallStatus3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -4802,6 +6044,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_InstallControl_AppInstallStatus[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallStatus";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Store.Preview.InstallControl.AppUpdateOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.Preview.InstallControl.IAppUpdateOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_InstallControl_AppUpdateOptions_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_InstallControl_AppUpdateOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_InstallControl_AppUpdateOptions[] = L"Windows.ApplicationModel.Store.Preview.InstallControl.AppUpdateOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

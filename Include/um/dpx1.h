@@ -216,6 +216,7 @@ typedef /* [public][public] */ struct __MIDL___MIDL_itf_dpx1_0000_0000_0006
 #define DPX_COMPRESSION_ALGORITHM_OPTION_NAME L"postprocess_compression_algorithm"
 #define DPX_CLEANUP_OPTION_NAME L"postprocess_source_cleanup"
 #define DPX_COMPRESSION_ALGORITHM_XPRESS_HUFF L"xpress_huff"
+#define DPX_COMPRESSION_ALGORITHM_WOF_PROVIDER_FILE L"wof_provider_file"
 #define DPX_COMPRESSED_FILE_HEADER_LENGTH 4
 #define DPX_COMPRESSED_FILE_HEADER_XPRESS_HUFF {'D', 'C', 'X', '\x01'}
 #define DPX_XPRESS_HUFF_BLOCK_SIZE (1024 * 1024)

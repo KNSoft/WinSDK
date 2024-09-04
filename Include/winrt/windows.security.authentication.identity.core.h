@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.authentication.identity.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -1020,8 +1022,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("0FD340A5-F574-4320-A08E-0A19A82322AA"), exclusiveto, contract] */
                         MIDL_INTERFACE("0FD340A5-F574-4320-A08E-0A19A82322AA")
-                        IMicrosoftAccountMultiFactorAuthenticationManager : IInspectable
+                        IMicrosoftAccountMultiFactorAuthenticationManager : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetOneTimePassCodeAsync(
                                 /* [in] */__RPC__in HSTRING userAccountId,
                                 /* [in] */UINT32 codeLength,
@@ -1111,8 +1114,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("D964C2E6-F446-4C71-8B79-6EA4024AA9B8"), exclusiveto, contract] */
                         MIDL_INTERFACE("D964C2E6-F446-4C71-8B79-6EA4024AA9B8")
-                        IMicrosoftAccountMultiFactorAuthenticatorStatics : IInspectable
+                        IMicrosoftAccountMultiFactorAuthenticatorStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticationManager * * value
                                 ) = 0;
@@ -1155,8 +1159,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("4E23A9A0-E9FA-497A-95DE-6D5747BF974C"), exclusiveto, contract] */
                         MIDL_INTERFACE("4E23A9A0-E9FA-497A-95DE-6D5747BF974C")
-                        IMicrosoftAccountMultiFactorGetSessionsResult : IInspectable
+                        IMicrosoftAccountMultiFactorGetSessionsResult : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Sessions(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CCore__CMicrosoftAccountMultiFactorSessionInfo * * value
                                 ) = 0;
@@ -1202,8 +1207,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("82BA264B-D87C-4668-A976-40CFAE547D08"), exclusiveto, contract] */
                         MIDL_INTERFACE("82BA264B-D87C-4668-A976-40CFAE547D08")
-                        IMicrosoftAccountMultiFactorOneTimeCodedInfo : IInspectable
+                        IMicrosoftAccountMultiFactorOneTimeCodedInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Code(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1255,8 +1261,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("5F7EABB4-A278-4635-B765-B494EB260AF4"), exclusiveto, contract] */
                         MIDL_INTERFACE("5F7EABB4-A278-4635-B765-B494EB260AF4")
-                        IMicrosoftAccountMultiFactorSessionInfo : IInspectable
+                        IMicrosoftAccountMultiFactorSessionInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UserAccountId(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
@@ -1317,8 +1324,9 @@ namespace ABI {
                     namespace Core {
                         /* [object, uuid("AA7EC5FB-DA3F-4088-A20D-5618AFADB2E5"), exclusiveto, contract] */
                         MIDL_INTERFACE("AA7EC5FB-DA3F-4088-A20D-5618AFADB2E5")
-                        IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo : IInspectable
+                        IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Sessions(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CCore__CMicrosoftAccountMultiFactorSessionInfo * * value
                                 ) = 0;

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.storage.provider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -355,6 +357,34 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CStorage_CProvider_CIFileUpdateRequestedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                interface IStorageProviderGetContentInfoForPathResult;
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult ABI::Windows::Storage::Provider::IStorageProviderGetContentInfoForPathResult
+
+#endif // ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                interface IStorageProviderGetPathForContentUriResult;
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult ABI::Windows::Storage::Provider::IStorageProviderGetPathForContentUriResult
+
+#endif // ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderItemPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderItemPropertiesStatics_FWD_DEFINED__
 namespace ABI {
@@ -452,6 +482,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderSyncRootManagerStatics ABI::Windows::Storage::Provider::IStorageProviderSyncRootManagerStatics
 
 #endif // ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderSyncRootManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                interface IStorageProviderUriSource;
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource ABI::Windows::Storage::Provider::IStorageProviderUriSource
+
+#endif // ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -893,6 +937,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_USE
@@ -921,6 +966,7 @@ typedef ITypedEventHandler<ABI::Windows::Storage::Provider::CachedFileUpdaterUI*
 #endif /* DEF___FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1144,6 +1190,17 @@ namespace ABI {
         namespace Storage {
             namespace Provider {
                 
+                typedef enum StorageProviderUriSourceStatus : int StorageProviderUriSourceStatus;
+                
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                
                 typedef enum UIStatus : int UIStatus;
                 
             } /* Windows */
@@ -1160,6 +1217,9 @@ namespace ABI {
             } /* Windows */
         } /* Storage */
     } /* Provider */} /* ABI */
+
+
+
 
 
 
@@ -1196,6 +1256,26 @@ namespace ABI {
         } /* Storage */
     } /* Provider */} /* ABI */
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                class StorageProviderGetContentInfoForPathResult;
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                class StorageProviderGetPathForContentUriResult;
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
 
 
 
@@ -1511,6 +1591,34 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Storage.Provider.StorageProviderUriSourceStatus
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ */
+
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                /* [v1_enum, contract] */
+                enum StorageProviderUriSourceStatus : int
+                {
+                    StorageProviderUriSourceStatus_Success = 0,
+                    StorageProviderUriSourceStatus_NoSyncRoot = 1,
+                    StorageProviderUriSourceStatus_FileNotFound = 2,
+                };
+                
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
  * Struct Windows.Storage.Provider.UIStatus
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -1587,8 +1695,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("9FC90920-7BCF-4888-A81E-102D7034D7CE"), exclusiveto, contract] */
                 MIDL_INTERFACE("9FC90920-7BCF-4888-A81E-102D7034D7CE")
-                ICachedFileUpdaterStatics : IInspectable
+                ICachedFileUpdaterStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetUpdateInformation(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                         /* [in] */__RPC__in HSTRING contentId,
@@ -1631,8 +1740,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("9E6F41E6-BAF2-4A97-B600-9333F5DF80FD"), exclusiveto, contract] */
                 MIDL_INTERFACE("9E6F41E6-BAF2-4A97-B600-9333F5DF80FD")
-                ICachedFileUpdaterUI : IInspectable
+                ICachedFileUpdaterUI : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Title(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1698,8 +1808,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("8856A21C-8699-4340-9F49-F7CAD7FE8991"), exclusiveto, contract] */
                 MIDL_INTERFACE("8856A21C-8699-4340-9F49-F7CAD7FE8991")
-                ICachedFileUpdaterUI2 : IInspectable
+                ICachedFileUpdaterUI2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UpdateRequest(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Provider::IFileUpdateRequest * * value
                         ) = 0;
@@ -1741,8 +1852,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("40C82536-C1FE-4D93-A792-1E736BC70837"), exclusiveto, contract] */
                 MIDL_INTERFACE("40C82536-C1FE-4D93-A792-1E736BC70837")
-                IFileUpdateRequest : IInspectable
+                IFileUpdateRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1800,8 +1912,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("82484648-BDBE-447B-A2EE-7AFE6A032A94"), exclusiveto, contract] */
                 MIDL_INTERFACE("82484648-BDBE-447B-A2EE-7AFE6A032A94")
-                IFileUpdateRequest2 : IInspectable
+                IFileUpdateRequest2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UserInputNeededMessage(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1843,8 +1956,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("FFCEDB2B-8ADE-44A5-BB00-164C4E72F13A"), exclusiveto, contract] */
                 MIDL_INTERFACE("FFCEDB2B-8ADE-44A5-BB00-164C4E72F13A")
-                IFileUpdateRequestDeferral : IInspectable
+                IFileUpdateRequestDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -1881,8 +1995,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("7B0A9342-3905-438D-AAEF-78AE265F8DD2"), exclusiveto, contract] */
                 MIDL_INTERFACE("7B0A9342-3905-438D-AAEF-78AE265F8DD2")
-                IFileUpdateRequestedEventArgs : IInspectable
+                IFileUpdateRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Provider::IFileUpdateRequest * * value
                         ) = 0;
@@ -1898,6 +2013,112 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIFileUpdateRequestedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CStorage_CProvider_CIFileUpdateRequestedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Storage.Provider.IStorageProviderGetContentInfoForPathResult
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Storage.Provider.StorageProviderGetContentInfoForPathResult
+ *
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Provider_IStorageProviderGetContentInfoForPathResult[] = L"Windows.Storage.Provider.IStorageProviderGetContentInfoForPathResult";
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                /* [object, uuid("2564711D-AA89-4D12-82E3-F72A92E33966"), exclusiveto, contract] */
+                MIDL_INTERFACE("2564711D-AA89-4D12-82E3-F72A92E33966")
+                IStorageProviderGetContentInfoForPathResult : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__out ABI::Windows::Storage::Provider::StorageProviderUriSourceStatus * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Status(
+                        /* [in] */ABI::Windows::Storage::Provider::StorageProviderUriSourceStatus value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentUri(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ContentUri(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ContentId(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStorageProviderGetContentInfoForPathResult=_uuidof(IStorageProviderGetContentInfoForPathResult);
+                
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Storage.Provider.IStorageProviderGetPathForContentUriResult
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Storage.Provider.StorageProviderGetPathForContentUriResult
+ *
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Provider_IStorageProviderGetPathForContentUriResult[] = L"Windows.Storage.Provider.IStorageProviderGetPathForContentUriResult";
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                /* [object, uuid("63711A9D-4118-45A6-ACB6-22C49D019F40"), exclusiveto, contract] */
+                MIDL_INTERFACE("63711A9D-4118-45A6-ACB6-22C49D019F40")
+                IStorageProviderGetPathForContentUriResult : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__out ABI::Windows::Storage::Provider::StorageProviderUriSourceStatus * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Status(
+                        /* [in] */ABI::Windows::Storage::Provider::StorageProviderUriSourceStatus value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Path(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Path(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStorageProviderGetPathForContentUriResult=_uuidof(IStorageProviderGetPathForContentUriResult);
+                
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
 
 
 /*
@@ -1921,8 +2142,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("2D2C1C97-2704-4729-8FA9-7E6B8E158C2F"), exclusiveto, contract] */
                 MIDL_INTERFACE("2D2C1C97-2704-4729-8FA9-7E6B8E158C2F")
-                IStorageProviderItemPropertiesStatics : IInspectable
+                IStorageProviderItemPropertiesStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageItem * item,
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty * itemProperties,
@@ -1963,8 +2185,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("476CB558-730B-4188-B7B5-63B716ED476D"), exclusiveto, contract] */
                 MIDL_INTERFACE("476CB558-730B-4188-B7B5-63B716ED476D")
-                IStorageProviderItemProperty : IInspectable
+                IStorageProviderItemProperty : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Id(
                         /* [in] */INT32 value
                         ) = 0;
@@ -2018,8 +2241,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("C5B383BB-FF1F-4298-831E-FF1C08089690"), exclusiveto, contract] */
                 MIDL_INTERFACE("C5B383BB-FF1F-4298-831E-FF1C08089690")
-                IStorageProviderItemPropertyDefinition : IInspectable
+                IStorageProviderItemPropertyDefinition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -2064,8 +2288,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("8F6F9C3E-F632-4A9B-8D99-D2D7A11DF56A"), contract] */
                 MIDL_INTERFACE("8F6F9C3E-F632-4A9B-8D99-D2D7A11DF56A")
-                IStorageProviderItemPropertySource : IInspectable
+                IStorageProviderItemPropertySource : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetItemProperties(
                         /* [in] */__RPC__in HSTRING itemPath,
                         /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty * * itemProperties
@@ -2102,8 +2327,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("658D2F0E-63B7-4567-ACF9-51ABE301DDA5"), contract] */
                 MIDL_INTERFACE("658D2F0E-63B7-4567-ACF9-51ABE301DDA5")
-                IStorageProviderPropertyCapabilities : IInspectable
+                IStorageProviderPropertyCapabilities : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsPropertySupported(
                         /* [in] */__RPC__in HSTRING propertyCanonicalName,
                         /* [retval, out] */__RPC__out boolean * isSupported
@@ -2143,8 +2369,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("7C1305C4-99F9-41AC-8904-AB055D654926"), exclusiveto, contract] */
                 MIDL_INTERFACE("7C1305C4-99F9-41AC-8904-AB055D654926")
-                IStorageProviderSyncRootInfo : IInspectable
+                IStorageProviderSyncRootInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2273,8 +2500,9 @@ namespace ABI {
             namespace Provider {
                 /* [object, uuid("3E99FBBF-8FE3-4B40-ABC7-F6FC3D74C98E"), exclusiveto, contract] */
                 MIDL_INTERFACE("3E99FBBF-8FE3-4B40-ABC7-F6FC3D74C98E")
-                IStorageProviderSyncRootManagerStatics : IInspectable
+                IStorageProviderSyncRootManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Register(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Provider::IStorageProviderSyncRootInfo * syncRootInformation
                         ) = 0;
@@ -2304,6 +2532,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIStorageProviderSyncRootManagerStatics;
 #endif /* !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderSyncRootManagerStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Storage.Provider.IStorageProviderUriSource
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Provider_IStorageProviderUriSource[] = L"Windows.Storage.Provider.IStorageProviderUriSource";
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Provider {
+                /* [object, uuid("B29806D1-8BE0-4962-8BB6-0D4C2E14D47A"), contract] */
+                MIDL_INTERFACE("B29806D1-8BE0-4962-8BB6-0D4C2E14D47A")
+                IStorageProviderUriSource : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetPathForContentUri(
+                        /* [in] */__RPC__in HSTRING contentUri,
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::Provider::IStorageProviderGetPathForContentUriResult * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetContentInfoForPath(
+                        /* [in] */__RPC__in HSTRING path,
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::Provider::IStorageProviderGetContentInfoForPathResult * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStorageProviderUriSource=_uuidof(IStorageProviderUriSource);
+                
+            } /* Windows */
+        } /* Storage */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_INTERFACE_DEFINED__) */
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
 
 
 /*
@@ -2407,6 +2678,60 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Storage_Provider_FileUpdateRequestedEventArgs[] = L"Windows.Storage.Provider.FileUpdateRequestedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Storage.Provider.StorageProviderGetContentInfoForPathResult
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 2.0 of the Windows.Storage.Provider.CloudFilesContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.Provider.IStorageProviderGetContentInfoForPathResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+#ifndef RUNTIMECLASS_Windows_Storage_Provider_StorageProviderGetContentInfoForPathResult_DEFINED
+#define RUNTIMECLASS_Windows_Storage_Provider_StorageProviderGetContentInfoForPathResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Storage_Provider_StorageProviderGetContentInfoForPathResult[] = L"Windows.Storage.Provider.StorageProviderGetContentInfoForPathResult";
+#endif
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.Storage.Provider.StorageProviderGetPathForContentUriResult
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 2.0 of the Windows.Storage.Provider.CloudFilesContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.Provider.IStorageProviderGetPathForContentUriResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+#ifndef RUNTIMECLASS_Windows_Storage_Provider_StorageProviderGetPathForContentUriResult_DEFINED
+#define RUNTIMECLASS_Windows_Storage_Provider_StorageProviderGetPathForContentUriResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Storage_Provider_StorageProviderGetPathForContentUriResult[] = L"Windows.Storage.Provider.StorageProviderGetPathForContentUriResult";
+#endif
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
 
 
 /*
@@ -2582,6 +2907,18 @@ typedef interface __x_ABI_CWindows_CStorage_CProvider_CIFileUpdateRequestedEvent
 
 #endif // ____x_ABI_CWindows_CStorage_CProvider_CIFileUpdateRequestedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult;
+
+#endif // ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult;
+
+#endif // ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderItemPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderItemPropertiesStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderItemPropertiesStatics __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderItemPropertiesStatics;
@@ -2623,6 +2960,12 @@ typedef interface __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderSyncRootI
 typedef interface __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderSyncRootManagerStatics __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderSyncRootManagerStatics;
 
 #endif // ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderSyncRootManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource;
+
+#endif // ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -3643,6 +3986,7 @@ interface __FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdat
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -3689,6 +4033,7 @@ interface __FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdat
 
 #endif // ____FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3775,10 +4120,18 @@ typedef enum __x_ABI_CWindows_CStorage_CProvider_CStorageProviderPopulationPolic
 typedef enum __x_ABI_CWindows_CStorage_CProvider_CStorageProviderProtectionMode __x_ABI_CWindows_CStorage_CProvider_CStorageProviderProtectionMode;
 
 
+typedef enum __x_ABI_CWindows_CStorage_CProvider_CStorageProviderUriSourceStatus __x_ABI_CWindows_CStorage_CProvider_CStorageProviderUriSourceStatus;
+
+
 typedef enum __x_ABI_CWindows_CStorage_CProvider_CUIStatus __x_ABI_CWindows_CStorage_CProvider_CUIStatus;
 
 
 typedef enum __x_ABI_CWindows_CStorage_CProvider_CWriteActivationMode __x_ABI_CWindows_CStorage_CProvider_CWriteActivationMode;
+
+
+
+
+
 
 
 
@@ -4020,6 +4373,26 @@ enum __x_ABI_CWindows_CStorage_CProvider_CStorageProviderProtectionMode
     StorageProviderProtectionMode_Personal = 1,
 };
 #endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Storage.Provider.StorageProviderUriSourceStatus
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ */
+
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CStorage_CProvider_CStorageProviderUriSourceStatus
+{
+    StorageProviderUriSourceStatus_Success = 0,
+    StorageProviderUriSourceStatus_NoSyncRoot = 1,
+    StorageProviderUriSourceStatus_FileNotFound = 2,
+};
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
 
 
 /*
@@ -4823,6 +5196,248 @@ interface __x_ABI_CWindows_CStorage_CProvider_CIFileUpdateRequestedEventArgs
 EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIFileUpdateRequestedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CStorage_CProvider_CIFileUpdateRequestedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Storage.Provider.IStorageProviderGetContentInfoForPathResult
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Storage.Provider.StorageProviderGetContentInfoForPathResult
+ *
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Provider_IStorageProviderGetContentInfoForPathResult[] = L"Windows.Storage.Provider.IStorageProviderGetContentInfoForPathResult";
+/* [object, uuid("2564711D-AA89-4D12-82E3-F72A92E33966"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CStorage_CProvider_CStorageProviderUriSourceStatus * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Status )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+        /* [in] */__x_ABI_CWindows_CStorage_CProvider_CStorageProviderUriSourceStatus value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContentUri )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ContentUri )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContentId )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ContentId )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResultVtbl;
+
+interface __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_get_Status(This,value) \
+    ( (This)->lpVtbl->get_Status(This,value) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_put_Status(This,value) \
+    ( (This)->lpVtbl->put_Status(This,value) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_get_ContentUri(This,value) \
+    ( (This)->lpVtbl->get_ContentUri(This,value) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_put_ContentUri(This,value) \
+    ( (This)->lpVtbl->put_ContentUri(This,value) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_get_ContentId(This,value) \
+    ( (This)->lpVtbl->get_ContentId(This,value) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_put_ContentId(This,value) \
+    ( (This)->lpVtbl->put_ContentId(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Storage.Provider.IStorageProviderGetPathForContentUriResult
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Storage.Provider.StorageProviderGetPathForContentUriResult
+ *
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Provider_IStorageProviderGetPathForContentUriResult[] = L"Windows.Storage.Provider.IStorageProviderGetPathForContentUriResult";
+/* [object, uuid("63711A9D-4118-45A6-ACB6-22C49D019F40"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CStorage_CProvider_CStorageProviderUriSourceStatus * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Status )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This,
+        /* [in] */__x_ABI_CWindows_CStorage_CProvider_CStorageProviderUriSourceStatus value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Path )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Path )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResultVtbl;
+
+interface __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_get_Status(This,value) \
+    ( (This)->lpVtbl->get_Status(This,value) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_put_Status(This,value) \
+    ( (This)->lpVtbl->put_Status(This,value) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_get_Path(This,value) \
+    ( (This)->lpVtbl->get_Path(This,value) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_put_Path(This,value) \
+    ( (This)->lpVtbl->put_Path(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
 
 
 /*
@@ -5772,6 +6387,105 @@ EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIStorageProviderSync
 
 /*
  *
+ * Interface Windows.Storage.Provider.IStorageProviderUriSource
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Provider_IStorageProviderUriSource[] = L"Windows.Storage.Provider.IStorageProviderUriSource";
+/* [object, uuid("B29806D1-8BE0-4962-8BB6-0D4C2E14D47A"), contract] */
+typedef struct __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSourceVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetPathForContentUri )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource * This,
+        /* [in] */__RPC__in HSTRING contentUri,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetPathForContentUriResult * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetContentInfoForPath )(
+        __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource * This,
+        /* [in] */__RPC__in HSTRING path,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderGetContentInfoForPathResult * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSourceVtbl;
+
+interface __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource
+{
+    CONST_VTBL struct __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSourceVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_GetPathForContentUri(This,contentUri,result) \
+    ( (This)->lpVtbl->GetPathForContentUri(This,contentUri,result) )
+
+#define __x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_GetContentInfoForPath(This,path,result) \
+    ( (This)->lpVtbl->GetContentInfoForPath(This,path,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource;
+#endif /* !defined(____x_ABI_CWindows_CStorage_CProvider_CIStorageProviderUriSource_INTERFACE_DEFINED__) */
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
  * Class Windows.Storage.Provider.CachedFileUpdater
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5871,6 +6585,60 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Storage_Provider_FileUpdateRequestedEventArgs[] = L"Windows.Storage.Provider.FileUpdateRequestedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Storage.Provider.StorageProviderGetContentInfoForPathResult
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 2.0 of the Windows.Storage.Provider.CloudFilesContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.Provider.IStorageProviderGetContentInfoForPathResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+#ifndef RUNTIMECLASS_Windows_Storage_Provider_StorageProviderGetContentInfoForPathResult_DEFINED
+#define RUNTIMECLASS_Windows_Storage_Provider_StorageProviderGetContentInfoForPathResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Storage_Provider_StorageProviderGetContentInfoForPathResult[] = L"Windows.Storage.Provider.StorageProviderGetContentInfoForPathResult";
+#endif
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.Storage.Provider.StorageProviderGetPathForContentUriResult
+ *
+ * Introduced to Windows.Storage.Provider.CloudFilesContract in version 2.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 2.0 of the Windows.Storage.Provider.CloudFilesContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.Provider.IStorageProviderGetPathForContentUriResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
+
+#ifndef RUNTIMECLASS_Windows_Storage_Provider_StorageProviderGetPathForContentUriResult_DEFINED
+#define RUNTIMECLASS_Windows_Storage_Provider_StorageProviderGetPathForContentUriResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Storage_Provider_StorageProviderGetPathForContentUriResult[] = L"Windows.Storage.Provider.StorageProviderGetPathForContentUriResult";
+#endif
+#endif // WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION >= 0x20000
 
 
 /*

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.wifidirect.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -845,6 +847,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisher_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisherStatusChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisher_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisherStatusChangedEventArgs_USE
@@ -874,6 +877,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::WiFiDirect::WiFiDirectAdvertis
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -895,6 +899,7 @@ namespace ABI {
     } /* WiFiDirect */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionListener_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionRequestedEventArgs_USE
@@ -924,6 +929,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::WiFiDirect::WiFiDirectConnecti
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionListener_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1555,8 +1561,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("AB511A2D-2A06-49A1-A584-61435C7905A6"), exclusiveto, contract] */
                 MIDL_INTERFACE("AB511A2D-2A06-49A1-A584-61435C7905A6")
-                IWiFiDirectAdvertisement : IInspectable
+                IWiFiDirectAdvertisement : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InformationElements(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CDevices__CWiFiDirect__CWiFiDirectInformationElement * * value
                         ) = 0;
@@ -1613,8 +1620,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("B759AA46-D816-491B-917A-B40D7DC403A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("B759AA46-D816-491B-917A-B40D7DC403A2")
-                IWiFiDirectAdvertisement2 : IInspectable
+                IWiFiDirectAdvertisement2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedConfigurationMethods(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CDevices__CWiFiDirect__CWiFiDirectConfigurationMethod * * value
                         ) = 0;
@@ -1653,8 +1661,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("B35A2D1A-9B1F-45D9-925A-694D66DF68EF"), exclusiveto, contract] */
                 MIDL_INTERFACE("B35A2D1A-9B1F-45D9-925A-694D66DF68EF")
-                IWiFiDirectAdvertisementPublisher : IInspectable
+                IWiFiDirectAdvertisementPublisher : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Advertisement(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement * * value
                         ) = 0;
@@ -1705,8 +1714,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("AAFDE53C-5481-46E6-90DD-32116518F192"), exclusiveto, contract] */
                 MIDL_INTERFACE("AAFDE53C-5481-46E6-90DD-32116518F192")
-                IWiFiDirectAdvertisementPublisherStatusChangedEventArgs : IInspectable
+                IWiFiDirectAdvertisementPublisherStatusChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus * value
                         ) = 0;
@@ -1748,8 +1758,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("699C1B0D-8D13-4EE9-B9EC-9C72F8251F7D"), exclusiveto, contract] */
                 MIDL_INTERFACE("699C1B0D-8D13-4EE9-B9EC-9C72F8251F7D")
-                IWiFiDirectConnectionListener : IInspectable
+                IWiFiDirectConnectionListener : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ConnectionRequested(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionListener_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionRequestedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1792,8 +1803,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("B2E55405-5702-4B16-A02C-BBCD21EF6098"), exclusiveto, contract] */
                 MIDL_INTERFACE("B2E55405-5702-4B16-A02C-BBCD21EF6098")
-                IWiFiDirectConnectionParameters : IInspectable
+                IWiFiDirectConnectionParameters : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GroupOwnerIntent(
                         /* [retval, out] */__RPC__out INT16 * value
                         ) = 0;
@@ -1835,8 +1847,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("AB3B0FBE-AA82-44B4-88C8-E3056B89801D"), exclusiveto, contract] */
                 MIDL_INTERFACE("AB3B0FBE-AA82-44B4-88C8-E3056B89801D")
-                IWiFiDirectConnectionParameters2 : IInspectable
+                IWiFiDirectConnectionParameters2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PreferenceOrderedConfigurationMethods(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CDevices__CWiFiDirect__CWiFiDirectConfigurationMethod * * value
                         ) = 0;
@@ -1881,8 +1894,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("598AF493-7642-456F-B9D8-E8A9EB1F401A"), exclusiveto, contract] */
                 MIDL_INTERFACE("598AF493-7642-456F-B9D8-E8A9EB1F401A")
-                IWiFiDirectConnectionParametersStatics : IInspectable
+                IWiFiDirectConnectionParametersStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDevicePairingKinds(
                         /* [in] */ABI::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod configurationMethod,
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Enumeration::DevicePairingKinds * result
@@ -1926,8 +1940,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("8EB99605-914F-49C3-A614-D18DC5B19B43"), exclusiveto, contract] */
                 MIDL_INTERFACE("8EB99605-914F-49C3-A614-D18DC5B19B43")
-                IWiFiDirectConnectionRequest : IInspectable
+                IWiFiDirectConnectionRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceInformation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceInformation * * value
                         ) = 0;
@@ -1966,8 +1981,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("F99D20BE-D38D-484F-8215-E7B65ABF244C"), exclusiveto, contract] */
                 MIDL_INTERFACE("F99D20BE-D38D-484F-8215-E7B65ABF244C")
-                IWiFiDirectConnectionRequestedEventArgs : IInspectable
+                IWiFiDirectConnectionRequestedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetConnectionRequest(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest * * result
                         ) = 0;
@@ -2010,8 +2026,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("72DEAAA8-72EB-4DAE-8A28-8513355D2777"), exclusiveto, contract] */
                 MIDL_INTERFACE("72DEAAA8-72EB-4DAE-8A28-8513355D2777")
-                IWiFiDirectDevice : IInspectable
+                IWiFiDirectDevice : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConnectionStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus * value
                         ) = 0;
@@ -2063,8 +2080,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("E86CB57C-3AAC-4851-A792-482AAF931B04"), exclusiveto, contract] */
                 MIDL_INTERFACE("E86CB57C-3AAC-4851-A792-482AAF931B04")
-                IWiFiDirectDeviceStatics : IInspectable
+                IWiFiDirectDeviceStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * deviceSelector
                         ) = 0;
@@ -2107,8 +2125,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("1A953E49-B103-437E-9226-AB67971342F9"), exclusiveto, contract] */
                 MIDL_INTERFACE("1A953E49-B103-437E-9226-AB67971342F9")
-                IWiFiDirectDeviceStatics2 : IInspectable
+                IWiFiDirectDeviceStatics2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [in] */ABI::Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
@@ -2153,8 +2172,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("AFFB72D6-76BB-497E-AC8B-DC72838BC309"), exclusiveto, contract] */
                 MIDL_INTERFACE("AFFB72D6-76BB-497E-AC8B-DC72838BC309")
-                IWiFiDirectInformationElement : IInspectable
+                IWiFiDirectInformationElement : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Oui(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -2208,8 +2228,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("DBD02F16-11A5-4E60-8CAA-34772148378A"), exclusiveto, contract] */
                 MIDL_INTERFACE("DBD02F16-11A5-4E60-8CAA-34772148378A")
-                IWiFiDirectInformationElementStatics : IInspectable
+                IWiFiDirectInformationElementStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromBuffer(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * buffer,
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CDevices__CWiFiDirect__CWiFiDirectInformationElement * * result
@@ -2253,8 +2274,9 @@ namespace ABI {
             namespace WiFiDirect {
                 /* [object, uuid("A64FDBBA-F2FD-4567-A91B-F5C2F5321057"), exclusiveto, contract] */
                 MIDL_INTERFACE("A64FDBBA-F2FD-4567-A91B-F5C2F5321057")
-                IWiFiDirectLegacySettings : IInspectable
+                IWiFiDirectLegacySettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3579,6 +3601,7 @@ interface __FIAsyncOperation_1_Windows__CDevices__CWiFiDirect__CWiFiDirectDevice
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisher_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisherStatusChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisher_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisherStatusChangedEventArgs_INTERFACE_DEFINED__
 
@@ -3626,9 +3649,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectAdv
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisher_Windows__CDevices__CWiFiDirect__CWiFiDirectAdvertisementPublisherStatusChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionListener_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionListener_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionRequestedEventArgs_INTERFACE_DEFINED__
@@ -3676,6 +3701,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectCon
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionListener_Windows__CDevices__CWiFiDirect__CWiFiDirectConnectionRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

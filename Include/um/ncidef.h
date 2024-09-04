@@ -48,6 +48,7 @@ Abstract:
 #define NCI_PACKET_MAX_SIZE                             (0xFF)
 
 #define NCI_PACKET_MT_BUFFER_OFFSET                     (0x00)
+#define NCI_PACKET_MT_MASK                              (0xE0)
 #define NCI_PACKET_MT_SHIFT                             (0x05)
 
 #define NCI_PACKET_MT_DATA                              (0x0)

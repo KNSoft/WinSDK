@@ -1431,9 +1431,35 @@ typedef struct _IDENTIFY_DEVICE_DATA_LOG_PAGE_ZONED_DEVICE_INFO {
 
 
 //
-// "Device Internal Status Data Log" structure definition.
+// "Current Device Internal Status Data Log" structure definition.
 //
-#pragma pack(push, gplog_device_data, 1)
+
+#define CURRENT_DEVICE_INTERNAL_STATUS_DATA_LOG_ADDRESS 0x24
+
+#pragma pack(push, gplog_current_device_data, 1)
+typedef struct _CURRENT_DEVICE_INTERNAL_STATUS_LOG {
+
+    UCHAR   LogAddress;                         // Byte 0
+    UCHAR   Reserved0[3];                       // Byte 1-3
+    ULONG   OrganizationID;                     // Bytes 4-7, 31:24 reserved, 23:0 - IEEE OUI
+    USHORT  Area1LastLogPage;                   // Bytes 8-9
+    USHORT  Area2LastLogPage;                   // Bytes 10-11
+    USHORT  Area3LastLogPage;                   // Bytes 12-13
+    UCHAR   Reserved2[368];                     // Bytes 14-381
+    UCHAR   SavedDataAvailable;                 // Byte 382
+    UCHAR   SavedDataGenerationNumber;          // Byte 383
+    UCHAR   ReasonIdentifier[128];              // Bytes 384-511
+
+} CURRENT_DEVICE_INTERNAL_STATUS_LOG, *PCURRENT_DEVICE_INTERNAL_STATUS_LOG;
+#pragma pack (pop, gplog_current_device_data)
+
+//
+// "Saved Device Internal Status Data Log" structure definition.
+//
+
+#define SAVED_DEVICE_INTERNAL_STATUS_DATA_LOG_ADDRESS 0x25
+
+#pragma pack(push, gplog_saved_device_data, 1)
 typedef struct _SAVED_DEVICE_INTERNAL_STATUS_LOG {
 
     UCHAR   LogAddress;                         // Byte 0
@@ -1448,7 +1474,7 @@ typedef struct _SAVED_DEVICE_INTERNAL_STATUS_LOG {
     UCHAR   ReasonIdentifier[128];              // Bytes 384-511
 
 } SAVED_DEVICE_INTERNAL_STATUS_LOG, *PSAVED_DEVICE_INTERNAL_STATUS_LOG;
-#pragma pack (pop, gplog_device_data)
+#pragma pack (pop, gplog_saved_device_data)
 
 
 //

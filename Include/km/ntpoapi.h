@@ -16,6 +16,8 @@ Revision History:
 
 --*/
 
+//@[contract("ntoskrnl-ntpoapi"), comment("MVI_tracked - https://osgwiki.com/wiki/Microsoft_Virus_Initiative")];
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 // begin_ntminiport begin_wdm begin_winnt
 
@@ -1506,6 +1508,22 @@ DEFINE_GUID(GUID_INTSTEER_LOAD_PER_PROC_TRIGGER,
 DEFINE_GUID(GUID_INTSTEER_TIME_UNPARK_TRIGGER,
 0xd6ba4903, 0x386f, 0x4c2c, 0x8a, 0xdb, 0x5c, 0x21, 0xb3, 0x32, 0x8d, 0x25);
 
+// Graphics power settings
+// ------------------------
+//
+
+// Specified the subgroup which contains all inbox graphics settings.
+//
+// {5FB4938D-1EE8-4b0f-9A3C-5036B0AB995C}
+//
+DEFINE_GUID(GUID_GRAPHICS_SUBGROUP, 0x5fb4938d, 0x1ee8, 0x4b0f, 0x9a, 0x3c, 0x50, 0x36, 0xb0, 0xab, 0x99, 0x5c);
+
+// Specifies the GPU preference policy.
+//
+// {DD848B2A-8A5D-4451-9AE2-39CD41658F6C}
+//
+DEFINE_GUID(GUID_GPU_PREFERENCE_POLICY, 0xdd848b2a, 0x8a5d, 0x4451, 0x9a, 0xe2, 0x39, 0xcd, 0x41, 0x65, 0x8f, 0x6c);
+
 // Other miscellaneous power notification GUIDs
 // ------------------------
 //
@@ -1517,6 +1535,14 @@ DEFINE_GUID(GUID_INTSTEER_TIME_UNPARK_TRIGGER,
 
 DEFINE_GUID(GUID_MIXED_REALITY_MODE,
 0x1e626b4e, 0xcf04, 0x4f8d, 0x9c, 0xc7, 0xc9, 0x7c, 0x5b, 0xf, 0x23, 0x91);
+
+// Specifies a change (start/end) in System Power Report's Active Session.
+//
+// {0E24CE38-C393-4742-BDB1-744F4B9EE08E}
+//
+
+DEFINE_GUID(GUID_SPR_ACTIVE_SESSION_CHANGE,
+0xe24ce38, 0xc393, 0x4742, 0xbd, 0xb1, 0x74, 0x4f, 0x4b, 0x9e, 0xe0, 0x8e);
 
 // end_winnt  end_wdm end_ntminiport
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
@@ -1899,6 +1925,8 @@ typedef struct _POWER_IDLE_RESILIENCY {
 //
 // Monitor on/off reasons
 //
+// N.B. Update power-event mapping when adding new events.
+//
 typedef enum {
     MonitorRequestReasonUnknown,
     MonitorRequestReasonPowerButton,
@@ -1946,6 +1974,7 @@ typedef enum {
     MonitorRequestReasonPdcSignalWindowsMobileShell,            // PDC_SIGNAL_PROVIDER_UM_CS_CONTROL
     MonitorRequestReasonPdcSignalHeyCortana,                    // PDC_SIGNAL_PROVIDER_HEY_CORTANA
     MonitorRequestReasonPdcSignalHolographicShell,              // PDC_SIGNAL_PROVIDER_HOLOSI_CRITICAL_BATTERY_WAKE
+    MonitorRequestReasonPdcSignalFingerprint,                   // PDC_SIGNAL_PROVIDER_WINBIO
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -2586,6 +2615,9 @@ typedef struct {
 #define POWER_ACTION_HIBERBOOT          0x00000008
 #define POWER_ACTION_USER_NOTIFY        0x00000010  // Indicate User-mode of an impending action.
 #define POWER_ACTION_DOZE_TO_HIBERNATE  0x00000020
+#define POWER_ACTION_ACPI_CRITICAL      0x01000000
+#define POWER_ACTION_ACPI_USER_NOTIFY   0x02000000
+#define POWER_ACTION_DIRECTED_DRIPS     0x04000000
 #define POWER_ACTION_PSEUDO_TRANSITION  0x08000000
 #define POWER_ACTION_LIGHTEST_FIRST     0x10000000
 #define POWER_ACTION_LOCK_CONSOLE       0x20000000
@@ -2817,6 +2849,7 @@ NtSetThreadExecutionState(
     _Out_ PEXECUTION_STATE PreviousFlags
     );
 
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -2828,6 +2861,7 @@ NtInitiatePowerAction(
     _In_ BOOLEAN Asynchronous
     );
 
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -2982,6 +3016,9 @@ typedef struct {
 #define SPSD_REASON_HYPERVISOR                  0x00000012
 #define SPSD_REASON_AOAC_NOBIOSSUPPORT          0x00000013
 #define SPSD_REASON_AOAC_HARDWARECHECKS         0x00000014
+#define SPSD_REASON_DEVICE_GUARD                0x00000015
+
+// begin_nthal
 
 //
 // Flags indicating disabled sleep states.
@@ -2993,6 +3030,8 @@ typedef struct {
 #define PO_REASON_STATE_S4     0x00000008
 #define PO_REASON_STATE_S4FIRM 0x00000010
 #define PO_REASON_STATE_S0IDLE 0x00000020
+
+// end_nthal
 
 //
 // Wrappers defining common combinations of disabled sleep flags.
@@ -3203,6 +3242,13 @@ typedef struct _PO_WAKE_SOURCE_HISTORY {
     ULONG Offsets[ANYSIZE_ARRAY];
 } PO_WAKE_SOURCE_HISTORY, *PPO_WAKE_SOURCE_HISTORY;
 
+typedef struct _PO_SPR_ACTIVE_SESSION_DATA {
+    BOOLEAN Start;
+    GUID ActiveSessionGuid;
+} PO_SPR_ACTIVE_SESSION_DATA, *PPO_SPR_ACTIVE_SESSION_DATA;
+
+// begin_nthal
+
 typedef enum _PO_SLEEP_DISABLE_REASON {
     PoSleepDisableReasonVideo = 0,
     PoSleepDisableReasonHypervisor,
@@ -3213,6 +3259,8 @@ typedef enum _PO_SLEEP_DISABLE_REASON {
     PoSleepDisableReasonMax
 
 } PO_SLEEP_DISABLE_REASON, *PPO_SLEEP_DISABLE_REASON;
+
+// end_nthal
 
 typedef enum _PO_HIBER_FORCE_DISABLE_REASON {
     PoHiberForceDisableReasonPolicy,
@@ -3237,6 +3285,8 @@ typedef enum _PO_CS_DEVICE_NOTIFICATION_TYPE {
 
 } PO_CS_DEVICE_NOTIFICATION_TYPE;
 
+// begin_nthal
+
 #define PO_SLEEP_DISABLE_S1     PO_REASON_STATE_S1
 #define PO_SLEEP_DISABLE_S2     PO_REASON_STATE_S2
 #define PO_SLEEP_DISABLE_S3     PO_REASON_STATE_S3
@@ -3246,6 +3296,8 @@ typedef enum _PO_CS_DEVICE_NOTIFICATION_TYPE {
                               PO_SLEEP_DISABLE_S2 | \
                               PO_SLEEP_DISABLE_S3 | \
                               PO_SLEEP_DISABLE_S4)
+
+// end_nthal
 
 //
 // Flags for the processor performance limit perf counter

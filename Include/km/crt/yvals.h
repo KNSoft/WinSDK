@@ -3,11 +3,7 @@
 #elif defined _STL100_
 #include "_100_yvals.h"
 #elif defined _STL110_
-#if defined _STLFKG_
-#include "_fkg_yvals.h"
-#else
 #include "_110_yvals.h"
-#endif
 #else
 
 

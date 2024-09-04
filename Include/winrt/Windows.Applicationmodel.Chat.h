@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.chat.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2960,6 +2962,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatConversation_Windows__CApplicationModel__CChat__CRemoteParticipantComposingChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatConversation_Windows__CApplicationModel__CChat__CRemoteParticipantComposingChangedEventArgs_USE
@@ -2989,6 +2992,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Chat::ChatConversatio
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3001,6 +3005,7 @@ namespace ABI {
     } /* Chat */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessageStore_Windows__CApplicationModel__CChat__CChatMessageChangedEventArgs_USE
@@ -3031,6 +3036,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Chat::ChatMessageStor
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3043,6 +3049,7 @@ namespace ABI {
     } /* Chat */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessageStore_Windows__CApplicationModel__CChat__CChatMessageStoreChangedEventArgs_USE
@@ -3073,6 +3080,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Chat::ChatMessageStor
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -3094,6 +3102,7 @@ namespace ABI {
     } /* Chat */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsEndUserMessageManager_Windows__CApplicationModel__CChat__CRcsEndUserMessageAvailableEventArgs_USE
@@ -3124,6 +3133,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Chat::RcsEndUserMessa
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3136,6 +3146,7 @@ namespace ABI {
     } /* Chat */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsTransport_Windows__CApplicationModel__CChat__CRcsServiceKindSupportedChangedEventArgs_USE
@@ -3165,6 +3176,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Chat::RcsTransport*,A
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsTransport_Windows__CApplicationModel__CChat__CRcsServiceKindSupportedChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -4575,8 +4587,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("3AFF77BC-39C9-4DD1-AD2D-3964DD9D403F"), exclusiveto, contract] */
                 MIDL_INTERFACE("3AFF77BC-39C9-4DD1-AD2D-3964DD9D403F")
-                IChatCapabilities : IInspectable
+                IChatCapabilities : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsOnline(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -4627,13 +4640,14 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("B57A2F30-7041-458E-B0CF-7C0D9FEA333A"), exclusiveto, contract] */
                 MIDL_INTERFACE("B57A2F30-7041-458E-B0CF-7C0D9FEA333A")
-                IChatCapabilitiesManagerStatics : IInspectable
+                IChatCapabilitiesManagerStatics : public IInspectable
                 {
-                    virtual HRESULT STDMETHODCALLTYPE GetCachedCapabilitiesAsync(
+                public:
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetCachedCapabilitiesAsync(
                         /* [in] */__RPC__in HSTRING address,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatCapabilities * * result
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE GetCapabilitiesFromNetworkAsync(
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetCapabilitiesFromNetworkAsync(
                         /* [in] */__RPC__in HSTRING address,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatCapabilities * * result
                         ) = 0;
@@ -4672,8 +4686,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("A58C080D-1A6F-46DC-8F3D-F5028660B6EE"), exclusiveto, contract] */
                 MIDL_INTERFACE("A58C080D-1A6F-46DC-8F3D-F5028660B6EE")
-                IChatConversation : IInspectable
+                IChatConversation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HasUnreadMessages(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -4769,8 +4784,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("0A030CD1-983A-47AA-9A90-EE48EE997B59"), exclusiveto, contract] */
                 MIDL_INTERFACE("0A030CD1-983A-47AA-9A90-EE48EE997B59")
-                IChatConversation2 : IInspectable
+                IChatConversation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanModifyParticipants(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -4812,8 +4828,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("055136D2-DE32-4A47-A93A-B3DC0833852B"), exclusiveto, contract] */
                 MIDL_INTERFACE("055136D2-DE32-4A47-A93A-B3DC0833852B")
-                IChatConversationReader : IInspectable
+                IChatConversationReader : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ReadBatchAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CChat__CChatConversation * * result
                         ) = 0;
@@ -4856,8 +4873,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("331C21DC-7A07-4422-A32C-24BE7C6DAB24"), exclusiveto, contract] */
                 MIDL_INTERFACE("331C21DC-7A07-4422-A32C-24BE7C6DAB24")
-                IChatConversationThreadingInfo : IInspectable
+                IChatConversationThreadingInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -4917,8 +4935,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("8751D000-CEB1-4243-B803-15D45A1DD428"), contract] */
                 MIDL_INTERFACE("8751D000-CEB1-4243-B803-15D45A1DD428")
-                IChatItem : IInspectable
+                IChatItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ItemKind(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Chat::ChatItemKind * result
                         ) = 0;
@@ -4957,8 +4976,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("4B39052A-1142-5089-76DA-F2DB3D17CD05"), exclusiveto, contract] */
                 MIDL_INTERFACE("4B39052A-1142-5089-76DA-F2DB3D17CD05")
-                IChatMessage : IInspectable
+                IChatMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Attachments(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CApplicationModel__CChat__CChatMessageAttachment * * value
                         ) = 0;
@@ -5050,8 +5070,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("86668332-543F-49F5-AC71-6C2AFC6565FD"), exclusiveto, contract] */
                 MIDL_INTERFACE("86668332-543F-49F5-AC71-6C2AFC6565FD")
-                IChatMessage2 : IInspectable
+                IChatMessage2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EstimatedDownloadSize(
                         /* [retval, out] */__RPC__out UINT64 * result
                         ) = 0;
@@ -5175,8 +5196,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("74EB2FB0-3BA7-459F-8E0B-E8AF0FEBD9AD"), exclusiveto, contract] */
                 MIDL_INTERFACE("74EB2FB0-3BA7-459F-8E0B-E8AF0FEBD9AD")
-                IChatMessage3 : IInspectable
+                IChatMessage3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RemoteId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5219,8 +5241,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("2D144B0F-D2BF-460C-AA68-6D3F8483C9BF"), exclusiveto, contract] */
                 MIDL_INTERFACE("2D144B0F-D2BF-460C-AA68-6D3F8483C9BF")
-                IChatMessage4 : IInspectable
+                IChatMessage4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SyncId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -5262,8 +5285,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("C7C4FD74-BF63-58EB-508C-8B863FF16B67"), exclusiveto, contract] */
                 MIDL_INTERFACE("C7C4FD74-BF63-58EB-508C-8B863FF16B67")
-                IChatMessageAttachment : IInspectable
+                IChatMessageAttachment : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataStreamReference(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * * value
                         ) = 0;
@@ -5327,8 +5351,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("5ED99270-7DD1-4A87-A8CE-ACDD87D80DC8"), exclusiveto, contract] */
                 MIDL_INTERFACE("5ED99270-7DD1-4A87-A8CE-ACDD87D80DC8")
-                IChatMessageAttachment2 : IInspectable
+                IChatMessageAttachment2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Thumbnail(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * * result
                         ) = 0;
@@ -5382,8 +5407,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("205852A2-A356-5B71-6CA9-66C985B7D0D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("205852A2-A356-5B71-6CA9-66C985B7D0D5")
-                IChatMessageAttachmentFactory : IInspectable
+                IChatMessageAttachmentFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateChatMessageAttachment(
                         /* [in] */__RPC__in HSTRING mimeType,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * dataStreamReference,
@@ -5424,8 +5450,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("F6B9A380-CDEA-11E4-8830-0800200C9A66"), exclusiveto, contract] */
                 MIDL_INTERFACE("F6B9A380-CDEA-11E4-8830-0800200C9A66")
-                IChatMessageBlockingStatic : IInspectable
+                IChatMessageBlockingStatic : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE MarkMessageAsBlockedAsync(
                         /* [in] */__RPC__in HSTRING localChatMessageId,
                         /* [in] */boolean blocked,
@@ -5466,8 +5493,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("1C18C355-421E-54B8-6D38-6B3A6C82FCCC"), exclusiveto, contract] */
                 MIDL_INTERFACE("1C18C355-421E-54B8-6D38-6B3A6C82FCCC")
-                IChatMessageChange : IInspectable
+                IChatMessageChange : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeType(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Chat::ChatMessageChangeType * value
                         ) = 0;
@@ -5509,8 +5537,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("14267020-28CE-5F26-7B05-9A5C7CCE87CA"), exclusiveto, contract] */
                 MIDL_INTERFACE("14267020-28CE-5F26-7B05-9A5C7CCE87CA")
-                IChatMessageChangeReader : IInspectable
+                IChatMessageChangeReader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AcceptChanges(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE AcceptChangesThrough(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Chat::IChatMessageChange * lastChangeToAcknowledge
@@ -5553,8 +5582,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("60B7F066-70A0-5224-508C-242EF7C1D06F"), exclusiveto, contract] */
                 MIDL_INTERFACE("60B7F066-70A0-5224-508C-242EF7C1D06F")
-                IChatMessageChangeTracker : IInspectable
+                IChatMessageChangeTracker : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Enable(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetChangeReader(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Chat::IChatMessageChangeReader * * value
@@ -5595,8 +5625,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("FBC6B30C-788C-4DCC-ACE7-6282382968CF"), exclusiveto, contract] */
                 MIDL_INTERFACE("FBC6B30C-788C-4DCC-ACE7-6282382968CF")
-                IChatMessageChangedDeferral : IInspectable
+                IChatMessageChangedDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -5633,8 +5664,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("B6B73E2D-691C-4EDF-8660-6EB9896892E3"), exclusiveto, contract] */
                 MIDL_INTERFACE("B6B73E2D-691C-4EDF-8660-6EB9896892E3")
-                IChatMessageChangedEventArgs : IInspectable
+                IChatMessageChangedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Chat::IChatMessageChangedDeferral * * result
                         ) = 0;
@@ -5677,8 +5709,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("1D45390F-9F4F-4E35-964E-1B9CA61AC044"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D45390F-9F4F-4E35-964E-1B9CA61AC044")
-                IChatMessageManager2Statics : IInspectable
+                IChatMessageManager2Statics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RegisterTransportAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * result
                         ) = 0;
@@ -5721,8 +5754,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("F15C60F7-D5E8-5E92-556D-E03B60253104"), exclusiveto, contract] */
                 MIDL_INTERFACE("F15C60F7-D5E8-5E92-556D-E03B60253104")
-                IChatMessageManagerStatic : IInspectable
+                IChatMessageManagerStatic : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetTransportsAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CChat__CChatMessageTransport * * value
                         ) = 0;
@@ -5773,8 +5807,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("208B830D-6755-48CC-9AB3-FD03C463FC92"), exclusiveto, contract] */
                 MIDL_INTERFACE("208B830D-6755-48CC-9AB3-FD03C463FC92")
-                IChatMessageManagerStatics3 : IInspectable
+                IChatMessageManagerStatics3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestSyncManagerAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatSyncManager * * result
                         ) = 0;
@@ -5813,8 +5848,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("FD344DFB-3063-4E17-8586-C6C08262E6C0"), exclusiveto, contract] */
                 MIDL_INTERFACE("FD344DFB-3063-4E17-8586-C6C08262E6C0")
-                IChatMessageNotificationTriggerDetails : IInspectable
+                IChatMessageNotificationTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChatMessage(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Chat::IChatMessage * * value
                         ) = 0;
@@ -5857,8 +5893,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("6BB522E0-AA07-4FD1-9471-77934FB75EE6"), exclusiveto, contract] */
                 MIDL_INTERFACE("6BB522E0-AA07-4FD1-9471-77934FB75EE6")
-                IChatMessageNotificationTriggerDetails2 : IInspectable
+                IChatMessageNotificationTriggerDetails2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShouldDisplayToast(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -5906,8 +5943,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("B6EA78CE-4489-56F9-76AA-E204682514CF"), exclusiveto, contract] */
                 MIDL_INTERFACE("B6EA78CE-4489-56F9-76AA-E204682514CF")
-                IChatMessageReader : IInspectable
+                IChatMessageReader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReadBatchAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CChat__CChatMessage * * value
                         ) = 0;
@@ -5946,8 +5984,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("89643683-64BB-470D-9DF4-0DE8BE1A05BF"), exclusiveto, contract] */
                 MIDL_INTERFACE("89643683-64BB-470D-9DF4-0DE8BE1A05BF")
-                IChatMessageReader2 : IInspectable
+                IChatMessageReader2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ReadBatchWithCountAsync(
                         /* [in] */INT32 count,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CChat__CChatMessage * * result
@@ -5987,8 +6026,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("31F2FD01-CCF6-580B-4976-0A07DD5D3B47"), exclusiveto, contract] */
                 MIDL_INTERFACE("31F2FD01-CCF6-580B-4976-0A07DD5D3B47")
-                IChatMessageStore : IInspectable
+                IChatMessageStore : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeTracker(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Chat::IChatMessageChangeTracker * * value
                         ) = 0;
@@ -6073,8 +6113,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("AD4DC4EE-3AD4-491B-B311-ABDF9BB22768"), exclusiveto, contract] */
                 MIDL_INTERFACE("AD4DC4EE-3AD4-491B-B311-ABDF9BB22768")
-                IChatMessageStore2 : IInspectable
+                IChatMessageStore2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ForwardMessageAsync(
                         /* [in] */__RPC__in HSTRING localChatMessageId,
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * addresses,
@@ -6181,8 +6222,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("9ADBBB09-4345-4EC1-8B74-B7338243719C"), exclusiveto, contract] */
                 MIDL_INTERFACE("9ADBBB09-4345-4EC1-8B74-B7338243719C")
-                IChatMessageStore3 : IInspectable
+                IChatMessageStore3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetMessageBySyncIdAsync(
                         /* [in] */__RPC__in HSTRING syncId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatMessage * * result
@@ -6222,8 +6264,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("65C66FAC-FE8C-46D4-9119-57B8410311D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("65C66FAC-FE8C-46D4-9119-57B8410311D5")
-                IChatMessageStoreChangedEventArgs : IInspectable
+                IChatMessageStoreChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -6265,8 +6308,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("63A9DBF8-E6B3-5C9A-5F85-D47925B9BD18"), exclusiveto, contract] */
                 MIDL_INTERFACE("63A9DBF8-E6B3-5C9A-5F85-D47925B9BD18")
-                IChatMessageTransport : IInspectable
+                IChatMessageTransport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAppSetAsNotificationProvider(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6321,8 +6365,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("90A75622-D84A-4C22-A94D-544444EDC8A1"), exclusiveto, contract] */
                 MIDL_INTERFACE("90A75622-D84A-4C22-A94D-544444EDC8A1")
-                IChatMessageTransport2 : IInspectable
+                IChatMessageTransport2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Configuration(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Chat::IChatMessageTransportConfiguration * * result
                         ) = 0;
@@ -6364,8 +6409,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("879FF725-1A08-4ACA-A075-3355126312E6"), exclusiveto, contract] */
                 MIDL_INTERFACE("879FF725-1A08-4ACA-A075-3355126312E6")
-                IChatMessageTransportConfiguration : IInspectable
+                IChatMessageTransportConfiguration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxAttachmentCount(
                         /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
@@ -6416,8 +6462,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("25E93A03-28EC-5889-569B-7E486B126F18"), exclusiveto, contract] */
                 MIDL_INTERFACE("25E93A03-28EC-5889-569B-7E486B126F18")
-                IChatMessageValidationResult : IInspectable
+                IChatMessageValidationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPartCount(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_UINT32 * * value
                         ) = 0;
@@ -6465,8 +6512,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("2FD364A6-BF36-42F7-B7E7-923C0AABFE16"), exclusiveto, contract] */
                 MIDL_INTERFACE("2FD364A6-BF36-42F7-B7E7-923C0AABFE16")
-                IChatQueryOptions : IInspectable
+                IChatQueryOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SearchString(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -6508,8 +6556,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("FFC7B2A2-283C-4C0A-8A0E-8C33BDBF0545"), exclusiveto, contract] */
                 MIDL_INTERFACE("FFC7B2A2-283C-4C0A-8A0E-8C33BDBF0545")
-                IChatRecipientDeliveryInfo : IInspectable
+                IChatRecipientDeliveryInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TransportAddress(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -6578,8 +6627,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("4665FE49-9020-4752-980D-39612325F589"), exclusiveto, contract] */
                 MIDL_INTERFACE("4665FE49-9020-4752-980D-39612325F589")
-                IChatSearchReader : IInspectable
+                IChatSearchReader : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ReadBatchAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CChat__CIChatItem * * result
                         ) = 0;
@@ -6622,8 +6672,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("09F869B2-69F4-4AFF-82B6-06992FF402D2"), exclusiveto, contract] */
                 MIDL_INTERFACE("09F869B2-69F4-4AFF-82B6-06992FF402D2")
-                IChatSyncConfiguration : IInspectable
+                IChatSyncConfiguration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSyncEnabled(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -6671,8 +6722,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("7BA52C63-2650-486F-B4B4-6BD9D3D63C84"), exclusiveto, contract] */
                 MIDL_INTERFACE("7BA52C63-2650-486F-B4B4-6BD9D3D63C84")
-                IChatSyncManager : IInspectable
+                IChatSyncManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Configuration(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Chat::IChatSyncConfiguration * * result
                         ) = 0;
@@ -6727,8 +6779,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("D7CDA5EB-CBD7-4F3B-8526-B506DEC35C53"), exclusiveto, contract] */
                 MIDL_INTERFACE("D7CDA5EB-CBD7-4F3B-8526-B506DEC35C53")
-                IRcsEndUserMessage : IInspectable
+                IRcsEndUserMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TransportId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -6788,8 +6841,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("92378737-9B42-46D3-9D5E-3C1B2DAE7CB8"), exclusiveto, contract] */
                 MIDL_INTERFACE("92378737-9B42-46D3-9D5E-3C1B2DAE7CB8")
-                IRcsEndUserMessageAction : IInspectable
+                IRcsEndUserMessageAction : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Label(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -6828,8 +6882,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("2D45AE01-3F89-41EA-9702-9E9ED411AA98"), exclusiveto, contract] */
                 MIDL_INTERFACE("2D45AE01-3F89-41EA-9702-9E9ED411AA98")
-                IRcsEndUserMessageAvailableEventArgs : IInspectable
+                IRcsEndUserMessageAvailableEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsMessageAvailable(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -6871,8 +6926,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("5B97742D-351F-4692-B41E-1B035DC18986"), exclusiveto, contract] */
                 MIDL_INTERFACE("5B97742D-351F-4692-B41E-1B035DC18986")
-                IRcsEndUserMessageAvailableTriggerDetails : IInspectable
+                IRcsEndUserMessageAvailableTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Title(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6914,8 +6970,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("3054AE5A-4D1F-4B59-9433-126C734E86A6"), exclusiveto, contract] */
                 MIDL_INTERFACE("3054AE5A-4D1F-4B59-9433-126C734E86A6")
-                IRcsEndUserMessageManager : IInspectable
+                IRcsEndUserMessageManager : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MessageAvailableChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsEndUserMessageManager_Windows__CApplicationModel__CChat__CRcsEndUserMessageAvailableEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -6958,8 +7015,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("7D270AC5-0ABD-4F31-9B99-A59E71A7B731"), exclusiveto, contract] */
                 MIDL_INTERFACE("7D270AC5-0ABD-4F31-9B99-A59E71A7B731")
-                IRcsManagerStatics : IInspectable
+                IRcsManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetEndUserMessageManager(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Chat::IRcsEndUserMessageManager * * result
                         ) = 0;
@@ -7009,8 +7067,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("F47EA244-E783-4866-B3A7-4E5CCF023070"), exclusiveto, contract] */
                 MIDL_INTERFACE("F47EA244-E783-4866-B3A7-4E5CCF023070")
-                IRcsServiceKindSupportedChangedEventArgs : IInspectable
+                IRcsServiceKindSupportedChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceKind(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Chat::RcsServiceKind * result
                         ) = 0;
@@ -7049,8 +7108,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("FEA34759-F37C-4319-8546-EC84D21D30FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("FEA34759-F37C-4319-8546-EC84D21D30FF")
-                IRcsTransport : IInspectable
+                IRcsTransport : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedProperties(
                         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable * * value
                         ) = 0;
@@ -7116,8 +7176,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("1FCCB102-2472-4BB9-9988-C1211C83E8A9"), exclusiveto, contract] */
                 MIDL_INTERFACE("1FCCB102-2472-4BB9-9988-C1211C83E8A9")
-                IRcsTransportConfiguration : IInspectable
+                IRcsTransportConfiguration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxAttachmentCount(
                         /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
@@ -7171,8 +7232,9 @@ namespace ABI {
             namespace Chat {
                 /* [object, uuid("1EC045A7-CFC9-45C9-9876-449F2BC180F5"), exclusiveto, contract] */
                 MIDL_INTERFACE("1EC045A7-CFC9-45C9-9876-449F2BC180F5")
-                IRemoteParticipantComposingChangedEventArgs : IInspectable
+                IRemoteParticipantComposingChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TransportId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                         ) = 0;
@@ -12930,6 +12992,7 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCha
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatConversation_Windows__CApplicationModel__CChat__CRemoteParticipantComposingChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatConversation_Windows__CApplicationModel__CChat__CRemoteParticipantComposingChangedEventArgs_INTERFACE_DEFINED__
 
@@ -12977,9 +13040,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatConver
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatConversation_Windows__CApplicationModel__CChat__CRemoteParticipantComposingChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessageStore_Windows__CApplicationModel__CChat__CChatMessageChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessageStore_Windows__CApplicationModel__CChat__CChatMessageChangedEventArgs_INTERFACE_DEFINED__
@@ -13028,9 +13093,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessag
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessageStore_Windows__CApplicationModel__CChat__CChatMessageChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessageStore_Windows__CApplicationModel__CChat__CChatMessageStoreChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessageStore_Windows__CApplicationModel__CChat__CChatMessageStoreChangedEventArgs_INTERFACE_DEFINED__
@@ -13079,9 +13146,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessag
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CChatMessageStore_Windows__CApplicationModel__CChat__CChatMessageStoreChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsEndUserMessageManager_Windows__CApplicationModel__CChat__CRcsEndUserMessageAvailableEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsEndUserMessageManager_Windows__CApplicationModel__CChat__CRcsEndUserMessageAvailableEventArgs_INTERFACE_DEFINED__
@@ -13130,9 +13199,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsEndUser
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsEndUserMessageManager_Windows__CApplicationModel__CChat__CRcsEndUserMessageAvailableEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsTransport_Windows__CApplicationModel__CChat__CRcsServiceKindSupportedChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsTransport_Windows__CApplicationModel__CChat__CRcsServiceKindSupportedChangedEventArgs_INTERFACE_DEFINED__
@@ -13180,6 +13251,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsTranspo
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CChat__CRcsTransport_Windows__CApplicationModel__CChat__CRcsServiceKindSupportedChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
@@ -15001,12 +15073,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-HRESULT ( STDMETHODCALLTYPE *GetCachedCapabilitiesAsync )(
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *GetCachedCapabilitiesAsync )(
         __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics * This,
         /* [in] */__RPC__in HSTRING address,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatCapabilities * * result
         );
-    HRESULT ( STDMETHODCALLTYPE *GetCapabilitiesFromNetworkAsync )(
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *GetCapabilitiesFromNetworkAsync )(
         __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics * This,
         /* [in] */__RPC__in HSTRING address,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatCapabilities * * result

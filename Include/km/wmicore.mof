@@ -19056,6 +19056,87 @@ class SystemConfig_V3_PnP:SystemConfig_V3
 
 [Dynamic,
  Description("System Configuration") : amended,
+ EventType(32),
+ EventTypeName("MobilePlatform") : amended
+]
+class SystemConfig_V3_MobilePlatform:SystemConfig_V3
+{
+    [WmiDataId(1),
+     Description("DeviceManufacturer") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  DeviceManufacturer;
+    [WmiDataId(2),
+     Description("DeviceManufacturerDisplayName") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  DeviceManufacturerDisplayName;
+    [WmiDataId(3),
+     Description("DeviceModel") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  DeviceModel;
+    [WmiDataId(4),
+     Description("DeviceModelDisplayName") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  DeviceModelDisplayName;
+    [WmiDataId(5),
+     Description("MobileOperator") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  MobileOperator;
+    [WmiDataId(6),
+     Description("MobileOperatorDisplayName") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  MobileOperatorDisplayName;
+    [WmiDataId(7),
+     Description("HardwareVersion") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  HardwareVersion;
+    [WmiDataId(8),
+     Description("SocVersion") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  SocVersion;
+    [WmiDataId(9),
+     Description("RadioHardwareVersion") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  RadioHardwareVersion;
+    [WmiDataId(10),
+     Description("RadioSoftwareVersion") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  RadioSoftwareVersion;
+    [WmiDataId(11),
+     Description("BspVersion") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  BspVersion;
+    [WmiDataId(12),
+     Description("OemSoftwareVersion") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  OemSoftwareVersion;
+};
+
+[Dynamic,
+ Description("System Configuration") : amended,
  EventType(22),
  EventTypeName("PnP") : amended
 ]

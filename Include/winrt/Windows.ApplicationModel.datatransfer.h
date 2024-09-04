@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.datatransfer.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -385,6 +387,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IDataPackagePropertySet4;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 ABI::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet4
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView_FWD_DEFINED__
 namespace ABI {
@@ -426,6 +442,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView3 ABI::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView3
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IDataPackagePropertySetView4;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 ABI::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView4
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView_FWD_DEFINED__
@@ -805,6 +835,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IStandardDataFormatsStatics3;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3 ABI::Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics3
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CITargetApplicationChosenEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CITargetApplicationChosenEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -1145,6 +1189,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_USE
@@ -1173,6 +1218,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataPac
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1240,6 +1286,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_USE
@@ -1268,6 +1315,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataTra
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1326,6 +1374,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_USE
@@ -1354,6 +1403,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataTra
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2667,6 +2717,9 @@ namespace ABI {
 
 
 
+
+
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
@@ -2861,8 +2914,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("E7ECD720-F2F4-4A2D-920E-170A2F482A27"), contract] */
                 MIDL_INTERFACE("E7ECD720-F2F4-4A2D-920E-170A2F482A27")
-                IDataProviderHandler : IUnknown
+                IDataProviderHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IDataProviderRequest * request
                         ) = 0;
@@ -2897,8 +2951,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("E7F9D9BA-E1BA-4E4D-BD65-D43845D3212F"), contract] */
                 MIDL_INTERFACE("E7F9D9BA-E1BA-4E4D-BD65-D43845D3212F")
-                IShareProviderHandler : IUnknown
+                IShareProviderHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IShareProviderOperation * operation
                         ) = 0;
@@ -2937,8 +2992,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("C627E291-34E2-4963-8EED-93CBB0EA3D70"), exclusiveto, contract] */
                 MIDL_INTERFACE("C627E291-34E2-4963-8EED-93CBB0EA3D70")
-                IClipboardStatics : IInspectable
+                IClipboardStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetContent(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView * * content
                         ) = 0;
@@ -2989,8 +3045,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("61EBF5C7-EFEA-4346-9554-981D7E198FFE"), exclusiveto, contract] */
                 MIDL_INTERFACE("61EBF5C7-EFEA-4346-9554-981D7E198FFE")
-                IDataPackage : IInspectable
+                IDataPackage : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView * * value
                         ) = 0;
@@ -3089,8 +3146,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("041C1FE9-2409-45E1-A538-4C53EEEE04A7"), exclusiveto, contract] */
                 MIDL_INTERFACE("041C1FE9-2409-45E1-A538-4C53EEEE04A7")
-                IDataPackage2 : IInspectable
+                IDataPackage2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetApplicationLink(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * value
                         ) = 0;
@@ -3132,8 +3190,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("88F31F5D-787B-4D32-965A-A9838105A056"), exclusiveto, contract] */
                 MIDL_INTERFACE("88F31F5D-787B-4D32-965A-A9838105A056")
-                IDataPackage3 : IInspectable
+                IDataPackage3 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ShareCompleted(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__CShareCompletedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3181,8 +3240,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("CD1C93EB-4C4C-443A-A8D3-F5C241E91689"), exclusiveto, contract] */
                 MIDL_INTERFACE("CD1C93EB-4C4C-443A-A8D3-F5C241E91689")
-                IDataPackagePropertySet : IInspectable
+                IDataPackagePropertySet : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Title(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3251,8 +3311,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("EB505D4A-9800-46AA-B181-7B6F0F2B919A"), exclusiveto, contract] */
                 MIDL_INTERFACE("EB505D4A-9800-46AA-B181-7B6F0F2B919A")
-                IDataPackagePropertySet2 : IInspectable
+                IDataPackagePropertySet2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentSourceWebLink(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                         ) = 0;
@@ -3318,8 +3379,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("9E87FD9B-5205-401B-874A-455653BD39E8"), exclusiveto, contract] */
                 MIDL_INTERFACE("9E87FD9B-5205-401B-874A-455653BD39E8")
-                IDataPackagePropertySet3 : IInspectable
+                IDataPackagePropertySet3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnterpriseId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3338,6 +3400,50 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet3;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.DataPackagePropertySet
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IDataPackagePropertySet4[] = L"Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet4";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [object, uuid("6390EBF5-1739-4C74-B22F-865FAB5E8545"), exclusiveto, contract] */
+                MIDL_INTERFACE("6390EBF5-1739-4C74-B22F-865FAB5E8545")
+                IDataPackagePropertySet4 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentSourceUserActivityJson(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ContentSourceUserActivityJson(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IDataPackagePropertySet4=_uuidof(IDataPackagePropertySet4);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3366,8 +3472,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("B94CEC01-0C1A-4C57-BE55-75D01289735D"), exclusiveto, contract] */
                 MIDL_INTERFACE("B94CEC01-0C1A-4C57-BE55-75D01289735D")
-                IDataPackagePropertySetView : IInspectable
+                IDataPackagePropertySetView : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Title(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3421,8 +3528,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("6054509B-8EBE-4FEB-9C1E-75E69DE54B84"), exclusiveto, contract] */
                 MIDL_INTERFACE("6054509B-8EBE-4FEB-9C1E-75E69DE54B84")
-                IDataPackagePropertySetView2 : IInspectable
+                IDataPackagePropertySetView2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PackageFamilyName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3473,8 +3581,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("DB764CE5-D174-495C-84FC-1A51F6AB45D7"), exclusiveto, contract] */
                 MIDL_INTERFACE("DB764CE5-D174-495C-84FC-1A51F6AB45D7")
-                IDataPackagePropertySetView3 : IInspectable
+                IDataPackagePropertySetView3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnterpriseId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3490,6 +3599,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView3;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IDataPackagePropertySetView4[] = L"Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView4";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [object, uuid("4474C80D-D16F-40AE-9580-6F8562B94235"), exclusiveto, contract] */
+                MIDL_INTERFACE("4474C80D-D16F-40AE-9580-6F8562B94235")
+                IDataPackagePropertySetView4 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentSourceUserActivityJson(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IDataPackagePropertySetView4=_uuidof(IDataPackagePropertySetView4);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3513,8 +3663,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("7B840471-5900-4D85-A90B-10CB85FE3552"), exclusiveto, contract] */
                 MIDL_INTERFACE("7B840471-5900-4D85-A90B-10CB85FE3552")
-                IDataPackageView : IInspectable
+                IDataPackageView : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Properties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView * * value
                         ) = 0;
@@ -3599,8 +3750,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("40ECBA95-2450-4C1D-B6B4-ED45463DEE9C"), exclusiveto, contract] */
                 MIDL_INTERFACE("40ECBA95-2450-4C1D-B6B4-ED45463DEE9C")
-                IDataPackageView2 : IInspectable
+                IDataPackageView2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetApplicationLinkAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CFoundation__CUri * * operation
                         ) = 0;
@@ -3642,8 +3794,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("D37771A8-DDAD-4288-8428-D1CAE394128B"), exclusiveto, contract] */
                 MIDL_INTERFACE("D37771A8-DDAD-4288-8428-D1CAE394128B")
-                IDataPackageView3 : IInspectable
+                IDataPackageView3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestAccessAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult * * operation
                         ) = 0;
@@ -3689,8 +3842,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("DFE96F1F-E042-4433-A09F-26D6FFDA8B85"), exclusiveto, contract] */
                 MIDL_INTERFACE("DFE96F1F-E042-4433-A09F-26D6FFDA8B85")
-                IDataPackageView4 : IInspectable
+                IDataPackageView4 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetAcceptedFormatId(
                         /* [in] */__RPC__in HSTRING formatId
                         ) = 0;
@@ -3729,8 +3883,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("C2CF2373-2D26-43D9-B69D-DCB86D03F6DA"), exclusiveto, contract] */
                 MIDL_INTERFACE("C2CF2373-2D26-43D9-B69D-DCB86D03F6DA")
-                IDataProviderDeferral : IInspectable
+                IDataProviderDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -3767,8 +3922,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("EBBC7157-D3C8-47DA-ACDE-F82388D5F716"), exclusiveto, contract] */
                 MIDL_INTERFACE("EBBC7157-D3C8-47DA-ACDE-F82388D5F716")
-                IDataProviderRequest : IInspectable
+                IDataProviderRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FormatId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3816,8 +3972,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("4341AE3B-FC12-4E53-8C02-AC714C415A27"), exclusiveto, contract] */
                 MIDL_INTERFACE("4341AE3B-FC12-4E53-8C02-AC714C415A27")
-                IDataRequest : IInspectable
+                IDataRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackage * * value
                         ) = 0;
@@ -3868,8 +4025,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("6DC4B89F-0386-4263-87C1-ED7DCE30890E"), exclusiveto, contract] */
                 MIDL_INTERFACE("6DC4B89F-0386-4263-87C1-ED7DCE30890E")
-                IDataRequestDeferral : IInspectable
+                IDataRequestDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -3906,8 +4064,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("CB8BA807-6AC5-43C9-8AC5-9BA232163182"), exclusiveto, contract] */
                 MIDL_INTERFACE("CB8BA807-6AC5-43C9-8AC5-9BA232163182")
-                IDataRequestedEventArgs : IInspectable
+                IDataRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataRequest * * value
                         ) = 0;
@@ -3946,8 +4105,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("A5CAEE9B-8708-49D1-8D36-67D25A8DA00C"), exclusiveto, contract] */
                 MIDL_INTERFACE("A5CAEE9B-8708-49D1-8D36-67D25A8DA00C")
-                IDataTransferManager : IInspectable
+                IDataTransferManager : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_DataRequested(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs * eventHandler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * eventCookie
@@ -3997,8 +4157,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("30AE7D71-8BA8-4C02-8E3F-DDB23B388715"), exclusiveto, contract] */
                 MIDL_INTERFACE("30AE7D71-8BA8-4C02-8E3F-DDB23B388715")
-                IDataTransferManager2 : IInspectable
+                IDataTransferManager2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ShareProvidersRequested(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CShareProvidersRequestedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -4041,8 +4202,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("A9DA01AA-E00E-4CFE-AA44-2DD932DCA3D8"), exclusiveto, contract] */
                 MIDL_INTERFACE("A9DA01AA-E00E-4CFE-AA44-2DD932DCA3D8")
-                IDataTransferManagerStatics : IInspectable
+                IDataTransferManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ShowShareUI(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataTransferManager * * value
@@ -4082,8 +4244,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("C54EC2EC-9F97-4D63-9868-395E271AD8F5"), exclusiveto, contract] */
                 MIDL_INTERFACE("C54EC2EC-9F97-4D63-9868-395E271AD8F5")
-                IDataTransferManagerStatics2 : IInspectable
+                IDataTransferManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4122,8 +4285,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("05845473-6C82-4F5C-AC23-62E458361FAC"), exclusiveto, contract] */
                 MIDL_INTERFACE("05845473-6C82-4F5C-AC23-62E458361FAC")
-                IDataTransferManagerStatics3 : IInspectable
+                IDataTransferManagerStatics3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowShareUIWithOptions(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IShareUIOptions * options
                         ) = 0;
@@ -4162,8 +4326,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("E22E7749-DD70-446F-AEFC-61CEE59F655E"), exclusiveto, contract] */
                 MIDL_INTERFACE("E22E7749-DD70-446F-AEFC-61CEE59F655E")
-                IHtmlFormatHelperStatics : IInspectable
+                IHtmlFormatHelperStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetStaticFragment(
                         /* [in] */__RPC__in HSTRING htmlFormat,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * htmlFragment
@@ -4207,8 +4372,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("E7AF329D-051D-4FAB-B1A9-47FD77F70A41"), exclusiveto, contract] */
                 MIDL_INTERFACE("E7AF329D-051D-4FAB-B1A9-47FD77F70A41")
-                IOperationCompletedEventArgs : IInspectable
+                IOperationCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Operation(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::DataTransfer::DataPackageOperation * value
                         ) = 0;
@@ -4247,8 +4413,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("858FA073-1E19-4105-B2F7-C8478808D562"), exclusiveto, contract] */
                 MIDL_INTERFACE("858FA073-1E19-4105-B2F7-C8478808D562")
-                IOperationCompletedEventArgs2 : IInspectable
+                IOperationCompletedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AcceptedFormatId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4287,8 +4454,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("4574C442-F913-4F60-9DF7-CC4060AB1916"), exclusiveto, contract] */
                 MIDL_INTERFACE("4574C442-F913-4F60-9DF7-CC4060AB1916")
-                IShareCompletedEventArgs : IInspectable
+                IShareCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShareTarget(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IShareTargetInfo * * value
                         ) = 0;
@@ -4327,8 +4495,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("2FABE026-443E-4CDA-AF25-8D81070EFD80"), exclusiveto, contract] */
                 MIDL_INTERFACE("2FABE026-443E-4CDA-AF25-8D81070EFD80")
-                IShareProvider : IInspectable
+                IShareProvider : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Title(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4379,8 +4548,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("172A174C-E79E-4F6D-B07D-128F469E0296"), exclusiveto, contract] */
                 MIDL_INTERFACE("172A174C-E79E-4F6D-B07D-128F469E0296")
-                IShareProviderFactory : IInspectable
+                IShareProviderFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING title,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * displayIcon,
@@ -4423,8 +4593,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("19CEF937-D435-4179-B6AF-14E0492B69F6"), exclusiveto, contract] */
                 MIDL_INTERFACE("19CEF937-D435-4179-B6AF-14E0492B69F6")
-                IShareProviderOperation : IInspectable
+                IShareProviderOperation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView * * value
                         ) = 0;
@@ -4467,8 +4638,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("F888F356-A3F8-4FCE-85E4-8826E63BE799"), exclusiveto, contract] */
                 MIDL_INTERFACE("F888F356-A3F8-4FCE-85E4-8826E63BE799")
-                IShareProvidersRequestedEventArgs : IInspectable
+                IShareProvidersRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Providers(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CApplicationModel__CDataTransfer__CShareProvider * * value
                         ) = 0;
@@ -4513,8 +4685,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("385BE607-C6E8-4114-B294-28F3BB6F9904"), exclusiveto, contract] */
                 MIDL_INTERFACE("385BE607-C6E8-4114-B294-28F3BB6F9904")
-                IShareTargetInfo : IInspectable
+                IShareTargetInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppUserModelId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4556,8 +4729,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("72FA8A80-342F-4D90-9551-2AE04E37680C"), exclusiveto, contract] */
                 MIDL_INTERFACE("72FA8A80-342F-4D90-9551-2AE04E37680C")
-                IShareUIOptions : IInspectable
+                IShareUIOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Theme(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::DataTransfer::ShareUITheme * value
                         ) = 0;
@@ -4605,8 +4779,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("C6132ADA-34B1-4849-BD5F-D09FEE3158C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("C6132ADA-34B1-4849-BD5F-D09FEE3158C5")
-                ISharedStorageAccessManagerStatics : IInspectable
+                ISharedStorageAccessManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AddFile(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * outToken
@@ -4653,8 +4828,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("7ED681A1-A880-40C9-B4ED-0BEE1E15F549"), exclusiveto, contract] */
                 MIDL_INTERFACE("7ED681A1-A880-40C9-B4ED-0BEE1E15F549")
-                IStandardDataFormatsStatics : IInspectable
+                IStandardDataFormatsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Text(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4712,8 +4888,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("42A254F4-9D76-42E8-861B-47C25DD0CF71"), exclusiveto, contract] */
                 MIDL_INTERFACE("42A254F4-9D76-42E8-861B-47C25DD0CF71")
-                IStandardDataFormatsStatics2 : IInspectable
+                IStandardDataFormatsStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebLink(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4732,6 +4909,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics2;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.StandardDataFormats
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IStandardDataFormatsStatics3[] = L"Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics3";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [object, uuid("3B57B069-01D4-474C-8B5F-BC8E27F38B21"), exclusiveto, contract] */
+                MIDL_INTERFACE("3B57B069-01D4-474C-8B5F-BC8E27F38B21")
+                IStandardDataFormatsStatics3 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UserActivityJsonArray(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStandardDataFormatsStatics3=_uuidof(IStandardDataFormatsStatics3);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4755,8 +4973,9 @@ namespace ABI {
             namespace DataTransfer {
                 /* [object, uuid("CA6FB8AC-2987-4EE3-9C54-D8AFBCB86C1D"), exclusiveto, contract] */
                 MIDL_INTERFACE("CA6FB8AC-2987-4EE3-9C54-D8AFBCB86C1D")
-                ITargetApplicationChosenEventArgs : IInspectable
+                ITargetApplicationChosenEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ApplicationName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4835,6 +5054,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3
+ *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet4
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -4861,6 +5081,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3
+ *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView4
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -5248,6 +5469,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics3 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
@@ -5342,6 +5564,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView;
@@ -5359,6 +5587,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage
 typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView3 __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView3;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView_FWD_DEFINED__
@@ -5521,6 +5755,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDat
 typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics2 __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics2;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3 __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CITargetApplicationChosenEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CITargetApplicationChosenEventArgs_FWD_DEFINED__
@@ -6227,6 +6467,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDa
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_INTERFACE_DEFINED__
 
@@ -6273,6 +6514,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDa
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -6331,6 +6573,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDa
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -6377,6 +6620,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDa
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -6435,6 +6679,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDa
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_INTERFACE_DEFINED__
 
@@ -6481,6 +6726,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDa
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -9097,6 +9343,9 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CShareUITheme __x_
 
 
 
+
+
+
 /*
  *
  * Struct Windows.ApplicationModel.DataTransfer.DataPackageOperation
@@ -10239,6 +10488,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPa
 
 /*
  *
+ * Interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.DataPackagePropertySet
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IDataPackagePropertySet4[] = L"Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet4";
+/* [object, uuid("6390EBF5-1739-4C74-B22F-865FAB5E8545"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContentSourceUserActivityJson )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ContentSourceUserActivityJson )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4 * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_get_ContentSourceUserActivityJson(This,value) \
+    ( (This)->lpVtbl->get_ContentSourceUserActivityJson(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_put_ContentSourceUserActivityJson(This,value) \
+    ( (This)->lpVtbl->put_ContentSourceUserActivityJson(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySet4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10582,6 +10931,99 @@ interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageProperty
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView3;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IDataPackagePropertySetView4[] = L"Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView4";
+/* [object, uuid("4474C80D-D16F-40AE-9580-6F8562B94235"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContentSourceUserActivityJson )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_get_ContentSourceUserActivityJson(This,value) \
+    ( (This)->lpVtbl->get_ContentSourceUserActivityJson(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -13467,6 +13909,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStanda
 
 /*
  *
+ * Interface Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.StandardDataFormats
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IStandardDataFormatsStatics3[] = L"Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics3";
+/* [object, uuid("3B57B069-01D4-474C-8B5F-BC8E27F38B21"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_UserActivityJsonArray )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_get_UserActivityJsonArray(This,value) \
+    ( (This)->lpVtbl->get_UserActivityJsonArray(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIStandardDataFormatsStatics3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.DataTransfer.ITargetApplicationChosenEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -13619,6 +14154,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3
+ *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet4
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -13645,6 +14181,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3
+ *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView4
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -14032,6 +14569,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics3 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *

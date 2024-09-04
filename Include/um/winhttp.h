@@ -449,6 +449,9 @@ typedef struct
 #define WINHTTP_OPTION_WEB_SOCKET_SEND_BUFFER_SIZE    123
 
 
+#define WINHTTP_OPTION_TCP_PRIORITY_HINT              128
+
+
 #define WINHTTP_OPTION_CONNECTION_FILTER              131
 
 
@@ -459,7 +462,9 @@ typedef struct
 #define WINHTTP_OPTION_KDC_PROXY_SETTINGS             136
 
 
-#define WINHTTP_LAST_OPTION                           WINHTTP_OPTION_KDC_PROXY_SETTINGS
+#define WINHTTP_OPTION_ENCODE_EXTRA                   138
+
+#define WINHTTP_LAST_OPTION                           WINHTTP_OPTION_ENCODE_EXTRA
 
 #define WINHTTP_OPTION_USERNAME                      0x1000
 #define WINHTTP_OPTION_PASSWORD                      0x1001

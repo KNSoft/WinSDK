@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.store.preview.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1501,6 +1503,11 @@ namespace ABI {
                         StoreSystemFeature_VideoMemory1GB = 33,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
+                        StoreSystemFeature_ArchitectureArm64 = 34,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
                     };
                     
                 } /* Windows */
@@ -1532,8 +1539,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("728F7FC0-8628-42EC-84A2-07780EB44D8B"), exclusiveto, contract] */
                     MIDL_INTERFACE("728F7FC0-8628-42EC-84A2-07780EB44D8B")
-                    IStoreConfigurationStatics : IInspectable
+                    IStoreConfigurationStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SetSystemConfiguration(
                             /* [in] */__RPC__in HSTRING catalogHardwareManufacturerId,
                             /* [in] */__RPC__in HSTRING catalogStoreContentModifierId,
@@ -1596,8 +1604,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("657C4595-C8B7-4FE9-9F4C-4D71027D347E"), exclusiveto, contract] */
                     MIDL_INTERFACE("657C4595-C8B7-4FE9-9F4C-4D71027D347E")
-                    IStoreConfigurationStatics2 : IInspectable
+                    IStoreConfigurationStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PurchasePromptingPolicy(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_UINT32 * * value
                             ) = 0;
@@ -1641,8 +1650,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("6D45F57C-F144-4CB5-9D3F-4EB05E30B6D3"), exclusiveto, contract] */
                     MIDL_INTERFACE("6D45F57C-F144-4CB5-9D3F-4EB05E30B6D3")
-                    IStoreConfigurationStatics3 : IInspectable
+                    IStoreConfigurationStatics3 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE HasStoreWebAccount(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1708,8 +1718,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("20FF56D2-4EE3-4CF0-9B12-552C03310F75"), exclusiveto, contract] */
                     MIDL_INTERFACE("20FF56D2-4EE3-4CF0-9B12-552C03310F75")
-                    IStoreConfigurationStatics4 : IInspectable
+                    IStoreConfigurationStatics4 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetStoreWebAccountId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
@@ -1775,8 +1786,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("F292DC08-C654-43AC-A21F-34801C9D3388"), exclusiveto, contract] */
                     MIDL_INTERFACE("F292DC08-C654-43AC-A21F-34801C9D3388")
-                    IStoreHardwareManufacturerInfo : IInspectable
+                    IStoreHardwareManufacturerInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HardwareManufacturerId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1826,8 +1838,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("8A157241-840E-49A9-BC01-5D5B01FBC8E9"), exclusiveto, contract] */
                     MIDL_INTERFACE("8A157241-840E-49A9-BC01-5D5B01FBC8E9")
-                    IStorePreview : IInspectable
+                    IStorePreview : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE RequestProductPurchaseByProductIdAndSkuIdAsync(
                             /* [in] */__RPC__in HSTRING productId,
                             /* [in] */__RPC__in HSTRING skuId,
@@ -1873,8 +1886,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("1937DBB3-6C01-4C9D-85CD-5BABAAC2B351"), exclusiveto, contract] */
                     MIDL_INTERFACE("1937DBB3-6C01-4C9D-85CD-5BABAAC2B351")
-                    IStorePreviewProductInfo : IInspectable
+                    IStorePreviewProductInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1927,8 +1941,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("B0DAAED1-D6C5-4E53-A043-FBA0D8E61231"), exclusiveto, contract] */
                     MIDL_INTERFACE("B0DAAED1-D6C5-4E53-A043-FBA0D8E61231")
-                    IStorePreviewPurchaseResults : IInspectable
+                    IStorePreviewPurchaseResults : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductPurchaseStatus(
                             /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Store::Preview::StorePreviewProductPurchaseStatus * value
                             ) = 0;
@@ -1969,8 +1984,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("81FD76E2-0B26-48D9-98CE-27461C669D6C"), exclusiveto, contract] */
                     MIDL_INTERFACE("81FD76E2-0B26-48D9-98CE-27461C669D6C")
-                    IStorePreviewSkuInfo : IInspectable
+                    IStorePreviewSkuInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2035,8 +2051,9 @@ namespace ABI {
                 namespace Preview {
                     /* [object, uuid("06A50525-E715-4123-9276-9D6F865BA55F"), exclusiveto, contract] */
                     MIDL_INTERFACE("06A50525-E715-4123-9276-9D6F865BA55F")
-                    IWebAuthenticationCoreManagerHelper : IInspectable
+                    IWebAuthenticationCoreManagerHelper : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestTokenWithUIElementHostingAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest * request,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * uiElement,
@@ -3958,6 +3975,11 @@ enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CStoreSystemFeature
     
     StoreSystemFeature_VideoMemory1GB = 33,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    StoreSystemFeature_ArchitectureArm64 = 34,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
     
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000

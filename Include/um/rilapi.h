@@ -150,11 +150,6 @@ HRESULT RIL_ResetModem(HRIL hRil, LPVOID lpContext, RILRESETMODEMKIND dwResetKin
     // In: RILRESETMODEMKIND
     // Async out: none (status only)
 
-HRESULT RIL_ResetModem_V2(HRIL hRil, LPVOID lpContext, const RILRESETMODEMPARAMS *params);
-    // RIL_COMMAND_RESETMODEM
-    // In: RILRESETMODEMPARAMS
-    // Async out: none (status only)
-
 //////////////////////////////////////////////////
 // UICC Slots and Cards
 //////////////////////////////////////////////////
@@ -518,9 +513,9 @@ HRESULT RIL_ManageCalls_V3(HRIL hRil, LPVOID lpContext, DWORD dwExecutor, RILMAN
     // Async out: none (status only)
 
 // modifies the state of circuit switched or packet switched calls.
-HRESULT RIL_ManageCalls(HRIL hRil, LPVOID lpContext, DWORD dwExecutor, RILMANAGECALLPARAMSCOMMAND dwCommand, DWORD dwID, const LPRILCALLMEDIAOFFERANSWERSET lprcmOfferAnswer, const LPRILADDRESS lpraAddress, RILCALLRTTACTION dwRTTAction);
+HRESULT RIL_ManageCalls(HRIL hRil, LPVOID lpContext, DWORD dwExecutor, RILMANAGECALLPARAMSCOMMAND dwCommand, DWORD dwID, const LPRILCALLMEDIAOFFERANSWERSET lprcmOfferAnswer, const LPRILADDRESS lpraAddress, const LPRILCALLRTT lpstRTTInfo);
     // RIL_COMMAND_MANAGECALLS
-    // In: RILMANAGECALLSPARAMS_V3
+    // In: RILMANAGECALLSPARAMS_V4
     // Async out: none (status only)
     
 HRESULT RIL_GetCallList(HRIL hRil, LPVOID lpContext, DWORD dwExecutor);

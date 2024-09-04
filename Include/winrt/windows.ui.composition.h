@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.composition.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -289,6 +291,76 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CIAmbientLight2 ABI::Windows::UI::Composition::IAmbientLight2
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CIAmbientLight2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIAnimationController_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationController_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IAnimationController;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController ABI::Windows::UI::Composition::IAnimationController
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIAnimationController_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IAnimationControllerStatics;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics ABI::Windows::UI::Composition::IAnimationControllerStatics
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IBounceScalarNaturalMotionAnimation;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation ABI::Windows::UI::Composition::IBounceScalarNaturalMotionAnimation
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IBounceVector2NaturalMotionAnimation;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation ABI::Windows::UI::Composition::IBounceVector2NaturalMotionAnimation
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IBounceVector3NaturalMotionAnimation;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation ABI::Windows::UI::Composition::IBounceVector3NaturalMotionAnimation
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation_FWD_DEFINED__
@@ -570,6 +642,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatch_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionContainerShape;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape ABI::Windows::UI::Composition::ICompositionContainerShape
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_FWD_DEFINED__
 namespace ABI {
@@ -696,6 +782,48 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameterFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionEllipseGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry ABI::Windows::UI::Composition::ICompositionEllipseGeometry
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry ABI::Windows::UI::Composition::ICompositionGeometry
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionGeometryFactory;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory ABI::Windows::UI::Composition::ICompositionGeometryFactory
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionGradientBrush_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionGradientBrush_FWD_DEFINED__
 namespace ABI {
@@ -780,6 +908,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLight2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionLight3;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 ABI::Windows::UI::Composition::ICompositionLight3
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_FWD_DEFINED__
 namespace ABI {
@@ -793,6 +935,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory ABI::Windows::UI::Composition::ICompositionLightFactory
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionLineGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry ABI::Windows::UI::Composition::ICompositionLineGeometry
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLinearGradientBrush_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionLinearGradientBrush_FWD_DEFINED__
@@ -878,6 +1034,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionObject3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionObject4;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionObject4 ABI::Windows::UI::Composition::ICompositionObject4
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_FWD_DEFINED__
 namespace ABI {
@@ -891,6 +1061,48 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory ABI::Windows::UI::Composition::ICompositionObjectFactory
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPath_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPath_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionPath;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPath ABI::Windows::UI::Composition::ICompositionPath
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionPath_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionPathFactory;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory ABI::Windows::UI::Composition::ICompositionPathFactory
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionPathGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry ABI::Windows::UI::Composition::ICompositionPathGeometry
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet_FWD_DEFINED__
@@ -919,6 +1131,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2 ABI::Windows::UI::Composition::ICompositionPropertySet2
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionRectangleGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry ABI::Windows::UI::Composition::ICompositionRectangleGeometry
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionRoundedRectangleGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry ABI::Windows::UI::Composition::ICompositionRoundedRectangleGeometry
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatch_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatch_FWD_DEFINED__
@@ -961,6 +1201,48 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory ABI::Windows::UI::Composition::ICompositionShadowFactory
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionShape_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionShape_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionShape;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape ABI::Windows::UI::Composition::ICompositionShape
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionShape_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionShapeFactory;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory ABI::Windows::UI::Composition::ICompositionShapeFactory
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionSpriteShape;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape ABI::Windows::UI::Composition::ICompositionSpriteShape
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_FWD_DEFINED__
@@ -1031,6 +1313,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory ABI::Windows::UI::Composition::ICompositionTargetFactory
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionViewBox;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox ABI::Windows::UI::Composition::ICompositionViewBox
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_FWD_DEFINED__
@@ -1115,6 +1411,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CICompositor4 ABI::Windows::UI::Composition::ICompositor4
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositor4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositor5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositor5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositor5;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5 ABI::Windows::UI::Composition::ICompositor5
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositor5_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositorStatics;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CICompositorStatics ABI::Windows::UI::Composition::ICompositorStatics
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_FWD_DEFINED__
@@ -1382,6 +1706,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CINaturalMotionAnimationFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IPathKeyFrameAnimation;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation ABI::Windows::UI::Composition::IPathKeyFrameAnimation
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIPointLight_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIPointLight_FWD_DEFINED__
 namespace ABI {
@@ -1409,6 +1747,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CIPointLight2 ABI::Windows::UI::Composition::IPointLight2
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CIPointLight2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIPointLight3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIPointLight3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IPointLight3;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3 ABI::Windows::UI::Composition::IPointLight3
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIPointLight3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAnimation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAnimation_FWD_DEFINED__
@@ -1480,6 +1832,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CIScalarNaturalMotionAnimationFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IShapeVisual;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual ABI::Windows::UI::Composition::IShapeVisual
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CISpotLight_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CISpotLight_FWD_DEFINED__
 namespace ABI {
@@ -1507,6 +1873,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CISpotLight2 ABI::Windows::UI::Composition::ISpotLight2
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CISpotLight2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CISpotLight3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CISpotLight3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ISpotLight3;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3 ABI::Windows::UI::Composition::ISpotLight3
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CISpotLight3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CISpringScalarNaturalMotionAnimation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CISpringScalarNaturalMotionAnimation_FWD_DEFINED__
@@ -2009,6 +2389,79 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Composition {
+                class CompositionShape;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterator_1_Windows__CUI__CComposition__CCompositionShape_USE
+#define DEF___FIIterator_1_Windows__CUI__CComposition__CCompositionShape_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("ff8d5b3b-ab18-5307-9ffe-e3b5d63452a4"))
+IIterator<ABI::Windows::UI::Composition::CompositionShape*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Composition::CompositionShape*, ABI::Windows::UI::Composition::ICompositionShape*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.Composition.CompositionShape>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::UI::Composition::CompositionShape*> __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_t;
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CComposition__CCompositionShape_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Composition::ICompositionShape*>
+//#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Composition::ICompositionShape*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CUI__CComposition__CCompositionShape_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterable_1_Windows__CUI__CComposition__CCompositionShape_USE
+#define DEF___FIIterable_1_Windows__CUI__CComposition__CCompositionShape_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("1135adf5-db12-55e8-ae0f-bd8d914bd399"))
+IIterable<ABI::Windows::UI::Composition::CompositionShape*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Composition::CompositionShape*, ABI::Windows::UI::Composition::ICompositionShape*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.Composition.CompositionShape>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::UI::Composition::CompositionShape*> __FIIterable_1_Windows__CUI__CComposition__CCompositionShape_t;
+#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CComposition__CCompositionShape_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Composition::ICompositionShape*>
+//#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Composition::ICompositionShape*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CUI__CComposition__CCompositionShape_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
                 class Visual;
             } /* Windows */
         } /* UI */
@@ -2175,6 +2628,38 @@ typedef IVectorView<ABI::Windows::UI::Composition::CompositionColorGradientStop*
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_USE
+#define DEF___FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("e7e27ef4-4ec6-5b8a-a858-561b9534a885"))
+IVectorView<ABI::Windows::UI::Composition::CompositionShape*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Composition::CompositionShape*, ABI::Windows::UI::Composition::ICompositionShape*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.Composition.CompositionShape>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::UI::Composition::CompositionShape*> __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_t;
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Composition::ICompositionShape*>
+//#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Composition::ICompositionShape*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FIVector_1_Windows__CUI__CComposition__CCompositionColorGradientStop_USE
@@ -2205,6 +2690,38 @@ typedef IVector<ABI::Windows::UI::Composition::CompositionColorGradientStop*> __
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVector_1_Windows__CUI__CComposition__CCompositionShape_USE
+#define DEF___FIVector_1_Windows__CUI__CComposition__CCompositionShape_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("42d4219a-be1b-5091-8f1e-90270840fc2d"))
+IVector<ABI::Windows::UI::Composition::CompositionShape*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Composition::CompositionShape*, ABI::Windows::UI::Composition::ICompositionShape*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.UI.Composition.CompositionShape>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVector<ABI::Windows::UI::Composition::CompositionShape*> __FIVector_1_Windows__CUI__CComposition__CCompositionShape_t;
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Composition::ICompositionShape*>
+//#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Composition::ICompositionShape*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVector_1_Windows__CUI__CComposition__CCompositionShape_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 namespace ABI {
@@ -2311,6 +2828,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_USE
@@ -2339,6 +2857,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Composition::CompositionGraphicsDev
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
@@ -2485,6 +3004,122 @@ typedef IMap<HSTRING,HSTRING> __FIMap_2_HSTRING_HSTRING_t;
 //#define __FIMap_2_HSTRING_HSTRING_t ABI::Windows::Foundation::Collections::IMap<HSTRING,HSTRING>
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIMap_2_HSTRING_HSTRING_USE */
+
+
+
+
+#ifndef DEF___FIIterator_1_float_USE
+#define DEF___FIIterator_1_float_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("42614e61-b0aa-5e72-9354-2771db20b7a8"))
+IIterator<float> : IIterator_impl<float> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Single>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<float> __FIIterator_1_float_t;
+#define __FIIterator_1_float ABI::Windows::Foundation::Collections::__FIIterator_1_float_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_float ABI::Windows::Foundation::Collections::IIterator<FLOAT>
+//#define __FIIterator_1_float_t ABI::Windows::Foundation::Collections::IIterator<FLOAT>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_float_USE */
+
+
+
+
+#ifndef DEF___FIIterable_1_float_USE
+#define DEF___FIIterable_1_float_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("b01bee51-063a-5fda-bd72-d76637bb8cb8"))
+IIterable<float> : IIterable_impl<float> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Single>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<float> __FIIterable_1_float_t;
+#define __FIIterable_1_float ABI::Windows::Foundation::Collections::__FIIterable_1_float_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_float ABI::Windows::Foundation::Collections::IIterable<FLOAT>
+//#define __FIIterable_1_float_t ABI::Windows::Foundation::Collections::IIterable<FLOAT>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_float_USE */
+
+
+
+
+#ifndef DEF___FIVectorView_1_float_USE
+#define DEF___FIVectorView_1_float_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("7bca64fd-150c-5d50-b56b-9f4f474c5930"))
+IVectorView<float> : IVectorView_impl<float> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Single>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<float> __FIVectorView_1_float_t;
+#define __FIVectorView_1_float ABI::Windows::Foundation::Collections::__FIVectorView_1_float_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_float ABI::Windows::Foundation::Collections::IVectorView<FLOAT>
+//#define __FIVectorView_1_float_t ABI::Windows::Foundation::Collections::IVectorView<FLOAT>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_float_USE */
+
+
+
+
+#ifndef DEF___FIVector_1_float_USE
+#define DEF___FIVector_1_float_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("61cf693f-db4c-579f-b905-5dd3d23cfd4d"))
+IVector<float> : IVector_impl<float> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Single>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVector<float> __FIVector_1_float_t;
+#define __FIVector_1_float ABI::Windows::Foundation::Collections::__FIVector_1_float_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_float ABI::Windows::Foundation::Collections::IVector<FLOAT>
+//#define __FIVector_1_float_t ABI::Windows::Foundation::Collections::IVector<FLOAT>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVector_1_float_USE */
 
 
 
@@ -2655,6 +3290,19 @@ typedef IReference<struct ABI::Windows::Foundation::Numerics::Vector3> __FIRefer
 
 
 
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IAsyncAction;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIAsyncAction ABI::Windows::Foundation::IAsyncAction
+
+#endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 namespace ABI {
@@ -2818,6 +3466,19 @@ namespace ABI {
 
 
 
+#ifndef ____x_ABI_CWindows_CGraphics_CIGeometrySource2D_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CIGeometrySource2D_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            interface IGeometrySource2D;
+        } /* Windows */
+    } /* Graphics */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CIGeometrySource2D ABI::Windows::Graphics::IGeometrySource2D
+
+#endif // ____x_ABI_CWindows_CGraphics_CIGeometrySource2D_FWD_DEFINED__
+
+
 namespace ABI {
     namespace Windows {
         namespace Graphics {
@@ -2906,6 +3567,17 @@ namespace ABI {
 
 
 
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                
+                typedef enum AnimationControllerProgressBehavior : int AnimationControllerProgressBehavior;
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -3072,6 +3744,55 @@ namespace ABI {
         } /* UI */
     } /* Composition */} /* ABI */
 
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                
+                typedef enum CompositionStrokeCap : int CompositionStrokeCap;
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                
+                typedef enum CompositionStrokeLineJoin : int CompositionStrokeLineJoin;
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3193,6 +3914,46 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Composition {
+                class AnimationController;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class BounceScalarNaturalMotionAnimation;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class BounceVector2NaturalMotionAnimation;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class BounceVector3NaturalMotionAnimation;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
                 class ColorKeyFrameAnimation;
             } /* Windows */
         } /* UI */
@@ -3277,6 +4038,16 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Composition {
+                class CompositionContainerShape;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
                 class CompositionDrawingSurface;
             } /* Windows */
         } /* UI */
@@ -3327,6 +4098,26 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Composition {
+                class CompositionEllipseGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class CompositionGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
                 class CompositionGradientBrush;
             } /* Windows */
         } /* UI */
@@ -3339,6 +4130,16 @@ namespace ABI {
         namespace UI {
             namespace Composition {
                 class CompositionLight;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class CompositionLineGeometry;
             } /* Windows */
         } /* UI */
     } /* Composition */} /* ABI */
@@ -3388,7 +4189,47 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Composition {
+                class CompositionPath;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class CompositionPathGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
                 class CompositionPropertySet;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class CompositionRectangleGeometry;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class CompositionRoundedRectangleGeometry;
             } /* Windows */
         } /* UI */
     } /* Composition */} /* ABI */
@@ -3414,6 +4255,37 @@ namespace ABI {
     } /* Composition */} /* ABI */
 
 
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class CompositionShapeCollection;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class CompositionSpriteShape;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class CompositionStrokeDashArray;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -3429,6 +4301,16 @@ namespace ABI {
         namespace UI {
             namespace Composition {
                 class CompositionTarget;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class CompositionViewBox;
             } /* Windows */
         } /* UI */
     } /* Composition */} /* ABI */
@@ -3578,6 +4460,16 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Composition {
+                class PathKeyFrameAnimation;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
                 class PointLight;
             } /* Windows */
         } /* UI */
@@ -3610,6 +4502,16 @@ namespace ABI {
         namespace UI {
             namespace Composition {
                 class ScalarNaturalMotionAnimation;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                class ShapeVisual;
             } /* Windows */
         } /* UI */
     } /* Composition */} /* ABI */
@@ -3752,6 +4654,33 @@ namespace ABI {
 
 
 
+
+
+/*
+ *
+ * Struct Windows.UI.Composition.AnimationControllerProgressBehavior
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [v1_enum, contract] */
+                enum AnimationControllerProgressBehavior : int
+                {
+                    AnimationControllerProgressBehavior_Default = 0,
+                    AnimationControllerProgressBehavior_IncludesDelayTime = 1,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4192,6 +5121,64 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.UI.Composition.CompositionStrokeCap
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [v1_enum, contract] */
+                enum CompositionStrokeCap : int
+                {
+                    CompositionStrokeCap_Flat = 0,
+                    CompositionStrokeCap_Square = 1,
+                    CompositionStrokeCap_Round = 2,
+                    CompositionStrokeCap_Triangle = 3,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.UI.Composition.CompositionStrokeLineJoin
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [v1_enum, contract] */
+                enum CompositionStrokeLineJoin : int
+                {
+                    CompositionStrokeLineJoin_Miter = 0,
+                    CompositionStrokeLineJoin_Bevel = 1,
+                    CompositionStrokeLineJoin_Round = 2,
+                    CompositionStrokeLineJoin_MiterOrBevel = 3,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.IAmbientLight
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -4211,8 +5198,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("A48130A1-B7C4-46F7-B9BF-DAF43A44E6EE"), exclusiveto, contract] */
                 MIDL_INTERFACE("A48130A1-B7C4-46F7-B9BF-DAF43A44E6EE")
-                IAmbientLight : IInspectable
+                IAmbientLight : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                         ) = 0;
@@ -4254,8 +5242,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("3B64A6BF-5F97-4C94-86E5-042DD386B27D"), exclusiveto, contract] */
                 MIDL_INTERFACE("3B64A6BF-5F97-4C94-86E5-042DD386B27D")
-                IAmbientLight2 : IInspectable
+                IAmbientLight2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Intensity(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -4274,6 +5263,258 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIAmbientLight2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIAmbientLight2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IAnimationController
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.AnimationController
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIAnimationController_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationController_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IAnimationController[] = L"Windows.UI.Composition.IAnimationController";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("C934EFD2-0722-4F5F-A4E2-9510F3D43BF7"), exclusiveto, contract] */
+                MIDL_INTERFACE("C934EFD2-0722-4F5F-A4E2-9510F3D43BF7")
+                IAnimationController : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PlaybackRate(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PlaybackRate(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Progress(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Progress(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProgressBehavior(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::AnimationControllerProgressBehavior * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ProgressBehavior(
+                        /* [in] */ABI::Windows::UI::Composition::AnimationControllerProgressBehavior value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Pause(void) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Resume(void) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAnimationController=_uuidof(IAnimationController);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIAnimationController;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIAnimationController_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IAnimationControllerStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.AnimationController
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IAnimationControllerStatics[] = L"Windows.UI.Composition.IAnimationControllerStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("E71164DF-651B-4800-B9E5-6A3BCFED3365"), exclusiveto, contract] */
+                MIDL_INTERFACE("E71164DF-651B-4800-B9E5-6A3BCFED3365")
+                IAnimationControllerStatics : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPlaybackRate(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinPlaybackRate(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAnimationControllerStatics=_uuidof(IAnimationControllerStatics);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IBounceScalarNaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.BounceScalarNaturalMotionAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IBounceScalarNaturalMotionAnimation[] = L"Windows.UI.Composition.IBounceScalarNaturalMotionAnimation";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("BAA30DCC-A633-4618-9B06-7F7C72C87CFF"), exclusiveto, contract] */
+                MIDL_INTERFACE("BAA30DCC-A633-4618-9B06-7F7C72C87CFF")
+                IBounceScalarNaturalMotionAnimation : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Acceleration(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Acceleration(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Restitution(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Restitution(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IBounceScalarNaturalMotionAnimation=_uuidof(IBounceScalarNaturalMotionAnimation);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IBounceVector2NaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.BounceVector2NaturalMotionAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IBounceVector2NaturalMotionAnimation[] = L"Windows.UI.Composition.IBounceVector2NaturalMotionAnimation";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("DA344196-2154-4B3C-88AA-47361204ECCD"), exclusiveto, contract] */
+                MIDL_INTERFACE("DA344196-2154-4B3C-88AA-47361204ECCD")
+                IBounceVector2NaturalMotionAnimation : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Acceleration(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Acceleration(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Restitution(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Restitution(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IBounceVector2NaturalMotionAnimation=_uuidof(IBounceVector2NaturalMotionAnimation);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IBounceVector3NaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.BounceVector3NaturalMotionAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IBounceVector3NaturalMotionAnimation[] = L"Windows.UI.Composition.IBounceVector3NaturalMotionAnimation";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("47DABC31-10D3-4518-86F1-09CAF742D113"), exclusiveto, contract] */
+                MIDL_INTERFACE("47DABC31-10D3-4518-86F1-09CAF742D113")
+                IBounceVector3NaturalMotionAnimation : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Acceleration(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Acceleration(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Restitution(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Restitution(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IBounceVector3NaturalMotionAnimation=_uuidof(IBounceVector3NaturalMotionAnimation);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4297,8 +5538,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("93ADB5E9-8E05-4593-84A3-DCA152781E56"), exclusiveto, contract] */
                 MIDL_INTERFACE("93ADB5E9-8E05-4593-84A3-DCA152781E56")
-                IColorKeyFrameAnimation : IInspectable
+                IColorKeyFrameAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InterpolationColorSpace(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::CompositionColorSpace * value
                         ) = 0;
@@ -4349,8 +5591,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("464C4C2C-1CAA-4061-9B40-E13FDE1503CA"), exclusiveto, contract] */
                 MIDL_INTERFACE("464C4C2C-1CAA-4061-9B40-E13FDE1503CA")
-                ICompositionAnimation : IInspectable
+                ICompositionAnimation : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ClearAllParameters(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE ClearParameter(
                         /* [in] */__RPC__in HSTRING key
@@ -4426,8 +5669,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("369B603E-A80F-4948-93E3-ED23FB38C6CB"), exclusiveto, contract] */
                 MIDL_INTERFACE("369B603E-A80F-4948-93E3-ED23FB38C6CB")
-                ICompositionAnimation2 : IInspectable
+                ICompositionAnimation2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetBooleanParameter(
                         /* [in] */__RPC__in HSTRING key,
                         /* [in] */boolean value
@@ -4473,8 +5717,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("D51E030D-7DA4-4BD7-BC2D-F4517529F43A"), exclusiveto, contract] */
                 MIDL_INTERFACE("D51E030D-7DA4-4BD7-BC2D-F4517529F43A")
-                ICompositionAnimation3 : IInspectable
+                ICompositionAnimation3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InitialValueExpressions(
                         /* [retval, out] */__RPC__deref_out_opt __FIMap_2_HSTRING_HSTRING * * value
                         ) = 0;
@@ -4510,8 +5755,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("1C2C2999-E818-48D3-A6DD-D78C82F8ACE9"), contract] */
                 MIDL_INTERFACE("1C2C2999-E818-48D3-A6DD-D78C82F8ACE9")
-                ICompositionAnimationBase : IInspectable
+                ICompositionAnimationBase : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -4547,8 +5793,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("10F6C4FB-6E51-4C25-BBD3-586A9BEC3EF4"), exclusiveto, contract] */
                 MIDL_INTERFACE("10F6C4FB-6E51-4C25-BBD3-586A9BEC3EF4")
-                ICompositionAnimationFactory : IInspectable
+                ICompositionAnimationFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -4588,8 +5835,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("5E7CC90C-CD14-4E07-8A55-C72527AABDAC"), exclusiveto, contract] */
                 MIDL_INTERFACE("5E7CC90C-CD14-4E07-8A55-C72527AABDAC")
-                ICompositionAnimationGroup : IInspectable
+                ICompositionAnimationGroup : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Count(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -4635,8 +5883,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("C5ACAE58-3898-499E-8D7F-224E91286A5D"), exclusiveto, contract] */
                 MIDL_INTERFACE("C5ACAE58-3898-499E-8D7F-224E91286A5D")
-                ICompositionBackdropBrush : IInspectable
+                ICompositionBackdropBrush : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -4672,8 +5921,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("0D00DAD0-9464-450A-A562-2E2698B0A812"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D00DAD0-9464-450A-A562-2E2698B0A812")
-                ICompositionBatchCompletedEventArgs : IInspectable
+                ICompositionBatchCompletedEventArgs : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -4709,8 +5959,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("AB0D7608-30C0-40E9-B568-B60A6BD1FB46"), exclusiveto, contract] */
                 MIDL_INTERFACE("AB0D7608-30C0-40E9-B568-B60A6BD1FB46")
-                ICompositionBrush : IInspectable
+                ICompositionBrush : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -4746,8 +5997,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("DA53FB4C-4650-47C4-AD76-765379607ED6"), exclusiveto, contract] */
                 MIDL_INTERFACE("DA53FB4C-4650-47C4-AD76-765379607ED6")
-                ICompositionBrushFactory : IInspectable
+                ICompositionBrushFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -4783,8 +6035,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("8253353E-B517-48BC-B1E8-4B3561A2E181"), exclusiveto, contract] */
                 MIDL_INTERFACE("8253353E-B517-48BC-B1E8-4B3561A2E181")
-                ICompositionCapabilities : IInspectable
+                ICompositionCapabilities : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AreEffectsSupported(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4833,8 +6086,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("F7B7A86E-6416-49E5-8DDF-AFE949E20562"), exclusiveto, contract] */
                 MIDL_INTERFACE("F7B7A86E-6416-49E5-8DDF-AFE949E20562")
-                ICompositionCapabilitiesStatics : IInspectable
+                ICompositionCapabilitiesStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionCapabilities * * current
                         ) = 0;
@@ -4873,8 +6127,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("1CCD2A52-CFC7-4ACE-9983-146BB8EB6A3C"), exclusiveto, contract] */
                 MIDL_INTERFACE("1CCD2A52-CFC7-4ACE-9983-146BB8EB6A3C")
-                ICompositionClip : IInspectable
+                ICompositionClip : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -4910,8 +6165,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("5893E069-3516-40E1-89E0-5BA924927235"), exclusiveto, contract] */
                 MIDL_INTERFACE("5893E069-3516-40E1-89E0-5BA924927235")
-                ICompositionClip2 : IInspectable
+                ICompositionClip2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnchorPoint(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
                         ) = 0;
@@ -4989,8 +6245,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("B9484CAF-20C7-4AED-AC4A-9C78BA1302CF"), exclusiveto, contract] */
                 MIDL_INTERFACE("B9484CAF-20C7-4AED-AC4A-9C78BA1302CF")
-                ICompositionClipFactory : IInspectable
+                ICompositionClipFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5026,8 +6283,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("2B264C5E-BF35-4831-8642-CF70C20FFF2F"), exclusiveto, contract] */
                 MIDL_INTERFACE("2B264C5E-BF35-4831-8642-CF70C20FFF2F")
-                ICompositionColorBrush : IInspectable
+                ICompositionColorBrush : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                         ) = 0;
@@ -5069,8 +6327,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("6F00CA92-C801-4E41-9A8F-A53E20F57778"), exclusiveto, contract] */
                 MIDL_INTERFACE("6F00CA92-C801-4E41-9A8F-A53E20F57778")
-                ICompositionColorGradientStop : IInspectable
+                ICompositionColorGradientStop : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                         ) = 0;
@@ -5123,8 +6382,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("9F1D20EC-7B04-4B1D-90BC-9FA32C0CFD26"), exclusiveto, contract] */
                 MIDL_INTERFACE("9F1D20EC-7B04-4B1D-90BC-9FA32C0CFD26")
-                ICompositionColorGradientStopCollection : IInspectable
+                ICompositionColorGradientStopCollection : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5160,8 +6420,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("0D00DAD0-CA07-4400-8C8E-CB5DB08559CC"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D00DAD0-CA07-4400-8C8E-CB5DB08559CC")
-                ICompositionCommitBatch : IInspectable
+                ICompositionCommitBatch : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsActive(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5191,6 +6452,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatc
 
 /*
  *
+ * Interface Windows.UI.Composition.ICompositionContainerShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionContainerShape
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionContainerShape[] = L"Windows.UI.Composition.ICompositionContainerShape";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("4F5E859B-2E5B-44A8-982C-AA0F69C16059"), exclusiveto, contract] */
+                MIDL_INTERFACE("4F5E859B-2E5B-44A8-982C-AA0F69C16059")
+                ICompositionContainerShape : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Shapes(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CComposition__CCompositionShape * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionContainerShape=_uuidof(ICompositionContainerShape);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.ICompositionDrawingSurface
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -5210,8 +6512,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("A166C300-FAD0-4D11-9E67-E433162FF49E"), exclusiveto, contract] */
                 MIDL_INTERFACE("A166C300-FAD0-4D11-9E67-E433162FF49E")
-                ICompositionDrawingSurface : IInspectable
+                ICompositionDrawingSurface : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlphaMode(
                         /* [retval, out] */__RPC__out ABI::Windows::Graphics::DirectX::DirectXAlphaMode * value
                         ) = 0;
@@ -5256,8 +6559,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("FAD0E88B-E354-44E8-8E3D-C4880D5A213F"), exclusiveto, contract] */
                 MIDL_INTERFACE("FAD0E88B-E354-44E8-8E3D-C4880D5A213F")
-                ICompositionDrawingSurface2 : IInspectable
+                ICompositionDrawingSurface2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SizeInt32(
                         /* [retval, out] */__RPC__out ABI::Windows::Graphics::SizeInt32 * value
                         ) = 0;
@@ -5315,8 +6619,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("9497B00A-312D-46B9-9DB3-412FD79464C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("9497B00A-312D-46B9-9DB3-412FD79464C8")
-                ICompositionDrawingSurfaceFactory : IInspectable
+                ICompositionDrawingSurfaceFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5352,8 +6657,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("5145E356-BF79-4EA8-8CC2-6B5B472E6C9A"), exclusiveto, contract] */
                 MIDL_INTERFACE("5145E356-BF79-4EA8-8CC2-6B5B472E6C9A")
-                ICompositionEasingFunction : IInspectable
+                ICompositionEasingFunction : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5389,8 +6695,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("60840774-3DA0-4949-8200-7206C00190A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("60840774-3DA0-4949-8200-7206C00190A0")
-                ICompositionEasingFunctionFactory : IInspectable
+                ICompositionEasingFunctionFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5426,8 +6733,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("BF7F795E-83CC-44BF-A447-3E3C071789EC"), exclusiveto, contract] */
                 MIDL_INTERFACE("BF7F795E-83CC-44BF-A447-3E3C071789EC")
-                ICompositionEffectBrush : IInspectable
+                ICompositionEffectBrush : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetSourceParameter(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionBrush * * result
@@ -5471,8 +6779,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("BE5624AF-BA7E-4510-9850-41C0B4FF74DF"), exclusiveto, contract] */
                 MIDL_INTERFACE("BE5624AF-BA7E-4510-9850-41C0B4FF74DF")
-                ICompositionEffectFactory : IInspectable
+                ICompositionEffectFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateBrush(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionEffectBrush * * result
                         ) = 0;
@@ -5521,8 +6830,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("858AB13A-3292-4E4E-B3BB-2B6C6544A6EE"), exclusiveto, contract] */
                 MIDL_INTERFACE("858AB13A-3292-4E4E-B3BB-2B6C6544A6EE")
-                ICompositionEffectSourceParameter : IInspectable
+                ICompositionEffectSourceParameter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5561,8 +6871,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("B3D9F276-ABA3-4724-ACF3-D0397464DB1C"), exclusiveto, contract] */
                 MIDL_INTERFACE("B3D9F276-ABA3-4724-ACF3-D0397464DB1C")
-                ICompositionEffectSourceParameterFactory : IInspectable
+                ICompositionEffectSourceParameterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionEffectSourceParameter * * instance
@@ -5579,6 +6890,150 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameterFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameterFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionEllipseGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionEllipseGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionEllipseGeometry[] = L"Windows.UI.Composition.ICompositionEllipseGeometry";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("4801F884-F6AD-4B93-AFA9-897B64E57B1F"), exclusiveto, contract] */
+                MIDL_INTERFACE("4801F884-F6AD-4B93-AFA9-897B64E57B1F")
+                ICompositionEllipseGeometry : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Center(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Center(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Radius(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Radius(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionEllipseGeometry=_uuidof(ICompositionEllipseGeometry);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionGeometry[] = L"Windows.UI.Composition.ICompositionGeometry";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("E985217C-6A17-4207-ABD8-5FD3DD612A9D"), exclusiveto, contract] */
+                MIDL_INTERFACE("E985217C-6A17-4207-ABD8-5FD3DD612A9D")
+                ICompositionGeometry : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TrimEnd(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TrimEnd(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TrimOffset(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TrimOffset(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TrimStart(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TrimStart(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionGeometry=_uuidof(ICompositionGeometry);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionGeometryFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionGeometryFactory[] = L"Windows.UI.Composition.ICompositionGeometryFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("BFFEBFE1-8C25-480B-9F56-FED6B288055D"), exclusiveto, contract] */
+                MIDL_INTERFACE("BFFEBFE1-8C25-480B-9F56-FED6B288055D")
+                ICompositionGeometryFactory : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionGeometryFactory=_uuidof(ICompositionGeometryFactory);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5602,8 +7057,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("1D9709E0-FFC6-4C0E-A9AB-34144D4C9098"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D9709E0-FFC6-4C0E-A9AB-34144D4C9098")
-                ICompositionGradientBrush : IInspectable
+                ICompositionGradientBrush : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnchorPoint(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
                         ) = 0;
@@ -5696,8 +7152,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("56D765D7-F189-48C9-9C8D-94DAF1BEC010"), exclusiveto, contract] */
                 MIDL_INTERFACE("56D765D7-F189-48C9-9C8D-94DAF1BEC010")
-                ICompositionGradientBrushFactory : IInspectable
+                ICompositionGradientBrushFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5733,8 +7190,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("FB22C6E1-80A2-4667-9936-DBEAF6EEFE95"), exclusiveto, contract] */
                 MIDL_INTERFACE("FB22C6E1-80A2-4667-9936-DBEAF6EEFE95")
-                ICompositionGraphicsDevice : IInspectable
+                ICompositionGraphicsDevice : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateDrawingSurface(
                         /* [in] */ABI::Windows::Foundation::Size sizePixels,
                         /* [in] */ABI::Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat,
@@ -5783,8 +7241,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("0FB8BDF6-C0F0-4BCC-9FB8-084982490D7D"), exclusiveto, contract] */
                 MIDL_INTERFACE("0FB8BDF6-C0F0-4BCC-9FB8-084982490D7D")
-                ICompositionGraphicsDevice2 : IInspectable
+                ICompositionGraphicsDevice2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateDrawingSurface2(
                         /* [in] */ABI::Windows::Graphics::SizeInt32 sizePixels,
                         /* [in] */ABI::Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat,
@@ -5832,8 +7291,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("41A6D7C2-2E5D-4BC1-B09E-8F0A03E3D8D3"), exclusiveto, contract] */
                 MIDL_INTERFACE("41A6D7C2-2E5D-4BC1-B09E-8F0A03E3D8D3")
-                ICompositionLight : IInspectable
+                ICompositionLight : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Targets(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IVisualUnorderedCollection * * value
                         ) = 0;
@@ -5872,8 +7332,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("A7BCDA72-F35D-425D-9B98-23F4205F6669"), exclusiveto, contract] */
                 MIDL_INTERFACE("A7BCDA72-F35D-425D-9B98-23F4205F6669")
-                ICompositionLight2 : IInspectable
+                ICompositionLight2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExclusionsFromTargets(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IVisualUnorderedCollection * * value
                         ) = 0;
@@ -5889,6 +7350,50 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLight2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLight2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionLight3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionLight
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionLight3[] = L"Windows.UI.Composition.ICompositionLight3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("4B0B00E4-DF07-4959-B7A4-4F7E4233F838"), exclusiveto, contract] */
+                MIDL_INTERFACE("4B0B00E4-DF07-4959-B7A4-4F7E4233F838")
+                ICompositionLight3 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsEnabled(
+                        /* [in] */boolean value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionLight3=_uuidof(ICompositionLight3);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLight3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5912,8 +7417,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("069CF306-DA3C-4B44-838A-5E03D51ACE55"), exclusiveto, contract] */
                 MIDL_INTERFACE("069CF306-DA3C-4B44-838A-5E03D51ACE55")
-                ICompositionLightFactory : IInspectable
+                ICompositionLightFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5926,6 +7432,56 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionLineGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionLineGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionLineGeometry[] = L"Windows.UI.Composition.ICompositionLineGeometry";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("DD7615A4-0C9A-4B67-8DCE-440A5BF9CDEC"), exclusiveto, contract] */
+                MIDL_INTERFACE("DD7615A4-0C9A-4B67-8DCE-440A5BF9CDEC")
+                ICompositionLineGeometry : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Start(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Start(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_End(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_End(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionLineGeometry=_uuidof(ICompositionLineGeometry);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5949,8 +7505,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("983BC519-A9DB-413C-A2D8-2A9056FC525E"), exclusiveto, contract] */
                 MIDL_INTERFACE("983BC519-A9DB-413C-A2D8-2A9056FC525E")
-                ICompositionLinearGradientBrush : IInspectable
+                ICompositionLinearGradientBrush : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EndPoint(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
                         ) = 0;
@@ -5998,8 +7555,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("522CF09E-BE6B-4F41-BE49-F9226D471B4A"), exclusiveto, contract] */
                 MIDL_INTERFACE("522CF09E-BE6B-4F41-BE49-F9226D471B4A")
-                ICompositionMaskBrush : IInspectable
+                ICompositionMaskBrush : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mask(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionBrush * * value
                         ) = 0;
@@ -6047,8 +7605,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("F25154E4-BC8C-4BE7-B80F-8685B83C0186"), exclusiveto, contract] */
                 MIDL_INTERFACE("F25154E4-BC8C-4BE7-B80F-8685B83C0186")
-                ICompositionNineGridBrush : IInspectable
+                ICompositionNineGridBrush : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BottomInset(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -6162,8 +7721,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("BCB4AD45-7609-4550-934F-16002A68FDED"), exclusiveto, contract] */
                 MIDL_INTERFACE("BCB4AD45-7609-4550-934F-16002A68FDED")
-                ICompositionObject : IInspectable
+                ICompositionObject : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Compositor(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositor * * value
                         ) = 0;
@@ -6215,8 +7775,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("EF874EA1-5CFF-4B68-9E30-A1519D08BA03"), exclusiveto, contract] */
                 MIDL_INTERFACE("EF874EA1-5CFF-4B68-9E30-A1519D08BA03")
-                ICompositionObject2 : IInspectable
+                ICompositionObject2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Comment(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6270,8 +7831,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("4BC27925-DACD-4CF2-98B1-986B76E7EBE6"), exclusiveto, contract] */
                 MIDL_INTERFACE("4BC27925-DACD-4CF2-98B1-986B76E7EBE6")
-                ICompositionObject3 : IInspectable
+                ICompositionObject3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DispatcherQueue(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IDispatcherQueue * * value
                         ) = 0;
@@ -6287,6 +7849,48 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionObject3;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObject3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionObject4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionObject
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionObject4[] = L"Windows.UI.Composition.ICompositionObject4";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("0BB3784C-346B-4A7C-966B-7310966553D5"), exclusiveto, contract] */
+                MIDL_INTERFACE("0BB3784C-346B-4A7C-966B-7310966553D5")
+                ICompositionObject4 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE TryGetAnimationController(
+                        /* [in] */__RPC__in HSTRING propertyName,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IAnimationController * * animationController
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionObject4=_uuidof(ICompositionObject4);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionObject4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6310,8 +7914,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("51205C5E-558A-4F2A-8D39-37BFE1E20DDD"), exclusiveto, contract] */
                 MIDL_INTERFACE("51205C5E-558A-4F2A-8D39-37BFE1E20DDD")
-                ICompositionObjectFactory : IInspectable
+                ICompositionObjectFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6324,6 +7929,130 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionPath
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionPath
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPath_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPath_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionPath[] = L"Windows.UI.Composition.ICompositionPath";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("66DA1D5F-2E10-4F22-8A06-0A8151919E60"), exclusiveto, contract] */
+                MIDL_INTERFACE("66DA1D5F-2E10-4F22-8A06-0A8151919E60")
+                ICompositionPath : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionPath=_uuidof(ICompositionPath);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPath;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPath_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionPathFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionPath
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionPathFactory[] = L"Windows.UI.Composition.ICompositionPathFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("9C1E8C6A-0F33-4751-9437-EB3FB9D3AB07"), exclusiveto, contract] */
+                MIDL_INTERFACE("9C1E8C6A-0F33-4751-9437-EB3FB9D3AB07")
+                ICompositionPathFactory : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Create(
+                        /* [in] */__RPC__in_opt ABI::Windows::Graphics::IGeometrySource2D * source,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionPath * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionPathFactory=_uuidof(ICompositionPathFactory);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionPathGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionPathGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionPathGeometry[] = L"Windows.UI.Composition.ICompositionPathGeometry";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("0B6A417E-2C77-4C23-AF5E-6304C147BB61"), exclusiveto, contract] */
+                MIDL_INTERFACE("0B6A417E-2C77-4C23-AF5E-6304C147BB61")
+                ICompositionPathGeometry : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Path(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionPath * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Path(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionPath * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionPathGeometry=_uuidof(ICompositionPathGeometry);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6347,8 +8076,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("C9D6D202-5F67-4453-9117-9EADD430D3C2"), exclusiveto, contract] */
                 MIDL_INTERFACE("C9D6D202-5F67-4453-9117-9EADD430D3C2")
-                ICompositionPropertySet : IInspectable
+                ICompositionPropertySet : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE InsertColor(
                         /* [in] */__RPC__in HSTRING propertyName,
                         /* [in] */ABI::Windows::UI::Color value
@@ -6456,8 +8186,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("DE80731E-A211-4455-8880-7D0F3F6A44FD"), exclusiveto, contract] */
                 MIDL_INTERFACE("DE80731E-A211-4455-8880-7D0F3F6A44FD")
-                ICompositionPropertySet2 : IInspectable
+                ICompositionPropertySet2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE InsertBoolean(
                         /* [in] */__RPC__in HSTRING propertyName,
                         /* [in] */boolean value
@@ -6483,6 +8214,112 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPropertySe
 
 /*
  *
+ * Interface Windows.UI.Composition.ICompositionRectangleGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionRectangleGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionRectangleGeometry[] = L"Windows.UI.Composition.ICompositionRectangleGeometry";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("0CD51428-5356-4246-AECF-7A0B76975400"), exclusiveto, contract] */
+                MIDL_INTERFACE("0CD51428-5356-4246-AECF-7A0B76975400")
+                ICompositionRectangleGeometry : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Offset(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Offset(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Size(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Size(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionRectangleGeometry=_uuidof(ICompositionRectangleGeometry);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionRoundedRectangleGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionRoundedRectangleGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionRoundedRectangleGeometry[] = L"Windows.UI.Composition.ICompositionRoundedRectangleGeometry";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("8770C822-1D50-4B8B-B013-7C9A0E46935F"), exclusiveto, contract] */
+                MIDL_INTERFACE("8770C822-1D50-4B8B-B013-7C9A0E46935F")
+                ICompositionRoundedRectangleGeometry : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CornerRadius(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_CornerRadius(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Offset(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Offset(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Size(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Size(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionRoundedRectangleGeometry=_uuidof(ICompositionRoundedRectangleGeometry);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.ICompositionScopedBatch
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -6502,8 +8339,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("0D00DAD0-FB07-46FD-8C72-6280D1A3D1DD"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D00DAD0-FB07-46FD-8C72-6280D1A3D1DD")
-                ICompositionScopedBatch : IInspectable
+                ICompositionScopedBatch : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsActive(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6555,8 +8393,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("329E52E2-4335-49CC-B14A-37782D10F0C4"), exclusiveto, contract] */
                 MIDL_INTERFACE("329E52E2-4335-49CC-B14A-37782D10F0C4")
-                ICompositionShadow : IInspectable
+                ICompositionShadow : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6592,8 +8431,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("221F492F-DCBA-4B91-999E-1DC217A01530"), exclusiveto, contract] */
                 MIDL_INTERFACE("221F492F-DCBA-4B91-999E-1DC217A01530")
-                ICompositionShadowFactory : IInspectable
+                ICompositionShadowFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6606,6 +8446,225 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionShape
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShape_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionShape_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionShape[] = L"Windows.UI.Composition.ICompositionShape";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("B47CE2F7-9A88-42C4-9E87-2E500CA8688C"), exclusiveto, contract] */
+                MIDL_INTERFACE("B47CE2F7-9A88-42C4-9E87-2E500CA8688C")
+                ICompositionShape : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CenterPoint(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_CenterPoint(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Offset(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Offset(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RotationAngle(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_RotationAngle(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RotationAngleInDegrees(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_RotationAngleInDegrees(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Scale(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Scale(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TransformMatrix(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Matrix3x2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TransformMatrix(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Matrix3x2 value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionShape=_uuidof(ICompositionShape);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionShape;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShape_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionShapeFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionShape
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionShapeFactory[] = L"Windows.UI.Composition.ICompositionShapeFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("1DFC36D0-B05A-44EF-82B0-12118BCD4CD0"), exclusiveto, contract] */
+                MIDL_INTERFACE("1DFC36D0-B05A-44EF-82B0-12118BCD4CD0")
+                ICompositionShapeFactory : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionShapeFactory=_uuidof(ICompositionShapeFactory);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionSpriteShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionSpriteShape
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionSpriteShape[] = L"Windows.UI.Composition.ICompositionSpriteShape";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("401B61BB-0007-4363-B1F3-6BCC003FB83E"), exclusiveto, contract] */
+                MIDL_INTERFACE("401B61BB-0007-4363-B1F3-6BCC003FB83E")
+                ICompositionSpriteShape : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillBrush(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionBrush * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_FillBrush(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionBrush * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Geometry(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionGeometry * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Geometry(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionGeometry * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsStrokeNonScaling(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsStrokeNonScaling(
+                        /* [in] */boolean value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StrokeBrush(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionBrush * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StrokeBrush(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionBrush * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StrokeDashArray(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_float * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StrokeDashCap(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::CompositionStrokeCap * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StrokeDashCap(
+                        /* [in] */ABI::Windows::UI::Composition::CompositionStrokeCap value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StrokeDashOffset(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StrokeDashOffset(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StrokeEndCap(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::CompositionStrokeCap * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StrokeEndCap(
+                        /* [in] */ABI::Windows::UI::Composition::CompositionStrokeCap value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StrokeLineJoin(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::CompositionStrokeLineJoin * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StrokeLineJoin(
+                        /* [in] */ABI::Windows::UI::Composition::CompositionStrokeLineJoin value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StrokeMiterLimit(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StrokeMiterLimit(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StrokeStartCap(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::CompositionStrokeCap * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StrokeStartCap(
+                        /* [in] */ABI::Windows::UI::Composition::CompositionStrokeCap value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StrokeThickness(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StrokeThickness(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionSpriteShape=_uuidof(ICompositionSpriteShape);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6626,8 +8685,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("1527540D-42C7-47A6-A408-668F79A90DFB"), contract] */
                 MIDL_INTERFACE("1527540D-42C7-47A6-A408-668F79A90DFB")
-                ICompositionSurface : IInspectable
+                ICompositionSurface : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6663,8 +8723,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("AD016D79-1E4C-4C0D-9C29-83338C87C162"), exclusiveto, contract] */
                 MIDL_INTERFACE("AD016D79-1E4C-4C0D-9C29-83338C87C162")
-                ICompositionSurfaceBrush : IInspectable
+                ICompositionSurfaceBrush : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BitmapInterpolationMode(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::CompositionBitmapInterpolationMode * value
                         ) = 0;
@@ -6730,8 +8791,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("D27174D5-64F5-4692-9DC7-71B61D7E5880"), exclusiveto, contract] */
                 MIDL_INTERFACE("D27174D5-64F5-4692-9DC7-71B61D7E5880")
-                ICompositionSurfaceBrush2 : IInspectable
+                ICompositionSurfaceBrush2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnchorPoint(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
                         ) = 0;
@@ -6809,8 +8871,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("A1BEA8BA-D726-4663-8129-6B5E7927FFA6"), exclusiveto, contract] */
                 MIDL_INTERFACE("A1BEA8BA-D726-4663-8129-6B5E7927FFA6")
-                ICompositionTarget : IInspectable
+                ICompositionTarget : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Root(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IVisual * * value
                         ) = 0;
@@ -6852,8 +8915,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("93CD9D2B-8516-4B14-A8CE-F49E2119EC42"), exclusiveto, contract] */
                 MIDL_INTERFACE("93CD9D2B-8516-4B14-A8CE-F49E2119EC42")
-                ICompositionTargetFactory : IInspectable
+                ICompositionTargetFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6866,6 +8930,74 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionViewBox
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionViewBox
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionViewBox[] = L"Windows.UI.Composition.ICompositionViewBox";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("B440BF07-068F-4537-84C6-4ECBE019E1F4"), exclusiveto, contract] */
+                MIDL_INTERFACE("B440BF07-068F-4537-84C6-4ECBE019E1F4")
+                ICompositionViewBox : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalAlignmentRatio(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_HorizontalAlignmentRatio(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Offset(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Offset(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Size(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Size(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Stretch(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::CompositionStretch * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Stretch(
+                        /* [in] */ABI::Windows::UI::Composition::CompositionStretch value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VerticalAlignmentRatio(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_VerticalAlignmentRatio(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositionViewBox=_uuidof(ICompositionViewBox);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionViewBox;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6889,8 +9021,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("A9C384DB-8740-4F94-8B9D-B68521E7863D"), exclusiveto, contract] */
                 MIDL_INTERFACE("A9C384DB-8740-4F94-8B9D-B68521E7863D")
-                ICompositionVirtualDrawingSurface : IInspectable
+                ICompositionVirtualDrawingSurface : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Trim(
                         /* [in] */UINT32 __rectsSize,
                         /* [size_is(__rectsSize), in] */__RPC__in_ecount_full(__rectsSize) ABI::Windows::Graphics::RectInt32 * rects
@@ -6930,8 +9063,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("6766106C-D56B-4A49-B1DF-5076A0620768"), exclusiveto, contract] */
                 MIDL_INTERFACE("6766106C-D56B-4A49-B1DF-5076A0620768")
-                ICompositionVirtualDrawingSurfaceFactory : IInspectable
+                ICompositionVirtualDrawingSurfaceFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -6967,8 +9101,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("B403CA50-7F8C-4E83-985F-CC45060036D8"), exclusiveto, contract] */
                 MIDL_INTERFACE("B403CA50-7F8C-4E83-985F-CC45060036D8")
-                ICompositor : IInspectable
+                ICompositor : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateColorKeyFrameAnimation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IColorKeyFrameAnimation * * result
                         ) = 0;
@@ -7090,8 +9225,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("735081DC-5E24-45DA-A38F-E32CC349A9A0"), exclusiveto, contract] */
                 MIDL_INTERFACE("735081DC-5E24-45DA-A38F-E32CC349A9A0")
-                ICompositor2 : IInspectable
+                ICompositor2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateAmbientLight(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IAmbientLight * * result
                         ) = 0;
@@ -7167,8 +9303,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("C9DD8EF0-6EB1-4E3C-A658-675D9C64D4AB"), exclusiveto, contract] */
                 MIDL_INTERFACE("C9DD8EF0-6EB1-4E3C-A658-675D9C64D4AB")
-                ICompositor3 : IInspectable
+                ICompositor3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateHostBackdropBrush(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionBackdropBrush * * result
                         ) = 0;
@@ -7207,8 +9344,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("AE47E78A-7910-4425-A482-A05B758ADCE9"), exclusiveto, contract] */
                 MIDL_INTERFACE("AE47E78A-7910-4425-A482-A05B758ADCE9")
-                ICompositor4 : IInspectable
+                ICompositor4 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateColorGradientStop(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionColorGradientStop * * result
                         ) = 0;
@@ -7245,6 +9383,150 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositor4;
 
 /*
  *
+ * Interface Windows.UI.Composition.ICompositor5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.Compositor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositor5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositor5[] = L"Windows.UI.Composition.ICompositor5";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("48EA31AD-7FCD-4076-A79C-90CC4B852C9B"), exclusiveto, contract] */
+                MIDL_INTERFACE("48EA31AD-7FCD-4076-A79C-90CC4B852C9B")
+                ICompositor5 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Comment(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Comment(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GlobalPlaybackRate(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_GlobalPlaybackRate(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateBounceScalarAnimation(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IBounceScalarNaturalMotionAnimation * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateBounceVector2Animation(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IBounceVector2NaturalMotionAnimation * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateBounceVector3Animation(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IBounceVector3NaturalMotionAnimation * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateContainerShape(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionContainerShape * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateEllipseGeometry(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionEllipseGeometry * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateLineGeometry(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionLineGeometry * * result
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreatePathGeometry(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionPathGeometry * * result
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreatePathGeometryWithPath(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionPath * path,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionPathGeometry * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreatePathKeyFrameAnimation(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IPathKeyFrameAnimation * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateRectangleGeometry(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionRectangleGeometry * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateRoundedRectangleGeometry(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionRoundedRectangleGeometry * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateShapeVisual(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IShapeVisual * * result
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateSpriteShape(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionSpriteShape * * result
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateSpriteShapeWithGeometry(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionGeometry * geometry,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionSpriteShape * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateViewBox(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionViewBox * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE RequestCommitAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * action
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositor5=_uuidof(ICompositor5);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositor5;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositorStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.Compositor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositorStatics[] = L"Windows.UI.Composition.ICompositorStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("080DB93E-121E-4D97-8B74-1DFCF91987EA"), exclusiveto, contract] */
+                MIDL_INTERFACE("080DB93E-121E-4D97-8B74-1DFCF91987EA")
+                ICompositorStatics : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxGlobalPlaybackRate(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinGlobalPlaybackRate(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICompositorStatics=_uuidof(ICompositorStatics);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositorStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.IContainerVisual
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -7264,8 +9546,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("02F6BC74-ED20-4773-AFE6-D49B4A93DB32"), exclusiveto, contract] */
                 MIDL_INTERFACE("02F6BC74-ED20-4773-AFE6-D49B4A93DB32")
-                IContainerVisual : IInspectable
+                IContainerVisual : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Children(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IVisualCollection * * value
                         ) = 0;
@@ -7304,8 +9587,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("0363A65B-C7DA-4D9A-95F4-69B5C8DF670B"), exclusiveto, contract] */
                 MIDL_INTERFACE("0363A65B-C7DA-4D9A-95F4-69B5C8DF670B")
-                IContainerVisualFactory : IInspectable
+                IContainerVisualFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -7341,8 +9625,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("32350666-C1E8-44F9-96B8-C98ACF0AE698"), exclusiveto, contract] */
                 MIDL_INTERFACE("32350666-C1E8-44F9-96B8-C98ACF0AE698")
-                ICubicBezierEasingFunction : IInspectable
+                ICubicBezierEasingFunction : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ControlPoint1(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
                         ) = 0;
@@ -7384,8 +9669,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("318CFAFC-5CE3-4B55-AB5D-07A00353AC99"), exclusiveto, contract] */
                 MIDL_INTERFACE("318CFAFC-5CE3-4B55-AB5D-07A00353AC99")
-                IDistantLight : IInspectable
+                IDistantLight : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                         ) = 0;
@@ -7439,8 +9725,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("DBCDAA1C-294B-48D7-B60E-76DF64AA392B"), exclusiveto, contract] */
                 MIDL_INTERFACE("DBCDAA1C-294B-48D7-B60E-76DF64AA392B")
-                IDistantLight2 : IInspectable
+                IDistantLight2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Intensity(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -7482,8 +9769,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("CB977C07-A154-4851-85E7-A8924C84FAD8"), exclusiveto, contract] */
                 MIDL_INTERFACE("CB977C07-A154-4851-85E7-A8924C84FAD8")
-                IDropShadow : IInspectable
+                IDropShadow : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BlurRadius(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -7549,8 +9837,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("6C4218BC-15B9-4C2D-8D4A-0767DF11977A"), exclusiveto, contract] */
                 MIDL_INTERFACE("6C4218BC-15B9-4C2D-8D4A-0767DF11977A")
-                IDropShadow2 : IInspectable
+                IDropShadow2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourcePolicy(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::CompositionDropShadowSourcePolicy * value
                         ) = 0;
@@ -7592,8 +9881,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("6ACC5431-7D3D-4BF3-ABB6-F44BDC4888C1"), exclusiveto, contract] */
                 MIDL_INTERFACE("6ACC5431-7D3D-4BF3-ABB6-F44BDC4888C1")
-                IExpressionAnimation : IInspectable
+                IExpressionAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Expression(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7640,8 +9930,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("0598A3FF-0A92-4C9D-A427-B25519250DBF"), exclusiveto, contract] */
                 MIDL_INTERFACE("0598A3FF-0A92-4C9D-A427-B25519250DBF")
-                IImplicitAnimationCollection : IInspectable
+                IImplicitAnimationCollection : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -7677,8 +9968,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("1E73E647-84C7-477A-B474-5880E0442E15"), exclusiveto, contract] */
                 MIDL_INTERFACE("1E73E647-84C7-477A-B474-5880E0442E15")
-                IInsetClip : IInspectable
+                IInsetClip : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BottomInset(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -7738,8 +10030,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("126E7F22-3AE9-4540-9A8A-DEAE8A4A4A84"), exclusiveto, contract] */
                 MIDL_INTERFACE("126E7F22-3AE9-4540-9A8A-DEAE8A4A4A84")
-                IKeyFrameAnimation : IInspectable
+                IKeyFrameAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DelayTime(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -7817,8 +10110,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("F4B488BB-2940-4EC0-A41A-EB6D801A2F18"), exclusiveto, contract] */
                 MIDL_INTERFACE("F4B488BB-2940-4EC0-A41A-EB6D801A2F18")
-                IKeyFrameAnimation2 : IInspectable
+                IKeyFrameAnimation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Direction(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::AnimationDirection * value
                         ) = 0;
@@ -7860,8 +10154,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("845BF0B4-D8DE-462F-8753-C80D43C6FF5A"), exclusiveto, contract] */
                 MIDL_INTERFACE("845BF0B4-D8DE-462F-8753-C80D43C6FF5A")
-                IKeyFrameAnimation3 : IInspectable
+                IKeyFrameAnimation3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DelayBehavior(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::AnimationDelayBehavior * value
                         ) = 0;
@@ -7903,8 +10198,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("BF0803F8-712A-4FC1-8C87-970859ED8D2E"), exclusiveto, contract] */
                 MIDL_INTERFACE("BF0803F8-712A-4FC1-8C87-970859ED8D2E")
-                IKeyFrameAnimationFactory : IInspectable
+                IKeyFrameAnimationFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -7940,8 +10236,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("AF843985-0444-4887-8E83-B40B253F822C"), exclusiveto, contract] */
                 MIDL_INTERFACE("AF843985-0444-4887-8E83-B40B253F822C")
-                ILayerVisual : IInspectable
+                ILayerVisual : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Effect(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionEffectBrush * * value
                         ) = 0;
@@ -7983,8 +10280,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("98F9AEEB-6F23-49F1-90B1-1F59A14FBCE3"), exclusiveto, contract] */
                 MIDL_INTERFACE("98F9AEEB-6F23-49F1-90B1-1F59A14FBCE3")
-                ILayerVisual2 : IInspectable
+                ILayerVisual2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Shadow(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionShadow * * value
                         ) = 0;
@@ -8026,8 +10324,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("9400975A-C7A6-46B3-ACF7-1A268A0A117D"), exclusiveto, contract] */
                 MIDL_INTERFACE("9400975A-C7A6-46B3-ACF7-1A268A0A117D")
-                ILinearEasingFunction : IInspectable
+                ILinearEasingFunction : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -8063,8 +10362,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("438DE12D-769B-4821-A949-284A6547E873"), exclusiveto, contract] */
                 MIDL_INTERFACE("438DE12D-769B-4821-A949-284A6547E873")
-                INaturalMotionAnimation : IInspectable
+                INaturalMotionAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DelayBehavior(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Composition::AnimationDelayBehavior * value
                         ) = 0;
@@ -8118,8 +10418,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("F53ACB06-CF6A-4387-A3FE-5221F3E7E0E0"), exclusiveto, contract] */
                 MIDL_INTERFACE("F53ACB06-CF6A-4387-A3FE-5221F3E7E0E0")
-                INaturalMotionAnimationFactory : IInspectable
+                INaturalMotionAnimationFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -8132,6 +10433,53 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CINaturalMotionAnimationFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CINaturalMotionAnimationFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IPathKeyFrameAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.PathKeyFrameAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IPathKeyFrameAnimation[] = L"Windows.UI.Composition.IPathKeyFrameAnimation";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("9D0D18C9-1576-4B3F-BE60-1D5031F5E71B"), exclusiveto, contract] */
+                MIDL_INTERFACE("9D0D18C9-1576-4B3F-BE60-1D5031F5E71B")
+                IPathKeyFrameAnimation : public IInspectable
+                {
+                public:
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE InsertKeyFrame(
+                        /* [in] */FLOAT normalizedProgressKey,
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionPath * path
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE InsertKeyFrameWithEasingFunction(
+                        /* [in] */FLOAT normalizedProgressKey,
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionPath * path,
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionEasingFunction * easingFunction
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPathKeyFrameAnimation=_uuidof(IPathKeyFrameAnimation);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8155,8 +10503,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("B18545B3-0C5A-4AB0-BEDC-4F3546948272"), exclusiveto, contract] */
                 MIDL_INTERFACE("B18545B3-0C5A-4AB0-BEDC-4F3546948272")
-                IPointLight : IInspectable
+                IPointLight : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                         ) = 0;
@@ -8228,8 +10577,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("EFE98F2C-0678-4F69-B164-A810D995BCB7"), exclusiveto, contract] */
                 MIDL_INTERFACE("EFE98F2C-0678-4F69-B164-A810D995BCB7")
-                IPointLight2 : IInspectable
+                IPointLight2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Intensity(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -8248,6 +10598,56 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIPointLight2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIPointLight2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IPointLight3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.PointLight
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIPointLight3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIPointLight3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IPointLight3[] = L"Windows.UI.Composition.IPointLight3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("4C0A8367-D4E9-468A-87AE-7BA43AB29485"), exclusiveto, contract] */
+                MIDL_INTERFACE("4C0A8367-D4E9-468A-87AE-7BA43AB29485")
+                IPointLight3 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinAttenuationCutoff(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MinAttenuationCutoff(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxAttenuationCutoff(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MaxAttenuationCutoff(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPointLight3=_uuidof(IPointLight3);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIPointLight3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIPointLight3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8271,8 +10671,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("404E5835-ECF6-4240-8520-671279CF36BC"), exclusiveto, contract] */
                 MIDL_INTERFACE("404E5835-ECF6-4240-8520-671279CF36BC")
-                IQuaternionKeyFrameAnimation : IInspectable
+                IQuaternionKeyFrameAnimation : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE InsertKeyFrame(
                         /* [in] */FLOAT normalizedProgressKey,
                         /* [in] */ABI::Windows::Foundation::Numerics::Quaternion value
@@ -8317,8 +10718,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("3A31AC7D-28BF-4E7A-8524-71679D480F38"), exclusiveto, contract] */
                 MIDL_INTERFACE("3A31AC7D-28BF-4E7A-8524-71679D480F38")
-                IRenderingDeviceReplacedEventArgs : IInspectable
+                IRenderingDeviceReplacedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GraphicsDevice(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionGraphicsDevice * * value
                         ) = 0;
@@ -8357,8 +10759,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("AE288FA9-252C-4B95-A725-BF85E38000A1"), exclusiveto, contract] */
                 MIDL_INTERFACE("AE288FA9-252C-4B95-A725-BF85E38000A1")
-                IScalarKeyFrameAnimation : IInspectable
+                IScalarKeyFrameAnimation : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE InsertKeyFrame(
                         /* [in] */FLOAT normalizedProgressKey,
                         /* [in] */FLOAT value
@@ -8403,8 +10806,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("94A94581-BF92-495B-B5BD-D2C659430737"), exclusiveto, contract] */
                 MIDL_INTERFACE("94A94581-BF92-495B-B5BD-D2C659430737")
-                IScalarNaturalMotionAnimation : IInspectable
+                IScalarNaturalMotionAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FinalValue(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_float * * value
                         ) = 0;
@@ -8458,8 +10862,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("835AA4FC-671C-41DD-AF48-AE8DEF8B1529"), exclusiveto, contract] */
                 MIDL_INTERFACE("835AA4FC-671C-41DD-AF48-AE8DEF8B1529")
-                IScalarNaturalMotionAnimationFactory : IInspectable
+                IScalarNaturalMotionAnimationFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -8472,6 +10877,53 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIScalarNaturalMotionAnimationFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIScalarNaturalMotionAnimationFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IShapeVisual
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.ShapeVisual
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IShapeVisual[] = L"Windows.UI.Composition.IShapeVisual";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("F2BD13C3-BA7E-4B0F-9126-FFB7536B8176"), exclusiveto, contract] */
+                MIDL_INTERFACE("F2BD13C3-BA7E-4B0F-9126-FFB7536B8176")
+                IShapeVisual : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Shapes(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CComposition__CCompositionShape * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewBox(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionViewBox * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ViewBox(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositionViewBox * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IShapeVisual=_uuidof(IShapeVisual);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIShapeVisual;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8495,8 +10947,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("5A9FE273-44A1-4F95-A422-8FA5116BDB44"), exclusiveto, contract] */
                 MIDL_INTERFACE("5A9FE273-44A1-4F95-A422-8FA5116BDB44")
-                ISpotLight : IInspectable
+                ISpotLight : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConstantAttenuation(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -8604,8 +11057,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("64EE615E-0686-4DEA-A9E8-BC3A8C701459"), exclusiveto, contract] */
                 MIDL_INTERFACE("64EE615E-0686-4DEA-A9E8-BC3A8C701459")
-                ISpotLight2 : IInspectable
+                ISpotLight2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InnerConeIntensity(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -8634,6 +11088,56 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CISpotLight2;
 
 /*
  *
+ * Interface Windows.UI.Composition.ISpotLight3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.SpotLight
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CISpotLight3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CISpotLight3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ISpotLight3[] = L"Windows.UI.Composition.ISpotLight3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                /* [object, uuid("E4D03EEA-131F-480E-859E-B82705B74360"), exclusiveto, contract] */
+                MIDL_INTERFACE("E4D03EEA-131F-480E-859E-B82705B74360")
+                ISpotLight3 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinAttenuationCutoff(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MinAttenuationCutoff(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxAttenuationCutoff(
+                        /* [retval, out] */__RPC__out FLOAT * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MaxAttenuationCutoff(
+                        /* [in] */FLOAT value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISpotLight3=_uuidof(ISpotLight3);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CISpotLight3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CISpotLight3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.ISpringScalarNaturalMotionAnimation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -8653,8 +11157,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("0572A95F-37F9-4FBE-B87B-5CD03A89501C"), exclusiveto, contract] */
                 MIDL_INTERFACE("0572A95F-37F9-4FBE-B87B-5CD03A89501C")
-                ISpringScalarNaturalMotionAnimation : IInspectable
+                ISpringScalarNaturalMotionAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DampingRatio(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -8702,8 +11207,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("23F494B5-EE73-4F0F-A423-402B946DF4B3"), exclusiveto, contract] */
                 MIDL_INTERFACE("23F494B5-EE73-4F0F-A423-402B946DF4B3")
-                ISpringVector2NaturalMotionAnimation : IInspectable
+                ISpringVector2NaturalMotionAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DampingRatio(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -8751,8 +11257,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("6C8749DF-D57B-4794-8E2D-CECB11E194E5"), exclusiveto, contract] */
                 MIDL_INTERFACE("6C8749DF-D57B-4794-8E2D-CECB11E194E5")
-                ISpringVector3NaturalMotionAnimation : IInspectable
+                ISpringVector3NaturalMotionAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DampingRatio(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -8800,8 +11307,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("08E05581-1AD1-4F97-9757-402D76E4233B"), exclusiveto, contract] */
                 MIDL_INTERFACE("08E05581-1AD1-4F97-9757-402D76E4233B")
-                ISpriteVisual : IInspectable
+                ISpriteVisual : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Brush(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionBrush * * value
                         ) = 0;
@@ -8843,8 +11351,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("588C9664-997A-4850-91FE-53CB58F81CE9"), exclusiveto, contract] */
                 MIDL_INTERFACE("588C9664-997A-4850-91FE-53CB58F81CE9")
-                ISpriteVisual2 : IInspectable
+                ISpriteVisual2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Shadow(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionShadow * * value
                         ) = 0;
@@ -8886,8 +11395,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("D0CAA74B-560C-4A0B-A5F6-206CA8C3ECD6"), exclusiveto, contract] */
                 MIDL_INTERFACE("D0CAA74B-560C-4A0B-A5F6-206CA8C3ECD6")
-                IStepEasingFunction : IInspectable
+                IStepEasingFunction : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FinalStep(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -8953,8 +11463,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("DF414515-4E29-4F11-B55E-BF2A6EB36294"), exclusiveto, contract] */
                 MIDL_INTERFACE("DF414515-4E29-4F11-B55E-BF2A6EB36294")
-                IVector2KeyFrameAnimation : IInspectable
+                IVector2KeyFrameAnimation : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE InsertKeyFrame(
                         /* [in] */FLOAT normalizedProgressKey,
                         /* [in] */ABI::Windows::Foundation::Numerics::Vector2 value
@@ -8999,8 +11510,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("0F3E0B7D-E512-479D-A00C-77C93A30A395"), exclusiveto, contract] */
                 MIDL_INTERFACE("0F3E0B7D-E512-479D-A00C-77C93A30A395")
-                IVector2NaturalMotionAnimation : IInspectable
+                IVector2NaturalMotionAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FinalValue(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CNumerics__CVector2 * * value
                         ) = 0;
@@ -9054,8 +11566,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("8C74FF61-0761-48A2-BDDB-6AFCC52B89D8"), exclusiveto, contract] */
                 MIDL_INTERFACE("8C74FF61-0761-48A2-BDDB-6AFCC52B89D8")
-                IVector2NaturalMotionAnimationFactory : IInspectable
+                IVector2NaturalMotionAnimationFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -9091,8 +11604,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("C8039DAA-A281-43C2-A73D-B68E3C533C40"), exclusiveto, contract] */
                 MIDL_INTERFACE("C8039DAA-A281-43C2-A73D-B68E3C533C40")
-                IVector3KeyFrameAnimation : IInspectable
+                IVector3KeyFrameAnimation : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE InsertKeyFrame(
                         /* [in] */FLOAT normalizedProgressKey,
                         /* [in] */ABI::Windows::Foundation::Numerics::Vector3 value
@@ -9137,8 +11651,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("9C17042C-E2CA-45AD-969E-4E78B7B9AD41"), exclusiveto, contract] */
                 MIDL_INTERFACE("9C17042C-E2CA-45AD-969E-4E78B7B9AD41")
-                IVector3NaturalMotionAnimation : IInspectable
+                IVector3NaturalMotionAnimation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FinalValue(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CNumerics__CVector3 * * value
                         ) = 0;
@@ -9192,8 +11707,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("21A81D2F-0880-457B-AC87-B609018C876D"), exclusiveto, contract] */
                 MIDL_INTERFACE("21A81D2F-0880-457B-AC87-B609018C876D")
-                IVector3NaturalMotionAnimationFactory : IInspectable
+                IVector3NaturalMotionAnimationFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -9229,8 +11745,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("2457945B-ADDD-4385-9606-B6A3D5E4E1B9"), exclusiveto, contract] */
                 MIDL_INTERFACE("2457945B-ADDD-4385-9606-B6A3D5E4E1B9")
-                IVector4KeyFrameAnimation : IInspectable
+                IVector4KeyFrameAnimation : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE InsertKeyFrame(
                         /* [in] */FLOAT normalizedProgressKey,
                         /* [in] */ABI::Windows::Foundation::Numerics::Vector4 value
@@ -9275,8 +11792,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("117E202D-A859-4C89-873B-C2AA566788E3"), exclusiveto, contract] */
                 MIDL_INTERFACE("117E202D-A859-4C89-873B-C2AA566788E3")
-                IVisual : IInspectable
+                IVisual : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnchorPoint(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector2 * value
                         ) = 0;
@@ -9411,8 +11929,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("3052B611-56C3-4C3E-8BF3-F6E1AD473F06"), exclusiveto, contract] */
                 MIDL_INTERFACE("3052B611-56C3-4C3E-8BF3-F6E1AD473F06")
-                IVisual2 : IInspectable
+                IVisual2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ParentForTransform(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IVisual * * value
                         ) = 0;
@@ -9470,8 +11989,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("8B745505-FD3E-4A98-84A8-E949468C6BCB"), exclusiveto, contract] */
                 MIDL_INTERFACE("8B745505-FD3E-4A98-84A8-E949468C6BCB")
-                IVisualCollection : IInspectable
+                IVisualCollection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Count(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -9528,8 +12048,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("AD0FF93E-B502-4EB5-87B4-9A38A71D0137"), exclusiveto, contract] */
                 MIDL_INTERFACE("AD0FF93E-B502-4EB5-87B4-9A38A71D0137")
-                IVisualFactory : IInspectable
+                IVisualFactory : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -9569,8 +12090,9 @@ namespace ABI {
             namespace Composition {
                 /* [object, uuid("338FAA70-54C8-40A7-8029-C9CEEB0AA250"), exclusiveto, contract] */
                 MIDL_INTERFACE("338FAA70-54C8-40A7-8029-C9CEEB0AA250")
-                IVisualUnorderedCollection : IInspectable
+                IVisualUnorderedCollection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Count(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -9618,6 +12140,105 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIVisualUnorderedCollec
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_AmbientLight[] = L"Windows.UI.Composition.AmbientLight";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.AnimationController
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Composition.IAnimationControllerStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IAnimationController ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_AnimationController_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_AnimationController_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_AnimationController[] = L"Windows.UI.Composition.AnimationController";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.BounceScalarNaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IBounceScalarNaturalMotionAnimation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_BounceScalarNaturalMotionAnimation_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_BounceScalarNaturalMotionAnimation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_BounceScalarNaturalMotionAnimation[] = L"Windows.UI.Composition.BounceScalarNaturalMotionAnimation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.BounceVector2NaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IBounceVector2NaturalMotionAnimation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_BounceVector2NaturalMotionAnimation_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_BounceVector2NaturalMotionAnimation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_BounceVector2NaturalMotionAnimation[] = L"Windows.UI.Composition.BounceVector2NaturalMotionAnimation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.BounceVector3NaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IBounceVector3NaturalMotionAnimation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_BounceVector3NaturalMotionAnimation_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_BounceVector3NaturalMotionAnimation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_BounceVector3NaturalMotionAnimation[] = L"Windows.UI.Composition.BounceVector3NaturalMotionAnimation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9921,6 +12542,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.CompositionContainerShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionContainerShape ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionContainerShape_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionContainerShape_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionContainerShape[] = L"Windows.UI.Composition.CompositionContainerShape";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.CompositionDrawingSurface
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -10047,6 +12692,54 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.CompositionEllipseGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionEllipseGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionEllipseGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionEllipseGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionEllipseGeometry[] = L"Windows.UI.Composition.CompositionEllipseGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionGeometry[] = L"Windows.UI.Composition.CompositionGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.CompositionGradientBrush
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -10104,6 +12797,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Composition.ICompositionLight ** Default Interface **
  *    Windows.UI.Composition.ICompositionLight2
+ *    Windows.UI.Composition.ICompositionLight3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -10117,6 +12811,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionLight[] = L"Windows.UI.Composition.CompositionLight";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionLineGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionLineGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionLineGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionLineGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionLineGeometry[] = L"Windows.UI.Composition.CompositionLineGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10203,6 +12921,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Foundation.IClosable
  *    Windows.UI.Composition.ICompositionObject2
  *    Windows.UI.Composition.ICompositionObject3
+ *    Windows.UI.Composition.ICompositionObject4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -10216,6 +12935,58 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionObject[] = L"Windows.UI.Composition.CompositionObject";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionPath
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.Composition.ICompositionPathFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionPath ** Default Interface **
+ *    Windows.Graphics.IGeometrySource2D
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionPath_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionPath_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionPath[] = L"Windows.UI.Composition.CompositionPath";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionPathGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionPathGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionPathGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionPathGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionPathGeometry[] = L"Windows.UI.Composition.CompositionPathGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10241,6 +13012,54 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionPropertySet[] = L"Windows.UI.Composition.CompositionPropertySet";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionRectangleGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionRectangleGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionRectangleGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionRectangleGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionRectangleGeometry[] = L"Windows.UI.Composition.CompositionRectangleGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionRoundedRectangleGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionRoundedRectangleGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionRoundedRectangleGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionRoundedRectangleGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionRoundedRectangleGeometry[] = L"Windows.UI.Composition.CompositionRoundedRectangleGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10289,6 +13108,104 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionShadow[] = L"Windows.UI.Composition.CompositionShadow";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionShape ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionShape_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionShape_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionShape[] = L"Windows.UI.Composition.CompositionShape";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionShapeCollection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Foundation.Collections.IVector_1_Windows.UI.Composition.CompositionShape ** Default Interface **
+ *    Windows.Foundation.Collections.IIterable_1_Windows.UI.Composition.CompositionShape
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionShapeCollection_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionShapeCollection_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionShapeCollection[] = L"Windows.UI.Composition.CompositionShapeCollection";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionSpriteShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionSpriteShape ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionSpriteShape_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionSpriteShape_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionSpriteShape[] = L"Windows.UI.Composition.CompositionSpriteShape";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionStrokeDashArray
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Foundation.Collections.IVector_1_float ** Default Interface **
+ *    Windows.Foundation.Collections.IIterable_1_float
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionStrokeDashArray_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionStrokeDashArray_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionStrokeDashArray[] = L"Windows.UI.Composition.CompositionStrokeDashArray";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10342,6 +13259,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.CompositionViewBox
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionViewBox ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionViewBox_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionViewBox_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionViewBox[] = L"Windows.UI.Composition.CompositionViewBox";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.CompositionVirtualDrawingSurface
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -10374,12 +13315,16 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass can be activated.
  *   Type can be activated via RoActivateInstance starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Composition.ICompositorStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
  * Class implements the following interfaces:
  *    Windows.UI.Composition.ICompositor ** Default Interface **
  *    Windows.Foundation.IClosable
  *    Windows.UI.Composition.ICompositor2
  *    Windows.UI.Composition.ICompositor3
  *    Windows.UI.Composition.ICompositor4
+ *    Windows.UI.Composition.ICompositor5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -10693,6 +13638,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.PathKeyFrameAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IPathKeyFrameAnimation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_PathKeyFrameAnimation_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_PathKeyFrameAnimation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_PathKeyFrameAnimation[] = L"Windows.UI.Composition.PathKeyFrameAnimation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.PointLight
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -10701,6 +13670,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Composition.IPointLight ** Default Interface **
  *    Windows.UI.Composition.IPointLight2
+ *    Windows.UI.Composition.IPointLight3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -10814,6 +13784,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.ShapeVisual
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IShapeVisual ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_ShapeVisual_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_ShapeVisual_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_ShapeVisual[] = L"Windows.UI.Composition.ShapeVisual";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.SpotLight
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -10822,6 +13816,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Composition.ISpotLight ** Default Interface **
  *    Windows.UI.Composition.ISpotLight2
+ *    Windows.UI.Composition.ISpotLight3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -11169,6 +14164,36 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CIAmbientLight2 __x_ABI_CWin
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CIAmbientLight2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIAnimationController_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationController_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIAnimationController __x_ABI_CWindows_CUI_CComposition_CIAnimationController;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIAnimationController_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation __x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation;
@@ -11289,6 +14314,12 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatch __x
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatch_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface;
@@ -11343,6 +14374,24 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourcePar
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameterFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionGradientBrush_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionGradientBrush_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionGradientBrush __x_ABI_CWindows_CUI_CComposition_CICompositionGradientBrush;
@@ -11379,11 +14428,23 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionLight2 __x_ABI_
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLight2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 __x_ABI_CWindows_CUI_CComposition_CICompositionLight3;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory __x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory;
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLinearGradientBrush_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionLinearGradientBrush_FWD_DEFINED__
@@ -11421,11 +14482,35 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionObject3 __x_ABI
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionObject3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionObject4 __x_ABI_CWindows_CUI_CComposition_CICompositionObject4;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory __x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory;
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPath_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPath_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionPath __x_ABI_CWindows_CUI_CComposition_CICompositionPath;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionPath_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet_FWD_DEFINED__
@@ -11438,6 +14523,18 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet __x
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2 __x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2;
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatch_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatch_FWD_DEFINED__
@@ -11456,6 +14553,24 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionShadow __x_ABI_
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory __x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory;
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionShape_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionShape_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionShape __x_ABI_CWindows_CUI_CComposition_CICompositionShape;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionShape_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_FWD_DEFINED__
@@ -11486,6 +14601,12 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionTarget __x_ABI_
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory __x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory;
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_FWD_DEFINED__
@@ -11522,6 +14643,18 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositor3 __x_ABI_CWindo
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositor4 __x_ABI_CWindows_CUI_CComposition_CICompositor4;
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositor4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositor5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositor5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositor5 __x_ABI_CWindows_CUI_CComposition_CICompositor5;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositor5_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositorStatics __x_ABI_CWindows_CUI_CComposition_CICompositorStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_FWD_DEFINED__
@@ -11637,6 +14770,12 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CINaturalMotionAnimationFact
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CINaturalMotionAnimationFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIPointLight_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIPointLight_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CIPointLight __x_ABI_CWindows_CUI_CComposition_CIPointLight;
@@ -11648,6 +14787,12 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CIPointLight __x_ABI_CWindow
 typedef interface __x_ABI_CWindows_CUI_CComposition_CIPointLight2 __x_ABI_CWindows_CUI_CComposition_CIPointLight2;
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CIPointLight2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIPointLight3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIPointLight3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIPointLight3 __x_ABI_CWindows_CUI_CComposition_CIPointLight3;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIPointLight3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAnimation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAnimation_FWD_DEFINED__
@@ -11679,6 +14824,12 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CIScalarNaturalMotionAnimati
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CIScalarNaturalMotionAnimationFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIShapeVisual __x_ABI_CWindows_CUI_CComposition_CIShapeVisual;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CISpotLight_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CISpotLight_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CISpotLight __x_ABI_CWindows_CUI_CComposition_CISpotLight;
@@ -11690,6 +14841,12 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CISpotLight __x_ABI_CWindows
 typedef interface __x_ABI_CWindows_CUI_CComposition_CISpotLight2 __x_ABI_CWindows_CUI_CComposition_CISpotLight2;
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CISpotLight2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CISpotLight3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CISpotLight3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CISpotLight3 __x_ABI_CWindows_CUI_CComposition_CISpotLight3;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CISpotLight3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CISpringScalarNaturalMotionAnimation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CISpringScalarNaturalMotionAnimation_FWD_DEFINED__
@@ -12358,6 +15515,168 @@ interface __FIIterable_1_Windows__CUI__CComposition__CCompositionColorGradientSt
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterator_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CUI__CComposition__CCompositionShape __FIIterator_1_Windows__CUI__CComposition__CCompositionShape;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CComposition__CCompositionShape;
+
+typedef struct __FIIterator_1_Windows__CUI__CComposition__CCompositionShapeVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CComposition_CICompositionShape * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CComposition_CICompositionShape * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CUI__CComposition__CCompositionShapeVtbl;
+
+interface __FIIterator_1_Windows__CUI__CComposition__CCompositionShape
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CUI__CComposition__CCompositionShapeVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CUI__CComposition__CCompositionShape_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterable_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CUI__CComposition__CCompositionShape __FIIterable_1_Windows__CUI__CComposition__CCompositionShape;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CComposition__CCompositionShape;
+
+typedef  struct __FIIterable_1_Windows__CUI__CComposition__CCompositionShapeVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CUI__CComposition__CCompositionShape * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CUI__CComposition__CCompositionShape * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CUI__CComposition__CCompositionShape * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CUI__CComposition__CCompositionShape * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CUI__CComposition__CCompositionShape * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CUI__CComposition__CCompositionShape * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CComposition__CCompositionShape **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CUI__CComposition__CCompositionShapeVtbl;
+
+interface __FIIterable_1_Windows__CUI__CComposition__CCompositionShape
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CUI__CComposition__CCompositionShapeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CUI__CComposition__CCompositionShape_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FIIterator_1_Windows__CUI__CComposition__CVisual_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CUI__CComposition__CVisual_INTERFACE_DEFINED__
@@ -12800,6 +16119,117 @@ interface __FIVectorView_1_Windows__CUI__CComposition__CCompositionColorGradient
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CComposition__CCompositionShape;
+
+typedef struct __FIVectorView_1_Windows__CUI__CComposition__CCompositionShapeVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CComposition_CICompositionShape * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CComposition_CICompositionShape * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CComposition_CICompositionShape * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CUI__CComposition__CCompositionShapeVtbl;
+
+interface __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CUI__CComposition__CCompositionShapeVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FIVector_1_Windows__CUI__CComposition__CCompositionColorGradientStop_INTERFACE_DEFINED__)
 #define ____FIVector_1_Windows__CUI__CComposition__CCompositionColorGradientStop_INTERFACE_DEFINED__
@@ -12943,6 +16373,149 @@ interface __FIVector_1_Windows__CUI__CComposition__CCompositionColorGradientStop
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVector_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__)
+#define ____FIVector_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__
+
+typedef interface __FIVector_1_Windows__CUI__CComposition__CCompositionShape __FIVector_1_Windows__CUI__CComposition__CCompositionShape;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVector_1_Windows__CUI__CComposition__CCompositionShape;
+
+typedef struct __FIVector_1_Windows__CUI__CComposition__CCompositionShapeVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionShape * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionShape * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CComposition__CCompositionShape **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This, /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CComposition_CICompositionShape * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CUI__CComposition__CCompositionShape * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CComposition_CICompositionShape * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CUI__CComposition__CCompositionShapeVtbl;
+
+interface __FIVector_1_Windows__CUI__CComposition__CCompositionShape
+{
+    CONST_VTBL struct __FIVector_1_Windows__CUI__CComposition__CCompositionShapeVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_Windows__CUI__CComposition__CCompositionShape_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVector_1_Windows__CUI__CComposition__CCompositionShape_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_INTERFACE_DEFINED__)
@@ -13047,6 +16620,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabi
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__
 
@@ -13093,6 +16667,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphi
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #if !defined(____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__)
@@ -13482,6 +17057,410 @@ interface __FIMap_2_HSTRING_HSTRING
 #endif // ____FIMap_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 
 
+#if !defined(____FIIterator_1_float_INTERFACE_DEFINED__)
+#define ____FIIterator_1_float_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_float __FIIterator_1_float;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_float;
+
+typedef struct __FIIterator_1_floatVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_float * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_float * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_float * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_float * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_float * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_float * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_float * This, /* [retval][out] */ __RPC__out float *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_float * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_float * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_float * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) float *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_floatVtbl;
+
+interface __FIIterator_1_float
+{
+    CONST_VTBL struct __FIIterator_1_floatVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_float_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_float_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_float_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_float_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_float_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_float_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_float_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_float_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_float_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_float_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_float_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterable_1_float_INTERFACE_DEFINED__)
+#define ____FIIterable_1_float_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_float __FIIterable_1_float;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_float;
+
+typedef  struct __FIIterable_1_floatVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_float * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_float * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_float * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_float * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_float * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_float * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_float * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_float **first);
+
+    END_INTERFACE
+} __FIIterable_1_floatVtbl;
+
+interface __FIIterable_1_float
+{
+    CONST_VTBL struct __FIIterable_1_floatVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_float_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_float_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_float_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_float_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_float_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_float_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_float_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_float_INTERFACE_DEFINED__
+
+
+#if !defined(____FIVectorView_1_float_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_float_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_float __FIVectorView_1_float;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_float;
+
+typedef struct __FIVectorView_1_floatVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_float * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_float * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_float * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_float * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_float * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_float * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_float * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out float *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_float * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_float * This,
+            /* [in] */ float item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_float * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) float *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_floatVtbl;
+
+interface __FIVectorView_1_float
+{
+    CONST_VTBL struct __FIVectorView_1_floatVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_float_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_float_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_float_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_float_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_float_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_float_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_float_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_float_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_float_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_float_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_float_INTERFACE_DEFINED__
+
+
+#if !defined(____FIVector_1_float_INTERFACE_DEFINED__)
+#define ____FIVector_1_float_INTERFACE_DEFINED__
+
+typedef interface __FIVector_1_float __FIVector_1_float;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVector_1_float;
+
+typedef struct __FIVector_1_floatVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_float * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_float * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_float * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_float * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_float * This, /* [out] */ __RPC__deref_out_opt float *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_float * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_float * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt float *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_float * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_float * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_float **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_float * This,
+        /* [in] */ __RPC__in float item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_float * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in float item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_float * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in float item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_float * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_float * This, /* [in] */ __RPC__in float item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_float * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_float * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_float * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) float *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_float * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) float *value);
+
+    END_INTERFACE
+} __FIVector_1_floatVtbl;
+
+interface __FIVector_1_float
+{
+    CONST_VTBL struct __FIVector_1_floatVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_float_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_float_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_float_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_float_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_float_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_float_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_float_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_float_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_float_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_float_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_float_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_float_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_float_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_float_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_float_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_float_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_float_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_float_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVector_1_float_INTERFACE_DEFINED__
+
+
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
 #define ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
 
@@ -13811,6 +17790,13 @@ interface __FIReference_1_Windows__CFoundation__CNumerics__CVector3
 
 
 
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIAsyncAction __x_ABI_CWindows_CFoundation_CIAsyncAction;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIClosable __x_ABI_CWindows_CFoundation_CIClosable;
@@ -13876,6 +17862,13 @@ typedef interface __x_ABI_CWindows_CGraphics_CEffects_CIGraphicsEffectSource __x
 
 
 
+#ifndef ____x_ABI_CWindows_CGraphics_CIGeometrySource2D_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CIGeometrySource2D_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CIGeometrySource2D __x_ABI_CWindows_CGraphics_CIGeometrySource2D;
+
+#endif // ____x_ABI_CWindows_CGraphics_CIGeometrySource2D_FWD_DEFINED__
+
+
 
 typedef struct __x_ABI_CWindows_CGraphics_CPointInt32 __x_ABI_CWindows_CGraphics_CPointInt32;
 
@@ -13910,6 +17903,9 @@ typedef interface __x_ABI_CWindows_CUI_CCore_CICoreDispatcher __x_ABI_CWindows_C
 
 
 
+
+
+typedef enum __x_ABI_CWindows_CUI_CComposition_CAnimationControllerProgressBehavior __x_ABI_CWindows_CUI_CComposition_CAnimationControllerProgressBehavior;
 
 
 typedef enum __x_ABI_CWindows_CUI_CComposition_CAnimationDelayBehavior __x_ABI_CWindows_CUI_CComposition_CAnimationDelayBehavior;
@@ -13957,8 +17953,10 @@ typedef enum __x_ABI_CWindows_CUI_CComposition_CCompositionGradientExtendMode __
 typedef enum __x_ABI_CWindows_CUI_CComposition_CCompositionStretch __x_ABI_CWindows_CUI_CComposition_CCompositionStretch;
 
 
+typedef enum __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeCap __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeCap;
 
 
+typedef enum __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeLineJoin __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeLineJoin;
 
 
 
@@ -14132,6 +18130,75 @@ typedef enum __x_ABI_CWindows_CUI_CComposition_CCompositionStretch __x_ABI_CWind
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.UI.Composition.AnimationControllerProgressBehavior
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CComposition_CAnimationControllerProgressBehavior
+{
+    AnimationControllerProgressBehavior_Default = 0,
+    AnimationControllerProgressBehavior_IncludesDelayTime = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -14450,6 +18517,48 @@ enum __x_ABI_CWindows_CUI_CComposition_CCompositionStretch
 
 /*
  *
+ * Struct Windows.UI.Composition.CompositionStrokeCap
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeCap
+{
+    CompositionStrokeCap_Flat = 0,
+    CompositionStrokeCap_Square = 1,
+    CompositionStrokeCap_Round = 2,
+    CompositionStrokeCap_Triangle = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.UI.Composition.CompositionStrokeLineJoin
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeLineJoin
+{
+    CompositionStrokeLineJoin_Miter = 0,
+    CompositionStrokeLineJoin_Bevel = 1,
+    CompositionStrokeLineJoin_Round = 2,
+    CompositionStrokeLineJoin_MiterOrBevel = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.IAmbientLight
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -14646,6 +18755,588 @@ interface __x_ABI_CWindows_CUI_CComposition_CIAmbientLight2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIAmbientLight2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIAmbientLight2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IAnimationController
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.AnimationController
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIAnimationController_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationController_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IAnimationController[] = L"Windows.UI.Composition.IAnimationController";
+/* [object, uuid("C934EFD2-0722-4F5F-A4E2-9510F3D43BF7"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PlaybackRate )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_PlaybackRate )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Progress )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Progress )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProgressBehavior )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CComposition_CAnimationControllerProgressBehavior * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ProgressBehavior )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This,
+        /* [in] */__x_ABI_CWindows_CUI_CComposition_CAnimationControllerProgressBehavior value
+        );
+    HRESULT ( STDMETHODCALLTYPE *Pause )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This
+        );
+    HRESULT ( STDMETHODCALLTYPE *Resume )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationController * This
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CIAnimationController
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_get_PlaybackRate(This,value) \
+    ( (This)->lpVtbl->get_PlaybackRate(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_put_PlaybackRate(This,value) \
+    ( (This)->lpVtbl->put_PlaybackRate(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_get_Progress(This,value) \
+    ( (This)->lpVtbl->get_Progress(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_put_Progress(This,value) \
+    ( (This)->lpVtbl->put_Progress(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_get_ProgressBehavior(This,value) \
+    ( (This)->lpVtbl->get_ProgressBehavior(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_put_ProgressBehavior(This,value) \
+    ( (This)->lpVtbl->put_ProgressBehavior(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_Pause(This) \
+    ( (This)->lpVtbl->Pause(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationController_Resume(This) \
+    ( (This)->lpVtbl->Resume(This) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIAnimationController;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIAnimationController_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IAnimationControllerStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.AnimationController
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IAnimationControllerStatics[] = L"Windows.UI.Composition.IAnimationControllerStatics";
+/* [object, uuid("E71164DF-651B-4800-B9E5-6A3BCFED3365"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxPlaybackRate )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinPlaybackRate )(
+        __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_get_MaxPlaybackRate(This,value) \
+    ( (This)->lpVtbl->get_MaxPlaybackRate(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_get_MinPlaybackRate(This,value) \
+    ( (This)->lpVtbl->get_MinPlaybackRate(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIAnimationControllerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IBounceScalarNaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.BounceScalarNaturalMotionAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IBounceScalarNaturalMotionAnimation[] = L"Windows.UI.Composition.IBounceScalarNaturalMotionAnimation";
+/* [object, uuid("BAA30DCC-A633-4618-9B06-7F7C72C87CFF"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Acceleration )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Acceleration )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Restitution )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Restitution )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * This,
+        /* [in] */FLOAT value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimationVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_get_Acceleration(This,value) \
+    ( (This)->lpVtbl->get_Acceleration(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_put_Acceleration(This,value) \
+    ( (This)->lpVtbl->put_Acceleration(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_get_Restitution(This,value) \
+    ( (This)->lpVtbl->get_Restitution(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_put_Restitution(This,value) \
+    ( (This)->lpVtbl->put_Restitution(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IBounceVector2NaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.BounceVector2NaturalMotionAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IBounceVector2NaturalMotionAnimation[] = L"Windows.UI.Composition.IBounceVector2NaturalMotionAnimation";
+/* [object, uuid("DA344196-2154-4B3C-88AA-47361204ECCD"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Acceleration )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Acceleration )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Restitution )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Restitution )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * This,
+        /* [in] */FLOAT value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimationVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_get_Acceleration(This,value) \
+    ( (This)->lpVtbl->get_Acceleration(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_put_Acceleration(This,value) \
+    ( (This)->lpVtbl->put_Acceleration(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_get_Restitution(This,value) \
+    ( (This)->lpVtbl->get_Restitution(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_put_Restitution(This,value) \
+    ( (This)->lpVtbl->put_Restitution(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IBounceVector3NaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.BounceVector3NaturalMotionAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IBounceVector3NaturalMotionAnimation[] = L"Windows.UI.Composition.IBounceVector3NaturalMotionAnimation";
+/* [object, uuid("47DABC31-10D3-4518-86F1-09CAF742D113"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Acceleration )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Acceleration )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Restitution )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Restitution )(
+        __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * This,
+        /* [in] */FLOAT value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimationVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_get_Acceleration(This,value) \
+    ( (This)->lpVtbl->get_Acceleration(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_put_Acceleration(This,value) \
+    ( (This)->lpVtbl->put_Acceleration(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_get_Restitution(This,value) \
+    ( (This)->lpVtbl->get_Restitution(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_put_Restitution(This,value) \
+    ( (This)->lpVtbl->put_Restitution(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -16753,6 +21444,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatc
 
 /*
  *
+ * Interface Windows.UI.Composition.ICompositionContainerShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionContainerShape
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionContainerShape[] = L"Windows.UI.Composition.ICompositionContainerShape";
+/* [object, uuid("4F5E859B-2E5B-44A8-982C-AA0F69C16059"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShapeVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Shapes )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CComposition__CCompositionShape * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShapeVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShapeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_get_Shapes(This,value) \
+    ( (This)->lpVtbl->get_Shapes(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.ICompositionDrawingSurface
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -17650,6 +22434,334 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEffectSour
 
 /*
  *
+ * Interface Windows.UI.Composition.ICompositionEllipseGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionEllipseGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionEllipseGeometry[] = L"Windows.UI.Composition.ICompositionEllipseGeometry";
+/* [object, uuid("4801F884-F6AD-4B93-AFA9-897B64E57B1F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Center )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Center )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Radius )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Radius )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometryVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_get_Center(This,value) \
+    ( (This)->lpVtbl->get_Center(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_put_Center(This,value) \
+    ( (This)->lpVtbl->put_Center(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_get_Radius(This,value) \
+    ( (This)->lpVtbl->get_Radius(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_put_Radius(This,value) \
+    ( (This)->lpVtbl->put_Radius(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionGeometry[] = L"Windows.UI.Composition.ICompositionGeometry";
+/* [object, uuid("E985217C-6A17-4207-ABD8-5FD3DD612A9D"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TrimEnd )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_TrimEnd )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TrimOffset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_TrimOffset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TrimStart )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_TrimStart )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * This,
+        /* [in] */FLOAT value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_get_TrimEnd(This,value) \
+    ( (This)->lpVtbl->get_TrimEnd(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_put_TrimEnd(This,value) \
+    ( (This)->lpVtbl->put_TrimEnd(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_get_TrimOffset(This,value) \
+    ( (This)->lpVtbl->get_TrimOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_put_TrimOffset(This,value) \
+    ( (This)->lpVtbl->put_TrimOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_get_TrimStart(This,value) \
+    ( (This)->lpVtbl->get_TrimStart(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_put_TrimStart(This,value) \
+    ( (This)->lpVtbl->put_TrimStart(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionGeometryFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionGeometryFactory[] = L"Windows.UI.Composition.ICompositionGeometryFactory";
+/* [object, uuid("BFFEBFE1-8C25-480B-9F56-FED6B288055D"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGeometryFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.ICompositionGradientBrush
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -18358,6 +23470,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLight2;
 
 /*
  *
+ * Interface Windows.UI.Composition.ICompositionLight3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionLight
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionLight3[] = L"Windows.UI.Composition.ICompositionLight3";
+/* [object, uuid("4B0B00E4-DF07-4959-B7A4-4F7E4233F838"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionLight3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsEnabled )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsEnabled )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionLight3 * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionLight3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionLight3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionLight3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLight3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLight3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLight3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLight3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLight3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLight3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLight3_get_IsEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsEnabled(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLight3_put_IsEnabled(This,value) \
+    ( (This)->lpVtbl->put_IsEnabled(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLight3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLight3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.ICompositionLightFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -18440,6 +23652,120 @@ interface __x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionLineGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionLineGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionLineGeometry[] = L"Windows.UI.Composition.ICompositionLineGeometry";
+/* [object, uuid("DD7615A4-0C9A-4B67-8DCE-440A5BF9CDEC"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Start )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Start )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_End )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_End )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometryVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_get_Start(This,value) \
+    ( (This)->lpVtbl->get_Start(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_put_Start(This,value) \
+    ( (This)->lpVtbl->put_Start(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_get_End(This,value) \
+    ( (This)->lpVtbl->get_End(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_put_End(This,value) \
+    ( (This)->lpVtbl->put_End(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -19275,6 +24601,100 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionObject3;
 
 /*
  *
+ * Interface Windows.UI.Composition.ICompositionObject4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionObject
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionObject4[] = L"Windows.UI.Composition.ICompositionObject4";
+/* [object, uuid("0BB3784C-346B-4A7C-966B-7310966553D5"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionObject4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionObject4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionObject4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionObject4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionObject4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionObject4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionObject4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *TryGetAnimationController )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionObject4 * This,
+        /* [in] */__RPC__in HSTRING propertyName,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CIAnimationController * * animationController
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionObject4Vtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionObject4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionObject4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionObject4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionObject4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionObject4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionObject4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionObject4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionObject4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionObject4_TryGetAnimationController(This,propertyName,animationController) \
+    ( (This)->lpVtbl->TryGetAnimationController(This,propertyName,animationController) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionObject4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObject4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.ICompositionObjectFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -19357,6 +24777,286 @@ interface __x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionPath
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionPath
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPath_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPath_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionPath[] = L"Windows.UI.Composition.ICompositionPath";
+/* [object, uuid("66DA1D5F-2E10-4F22-8A06-0A8151919E60"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionPathVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPath * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPath * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPath * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPath * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPath * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPath * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionPathVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionPath
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionPathVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPath_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPath_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPath_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPath_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPath_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPath_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPath;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPath_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionPathFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionPath
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionPathFactory[] = L"Windows.UI.Composition.ICompositionPathFactory";
+/* [object, uuid("9C1E8C6A-0F33-4751-9437-EB3FB9D3AB07"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Create )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CGraphics_CIGeometrySource2D * source,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionPath * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_Create(This,source,result) \
+    ( (This)->lpVtbl->Create(This,source,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPathFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionPathGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionPathGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionPathGeometry[] = L"Windows.UI.Composition.ICompositionPathGeometry";
+/* [object, uuid("0B6A417E-2C77-4C23-AF5E-6304C147BB61"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Path )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionPath * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Path )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionPath * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometryVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_get_Path(This,value) \
+    ( (This)->lpVtbl->get_Path(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_put_Path(This,value) \
+    ( (This)->lpVtbl->put_Path(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -19686,6 +25386,248 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPropertySe
 
 /*
  *
+ * Interface Windows.UI.Composition.ICompositionRectangleGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionRectangleGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionRectangleGeometry[] = L"Windows.UI.Composition.ICompositionRectangleGeometry";
+/* [object, uuid("0CD51428-5356-4246-AECF-7A0B76975400"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Offset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Offset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Size )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Size )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometryVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_get_Offset(This,value) \
+    ( (This)->lpVtbl->get_Offset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_put_Offset(This,value) \
+    ( (This)->lpVtbl->put_Offset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_get_Size(This,value) \
+    ( (This)->lpVtbl->get_Size(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_put_Size(This,value) \
+    ( (This)->lpVtbl->put_Size(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionRoundedRectangleGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionRoundedRectangleGeometry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionRoundedRectangleGeometry[] = L"Windows.UI.Composition.ICompositionRoundedRectangleGeometry";
+/* [object, uuid("8770C822-1D50-4B8B-B013-7C9A0E46935F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CornerRadius )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_CornerRadius )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Offset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Offset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Size )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Size )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometryVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_get_CornerRadius(This,value) \
+    ( (This)->lpVtbl->get_CornerRadius(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_put_CornerRadius(This,value) \
+    ( (This)->lpVtbl->put_CornerRadius(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_get_Offset(This,value) \
+    ( (This)->lpVtbl->get_Offset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_put_Offset(This,value) \
+    ( (This)->lpVtbl->put_Offset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_get_Size(This,value) \
+    ( (This)->lpVtbl->get_Size(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_put_Size(This,value) \
+    ( (This)->lpVtbl->put_Size(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.ICompositionScopedBatch
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -19987,6 +25929,509 @@ interface __x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionShape
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShape_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionShape_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionShape[] = L"Windows.UI.Composition.ICompositionShape";
+/* [object, uuid("B47CE2F7-9A88-42C4-9E87-2E500CA8688C"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionShapeVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CenterPoint )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_CenterPoint )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Offset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Offset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_RotationAngle )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_RotationAngle )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_RotationAngleInDegrees )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_RotationAngleInDegrees )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Scale )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Scale )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TransformMatrix )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CMatrix3x2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_TransformMatrix )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionShape * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CMatrix3x2 value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionShapeVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionShape
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionShapeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_get_CenterPoint(This,value) \
+    ( (This)->lpVtbl->get_CenterPoint(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_put_CenterPoint(This,value) \
+    ( (This)->lpVtbl->put_CenterPoint(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_get_Offset(This,value) \
+    ( (This)->lpVtbl->get_Offset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_put_Offset(This,value) \
+    ( (This)->lpVtbl->put_Offset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_get_RotationAngle(This,value) \
+    ( (This)->lpVtbl->get_RotationAngle(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_put_RotationAngle(This,value) \
+    ( (This)->lpVtbl->put_RotationAngle(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_get_RotationAngleInDegrees(This,value) \
+    ( (This)->lpVtbl->get_RotationAngleInDegrees(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_put_RotationAngleInDegrees(This,value) \
+    ( (This)->lpVtbl->put_RotationAngleInDegrees(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_get_Scale(This,value) \
+    ( (This)->lpVtbl->get_Scale(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_put_Scale(This,value) \
+    ( (This)->lpVtbl->put_Scale(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_get_TransformMatrix(This,value) \
+    ( (This)->lpVtbl->get_TransformMatrix(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShape_put_TransformMatrix(This,value) \
+    ( (This)->lpVtbl->put_TransformMatrix(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionShape;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShape_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionShapeFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionShape
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionShapeFactory[] = L"Windows.UI.Composition.ICompositionShapeFactory";
+/* [object, uuid("1DFC36D0-B05A-44EF-82B0-12118BCD4CD0"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShapeFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionSpriteShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionSpriteShape
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionSpriteShape[] = L"Windows.UI.Composition.ICompositionSpriteShape";
+/* [object, uuid("401B61BB-0007-4363-B1F3-6BCC003FB83E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShapeVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FillBrush )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionBrush * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_FillBrush )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionBrush * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Geometry )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Geometry )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsStrokeNonScaling )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsStrokeNonScaling )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StrokeBrush )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionBrush * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_StrokeBrush )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionBrush * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StrokeDashArray )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_float * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StrokeDashCap )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeCap * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_StrokeDashCap )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */__x_ABI_CWindows_CUI_CComposition_CCompositionStrokeCap value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StrokeDashOffset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_StrokeDashOffset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StrokeEndCap )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeCap * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_StrokeEndCap )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */__x_ABI_CWindows_CUI_CComposition_CCompositionStrokeCap value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StrokeLineJoin )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeLineJoin * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_StrokeLineJoin )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */__x_ABI_CWindows_CUI_CComposition_CCompositionStrokeLineJoin value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StrokeMiterLimit )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_StrokeMiterLimit )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StrokeStartCap )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CComposition_CCompositionStrokeCap * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_StrokeStartCap )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */__x_ABI_CWindows_CUI_CComposition_CCompositionStrokeCap value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StrokeThickness )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_StrokeThickness )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * This,
+        /* [in] */FLOAT value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShapeVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShapeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_FillBrush(This,value) \
+    ( (This)->lpVtbl->get_FillBrush(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_FillBrush(This,value) \
+    ( (This)->lpVtbl->put_FillBrush(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_Geometry(This,value) \
+    ( (This)->lpVtbl->get_Geometry(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_Geometry(This,value) \
+    ( (This)->lpVtbl->put_Geometry(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_IsStrokeNonScaling(This,value) \
+    ( (This)->lpVtbl->get_IsStrokeNonScaling(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_IsStrokeNonScaling(This,value) \
+    ( (This)->lpVtbl->put_IsStrokeNonScaling(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_StrokeBrush(This,value) \
+    ( (This)->lpVtbl->get_StrokeBrush(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_StrokeBrush(This,value) \
+    ( (This)->lpVtbl->put_StrokeBrush(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_StrokeDashArray(This,value) \
+    ( (This)->lpVtbl->get_StrokeDashArray(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_StrokeDashCap(This,value) \
+    ( (This)->lpVtbl->get_StrokeDashCap(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_StrokeDashCap(This,value) \
+    ( (This)->lpVtbl->put_StrokeDashCap(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_StrokeDashOffset(This,value) \
+    ( (This)->lpVtbl->get_StrokeDashOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_StrokeDashOffset(This,value) \
+    ( (This)->lpVtbl->put_StrokeDashOffset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_StrokeEndCap(This,value) \
+    ( (This)->lpVtbl->get_StrokeEndCap(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_StrokeEndCap(This,value) \
+    ( (This)->lpVtbl->put_StrokeEndCap(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_StrokeLineJoin(This,value) \
+    ( (This)->lpVtbl->get_StrokeLineJoin(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_StrokeLineJoin(This,value) \
+    ( (This)->lpVtbl->put_StrokeLineJoin(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_StrokeMiterLimit(This,value) \
+    ( (This)->lpVtbl->get_StrokeMiterLimit(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_StrokeMiterLimit(This,value) \
+    ( (This)->lpVtbl->put_StrokeMiterLimit(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_StrokeStartCap(This,value) \
+    ( (This)->lpVtbl->get_StrokeStartCap(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_StrokeStartCap(This,value) \
+    ( (This)->lpVtbl->put_StrokeStartCap(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_get_StrokeThickness(This,value) \
+    ( (This)->lpVtbl->get_StrokeThickness(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_put_StrokeThickness(This,value) \
+    ( (This)->lpVtbl->put_StrokeThickness(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -20596,6 +27041,162 @@ interface __x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionTargetFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositionViewBox
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.CompositionViewBox
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionViewBox[] = L"Windows.UI.Composition.ICompositionViewBox";
+/* [object, uuid("B440BF07-068F-4537-84C6-4ECBE019E1F4"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionViewBoxVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HorizontalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_HorizontalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Offset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Offset )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Size )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Size )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CVector2 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Stretch )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CComposition_CCompositionStretch * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Stretch )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [in] */__x_ABI_CWindows_CUI_CComposition_CCompositionStretch value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_VerticalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_VerticalAlignmentRatio )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * This,
+        /* [in] */FLOAT value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositionViewBoxVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionViewBoxVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_get_HorizontalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->get_HorizontalAlignmentRatio(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_put_HorizontalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->put_HorizontalAlignmentRatio(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_get_Offset(This,value) \
+    ( (This)->lpVtbl->get_Offset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_put_Offset(This,value) \
+    ( (This)->lpVtbl->put_Offset(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_get_Size(This,value) \
+    ( (This)->lpVtbl->get_Size(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_put_Size(This,value) \
+    ( (This)->lpVtbl->put_Size(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_get_Stretch(This,value) \
+    ( (This)->lpVtbl->get_Stretch(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_put_Stretch(This,value) \
+    ( (This)->lpVtbl->put_Stretch(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_get_VerticalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->get_VerticalAlignmentRatio(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_put_VerticalAlignmentRatio(This,value) \
+    ( (This)->lpVtbl->put_VerticalAlignmentRatio(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionViewBox;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionViewBox_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -21445,6 +28046,334 @@ interface __x_ABI_CWindows_CUI_CComposition_CICompositor4
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositor4;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositor5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.Compositor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositor5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositor5[] = L"Windows.UI.Composition.ICompositor5";
+/* [object, uuid("48EA31AD-7FCD-4076-A79C-90CC4B852C9B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositor5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Comment )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Comment )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_GlobalPlaybackRate )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_GlobalPlaybackRate )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [in] */FLOAT value
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateBounceScalarAnimation )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CIBounceScalarNaturalMotionAnimation * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateBounceVector2Animation )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CIBounceVector2NaturalMotionAnimation * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateBounceVector3Animation )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CIBounceVector3NaturalMotionAnimation * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateContainerShape )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionContainerShape * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateEllipseGeometry )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionEllipseGeometry * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateLineGeometry )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionLineGeometry * * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreatePathGeometry )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreatePathGeometryWithPath )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionPath * path,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionPathGeometry * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreatePathKeyFrameAnimation )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateRectangleGeometry )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionRectangleGeometry * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateRoundedRectangleGeometry )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionRoundedRectangleGeometry * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateShapeVisual )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateSpriteShape )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateSpriteShapeWithGeometry )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionGeometry * geometry,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionSpriteShape * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateViewBox )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *RequestCommitAsync )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositor5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * action
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositor5Vtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositor5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositor5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_get_Comment(This,value) \
+    ( (This)->lpVtbl->get_Comment(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_put_Comment(This,value) \
+    ( (This)->lpVtbl->put_Comment(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_get_GlobalPlaybackRate(This,value) \
+    ( (This)->lpVtbl->get_GlobalPlaybackRate(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_put_GlobalPlaybackRate(This,value) \
+    ( (This)->lpVtbl->put_GlobalPlaybackRate(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateBounceScalarAnimation(This,result) \
+    ( (This)->lpVtbl->CreateBounceScalarAnimation(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateBounceVector2Animation(This,result) \
+    ( (This)->lpVtbl->CreateBounceVector2Animation(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateBounceVector3Animation(This,result) \
+    ( (This)->lpVtbl->CreateBounceVector3Animation(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateContainerShape(This,result) \
+    ( (This)->lpVtbl->CreateContainerShape(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateEllipseGeometry(This,result) \
+    ( (This)->lpVtbl->CreateEllipseGeometry(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateLineGeometry(This,result) \
+    ( (This)->lpVtbl->CreateLineGeometry(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreatePathGeometry(This,result) \
+    ( (This)->lpVtbl->CreatePathGeometry(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreatePathGeometryWithPath(This,path,result) \
+    ( (This)->lpVtbl->CreatePathGeometryWithPath(This,path,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreatePathKeyFrameAnimation(This,result) \
+    ( (This)->lpVtbl->CreatePathKeyFrameAnimation(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateRectangleGeometry(This,result) \
+    ( (This)->lpVtbl->CreateRectangleGeometry(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateRoundedRectangleGeometry(This,result) \
+    ( (This)->lpVtbl->CreateRoundedRectangleGeometry(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateShapeVisual(This,result) \
+    ( (This)->lpVtbl->CreateShapeVisual(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateSpriteShape(This,result) \
+    ( (This)->lpVtbl->CreateSpriteShape(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateSpriteShapeWithGeometry(This,geometry,result) \
+    ( (This)->lpVtbl->CreateSpriteShapeWithGeometry(This,geometry,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_CreateViewBox(This,result) \
+    ( (This)->lpVtbl->CreateViewBox(This,result) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor5_RequestCommitAsync(This,action) \
+    ( (This)->lpVtbl->RequestCommitAsync(This,action) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositor5;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ICompositorStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.Compositor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositorStatics[] = L"Windows.UI.Composition.ICompositorStatics";
+/* [object, uuid("080DB93E-121E-4D97-8B74-1DFCF91987EA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositorStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositorStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositorStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositorStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositorStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositorStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositorStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxGlobalPlaybackRate )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositorStatics * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinGlobalPlaybackRate )(
+        __x_ABI_CWindows_CUI_CComposition_CICompositorStatics * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CICompositorStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CICompositorStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositorStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CICompositorStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositorStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositorStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositorStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositorStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositorStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositorStatics_get_MaxGlobalPlaybackRate(This,value) \
+    ( (This)->lpVtbl->get_MaxGlobalPlaybackRate(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositorStatics_get_MinGlobalPlaybackRate(This,value) \
+    ( (This)->lpVtbl->get_MinGlobalPlaybackRate(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositorStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositorStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -23511,6 +30440,109 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CINaturalMotionAnimatio
 
 /*
  *
+ * Interface Windows.UI.Composition.IPathKeyFrameAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.PathKeyFrameAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IPathKeyFrameAnimation[] = L"Windows.UI.Composition.IPathKeyFrameAnimation";
+/* [object, uuid("9D0D18C9-1576-4B3F-BE60-1D5031F5E71B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *InsertKeyFrame )(
+        __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation * This,
+        /* [in] */FLOAT normalizedProgressKey,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionPath * path
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *InsertKeyFrameWithEasingFunction )(
+        __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation * This,
+        /* [in] */FLOAT normalizedProgressKey,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionPath * path,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunction * easingFunction
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimationVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_InsertKeyFrame(This,normalizedProgressKey,path) \
+    ( (This)->lpVtbl->InsertKeyFrame(This,normalizedProgressKey,path) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_InsertKeyFrameWithEasingFunction(This,normalizedProgressKey,path,easingFunction) \
+    ( (This)->lpVtbl->InsertKeyFrameWithEasingFunction(This,normalizedProgressKey,path,easingFunction) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIPathKeyFrameAnimation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.IPointLight
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -23777,6 +30809,120 @@ interface __x_ABI_CWindows_CUI_CComposition_CIPointLight2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIPointLight2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIPointLight2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.IPointLight3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.PointLight
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIPointLight3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIPointLight3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IPointLight3[] = L"Windows.UI.Composition.IPointLight3";
+/* [object, uuid("4C0A8367-D4E9-468A-87AE-7BA43AB29485"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CIPointLight3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinAttenuationCutoff )(
+        __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MinAttenuationCutoff )(
+        __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxAttenuationCutoff )(
+        __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MaxAttenuationCutoff )(
+        __x_ABI_CWindows_CUI_CComposition_CIPointLight3 * This,
+        /* [in] */FLOAT value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CIPointLight3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CIPointLight3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIPointLight3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_get_MinAttenuationCutoff(This,value) \
+    ( (This)->lpVtbl->get_MinAttenuationCutoff(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_put_MinAttenuationCutoff(This,value) \
+    ( (This)->lpVtbl->put_MinAttenuationCutoff(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_get_MaxAttenuationCutoff(This,value) \
+    ( (This)->lpVtbl->get_MaxAttenuationCutoff(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIPointLight3_put_MaxAttenuationCutoff(This,value) \
+    ( (This)->lpVtbl->put_MaxAttenuationCutoff(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIPointLight3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIPointLight3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -24294,6 +31440,113 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIScalarNaturalMotionAn
 
 /*
  *
+ * Interface Windows.UI.Composition.IShapeVisual
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.ShapeVisual
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IShapeVisual[] = L"Windows.UI.Composition.IShapeVisual";
+/* [object, uuid("F2BD13C3-BA7E-4B0F-9126-FFB7536B8176"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CIShapeVisualVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Shapes )(
+        __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CComposition__CCompositionShape * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ViewBox )(
+        __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ViewBox )(
+        __x_ABI_CWindows_CUI_CComposition_CIShapeVisual * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionViewBox * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CIShapeVisualVtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CIShapeVisual
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIShapeVisualVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual_get_Shapes(This,value) \
+    ( (This)->lpVtbl->get_Shapes(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual_get_ViewBox(This,value) \
+    ( (This)->lpVtbl->get_ViewBox(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CIShapeVisual_put_ViewBox(This,value) \
+    ( (This)->lpVtbl->put_ViewBox(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIShapeVisual;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIShapeVisual_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Composition.ISpotLight
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -24658,6 +31911,120 @@ interface __x_ABI_CWindows_CUI_CComposition_CISpotLight2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CISpotLight2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CISpotLight2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Composition.ISpotLight3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Composition.SpotLight
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CISpotLight3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CComposition_CISpotLight3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ISpotLight3[] = L"Windows.UI.Composition.ISpotLight3";
+/* [object, uuid("E4D03EEA-131F-480E-859E-B82705B74360"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CComposition_CISpotLight3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinAttenuationCutoff )(
+        __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MinAttenuationCutoff )(
+        __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This,
+        /* [in] */FLOAT value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxAttenuationCutoff )(
+        __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MaxAttenuationCutoff )(
+        __x_ABI_CWindows_CUI_CComposition_CISpotLight3 * This,
+        /* [in] */FLOAT value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CComposition_CISpotLight3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CComposition_CISpotLight3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CISpotLight3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_get_MinAttenuationCutoff(This,value) \
+    ( (This)->lpVtbl->get_MinAttenuationCutoff(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_put_MinAttenuationCutoff(This,value) \
+    ( (This)->lpVtbl->put_MinAttenuationCutoff(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_get_MaxAttenuationCutoff(This,value) \
+    ( (This)->lpVtbl->get_MaxAttenuationCutoff(This,value) )
+
+#define __x_ABI_CWindows_CUI_CComposition_CISpotLight3_put_MaxAttenuationCutoff(This,value) \
+    ( (This)->lpVtbl->put_MaxAttenuationCutoff(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CISpotLight3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CISpotLight3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -26910,6 +34277,105 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.AnimationController
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Composition.IAnimationControllerStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IAnimationController ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_AnimationController_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_AnimationController_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_AnimationController[] = L"Windows.UI.Composition.AnimationController";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.BounceScalarNaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IBounceScalarNaturalMotionAnimation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_BounceScalarNaturalMotionAnimation_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_BounceScalarNaturalMotionAnimation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_BounceScalarNaturalMotionAnimation[] = L"Windows.UI.Composition.BounceScalarNaturalMotionAnimation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.BounceVector2NaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IBounceVector2NaturalMotionAnimation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_BounceVector2NaturalMotionAnimation_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_BounceVector2NaturalMotionAnimation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_BounceVector2NaturalMotionAnimation[] = L"Windows.UI.Composition.BounceVector2NaturalMotionAnimation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.BounceVector3NaturalMotionAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IBounceVector3NaturalMotionAnimation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_BounceVector3NaturalMotionAnimation_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_BounceVector3NaturalMotionAnimation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_BounceVector3NaturalMotionAnimation[] = L"Windows.UI.Composition.BounceVector3NaturalMotionAnimation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.ColorKeyFrameAnimation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -27209,6 +34675,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.CompositionContainerShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionContainerShape ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionContainerShape_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionContainerShape_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionContainerShape[] = L"Windows.UI.Composition.CompositionContainerShape";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.CompositionDrawingSurface
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -27335,6 +34825,54 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.CompositionEllipseGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionEllipseGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionEllipseGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionEllipseGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionEllipseGeometry[] = L"Windows.UI.Composition.CompositionEllipseGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionGeometry[] = L"Windows.UI.Composition.CompositionGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.CompositionGradientBrush
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -27392,6 +34930,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Composition.ICompositionLight ** Default Interface **
  *    Windows.UI.Composition.ICompositionLight2
+ *    Windows.UI.Composition.ICompositionLight3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -27405,6 +34944,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionLight[] = L"Windows.UI.Composition.CompositionLight";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionLineGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionLineGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionLineGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionLineGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionLineGeometry[] = L"Windows.UI.Composition.CompositionLineGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -27491,6 +35054,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Foundation.IClosable
  *    Windows.UI.Composition.ICompositionObject2
  *    Windows.UI.Composition.ICompositionObject3
+ *    Windows.UI.Composition.ICompositionObject4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -27504,6 +35068,58 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionObject[] = L"Windows.UI.Composition.CompositionObject";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionPath
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.Composition.ICompositionPathFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionPath ** Default Interface **
+ *    Windows.Graphics.IGeometrySource2D
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionPath_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionPath_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionPath[] = L"Windows.UI.Composition.CompositionPath";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionPathGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionPathGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionPathGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionPathGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionPathGeometry[] = L"Windows.UI.Composition.CompositionPathGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -27529,6 +35145,54 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionPropertySet[] = L"Windows.UI.Composition.CompositionPropertySet";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionRectangleGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionRectangleGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionRectangleGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionRectangleGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionRectangleGeometry[] = L"Windows.UI.Composition.CompositionRectangleGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionRoundedRectangleGeometry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionRoundedRectangleGeometry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionRoundedRectangleGeometry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionRoundedRectangleGeometry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionRoundedRectangleGeometry[] = L"Windows.UI.Composition.CompositionRoundedRectangleGeometry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -27577,6 +35241,104 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionShadow[] = L"Windows.UI.Composition.CompositionShadow";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionShape ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionShape_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionShape_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionShape[] = L"Windows.UI.Composition.CompositionShape";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionShapeCollection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Foundation.Collections.IVector_1_Windows.UI.Composition.CompositionShape ** Default Interface **
+ *    Windows.Foundation.Collections.IIterable_1_Windows.UI.Composition.CompositionShape
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionShapeCollection_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionShapeCollection_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionShapeCollection[] = L"Windows.UI.Composition.CompositionShapeCollection";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionSpriteShape
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionSpriteShape ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionSpriteShape_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionSpriteShape_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionSpriteShape[] = L"Windows.UI.Composition.CompositionSpriteShape";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.UI.Composition.CompositionStrokeDashArray
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Foundation.Collections.IVector_1_float ** Default Interface **
+ *    Windows.Foundation.Collections.IIterable_1_float
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionStrokeDashArray_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionStrokeDashArray_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionStrokeDashArray[] = L"Windows.UI.Composition.CompositionStrokeDashArray";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -27630,6 +35392,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.CompositionViewBox
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.ICompositionViewBox ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionViewBox_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionViewBox_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionViewBox[] = L"Windows.UI.Composition.CompositionViewBox";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.CompositionVirtualDrawingSurface
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -27662,12 +35448,16 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass can be activated.
  *   Type can be activated via RoActivateInstance starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Composition.ICompositorStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
  * Class implements the following interfaces:
  *    Windows.UI.Composition.ICompositor ** Default Interface **
  *    Windows.Foundation.IClosable
  *    Windows.UI.Composition.ICompositor2
  *    Windows.UI.Composition.ICompositor3
  *    Windows.UI.Composition.ICompositor4
+ *    Windows.UI.Composition.ICompositor5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -27981,6 +35771,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.PathKeyFrameAnimation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IPathKeyFrameAnimation ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_PathKeyFrameAnimation_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_PathKeyFrameAnimation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_PathKeyFrameAnimation[] = L"Windows.UI.Composition.PathKeyFrameAnimation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.PointLight
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -27989,6 +35803,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Composition.IPointLight ** Default Interface **
  *    Windows.UI.Composition.IPointLight2
+ *    Windows.UI.Composition.IPointLight3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -28102,6 +35917,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Composition.ShapeVisual
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Composition.IShapeVisual ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Composition_ShapeVisual_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_ShapeVisual_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_ShapeVisual[] = L"Windows.UI.Composition.ShapeVisual";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Composition.SpotLight
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -28110,6 +35949,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Composition.ISpotLight ** Default Interface **
  *    Windows.UI.Composition.ISpotLight2
+ *    Windows.UI.Composition.ISpotLight3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

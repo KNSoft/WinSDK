@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.capture.frames.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -265,6 +267,22 @@
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IAudioMediaFrame;
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame ABI::Windows::Media::Capture::Frames::IAudioMediaFrame
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_FWD_DEFINED__
 namespace ABI {
@@ -377,6 +395,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IMediaFrameFormat2;
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2 ABI::Windows::Media::Capture::Frames::IMediaFrameFormat2
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader_FWD_DEFINED__
 namespace ABI {
@@ -425,6 +459,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IMediaFrameReference2;
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2 ABI::Windows::Media::Capture::Frames::IMediaFrameReference2
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource_FWD_DEFINED__
 namespace ABI {
@@ -472,6 +522,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 ABI::Windows::Media::Capture::Frames::IMediaFrameSourceController2
 
 #endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IMediaFrameSourceController3;
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3 ABI::Windows::Media::Capture::Frames::IMediaFrameSourceController3
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_FWD_DEFINED__
@@ -536,6 +602,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo ABI::Windows::Media::Capture::Frames::IMediaFrameSourceInfo
 
 #endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IMediaFrameSourceInfo2;
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 ABI::Windows::Media::Capture::Frames::IMediaFrameSourceInfo2
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__
@@ -1737,6 +1819,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_USE
@@ -1765,6 +1848,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Capture::Frames::MediaFrameReade
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -1814,6 +1898,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_USE
@@ -1842,6 +1927,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Capture::Frames::MultiSourceMedi
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -2030,6 +2116,125 @@ typedef IReference<UINT32> __FIReference_1_UINT32_t;
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                class MediaCaptureVideoProfileMediaDescription;
+            } /* Windows */
+        } /* Media */
+    } /* Capture */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                interface IMediaCaptureVideoProfileMediaDescription;
+            } /* Windows */
+        } /* Media */
+    } /* Capture */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription_FWD_DEFINED__
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_USE
+#define DEF___FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("b3e8378f-710c-5126-a6c9-8f489f63e15e"))
+IIterator<ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription*, ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription*> __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t;
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription*>
+//#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_USE
+#define DEF___FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("0895e56d-fe1f-5364-ab67-c597d8970b89"))
+IIterable<ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription*, ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription*> __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t;
+#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription*>
+//#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_USE
+#define DEF___FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("726c7c8c-789e-5fcb-b31f-f9d9d4a3ac42"))
+IVectorView<ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription*, ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription*> __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t;
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription*>
+//#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 
 
 namespace ABI {
@@ -2148,6 +2353,29 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Media {
+            class AudioFrame;
+        } /* Windows */
+    } /* Media */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CMedia_CIAudioFrame_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CIAudioFrame_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            interface IAudioFrame;
+        } /* Windows */
+    } /* Media */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CIAudioFrame ABI::Windows::Media::IAudioFrame
+
+#endif // ____x_ABI_CWindows_CMedia_CIAudioFrame_FWD_DEFINED__
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
             namespace Capture {
                 
                 typedef enum MediaStreamType : int MediaStreamType;
@@ -2155,6 +2383,33 @@ namespace ABI {
             } /* Windows */
         } /* Media */
     } /* Capture */} /* ABI */
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                class AudioDeviceController;
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IAudioDeviceController;
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController ABI::Windows::Media::Devices::IAudioDeviceController
+
+#endif // ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
+
 
 
 
@@ -2244,6 +2499,30 @@ namespace ABI {
 
 
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                class AudioEncodingProperties;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IAudioEncodingProperties;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties ABI::Windows::Media::MediaProperties::IAudioEncodingProperties
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties_FWD_DEFINED__
 
 
 namespace ABI {
@@ -2439,6 +2718,23 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    class AudioMediaFrame;
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
 
 
 namespace ABI {
@@ -2696,6 +2992,16 @@ namespace ABI {
                         MediaFrameSourceKind_Color = 1,
                         MediaFrameSourceKind_Infrared = 2,
                         MediaFrameSourceKind_Depth = 3,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
+                        MediaFrameSourceKind_Audio = 4,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
+                        MediaFrameSourceKind_Image = 5,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
                     };
                     
                 } /* Windows */
@@ -2772,6 +3078,55 @@ namespace ABI {
 
 /*
  *
+ * Interface Windows.Media.Capture.Frames.IAudioMediaFrame
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.AudioMediaFrame
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IAudioMediaFrame[] = L"Windows.Media.Capture.Frames.IAudioMediaFrame";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    /* [object, uuid("A3A9FEFF-8021-441B-9A46-E7F0137B7981"), exclusiveto, contract] */
+                    MIDL_INTERFACE("A3A9FEFF-8021-441B-9A46-E7F0137B7981")
+                    IAudioMediaFrame : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameReference(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameReference * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioEncodingProperties(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties * * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE GetAudioFrame(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::IAudioFrame * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IAudioMediaFrame=_uuidof(IAudioMediaFrame);
+                    
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Capture.Frames.IBufferMediaFrame
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -2792,8 +3147,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("B5B153C7-9B84-4062-B79C-A365B2596854"), exclusiveto, contract] */
                     MIDL_INTERFACE("B5B153C7-9B84-4062-B79C-A365B2596854")
-                    IBufferMediaFrame : IInspectable
+                    IBufferMediaFrame : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameReference(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameReference * * value
                             ) = 0;
@@ -2837,8 +3193,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("47135E4F-8549-45C0-925B-80D35EFDB10A"), exclusiveto, contract] */
                     MIDL_INTERFACE("47135E4F-8549-45C0-925B-80D35EFDB10A")
-                    IDepthMediaFrame : IInspectable
+                    IDepthMediaFrame : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameReference(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameReference * * value
                             ) = 0;
@@ -2890,8 +3247,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("6CCA473D-C4A4-4176-B0CD-33EAE3B35AA3"), exclusiveto, contract] */
                     MIDL_INTERFACE("6CCA473D-C4A4-4176-B0CD-33EAE3B35AA3")
-                    IDepthMediaFrame2 : IInspectable
+                    IDepthMediaFrame2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxReliableDepth(
                             /* [retval, out] */__RPC__out UINT32 * value
                             ) = 0;
@@ -2935,8 +3293,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("C312CF40-D729-453E-8780-2E04F140D28E"), exclusiveto, contract] */
                     MIDL_INTERFACE("C312CF40-D729-453E-8780-2E04F140D28E")
-                    IDepthMediaFrameFormat : IInspectable
+                    IDepthMediaFrameFormat : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VideoFormat(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IVideoMediaFrameFormat * * value
                             ) = 0;
@@ -2980,8 +3339,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("3FD13503-004B-4F0E-91AC-465299B41658"), exclusiveto, contract] */
                     MIDL_INTERFACE("3FD13503-004B-4F0E-91AC-465299B41658")
-                    IInfraredMediaFrame : IInspectable
+                    IInfraredMediaFrame : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameReference(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameReference * * value
                             ) = 0;
@@ -3028,8 +3388,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("0B430ADD-A490-4435-ADA1-9AFFD55239F7"), exclusiveto, contract] */
                     MIDL_INTERFACE("0B430ADD-A490-4435-ADA1-9AFFD55239F7")
-                    IMediaFrameArrivedEventArgs : IInspectable
+                    IMediaFrameArrivedEventArgs : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -3067,8 +3428,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("71902B4E-B279-4A97-A9DB-BD5A2FB78F39"), exclusiveto, contract] */
                     MIDL_INTERFACE("71902B4E-B279-4A97-A9DB-BD5A2FB78F39")
-                    IMediaFrameFormat : IInspectable
+                    IMediaFrameFormat : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MajorType(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3101,6 +3463,49 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameForm
 
 /*
  *
+ * Interface Windows.Media.Capture.Frames.IMediaFrameFormat2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.MediaFrameFormat
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMediaFrameFormat2[] = L"Windows.Media.Capture.Frames.IMediaFrameFormat2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    /* [object, uuid("63856340-5E87-4C10-86D1-6DF097A6C6A8"), exclusiveto, contract] */
+                    MIDL_INTERFACE("63856340-5E87-4C10-86D1-6DF097A6C6A8")
+                    IMediaFrameFormat2 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioEncodingProperties(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IMediaFrameFormat2=_uuidof(IMediaFrameFormat2);
+                    
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Capture.Frames.IMediaFrameReader
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -3125,8 +3530,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("E4C94395-2028-48ED-90B0-D1C1B162E24C"), exclusiveto, contract] */
                     MIDL_INTERFACE("E4C94395-2028-48ED-90B0-D1C1B162E24C")
-                    IMediaFrameReader : IInspectable
+                    IMediaFrameReader : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_FrameArrived(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3180,8 +3586,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("871127B3-8531-4050-87CC-A13733CF3E9B"), exclusiveto, contract] */
                     MIDL_INTERFACE("871127B3-8531-4050-87CC-A13733CF3E9B")
-                    IMediaFrameReader2 : IInspectable
+                    IMediaFrameReader2 : public IInspectable
                     {
+                    public:
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AcquisitionMode(
                             /* [in] */ABI::Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode value
                             ) = 0;
@@ -3229,8 +3636,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("F6B88641-F0DC-4044-8DC9-961CEDD05BAD"), exclusiveto, contract] */
                     MIDL_INTERFACE("F6B88641-F0DC-4044-8DC9-961CEDD05BAD")
-                    IMediaFrameReference : IInspectable
+                    IMediaFrameReference : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourceKind(
                             /* [retval, out] */__RPC__out ABI::Windows::Media::Capture::Frames::MediaFrameSourceKind * value
                             ) = 0;
@@ -3272,6 +3680,49 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameRefe
 
 /*
  *
+ * Interface Windows.Media.Capture.Frames.IMediaFrameReference2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.MediaFrameReference
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMediaFrameReference2[] = L"Windows.Media.Capture.Frames.IMediaFrameReference2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    /* [object, uuid("DDBC3ECC-D5B2-49EF-836A-947D989B80C1"), exclusiveto, contract] */
+                    MIDL_INTERFACE("DDBC3ECC-D5B2-49EF-836A-947D989B80C1")
+                    IMediaFrameReference2 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioMediaFrame(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IAudioMediaFrame * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IMediaFrameReference2=_uuidof(IMediaFrameReference2);
+                    
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Capture.Frames.IMediaFrameSource
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -3292,8 +3743,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("D6782953-90DB-46A8-8ADD-2AA884A8D253"), exclusiveto, contract] */
                     MIDL_INTERFACE("D6782953-90DB-46A8-8ADD-2AA884A8D253")
-                    IMediaFrameSource : IInspectable
+                    IMediaFrameSource : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Info(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameSourceInfo * * value
                             ) = 0;
@@ -3358,8 +3810,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("6D076635-316D-4B8F-B7B6-EEB04A8C6525"), exclusiveto, contract] */
                     MIDL_INTERFACE("6D076635-316D-4B8F-B7B6-EEB04A8C6525")
-                    IMediaFrameSourceController : IInspectable
+                    IMediaFrameSourceController : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetPropertyAsync(
                             /* [in] */__RPC__in HSTRING propertyId,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult * * value
@@ -3409,8 +3862,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("EFC49FD4-FCF2-4A03-B4E4-AC9628739BEE"), exclusiveto, contract] */
                     MIDL_INTERFACE("EFC49FD4-FCF2-4A03-B4E4-AC9628739BEE")
-                    IMediaFrameSourceController2 : IInspectable
+                    IMediaFrameSourceController2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetPropertyByExtendedIdAsync(
                             /* [in] */UINT32 __extendedPropertyIdSize,
                             /* [size_is(__extendedPropertyIdSize), in] */__RPC__in_ecount_full(__extendedPropertyIdSize) BYTE * extendedPropertyId,
@@ -3441,6 +3895,49 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSour
 
 /*
  *
+ * Interface Windows.Media.Capture.Frames.IMediaFrameSourceController3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.MediaFrameSourceController
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMediaFrameSourceController3[] = L"Windows.Media.Capture.Frames.IMediaFrameSourceController3";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    /* [object, uuid("1F0CF815-2464-4651-B1E8-4A82DBDB54DE"), exclusiveto, contract] */
+                    MIDL_INTERFACE("1F0CF815-2464-4651-B1E8-4A82DBDB54DE")
+                    IMediaFrameSourceController3 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioDeviceController(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Devices::IAudioDeviceController * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IMediaFrameSourceController3=_uuidof(IMediaFrameSourceController3);
+                    
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Capture.Frames.IMediaFrameSourceGetPropertyResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -3461,8 +3958,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("088616C2-3A64-4BD5-BD2B-E7C898D2F37A"), exclusiveto, contract] */
                     MIDL_INTERFACE("088616C2-3A64-4BD5-BD2B-E7C898D2F37A")
-                    IMediaFrameSourceGetPropertyResult : IInspectable
+                    IMediaFrameSourceGetPropertyResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyStatus * value
                             ) = 0;
@@ -3506,8 +4004,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("7F605B87-4832-4B5F-AE3D-412FAAB37D34"), exclusiveto, contract] */
                     MIDL_INTERFACE("7F605B87-4832-4B5F-AE3D-412FAAB37D34")
-                    IMediaFrameSourceGroup : IInspectable
+                    IMediaFrameSourceGroup : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3554,8 +4053,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("1C48BFC5-436F-4508-94CF-D5D8B7326445"), exclusiveto, contract] */
                     MIDL_INTERFACE("1C48BFC5-436F-4508-94CF-D5D8B7326445")
-                    IMediaFrameSourceGroupStatics : IInspectable
+                    IMediaFrameSourceGroupStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE FindAllAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup * * value
                             ) = 0;
@@ -3603,8 +4103,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("87BDC9CD-4601-408F-91CF-038318CD0AF3"), exclusiveto, contract] */
                     MIDL_INTERFACE("87BDC9CD-4601-408F-91CF-038318CD0AF3")
-                    IMediaFrameSourceInfo : IInspectable
+                    IMediaFrameSourceInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -3643,6 +4144,52 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSour
 
 /*
  *
+ * Interface Windows.Media.Capture.Frames.IMediaFrameSourceInfo2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.MediaFrameSourceInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMediaFrameSourceInfo2[] = L"Windows.Media.Capture.Frames.IMediaFrameSourceInfo2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    /* [object, uuid("195A7855-6457-42C6-A769-19B65BD32E6E"), exclusiveto, contract] */
+                    MIDL_INTERFACE("195A7855-6457-42C6-A769-19B65BD32E6E")
+                    IMediaFrameSourceInfo2 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProfileId(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VideoProfileMediaDescription(
+                            /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IMediaFrameSourceInfo2=_uuidof(IMediaFrameSourceInfo2);
+                    
+                } /* Windows */
+            } /* Media */
+        } /* Capture */
+    } /* Frames */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Capture.Frames.IMultiSourceMediaFrameArrivedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -3663,8 +4210,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("63115E01-CF51-48FD-AAB0-6D693EB48127"), exclusiveto, contract] */
                     MIDL_INTERFACE("63115E01-CF51-48FD-AAB0-6D693EB48127")
-                    IMultiSourceMediaFrameArrivedEventArgs : IInspectable
+                    IMultiSourceMediaFrameArrivedEventArgs : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -3706,8 +4254,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("8D144402-F763-488D-98F2-B437BCF075E7"), exclusiveto, contract] */
                     MIDL_INTERFACE("8D144402-F763-488D-98F2-B437BCF075E7")
-                    IMultiSourceMediaFrameReader : IInspectable
+                    IMultiSourceMediaFrameReader : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_FrameArrived(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3761,8 +4310,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("EF5C8ABD-FC5C-4C6B-9D81-3CB9CC637C26"), exclusiveto, contract] */
                     MIDL_INTERFACE("EF5C8ABD-FC5C-4C6B-9D81-3CB9CC637C26")
-                    IMultiSourceMediaFrameReader2 : IInspectable
+                    IMultiSourceMediaFrameReader2 : public IInspectable
                     {
+                    public:
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AcquisitionMode(
                             /* [in] */ABI::Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode value
                             ) = 0;
@@ -3810,8 +4360,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("21964B1A-7FE2-44D6-92E5-298E6D2810E9"), exclusiveto, contract] */
                     MIDL_INTERFACE("21964B1A-7FE2-44D6-92E5-298E6D2810E9")
-                    IMultiSourceMediaFrameReference : IInspectable
+                    IMultiSourceMediaFrameReference : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE TryGetFrameReferenceBySourceId(
                             /* [in] */__RPC__in HSTRING sourceId,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameReference * * value
@@ -3853,8 +4404,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("00DD4CCB-32BD-4FE1-A013-7CC13CF5DBCF"), exclusiveto, contract] */
                     MIDL_INTERFACE("00DD4CCB-32BD-4FE1-A013-7CC13CF5DBCF")
-                    IVideoMediaFrame : IInspectable
+                    IVideoMediaFrame : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameReference(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameReference * * value
                             ) = 0;
@@ -3916,8 +4468,9 @@ namespace ABI {
                 namespace Frames {
                     /* [object, uuid("46027FC0-D71B-45C7-8F14-6D9A0AE604E4"), exclusiveto, contract] */
                     MIDL_INTERFACE("46027FC0-D71B-45C7-8F14-6D9A0AE604E4")
-                    IVideoMediaFrameFormat : IInspectable
+                    IVideoMediaFrameFormat : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MediaFrameFormat(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameFormat * * value
                             ) = 0;
@@ -3943,6 +4496,30 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrameFormat;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrameFormat_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.Media.Capture.Frames.AudioMediaFrame
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Capture.Frames.IAudioMediaFrame ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Capture_Frames_AudioMediaFrame_DEFINED
+#define RUNTIMECLASS_Windows_Media_Capture_Frames_AudioMediaFrame_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Capture_Frames_AudioMediaFrame[] = L"Windows.Media.Capture.Frames.AudioMediaFrame";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4075,6 +4652,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Media.Capture.Frames.IMediaFrameFormat ** Default Interface **
+ *    Windows.Media.Capture.Frames.IMediaFrameFormat2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -4126,6 +4704,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Capture.Frames.IMediaFrameReference ** Default Interface **
  *    Windows.Foundation.IClosable
+ *    Windows.Media.Capture.Frames.IMediaFrameReference2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -4175,6 +4754,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Capture.Frames.IMediaFrameSourceController ** Default Interface **
  *    Windows.Media.Capture.Frames.IMediaFrameSourceController2
+ *    Windows.Media.Capture.Frames.IMediaFrameSourceController3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -4250,6 +4830,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Media.Capture.Frames.IMediaFrameSourceInfo ** Default Interface **
+ *    Windows.Media.Capture.Frames.IMediaFrameSourceInfo2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -4393,6 +4974,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #else // !defined(__cplusplus)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame;
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame __x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame;
@@ -4435,6 +5022,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat __
 
 #endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2 __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2;
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader;
@@ -4453,6 +5046,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference
 
 #endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2 __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2;
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource;
@@ -4470,6 +5069,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceCon
 typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2;
 
 #endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3 __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3;
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_FWD_DEFINED__
@@ -4494,6 +5099,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGro
 typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo;
 
 #endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2;
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__
@@ -6731,6 +7342,7 @@ interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceM
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
 
@@ -6777,6 +7389,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFram
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -6833,6 +7446,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFram
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
 
@@ -6879,6 +7493,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSour
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
@@ -7292,6 +7907,285 @@ interface __FIReference_1_UINT32
 #endif // ____FIReference_1_UINT32_INTERFACE_DEFINED__
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription __x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription;
+
+#endif // ____x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription_FWD_DEFINED__
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription;
+
+typedef struct __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescriptionVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescriptionVtbl;
+
+interface __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescriptionVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription;
+
+typedef  struct __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescriptionVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescriptionVtbl;
+
+interface __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescriptionVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription;
+
+typedef struct __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescriptionVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+            /* [in] */ __x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CCapture_CIMediaCaptureVideoProfileMediaDescription * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescriptionVtbl;
+
+interface __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescriptionVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 
 #ifndef ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation_FWD_DEFINED__
@@ -7344,8 +8238,28 @@ typedef interface __x_ABI_CWindows_CGraphics_CImaging_CISoftwareBitmap __x_ABI_C
 
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CIAudioFrame_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CIAudioFrame_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CIAudioFrame __x_ABI_CWindows_CMedia_CIAudioFrame;
+
+#endif // ____x_ABI_CWindows_CMedia_CIAudioFrame_FWD_DEFINED__
+
+
+
+
+
 
 typedef enum __x_ABI_CWindows_CMedia_CCapture_CMediaStreamType __x_ABI_CWindows_CMedia_CCapture_CMediaStreamType;
+
+
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController;
+
+#endif // ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
+
 
 
 
@@ -7376,6 +8290,13 @@ typedef interface __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceController __x_A
 
 
 
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties_FWD_DEFINED__
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
@@ -7434,6 +8355,12 @@ typedef enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMediaFrameSourceSetProper
 
 
 typedef enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMultiSourceMediaFrameReaderStartStatus __x_ABI_CWindows_CMedia_CCapture_CFrames_CMultiSourceMediaFrameReaderStartStatus;
+
+
+
+
+
+
 
 
 
@@ -7579,6 +8506,16 @@ enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMediaFrameSourceKind
     MediaFrameSourceKind_Color = 1,
     MediaFrameSourceKind_Infrared = 2,
     MediaFrameSourceKind_Depth = 3,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    MediaFrameSourceKind_Audio = 4,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    MediaFrameSourceKind_Image = 5,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -7626,6 +8563,113 @@ enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMultiSourceMediaFrameReaderStartS
     MultiSourceMediaFrameReaderStartStatus_UnknownFailure = 4,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Media.Capture.Frames.IAudioMediaFrame
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.AudioMediaFrame
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IAudioMediaFrame[] = L"Windows.Media.Capture.Frames.IAudioMediaFrame";
+/* [object, uuid("A3A9FEFF-8021-441B-9A46-E7F0137B7981"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrameVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FrameReference )(
+        __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AudioEncodingProperties )(
+        __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetAudioFrame )(
+        __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CIAudioFrame * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrameVtbl;
+
+interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrameVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_get_FrameReference(This,value) \
+    ( (This)->lpVtbl->get_FrameReference(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_get_AudioEncodingProperties(This,value) \
+    ( (This)->lpVtbl->get_AudioEncodingProperties(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_GetAudioFrame(This,value) \
+    ( (This)->lpVtbl->GetAudioFrame(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8360,6 +9404,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameForm
 
 /*
  *
+ * Interface Windows.Media.Capture.Frames.IMediaFrameFormat2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.MediaFrameFormat
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMediaFrameFormat2[] = L"Windows.Media.Capture.Frames.IMediaFrameFormat2";
+/* [object, uuid("63856340-5E87-4C10-86D1-6DF097A6C6A8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AudioEncodingProperties )(
+        __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_get_AudioEncodingProperties(This,value) \
+    ( (This)->lpVtbl->get_AudioEncodingProperties(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Capture.Frames.IMediaFrameReader
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -8732,6 +9869,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameRefe
 
 /*
  *
+ * Interface Windows.Media.Capture.Frames.IMediaFrameReference2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.MediaFrameReference
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMediaFrameReference2[] = L"Windows.Media.Capture.Frames.IMediaFrameReference2";
+/* [object, uuid("DDBC3ECC-D5B2-49EF-836A-947D989B80C1"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AudioMediaFrame )(
+        __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCapture_CFrames_CIAudioMediaFrame * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_get_AudioMediaFrame(This,value) \
+    ( (This)->lpVtbl->get_AudioMediaFrame(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Capture.Frames.IMediaFrameSource
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -9090,6 +10320,99 @@ interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Media.Capture.Frames.IMediaFrameSourceController3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.MediaFrameSourceController
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMediaFrameSourceController3[] = L"Windows.Media.Capture.Frames.IMediaFrameSourceController3";
+/* [object, uuid("1F0CF815-2464-4651-B1E8-4A82DBDB54DE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AudioDeviceController )(
+        __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_get_AudioDeviceController(This,value) \
+    ( (This)->lpVtbl->get_AudioDeviceController(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9540,6 +10863,106 @@ interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Media.Capture.Frames.IMediaFrameSourceInfo2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Capture.Frames.MediaFrameSourceInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMediaFrameSourceInfo2[] = L"Windows.Media.Capture.Frames.IMediaFrameSourceInfo2";
+/* [object, uuid("195A7855-6457-42C6-A769-19B65BD32E6E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProfileId )(
+        __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_VideoProfileMediaDescription )(
+        __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_get_ProfileId(This,value) \
+    ( (This)->lpVtbl->get_ProfileId(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_get_VideoProfileMediaDescription(This,value) \
+    ( (This)->lpVtbl->get_VideoProfileMediaDescription(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10210,6 +11633,30 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFram
 
 /*
  *
+ * Class Windows.Media.Capture.Frames.AudioMediaFrame
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Capture.Frames.IAudioMediaFrame ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Capture_Frames_AudioMediaFrame_DEFINED
+#define RUNTIMECLASS_Windows_Media_Capture_Frames_AudioMediaFrame_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Capture_Frames_AudioMediaFrame[] = L"Windows.Media.Capture.Frames.AudioMediaFrame";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.Capture.Frames.BufferMediaFrame
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -10338,6 +11785,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Media.Capture.Frames.IMediaFrameFormat ** Default Interface **
+ *    Windows.Media.Capture.Frames.IMediaFrameFormat2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -10389,6 +11837,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Capture.Frames.IMediaFrameReference ** Default Interface **
  *    Windows.Foundation.IClosable
+ *    Windows.Media.Capture.Frames.IMediaFrameReference2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -10438,6 +11887,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Capture.Frames.IMediaFrameSourceController ** Default Interface **
  *    Windows.Media.Capture.Frames.IMediaFrameSourceController2
+ *    Windows.Media.Capture.Frames.IMediaFrameSourceController3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -10513,6 +11963,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Media.Capture.Frames.IMediaFrameSourceInfo ** Default Interface **
+ *    Windows.Media.Capture.Frames.IMediaFrameSourceInfo2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

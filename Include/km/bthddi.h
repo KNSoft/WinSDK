@@ -1311,10 +1311,10 @@ struct _BRB_SCO_GET_SYSTEM_INFO {
 //
 #define CALLBACK_CONFIG_EXTRA_IN        (0x00000008)
 
+// If specified, the callback will be called when the remote host requests a
+// reconfiguration of the channel.
 //
-// Client will allow reconfig of the channel.  If this flag is not specified,
-// any reconfig is rejected and the channel is torn down.
-//
+// If this flag is not specified, any reconfig is rejected and the channel is torn down.
 #define CALLBACK_RECONFIG               (0x00000010)
 
 //
@@ -1330,9 +1330,12 @@ struct _BRB_SCO_GET_SYSTEM_INFO {
 typedef struct _INDICATION_PARAMETERS *PINDICATION_PARAMETERS;
 typedef struct _INDICATION_PARAMETERS_ENHANCED *PINDICATION_PARAMETERS_ENHANCED;
 
-#if (NTDDI_VERSION >= NTDDI_WIN8)
-typedef enum _INDICATION_CODE {
+#ifndef INDICATIONCODE
 
+#if (NTDDI_VERSION >= NTDDI_WIN8)
+
+typedef enum _INDICATION_CODE
+{
     IndicationAddReference = 0,
     IndicationReleaseReference,
     IndicationRemoteConnect,
@@ -1349,7 +1352,8 @@ typedef enum _INDICATION_CODE {
 
 #else
 
-typedef enum _INDICATION_CODE {
+typedef enum _INDICATION_CODE
+{
     IndicationAddReference = 0,
     IndicationReleaseReference,
     IndicationRemoteConnect,
@@ -1364,6 +1368,9 @@ typedef enum _INDICATION_CODE {
 } INDICATION_CODE, *PINDICATION_CODE;
 
 #endif // NTDDI_WIN8
+
+#endif // INDICATIONCODE
+
 typedef
 void
 (*PFNBTHPORT_INDICATION_CALLBACK)(
@@ -1498,7 +1505,6 @@ typedef struct _CHANNEL_CONFIG_PARAMETERS_ENHANCED {
     //
     CO_EXTENDED_WINDOW_SIZE ExtendedWindowSize;
 
-
 } CHANNEL_CONFIG_PARAMETERS_ENHANCED, *PCHANNEL_CONFIG_PARAMETERS_ENHANCED;
 
 typedef struct _CHANNEL_CONFIG_RESULTS_ENHANCED {
@@ -1531,9 +1537,9 @@ typedef struct _CHANNEL_CONFIG_RESULTS {
 
 } CHANNEL_CONFIG_RESULTS, *PCHANNEL_CONFIG_RESULTS;
 
-//
+#ifndef L2CAPDISCONNECTREASON
+
 // Reasons why a channel has been disconnected
-//
 typedef enum _L2CAP_DISCONNECT_REASON {
     HciDisconnect = 0,
     L2capDisconnectRequest,
@@ -1541,6 +1547,7 @@ typedef enum _L2CAP_DISCONNECT_REASON {
     HardwareRemoval,
 } L2CAP_DISCONNECT_REASON;
 
+#endif
 
 typedef struct _INDICATION_PARAMETERS {
 

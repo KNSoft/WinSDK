@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.gpio.provider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
@@ -98,8 +96,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -321,6 +323,7 @@ namespace ABI {
 
 
 #if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_USE
@@ -349,6 +352,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Gpio::Provider::IGpioPinProvid
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_USE */
 
 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
@@ -576,8 +580,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("AD11CEC7-19EA-4B21-874F-B91AED4A25DB"), contract] */
                     MIDL_INTERFACE("AD11CEC7-19EA-4B21-874F-B91AED4A25DB")
-                    IGpioControllerProvider : IInspectable
+                    IGpioControllerProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PinCount(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -620,8 +625,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("42344CB7-6ABC-40FF-9CE7-73B85301B900"), contract] */
                     MIDL_INTERFACE("42344CB7-6ABC-40FF-9CE7-73B85301B900")
-                    IGpioPinProvider : IInspectable
+                    IGpioPinProvider : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ValueChanged(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -694,8 +700,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("32A6D6F2-3D5B-44CD-8FBE-13A69F2EDB24"), exclusiveto, contract] */
                     MIDL_INTERFACE("32A6D6F2-3D5B-44CD-8FBE-13A69F2EDB24")
-                    IGpioPinProviderValueChangedEventArgs : IInspectable
+                    IGpioPinProviderValueChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Edge(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Gpio::Provider::ProviderGpioPinEdge * value
                             ) = 0;
@@ -736,8 +743,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("3ECB0B59-568C-4392-B24A-8A59A902B1F1"), exclusiveto, contract] */
                     MIDL_INTERFACE("3ECB0B59-568C-4392-B24A-8A59A902B1F1")
-                    IGpioPinProviderValueChangedEventArgsFactory : IInspectable
+                    IGpioPinProviderValueChangedEventArgsFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */ABI::Windows::Devices::Gpio::Provider::ProviderGpioPinEdge edge,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Gpio::Provider::IGpioPinProviderValueChangedEventArgs * * value
@@ -776,8 +784,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("44E82707-08CA-434A-AFE0-D61580446F7E"), contract] */
                     MIDL_INTERFACE("44E82707-08CA-434A-AFE0-D61580446F7E")
-                    IGpioProvider : IInspectable
+                    IGpioProvider : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetControllers(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CGpio__CProvider__CIGpioControllerProvider * * result
                             ) = 0;
@@ -1137,6 +1146,7 @@ interface __FIVectorView_1_Windows__CDevices__CGpio__CProvider__CIGpioController
 
 
 #if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_INTERFACE_DEFINED__
 
@@ -1183,6 +1193,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPin
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 

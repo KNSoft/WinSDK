@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.input.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1311,6 +1313,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_USE
@@ -1340,6 +1343,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::EdgeGesture*,ABI::Windows::U
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -1361,6 +1365,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_USE
@@ -1391,6 +1396,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1403,6 +1409,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_USE
@@ -1433,6 +1440,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1445,6 +1453,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_USE
@@ -1475,6 +1484,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1487,6 +1497,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_USE
@@ -1517,6 +1528,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1529,6 +1541,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_USE
@@ -1559,6 +1572,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1571,6 +1585,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_USE
@@ -1601,6 +1616,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1613,6 +1629,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_USE
@@ -1643,6 +1660,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1655,6 +1673,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_USE
@@ -1685,6 +1704,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer*,ABI::Wind
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1697,6 +1717,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_USE
@@ -1726,6 +1747,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer*,ABI::Wind
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -1782,6 +1804,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_USE
@@ -1810,6 +1833,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windo
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -1956,6 +1980,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_USE
@@ -1985,6 +2010,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windo
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1997,6 +2023,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_USE
@@ -2027,6 +2054,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windo
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -2039,6 +2067,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_USE
@@ -2069,6 +2098,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windo
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -2081,6 +2111,7 @@ namespace ABI {
     } /* Input */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_USE
@@ -2110,6 +2141,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windo
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -2179,8 +2211,8 @@ namespace ABI {
 #endif // ____x_ABI_CWindows_CUI_CCore_CIKeyEventArgs_FWD_DEFINED__
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_USE
@@ -2209,8 +2241,8 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::KeyboardDeliveryInterceptor*
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_USE */
 
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 #ifndef DEF___FIReference_1_float_USE
@@ -3024,8 +3056,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("E9374738-6F88-41D9-8720-78E08E398349"), exclusiveto, contract] */
                 MIDL_INTERFACE("E9374738-6F88-41D9-8720-78E08E398349")
-                ICrossSlidingEventArgs : IInspectable
+                ICrossSlidingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -3070,8 +3103,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("1C905384-083C-4BD3-B559-179CDDEB33EC"), exclusiveto, contract] */
                 MIDL_INTERFACE("1C905384-083C-4BD3-B559-179CDDEB33EC")
-                IDraggingEventArgs : IInspectable
+                IDraggingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -3116,8 +3150,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("580D5292-2AB1-49AA-A7F0-33BD3F8DF9F1"), exclusiveto, contract] */
                 MIDL_INTERFACE("580D5292-2AB1-49AA-A7F0-33BD3F8DF9F1")
-                IEdgeGesture : IInspectable
+                IEdgeGesture : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Starting(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3174,8 +3209,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("44FA4A24-2D09-42E1-8B5E-368208796A4C"), exclusiveto, contract] */
                 MIDL_INTERFACE("44FA4A24-2D09-42E1-8B5E-368208796A4C")
-                IEdgeGestureEventArgs : IInspectable
+                IEdgeGestureEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Input::EdgeGestureKind * value
                         ) = 0;
@@ -3214,8 +3250,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("BC6A8519-18EE-4043-9839-4FC584D60A14"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC6A8519-18EE-4043-9839-4FC584D60A14")
-                IEdgeGestureStatics : IInspectable
+                IEdgeGestureStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IEdgeGesture * * current
                         ) = 0;
@@ -3254,8 +3291,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("B47A37BF-3D6B-4F88-83E8-6DCB4012FFB0"), exclusiveto, contract] */
                 MIDL_INTERFACE("B47A37BF-3D6B-4F88-83E8-6DCB4012FFB0")
-                IGestureRecognizer : IInspectable
+                IGestureRecognizer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_GestureSettings(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Input::GestureSettings * value
                         ) = 0;
@@ -3473,8 +3511,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("2BF755C5-E799-41B4-BB40-242F40959B71"), exclusiveto, contract] */
                 MIDL_INTERFACE("2BF755C5-E799-41B4-BB40-242F40959B71")
-                IHoldingEventArgs : IInspectable
+                IHoldingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -3519,8 +3558,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("B4BAF068-8F49-446C-8DB5-8C0FFE85CC9E"), exclusiveto, contract] */
                 MIDL_INTERFACE("B4BAF068-8F49-446C-8DB5-8C0FFE85CC9E")
-                IKeyboardDeliveryInterceptor : IInspectable
+                IKeyboardDeliveryInterceptor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsInterceptionEnabledWhenInForeground(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3576,8 +3616,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("F9F63BA2-CEBA-4755-8A7E-14C0FFECD239"), exclusiveto, contract] */
                 MIDL_INTERFACE("F9F63BA2-CEBA-4755-8A7E-14C0FFECD239")
-                IKeyboardDeliveryInterceptorStatics : IInspectable
+                IKeyboardDeliveryInterceptorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IKeyboardDeliveryInterceptor * * keyboardDeliverySettings
                         ) = 0;
@@ -3616,8 +3657,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("B34AB22B-D19B-46FF-9F38-DEC7754BB9E7"), exclusiveto, contract] */
                 MIDL_INTERFACE("B34AB22B-D19B-46FF-9F38-DEC7754BB9E7")
-                IManipulationCompletedEventArgs : IInspectable
+                IManipulationCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -3665,8 +3707,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("DD37A898-26BF-467A-9CE5-CCF3FB11371E"), exclusiveto, contract] */
                 MIDL_INTERFACE("DD37A898-26BF-467A-9CE5-CCF3FB11371E")
-                IManipulationInertiaStartingEventArgs : IInspectable
+                IManipulationInertiaStartingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -3717,8 +3760,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("DDEC873E-CFCE-4932-8C1D-3C3D011A34C0"), exclusiveto, contract] */
                 MIDL_INTERFACE("DDEC873E-CFCE-4932-8C1D-3C3D011A34C0")
-                IManipulationStartedEventArgs : IInspectable
+                IManipulationStartedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -3763,8 +3807,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("CB354CE5-ABB8-4F9F-B3CE-8181AA61AD82"), exclusiveto, contract] */
                 MIDL_INTERFACE("CB354CE5-ABB8-4F9F-B3CE-8181AA61AD82")
-                IManipulationUpdatedEventArgs : IInspectable
+                IManipulationUpdatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -3815,8 +3860,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("EAD0CA44-9DED-4037-8149-5E4CC2564468"), exclusiveto, contract] */
                 MIDL_INTERFACE("EAD0CA44-9DED-4037-8149-5E4CC2564468")
-                IMouseWheelParameters : IInspectable
+                IMouseWheelParameters : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CharTranslation(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                         ) = 0;
@@ -3876,8 +3922,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("E995317D-7296-42D9-8233-C5BE73B74A4A"), exclusiveto, contract] */
                 MIDL_INTERFACE("E995317D-7296-42D9-8233-C5BE73B74A4A")
-                IPointerPoint : IInspectable
+                IPointerPoint : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDevice(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Input::IPointerDevice * * value
                         ) = 0;
@@ -3937,8 +3984,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("C79D8A4B-C163-4EE7-803F-67CE79F9972D"), exclusiveto, contract] */
                 MIDL_INTERFACE("C79D8A4B-C163-4EE7-803F-67CE79F9972D")
-                IPointerPointProperties : IInspectable
+                IPointerPointProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Pressure(
                         /* [retval, out] */__RPC__out FLOAT * value
                         ) = 0;
@@ -4050,8 +4098,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("22C3433A-C83B-41C0-A296-5E232D64D6AF"), exclusiveto, contract] */
                 MIDL_INTERFACE("22C3433A-C83B-41C0-A296-5E232D64D6AF")
-                IPointerPointProperties2 : IInspectable
+                IPointerPointProperties2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ZDistance(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_float * * value
                         ) = 0;
@@ -4090,8 +4139,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("A506638D-2A1A-413E-BC75-9F38381CC069"), exclusiveto, contract] */
                 MIDL_INTERFACE("A506638D-2A1A-413E-BC75-9F38381CC069")
-                IPointerPointStatics : IInspectable
+                IPointerPointStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetCurrentPoint(
                         /* [in] */UINT32 pointerId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IPointerPoint * * pointerPoint
@@ -4142,8 +4192,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("4D5FE14F-B87C-4028-BC9C-59E9947FB056"), contract] */
                 MIDL_INTERFACE("4D5FE14F-B87C-4028-BC9C-59E9947FB056")
-                IPointerPointTransform : IInspectable
+                IPointerPointTransform : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Inverse(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IPointerPointTransform * * value
                         ) = 0;
@@ -4191,8 +4242,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("4D1E6461-84F7-499D-BD91-2A36E2B7AAA2"), exclusiveto, contract] */
                 MIDL_INTERFACE("4D1E6461-84F7-499D-BD91-2A36E2B7AAA2")
-                IPointerVisualizationSettings : IInspectable
+                IPointerVisualizationSettings : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsContactFeedbackEnabled(
                         /* [in] */boolean value
                         ) = 0;
@@ -4240,8 +4292,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("68870EDB-165B-4214-B4F3-584ECA8C8A69"), exclusiveto, contract] */
                 MIDL_INTERFACE("68870EDB-165B-4214-B4F3-584ECA8C8A69")
-                IPointerVisualizationSettingsStatics : IInspectable
+                IPointerVisualizationSettingsStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IPointerVisualizationSettings * * visualizationSettings
                         ) = 0;
@@ -4280,8 +4333,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3055D1C8-DF51-43D4-B23B-0E1037467A09"), exclusiveto, contract] */
                 MIDL_INTERFACE("3055D1C8-DF51-43D4-B23B-0E1037467A09")
-                IRadialController : IInspectable
+                IRadialController : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Menu(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerMenu * * value
                         ) = 0;
@@ -4381,8 +4435,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EFF-4CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EFF-4CEE-11E6-B535-001BDC06AB3B")
-                IRadialController2 : IInspectable
+                IRadialController2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ButtonPressed(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -4439,8 +4494,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("206AA438-E651-11E5-BF62-2C27D7404E85"), exclusiveto, contract] */
                 MIDL_INTERFACE("206AA438-E651-11E5-BF62-2C27D7404E85")
-                IRadialControllerButtonClickedEventArgs : IInspectable
+                IRadialControllerButtonClickedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact * * value
                         ) = 0;
@@ -4479,8 +4535,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EF3-3CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EF3-3CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerButtonClickedEventArgs2 : IInspectable
+                IRadialControllerButtonClickedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SimpleHapticsController(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController * * value
                         ) = 0;
@@ -4519,8 +4576,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EEE-3CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EEE-3CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerButtonHoldingEventArgs : IInspectable
+                IRadialControllerButtonHoldingEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact * * value
                         ) = 0;
@@ -4562,8 +4620,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EED-4CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EED-4CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerButtonPressedEventArgs : IInspectable
+                IRadialControllerButtonPressedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact * * value
                         ) = 0;
@@ -4605,8 +4664,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EEF-3CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EEF-3CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerButtonReleasedEventArgs : IInspectable
+                IRadialControllerButtonReleasedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact * * value
                         ) = 0;
@@ -4648,8 +4708,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("A6B79ECB-6A52-4430-910C-56370A9D6B42"), exclusiveto, contract] */
                 MIDL_INTERFACE("A6B79ECB-6A52-4430-910C-56370A9D6B42")
-                IRadialControllerConfiguration : IInspectable
+                IRadialControllerConfiguration : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetDefaultMenuItems(
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind * buttons
                         ) = 0;
@@ -4693,8 +4754,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EF7-3CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EF7-3CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerConfiguration2 : IInspectable
+                IRadialControllerConfiguration2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ActiveControllerWhenMenuIsSuppressed(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Input::IRadialController * value
                         ) = 0;
@@ -4742,8 +4804,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("79B6B0E5-069A-4486-A99D-8DB772B9642F"), exclusiveto, contract] */
                 MIDL_INTERFACE("79B6B0E5-069A-4486-A99D-8DB772B9642F")
-                IRadialControllerConfigurationStatics : IInspectable
+                IRadialControllerConfigurationStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerConfiguration * * configuration
                         ) = 0;
@@ -4782,8 +4845,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("53E08B17-E205-48D3-9CAF-80FF47C4D7C7"), exclusiveto, contract] */
                 MIDL_INTERFACE("53E08B17-E205-48D3-9CAF-80FF47C4D7C7")
-                IRadialControllerConfigurationStatics2 : IInspectable
+                IRadialControllerConfigurationStatics2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AppController(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Input::IRadialController * value
                         ) = 0;
@@ -4831,8 +4895,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("206AA439-E651-11E5-BF62-2C27D7404E85"), exclusiveto, contract] */
                 MIDL_INTERFACE("206AA439-E651-11E5-BF62-2C27D7404E85")
-                IRadialControllerControlAcquiredEventArgs : IInspectable
+                IRadialControllerControlAcquiredEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact * * value
                         ) = 0;
@@ -4871,8 +4936,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EF4-3CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EF4-3CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerControlAcquiredEventArgs2 : IInspectable
+                IRadialControllerControlAcquiredEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsButtonPressed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4914,8 +4980,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("8506B35D-F640-4412-ABA0-BAD077E5EA8A"), exclusiveto, contract] */
                 MIDL_INTERFACE("8506B35D-F640-4412-ABA0-BAD077E5EA8A")
-                IRadialControllerMenu : IInspectable
+                IRadialControllerMenu : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Items(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem * * value
                         ) = 0;
@@ -4969,8 +5036,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("C80FC98D-AD0B-4C9C-8F2F-136A2373A6BA"), exclusiveto, contract] */
                 MIDL_INTERFACE("C80FC98D-AD0B-4C9C-8F2F-136A2373A6BA")
-                IRadialControllerMenuItem : IInspectable
+                IRadialControllerMenuItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayText(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5022,8 +5090,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("249E0887-D842-4524-9DF8-E0D647EDC887"), exclusiveto, contract] */
                 MIDL_INTERFACE("249E0887-D842-4524-9DF8-E0D647EDC887")
-                IRadialControllerMenuItemStatics : IInspectable
+                IRadialControllerMenuItemStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromIcon(
                         /* [in] */__RPC__in HSTRING displayText,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * icon,
@@ -5069,8 +5138,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("0CBB70BE-7E3E-48BD-BE04-2C7FCAA9C1FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("0CBB70BE-7E3E-48BD-BE04-2C7FCAA9C1FF")
-                IRadialControllerMenuItemStatics2 : IInspectable
+                IRadialControllerMenuItemStatics2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromFontGlyph(
                         /* [in] */__RPC__in HSTRING displayText,
                         /* [in] */__RPC__in HSTRING glyph,
@@ -5119,8 +5189,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("206AA435-E651-11E5-BF62-2C27D7404E85"), exclusiveto, contract] */
                 MIDL_INTERFACE("206AA435-E651-11E5-BF62-2C27D7404E85")
-                IRadialControllerRotationChangedEventArgs : IInspectable
+                IRadialControllerRotationChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RotationDeltaInDegrees(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -5162,8 +5233,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EEC-4CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EEC-4CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerRotationChangedEventArgs2 : IInspectable
+                IRadialControllerRotationChangedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsButtonPressed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5205,8 +5277,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("206AA434-E651-11E5-BF62-2C27D7404E85"), exclusiveto, contract] */
                 MIDL_INTERFACE("206AA434-E651-11E5-BF62-2C27D7404E85")
-                IRadialControllerScreenContact : IInspectable
+                IRadialControllerScreenContact : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Bounds(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                         ) = 0;
@@ -5248,8 +5321,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("206AA437-E651-11E5-BF62-2C27D7404E85"), exclusiveto, contract] */
                 MIDL_INTERFACE("206AA437-E651-11E5-BF62-2C27D7404E85")
-                IRadialControllerScreenContactContinuedEventArgs : IInspectable
+                IRadialControllerScreenContactContinuedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact * * value
                         ) = 0;
@@ -5288,8 +5362,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EF1-3CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EF1-3CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerScreenContactContinuedEventArgs2 : IInspectable
+                IRadialControllerScreenContactContinuedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsButtonPressed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5331,8 +5406,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EF2-3CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EF2-3CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerScreenContactEndedEventArgs : IInspectable
+                IRadialControllerScreenContactEndedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsButtonPressed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5374,8 +5450,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("206AA436-E651-11E5-BF62-2C27D7404E85"), exclusiveto, contract] */
                 MIDL_INTERFACE("206AA436-E651-11E5-BF62-2C27D7404E85")
-                IRadialControllerScreenContactStartedEventArgs : IInspectable
+                IRadialControllerScreenContactStartedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact * * value
                         ) = 0;
@@ -5414,8 +5491,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3D577EF0-3CEE-11E6-B535-001BDC06AB3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D577EF0-3CEE-11E6-B535-001BDC06AB3B")
-                IRadialControllerScreenContactStartedEventArgs2 : IInspectable
+                IRadialControllerScreenContactStartedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsButtonPressed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5457,8 +5535,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("FADED0B7-B84C-4894-87AA-8F25AA5F288B"), exclusiveto, contract] */
                 MIDL_INTERFACE("FADED0B7-B84C-4894-87AA-8F25AA5F288B")
-                IRadialControllerStatics : IInspectable
+                IRadialControllerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsSupported(
                         /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
@@ -5500,8 +5579,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("4CBF40BD-AF7A-4A36-9476-B1DCE141709A"), exclusiveto, contract] */
                 MIDL_INTERFACE("4CBF40BD-AF7A-4A36-9476-B1DCE141709A")
-                IRightTappedEventArgs : IInspectable
+                IRightTappedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -5543,8 +5623,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("CFA126E4-253A-4C3C-953B-395C37AED309"), exclusiveto, contract] */
                 MIDL_INTERFACE("CFA126E4-253A-4C3C-953B-395C37AED309")
-                ITappedEventArgs : IInspectable
+                ITappedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointerDeviceType(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Input::PointerDeviceType * value
                         ) = 0;
@@ -7580,6 +7661,7 @@ interface __FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_INTERFACE_DEFINED__
 
@@ -7627,9 +7709,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CU
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_INTERFACE_DEFINED__
@@ -7678,9 +7762,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_INTERFACE_DEFINED__
@@ -7729,9 +7815,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_INTERFACE_DEFINED__
@@ -7780,9 +7868,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_INTERFACE_DEFINED__
@@ -7831,9 +7921,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__
@@ -7882,9 +7974,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_INTERFACE_DEFINED__
@@ -7933,9 +8027,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_INTERFACE_DEFINED__
@@ -7984,9 +8080,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_INTERFACE_DEFINED__
@@ -8035,9 +8133,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windo
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_INTERFACE_DEFINED__
@@ -8085,6 +8185,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windo
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -8141,6 +8242,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspe
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__
 
@@ -8187,6 +8289,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Window
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -8351,6 +8454,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Window
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__
 
@@ -8398,9 +8502,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Window
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__
@@ -8449,9 +8555,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Window
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__
@@ -8500,9 +8608,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Window
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__
@@ -8550,6 +8660,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Window
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
@@ -8611,8 +8722,8 @@ typedef interface __x_ABI_CWindows_CUI_CCore_CIKeyEventArgs __x_ABI_CWindows_CUI
 #endif // ____x_ABI_CWindows_CUI_CCore_CIKeyEventArgs_FWD_DEFINED__
 
 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_INTERFACE_DEFINED__
 
@@ -8659,8 +8770,8 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterce
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_INTERFACE_DEFINED__
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIReference_1_float_INTERFACE_DEFINED__)
 #define ____FIReference_1_float_INTERFACE_DEFINED__

@@ -109,6 +109,8 @@ cpp_quote( "#define DPX_CLEANUP_OPTION_NAME L\"postprocess_source_cleanup\"" )
 
 #define DPX_COMPRESSION_ALGORITHM_XPRESS_HUFF L"xpress_huff"
 cpp_quote( "#define DPX_COMPRESSION_ALGORITHM_XPRESS_HUFF L\"xpress_huff\"" )
+#define DPX_COMPRESSION_ALGORITHM_XPRESS_WOF_PROVIDER_FILE L"wof_provider_file"
+cpp_quote( "#define DPX_COMPRESSION_ALGORITHM_WOF_PROVIDER_FILE L\"wof_provider_file\"" )
 
 #define DPX_COMPRESSED_FILE_HEADER_LENGTH 4
 cpp_quote( "#define DPX_COMPRESSED_FILE_HEADER_LENGTH 4" )

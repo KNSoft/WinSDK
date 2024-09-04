@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.storage.pickers.provider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -428,6 +430,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_USE
@@ -457,6 +460,7 @@ typedef ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileOpenPic
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -471,6 +475,7 @@ namespace ABI {
     } /* Provider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_USE
@@ -500,6 +505,7 @@ typedef ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileOpenPic
 #endif /* DEF___FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -560,6 +566,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_USE
@@ -588,6 +595,7 @@ typedef ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileSavePic
 #endif /* DEF___FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -929,8 +937,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("DDA45A10-F9D4-40C4-8AF5-C5B6B5A61D1D"), exclusiveto, contract] */
                     MIDL_INTERFACE("DDA45A10-F9D4-40C4-8AF5-C5B6B5A61D1D")
-                    IFileOpenPickerUI : IInspectable
+                    IFileOpenPickerUI : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE AddFile(
                             /* [in] */__RPC__in HSTRING id,
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * file,
@@ -1025,8 +1034,9 @@ namespace ABI {
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                     DEPRECATED("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
                     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
-                    IFileRemovedEventArgs : IInspectable
+                    IFileRemovedEventArgs : public IInspectable
                     {
+                    public:
                         
                         #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
                         DEPRECATED("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
@@ -1071,8 +1081,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("9656C1E7-3E56-43CC-8A39-33C73D9D542B"), exclusiveto, contract] */
                     MIDL_INTERFACE("9656C1E7-3E56-43CC-8A39-33C73D9D542B")
-                    IFileSavePickerUI : IInspectable
+                    IFileSavePickerUI : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Title(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1143,8 +1154,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("7AF7F71E-1A67-4A31-AE80-E907708A619B"), exclusiveto, contract] */
                     MIDL_INTERFACE("7AF7F71E-1A67-4A31-AE80-E907708A619B")
-                    IPickerClosingDeferral : IInspectable
+                    IPickerClosingDeferral : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                         
                     };
@@ -1183,8 +1195,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("7E59F224-B332-4F12-8B9F-A8C2F06B32CD"), exclusiveto, contract] */
                     MIDL_INTERFACE("7E59F224-B332-4F12-8B9F-A8C2F06B32CD")
-                    IPickerClosingEventArgs : IInspectable
+                    IPickerClosingEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClosingOperation(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Pickers::Provider::IPickerClosingOperation * * value
                             ) = 0;
@@ -1228,8 +1241,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("4CE9FB84-BEEE-4E39-A773-FC5F0EAE328D"), exclusiveto, contract] */
                     MIDL_INTERFACE("4CE9FB84-BEEE-4E39-A773-FC5F0EAE328D")
-                    IPickerClosingOperation : IInspectable
+                    IPickerClosingOperation : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Pickers::Provider::IPickerClosingDeferral * * value
                             ) = 0;
@@ -1273,8 +1287,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("42BD3355-7F88-478B-8E81-690B20340678"), exclusiveto, contract] */
                     MIDL_INTERFACE("42BD3355-7F88-478B-8E81-690B20340678")
-                    ITargetFileRequest : IInspectable
+                    ITargetFileRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetFile(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFile * * value
                             ) = 0;
@@ -1321,8 +1336,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("4AEE9D91-BF15-4DA9-95F6-F6B7D558225B"), exclusiveto, contract] */
                     MIDL_INTERFACE("4AEE9D91-BF15-4DA9-95F6-F6B7D558225B")
-                    ITargetFileRequestDeferral : IInspectable
+                    ITargetFileRequestDeferral : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                         
                     };
@@ -1361,8 +1377,9 @@ namespace ABI {
                 namespace Provider {
                     /* [object, uuid("B163DBC1-1B51-4C89-A591-0FD40B3C57C9"), exclusiveto, contract] */
                     MIDL_INTERFACE("B163DBC1-1B51-4C89-A591-0FD40B3C57C9")
-                    ITargetFileRequestedEventArgs : IInspectable
+                    ITargetFileRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Pickers::Provider::ITargetFileRequest * * value
                             ) = 0;
@@ -1630,6 +1647,7 @@ typedef interface __x_ABI_CWindows_CStorage_CPickers_CProvider_CITargetFileReque
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_INTERFACE_DEFINED__
 
@@ -1677,9 +1695,11 @@ interface __FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileO
 #endif // ____FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_INTERFACE_DEFINED__
@@ -1727,6 +1747,7 @@ interface __FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileO
 
 #endif // ____FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1783,6 +1804,7 @@ interface __FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileS
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -1829,6 +1851,7 @@ interface __FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileS
 
 #endif // ____FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)

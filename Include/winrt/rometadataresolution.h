@@ -8,7 +8,9 @@
 #pragma once
 
 #include <cor.h>
-
+#include <activation.h>
+#include <hstring.h>
+ 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 _Check_return_ extern "C" HRESULT WINAPI RoGetMetaDataFile(
     _In_ const HSTRING name,

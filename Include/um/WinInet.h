@@ -2377,12 +2377,20 @@ BOOLAPI GopherGetAttributeW(
 
 #define HTTP_QUERY_FLAG_NUMBER64                0x08000000
 
+//
+// HTTP_QUERY_FLAG_COALESCE_WITH_COMMA - if this bit is set in the dwInfoLevel
+// parameter of HttpQueryInfo(), then the values from several headers of the
+// same name will be combined using comma as the delimiter
+//
 
-#define HTTP_QUERY_MODIFIER_FLAGS_MASK          (HTTP_QUERY_FLAG_REQUEST_HEADERS    \
-                                                | HTTP_QUERY_FLAG_SYSTEMTIME        \
-                                                | HTTP_QUERY_FLAG_NUMBER            \
-                                                | HTTP_QUERY_FLAG_COALESCE          \
-                                                | HTTP_QUERY_FLAG_NUMBER64          \
+#define HTTP_QUERY_FLAG_COALESCE_WITH_COMMA     0x04000000
+
+#define HTTP_QUERY_MODIFIER_FLAGS_MASK          (HTTP_QUERY_FLAG_REQUEST_HEADERS      \
+                                                | HTTP_QUERY_FLAG_SYSTEMTIME          \
+                                                | HTTP_QUERY_FLAG_NUMBER              \
+                                                | HTTP_QUERY_FLAG_COALESCE            \
+                                                | HTTP_QUERY_FLAG_NUMBER64            \
+                                                | HTTP_QUERY_FLAG_COALESCE_WITH_COMMA \
                                                 )
 
 #define HTTP_QUERY_HEADER_MASK                  (~HTTP_QUERY_MODIFIER_FLAGS_MASK)
@@ -2427,6 +2435,7 @@ BOOLAPI GopherGetAttributeW(
 #define HTTP_STATUS_REQUEST_TOO_LARGE   413 // request entity was too large
 #define HTTP_STATUS_URI_TOO_LONG        414 // request URI too long
 #define HTTP_STATUS_UNSUPPORTED_MEDIA   415 // unsupported media type
+#define HTTP_STATUS_MISDIRECTED_REQUEST 421 // misdirected request
 #define HTTP_STATUS_RETRY_WITH          449 // retry after doing the appropriate action.
 
 #define HTTP_STATUS_SERVER_ERROR        500 // internal server error

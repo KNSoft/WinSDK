@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.web.http.filters.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1205,8 +1207,9 @@ namespace ABI {
                 namespace Filters {
                     /* [object, uuid("71C89B09-E131-4B54-A53C-EB43FF37E9BB"), exclusiveto, contract] */
                     MIDL_INTERFACE("71C89B09-E131-4B54-A53C-EB43FF37E9BB")
-                    IHttpBaseProtocolFilter : IInspectable
+                    IHttpBaseProtocolFilter : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowAutoRedirect(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -1306,8 +1309,9 @@ namespace ABI {
                 namespace Filters {
                     /* [object, uuid("2EC30013-9427-4900-A017-FA7DA3B5C9AE"), exclusiveto, contract] */
                     MIDL_INTERFACE("2EC30013-9427-4900-A017-FA7DA3B5C9AE")
-                    IHttpBaseProtocolFilter2 : IInspectable
+                    IHttpBaseProtocolFilter2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxVersion(
                             /* [retval, out] */__RPC__out ABI::Windows::Web::Http::HttpVersion * value
                             ) = 0;
@@ -1356,8 +1360,9 @@ namespace ABI {
                 namespace Filters {
                     /* [object, uuid("D43F4D4C-BD42-43AE-8717-AD2C8F4B2937"), exclusiveto, contract] */
                     MIDL_INTERFACE("D43F4D4C-BD42-43AE-8717-AD2C8F4B2937")
-                    IHttpBaseProtocolFilter3 : IInspectable
+                    IHttpBaseProtocolFilter3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CookieUsageBehavior(
                             /* [retval, out] */__RPC__out ABI::Windows::Web::Http::Filters::HttpCookieUsageBehavior * value
                             ) = 0;
@@ -1406,8 +1411,9 @@ namespace ABI {
                 namespace Filters {
                     /* [object, uuid("9FE36CCF-2983-4893-941F-EB518CA8CEF9"), exclusiveto, contract] */
                     MIDL_INTERFACE("9FE36CCF-2983-4893-941F-EB518CA8CEF9")
-                    IHttpBaseProtocolFilter4 : IInspectable
+                    IHttpBaseProtocolFilter4 : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ServerCustomValidationRequested(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CWeb__CHttp__CFilters__CHttpBaseProtocolFilter_Windows__CWeb__CHttp__CFilters__CHttpServerCustomValidationRequestedEventArgs * eventHandler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * eventCookie
@@ -1453,8 +1459,9 @@ namespace ABI {
                 namespace Filters {
                     /* [object, uuid("C77E1CB4-3CEA-4EB5-AC85-04E186E63AB7"), exclusiveto, contract] */
                     MIDL_INTERFACE("C77E1CB4-3CEA-4EB5-AC85-04E186E63AB7")
-                    IHttpCacheControl : IInspectable
+                    IHttpCacheControl : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ReadBehavior(
                             /* [retval, out] */__RPC__out ABI::Windows::Web::Http::Filters::HttpCacheReadBehavior * value
                             ) = 0;
@@ -1505,8 +1512,9 @@ namespace ABI {
                 namespace Filters {
                     /* [object, uuid("A4CB6DD5-0902-439E-BFD7-E12552B165CE"), contract] */
                     MIDL_INTERFACE("A4CB6DD5-0902-439E-BFD7-E12552B165CE")
-                    IHttpFilter : IInspectable
+                    IHttpFilter : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SendRequestAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Web::Http::IHttpRequestMessage * request,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress * * operation
@@ -1548,8 +1556,9 @@ namespace ABI {
                 namespace Filters {
                     /* [object, uuid("3165FE32-E7DD-48B7-A361-939C750E63CC"), exclusiveto, contract] */
                     MIDL_INTERFACE("3165FE32-E7DD-48B7-A361-939C750E63CC")
-                    IHttpServerCustomValidationRequestedEventArgs : IInspectable
+                    IHttpServerCustomValidationRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequestMessage(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::IHttpRequestMessage * * value
                             ) = 0;

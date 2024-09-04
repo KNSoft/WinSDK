@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.perception.spatial.surfaces.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1119,8 +1121,9 @@ namespace ABI {
                 namespace Surfaces {
                     /* [object, uuid("F8E9EBE7-39B7-3962-BB03-57F56E1FB0A1"), exclusiveto, contract] */
                     MIDL_INTERFACE("F8E9EBE7-39B7-3962-BB03-57F56E1FB0A1")
-                    ISpatialSurfaceInfo : IInspectable
+                    ISpatialSurfaceInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -1177,8 +1180,9 @@ namespace ABI {
                 namespace Surfaces {
                     /* [object, uuid("108F57D9-DF0D-3950-A0FD-F972C77C27B4"), exclusiveto, contract] */
                     MIDL_INTERFACE("108F57D9-DF0D-3950-A0FD-F972C77C27B4")
-                    ISpatialSurfaceMesh : IInspectable
+                    ISpatialSurfaceMesh : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SurfaceInfo(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo * * value
                             ) = 0;
@@ -1234,8 +1238,9 @@ namespace ABI {
                 namespace Surfaces {
                     /* [object, uuid("93CF59E0-871F-33F8-98B2-03D101458F6F"), exclusiveto, contract] */
                     MIDL_INTERFACE("93CF59E0-871F-33F8-98B2-03D101458F6F")
-                    ISpatialSurfaceMeshBuffer : IInspectable
+                    ISpatialSurfaceMeshBuffer : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Format(
                             /* [retval, out] */__RPC__out ABI::Windows::Graphics::DirectX::DirectXPixelFormat * value
                             ) = 0;
@@ -1285,8 +1290,9 @@ namespace ABI {
                 namespace Surfaces {
                     /* [object, uuid("D2759F89-3572-3D2D-A10D-5FEE9394AA37"), exclusiveto, contract] */
                     MIDL_INTERFACE("D2759F89-3572-3D2D-A10D-5FEE9394AA37")
-                    ISpatialSurfaceMeshOptions : IInspectable
+                    ISpatialSurfaceMeshOptions : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VertexPositionFormat(
                             /* [retval, out] */__RPC__out ABI::Windows::Graphics::DirectX::DirectXPixelFormat * value
                             ) = 0;
@@ -1348,8 +1354,9 @@ namespace ABI {
                 namespace Surfaces {
                     /* [object, uuid("9B340ABF-9781-4505-8935-013575CAAE5E"), exclusiveto, contract] */
                     MIDL_INTERFACE("9B340ABF-9781-4505-8935-013575CAAE5E")
-                    ISpatialSurfaceMeshOptionsStatics : IInspectable
+                    ISpatialSurfaceMeshOptionsStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedVertexPositionFormats(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CGraphics__CDirectX__CDirectXPixelFormat * * value
                             ) = 0;
@@ -1396,8 +1403,9 @@ namespace ABI {
                 namespace Surfaces {
                     /* [object, uuid("10B69819-DDCA-3483-AC3A-748FE8C86DF5"), exclusiveto, contract] */
                     MIDL_INTERFACE("10B69819-DDCA-3483-AC3A-748FE8C86DF5")
-                    ISpatialSurfaceObserver : IInspectable
+                    ISpatialSurfaceObserver : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetObservedSurfaces(
                             /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_GUID_Windows__CPerception__CSpatial__CSurfaces__CSpatialSurfaceInfo * * value
                             ) = 0;
@@ -1451,8 +1459,9 @@ namespace ABI {
                 namespace Surfaces {
                     /* [object, uuid("165951ED-2108-4168-9175-87E027BC9285"), exclusiveto, contract] */
                     MIDL_INTERFACE("165951ED-2108-4168-9175-87E027BC9285")
-                    ISpatialSurfaceObserverStatics : IInspectable
+                    ISpatialSurfaceObserverStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE RequestAccessAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus * * result
                             ) = 0;
@@ -1497,8 +1506,9 @@ namespace ABI {
                 namespace Surfaces {
                     /* [object, uuid("0F534261-C55D-4E6B-A895-A19DE69A42E3"), exclusiveto, contract] */
                     MIDL_INTERFACE("0F534261-C55D-4E6B-A895-A19DE69A42E3")
-                    ISpatialSurfaceObserverStatics2 : IInspectable
+                    ISpatialSurfaceObserverStatics2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE IsSupported(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;

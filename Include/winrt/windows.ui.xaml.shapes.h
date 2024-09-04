@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.shapes.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1110,8 +1112,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("70E05AC4-D38D-4BAB-831F-4A22EF52AC86"), exclusiveto, contract] */
                     MIDL_INTERFACE("70E05AC4-D38D-4BAB-831F-4A22EF52AC86")
-                    IEllipse : IInspectable
+                    IEllipse : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1149,8 +1152,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("46A5433D-4FFB-48DF-8732-4E15C834816B"), exclusiveto, contract] */
                     MIDL_INTERFACE("46A5433D-4FFB-48DF-8732-4E15C834816B")
-                    ILine : IInspectable
+                    ILine : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_X1(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -1212,8 +1216,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("267C123D-6EA4-4C50-8B1D-50207AFF1E8A"), exclusiveto, contract] */
                     MIDL_INTERFACE("267C123D-6EA4-4C50-8B1D-50207AFF1E8A")
-                    ILineStatics : IInspectable
+                    ILineStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_X1Property(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -1263,8 +1268,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("78883609-3D57-4F3C-B8A5-6CABCAC9711F"), exclusiveto, contract] */
                     MIDL_INTERFACE("78883609-3D57-4F3C-B8A5-6CABCAC9711F")
-                    IPath : IInspectable
+                    IPath : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IGeometry * * value
                             ) = 0;
@@ -1308,8 +1314,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("2340A4E3-5A86-4FC6-9A50-CBB93B828766"), exclusiveto, contract] */
                     MIDL_INTERFACE("2340A4E3-5A86-4FC6-9A50-CBB93B828766")
-                    IPathFactory : IInspectable
+                    IPathFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -1352,8 +1359,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("F627E59D-87DC-4142-81F1-97FC7FF8641C"), exclusiveto, contract] */
                     MIDL_INTERFACE("F627E59D-87DC-4142-81F1-97FC7FF8641C")
-                    IPathStatics : IInspectable
+                    IPathStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -1394,8 +1402,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("E3755C19-2E4D-4BCC-8D34-86871957FA01"), exclusiveto, contract] */
                     MIDL_INTERFACE("E3755C19-2E4D-4BCC-8D34-86871957FA01")
-                    IPolygon : IInspectable
+                    IPolygon : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillRule(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::FillRule * value
                             ) = 0;
@@ -1445,8 +1454,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("362A8AAB-D463-4366-9E1A-BEBA72810FB7"), exclusiveto, contract] */
                     MIDL_INTERFACE("362A8AAB-D463-4366-9E1A-BEBA72810FB7")
-                    IPolygonStatics : IInspectable
+                    IPolygonStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillRuleProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -1490,8 +1500,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("91DC62F8-42B3-47F3-8476-C55124A7C4C6"), exclusiveto, contract] */
                     MIDL_INTERFACE("91DC62F8-42B3-47F3-8476-C55124A7C4C6")
-                    IPolyline : IInspectable
+                    IPolyline : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillRule(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::FillRule * value
                             ) = 0;
@@ -1541,8 +1552,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("C7AA2CD1-A26C-43B0-AAA5-822FA64A11B9"), exclusiveto, contract] */
                     MIDL_INTERFACE("C7AA2CD1-A26C-43B0-AAA5-822FA64A11B9")
-                    IPolylineStatics : IInspectable
+                    IPolylineStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillRuleProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -1586,8 +1598,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("855BC230-8A11-4E18-A136-4BC21C7827B0"), exclusiveto, contract] */
                     MIDL_INTERFACE("855BC230-8A11-4E18-A136-4BC21C7827B0")
-                    IRectangle : IInspectable
+                    IRectangle : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RadiusX(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -1637,8 +1650,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("9F25AA53-BB3A-4C3C-89DB-6FBC0D1FA0CC"), exclusiveto, contract] */
                     MIDL_INTERFACE("9F25AA53-BB3A-4C3C-89DB-6FBC0D1FA0CC")
-                    IRectangleStatics : IInspectable
+                    IRectangleStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RadiusXProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -1682,8 +1696,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("786F2B75-9AA0-454D-AE06-A2466E37C832"), exclusiveto, contract] */
                     MIDL_INTERFACE("786F2B75-9AA0-454D-AE06-A2466E37C832")
-                    IShape : IInspectable
+                    IShape : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Fill(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * value
                             ) = 0;
@@ -1790,8 +1805,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("97248DBA-49F2-49A4-A5DD-164DF824DB14"), exclusiveto, contract] */
                     MIDL_INTERFACE("97248DBA-49F2-49A4-A5DD-164DF824DB14")
-                    IShape2 : IInspectable
+                    IShape2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetAlphaMask(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionBrush * * returnValue
                             ) = 0;
@@ -1832,8 +1848,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("4B717613-F6AA-48D5-9588-E1D188EACBC9"), exclusiveto, contract] */
                     MIDL_INTERFACE("4B717613-F6AA-48D5-9588-E1D188EACBC9")
-                    IShapeFactory : IInspectable
+                    IShapeFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -1876,8 +1893,9 @@ namespace ABI {
                 namespace Shapes {
                     /* [object, uuid("1D7B4C55-9DF3-48DC-9194-9D306FAA6089"), exclusiveto, contract] */
                     MIDL_INTERFACE("1D7B4C55-9DF3-48DC-9194-9D306FAA6089")
-                    IShapeStatics : IInspectable
+                    IShapeStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;

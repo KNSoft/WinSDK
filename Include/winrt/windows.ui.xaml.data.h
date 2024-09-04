@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.data.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1634,8 +1636,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("F3888DB8-139F-4DCE-8DC9-F7F1444D1185"), contract] */
                     MIDL_INTERFACE("F3888DB8-139F-4DCE-8DC9-F7F1444D1185")
-                    ICurrentChangingEventHandler : IUnknown
+                    ICurrentChangingEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Data::ICurrentChangingEventArgs * e
@@ -1673,8 +1676,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("50F19C16-0A22-4D8E-A089-1EA9951657D2"), contract] */
                     MIDL_INTERFACE("50F19C16-0A22-4D8E-A089-1EA9951657D2")
-                    IPropertyChangedEventHandler : IUnknown
+                    IPropertyChangedEventHandler : public IUnknown
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Invoke(
                             /* [in] */__RPC__in_opt IInspectable * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Data::IPropertyChangedEventArgs * e
@@ -1716,8 +1720,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("3F7A0C6B-D00F-4730-8C1D-48E16C46F9CA"), exclusiveto, contract] */
                     MIDL_INTERFACE("3F7A0C6B-D00F-4730-8C1D-48E16C46F9CA")
-                    IBinding : IInspectable
+                    IBinding : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Path(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IPropertyPath * * value
                             ) = 0;
@@ -1803,8 +1808,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("34F96FCB-0406-48B3-9E82-F333EC4C6910"), exclusiveto, contract] */
                     MIDL_INTERFACE("34F96FCB-0406-48B3-9E82-F333EC4C6910")
-                    IBinding2 : IInspectable
+                    IBinding2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FallbackValue(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                             ) = 0;
@@ -1860,8 +1866,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("1589A2AB-3D15-49BC-A447-8A5448E58870"), exclusiveto, contract] */
                     MIDL_INTERFACE("1589A2AB-3D15-49BC-A447-8A5448E58870")
-                    IBindingBase : IInspectable
+                    IBindingBase : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1899,8 +1906,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("22DAFC3A-7701-4666-A1BA-9859BDCFEC34"), exclusiveto, contract] */
                     MIDL_INTERFACE("22DAFC3A-7701-4666-A1BA-9859BDCFEC34")
-                    IBindingBaseFactory : IInspectable
+                    IBindingBaseFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -1943,8 +1951,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("516A19A5-C2FD-4A9E-9FD3-9AA42F995A3C"), exclusiveto, contract] */
                     MIDL_INTERFACE("516A19A5-C2FD-4A9E-9FD3-9AA42F995A3C")
-                    IBindingExpression : IInspectable
+                    IBindingExpression : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataItem(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                             ) = 0;
@@ -1989,8 +1998,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("FDED3154-E954-4F67-8FB6-6ED79B3A1CB3"), exclusiveto, contract] */
                     MIDL_INTERFACE("FDED3154-E954-4F67-8FB6-6ED79B3A1CB3")
-                    IBindingExpressionBase : IInspectable
+                    IBindingExpressionBase : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -2028,8 +2038,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("EA7116A7-C2D9-4375-B471-66B9C48C7930"), exclusiveto, contract] */
                     MIDL_INTERFACE("EA7116A7-C2D9-4375-B471-66B9C48C7930")
-                    IBindingExpressionBaseFactory : IInspectable
+                    IBindingExpressionBaseFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -2067,8 +2078,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("1CB55CD9-DB72-40B3-A2B5-24EE6EA5C328"), exclusiveto, contract] */
                     MIDL_INTERFACE("1CB55CD9-DB72-40B3-A2B5-24EE6EA5C328")
-                    IBindingExpressionFactory : IInspectable
+                    IBindingExpressionFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -2106,8 +2118,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("FF42BB08-C39E-4F7E-8434-A1569083883C"), exclusiveto, contract] */
                     MIDL_INTERFACE("FF42BB08-C39E-4F7E-8434-A1569083883C")
-                    IBindingFactory : IInspectable
+                    IBindingFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -2150,8 +2163,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("6FFFD738-9839-419C-A17A-4B3604E1524E"), exclusiveto, contract] */
                     MIDL_INTERFACE("6FFFD738-9839-419C-A17A-4B3604E1524E")
-                    IBindingOperations : IInspectable
+                    IBindingOperations : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -2189,8 +2203,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("E155EF73-95A0-4AAB-8C7D-2A47DA073C79"), exclusiveto, contract] */
                     MIDL_INTERFACE("E155EF73-95A0-4AAB-8C7D-2A47DA073C79")
-                    IBindingOperationsStatics : IInspectable
+                    IBindingOperationsStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SetBinding(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * target,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyProperty * dp,
@@ -2236,8 +2251,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("8BE8BFE4-DBEF-44DF-8126-A31A89121DDC"), contract] */
                     MIDL_INTERFACE("8BE8BFE4-DBEF-44DF-8126-A31A89121DDC")
-                    ICollectionView : IInspectable
+                    ICollectionView : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentItem(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                             ) = 0;
@@ -2328,8 +2344,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("34D4AAF4-8E72-4950-9192-ECD07D399D0A"), contract] */
                     MIDL_INTERFACE("34D4AAF4-8E72-4950-9192-ECD07D399D0A")
-                    ICollectionViewFactory : IInspectable
+                    ICollectionViewFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateView(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICollectionView * * result
                             ) = 0;
@@ -2367,8 +2384,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("7E01B9D8-D7B5-48B6-B31C-5BB5BDF5F09B"), contract] */
                     MIDL_INTERFACE("7E01B9D8-D7B5-48B6-B31C-5BB5BDF5F09B")
-                    ICollectionViewGroup : IInspectable
+                    ICollectionViewGroup : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Group(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                             ) = 0;
@@ -2412,8 +2430,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("A66A1146-D2FB-4EAD-BE9F-3578A466DCFE"), exclusiveto, contract] */
                     MIDL_INTERFACE("A66A1146-D2FB-4EAD-BE9F-3578A466DCFE")
-                    ICollectionViewSource : IInspectable
+                    ICollectionViewSource : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Source(
                             /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
                             ) = 0;
@@ -2472,8 +2491,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("173A0710-46AF-4C0C-818B-21B6EF81BF65"), exclusiveto, contract] */
                     MIDL_INTERFACE("173A0710-46AF-4C0C-818B-21B6EF81BF65")
-                    ICollectionViewSourceStatics : IInspectable
+                    ICollectionViewSourceStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourceProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
@@ -2523,8 +2543,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("F9891E29-51CC-47DD-A5B9-35DC4914AF69"), exclusiveto, contract] */
                     MIDL_INTERFACE("F9891E29-51CC-47DD-A5B9-35DC4914AF69")
-                    ICurrentChangingEventArgs : IInspectable
+                    ICurrentChangingEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Cancel(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -2571,8 +2592,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("153BBEEE-62F3-48CF-8183-8BE26DE3A66E"), exclusiveto, contract] */
                     MIDL_INTERFACE("153BBEEE-62F3-48CF-8183-8BE26DE3A66E")
-                    ICurrentChangingEventArgsFactory : IInspectable
+                    ICurrentChangingEventArgsFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -2618,8 +2640,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("30DA92C0-23E8-42A0-AE7C-734A0E5D2782"), contract] */
                     MIDL_INTERFACE("30DA92C0-23E8-42A0-AE7C-734A0E5D2782")
-                    ICustomProperty : IInspectable
+                    ICustomProperty : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Interop::TypeName * value
                             ) = 0;
@@ -2684,8 +2707,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("7C925755-3E48-42B4-8677-76372267033F"), contract] */
                     MIDL_INTERFACE("7C925755-3E48-42B4-8677-76372267033F")
-                    ICustomPropertyProvider : IInspectable
+                    ICustomPropertyProvider : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetCustomProperty(
                             /* [in] */__RPC__in HSTRING name,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICustomProperty * * returnValue
@@ -2738,8 +2762,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("83B834BE-0583-4A26-9B64-8BF4A2F65704"), exclusiveto, contract] */
                     MIDL_INTERFACE("83B834BE-0583-4A26-9B64-8BF4A2F65704")
-                    IItemIndexRange : IInspectable
+                    IItemIndexRange : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FirstIndex(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -2786,8 +2811,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("86E2C440-2E7A-4C7D-A664-E8ABF07BFC7E"), exclusiveto, contract] */
                     MIDL_INTERFACE("86E2C440-2E7A-4C7D-A664-E8ABF07BFC7E")
-                    IItemIndexRangeFactory : IInspectable
+                    IItemIndexRangeFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */INT32 firstIndex,
                             /* [in] */UINT32 length,
@@ -2833,8 +2859,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("F05F5665-71FD-45A2-BE13-A081D294A68D"), contract] */
                     MIDL_INTERFACE("F05F5665-71FD-45A2-BE13-A081D294A68D")
-                    IItemsRangeInfo : IInspectable
+                    IItemsRangeInfo : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE RangesChanged(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Data::IItemIndexRange * visibleRange,
                             /* [in] */__RPC__in_opt __FIVectorView_1_Windows__CUI__CXaml__CData__CItemIndexRange * trackedItems
@@ -2873,8 +2900,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("CF75D69C-F2F4-486B-B302-BB4C09BAEBFA"), contract] */
                     MIDL_INTERFACE("CF75D69C-F2F4-486B-B302-BB4C09BAEBFA")
-                    INotifyPropertyChanged : IInspectable
+                    INotifyPropertyChanged : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PropertyChanged(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Data::IPropertyChangedEventHandler  * value,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -2919,8 +2947,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("4F33A9A0-5CF4-47A4-B16F-D7FAAF17457E"), exclusiveto, contract] */
                     MIDL_INTERFACE("4F33A9A0-5CF4-47A4-B16F-D7FAAF17457E")
-                    IPropertyChangedEventArgs : IInspectable
+                    IPropertyChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PropertyName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2961,8 +2990,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("6DCC9C03-E0C7-4EEE-8EA9-37E3406EEB1C"), exclusiveto, contract] */
                     MIDL_INTERFACE("6DCC9C03-E0C7-4EEE-8EA9-37E3406EEB1C")
-                    IPropertyChangedEventArgsFactory : IInspectable
+                    IPropertyChangedEventArgsFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in HSTRING name,
                             /* [in] */__RPC__in_opt IInspectable * outer,
@@ -3006,8 +3036,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("2397CE84-2822-483A-B499-D0F031E06C6B"), exclusiveto, contract] */
                     MIDL_INTERFACE("2397CE84-2822-483A-B499-D0F031E06C6B")
-                    IRelativeSource : IInspectable
+                    IRelativeSource : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Data::RelativeSourceMode * value
                             ) = 0;
@@ -3051,8 +3082,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("EF8392CD-446E-4F93-AACB-9B1255577460"), exclusiveto, contract] */
                     MIDL_INTERFACE("EF8392CD-446E-4F93-AACB-9B1255577460")
-                    IRelativeSourceFactory : IInspectable
+                    IRelativeSourceFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in_opt IInspectable * outer,
                             /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -3092,8 +3124,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("2E12CA86-E1ED-4245-BE49-207E42AEC524"), contract] */
                     MIDL_INTERFACE("2E12CA86-E1ED-4245-BE49-207E42AEC524")
-                    ISelectionInfo : IInspectable
+                    ISelectionInfo : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SelectRange(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Data::IItemIndexRange * itemIndexRange
                             ) = 0;
@@ -3141,8 +3174,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("7F5EE992-7694-4E6C-A51B-E34BF43DE743"), contract] */
                     MIDL_INTERFACE("7F5EE992-7694-4E6C-A51B-E34BF43DE743")
-                    ISupportIncrementalLoading : IInspectable
+                    ISupportIncrementalLoading : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE LoadMoreItemsAsync(
                             /* [in] */UINT32 count,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CData__CLoadMoreItemsResult * * operation
@@ -3184,8 +3218,9 @@ namespace ABI {
                 namespace Data {
                     /* [object, uuid("E6F2FEF0-0712-487F-B313-F300B8D79AA1"), contract] */
                     MIDL_INTERFACE("E6F2FEF0-0712-487F-B313-F300B8D79AA1")
-                    IValueConverter : IInspectable
+                    IValueConverter : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Convert(
                             /* [in] */__RPC__in_opt IInspectable * value,
                             /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName targetType,

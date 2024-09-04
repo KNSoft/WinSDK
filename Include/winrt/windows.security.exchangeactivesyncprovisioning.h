@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.exchangeactivesyncprovisioning.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -800,8 +802,9 @@ namespace ABI {
             namespace ExchangeActiveSyncProvisioning {
                 /* [object, uuid("54DFD981-1968-4CA3-B958-E595D16505EB"), exclusiveto, contract] */
                 MIDL_INTERFACE("54DFD981-1968-4CA3-B958-E595D16505EB")
-                IEasClientDeviceInformation : IInspectable
+                IEasClientDeviceInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -859,8 +862,9 @@ namespace ABI {
             namespace ExchangeActiveSyncProvisioning {
                 /* [object, uuid("FFB35923-BB26-4D6A-81BC-165AEE0AD754"), exclusiveto, contract] */
                 MIDL_INTERFACE("FFB35923-BB26-4D6A-81BC-165AEE0AD754")
-                IEasClientDeviceInformation2 : IInspectable
+                IEasClientDeviceInformation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SystemHardwareVersion(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -902,8 +906,9 @@ namespace ABI {
             namespace ExchangeActiveSyncProvisioning {
                 /* [object, uuid("45B72362-DFBA-4A9B-ACED-6FE2ADCB6420"), exclusiveto, contract] */
                 MIDL_INTERFACE("45B72362-DFBA-4A9B-ACED-6FE2ADCB6420")
-                IEasClientSecurityPolicy : IInspectable
+                IEasClientSecurityPolicy : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequireEncryption(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -993,8 +998,9 @@ namespace ABI {
             namespace ExchangeActiveSyncProvisioning {
                 /* [object, uuid("463C299C-7F19-4C66-B403-CB45DD57A2B3"), exclusiveto, contract] */
                 MIDL_INTERFACE("463C299C-7F19-4C66-B403-CB45DD57A2B3")
-                IEasComplianceResults : IInspectable
+                IEasComplianceResults : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Compliant(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -1061,8 +1067,9 @@ namespace ABI {
             namespace ExchangeActiveSyncProvisioning {
                 /* [object, uuid("2FBE60C9-1AA8-47F5-88BB-CB3EF0BFFB15"), exclusiveto, contract] */
                 MIDL_INTERFACE("2FBE60C9-1AA8-47F5-88BB-CB3EF0BFFB15")
-                IEasComplianceResults2 : IInspectable
+                IEasComplianceResults2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EncryptionProviderType(
                         /* [retval, out] */__RPC__out ABI::Windows::Security::ExchangeActiveSyncProvisioning::EasEncryptionProviderType * value
                         ) = 0;

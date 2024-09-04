@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.management.workplace.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,12 +92,16 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_MANAGEMENT_WORKPLACE_WORKPLACESETTINGSCONTRACT_VERSION)
 #define WINDOWS_MANAGEMENT_WORKPLACE_WORKPLACESETTINGSCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_MANAGEMENT_WORKPLACE_WORKPLACESETTINGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -242,8 +244,9 @@ namespace ABI {
             namespace Workplace {
                 /* [object, uuid("C39709E7-741C-41F2-A4B6-314C31502586"), exclusiveto, contract] */
                 MIDL_INTERFACE("C39709E7-741C-41F2-A4B6-314C31502586")
-                IMdmAllowPolicyStatics : IInspectable
+                IMdmAllowPolicyStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsBrowserAllowed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -291,8 +294,9 @@ namespace ABI {
             namespace Workplace {
                 /* [object, uuid("C99C7526-03D4-49F9-A993-43EFCCD265C4"), exclusiveto, contract] */
                 MIDL_INTERFACE("C99C7526-03D4-49F9-A993-43EFCCD265C4")
-                IMdmPolicyStatics2 : IInspectable
+                IMdmPolicyStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetMessagingSyncPolicy(
                         /* [retval, out] */__RPC__out ABI::Windows::Management::Workplace::MessagingSyncPolicy * value
                         ) = 0;
@@ -331,8 +335,9 @@ namespace ABI {
             namespace Workplace {
                 /* [object, uuid("E4676FFD-2D92-4C08-BAD4-F6590B54A6D3"), exclusiveto, contract] */
                 MIDL_INTERFACE("E4676FFD-2D92-4C08-BAD4-F6590B54A6D3")
-                IWorkplaceSettingsStatics : IInspectable
+                IWorkplaceSettingsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsMicrosoftAccountOptional(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;

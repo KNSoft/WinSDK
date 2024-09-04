@@ -926,11 +926,22 @@ cpp_quote("//;end_internal")
     }
 
     [
+        uuid(6cdf73b0-7f2f-451f-bc0f-63e0f3284e54),     // IID_IShellUIHelper9
+
+        helpstring("Shell UI Helper Control Interface 9"),
+        oleautomation, dual
+    ]
+    interface IShellUIHelper9 : IShellUIHelper8
+    {
+        [id(DISPID_GETOSSKU)] HRESULT GetOSSku([out, retval] DWORD* pdwResult);
+    }
+
+    [
         uuid(64AB4BB7-111E-11d1-8F79-00C04FC2FBE1)  // CLSID_ShellUIHelper
     ]
     coclass ShellUIHelper
     {
-        [default] interface IShellUIHelper8;
+        [default] interface IShellUIHelper9;
     }
 
     [

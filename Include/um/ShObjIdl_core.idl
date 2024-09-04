@@ -1002,6 +1002,7 @@ cpp_quote("#define STR_PARSE_WITH_EXPLICIT_ASSOCAPP L\"ExplicitAssociationApp\""
 // with STR_PARSE_WITH_EXPLICIT_ASSOCAPP.  When absent, the Progid or Application was not bound into the IDList.
 cpp_quote("#define STR_PARSE_EXPLICIT_ASSOCIATION_SUCCESSFUL L\"ExplicitAssociationSuccessful\"")
 
+
 // IShellFolder IBindCtx parameter: "ParseAndCreateItem"
 //
 // The IUnknown for this is accessed through IBindCtx::RegisterObjectParam/GetObjectParam.
@@ -5152,6 +5153,25 @@ interface IFileOperation : IUnknown
     HRESULT GetAnyOperationsAborted([out] BOOL *pfAnyOperationsAborted);
 }
 
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)")
+typedef [v1_enum] enum FILE_OPERATION_FLAGS2
+{
+    FOF2_NONE = 0x00000000,
+    FOF2_MERGEFOLDERSONCOLLISION = 0x00000001,
+} FILE_OPERATION_FLAGS2;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(FILE_OPERATION_FLAGS2)")
+
+[
+    uuid(cd8f23c1-8f61-4916-909d-55bdd0918753),
+    object,
+    pointer_default(unique)
+]
+interface IFileOperation2 : IFileOperation
+{
+    HRESULT SetOperationFlags2([in] FILE_OPERATION_FLAGS2 operationFlags2);
+}
+cpp_quote("#endif  // (NTDDI_VERSION >= NTDDI_WIN10_RS4)")
+
 [
     uuid(a6087428-3be3-4d73-b308-7c04a540bf1a),
     object,
@@ -6901,8 +6921,6 @@ interface IPreviewItem : IRelatedItem
 
 cpp_quote("#endif  // NTDDI_VISTA")
 
-// New for Vista, but used by downlevel code
-//cpp_quote("#if (NTDDI_VERSION >= NTDDI_VISTA)")
 [
     uuid(8a87781b-39a7-4a1f-aab3-a39b9c34a7d9),
     object,
@@ -6912,9 +6930,13 @@ interface IDestinationStreamFactory : IUnknown
 {
     HRESULT GetDestinationStream([out] IStream **ppstm);
 }
-//cpp_quote("#endif  // NTDDI_VISTA")
 
 cpp_quote("#if (NTDDI_VERSION >= NTDDI_VISTA)")
+
+// SID_ExecuteCreatingProcess/ICreatingProcess
+// A service implemented by callers of ShellExecute that lets them modify the inputs
+// of CreateProcess before it is called.
+// See SEE_MASK_FLAG_HINST_IS_SITE for details on how to provide this service.
 [
     object,
     uuid(F6EF6140-E26F-4D82-bAC4-E9BA5FD239A8),
@@ -6938,19 +6960,12 @@ interface ICreateProcessInputs : IUnknown
         [in, string, annotation("_In_")] LPCWSTR pszValue);
 }
 
-[
-    object,
-    uuid(c2b937a9-3110-4398-8a56-f34c6342d244),
-    pointer_default(unique),
-    local
-]
+[ uuid(c2b937a9-3110-4398-8a56-f34c6342d244), local ]
 interface ICreatingProcess : IUnknown
 {
     HRESULT OnCreating([in, annotation("_In_")] ICreateProcessInputs *pcpi);
 }
-//  SID_ExecuteCreatingProcess
-//      used by callers that wish to modify the process parameters during command execution.
-//      Service object is expected to implement ICreatingProcess.
+
 cpp_quote("#define SID_ExecuteCreatingProcess __uuidof(ICreatingProcess)")
 
 cpp_quote("#endif  // NTDDI_VISTA")
@@ -6981,7 +6996,7 @@ interface INewMenuClient : IUnknown
     HRESULT SelectAndEditItem(
         [in] PCIDLIST_ABSOLUTE pidlItem,
         [in] NMCSAEI_FLAGS flags);
-};
+}
 
 cpp_quote("#define SID_SNewMenuClient   IID_INewMenuClient")
 
@@ -7012,9 +7027,6 @@ interface IShellItemFilter : IUnknown
 }
 
 cpp_quote("#endif  // (_WIN32_IE >= _WIN32_IE_IE70)")
-
-// New for Vista, but used by downlevel code
-//cpp_quote("#if (NTDDI_VERSION >= NTDDI_VISTA)")
 
 [
     object,
@@ -7943,6 +7955,7 @@ typedef [v1_enum] enum DEFAULT_FOLDER_MENU_RESTRICTIONS
     DFMR_USE_SPECIFIED_HANDLERS                 = 0X0100,   // this flag is specified if a handler clsid is added through SetHandlerClsid
     DFMR_USE_SPECIFIED_VERBS                    = 0X0200,   // only load handlers that support the specified verbs
     DFMR_NO_ASYNC_VERBS                         = 0x0400,   // ignore async verbs
+    DFMR_NO_NATIVECPU_VERBS                     = 0x0800,   // ignore verbs that are registered for the native CPU architecture
 } DEFAULT_FOLDER_MENU_RESTRICTIONS;
 
 cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(DEFAULT_FOLDER_MENU_RESTRICTIONS)")
@@ -8890,6 +8903,7 @@ interface IHandlerActivationHost : IUnknown
     // HRESULT_FROM_WIN32(ERROR_CANCELLED) should be returned. EXECUTE_E_LAUNCH_APPLICATION
     // can be returned to indicate that this verb implementation should be skipped and the next
     // one tried (if there is one). Generally these error codes will propagate out of the sub system activating the handlers.
+    // handlerInfo implements IHandlerInfo2
     HRESULT BeforeCoCreateInstance([in] REFCLSID clsidHandler,
         [in] IShellItemArray *itemsBeingActivated, [in] IHandlerInfo *handlerInfo);
     // The applicationPath will normally be a fully qualified path to an application .exe
@@ -8964,6 +8978,62 @@ interface IContactManagerInterop : IUnknown
 cpp_quote("#endif // NTDDI_WINBLUE")
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+
+//===========================================================================
+//
+// IShellIconOverlayIdentifier
+//
+// Used to identify a file as a member of the group of files that have this specific
+// icon overlay
+//
+// Users can create new IconOverlayIdentifiers and place them in the following registry
+// location together with the Icon overlay image and their priority.
+// HKEY_LOCAL_MACHINE "Software\\Microsoft\\Windows\\CurrentVersion\\ShellIconOverlayIdentifiers"
+//
+// The shell will enumerate through all IconOverlayIdentifiers at start, and prioritize
+// them according to internal rules, in case the internal rules don't apply, we use their
+// input priority
+//
+// IShellIconOverlayIdentifier:IsMemberOf(LPCWSTR pwszPath, DWORD dwAttrib)
+//      pwszPath        full path of the file
+//      dwAttrib        attribute of this file
+//
+//  returns:
+//      S_OK,    if the file is a member
+//      S_FALSE, if the file is not a member
+//      E_FAIL,  if the operation failed due to bad WIN32_FIND_DATA
+//
+// IShellIconOverlayIdentifier::GetOverlayInfo(LPWSTR pwszIconFile, int * pIndex, DWORD * dwFlags) PURE;
+//      pszIconFile    the path of the icon file
+//      pIndex         Depend on the flags, this could contain the IconIndex
+//      dwFlags        defined below
+//
+// IShellIconOverlayIdentifier::GetPriority(int * pIPriority) PURE;
+//      pIPriority     the priority of this Overlay Identifier
+//
+//===========================================================================
+
+[
+    uuid(0c6c4200-c589-11d0-999a-00c04fd655e1),
+    pointer_default(unique)
+]
+interface IShellIconOverlayIdentifier : IUnknown
+{
+    HRESULT IsMemberOf(
+        [in, string] LPCWSTR pwszPath,
+        [in] DWORD  dwAttrib);
+
+    HRESULT GetOverlayInfo(
+        [out, string, size_is(cchMax)] LPWSTR pwszIconFile,
+        [in]  int   cchMax,
+        [out] int   *pIndex,
+        [out] DWORD *pdwFlags);
+
+    HRESULT GetPriority(
+        [out] int *pPriority);
+}
+cpp_quote("#define ISIOI_ICONFILE   0x00000001") // path is returned through pwszIconFile
+cpp_quote("#define ISIOI_ICONINDEX  0x00000002") // icon index in pwszIconFile is returned through pIndex
 
 #pragma endregion
 

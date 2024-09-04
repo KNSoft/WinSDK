@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.payments.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -2065,8 +2067,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("5078B9E1-F398-4F2C-A27E-94D371CF6C7D"), contract] */
                 MIDL_INTERFACE("5078B9E1-F398-4F2C-A27E-94D371CF6C7D")
-                IPaymentRequestChangedHandler : IUnknown
+                IPaymentRequestChangedHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Payments::IPaymentRequest * paymentRequest,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Payments::IPaymentRequestChangedArgs * args
@@ -2106,8 +2109,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("5F2264E9-6F3A-4166-A018-0A0B06BB32B5"), exclusiveto, contract] */
                 MIDL_INTERFACE("5F2264E9-6F3A-4166-A018-0A0B06BB32B5")
-                IPaymentAddress : IInspectable
+                IPaymentAddress : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Country(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2212,8 +2216,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("7696FE55-D5D3-4D3D-B345-45591759C510"), exclusiveto, contract] */
                 MIDL_INTERFACE("7696FE55-D5D3-4D3D-B345-45591759C510")
-                IPaymentCanMakePaymentResult : IInspectable
+                IPaymentCanMakePaymentResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Payments::PaymentCanMakePaymentResultStatus * value
                         ) = 0;
@@ -2252,8 +2257,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("BBDCAA3E-7D49-4F69-AA53-2A0F8164B7C9"), exclusiveto, contract] */
                 MIDL_INTERFACE("BBDCAA3E-7D49-4F69-AA53-2A0F8164B7C9")
-                IPaymentCanMakePaymentResultFactory : IInspectable
+                IPaymentCanMakePaymentResultFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::ApplicationModel::Payments::PaymentCanMakePaymentResultStatus value,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Payments::IPaymentCanMakePaymentResult * * result
@@ -2293,8 +2299,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("E3A3E9E0-B41F-4987-BDCB-071331F2DAA4"), exclusiveto, contract] */
                 MIDL_INTERFACE("E3A3E9E0-B41F-4987-BDCB-071331F2DAA4")
-                IPaymentCurrencyAmount : IInspectable
+                IPaymentCurrencyAmount : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Currency(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2348,8 +2355,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("3257D338-140C-4575-8535-F773178C09A7"), exclusiveto, contract] */
                 MIDL_INTERFACE("3257D338-140C-4575-8535-F773178C09A7")
-                IPaymentCurrencyAmountFactory : IInspectable
+                IPaymentCurrencyAmountFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING value,
                         /* [in] */__RPC__in HSTRING currency,
@@ -2396,8 +2404,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("53BB2D7D-E0EB-4053-8EAE-CE7C48E02945"), exclusiveto, contract] */
                 MIDL_INTERFACE("53BB2D7D-E0EB-4053-8EAE-CE7C48E02945")
-                IPaymentDetails : IInspectable
+                IPaymentDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Total(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Payments::IPaymentItem * * value
                         ) = 0;
@@ -2457,8 +2466,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("CFE8AFEE-C0EA-4CA1-8BC7-6DE67B1F3763"), exclusiveto, contract] */
                 MIDL_INTERFACE("CFE8AFEE-C0EA-4CA1-8BC7-6DE67B1F3763")
-                IPaymentDetailsFactory : IInspectable
+                IPaymentDetailsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Payments::IPaymentItem * total,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Payments::IPaymentDetails * * result
@@ -2503,8 +2513,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("BE1C7D65-4323-41D7-B305-DFCB765F69DE"), exclusiveto, contract] */
                 MIDL_INTERFACE("BE1C7D65-4323-41D7-B305-DFCB765F69DE")
-                IPaymentDetailsModifier : IInspectable
+                IPaymentDetailsModifier : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_JsonData(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2552,8 +2563,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("79005286-54DE-429C-9E4F-5DCE6E10EBCE"), exclusiveto, contract] */
                 MIDL_INTERFACE("79005286-54DE-429C-9E4F-5DCE6E10EBCE")
-                IPaymentDetailsModifierFactory : IInspectable
+                IPaymentDetailsModifierFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * supportedMethodIds,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Payments::IPaymentItem * total,
@@ -2607,8 +2619,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("685AC88B-79B2-4B76-9E03-A876223DFE72"), exclusiveto, contract] */
                 MIDL_INTERFACE("685AC88B-79B2-4B76-9E03-A876223DFE72")
-                IPaymentItem : IInspectable
+                IPaymentItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Label(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2662,8 +2675,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("C6AB7AD8-2503-4D1D-A778-02B2E5927B2C"), exclusiveto, contract] */
                 MIDL_INTERFACE("C6AB7AD8-2503-4D1D-A778-02B2E5927B2C")
-                IPaymentItemFactory : IInspectable
+                IPaymentItemFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING label,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Payments::IPaymentCurrencyAmount * amount,
@@ -2704,8 +2718,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("FB0EE829-EC0C-449A-83DA-7AE3073365A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("FB0EE829-EC0C-449A-83DA-7AE3073365A2")
-                IPaymentMediator : IInspectable
+                IPaymentMediator : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetSupportedMethodIdsAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_HSTRING * * result
                         ) = 0;
@@ -2753,8 +2768,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("CEEF98F1-E407-4128-8E73-D93D5F822786"), exclusiveto, contract] */
                 MIDL_INTERFACE("CEEF98F1-E407-4128-8E73-D93D5F822786")
-                IPaymentMediator2 : IInspectable
+                IPaymentMediator2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CanMakePaymentAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Payments::IPaymentRequest * paymentRequest,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CPayments__CPaymentCanMakePaymentResult * * result
@@ -2794,8 +2810,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("63445050-0E94-4ED6-AACB-E6012BD327A7"), exclusiveto, contract] */
                 MIDL_INTERFACE("63445050-0E94-4ED6-AACB-E6012BD327A7")
-                IPaymentMerchantInfo : IInspectable
+                IPaymentMerchantInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PackageFullName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2837,8 +2854,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("9E89CED3-CCB7-4167-A8EC-E10AE96DBCD1"), exclusiveto, contract] */
                 MIDL_INTERFACE("9E89CED3-CCB7-4167-A8EC-E10AE96DBCD1")
-                IPaymentMerchantInfoFactory : IInspectable
+                IPaymentMerchantInfoFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Payments::IPaymentMerchantInfo * * result
@@ -2878,8 +2896,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("D1D3CAF4-DE98-4129-B1B7-C3AD86237BF4"), exclusiveto, contract] */
                 MIDL_INTERFACE("D1D3CAF4-DE98-4129-B1B7-C3AD86237BF4")
-                IPaymentMethodData : IInspectable
+                IPaymentMethodData : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedMethodIds(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * value
                         ) = 0;
@@ -2921,8 +2940,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("8ADDD27F-9BAA-4A82-8342-A8210992A36B"), exclusiveto, contract] */
                 MIDL_INTERFACE("8ADDD27F-9BAA-4A82-8342-A8210992A36B")
-                IPaymentMethodDataFactory : IInspectable
+                IPaymentMethodDataFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * supportedMethodIds,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Payments::IPaymentMethodData * * result
@@ -2967,8 +2987,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("AAA30854-1F2B-4365-8251-01B58915A5BC"), exclusiveto, contract] */
                 MIDL_INTERFACE("AAA30854-1F2B-4365-8251-01B58915A5BC")
-                IPaymentOptions : IInspectable
+                IPaymentOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequestPayerEmail(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Payments::PaymentOptionPresence * value
                         ) = 0;
@@ -3034,8 +3055,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("B74942E1-ED7B-47EB-BC08-78CC5D6896B6"), exclusiveto, contract] */
                 MIDL_INTERFACE("B74942E1-ED7B-47EB-BC08-78CC5D6896B6")
-                IPaymentRequest : IInspectable
+                IPaymentRequest : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MerchantInfo(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Payments::IPaymentMerchantInfo * * value
                         ) = 0;
@@ -3083,8 +3105,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("B63CCFB5-5998-493E-A04C-67048A50F141"), exclusiveto, contract] */
                 MIDL_INTERFACE("B63CCFB5-5998-493E-A04C-67048A50F141")
-                IPaymentRequest2 : IInspectable
+                IPaymentRequest2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3123,8 +3146,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("C6145E44-CD8B-4BE4-B555-27C99194C0C5"), exclusiveto, contract] */
                 MIDL_INTERFACE("C6145E44-CD8B-4BE4-B555-27C99194C0C5")
-                IPaymentRequestChangedArgs : IInspectable
+                IPaymentRequestChangedArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeKind(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Payments::PaymentRequestChangeKind * value
                         ) = 0;
@@ -3172,8 +3196,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("DF699E5C-16C4-47AD-9401-8440EC0757DB"), exclusiveto, contract] */
                 MIDL_INTERFACE("DF699E5C-16C4-47AD-9401-8440EC0757DB")
-                IPaymentRequestChangedResult : IInspectable
+                IPaymentRequestChangedResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeAcceptedByMerchant(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3227,8 +3252,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("08740F56-1D33-4431-814B-67EA24BF21DB"), exclusiveto, contract] */
                 MIDL_INTERFACE("08740F56-1D33-4431-814B-67EA24BF21DB")
-                IPaymentRequestChangedResultFactory : IInspectable
+                IPaymentRequestChangedResultFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */boolean changeAcceptedByMerchant,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Payments::IPaymentRequestChangedResult * * result
@@ -3273,8 +3299,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("3E8A79DC-6B74-42D3-B103-F0DE35FB1848"), exclusiveto, contract] */
                 MIDL_INTERFACE("3E8A79DC-6B74-42D3-B103-F0DE35FB1848")
-                IPaymentRequestFactory : IInspectable
+                IPaymentRequestFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Payments::IPaymentDetails * details,
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CApplicationModel__CPayments__CPaymentMethodData * methodData,
@@ -3328,8 +3355,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("E6CE1325-A506-4372-B7EF-1A031D5662D1"), exclusiveto, contract] */
                 MIDL_INTERFACE("E6CE1325-A506-4372-B7EF-1A031D5662D1")
-                IPaymentRequestFactory2 : IInspectable
+                IPaymentRequestFactory2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithMerchantInfoOptionsAndId(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Payments::IPaymentDetails * details,
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CApplicationModel__CPayments__CPaymentMethodData * methodData,
@@ -3373,8 +3401,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("7B9C3912-30F2-4E90-B249-8CE7D78FFE56"), exclusiveto, contract] */
                 MIDL_INTERFACE("7B9C3912-30F2-4E90-B249-8CE7D78FFE56")
-                IPaymentRequestSubmitResult : IInspectable
+                IPaymentRequestSubmitResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Payments::PaymentRequestStatus * value
                         ) = 0;
@@ -3416,8 +3445,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("E1389457-8BD2-4888-9FA8-97985545108E"), exclusiveto, contract] */
                 MIDL_INTERFACE("E1389457-8BD2-4888-9FA8-97985545108E")
-                IPaymentResponse : IInspectable
+                IPaymentResponse : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PaymentToken(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Payments::IPaymentToken * * value
                         ) = 0;
@@ -3475,8 +3505,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("13372ADA-9753-4574-8966-93145A76C7F9"), exclusiveto, contract] */
                 MIDL_INTERFACE("13372ADA-9753-4574-8966-93145A76C7F9")
-                IPaymentShippingOption : IInspectable
+                IPaymentShippingOption : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Label(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3536,8 +3567,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("5DE5F917-B2D7-446B-9D73-6123FBCA3BC6"), exclusiveto, contract] */
                 MIDL_INTERFACE("5DE5F917-B2D7-446B-9D73-6123FBCA3BC6")
-                IPaymentShippingOptionFactory : IInspectable
+                IPaymentShippingOptionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING label,
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Payments::IPaymentCurrencyAmount * amount,
@@ -3591,8 +3623,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("BBCAC013-CCD0-41F2-B2A1-0A2E4B5DCE25"), exclusiveto, contract] */
                 MIDL_INTERFACE("BBCAC013-CCD0-41F2-B2A1-0A2E4B5DCE25")
-                IPaymentToken : IInspectable
+                IPaymentToken : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PaymentMethodId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3634,8 +3667,9 @@ namespace ABI {
             namespace Payments {
                 /* [object, uuid("988CD7AA-4753-4904-8373-DD7B08B995C1"), exclusiveto, contract] */
                 MIDL_INTERFACE("988CD7AA-4753-4904-8373-DD7B08B995C1")
-                IPaymentTokenFactory : IInspectable
+                IPaymentTokenFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING paymentMethodId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Payments::IPaymentToken * * result

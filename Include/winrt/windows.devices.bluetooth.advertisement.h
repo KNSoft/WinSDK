@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.bluetooth.advertisement.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1105,6 +1107,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_USE
@@ -1134,6 +1137,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::Advertisement::Blue
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -1148,6 +1152,7 @@ namespace ABI {
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_USE
@@ -1178,6 +1183,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::Advertisement::Blue
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1192,6 +1198,7 @@ namespace ABI {
     } /* Advertisement */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_USE
@@ -1221,6 +1228,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::Advertisement::Blue
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1725,8 +1733,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("066FB2B7-33D1-4E7D-8367-CF81D0F79653"), exclusiveto, contract] */
                     MIDL_INTERFACE("066FB2B7-33D1-4E7D-8367-CF81D0F79653")
-                    IBluetoothLEAdvertisement : IInspectable
+                    IBluetoothLEAdvertisement : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Flags(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementFlags * * value
                             ) = 0;
@@ -1793,8 +1802,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("FBFAD7F2-B9C5-4A08-BC51-502F8EF68A79"), exclusiveto, contract] */
                     MIDL_INTERFACE("FBFAD7F2-B9C5-4A08-BC51-502F8EF68A79")
-                    IBluetoothLEAdvertisementBytePattern : IInspectable
+                    IBluetoothLEAdvertisementBytePattern : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataType(
                             /* [retval, out] */__RPC__out BYTE * value
                             ) = 0;
@@ -1850,8 +1860,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("C2E24D73-FD5C-4EC3-BE2A-9CA6FA11B7BD"), exclusiveto, contract] */
                     MIDL_INTERFACE("C2E24D73-FD5C-4EC3-BE2A-9CA6FA11B7BD")
-                    IBluetoothLEAdvertisementBytePatternFactory : IInspectable
+                    IBluetoothLEAdvertisementBytePatternFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */BYTE dataType,
                             /* [in] */INT16 offset,
@@ -1895,8 +1906,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("D7213314-3A43-40F9-B6F0-92BFEFC34AE3"), exclusiveto, contract] */
                     MIDL_INTERFACE("D7213314-3A43-40F9-B6F0-92BFEFC34AE3")
-                    IBluetoothLEAdvertisementDataSection : IInspectable
+                    IBluetoothLEAdvertisementDataSection : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataType(
                             /* [retval, out] */__RPC__out BYTE * value
                             ) = 0;
@@ -1946,8 +1958,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("E7A40942-A845-4045-BF7E-3E9971DB8A6B"), exclusiveto, contract] */
                     MIDL_INTERFACE("E7A40942-A845-4045-BF7E-3E9971DB8A6B")
-                    IBluetoothLEAdvertisementDataSectionFactory : IInspectable
+                    IBluetoothLEAdvertisementDataSectionFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */BYTE dataType,
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
@@ -1990,8 +2003,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("3BB6472F-0606-434B-A76E-74159F0684D3"), exclusiveto, contract] */
                     MIDL_INTERFACE("3BB6472F-0606-434B-A76E-74159F0684D3")
-                    IBluetoothLEAdvertisementDataTypesStatics : IInspectable
+                    IBluetoothLEAdvertisementDataTypesStatics : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Flags(
                             /* [retval, out] */__RPC__out BYTE * value
                             ) = 0;
@@ -2095,8 +2109,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("131EB0D3-D04E-47B1-837E-49405BF6F80F"), exclusiveto, contract] */
                     MIDL_INTERFACE("131EB0D3-D04E-47B1-837E-49405BF6F80F")
-                    IBluetoothLEAdvertisementFilter : IInspectable
+                    IBluetoothLEAdvertisementFilter : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Advertisement(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement * * value
                             ) = 0;
@@ -2143,8 +2158,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("CDE820F9-D9FA-43D6-A264-DDD8B7DA8B78"), exclusiveto, contract] */
                     MIDL_INTERFACE("CDE820F9-D9FA-43D6-A264-DDD8B7DA8B78")
-                    IBluetoothLEAdvertisementPublisher : IInspectable
+                    IBluetoothLEAdvertisementPublisher : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus * value
                             ) = 0;
@@ -2197,8 +2213,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("5C5F065E-B863-4981-A1AF-1C544D8B0C0D"), exclusiveto, contract] */
                     MIDL_INTERFACE("5C5F065E-B863-4981-A1AF-1C544D8B0C0D")
-                    IBluetoothLEAdvertisementPublisherFactory : IInspectable
+                    IBluetoothLEAdvertisementPublisherFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement * advertisement,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher * * value
@@ -2240,8 +2257,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("09C2BD9F-2DFF-4B23-86EE-0D14FB94AEAE"), exclusiveto, contract] */
                     MIDL_INTERFACE("09C2BD9F-2DFF-4B23-86EE-0D14FB94AEAE")
-                    IBluetoothLEAdvertisementPublisherStatusChangedEventArgs : IInspectable
+                    IBluetoothLEAdvertisementPublisherStatusChangedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus * value
                             ) = 0;
@@ -2285,8 +2303,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("27987DDF-E596-41BE-8D43-9E6731D4A913"), exclusiveto, contract] */
                     MIDL_INTERFACE("27987DDF-E596-41BE-8D43-9E6731D4A913")
-                    IBluetoothLEAdvertisementReceivedEventArgs : IInspectable
+                    IBluetoothLEAdvertisementReceivedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RawSignalStrengthInDBm(
                             /* [retval, out] */__RPC__out INT16 * value
                             ) = 0;
@@ -2339,8 +2358,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("A6AC336F-F3D3-4297-8D6C-C81EA6623F40"), exclusiveto, contract] */
                     MIDL_INTERFACE("A6AC336F-F3D3-4297-8D6C-C81EA6623F40")
-                    IBluetoothLEAdvertisementWatcher : IInspectable
+                    IBluetoothLEAdvertisementWatcher : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinSamplingInterval(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                             ) = 0;
@@ -2427,8 +2447,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("9AAF2D56-39AC-453E-B32A-85C657E017F1"), exclusiveto, contract] */
                     MIDL_INTERFACE("9AAF2D56-39AC-453E-B32A-85C657E017F1")
-                    IBluetoothLEAdvertisementWatcherFactory : IInspectable
+                    IBluetoothLEAdvertisementWatcherFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementFilter * advertisementFilter,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher * * value
@@ -2470,8 +2491,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("DD40F84D-E7B9-43E3-9C04-0685D085FD8C"), exclusiveto, contract] */
                     MIDL_INTERFACE("DD40F84D-E7B9-43E3-9C04-0685D085FD8C")
-                    IBluetoothLEAdvertisementWatcherStoppedEventArgs : IInspectable
+                    IBluetoothLEAdvertisementWatcherStoppedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::BluetoothError * value
                             ) = 0;
@@ -2512,8 +2534,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("912DBA18-6963-4533-B061-4694DAFB34E5"), exclusiveto, contract] */
                     MIDL_INTERFACE("912DBA18-6963-4533-B061-4694DAFB34E5")
-                    IBluetoothLEManufacturerData : IInspectable
+                    IBluetoothLEManufacturerData : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CompanyId(
                             /* [retval, out] */__RPC__out UINT16 * value
                             ) = 0;
@@ -2563,8 +2586,9 @@ namespace ABI {
                 namespace Advertisement {
                     /* [object, uuid("C09B39F8-319A-441E-8DE5-66A81E877A6C"), exclusiveto, contract] */
                     MIDL_INTERFACE("C09B39F8-319A-441E-8DE5-66A81E877A6C")
-                    IBluetoothLEManufacturerDataFactory : IInspectable
+                    IBluetoothLEManufacturerDataFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */UINT16 companyId,
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
@@ -4559,6 +4583,7 @@ interface __FIReference_1_Windows__CDevices__CBluetooth__CAdvertisement__CBlueto
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_INTERFACE_DEFINED__
 
@@ -4606,9 +4631,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement_
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_INTERFACE_DEFINED__
@@ -4657,9 +4684,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement_
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_INTERFACE_DEFINED__
@@ -4707,6 +4736,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement_
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_GUID_INTERFACE_DEFINED__)

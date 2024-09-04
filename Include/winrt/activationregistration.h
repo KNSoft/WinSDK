@@ -1,6 +1,6 @@
 /* Header file automatically generated from activationregistration.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -35,17 +35,14 @@
 #pragma once
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -53,8 +50,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -358,6 +359,7 @@ namespace ABI {
                 IdentityType_ActivateAsPackage,
                 IdentityType_SessionVirtual,
                 IdentityType_SessionUser,
+                IdentityType_ActivateAsActivatingUser,
             } IdentityType;
             
         } /* Windows */
@@ -417,8 +419,9 @@ namespace ABI {
         namespace Foundation {
             /* [pointer_default(unique), uuid("9BBCAE23-3DD6-49C3-B63C-1C587E7A6A67"), object, version] */
             MIDL_INTERFACE("9BBCAE23-3DD6-49C3-B63C-1C587E7A6A67")
-            IActivatableClassRegistration : IInspectable
+            IActivatableClassRegistration : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivatableClassId(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * activatableClassID
                     ) = 0;
@@ -459,8 +462,9 @@ namespace ABI {
         namespace Foundation {
             /* [pointer_default(ref), uuid("C8AA04F6-66C6-46A3-8FE6-F56BE7DDC091"), object, version] */
             MIDL_INTERFACE("C8AA04F6-66C6-46A3-8FE6-F56BE7DDC091")
-            IDllServerActivatableClassRegistration : IInspectable
+            IDllServerActivatableClassRegistration : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DllPath(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * dllPath
                     ) = 0;
@@ -492,8 +496,9 @@ namespace ABI {
         namespace Foundation {
             /* [pointer_default(ref), uuid("9308C3C5-C2AC-49D1-A024-660A2BB5D5AC"), object, version] */
             MIDL_INTERFACE("9308C3C5-C2AC-49D1-A024-660A2BB5D5AC")
-            IExeServerActivatableClassRegistration : IInspectable
+            IExeServerActivatableClassRegistration : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServerRegistration(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IExeServerRegistration * * serverRegistration
                     ) = 0;
@@ -522,8 +527,9 @@ namespace ABI {
         namespace Foundation {
             /* [pointer_default(unique), uuid("EC734A06-0401-4317-BAC1-3B7E207242E3"), object, version] */
             MIDL_INTERFACE("EC734A06-0401-4317-BAC1-3B7E207242E3")
-            IExeServerRegistration : IInspectable
+            IExeServerRegistration : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServerName(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * serverName
                     ) = 0;
@@ -1037,6 +1043,7 @@ enum __x_ABI_CWindows_CFoundation_CIdentityType
     IdentityType_ActivateAsPackage,
     IdentityType_SessionVirtual,
     IdentityType_SessionUser,
+    IdentityType_ActivateAsActivatingUser,
 } __x_ABI_CWindows_CFoundation_CIdentityType;
 
 

@@ -12,25 +12,26 @@ Abstract:
 
 Notes:
 
-    Do not include this header directly. This is to be used together with NetAdapterCx 1.0.
+    Do not include this header directly. This is to be used together with NetAdapterCx.
     
-    NetAdapterCx 1.0 is preview only, any files related to it may be substantially modified
+    NetAdapterCx is preview only, any files related to it may be substantially modified 
     or removed in future releases of Windows.
 
  --*/
 
 #pragma once
 
-#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
-#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1)
-#        error NetPacket.h can be used only with NetAdapterCx 1.0 or 1.1
+#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2))
+#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1 && NET_ADAPTER_CX_1_2 != 1)
+#        error NetPacket.h can be used only with NetAdapterCx
 #    endif
 #else
 #    error Include NetAdapterCx.h
-#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
+#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2)
 
 #pragma warning(push)
 #pragma warning(default : 4820) // Warn if the compiler inserted padding
+#pragma warning(disable:4201) // 'nonstandard extension used: nameless struct/union'
 
 #if _WIN64
 #  define NET_PACKET_FRAGMENT_ALIGNMENT_BYTES 32
@@ -44,40 +45,34 @@ C_ASSERT(NET_PACKET_FRAGMENT_ALIGNMENT_BYTES == (1 << NET_PACKET_FRAGMENT_ALIGNM
 
 #define NET_PACKET_FRAGMENT_ALIGNMENT_MASK (NET_PACKET_FRAGMENT_ALIGNMENT_BYTES - 1)
 
-#define NET_PACKET_FRAGMENT_ASSERT_ALIGNED(fragment) \
-    NT_ASSERTMSG("Packet fragment descriptor must be aligned", \
-    !(ULONG_PTR(fragment) & NET_PACKET_FRAGMENT_ALIGNMENT_MASK))
-
-#define NET_PACKET_FRAGMENT_GET_NEXT(fragment) \
-    ((NET_PACKET_FRAGMENT*)((ULONG_PTR)((fragment)->NextFragment_Reserved) << NET_PACKET_FRAGMENT_ALIGNMENT_SHIFT))
-
-#define NET_PACKET_FRAGMENT_SET_NEXT(fragment, next)            \
-    (NET_PACKET_FRAGMENT_ASSERT_ALIGNED(next),                  \
-    ((fragment)->NextFragment_Reserved = (ULONG_PTR)(next) >> NET_PACKET_FRAGMENT_ALIGNMENT_SHIFT),  \
-    next)
-
 typedef LARGE_INTEGER PHYSICAL_ADDRESS;
 
 #include <pshpack4.h>
 typedef struct DECLSPEC_ALIGN(NET_PACKET_FRAGMENT_ALIGNMENT_BYTES) _NET_PACKET_FRAGMENT
 {
     ULONG_PTR LastFragmentOfFrame   : 1;
-    ULONG_PTR LastPacketOfChain     : 1;
-
-#if _WIN64
-    ULONG_PTR Reserved              : 3;
-    ULONG_PTR NextFragment_Reserved : 59;
+#ifdef _WIN64
+    ULONG_PTR Reserved              : 63;
 #else
-    ULONG_PTR Reserved              : 1;
-    ULONG_PTR NextFragment_Reserved : 29;
+    ULONG_PTR Reserved              : 31;
 #endif
 
     union
     {
-        MDL *Mdl;
-        PHYSICAL_ADDRESS DmaLogicalAddress;
-        ULONG64 AsInteger;
-    } Mapping;
+        struct
+        {
+            PVOID RxBufferReturnContext;
+        }
+        DUMMYSTRUCTNAME;
+
+        union
+        {
+            MDL *Mdl;
+            PHYSICAL_ADDRESS DmaLogicalAddress;
+            ULONG64 AsInteger;
+        } Mapping;
+    }
+    DUMMYUNIONNAME;
 
     PVOID VirtualAddress;
 
@@ -88,7 +83,7 @@ typedef struct DECLSPEC_ALIGN(NET_PACKET_FRAGMENT_ALIGNMENT_BYTES) _NET_PACKET_F
     UINT64 Completed               : 1;
     UINT64 Scratch                 : 1;
 
-} NET_PACKET_FRAGMENT;
+} NET_PACKET_FRAGMENT, *PNET_PACKET_FRAGMENT;
 #include <poppack.h>
 
 #ifdef _WIN64
@@ -146,18 +141,17 @@ typedef struct _NET_PACKET_LAYOUT
 
 C_ASSERT(sizeof(NET_PACKET_LAYOUT) == 5);
 
-
 typedef enum _NET_PACKET_TX_CHECKSUM_ACTION
 {
-    NET_PACKET_TX_CHECKSUM_PASSTHROUGH                  = 0,
-    NET_PACKET_TX_CHECKSUM_REQUIRED                     = 2,
+    NET_PACKET_TX_CHECKSUM_PASSTHROUGH = 0,
+    NET_PACKET_TX_CHECKSUM_REQUIRED = 2,
 } NET_PACKET_TX_CHECKSUM_ACTION;
 
 typedef enum _NET_PACKET_RX_CHECKSUM_EVALUATION
 {
-    NET_PACKET_RX_CHECKSUM_NOT_CHECKED                  = 0,
-    NET_PACKET_RX_CHECKSUM_VALID                        = 1,
-    NET_PACKET_RX_CHECKSUM_INVALID                      = 2,
+    NET_PACKET_RX_CHECKSUM_NOT_CHECKED = 0,
+    NET_PACKET_RX_CHECKSUM_VALID = 1,
+    NET_PACKET_RX_CHECKSUM_INVALID = 2,
 } NET_PACKET_RX_CHECKSUM_EVALUATION;
 
 typedef struct _NET_PACKET_CHECKSUM
@@ -178,35 +172,27 @@ typedef struct _NET_PACKET_CHECKSUM
 C_ASSERT(sizeof(NET_PACKET_CHECKSUM) == 1);
 
 
-#if _WIN64
-#  define NET_PACKET_ALIGNMENT_BYTES 64
-#else
 #  define NET_PACKET_ALIGNMENT_BYTES 16
-#endif
 
 typedef struct DECLSPEC_ALIGN(NET_PACKET_ALIGNMENT_BYTES) _NET_PACKET
 {
-    NET_PACKET_FRAGMENT Data;
+    UINT32 FragmentOffset : 31;
+    UINT32 FragmentValid : 1;
 
     NET_PACKET_LAYOUT Layout;
-    NET_PACKET_CHECKSUM Checksum;
+    UINT8 Reserved4;
 
     UINT16 IgnoreThisPacket         :  1;
     UINT16 AdvancedOffloadRequested :  1;
     UINT16 Reserved1                : 14;
 
     UINT32 Hash;
-
-    UINT32 Reserved2;
-    PVOID  Reserved3[2];
-
 } NET_PACKET, *PNET_PACKET;
 
-#if _WIN64
-C_ASSERT(sizeof(NET_PACKET) == 64);
-#else
-C_ASSERT(sizeof(NET_PACKET) == 48);
-#endif
+C_ASSERT(sizeof(NET_PACKET) == 16);
+
+#define NET_PACKET_GET_FRAGMENT_VALID(packet) \
+    ((packet)->FragmentValid)
 
 typedef struct _NET_PACKET_8021Q_HEADER
 {
@@ -216,16 +202,6 @@ typedef struct _NET_PACKET_8021Q_HEADER
 } NET_PACKET_8021Q_HEADER;
 
 C_ASSERT(sizeof(NET_PACKET_8021Q_HEADER) == 2);
-
-#include <pshpack2.h>
-typedef struct _NET_PACKET_OFFLOAD_RSC
-{
-    UINT16 CoalescedSegmentCount;
-    UINT32 TimestampDelta;
-} NET_PACKET_OFFLOAD_RSC;
-#include <poppack.h>
-
-C_ASSERT(sizeof(NET_PACKET_OFFLOAD_RSC) == 6);
 
 typedef enum _NET_PACKET_ENCAPSULATION_TYPE
 {
@@ -262,5 +238,126 @@ typedef struct _NET_PACKET_ADVANCED_OFFLOAD
 } NET_PACKET_ADVANCED_OFFLOAD;
 
 C_ASSERT(sizeof(NET_PACKET_ADVANCED_OFFLOAD) == 20);
+
+FORCEINLINE
+BOOLEAN
+NetPacketIsIpv4(
+    const NET_PACKET * packet
+)
+{
+    return (packet->Layout.Layer3Type == NET_PACKET_LAYER3_TYPE_IPV4_NO_OPTIONS ||
+        packet->Layout.Layer3Type == NET_PACKET_LAYER3_TYPE_IPV4_UNSPECIFIED_OPTIONS ||
+        packet->Layout.Layer3Type == NET_PACKET_LAYER3_TYPE_IPV4_WITH_OPTIONS);
+}
+
+FORCEINLINE
+BOOLEAN
+NetPacketIsIpv6(
+    const NET_PACKET * packet
+)
+{
+    return (packet->Layout.Layer3Type == NET_PACKET_LAYER3_TYPE_IPV6_NO_EXTENSIONS ||
+        packet->Layout.Layer3Type == NET_PACKET_LAYER3_TYPE_IPV6_UNSPECIFIED_EXTENSIONS ||
+        packet->Layout.Layer3Type == NET_PACKET_LAYER3_TYPE_IPV6_WITH_EXTENSIONS);
+}
+
+//
+// Net packet extension defines
+//
+
+//
+// Known packet extension constants and helper macros
+//
+#define NET_PACKET_EXTENSION_INVALID_OFFSET ((ULONG)0)
+
+FORCEINLINE
+PVOID
+NetPacketGetExtension(
+    const NET_PACKET * packet,
+    size_t offset
+)
+{
+    NT_ASSERT(offset != NET_PACKET_EXTENSION_INVALID_OFFSET);
+    NT_ASSERT(offset <= 0xffff);
+
+    return (PVOID)((UCHAR*)(packet)+offset);
+}
+
+//
+// ms_PacketChecksum
+//
+
+#define NET_PACKET_EXTENSION_CHECKSUM_NAME L"ms_PacketChecksum"
+#define NET_PACKET_EXTENSION_CHECKSUM_VERSION_1 1
+
+#define NET_PACKET_EXTENSION_CHECKSUM_VERSION_1_SIZE 1
+
+FORCEINLINE
+NET_PACKET_CHECKSUM*
+NetPacketGetPacketChecksum(
+    const NET_PACKET * packet,
+    size_t offset
+)
+{
+    return (NET_PACKET_CHECKSUM*)NetPacketGetExtension(packet, offset);
+}
+
+//
+// ms_PacketLargeSendSegmentation
+//
+#define NET_PACKET_EXTENSION_LSO_NAME L"ms_PacketLargeSendSegmentation"
+#define NET_PACKET_EXTENSION_LSO_VERSION_1 1
+
+typedef struct _NET_PACKET_LARGE_SEND_SEGMENTATION
+{
+    union {
+        struct {
+            ULONG Mss : 20;
+            ULONG Reserved0 : 12;
+        } TCP;
+    } DUMMYUNIONNAME;
+} NET_PACKET_LARGE_SEND_SEGMENTATION;
+
+#define NET_PACKET_EXTENSION_LSO_VERSION_1_SIZE sizeof(ULONG)
+
+FORCEINLINE
+NET_PACKET_LARGE_SEND_SEGMENTATION*
+NetPacketGetPacketLargeSendSegmentation(
+    const NET_PACKET * packet,
+    size_t offset
+)
+{
+    return (NET_PACKET_LARGE_SEND_SEGMENTATION*)NetPacketGetExtension(packet, offset);
+}
+
+//
+// ms_PacketReceiveSegmentCoalescence
+//
+#define NET_PACKET_EXTENSION_RSC_NAME L"ms_PacketReceiveSegmentCoalescence"
+#define NET_PACKET_EXTENSION_RSC_VERSION_1 1
+
+#include <pshpack2.h>
+typedef struct _NET_PACKET_RECEIVE_SEGMENT_COALESCENCE
+{
+    USHORT CoalescedSegmentCount;
+    union {
+        struct {
+            UINT16 RscTcpTimestampDelta;
+        } TCP;
+    } DUMMYUNIONNAME;
+} NET_PACKET_RECEIVE_SEGMENT_COALESCENCE;
+#include <poppack.h>
+
+#define NET_PACKET_EXTENSION_RSC_VERSION_1_SIZE (sizeof(USHORT) + sizeof(UINT16))
+
+FORCEINLINE
+NET_PACKET_RECEIVE_SEGMENT_COALESCENCE*
+NetPacketGetPacketReceiveSegmentCoalescence(
+    const NET_PACKET * packet,
+    size_t offset
+)
+{
+    return (NET_PACKET_RECEIVE_SEGMENT_COALESCENCE*)NetPacketGetExtension(packet, offset);
+}
 
 #pragma warning(pop)

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.calls.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -250,7 +252,9 @@
 #include "EventToken.h"
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
+#include "Windows.ApplicationModel.Contacts.h"
 #include "Windows.System.h"
+#include "Windows.UI.h"
 // Importing Collections header
 #include <windows.foundation.collections.h>
 
@@ -353,6 +357,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CCalls_CIMuteChangeEventArgs ABI::Windows::ApplicationModel::Calls::IMuteChangeEventArgs
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIMuteChangeEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneCallBlockingStatics;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics ABI::Windows::ApplicationModel::Calls::IPhoneCallBlockingStatics
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHistoryEntry_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHistoryEntry_FWD_DEFINED__
@@ -480,6 +498,188 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHistoryStore_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneCallManagerStatics;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics ABI::Windows::ApplicationModel::Calls::IPhoneCallManagerStatics
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneCallManagerStatics2;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 ABI::Windows::ApplicationModel::Calls::IPhoneCallManagerStatics2
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneCallStore;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore ABI::Windows::ApplicationModel::Calls::IPhoneCallStore
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneCallVideoCapabilities;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities ABI::Windows::ApplicationModel::Calls::IPhoneCallVideoCapabilities
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneCallVideoCapabilitiesManagerStatics;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics ABI::Windows::ApplicationModel::Calls::IPhoneCallVideoCapabilitiesManagerStatics
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneDialOptions;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions ABI::Windows::ApplicationModel::Calls::IPhoneDialOptions
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneLine;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine ABI::Windows::ApplicationModel::Calls::IPhoneLine
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneLineCellularDetails;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails ABI::Windows::ApplicationModel::Calls::IPhoneLineCellularDetails
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneLineConfiguration;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration ABI::Windows::ApplicationModel::Calls::IPhoneLineConfiguration
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneLineStatics;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics ABI::Windows::ApplicationModel::Calls::IPhoneLineStatics
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneLineWatcher;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcher
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneLineWatcherEventArgs;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcherEventArgs
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IPhoneVoicemail;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail ABI::Windows::ApplicationModel::Calls::IPhoneVoicemail
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator_FWD_DEFINED__
 namespace ABI {
@@ -507,6 +707,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator2 ABI::Windows::ApplicationModel::Calls::IVoipCallCoordinator2
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IVoipCallCoordinator3;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 ABI::Windows::ApplicationModel::Calls::IVoipCallCoordinator3
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinatorStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinatorStatics_FWD_DEFINED__
@@ -549,6 +763,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall2 ABI::Windows::ApplicationModel::Calls::IVoipPhoneCall2
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                interface IVoipPhoneCall3;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3 ABI::Windows::ApplicationModel::Calls::IVoipPhoneCall3
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -799,6 +1027,225 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Calls {
+                class PhoneCallStore;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("27b63bb3-d008-58f5-854d-ddae65a020b9"))
+IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::PhoneCallStore*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneCallStore*, ABI::Windows::ApplicationModel::Calls::IPhoneCallStore*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.ApplicationModel.Calls.PhoneCallStore>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::PhoneCallStore*> __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::IPhoneCallStore*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::IPhoneCallStore*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_USE */
+
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_USE
+#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("871cad28-01e8-53b5-a14b-30316df65907"))
+IAsyncOperation<ABI::Windows::ApplicationModel::Calls::PhoneCallStore*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneCallStore*, ABI::Windows::ApplicationModel::Calls::IPhoneCallStore*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.ApplicationModel.Calls.PhoneCallStore>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::ApplicationModel::Calls::PhoneCallStore*> __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t;
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Calls::IPhoneCallStore*>
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Calls::IPhoneCallStore*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_USE */
+
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                class PhoneCallVideoCapabilities;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("e50fc826-3ef3-5669-aa14-eb95903793a5"))
+IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities*, ABI::Windows::ApplicationModel::Calls::IPhoneCallVideoCapabilities*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.ApplicationModel.Calls.PhoneCallVideoCapabilities>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities*> __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::IPhoneCallVideoCapabilities*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::IPhoneCallVideoCapabilities*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_USE */
+
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_USE
+#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("7b4b280a-e312-5f06-b953-7e482b67cfcf"))
+IAsyncOperation<ABI::Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities*, ABI::Windows::ApplicationModel::Calls::IPhoneCallVideoCapabilities*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.ApplicationModel.Calls.PhoneCallVideoCapabilities>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities*> __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t;
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Calls::IPhoneCallVideoCapabilities*>
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Calls::IPhoneCallVideoCapabilities*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_USE */
+
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                class PhoneLine;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("92ce5bfd-1417-55ee-b0b6-298ae78cb179"))
+IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::PhoneLine*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneLine*, ABI::Windows::ApplicationModel::Calls::IPhoneLine*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.ApplicationModel.Calls.PhoneLine>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::PhoneLine*> __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::IPhoneLine*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Calls::IPhoneLine*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_USE */
+
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_USE
+#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("d8712730-aa68-5614-a408-b2012463120b"))
+IAsyncOperation<ABI::Windows::ApplicationModel::Calls::PhoneLine*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneLine*, ABI::Windows::ApplicationModel::Calls::IPhoneLine*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.ApplicationModel.Calls.PhoneLine>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::ApplicationModel::Calls::PhoneLine*> __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_t;
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Calls::IPhoneLine*>
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Calls::IPhoneLine*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_USE */
+
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
                 enum VoipPhoneCallResourceReservationStatus : int;
             } /* Windows */
         } /* ApplicationModel */
@@ -981,6 +1428,7 @@ namespace ABI {
 
 
 #if WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION >= 0x10000
+#if WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_USE
@@ -1010,6 +1458,126 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::LockScreenCall
 
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("7c5f5192-9fc0-5543-9bc4-411482e4ea93"))
+ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::PhoneLine*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneLine*, ABI::Windows::ApplicationModel::Calls::IPhoneLine*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.ApplicationModel.Calls.PhoneLine, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::PhoneLine*,IInspectable*> __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::IPhoneLine*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::IPhoneLine*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_USE */
+
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                class PhoneLineWatcher;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("d55ce56a-23ac-5185-bf76-2808ec83c78b"))
+ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::PhoneLineWatcher*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneLineWatcher*, ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcher*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.ApplicationModel.Calls.PhoneLineWatcher, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::PhoneLineWatcher*,IInspectable*> __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcher*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcher*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_USE */
+
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                class PhoneLineWatcherEventArgs;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("727cff26-a887-5361-8924-95f7bab4e25d"))
+ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::PhoneLineWatcher*,ABI::Windows::ApplicationModel::Calls::PhoneLineWatcherEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneLineWatcher*, ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcher*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Calls::PhoneLineWatcherEventArgs*, ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcherEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.ApplicationModel.Calls.PhoneLineWatcher, Windows.ApplicationModel.Calls.PhoneLineWatcherEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::PhoneLineWatcher*,ABI::Windows::ApplicationModel::Calls::PhoneLineWatcherEventArgs*> __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcher*,ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcherEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcher*,ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcherEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_USE */
+
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -1031,6 +1599,7 @@ namespace ABI {
     } /* Calls */} /* ABI */
 
 
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallCoordinator_Windows__CApplicationModel__CCalls__CMuteChangeEventArgs_USE
@@ -1061,6 +1630,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::VoipCallCoordi
 
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -1082,6 +1652,7 @@ namespace ABI {
     } /* Calls */} /* ABI */
 
 
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallAnswerEventArgs_USE
@@ -1112,6 +1683,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::VoipPhoneCall*
 
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1124,6 +1696,7 @@ namespace ABI {
     } /* Calls */} /* ABI */
 
 
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallRejectEventArgs_USE
@@ -1154,6 +1727,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::VoipPhoneCall*
 
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1166,6 +1740,7 @@ namespace ABI {
     } /* Calls */} /* ABI */
 
 
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_USE
@@ -1196,43 +1771,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Calls::VoipPhoneCall*
 
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
-
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            struct TimeSpan;
-            
-        } /* Windows */
-    } /* Foundation */} /* ABI */
-
-
-#ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
-#define DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation {
-template <>
-struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800"))
-IReference<struct ABI::Windows::Foundation::TimeSpan> : IReference_impl<struct ABI::Windows::Foundation::TimeSpan> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Windows__CFoundation__CTimeSpan_t;
-#define __FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CTimeSpan_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::TimeSpan>
-//#define __FIReference_1_Windows__CFoundation__CTimeSpan_t ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::TimeSpan>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
-
-
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 
 #ifndef DEF___FIIterator_1_HSTRING_USE
@@ -1289,6 +1828,101 @@ typedef IIterable<HSTRING> __FIIterable_1_HSTRING_t;
 //#define __FIIterable_1_HSTRING_t ABI::Windows::Foundation::Collections::IIterable<HSTRING>
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_HSTRING_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a"))
+IAsyncOperationCompletedHandler<bool> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Boolean>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<bool> __FIAsyncOperationCompletedHandler_1_boolean_t;
+#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_boolean_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
+//#define __FIAsyncOperationCompletedHandler_1_boolean_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperation_1_boolean_USE
+#define DEF___FIAsyncOperation_1_boolean_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a"))
+IAsyncOperation<bool> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Boolean>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
+#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::IAsyncOperation<boolean>
+//#define __FIAsyncOperation_1_boolean_t ABI::Windows::Foundation::IAsyncOperation<boolean>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_boolean_USE */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            struct TimeSpan;
+            
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#define DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800"))
+IReference<struct ABI::Windows::Foundation::TimeSpan> : IReference_impl<struct ABI::Windows::Foundation::TimeSpan> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Windows__CFoundation__CTimeSpan_t;
+#define __FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CTimeSpan_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::TimeSpan>
+//#define __FIReference_1_Windows__CFoundation__CTimeSpan_t ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::TimeSpan>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
 
 
 
@@ -1410,6 +2044,265 @@ typedef IAsyncOperation<UINT32> __FIAsyncOperation_1_UINT32_t;
 
 
 
+#ifndef DEF___FIEventHandler_1_IInspectable_USE
+#define DEF___FIEventHandler_1_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b"))
+IEventHandler<IInspectable*> : IEventHandler_impl<IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
+#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::IEventHandler<IInspectable*>
+//#define __FIEventHandler_1_IInspectable_t ABI::Windows::Foundation::IEventHandler<IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_IInspectable_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_GUID_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_GUID_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("5233899b-ba7e-504f-bb83-ceebac62decf"))
+IAsyncOperationCompletedHandler<GUID> : IAsyncOperationCompletedHandler_impl<GUID> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Guid>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<GUID> __FIAsyncOperationCompletedHandler_1_GUID_t;
+#define __FIAsyncOperationCompletedHandler_1_GUID ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_GUID_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_GUID ABI::Windows::Foundation::IAsyncOperationCompletedHandler<GUID>
+//#define __FIAsyncOperationCompletedHandler_1_GUID_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<GUID>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_GUID_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperation_1_GUID_USE
+#define DEF___FIAsyncOperation_1_GUID_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("6607bc41-294b-5975-9c3f-4b49836d0916"))
+IAsyncOperation<GUID> : IAsyncOperation_impl<GUID> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Guid>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<GUID> __FIAsyncOperation_1_GUID_t;
+#define __FIAsyncOperation_1_GUID ABI::Windows::Foundation::__FIAsyncOperation_1_GUID_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_GUID ABI::Windows::Foundation::IAsyncOperation<GUID>
+//#define __FIAsyncOperation_1_GUID_t ABI::Windows::Foundation::IAsyncOperation<GUID>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_GUID_USE */
+
+
+
+
+
+#ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20"))
+IKeyValuePair<HSTRING,IInspectable*> : IKeyValuePair_impl<HSTRING,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IKeyValuePair`2<String, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IKeyValuePair<HSTRING,IInspectable*> __FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define __FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIKeyValuePair_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>
+//#define __FIKeyValuePair_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+
+
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8"))
+IIterator<__FIKeyValuePair_2_HSTRING_IInspectable*> : IIterator_impl<__FIKeyValuePair_2_HSTRING_IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Object>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<__FIKeyValuePair_2_HSTRING_IInspectable*> __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>*>
+//#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+
+
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204"))
+IIterable<__FIKeyValuePair_2_HSTRING_IInspectable*> : IIterable_impl<__FIKeyValuePair_2_HSTRING_IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Object>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<__FIKeyValuePair_2_HSTRING_IInspectable*> __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>*>
+//#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+
+
+
+#ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
+#define DEF___FIMapView_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e"))
+IMapView<HSTRING,IInspectable*> : IMapView_impl<HSTRING,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IMapView`2<String, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IMapView<HSTRING,IInspectable*> __FIMapView_2_HSTRING_IInspectable_t;
+#define __FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IMapView<HSTRING,IInspectable*>
+//#define __FIMapView_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IMapView<HSTRING,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                class Contact;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Contacts */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContact;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Contacts */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContact ABI::Windows::ApplicationModel::Contacts::IContact
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                class ContactPhone;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Contacts */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactPhone;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Contacts */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone ABI::Windows::ApplicationModel::Contacts::IContactPhone
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_FWD_DEFINED__
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -1486,7 +2379,41 @@ namespace ABI {
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            
+            typedef struct Color Color;
+            
+        } /* Windows */
+    } /* UI */} /* ABI */
 
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                
+                typedef enum CellularDtmfMode : int CellularDtmfMode;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                
+                typedef enum PhoneAudioRoutingEndpoint : int PhoneAudioRoutingEndpoint;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1549,6 +2476,83 @@ namespace ABI {
             namespace Calls {
                 
                 typedef enum PhoneCallHistoryStoreAccessType : int PhoneCallHistoryStoreAccessType;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                
+                typedef enum PhoneCallMedia : int PhoneCallMedia;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                
+                typedef enum PhoneLineNetworkOperatorDisplayTextLocation : int PhoneLineNetworkOperatorDisplayTextLocation;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                
+                typedef enum PhoneLineTransport : int PhoneLineTransport;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                
+                typedef enum PhoneLineWatcherStatus : int PhoneLineWatcherStatus;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                
+                typedef enum PhoneNetworkState : int PhoneNetworkState;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                
+                typedef enum PhoneSimState : int PhoneSimState;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                
+                typedef enum PhoneVoicemailType : int PhoneVoicemailType;
                 
             } /* Windows */
         } /* ApplicationModel */
@@ -1622,6 +2626,22 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
@@ -1630,6 +2650,7 @@ namespace ABI {
             } /* Windows */
         } /* ApplicationModel */
     } /* Calls */} /* ABI */
+
 
 
 
@@ -1682,12 +2703,114 @@ namespace ABI {
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                class PhoneDialOptions;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                class PhoneLineCellularDetails;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                class PhoneLineConfiguration;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                class PhoneVoicemail;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.CellularDtmfMode
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [v1_enum, contract] */
+                enum CellularDtmfMode : int
+                {
+                    CellularDtmfMode_Continuous = 0,
+                    CellularDtmfMode_Burst = 1,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneAudioRoutingEndpoint
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [v1_enum, contract] */
+                enum PhoneAudioRoutingEndpoint : int
+                {
+                    PhoneAudioRoutingEndpoint_Default = 0,
+                    PhoneAudioRoutingEndpoint_Bluetooth = 1,
+                    PhoneAudioRoutingEndpoint_Speakerphone = 2,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -1859,6 +2982,217 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.ApplicationModel.Calls.PhoneCallMedia
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [v1_enum, contract] */
+                enum PhoneCallMedia : int
+                {
+                    PhoneCallMedia_Audio = 0,
+                    PhoneCallMedia_AudioAndVideo = 1,
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x40000
+                    
+                    PhoneCallMedia_AudioAndRealTimeText = 2,
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x40000
+                    
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneLineNetworkOperatorDisplayTextLocation
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [v1_enum, contract] */
+                enum PhoneLineNetworkOperatorDisplayTextLocation : int
+                {
+                    PhoneLineNetworkOperatorDisplayTextLocation_Default = 0,
+                    PhoneLineNetworkOperatorDisplayTextLocation_Tile = 1,
+                    PhoneLineNetworkOperatorDisplayTextLocation_Dialer = 2,
+                    PhoneLineNetworkOperatorDisplayTextLocation_InCallUI = 3,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneLineTransport
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [v1_enum, contract] */
+                enum PhoneLineTransport : int
+                {
+                    PhoneLineTransport_Cellular = 0,
+                    PhoneLineTransport_VoipApp = 1,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneLineWatcherStatus
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [v1_enum, contract] */
+                enum PhoneLineWatcherStatus : int
+                {
+                    PhoneLineWatcherStatus_Created = 0,
+                    PhoneLineWatcherStatus_Started = 1,
+                    PhoneLineWatcherStatus_EnumerationCompleted = 2,
+                    PhoneLineWatcherStatus_Stopped = 3,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneNetworkState
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [v1_enum, contract] */
+                enum PhoneNetworkState : int
+                {
+                    PhoneNetworkState_Unknown = 0,
+                    PhoneNetworkState_NoSignal = 1,
+                    PhoneNetworkState_Deregistered = 2,
+                    PhoneNetworkState_Denied = 3,
+                    PhoneNetworkState_Searching = 4,
+                    PhoneNetworkState_Home = 5,
+                    PhoneNetworkState_RoamingInternational = 6,
+                    PhoneNetworkState_RoamingDomestic = 7,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneSimState
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [v1_enum, contract] */
+                enum PhoneSimState : int
+                {
+                    PhoneSimState_Unknown = 0,
+                    PhoneSimState_PinNotRequired = 1,
+                    PhoneSimState_PinUnlocked = 2,
+                    PhoneSimState_PinLocked = 3,
+                    PhoneSimState_PukLocked = 4,
+                    PhoneSimState_NotInserted = 5,
+                    PhoneSimState_Invalid = 6,
+                    PhoneSimState_Disabled = 7,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneVoicemailType
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [v1_enum, contract] */
+                enum PhoneVoicemailType : int
+                {
+                    PhoneVoicemailType_None = 0,
+                    PhoneVoicemailType_Traditional = 1,
+                    PhoneVoicemailType_Visual = 2,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Struct Windows.ApplicationModel.Calls.VoipPhoneCallMedia
  *
  * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 1.0
@@ -1995,8 +3329,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("FD789617-2DD7-4C8C-B2BD-95D17A5BB733"), exclusiveto, contract] */
                 MIDL_INTERFACE("FD789617-2DD7-4C8C-B2BD-95D17A5BB733")
-                ICallAnswerEventArgs : IInspectable
+                ICallAnswerEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AcceptedMedia(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::VoipPhoneCallMedia * value
                         ) = 0;
@@ -2035,8 +3370,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("DA47FAD7-13D4-4D92-A1C2-B77811EE37EC"), exclusiveto, contract] */
                 MIDL_INTERFACE("DA47FAD7-13D4-4D92-A1C2-B77811EE37EC")
-                ICallRejectEventArgs : IInspectable
+                ICallRejectEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RejectReason(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::VoipPhoneCallRejectReason * value
                         ) = 0;
@@ -2075,8 +3411,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("EAB2349E-66F5-47F9-9FB5-459C5198C720"), exclusiveto, contract] */
                 MIDL_INTERFACE("EAB2349E-66F5-47F9-9FB5-459C5198C720")
-                ICallStateChangeEventArgs : IInspectable
+                ICallStateChangeEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::VoipPhoneCallState * value
                         ) = 0;
@@ -2115,8 +3452,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("2DD7ED0D-98ED-4041-9632-50FF812B773F"), exclusiveto, contract] */
                 MIDL_INTERFACE("2DD7ED0D-98ED-4041-9632-50FF812B773F")
-                ILockScreenCallEndCallDeferral : IInspectable
+                ILockScreenCallEndCallDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -2153,8 +3491,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("8190A363-6F27-46E9-AEB6-C0AE83E47DC7"), exclusiveto, contract] */
                 MIDL_INTERFACE("8190A363-6F27-46E9-AEB6-C0AE83E47DC7")
-                ILockScreenCallEndRequestedEventArgs : IInspectable
+                ILockScreenCallEndRequestedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::ILockScreenCallEndCallDeferral * * value
                         ) = 0;
@@ -2196,8 +3535,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("C596FD8D-73C9-4A14-B021-EC1C50A3B727"), exclusiveto, contract] */
                 MIDL_INTERFACE("C596FD8D-73C9-4A14-B021-EC1C50A3B727")
-                ILockScreenCallUI : IInspectable
+                ILockScreenCallUI : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Dismiss(void) = 0;
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_EndRequested(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs * handler,
@@ -2254,8 +3594,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("8585E159-0C41-432C-814D-C5F1FDF530BE"), exclusiveto, contract] */
                 MIDL_INTERFACE("8585E159-0C41-432C-814D-C5F1FDF530BE")
-                IMuteChangeEventArgs : IInspectable
+                IMuteChangeEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Muted(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2271,6 +3612,60 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIMuteChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIMuteChangeEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallBlockingStatics
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallBlocking
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallBlockingStatics[] = L"Windows.ApplicationModel.Calls.IPhoneCallBlockingStatics";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("19646F84-2B79-26F1-A46F-694BE043F313"), exclusiveto, contract] */
+                MIDL_INTERFACE("19646F84-2B79-26F1-A46F-694BE043F313")
+                IPhoneCallBlockingStatics : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BlockUnknownNumbers(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_BlockUnknownNumbers(
+                        /* [in] */boolean value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BlockPrivateNumbers(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_BlockPrivateNumbers(
+                        /* [in] */boolean value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE SetCallBlockingListAsync(
+                        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * phoneNumberList,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneCallBlockingStatics=_uuidof(IPhoneCallBlockingStatics);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -2294,8 +3689,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("FAB0E129-32A4-4B85-83D1-F90D8C23A857"), exclusiveto, contract] */
                 MIDL_INTERFACE("FAB0E129-32A4-4B85-83D1-F90D8C23A857")
-                IPhoneCallHistoryEntry : IInspectable
+                IPhoneCallHistoryEntry : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2433,8 +3829,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("30F159DA-3955-4042-84E6-66EEBF82E67F"), exclusiveto, contract] */
                 MIDL_INTERFACE("30F159DA-3955-4042-84E6-66EEBF82E67F")
-                IPhoneCallHistoryEntryAddress : IInspectable
+                IPhoneCallHistoryEntryAddress : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2494,8 +3891,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("FB0FADBA-C7F0-4BB6-9F6B-BA5D73209ACA"), exclusiveto, contract] */
                 MIDL_INTERFACE("FB0FADBA-C7F0-4BB6-9F6B-BA5D73209ACA")
-                IPhoneCallHistoryEntryAddressFactory : IInspectable
+                IPhoneCallHistoryEntryAddressFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING rawAddress,
                         /* [in] */ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind,
@@ -2536,8 +3934,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("9C5FE15C-8BED-40CA-B06E-C4CA8EAE5C87"), exclusiveto, contract] */
                 MIDL_INTERFACE("9C5FE15C-8BED-40CA-B06E-C4CA8EAE5C87")
-                IPhoneCallHistoryEntryQueryOptions : IInspectable
+                IPhoneCallHistoryEntryQueryOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesiredMedia(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia * value
                         ) = 0;
@@ -2582,8 +3981,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("61ECE4BE-8D86-479F-8404-A9846920FEE6"), exclusiveto, contract] */
                 MIDL_INTERFACE("61ECE4BE-8D86-479F-8404-A9846920FEE6")
-                IPhoneCallHistoryEntryReader : IInspectable
+                IPhoneCallHistoryEntryReader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReadBatchAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry * * result
                         ) = 0;
@@ -2622,8 +4022,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("D925C523-F55F-4353-9DB4-0205A5265A55"), exclusiveto, contract] */
                 MIDL_INTERFACE("D925C523-F55F-4353-9DB4-0205A5265A55")
-                IPhoneCallHistoryManagerForUser : IInspectable
+                IPhoneCallHistoryManagerForUser : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestStoreAsync(
                         /* [in] */ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryStore * * result
@@ -2666,8 +4067,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("F5A6DA39-B31F-4F45-AC8E-1B08893C1B50"), exclusiveto, contract] */
                 MIDL_INTERFACE("F5A6DA39-B31F-4F45-AC8E-1B08893C1B50")
-                IPhoneCallHistoryManagerStatics : IInspectable
+                IPhoneCallHistoryManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RequestStoreAsync(
                         /* [in] */ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryStore * * result
@@ -2707,8 +4109,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("EFD474F0-A2DB-4188-9E92-BC3CFA6813CF"), exclusiveto, contract] */
                 MIDL_INTERFACE("EFD474F0-A2DB-4188-9E92-BC3CFA6813CF")
-                IPhoneCallHistoryManagerStatics2 : IInspectable
+                IPhoneCallHistoryManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerForUser * * result
@@ -2748,8 +4151,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("2F907DB8-B40E-422B-8545-CB1910A61C52"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F907DB8-B40E-422B-8545-CB1910A61C52")
-                IPhoneCallHistoryStore : IInspectable
+                IPhoneCallHistoryStore : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetEntryAsync(
                         /* [in] */__RPC__in HSTRING callHistoryEntryId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry * * result
@@ -2811,6 +4215,709 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHist
 
 /*
  *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallManagerStatics
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallManager
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallManagerStatics[] = L"Windows.ApplicationModel.Calls.IPhoneCallManagerStatics";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("60EDAC78-78A6-4872-A3EF-98325EC8B843"), exclusiveto, contract] */
+                MIDL_INTERFACE("60EDAC78-78A6-4872-A3EF-98325EC8B843")
+                IPhoneCallManagerStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE ShowPhoneCallUI(
+                        /* [in] */__RPC__in HSTRING phoneNumber,
+                        /* [in] */__RPC__in HSTRING displayName
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneCallManagerStatics=_uuidof(IPhoneCallManagerStatics);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallManagerStatics2
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallManager
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallManagerStatics2[] = L"Windows.ApplicationModel.Calls.IPhoneCallManagerStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("C7E3C8BC-2370-431C-98FD-43BE5F03086D"), exclusiveto, contract] */
+                MIDL_INTERFACE("C7E3C8BC-2370-431C-98FD-43BE5F03086D")
+                IPhoneCallManagerStatics2 : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CallStateChanged(
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_CallStateChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsCallActive(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsCallIncoming(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE ShowPhoneCallSettingsUI(void) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE RequestStoreAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneCallManagerStatics2=_uuidof(IPhoneCallManagerStatics2);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallStore
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallStore
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallStore[] = L"Windows.ApplicationModel.Calls.IPhoneCallStore";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("5F610748-18A6-4173-86D1-28BE9DC62DBA"), exclusiveto, contract] */
+                MIDL_INTERFACE("5F610748-18A6-4173-86D1-28BE9DC62DBA")
+                IPhoneCallStore : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE IsEmergencyPhoneNumberAsync(
+                        /* [in] */__RPC__in HSTRING number,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetDefaultLineAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_GUID * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE RequestLineWatcher(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::IPhoneLineWatcher * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneCallStore=_uuidof(IPhoneCallStore);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilities
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallVideoCapabilities
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallVideoCapabilities[] = L"Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilities";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("02382786-B16A-4FDB-BE3B-C4240E13AD0D"), exclusiveto, contract] */
+                MIDL_INTERFACE("02382786-B16A-4FDB-BE3B-C4240E13AD0D")
+                IPhoneCallVideoCapabilities : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsVideoCallingCapable(
+                        /* [retval, out] */__RPC__out boolean * pValue
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneCallVideoCapabilities=_uuidof(IPhoneCallVideoCapabilities);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilitiesManagerStatics
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallVideoCapabilitiesManager
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallVideoCapabilitiesManagerStatics[] = L"Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilitiesManagerStatics";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("F3C64B56-F00B-4A1C-A0C6-EE1910749CE7"), exclusiveto, contract] */
+                MIDL_INTERFACE("F3C64B56-F00B-4A1C-A0C6-EE1910749CE7")
+                IPhoneCallVideoCapabilitiesManagerStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetCapabilitiesAsync(
+                        /* [in] */__RPC__in HSTRING phoneNumber,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneCallVideoCapabilitiesManagerStatics=_uuidof(IPhoneCallVideoCapabilitiesManagerStatics);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneDialOptions
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneDialOptions
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneDialOptions[] = L"Windows.ApplicationModel.Calls.IPhoneDialOptions";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("B639C4B8-F06F-36CB-A863-823742B5F2D4"), exclusiveto, contract] */
+                MIDL_INTERFACE("B639C4B8-F06F-36CB-A863-823742B5F2D4")
+                IPhoneDialOptions : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Number(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Number(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_DisplayName(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Contact(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContact * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Contact(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContactPhone(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactPhone * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ContactPhone(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContactPhone * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Media(
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::PhoneCallMedia * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Media(
+                        /* [in] */ABI::Windows::ApplicationModel::Calls::PhoneCallMedia value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioEndpoint(
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::PhoneAudioRoutingEndpoint * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AudioEndpoint(
+                        /* [in] */ABI::Windows::ApplicationModel::Calls::PhoneAudioRoutingEndpoint value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneDialOptions=_uuidof(IPhoneDialOptions);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLine
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLine
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLine[] = L"Windows.ApplicationModel.Calls.IPhoneLine";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("27C66F30-6A69-34CA-A2BA-65302530C311"), exclusiveto, contract] */
+                MIDL_INTERFACE("27C66F30-6A69-34CA-A2BA-65302530C311")
+                IPhoneLine : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LineChanged(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LineChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
+                        /* [retval, out] */__RPC__out GUID * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayColor(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkState(
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::PhoneNetworkState * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Voicemail(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::IPhoneVoicemail * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkName(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CellularDetails(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::IPhoneLineCellularDetails * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Transport(
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::PhoneLineTransport * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanDial(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportsTile(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VideoCallingCapabilities(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::IPhoneCallVideoCapabilities * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LineConfiguration(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::IPhoneLineConfiguration * * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE IsImmediateDialNumberAsync(
+                        /* [in] */__RPC__in HSTRING number,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Dial(
+                        /* [in] */__RPC__in HSTRING number,
+                        /* [in] */__RPC__in HSTRING displayName
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE DialWithOptions(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Calls::IPhoneDialOptions * options
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneLine=_uuidof(IPhoneLine);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineCellularDetails
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLineCellularDetails
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineCellularDetails[] = L"Windows.ApplicationModel.Calls.IPhoneLineCellularDetails";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("192601D5-147C-4769-B673-98A5EC8426CB"), exclusiveto, contract] */
+                MIDL_INTERFACE("192601D5-147C-4769-B673-98A5EC8426CB")
+                IPhoneLineCellularDetails : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SimState(
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::PhoneSimState * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SimSlotIndex(
+                        /* [retval, out] */__RPC__out INT32 * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsModemOn(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RegistrationRejectCode(
+                        /* [retval, out] */__RPC__out INT32 * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetNetworkOperatorDisplayText(
+                        /* [in] */ABI::Windows::ApplicationModel::Calls::PhoneLineNetworkOperatorDisplayTextLocation location,
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneLineCellularDetails=_uuidof(IPhoneLineCellularDetails);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineConfiguration
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLineConfiguration
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineConfiguration[] = L"Windows.ApplicationModel.Calls.IPhoneLineConfiguration";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("FE265862-F64F-4312-B2A8-4E257721AA95"), exclusiveto, contract] */
+                MIDL_INTERFACE("FE265862-F64F-4312-B2A8-4E257721AA95")
+                IPhoneLineConfiguration : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsVideoCallingEnabled(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedProperties(
+                        /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneLineConfiguration=_uuidof(IPhoneLineConfiguration);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineStatics
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLine
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineStatics[] = L"Windows.ApplicationModel.Calls.IPhoneLineStatics";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("F38B5F23-CEB0-404F-BCF2-BA9F697D8ADF"), exclusiveto, contract] */
+                MIDL_INTERFACE("F38B5F23-CEB0-404F-BCF2-BA9F697D8ADF")
+                IPhoneLineStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
+                        /* [in] */GUID lineId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneLineStatics=_uuidof(IPhoneLineStatics);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineWatcher
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLineWatcher
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineWatcher[] = L"Windows.ApplicationModel.Calls.IPhoneLineWatcher";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("8A45CD0A-6323-44E0-A6F6-9F21F64DC90A"), exclusiveto, contract] */
+                MIDL_INTERFACE("8A45CD0A-6323-44E0-A6F6-9F21F64DC90A")
+                IPhoneLineWatcher : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Start(void) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Stop(void) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LineAdded(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LineAdded(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LineRemoved(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LineRemoved(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LineUpdated(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LineUpdated(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_EnumerationCompleted(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_EnumerationCompleted(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Stopped(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Stopped(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::PhoneLineWatcherStatus * status
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneLineWatcher=_uuidof(IPhoneLineWatcher);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineWatcherEventArgs
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLineWatcherEventArgs
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineWatcherEventArgs[] = L"Windows.ApplicationModel.Calls.IPhoneLineWatcherEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("D07C753E-9E12-4A37-82B7-AD535DAD6A67"), exclusiveto, contract] */
+                MIDL_INTERFACE("D07C753E-9E12-4A37-82B7-AD535DAD6A67")
+                IPhoneLineWatcherEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LineId(
+                        /* [retval, out] */__RPC__out GUID * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneLineWatcherEventArgs=_uuidof(IPhoneLineWatcherEventArgs);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneVoicemail
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneVoicemail
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneVoicemail[] = L"Windows.ApplicationModel.Calls.IPhoneVoicemail";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("C9CE77F6-6E9F-3A8B-B727-6E0CF6998224"), exclusiveto, contract] */
+                MIDL_INTERFACE("C9CE77F6-6E9F-3A8B-B727-6E0CF6998224")
+                IPhoneVoicemail : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Number(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MessageCount(
+                        /* [retval, out] */__RPC__out INT32 * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Calls::PhoneVoicemailType * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE DialVoicemailAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPhoneVoicemail=_uuidof(IPhoneVoicemail);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Calls.IVoipCallCoordinator
  *
  * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 1.0
@@ -2830,8 +4937,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("4F118BCF-E8EF-4434-9C5F-A8D893FAFE79"), exclusiveto, contract] */
                 MIDL_INTERFACE("4F118BCF-E8EF-4434-9C5F-A8D893FAFE79")
-                IVoipCallCoordinator : IInspectable
+                IVoipCallCoordinator : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReserveCallResourcesAsync(
                         /* [in] */__RPC__in HSTRING taskEntryPoint,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CVoipPhoneCallResourceReservationStatus * * operation
@@ -2929,8 +5037,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("BEB4A9F3-C704-4234-89CE-E88CC0D28FBE"), exclusiveto, contract] */
                 MIDL_INTERFACE("BEB4A9F3-C704-4234-89CE-E88CC0D28FBE")
-                IVoipCallCoordinator2 : IInspectable
+                IVoipCallCoordinator2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetupNewAcceptedCall(
                         /* [in] */__RPC__in HSTRING context,
                         /* [in] */__RPC__in HSTRING contactName,
@@ -2955,6 +5064,70 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoord
 
 /*
  *
+ * Interface Windows.ApplicationModel.Calls.IVoipCallCoordinator3
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.VoipCallCoordinator
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.ApplicationModel.Calls.IVoipCallCoordinator
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IVoipCallCoordinator3[] = L"Windows.ApplicationModel.Calls.IVoipCallCoordinator3";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("338D0CBF-9B55-4021-87CA-E64B9BD666C7"), exclusiveto, contract] */
+                MIDL_INTERFACE("338D0CBF-9B55-4021-87CA-E64B9BD666C7")
+                IVoipCallCoordinator3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE RequestNewAppInitiatedCall(
+                        /* [in] */__RPC__in HSTRING context,
+                        /* [in] */__RPC__in HSTRING contactName,
+                        /* [in] */__RPC__in HSTRING contactNumber,
+                        /* [in] */__RPC__in HSTRING serviceName,
+                        /* [in] */ABI::Windows::ApplicationModel::Calls::VoipPhoneCallMedia media,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::IVoipPhoneCall * * call
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE RequestNewIncomingCallWithContactRemoteId(
+                        /* [in] */__RPC__in HSTRING context,
+                        /* [in] */__RPC__in HSTRING contactName,
+                        /* [in] */__RPC__in HSTRING contactNumber,
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * contactImage,
+                        /* [in] */__RPC__in HSTRING serviceName,
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * brandingImage,
+                        /* [in] */__RPC__in HSTRING callDetails,
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * ringtone,
+                        /* [in] */ABI::Windows::ApplicationModel::Calls::VoipPhoneCallMedia media,
+                        /* [in] */ABI::Windows::Foundation::TimeSpan ringTimeout,
+                        /* [in] */__RPC__in HSTRING contactRemoteId,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::IVoipPhoneCall * * call
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IVoipCallCoordinator3=_uuidof(IVoipCallCoordinator3);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Calls.IVoipCallCoordinatorStatics
  *
  * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 1.0
@@ -2974,8 +5147,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("7F5D1F2B-E04A-4D10-B31A-A55C922CC2FB"), exclusiveto, contract] */
                 MIDL_INTERFACE("7F5D1F2B-E04A-4D10-B31A-A55C922CC2FB")
-                IVoipCallCoordinatorStatics : IInspectable
+                IVoipCallCoordinatorStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Calls::IVoipCallCoordinator * * coordinator
                         ) = 0;
@@ -3014,8 +5188,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("6CF1F19A-7794-4A5A-8C68-AE87947A6990"), exclusiveto, contract] */
                 MIDL_INTERFACE("6CF1F19A-7794-4A5A-8C68-AE87947A6990")
-                IVoipPhoneCall : IInspectable
+                IVoipPhoneCall : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_EndRequested(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3112,8 +5287,9 @@ namespace ABI {
             namespace Calls {
                 /* [object, uuid("741B46E1-245F-41F3-9399-3141D25B52E3"), exclusiveto, contract] */
                 MIDL_INTERFACE("741B46E1-245F-41F3-9399-3141D25B52E3")
-                IVoipPhoneCall2 : IInspectable
+                IVoipPhoneCall2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryShowAppUI(void) = 0;
                     
                 };
@@ -3127,6 +5303,52 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall2;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IVoipPhoneCall3
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.VoipPhoneCall
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.ApplicationModel.Calls.IVoipPhoneCall2
+ *     Windows.ApplicationModel.Calls.IVoipPhoneCall
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IVoipPhoneCall3[] = L"Windows.ApplicationModel.Calls.IVoipPhoneCall3";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Calls {
+                /* [object, uuid("0D891522-E258-4AA9-907A-1AA413C25523"), exclusiveto, contract] */
+                MIDL_INTERFACE("0D891522-E258-4AA9-907A-1AA413C25523")
+                IVoipPhoneCall3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE NotifyCallAccepted(
+                        /* [in] */ABI::Windows::ApplicationModel::Calls::VoipPhoneCallMedia media
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IVoipPhoneCall3=_uuidof(IVoipPhoneCall3);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Calls */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -3281,6 +5503,29 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_MuteChangeEventArgs[] = L"Windows.ApplicationModel.Calls.MuteChangeEventArgs";
 #endif
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneCallBlocking
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneCallBlockingStatics interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallBlocking_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallBlocking_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallBlocking[] = L"Windows.ApplicationModel.Calls.PhoneCallBlocking";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -3461,6 +5706,275 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Calls.PhoneCallManager
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneCallManagerStatics2 interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneCallManagerStatics interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallManager_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallManager[] = L"Windows.ApplicationModel.Calls.PhoneCallManager";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneCallStore
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneCallStore ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallStore_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallStore_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallStore[] = L"Windows.ApplicationModel.Calls.PhoneCallStore";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneCallVideoCapabilities
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilities ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilities_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilities_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilities[] = L"Windows.ApplicationModel.Calls.PhoneCallVideoCapabilities";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneCallVideoCapabilitiesManager
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilitiesManagerStatics interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilitiesManager_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilitiesManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilitiesManager[] = L"Windows.ApplicationModel.Calls.PhoneCallVideoCapabilitiesManager";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneDialOptions
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneDialOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneDialOptions_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneDialOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneDialOptions[] = L"Windows.ApplicationModel.Calls.PhoneDialOptions";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLine
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneLineStatics interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLine ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLine_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLine_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLine[] = L"Windows.ApplicationModel.Calls.PhoneLine";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLineCellularDetails
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLineCellularDetails ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineCellularDetails_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineCellularDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLineCellularDetails[] = L"Windows.ApplicationModel.Calls.PhoneLineCellularDetails";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLineConfiguration
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLineConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLineConfiguration[] = L"Windows.ApplicationModel.Calls.PhoneLineConfiguration";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLineWatcher
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLineWatcher ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineWatcher_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineWatcher_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLineWatcher[] = L"Windows.ApplicationModel.Calls.PhoneLineWatcher";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLineWatcherEventArgs
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLineWatcherEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineWatcherEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineWatcherEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLineWatcherEventArgs[] = L"Windows.ApplicationModel.Calls.PhoneLineWatcherEventArgs";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneVoicemail
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneVoicemail ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneVoicemail_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneVoicemail_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneVoicemail[] = L"Windows.ApplicationModel.Calls.PhoneVoicemail";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Calls.VoipCallCoordinator
  *
  * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 1.0
@@ -3472,6 +5986,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Calls.IVoipCallCoordinator ** Default Interface **
  *    Windows.ApplicationModel.Calls.IVoipCallCoordinator2
+ *    Windows.ApplicationModel.Calls.IVoipCallCoordinator3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -3495,6 +6010,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Calls.IVoipPhoneCall ** Default Interface **
  *    Windows.ApplicationModel.Calls.IVoipPhoneCall2
+ *    Windows.ApplicationModel.Calls.IVoipPhoneCall3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -3554,6 +6070,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIMuteChangeEventArg
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIMuteChangeEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHistoryEntry_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHistoryEntry_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHistoryEntry __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHistoryEntry;
@@ -3608,6 +6130,84 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHistorySt
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHistoryStore_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator;
@@ -3619,6 +6219,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinato
 typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator2 __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator2;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinatorStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinatorStatics_FWD_DEFINED__
@@ -3637,6 +6243,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall __x_
 typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall2 __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall2;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3 __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -4144,6 +6756,351 @@ interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHis
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStoreVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStoreVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStoreVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_INTERFACE_DEFINED__
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore;
+
+typedef struct __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStoreVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallStore **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStoreVtbl;
+
+interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStoreVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_INTERFACE_DEFINED__
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilitiesVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilitiesVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilitiesVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_INTERFACE_DEFINED__
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities;
+
+typedef struct __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilitiesVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilitiesVtbl;
+
+interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilitiesVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_INTERFACE_DEFINED__
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLineVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLineVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLineVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine_INTERFACE_DEFINED__
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine;
+
+typedef struct __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLineVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CPhoneLine **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLineVtbl;
+
+interface __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLineVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_INTERFACE_DEFINED__
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
 enum __x_ABI_CWindows_CApplicationModel_CCalls_CVoipPhoneCallResourceReservationStatus;
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CVoipPhoneCallResourceReservationStatus_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCalls__CVoipPhoneCallResourceReservationStatus_INTERFACE_DEFINED__
@@ -4424,6 +7381,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScree
 
 
 #if WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION >= 0x10000
+#if WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_INTERFACE_DEFINED__
 
@@ -4471,9 +7429,166 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScree
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallCoordinator_Windows__CApplicationModel__CCalls__CMuteChangeEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallCoordinator_Windows__CApplicationModel__CCalls__CMuteChangeEventArgs_INTERFACE_DEFINED__
@@ -4522,9 +7637,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallC
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallCoordinator_Windows__CApplicationModel__CCalls__CMuteChangeEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallAnswerEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallAnswerEventArgs_INTERFACE_DEFINED__
@@ -4573,9 +7690,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhone
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallAnswerEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallRejectEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallRejectEventArgs_INTERFACE_DEFINED__
@@ -4624,9 +7743,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhone
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallRejectEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_INTERFACE_DEFINED__
@@ -4675,64 +7796,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhone
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
-
-struct __x_ABI_CWindows_CFoundation_CTimeSpan;
-
-#if !defined(____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__)
-#define ____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
-
-typedef interface __FIReference_1_Windows__CFoundation__CTimeSpan __FIReference_1_Windows__CFoundation__CTimeSpan;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CTimeSpan;
-
-typedef struct __FIReference_1_Windows__CFoundation__CTimeSpanVtbl
-{
-    BEGIN_INTERFACE
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This );
-    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This );
-
-    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This, 
-                                            /* [out] */ __RPC__out ULONG *iidCount,
-                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This, /* [retval][out] */ __RPC__out struct __x_ABI_CWindows_CFoundation_CTimeSpan *value);
-    END_INTERFACE
-} __FIReference_1_Windows__CFoundation__CTimeSpanVtbl;
-
-interface __FIReference_1_Windows__CFoundation__CTimeSpan
-{
-    CONST_VTBL struct __FIReference_1_Windows__CFoundation__CTimeSpanVtbl *lpVtbl;
-};
-
-#ifdef COBJMACROS
-#define __FIReference_1_Windows__CFoundation__CTimeSpan_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-#define __FIReference_1_Windows__CFoundation__CTimeSpan_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-#define __FIReference_1_Windows__CFoundation__CTimeSpan_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-#define __FIReference_1_Windows__CFoundation__CTimeSpan_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-#define __FIReference_1_Windows__CFoundation__CTimeSpan_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-#define __FIReference_1_Windows__CFoundation__CTimeSpan_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-#define __FIReference_1_Windows__CFoundation__CTimeSpan_get_Value(This,value)	\
-    ( (This)->lpVtbl -> get_Value(This,value) ) 
-#endif /* COBJMACROS */
-
-
-#endif // ____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
-
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
 #define ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
@@ -4888,6 +7952,173 @@ interface __FIIterable_1_HSTRING
 
 
 #endif // ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_boolean __FIAsyncOperationCompletedHandler_1_boolean;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_boolean;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_booleanVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_boolean *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_booleanVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_boolean
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_booleanVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_boolean_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_boolean;
+
+typedef struct __FIAsyncOperation_1_booleanVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_boolean * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_boolean * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_boolean * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_boolean * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_boolean *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_boolean **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__out boolean *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_booleanVtbl;
+
+interface __FIAsyncOperation_1_boolean
+{
+    CONST_VTBL struct __FIAsyncOperation_1_booleanVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_boolean_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_boolean_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_boolean_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_boolean_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_boolean_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_boolean_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
+
+
+struct __x_ABI_CWindows_CFoundation_CTimeSpan;
+
+#if !defined(____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__)
+#define ____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_Windows__CFoundation__CTimeSpan __FIReference_1_Windows__CFoundation__CTimeSpan;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CTimeSpan;
+
+typedef struct __FIReference_1_Windows__CFoundation__CTimeSpanVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CFoundation__CTimeSpan * This, /* [retval][out] */ __RPC__out struct __x_ABI_CWindows_CFoundation_CTimeSpan *value);
+    END_INTERFACE
+} __FIReference_1_Windows__CFoundation__CTimeSpanVtbl;
+
+interface __FIReference_1_Windows__CFoundation__CTimeSpan
+{
+    CONST_VTBL struct __FIReference_1_Windows__CFoundation__CTimeSpanVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_Windows__CFoundation__CTimeSpan_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_Windows__CFoundation__CTimeSpan_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_Windows__CFoundation__CTimeSpan_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_Windows__CFoundation__CTimeSpan_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_Windows__CFoundation__CTimeSpan_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_Windows__CFoundation__CTimeSpan_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_Windows__CFoundation__CTimeSpan_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
 
 
 #if !defined(____FIVectorView_1_HSTRING_INTERFACE_DEFINED__)
@@ -5248,6 +8479,473 @@ interface __FIAsyncOperation_1_UINT32
 
 
 
+#if !defined(____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_IInspectable __FIEventHandler_1_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_IInspectable;
+
+typedef struct __FIEventHandler_1_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_IInspectable * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FIEventHandler_1_IInspectableVtbl;
+
+interface __FIEventHandler_1_IInspectable
+{
+    CONST_VTBL struct __FIEventHandler_1_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_IInspectable_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_IInspectable_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_IInspectable_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_IInspectable_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperationCompletedHandler_1_GUID_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_GUID_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_GUID __FIAsyncOperationCompletedHandler_1_GUID;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_GUID;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_GUID __FIAsyncOperation_1_GUID;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_GUIDVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_GUID * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_GUID * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_GUID * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_GUID * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_GUID *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_GUIDVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_GUID
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_GUIDVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_GUID_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_GUID_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_GUID_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_GUID_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_GUID_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperation_1_GUID_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_GUID_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_GUID __FIAsyncOperation_1_GUID;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_GUID;
+
+typedef struct __FIAsyncOperation_1_GUIDVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_GUID * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_GUID * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_GUID * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_GUID * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_GUID * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_GUID * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_GUID * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_GUID *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_GUID * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_GUID **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_GUID * This, /* [retval][out] */ __RPC__out GUID *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_GUIDVtbl;
+
+interface __FIAsyncOperation_1_GUID
+{
+    CONST_VTBL struct __FIAsyncOperation_1_GUIDVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_GUID_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_GUID_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_GUID_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_GUID_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_GUID_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_GUID_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_GUID_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_GUID_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_GUID_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_GUID_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIKeyValuePair_2_HSTRING_IInspectable __FIKeyValuePair_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_IInspectable;
+
+typedef struct __FIKeyValuePair_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Key )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out HSTRING *key);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__deref_out_opt IInspectable * *value);
+    END_INTERFACE
+} __FIKeyValuePair_2_HSTRING_IInspectableVtbl;
+
+interface __FIKeyValuePair_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIKeyValuePair_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIKeyValuePair_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_get_Key(This,key)	\
+    ( (This)->lpVtbl -> get_Key(This,key) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable;
+
+typedef struct __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out __FIKeyValuePair_2_HSTRING_IInspectable * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_HSTRING_IInspectable * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl;
+
+interface __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable;
+
+typedef  struct __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable **first);
+
+    END_INTERFACE
+} __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl;
+
+interface __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIMapView_2_HSTRING_IInspectable __FIMapView_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIMapView_2_HSTRING_IInspectable;
+
+typedef struct __FIMapView_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,/* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *Lookup )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in HSTRING key,
+        /* [retval][out] */ __RPC__deref_out_opt IInspectable * *value);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out unsigned int *size);
+    HRESULT ( STDMETHODCALLTYPE *HasKey )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This, /* [in] */ __RPC__in HSTRING key, /* [retval][out] */ __RPC__out boolean *found);
+    HRESULT ( STDMETHODCALLTYPE *Split )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,/* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable **firstPartition,
+        /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable **secondPartition);
+    END_INTERFACE
+} __FIMapView_2_HSTRING_IInspectableVtbl;
+
+interface __FIMapView_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIMapView_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIMapView_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIMapView_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIMapView_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIMapView_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIMapView_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIMapView_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIMapView_2_HSTRING_IInspectable_Lookup(This,key,value)	\
+    ( (This)->lpVtbl -> Lookup(This,key,value) ) 
+#define __FIMapView_2_HSTRING_IInspectable_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+#define __FIMapView_2_HSTRING_IInspectable_HasKey(This,key,found)	\
+    ( (This)->lpVtbl -> HasKey(This,key,found) ) 
+#define __FIMapView_2_HSTRING_IInspectable_Split(This,firstPartition,secondPartition)	\
+    ( (This)->lpVtbl -> Split(This,firstPartition,secondPartition) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContact __x_ABI_CWindows_CApplicationModel_CContacts_CIContact;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_FWD_DEFINED__
+
+
+
+
+
 
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
 
@@ -5281,6 +8979,18 @@ typedef interface __x_ABI_CWindows_CSystem_CIUser __x_ABI_CWindows_CSystem_CIUse
 
 
 
+typedef struct __x_ABI_CWindows_CUI_CColor __x_ABI_CWindows_CUI_CColor;
+
+
+
+
+
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CCellularDtmfMode __x_ABI_CWindows_CApplicationModel_CCalls_CCellularDtmfMode;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneAudioRoutingEndpoint __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneAudioRoutingEndpoint;
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallHistoryEntryMedia __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallHistoryEntryMedia;
@@ -5299,6 +9009,27 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallHistorySourceId
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallHistoryStoreAccessType __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallHistoryStoreAccessType;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallMedia __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallMedia;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineNetworkOperatorDisplayTextLocation __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineNetworkOperatorDisplayTextLocation;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineTransport __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineTransport;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineWatcherStatus __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineWatcherStatus;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneNetworkState __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneNetworkState;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneSimState __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneSimState;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneVoicemailType __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneVoicemailType;
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CVoipPhoneCallMedia __x_ABI_CWindows_CApplicationModel_CCalls_CVoipPhoneCallMedia;
@@ -5357,6 +9088,73 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CCalls_CVoipPhoneCallState __x_A
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.CellularDtmfMode
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CCalls_CCellularDtmfMode
+{
+    CellularDtmfMode_Continuous = 0,
+    CellularDtmfMode_Burst = 1,
+};
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneAudioRoutingEndpoint
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneAudioRoutingEndpoint
+{
+    PhoneAudioRoutingEndpoint_Default = 0,
+    PhoneAudioRoutingEndpoint_Bluetooth = 1,
+    PhoneAudioRoutingEndpoint_Speakerphone = 2,
+};
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -5474,6 +9272,161 @@ enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallHistoryStoreAccessType
     PhoneCallHistoryStoreAccessType_AllEntriesReadWrite = 2,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneCallMedia
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallMedia
+{
+    PhoneCallMedia_Audio = 0,
+    PhoneCallMedia_AudioAndVideo = 1,
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x40000
+    
+    PhoneCallMedia_AudioAndRealTimeText = 2,
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x40000
+    
+};
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneLineNetworkOperatorDisplayTextLocation
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineNetworkOperatorDisplayTextLocation
+{
+    PhoneLineNetworkOperatorDisplayTextLocation_Default = 0,
+    PhoneLineNetworkOperatorDisplayTextLocation_Tile = 1,
+    PhoneLineNetworkOperatorDisplayTextLocation_Dialer = 2,
+    PhoneLineNetworkOperatorDisplayTextLocation_InCallUI = 3,
+};
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneLineTransport
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineTransport
+{
+    PhoneLineTransport_Cellular = 0,
+    PhoneLineTransport_VoipApp = 1,
+};
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneLineWatcherStatus
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineWatcherStatus
+{
+    PhoneLineWatcherStatus_Created = 0,
+    PhoneLineWatcherStatus_Started = 1,
+    PhoneLineWatcherStatus_EnumerationCompleted = 2,
+    PhoneLineWatcherStatus_Stopped = 3,
+};
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneNetworkState
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneNetworkState
+{
+    PhoneNetworkState_Unknown = 0,
+    PhoneNetworkState_NoSignal = 1,
+    PhoneNetworkState_Deregistered = 2,
+    PhoneNetworkState_Denied = 3,
+    PhoneNetworkState_Searching = 4,
+    PhoneNetworkState_Home = 5,
+    PhoneNetworkState_RoamingInternational = 6,
+    PhoneNetworkState_RoamingDomestic = 7,
+};
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneSimState
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneSimState
+{
+    PhoneSimState_Unknown = 0,
+    PhoneSimState_PinNotRequired = 1,
+    PhoneSimState_PinUnlocked = 2,
+    PhoneSimState_PinLocked = 3,
+    PhoneSimState_PukLocked = 4,
+    PhoneSimState_NotInserted = 5,
+    PhoneSimState_Invalid = 6,
+    PhoneSimState_Disabled = 7,
+};
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Calls.PhoneVoicemailType
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneVoicemailType
+{
+    PhoneVoicemailType_None = 0,
+    PhoneVoicemailType_Traditional = 1,
+    PhoneVoicemailType_Visual = 2,
+};
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -6257,6 +10210,128 @@ interface __x_ABI_CWindows_CApplicationModel_CCalls_CIMuteChangeEventArgs
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIMuteChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIMuteChangeEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallBlockingStatics
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallBlocking
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallBlockingStatics[] = L"Windows.ApplicationModel.Calls.IPhoneCallBlockingStatics";
+/* [object, uuid("19646F84-2B79-26F1-A46F-694BE043F313"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BlockUnknownNumbers )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_BlockUnknownNumbers )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BlockPrivateNumbers )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_BlockPrivateNumbers )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This,
+        /* [in] */boolean value
+        );
+    HRESULT ( STDMETHODCALLTYPE *SetCallBlockingListAsync )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * phoneNumberList,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStaticsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_get_BlockUnknownNumbers(This,value) \
+    ( (This)->lpVtbl->get_BlockUnknownNumbers(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_put_BlockUnknownNumbers(This,value) \
+    ( (This)->lpVtbl->put_BlockUnknownNumbers(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_get_BlockPrivateNumbers(This,value) \
+    ( (This)->lpVtbl->get_BlockPrivateNumbers(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_put_BlockPrivateNumbers(This,value) \
+    ( (This)->lpVtbl->put_BlockPrivateNumbers(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_SetCallBlockingListAsync(This,phoneNumberList,result) \
+    ( (This)->lpVtbl->SetCallBlockingListAsync(This,phoneNumberList,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallBlockingStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -7490,6 +11565,1604 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallHist
 
 /*
  *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallManagerStatics
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallManager
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallManagerStatics[] = L"Windows.ApplicationModel.Calls.IPhoneCallManagerStatics";
+/* [object, uuid("60EDAC78-78A6-4872-A3EF-98325EC8B843"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *ShowPhoneCallUI )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics * This,
+        /* [in] */__RPC__in HSTRING phoneNumber,
+        /* [in] */__RPC__in HSTRING displayName
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStaticsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_ShowPhoneCallUI(This,phoneNumber,displayName) \
+    ( (This)->lpVtbl->ShowPhoneCallUI(This,phoneNumber,displayName) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallManagerStatics2
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallManager
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallManagerStatics2[] = L"Windows.ApplicationModel.Calls.IPhoneCallManagerStatics2";
+/* [object, uuid("C7E3C8BC-2370-431C-98FD-43BE5F03086D"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_CallStateChanged )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_CallStateChanged )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsCallActive )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsCallIncoming )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *ShowPhoneCallSettingsUI )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This
+        );
+    HRESULT ( STDMETHODCALLTYPE *RequestStoreAsync )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_add_CallStateChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_CallStateChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_remove_CallStateChanged(This,token) \
+    ( (This)->lpVtbl->remove_CallStateChanged(This,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_get_IsCallActive(This,value) \
+    ( (This)->lpVtbl->get_IsCallActive(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_get_IsCallIncoming(This,value) \
+    ( (This)->lpVtbl->get_IsCallIncoming(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_ShowPhoneCallSettingsUI(This) \
+    ( (This)->lpVtbl->ShowPhoneCallSettingsUI(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_RequestStoreAsync(This,result) \
+    ( (This)->lpVtbl->RequestStoreAsync(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallStore
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallStore
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallStore[] = L"Windows.ApplicationModel.Calls.IPhoneCallStore";
+/* [object, uuid("5F610748-18A6-4173-86D1-28BE9DC62DBA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStoreVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *IsEmergencyPhoneNumberAsync )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * This,
+        /* [in] */__RPC__in HSTRING number,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetDefaultLineAsync )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_GUID * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *RequestLineWatcher )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStoreVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStoreVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_IsEmergencyPhoneNumberAsync(This,number,result) \
+    ( (This)->lpVtbl->IsEmergencyPhoneNumberAsync(This,number,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_GetDefaultLineAsync(This,result) \
+    ( (This)->lpVtbl->GetDefaultLineAsync(This,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_RequestLineWatcher(This,result) \
+    ( (This)->lpVtbl->RequestLineWatcher(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallStore_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilities
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallVideoCapabilities
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallVideoCapabilities[] = L"Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilities";
+/* [object, uuid("02382786-B16A-4FDB-BE3B-C4240E13AD0D"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsVideoCallingCapable )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities * This,
+        /* [retval, out] */__RPC__out boolean * pValue
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_get_IsVideoCallingCapable(This,pValue) \
+    ( (This)->lpVtbl->get_IsVideoCallingCapable(This,pValue) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilitiesManagerStatics
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneCallVideoCapabilitiesManager
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneCallVideoCapabilitiesManagerStatics[] = L"Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilitiesManagerStatics";
+/* [object, uuid("F3C64B56-F00B-4A1C-A0C6-EE1910749CE7"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetCapabilitiesAsync )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics * This,
+        /* [in] */__RPC__in HSTRING phoneNumber,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStaticsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_GetCapabilitiesAsync(This,phoneNumber,result) \
+    ( (This)->lpVtbl->GetCapabilitiesAsync(This,phoneNumber,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilitiesManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneDialOptions
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneDialOptions
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneDialOptions[] = L"Windows.ApplicationModel.Calls.IPhoneDialOptions";
+/* [object, uuid("B639C4B8-F06F-36CB-A863-823742B5F2D4"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptionsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Number )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Number )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DisplayName )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_DisplayName )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Contact )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContact * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Contact )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContact * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContactPhone )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ContactPhone )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Media )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallMedia * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Media )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CCalls_CPhoneCallMedia value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AudioEndpoint )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneAudioRoutingEndpoint * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AudioEndpoint )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * This,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CCalls_CPhoneAudioRoutingEndpoint value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptionsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptionsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_get_Number(This,value) \
+    ( (This)->lpVtbl->get_Number(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_put_Number(This,value) \
+    ( (This)->lpVtbl->put_Number(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_get_DisplayName(This,value) \
+    ( (This)->lpVtbl->get_DisplayName(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_put_DisplayName(This,value) \
+    ( (This)->lpVtbl->put_DisplayName(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_get_Contact(This,value) \
+    ( (This)->lpVtbl->get_Contact(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_put_Contact(This,value) \
+    ( (This)->lpVtbl->put_Contact(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_get_ContactPhone(This,value) \
+    ( (This)->lpVtbl->get_ContactPhone(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_put_ContactPhone(This,value) \
+    ( (This)->lpVtbl->put_ContactPhone(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_get_Media(This,value) \
+    ( (This)->lpVtbl->get_Media(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_put_Media(This,value) \
+    ( (This)->lpVtbl->put_Media(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_get_AudioEndpoint(This,value) \
+    ( (This)->lpVtbl->get_AudioEndpoint(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_put_AudioEndpoint(This,value) \
+    ( (This)->lpVtbl->put_AudioEndpoint(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLine
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLine
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLine[] = L"Windows.ApplicationModel.Calls.IPhoneLine";
+/* [object, uuid("27C66F30-6A69-34CA-A2BA-65302530C311"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LineChanged )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLine_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LineChanged )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Id )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__out GUID * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DisplayColor )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CColor * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NetworkState )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneNetworkState * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DisplayName )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Voicemail )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NetworkName )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CellularDetails )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Transport )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineTransport * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CanDial )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SupportsTile )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_VideoCallingCapabilities )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneCallVideoCapabilities * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LineConfiguration )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *IsImmediateDialNumberAsync )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [in] */__RPC__in HSTRING number,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *Dial )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [in] */__RPC__in HSTRING number,
+        /* [in] */__RPC__in HSTRING displayName
+        );
+    HRESULT ( STDMETHODCALLTYPE *DialWithOptions )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneDialOptions * options
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_add_LineChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_LineChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_remove_LineChanged(This,token) \
+    ( (This)->lpVtbl->remove_LineChanged(This,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_Id(This,value) \
+    ( (This)->lpVtbl->get_Id(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_DisplayColor(This,value) \
+    ( (This)->lpVtbl->get_DisplayColor(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_NetworkState(This,value) \
+    ( (This)->lpVtbl->get_NetworkState(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_DisplayName(This,value) \
+    ( (This)->lpVtbl->get_DisplayName(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_Voicemail(This,value) \
+    ( (This)->lpVtbl->get_Voicemail(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_NetworkName(This,value) \
+    ( (This)->lpVtbl->get_NetworkName(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_CellularDetails(This,value) \
+    ( (This)->lpVtbl->get_CellularDetails(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_Transport(This,value) \
+    ( (This)->lpVtbl->get_Transport(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_CanDial(This,value) \
+    ( (This)->lpVtbl->get_CanDial(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_SupportsTile(This,value) \
+    ( (This)->lpVtbl->get_SupportsTile(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_VideoCallingCapabilities(This,value) \
+    ( (This)->lpVtbl->get_VideoCallingCapabilities(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_get_LineConfiguration(This,value) \
+    ( (This)->lpVtbl->get_LineConfiguration(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_IsImmediateDialNumberAsync(This,number,result) \
+    ( (This)->lpVtbl->IsImmediateDialNumberAsync(This,number,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_Dial(This,number,displayName) \
+    ( (This)->lpVtbl->Dial(This,number,displayName) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_DialWithOptions(This,options) \
+    ( (This)->lpVtbl->DialWithOptions(This,options) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLine_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineCellularDetails
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLineCellularDetails
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineCellularDetails[] = L"Windows.ApplicationModel.Calls.IPhoneLineCellularDetails";
+/* [object, uuid("192601D5-147C-4769-B673-98A5EC8426CB"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetailsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SimState )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneSimState * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SimSlotIndex )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsModemOn )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_RegistrationRejectCode )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetNetworkOperatorDisplayText )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails * This,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineNetworkOperatorDisplayTextLocation location,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetailsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetailsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_get_SimState(This,value) \
+    ( (This)->lpVtbl->get_SimState(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_get_SimSlotIndex(This,value) \
+    ( (This)->lpVtbl->get_SimSlotIndex(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_get_IsModemOn(This,value) \
+    ( (This)->lpVtbl->get_IsModemOn(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_get_RegistrationRejectCode(This,value) \
+    ( (This)->lpVtbl->get_RegistrationRejectCode(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_GetNetworkOperatorDisplayText(This,location,value) \
+    ( (This)->lpVtbl->GetNetworkOperatorDisplayText(This,location,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineCellularDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineConfiguration
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLineConfiguration
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineConfiguration[] = L"Windows.ApplicationModel.Calls.IPhoneLineConfiguration";
+/* [object, uuid("FE265862-F64F-4312-B2A8-4E257721AA95"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfigurationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsVideoCallingEnabled )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExtendedProperties )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfigurationVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfigurationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_get_IsVideoCallingEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsVideoCallingEnabled(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_get_ExtendedProperties(This,value) \
+    ( (This)->lpVtbl->get_ExtendedProperties(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineStatics
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLine
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineStatics[] = L"Windows.ApplicationModel.Calls.IPhoneLineStatics";
+/* [object, uuid("F38B5F23-CEB0-404F-BCF2-BA9F697D8ADF"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *FromIdAsync )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics * This,
+        /* [in] */GUID lineId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStaticsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_FromIdAsync(This,lineId,result) \
+    ( (This)->lpVtbl->FromIdAsync(This,lineId,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineWatcher
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLineWatcher
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineWatcher[] = L"Windows.ApplicationModel.Calls.IPhoneLineWatcher";
+/* [object, uuid("8A45CD0A-6323-44E0-A6F6-9F21F64DC90A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Start )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This
+        );
+    HRESULT ( STDMETHODCALLTYPE *Stop )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LineAdded )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LineAdded )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LineRemoved )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LineRemoved )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LineUpdated )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LineUpdated )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_EnumerationCompleted )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_EnumerationCompleted )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Stopped )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Stopped )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneLineWatcherStatus * status
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_Start(This) \
+    ( (This)->lpVtbl->Start(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_Stop(This) \
+    ( (This)->lpVtbl->Stop(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_add_LineAdded(This,handler,token) \
+    ( (This)->lpVtbl->add_LineAdded(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_remove_LineAdded(This,token) \
+    ( (This)->lpVtbl->remove_LineAdded(This,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_add_LineRemoved(This,handler,token) \
+    ( (This)->lpVtbl->add_LineRemoved(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_remove_LineRemoved(This,token) \
+    ( (This)->lpVtbl->remove_LineRemoved(This,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_add_LineUpdated(This,handler,token) \
+    ( (This)->lpVtbl->add_LineUpdated(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_remove_LineUpdated(This,token) \
+    ( (This)->lpVtbl->remove_LineUpdated(This,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_add_EnumerationCompleted(This,handler,token) \
+    ( (This)->lpVtbl->add_EnumerationCompleted(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_remove_EnumerationCompleted(This,token) \
+    ( (This)->lpVtbl->remove_EnumerationCompleted(This,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_add_Stopped(This,handler,token) \
+    ( (This)->lpVtbl->add_Stopped(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_remove_Stopped(This,token) \
+    ( (This)->lpVtbl->remove_Stopped(This,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_get_Status(This,status) \
+    ( (This)->lpVtbl->get_Status(This,status) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcher_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneLineWatcherEventArgs
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneLineWatcherEventArgs
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneLineWatcherEventArgs[] = L"Windows.ApplicationModel.Calls.IPhoneLineWatcherEventArgs";
+/* [object, uuid("D07C753E-9E12-4A37-82B7-AD535DAD6A67"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LineId )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs * This,
+        /* [retval, out] */__RPC__out GUID * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_get_LineId(This,value) \
+    ( (This)->lpVtbl->get_LineId(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneLineWatcherEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IPhoneVoicemail
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.PhoneVoicemail
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IPhoneVoicemail[] = L"Windows.ApplicationModel.Calls.IPhoneVoicemail";
+/* [object, uuid("C9CE77F6-6E9F-3A8B-B727-6E0CF6998224"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemailVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Number )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MessageCount )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Type )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CCalls_CPhoneVoicemailType * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *DialVoicemailAsync )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemailVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemailVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_get_Number(This,value) \
+    ( (This)->lpVtbl->get_Number(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_get_MessageCount(This,value) \
+    ( (This)->lpVtbl->get_MessageCount(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_get_Type(This,value) \
+    ( (This)->lpVtbl->get_Type(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_DialVoicemailAsync(This,result) \
+    ( (This)->lpVtbl->DialVoicemailAsync(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIPhoneVoicemail_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Calls.IVoipCallCoordinator
  *
  * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 1.0
@@ -7778,6 +13451,126 @@ interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator2
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator2;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Calls.IVoipCallCoordinator3
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.VoipCallCoordinator
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.ApplicationModel.Calls.IVoipCallCoordinator
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IVoipCallCoordinator3[] = L"Windows.ApplicationModel.Calls.IVoipCallCoordinator3";
+/* [object, uuid("338D0CBF-9B55-4021-87CA-E64B9BD666C7"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *RequestNewAppInitiatedCall )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 * This,
+        /* [in] */__RPC__in HSTRING context,
+        /* [in] */__RPC__in HSTRING contactName,
+        /* [in] */__RPC__in HSTRING contactNumber,
+        /* [in] */__RPC__in HSTRING serviceName,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CCalls_CVoipPhoneCallMedia media,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall * * call
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *RequestNewIncomingCallWithContactRemoteId )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3 * This,
+        /* [in] */__RPC__in HSTRING context,
+        /* [in] */__RPC__in HSTRING contactName,
+        /* [in] */__RPC__in HSTRING contactNumber,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * contactImage,
+        /* [in] */__RPC__in HSTRING serviceName,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * brandingImage,
+        /* [in] */__RPC__in HSTRING callDetails,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * ringtone,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CCalls_CVoipPhoneCallMedia media,
+        /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan ringTimeout,
+        /* [in] */__RPC__in HSTRING contactRemoteId,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall * * call
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_RequestNewAppInitiatedCall(This,context,contactName,contactNumber,serviceName,media,call) \
+    ( (This)->lpVtbl->RequestNewAppInitiatedCall(This,context,contactName,contactNumber,serviceName,media,call) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_RequestNewIncomingCallWithContactRemoteId(This,context,contactName,contactNumber,contactImage,serviceName,brandingImage,callDetails,ringtone,media,ringTimeout,contactRemoteId,call) \
+    ( (This)->lpVtbl->RequestNewIncomingCallWithContactRemoteId(This,context,contactName,contactNumber,contactImage,serviceName,brandingImage,callDetails,ringtone,media,ringTimeout,contactRemoteId,call) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipCallCoordinator3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -8198,6 +13991,104 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall
 
 /*
  *
+ * Interface Windows.ApplicationModel.Calls.IVoipPhoneCall3
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Calls.VoipPhoneCall
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.ApplicationModel.Calls.IVoipPhoneCall2
+ *     Windows.ApplicationModel.Calls.IVoipPhoneCall
+ *
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Calls_IVoipPhoneCall3[] = L"Windows.ApplicationModel.Calls.IVoipPhoneCall3";
+/* [object, uuid("0D891522-E258-4AA9-907A-1AA413C25523"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *NotifyCallAccepted )(
+        __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3 * This,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CCalls_CVoipPhoneCallMedia media
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_NotifyCallAccepted(This,media) \
+    ( (This)->lpVtbl->NotifyCallAccepted(This,media) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCalls_CIVoipPhoneCall3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Calls.CallAnswerEventArgs
  *
  * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 1.0
@@ -8348,6 +14239,29 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_MuteChangeEventArgs[] = L"Windows.ApplicationModel.Calls.MuteChangeEventArgs";
 #endif
 #endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneCallBlocking
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneCallBlockingStatics interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallBlocking_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallBlocking_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallBlocking[] = L"Windows.ApplicationModel.Calls.PhoneCallBlocking";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -8528,6 +14442,275 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.Calls.PhoneCallManager
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneCallManagerStatics2 interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneCallManagerStatics interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallManager_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallManager[] = L"Windows.ApplicationModel.Calls.PhoneCallManager";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneCallStore
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneCallStore ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallStore_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallStore_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallStore[] = L"Windows.ApplicationModel.Calls.PhoneCallStore";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneCallVideoCapabilities
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilities ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilities_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilities_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilities[] = L"Windows.ApplicationModel.Calls.PhoneCallVideoCapabilities";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneCallVideoCapabilitiesManager
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneCallVideoCapabilitiesManagerStatics interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilitiesManager_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilitiesManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneCallVideoCapabilitiesManager[] = L"Windows.ApplicationModel.Calls.PhoneCallVideoCapabilitiesManager";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneDialOptions
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneDialOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneDialOptions_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneDialOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneDialOptions[] = L"Windows.ApplicationModel.Calls.PhoneDialOptions";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLine
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Calls.IPhoneLineStatics interface starting with version 1.0 of the Windows.ApplicationModel.Calls.CallsPhoneContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLine ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLine_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLine_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLine[] = L"Windows.ApplicationModel.Calls.PhoneLine";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLineCellularDetails
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLineCellularDetails ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineCellularDetails_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineCellularDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLineCellularDetails[] = L"Windows.ApplicationModel.Calls.PhoneLineCellularDetails";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLineConfiguration
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLineConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLineConfiguration[] = L"Windows.ApplicationModel.Calls.PhoneLineConfiguration";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLineWatcher
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLineWatcher ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineWatcher_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineWatcher_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLineWatcher[] = L"Windows.ApplicationModel.Calls.PhoneLineWatcher";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneLineWatcherEventArgs
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneLineWatcherEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineWatcherEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneLineWatcherEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneLineWatcherEventArgs[] = L"Windows.ApplicationModel.Calls.PhoneLineWatcherEventArgs";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Calls.PhoneVoicemail
+ *
+ * Introduced to Windows.ApplicationModel.Calls.CallsPhoneContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Calls.IPhoneVoicemail ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneVoicemail_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Calls_PhoneVoicemail_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Calls_PhoneVoicemail[] = L"Windows.ApplicationModel.Calls.PhoneVoicemail";
+#endif
+#endif // WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Calls.VoipCallCoordinator
  *
  * Introduced to Windows.ApplicationModel.Calls.CallsVoipContract in version 1.0
@@ -8539,6 +14722,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Calls.IVoipCallCoordinator ** Default Interface **
  *    Windows.ApplicationModel.Calls.IVoipCallCoordinator2
+ *    Windows.ApplicationModel.Calls.IVoipCallCoordinator3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -8562,6 +14746,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Calls.IVoipPhoneCall ** Default Interface **
  *    Windows.ApplicationModel.Calls.IVoipPhoneCall2
+ *    Windows.ApplicationModel.Calls.IVoipPhoneCall3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

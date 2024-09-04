@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.bluetooth.rfcomm.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1293,8 +1295,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("AE81FF1F-C5A1-4C40-8C28-F3EFD69062F3"), exclusiveto, contract] */
                     MIDL_INTERFACE("AE81FF1F-C5A1-4C40-8C28-F3EFD69062F3")
-                    IRfcommDeviceService : IInspectable
+                    IRfcommDeviceService : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConnectionHostName(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::IHostName * * value
                             ) = 0;
@@ -1358,8 +1361,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("536CED14-EBCD-49FE-BF9F-40EFC689B20D"), exclusiveto, contract] */
                     MIDL_INTERFACE("536CED14-EBCD-49FE-BF9F-40EFC689B20D")
-                    IRfcommDeviceService2 : IInspectable
+                    IRfcommDeviceService2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Device(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::IBluetoothDevice * * value
                             ) = 0;
@@ -1405,8 +1409,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("1C22ACE6-DD44-4D23-866D-8F3486EE6490"), exclusiveto, contract] */
                     MIDL_INTERFACE("1C22ACE6-DD44-4D23-866D-8F3486EE6490")
-                    IRfcommDeviceService3 : IInspectable
+                    IRfcommDeviceService3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceAccessInformation(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceAccessInformation * * value
                             ) = 0;
@@ -1450,8 +1455,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("A4A149EF-626D-41AC-B253-87AC5C27E28A"), exclusiveto, contract] */
                     MIDL_INTERFACE("A4A149EF-626D-41AC-B253-87AC5C27E28A")
-                    IRfcommDeviceServiceStatics : IInspectable
+                    IRfcommDeviceServiceStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
                             /* [in] */__RPC__in HSTRING deviceId,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService * * asyncOp
@@ -1501,8 +1507,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("AA8CB1C9-E78D-4BE4-8076-0A3D87A0A05F"), exclusiveto, contract] */
                     MIDL_INTERFACE("AA8CB1C9-E78D-4BE4-8076-0A3D87A0A05F")
-                    IRfcommDeviceServiceStatics2 : IInspectable
+                    IRfcommDeviceServiceStatics2 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetDeviceSelectorForBluetoothDevice(
                             /* [in] */__RPC__in_opt ABI::Windows::Devices::Bluetooth::IBluetoothDevice * bluetoothDevice,
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * selector
@@ -1560,8 +1567,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("3B48388C-7CCF-488E-9625-D259A5732D55"), exclusiveto, contract] */
                     MIDL_INTERFACE("3B48388C-7CCF-488E-9625-D259A5732D55")
-                    IRfcommDeviceServicesResult : IInspectable
+                    IRfcommDeviceServicesResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::Bluetooth::BluetoothError * value
                             ) = 0;
@@ -1605,8 +1613,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("22629204-7E02-4017-8136-DA1B6A1B9BBF"), exclusiveto, contract] */
                     MIDL_INTERFACE("22629204-7E02-4017-8136-DA1B6A1B9BBF")
-                    IRfcommServiceId : IInspectable
+                    IRfcommServiceId : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uuid(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -1653,8 +1662,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("2A179EBA-A975-46E3-B56B-08FFD783A5FE"), exclusiveto, contract] */
                     MIDL_INTERFACE("2A179EBA-A975-46E3-B56B-08FFD783A5FE")
-                    IRfcommServiceIdStatics : IInspectable
+                    IRfcommServiceIdStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE FromUuid(
                             /* [in] */GUID uuid,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId * * serviceId
@@ -1718,8 +1728,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("EADBFDC4-B1F6-44FF-9F7C-E7A82AB86821"), exclusiveto, contract] */
                     MIDL_INTERFACE("EADBFDC4-B1F6-44FF-9F7C-E7A82AB86821")
-                    IRfcommServiceProvider : IInspectable
+                    IRfcommServiceProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceId(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId * * value
                             ) = 0;
@@ -1771,8 +1782,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("736BDFC6-3C81-4D1E-BAF2-DDBB81284512"), exclusiveto, contract] */
                     MIDL_INTERFACE("736BDFC6-3C81-4D1E-BAF2-DDBB81284512")
-                    IRfcommServiceProvider2 : IInspectable
+                    IRfcommServiceProvider2 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartAdvertisingWithRadioDiscoverability(
                             /* [in] */__RPC__in_opt ABI::Windows::Networking::Sockets::IStreamSocketListener * listener,
                             /* [in] */boolean radioDiscoverable
@@ -1814,8 +1826,9 @@ namespace ABI {
                 namespace Rfcomm {
                     /* [object, uuid("98888303-69CA-413A-84F7-4344C7292997"), exclusiveto, contract] */
                     MIDL_INTERFACE("98888303-69CA-413A-84F7-4344C7292997")
-                    IRfcommServiceProviderStatics : IInspectable
+                    IRfcommServiceProviderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId * serviceId,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommServiceProvider * * asyncOp

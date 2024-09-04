@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.globalization.phonenumberformatting.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -427,8 +429,9 @@ namespace ABI {
             namespace PhoneNumberFormatting {
                 /* [object, uuid("1556B49E-BAD4-4B4A-900D-4407ADB7C981"), exclusiveto, contract] */
                 MIDL_INTERFACE("1556B49E-BAD4-4B4A-900D-4407ADB7C981")
-                IPhoneNumberFormatter : IInspectable
+                IPhoneNumberFormatter : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE Format(
                         /* [in] */__RPC__in_opt ABI::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo * number,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * result
@@ -485,8 +488,9 @@ namespace ABI {
             namespace PhoneNumberFormatting {
                 /* [object, uuid("5CA6F931-84D9-414B-AB4E-A0552C878602"), exclusiveto, contract] */
                 MIDL_INTERFACE("5CA6F931-84D9-414B-AB4E-A0552C878602")
-                IPhoneNumberFormatterStatics : IInspectable
+                IPhoneNumberFormatterStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryCreate(
                         /* [in] */__RPC__in HSTRING regionCode,
                         /* [out] */__RPC__deref_out_opt ABI::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter * * phoneNumber
@@ -539,8 +543,9 @@ namespace ABI {
             namespace PhoneNumberFormatting {
                 /* [object, uuid("1C7CE4DD-C8B4-4EA3-9AEF-B342E2C5B417"), exclusiveto, contract] */
                 MIDL_INTERFACE("1C7CE4DD-C8B4-4EA3-9AEF-B342E2C5B417")
-                IPhoneNumberInfo : IInspectable
+                IPhoneNumberInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CountryCode(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -601,8 +606,9 @@ namespace ABI {
             namespace PhoneNumberFormatting {
                 /* [object, uuid("8202B964-ADAA-4CFF-8FCF-17E7516A28FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("8202B964-ADAA-4CFF-8FCF-17E7516A28FF")
-                IPhoneNumberInfoFactory : IInspectable
+                IPhoneNumberInfoFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING number,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo * * result
@@ -642,8 +648,9 @@ namespace ABI {
             namespace PhoneNumberFormatting {
                 /* [object, uuid("5B3F4F6A-86A9-40E9-8649-6D61161928D4"), exclusiveto, contract] */
                 MIDL_INTERFACE("5B3F4F6A-86A9-40E9-8649-6D61161928D4")
-                IPhoneNumberInfoStatics : IInspectable
+                IPhoneNumberInfoStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryParse(
                         /* [in] */__RPC__in HSTRING input,
                         /* [out] */__RPC__deref_out_opt ABI::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo * * phoneNumber,

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.wifidirect.services.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -807,6 +809,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectService_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionDeferredEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectService_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionDeferredEventArgs_USE
@@ -835,6 +838,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::WiFiDirect::Services::WiFiDire
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectService_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionDeferredEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -895,6 +899,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAutoAcceptSessionConnectedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAutoAcceptSessionConnectedEventArgs_USE
@@ -924,6 +929,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::WiFiDirect::Services::WiFiDire
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -938,6 +944,7 @@ namespace ABI {
     } /* Services */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionRequestedEventArgs_USE
@@ -967,6 +974,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::WiFiDirect::Services::WiFiDire
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1016,6 +1024,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSession_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceRemotePortAddedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSession_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceRemotePortAddedEventArgs_USE
@@ -1044,6 +1053,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::WiFiDirect::Services::WiFiDire
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSession_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceRemotePortAddedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -1777,8 +1787,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("50AABBB8-5F71-45EC-84F1-A1E4FC7879A3"), exclusiveto, contract] */
                     MIDL_INTERFACE("50AABBB8-5F71-45EC-84F1-A1E4FC7879A3")
-                    IWiFiDirectService : IInspectable
+                    IWiFiDirectService : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RemoteServiceInfo(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                             ) = 0;
@@ -1855,8 +1866,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("A4AA1EE1-9D8F-4F4F-93EE-7DDEA2E37F46"), exclusiveto, contract] */
                     MIDL_INTERFACE("A4AA1EE1-9D8F-4F4F-93EE-7DDEA2E37F46")
-                    IWiFiDirectServiceAdvertiser : IInspectable
+                    IWiFiDirectServiceAdvertiser : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1977,8 +1989,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("3106AC0D-B446-4F13-9F9A-8AE925FEBA2B"), exclusiveto, contract] */
                     MIDL_INTERFACE("3106AC0D-B446-4F13-9F9A-8AE925FEBA2B")
-                    IWiFiDirectServiceAdvertiserFactory : IInspectable
+                    IWiFiDirectServiceAdvertiserFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateWiFiDirectServiceAdvertiser(
                             /* [in] */__RPC__in HSTRING serviceName,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdvertiser * * result
@@ -2020,8 +2033,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("DCD9E01E-83DF-43E5-8F43-CBE8479E84EB"), exclusiveto, contract] */
                     MIDL_INTERFACE("DCD9E01E-83DF-43E5-8F43-CBE8479E84EB")
-                    IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs : IInspectable
+                    IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Session(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSession * * value
                             ) = 0;
@@ -2065,8 +2079,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("8BDB7CFE-97D9-45A2-8E99-DB50910FB6A6"), exclusiveto, contract] */
                     MIDL_INTERFACE("8BDB7CFE-97D9-45A2-8E99-DB50910FB6A6")
-                    IWiFiDirectServiceProvisioningInfo : IInspectable
+                    IWiFiDirectServiceProvisioningInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectedConfigurationMethod(
                             /* [retval, out] */__RPC__out ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceConfigurationMethod * value
                             ) = 0;
@@ -2110,8 +2125,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("D4CEBAC1-3FD3-4F0E-B7BD-782906F44411"), exclusiveto, contract] */
                     MIDL_INTERFACE("D4CEBAC1-3FD3-4F0E-B7BD-782906F44411")
-                    IWiFiDirectServiceRemotePortAddedEventArgs : IInspectable
+                    IWiFiDirectServiceRemotePortAddedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EndpointPairs(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CEndpointPair * * value
                             ) = 0;
@@ -2159,8 +2175,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("81142163-E426-47CB-8640-E1B3588BF26F"), exclusiveto, contract] */
                     MIDL_INTERFACE("81142163-E426-47CB-8640-E1B3588BF26F")
-                    IWiFiDirectServiceSession : IInspectable
+                    IWiFiDirectServiceSession : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2244,8 +2261,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("8DFC197F-1201-4F1F-B6F4-5DF1B7B9FB2E"), exclusiveto, contract] */
                     MIDL_INTERFACE("8DFC197F-1201-4F1F-B6F4-5DF1B7B9FB2E")
-                    IWiFiDirectServiceSessionDeferredEventArgs : IInspectable
+                    IWiFiDirectServiceSessionDeferredEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeferredSessionInfo(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                             ) = 0;
@@ -2290,8 +2308,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("A0E27C8B-50CB-4A58-9BCF-E472B99FBA04"), exclusiveto, contract] */
                     MIDL_INTERFACE("A0E27C8B-50CB-4A58-9BCF-E472B99FBA04")
-                    IWiFiDirectServiceSessionRequest : IInspectable
+                    IWiFiDirectServiceSessionRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceInformation(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceInformation * * value
                             ) = 0;
@@ -2338,8 +2357,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("74BDCC11-53D6-4999-B4F8-6C8ECC1771E7"), exclusiveto, contract] */
                     MIDL_INTERFACE("74BDCC11-53D6-4999-B4F8-6C8ECC1771E7")
-                    IWiFiDirectServiceSessionRequestedEventArgs : IInspectable
+                    IWiFiDirectServiceSessionRequestedEventArgs : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetSessionRequest(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionRequest * * value
                             ) = 0;
@@ -2380,8 +2400,9 @@ namespace ABI {
                 namespace Services {
                     /* [object, uuid("7DB40045-FD74-4688-B725-5DCE86ACF233"), exclusiveto, contract] */
                     MIDL_INTERFACE("7DB40045-FD74-4688-B725-5DCE86ACF233")
-                    IWiFiDirectServiceStatics : IInspectable
+                    IWiFiDirectServiceStatics : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetSelector(
                             /* [in] */__RPC__in HSTRING serviceName,
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * serviceSelector
@@ -3446,6 +3467,7 @@ interface __FIAsyncOperation_1_Windows__CDevices__CWiFiDirect__CServices__CWiFiD
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectService_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionDeferredEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectService_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionDeferredEventArgs_INTERFACE_DEFINED__
 
@@ -3492,6 +3514,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWi
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectService_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionDeferredEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3548,6 +3571,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWi
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAutoAcceptSessionConnectedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAutoAcceptSessionConnectedEventArgs_INTERFACE_DEFINED__
 
@@ -3595,9 +3619,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWi
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAutoAcceptSessionConnectedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionRequestedEventArgs_INTERFACE_DEFINED__
@@ -3645,6 +3671,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWi
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceAdvertiser_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSessionRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -3701,6 +3728,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWi
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSession_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceRemotePortAddedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSession_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceRemotePortAddedEventArgs_INTERFACE_DEFINED__
 
@@ -3747,6 +3775,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWi
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceSession_Windows__CDevices__CWiFiDirect__CServices__CWiFiDirectServiceRemotePortAddedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)

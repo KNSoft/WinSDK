@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.composition.interactions.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1626,6 +1628,16 @@ namespace ABI {
                     {
                         VisualInteractionSourceRedirectionMode_Off = 0,
                         VisualInteractionSourceRedirectionMode_CapableTouchpadOnly = 1,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
+                        VisualInteractionSourceRedirectionMode_PointerWheelOnly = 2,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
+                        VisualInteractionSourceRedirectionMode_CapableTouchpadAndPointerWheel = 3,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                        
                     };
                     
                 } /* Windows */
@@ -1657,8 +1669,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("43250538-EB73-4561-A71D-1A43EAEB7A9B"), exclusiveto, contract] */
                     MIDL_INTERFACE("43250538-EB73-4561-A71D-1A43EAEB7A9B")
-                    ICompositionConditionalValue : IInspectable
+                    ICompositionConditionalValue : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Condition(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IExpressionAnimation * * value
                             ) = 0;
@@ -1708,8 +1721,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("090C4B72-8467-4D0A-9065-AC46B80A5522"), exclusiveto, contract] */
                     MIDL_INTERFACE("090C4B72-8467-4D0A-9065-AC46B80A5522")
-                    ICompositionConditionalValueStatics : IInspectable
+                    ICompositionConditionalValueStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositor * compositor,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::Interactions::ICompositionConditionalValue * * result
@@ -1748,8 +1762,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("043B2431-06E3-495A-BA54-409F0017FAC0"), contract] */
                     MIDL_INTERFACE("043B2431-06E3-495A-BA54-409F0017FAC0")
-                    ICompositionInteractionSource : IInspectable
+                    ICompositionInteractionSource : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -1791,8 +1806,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("1B468E4B-A5BF-47D8-A547-3894155A158C"), exclusiveto, contract] */
                     MIDL_INTERFACE("1B468E4B-A5BF-47D8-A547-3894155A158C")
-                    ICompositionInteractionSourceCollection : IInspectable
+                    ICompositionInteractionSourceCollection : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Count(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -1840,8 +1856,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("2A8E8CB1-1000-4416-8363-CC27FB877308"), exclusiveto, contract] */
                     MIDL_INTERFACE("2A8E8CB1-1000-4416-8363-CC27FB877308")
-                    IInteractionTracker : IInspectable
+                    IInteractionTracker : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InteractionSources(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::Interactions::ICompositionInteractionSourceCollection * * value
                             ) = 0;
@@ -1990,8 +2007,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("25769A3E-CE6D-448C-8386-92620D240756"), exclusiveto, contract] */
                     MIDL_INTERFACE("25769A3E-CE6D-448C-8386-92620D240756")
-                    IInteractionTracker2 : IInspectable
+                    IInteractionTracker2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE ConfigureCenterPointXInertiaModifiers(
                             /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CComposition__CInteractions__CCompositionConditionalValue * conditionalValues
                             ) = 0;
@@ -2035,8 +2053,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("E6C5D7A2-5C4B-42C6-84B7-F69441B18091"), exclusiveto, contract] */
                     MIDL_INTERFACE("E6C5D7A2-5C4B-42C6-84B7-F69441B18091")
-                    IInteractionTracker3 : IInspectable
+                    IInteractionTracker3 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE ConfigureVector2PositionInertiaModifiers(
                             /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CComposition__CInteractions__CInteractionTrackerVector2InertiaModifier * modifiers
                             ) = 0;
@@ -2077,8 +2096,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("8D1C8CF1-D7B0-434C-A5D2-2D7611864834"), exclusiveto, contract] */
                     MIDL_INTERFACE("8D1C8CF1-D7B0-434C-A5D2-2D7611864834")
-                    IInteractionTrackerCustomAnimationStateEnteredArgs : IInspectable
+                    IInteractionTrackerCustomAnimationStateEnteredArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequestId(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -2119,8 +2139,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("50012FAA-1510-4142-A1A5-019B09F8857B"), exclusiveto, contract] */
                     MIDL_INTERFACE("50012FAA-1510-4142-A1A5-019B09F8857B")
-                    IInteractionTrackerIdleStateEnteredArgs : IInspectable
+                    IInteractionTrackerIdleStateEnteredArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequestId(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -2161,8 +2182,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("A0E2C920-26B4-4DA2-8B61-5E683979BBE2"), exclusiveto, contract] */
                     MIDL_INTERFACE("A0E2C920-26B4-4DA2-8B61-5E683979BBE2")
-                    IInteractionTrackerInertiaModifier : IInspectable
+                    IInteractionTrackerInertiaModifier : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -2200,8 +2222,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("993818FE-C94E-4B86-87F3-922665BA46B9"), exclusiveto, contract] */
                     MIDL_INTERFACE("993818FE-C94E-4B86-87F3-922665BA46B9")
-                    IInteractionTrackerInertiaModifierFactory : IInspectable
+                    IInteractionTrackerInertiaModifierFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -2239,8 +2262,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("04922FDC-F154-4CB8-BF33-CC1BA611E6DB"), exclusiveto, contract] */
                     MIDL_INTERFACE("04922FDC-F154-4CB8-BF33-CC1BA611E6DB")
-                    IInteractionTrackerInertiaMotion : IInspectable
+                    IInteractionTrackerInertiaMotion : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Condition(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IExpressionAnimation * * value
                             ) = 0;
@@ -2290,8 +2314,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("8CC83DD6-BA7B-431A-844B-6EAC9130F99A"), exclusiveto, contract] */
                     MIDL_INTERFACE("8CC83DD6-BA7B-431A-844B-6EAC9130F99A")
-                    IInteractionTrackerInertiaMotionStatics : IInspectable
+                    IInteractionTrackerInertiaMotionStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositor * compositor,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaMotion * * result
@@ -2333,8 +2358,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("70ACDAAE-27DC-48ED-A3C3-6D61C9A029D2"), exclusiveto, contract] */
                     MIDL_INTERFACE("70ACDAAE-27DC-48ED-A3C3-6D61C9A029D2")
-                    IInteractionTrackerInertiaNaturalMotion : IInspectable
+                    IInteractionTrackerInertiaNaturalMotion : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Condition(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IExpressionAnimation * * value
                             ) = 0;
@@ -2384,8 +2410,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("CFDA55B0-5E3E-4289-932D-EE5F50E74283"), exclusiveto, contract] */
                     MIDL_INTERFACE("CFDA55B0-5E3E-4289-932D-EE5F50E74283")
-                    IInteractionTrackerInertiaNaturalMotionStatics : IInspectable
+                    IInteractionTrackerInertiaNaturalMotionStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositor * compositor,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaNaturalMotion * * result
@@ -2427,8 +2454,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("86F7EC09-5096-4170-9CC8-DF2FE101BB93"), exclusiveto, contract] */
                     MIDL_INTERFACE("86F7EC09-5096-4170-9CC8-DF2FE101BB93")
-                    IInteractionTrackerInertiaRestingValue : IInspectable
+                    IInteractionTrackerInertiaRestingValue : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Condition(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IExpressionAnimation * * value
                             ) = 0;
@@ -2478,8 +2506,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("18ED4699-0745-4096-BCAB-3A4E99569BCF"), exclusiveto, contract] */
                     MIDL_INTERFACE("18ED4699-0745-4096-BCAB-3A4E99569BCF")
-                    IInteractionTrackerInertiaRestingValueStatics : IInspectable
+                    IInteractionTrackerInertiaRestingValueStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositor * compositor,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaRestingValue * * result
@@ -2521,8 +2550,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("87108CF2-E7FF-4F7D-9FFD-D72F1E409B63"), exclusiveto, contract] */
                     MIDL_INTERFACE("87108CF2-E7FF-4F7D-9FFD-D72F1E409B63")
-                    IInteractionTrackerInertiaStateEnteredArgs : IInspectable
+                    IInteractionTrackerInertiaStateEnteredArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ModifiedRestingPosition(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CNumerics__CVector3 * * value
                             ) = 0;
@@ -2581,8 +2611,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("A7263939-A17B-4011-99FD-B5C24F143748"), exclusiveto, contract] */
                     MIDL_INTERFACE("A7263939-A17B-4011-99FD-B5C24F143748")
-                    IInteractionTrackerInteractingStateEnteredArgs : IInspectable
+                    IInteractionTrackerInteractingStateEnteredArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequestId(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -2620,8 +2651,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("DB2E8AF3-4DEB-4E53-B29C-B06C9F96D651"), contract] */
                     MIDL_INTERFACE("DB2E8AF3-4DEB-4E53-B29C-B06C9F96D651")
-                    IInteractionTrackerOwner : IInspectable
+                    IInteractionTrackerOwner : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CustomAnimationStateEntered(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::Interactions::IInteractionTracker * sender,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::Interactions::IInteractionTrackerCustomAnimationStateEnteredArgs * args
@@ -2683,8 +2715,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("80DD82F1-CE25-488F-91DD-CB6455CCFF2E"), exclusiveto, contract] */
                     MIDL_INTERFACE("80DD82F1-CE25-488F-91DD-CB6455CCFF2E")
-                    IInteractionTrackerRequestIgnoredArgs : IInspectable
+                    IInteractionTrackerRequestIgnoredArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequestId(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
@@ -2725,8 +2758,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("BBA5D7B7-6590-4498-8D6C-EB62B514C92A"), exclusiveto, contract] */
                     MIDL_INTERFACE("BBA5D7B7-6590-4498-8D6C-EB62B514C92A")
-                    IInteractionTrackerStatics : IInspectable
+                    IInteractionTrackerStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositor * compositor,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::Interactions::IInteractionTracker * * result
@@ -2773,8 +2807,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("CF1578EF-D3DF-4501-B9E6-F02FB22F73D0"), exclusiveto, contract] */
                     MIDL_INTERFACE("CF1578EF-D3DF-4501-B9E6-F02FB22F73D0")
-                    IInteractionTrackerValuesChangedArgs : IInspectable
+                    IInteractionTrackerValuesChangedArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector3 * value
                             ) = 0;
@@ -2821,8 +2856,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("87E08AB0-3086-4853-A4B7-77882AD5D7E3"), exclusiveto, contract] */
                     MIDL_INTERFACE("87E08AB0-3086-4853-A4B7-77882AD5D7E3")
-                    IInteractionTrackerVector2InertiaModifier : IInspectable
+                    IInteractionTrackerVector2InertiaModifier : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -2860,8 +2896,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("7401D6C4-6C6D-48DF-BC3E-171E227E7D7F"), exclusiveto, contract] */
                     MIDL_INTERFACE("7401D6C4-6C6D-48DF-BC3E-171E227E7D7F")
-                    IInteractionTrackerVector2InertiaModifierFactory : IInspectable
+                    IInteractionTrackerVector2InertiaModifierFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -2899,8 +2936,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("5F17695C-162D-4C07-9400-C282B28276CA"), exclusiveto, contract] */
                     MIDL_INTERFACE("5F17695C-162D-4C07-9400-C282B28276CA")
-                    IInteractionTrackerVector2InertiaNaturalMotion : IInspectable
+                    IInteractionTrackerVector2InertiaNaturalMotion : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Condition(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::IExpressionAnimation * * value
                             ) = 0;
@@ -2950,8 +2988,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("82001A48-09C0-434F-8189-141C66DF362F"), exclusiveto, contract] */
                     MIDL_INTERFACE("82001A48-09C0-434F-8189-141C66DF362F")
-                    IInteractionTrackerVector2InertiaNaturalMotionStatics : IInspectable
+                    IInteractionTrackerVector2InertiaNaturalMotionStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::ICompositor * compositor,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::Interactions::IInteractionTrackerVector2InertiaNaturalMotion * * result
@@ -2993,8 +3032,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("CA0E8A86-D8D6-4111-B088-70347BD2B0ED"), exclusiveto, contract] */
                     MIDL_INTERFACE("CA0E8A86-D8D6-4111-B088-70347BD2B0ED")
-                    IVisualInteractionSource : IInspectable
+                    IVisualInteractionSource : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPositionXRailsEnabled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -3092,8 +3132,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("AA914893-A73C-414D-80D0-249BAD2FBD93"), exclusiveto, contract] */
                     MIDL_INTERFACE("AA914893-A73C-414D-80D0-249BAD2FBD93")
-                    IVisualInteractionSource2 : IInspectable
+                    IVisualInteractionSource2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeltaPosition(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector3 * value
                             ) = 0;
@@ -3164,8 +3205,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("B2CA917C-E98A-41F2-B3C9-891C9266C8F6"), exclusiveto, contract] */
                     MIDL_INTERFACE("B2CA917C-E98A-41F2-B3C9-891C9266C8F6")
-                    IVisualInteractionSourceObjectFactory : IInspectable
+                    IVisualInteractionSourceObjectFactory : public IInspectable
                     {
+                    public:
                         
                     };
 
@@ -3203,8 +3245,9 @@ namespace ABI {
                 namespace Interactions {
                     /* [object, uuid("369965E1-8645-4F75-BA00-6479CD10C8E6"), exclusiveto, contract] */
                     MIDL_INTERFACE("369965E1-8645-4F75-BA00-6479CD10C8E6")
-                    IVisualInteractionSourceStatics : IInspectable
+                    IVisualInteractionSourceStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::IVisual * source,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Composition::Interactions::IVisualInteractionSource * * result
@@ -4776,6 +4819,16 @@ enum __x_ABI_CWindows_CUI_CComposition_CInteractions_CVisualInteractionSourceRed
 {
     VisualInteractionSourceRedirectionMode_Off = 0,
     VisualInteractionSourceRedirectionMode_CapableTouchpadOnly = 1,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    VisualInteractionSourceRedirectionMode_PointerWheelOnly = 2,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    VisualInteractionSourceRedirectionMode_CapableTouchpadAndPointerWheel = 3,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 

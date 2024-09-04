@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.mediaproperties.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -286,6 +288,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IAudioEncodingProperties3;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3 ABI::Windows::Media::MediaProperties::IAudioEncodingProperties3
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_FWD_DEFINED__
 namespace ABI {
@@ -342,6 +358,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IContainerEncodingProperties2;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2 ABI::Windows::Media::MediaProperties::IContainerEncodingProperties2
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics_FWD_DEFINED__
 namespace ABI {
@@ -369,6 +399,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties ABI::Windows::Media::MediaProperties::IImageEncodingProperties
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IImageEncodingProperties2;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2 ABI::Windows::Media::MediaProperties::IImageEncodingProperties2
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics_FWD_DEFINED__
@@ -425,6 +469,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile2 ABI::Windows::Media::MediaProperties::IMediaEncodingProfile2
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IMediaEncodingProfile3;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 ABI::Windows::Media::MediaProperties::IMediaEncodingProfile3
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics_FWD_DEFINED__
@@ -524,6 +582,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IMediaEncodingSubtypesStatics4;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 ABI::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics4
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
 namespace ABI {
@@ -551,6 +623,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics ABI::Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface ITimedMetadataEncodingProperties;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties ABI::Windows::Media::MediaProperties::ITimedMetadataEncodingProperties
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_FWD_DEFINED__
@@ -607,6 +693,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 ABI::Windows::Media::MediaProperties::IVideoEncodingProperties4
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IVideoEncodingProperties5;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5 ABI::Windows::Media::MediaProperties::IVideoEncodingProperties5
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_FWD_DEFINED__
@@ -1320,6 +1420,157 @@ typedef IVector<ABI::Windows::Media::Core::VideoStreamDescriptor*> __FIVector_1_
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                class TimedMetadataStreamDescriptor;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface IMediaStreamDescriptor;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor ABI::Windows::Media::Core::IMediaStreamDescriptor
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#define DEF___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("68475671-f53b-57ff-92ac-28bfd46573d7"))
+IIterator<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*, ABI::Windows::Media::Core::IMediaStreamDescriptor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Media.Core.TimedMetadataStreamDescriptor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t;
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+//#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#define DEF___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("f3d07841-3852-509d-a12b-a9f2ac89da93"))
+IIterable<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*, ABI::Windows::Media::Core::IMediaStreamDescriptor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Media.Core.TimedMetadataStreamDescriptor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t;
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+//#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#define DEF___FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("62e7b4ed-0c95-5743-a142-054f4bdea0a4"))
+IVectorView<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*, ABI::Windows::Media::Core::IMediaStreamDescriptor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Media.Core.TimedMetadataStreamDescriptor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t;
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+//#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#define DEF___FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("1ebdbbcf-4f75-5645-b8bc-31a716978bcc"))
+IVector<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*, ABI::Windows::Media::Core::IMediaStreamDescriptor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.Media.Core.TimedMetadataStreamDescriptor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVector<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor*> __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t;
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+//#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::IMediaStreamDescriptor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
 
 
 #ifndef DEF___FIKeyValuePair_2_GUID_IInspectable_USE
@@ -1467,6 +1718,7 @@ typedef IMap<GUID,IInspectable*> __FIMap_2_GUID_IInspectable_t;
 //#define __FIMap_2_GUID_IInspectable_t ABI::Windows::Foundation::Collections::IMap<GUID,IInspectable*>
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIMap_2_GUID_IInspectable_USE */
+
 
 
 
@@ -1629,6 +1881,13 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Media {
@@ -1671,6 +1930,16 @@ namespace ABI {
         } /* Media */
     } /* MediaProperties */} /* ABI */
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                class TimedMetadataEncodingProperties;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
 
 
 
@@ -1760,6 +2029,11 @@ namespace ABI {
                 {
                     MediaPixelFormat_Nv12 = 0,
                     MediaPixelFormat_Bgra8 = 1,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
+                    MediaPixelFormat_P010 = 2,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                    
                 };
                 
             } /* Windows */
@@ -1948,8 +2222,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("62BC7A16-005C-4B3B-8A0B-0A090E9687F3"), exclusiveto, contract] */
                 MIDL_INTERFACE("62BC7A16-005C-4B3B-8A0B-0A090E9687F3")
-                IAudioEncodingProperties : IInspectable
+                IAudioEncodingProperties : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Bitrate(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -2009,8 +2284,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("C45D54DA-80BD-4C23-80D5-72D4A181E894"), exclusiveto, contract] */
                 MIDL_INTERFACE("C45D54DA-80BD-4C23-80D5-72D4A181E894")
-                IAudioEncodingProperties2 : IInspectable
+                IAudioEncodingProperties2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSpatial(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2026,6 +2302,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Media.MediaProperties.IAudioEncodingProperties3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.AudioEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IAudioEncodingProperties3[] = L"Windows.Media.MediaProperties.IAudioEncodingProperties3";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                /* [object, uuid("87600341-748C-4F8D-B0FD-10CAF08FF087"), exclusiveto, contract] */
+                MIDL_INTERFACE("87600341-748C-4F8D-B0FD-10CAF08FF087")
+                IAudioEncodingProperties3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Copy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAudioEncodingProperties3=_uuidof(IAudioEncodingProperties3);
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2049,8 +2366,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("0CAD332C-EBE9-4527-B36D-E42A13CF38DB"), exclusiveto, contract] */
                 MIDL_INTERFACE("0CAD332C-EBE9-4527-B36D-E42A13CF38DB")
-                IAudioEncodingPropertiesStatics : IInspectable
+                IAudioEncodingPropertiesStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateAac(
                         /* [in] */UINT32 sampleRate,
                         /* [in] */UINT32 channelCount,
@@ -2116,8 +2434,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("7489316F-77A0-433D-8ED5-4040280E8665"), exclusiveto, contract] */
                 MIDL_INTERFACE("7489316F-77A0-433D-8ED5-4040280E8665")
-                IAudioEncodingPropertiesStatics2 : IInspectable
+                IAudioEncodingPropertiesStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateAlac(
                         /* [in] */UINT32 sampleRate,
                         /* [in] */UINT32 channelCount,
@@ -2165,8 +2484,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("98F10D79-13EA-49FF-BE70-2673DB69702C"), exclusiveto, contract] */
                 MIDL_INTERFACE("98F10D79-13EA-49FF-BE70-2673DB69702C")
-                IAudioEncodingPropertiesWithFormatUserData : IInspectable
+                IAudioEncodingPropertiesWithFormatUserData : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetFormatUserData(
                         /* [in] */UINT32 __valueSize,
                         /* [size_is(__valueSize), in] */__RPC__in_ecount_full(__valueSize) BYTE * value
@@ -2214,8 +2534,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("59AC2A57-B32A-479E-8A61-4B7F2E9E7EA0"), exclusiveto, contract] */
                 MIDL_INTERFACE("59AC2A57-B32A-479E-8A61-4B7F2E9E7EA0")
-                IContainerEncodingProperties : IInspectable
+                IContainerEncodingProperties : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -2228,6 +2549,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.MediaProperties.IContainerEncodingProperties2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.ContainerEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IContainerEncodingProperties2[] = L"Windows.Media.MediaProperties.IContainerEncodingProperties2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                /* [object, uuid("B272C029-AE26-4819-BAAD-AD7A49B0A876"), exclusiveto, contract] */
+                MIDL_INTERFACE("B272C029-AE26-4819-BAAD-AD7A49B0A876")
+                IContainerEncodingProperties2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Copy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IContainerEncodingProperties * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IContainerEncodingProperties2=_uuidof(IContainerEncodingProperties2);
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2251,8 +2613,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("38654CA7-846A-4F97-A2E5-C3A15BBF70FD"), exclusiveto, contract] */
                 MIDL_INTERFACE("38654CA7-846A-4F97-A2E5-C3A15BBF70FD")
-                IH264ProfileIdsStatics : IInspectable
+                IH264ProfileIdsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConstrainedBaseline(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -2322,8 +2685,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("78625635-F331-4189-B1C3-B48D5AE034F1"), exclusiveto, contract] */
                 MIDL_INTERFACE("78625635-F331-4189-B1C3-B48D5AE034F1")
-                IImageEncodingProperties : IInspectable
+                IImageEncodingProperties : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Width(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -2352,6 +2716,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingP
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.IImageEncodingProperties2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.ImageEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IImageEncodingProperties2[] = L"Windows.Media.MediaProperties.IImageEncodingProperties2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                /* [object, uuid("C854A2DF-C923-469B-AC8E-6A9F3C1CD9E3"), exclusiveto, contract] */
+                MIDL_INTERFACE("C854A2DF-C923-469B-AC8E-6A9F3C1CD9E3")
+                IImageEncodingProperties2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Copy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IImageEncodingProperties * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IImageEncodingProperties2=_uuidof(IImageEncodingProperties2);
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IImageEncodingPropertiesStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2371,8 +2776,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("257C68DC-8B99-439E-AA59-913A36161297"), exclusiveto, contract] */
                 MIDL_INTERFACE("257C68DC-8B99-439E-AA59-913A36161297")
-                IImageEncodingPropertiesStatics : IInspectable
+                IImageEncodingPropertiesStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateJpeg(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IImageEncodingProperties * * value
                         ) = 0;
@@ -2417,8 +2823,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("F6C25B29-3824-46B0-956E-501329E1BE3C"), exclusiveto, contract] */
                 MIDL_INTERFACE("F6C25B29-3824-46B0-956E-501329E1BE3C")
-                IImageEncodingPropertiesStatics2 : IInspectable
+                IImageEncodingPropertiesStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateUncompressed(
                         /* [in] */ABI::Windows::Media::MediaProperties::MediaPixelFormat format,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IImageEncodingProperties * * value
@@ -2461,8 +2868,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("E7DBF5A8-1DB9-4783-876B-3DFE12ACFDB3"), exclusiveto, contract] */
                 MIDL_INTERFACE("E7DBF5A8-1DB9-4783-876B-3DFE12ACFDB3")
-                IMediaEncodingProfile : IInspectable
+                IMediaEncodingProfile : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Audio(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties * value
                         ) = 0;
@@ -2516,8 +2924,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("349B3E0A-4035-488E-9877-85632865ED10"), exclusiveto, contract] */
                 MIDL_INTERFACE("349B3E0A-4035-488E-9877-85632865ED10")
-                IMediaEncodingProfile2 : IInspectable
+                IMediaEncodingProfile2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetAudioTracks(
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CMedia__CCore__CAudioStreamDescriptor * value
                         ) = 0;
@@ -2546,6 +2955,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingP
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.IMediaEncodingProfile3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.MediaEncodingProfile
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IMediaEncodingProfile3[] = L"Windows.Media.MediaProperties.IMediaEncodingProfile3";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                /* [object, uuid("BA6EBE88-7570-4E69-ACCF-5611AD015F88"), exclusiveto, contract] */
+                MIDL_INTERFACE("BA6EBE88-7570-4E69-ACCF-5611AD015F88")
+                IMediaEncodingProfile3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE SetTimedMetadataTracks(
+                        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetTimedMetadataTracks(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaEncodingProfile3=_uuidof(IMediaEncodingProfile3);
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IMediaEncodingProfileStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2565,8 +3018,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("197F352C-2EDE-4A45-A896-817A4854F8FE"), exclusiveto, contract] */
                 MIDL_INTERFACE("197F352C-2EDE-4A45-A896-817A4854F8FE")
-                IMediaEncodingProfileStatics : IInspectable
+                IMediaEncodingProfileStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateM4a(
                         /* [in] */ABI::Windows::Media::MediaProperties::AudioEncodingQuality quality,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProfile * * value
@@ -2630,8 +3084,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("CE8DE74F-6AF4-4288-8FE2-79ADF1F79A43"), exclusiveto, contract] */
                 MIDL_INTERFACE("CE8DE74F-6AF4-4288-8FE2-79ADF1F79A43")
-                IMediaEncodingProfileStatics2 : IInspectable
+                IMediaEncodingProfileStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWav(
                         /* [in] */ABI::Windows::Media::MediaProperties::AudioEncodingQuality quality,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProfile * * value
@@ -2675,8 +3130,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("90DAC5AA-CF76-4294-A9ED-1A1420F51F6B"), exclusiveto, contract] */
                 MIDL_INTERFACE("90DAC5AA-CF76-4294-A9ED-1A1420F51F6B")
-                IMediaEncodingProfileStatics3 : IInspectable
+                IMediaEncodingProfileStatics3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateAlac(
                         /* [in] */ABI::Windows::Media::MediaProperties::AudioEncodingQuality quality,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProfile * * value
@@ -2721,8 +3177,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("B4002AF6-ACD4-4E5A-A24B-5D7498A8B8C4"), contract] */
                 MIDL_INTERFACE("B4002AF6-ACD4-4E5A-A24B-5D7498A8B8C4")
-                IMediaEncodingProperties : IInspectable
+                IMediaEncodingProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Properties(
                         /* [retval, out] */__RPC__deref_out_opt __FIMap_2_GUID_IInspectable * * value
                         ) = 0;
@@ -2770,8 +3227,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("37B6580E-A171-4464-BA5A-53189E48C1C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("37B6580E-A171-4464-BA5A-53189E48C1C8")
-                IMediaEncodingSubtypesStatics : IInspectable
+                IMediaEncodingSubtypesStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Aac(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2927,8 +3385,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("4B7CD23D-42FF-4D33-8531-0626BEE4B52D"), exclusiveto, contract] */
                 MIDL_INTERFACE("4B7CD23D-42FF-4D33-8531-0626BEE4B52D")
-                IMediaEncodingSubtypesStatics2 : IInspectable
+                IMediaEncodingSubtypesStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Vp9(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2976,8 +3435,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("BA2414E4-883D-464E-A44F-097DA08EF7FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("BA2414E4-883D-464E-A44F-097DA08EF7FF")
-                IMediaEncodingSubtypesStatics3 : IInspectable
+                IMediaEncodingSubtypesStatics3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Alac(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2996,6 +3456,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.MediaEncodingSubtypes
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics4[] = L"Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics4";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                /* [object, uuid("DDECE58A-3949-4644-8A2C-59EF02C642FA"), exclusiveto, contract] */
+                MIDL_INTERFACE("DDECE58A-3949-4644-8A2C-59EF02C642FA")
+                IMediaEncodingSubtypesStatics4 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_P010(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaEncodingSubtypesStatics4=_uuidof(IMediaEncodingSubtypesStatics4);
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3019,8 +3520,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("D2D0FEE5-8929-401D-AC78-7D357E378163"), exclusiveto, contract] */
                 MIDL_INTERFACE("D2D0FEE5-8929-401D-AC78-7D357E378163")
-                IMediaRatio : IInspectable
+                IMediaRatio : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Numerator(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -3068,8 +3570,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("A461FF85-E57A-4128-9B21-D5331B04235C"), exclusiveto, contract] */
                 MIDL_INTERFACE("A461FF85-E57A-4128-9B21-D5331B04235C")
-                IMpeg2ProfileIdsStatics : IInspectable
+                IMpeg2ProfileIdsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Simple(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -3101,6 +3604,55 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileId
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.ITimedMetadataEncodingProperties
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.TimedMetadataEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_ITimedMetadataEncodingProperties[] = L"Windows.Media.MediaProperties.ITimedMetadataEncodingProperties";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                /* [object, uuid("51CD30D3-D690-4CFA-97F4-4A398E9DB420"), exclusiveto, contract] */
+                MIDL_INTERFACE("51CD30D3-D690-4CFA-97F4-4A398E9DB420")
+                ITimedMetadataEncodingProperties : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE SetFormatUserData(
+                        /* [in] */UINT32 __valueSize,
+                        /* [size_is(__valueSize), in] */__RPC__in_ecount_full(__valueSize) BYTE * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetFormatUserData(
+                        /* [out] */__RPC__out UINT32 * __valueSize,
+                        /* [size_is(, *(__valueSize)), out] */__RPC__deref_out_ecount_full_opt(*(__valueSize)) BYTE * * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Copy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProperties * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ITimedMetadataEncodingProperties=_uuidof(ITimedMetadataEncodingProperties);
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IVideoEncodingProperties
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3124,8 +3676,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("76EE6C9A-37C2-4F2A-880A-1282BBB4373D"), exclusiveto, contract] */
                 MIDL_INTERFACE("76EE6C9A-37C2-4F2A-880A-1282BBB4373D")
-                IVideoEncodingProperties : IInspectable
+                IVideoEncodingProperties : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Bitrate(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -3185,8 +3738,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("F743A1EF-D465-4290-A94B-EF0F1528F8E3"), exclusiveto, contract] */
                 MIDL_INTERFACE("F743A1EF-D465-4290-A94B-EF0F1528F8E3")
-                IVideoEncodingProperties2 : IInspectable
+                IVideoEncodingProperties2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SetFormatUserData(
                         /* [in] */UINT32 __valueSize,
                         /* [size_is(__valueSize), in] */__RPC__in_ecount_full(__valueSize) BYTE * value
@@ -3236,8 +3790,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("386BCDC4-873A-479F-B3EB-56C1FCBEC6D7"), exclusiveto, contract] */
                 MIDL_INTERFACE("386BCDC4-873A-479F-B3EB-56C1FCBEC6D7")
-                IVideoEncodingProperties3 : IInspectable
+                IVideoEncodingProperties3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StereoscopicVideoPackingMode(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::MediaProperties::StereoscopicVideoPackingMode * value
                         ) = 0;
@@ -3276,8 +3831,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("724EF014-C10C-40F2-9D72-3EE13B45FA8E"), exclusiveto, contract] */
                 MIDL_INTERFACE("724EF014-C10C-40F2-9D72-3EE13B45FA8E")
-                IVideoEncodingProperties4 : IInspectable
+                IVideoEncodingProperties4 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SphericalVideoFrameFormat(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::MediaProperties::SphericalVideoFrameFormat * value
                         ) = 0;
@@ -3293,6 +3849,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Media.MediaProperties.IVideoEncodingProperties5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.VideoEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IVideoEncodingProperties5[] = L"Windows.Media.MediaProperties.IVideoEncodingProperties5";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                /* [object, uuid("4959080F-272F-4ECE-A4DF-C0CCDB33D840"), exclusiveto, contract] */
+                MIDL_INTERFACE("4959080F-272F-4ECE-A4DF-C0CCDB33D840")
+                IVideoEncodingProperties5 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Copy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IVideoEncodingProperties * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IVideoEncodingProperties5=_uuidof(IVideoEncodingProperties5);
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3316,8 +3913,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("3CE14D44-1DC5-43DB-9F38-EBEBF90152CB"), exclusiveto, contract] */
                 MIDL_INTERFACE("3CE14D44-1DC5-43DB-9F38-EBEBF90152CB")
-                IVideoEncodingPropertiesStatics : IInspectable
+                IVideoEncodingPropertiesStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateH264(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IVideoEncodingProperties * * value
                         ) = 0;
@@ -3365,8 +3963,9 @@ namespace ABI {
             namespace MediaProperties {
                 /* [object, uuid("CF1EBD5D-49FE-4D00-B59A-CFA4DFC51944"), exclusiveto, contract] */
                 MIDL_INTERFACE("CF1EBD5D-49FE-4D00-B59A-CFA4DFC51944")
-                IVideoEncodingPropertiesStatics2 : IInspectable
+                IVideoEncodingPropertiesStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateHevc(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IVideoEncodingProperties * * value
                         ) = 0;
@@ -3403,6 +4002,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingP
  *    Windows.Media.MediaProperties.IMediaEncodingProperties
  *    Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData
  *    Windows.Media.MediaProperties.IAudioEncodingProperties2
+ *    Windows.Media.MediaProperties.IAudioEncodingProperties3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3431,6 +4031,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.MediaProperties.IContainerEncodingProperties ** Default Interface **
  *    Windows.Media.MediaProperties.IMediaEncodingProperties
+ *    Windows.Media.MediaProperties.IContainerEncodingProperties2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3486,6 +4087,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.MediaProperties.IImageEncodingProperties ** Default Interface **
  *    Windows.Media.MediaProperties.IMediaEncodingProperties
+ *    Windows.Media.MediaProperties.IImageEncodingProperties2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3519,6 +4121,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.MediaProperties.IMediaEncodingProfile ** Default Interface **
  *    Windows.Media.MediaProperties.IMediaEncodingProfile2
+ *    Windows.Media.MediaProperties.IMediaEncodingProfile3
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
@@ -3542,6 +4145,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics4 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics3 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -3636,6 +4240,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Media.MediaProperties.TimedMetadataEncodingProperties
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.MediaProperties.ITimedMetadataEncodingProperties
+ *    Windows.Media.MediaProperties.IMediaEncodingProperties ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_MediaProperties_TimedMetadataEncodingProperties_DEFINED
+#define RUNTIMECLASS_Windows_Media_MediaProperties_TimedMetadataEncodingProperties_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_MediaProperties_TimedMetadataEncodingProperties[] = L"Windows.Media.MediaProperties.TimedMetadataEncodingProperties";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.MediaProperties.VideoEncodingProperties
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3654,6 +4286,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.MediaProperties.IVideoEncodingProperties2
  *    Windows.Media.MediaProperties.IVideoEncodingProperties3
  *    Windows.Media.MediaProperties.IVideoEncodingProperties4
+ *    Windows.Media.MediaProperties.IVideoEncodingProperties5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3685,6 +4318,12 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProper
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3 __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics;
@@ -3709,6 +4348,12 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingPr
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2 __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics __x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics;
@@ -3720,6 +4365,12 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStati
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties;
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2 __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics_FWD_DEFINED__
@@ -3744,6 +4395,12 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfil
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile2 __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile2;
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics_FWD_DEFINED__
@@ -3787,6 +4444,12 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtyp
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio;
@@ -3798,6 +4461,12 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio __x_ABI_
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics __x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics;
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_FWD_DEFINED__
@@ -3822,6 +4491,12 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProper
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4;
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5 __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_FWD_DEFINED__
@@ -5616,6 +6291,428 @@ interface __FIVector_1_Windows__CMedia__CCore__CVideoStreamDescriptor
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor_FWD_DEFINED__
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+typedef struct __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl;
+
+interface __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+typedef  struct __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl;
+
+interface __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+typedef struct __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [in] */ __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl;
+
+interface __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__)
+#define ____FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+typedef interface __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor;
+
+typedef struct __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This, /* [in] */ __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CMedia_CCore_CIMediaStreamDescriptor * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl;
+
+interface __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor
+{
+    CONST_VTBL struct __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptorVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
 
 #if !defined(____FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__)
 #define ____FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__
@@ -6015,6 +7112,7 @@ interface __FIMap_2_GUID_IInspectable
 
 
 
+
 #ifndef ____x_ABI_CWindows_CStorage_CIStorageFile_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIStorageFile_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CIStorageFile __x_ABI_CWindows_CStorage_CIStorageFile;
@@ -6057,6 +7155,14 @@ typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CStereoscopicVideoPackingM
 
 
 typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CVideoEncodingQuality __x_ABI_CWindows_CMedia_CMediaProperties_CVideoEncodingQuality;
+
+
+
+
+
+
+
+
 
 
 
@@ -6159,6 +7265,11 @@ enum __x_ABI_CWindows_CMedia_CMediaProperties_CMediaPixelFormat
 {
     MediaPixelFormat_Nv12 = 0,
     MediaPixelFormat_Bgra8 = 1,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    MediaPixelFormat_P010 = 2,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -6515,6 +7626,99 @@ interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Media.MediaProperties.IAudioEncodingProperties3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.AudioEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IAudioEncodingProperties3[] = L"Windows.Media.MediaProperties.IAudioEncodingProperties3";
+/* [object, uuid("87600341-748C-4F8D-B0FD-10CAF08FF087"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Copy )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_Copy(This,result) \
+    ( (This)->lpVtbl->Copy(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6953,6 +8157,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncod
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.IContainerEncodingProperties2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.ContainerEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IContainerEncodingProperties2[] = L"Windows.Media.MediaProperties.IContainerEncodingProperties2";
+/* [object, uuid("B272C029-AE26-4819-BAAD-AD7A49B0A876"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Copy )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_Copy(This,result) \
+    ( (This)->lpVtbl->Copy(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IH264ProfileIdsStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7223,6 +8520,99 @@ interface __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.MediaProperties.IImageEncodingProperties2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.ImageEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IImageEncodingProperties2[] = L"Windows.Media.MediaProperties.IImageEncodingProperties2";
+/* [object, uuid("C854A2DF-C923-469B-AC8E-6A9F3C1CD9E3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Copy )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_Copy(This,result) \
+    ( (This)->lpVtbl->Copy(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7673,6 +9063,106 @@ interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile2
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile2;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Media.MediaProperties.IMediaEncodingProfile3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.MediaEncodingProfile
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IMediaEncodingProfile3[] = L"Windows.Media.MediaProperties.IMediaEncodingProfile3";
+/* [object, uuid("BA6EBE88-7570-4E69-ACCF-5611AD015F88"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *SetTimedMetadataTracks )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetTimedMetadataTracks )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_SetTimedMetadataTracks(This,value) \
+    ( (This)->lpVtbl->SetTimedMetadataTracks(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_GetTimedMetadataTracks(This,result) \
+    ( (This)->lpVtbl->GetTimedMetadataTracks(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8722,6 +10212,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingS
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.MediaEncodingSubtypes
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics4[] = L"Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics4";
+/* [object, uuid("DDECE58A-3949-4644-8A2C-59EF02C642FA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_P010 )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_get_P010(This,value) \
+    ( (This)->lpVtbl->get_P010(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IMediaRatio
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -8953,6 +10536,115 @@ interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.MediaProperties.ITimedMetadataEncodingProperties
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.TimedMetadataEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_ITimedMetadataEncodingProperties[] = L"Windows.Media.MediaProperties.ITimedMetadataEncodingProperties";
+/* [object, uuid("51CD30D3-D690-4CFA-97F4-4A398E9DB420"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingPropertiesVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *SetFormatUserData )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties * This,
+        /* [in] */UINT32 __valueSize,
+        /* [size_is(__valueSize), in] */__RPC__in_ecount_full(__valueSize) BYTE * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetFormatUserData )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties * This,
+        /* [out] */__RPC__out UINT32 * __valueSize,
+        /* [size_is(, *(__valueSize)), out] */__RPC__deref_out_ecount_full_opt(*(__valueSize)) BYTE * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *Copy )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingPropertiesVtbl;
+
+interface __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingPropertiesVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_SetFormatUserData(This,__valueSize,value) \
+    ( (This)->lpVtbl->SetFormatUserData(This,__valueSize,value) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_GetFormatUserData(This,__valueSize,value) \
+    ( (This)->lpVtbl->GetFormatUserData(This,__valueSize,value) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_Copy(This,result) \
+    ( (This)->lpVtbl->Copy(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CITimedMetadataEncodingProperties_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9405,6 +11097,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingP
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.IVideoEncodingProperties5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.VideoEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IVideoEncodingProperties5[] = L"Windows.Media.MediaProperties.IVideoEncodingProperties5";
+/* [object, uuid("4959080F-272F-4ECE-A4DF-C0CCDB33D840"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Copy )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_Copy(This,result) \
+    ( (This)->lpVtbl->Copy(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9625,6 +11410,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingP
  *    Windows.Media.MediaProperties.IMediaEncodingProperties
  *    Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData
  *    Windows.Media.MediaProperties.IAudioEncodingProperties2
+ *    Windows.Media.MediaProperties.IAudioEncodingProperties3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -9653,6 +11439,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.MediaProperties.IContainerEncodingProperties ** Default Interface **
  *    Windows.Media.MediaProperties.IMediaEncodingProperties
+ *    Windows.Media.MediaProperties.IContainerEncodingProperties2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -9708,6 +11495,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.MediaProperties.IImageEncodingProperties ** Default Interface **
  *    Windows.Media.MediaProperties.IMediaEncodingProperties
+ *    Windows.Media.MediaProperties.IImageEncodingProperties2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -9741,6 +11529,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.MediaProperties.IMediaEncodingProfile ** Default Interface **
  *    Windows.Media.MediaProperties.IMediaEncodingProfile2
+ *    Windows.Media.MediaProperties.IMediaEncodingProfile3
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
@@ -9764,6 +11553,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics4 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics3 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -9858,6 +11648,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Media.MediaProperties.TimedMetadataEncodingProperties
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.MediaProperties.ITimedMetadataEncodingProperties
+ *    Windows.Media.MediaProperties.IMediaEncodingProperties ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_MediaProperties_TimedMetadataEncodingProperties_DEFINED
+#define RUNTIMECLASS_Windows_Media_MediaProperties_TimedMetadataEncodingProperties_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_MediaProperties_TimedMetadataEncodingProperties[] = L"Windows.Media.MediaProperties.TimedMetadataEncodingProperties";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.MediaProperties.VideoEncodingProperties
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9876,6 +11694,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.MediaProperties.IVideoEncodingProperties2
  *    Windows.Media.MediaProperties.IVideoEncodingProperties3
  *    Windows.Media.MediaProperties.IVideoEncodingProperties4
+ *    Windows.Media.MediaProperties.IVideoEncodingProperties5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

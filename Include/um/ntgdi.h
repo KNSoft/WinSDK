@@ -2552,7 +2552,7 @@ BOOL APIENTRY NtGdiDwmCreatedBitmapRemotingOutput(
 __kernel_entry W32KAPI NTSTATUS APIENTRY
 NtGdiGetCurrentDpiInfo(
     _In_ HMONITOR hmon,
-    PVOID pvStruct);
+    _Out_writes_bytes_(sizeof(DPI_INFORMATION)) PVOID pvStruct);
 
 _Must_inspect_result_
 _Success_(return == STATUS_SUCCESS)
@@ -2609,6 +2609,10 @@ NtGdiGetBitmapDpiScaleValue(
 
 LONG GreGetDCDpiScaleValue(
     _In_ HDC hdc);
+
+// WARNING: To be used only for TESTING.
+// It won't create a "real" GDI scaled DC. If used, clipping issues are expected
+// since clipping region set by user code won't be scaled-up by GDI scaling factor.
 
 VOID GreSetDCDpiScaleValue(
     _In_ HDC hdc,

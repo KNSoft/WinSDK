@@ -3487,6 +3487,9 @@ CryptDecodeObject(
 // Signed by Microsoft through EV hardware certification (EV WHQL)
 #define szOID_EV_WHQL_CRYPTO            "1.3.6.1.4.1.311.10.3.39"
 
+// Signer of Biometric code
+#define szOID_BIOMETRIC_SIGNING         "1.3.6.1.4.1.311.10.3.41"
+
 // Image can be executed in a VSM Enclave
 #define szOID_ENCLAVE_SIGNING           "1.3.6.1.4.1.311.10.3.42"
 
@@ -14035,6 +14038,11 @@ CertVerifyRevocation(
 //--------------------------------------------------------------------------
 #define CERT_VERIFY_REV_NO_OCSP_FAILOVER_TO_CRL_FLAG    0x00000010
 
+//+-------------------------------------------------------------------------
+//  When the following flag is set, only wire retrieval for OCSP responses.
+//--------------------------------------------------------------------------
+#define CERT_VERIFY_REV_SERVER_OCSP_WIRE_ONLY_FLAG      0x00000020
+
 
 //+-------------------------------------------------------------------------
 //  CERT_CONTEXT_REVOCATION_TYPE
@@ -20612,7 +20620,8 @@ CryptBinaryToStringW(
 #define szOID_PKCS_12_pbeWithSHA1And2KeyTripleDES   "1.2.840.113549.1.12.1.4"
 #define szOID_PKCS_12_pbeWithSHA1And128BitRC2       "1.2.840.113549.1.12.1.5"
 #define szOID_PKCS_12_pbeWithSHA1And40BitRC2        "1.2.840.113549.1.12.1.6"
-
+#define szOID_PKCS_5_PBKDF2                         "1.2.840.113549.1.5.12"
+#define szOID_PKCS_5_PBES2                          "1.2.840.113549.1.5.13"
 
 //+-------------------------------------------------------------------------
 //  PBE parameters as defined in PKCS#12 as pkcs-12PbeParams.
@@ -20819,11 +20828,41 @@ PFXExportCertStoreEx(
 #define PKCS12_INCLUDE_EXTENDED_PROPERTIES      0x0010
 #define PKCS12_PROTECT_TO_DOMAIN_SIDS           0x0020
 #define PKCS12_EXPORT_SILENT                    0x0040
+#define PKCS12_EXPORT_PBES2_PARAMS              0x0080 
 #define PKCS12_DISABLE_ENCRYPT_CERTIFICATES     0x0100
 #define PKCS12_ENCRYPT_CERTIFICATES             0x0200
 #define PKCS12_EXPORT_ECC_CURVE_PARAMETERS      0x1000
 #define PKCS12_EXPORT_ECC_CURVE_OID             0x2000
 #define PKCS12_EXPORT_RESERVED_MASK             0xffff0000
+
+#define PKCS12_PBKDF2_ID_HMAC_SHA1     "1.2.840.113549.2.7"
+#define PKCS12_PBKDF2_ID_HMAC_SHA256   "1.2.840.113549.2.9"
+#define PKCS12_PBKDF2_ID_HMAC_SHA384   "1.2.840.113549.2.10"
+#define PKCS12_PBKDF2_ID_HMAC_SHA512   "1.2.840.113549.2.11"
+
+//
+// PKCS12 Pbes2 Parameter Structure
+//     It is passed into PFXExportCertStoreEx as pvPara 
+//     when PKCS12_EXPORT_PBES2_PARAMS is set for dwFlags.
+//
+typedef struct _PKCS12_PBES2_EXPORT_PARAMS 
+{ 
+    DWORD dwSize;            // structure size of _PKCS12_PBES2_EXPORT_PARAMS    
+    PVOID hNcryptDescriptor;
+    LPWSTR pwszPbes2Alg; 
+} PKCS12_PBES2_EXPORT_PARAMS, *PPKCS12_PBES2_EXPORT_PARAMS; 
+
+//
+// PKCS12 Pbes2 Algorithm string definition
+//     This string is passed into pwszPbes2Alg of the structure
+//     PKCS12_PBES2_EXPORT_PARAMS, which indicates which
+//     algorithms will be used for key and certificate encryption,
+//     and MacData hashing.
+//
+
+// AES256 will be used for key/certificate encryption, and
+// SHA256 will be used for KDF2, and MacData hashing.
+#define PKCS12_PBES2_ALG_AES256_SHA256  L"AES256-SHA256"
 
 // Registry path to the PFX configuration local machine subkey
 #define PKCS12_CONFIG_REGPATH        \

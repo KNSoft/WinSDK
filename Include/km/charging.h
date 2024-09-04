@@ -221,7 +221,6 @@ typedef struct _POWERSOURCEUPDATEEX {
     POWERSOURCEUPDATE Source;
 
     //
-    // Charger ID
     // If a non-zero ChargerId is provided, and the battery driver supports the
     // BatteryChargerId information level, the MaxChargeCurrent variable in the
     // Source struct above will not be used.
@@ -333,8 +332,7 @@ typedef struct _CAD_POWER_SOURCE_INFO_USB {
     USBFN_PORT_TYPE PowerSourceInformation;
 
     //
-    // Represents OEM proprietary charger type when not GUID_EMPTY, this value
-    // is not interpreted by CAD.
+    // Represents OEM proprietary charger type when not GUID_EMPTY.
     //
 
     GUID OemCharger;

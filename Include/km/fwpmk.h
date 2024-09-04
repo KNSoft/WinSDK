@@ -4898,6 +4898,20 @@ FwpmNetEventEnum3(
    );
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4) 
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+NTAPI
+FwpmNetEventEnum4(
+   _In_ HANDLE engineHandle,
+   _In_ HANDLE enumHandle,
+   _In_ UINT32 numEntriesRequested,
+   _Outptr_result_buffer_(*numEntriesReturned) FWPM_NET_EVENT4*** entries,
+   _Out_ UINT32* numEntriesReturned
+   );
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4) 
+
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
@@ -4941,6 +4955,9 @@ FwpmNetEventsSetSecurityInfo0(
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4) 
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4) 
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)

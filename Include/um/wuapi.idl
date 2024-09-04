@@ -424,6 +424,24 @@ typedef [public] enum tagOperationResultCode
 } OperationResultCode;
 
 [
+    helpstring(
+        "Defines possible status code of update history entry - "
+        "install/uninstall/download success/failure/cancel."),
+    v1_enum
+]
+typedef [public] enum tagUpdateHistoryStatusCode
+{   /* In the order of significance */
+    [helpstring("Install Success")]         uhsInstallSuccess           = 0,
+    [helpstring("Install Failure")]         uhsInstallFailure           = 1,
+    [helpstring("Install Cancellation")]    uhsInstallCancellation      = 2,
+    [helpstring("Uninstall Success")]       uhsUninstallSuccess         = 3,
+    [helpstring("Uninstall Failure")]       uhsUninstallFailure         = 4,
+    [helpstring("Uninstall Cancellation")]  uhsUninstallCancellation    = 6,
+    [helpstring("Download Failure")]        uhsDownloadFailure          = 7,
+    [helpstring("Download Cancellation")]   uhsDownloadCancellation     = 8,
+} UpdateHistoryStatusCode;
+
+[
     helpstring("Defines possible types of an update."),
     v1_enum
 ]

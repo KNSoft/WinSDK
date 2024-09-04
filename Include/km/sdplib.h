@@ -182,7 +182,7 @@ _IRQL_requires_same_
 _When_(return!=0, __drv_allocatesMem(Mem))
 PSDP_NODE
 SdpCreateNodeUrl(
-    _In_reads_bytes_(UrlLength) PCHAR url,
+    _In_reads_bytes_(urlLength) PCHAR url,
      ULONG urlLength,
     _In_ ULONG tag
     );
@@ -202,7 +202,7 @@ _IRQL_requires_same_
 _When_(return!=0, __drv_allocatesMem(Mem))
 PSDP_NODE
 SdpCreateNodeString(
-    _In_reads_bytes_(StringLength) PCHAR string, 
+    _In_reads_bytes_(stringLength) PCHAR string, 
      ULONG stringLength, 
     _In_ ULONG tag
     );

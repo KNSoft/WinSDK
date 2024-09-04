@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.enumeration.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1547,6 +1549,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_USE
@@ -1576,6 +1579,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceAccessInfor
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -1597,6 +1601,7 @@ namespace ABI {
     } /* Enumeration */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingRequestedEventArgs_USE
@@ -1626,6 +1631,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceInformation
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingRequestedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 namespace ABI {
@@ -1682,6 +1688,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_USE
@@ -1711,6 +1718,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Enumeration::DevicePicker*,ABI
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1723,6 +1731,7 @@ namespace ABI {
     } /* Enumeration */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_USE
@@ -1752,6 +1761,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Enumeration::DevicePicker*,ABI
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -1799,6 +1809,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,II
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_USE
 #define DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_USE
@@ -1828,6 +1839,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,AB
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1840,6 +1852,7 @@ namespace ABI {
     } /* Enumeration */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_USE
@@ -1869,6 +1882,7 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,AB
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2909,8 +2923,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("DEDA0BCC-4F9D-4F58-9DBA-A9BC800408D5"), exclusiveto, contract] */
                 MIDL_INTERFACE("DEDA0BCC-4F9D-4F58-9DBA-A9BC800408D5")
-                IDeviceAccessChangedEventArgs : IInspectable
+                IDeviceAccessChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Enumeration::DeviceAccessStatus * value
                         ) = 0;
@@ -2953,8 +2968,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("82523262-934B-4B30-A178-ADC39F2F2BE3"), exclusiveto, contract] */
                 MIDL_INTERFACE("82523262-934B-4B30-A178-ADC39F2F2BE3")
-                IDeviceAccessChangedEventArgs2 : IInspectable
+                IDeviceAccessChangedEventArgs2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2993,8 +3009,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("0BAA9A73-6DE5-4915-8DDD-9A0554A6F545"), exclusiveto, contract] */
                 MIDL_INTERFACE("0BAA9A73-6DE5-4915-8DDD-9A0554A6F545")
-                IDeviceAccessInformation : IInspectable
+                IDeviceAccessInformation : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AccessChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -3040,8 +3057,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("574BD3D3-5F30-45CD-8A94-724FE5973084"), exclusiveto, contract] */
                 MIDL_INTERFACE("574BD3D3-5F30-45CD-8A94-724FE5973084")
-                IDeviceAccessInformationStatics : IInspectable
+                IDeviceAccessInformationStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromId(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceAccessInformation * * value
@@ -3089,8 +3107,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("B8578C0C-BBC1-484B-BFFA-7B31DCC200B2"), exclusiveto, contract] */
                 MIDL_INTERFACE("B8578C0C-BBC1-484B-BFFA-7B31DCC200B2")
-                IDeviceConnectionChangeTriggerDetails : IInspectable
+                IDeviceConnectionChangeTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3129,8 +3148,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("8E44B56D-F902-4A00-B536-F37992E6A2A7"), exclusiveto, contract] */
                 MIDL_INTERFACE("8E44B56D-F902-4A00-B536-F37992E6A2A7")
-                IDeviceDisconnectButtonClickedEventArgs : IInspectable
+                IDeviceDisconnectButtonClickedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Device(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceInformation * * value
                         ) = 0;
@@ -3169,8 +3189,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("ABA0FB95-4398-489D-8E44-E6130927011F"), exclusiveto, contract] */
                 MIDL_INTERFACE("ABA0FB95-4398-489D-8E44-E6130927011F")
-                IDeviceInformation : IInspectable
+                IDeviceInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3233,8 +3254,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("F156A638-7997-48D9-A10C-269D46533F48"), exclusiveto, contract] */
                 MIDL_INTERFACE("F156A638-7997-48D9-A10C-269D46533F48")
-                IDeviceInformation2 : IInspectable
+                IDeviceInformation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Enumeration::DeviceInformationKind * value
                         ) = 0;
@@ -3276,8 +3298,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("85138C02-4EE6-4914-8370-107A39144C0E"), exclusiveto, contract] */
                 MIDL_INTERFACE("85138C02-4EE6-4914-8370-107A39144C0E")
-                IDeviceInformationCustomPairing : IInspectable
+                IDeviceInformationCustomPairing : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE PairAsync(
                         /* [in] */ABI::Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDevicePairingResult * * result
@@ -3335,8 +3358,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("2C4769F5-F684-40D5-8469-E8DBAAB70485"), exclusiveto, contract] */
                 MIDL_INTERFACE("2C4769F5-F684-40D5-8469-E8DBAAB70485")
-                IDeviceInformationPairing : IInspectable
+                IDeviceInformationPairing : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPaired(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3385,8 +3409,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("F68612FD-0AEE-4328-85CC-1C742BB1790D"), exclusiveto, contract] */
                 MIDL_INTERFACE("F68612FD-0AEE-4328-85CC-1C742BB1790D")
-                IDeviceInformationPairing2 : IInspectable
+                IDeviceInformationPairing2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProtectionLevel(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Enumeration::DevicePairingProtectionLevel * value
                         ) = 0;
@@ -3436,8 +3461,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("E915C408-36D4-49A1-BF13-514173799B6B"), exclusiveto, contract] */
                 MIDL_INTERFACE("E915C408-36D4-49A1-BF13-514173799B6B")
-                IDeviceInformationPairingStatics : IInspectable
+                IDeviceInformationPairingStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryRegisterForAllInboundPairingRequests(
                         /* [in] */ABI::Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported,
                         /* [retval, out] */__RPC__out boolean * result
@@ -3477,8 +3503,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("C17F100E-3A46-4A78-8013-769DC9B97390"), exclusiveto, contract] */
                 MIDL_INTERFACE("C17F100E-3A46-4A78-8013-769DC9B97390")
-                IDeviceInformationStatics : IInspectable
+                IDeviceInformationStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromIdAsync(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation * * asyncOp
@@ -3555,8 +3582,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("493B4F34-A84F-45FD-9167-15D1CB1BD1F9"), exclusiveto, contract] */
                 MIDL_INTERFACE("493B4F34-A84F-45FD-9167-15D1CB1BD1F9")
-                IDeviceInformationStatics2 : IInspectable
+                IDeviceInformationStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAqsFilterFromDeviceClass(
                         /* [in] */ABI::Windows::Devices::Enumeration::DeviceClass deviceClass,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * aqsFilter
@@ -3614,8 +3642,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("8F315305-D972-44B7-A37E-9E822C78213B"), exclusiveto, contract] */
                 MIDL_INTERFACE("8F315305-D972-44B7-A37E-9E822C78213B")
-                IDeviceInformationUpdate : IInspectable
+                IDeviceInformationUpdate : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3657,8 +3686,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("5D9D148C-A873-485E-BAA6-AA620788E3CC"), exclusiveto, contract] */
                 MIDL_INTERFACE("5D9D148C-A873-485E-BAA6-AA620788E3CC")
-                IDeviceInformationUpdate2 : IInspectable
+                IDeviceInformationUpdate2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Enumeration::DeviceInformationKind * value
                         ) = 0;
@@ -3697,8 +3727,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("F717FC56-DE6B-487F-8376-0180ACA69963"), exclusiveto, contract] */
                 MIDL_INTERFACE("F717FC56-DE6B-487F-8376-0180ACA69963")
-                IDevicePairingRequestedEventArgs : IInspectable
+                IDevicePairingRequestedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceInformation(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceInformation * * value
                         ) = 0;
@@ -3750,8 +3781,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("072B02BF-DD95-4025-9B37-DE51ADBA37B7"), exclusiveto, contract] */
                 MIDL_INTERFACE("072B02BF-DD95-4025-9B37-DE51ADBA37B7")
-                IDevicePairingResult : IInspectable
+                IDevicePairingResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Enumeration::DevicePairingResultStatus * status
                         ) = 0;
@@ -3790,8 +3822,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("482CB27C-83BB-420E-BE51-6602B222DE54"), contract] */
                 MIDL_INTERFACE("482CB27C-83BB-420E-BE51-6602B222DE54")
-                IDevicePairingSettings : IInspectable
+                IDevicePairingSettings : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -3827,8 +3860,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("84997AA2-034A-4440-8813-7D0BD479BF5A"), exclusiveto, contract] */
                 MIDL_INTERFACE("84997AA2-034A-4440-8813-7D0BD479BF5A")
-                IDevicePicker : IInspectable
+                IDevicePicker : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Filter(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDevicePickerFilter * * filter
                         ) = 0;
@@ -3916,8 +3950,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("E69A12C6-E627-4ED8-9B6C-460AF445E56D"), exclusiveto, contract] */
                 MIDL_INTERFACE("E69A12C6-E627-4ED8-9B6C-460AF445E56D")
-                IDevicePickerAppearance : IInspectable
+                IDevicePickerAppearance : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Title(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3995,8 +4030,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("91DB92A2-57CB-48F1-9B59-A59B7A1F02A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("91DB92A2-57CB-48F1-9B59-A59B7A1F02A2")
-                IDevicePickerFilter : IInspectable
+                IDevicePickerFilter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedDeviceClasses(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CDevices__CEnumeration__CDeviceClass * * value
                         ) = 0;
@@ -4038,8 +4074,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("269EDADE-1D2F-4940-8402-4156B81D3C77"), exclusiveto, contract] */
                 MIDL_INTERFACE("269EDADE-1D2F-4940-8402-4156B81D3C77")
-                IDeviceSelectedEventArgs : IInspectable
+                IDeviceSelectedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectedDevice(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceInformation * * value
                         ) = 0;
@@ -4078,8 +4115,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("66F44AD3-79D9-444B-92CF-A92EF72571C7"), exclusiveto, contract] */
                 MIDL_INTERFACE("66F44AD3-79D9-444B-92CF-A92EF72571C7")
-                IDeviceUnpairingResult : IInspectable
+                IDeviceUnpairingResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Enumeration::DeviceUnpairingResultStatus * status
                         ) = 0;
@@ -4118,8 +4156,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("C9EAB97D-8F6B-4F96-A9F4-ABC814E22271"), exclusiveto, contract] */
                 MIDL_INTERFACE("C9EAB97D-8F6B-4F96-A9F4-ABC814E22271")
-                IDeviceWatcher : IInspectable
+                IDeviceWatcher : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Added(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -4195,8 +4234,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("FF08456E-ED14-49E9-9A69-8117C54AE971"), exclusiveto, contract] */
                 MIDL_INTERFACE("FF08456E-ED14-49E9-9A69-8117C54AE971")
-                IDeviceWatcher2 : IInspectable
+                IDeviceWatcher2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetBackgroundTrigger(
                         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CDevices__CEnumeration__CDeviceWatcherEventKind * requestedEventKinds,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IDeviceWatcherTrigger * * trigger
@@ -4236,8 +4276,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("74AA9C0B-1DBD-47FD-B635-3CC556D0FF8B"), exclusiveto, contract] */
                 MIDL_INTERFACE("74AA9C0B-1DBD-47FD-B635-3CC556D0FF8B")
-                IDeviceWatcherEvent : IInspectable
+                IDeviceWatcherEvent : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::Devices::Enumeration::DeviceWatcherEventKind * value
                         ) = 0;
@@ -4282,8 +4323,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("38808119-4CB7-4E57-A56D-776D07CBFEF9"), exclusiveto, contract] */
                 MIDL_INTERFACE("38808119-4CB7-4E57-A56D-776D07CBFEF9")
-                IDeviceWatcherTriggerDetails : IInspectable
+                IDeviceWatcherTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceWatcherEvents(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceWatcherEvent * * value
                         ) = 0;
@@ -4322,8 +4364,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("42340A27-5810-459C-AABB-C65E1F813ECF"), exclusiveto, contract] */
                 MIDL_INTERFACE("42340A27-5810-459C-AABB-C65E1F813ECF")
-                IEnclosureLocation : IInspectable
+                IEnclosureLocation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InDock(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4372,8 +4415,9 @@ namespace ABI {
             namespace Enumeration {
                 /* [object, uuid("2885995B-E07D-485D-8A9E-BDF29AEF4F66"), exclusiveto, contract] */
                 MIDL_INTERFACE("2885995B-E07D-485D-8A9E-BDF29AEF4F66")
-                IEnclosureLocation2 : IInspectable
+                IEnclosureLocation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RotationAngleInDegreesClockwise(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -6900,6 +6944,7 @@ interface __FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceUnpairing
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_INTERFACE_DEFINED__
 
@@ -6947,9 +6992,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccess
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingRequestedEventArgs_INTERFACE_DEFINED__
@@ -6997,6 +7044,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInform
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingRequestedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
 
 
@@ -7053,6 +7101,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_INTERFACE_DEFINED__
 
@@ -7100,9 +7149,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_INTERFACE_DEFINED__
@@ -7150,6 +7201,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -7206,6 +7258,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatche
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_INTERFACE_DEFINED__
 
@@ -7253,9 +7306,11 @@ interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatche
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_INTERFACE_DEFINED__
@@ -7303,6 +7358,7 @@ interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatche
 
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 

@@ -760,6 +760,29 @@ typedef struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE1_
     } 	FWPM_NET_EVENT_IKEEXT_MM_FAILURE1;
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN7)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+typedef struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_
+    {
+    UINT32 failureErrorCode;
+    IPSEC_FAILURE_POINT failurePoint;
+    UINT32 flags;
+    IKEEXT_KEY_MODULE_TYPE keyingModuleType;
+    IKEEXT_MM_SA_STATE mmState;
+    IKEEXT_SA_ROLE saRole;
+    IKEEXT_AUTHENTICATION_METHOD_TYPE mmAuthMethod;
+    UINT8 endCertHash[ 20 ];
+    UINT64 mmId;
+    UINT64 mmFilterId;
+    /* [ref][string] */ wchar_t *localPrincipalNameForAuth;
+    /* [ref][string] */ wchar_t *remotePrincipalNameForAuth;
+    UINT32 numLocalPrincipalGroupSids;
+    /* [unique][string][size_is] */ LPWSTR *localPrincipalGroupSids;
+    UINT32 numRemotePrincipalGroupSids;
+    /* [unique][string][size_is] */ LPWSTR *remotePrincipalGroupSids;
+    GUID *providerContextKey;
+    } 	FWPM_NET_EVENT_IKEEXT_MM_FAILURE2;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 typedef struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_
     {
     UINT32 failureErrorCode;
@@ -781,6 +804,31 @@ typedef struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_
     UINT64 qmFilterId;
     } 	FWPM_NET_EVENT_IKEEXT_QM_FAILURE0;
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+typedef struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_
+    {
+    UINT32 failureErrorCode;
+    IPSEC_FAILURE_POINT failurePoint;
+    IKEEXT_KEY_MODULE_TYPE keyingModuleType;
+    IKEEXT_QM_SA_STATE qmState;
+    IKEEXT_SA_ROLE saRole;
+    IPSEC_TRAFFIC_TYPE saTrafficType;
+    /* [switch_is][switch_type] */ union 
+        {
+        /* [case()] */  /* Empty union arm */ 
+        /* [case()] */ FWP_CONDITION_VALUE0 localSubNet;
+        } 	;
+    /* [switch_is][switch_type] */ union 
+        {
+        /* [case()] */  /* Empty union arm */ 
+        /* [case()] */ FWP_CONDITION_VALUE0 remoteSubNet;
+        } 	;
+    UINT64 qmFilterId;
+    UINT64 mmSaLuid;
+    GUID mmProviderContextKey;
+    } 	FWPM_NET_EVENT_IKEEXT_QM_FAILURE1;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 #define FWPM_NET_EVENT_IKEEXT_EM_FAILURE_FLAG_MULTIPLE (0x00000001)
 #define FWPM_NET_EVENT_IKEEXT_EM_FAILURE_FLAG_BENIGN (0x00000002)
 typedef struct FWPM_NET_EVENT_IKEEXT_EM_FAILURE0_
@@ -1011,6 +1059,27 @@ typedef struct FWPM_NET_EVENT3_
     } 	FWPM_NET_EVENT3;
 
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+typedef struct FWPM_NET_EVENT4_
+    {
+    FWPM_NET_EVENT_HEADER3 header;
+    FWPM_NET_EVENT_TYPE type;
+    /* [switch_is][switch_type] */ union 
+        {
+        /* [case()][unique] */ FWPM_NET_EVENT_IKEEXT_MM_FAILURE2 *ikeMmFailure;
+        /* [case()][unique] */ FWPM_NET_EVENT_IKEEXT_QM_FAILURE1 *ikeQmFailure;
+        /* [case()][unique] */ FWPM_NET_EVENT_IKEEXT_EM_FAILURE1 *ikeEmFailure;
+        /* [case()][unique] */ FWPM_NET_EVENT_CLASSIFY_DROP2 *classifyDrop;
+        /* [case()][unique] */ FWPM_NET_EVENT_IPSEC_KERNEL_DROP0 *ipsecDrop;
+        /* [case()][unique] */ FWPM_NET_EVENT_IPSEC_DOSP_DROP0 *idpDrop;
+        /* [case()][unique] */ FWPM_NET_EVENT_CLASSIFY_ALLOW0 *classifyAllow;
+        /* [case()][unique] */ FWPM_NET_EVENT_CAPABILITY_DROP0 *capabilityDrop;
+        /* [case()][unique] */ FWPM_NET_EVENT_CAPABILITY_ALLOW0 *capabilityAllow;
+        /* [case()][unique] */ FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 *classifyDropMac;
+        } 	;
+    } 	FWPM_NET_EVENT4;
+
+#endif //(NTDDI_VERSION >= NTDDI_WIN10_RS4)
 typedef struct FWPM_NET_EVENT_ENUM_TEMPLATE0_
     {
     FILETIME startTime;

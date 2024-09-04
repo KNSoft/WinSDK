@@ -223,6 +223,7 @@ __inline ULONG CountOfSetBitsUlongPtr(ULONG_PTR _X)
 #define CLASS_TAG_LOCK_TRACKING             'TLcS'
 #define CLASS_TAG_LB_PROVISIONING           'PLcS'
 #define CLASS_TAG_MANAGE_DATASET            'MDcS'
+#define CLASS_TAG_ZONE_INFO                 'ZIcS'
 
 #define MAXIMUM_RETRIES 4
 

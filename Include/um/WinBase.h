@@ -1,3 +1,5 @@
+//@[contract("winbase"), comment("MVI_tracked - https://osgwiki.com/wiki/Microsoft_Virus_Initiative")];
+
 #include <winapifamily.h>
 
 /************************************************************************
@@ -594,6 +596,7 @@ typedef struct _MEMORYSTATUS {
 
 #define PROCESS_MODE_BACKGROUND_BEGIN     0x00100000
 #define PROCESS_MODE_BACKGROUND_END       0x00200000
+#define CREATE_SECURE_PROCESS             0x00400000
 
 #define CREATE_BREAKAWAY_FROM_JOB         0x01000000
 #define CREATE_PRESERVE_CODE_AUTHZ_LEVEL  0x02000000
@@ -2178,6 +2181,19 @@ OpenCommPort(
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3) // NTDDI_WIN10_RS4NTDDI_WIN10_RS4
+
+WINBASEAPI
+ULONG
+WINAPI
+GetCommPorts(
+    _Out_writes_(uPortNumbersCount) PULONG lpPortNumbers,
+    _In_                            ULONG uPortNumbersCount,
+    _Out_                           PULONG puPortNumbersFound
+    );
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3) // NTDDI_WIN10_RS4NTDDI_WIN10_RS4
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP) */
 #pragma endregion
 
@@ -3619,6 +3635,16 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROCESS_CREATION_MITIGATION_POLICY2_MODULE_TAMPERING_PROTECTION_ALWAYS_OFF        (0x00000002ui64 << 12)
 #define PROCESS_CREATION_MITIGATION_POLICY2_MODULE_TAMPERING_PROTECTION_NOINHERIT         (0x00000003ui64 << 12)
 
+//
+// Define the restricted indirect branch prediction mitigation policy options.
+//
+
+#define PROCESS_CREATION_MITIGATION_POLICY2_RESTRICT_INDIRECT_BRANCH_PREDICTION_MASK        (0x00000003ui64 << 16)
+#define PROCESS_CREATION_MITIGATION_POLICY2_RESTRICT_INDIRECT_BRANCH_PREDICTION_DEFER       (0x00000000ui64 << 16)
+#define PROCESS_CREATION_MITIGATION_POLICY2_RESTRICT_INDIRECT_BRANCH_PREDICTION_ALWAYS_ON   (0x00000001ui64 << 16)
+#define PROCESS_CREATION_MITIGATION_POLICY2_RESTRICT_INDIRECT_BRANCH_PREDICTION_ALWAYS_OFF  (0x00000002ui64 << 16)
+#define PROCESS_CREATION_MITIGATION_POLICY2_RESTRICT_INDIRECT_BRANCH_PREDICTION_RESERVED    (0x00000003ui64 << 16)
+
 #endif // _WIN32_WINNT_WINTHRESHOLD
 #endif // _WIN32_WINNT_WINBLUE
 #endif // _WIN32_WINNT_WIN8
@@ -3748,8 +3774,8 @@ SetEnvironmentVariable(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region OneCore Family or App Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP)
 
 WINBASEAPI
 DWORD
@@ -3859,7 +3885,7 @@ SetFirmwareEnvironmentVariableExW(
 
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -7209,6 +7235,7 @@ LogonUserExW (
 #define LOGON_NETCREDENTIALS_ONLY       0x00000002
 #define LOGON_ZERO_PASSWORD_BUFFER      0x80000000
 
+//@[comment("MVI_tracked")]
 WINADVAPI
 _Must_inspect_result_ BOOL
 WINAPI
@@ -9085,6 +9112,23 @@ ReadThreadProfilingData(
 #pragma endregion
 
 #endif /* (_WIN32_WINNT >= 0x0601) */
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+WINBASEAPI
+DWORD
+WINAPI
+RaiseCustomSystemEventTrigger(
+    _In_ PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG CustomSystemEventTriggerConfig
+    );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS4) */
 
 
 

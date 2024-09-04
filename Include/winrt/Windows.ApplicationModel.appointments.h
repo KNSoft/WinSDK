@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.appointments.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1864,6 +1866,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_USE
@@ -1892,6 +1895,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Appointments::Appoint
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -3268,8 +3272,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("DD002F2F-2BDD-4076-90A3-22C275312965"), exclusiveto, contract] */
                 MIDL_INTERFACE("DD002F2F-2BDD-4076-90A3-22C275312965")
-                IAppointment : IInspectable
+                IAppointment : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartTime(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                         ) = 0;
@@ -3384,8 +3389,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("5E85983C-540F-3452-9B5C-0DD7AD4C65A2"), exclusiveto, contract] */
                 MIDL_INTERFACE("5E85983C-540F-3452-9B5C-0DD7AD4C65A2")
-                IAppointment2 : IInspectable
+                IAppointment2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3486,8 +3492,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("BFCC45A9-8961-4991-934B-C48768E5A96C"), exclusiveto, contract] */
                 MIDL_INTERFACE("BFCC45A9-8961-4991-934B-C48768E5A96C")
-                IAppointment3 : IInspectable
+                IAppointment3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeNumber(
                         /* [retval, out] */__RPC__out UINT64 * value
                         ) = 0;
@@ -3538,8 +3545,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("5273819D-8339-3D4F-A02F-64084452BB5D"), exclusiveto, contract] */
                 MIDL_INTERFACE("5273819D-8339-3D4F-A02F-64084452BB5D")
-                IAppointmentCalendar : IInspectable
+                IAppointmentCalendar : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayColor(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                         ) = 0;
@@ -3678,8 +3686,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("18E7E422-2467-4E1C-A459-D8A29303D092"), exclusiveto, contract] */
                 MIDL_INTERFACE("18E7E422-2467-4E1C-A459-D8A29303D092")
-                IAppointmentCalendar2 : IInspectable
+                IAppointmentCalendar2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SyncManager(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::IAppointmentCalendarSyncManager * * value
                         ) = 0;
@@ -3811,8 +3820,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("EB23D22B-A685-42AE-8495-B3119ADB4167"), exclusiveto, contract] */
                 MIDL_INTERFACE("EB23D22B-A685-42AE-8495-B3119ADB4167")
-                IAppointmentCalendar3 : IInspectable
+                IAppointmentCalendar3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE RegisterSyncManagerAsync(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * result
                         ) = 0;
@@ -3851,8 +3861,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("2B21B3A0-4AFF-4392-BC5F-5645FFCFFB17"), exclusiveto, contract] */
                 MIDL_INTERFACE("2B21B3A0-4AFF-4392-BC5F-5645FFCFFB17")
-                IAppointmentCalendarSyncManager : IInspectable
+                IAppointmentCalendarSyncManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Appointments::AppointmentCalendarSyncStatus * value
                         ) = 0;
@@ -3907,8 +3918,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("647528AD-0D29-4C7C-AAA7-BF996805537C"), exclusiveto, contract] */
                 MIDL_INTERFACE("647528AD-0D29-4C7C-AAA7-BF996805537C")
-                IAppointmentCalendarSyncManager2 : IInspectable
+                IAppointmentCalendarSyncManager2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Status(
                         /* [in] */ABI::Windows::ApplicationModel::Appointments::AppointmentCalendarSyncStatus value
                         ) = 0;
@@ -3953,8 +3965,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("D5CDF0BE-2F2F-3B7D-AF0A-A7E20F3A46E3"), exclusiveto, contract] */
                 MIDL_INTERFACE("D5CDF0BE-2F2F-3B7D-AF0A-A7E20F3A46E3")
-                IAppointmentConflictResult : IInspectable
+                IAppointmentConflictResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Appointments::AppointmentConflictType * value
                         ) = 0;
@@ -3996,8 +4009,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("A2076767-16F6-4BCE-9F5A-8600B8019FCB"), exclusiveto, contract] */
                 MIDL_INTERFACE("A2076767-16F6-4BCE-9F5A-8600B8019FCB")
-                IAppointmentException : IInspectable
+                IAppointmentException : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Appointment(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::IAppointment * * value
                         ) = 0;
@@ -4046,8 +4060,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("13BF0796-9842-495B-B0E7-EF8F79C0701D"), exclusiveto, contract] */
                 MIDL_INTERFACE("13BF0796-9842-495B-B0E7-EF8F79C0701D")
-                IAppointmentInvitee : IInspectable
+                IAppointmentInvitee : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Role(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Appointments::AppointmentParticipantRole * value
                         ) = 0;
@@ -4095,8 +4110,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("70261423-73CC-4660-B318-B01365302A03"), exclusiveto, contract] */
                 MIDL_INTERFACE("70261423-73CC-4660-B318-B01365302A03")
-                IAppointmentManagerForUser : IInspectable
+                IAppointmentManagerForUser : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowAddAppointmentAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Appointments::IAppointment * appointment,
                         /* [in] */ABI::Windows::Foundation::Rect selection,
@@ -4207,8 +4223,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("3A30FA01-5C40-499D-B33F-A43050F74FC4"), exclusiveto, contract] */
                 MIDL_INTERFACE("3A30FA01-5C40-499D-B33F-A43050F74FC4")
-                IAppointmentManagerStatics : IInspectable
+                IAppointmentManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowAddAppointmentAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Appointments::IAppointment * appointment,
                         /* [in] */ABI::Windows::Foundation::Rect selection,
@@ -4299,8 +4316,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("0A81F60D-D04F-4034-AF72-A36573B45FF0"), exclusiveto, contract] */
                 MIDL_INTERFACE("0A81F60D-D04F-4034-AF72-A36573B45FF0")
-                IAppointmentManagerStatics2 : IInspectable
+                IAppointmentManagerStatics2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowAppointmentDetailsAsync(
                         /* [in] */__RPC__in HSTRING appointmentId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncAction
@@ -4353,8 +4371,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("2F9AE09C-B34C-4DC7-A35D-CAFD88AE3EC6"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F9AE09C-B34C-4DC7-A35D-CAFD88AE3EC6")
-                IAppointmentManagerStatics3 : IInspectable
+                IAppointmentManagerStatics3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetForUser(
                         /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::IAppointmentManagerForUser * * result
@@ -4391,8 +4410,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("615E2902-9718-467B-83FB-B293A19121DE"), contract] */
                 MIDL_INTERFACE("615E2902-9718-467B-83FB-B293A19121DE")
-                IAppointmentParticipant : IInspectable
+                IAppointmentParticipant : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4440,8 +4460,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("25141FE9-68AE-3AAE-855F-BC4441CAA234"), exclusiveto, contract] */
                 MIDL_INTERFACE("25141FE9-68AE-3AAE-855F-BC4441CAA234")
-                IAppointmentPropertiesStatics : IInspectable
+                IAppointmentPropertiesStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Subject(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4550,8 +4571,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("DFFC434B-B017-45DD-8AF5-D163D10801BB"), exclusiveto, contract] */
                 MIDL_INTERFACE("DFFC434B-B017-45DD-8AF5-D163D10801BB")
-                IAppointmentPropertiesStatics2 : IInspectable
+                IAppointmentPropertiesStatics2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeNumber(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4596,8 +4618,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("D87B3E83-15A6-487B-B959-0C361E60E954"), exclusiveto, contract] */
                 MIDL_INTERFACE("D87B3E83-15A6-487B-B959-0C361E60E954")
-                IAppointmentRecurrence : IInspectable
+                IAppointmentRecurrence : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Unit(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Appointments::AppointmentRecurrenceUnit * value
                         ) = 0;
@@ -4685,8 +4708,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("3DF3A2E0-05A7-4F50-9F86-B03F9436254D"), exclusiveto, contract] */
                 MIDL_INTERFACE("3DF3A2E0-05A7-4F50-9F86-B03F9436254D")
-                IAppointmentRecurrence2 : IInspectable
+                IAppointmentRecurrence2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecurrenceType(
                         /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Appointments::RecurrenceType * value
                         ) = 0;
@@ -4736,8 +4760,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("89FF96D9-DA4D-4A17-8DD2-1CEBC2B5FF9D"), exclusiveto, contract] */
                 MIDL_INTERFACE("89FF96D9-DA4D-4A17-8DD2-1CEBC2B5FF9D")
-                IAppointmentRecurrence3 : IInspectable
+                IAppointmentRecurrence3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CalendarIdentifier(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -4776,8 +4801,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("A461918C-7A47-4D96-96C9-15CD8A05A735"), exclusiveto, contract] */
                 MIDL_INTERFACE("A461918C-7A47-4D96-96C9-15CD8A05A735")
-                IAppointmentStore : IInspectable
+                IAppointmentStore : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChangeTracker(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::IAppointmentStoreChangeTracker * * value
                         ) = 0;
@@ -4917,8 +4943,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("25C48C20-1C41-424F-8084-67C1CFE0A854"), exclusiveto, contract] */
                 MIDL_INTERFACE("25C48C20-1C41-424F-8084-67C1CFE0A854")
-                IAppointmentStore2 : IInspectable
+                IAppointmentStore2 : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_StoreChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs * pHandler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * pToken
@@ -4966,8 +4993,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("4251940B-B078-470A-9A40-C2E01761F72F"), exclusiveto, contract] */
                 MIDL_INTERFACE("4251940B-B078-470A-9A40-C2E01761F72F")
-                IAppointmentStore3 : IInspectable
+                IAppointmentStore3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetChangeTracker(
                         /* [in] */__RPC__in HSTRING identity,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::IAppointmentStoreChangeTracker * * result
@@ -5007,8 +5035,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("A5A6E035-0A33-3654-8463-B543E90C3B79"), exclusiveto, contract] */
                 MIDL_INTERFACE("A5A6E035-0A33-3654-8463-B543E90C3B79")
-                IAppointmentStoreChange : IInspectable
+                IAppointmentStoreChange : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Appointment(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::IAppointment * * value
                         ) = 0;
@@ -5054,8 +5083,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("B37D0DCE-5211-4402-A608-A96FE70B8EE2"), exclusiveto, contract] */
                 MIDL_INTERFACE("B37D0DCE-5211-4402-A608-A96FE70B8EE2")
-                IAppointmentStoreChange2 : IInspectable
+                IAppointmentStoreChange2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppointmentCalendar(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::IAppointmentCalendar * * value
                         ) = 0;
@@ -5094,8 +5124,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("8B2409F1-65F3-42A0-961D-4C209BF30370"), exclusiveto, contract] */
                 MIDL_INTERFACE("8B2409F1-65F3-42A0-961D-4C209BF30370")
-                IAppointmentStoreChangeReader : IInspectable
+                IAppointmentStoreChangeReader : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ReadBatchAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentStoreChange * * result
                         ) = 0;
@@ -5138,8 +5169,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("1B25F4B1-8ECE-4F17-93C8-E6412458FD5C"), exclusiveto, contract] */
                 MIDL_INTERFACE("1B25F4B1-8ECE-4F17-93C8-E6412458FD5C")
-                IAppointmentStoreChangeTracker : IInspectable
+                IAppointmentStoreChangeTracker : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetChangeReader(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::IAppointmentStoreChangeReader * * value
                         ) = 0;
@@ -5180,8 +5212,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("B66AAF45-9542-4CF7-8550-EB370E0C08D3"), exclusiveto, contract] */
                 MIDL_INTERFACE("B66AAF45-9542-4CF7-8550-EB370E0C08D3")
-                IAppointmentStoreChangeTracker2 : IInspectable
+                IAppointmentStoreChangeTracker2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTracking(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -5220,8 +5253,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("4CB82026-FEDB-4BC3-9662-95A9BEFDF4DF"), exclusiveto, contract] */
                 MIDL_INTERFACE("4CB82026-FEDB-4BC3-9662-95A9BEFDF4DF")
-                IAppointmentStoreChangedDeferral : IInspectable
+                IAppointmentStoreChangedDeferral : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                     
                 };
@@ -5258,8 +5292,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("2285F8B9-0791-417E-BFEA-CC6D41636C8C"), exclusiveto, contract] */
                 MIDL_INTERFACE("2285F8B9-0791-417E-BFEA-CC6D41636C8C")
-                IAppointmentStoreChangedEventArgs : IInspectable
+                IAppointmentStoreChangedEventArgs : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::IAppointmentStoreChangedDeferral * * result
                         ) = 0;
@@ -5298,8 +5333,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("9B33CB11-C301-421E-AFEF-047ECFA76ADB"), exclusiveto, contract] */
                 MIDL_INTERFACE("9B33CB11-C301-421E-AFEF-047ECFA76ADB")
-                IAppointmentStoreNotificationTriggerDetails : IInspectable
+                IAppointmentStoreNotificationTriggerDetails : public IInspectable
                 {
+                public:
                     
                 };
 
@@ -5335,8 +5371,9 @@ namespace ABI {
             namespace Appointments {
                 /* [object, uuid("55F7DC55-9942-3086-82B5-2CB29F64D5F5"), exclusiveto, contract] */
                 MIDL_INTERFACE("55F7DC55-9942-3086-82B5-2CB29F64D5F5")
-                IFindAppointmentsOptions : IInspectable
+                IFindAppointmentsOptions : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CalendarIds(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
                         ) = 0;
@@ -8528,6 +8565,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAp
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_INTERFACE_DEFINED__
 
@@ -8574,6 +8612,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAp
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 struct __x_ABI_CWindows_CFoundation_CTimeSpan;

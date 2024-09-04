@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.appointments.dataprovider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -508,6 +510,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarCancelMeetingRequestEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarCancelMeetingRequestEventArgs_USE
@@ -537,6 +540,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Appointments::DataPro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -551,6 +555,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs_USE
@@ -581,6 +586,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Appointments::DataPro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -595,6 +601,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarForwardMeetingRequestEventArgs_USE
@@ -625,6 +632,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Appointments::DataPro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -639,6 +647,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs_USE
@@ -669,6 +678,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Appointments::DataPro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -683,6 +693,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarSyncManagerSyncRequestEventArgs_USE
@@ -713,6 +724,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Appointments::DataPro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -727,6 +739,7 @@ namespace ABI {
     } /* DataProvider */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarUpdateMeetingResponseRequestEventArgs_USE
@@ -756,6 +769,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Appointments::DataPro
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarUpdateMeetingResponseRequestEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 namespace ABI {
@@ -1233,8 +1247,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("49460F8D-6434-40D7-AD46-6297419314D1"), exclusiveto, contract] */
                     MIDL_INTERFACE("49460F8D-6434-40D7-AD46-6297419314D1")
-                    IAppointmentCalendarCancelMeetingRequest : IInspectable
+                    IAppointmentCalendarCancelMeetingRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppointmentCalendarLocalId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1296,8 +1311,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("1A79BE16-7F30-4E35-BEEF-9D2C7B6DCAE1"), exclusiveto, contract] */
                     MIDL_INTERFACE("1A79BE16-7F30-4E35-BEEF-9D2C7B6DCAE1")
-                    IAppointmentCalendarCancelMeetingRequestEventArgs : IInspectable
+                    IAppointmentCalendarCancelMeetingRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarCancelMeetingRequest * * value
                             ) = 0;
@@ -1341,8 +1357,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("2E62F2B2-CA96-48AC-9124-406B19FEFA70"), exclusiveto, contract] */
                     MIDL_INTERFACE("2E62F2B2-CA96-48AC-9124-406B19FEFA70")
-                    IAppointmentCalendarCreateOrUpdateAppointmentRequest : IInspectable
+                    IAppointmentCalendarCreateOrUpdateAppointmentRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppointmentCalendarLocalId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1399,8 +1416,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("CF8DED28-002E-4BF7-8E9D-5E20D49AA3BA"), exclusiveto, contract] */
                     MIDL_INTERFACE("CF8DED28-002E-4BF7-8E9D-5E20D49AA3BA")
-                    IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs : IInspectable
+                    IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarCreateOrUpdateAppointmentRequest * * value
                             ) = 0;
@@ -1444,8 +1462,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("82E5EE56-26B6-4253-8A8F-6CF5F2FF7884"), exclusiveto, contract] */
                     MIDL_INTERFACE("82E5EE56-26B6-4253-8A8F-6CF5F2FF7884")
-                    IAppointmentCalendarForwardMeetingRequest : IInspectable
+                    IAppointmentCalendarForwardMeetingRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppointmentCalendarLocalId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1510,8 +1529,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("3109151A-23A2-42FD-9C82-C9A60D59F8A8"), exclusiveto, contract] */
                     MIDL_INTERFACE("3109151A-23A2-42FD-9C82-C9A60D59F8A8")
-                    IAppointmentCalendarForwardMeetingRequestEventArgs : IInspectable
+                    IAppointmentCalendarForwardMeetingRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarForwardMeetingRequest * * value
                             ) = 0;
@@ -1555,8 +1575,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("CE1C63F5-EDF6-43C3-82B7-BE6B368C6900"), exclusiveto, contract] */
                     MIDL_INTERFACE("CE1C63F5-EDF6-43C3-82B7-BE6B368C6900")
-                    IAppointmentCalendarProposeNewTimeForMeetingRequest : IInspectable
+                    IAppointmentCalendarProposeNewTimeForMeetingRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppointmentCalendarLocalId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1621,8 +1642,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("D2D777D8-FED1-4280-A3BA-2E1F47609AA2"), exclusiveto, contract] */
                     MIDL_INTERFACE("D2D777D8-FED1-4280-A3BA-2E1F47609AA2")
-                    IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs : IInspectable
+                    IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarProposeNewTimeForMeetingRequest * * value
                             ) = 0;
@@ -1666,8 +1688,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("12AB382B-7163-4A56-9A4E-7223A84ADF46"), exclusiveto, contract] */
                     MIDL_INTERFACE("12AB382B-7163-4A56-9A4E-7223A84ADF46")
-                    IAppointmentCalendarSyncManagerSyncRequest : IInspectable
+                    IAppointmentCalendarSyncManagerSyncRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppointmentCalendarLocalId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1714,8 +1737,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("CA17C6F7-0284-4EDD-87BA-4D8F69DCF5C0"), exclusiveto, contract] */
                     MIDL_INTERFACE("CA17C6F7-0284-4EDD-87BA-4D8F69DCF5C0")
-                    IAppointmentCalendarSyncManagerSyncRequestEventArgs : IInspectable
+                    IAppointmentCalendarSyncManagerSyncRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarSyncManagerSyncRequest * * value
                             ) = 0;
@@ -1759,8 +1783,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("A36D608C-C29D-4B94-B086-7E9FF7BD84A0"), exclusiveto, contract] */
                     MIDL_INTERFACE("A36D608C-C29D-4B94-B086-7E9FF7BD84A0")
-                    IAppointmentCalendarUpdateMeetingResponseRequest : IInspectable
+                    IAppointmentCalendarUpdateMeetingResponseRequest : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AppointmentCalendarLocalId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1825,8 +1850,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("88759883-97BF-479D-AED5-0BE8CE567D1E"), exclusiveto, contract] */
                     MIDL_INTERFACE("88759883-97BF-479D-AED5-0BE8CE567D1E")
-                    IAppointmentCalendarUpdateMeetingResponseRequestEventArgs : IInspectable
+                    IAppointmentCalendarUpdateMeetingResponseRequestEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarUpdateMeetingResponseRequest * * value
                             ) = 0;
@@ -1870,8 +1896,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("F3DD9D83-3254-465F-ABDB-928046552CF4"), exclusiveto, contract] */
                     MIDL_INTERFACE("F3DD9D83-3254-465F-ABDB-928046552CF4")
-                    IAppointmentDataProviderConnection : IInspectable
+                    IAppointmentDataProviderConnection : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SyncRequested(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarSyncManagerSyncRequestEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1952,8 +1979,9 @@ namespace ABI {
                 namespace DataProvider {
                     /* [object, uuid("B3283C01-7E12-4E5E-B1EF-74FB68AC6F2A"), exclusiveto, contract] */
                     MIDL_INTERFACE("B3283C01-7E12-4E5E-B1EF-74FB68AC6F2A")
-                    IAppointmentDataProviderTriggerDetails : IInspectable
+                    IAppointmentDataProviderTriggerDetails : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Connection(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Appointments::DataProvider::IAppointmentDataProviderConnection * * value
                             ) = 0;
@@ -2403,6 +2431,7 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CAppointments_CDataProvider
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarCancelMeetingRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarCancelMeetingRequestEventArgs_INTERFACE_DEFINED__
 
@@ -2450,9 +2479,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDa
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarCancelMeetingRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs_INTERFACE_DEFINED__
@@ -2501,9 +2532,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDa
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarForwardMeetingRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarForwardMeetingRequestEventArgs_INTERFACE_DEFINED__
@@ -2552,9 +2585,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDa
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarForwardMeetingRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs_INTERFACE_DEFINED__
@@ -2603,9 +2638,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDa
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__
@@ -2654,9 +2691,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDa
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarSyncManagerSyncRequestEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarUpdateMeetingResponseRequestEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarUpdateMeetingResponseRequestEventArgs_INTERFACE_DEFINED__
@@ -2704,6 +2743,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDa
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentDataProviderConnection_Windows__CApplicationModel__CAppointments__CDataProvider__CAppointmentCalendarUpdateMeetingResponseRequestEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 struct __x_ABI_CWindows_CFoundation_CDateTime;

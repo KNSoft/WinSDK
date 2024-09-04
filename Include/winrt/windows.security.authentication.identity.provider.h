@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.authentication.identity.provider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1346,6 +1348,51 @@ namespace ABI {
                             SecondaryAuthenticationFactorAuthenticationMessage_SayPassphrase = 17,
                             SecondaryAuthenticationFactorAuthenticationMessage_ReadyToSignIn = 18,
                             SecondaryAuthenticationFactorAuthenticationMessage_UseAnotherSignInOption = 19,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+                            SecondaryAuthenticationFactorAuthenticationMessage_ConnectionRequired = 20,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+                            SecondaryAuthenticationFactorAuthenticationMessage_TimeLimitExceeded = 21,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+                            SecondaryAuthenticationFactorAuthenticationMessage_CanceledByUser = 22,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+                            SecondaryAuthenticationFactorAuthenticationMessage_CenterHand = 23,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+                            SecondaryAuthenticationFactorAuthenticationMessage_MoveHandCloser = 24,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+                            SecondaryAuthenticationFactorAuthenticationMessage_MoveHandFarther = 25,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+                            SecondaryAuthenticationFactorAuthenticationMessage_PlaceHandAbove = 26,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+                            SecondaryAuthenticationFactorAuthenticationMessage_RecognitionFailed = 27,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
+                            SecondaryAuthenticationFactorAuthenticationMessage_DeviceUnavailable = 28,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+                            
                         };
                         
                     } /* Windows */
@@ -1721,8 +1768,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("020A16E5-6A25-40A3-8C00-50A023F619D1"), exclusiveto, contract] */
                         MIDL_INTERFACE("020A16E5-6A25-40A3-8C00-50A023F619D1")
-                        ISecondaryAuthenticationFactorAuthentication : IInspectable
+                        ISecondaryAuthenticationFactorAuthentication : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceAuthenticationHmac(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                                 ) = 0;
@@ -1783,8 +1831,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("9CBB5987-EF6D-4BC2-BF49-4617515A0F9A"), exclusiveto, contract] */
                         MIDL_INTERFACE("9CBB5987-EF6D-4BC2-BF49-4617515A0F9A")
-                        ISecondaryAuthenticationFactorAuthenticationResult : IInspectable
+                        ISecondaryAuthenticationFactorAuthenticationResult : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                                 /* [retval, out] */__RPC__out ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStatus * value
                                 ) = 0;
@@ -1830,8 +1879,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("D4A5EE56-7291-4073-BC1F-CCB8F5AFDF96"), exclusiveto, contract] */
                         MIDL_INTERFACE("D4A5EE56-7291-4073-BC1F-CCB8F5AFDF96")
-                        ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs : IInspectable
+                        ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StageInfo(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthenticationStageInfo * * value
                                 ) = 0;
@@ -1874,8 +1924,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("56FEC28B-E8AA-4C0F-8E4C-A559E73ADD88"), exclusiveto, contract] */
                         MIDL_INTERFACE("56FEC28B-E8AA-4C0F-8E4C-A559E73ADD88")
-                        ISecondaryAuthenticationFactorAuthenticationStageInfo : IInspectable
+                        ISecondaryAuthenticationFactorAuthenticationStageInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Stage(
                                 /* [retval, out] */__RPC__out ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStage * value
                                 ) = 0;
@@ -1924,8 +1975,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("3F582656-28F8-4E0F-AE8C-5898B9AE2469"), exclusiveto, contract] */
                         MIDL_INTERFACE("3F582656-28F8-4E0F-AE8C-5898B9AE2469")
-                        ISecondaryAuthenticationFactorAuthenticationStatics : IInspectable
+                        ISecondaryAuthenticationFactorAuthenticationStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE ShowNotificationMessageAsync(
                                 /* [in] */__RPC__in HSTRING deviceName,
                                 /* [in] */ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationMessage message,
@@ -1985,8 +2037,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("90499A19-7EF2-4523-951C-A417A24ACF93"), exclusiveto, contract] */
                         MIDL_INTERFACE("90499A19-7EF2-4523-951C-A417A24ACF93")
-                        ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics : IInspectable
+                        ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics : public IInspectable
                         {
+                        public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE RegisterDevicePresenceMonitoringAsync(
                                 /* [in] */__RPC__in HSTRING deviceId,
                                 /* [in] */__RPC__in HSTRING deviceInstancePath,
@@ -2048,8 +2101,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("1E2BA861-8533-4FCE-839B-ECB72410AC14"), exclusiveto, contract] */
                         MIDL_INTERFACE("1E2BA861-8533-4FCE-839B-ECB72410AC14")
-                        ISecondaryAuthenticationFactorInfo : IInspectable
+                        ISecondaryAuthenticationFactorInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * deviceId
                                 ) = 0;
@@ -2105,8 +2159,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("14D981A3-FC26-4FF7-ABC3-48E82A512A0A"), exclusiveto, contract] */
                         MIDL_INTERFACE("14D981A3-FC26-4FF7-ABC3-48E82A512A0A")
-                        ISecondaryAuthenticationFactorInfo2 : IInspectable
+                        ISecondaryAuthenticationFactorInfo2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PresenceMonitoringMode(
                                 /* [retval, out] */__RPC__out ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode * value
                                 ) = 0;
@@ -2156,8 +2211,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("9F4CBBB4-8CBA-48B0-840D-DBB22A54C678"), exclusiveto, contract] */
                         MIDL_INTERFACE("9F4CBBB4-8CBA-48B0-840D-DBB22A54C678")
-                        ISecondaryAuthenticationFactorRegistration : IInspectable
+                        ISecondaryAuthenticationFactorRegistration : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE FinishRegisteringDeviceAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * deviceConfigurationData,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * result
@@ -2205,8 +2261,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("A4FE35F0-ADE3-4981-AF6B-EC195921682A"), exclusiveto, contract] */
                         MIDL_INTERFACE("A4FE35F0-ADE3-4981-AF6B-EC195921682A")
-                        ISecondaryAuthenticationFactorRegistrationResult : IInspectable
+                        ISecondaryAuthenticationFactorRegistrationResult : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                                 /* [retval, out] */__RPC__out ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationStatus * value
                                 ) = 0;
@@ -2252,8 +2309,9 @@ namespace ABI {
                     namespace Provider {
                         /* [object, uuid("1ADF0F65-E3B7-4155-997F-B756EF65BEBA"), exclusiveto, contract] */
                         MIDL_INTERFACE("1ADF0F65-E3B7-4155-997F-B756EF65BEBA")
-                        ISecondaryAuthenticationFactorRegistrationStatics : IInspectable
+                        ISecondaryAuthenticationFactorRegistrationStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE RequestStartRegisteringDeviceAsync(
                                 /* [in] */__RPC__in HSTRING deviceId,
                                 /* [in] */ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceCapabilities capabilities,
@@ -3661,6 +3719,51 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAu
     SecondaryAuthenticationFactorAuthenticationMessage_SayPassphrase = 17,
     SecondaryAuthenticationFactorAuthenticationMessage_ReadyToSignIn = 18,
     SecondaryAuthenticationFactorAuthenticationMessage_UseAnotherSignInOption = 19,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    SecondaryAuthenticationFactorAuthenticationMessage_ConnectionRequired = 20,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    SecondaryAuthenticationFactorAuthenticationMessage_TimeLimitExceeded = 21,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    SecondaryAuthenticationFactorAuthenticationMessage_CanceledByUser = 22,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    SecondaryAuthenticationFactorAuthenticationMessage_CenterHand = 23,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    SecondaryAuthenticationFactorAuthenticationMessage_MoveHandCloser = 24,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    SecondaryAuthenticationFactorAuthenticationMessage_MoveHandFarther = 25,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    SecondaryAuthenticationFactorAuthenticationMessage_PlaceHandAbove = 26,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    SecondaryAuthenticationFactorAuthenticationMessage_RecognitionFailed = 27,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
+    SecondaryAuthenticationFactorAuthenticationMessage_DeviceUnavailable = 28,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 

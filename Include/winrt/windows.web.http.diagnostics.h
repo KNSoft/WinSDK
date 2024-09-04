@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.web.http.diagnostics.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -508,6 +510,7 @@ namespace ABI {
 
 
 #if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
+#if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderRequestResponseCompletedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderRequestResponseCompletedEventArgs_USE
@@ -537,6 +540,7 @@ typedef ITypedEventHandler<ABI::Windows::Web::Http::Diagnostics::HttpDiagnosticP
 
 
 #endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -551,6 +555,7 @@ namespace ABI {
     } /* Diagnostics */} /* ABI */
 
 
+#if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 #if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderRequestSentEventArgs_USE
@@ -581,6 +586,7 @@ typedef ITypedEventHandler<ABI::Windows::Web::Http::Diagnostics::HttpDiagnosticP
 
 
 #endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -595,6 +601,7 @@ namespace ABI {
     } /* Diagnostics */} /* ABI */
 
 
+#if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 #if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderResponseReceivedEventArgs_USE
@@ -624,6 +631,7 @@ typedef ITypedEventHandler<ABI::Windows::Web::Http::Diagnostics::HttpDiagnosticP
 #endif /* DEF___FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderResponseReceivedEventArgs_USE */
 
 
+#endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -897,8 +905,9 @@ namespace ABI {
                 namespace Diagnostics {
                     /* [object, uuid("BD811501-A056-4D39-B174-833B7B03B02C"), exclusiveto, contract] */
                     MIDL_INTERFACE("BD811501-A056-4D39-B174-833B7B03B02C")
-                    IHttpDiagnosticProvider : IInspectable
+                    IHttpDiagnosticProvider : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Start(void) = 0;
                         virtual HRESULT STDMETHODCALLTYPE Stop(void) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_RequestSent(
@@ -959,8 +968,9 @@ namespace ABI {
                 namespace Diagnostics {
                     /* [object, uuid("735F98EE-94F6-4532-B26E-61E1B1E4EFD4"), exclusiveto, contract] */
                     MIDL_INTERFACE("735F98EE-94F6-4532-B26E-61E1B1E4EFD4")
-                    IHttpDiagnosticProviderRequestResponseCompletedEventArgs : IInspectable
+                    IHttpDiagnosticProviderRequestResponseCompletedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivityId(
                             /* [retval, out] */__RPC__out GUID * value
                             ) = 0;
@@ -1019,8 +1029,9 @@ namespace ABI {
                 namespace Diagnostics {
                     /* [object, uuid("E0AFDE10-55CF-4C01-91D4-A20557D849F0"), exclusiveto, contract] */
                     MIDL_INTERFACE("E0AFDE10-55CF-4C01-91D4-A20557D849F0")
-                    IHttpDiagnosticProviderRequestResponseTimestamps : IInspectable
+                    IHttpDiagnosticProviderRequestResponseTimestamps : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CacheCheckedTimestamp(
                             /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
                             ) = 0;
@@ -1085,8 +1096,9 @@ namespace ABI {
                 namespace Diagnostics {
                     /* [object, uuid("3F5196D0-4C1F-4EBE-A57A-06930771C50D"), exclusiveto, contract] */
                     MIDL_INTERFACE("3F5196D0-4C1F-4EBE-A57A-06930771C50D")
-                    IHttpDiagnosticProviderRequestSentEventArgs : IInspectable
+                    IHttpDiagnosticProviderRequestSentEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                             ) = 0;
@@ -1145,8 +1157,9 @@ namespace ABI {
                 namespace Diagnostics {
                     /* [object, uuid("A0A2566C-AB5F-4D66-BB2D-084CF41635D0"), exclusiveto, contract] */
                     MIDL_INTERFACE("A0A2566C-AB5F-4D66-BB2D-084CF41635D0")
-                    IHttpDiagnosticProviderResponseReceivedEventArgs : IInspectable
+                    IHttpDiagnosticProviderResponseReceivedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                             ) = 0;
@@ -1193,8 +1206,9 @@ namespace ABI {
                 namespace Diagnostics {
                     /* [object, uuid("5B824EC1-6A6C-47CC-AFEC-1E86BC26053B"), exclusiveto, contract] */
                     MIDL_INTERFACE("5B824EC1-6A6C-47CC-AFEC-1E86BC26053B")
-                    IHttpDiagnosticProviderStatics : IInspectable
+                    IHttpDiagnosticProviderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateFromProcessDiagnosticInfo(
                             /* [in] */__RPC__in_opt ABI::Windows::System::Diagnostics::IProcessDiagnosticInfo * processDiagnosticInfo,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider * * value
@@ -1236,8 +1250,9 @@ namespace ABI {
                 namespace Diagnostics {
                     /* [object, uuid("54A9D260-8860-423F-B6FA-D77716F647A7"), exclusiveto, contract] */
                     MIDL_INTERFACE("54A9D260-8860-423F-B6FA-D77716F647A7")
-                    IHttpDiagnosticSourceLocation : IInspectable
+                    IHttpDiagnosticSourceLocation : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourceUri(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                             ) = 0;
@@ -1735,6 +1750,7 @@ interface __FIVectorView_1_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticSo
 
 
 #if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
+#if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderRequestResponseCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderRequestResponseCompletedEventArgs_INTERFACE_DEFINED__
 
@@ -1782,9 +1798,11 @@ interface __FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagn
 #endif // ____FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderRequestResponseCompletedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 #if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderRequestSentEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderRequestSentEventArgs_INTERFACE_DEFINED__
@@ -1833,9 +1851,11 @@ interface __FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagn
 #endif // ____FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderRequestSentEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 #if WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderResponseReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderResponseReceivedEventArgs_INTERFACE_DEFINED__
@@ -1883,6 +1903,7 @@ interface __FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagn
 
 #endif // ____FITypedEventHandler_2_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProvider_Windows__CWeb__CHttp__CDiagnostics__CHttpDiagnosticProviderResponseReceivedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_WEB_HTTP_DIAGNOSTICS_HTTPDIAGNOSTICSCONTRACT_VERSION >= 0x10000
 
 struct __x_ABI_CWindows_CFoundation_CDateTime;

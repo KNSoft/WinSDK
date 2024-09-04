@@ -53,6 +53,13 @@ typedef interface IDXGIOutput6 IDXGIOutput6;
 #endif 	/* __IDXGIOutput6_FWD_DEFINED__ */
 
 
+#ifndef __IDXGIFactory6_FWD_DEFINED__
+#define __IDXGIFactory6_FWD_DEFINED__
+typedef interface IDXGIFactory6 IDXGIFactory6;
+
+#endif 	/* __IDXGIFactory6_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "dxgi1_5.h"
 
@@ -68,6 +75,7 @@ extern "C"{
 #include <winapifamily.h>
 #pragma region App Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+HRESULT WINAPI DXGIDeclareAdapterRemovalSupport();
 typedef 
 enum DXGI_ADAPTER_FLAG3
     {
@@ -708,14 +716,398 @@ EXTERN_C const IID IID_IDXGIOutput6;
 /* interface __MIDL_itf_dxgi1_6_0000_0002 */
 /* [local] */ 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
-#pragma endregion
-DEFINE_GUID(IID_IDXGIAdapter4,0x3c8d99d1,0x4fbf,0x4181,0xa8,0x2c,0xaf,0x66,0xbf,0x7b,0xd2,0x4e);
-DEFINE_GUID(IID_IDXGIOutput6,0x068346e8,0xaaec,0x4b84,0xad,0xd7,0x13,0x7f,0x51,0x3f,0x77,0xa1);
+typedef 
+enum DXGI_GPU_PREFERENCE
+    {
+        DXGI_GPU_PREFERENCE_UNSPECIFIED	= 0,
+        DXGI_GPU_PREFERENCE_MINIMUM_POWER	= ( DXGI_GPU_PREFERENCE_UNSPECIFIED + 1 ) ,
+        DXGI_GPU_PREFERENCE_HIGH_PERFORMANCE	= ( DXGI_GPU_PREFERENCE_MINIMUM_POWER + 1 ) 
+    } 	DXGI_GPU_PREFERENCE;
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_dxgi1_6_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_dxgi1_6_0000_0002_v0_0_s_ifspec;
+
+#ifndef __IDXGIFactory6_INTERFACE_DEFINED__
+#define __IDXGIFactory6_INTERFACE_DEFINED__
+
+/* interface IDXGIFactory6 */
+/* [unique][local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IDXGIFactory6;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c1b6694f-ff09-44a9-b03c-77900a0a1d17")
+    IDXGIFactory6 : public IDXGIFactory5
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE EnumAdapterByGpuPreference( 
+            /* [annotation] */ 
+            _In_  UINT Adapter,
+            /* [annotation] */ 
+            _In_  DXGI_GPU_PREFERENCE GpuPreference,
+            /* [annotation] */ 
+            _In_  REFIID riid,
+            /* [annotation] */ 
+            _COM_Outptr_  void **ppvAdapter) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IDXGIFactory6Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IDXGIFactory6 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IDXGIFactory6 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IDXGIFactory6 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetPrivateData )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  REFGUID Name,
+            /* [in] */ UINT DataSize,
+            /* [annotation][in] */ 
+            _In_reads_bytes_(DataSize)  const void *pData);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetPrivateDataInterface )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  REFGUID Name,
+            /* [annotation][in] */ 
+            _In_opt_  const IUnknown *pUnknown);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPrivateData )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  REFGUID Name,
+            /* [annotation][out][in] */ 
+            _Inout_  UINT *pDataSize,
+            /* [annotation][out] */ 
+            _Out_writes_bytes_(*pDataSize)  void *pData);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetParent )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][retval][out] */ 
+            _COM_Outptr_  void **ppParent);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnumAdapters )( 
+            IDXGIFactory6 * This,
+            /* [in] */ UINT Adapter,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IDXGIAdapter **ppAdapter);
+        
+        HRESULT ( STDMETHODCALLTYPE *MakeWindowAssociation )( 
+            IDXGIFactory6 * This,
+            HWND WindowHandle,
+            UINT Flags);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetWindowAssociation )( 
+            IDXGIFactory6 * This,
+            /* [annotation][out] */ 
+            _Out_  HWND *pWindowHandle);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateSwapChain )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  IUnknown *pDevice,
+            /* [annotation][in] */ 
+            _In_  DXGI_SWAP_CHAIN_DESC *pDesc,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IDXGISwapChain **ppSwapChain);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateSoftwareAdapter )( 
+            IDXGIFactory6 * This,
+            /* [in] */ HMODULE Module,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IDXGIAdapter **ppAdapter);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnumAdapters1 )( 
+            IDXGIFactory6 * This,
+            /* [in] */ UINT Adapter,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IDXGIAdapter1 **ppAdapter);
+        
+        BOOL ( STDMETHODCALLTYPE *IsCurrent )( 
+            IDXGIFactory6 * This);
+        
+        BOOL ( STDMETHODCALLTYPE *IsWindowedStereoEnabled )( 
+            IDXGIFactory6 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateSwapChainForHwnd )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  IUnknown *pDevice,
+            /* [annotation][in] */ 
+            _In_  HWND hWnd,
+            /* [annotation][in] */ 
+            _In_  const DXGI_SWAP_CHAIN_DESC1 *pDesc,
+            /* [annotation][in] */ 
+            _In_opt_  const DXGI_SWAP_CHAIN_FULLSCREEN_DESC *pFullscreenDesc,
+            /* [annotation][in] */ 
+            _In_opt_  IDXGIOutput *pRestrictToOutput,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IDXGISwapChain1 **ppSwapChain);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateSwapChainForCoreWindow )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  IUnknown *pDevice,
+            /* [annotation][in] */ 
+            _In_  IUnknown *pWindow,
+            /* [annotation][in] */ 
+            _In_  const DXGI_SWAP_CHAIN_DESC1 *pDesc,
+            /* [annotation][in] */ 
+            _In_opt_  IDXGIOutput *pRestrictToOutput,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IDXGISwapChain1 **ppSwapChain);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetSharedResourceAdapterLuid )( 
+            IDXGIFactory6 * This,
+            /* [annotation] */ 
+            _In_  HANDLE hResource,
+            /* [annotation] */ 
+            _Out_  LUID *pLuid);
+        
+        HRESULT ( STDMETHODCALLTYPE *RegisterStereoStatusWindow )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  HWND WindowHandle,
+            /* [annotation][in] */ 
+            _In_  UINT wMsg,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCookie);
+        
+        HRESULT ( STDMETHODCALLTYPE *RegisterStereoStatusEvent )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  HANDLE hEvent,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCookie);
+        
+        void ( STDMETHODCALLTYPE *UnregisterStereoStatus )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwCookie);
+        
+        HRESULT ( STDMETHODCALLTYPE *RegisterOcclusionStatusWindow )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  HWND WindowHandle,
+            /* [annotation][in] */ 
+            _In_  UINT wMsg,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCookie);
+        
+        HRESULT ( STDMETHODCALLTYPE *RegisterOcclusionStatusEvent )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  HANDLE hEvent,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCookie);
+        
+        void ( STDMETHODCALLTYPE *UnregisterOcclusionStatus )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwCookie);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateSwapChainForComposition )( 
+            IDXGIFactory6 * This,
+            /* [annotation][in] */ 
+            _In_  IUnknown *pDevice,
+            /* [annotation][in] */ 
+            _In_  const DXGI_SWAP_CHAIN_DESC1 *pDesc,
+            /* [annotation][in] */ 
+            _In_opt_  IDXGIOutput *pRestrictToOutput,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IDXGISwapChain1 **ppSwapChain);
+        
+        UINT ( STDMETHODCALLTYPE *GetCreationFlags )( 
+            IDXGIFactory6 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnumAdapterByLuid )( 
+            IDXGIFactory6 * This,
+            /* [annotation] */ 
+            _In_  LUID AdapterLuid,
+            /* [annotation] */ 
+            _In_  REFIID riid,
+            /* [annotation] */ 
+            _COM_Outptr_  void **ppvAdapter);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnumWarpAdapter )( 
+            IDXGIFactory6 * This,
+            /* [annotation] */ 
+            _In_  REFIID riid,
+            /* [annotation] */ 
+            _COM_Outptr_  void **ppvAdapter);
+        
+        HRESULT ( STDMETHODCALLTYPE *CheckFeatureSupport )( 
+            IDXGIFactory6 * This,
+            DXGI_FEATURE Feature,
+            /* [annotation] */ 
+            _Inout_updates_bytes_(FeatureSupportDataSize)  void *pFeatureSupportData,
+            UINT FeatureSupportDataSize);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnumAdapterByGpuPreference )( 
+            IDXGIFactory6 * This,
+            /* [annotation] */ 
+            _In_  UINT Adapter,
+            /* [annotation] */ 
+            _In_  DXGI_GPU_PREFERENCE GpuPreference,
+            /* [annotation] */ 
+            _In_  REFIID riid,
+            /* [annotation] */ 
+            _COM_Outptr_  void **ppvAdapter);
+        
+        END_INTERFACE
+    } IDXGIFactory6Vtbl;
+
+    interface IDXGIFactory6
+    {
+        CONST_VTBL struct IDXGIFactory6Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IDXGIFactory6_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IDXGIFactory6_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IDXGIFactory6_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IDXGIFactory6_SetPrivateData(This,Name,DataSize,pData)	\
+    ( (This)->lpVtbl -> SetPrivateData(This,Name,DataSize,pData) ) 
+
+#define IDXGIFactory6_SetPrivateDataInterface(This,Name,pUnknown)	\
+    ( (This)->lpVtbl -> SetPrivateDataInterface(This,Name,pUnknown) ) 
+
+#define IDXGIFactory6_GetPrivateData(This,Name,pDataSize,pData)	\
+    ( (This)->lpVtbl -> GetPrivateData(This,Name,pDataSize,pData) ) 
+
+#define IDXGIFactory6_GetParent(This,riid,ppParent)	\
+    ( (This)->lpVtbl -> GetParent(This,riid,ppParent) ) 
+
+
+#define IDXGIFactory6_EnumAdapters(This,Adapter,ppAdapter)	\
+    ( (This)->lpVtbl -> EnumAdapters(This,Adapter,ppAdapter) ) 
+
+#define IDXGIFactory6_MakeWindowAssociation(This,WindowHandle,Flags)	\
+    ( (This)->lpVtbl -> MakeWindowAssociation(This,WindowHandle,Flags) ) 
+
+#define IDXGIFactory6_GetWindowAssociation(This,pWindowHandle)	\
+    ( (This)->lpVtbl -> GetWindowAssociation(This,pWindowHandle) ) 
+
+#define IDXGIFactory6_CreateSwapChain(This,pDevice,pDesc,ppSwapChain)	\
+    ( (This)->lpVtbl -> CreateSwapChain(This,pDevice,pDesc,ppSwapChain) ) 
+
+#define IDXGIFactory6_CreateSoftwareAdapter(This,Module,ppAdapter)	\
+    ( (This)->lpVtbl -> CreateSoftwareAdapter(This,Module,ppAdapter) ) 
+
+
+#define IDXGIFactory6_EnumAdapters1(This,Adapter,ppAdapter)	\
+    ( (This)->lpVtbl -> EnumAdapters1(This,Adapter,ppAdapter) ) 
+
+#define IDXGIFactory6_IsCurrent(This)	\
+    ( (This)->lpVtbl -> IsCurrent(This) ) 
+
+
+#define IDXGIFactory6_IsWindowedStereoEnabled(This)	\
+    ( (This)->lpVtbl -> IsWindowedStereoEnabled(This) ) 
+
+#define IDXGIFactory6_CreateSwapChainForHwnd(This,pDevice,hWnd,pDesc,pFullscreenDesc,pRestrictToOutput,ppSwapChain)	\
+    ( (This)->lpVtbl -> CreateSwapChainForHwnd(This,pDevice,hWnd,pDesc,pFullscreenDesc,pRestrictToOutput,ppSwapChain) ) 
+
+#define IDXGIFactory6_CreateSwapChainForCoreWindow(This,pDevice,pWindow,pDesc,pRestrictToOutput,ppSwapChain)	\
+    ( (This)->lpVtbl -> CreateSwapChainForCoreWindow(This,pDevice,pWindow,pDesc,pRestrictToOutput,ppSwapChain) ) 
+
+#define IDXGIFactory6_GetSharedResourceAdapterLuid(This,hResource,pLuid)	\
+    ( (This)->lpVtbl -> GetSharedResourceAdapterLuid(This,hResource,pLuid) ) 
+
+#define IDXGIFactory6_RegisterStereoStatusWindow(This,WindowHandle,wMsg,pdwCookie)	\
+    ( (This)->lpVtbl -> RegisterStereoStatusWindow(This,WindowHandle,wMsg,pdwCookie) ) 
+
+#define IDXGIFactory6_RegisterStereoStatusEvent(This,hEvent,pdwCookie)	\
+    ( (This)->lpVtbl -> RegisterStereoStatusEvent(This,hEvent,pdwCookie) ) 
+
+#define IDXGIFactory6_UnregisterStereoStatus(This,dwCookie)	\
+    ( (This)->lpVtbl -> UnregisterStereoStatus(This,dwCookie) ) 
+
+#define IDXGIFactory6_RegisterOcclusionStatusWindow(This,WindowHandle,wMsg,pdwCookie)	\
+    ( (This)->lpVtbl -> RegisterOcclusionStatusWindow(This,WindowHandle,wMsg,pdwCookie) ) 
+
+#define IDXGIFactory6_RegisterOcclusionStatusEvent(This,hEvent,pdwCookie)	\
+    ( (This)->lpVtbl -> RegisterOcclusionStatusEvent(This,hEvent,pdwCookie) ) 
+
+#define IDXGIFactory6_UnregisterOcclusionStatus(This,dwCookie)	\
+    ( (This)->lpVtbl -> UnregisterOcclusionStatus(This,dwCookie) ) 
+
+#define IDXGIFactory6_CreateSwapChainForComposition(This,pDevice,pDesc,pRestrictToOutput,ppSwapChain)	\
+    ( (This)->lpVtbl -> CreateSwapChainForComposition(This,pDevice,pDesc,pRestrictToOutput,ppSwapChain) ) 
+
+
+#define IDXGIFactory6_GetCreationFlags(This)	\
+    ( (This)->lpVtbl -> GetCreationFlags(This) ) 
+
+
+#define IDXGIFactory6_EnumAdapterByLuid(This,AdapterLuid,riid,ppvAdapter)	\
+    ( (This)->lpVtbl -> EnumAdapterByLuid(This,AdapterLuid,riid,ppvAdapter) ) 
+
+#define IDXGIFactory6_EnumWarpAdapter(This,riid,ppvAdapter)	\
+    ( (This)->lpVtbl -> EnumWarpAdapter(This,riid,ppvAdapter) ) 
+
+
+#define IDXGIFactory6_CheckFeatureSupport(This,Feature,pFeatureSupportData,FeatureSupportDataSize)	\
+    ( (This)->lpVtbl -> CheckFeatureSupport(This,Feature,pFeatureSupportData,FeatureSupportDataSize) ) 
+
+
+#define IDXGIFactory6_EnumAdapterByGpuPreference(This,Adapter,GpuPreference,riid,ppvAdapter)	\
+    ( (This)->lpVtbl -> EnumAdapterByGpuPreference(This,Adapter,GpuPreference,riid,ppvAdapter) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IDXGIFactory6_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_dxgi1_6_0000_0003 */
+/* [local] */ 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+DEFINE_GUID(IID_IDXGIAdapter4,0x3c8d99d1,0x4fbf,0x4181,0xa8,0x2c,0xaf,0x66,0xbf,0x7b,0xd2,0x4e);
+DEFINE_GUID(IID_IDXGIOutput6,0x068346e8,0xaaec,0x4b84,0xad,0xd7,0x13,0x7f,0x51,0x3f,0x77,0xa1);
+DEFINE_GUID(IID_IDXGIFactory6,0xc1b6694f,0xff09,0x44a9,0xb0,0x3c,0x77,0x90,0x0a,0x0a,0x1d,0x17);
+
+
+extern RPC_IF_HANDLE __MIDL_itf_dxgi1_6_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_dxgi1_6_0000_0003_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

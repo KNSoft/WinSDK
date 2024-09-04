@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.gaming.xboxlive.storage.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -206,11 +208,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -226,11 +228,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1606,8 +1608,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("917281E0-7201-4953-AA2C-4008F03AEF45"), exclusiveto, contract] */
                     MIDL_INTERFACE("917281E0-7201-4953-AA2C-4008F03AEF45")
-                    IGameSaveBlobGetResult : IInspectable
+                    IGameSaveBlobGetResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus * value
                             ) = 0;
@@ -1651,8 +1654,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("ADD38034-BAF0-4645-B6D0-46EDAFFB3C2B"), exclusiveto, contract] */
                     MIDL_INTERFACE("ADD38034-BAF0-4645-B6D0-46EDAFFB3C2B")
-                    IGameSaveBlobInfo : IInspectable
+                    IGameSaveBlobInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1696,8 +1700,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("C7578582-3697-42BF-989C-665D923B5231"), exclusiveto, contract] */
                     MIDL_INTERFACE("C7578582-3697-42BF-989C-665D923B5231")
-                    IGameSaveBlobInfoGetResult : IInspectable
+                    IGameSaveBlobInfoGetResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus * value
                             ) = 0;
@@ -1741,8 +1746,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("9FDD74B2-EEEE-447B-A9D2-7F96C0F83208"), exclusiveto, contract] */
                     MIDL_INTERFACE("9FDD74B2-EEEE-447B-A9D2-7F96C0F83208")
-                    IGameSaveBlobInfoQuery : IInspectable
+                    IGameSaveBlobInfoQuery : public IInspectable
                     {
+                    public:
                         /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE GetBlobInfoAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGaming__CXboxLive__CStorage__CGameSaveBlobInfoGetResult * * operation
                             ) = 0;
@@ -1791,8 +1797,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("C3C08F89-563F-4ECD-9C6F-33FD0E323D10"), exclusiveto, contract] */
                     MIDL_INTERFACE("C3C08F89-563F-4ECD-9C6F-33FD0E323D10")
-                    IGameSaveContainer : IInspectable
+                    IGameSaveContainer : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1860,8 +1867,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("B7E27300-155D-4BB4-B2BA-930306F391B5"), exclusiveto, contract] */
                     MIDL_INTERFACE("B7E27300-155D-4BB4-B2BA-930306F391B5")
-                    IGameSaveContainerInfo : IInspectable
+                    IGameSaveContainerInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -1914,8 +1922,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("FFC50D74-C581-4F9D-9E39-30A10C1E4C50"), exclusiveto, contract] */
                     MIDL_INTERFACE("FFC50D74-C581-4F9D-9E39-30A10C1E4C50")
-                    IGameSaveContainerInfoGetResult : IInspectable
+                    IGameSaveContainerInfoGetResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus * value
                             ) = 0;
@@ -1959,8 +1968,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("3C94E863-6F80-4327-9327-FFC11AFD42B3"), exclusiveto, contract] */
                     MIDL_INTERFACE("3C94E863-6F80-4327-9327-FFC11AFD42B3")
-                    IGameSaveContainerInfoQuery : IInspectable
+                    IGameSaveContainerInfoQuery : public IInspectable
                     {
+                    public:
                         /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE GetContainerInfoAsync(
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGaming__CXboxLive__CStorage__CGameSaveContainerInfoGetResult * * operation
                             ) = 0;
@@ -2009,8 +2019,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("CF0F1A05-24A0-4582-9A55-B1BBBB9388D8"), exclusiveto, contract] */
                     MIDL_INTERFACE("CF0F1A05-24A0-4582-9A55-B1BBBB9388D8")
-                    IGameSaveOperationResult : IInspectable
+                    IGameSaveOperationResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus * value
                             ) = 0;
@@ -2051,8 +2062,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("90A60394-80FE-4211-97F8-A5DE14DD95D2"), exclusiveto, contract] */
                     MIDL_INTERFACE("90A60394-80FE-4211-97F8-A5DE14DD95D2")
-                    IGameSaveProvider : IInspectable
+                    IGameSaveProvider : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
                             ) = 0;
@@ -2114,8 +2126,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("3AB90816-D393-4D65-AC16-41C3E67AB945"), exclusiveto, contract] */
                     MIDL_INTERFACE("3AB90816-D393-4D65-AC16-41C3E67AB945")
-                    IGameSaveProviderGetResult : IInspectable
+                    IGameSaveProviderGetResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                             /* [retval, out] */__RPC__out ABI::Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus * value
                             ) = 0;
@@ -2159,8 +2172,9 @@ namespace ABI {
                 namespace Storage {
                     /* [object, uuid("D01D3ED0-7B03-449D-8CBD-3402842A1048"), exclusiveto, contract] */
                     MIDL_INTERFACE("D01D3ED0-7B03-449D-8CBD-3402842A1048")
-                    IGameSaveProviderStatics : IInspectable
+                    IGameSaveProviderStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetForUserAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
                             /* [in] */__RPC__in HSTRING serviceConfigId,

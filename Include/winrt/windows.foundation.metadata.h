@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.foundation.metadata.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -205,58 +207,59 @@ namespace ABI {
             namespace Metadata {
                 /* [object, uuid("997439FE-F681-4A11-B416-C13A47E8BA36"), exclusiveto, contract] */
                 MIDL_INTERFACE("997439FE-F681-4A11-B416-C13A47E8BA36")
-                IApiInformationStatics : IInspectable
+                IApiInformationStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IsTypePresent(
                         /* [in] */__RPC__in HSTRING typeName,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE IsMethodPresent(
                         /* [in] */__RPC__in HSTRING typeName,
                         /* [in] */__RPC__in HSTRING methodName,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE IsMethodPresentWithArity(
                         /* [in] */__RPC__in HSTRING typeName,
                         /* [in] */__RPC__in HSTRING methodName,
                         /* [in] */UINT32 inputParameterCount,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE IsEventPresent(
                         /* [in] */__RPC__in HSTRING typeName,
                         /* [in] */__RPC__in HSTRING eventName,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE IsPropertyPresent(
                         /* [in] */__RPC__in HSTRING typeName,
                         /* [in] */__RPC__in HSTRING propertyName,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE IsReadOnlyPropertyPresent(
                         /* [in] */__RPC__in HSTRING typeName,
                         /* [in] */__RPC__in HSTRING propertyName,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE IsWriteablePropertyPresent(
                         /* [in] */__RPC__in HSTRING typeName,
                         /* [in] */__RPC__in HSTRING propertyName,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE IsEnumNamedValuePresent(
                         /* [in] */__RPC__in HSTRING enumTypeName,
                         /* [in] */__RPC__in HSTRING valueName,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE IsApiContractPresentByMajor(
                         /* [in] */__RPC__in HSTRING contractName,
                         /* [in] */UINT16 majorVersion,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE IsApiContractPresentByMajorAndMinor(
                         /* [in] */__RPC__in HSTRING contractName,
                         /* [in] */UINT16 majorVersion,
                         /* [in] */UINT16 minorVersion,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     
                 };
@@ -387,63 +390,63 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *IsTypePresent )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING typeName,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *IsMethodPresent )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING typeName,
         /* [in] */__RPC__in HSTRING methodName,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *IsMethodPresentWithArity )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING typeName,
         /* [in] */__RPC__in HSTRING methodName,
         /* [in] */UINT32 inputParameterCount,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsEventPresent )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING typeName,
         /* [in] */__RPC__in HSTRING eventName,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsPropertyPresent )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING typeName,
         /* [in] */__RPC__in HSTRING propertyName,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsReadOnlyPropertyPresent )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING typeName,
         /* [in] */__RPC__in HSTRING propertyName,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsWriteablePropertyPresent )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING typeName,
         /* [in] */__RPC__in HSTRING propertyName,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsEnumNamedValuePresent )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING enumTypeName,
         /* [in] */__RPC__in HSTRING valueName,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *IsApiContractPresentByMajor )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING contractName,
         /* [in] */UINT16 majorVersion,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *IsApiContractPresentByMajorAndMinor )(
         __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics * This,
         /* [in] */__RPC__in HSTRING contractName,
         /* [in] */UINT16 majorVersion,
         /* [in] */UINT16 minorVersion,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -473,35 +476,35 @@ interface __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics
 #define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsTypePresent(This,typeName,value) \
-    ( (This)->lpVtbl->IsTypePresent(This,typeName,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsTypePresent(This,typeName,result) \
+    ( (This)->lpVtbl->IsTypePresent(This,typeName,result) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsMethodPresent(This,typeName,methodName,value) \
-    ( (This)->lpVtbl->IsMethodPresent(This,typeName,methodName,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsMethodPresent(This,typeName,methodName,result) \
+    ( (This)->lpVtbl->IsMethodPresent(This,typeName,methodName,result) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsMethodPresentWithArity(This,typeName,methodName,inputParameterCount,value) \
-    ( (This)->lpVtbl->IsMethodPresentWithArity(This,typeName,methodName,inputParameterCount,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsMethodPresentWithArity(This,typeName,methodName,inputParameterCount,result) \
+    ( (This)->lpVtbl->IsMethodPresentWithArity(This,typeName,methodName,inputParameterCount,result) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsEventPresent(This,typeName,eventName,value) \
-    ( (This)->lpVtbl->IsEventPresent(This,typeName,eventName,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsEventPresent(This,typeName,eventName,result) \
+    ( (This)->lpVtbl->IsEventPresent(This,typeName,eventName,result) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsPropertyPresent(This,typeName,propertyName,value) \
-    ( (This)->lpVtbl->IsPropertyPresent(This,typeName,propertyName,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsPropertyPresent(This,typeName,propertyName,result) \
+    ( (This)->lpVtbl->IsPropertyPresent(This,typeName,propertyName,result) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsReadOnlyPropertyPresent(This,typeName,propertyName,value) \
-    ( (This)->lpVtbl->IsReadOnlyPropertyPresent(This,typeName,propertyName,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsReadOnlyPropertyPresent(This,typeName,propertyName,result) \
+    ( (This)->lpVtbl->IsReadOnlyPropertyPresent(This,typeName,propertyName,result) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsWriteablePropertyPresent(This,typeName,propertyName,value) \
-    ( (This)->lpVtbl->IsWriteablePropertyPresent(This,typeName,propertyName,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsWriteablePropertyPresent(This,typeName,propertyName,result) \
+    ( (This)->lpVtbl->IsWriteablePropertyPresent(This,typeName,propertyName,result) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsEnumNamedValuePresent(This,enumTypeName,valueName,value) \
-    ( (This)->lpVtbl->IsEnumNamedValuePresent(This,enumTypeName,valueName,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsEnumNamedValuePresent(This,enumTypeName,valueName,result) \
+    ( (This)->lpVtbl->IsEnumNamedValuePresent(This,enumTypeName,valueName,result) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsApiContractPresentByMajor(This,contractName,majorVersion,value) \
-    ( (This)->lpVtbl->IsApiContractPresentByMajor(This,contractName,majorVersion,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsApiContractPresentByMajor(This,contractName,majorVersion,result) \
+    ( (This)->lpVtbl->IsApiContractPresentByMajor(This,contractName,majorVersion,result) )
 
-#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsApiContractPresentByMajorAndMinor(This,contractName,majorVersion,minorVersion,value) \
-    ( (This)->lpVtbl->IsApiContractPresentByMajorAndMinor(This,contractName,majorVersion,minorVersion,value) )
+#define __x_ABI_CWindows_CFoundation_CMetadata_CIApiInformationStatics_IsApiContractPresentByMajorAndMinor(This,contractName,majorVersion,minorVersion,result) \
+    ( (This)->lpVtbl->IsApiContractPresentByMajorAndMinor(This,contractName,majorVersion,minorVersion,result) )
 
 
 #endif /* COBJMACROS */

@@ -158,6 +158,7 @@ typedef enum MF_MEDIA_ENGINE_EVENT
     MF_MEDIA_ENGINE_EVENT_DELAYLOADEVENT_CHANGED = 1013,
     MF_MEDIA_ENGINE_EVENT_STREAMRENDERINGERROR = 1014,
     MF_MEDIA_ENGINE_EVENT_SUPPORTEDRATES_CHANGED = 1015,
+    MF_MEDIA_ENGINE_EVENT_AUDIOENDPOINTCHANGE = 1016,
 
 } MF_MEDIA_ENGINE_EVENT;
 
@@ -667,6 +668,29 @@ interface IMFMediaEngineEx : IMFMediaEngine
         );
 };
 
+//+-----------------------------------------------------------------------------
+//
+//  Interface:  IMFMediaEngineAudioEndpointId
+//
+//  Synopsis:   IMFMediaEngineAudioEndpointId extends the media engine for audio endpoint Ids
+//
+//------------------------------------------------------------------------------
+[
+    object,
+    uuid(7a3bac98-0e76-49fb-8c20-8a86fd98eaf2),
+    pointer_default(unique),
+    local
+]
+interface IMFMediaEngineAudioEndpointId : IUnknown
+{
+    HRESULT SetAudioEndpointId(
+        [in, annotation("_In_opt_")] LPCWSTR pszEndpointId
+        );
+
+    HRESULT GetAudioEndpointId(
+        [out, annotation("_Outptr_")] LPWSTR* ppszEndpointId
+        );
+};
 
 typedef enum MF_MEDIA_ENGINE_EXTENSION_TYPE
 {

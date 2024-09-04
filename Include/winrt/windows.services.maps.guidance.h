@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.services.maps.guidance.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -834,6 +836,7 @@ namespace ABI {
 
 
 #if WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
+#if WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceReroutedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceReroutedEventArgs_USE
@@ -863,6 +866,7 @@ typedef ITypedEventHandler<ABI::Windows::Services::Maps::Guidance::GuidanceNavig
 
 
 #endif // WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -877,6 +881,7 @@ namespace ABI {
     } /* Guidance */} /* ABI */
 
 
+#if WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 #if WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceUpdatedEventArgs_USE
@@ -906,6 +911,7 @@ typedef ITypedEventHandler<ABI::Windows::Services::Maps::Guidance::GuidanceNavig
 #endif /* DEF___FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceUpdatedEventArgs_USE */
 
 
+#endif // WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 
 
@@ -1584,8 +1590,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("CA2AA24A-C7C2-4D4C-9D7C-499576BCEDDB"), exclusiveto, contract] */
                     MIDL_INTERFACE("CA2AA24A-C7C2-4D4C-9D7C-499576BCEDDB")
-                    IGuidanceAudioNotificationRequestedEventArgs : IInspectable
+                    IGuidanceAudioNotificationRequestedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioNotification(
                             /* [retval, out] */__RPC__out ABI::Windows::Services::Maps::Guidance::GuidanceAudioNotificationKind * value
                             ) = 0;
@@ -1632,8 +1639,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("8404D114-6581-43B7-AC15-C9079BF90DF1"), exclusiveto, contract] */
                     MIDL_INTERFACE("8404D114-6581-43B7-AC15-C9079BF90DF1")
-                    IGuidanceLaneInfo : IInspectable
+                    IGuidanceLaneInfo : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LaneMarkers(
                             /* [retval, out] */__RPC__out ABI::Windows::Services::Maps::Guidance::GuidanceLaneMarkers * value
                             ) = 0;
@@ -1677,8 +1685,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("FC09326C-ECC9-4928-A2A1-7232B99B94A1"), exclusiveto, contract] */
                     MIDL_INTERFACE("FC09326C-ECC9-4928-A2A1-7232B99B94A1")
-                    IGuidanceManeuver : IInspectable
+                    IGuidanceManeuver : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartLocation(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                             ) = 0;
@@ -1752,8 +1761,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("B7ACB168-2912-4A99-AFF1-798609B981FE"), exclusiveto, contract] */
                     MIDL_INTERFACE("B7ACB168-2912-4A99-AFF1-798609B981FE")
-                    IGuidanceMapMatchedCoordinate : IInspectable
+                    IGuidanceMapMatchedCoordinate : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Location(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
                             ) = 0;
@@ -1806,8 +1816,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("08F17EF7-8E3F-4D9A-BE8A-108F9A012C67"), exclusiveto, contract] */
                     MIDL_INTERFACE("08F17EF7-8E3F-4D9A-BE8A-108F9A012C67")
-                    IGuidanceNavigator : IInspectable
+                    IGuidanceNavigator : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE StartNavigating(
                             /* [in] */__RPC__in_opt ABI::Windows::Services::Maps::Guidance::IGuidanceRoute * route
                             ) = 0;
@@ -1929,8 +1940,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("6CDC50D1-041C-4BF3-B633-A101FC2F6B57"), exclusiveto, contract] */
                     MIDL_INTERFACE("6CDC50D1-041C-4BF3-B633-A101FC2F6B57")
-                    IGuidanceNavigator2 : IInspectable
+                    IGuidanceNavigator2 : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AudioNotificationRequested(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceAudioNotificationRequestedEventArgs * value,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1981,8 +1993,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("00FD9513-4456-4E66-A143-3ADD6BE08426"), exclusiveto, contract] */
                     MIDL_INTERFACE("00FD9513-4456-4E66-A143-3ADD6BE08426")
-                    IGuidanceNavigatorStatics : IInspectable
+                    IGuidanceNavigatorStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetCurrent(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Maps::Guidance::IGuidanceNavigator * * result
                             ) = 0;
@@ -2023,8 +2036,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("54C5C3E2-7784-4C85-8C95-D0C6EFB43965"), exclusiveto, contract] */
                     MIDL_INTERFACE("54C5C3E2-7784-4C85-8C95-D0C6EFB43965")
-                    IGuidanceNavigatorStatics2 : IInspectable
+                    IGuidanceNavigatorStatics2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UseAppProvidedVoice(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -2065,8 +2079,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("115D4008-D528-454E-BB94-A50341D2C9F1"), exclusiveto, contract] */
                     MIDL_INTERFACE("115D4008-D528-454E-BB94-A50341D2C9F1")
-                    IGuidanceReroutedEventArgs : IInspectable
+                    IGuidanceReroutedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Route(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Maps::Guidance::IGuidanceRoute * * result
                             ) = 0;
@@ -2107,8 +2122,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("B32758A6-BE78-4C63-AFE7-6C2957479B3E"), exclusiveto, contract] */
                     MIDL_INTERFACE("B32758A6-BE78-4C63-AFE7-6C2957479B3E")
-                    IGuidanceRoadSegment : IInspectable
+                    IGuidanceRoadSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RoadName(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2173,8 +2189,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("2474A61D-1723-49F1-895B-47A2C4AA9C55"), exclusiveto, contract] */
                     MIDL_INTERFACE("2474A61D-1723-49F1-895B-47A2C4AA9C55")
-                    IGuidanceRoadSegment2 : IInspectable
+                    IGuidanceRoadSegment2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsScenic(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -2215,8 +2232,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("F1A728B6-F77A-4742-8312-53300F9845F0"), exclusiveto, contract] */
                     MIDL_INTERFACE("F1A728B6-F77A-4742-8312-53300F9845F0")
-                    IGuidanceRoadSignpost : IInspectable
+                    IGuidanceRoadSignpost : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExitNumber(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -2269,8 +2287,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("3A14545D-801A-40BD-A286-AFB2010CCE6C"), exclusiveto, contract] */
                     MIDL_INTERFACE("3A14545D-801A-40BD-A286-AFB2010CCE6C")
-                    IGuidanceRoute : IInspectable
+                    IGuidanceRoute : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Duration(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                             ) = 0;
@@ -2329,8 +2348,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("F56D926A-55ED-49C1-B09C-4B8223B50DB3"), exclusiveto, contract] */
                     MIDL_INTERFACE("F56D926A-55ED-49C1-B09C-4B8223B50DB3")
-                    IGuidanceRouteStatics : IInspectable
+                    IGuidanceRouteStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CanCreateFromMapRoute(
                             /* [in] */__RPC__in_opt ABI::Windows::Services::Maps::IMapRoute * mapRoute,
                             /* [retval, out] */__RPC__out boolean * result
@@ -2376,8 +2396,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("DB1F8DA5-B878-4D92-98DD-347D23D38262"), exclusiveto, contract] */
                     MIDL_INTERFACE("DB1F8DA5-B878-4D92-98DD-347D23D38262")
-                    IGuidanceTelemetryCollector : IInspectable
+                    IGuidanceTelemetryCollector : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Enabled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -2434,8 +2455,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("36532047-F160-44FB-B578-94577CA05990"), exclusiveto, contract] */
                     MIDL_INTERFACE("36532047-F160-44FB-B578-94577CA05990")
-                    IGuidanceTelemetryCollectorStatics : IInspectable
+                    IGuidanceTelemetryCollectorStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE GetCurrent(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Maps::Guidance::IGuidanceTelemetryCollector * * result
                             ) = 0;
@@ -2476,8 +2498,9 @@ namespace ABI {
                 namespace Guidance {
                     /* [object, uuid("FDAC160B-9E8D-4DE3-A9FA-B06321D18DB9"), exclusiveto, contract] */
                     MIDL_INTERFACE("FDAC160B-9E8D-4DE3-A9FA-B06321D18DB9")
-                    IGuidanceUpdatedEventArgs : IInspectable
+                    IGuidanceUpdatedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
                             /* [retval, out] */__RPC__out ABI::Windows::Services::Maps::Guidance::GuidanceMode * value
                             ) = 0;
@@ -3847,6 +3870,7 @@ interface __FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanc
 
 
 #if WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
+#if WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceReroutedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceReroutedEventArgs_INTERFACE_DEFINED__
 
@@ -3894,9 +3918,11 @@ interface __FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanc
 #endif // ____FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceReroutedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 #if WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceUpdatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceUpdatedEventArgs_INTERFACE_DEFINED__
@@ -3944,6 +3970,7 @@ interface __FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanc
 
 #endif // ____FITypedEventHandler_2_Windows__CServices__CMaps__CGuidance__CGuidanceNavigator_Windows__CServices__CMaps__CGuidance__CGuidanceUpdatedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_SERVICES_MAPS_GUIDANCECONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)

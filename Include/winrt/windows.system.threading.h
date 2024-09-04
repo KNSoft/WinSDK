@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.threading.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,17 +77,14 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -94,8 +92,12 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
 #define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
@@ -348,8 +350,9 @@ namespace ABI {
             namespace Threading {
                 /* [object, uuid("34ED19FA-8384-4EB9-8209-FB5094EEEC35"), contract] */
                 MIDL_INTERFACE("34ED19FA-8384-4EB9-8209-FB5094EEEC35")
-                ITimerDestroyedHandler : IUnknown
+                ITimerDestroyedHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::System::Threading::IThreadPoolTimer * timer
                         ) = 0;
@@ -384,8 +387,9 @@ namespace ABI {
             namespace Threading {
                 /* [object, uuid("FAAEA667-FBEB-49CB-ADB2-71184C556E43"), contract] */
                 MIDL_INTERFACE("FAAEA667-FBEB-49CB-ADB2-71184C556E43")
-                ITimerElapsedHandler : IUnknown
+                ITimerElapsedHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::System::Threading::IThreadPoolTimer * timer
                         ) = 0;
@@ -420,8 +424,9 @@ namespace ABI {
             namespace Threading {
                 /* [object, uuid("1D1A8B8B-FA66-414F-9CBD-B65FC99D17FA"), contract] */
                 MIDL_INTERFACE("1D1A8B8B-FA66-414F-9CBD-B65FC99D17FA")
-                IWorkItemHandler : IUnknown
+                IWorkItemHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IAsyncAction * operation
                         ) = 0;
@@ -460,8 +465,9 @@ namespace ABI {
             namespace Threading {
                 /* [object, uuid("B6BF67DD-84BD-44F8-AC1C-93EBCB9DBA91"), exclusiveto, contract] */
                 MIDL_INTERFACE("B6BF67DD-84BD-44F8-AC1C-93EBCB9DBA91")
-                IThreadPoolStatics : IInspectable
+                IThreadPoolStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE RunAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::System::Threading::IWorkItemHandler  * handler,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
@@ -512,8 +518,9 @@ namespace ABI {
             namespace Threading {
                 /* [object, uuid("594EBE78-55EA-4A88-A50D-3402AE1F9CF2"), exclusiveto, contract] */
                 MIDL_INTERFACE("594EBE78-55EA-4A88-A50D-3402AE1F9CF2")
-                IThreadPoolTimer : IInspectable
+                IThreadPoolTimer : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Period(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
                         ) = 0;
@@ -556,8 +563,9 @@ namespace ABI {
             namespace Threading {
                 /* [object, uuid("1A8A9D02-E482-461B-B8C7-8EFAD1CCE590"), exclusiveto, contract] */
                 MIDL_INTERFACE("1A8A9D02-E482-461B-B8C7-8EFAD1CCE590")
-                IThreadPoolTimerStatics : IInspectable
+                IThreadPoolTimerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimer(
                         /* [in] */__RPC__in_opt ABI::Windows::System::Threading::ITimerElapsedHandler  * handler,
                         /* [in] */ABI::Windows::Foundation::TimeSpan period,

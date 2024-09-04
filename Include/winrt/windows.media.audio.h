@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.audio.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -254,6 +256,8 @@
 #include "Windows.Foundation.Numerics.h"
 #include "Windows.Media.h"
 #include "Windows.Media.Capture.h"
+#include "Windows.Media.Core.h"
+#include "Windows.Media.Devices.h"
 #include "Windows.Media.Effects.h"
 #include "Windows.Media.MediaProperties.h"
 #include "Windows.Media.Render.h"
@@ -390,6 +394,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                interface IAudioGraph3;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 ABI::Windows::Media::Audio::IAudioGraph3
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphConnection_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphConnection_FWD_DEFINED__
 namespace ABI {
@@ -417,6 +435,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings ABI::Windows::Media::Audio::IAudioGraphSettings
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                interface IAudioGraphSettings2;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 ABI::Windows::Media::Audio::IAudioGraphSettings2
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettingsFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettingsFactory_FWD_DEFINED__
@@ -656,6 +688,34 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioNodeWithListener_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                interface IAudioStateMonitor;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor ABI::Windows::Media::Audio::IAudioStateMonitor
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                interface IAudioStateMonitorStatics;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics ABI::Windows::Media::Audio::IAudioStateMonitorStatics
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CICreateAudioDeviceInputNodeResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CICreateAudioDeviceInputNodeResult_FWD_DEFINED__
 namespace ABI {
@@ -725,6 +785,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult ABI::Windows::Media::Audio::ICreateAudioGraphResult
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                interface ICreateMediaSourceAudioInputNodeResult;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult ABI::Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CIEchoEffectDefinition_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CIEchoEffectDefinition_FWD_DEFINED__
@@ -837,6 +911,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CAudio_CILimiterEffectDefinitionFactory ABI::Windows::Media::Audio::ILimiterEffectDefinitionFactory
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CILimiterEffectDefinitionFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                interface IMediaSourceAudioInputNode;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode ABI::Windows::Media::Audio::IMediaSourceAudioInputNode
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CIReverbEffectDefinition_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CIReverbEffectDefinition_FWD_DEFINED__
@@ -1448,6 +1536,79 @@ namespace ABI {
     namespace Windows {
         namespace Media {
             namespace Audio {
+                class CreateMediaSourceAudioInputNodeResult;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("e471b446-3a01-5190-89c9-15e740374cfc"))
+IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::CreateMediaSourceAudioInputNodeResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Audio::CreateMediaSourceAudioInputNodeResult*, ABI::Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::CreateMediaSourceAudioInputNodeResult*> __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c69c20f3-88fc-5f3a-95d0-2816eae45968"))
+IAsyncOperation<ABI::Windows::Media::Audio::CreateMediaSourceAudioInputNodeResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Audio::CreateMediaSourceAudioInputNodeResult*, ABI::Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Media::Audio::CreateMediaSourceAudioInputNodeResult*> __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t;
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult*>
+//#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
                 class AudioFileInputNode;
             } /* Windows */
         } /* Media */
@@ -1507,6 +1668,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_USE
@@ -1536,6 +1698,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Audio::AudioFrameInputNode*,ABI:
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1548,6 +1711,7 @@ namespace ABI {
     } /* Audio */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_USE
@@ -1577,6 +1741,7 @@ typedef ITypedEventHandler<ABI::Windows::Media::Audio::AudioFrameInputNode*,ABI:
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -1633,6 +1798,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_USE
@@ -1662,6 +1828,91 @@ typedef ITypedEventHandler<ABI::Windows::Media::Audio::AudioGraph*,ABI::Windows:
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                class AudioStateMonitor;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("1333df3f-c55b-5a23-9596-34657c2a3406"))
+ITypedEventHandler<ABI::Windows::Media::Audio::AudioStateMonitor*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Audio::AudioStateMonitor*, ABI::Windows::Media::Audio::IAudioStateMonitor*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Media.Audio.AudioStateMonitor, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Media::Audio::AudioStateMonitor*,IInspectable*> __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::IAudioStateMonitor*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::IAudioStateMonitor*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                class MediaSourceAudioInputNode;
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b78980bf-7acf-5dc8-9fcd-31d6ab2f92f1"))
+ITypedEventHandler<ABI::Windows::Media::Audio::MediaSourceAudioInputNode*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Audio::MediaSourceAudioInputNode*, ABI::Windows::Media::Audio::IMediaSourceAudioInputNode*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Media.Audio.MediaSourceAudioInputNode, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Media::Audio::MediaSourceAudioInputNode*,IInspectable*> __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::IMediaSourceAudioInputNode*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::IMediaSourceAudioInputNode*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 namespace ABI {
     namespace Windows {
@@ -2065,6 +2316,47 @@ namespace ABI {
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                class MediaSource;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaSource2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSource2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface IMediaSource2;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaSource2 ABI::Windows::Media::Core::IMediaSource2
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSource2_FWD_DEFINED__
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                
+                typedef enum AudioDeviceRole : int AudioDeviceRole;
+                
+            } /* Windows */
+        } /* Media */
+    } /* Devices */} /* ABI */
+
+
+
+
 
 
 
@@ -2131,6 +2423,17 @@ namespace ABI {
         } /* Media */
     } /* Render */} /* ABI */
 
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            
+            typedef enum SoundLevel : int SoundLevel;
+            
+        } /* Windows */
+    } /* Media */} /* ABI */
 
 
 
@@ -2253,6 +2556,17 @@ namespace ABI {
         namespace Media {
             namespace Audio {
                 
+                typedef enum MediaSourceAudioInputNodeCreationStatus : int MediaSourceAudioInputNodeCreationStatus;
+                
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                
                 typedef enum QuantumSizeSelectionMode : int QuantumSizeSelectionMode;
                 
             } /* Windows */
@@ -2269,6 +2583,12 @@ namespace ABI {
             } /* Windows */
         } /* Media */
     } /* Audio */} /* ABI */
+
+
+
+
+
+
 
 
 
@@ -2439,6 +2759,7 @@ namespace ABI {
     } /* Audio */} /* ABI */
 
 
+
 namespace ABI {
     namespace Windows {
         namespace Media {
@@ -2447,6 +2768,7 @@ namespace ABI {
             } /* Windows */
         } /* Media */
     } /* Audio */} /* ABI */
+
 
 
 
@@ -2484,6 +2806,7 @@ namespace ABI {
             } /* Windows */
         } /* Media */
     } /* Audio */} /* ABI */
+
 
 
 namespace ABI {
@@ -2707,6 +3030,35 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Media.Audio.MediaSourceAudioInputNodeCreationStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                /* [v1_enum, contract] */
+                enum MediaSourceAudioInputNodeCreationStatus : int
+                {
+                    MediaSourceAudioInputNodeCreationStatus_Success = 0,
+                    MediaSourceAudioInputNodeCreationStatus_FormatNotSupported = 1,
+                    MediaSourceAudioInputNodeCreationStatus_NetworkError = 2,
+                    MediaSourceAudioInputNodeCreationStatus_UnknownFailure = 3,
+                };
+                
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Struct Windows.Media.Audio.QuantumSizeSelectionMode
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2787,8 +3139,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("B01B6BE1-6F4E-49E2-AC01-559D62BEB3A9"), exclusiveto, contract] */
                 MIDL_INTERFACE("B01B6BE1-6F4E-49E2-AC01-559D62BEB3A9")
-                IAudioDeviceInputNode : IInspectable
+                IAudioDeviceInputNode : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Device(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceInformation * * value
                         ) = 0;
@@ -2832,8 +3185,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("362EDBFF-FF1C-4434-9E0F-BD2EF522AC82"), exclusiveto, contract] */
                 MIDL_INTERFACE("362EDBFF-FF1C-4434-9E0F-BD2EF522AC82")
-                IAudioDeviceOutputNode : IInspectable
+                IAudioDeviceOutputNode : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Device(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceInformation * * value
                         ) = 0;
@@ -2878,8 +3232,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("905B67C8-6F65-4CD4-8890-4694843C276D"), exclusiveto, contract] */
                 MIDL_INTERFACE("905B67C8-6F65-4CD4-8890-4694843C276D")
-                IAudioFileInputNode : IInspectable
+                IAudioFileInputNode : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PlaybackSpeedFactor(
                         /* [in] */DOUBLE value
                         ) = 0;
@@ -2963,8 +3318,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("50E01980-5166-4093-80F8-ADA00089E9CF"), exclusiveto, contract] */
                 MIDL_INTERFACE("50E01980-5166-4093-80F8-ADA00089E9CF")
-                IAudioFileOutputNode : IInspectable
+                IAudioFileOutputNode : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_File(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFile * * value
                         ) = 0;
@@ -3009,8 +3365,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("DC7C829E-0208-4504-A5A8-F0F268920A65"), exclusiveto, contract] */
                 MIDL_INTERFACE("DC7C829E-0208-4504-A5A8-F0F268920A65")
-                IAudioFrameCompletedEventArgs : IInspectable
+                IAudioFrameCompletedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Frame(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::IAudioFrame * * value
                         ) = 0;
@@ -3055,8 +3412,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("01B266C7-FD96-4FF5-A3C5-D27A9BF44237"), exclusiveto, contract] */
                 MIDL_INTERFACE("01B266C7-FD96-4FF5-A3C5-D27A9BF44237")
-                IAudioFrameInputNode : IInspectable
+                IAudioFrameInputNode : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PlaybackSpeedFactor(
                         /* [in] */DOUBLE value
                         ) = 0;
@@ -3124,8 +3482,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("B847371B-3299-45F5-88B3-C9D12A3F1CC8"), exclusiveto, contract] */
                 MIDL_INTERFACE("B847371B-3299-45F5-88B3-C9D12A3F1CC8")
-                IAudioFrameOutputNode : IInspectable
+                IAudioFrameOutputNode : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetFrame(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::IAudioFrame * * audioFrame
                         ) = 0;
@@ -3168,8 +3527,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("1AD46EED-E48C-4E14-9660-2C4F83E9CDD8"), exclusiveto, contract] */
                 MIDL_INTERFACE("1AD46EED-E48C-4E14-9660-2C4F83E9CDD8")
-                IAudioGraph : IInspectable
+                IAudioGraph : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFrameInputNode(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioFrameInputNode * * frameInputNode
                         ) = 0;
@@ -3304,8 +3664,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("4E4C3BD5-4FC1-45F6-A947-3CD38F4FD839"), exclusiveto, contract] */
                 MIDL_INTERFACE("4E4C3BD5-4FC1-45F6-A947-3CD38F4FD839")
-                IAudioGraph2 : IInspectable
+                IAudioGraph2 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFrameInputNodeWithFormatAndEmitter(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties * encodingProperties,
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioNodeEmitter * emitter,
@@ -3347,6 +3708,53 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioGraph2;
 
 /*
  *
+ * Interface Windows.Media.Audio.IAudioGraph3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.AudioGraph
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IAudioGraph3[] = L"Windows.Media.Audio.IAudioGraph3";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                /* [object, uuid("DDCD25AE-1185-42A7-831D-6A9B0FC86820"), exclusiveto, contract] */
+                MIDL_INTERFACE("DDCD25AE-1185-42A7-831D-6A9B0FC86820")
+                IAudioGraph3 : public IInspectable
+                {
+                public:
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateMediaSourceAudioInputNodeAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Media::Core::IMediaSource2 * mediaSource,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateMediaSourceAudioInputNodeWithEmitterAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Media::Core::IMediaSource2 * mediaSource,
+                        /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioNodeEmitter * emitter,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAudioGraph3=_uuidof(IAudioGraph3);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Audio.IAudioGraphConnection
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3366,8 +3774,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("763070ED-D04E-4FAC-B233-600B42EDD469"), exclusiveto, contract] */
                 MIDL_INTERFACE("763070ED-D04E-4FAC-B233-600B42EDD469")
-                IAudioGraphConnection : IInspectable
+                IAudioGraphConnection : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Destination(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioNode * * value
                         ) = 0;
@@ -3412,8 +3821,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("1D59647F-E6FE-4628-84F8-9D8BDBA25785"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D59647F-E6FE-4628-84F8-9D8BDBA25785")
-                IAudioGraphSettings : IInspectable
+                IAudioGraphSettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EncodingProperties(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties * * value
                         ) = 0;
@@ -3466,6 +3876,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings;
 
 /*
  *
+ * Interface Windows.Media.Audio.IAudioGraphSettings2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.AudioGraphSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IAudioGraphSettings2[] = L"Windows.Media.Audio.IAudioGraphSettings2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                /* [object, uuid("72919787-4DAB-46E3-B4C9-D8E1A2636062"), exclusiveto, contract] */
+                MIDL_INTERFACE("72919787-4DAB-46E3-B4C9-D8E1A2636062")
+                IAudioGraphSettings2 : public IInspectable
+                {
+                public:
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MaxPlaybackSpeedFactor(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxPlaybackSpeedFactor(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAudioGraphSettings2=_uuidof(IAudioGraphSettings2);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Audio.IAudioGraphSettingsFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3485,8 +3939,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("A5D91CC6-C2EB-4A61-A214-1D66D75F83DA"), exclusiveto, contract] */
                 MIDL_INTERFACE("A5D91CC6-C2EB-4A61-A214-1D66D75F83DA")
-                IAudioGraphSettingsFactory : IInspectable
+                IAudioGraphSettingsFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::Media::Render::AudioRenderCategory audioRenderCategory,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioGraphSettings * * value
@@ -3526,8 +3981,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("76EC3132-E159-4AB7-A82A-17BEB4B31E94"), exclusiveto, contract] */
                 MIDL_INTERFACE("76EC3132-E159-4AB7-A82A-17BEB4B31E94")
-                IAudioGraphStatics : IInspectable
+                IAudioGraphStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioGraphSettings * settings,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioGraphResult * * result
@@ -3567,8 +4023,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("C3D9CBE0-3FF6-4FB3-B262-50D435C55423"), exclusiveto, contract] */
                 MIDL_INTERFACE("C3D9CBE0-3FF6-4FB3-B262-50D435C55423")
-                IAudioGraphUnrecoverableErrorOccurredEventArgs : IInspectable
+                IAudioGraphUnrecoverableErrorOccurredEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Error(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::AudioGraphUnrecoverableError * value
                         ) = 0;
@@ -3609,8 +4066,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("D148005C-8428-4784-B7FD-A99D468C5D20"), contract] */
                 MIDL_INTERFACE("D148005C-8428-4784-B7FD-A99D468C5D20")
-                IAudioInputNode : IInspectable
+                IAudioInputNode : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OutgoingConnections(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CAudio__CAudioGraphConnection * * value
                         ) = 0;
@@ -3662,8 +4120,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("905156B7-CA68-4C6D-A8BC-E3EE17FE3FD2"), contract] */
                 MIDL_INTERFACE("905156B7-CA68-4C6D-A8BC-E3EE17FE3FD2")
-                IAudioInputNode2 : IInspectable
+                IAudioInputNode2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Emitter(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioNodeEmitter * * value
                         ) = 0;
@@ -3703,8 +4162,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("15389D7F-DBD8-4819-BF03-668E9357CD6D"), contract] */
                 MIDL_INTERFACE("15389D7F-DBD8-4819-BF03-668E9357CD6D")
-                IAudioNode : IInspectable
+                IAudioNode : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EffectDefinitions(
                         /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition * * value
                         ) = 0;
@@ -3767,8 +4227,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("3676971D-880A-47B8-ADF7-1323A9D965BE"), exclusiveto, contract] */
                 MIDL_INTERFACE("3676971D-880A-47B8-ADF7-1323A9D965BE")
-                IAudioNodeEmitter : IInspectable
+                IAudioNodeEmitter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector3 * value
                         ) = 0;
@@ -3849,8 +4310,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("4AB6EECB-EC29-47F8-818C-B6B660A5AEB1"), exclusiveto, contract] */
                 MIDL_INTERFACE("4AB6EECB-EC29-47F8-818C-B6B660A5AEB1")
-                IAudioNodeEmitter2 : IInspectable
+                IAudioNodeEmitter2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SpatialAudioModel(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::SpatialAudioModel * value
                         ) = 0;
@@ -3892,8 +4354,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("E99B2CEE-02CA-4375-9326-0C6AE4BCDFB5"), exclusiveto, contract] */
                 MIDL_INTERFACE("E99B2CEE-02CA-4375-9326-0C6AE4BCDFB5")
-                IAudioNodeEmitterConeProperties : IInspectable
+                IAudioNodeEmitterConeProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InnerAngle(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -3938,8 +4401,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("1D1D5AF7-0D53-4FA9-BD84-D5816A86F3FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("1D1D5AF7-0D53-4FA9-BD84-D5816A86F3FF")
-                IAudioNodeEmitterDecayModel : IInspectable
+                IAudioNodeEmitterDecayModel : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::AudioNodeEmitterDecayKind * value
                         ) = 0;
@@ -3987,8 +4451,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("C7787CA8-F178-462F-BC81-8DD5CBE5DAE8"), exclusiveto, contract] */
                 MIDL_INTERFACE("C7787CA8-F178-462F-BC81-8DD5CBE5DAE8")
-                IAudioNodeEmitterDecayModelStatics : IInspectable
+                IAudioNodeEmitterDecayModelStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateNatural(
                         /* [in] */DOUBLE minGain,
                         /* [in] */DOUBLE maxGain,
@@ -4036,8 +4501,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("FDC8489A-6AD6-4CE4-B7F7-A99370DF7EE9"), exclusiveto, contract] */
                 MIDL_INTERFACE("FDC8489A-6AD6-4CE4-B7F7-A99370DF7EE9")
-                IAudioNodeEmitterFactory : IInspectable
+                IAudioNodeEmitterFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateAudioNodeEmitter(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioNodeEmitterShape * shape,
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioNodeEmitterDecayModel * decayModel,
@@ -4079,8 +4545,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("48934BCF-CF2C-4EFC-9331-75BD22DF1F0C"), exclusiveto, contract] */
                 MIDL_INTERFACE("48934BCF-CF2C-4EFC-9331-75BD22DF1F0C")
-                IAudioNodeEmitterNaturalDecayModelProperties : IInspectable
+                IAudioNodeEmitterNaturalDecayModelProperties : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UnityGainDistance(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -4122,8 +4589,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("EA0311C5-E73D-44BC-859C-45553BBC4828"), exclusiveto, contract] */
                 MIDL_INTERFACE("EA0311C5-E73D-44BC-859C-45553BBC4828")
-                IAudioNodeEmitterShape : IInspectable
+                IAudioNodeEmitterShape : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::AudioNodeEmitterShapeKind * value
                         ) = 0;
@@ -4165,8 +4633,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("57BB2771-FFA5-4B86-A779-E264AEB9145F"), exclusiveto, contract] */
                 MIDL_INTERFACE("57BB2771-FFA5-4B86-A779-E264AEB9145F")
-                IAudioNodeEmitterShapeStatics : IInspectable
+                IAudioNodeEmitterShapeStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateCone(
                         /* [in] */DOUBLE innerAngle,
                         /* [in] */DOUBLE outerAngle,
@@ -4211,8 +4680,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("D9722E16-0C0A-41DA-B755-6C77835FB1EB"), exclusiveto, contract] */
                 MIDL_INTERFACE("D9722E16-0C0A-41DA-B755-6C77835FB1EB")
-                IAudioNodeListener : IInspectable
+                IAudioNodeListener : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector3 * value
                         ) = 0;
@@ -4274,8 +4744,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("0E0F907C-79FF-4544-9EEB-01257B15105A"), contract] */
                 MIDL_INTERFACE("0E0F907C-79FF-4544-9EEB-01257B15105A")
-                IAudioNodeWithListener : IInspectable
+                IAudioNodeWithListener : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Listener(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioNodeListener * value
                         ) = 0;
@@ -4294,6 +4765,126 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioNodeWithListener;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioNodeWithListener_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Media.Audio.IAudioStateMonitor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.AudioStateMonitor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IAudioStateMonitor[] = L"Windows.Media.Audio.IAudioStateMonitor";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                /* [object, uuid("1D13D136-0199-4CDC-B84E-E72C2B581ECE"), exclusiveto, contract] */
+                MIDL_INTERFACE("1D13D136-0199-4CDC-B84E-E72C2B581ECE")
+                IAudioStateMonitor : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SoundLevelChanged(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_SoundLevelChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SoundLevel(
+                        /* [retval, out] */__RPC__out ABI::Windows::Media::SoundLevel * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAudioStateMonitor=_uuidof(IAudioStateMonitor);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Media.Audio.IAudioStateMonitorStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.AudioStateMonitor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IAudioStateMonitorStatics[] = L"Windows.Media.Audio.IAudioStateMonitorStatics";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                /* [object, uuid("6374EA4C-1B3B-4001-94D9-DD225330FA40"), exclusiveto, contract] */
+                MIDL_INTERFACE("6374EA4C-1B3B-4001-94D9-DD225330FA40")
+                IAudioStateMonitorStatics : public IInspectable
+                {
+                public:
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateForRenderMonitoring(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioStateMonitor * * result
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateForRenderMonitoringWithCategory(
+                        /* [in] */ABI::Windows::Media::Render::AudioRenderCategory category,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioStateMonitor * * result
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateForRenderMonitoringWithCategoryAndDeviceRole(
+                        /* [in] */ABI::Windows::Media::Render::AudioRenderCategory category,
+                        /* [in] */ABI::Windows::Media::Devices::AudioDeviceRole role,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioStateMonitor * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateForRenderMonitoringWithCategoryAndDeviceId(
+                        /* [in] */ABI::Windows::Media::Render::AudioRenderCategory category,
+                        /* [in] */__RPC__in HSTRING deviceId,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioStateMonitor * * result
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateForCaptureMonitoring(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioStateMonitor * * result
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateForCaptureMonitoringWithCategory(
+                        /* [in] */ABI::Windows::Media::Capture::MediaCategory category,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioStateMonitor * * result
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateForCaptureMonitoringWithCategoryAndDeviceRole(
+                        /* [in] */ABI::Windows::Media::Capture::MediaCategory category,
+                        /* [in] */ABI::Windows::Media::Devices::AudioDeviceRole role,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioStateMonitor * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateForCaptureMonitoringWithCategoryAndDeviceId(
+                        /* [in] */ABI::Windows::Media::Capture::MediaCategory category,
+                        /* [in] */__RPC__in HSTRING deviceId,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IAudioStateMonitor * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAudioStateMonitorStatics=_uuidof(IAudioStateMonitorStatics);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4317,8 +4908,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("16EEC7A8-1CA7-40EF-91A4-D346E0AA1BBA"), exclusiveto, contract] */
                 MIDL_INTERFACE("16EEC7A8-1CA7-40EF-91A4-D346E0AA1BBA")
-                ICreateAudioDeviceInputNodeResult : IInspectable
+                ICreateAudioDeviceInputNodeResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::AudioDeviceNodeCreationStatus * value
                         ) = 0;
@@ -4360,8 +4952,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("F7776D27-1D9A-47F7-9CD4-2859CC1B7BFF"), exclusiveto, contract] */
                 MIDL_INTERFACE("F7776D27-1D9A-47F7-9CD4-2859CC1B7BFF")
-                ICreateAudioDeviceOutputNodeResult : IInspectable
+                ICreateAudioDeviceOutputNodeResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::AudioDeviceNodeCreationStatus * value
                         ) = 0;
@@ -4403,8 +4996,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("CE83D61C-E297-4C50-9CE7-1C7A69D6BD09"), exclusiveto, contract] */
                 MIDL_INTERFACE("CE83D61C-E297-4C50-9CE7-1C7A69D6BD09")
-                ICreateAudioFileInputNodeResult : IInspectable
+                ICreateAudioFileInputNodeResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::AudioFileNodeCreationStatus * value
                         ) = 0;
@@ -4446,8 +5040,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("47D6BA7B-E909-453F-866E-5540CDA734FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("47D6BA7B-E909-453F-866E-5540CDA734FF")
-                ICreateAudioFileOutputNodeResult : IInspectable
+                ICreateAudioFileOutputNodeResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::AudioFileNodeCreationStatus * value
                         ) = 0;
@@ -4489,8 +5084,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("5453EF7E-7BDE-4B76-BB5D-48F79CFC8C0B"), exclusiveto, contract] */
                 MIDL_INTERFACE("5453EF7E-7BDE-4B76-BB5D-48F79CFC8C0B")
-                ICreateAudioGraphResult : IInspectable
+                ICreateAudioGraphResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::AudioGraphCreationStatus * value
                         ) = 0;
@@ -4509,6 +5105,50 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.Audio.ICreateMediaSourceAudioInputNodeResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_ICreateMediaSourceAudioInputNodeResult[] = L"Windows.Media.Audio.ICreateMediaSourceAudioInputNodeResult";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                /* [object, uuid("46A658A3-53C0-4D59-9E51-CC1D1044A4C4"), exclusiveto, contract] */
+                MIDL_INTERFACE("46A658A3-53C0-4D59-9E51-CC1D1044A4C4")
+                ICreateMediaSourceAudioInputNodeResult : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__out ABI::Windows::Media::Audio::MediaSourceAudioInputNodeCreationStatus * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Node(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IMediaSourceAudioInputNode * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICreateMediaSourceAudioInputNodeResult=_uuidof(ICreateMediaSourceAudioInputNodeResult);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4536,8 +5176,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("0E4D3FAA-36B8-4C91-B9DA-11F44A8A6610"), exclusiveto, contract] */
                 MIDL_INTERFACE("0E4D3FAA-36B8-4C91-B9DA-11F44A8A6610")
-                IEchoEffectDefinition : IInspectable
+                IEchoEffectDefinition : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_WetDryMix(
                         /* [in] */DOUBLE value
                         ) = 0;
@@ -4591,8 +5232,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("0D4E2257-AAF2-4E86-A54C-FB79DB8F6C12"), exclusiveto, contract] */
                 MIDL_INTERFACE("0D4E2257-AAF2-4E86-A54C-FB79DB8F6C12")
-                IEchoEffectDefinitionFactory : IInspectable
+                IEchoEffectDefinitionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioGraph * audioGraph,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IEchoEffectDefinition * * value
@@ -4632,8 +5274,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("C00A5A6A-262D-4B85-9BB7-43280B62ED0C"), exclusiveto, contract] */
                 MIDL_INTERFACE("C00A5A6A-262D-4B85-9BB7-43280B62ED0C")
-                IEqualizerBand : IInspectable
+                IEqualizerBand : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Bandwidth(
                         /* [retval, out] */__RPC__out DOUBLE * value
                         ) = 0;
@@ -4691,8 +5334,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("023F6F1F-83FE-449A-A822-C696442D16B0"), exclusiveto, contract] */
                 MIDL_INTERFACE("023F6F1F-83FE-449A-A822-C696442D16B0")
-                IEqualizerEffectDefinition : IInspectable
+                IEqualizerEffectDefinition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Bands(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CAudio__CEqualizerBand * * value
                         ) = 0;
@@ -4731,8 +5375,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("D2876FC4-D410-4EB5-9E69-C9AA1277EAF0"), exclusiveto, contract] */
                 MIDL_INTERFACE("D2876FC4-D410-4EB5-9E69-C9AA1277EAF0")
-                IEqualizerEffectDefinitionFactory : IInspectable
+                IEqualizerEffectDefinitionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioGraph * audioGraph,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IEqualizerEffectDefinition * * value
@@ -4772,8 +5417,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("3D9BD498-A306-4F06-BD9F-E9EFC8226304"), exclusiveto, contract] */
                 MIDL_INTERFACE("3D9BD498-A306-4F06-BD9F-E9EFC8226304")
-                IFrameInputNodeQuantumStartedEventArgs : IInspectable
+                IFrameInputNodeQuantumStartedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequiredSamples(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -4816,8 +5462,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("6B755D19-2603-47BA-BDEB-39055E3486DC"), exclusiveto, contract] */
                 MIDL_INTERFACE("6B755D19-2603-47BA-BDEB-39055E3486DC")
-                ILimiterEffectDefinition : IInspectable
+                ILimiterEffectDefinition : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Release(
                         /* [in] */UINT32 value
                         ) = 0;
@@ -4865,8 +5512,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("ECBAE6F1-61FF-45EF-B8F5-48659A57C72D"), exclusiveto, contract] */
                 MIDL_INTERFACE("ECBAE6F1-61FF-45EF-B8F5-48659A57C72D")
-                ILimiterEffectDefinitionFactory : IInspectable
+                ILimiterEffectDefinitionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioGraph * audioGraph,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::ILimiterEffectDefinition * * value
@@ -4883,6 +5531,94 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CILimiterEffectDefinitionFactory;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CILimiterEffectDefinitionFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.Audio.IMediaSourceAudioInputNode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.MediaSourceAudioInputNode
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Media.Audio.IAudioInputNode
+ *     Windows.Media.Audio.IAudioNode
+ *     Windows.Foundation.IClosable
+ *     Windows.Media.Audio.IAudioInputNode2
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IMediaSourceAudioInputNode[] = L"Windows.Media.Audio.IMediaSourceAudioInputNode";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Audio {
+                /* [object, uuid("99D8983B-A88A-4041-8E4F-DDBAC0C91FD3"), exclusiveto, contract] */
+                MIDL_INTERFACE("99D8983B-A88A-4041-8E4F-DDBAC0C91FD3")
+                IMediaSourceAudioInputNode : public IInspectable
+                {
+                public:
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PlaybackSpeedFactor(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PlaybackSpeedFactor(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Seek(
+                        /* [in] */ABI::Windows::Foundation::TimeSpan position
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartTime(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_StartTime(
+                        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EndTime(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_EndTime(
+                        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LoopCount(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_int * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_LoopCount(
+                        /* [in] */__RPC__in_opt __FIReference_1_int * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Duration(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MediaSource(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaSource2 * * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MediaSourceCompleted(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MediaSourceCompleted(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaSourceAudioInputNode=_uuidof(IMediaSourceAudioInputNode);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Audio */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4910,8 +5646,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("4606AA89-F563-4D0A-8F6E-F0CDDFF35D84"), exclusiveto, contract] */
                 MIDL_INTERFACE("4606AA89-F563-4D0A-8F6E-F0CDDFF35D84")
-                IReverbEffectDefinition : IInspectable
+                IReverbEffectDefinition : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_WetDryMix(
                         /* [in] */DOUBLE value
                         ) = 0;
@@ -5085,8 +5822,9 @@ namespace ABI {
             namespace Audio {
                 /* [object, uuid("A7D5CBFE-100B-4FF0-9DA6-DC4E05A759F0"), exclusiveto, contract] */
                 MIDL_INTERFACE("A7D5CBFE-100B-4FF0-9DA6-DC4E05A759F0")
-                IReverbEffectDefinitionFactory : IInspectable
+                IReverbEffectDefinitionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in_opt ABI::Windows::Media::Audio::IAudioGraph * audioGraph,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Audio::IReverbEffectDefinition * * value
@@ -5306,6 +6044,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Audio.IAudioGraph ** Default Interface **
  *    Windows.Foundation.IClosable
  *    Windows.Media.Audio.IAudioGraph2
+ *    Windows.Media.Audio.IAudioGraph3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -5381,6 +6120,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Media.Audio.IAudioGraphSettings ** Default Interface **
+ *    Windows.Media.Audio.IAudioGraphSettings2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -5580,6 +6320,31 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Media.Audio.AudioStateMonitor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.Audio.IAudioStateMonitorStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Audio.IAudioStateMonitor ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Audio_AudioStateMonitor_DEFINED
+#define RUNTIMECLASS_Windows_Media_Audio_AudioStateMonitor_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Audio_AudioStateMonitor[] = L"Windows.Media.Audio.AudioStateMonitor";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.Audio.AudioSubmixNode
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5727,6 +6492,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Audio.ICreateMediaSourceAudioInputNodeResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Audio_CreateMediaSourceAudioInputNodeResult_DEFINED
+#define RUNTIMECLASS_Windows_Media_Audio_CreateMediaSourceAudioInputNodeResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Audio_CreateMediaSourceAudioInputNodeResult[] = L"Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.Audio.EchoEffectDefinition
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5859,6 +6648,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Media.Audio.MediaSourceAudioInputNode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Audio.IMediaSourceAudioInputNode ** Default Interface **
+ *    Windows.Media.Audio.IAudioInputNode2
+ *    Windows.Media.Audio.IAudioInputNode
+ *    Windows.Media.Audio.IAudioNode
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Audio_MediaSourceAudioInputNode_DEFINED
+#define RUNTIMECLASS_Windows_Media_Audio_MediaSourceAudioInputNode_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Audio_MediaSourceAudioInputNode[] = L"Windows.Media.Audio.MediaSourceAudioInputNode";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.Audio.ReverbEffectDefinition
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5943,6 +6760,12 @@ typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph2 __x_ABI_CWindows_
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3;
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphConnection_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphConnection_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphConnection __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphConnection;
@@ -5954,6 +6777,12 @@ typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphConnection __x_ABI_
 typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings;
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2;
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettingsFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettingsFactory_FWD_DEFINED__
@@ -6057,6 +6886,18 @@ typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioNodeWithListener __x_ABI
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioNodeWithListener_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor;
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics;
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CICreateAudioDeviceInputNodeResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CICreateAudioDeviceInputNodeResult_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CAudio_CICreateAudioDeviceInputNodeResult __x_ABI_CWindows_CMedia_CAudio_CICreateAudioDeviceInputNodeResult;
@@ -6086,6 +6927,12 @@ typedef interface __x_ABI_CWindows_CMedia_CAudio_CICreateAudioFileOutputNodeResu
 typedef interface __x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult __x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult;
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult;
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CIEchoEffectDefinition_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CIEchoEffectDefinition_FWD_DEFINED__
@@ -6134,6 +6981,12 @@ typedef interface __x_ABI_CWindows_CMedia_CAudio_CILimiterEffectDefinition __x_A
 typedef interface __x_ABI_CWindows_CMedia_CAudio_CILimiterEffectDefinitionFactory __x_ABI_CWindows_CMedia_CAudio_CILimiterEffectDefinitionFactory;
 
 #endif // ____x_ABI_CWindows_CMedia_CAudio_CILimiterEffectDefinitionFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode;
+
+#endif // ____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CAudio_CIReverbEffectDefinition_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CAudio_CIReverbEffectDefinition_FWD_DEFINED__
@@ -7272,6 +8125,121 @@ interface __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioGraphResult
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResultVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult;
+
+typedef struct __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResultVtbl;
+
+interface __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFileInputNode_IInspectable_INTERFACE_DEFINED__)
@@ -7325,6 +8293,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFileInputNode_I
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_INTERFACE_DEFINED__
 
@@ -7372,9 +8341,11 @@ interface __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_INTERFACE_DEFINED__
@@ -7422,6 +8393,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_
 
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -7478,6 +8450,7 @@ interface __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspecta
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_INTERFACE_DEFINED__
 
@@ -7525,6 +8498,109 @@ interface __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__
 #endif // ____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 struct __x_ABI_CWindows_CFoundation_CTimeSpan;
 
@@ -8226,6 +9302,22 @@ typedef enum __x_ABI_CWindows_CMedia_CCapture_CMediaCategory __x_ABI_CWindows_CM
 
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaSource2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaSource2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaSource2 __x_ABI_CWindows_CMedia_CCore_CIMediaSource2;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaSource2_FWD_DEFINED__
+
+
+
+
+
+
+typedef enum __x_ABI_CWindows_CMedia_CDevices_CAudioDeviceRole __x_ABI_CWindows_CMedia_CDevices_CAudioDeviceRole;
+
+
+
+
 
 
 
@@ -8250,6 +9342,11 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfil
 
 typedef enum __x_ABI_CWindows_CMedia_CRender_CAudioRenderCategory __x_ABI_CWindows_CMedia_CRender_CAudioRenderCategory;
 
+
+
+
+
+typedef enum __x_ABI_CWindows_CMedia_CSoundLevel __x_ABI_CWindows_CMedia_CSoundLevel;
 
 
 
@@ -8291,10 +9388,22 @@ typedef enum __x_ABI_CWindows_CMedia_CAudio_CAudioNodeEmitterSettings __x_ABI_CW
 typedef enum __x_ABI_CWindows_CMedia_CAudio_CAudioNodeEmitterShapeKind __x_ABI_CWindows_CMedia_CAudio_CAudioNodeEmitterShapeKind;
 
 
+typedef enum __x_ABI_CWindows_CMedia_CAudio_CMediaSourceAudioInputNodeCreationStatus __x_ABI_CWindows_CMedia_CAudio_CMediaSourceAudioInputNodeCreationStatus;
+
+
 typedef enum __x_ABI_CWindows_CMedia_CAudio_CQuantumSizeSelectionMode __x_ABI_CWindows_CMedia_CAudio_CQuantumSizeSelectionMode;
 
 
 typedef enum __x_ABI_CWindows_CMedia_CAudio_CSpatialAudioModel __x_ABI_CWindows_CMedia_CAudio_CSpatialAudioModel;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8518,6 +9627,27 @@ enum __x_ABI_CWindows_CMedia_CAudio_CAudioNodeEmitterShapeKind
     AudioNodeEmitterShapeKind_Cone = 1,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Struct Windows.Media.Audio.MediaSourceAudioInputNodeCreationStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CMedia_CAudio_CMediaSourceAudioInputNodeCreationStatus
+{
+    MediaSourceAudioInputNodeCreationStatus_Success = 0,
+    MediaSourceAudioInputNodeCreationStatus_FormatNotSupported = 1,
+    MediaSourceAudioInputNodeCreationStatus_NetworkError = 2,
+    MediaSourceAudioInputNodeCreationStatus_UnknownFailure = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9843,6 +10973,109 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioGraph2;
 
 /*
  *
+ * Interface Windows.Media.Audio.IAudioGraph3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.AudioGraph
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IAudioGraph3[] = L"Windows.Media.Audio.IAudioGraph3";
+/* [object, uuid("DDCD25AE-1185-42A7-831D-6A9B0FC86820"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateMediaSourceAudioInputNodeAsync )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CMedia_CCore_CIMediaSource2 * mediaSource,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateMediaSourceAudioInputNodeWithEmitterAsync )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CMedia_CCore_CIMediaSource2 * mediaSource,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioNodeEmitter * emitter,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_CreateMediaSourceAudioInputNodeAsync(This,mediaSource,operation) \
+    ( (This)->lpVtbl->CreateMediaSourceAudioInputNodeAsync(This,mediaSource,operation) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_CreateMediaSourceAudioInputNodeWithEmitterAsync(This,mediaSource,emitter,operation) \
+    ( (This)->lpVtbl->CreateMediaSourceAudioInputNodeWithEmitterAsync(This,mediaSource,emitter,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioGraph3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Audio.IAudioGraphConnection
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10116,6 +11349,106 @@ interface __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.Audio.IAudioGraphSettings2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.AudioGraphSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IAudioGraphSettings2[] = L"Windows.Media.Audio.IAudioGraphSettings2";
+/* [object, uuid("72919787-4DAB-46E3-B4C9-D8E1A2636062"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MaxPlaybackSpeedFactor )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 * This,
+        /* [in] */DOUBLE value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxPlaybackSpeedFactor )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2 * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_put_MaxPlaybackSpeedFactor(This,value) \
+    ( (This)->lpVtbl->put_MaxPlaybackSpeedFactor(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_get_MaxPlaybackSpeedFactor(This,value) \
+    ( (This)->lpVtbl->get_MaxPlaybackSpeedFactor(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioGraphSettings2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -12036,6 +13369,266 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioNodeWithListener;
 
 /*
  *
+ * Interface Windows.Media.Audio.IAudioStateMonitor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.AudioStateMonitor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IAudioStateMonitor[] = L"Windows.Media.Audio.IAudioStateMonitor";
+/* [object, uuid("1D13D136-0199-4CDC-B84E-E72C2B581ECE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_SoundLevelChanged )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_SoundLevelChanged )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SoundLevel )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CMedia_CSoundLevel * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorVtbl;
+
+interface __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_add_SoundLevelChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_SoundLevelChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_remove_SoundLevelChanged(This,token) \
+    ( (This)->lpVtbl->remove_SoundLevelChanged(This,token) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_get_SoundLevel(This,value) \
+    ( (This)->lpVtbl->get_SoundLevel(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Media.Audio.IAudioStateMonitorStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.AudioStateMonitor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IAudioStateMonitorStatics[] = L"Windows.Media.Audio.IAudioStateMonitorStatics";
+/* [object, uuid("6374EA4C-1B3B-4001-94D9-DD225330FA40"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateForRenderMonitoring )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateForRenderMonitoringWithCategory )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CRender_CAudioRenderCategory category,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateForRenderMonitoringWithCategoryAndDeviceRole )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CRender_CAudioRenderCategory category,
+        /* [in] */__x_ABI_CWindows_CMedia_CDevices_CAudioDeviceRole role,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateForRenderMonitoringWithCategoryAndDeviceId )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CRender_CAudioRenderCategory category,
+        /* [in] */__RPC__in HSTRING deviceId,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateForCaptureMonitoring )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateForCaptureMonitoringWithCategory )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CCapture_CMediaCategory category,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateForCaptureMonitoringWithCategoryAndDeviceRole )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CCapture_CMediaCategory category,
+        /* [in] */__x_ABI_CWindows_CMedia_CDevices_CAudioDeviceRole role,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateForCaptureMonitoringWithCategoryAndDeviceId )(
+        __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CCapture_CMediaCategory category,
+        /* [in] */__RPC__in HSTRING deviceId,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitor * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStaticsVtbl;
+
+interface __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_CreateForRenderMonitoring(This,result) \
+    ( (This)->lpVtbl->CreateForRenderMonitoring(This,result) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_CreateForRenderMonitoringWithCategory(This,category,result) \
+    ( (This)->lpVtbl->CreateForRenderMonitoringWithCategory(This,category,result) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_CreateForRenderMonitoringWithCategoryAndDeviceRole(This,category,role,result) \
+    ( (This)->lpVtbl->CreateForRenderMonitoringWithCategoryAndDeviceRole(This,category,role,result) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_CreateForRenderMonitoringWithCategoryAndDeviceId(This,category,deviceId,result) \
+    ( (This)->lpVtbl->CreateForRenderMonitoringWithCategoryAndDeviceId(This,category,deviceId,result) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_CreateForCaptureMonitoring(This,result) \
+    ( (This)->lpVtbl->CreateForCaptureMonitoring(This,result) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_CreateForCaptureMonitoringWithCategory(This,category,result) \
+    ( (This)->lpVtbl->CreateForCaptureMonitoringWithCategory(This,category,result) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_CreateForCaptureMonitoringWithCategoryAndDeviceRole(This,category,role,result) \
+    ( (This)->lpVtbl->CreateForCaptureMonitoringWithCategoryAndDeviceRole(This,category,role,result) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_CreateForCaptureMonitoringWithCategoryAndDeviceId(This,category,deviceId,result) \
+    ( (This)->lpVtbl->CreateForCaptureMonitoringWithCategoryAndDeviceId(This,category,deviceId,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIAudioStateMonitorStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Audio.ICreateAudioDeviceInputNodeResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12532,6 +14125,106 @@ interface __x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CICreateAudioGraphResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.Audio.ICreateMediaSourceAudioInputNodeResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_ICreateMediaSourceAudioInputNodeResult[] = L"Windows.Media.Audio.ICreateMediaSourceAudioInputNodeResult";
+/* [object, uuid("46A658A3-53C0-4D59-9E51-CC1D1044A4C4"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CMedia_CAudio_CMediaSourceAudioInputNodeCreationStatus * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Node )(
+        __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResultVtbl;
+
+interface __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_get_Status(This,value) \
+    ( (This)->lpVtbl->get_Status(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_get_Node(This,value) \
+    ( (This)->lpVtbl->get_Node(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CICreateMediaSourceAudioInputNodeResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -13386,6 +15079,198 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CILimiterEffectDefinitionF
 
 /*
  *
+ * Interface Windows.Media.Audio.IMediaSourceAudioInputNode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Audio.MediaSourceAudioInputNode
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Media.Audio.IAudioInputNode
+ *     Windows.Media.Audio.IAudioNode
+ *     Windows.Foundation.IClosable
+ *     Windows.Media.Audio.IAudioInputNode2
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Audio_IMediaSourceAudioInputNode[] = L"Windows.Media.Audio.IMediaSourceAudioInputNode";
+/* [object, uuid("99D8983B-A88A-4041-8E4F-DDBAC0C91FD3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNodeVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propput] */HRESULT ( STDMETHODCALLTYPE *put_PlaybackSpeedFactor )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [in] */DOUBLE value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PlaybackSpeedFactor )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Position )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *Seek )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan position
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_StartTime )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_StartTime )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_EndTime )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_EndTime )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LoopCount )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_int * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_LoopCount )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [in] */__RPC__in_opt __FIReference_1_int * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Duration )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MediaSource )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIMediaSource2 * * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MediaSourceCompleted )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MediaSourceCompleted )(
+        __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNodeVtbl;
+
+interface __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNodeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_put_PlaybackSpeedFactor(This,value) \
+    ( (This)->lpVtbl->put_PlaybackSpeedFactor(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_get_PlaybackSpeedFactor(This,value) \
+    ( (This)->lpVtbl->get_PlaybackSpeedFactor(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_get_Position(This,value) \
+    ( (This)->lpVtbl->get_Position(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_Seek(This,position) \
+    ( (This)->lpVtbl->Seek(This,position) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_get_StartTime(This,value) \
+    ( (This)->lpVtbl->get_StartTime(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_put_StartTime(This,value) \
+    ( (This)->lpVtbl->put_StartTime(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_get_EndTime(This,value) \
+    ( (This)->lpVtbl->get_EndTime(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_put_EndTime(This,value) \
+    ( (This)->lpVtbl->put_EndTime(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_get_LoopCount(This,value) \
+    ( (This)->lpVtbl->get_LoopCount(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_put_LoopCount(This,value) \
+    ( (This)->lpVtbl->put_LoopCount(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_get_Duration(This,value) \
+    ( (This)->lpVtbl->get_Duration(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_get_MediaSource(This,value) \
+    ( (This)->lpVtbl->get_MediaSource(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_add_MediaSourceCompleted(This,handler,token) \
+    ( (This)->lpVtbl->add_MediaSourceCompleted(This,handler,token) )
+
+#define __x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_remove_MediaSourceCompleted(This,token) \
+    ( (This)->lpVtbl->remove_MediaSourceCompleted(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CAudio_CIMediaSourceAudioInputNode_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Media.Audio.IReverbEffectDefinition
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -14091,6 +15976,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Media.Audio.IAudioGraph ** Default Interface **
  *    Windows.Foundation.IClosable
  *    Windows.Media.Audio.IAudioGraph2
+ *    Windows.Media.Audio.IAudioGraph3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14166,6 +16052,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Media.Audio.IAudioGraphSettings ** Default Interface **
+ *    Windows.Media.Audio.IAudioGraphSettings2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14365,6 +16252,31 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Media.Audio.AudioStateMonitor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.Audio.IAudioStateMonitorStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Audio.IAudioStateMonitor ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Audio_AudioStateMonitor_DEFINED
+#define RUNTIMECLASS_Windows_Media_Audio_AudioStateMonitor_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Audio_AudioStateMonitor[] = L"Windows.Media.Audio.AudioStateMonitor";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.Audio.AudioSubmixNode
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -14512,6 +16424,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Audio.ICreateMediaSourceAudioInputNodeResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Audio_CreateMediaSourceAudioInputNodeResult_DEFINED
+#define RUNTIMECLASS_Windows_Media_Audio_CreateMediaSourceAudioInputNodeResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Audio_CreateMediaSourceAudioInputNodeResult[] = L"Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.Audio.EchoEffectDefinition
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -14640,6 +16576,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Audio_LimiterEffectDefinition[] = L"Windows.Media.Audio.LimiterEffectDefinition";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Media.Audio.MediaSourceAudioInputNode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Audio.IMediaSourceAudioInputNode ** Default Interface **
+ *    Windows.Media.Audio.IAudioInputNode2
+ *    Windows.Media.Audio.IAudioInputNode
+ *    Windows.Media.Audio.IAudioNode
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Audio_MediaSourceAudioInputNode_DEFINED
+#define RUNTIMECLASS_Windows_Media_Audio_MediaSourceAudioInputNode_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Audio_MediaSourceAudioInputNode[] = L"Windows.Media.Audio.MediaSourceAudioInputNode";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

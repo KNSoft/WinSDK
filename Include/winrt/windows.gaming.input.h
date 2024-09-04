@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.gaming.input.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1390,6 +1392,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CGaming__CInput__CHeadset_USE
 #define DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CGaming__CInput__CHeadset_USE
@@ -1419,6 +1422,7 @@ typedef ITypedEventHandler<ABI::Windows::Gaming::Input::IGameController*,ABI::Wi
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1441,6 +1445,7 @@ namespace ABI {
 #endif // ____x_ABI_CWindows_CSystem_CIUserChangedEventArgs_FWD_DEFINED__
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_USE
@@ -1470,6 +1475,7 @@ typedef ITypedEventHandler<ABI::Windows::Gaming::Input::IGameController*,ABI::Wi
 #endif /* DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
@@ -2602,8 +2608,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("B14A539D-BEFB-4C81-8051-15ECF3B13036"), exclusiveto, contract] */
                 MIDL_INTERFACE("B14A539D-BEFB-4C81-8051-15ECF3B13036")
-                IArcadeStick : IInspectable
+                IArcadeStick : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetButtonLabel(
                         /* [in] */ABI::Windows::Gaming::Input::ArcadeStickButtons button,
                         /* [retval, out] */__RPC__out ABI::Windows::Gaming::Input::GameControllerButtonLabel * value
@@ -2646,8 +2653,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("5C37B8C8-37B1-4AD8-9458-200F1A30018E"), exclusiveto, contract] */
                 MIDL_INTERFACE("5C37B8C8-37B1-4AD8-9458-200F1A30018E")
-                IArcadeStickStatics : IInspectable
+                IArcadeStickStatics : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ArcadeStickAdded(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CGaming__CInput__CArcadeStick * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -2704,8 +2712,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("52B5D744-BB86-445A-B59C-596F0E2A49DF"), exclusiveto, contract] */
                 MIDL_INTERFACE("52B5D744-BB86-445A-B59C-596F0E2A49DF")
-                IArcadeStickStatics2 : IInspectable
+                IArcadeStickStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromGameController(
                         /* [in] */__RPC__in_opt ABI::Windows::Gaming::Input::IGameController * gameController,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::Input::IArcadeStick * * value
@@ -2749,8 +2758,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("B4A2C01C-B83B-4459-A1A9-97B03C33DA7C"), exclusiveto, contract] */
                 MIDL_INTERFACE("B4A2C01C-B83B-4459-A1A9-97B03C33DA7C")
-                IFlightStick : IInspectable
+                IFlightStick : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HatSwitchKind(
                         /* [retval, out] */__RPC__out ABI::Windows::Gaming::Input::GameControllerSwitchKind * value
                         ) = 0;
@@ -2796,8 +2806,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("5514924A-FECC-435E-83DC-5CEC8A18A520"), exclusiveto, contract] */
                 MIDL_INTERFACE("5514924A-FECC-435E-83DC-5CEC8A18A520")
-                IFlightStickStatics : IInspectable
+                IFlightStickStatics : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_FlightStickAdded(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CGaming__CInput__CFlightStick * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -2851,8 +2862,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("1BAF6522-5F64-42C5-8267-B9FE2215BFBD"), contract] */
                 MIDL_INTERFACE("1BAF6522-5F64-42C5-8267-B9FE2215BFBD")
-                IGameController : IInspectable
+                IGameController : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_HeadsetConnected(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CGaming__CInput__CHeadset * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -2915,8 +2927,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("DCECC681-3963-4DA6-955D-553F3B6F6161"), contract] */
                 MIDL_INTERFACE("DCECC681-3963-4DA6-955D-553F3B6F6161")
-                IGameControllerBatteryInfo : IInspectable
+                IGameControllerBatteryInfo : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryGetBatteryReport(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Power::IBatteryReport * * value
                         ) = 0;
@@ -2959,8 +2972,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("BC7BB43C-0A69-3903-9E9D-A50F86A45DE5"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC7BB43C-0A69-3903-9E9D-A50F86A45DE5")
-                IGamepad : IInspectable
+                IGamepad : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Vibration(
                         /* [retval, out] */__RPC__out ABI::Windows::Gaming::Input::GamepadVibration * value
                         ) = 0;
@@ -3010,8 +3024,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3C1689BD-5915-4245-B0C0-C89FAE0308FF"), exclusiveto, contract] */
                 MIDL_INTERFACE("3C1689BD-5915-4245-B0C0-C89FAE0308FF")
-                IGamepad2 : IInspectable
+                IGamepad2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetButtonLabel(
                         /* [in] */ABI::Windows::Gaming::Input::GamepadButtons button,
                         /* [retval, out] */__RPC__out ABI::Windows::Gaming::Input::GameControllerButtonLabel * value
@@ -3051,8 +3066,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("8BBCE529-D49C-39E9-9560-E47DDE96B7C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("8BBCE529-D49C-39E9-9560-E47DDE96B7C8")
-                IGamepadStatics : IInspectable
+                IGamepadStatics : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_GamepadAdded(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CGaming__CInput__CGamepad * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3109,8 +3125,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("42676DC5-0856-47C4-9213-B395504C3A3C"), exclusiveto, contract] */
                 MIDL_INTERFACE("42676DC5-0856-47C4-9213-B395504C3A3C")
-                IGamepadStatics2 : IInspectable
+                IGamepadStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromGameController(
                         /* [in] */__RPC__in_opt ABI::Windows::Gaming::Input::IGameController * gameController,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::Input::IGamepad * * value
@@ -3150,8 +3167,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3FD156EF-6925-3FA8-9181-029C5223AE3B"), exclusiveto, contract] */
                 MIDL_INTERFACE("3FD156EF-6925-3FA8-9181-029C5223AE3B")
-                IHeadset : IInspectable
+                IHeadset : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CaptureDeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3197,8 +3215,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("F546656F-E106-4C82-A90F-554012904B85"), exclusiveto, contract] */
                 MIDL_INTERFACE("F546656F-E106-4C82-A90F-554012904B85")
-                IRacingWheel : IInspectable
+                IRacingWheel : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HasClutch(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3259,8 +3278,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("3AC12CD5-581B-4936-9F94-69F1E6514C7D"), exclusiveto, contract] */
                 MIDL_INTERFACE("3AC12CD5-581B-4936-9F94-69F1E6514C7D")
-                IRacingWheelStatics : IInspectable
+                IRacingWheelStatics : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_RacingWheelAdded(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CGaming__CInput__CRacingWheel * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3317,8 +3337,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("E666BCAA-EDFD-4323-A9F6-3C384048D1ED"), exclusiveto, contract] */
                 MIDL_INTERFACE("E666BCAA-EDFD-4323-A9F6-3C384048D1ED")
-                IRacingWheelStatics2 : IInspectable
+                IRacingWheelStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromGameController(
                         /* [in] */__RPC__in_opt ABI::Windows::Gaming::Input::IGameController * gameController,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::Input::IRacingWheel * * value
@@ -3362,8 +3383,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("7CAD6D91-A7E1-4F71-9A78-33E9C5DFEA62"), exclusiveto, contract] */
                 MIDL_INTERFACE("7CAD6D91-A7E1-4F71-9A78-33E9C5DFEA62")
-                IRawGameController : IInspectable
+                IRawGameController : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AxisCount(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -3439,8 +3461,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("43C0C035-BB73-4756-A787-3ED6BEA617BD"), exclusiveto, contract] */
                 MIDL_INTERFACE("43C0C035-BB73-4756-A787-3ED6BEA617BD")
-                IRawGameController2 : IInspectable
+                IRawGameController2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SimpleHapticsControllers(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CHaptics__CSimpleHapticsController * * value
                         ) = 0;
@@ -3485,8 +3508,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("EB8D0792-E95A-4B19-AFC7-0A59F8BF759E"), exclusiveto, contract] */
                 MIDL_INTERFACE("EB8D0792-E95A-4B19-AFC7-0A59F8BF759E")
-                IRawGameControllerStatics : IInspectable
+                IRawGameControllerStatics : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_RawGameControllerAdded(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CGaming__CInput__CRawGameController * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3547,8 +3571,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("E5AEEFDD-F50E-4A55-8CDC-D33229548175"), exclusiveto, contract] */
                 MIDL_INTERFACE("E5AEEFDD-F50E-4A55-8CDC-D33229548175")
-                IUINavigationController : IInspectable
+                IUINavigationController : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCurrentReading(
                         /* [retval, out] */__RPC__out ABI::Windows::Gaming::Input::UINavigationReading * value
                         ) = 0;
@@ -3595,8 +3620,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("2F14930A-F6F8-4A48-8D89-94786CCA0C2E"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F14930A-F6F8-4A48-8D89-94786CCA0C2E")
-                IUINavigationControllerStatics : IInspectable
+                IUINavigationControllerStatics : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_UINavigationControllerAdded(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CGaming__CInput__CUINavigationController * value,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3653,8 +3679,9 @@ namespace ABI {
             namespace Input {
                 /* [object, uuid("E0CB28E3-B20B-4B0B-9ED4-F3D53CEC0DE4"), exclusiveto, contract] */
                 MIDL_INTERFACE("E0CB28E3-B20B-4B0B-9ED4-F3D53CEC0DE4")
-                IUINavigationControllerStatics2 : IInspectable
+                IUINavigationControllerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FromGameController(
                         /* [in] */__RPC__in_opt ABI::Windows::Gaming::Input::IGameController * gameController,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::Input::IUINavigationController * * value
@@ -5928,6 +5955,7 @@ interface __FIEventHandler_1_Windows__CGaming__CInput__CUINavigationController
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CGaming__CInput__CHeadset_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CGaming__CInput__CHeadset_INTERFACE_DEFINED__
 
@@ -5975,6 +6003,7 @@ interface __FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Win
 #endif // ____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CGaming__CInput__CHeadset_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserChangedEventArgs_FWD_DEFINED__
@@ -5984,6 +6013,7 @@ typedef interface __x_ABI_CWindows_CSystem_CIUserChangedEventArgs __x_ABI_CWindo
 #endif // ____x_ABI_CWindows_CSystem_CIUserChangedEventArgs_FWD_DEFINED__
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
@@ -6031,6 +6061,7 @@ interface __FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Win
 
 #endif // ____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor_FWD_DEFINED__

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.networking.networkoperators.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,15 +204,19 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_NETWORKOPERATORS_LEGACYNETWORKOPERATORSCONTRACT_VERSION)
 #define WINDOWS_NETWORKING_NETWORKOPERATORS_LEGACYNETWORKOPERATORSCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_NETWORKING_NETWORKOPERATORS_LEGACYNETWORKOPERATORSCONTRACT_VERSION)
 
+#if !defined(WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION)
+
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -226,11 +232,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -264,6 +270,202 @@
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESim;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim ABI::Windows::Networking::NetworkOperators::IESim
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimAddedEventArgs;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs ABI::Windows::Networking::NetworkOperators::IESimAddedEventArgs
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimDownloadProfileMetadataResult;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult ABI::Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimManagerStatics;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics ABI::Windows::Networking::NetworkOperators::IESimManagerStatics
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimOperationResult;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult ABI::Windows::Networking::NetworkOperators::IESimOperationResult
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimPolicy;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy ABI::Windows::Networking::NetworkOperators::IESimPolicy
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimProfile;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile ABI::Windows::Networking::NetworkOperators::IESimProfile
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimProfileMetadata;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata ABI::Windows::Networking::NetworkOperators::IESimProfileMetadata
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimProfilePolicy;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy ABI::Windows::Networking::NetworkOperators::IESimProfilePolicy
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimRemovedEventArgs;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs ABI::Windows::Networking::NetworkOperators::IESimRemovedEventArgs
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimServiceInfo;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo ABI::Windows::Networking::NetworkOperators::IESimServiceInfo
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimUpdatedEventArgs;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs ABI::Windows::Networking::NetworkOperators::IESimUpdatedEventArgs
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IESimWatcher;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher ABI::Windows::Networking::NetworkOperators::IESimWatcher
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IFdnAccessManagerStatics;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics ABI::Windows::Networking::NetworkOperators::IFdnAccessManagerStatics
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIHotspotAuthenticationContext_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIHotspotAuthenticationContext_FWD_DEFINED__
 namespace ABI {
@@ -501,6 +703,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar ABI::Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSar
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IMobileBroadbandAntennaSarFactory;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory ABI::Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSarFactory
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandCellCdma_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandCellCdma_FWD_DEFINED__
@@ -754,6 +970,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IMobileBroadbandModem3;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 ABI::Windows::Networking::NetworkOperators::IMobileBroadbandModem3
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration_FWD_DEFINED__
 namespace ABI {
@@ -781,6 +1011,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration2 ABI::Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration2
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IMobileBroadbandModemIsolation;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation ABI::Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolation
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IMobileBroadbandModemIsolationFactory;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory ABI::Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolationFactory
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemStatics_FWD_DEFINED__
@@ -865,6 +1123,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetworkRegistrationStateChangeTriggerDetails ABI::Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetworkRegistrationStateChangeTriggerDetails_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IMobileBroadbandPco;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPco
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface IMobileBroadbandPcoDataChangeTriggerDetails;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPcoDataChangeTriggerDetails
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPin_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPin_FWD_DEFINED__
@@ -1062,6 +1348,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandUiccAppsResult_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface INetworkOperatorDataUsageTriggerDetails;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails ABI::Windows::Networking::NetworkOperators::INetworkOperatorDataUsageTriggerDetails
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorNotificationEventDetails_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorNotificationEventDetails_FWD_DEFINED__
 namespace ABI {
@@ -1258,6 +1558,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIProvisioningAgentStaticMethods_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                interface ITetheringEntitlementCheckTriggerDetails;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails ABI::Windows::Networking::NetworkOperators::ITetheringEntitlementCheckTriggerDetails
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdMessage_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdMessage_FWD_DEFINED__
 namespace ABI {
@@ -1331,6 +1645,79 @@ namespace ABI {
 // Parameterized interface forward declarations (C++)
 
 // Collection interface definitions
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimProfile;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_USE
+#define DEF___FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("c480cd48-5922-5ab1-bb58-f149ae515431"))
+IIterator<ABI::Windows::Networking::NetworkOperators::ESimProfile*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimProfile*, ABI::Windows::Networking::NetworkOperators::IESimProfile*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Networking.NetworkOperators.ESimProfile>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::Networking::NetworkOperators::ESimProfile*> __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_t;
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::NetworkOperators::IESimProfile*>
+//#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::NetworkOperators::IESimProfile*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_USE
+#define DEF___FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("2ce4dd28-5154-57da-8e92-c1c9c964427b"))
+IIterable<ABI::Windows::Networking::NetworkOperators::ESimProfile*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimProfile*, ABI::Windows::Networking::NetworkOperators::IESimProfile*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Networking.NetworkOperators.ESimProfile>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::Networking::NetworkOperators::ESimProfile*> __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_t;
+#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::NetworkOperators::IESimProfile*>
+//#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::NetworkOperators::IESimProfile*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
 namespace ABI {
     namespace Windows {
         namespace Networking {
@@ -2276,6 +2663,38 @@ typedef IIterable<ABI::Windows::Networking::NetworkOperators::NetworkOperatorTet
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_USE
+#define DEF___FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("c776f3a9-6e7f-5144-89f7-8f5ec1165ba4"))
+IVectorView<ABI::Windows::Networking::NetworkOperators::ESimProfile*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimProfile*, ABI::Windows::Networking::NetworkOperators::IESimProfile*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Networking.NetworkOperators.ESimProfile>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::Networking::NetworkOperators::ESimProfile*> __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_t;
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::NetworkOperators::IESimProfile*>
+//#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::NetworkOperators::IESimProfile*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAntennaSar_USE
@@ -2693,6 +3112,260 @@ namespace ABI {
     namespace Windows {
         namespace Networking {
             namespace NetworkOperators {
+                class ESimOperationResult;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                struct ESimProfileInstallProgress;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_USE
+#define DEF___FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("67a4b8eb-792e-5683-b625-4928884d39ca"))
+IAsyncOperationProgressHandler<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*,struct ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress> : IAsyncOperationProgressHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*, ABI::Windows::Networking::NetworkOperators::IESimOperationResult*>,struct ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationProgressHandler`2<Windows.Networking.NetworkOperators.ESimOperationResult, Windows.Networking.NetworkOperators.ESimProfileInstallProgress>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationProgressHandler<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*,struct ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress> __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_t;
+#define __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*,ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress>
+//#define __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_t ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*,ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_USE
+#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("7b5eac5d-dc91-5071-a99f-256b4fb56362"))
+IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*,struct ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress> : IAsyncOperationWithProgressCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*, ABI::Windows::Networking::NetworkOperators::IESimOperationResult*>,struct ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<Windows.Networking.NetworkOperators.ESimOperationResult, Windows.Networking.NetworkOperators.ESimProfileInstallProgress>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*,struct ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress> __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_t;
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*,ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress>
+//#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_t ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*,ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_USE
+#define DEF___FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f1130ddf-680c-5594-a2ec-abcb0c521143"))
+IAsyncOperationWithProgress<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*,struct ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress> : IAsyncOperationWithProgress_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*, ABI::Windows::Networking::NetworkOperators::IESimOperationResult*>,struct ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperationWithProgress`2<Windows.Networking.NetworkOperators.ESimOperationResult, Windows.Networking.NetworkOperators.ESimProfileInstallProgress>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationWithProgress<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*,struct ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress> __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_t;
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*,ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress>
+//#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_t ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*,ABI::Windows::Networking::NetworkOperators::ESimProfileInstallProgress>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimDownloadProfileMetadataResult;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("800d3596-fb0b-501a-bda6-802409c1ea22"))
+IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult*, ABI::Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Networking.NetworkOperators.ESimDownloadProfileMetadataResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult*> __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("5efd6396-4690-5e52-827c-1b525d23d898"))
+IAsyncOperation<ABI::Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult*, ABI::Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Networking.NetworkOperators.ESimDownloadProfileMetadataResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult*> __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_t;
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult*>
+//#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("15887528-fa3f-5ae2-bd7f-1119e62d85b6"))
+IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*, ABI::Windows::Networking::NetworkOperators::IESimOperationResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Networking.NetworkOperators.ESimOperationResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*> __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("dd15e279-1276-588b-b9f0-11b97f270452"))
+IAsyncOperation<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*, ABI::Windows::Networking::NetworkOperators::IESimOperationResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Networking.NetworkOperators.ESimOperationResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Networking::NetworkOperators::ESimOperationResult*> __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_t;
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*>
+//#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::NetworkOperators::IESimOperationResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
                 class HotspotCredentialsAuthenticationResult;
             } /* Windows */
         } /* Networking */
@@ -3048,6 +3721,79 @@ typedef IAsyncOperation<enum ABI::Windows::Networking::NetworkOperators::MobileB
 #endif /* DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModemStatus_USE */
 
 
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class MobileBroadbandPco;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c7d3fc9e-c381-545c-a8ae-6a464edb16a2"))
+IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::MobileBroadbandPco*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::MobileBroadbandPco*, ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPco*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Networking.NetworkOperators.MobileBroadbandPco>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::MobileBroadbandPco*> __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPco*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPco*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_USE
+#define DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("ae622260-0d4b-5b39-976b-a7ab610ac185"))
+IAsyncOperation<ABI::Windows::Networking::NetworkOperators::MobileBroadbandPco*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::MobileBroadbandPco*, ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPco*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Networking.NetworkOperators.MobileBroadbandPco>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Networking::NetworkOperators::MobileBroadbandPco*> __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_t;
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPco*>
+//#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPco*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 namespace ABI {
     namespace Windows {
@@ -3564,6 +4310,264 @@ namespace ABI {
     namespace Windows {
         namespace Networking {
             namespace NetworkOperators {
+                class ESim;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("9ca277db-fe42-53b1-ae3b-098e51fa6a9b"))
+ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESim*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESim*, ABI::Windows::Networking::NetworkOperators::IESim*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.NetworkOperators.ESim, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESim*,IInspectable*> __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESim*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESim*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimProfileMetadata;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f4586725-ea85-5ac6-846e-a847e0e45a0b"))
+ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimProfileMetadata*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimProfileMetadata*, ABI::Windows::Networking::NetworkOperators::IESimProfileMetadata*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.NetworkOperators.ESimProfileMetadata, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimProfileMetadata*,IInspectable*> __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimProfileMetadata*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimProfileMetadata*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimWatcher;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b52d4068-1dda-5baa-b76b-a7bc478db5f2"))
+ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimWatcher*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimWatcher*, ABI::Windows::Networking::NetworkOperators::IESimWatcher*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.NetworkOperators.ESimWatcher, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimWatcher*,IInspectable*> __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimWatcher*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimWatcher*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimAddedEventArgs;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f99b94ba-d4d0-5c43-b174-ffd7e6e5131c"))
+ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimWatcher*,ABI::Windows::Networking::NetworkOperators::ESimAddedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimWatcher*, ABI::Windows::Networking::NetworkOperators::IESimWatcher*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimAddedEventArgs*, ABI::Windows::Networking::NetworkOperators::IESimAddedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.NetworkOperators.ESimWatcher, Windows.Networking.NetworkOperators.ESimAddedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimWatcher*,ABI::Windows::Networking::NetworkOperators::ESimAddedEventArgs*> __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimWatcher*,ABI::Windows::Networking::NetworkOperators::IESimAddedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimWatcher*,ABI::Windows::Networking::NetworkOperators::IESimAddedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimRemovedEventArgs;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("a8b7e917-3ac3-54e1-9e26-21f83c6097d2"))
+ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimWatcher*,ABI::Windows::Networking::NetworkOperators::ESimRemovedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimWatcher*, ABI::Windows::Networking::NetworkOperators::IESimWatcher*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimRemovedEventArgs*, ABI::Windows::Networking::NetworkOperators::IESimRemovedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.NetworkOperators.ESimWatcher, Windows.Networking.NetworkOperators.ESimRemovedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimWatcher*,ABI::Windows::Networking::NetworkOperators::ESimRemovedEventArgs*> __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimWatcher*,ABI::Windows::Networking::NetworkOperators::IESimRemovedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimWatcher*,ABI::Windows::Networking::NetworkOperators::IESimRemovedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimUpdatedEventArgs;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("e93527e9-ea10-5aa7-b8aa-fea866294704"))
+ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimWatcher*,ABI::Windows::Networking::NetworkOperators::ESimUpdatedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimWatcher*, ABI::Windows::Networking::NetworkOperators::IESimWatcher*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::ESimUpdatedEventArgs*, ABI::Windows::Networking::NetworkOperators::IESimUpdatedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.NetworkOperators.ESimWatcher, Windows.Networking.NetworkOperators.ESimUpdatedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::ESimWatcher*,ABI::Windows::Networking::NetworkOperators::ESimUpdatedEventArgs*> __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimWatcher*,ABI::Windows::Networking::NetworkOperators::IESimUpdatedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IESimWatcher*,ABI::Windows::Networking::NetworkOperators::IESimUpdatedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
                 class MobileBroadbandAccountWatcher;
             } /* Windows */
         } /* Networking */
@@ -3614,6 +4618,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountEventArgs_USE
@@ -3643,6 +4648,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::MobileBro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -3655,6 +4661,7 @@ namespace ABI {
     } /* NetworkOperators */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountUpdatedEventArgs_USE
@@ -3685,6 +4692,7 @@ typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::MobileBro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -3706,6 +4714,7 @@ namespace ABI {
     } /* NetworkOperators */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandDeviceServiceDataSession_Windows__CNetworking__CNetworkOperators__CMobileBroadbandDeviceServiceDataReceivedEventArgs_USE
@@ -3736,6 +4745,49 @@ typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::MobileBro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class MobileBroadbandModem;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f2df3c8f-20b5-555c-a381-7e29d5ab51d7"))
+ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::MobileBroadbandModem*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::NetworkOperators::MobileBroadbandModem*, ABI::Windows::Networking::NetworkOperators::IMobileBroadbandModem*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Networking.NetworkOperators.MobileBroadbandModem, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::MobileBroadbandModem*,IInspectable*> __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IMobileBroadbandModem*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::IMobileBroadbandModem*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -3757,6 +4809,7 @@ namespace ABI {
     } /* NetworkOperators */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandSarManager_Windows__CNetworking__CNetworkOperators__CMobileBroadbandTransmissionStateChangedEventArgs_USE
@@ -3787,6 +4840,124 @@ typedef ITypedEventHandler<ABI::Windows::Networking::NetworkOperators::MobileBro
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+#ifndef DEF___FIReference_1_int_USE
+#define DEF___FIReference_1_int_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4"))
+IReference<int> : IReference_impl<int> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Int32>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<int> __FIReference_1_int_t;
+#define __FIReference_1_int ABI::Windows::Foundation::__FIReference_1_int_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_int ABI::Windows::Foundation::IReference<INT32>
+//#define __FIReference_1_int_t ABI::Windows::Foundation::IReference<INT32>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_int_USE */
+
+
+
+
+
+#ifndef DEF___FIEventHandler_1_IInspectable_USE
+#define DEF___FIEventHandler_1_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b"))
+IEventHandler<IInspectable*> : IEventHandler_impl<IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
+#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::IEventHandler<IInspectable*>
+//#define __FIEventHandler_1_IInspectable_t ABI::Windows::Foundation::IEventHandler<IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_IInspectable_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a"))
+IAsyncOperationCompletedHandler<bool> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Boolean>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<bool> __FIAsyncOperationCompletedHandler_1_boolean_t;
+#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_boolean_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
+//#define __FIAsyncOperationCompletedHandler_1_boolean_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
+
+
+
+
+#ifndef DEF___FIAsyncOperation_1_boolean_USE
+#define DEF___FIAsyncOperation_1_boolean_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a"))
+IAsyncOperation<bool> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Boolean>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
+#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::IAsyncOperation<boolean>
+//#define __FIAsyncOperation_1_boolean_t ABI::Windows::Foundation::IAsyncOperation<boolean>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_boolean_USE */
+
+
 
 
 #ifndef DEF___FIIterator_1_UINT32_USE
@@ -4082,35 +5253,6 @@ typedef IVectorView<HSTRING> __FIVectorView_1_HSTRING_t;
 
 
 
-#ifndef DEF___FIReference_1_int_USE
-#define DEF___FIReference_1_int_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation {
-template <>
-struct __declspec(uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4"))
-IReference<int> : IReference_impl<int> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.IReference`1<Int32>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IReference<int> __FIReference_1_int_t;
-#define __FIReference_1_int ABI::Windows::Foundation::__FIReference_1_int_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIReference_1_int ABI::Windows::Foundation::IReference<INT32>
-//#define __FIReference_1_int_t ABI::Windows::Foundation::IReference<INT32>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIReference_1_int_USE */
-
-
-
-
 #ifndef DEF___FIReference_1_double_USE
 #define DEF___FIReference_1_double_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -4173,64 +5315,6 @@ typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Wi
 //#define __FIReference_1_Windows__CFoundation__CTimeSpan_t ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::TimeSpan>
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
-
-
-
-
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation {
-template <>
-struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a"))
-IAsyncOperationCompletedHandler<bool> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Boolean>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IAsyncOperationCompletedHandler<bool> __FIAsyncOperationCompletedHandler_1_boolean_t;
-#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_boolean_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
-//#define __FIAsyncOperationCompletedHandler_1_boolean_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<boolean>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
-
-
-
-
-#ifndef DEF___FIAsyncOperation_1_boolean_USE
-#define DEF___FIAsyncOperation_1_boolean_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation {
-template <>
-struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a"))
-IAsyncOperation<bool> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.IAsyncOperation`1<Boolean>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
-#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::IAsyncOperation<boolean>
-//#define __FIAsyncOperation_1_boolean_t ABI::Windows::Foundation::IAsyncOperation<boolean>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIAsyncOperation_1_boolean_USE */
 
 
 
@@ -4523,6 +5607,22 @@ namespace ABI {
 #endif // ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
 
 
+#ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Streams {
+                interface IRandomAccessStreamReference;
+            } /* Windows */
+        } /* Storage */
+    } /* Streams */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference ABI::Windows::Storage::Streams::IRandomAccessStreamReference
+
+#endif // ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+
+
+
 
 
 
@@ -4533,6 +5633,83 @@ namespace ABI {
             namespace NetworkOperators {
                 
                 typedef enum DataClasses : unsigned int DataClasses;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                
+                typedef enum ESimAuthenticationPreference : int ESimAuthenticationPreference;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                
+                typedef enum ESimOperationStatus : int ESimOperationStatus;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                
+                typedef enum ESimProfileClass : int ESimProfileClass;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                
+                typedef enum ESimProfileMetadataState : int ESimProfileMetadataState;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                
+                typedef enum ESimProfileState : int ESimProfileState;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                
+                typedef enum ESimState : int ESimState;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                
+                typedef enum ESimWatcherStatus : int ESimWatcherStatus;
                 
             } /* Windows */
         } /* Networking */
@@ -4653,6 +5830,17 @@ namespace ABI {
         namespace Networking {
             namespace NetworkOperators {
                 
+                typedef enum NetworkOperatorDataUsageNotificationKind : int NetworkOperatorDataUsageNotificationKind;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                
                 typedef enum NetworkOperatorEventMessageType : int NetworkOperatorEventMessageType;
                 
             } /* Windows */
@@ -4763,6 +5951,17 @@ namespace ABI {
         namespace Networking {
             namespace NetworkOperators {
                 
+                typedef struct ESimProfileInstallProgress ESimProfileInstallProgress;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                
                 typedef struct ProfileUsage ProfileUsage;
                 
             } /* Windows */
@@ -4840,6 +6039,69 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimPolicy;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimProfilePolicy;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class ESimServiceInfo;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
 
 
 
@@ -4934,15 +6196,16 @@ namespace ABI {
     } /* NetworkOperators */} /* ABI */
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace Networking {
             namespace NetworkOperators {
-                class MobileBroadbandModem;
+                class MobileBroadbandModemIsolation;
             } /* Windows */
         } /* Networking */
     } /* NetworkOperators */} /* ABI */
-
 
 
 namespace ABI {
@@ -4961,6 +6224,17 @@ namespace ABI {
         namespace Networking {
             namespace NetworkOperators {
                 class MobileBroadbandNetworkRegistrationStateChangeTriggerDetails;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                class MobileBroadbandPcoDataChangeTriggerDetails;
             } /* Windows */
         } /* Networking */
     } /* NetworkOperators */} /* ABI */
@@ -5029,6 +6303,16 @@ namespace ABI {
     namespace Windows {
         namespace Networking {
             namespace NetworkOperators {
+                class NetworkOperatorDataUsageTriggerDetails;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
                 class NetworkOperatorNotificationEventDetails;
             } /* Windows */
         } /* Networking */
@@ -5082,6 +6366,16 @@ namespace ABI {
     namespace Windows {
         namespace Networking {
             namespace NetworkOperators {
+                class TetheringEntitlementCheckTriggerDetails;
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
                 class UssdMessage;
             } /* Windows */
         } /* Networking */
@@ -5097,6 +6391,7 @@ namespace ABI {
             } /* Windows */
         } /* Networking */
     } /* NetworkOperators */} /* ABI */
+
 
 
 
@@ -5148,6 +6443,221 @@ namespace ABI {
         } /* Networking */
     } /* NetworkOperators */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimAuthenticationPreference
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [v1_enum, contract] */
+                enum ESimAuthenticationPreference : int
+                {
+                    ESimAuthenticationPreference_OnEntry = 0,
+                    ESimAuthenticationPreference_OnAction = 1,
+                    ESimAuthenticationPreference_Never = 2,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimOperationStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [v1_enum, contract] */
+                enum ESimOperationStatus : int
+                {
+                    ESimOperationStatus_Success = 0,
+                    ESimOperationStatus_NotAuthorized = 1,
+                    ESimOperationStatus_NotFound = 2,
+                    ESimOperationStatus_PolicyViolation = 3,
+                    ESimOperationStatus_InsufficientSpaceOnCard = 4,
+                    ESimOperationStatus_ServerFailure = 5,
+                    ESimOperationStatus_ServerNotReachable = 6,
+                    ESimOperationStatus_TimeoutWaitingForUserConsent = 7,
+                    ESimOperationStatus_IncorrectConfirmationCode = 8,
+                    ESimOperationStatus_ConfirmationCodeMaxRetriesExceeded = 9,
+                    ESimOperationStatus_CardRemoved = 10,
+                    ESimOperationStatus_CardBusy = 11,
+                    ESimOperationStatus_Other = 12,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimProfileClass
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [v1_enum, contract] */
+                enum ESimProfileClass : int
+                {
+                    ESimProfileClass_Operational = 0,
+                    ESimProfileClass_Test = 1,
+                    ESimProfileClass_Provisioning = 2,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimProfileMetadataState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [v1_enum, contract] */
+                enum ESimProfileMetadataState : int
+                {
+                    ESimProfileMetadataState_Unknown = 0,
+                    ESimProfileMetadataState_WaitingForInstall = 1,
+                    ESimProfileMetadataState_Downloading = 2,
+                    ESimProfileMetadataState_Installing = 3,
+                    ESimProfileMetadataState_Expired = 4,
+                    ESimProfileMetadataState_RejectingDownload = 5,
+                    ESimProfileMetadataState_NoLongerAvailable = 6,
+                    ESimProfileMetadataState_DeniedByPolicy = 7,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimProfileState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [v1_enum, contract] */
+                enum ESimProfileState : int
+                {
+                    ESimProfileState_Unknown = 0,
+                    ESimProfileState_Disabled = 1,
+                    ESimProfileState_Enabled = 2,
+                    ESimProfileState_Deleted = 3,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [v1_enum, contract] */
+                enum ESimState : int
+                {
+                    ESimState_Unknown = 0,
+                    ESimState_Idle = 1,
+                    ESimState_Removed = 2,
+                    ESimState_Busy = 3,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimWatcherStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [v1_enum, contract] */
+                enum ESimWatcherStatus : int
+                {
+                    ESimWatcherStatus_Created = 0,
+                    ESimWatcherStatus_Started = 1,
+                    ESimWatcherStatus_EnumerationCompleted = 2,
+                    ESimWatcherStatus_Stopping = 3,
+                    ESimWatcherStatus_Stopped = 4,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5450,6 +6960,32 @@ namespace ABI {
         } /* Networking */
     } /* NetworkOperators */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.NetworkOperatorDataUsageNotificationKind
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [v1_enum, contract] */
+                enum NetworkOperatorDataUsageNotificationKind : int
+                {
+                    NetworkOperatorDataUsageNotificationKind_DataUsageProgress = 0,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5795,6 +7331,33 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Networking.NetworkOperators.ESimProfileInstallProgress
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [contract] */
+                struct ESimProfileInstallProgress
+                {
+                    INT32 TotalSizeInBytes;
+                    INT32 InstalledSizeInBytes;
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Struct Windows.Networking.NetworkOperators.ProfileUsage
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5822,6 +7385,745 @@ namespace ABI {
 
 /*
  *
+ * Interface Windows.Networking.NetworkOperators.IESim
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESim
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESim[] = L"Windows.Networking.NetworkOperators.IESim";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("6F6E6E26-F123-437D-8CED-DC1D2BC0C3A9"), exclusiveto, contract] */
+                MIDL_INTERFACE("6F6E6E26-F123-437D-8CED-DC1D2BC0C3A9")
+                IESim : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AvailableMemoryInBytes(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_int * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Eid(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FirmwareVersion(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MobileBroadbandModemDeviceId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Policy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESimPolicy * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::ESimState * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetProfiles(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE DeleteProfileAsync(
+                        /* [in] */__RPC__in HSTRING profileId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE DownloadProfileMetadataAsync(
+                        /* [in] */__RPC__in HSTRING activationCode,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE ResetAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ProfileChanged(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ProfileChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESim=_uuidof(IESim);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimAddedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimAddedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimAddedEventArgs[] = L"Windows.Networking.NetworkOperators.IESimAddedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("38BD0A58-4D5A-4D08-8DA7-E73EFF369DDD"), exclusiveto, contract] */
+                MIDL_INTERFACE("38BD0A58-4D5A-4D08-8DA7-E73EFF369DDD")
+                IESimAddedEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ESim(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESim * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimAddedEventArgs=_uuidof(IESimAddedEventArgs);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimDownloadProfileMetadataResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimDownloadProfileMetadataResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimDownloadProfileMetadataResult[] = L"Windows.Networking.NetworkOperators.IESimDownloadProfileMetadataResult";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("C4234D9E-5AD6-426D-8D00-4434F449AFEC"), exclusiveto, contract] */
+                MIDL_INTERFACE("C4234D9E-5AD6-426D-8D00-4434F449AFEC")
+                IESimDownloadProfileMetadataResult : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Result(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESimOperationResult * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProfileMetadata(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESimProfileMetadata * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimDownloadProfileMetadataResult=_uuidof(IESimDownloadProfileMetadataResult);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimManagerStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimManagerStatics[] = L"Windows.Networking.NetworkOperators.IESimManagerStatics";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("0BFA2C0C-DF88-4631-BF04-C12E281B3962"), exclusiveto, contract] */
+                MIDL_INTERFACE("0BFA2C0C-DF88-4631-BF04-C12E281B3962")
+                IESimManagerStatics : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ServiceInfo(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESimServiceInfo * * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE TryCreateESimWatcher(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESimWatcher * * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ServiceInfoChanged(
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ServiceInfoChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimManagerStatics=_uuidof(IESimManagerStatics);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimOperationResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimOperationResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimOperationResult[] = L"Windows.Networking.NetworkOperators.IESimOperationResult";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("A67B63B1-309B-4E77-9E7E-CD93F1DDC7B9"), exclusiveto, contract] */
+                MIDL_INTERFACE("A67B63B1-309B-4E77-9E7E-CD93F1DDC7B9")
+                IESimOperationResult : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::ESimOperationStatus * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimOperationResult=_uuidof(IESimOperationResult);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimPolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimPolicy
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimPolicy[] = L"Windows.Networking.NetworkOperators.IESimPolicy";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("41E1B99D-CF7E-4315-882B-6F1E74B0D38F"), exclusiveto, contract] */
+                MIDL_INTERFACE("41E1B99D-CF7E-4315-882B-6F1E74B0D38F")
+                IESimPolicy : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShouldEnableManagingUi(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimPolicy=_uuidof(IESimPolicy);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimProfile
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimProfile
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimProfile[] = L"Windows.Networking.NetworkOperators.IESimProfile";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("EE1E7880-06A9-4027-B4F8-DDB23D7810E0"), exclusiveto, contract] */
+                MIDL_INTERFACE("EE1E7880-06A9-4027-B4F8-DDB23D7810E0")
+                IESimProfile : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Class(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::ESimProfileClass * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Nickname(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Policy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESimProfilePolicy * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProviderIcon(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProviderId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProviderName(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::ESimProfileState * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE DisableAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE EnableAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE SetNicknameAsync(
+                        /* [in] */__RPC__in HSTRING newNickname,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimProfile=_uuidof(IESimProfile);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimProfileMetadata
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimProfileMetadata
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimProfileMetadata[] = L"Windows.Networking.NetworkOperators.IESimProfileMetadata";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("ED25831F-90DB-498D-A7B4-EBCE807D3C23"), exclusiveto, contract] */
+                MIDL_INTERFACE("ED25831F-90DB-498D-A7B4-EBCE807D3C23")
+                IESimProfileMetadata : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsConfirmationCodeRequired(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Policy(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESimProfilePolicy * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProviderIcon(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProviderId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProviderName(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_State(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::ESimProfileMetadataState * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE DenyInstallAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE ConfirmInstallAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE ConfirmInstallWithConfirmationCodeAsync(
+                        /* [in] */__RPC__in HSTRING confirmationCode,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE PostponeInstallAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_StateChanged(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_StateChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimProfileMetadata=_uuidof(IESimProfileMetadata);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimProfilePolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimProfilePolicy
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimProfilePolicy[] = L"Windows.Networking.NetworkOperators.IESimProfilePolicy";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("E6DD0F1D-9C5C-46C5-A289-A948999BF062"), exclusiveto, contract] */
+                MIDL_INTERFACE("E6DD0F1D-9C5C-46C5-A289-A948999BF062")
+                IESimProfilePolicy : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanDelete(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanDisable(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsManagedByEnterprise(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimProfilePolicy=_uuidof(IESimProfilePolicy);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimRemovedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimRemovedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimRemovedEventArgs[] = L"Windows.Networking.NetworkOperators.IESimRemovedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("DEC5277B-2FD9-4ED9-8376-D9B5E41278A3"), exclusiveto, contract] */
+                MIDL_INTERFACE("DEC5277B-2FD9-4ED9-8376-D9B5E41278A3")
+                IESimRemovedEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ESim(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESim * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimRemovedEventArgs=_uuidof(IESimRemovedEventArgs);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimServiceInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimServiceInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimServiceInfo[] = L"Windows.Networking.NetworkOperators.IESimServiceInfo";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("F16AABCF-7F59-4A51-8494-BD89D5FF50EE"), exclusiveto, contract] */
+                MIDL_INTERFACE("F16AABCF-7F59-4A51-8494-BD89D5FF50EE")
+                IESimServiceInfo : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AuthenticationPreference(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::ESimAuthenticationPreference * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsESimUiEnabled(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimServiceInfo=_uuidof(IESimServiceInfo);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimUpdatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimUpdatedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimUpdatedEventArgs[] = L"Windows.Networking.NetworkOperators.IESimUpdatedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("4C125CEC-508D-4B88-83CB-68BEF8168D12"), exclusiveto, contract] */
+                MIDL_INTERFACE("4C125CEC-508D-4B88-83CB-68BEF8168D12")
+                IESimUpdatedEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ESim(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IESim * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimUpdatedEventArgs=_uuidof(IESimUpdatedEventArgs);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimWatcher
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimWatcher
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimWatcher[] = L"Windows.Networking.NetworkOperators.IESimWatcher";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("C1F84CEB-A28D-4FBF-9771-6E31B81CCF22"), exclusiveto, contract] */
+                MIDL_INTERFACE("C1F84CEB-A28D-4FBF-9771-6E31B81CCF22")
+                IESimWatcher : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::ESimWatcherStatus * status
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Start(void) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Stop(void) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Added(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Added(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_EnumerationCompleted(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_EnumerationCompleted(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Removed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Removed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Stopped(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Stopped(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Updated(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Updated(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IESimWatcher=_uuidof(IESimWatcher);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IFdnAccessManagerStatics
+ *
+ * Introduced to Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.FdnAccessManager
+ *
+ *
+ */
+#if WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IFdnAccessManagerStatics[] = L"Windows.Networking.NetworkOperators.IFdnAccessManagerStatics";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("F2AA4395-F1E6-4319-AA3E-477CA64B2BDF"), exclusiveto, contract] */
+                MIDL_INTERFACE("F2AA4395-F1E6-4319-AA3E-477CA64B2BDF")
+                IFdnAccessManagerStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE RequestUnlockAsync(
+                        /* [in] */__RPC__in HSTRING contactListId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IFdnAccessManagerStatics=_uuidof(IFdnAccessManagerStatics);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Interface Windows.Networking.NetworkOperators.IHotspotAuthenticationContext
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5841,8 +8143,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E756C791-1003-4DE5-83C7-DE61D88831D0"), exclusiveto, contract] */
                 MIDL_INTERFACE("E756C791-1003-4DE5-83C7-DE61D88831D0")
-                IHotspotAuthenticationContext : IInspectable
+                IHotspotAuthenticationContext : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WirelessNetworkId(
                         /* [out] */__RPC__out UINT32 * __valueSize,
                         /* [size_is(, *(__valueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__valueSize)) BYTE * * value
@@ -5908,8 +8211,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E756C791-1004-4DE5-83C7-DE61D88831D0"), exclusiveto, contract] */
                 MIDL_INTERFACE("E756C791-1004-4DE5-83C7-DE61D88831D0")
-                IHotspotAuthenticationContext2 : IInspectable
+                IHotspotAuthenticationContext2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE IssueCredentialsAsync(
                         /* [in] */__RPC__in HSTRING userName,
                         /* [in] */__RPC__in HSTRING password,
@@ -5952,8 +8256,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E756C791-1002-4DE5-83C7-DE61D88831D0"), exclusiveto, contract] */
                 MIDL_INTERFACE("E756C791-1002-4DE5-83C7-DE61D88831D0")
-                IHotspotAuthenticationContextStatics : IInspectable
+                IHotspotAuthenticationContextStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE TryGetAuthenticationContext(
                         /* [in] */__RPC__in HSTRING evenToken,
                         /* [out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IHotspotAuthenticationContext * * context,
@@ -5994,8 +8299,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E756C791-1001-4DE5-83C7-DE61D88831D0"), exclusiveto, contract] */
                 MIDL_INTERFACE("E756C791-1001-4DE5-83C7-DE61D88831D0")
-                IHotspotAuthenticationEventDetails : IInspectable
+                IHotspotAuthenticationEventDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EventToken(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6034,8 +8340,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E756C791-1005-4DE5-83C7-DE61D88831D0"), exclusiveto, contract] */
                 MIDL_INTERFACE("E756C791-1005-4DE5-83C7-DE61D88831D0")
-                IHotspotCredentialsAuthenticationResult : IInspectable
+                IHotspotCredentialsAuthenticationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HasNetworkErrorOccurred(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -6083,8 +8390,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("B458AEED-49F1-4C22-B073-96D511BF9C35"), exclusiveto, contract] */
                 MIDL_INTERFACE("B458AEED-49F1-4C22-B073-96D511BF9C35")
-                IKnownCSimFilePathsStatics : IInspectable
+                IKnownCSimFilePathsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EFSpn(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_UINT32 * * value
                         ) = 0;
@@ -6129,8 +8437,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("3883C8B9-FF24-4571-A867-09F960426E14"), exclusiveto, contract] */
                 MIDL_INTERFACE("3883C8B9-FF24-4571-A867-09F960426E14")
-                IKnownRuimFilePathsStatics : IInspectable
+                IKnownRuimFilePathsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EFSpn(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_UINT32 * * value
                         ) = 0;
@@ -6175,8 +8484,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("80CD1A63-37A5-43D3-80A3-CCD23E8FECEE"), exclusiveto, contract] */
                 MIDL_INTERFACE("80CD1A63-37A5-43D3-80A3-CCD23E8FECEE")
-                IKnownSimFilePathsStatics : IInspectable
+                IKnownSimFilePathsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EFOns(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_UINT32 * * value
                         ) = 0;
@@ -6224,8 +8534,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("7C34E581-1F1B-43F4-9530-8B092D32D71F"), exclusiveto, contract] */
                 MIDL_INTERFACE("7C34E581-1F1B-43F4-9530-8B092D32D71F")
-                IKnownUSimFilePathsStatics : IInspectable
+                IKnownUSimFilePathsStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EFSpn(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_UINT32 * * value
                         ) = 0;
@@ -6276,8 +8587,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("36C24CCD-CEE2-43E0-A603-EE86A36D6570"), exclusiveto, contract] */
                 MIDL_INTERFACE("36C24CCD-CEE2-43E0-A603-EE86A36D6570")
-                IMobileBroadbandAccount : IInspectable
+                IMobileBroadbandAccount : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkAccountId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6328,8 +8640,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("38F52F1C-1136-4257-959F-B658A352B6D4"), exclusiveto, contract] */
                 MIDL_INTERFACE("38F52F1C-1136-4257-959F-B658A352B6D4")
-                IMobileBroadbandAccount2 : IInspectable
+                IMobileBroadbandAccount2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetConnectionProfiles(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile * * value
                         ) = 0;
@@ -6368,8 +8681,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("092A1E21-9379-4B9B-AD31-D5FEE2F748C6"), exclusiveto, contract] */
                 MIDL_INTERFACE("092A1E21-9379-4B9B-AD31-D5FEE2F748C6")
-                IMobileBroadbandAccount3 : IInspectable
+                IMobileBroadbandAccount3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AccountExperienceUrl(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
                         ) = 0;
@@ -6408,8 +8722,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("3853C880-77DE-4C04-BEAD-A123B08C9F59"), exclusiveto, contract] */
                 MIDL_INTERFACE("3853C880-77DE-4C04-BEAD-A123B08C9F59")
-                IMobileBroadbandAccountEventArgs : IInspectable
+                IMobileBroadbandAccountEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkAccountId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6448,8 +8763,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("AA7F4D24-AFC1-4FC8-AE9A-A9175310FAAD"), exclusiveto, contract] */
                 MIDL_INTERFACE("AA7F4D24-AFC1-4FC8-AE9A-A9175310FAAD")
-                IMobileBroadbandAccountStatics : IInspectable
+                IMobileBroadbandAccountStatics : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AvailableNetworkAccountIds(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_HSTRING * * ppAccountIds
                         ) = 0;
@@ -6492,8 +8808,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("7BC31D88-A6BD-49E1-80AB-6B91354A57D4"), exclusiveto, contract] */
                 MIDL_INTERFACE("7BC31D88-A6BD-49E1-80AB-6B91354A57D4")
-                IMobileBroadbandAccountUpdatedEventArgs : IInspectable
+                IMobileBroadbandAccountUpdatedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkAccountId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -6538,8 +8855,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("6BF3335E-23B5-449F-928D-5E0D3E04471D"), exclusiveto, contract] */
                 MIDL_INTERFACE("6BF3335E-23B5-449F-928D-5E0D3E04471D")
-                IMobileBroadbandAccountWatcher : IInspectable
+                IMobileBroadbandAccountWatcher : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AccountAdded(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountEventArgs * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -6615,8 +8933,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("B9AF4B7E-CBF9-4109-90BE-5C06BFD513B6"), exclusiveto, contract] */
                 MIDL_INTERFACE("B9AF4B7E-CBF9-4109-90BE-5C06BFD513B6")
-                IMobileBroadbandAntennaSar : IInspectable
+                IMobileBroadbandAntennaSar : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AntennaIndex(
                         /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
@@ -6635,6 +8954,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandAntennaSarFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandAntennaSar
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandAntennaSarFactory[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandAntennaSarFactory";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("A91E1716-C04D-4A21-8698-1459DC672C6E"), exclusiveto, contract] */
+                MIDL_INTERFACE("A91E1716-C04D-4A21-8698-1459DC672C6E")
+                IMobileBroadbandAntennaSarFactory : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE CreateWithIndex(
+                        /* [in] */INT32 antennaIndex,
+                        /* [in] */INT32 sarBackoffIndex,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSar * * antennaSar
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMobileBroadbandAntennaSarFactory=_uuidof(IMobileBroadbandAntennaSarFactory);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -6658,8 +9020,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("0601B3B4-411A-4F2E-8287-76F5650C60CD"), exclusiveto, contract] */
                 MIDL_INTERFACE("0601B3B4-411A-4F2E-8287-76F5650C60CD")
-                IMobileBroadbandCellCdma : IInspectable
+                IMobileBroadbandCellCdma : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BaseStationId(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_int * * value
                         ) = 0;
@@ -6719,8 +9082,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("CC917F06-7EE0-47B8-9E1F-C3B48DF9DF5B"), exclusiveto, contract] */
                 MIDL_INTERFACE("CC917F06-7EE0-47B8-9E1F-C3B48DF9DF5B")
-                IMobileBroadbandCellGsm : IInspectable
+                IMobileBroadbandCellGsm : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BaseStationId(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_int * * value
                         ) = 0;
@@ -6777,8 +9141,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("9197C87B-2B78-456D-8B53-AAA25D0AF741"), exclusiveto, contract] */
                 MIDL_INTERFACE("9197C87B-2B78-456D-8B53-AAA25D0AF741")
-                IMobileBroadbandCellLte : IInspectable
+                IMobileBroadbandCellLte : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CellId(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_int * * value
                         ) = 0;
@@ -6838,8 +9203,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("0EDA1655-DB0E-4182-8CDA-CC419A7BDE08"), exclusiveto, contract] */
                 MIDL_INTERFACE("0EDA1655-DB0E-4182-8CDA-CC419A7BDE08")
-                IMobileBroadbandCellTdscdma : IInspectable
+                IMobileBroadbandCellTdscdma : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CellId(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_int * * value
                         ) = 0;
@@ -6899,8 +9265,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("77B4B5AE-49C8-4F15-B285-4C26A7F67215"), exclusiveto, contract] */
                 MIDL_INTERFACE("77B4B5AE-49C8-4F15-B285-4C26A7F67215")
-                IMobileBroadbandCellUmts : IInspectable
+                IMobileBroadbandCellUmts : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CellId(
                         /* [retval, out] */__RPC__deref_out_opt __FIReference_1_int * * value
                         ) = 0;
@@ -6960,8 +9327,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("89A9562A-E472-4DA5-929C-DE61711DD261"), exclusiveto, contract] */
                 MIDL_INTERFACE("89A9562A-E472-4DA5-929C-DE61711DD261")
-                IMobileBroadbandCellsInfo : IInspectable
+                IMobileBroadbandCellsInfo : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NeighboringCellsCdma(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandCellCdma * * value
                         ) = 0;
@@ -7027,8 +9395,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E6D08168-E381-4C6E-9BE8-FE156969A446"), exclusiveto, contract] */
                 MIDL_INTERFACE("E6D08168-E381-4C6E-9BE8-FE156969A446")
-                IMobileBroadbandDeviceInformation : IInspectable
+                IMobileBroadbandDeviceInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkDeviceStatus(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::NetworkDeviceStatus * value
                         ) = 0;
@@ -7106,8 +9475,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("2E467AF1-F932-4737-A722-03BA72370CB8"), exclusiveto, contract] */
                 MIDL_INTERFACE("2E467AF1-F932-4737-A722-03BA72370CB8")
-                IMobileBroadbandDeviceInformation2 : IInspectable
+                IMobileBroadbandDeviceInformation2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PinManager(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPinManager * * value
                         ) = 0;
@@ -7152,8 +9522,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E08BB4BD-5D30-4B5A-92CC-D54DF881D49E"), exclusiveto, contract] */
                 MIDL_INTERFACE("E08BB4BD-5D30-4B5A-92CC-D54DF881D49E")
-                IMobileBroadbandDeviceInformation3 : IInspectable
+                IMobileBroadbandDeviceInformation3 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SimSpn(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7198,8 +9569,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("22BE1A52-BD80-40AC-8E1F-2E07836A3DBD"), exclusiveto, contract] */
                 MIDL_INTERFACE("22BE1A52-BD80-40AC-8E1F-2E07836A3DBD")
-                IMobileBroadbandDeviceService : IInspectable
+                IMobileBroadbandDeviceService : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceServiceId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -7247,8 +9619,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("B0F46ABB-94D6-44B9-A538-F0810B645389"), exclusiveto, contract] */
                 MIDL_INTERFACE("B0F46ABB-94D6-44B9-A538-F0810B645389")
-                IMobileBroadbandDeviceServiceCommandResult : IInspectable
+                IMobileBroadbandDeviceServiceCommandResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StatusCode(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -7290,8 +9663,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("FC098A45-913B-4914-B6C3-AE6304593E75"), exclusiveto, contract] */
                 MIDL_INTERFACE("FC098A45-913B-4914-B6C3-AE6304593E75")
-                IMobileBroadbandDeviceServiceCommandSession : IInspectable
+                IMobileBroadbandDeviceServiceCommandSession : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SendQueryCommandAsync(
                         /* [in] */UINT32 commandId,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * data,
@@ -7338,8 +9712,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("B6AA13DE-1380-40E3-8618-73CBCA48138C"), exclusiveto, contract] */
                 MIDL_INTERFACE("B6AA13DE-1380-40E3-8618-73CBCA48138C")
-                IMobileBroadbandDeviceServiceDataReceivedEventArgs : IInspectable
+                IMobileBroadbandDeviceServiceDataReceivedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ReceivedData(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -7378,8 +9753,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("DAD62333-8BCF-4289-8A37-045C2169486A"), exclusiveto, contract] */
                 MIDL_INTERFACE("DAD62333-8BCF-4289-8A37-045C2169486A")
-                IMobileBroadbandDeviceServiceDataSession : IInspectable
+                IMobileBroadbandDeviceServiceDataSession : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE WriteDataAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * value,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncInfo
@@ -7427,8 +9803,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("53D69B5B-C4ED-45F0-803A-D9417A6D9846"), exclusiveto, contract] */
                 MIDL_INTERFACE("53D69B5B-C4ED-45F0-803A-D9417A6D9846")
-                IMobileBroadbandDeviceServiceInformation : IInspectable
+                IMobileBroadbandDeviceServiceInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceServiceId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -7473,8 +9850,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("4A055B70-B9AE-4458-9241-A6A5FBF18A0C"), exclusiveto, contract] */
                 MIDL_INTERFACE("4A055B70-B9AE-4458-9241-A6A5FBF18A0C")
-                IMobileBroadbandDeviceServiceTriggerDetails : IInspectable
+                IMobileBroadbandDeviceServiceTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7519,8 +9897,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("D0356912-E9F9-4F67-A03D-43189A316BF1"), exclusiveto, contract] */
                 MIDL_INTERFACE("D0356912-E9F9-4F67-A03D-43189A316BF1")
-                IMobileBroadbandModem : IInspectable
+                IMobileBroadbandModem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentAccount(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IMobileBroadbandAccount * * value
                         ) = 0;
@@ -7587,8 +9966,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("12862B28-B9EB-4EE2-BBE3-711F53EEA373"), exclusiveto, contract] */
                 MIDL_INTERFACE("12862B28-B9EB-4EE2-BBE3-711F53EEA373")
-                IMobileBroadbandModem2 : IInspectable
+                IMobileBroadbandModem2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetIsPassthroughEnabledAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * asyncInfo
                         ) = 0;
@@ -7612,6 +9992,57 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBr
 
 /*
  *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandModem3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandModem
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandModem3[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandModem3";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("E9FEC6EA-2F34-4582-9102-C314D2A87EEC"), exclusiveto, contract] */
+                MIDL_INTERFACE("E9FEC6EA-2F34-4582-9102-C314D2A87EEC")
+                IMobileBroadbandModem3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE TryGetPcoAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * * operation
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsInEmergencyCallMode(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_IsInEmergencyCallModeChanged(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_IsInEmergencyCallModeChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMobileBroadbandModem3=_uuidof(IMobileBroadbandModem3);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Networking.NetworkOperators.IMobileBroadbandModemConfiguration
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7631,8 +10062,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("FCE035A3-D6CD-4320-B982-BE9D3EC7890F"), exclusiveto, contract] */
                 MIDL_INTERFACE("FCE035A3-D6CD-4320-B982-BE9D3EC7890F")
-                IMobileBroadbandModemConfiguration : IInspectable
+                IMobileBroadbandModemConfiguration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uicc(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IMobileBroadbandUicc * * value
                         ) = 0;
@@ -7677,8 +10109,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("320FF5C5-E460-42AE-AA51-69621E7A4477"), exclusiveto, contract] */
                 MIDL_INTERFACE("320FF5C5-E460-42AE-AA51-69621E7A4477")
-                IMobileBroadbandModemConfiguration2 : IInspectable
+                IMobileBroadbandModemConfiguration2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SarManager(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IMobileBroadbandSarManager * * value
                         ) = 0;
@@ -7694,6 +10127,100 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration2;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandModemIsolation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandModemIsolation[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolation";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("B5618FEC-E661-4330-9BB4-3480212EC354"), exclusiveto, contract] */
+                MIDL_INTERFACE("B5618FEC-E661-4330-9BB4-3480212EC354")
+                IMobileBroadbandModemIsolation : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE AddAllowedHost(
+                        /* [in] */__RPC__in_opt ABI::Windows::Networking::IHostName * host
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE AddAllowedHostRange(
+                        /* [in] */__RPC__in_opt ABI::Windows::Networking::IHostName * first,
+                        /* [in] */__RPC__in_opt ABI::Windows::Networking::IHostName * last
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE ApplyConfigurationAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE ClearConfigurationAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMobileBroadbandModemIsolation=_uuidof(IMobileBroadbandModemIsolation);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandModemIsolation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandModemIsolationFactory[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolationFactory";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("21D7EC58-C2B1-4C2F-A030-72820A24ECD9"), exclusiveto, contract] */
+                MIDL_INTERFACE("21D7EC58-C2B1-4C2F-A030-72820A24ECD9")
+                IMobileBroadbandModemIsolationFactory : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Create(
+                        /* [in] */__RPC__in HSTRING modemDeviceId,
+                        /* [in] */__RPC__in HSTRING ruleGroupId,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolation * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMobileBroadbandModemIsolationFactory=_uuidof(IMobileBroadbandModemIsolationFactory);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7717,8 +10244,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("F99ED637-D6F1-4A78-8CBC-6421A65063C8"), exclusiveto, contract] */
                 MIDL_INTERFACE("F99ED637-D6F1-4A78-8CBC-6421A65063C8")
-                IMobileBroadbandModemStatics : IInspectable
+                IMobileBroadbandModemStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7764,8 +10292,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("CB63928C-0309-4CB6-A8C1-6A5A3C8E1FF6"), exclusiveto, contract] */
                 MIDL_INTERFACE("CB63928C-0309-4CB6-A8C1-6A5A3C8E1FF6")
-                IMobileBroadbandNetwork : IInspectable
+                IMobileBroadbandNetwork : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkAdapter(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Connectivity::INetworkAdapter * * value
                         ) = 0;
@@ -7829,8 +10358,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("5A55DB22-62F7-4BDD-BA1D-477441960BA0"), exclusiveto, contract] */
                 MIDL_INTERFACE("5A55DB22-62F7-4BDD-BA1D-477441960BA0")
-                IMobileBroadbandNetwork2 : IInspectable
+                IMobileBroadbandNetwork2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetVoiceCallSupportAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * asyncInfo
                         ) = 0;
@@ -7872,8 +10402,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("33670A8A-C7EF-444C-AB6C-DF7EF7A390FE"), exclusiveto, contract] */
                 MIDL_INTERFACE("33670A8A-C7EF-444C-AB6C-DF7EF7A390FE")
-                IMobileBroadbandNetwork3 : IInspectable
+                IMobileBroadbandNetwork3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetCellsInfoAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandCellsInfo * * asyncOperation
                         ) = 0;
@@ -7912,8 +10443,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("BEAF94E1-960F-49B4-A08D-7D85E968C7EC"), exclusiveto, contract] */
                 MIDL_INTERFACE("BEAF94E1-960F-49B4-A08D-7D85E968C7EC")
-                IMobileBroadbandNetworkRegistrationStateChange : IInspectable
+                IMobileBroadbandNetworkRegistrationStateChange : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -7955,8 +10487,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("89135CFF-28B8-46AA-B137-1C4B0F21EDFE"), exclusiveto, contract] */
                 MIDL_INTERFACE("89135CFF-28B8-46AA-B137-1C4B0F21EDFE")
-                IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails : IInspectable
+                IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkRegistrationStateChanges(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandNetworkRegistrationStateChange * * value
                         ) = 0;
@@ -7972,6 +10505,94 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetworkRegistrationStateChangeTriggerDetails;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetworkRegistrationStateChangeTriggerDetails_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandPco
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandPco
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandPco[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandPco";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("D4E4FCBE-E3A3-43C5-A87B-6C86D229D7FA"), exclusiveto, contract] */
+                MIDL_INTERFACE("D4E4FCBE-E3A3-43C5-A87B-6C86D229D7FA")
+                IMobileBroadbandPco : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Data(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * result
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsComplete(
+                        /* [retval, out] */__RPC__out boolean * result
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMobileBroadbandPco=_uuidof(IMobileBroadbandPco);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandPcoDataChangeTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandPcoDataChangeTriggerDetails
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandPcoDataChangeTriggerDetails[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandPcoDataChangeTriggerDetails";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("263F5114-64E0-4493-909B-2D14A01962B1"), exclusiveto, contract] */
+                MIDL_INTERFACE("263F5114-64E0-4493-909B-2D14A01962B1")
+                IMobileBroadbandPcoDataChangeTriggerDetails : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UpdatedData(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IMobileBroadbandPco * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMobileBroadbandPcoDataChangeTriggerDetails=_uuidof(IMobileBroadbandPcoDataChangeTriggerDetails);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7995,8 +10616,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E661D709-E779-45BF-8281-75323DF9E321"), exclusiveto, contract] */
                 MIDL_INTERFACE("E661D709-E779-45BF-8281-75323DF9E321")
-                IMobileBroadbandPin : IInspectable
+                IMobileBroadbandPin : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::MobileBroadbandPinType * value
                         ) = 0;
@@ -8075,8 +10697,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("BE16673E-1F04-4F95-8B90-E7F559DDE7E5"), exclusiveto, contract] */
                 MIDL_INTERFACE("BE16673E-1F04-4F95-8B90-E7F559DDE7E5")
-                IMobileBroadbandPinLockStateChange : IInspectable
+                IMobileBroadbandPinLockStateChange : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8121,8 +10744,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("D338C091-3E91-4D38-9036-AEE83A6E79AD"), exclusiveto, contract] */
                 MIDL_INTERFACE("D338C091-3E91-4D38-9036-AEE83A6E79AD")
-                IMobileBroadbandPinLockStateChangeTriggerDetails : IInspectable
+                IMobileBroadbandPinLockStateChangeTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PinLockStateChanges(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPinLockStateChange * * value
                         ) = 0;
@@ -8161,8 +10785,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("83567EDD-6E1F-4B9B-A413-2B1F50CC36DF"), exclusiveto, contract] */
                 MIDL_INTERFACE("83567EDD-6E1F-4B9B-A413-2B1F50CC36DF")
-                IMobileBroadbandPinManager : IInspectable
+                IMobileBroadbandPinManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SupportedPins(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPinType * * value
                         ) = 0;
@@ -8205,8 +10830,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("11DDDC32-31E7-49F5-B663-123D3BEF0362"), exclusiveto, contract] */
                 MIDL_INTERFACE("11DDDC32-31E7-49F5-B663-123D3BEF0362")
-                IMobileBroadbandPinOperationResult : IInspectable
+                IMobileBroadbandPinOperationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSuccessful(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -8248,8 +10874,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("B054A561-9833-4AED-9717-4348B21A24B3"), exclusiveto, contract] */
                 MIDL_INTERFACE("B054A561-9833-4AED-9717-4348B21A24B3")
-                IMobileBroadbandRadioStateChange : IInspectable
+                IMobileBroadbandRadioStateChange : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8291,8 +10918,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("71301ACE-093C-42C6-B0DB-AD1F75A65445"), exclusiveto, contract] */
                 MIDL_INTERFACE("71301ACE-093C-42C6-B0DB-AD1F75A65445")
-                IMobileBroadbandRadioStateChangeTriggerDetails : IInspectable
+                IMobileBroadbandRadioStateChangeTriggerDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RadioStateChanges(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandRadioStateChange * * value
                         ) = 0;
@@ -8331,8 +10959,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E5B26833-967E-40C9-A485-19C0DD209E22"), exclusiveto, contract] */
                 MIDL_INTERFACE("E5B26833-967E-40C9-A485-19C0DD209E22")
-                IMobileBroadbandSarManager : IInspectable
+                IMobileBroadbandSarManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsBackoffEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -8412,8 +11041,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("612E3875-040A-4F99-A4F9-61D7C32DA129"), exclusiveto, contract] */
                 MIDL_INTERFACE("612E3875-040A-4F99-A4F9-61D7C32DA129")
-                IMobileBroadbandTransmissionStateChangedEventArgs : IInspectable
+                IMobileBroadbandTransmissionStateChangedEventArgs : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTransmitting(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -8452,8 +11082,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("E634F691-525A-4CE2-8FCE-AA4162579154"), exclusiveto, contract] */
                 MIDL_INTERFACE("E634F691-525A-4CE2-8FCE-AA4162579154")
-                IMobileBroadbandUicc : IInspectable
+                IMobileBroadbandUicc : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SimIccId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8495,8 +11126,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("4D170556-98A1-43DD-B2EC-50C90CF248DF"), exclusiveto, contract] */
                 MIDL_INTERFACE("4D170556-98A1-43DD-B2EC-50C90CF248DF")
-                IMobileBroadbandUiccApp : IInspectable
+                IMobileBroadbandUiccApp : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
                         ) = 0;
@@ -8547,8 +11179,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("64C95285-358E-47C5-8249-695F383B2BDB"), exclusiveto, contract] */
                 MIDL_INTERFACE("64C95285-358E-47C5-8249-695F383B2BDB")
-                IMobileBroadbandUiccAppReadRecordResult : IInspectable
+                IMobileBroadbandUiccAppReadRecordResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus * value
                         ) = 0;
@@ -8590,8 +11223,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("D919682F-BE14-4934-981D-2F57B9ED83E6"), exclusiveto, contract] */
                 MIDL_INTERFACE("D919682F-BE14-4934-981D-2F57B9ED83E6")
-                IMobileBroadbandUiccAppRecordDetailsResult : IInspectable
+                IMobileBroadbandUiccAppRecordDetailsResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus * value
                         ) = 0;
@@ -8645,8 +11279,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("744930EB-8157-4A41-8494-6BF54C9B1D2B"), exclusiveto, contract] */
                 MIDL_INTERFACE("744930EB-8157-4A41-8494-6BF54C9B1D2B")
-                IMobileBroadbandUiccAppsResult : IInspectable
+                IMobileBroadbandUiccAppsResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus * value
                         ) = 0;
@@ -8665,6 +11300,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandUiccAppsResult;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandUiccAppsResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.INetworkOperatorDataUsageTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.NetworkOperatorDataUsageTriggerDetails
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_INetworkOperatorDataUsageTriggerDetails[] = L"Windows.Networking.NetworkOperators.INetworkOperatorDataUsageTriggerDetails";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("50E3126D-A465-4EEB-9317-28A167630CEA"), exclusiveto, contract] */
+                MIDL_INTERFACE("50E3126D-A465-4EEB-9317-28A167630CEA")
+                INetworkOperatorDataUsageTriggerDetails : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NotificationKind(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::NetworkOperatorDataUsageNotificationKind * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_INetworkOperatorDataUsageTriggerDetails=_uuidof(INetworkOperatorDataUsageTriggerDetails);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -8688,8 +11364,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("BC68A9D1-82E1-4488-9F2C-1276C2468FAC"), exclusiveto, contract] */
                 MIDL_INTERFACE("BC68A9D1-82E1-4488-9F2C-1276C2468FAC")
-                INetworkOperatorNotificationEventDetails : IInspectable
+                INetworkOperatorNotificationEventDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NotificationType(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::NetworkOperatorEventMessageType * value
                         ) = 0;
@@ -8743,8 +11420,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("0BCC0284-412E-403D-ACC6-B757E34774A4"), exclusiveto, contract] */
                 MIDL_INTERFACE("0BCC0284-412E-403D-ACC6-B757E34774A4")
-                INetworkOperatorTetheringAccessPointConfiguration : IInspectable
+                INetworkOperatorTetheringAccessPointConfiguration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Ssid(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8792,8 +11470,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("709D254C-595F-4847-BB30-646935542918"), exclusiveto, contract] */
                 MIDL_INTERFACE("709D254C-595F-4847-BB30-646935542918")
-                INetworkOperatorTetheringClient : IInspectable
+                INetworkOperatorTetheringClient : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MacAddress(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -8835,8 +11514,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("91B14016-8DCA-4225-BBED-EEF8B8D718D7"), exclusiveto, contract] */
                 MIDL_INTERFACE("91B14016-8DCA-4225-BBED-EEF8B8D718D7")
-                INetworkOperatorTetheringClientManager : IInspectable
+                INetworkOperatorTetheringClientManager : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetTetheringClients(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CNetworkOperatorTetheringClient * * value
                         ) = 0;
@@ -8875,8 +11555,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("0108916D-9E9A-4AF6-8DA3-60493B19C204"), exclusiveto, contract] */
                 MIDL_INTERFACE("0108916D-9E9A-4AF6-8DA3-60493B19C204")
-                INetworkOperatorTetheringEntitlementCheck : IInspectable
+                INetworkOperatorTetheringEntitlementCheck : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AuthorizeTethering(
                         /* [in] */boolean allow,
                         /* [in] */__RPC__in HSTRING entitlementFailureReason
@@ -8916,8 +11597,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("D45A8DA0-0E86-4D98-8BA4-DD70D4B764D3"), exclusiveto, contract] */
                 MIDL_INTERFACE("D45A8DA0-0E86-4D98-8BA4-DD70D4B764D3")
-                INetworkOperatorTetheringManager : IInspectable
+                INetworkOperatorTetheringManager : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxClientCount(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -8975,8 +11657,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("3EBCBACC-F8C3-405C-9964-70A1EEABE194"), exclusiveto, contract] */
                 MIDL_INTERFACE("3EBCBACC-F8C3-405C-9964-70A1EEABE194")
-                INetworkOperatorTetheringManagerStatics : IInspectable
+                INetworkOperatorTetheringManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetTetheringCapability(
                         /* [in] */__RPC__in HSTRING networkAccountId,
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::TetheringCapability * value
@@ -9020,8 +11703,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("5B235412-35F0-49E7-9B08-16D278FBAA42"), exclusiveto, contract] */
                 MIDL_INTERFACE("5B235412-35F0-49E7-9B08-16D278FBAA42")
-                INetworkOperatorTetheringManagerStatics2 : IInspectable
+                INetworkOperatorTetheringManagerStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetTetheringCapabilityFromConnectionProfile(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Connectivity::IConnectionProfile * profile,
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::TetheringCapability * result
@@ -9065,8 +11749,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("8FDAADB6-4AF9-4F21-9B58-D53E9F24231E"), exclusiveto, contract] */
                 MIDL_INTERFACE("8FDAADB6-4AF9-4F21-9B58-D53E9F24231E")
-                INetworkOperatorTetheringManagerStatics3 : IInspectable
+                INetworkOperatorTetheringManagerStatics3 : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromConnectionProfileWithTargetAdapter(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Connectivity::IConnectionProfile * profile,
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Connectivity::INetworkAdapter * adapter,
@@ -9107,8 +11792,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("EBD203A1-01BA-476D-B4B3-BF3D12C8F80C"), exclusiveto, contract] */
                 MIDL_INTERFACE("EBD203A1-01BA-476D-B4B3-BF3D12C8F80C")
-                INetworkOperatorTetheringOperationResult : IInspectable
+                INetworkOperatorTetheringOperationResult : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::TetheringOperationStatus * value
                         ) = 0;
@@ -9150,8 +11836,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("217700E0-8203-11DF-ADB9-F4CE462D9137"), exclusiveto, contract] */
                 MIDL_INTERFACE("217700E0-8203-11DF-ADB9-F4CE462D9137")
-                IProvisionFromXmlDocumentResults : IInspectable
+                IProvisionFromXmlDocumentResults : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllElementsProvisioned(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -9193,8 +11880,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("217700E0-8202-11DF-ADB9-F4CE462D9137"), exclusiveto, contract] */
                 MIDL_INTERFACE("217700E0-8202-11DF-ADB9-F4CE462D9137")
-                IProvisionedProfile : IInspectable
+                IProvisionedProfile : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE UpdateCost(
                         /* [in] */ABI::Windows::Networking::Connectivity::NetworkCostType value
                         ) = 0;
@@ -9236,8 +11924,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("217700E0-8201-11DF-ADB9-F4CE462D9137"), exclusiveto, contract] */
                 MIDL_INTERFACE("217700E0-8201-11DF-ADB9-F4CE462D9137")
-                IProvisioningAgent : IInspectable
+                IProvisioningAgent : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE ProvisionFromXmlDocumentAsync(
                         /* [in] */__RPC__in HSTRING provisioningXmlDocument,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CProvisionFromXmlDocumentResults * * asyncInfo
@@ -9282,8 +11971,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("217700E0-8101-11DF-ADB9-F4CE462D9137"), exclusiveto, contract] */
                 MIDL_INTERFACE("217700E0-8101-11DF-ADB9-F4CE462D9137")
-                IProvisioningAgentStaticMethods : IInspectable
+                IProvisioningAgentStaticMethods : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromNetworkAccountId(
                         /* [in] */__RPC__in HSTRING networkAccountId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IProvisioningAgent * * provisioningAgent
@@ -9300,6 +11990,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIProvisioningAgentStaticMethods;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIProvisioningAgentStaticMethods_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.ITetheringEntitlementCheckTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.TetheringEntitlementCheckTriggerDetails
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_ITetheringEntitlementCheckTriggerDetails[] = L"Windows.Networking.NetworkOperators.ITetheringEntitlementCheckTriggerDetails";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace NetworkOperators {
+                /* [object, uuid("03C65E9D-5926-41F3-A94E-B50926FC421B"), exclusiveto, contract] */
+                MIDL_INTERFACE("03C65E9D-5926-41F3-A94E-B50926FC421B")
+                ITetheringEntitlementCheckTriggerDetails : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkAccountId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE AllowTethering(void) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE DenyTethering(
+                        /* [in] */__RPC__in HSTRING entitlementFailureReason
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ITetheringEntitlementCheckTriggerDetails=_uuidof(ITetheringEntitlementCheckTriggerDetails);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* NetworkOperators */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9323,8 +12058,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("2F9ACF82-2004-4D5D-BF81-2ABA1B4BE4A8"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F9ACF82-2004-4D5D-BF81-2ABA1B4BE4A8")
-                IUssdMessage : IInspectable
+                IUssdMessage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataCodingScheme(
                         /* [retval, out] */__RPC__out BYTE * value
                         ) = 0;
@@ -9380,8 +12116,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("2F9ACF82-1003-4D5D-BF81-2ABA1B4BE4A8"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F9ACF82-1003-4D5D-BF81-2ABA1B4BE4A8")
-                IUssdMessageFactory : IInspectable
+                IUssdMessageFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateMessage(
                         /* [in] */__RPC__in HSTRING messageText,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IUssdMessage * * ussdMessage
@@ -9421,8 +12158,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("2F9ACF82-2005-4D5D-BF81-2ABA1B4BE4A8"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F9ACF82-2005-4D5D-BF81-2ABA1B4BE4A8")
-                IUssdReply : IInspectable
+                IUssdReply : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResultCode(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::NetworkOperators::UssdResultCode * value
                         ) = 0;
@@ -9464,8 +12202,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("2F9ACF82-2002-4D5D-BF81-2ABA1B4BE4A8"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F9ACF82-2002-4D5D-BF81-2ABA1B4BE4A8")
-                IUssdSession : IInspectable
+                IUssdSession : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE SendMessageAndGetReplyAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::NetworkOperators::IUssdMessage * message,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CUssdReply * * asyncInfo
@@ -9506,8 +12245,9 @@ namespace ABI {
             namespace NetworkOperators {
                 /* [object, uuid("2F9ACF82-1001-4D5D-BF81-2ABA1B4BE4A8"), exclusiveto, contract] */
                 MIDL_INTERFACE("2F9ACF82-1001-4D5D-BF81-2ABA1B4BE4A8")
-                IUssdSessionStatics : IInspectable
+                IUssdSessionStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateFromNetworkAccountId(
                         /* [in] */__RPC__in HSTRING networkAccountId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::NetworkOperators::IUssdSession * * ussdSession
@@ -9528,6 +12268,336 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdSessionStatics;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdSessionStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESim
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESim ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESim_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESim_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESim[] = L"Windows.Networking.NetworkOperators.ESim";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimAddedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimAddedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimAddedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimAddedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimAddedEventArgs[] = L"Windows.Networking.NetworkOperators.ESimAddedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimDownloadProfileMetadataResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimDownloadProfileMetadataResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimDownloadProfileMetadataResult_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimDownloadProfileMetadataResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimDownloadProfileMetadataResult[] = L"Windows.Networking.NetworkOperators.ESimDownloadProfileMetadataResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimManager
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Networking.NetworkOperators.IESimManagerStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimManager_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimManager[] = L"Windows.Networking.NetworkOperators.ESimManager";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimOperationResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimOperationResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimOperationResult_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimOperationResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimOperationResult[] = L"Windows.Networking.NetworkOperators.ESimOperationResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimPolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimPolicy ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimPolicy_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimPolicy_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimPolicy[] = L"Windows.Networking.NetworkOperators.ESimPolicy";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimProfile
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimProfile ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfile_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfile_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimProfile[] = L"Windows.Networking.NetworkOperators.ESimProfile";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimProfileMetadata
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimProfileMetadata ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfileMetadata_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfileMetadata_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimProfileMetadata[] = L"Windows.Networking.NetworkOperators.ESimProfileMetadata";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimProfilePolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimProfilePolicy ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfilePolicy_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfilePolicy_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimProfilePolicy[] = L"Windows.Networking.NetworkOperators.ESimProfilePolicy";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimRemovedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimRemovedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimRemovedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimRemovedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimRemovedEventArgs[] = L"Windows.Networking.NetworkOperators.ESimRemovedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimServiceInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimServiceInfo ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimServiceInfo_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimServiceInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimServiceInfo[] = L"Windows.Networking.NetworkOperators.ESimServiceInfo";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimUpdatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimUpdatedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimUpdatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimUpdatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimUpdatedEventArgs[] = L"Windows.Networking.NetworkOperators.ESimUpdatedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimWatcher
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimWatcher ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimWatcher_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimWatcher_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimWatcher[] = L"Windows.Networking.NetworkOperators.ESimWatcher";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.FdnAccessManager
+ *
+ * Introduced to Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Networking.NetworkOperators.IFdnAccessManagerStatics interface starting with version 1.0 of the Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract API contract
+ *
+ */
+#if WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_FdnAccessManager_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_FdnAccessManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_FdnAccessManager[] = L"Windows.Networking.NetworkOperators.FdnAccessManager";
+#endif
+#endif // WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -9776,6 +12846,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
  *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Networking.NetworkOperators.IMobileBroadbandAntennaSarFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Networking.NetworkOperators.IMobileBroadbandAntennaSar ** Default Interface **
@@ -10125,6 +13198,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Networking.NetworkOperators.IMobileBroadbandModem ** Default Interface **
  *    Windows.Networking.NetworkOperators.IMobileBroadbandModem2
+ *    Windows.Networking.NetworkOperators.IMobileBroadbandModem3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -10159,6 +13233,31 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandModemConfiguration[] = L"Windows.Networking.NetworkOperators.MobileBroadbandModemConfiguration";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.MobileBroadbandModemIsolation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolationFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolation ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandModemIsolation_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandModemIsolation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandModemIsolation[] = L"Windows.Networking.NetworkOperators.MobileBroadbandModemIsolation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10225,6 +13324,50 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandNetworkRegistrationStateChangeTriggerDetails[] = L"Windows.Networking.NetworkOperators.MobileBroadbandNetworkRegistrationStateChangeTriggerDetails";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.MobileBroadbandPco
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IMobileBroadbandPco ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandPco_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandPco_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandPco[] = L"Windows.Networking.NetworkOperators.MobileBroadbandPco";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.MobileBroadbandPcoDataChangeTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IMobileBroadbandPcoDataChangeTriggerDetails ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandPcoDataChangeTriggerDetails_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandPcoDataChangeTriggerDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandPcoDataChangeTriggerDetails[] = L"Windows.Networking.NetworkOperators.MobileBroadbandPcoDataChangeTriggerDetails";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10537,6 +13680,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Networking.NetworkOperators.NetworkOperatorDataUsageTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.INetworkOperatorDataUsageTriggerDetails ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_NetworkOperatorDataUsageTriggerDetails_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_NetworkOperatorDataUsageTriggerDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_NetworkOperatorDataUsageTriggerDetails[] = L"Windows.Networking.NetworkOperators.NetworkOperatorDataUsageTriggerDetails";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails
  *
  * Introduced to Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract in version 1.0
@@ -10723,6 +13890,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Networking.NetworkOperators.TetheringEntitlementCheckTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.ITetheringEntitlementCheckTriggerDetails ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_TetheringEntitlementCheckTriggerDetails_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_TetheringEntitlementCheckTriggerDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_TetheringEntitlementCheckTriggerDetails[] = L"Windows.Networking.NetworkOperators.TetheringEntitlementCheckTriggerDetails";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Networking.NetworkOperators.UssdMessage
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10797,6 +13988,90 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #else // !defined(__cplusplus)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIHotspotAuthenticationContext_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIHotspotAuthenticationContext_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIHotspotAuthenticationContext __x_ABI_CWindows_CNetworking_CNetworkOperators_CIHotspotAuthenticationContext;
@@ -10898,6 +14173,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadba
 typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar;
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandCellCdma_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandCellCdma_FWD_DEFINED__
@@ -11007,6 +14288,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadba
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration;
@@ -11018,6 +14305,18 @@ typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadba
 typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration2 __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration2;
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemStatics_FWD_DEFINED__
@@ -11054,6 +14353,18 @@ typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadba
 typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetworkRegistrationStateChangeTriggerDetails __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetworkRegistrationStateChangeTriggerDetails;
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetworkRegistrationStateChangeTriggerDetails_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPin_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPin_FWD_DEFINED__
@@ -11139,6 +14450,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadba
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandUiccAppsResult_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorNotificationEventDetails_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorNotificationEventDetails_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorNotificationEventDetails __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorNotificationEventDetails;
@@ -11223,6 +14540,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIProvisioningA
 
 #endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIProvisioningAgentStaticMethods_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails;
+
+#endif // ____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdMessage_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdMessage_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdMessage __x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdMessage;
@@ -11256,6 +14579,168 @@ typedef interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdSessionSt
 // Parameterized interface forward declarations (C)
 
 // Collection interface definitions
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile;
+
+typedef struct __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfileVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfileVtbl;
+
+interface __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfileVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile;
+
+typedef  struct __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfileVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CNetworking__CNetworkOperators__CESimProfile **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfileVtbl;
+
+interface __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfileVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CNetworking__CNetworkOperators__CESimProfile_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FIIterator_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAntennaSar_INTERFACE_DEFINED__)
@@ -13359,6 +16844,117 @@ interface __FIIterable_1_Windows__CNetworking__CNetworkOperators__CNetworkOperat
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile;
+
+typedef struct __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfileVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+            /* [in] */ __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfileVtbl;
+
+interface __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfileVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FIVectorView_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAntennaSar_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAntennaSar_INTERFACE_DEFINED__
@@ -14800,6 +18396,413 @@ interface __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CNetworkOper
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileInstallProgress;
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress;
+
+typedef interface __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress;
+
+typedef struct __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgressVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This, /* [in] */ __RPC__in_opt __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress *asyncInfo, /* [in] */ UINT64 progressInfo);
+    END_INTERFACE
+} __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgressVtbl;
+
+interface __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress
+{
+    CONST_VTBL struct __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgressVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_Invoke(This,asyncInfo,progressInfo)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,progressInfo) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress;
+
+//  Forward declare the async operation.
+typedef interface __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress;
+
+typedef struct __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgressVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This, /* [in] */ __RPC__in_opt __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgressVtbl;
+
+interface __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress
+{
+    CONST_VTBL struct __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgressVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress;
+
+typedef struct __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgressVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Progress )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This, /* [in] */ __RPC__in_opt __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Progress )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationProgressHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress **handler);
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This, /* [in] */ __RPC__in_opt __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * This, /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * *results);
+    END_INTERFACE
+} __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgressVtbl;
+
+interface __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress
+{
+    CONST_VTBL struct __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgressVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_put_Progress(This,handler)	\
+    ( (This)->lpVtbl -> put_Progress(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_get_Progress(This,handler)	\
+    ( (This)->lpVtbl -> get_Progress(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResultVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult;
+
+typedef struct __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResultVtbl;
+
+interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResultVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult;
+
+typedef struct __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResultVtbl;
+
+interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CHotspotCredentialsAuthenticationResult_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CHotspotCredentialsAuthenticationResult_INTERFACE_DEFINED__
@@ -15369,6 +19372,121 @@ interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileB
 
 #endif // ____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModemStatus_INTERFACE_DEFINED__
 
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPcoVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPcoVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPcoVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco;
+
+typedef struct __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPcoVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPcoVtbl;
+
+interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPcoVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -16177,6 +20295,318 @@ interface __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CUssdRep
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_IInspectable_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_IInspectable_INTERFACE_DEFINED__
@@ -16229,6 +20659,7 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobi
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountEventArgs_INTERFACE_DEFINED__
 
@@ -16276,9 +20707,11 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobi
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountUpdatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountUpdatedEventArgs_INTERFACE_DEFINED__
@@ -16327,9 +20760,11 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobi
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountWatcher_Windows__CNetworking__CNetworkOperators__CMobileBroadbandAccountUpdatedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandDeviceServiceDataSession_Windows__CNetworking__CNetworkOperators__CMobileBroadbandDeviceServiceDataReceivedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandDeviceServiceDataSession_Windows__CNetworking__CNetworkOperators__CMobileBroadbandDeviceServiceDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -16378,9 +20813,62 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobi
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandDeviceServiceDataSession_Windows__CNetworking__CNetworkOperators__CMobileBroadbandDeviceServiceDataReceivedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandSarManager_Windows__CNetworking__CNetworkOperators__CMobileBroadbandTransmissionStateChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandSarManager_Windows__CNetworking__CNetworkOperators__CMobileBroadbandTransmissionStateChangedEventArgs_INTERFACE_DEFINED__
@@ -16429,6 +20917,216 @@ interface __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobi
 #endif // ____FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandSarManager_Windows__CNetworking__CNetworkOperators__CMobileBroadbandTransmissionStateChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+#if !defined(____FIReference_1_int_INTERFACE_DEFINED__)
+#define ____FIReference_1_int_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_int __FIReference_1_int;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_int;
+
+typedef struct __FIReference_1_intVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_int * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_int * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_int * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_int * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_int * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_int * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_int * This, /* [retval][out] */ __RPC__out int *value);
+    END_INTERFACE
+} __FIReference_1_intVtbl;
+
+interface __FIReference_1_int
+{
+    CONST_VTBL struct __FIReference_1_intVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_int_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_int_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_int_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_int_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_int_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_int_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_int_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_int_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_IInspectable __FIEventHandler_1_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_IInspectable;
+
+typedef struct __FIEventHandler_1_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_IInspectable * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FIEventHandler_1_IInspectableVtbl;
+
+interface __FIEventHandler_1_IInspectable
+{
+    CONST_VTBL struct __FIEventHandler_1_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_IInspectable_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_IInspectable_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_IInspectable_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_IInspectable_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_boolean __FIAsyncOperationCompletedHandler_1_boolean;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_boolean;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_booleanVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_boolean *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_booleanVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_boolean
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_booleanVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_boolean_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
+
+
+#if !defined(____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_boolean;
+
+typedef struct __FIAsyncOperation_1_booleanVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_boolean * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_boolean * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_boolean * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_boolean * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_boolean *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_boolean **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__out boolean *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_booleanVtbl;
+
+interface __FIAsyncOperation_1_boolean
+{
+    CONST_VTBL struct __FIAsyncOperation_1_booleanVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_boolean_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_boolean_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_boolean_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_boolean_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_boolean_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_boolean_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
+
 
 #if !defined(____FIIterator_1_UINT32_INTERFACE_DEFINED__)
 #define ____FIIterator_1_UINT32_INTERFACE_DEFINED__
@@ -17237,62 +21935,6 @@ interface __FIVectorView_1_HSTRING
 #endif // ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__
 
 
-#if !defined(____FIReference_1_int_INTERFACE_DEFINED__)
-#define ____FIReference_1_int_INTERFACE_DEFINED__
-
-typedef interface __FIReference_1_int __FIReference_1_int;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIReference_1_int;
-
-typedef struct __FIReference_1_intVtbl
-{
-    BEGIN_INTERFACE
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_int * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_int * This );
-    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_int * This );
-
-    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_int * This, 
-                                            /* [out] */ __RPC__out ULONG *iidCount,
-                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_int * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_int * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_int * This, /* [retval][out] */ __RPC__out int *value);
-    END_INTERFACE
-} __FIReference_1_intVtbl;
-
-interface __FIReference_1_int
-{
-    CONST_VTBL struct __FIReference_1_intVtbl *lpVtbl;
-};
-
-#ifdef COBJMACROS
-#define __FIReference_1_int_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-#define __FIReference_1_int_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-#define __FIReference_1_int_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-#define __FIReference_1_int_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-#define __FIReference_1_int_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-#define __FIReference_1_int_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-#define __FIReference_1_int_get_Value(This,value)	\
-    ( (This)->lpVtbl -> get_Value(This,value) ) 
-#endif /* COBJMACROS */
-
-
-#endif // ____FIReference_1_int_INTERFACE_DEFINED__
-
-
 #if !defined(____FIReference_1_double_INTERFACE_DEFINED__)
 #define ____FIReference_1_double_INTERFACE_DEFINED__
 
@@ -17405,115 +22047,6 @@ interface __FIReference_1_Windows__CFoundation__CTimeSpan
 
 
 #endif // ____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
-
-
-#if !defined(____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__)
-#define ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
-
-typedef interface __FIAsyncOperationCompletedHandler_1_boolean __FIAsyncOperationCompletedHandler_1_boolean;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_boolean;
-
-// Forward declare the async operation.
-typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
-
-typedef struct __FIAsyncOperationCompletedHandler_1_booleanVtbl
-{
-    BEGIN_INTERFACE
-
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
-    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This);
-
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_boolean * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_boolean *asyncInfo, /* [in] */ AsyncStatus status);
-    END_INTERFACE
-} __FIAsyncOperationCompletedHandler_1_booleanVtbl;
-
-interface __FIAsyncOperationCompletedHandler_1_boolean
-{
-    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_booleanVtbl *lpVtbl;
-};
-
-#ifdef COBJMACROS
-#define __FIAsyncOperationCompletedHandler_1_boolean_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-#define __FIAsyncOperationCompletedHandler_1_boolean_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-#define __FIAsyncOperationCompletedHandler_1_boolean_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-#define __FIAsyncOperationCompletedHandler_1_boolean_Invoke(This,asyncInfo,status)	\
-    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
-#endif /* COBJMACROS */
-
-
-#endif // ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
-
-
-#if !defined(____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__)
-#define ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
-
-typedef interface __FIAsyncOperation_1_boolean __FIAsyncOperation_1_boolean;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIAsyncOperation_1_boolean;
-
-typedef struct __FIAsyncOperation_1_booleanVtbl
-{
-    BEGIN_INTERFACE
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_boolean * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_boolean * This);
-    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_boolean * This);
-
-    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_boolean * This,
-        /* [out] */ __RPC__out ULONG *iidCount,
-        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_boolean *handler);
-    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_boolean **handler);
-    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_boolean * This, /* [retval][out] */ __RPC__out boolean *results);
-    END_INTERFACE
-} __FIAsyncOperation_1_booleanVtbl;
-
-interface __FIAsyncOperation_1_boolean
-{
-    CONST_VTBL struct __FIAsyncOperation_1_booleanVtbl *lpVtbl;
-};
-
-#ifdef COBJMACROS
-#define __FIAsyncOperation_1_boolean_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-#define __FIAsyncOperation_1_boolean_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-#define __FIAsyncOperation_1_boolean_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-#define __FIAsyncOperation_1_boolean_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-#define __FIAsyncOperation_1_boolean_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-#define __FIAsyncOperation_1_boolean_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-#define __FIAsyncOperation_1_boolean_put_Completed(This,handler)	\
-    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
-#define __FIAsyncOperation_1_boolean_get_Completed(This,handler)	\
-    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
-#define __FIAsyncOperation_1_boolean_GetResults(This,results)	\
-    ( (This)->lpVtbl -> GetResults(This,results) ) 
-#endif /* COBJMACROS */
-
-
-#endif // ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
 
 
 #ifndef ____x_ABI_CWindows_CNetworking_CIHostName_FWD_DEFINED__
@@ -17867,12 +22400,41 @@ typedef interface __x_ABI_CWindows_CStorage_CStreams_CIBuffer __x_ABI_CWindows_C
 #endif // ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
 
 
+#ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference;
+
+#endif // ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+
+
+
 
 
 
 
 
 typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CDataClasses __x_ABI_CWindows_CNetworking_CNetworkOperators_CDataClasses;
+
+
+typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimAuthenticationPreference __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimAuthenticationPreference;
+
+
+typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimOperationStatus __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimOperationStatus;
+
+
+typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileClass __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileClass;
+
+
+typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileMetadataState __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileMetadataState;
+
+
+typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileState __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileState;
+
+
+typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimState __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimState;
+
+
+typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimWatcherStatus __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimWatcherStatus;
 
 
 typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CHotspotAuthenticationResponseCode __x_ABI_CWindows_CNetworking_CNetworkOperators_CHotspotAuthenticationResponseCode;
@@ -17905,6 +22467,9 @@ typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CMobileBroadbandUicc
 typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CNetworkDeviceStatus __x_ABI_CWindows_CNetworking_CNetworkOperators_CNetworkDeviceStatus;
 
 
+typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CNetworkOperatorDataUsageNotificationKind __x_ABI_CWindows_CNetworking_CNetworkOperators_CNetworkOperatorDataUsageNotificationKind;
+
+
 typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CNetworkOperatorEventMessageType __x_ABI_CWindows_CNetworking_CNetworkOperators_CNetworkOperatorEventMessageType;
 
 
@@ -17935,7 +22500,52 @@ typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CUiccAppRecordKind _
 typedef enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CUssdResultCode __x_ABI_CWindows_CNetworking_CNetworkOperators_CUssdResultCode;
 
 
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileInstallProgress __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileInstallProgress;
+
+
 typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CProfileUsage __x_ABI_CWindows_CNetworking_CNetworkOperators_CProfileUsage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -18108,6 +22718,165 @@ enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CDataClasses
     DataClasses_Custom = 0x80000000,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimAuthenticationPreference
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimAuthenticationPreference
+{
+    ESimAuthenticationPreference_OnEntry = 0,
+    ESimAuthenticationPreference_OnAction = 1,
+    ESimAuthenticationPreference_Never = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimOperationStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimOperationStatus
+{
+    ESimOperationStatus_Success = 0,
+    ESimOperationStatus_NotAuthorized = 1,
+    ESimOperationStatus_NotFound = 2,
+    ESimOperationStatus_PolicyViolation = 3,
+    ESimOperationStatus_InsufficientSpaceOnCard = 4,
+    ESimOperationStatus_ServerFailure = 5,
+    ESimOperationStatus_ServerNotReachable = 6,
+    ESimOperationStatus_TimeoutWaitingForUserConsent = 7,
+    ESimOperationStatus_IncorrectConfirmationCode = 8,
+    ESimOperationStatus_ConfirmationCodeMaxRetriesExceeded = 9,
+    ESimOperationStatus_CardRemoved = 10,
+    ESimOperationStatus_CardBusy = 11,
+    ESimOperationStatus_Other = 12,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimProfileClass
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileClass
+{
+    ESimProfileClass_Operational = 0,
+    ESimProfileClass_Test = 1,
+    ESimProfileClass_Provisioning = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimProfileMetadataState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileMetadataState
+{
+    ESimProfileMetadataState_Unknown = 0,
+    ESimProfileMetadataState_WaitingForInstall = 1,
+    ESimProfileMetadataState_Downloading = 2,
+    ESimProfileMetadataState_Installing = 3,
+    ESimProfileMetadataState_Expired = 4,
+    ESimProfileMetadataState_RejectingDownload = 5,
+    ESimProfileMetadataState_NoLongerAvailable = 6,
+    ESimProfileMetadataState_DeniedByPolicy = 7,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimProfileState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileState
+{
+    ESimProfileState_Unknown = 0,
+    ESimProfileState_Disabled = 1,
+    ESimProfileState_Enabled = 2,
+    ESimProfileState_Deleted = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimState
+{
+    ESimState_Unknown = 0,
+    ESimState_Idle = 1,
+    ESimState_Removed = 2,
+    ESimState_Busy = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.ESimWatcherStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimWatcherStatus
+{
+    ESimWatcherStatus_Created = 0,
+    ESimWatcherStatus_Started = 1,
+    ESimWatcherStatus_EnumerationCompleted = 2,
+    ESimWatcherStatus_Stopping = 3,
+    ESimWatcherStatus_Stopped = 4,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -18330,6 +23099,24 @@ enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CNetworkDeviceStatus
     NetworkDeviceStatus_DeviceBlocked = 7,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Networking.NetworkOperators.NetworkOperatorDataUsageNotificationKind
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CNetworkOperatorDataUsageNotificationKind
+{
+    NetworkOperatorDataUsageNotificationKind_DataUsageProgress = 0,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -18595,6 +23382,25 @@ enum __x_ABI_CWindows_CNetworking_CNetworkOperators_CUssdResultCode
 
 /*
  *
+ * Struct Windows.Networking.NetworkOperators.ESimProfileInstallProgress
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+/* [contract] */
+struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileInstallProgress
+{
+    INT32 TotalSizeInBytes;
+    INT32 InstalledSizeInBytes;
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Struct Windows.Networking.NetworkOperators.ProfileUsage
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -18610,6 +23416,1683 @@ struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CProfileUsage
     __x_ABI_CWindows_CFoundation_CDateTime LastSyncTime;
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESim
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESim
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESim[] = L"Windows.Networking.NetworkOperators.IESim";
+/* [object, uuid("6F6E6E26-F123-437D-8CED-DC1D2BC0C3A9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AvailableMemoryInBytes )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_int * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Eid )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FirmwareVersion )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MobileBroadbandModemDeviceId )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Policy )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_State )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimState * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetProfiles )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CNetworkOperators__CESimProfile * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *DeleteProfileAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [in] */__RPC__in HSTRING profileId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *DownloadProfileMetadataAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [in] */__RPC__in HSTRING activationCode,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimDownloadProfileMetadataResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *ResetAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ProfileChanged )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESim_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ProfileChanged )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_get_AvailableMemoryInBytes(This,value) \
+    ( (This)->lpVtbl->get_AvailableMemoryInBytes(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_get_Eid(This,value) \
+    ( (This)->lpVtbl->get_Eid(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_get_FirmwareVersion(This,value) \
+    ( (This)->lpVtbl->get_FirmwareVersion(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_get_MobileBroadbandModemDeviceId(This,value) \
+    ( (This)->lpVtbl->get_MobileBroadbandModemDeviceId(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_get_Policy(This,value) \
+    ( (This)->lpVtbl->get_Policy(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_get_State(This,value) \
+    ( (This)->lpVtbl->get_State(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_GetProfiles(This,value) \
+    ( (This)->lpVtbl->GetProfiles(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_DeleteProfileAsync(This,profileId,operation) \
+    ( (This)->lpVtbl->DeleteProfileAsync(This,profileId,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_DownloadProfileMetadataAsync(This,activationCode,operation) \
+    ( (This)->lpVtbl->DownloadProfileMetadataAsync(This,activationCode,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_ResetAsync(This,operation) \
+    ( (This)->lpVtbl->ResetAsync(This,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_add_ProfileChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_ProfileChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_remove_ProfileChanged(This,token) \
+    ( (This)->lpVtbl->remove_ProfileChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimAddedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimAddedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimAddedEventArgs[] = L"Windows.Networking.NetworkOperators.IESimAddedEventArgs";
+/* [object, uuid("38BD0A58-4D5A-4D08-8DA7-E73EFF369DDD"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ESim )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_get_ESim(This,value) \
+    ( (This)->lpVtbl->get_ESim(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimAddedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimDownloadProfileMetadataResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimDownloadProfileMetadataResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimDownloadProfileMetadataResult[] = L"Windows.Networking.NetworkOperators.IESimDownloadProfileMetadataResult";
+/* [object, uuid("C4234D9E-5AD6-426D-8D00-4434F449AFEC"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Result )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProfileMetadata )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResultVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_get_Result(This,value) \
+    ( (This)->lpVtbl->get_Result(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_get_ProfileMetadata(This,value) \
+    ( (This)->lpVtbl->get_ProfileMetadata(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimDownloadProfileMetadataResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimManagerStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimManagerStatics[] = L"Windows.Networking.NetworkOperators.IESimManagerStatics";
+/* [object, uuid("0BFA2C0C-DF88-4631-BF04-C12E281B3962"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ServiceInfo )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *TryCreateESimWatcher )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ServiceInfoChanged )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ServiceInfoChanged )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStaticsVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_get_ServiceInfo(This,value) \
+    ( (This)->lpVtbl->get_ServiceInfo(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_TryCreateESimWatcher(This,value) \
+    ( (This)->lpVtbl->TryCreateESimWatcher(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_add_ServiceInfoChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_ServiceInfoChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_remove_ServiceInfoChanged(This,token) \
+    ( (This)->lpVtbl->remove_ServiceInfoChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimOperationResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimOperationResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimOperationResult[] = L"Windows.Networking.NetworkOperators.IESimOperationResult";
+/* [object, uuid("A67B63B1-309B-4E77-9E7E-CD93F1DDC7B9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimOperationStatus * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResultVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_get_Status(This,value) \
+    ( (This)->lpVtbl->get_Status(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimOperationResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimPolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimPolicy
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimPolicy[] = L"Windows.Networking.NetworkOperators.IESimPolicy";
+/* [object, uuid("41E1B99D-CF7E-4315-882B-6F1E74B0D38F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicyVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ShouldEnableManagingUi )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicyVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicyVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_get_ShouldEnableManagingUi(This,value) \
+    ( (This)->lpVtbl->get_ShouldEnableManagingUi(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimPolicy_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimProfile
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimProfile
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimProfile[] = L"Windows.Networking.NetworkOperators.IESimProfile";
+/* [object, uuid("EE1E7880-06A9-4027-B4F8-DDB23D7810E0"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Class )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileClass * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Nickname )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Policy )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Id )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProviderIcon )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProviderId )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProviderName )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_State )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileState * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *DisableAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *EnableAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *SetNicknameAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile * This,
+        /* [in] */__RPC__in HSTRING newNickname,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_get_Class(This,value) \
+    ( (This)->lpVtbl->get_Class(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_get_Nickname(This,value) \
+    ( (This)->lpVtbl->get_Nickname(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_get_Policy(This,value) \
+    ( (This)->lpVtbl->get_Policy(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_get_Id(This,value) \
+    ( (This)->lpVtbl->get_Id(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_get_ProviderIcon(This,value) \
+    ( (This)->lpVtbl->get_ProviderIcon(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_get_ProviderId(This,value) \
+    ( (This)->lpVtbl->get_ProviderId(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_get_ProviderName(This,value) \
+    ( (This)->lpVtbl->get_ProviderName(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_get_State(This,value) \
+    ( (This)->lpVtbl->get_State(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_DisableAsync(This,operation) \
+    ( (This)->lpVtbl->DisableAsync(This,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_EnableAsync(This,operation) \
+    ( (This)->lpVtbl->EnableAsync(This,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_SetNicknameAsync(This,newNickname,operation) \
+    ( (This)->lpVtbl->SetNicknameAsync(This,newNickname,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfile_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimProfileMetadata
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimProfileMetadata
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimProfileMetadata[] = L"Windows.Networking.NetworkOperators.IESimProfileMetadata";
+/* [object, uuid("ED25831F-90DB-498D-A7B4-EBCE807D3C23"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadataVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsConfirmationCodeRequired )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Policy )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Id )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProviderIcon )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProviderId )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProviderName )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_State )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimProfileMetadataState * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *DenyInstallAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *ConfirmInstallAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *ConfirmInstallWithConfirmationCodeAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [in] */__RPC__in HSTRING confirmationCode,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CNetworking__CNetworkOperators__CESimOperationResult_Windows__CNetworking__CNetworkOperators__CESimProfileInstallProgress * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *PostponeInstallAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CESimOperationResult * * operation
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_StateChanged )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimProfileMetadata_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_StateChanged )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadataVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadataVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_get_IsConfirmationCodeRequired(This,value) \
+    ( (This)->lpVtbl->get_IsConfirmationCodeRequired(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_get_Policy(This,value) \
+    ( (This)->lpVtbl->get_Policy(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_get_Id(This,value) \
+    ( (This)->lpVtbl->get_Id(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_get_ProviderIcon(This,value) \
+    ( (This)->lpVtbl->get_ProviderIcon(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_get_ProviderId(This,value) \
+    ( (This)->lpVtbl->get_ProviderId(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_get_ProviderName(This,value) \
+    ( (This)->lpVtbl->get_ProviderName(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_get_State(This,value) \
+    ( (This)->lpVtbl->get_State(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_DenyInstallAsync(This,operation) \
+    ( (This)->lpVtbl->DenyInstallAsync(This,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_ConfirmInstallAsync(This,operation) \
+    ( (This)->lpVtbl->ConfirmInstallAsync(This,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_ConfirmInstallWithConfirmationCodeAsync(This,confirmationCode,operation) \
+    ( (This)->lpVtbl->ConfirmInstallWithConfirmationCodeAsync(This,confirmationCode,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_PostponeInstallAsync(This,operation) \
+    ( (This)->lpVtbl->PostponeInstallAsync(This,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_add_StateChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_StateChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_remove_StateChanged(This,token) \
+    ( (This)->lpVtbl->remove_StateChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfileMetadata_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimProfilePolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimProfilePolicy
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimProfilePolicy[] = L"Windows.Networking.NetworkOperators.IESimProfilePolicy";
+/* [object, uuid("E6DD0F1D-9C5C-46C5-A289-A948999BF062"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicyVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CanDelete )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CanDisable )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsManagedByEnterprise )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicyVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicyVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_get_CanDelete(This,value) \
+    ( (This)->lpVtbl->get_CanDelete(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_get_CanDisable(This,value) \
+    ( (This)->lpVtbl->get_CanDisable(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_get_IsManagedByEnterprise(This,value) \
+    ( (This)->lpVtbl->get_IsManagedByEnterprise(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimProfilePolicy_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimRemovedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimRemovedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimRemovedEventArgs[] = L"Windows.Networking.NetworkOperators.IESimRemovedEventArgs";
+/* [object, uuid("DEC5277B-2FD9-4ED9-8376-D9B5E41278A3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ESim )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_get_ESim(This,value) \
+    ( (This)->lpVtbl->get_ESim(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimRemovedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimServiceInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimServiceInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimServiceInfo[] = L"Windows.Networking.NetworkOperators.IESimServiceInfo";
+/* [object, uuid("F16AABCF-7F59-4A51-8494-BD89D5FF50EE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfoVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AuthenticationPreference )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimAuthenticationPreference * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsESimUiEnabled )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfoVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfoVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_get_AuthenticationPreference(This,value) \
+    ( (This)->lpVtbl->get_AuthenticationPreference(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_get_IsESimUiEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsESimUiEnabled(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimServiceInfo_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimUpdatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimUpdatedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimUpdatedEventArgs[] = L"Windows.Networking.NetworkOperators.IESimUpdatedEventArgs";
+/* [object, uuid("4C125CEC-508D-4B88-83CB-68BEF8168D12"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ESim )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESim * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_get_ESim(This,value) \
+    ( (This)->lpVtbl->get_ESim(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimUpdatedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IESimWatcher
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.ESimWatcher
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IESimWatcher[] = L"Windows.Networking.NetworkOperators.IESimWatcher";
+/* [object, uuid("C1F84CEB-A28D-4FBF-9771-6E31B81CCF22"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcherVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CESimWatcherStatus * status
+        );
+    HRESULT ( STDMETHODCALLTYPE *Start )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This
+        );
+    HRESULT ( STDMETHODCALLTYPE *Stop )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Added )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimAddedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Added )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_EnumerationCompleted )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_EnumerationCompleted )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Removed )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimRemovedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Removed )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Stopped )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Stopped )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Updated )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CESimWatcher_Windows__CNetworking__CNetworkOperators__CESimUpdatedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Updated )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcherVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcherVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_get_Status(This,status) \
+    ( (This)->lpVtbl->get_Status(This,status) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_Start(This) \
+    ( (This)->lpVtbl->Start(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_Stop(This) \
+    ( (This)->lpVtbl->Stop(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_add_Added(This,handler,token) \
+    ( (This)->lpVtbl->add_Added(This,handler,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_remove_Added(This,token) \
+    ( (This)->lpVtbl->remove_Added(This,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_add_EnumerationCompleted(This,handler,token) \
+    ( (This)->lpVtbl->add_EnumerationCompleted(This,handler,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_remove_EnumerationCompleted(This,token) \
+    ( (This)->lpVtbl->remove_EnumerationCompleted(This,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_add_Removed(This,handler,token) \
+    ( (This)->lpVtbl->add_Removed(This,handler,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_remove_Removed(This,token) \
+    ( (This)->lpVtbl->remove_Removed(This,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_add_Stopped(This,handler,token) \
+    ( (This)->lpVtbl->add_Stopped(This,handler,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_remove_Stopped(This,token) \
+    ( (This)->lpVtbl->remove_Stopped(This,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_add_Updated(This,handler,token) \
+    ( (This)->lpVtbl->add_Updated(This,handler,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_remove_Updated(This,token) \
+    ( (This)->lpVtbl->remove_Updated(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIESimWatcher_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IFdnAccessManagerStatics
+ *
+ * Introduced to Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.FdnAccessManager
+ *
+ *
+ */
+#if WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IFdnAccessManagerStatics[] = L"Windows.Networking.NetworkOperators.IFdnAccessManagerStatics";
+/* [object, uuid("F2AA4395-F1E6-4319-AA3E-477CA64B2BDF"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *RequestUnlockAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics * This,
+        /* [in] */__RPC__in HSTRING contactListId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStaticsVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_RequestUnlockAsync(This,contactListId,returnValue) \
+    ( (This)->lpVtbl->RequestUnlockAsync(This,contactListId,returnValue) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIFdnAccessManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -20499,6 +26982,101 @@ interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntenn
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandAntennaSarFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandAntennaSar
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandAntennaSarFactory[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandAntennaSarFactory";
+/* [object, uuid("A91E1716-C04D-4A21-8698-1459DC672C6E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateWithIndex )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory * This,
+        /* [in] */INT32 antennaIndex,
+        /* [in] */INT32 sarBackoffIndex,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSar * * antennaSar
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactoryVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_CreateWithIndex(This,antennaIndex,sarBackoffIndex,antennaSar) \
+    ( (This)->lpVtbl->CreateWithIndex(This,antennaIndex,sarBackoffIndex,antennaSar) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandAntennaSarFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -22764,6 +29342,121 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBr
 
 /*
  *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandModem3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandModem
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandModem3[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandModem3";
+/* [object, uuid("E9FEC6EA-2F34-4582-9102-C314D2A87EEC"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *TryGetPcoAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CNetworkOperators__CMobileBroadbandPco * * operation
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsInEmergencyCallMode )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_IsInEmergencyCallModeChanged )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CNetworking__CNetworkOperators__CMobileBroadbandModem_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_IsInEmergencyCallModeChanged )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3Vtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_TryGetPcoAsync(This,operation) \
+    ( (This)->lpVtbl->TryGetPcoAsync(This,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_get_IsInEmergencyCallMode(This,value) \
+    ( (This)->lpVtbl->get_IsInEmergencyCallMode(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_add_IsInEmergencyCallModeChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_IsInEmergencyCallModeChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_remove_IsInEmergencyCallModeChanged(This,token) \
+    ( (This)->lpVtbl->remove_IsInEmergencyCallModeChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModem3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Networking.NetworkOperators.IMobileBroadbandModemConfiguration
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -22960,6 +29653,216 @@ interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemC
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration2;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemConfiguration2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandModemIsolation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandModemIsolation[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolation";
+/* [object, uuid("B5618FEC-E661-4330-9BB4-3480212EC354"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *AddAllowedHost )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CNetworking_CIHostName * host
+        );
+    HRESULT ( STDMETHODCALLTYPE *AddAllowedHostRange )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CNetworking_CIHostName * first,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CNetworking_CIHostName * last
+        );
+    HRESULT ( STDMETHODCALLTYPE *ApplyConfigurationAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *ClearConfigurationAsync )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_AddAllowedHost(This,host) \
+    ( (This)->lpVtbl->AddAllowedHost(This,host) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_AddAllowedHostRange(This,first,last) \
+    ( (This)->lpVtbl->AddAllowedHostRange(This,first,last) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_ApplyConfigurationAsync(This,operation) \
+    ( (This)->lpVtbl->ApplyConfigurationAsync(This,operation) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_ClearConfigurationAsync(This,operation) \
+    ( (This)->lpVtbl->ClearConfigurationAsync(This,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandModemIsolation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandModemIsolationFactory[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolationFactory";
+/* [object, uuid("21D7EC58-C2B1-4C2F-A030-72820A24ECD9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Create )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory * This,
+        /* [in] */__RPC__in HSTRING modemDeviceId,
+        /* [in] */__RPC__in HSTRING ruleGroupId,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolation * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactoryVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_Create(This,modemDeviceId,ruleGroupId,result) \
+    ( (This)->lpVtbl->Create(This,modemDeviceId,ruleGroupId,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandModemIsolationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -23609,6 +30512,206 @@ interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetwor
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetworkRegistrationStateChangeTriggerDetails;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandNetworkRegistrationStateChangeTriggerDetails_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandPco
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandPco
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandPco[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandPco";
+/* [object, uuid("D4E4FCBE-E3A3-43C5-A87B-6C86D229D7FA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Data )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer * * result
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsComplete )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * This,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DeviceId )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_get_Data(This,result) \
+    ( (This)->lpVtbl->get_Data(This,result) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_get_IsComplete(This,result) \
+    ( (This)->lpVtbl->get_IsComplete(This,result) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_get_DeviceId(This,result) \
+    ( (This)->lpVtbl->get_DeviceId(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Networking.NetworkOperators.IMobileBroadbandPcoDataChangeTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.MobileBroadbandPcoDataChangeTriggerDetails
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_IMobileBroadbandPcoDataChangeTriggerDetails[] = L"Windows.Networking.NetworkOperators.IMobileBroadbandPcoDataChangeTriggerDetails";
+/* [object, uuid("263F5114-64E0-4493-909B-2D14A01962B1"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetailsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_UpdatedData )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPco * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetailsVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetailsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_get_UpdatedData(This,result) \
+    ( (This)->lpVtbl->get_UpdatedData(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBroadbandPcoDataChangeTriggerDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -25214,6 +32317,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIMobileBr
 
 /*
  *
+ * Interface Windows.Networking.NetworkOperators.INetworkOperatorDataUsageTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.NetworkOperatorDataUsageTriggerDetails
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_INetworkOperatorDataUsageTriggerDetails[] = L"Windows.Networking.NetworkOperators.INetworkOperatorDataUsageTriggerDetails";
+/* [object, uuid("50E3126D-A465-4EEB-9317-28A167630CEA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetailsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NotificationKind )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CNetworkOperators_CNetworkOperatorDataUsageNotificationKind * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetailsVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetailsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_get_NotificationKind(This,value) \
+    ( (This)->lpVtbl->get_NotificationKind(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CINetworkOperatorDataUsageTriggerDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails
  *
  * Introduced to Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract in version 1.0
@@ -26675,6 +33871,112 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIProvisio
 
 /*
  *
+ * Interface Windows.Networking.NetworkOperators.ITetheringEntitlementCheckTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.NetworkOperators.TetheringEntitlementCheckTriggerDetails
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_NetworkOperators_ITetheringEntitlementCheckTriggerDetails[] = L"Windows.Networking.NetworkOperators.ITetheringEntitlementCheckTriggerDetails";
+/* [object, uuid("03C65E9D-5926-41F3-A94E-B50926FC421B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetailsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NetworkAccountId )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *AllowTethering )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails * This
+        );
+    HRESULT ( STDMETHODCALLTYPE *DenyTethering )(
+        __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails * This,
+        /* [in] */__RPC__in HSTRING entitlementFailureReason
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetailsVtbl;
+
+interface __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetailsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_get_NetworkAccountId(This,value) \
+    ( (This)->lpVtbl->get_NetworkAccountId(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_AllowTethering(This) \
+    ( (This)->lpVtbl->AllowTethering(This) )
+
+#define __x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_DenyTethering(This,entitlementFailureReason) \
+    ( (This)->lpVtbl->DenyTethering(This,entitlementFailureReason) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CNetworkOperators_CITetheringEntitlementCheckTriggerDetails_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Networking.NetworkOperators.IUssdMessage
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -27201,6 +34503,336 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CNetworkOperators_CIUssdSess
 
 /*
  *
+ * Class Windows.Networking.NetworkOperators.ESim
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESim ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESim_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESim_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESim[] = L"Windows.Networking.NetworkOperators.ESim";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimAddedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimAddedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimAddedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimAddedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimAddedEventArgs[] = L"Windows.Networking.NetworkOperators.ESimAddedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimDownloadProfileMetadataResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimDownloadProfileMetadataResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimDownloadProfileMetadataResult_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimDownloadProfileMetadataResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimDownloadProfileMetadataResult[] = L"Windows.Networking.NetworkOperators.ESimDownloadProfileMetadataResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimManager
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Networking.NetworkOperators.IESimManagerStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimManager_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimManager[] = L"Windows.Networking.NetworkOperators.ESimManager";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimOperationResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimOperationResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimOperationResult_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimOperationResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimOperationResult[] = L"Windows.Networking.NetworkOperators.ESimOperationResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimPolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimPolicy ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimPolicy_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimPolicy_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimPolicy[] = L"Windows.Networking.NetworkOperators.ESimPolicy";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimProfile
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimProfile ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfile_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfile_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimProfile[] = L"Windows.Networking.NetworkOperators.ESimProfile";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimProfileMetadata
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimProfileMetadata ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfileMetadata_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfileMetadata_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimProfileMetadata[] = L"Windows.Networking.NetworkOperators.ESimProfileMetadata";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimProfilePolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimProfilePolicy ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfilePolicy_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimProfilePolicy_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimProfilePolicy[] = L"Windows.Networking.NetworkOperators.ESimProfilePolicy";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimRemovedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimRemovedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimRemovedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimRemovedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimRemovedEventArgs[] = L"Windows.Networking.NetworkOperators.ESimRemovedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimServiceInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimServiceInfo ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimServiceInfo_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimServiceInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimServiceInfo[] = L"Windows.Networking.NetworkOperators.ESimServiceInfo";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimUpdatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimUpdatedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimUpdatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimUpdatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimUpdatedEventArgs[] = L"Windows.Networking.NetworkOperators.ESimUpdatedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.ESimWatcher
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IESimWatcher ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimWatcher_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_ESimWatcher_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ESimWatcher[] = L"Windows.Networking.NetworkOperators.ESimWatcher";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.FdnAccessManager
+ *
+ * Introduced to Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Networking.NetworkOperators.IFdnAccessManagerStatics interface starting with version 1.0 of the Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract API contract
+ *
+ */
+#if WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_FdnAccessManager_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_FdnAccessManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_FdnAccessManager[] = L"Windows.Networking.NetworkOperators.FdnAccessManager";
+#endif
+#endif // WINDOWS_NETWORKING_NETWORKOPERATORS_NETWORKOPERATORSFDNCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Class Windows.Networking.NetworkOperators.HotspotAuthenticationContext
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -27445,6 +35077,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
  *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Networking.NetworkOperators.IMobileBroadbandAntennaSarFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Networking.NetworkOperators.IMobileBroadbandAntennaSar ** Default Interface **
@@ -27794,6 +35429,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Networking.NetworkOperators.IMobileBroadbandModem ** Default Interface **
  *    Windows.Networking.NetworkOperators.IMobileBroadbandModem2
+ *    Windows.Networking.NetworkOperators.IMobileBroadbandModem3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -27828,6 +35464,31 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandModemConfiguration[] = L"Windows.Networking.NetworkOperators.MobileBroadbandModemConfiguration";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.MobileBroadbandModemIsolation
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolationFactory interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IMobileBroadbandModemIsolation ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandModemIsolation_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandModemIsolation_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandModemIsolation[] = L"Windows.Networking.NetworkOperators.MobileBroadbandModemIsolation";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -27894,6 +35555,50 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandNetworkRegistrationStateChangeTriggerDetails[] = L"Windows.Networking.NetworkOperators.MobileBroadbandNetworkRegistrationStateChangeTriggerDetails";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.MobileBroadbandPco
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IMobileBroadbandPco ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandPco_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandPco_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandPco[] = L"Windows.Networking.NetworkOperators.MobileBroadbandPco";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.MobileBroadbandPcoDataChangeTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.IMobileBroadbandPcoDataChangeTriggerDetails ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandPcoDataChangeTriggerDetails_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_MobileBroadbandPcoDataChangeTriggerDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_MobileBroadbandPcoDataChangeTriggerDetails[] = L"Windows.Networking.NetworkOperators.MobileBroadbandPcoDataChangeTriggerDetails";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -28206,6 +35911,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Networking.NetworkOperators.NetworkOperatorDataUsageTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.INetworkOperatorDataUsageTriggerDetails ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_NetworkOperatorDataUsageTriggerDetails_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_NetworkOperatorDataUsageTriggerDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_NetworkOperatorDataUsageTriggerDetails[] = L"Windows.Networking.NetworkOperators.NetworkOperatorDataUsageTriggerDetails";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails
  *
  * Introduced to Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract in version 1.0
@@ -28388,6 +36117,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_ProvisioningAgent[] = L"Windows.Networking.NetworkOperators.ProvisioningAgent";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Networking.NetworkOperators.TetheringEntitlementCheckTriggerDetails
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Networking.NetworkOperators.ITetheringEntitlementCheckTriggerDetails ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Networking_NetworkOperators_TetheringEntitlementCheckTriggerDetails_DEFINED
+#define RUNTIMECLASS_Windows_Networking_NetworkOperators_TetheringEntitlementCheckTriggerDetails_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_NetworkOperators_TetheringEntitlementCheckTriggerDetails[] = L"Windows.Networking.NetworkOperators.TetheringEntitlementCheckTriggerDetails";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

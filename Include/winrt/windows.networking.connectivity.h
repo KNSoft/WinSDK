@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.networking.connectivity.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -298,6 +300,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext ABI::Windows::Networking::Connectivity::ICellularApnContext
 
 #endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                interface ICellularApnContext2;
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 ABI::Windows::Networking::Connectivity::ICellularApnContext2
+
+#endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost_FWD_DEFINED__
@@ -410,6 +426,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2 ABI::Windows::Networking::Connectivity::IConnectionProfileFilter2
 
 #endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                interface IConnectionProfileFilter3;
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 ABI::Windows::Networking::Connectivity::IConnectionProfileFilter3
+
+#endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSession_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSession_FWD_DEFINED__
@@ -732,6 +762,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails ABI::Windows::Networking::Connectivity::IWwanConnectionProfileDetails
 
 #endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                interface IWwanConnectionProfileDetails2;
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 ABI::Windows::Networking::Connectivity::IWwanConnectionProfileDetails2
+
+#endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -2598,6 +2642,93 @@ typedef IVectorView<ABI::Windows::Foundation::Uri*> __FIVectorView_1_Windows__CF
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#ifndef DEF___FIIterator_1_GUID_USE
+#define DEF___FIIterator_1_GUID_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("d3d64048-82b3-53c7-9285-b0be18368482"))
+IIterator<GUID> : IIterator_impl<GUID> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Guid>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<GUID> __FIIterator_1_GUID_t;
+#define __FIIterator_1_GUID ABI::Windows::Foundation::Collections::__FIIterator_1_GUID_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_GUID ABI::Windows::Foundation::Collections::IIterator<GUID>
+//#define __FIIterator_1_GUID_t ABI::Windows::Foundation::Collections::IIterator<GUID>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_GUID_USE */
+
+
+
+
+#ifndef DEF___FIIterable_1_GUID_USE
+#define DEF___FIIterable_1_GUID_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("f4ca3045-5dd7-54be-982e-d88d8ca0876e"))
+IIterable<GUID> : IIterable_impl<GUID> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Guid>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<GUID> __FIIterable_1_GUID_t;
+#define __FIIterable_1_GUID ABI::Windows::Foundation::Collections::__FIIterable_1_GUID_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_GUID ABI::Windows::Foundation::Collections::IIterable<GUID>
+//#define __FIIterable_1_GUID_t ABI::Windows::Foundation::Collections::IIterable<GUID>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_GUID_USE */
+
+
+
+
+#ifndef DEF___FIVectorView_1_GUID_USE
+#define DEF___FIVectorView_1_GUID_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("9520e64b-15b2-52a6-98ed-3191fa6cf68a"))
+IVectorView<GUID> : IVectorView_impl<GUID> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Guid>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<GUID> __FIVectorView_1_GUID_t;
+#define __FIVectorView_1_GUID ABI::Windows::Foundation::Collections::__FIVectorView_1_GUID_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_GUID ABI::Windows::Foundation::Collections::IVectorView<GUID>
+//#define __FIVectorView_1_GUID_t ABI::Windows::Foundation::Collections::IVectorView<GUID>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_GUID_USE */
+
+
+
+
 
 namespace ABI {
     namespace Windows {
@@ -2816,6 +2947,17 @@ namespace ABI {
         namespace Networking {
             namespace Connectivity {
                 
+                typedef enum WwanNetworkIPKind : int WwanNetworkIPKind;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                
                 typedef enum WwanNetworkRegistrationState : int WwanNetworkRegistrationState;
                 
             } /* Windows */
@@ -2832,6 +2974,9 @@ namespace ABI {
             } /* Windows */
         } /* Networking */
     } /* Connectivity */} /* ABI */
+
+
+
 
 
 
@@ -3382,6 +3527,36 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Networking.Connectivity.WwanNetworkIPKind
+ *
+ * Introduced to Windows.Networking.Connectivity.WwanContract in version 2.0
+ *
+ *
+ */
+
+#if WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x20000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                /* [v1_enum, contract] */
+                enum WwanNetworkIPKind : int
+                {
+                    WwanNetworkIPKind_None = 0,
+                    WwanNetworkIPKind_Ipv4 = 1,
+                    WwanNetworkIPKind_Ipv6 = 2,
+                    WwanNetworkIPKind_Ipv4v6 = 3,
+                    WwanNetworkIPKind_Ipv4v6v4Xlat = 4,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+#endif // WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
  * Struct Windows.Networking.Connectivity.WwanNetworkRegistrationState
  *
  * Introduced to Windows.Networking.Connectivity.WwanContract in version 1.0
@@ -3456,8 +3631,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("71BA143F-598E-49D0-84EB-8FEBAEDCC195"), contract] */
                 MIDL_INTERFACE("71BA143F-598E-49D0-84EB-8FEBAEDCC195")
-                INetworkStatusChangedEventHandler : IUnknown
+                INetworkStatusChangedEventHandler : public IUnknown
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         /* [in] */__RPC__in_opt IInspectable * sender
                         ) = 0;
@@ -3496,8 +3672,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("F769B039-ECA2-45EB-ADE1-B0368B756C49"), exclusiveto, contract] */
                 MIDL_INTERFACE("F769B039-ECA2-45EB-ADE1-B0368B756C49")
-                IAttributedNetworkUsage : IInspectable
+                IAttributedNetworkUsage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BytesSent(
                         /* [retval, out] */__RPC__out UINT64 * value
                         ) = 0;
@@ -3548,8 +3725,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("6FA529F4-EFFD-4542-9AB2-705BBF94943A"), exclusiveto, contract] */
                 MIDL_INTERFACE("6FA529F4-EFFD-4542-9AB2-705BBF94943A")
-                ICellularApnContext : IInspectable
+                ICellularApnContext : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProviderId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3602,6 +3780,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnC
 
 /*
  *
+ * Interface Windows.Networking.Connectivity.ICellularApnContext2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Connectivity.CellularApnContext
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_ICellularApnContext2[] = L"Windows.Networking.Connectivity.ICellularApnContext2";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                /* [object, uuid("76B0EB1A-AC49-4350-B1E5-DC4763BC69C7"), exclusiveto, contract] */
+                MIDL_INTERFACE("76B0EB1A-AC49-4350-B1E5-DC4763BC69C7")
+                ICellularApnContext2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProfileName(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ProfileName(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICellularApnContext2=_uuidof(ICellularApnContext2);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Networking.Connectivity.IConnectionCost
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3621,8 +3843,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("BAD7D829-3416-4B10-A202-BAC0B075BDAE"), exclusiveto, contract] */
                 MIDL_INTERFACE("BAD7D829-3416-4B10-A202-BAC0B075BDAE")
-                IConnectionCost : IInspectable
+                IConnectionCost : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkCostType(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Connectivity::NetworkCostType * value
                         ) = 0;
@@ -3670,8 +3893,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("8E113A05-E209-4549-BB25-5E0DB691CB05"), exclusiveto, contract] */
                 MIDL_INTERFACE("8E113A05-E209-4549-BB25-5E0DB691CB05")
-                IConnectionCost2 : IInspectable
+                IConnectionCost2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BackgroundDataUsageRestricted(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3710,8 +3934,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("71BA143C-598E-49D0-84EB-8FEBAEDCC195"), exclusiveto, contract] */
                 MIDL_INTERFACE("71BA143C-598E-49D0-84EB-8FEBAEDCC195")
-                IConnectionProfile : IInspectable
+                IConnectionProfile : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProfileName(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -3787,8 +4012,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("E2045145-4C9F-400C-9150-7EC7D6E2888A"), exclusiveto, contract] */
                 MIDL_INTERFACE("E2045145-4C9F-400C-9150-7EC7D6E2888A")
-                IConnectionProfile2 : IInspectable
+                IConnectionProfile2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsWwanConnectionProfile(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -3858,8 +4084,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("578C2528-4CD9-4161-8045-201CFD5B115C"), exclusiveto, contract] */
                 MIDL_INTERFACE("578C2528-4CD9-4161-8045-201CFD5B115C")
-                IConnectionProfile3 : IInspectable
+                IConnectionProfile3 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetAttributedNetworkUsageAsync(
                         /* [in] */ABI::Windows::Foundation::DateTime startTime,
                         /* [in] */ABI::Windows::Foundation::DateTime endTime,
@@ -3901,8 +4128,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("7A2D42CD-81E0-4AE6-ABED-AB9CA13EB714"), exclusiveto, contract] */
                 MIDL_INTERFACE("7A2D42CD-81E0-4AE6-ABED-AB9CA13EB714")
-                IConnectionProfile4 : IInspectable
+                IConnectionProfile4 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetProviderNetworkUsageAsync(
                         /* [in] */ABI::Windows::Foundation::DateTime startTime,
                         /* [in] */ABI::Windows::Foundation::DateTime endTime,
@@ -3944,8 +4172,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("204C7CC8-BD2D-4E8D-A4B3-455EC337388A"), exclusiveto, contract] */
                 MIDL_INTERFACE("204C7CC8-BD2D-4E8D-A4B3-455EC337388A")
-                IConnectionProfileFilter : IInspectable
+                IConnectionProfileFilter : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsConnected(
                         /* [in] */boolean value
                         ) = 0;
@@ -4011,8 +4240,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("CD068EE1-C3FC-4FAD-9DDC-593FAA4B7885"), exclusiveto, contract] */
                 MIDL_INTERFACE("CD068EE1-C3FC-4FAD-9DDC-593FAA4B7885")
-                IConnectionProfileFilter2 : IInspectable
+                IConnectionProfileFilter2 : public IInspectable
                 {
+                public:
                     /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsRoaming(
                         /* [in] */__RPC__in_opt __FIReference_1_boolean * value
                         ) = 0;
@@ -4050,6 +4280,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionPr
 
 /*
  *
+ * Interface Windows.Networking.Connectivity.IConnectionProfileFilter3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Connectivity.ConnectionProfileFilter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_IConnectionProfileFilter3[] = L"Windows.Networking.Connectivity.IConnectionProfileFilter3";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                /* [object, uuid("0AAA09C0-5014-447C-8809-AEE4CB0AF94A"), exclusiveto, contract] */
+                MIDL_INTERFACE("0AAA09C0-5014-447C-8809-AEE4CB0AF94A")
+                IConnectionProfileFilter3 : public IInspectable
+                {
+                public:
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PurposeGuid(
+                        /* [in] */__RPC__in_opt __FIReference_1_GUID * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PurposeGuid(
+                        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_GUID * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IConnectionProfileFilter3=_uuidof(IConnectionProfileFilter3);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Networking.Connectivity.IConnectionSession
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4073,8 +4347,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("FF905D4C-F83B-41B0-8A0C-1462D9C56B73"), exclusiveto, contract] */
                 MIDL_INTERFACE("FF905D4C-F83B-41B0-8A0C-1462D9C56B73")
-                IConnectionSession : IInspectable
+                IConnectionSession : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConnectionProfile(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Connectivity::IConnectionProfile * * value
                         ) = 0;
@@ -4113,8 +4388,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("4FAA3FFF-6746-4824-A964-EED8E87F8709"), exclusiveto, contract] */
                 MIDL_INTERFACE("4FAA3FFF-6746-4824-A964-EED8E87F8709")
-                IConnectivityInterval : IInspectable
+                IConnectivityInterval : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_StartTime(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * startTime
                         ) = 0;
@@ -4156,8 +4432,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("5120D4B1-4FB1-48B0-AFC9-42E0092A8164"), exclusiveto, contract] */
                 MIDL_INTERFACE("5120D4B1-4FB1-48B0-AFC9-42E0092A8164")
-                IConnectivityManagerStatics : IInspectable
+                IConnectivityManagerStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE AcquireConnectionAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Connectivity::ICellularApnContext * cellularApnContext,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession * * operation
@@ -4203,8 +4480,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("977A8B8C-3885-40F3-8851-42CD2BD568BB"), exclusiveto, contract] */
                 MIDL_INTERFACE("977A8B8C-3885-40F3-8851-42CD2BD568BB")
-                IDataPlanStatus : IInspectable
+                IDataPlanStatus : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataPlanUsage(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Connectivity::IDataPlanUsage * * value
                         ) = 0;
@@ -4258,8 +4536,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("B921492D-3B44-47FF-B361-BE59E69ED1B0"), exclusiveto, contract] */
                 MIDL_INTERFACE("B921492D-3B44-47FF-B361-BE59E69ED1B0")
-                IDataPlanUsage : IInspectable
+                IDataPlanUsage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MegabytesUsed(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -4305,8 +4584,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                IDataUsage : IInspectable
+                IDataUsage : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")
@@ -4356,8 +4636,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("D85145E0-138F-47D7-9B3A-36BB488CEF33"), exclusiveto, contract] */
                 MIDL_INTERFACE("D85145E0-138F-47D7-9B3A-36BB488CEF33")
-                IIPInformation : IInspectable
+                IIPInformation : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkAdapter(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Connectivity::INetworkAdapter * * value
                         ) = 0;
@@ -4399,8 +4680,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("48AA53AA-1108-4546-A6CB-9A74DA4B7BA0"), exclusiveto, contract] */
                 MIDL_INTERFACE("48AA53AA-1108-4546-A6CB-9A74DA4B7BA0")
-                ILanIdentifier : IInspectable
+                ILanIdentifier : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InfrastructureId(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Connectivity::ILanIdentifierData * * value
                         ) = 0;
@@ -4445,8 +4727,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("A74E83C3-D639-45BE-A36A-C4E4AEAF6D9B"), exclusiveto, contract] */
                 MIDL_INTERFACE("A74E83C3-D639-45BE-A36A-C4E4AEAF6D9B")
-                ILanIdentifierData : IInspectable
+                ILanIdentifierData : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                         /* [retval, out] */__RPC__out UINT32 * value
                         ) = 0;
@@ -4488,8 +4771,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("3B542E03-5388-496C-A8A3-AFFD39AEC2E6"), exclusiveto, contract] */
                 MIDL_INTERFACE("3B542E03-5388-496C-A8A3-AFFD39AEC2E6")
-                INetworkAdapter : IInspectable
+                INetworkAdapter : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OutboundMaxBitsPerSecond(
                         /* [retval, out] */__RPC__out UINT64 * value
                         ) = 0;
@@ -4543,8 +4827,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("5074F851-950D-4165-9C15-365619481EEA"), exclusiveto, contract] */
                 MIDL_INTERFACE("5074F851-950D-4165-9C15-365619481EEA")
-                INetworkInformationStatics : IInspectable
+                INetworkInformationStatics : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetConnectionProfiles(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile * * value
                         ) = 0;
@@ -4608,8 +4893,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("459CED14-2832-49B6-BA6E-E265F04786A8"), exclusiveto, contract] */
                 MIDL_INTERFACE("459CED14-2832-49B6-BA6E-E265F04786A8")
-                INetworkInformationStatics2 : IInspectable
+                INetworkInformationStatics2 : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE FindConnectionProfilesAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Connectivity::IConnectionProfileFilter * pProfileFilter,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile * * value
@@ -4649,8 +4935,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("01BC4D39-F5E0-4567-A28C-42080C831B2B"), exclusiveto, contract] */
                 MIDL_INTERFACE("01BC4D39-F5E0-4567-A28C-42080C831B2B")
-                INetworkItem : IInspectable
+                INetworkItem : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkId(
                         /* [retval, out] */__RPC__out GUID * value
                         ) = 0;
@@ -4692,8 +4979,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("7CA07E8D-917B-4B5F-B84D-28F7A5AC5402"), exclusiveto, contract] */
                 MIDL_INTERFACE("7CA07E8D-917B-4B5F-B84D-28F7A5AC5402")
-                INetworkSecuritySettings : IInspectable
+                INetworkSecuritySettings : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NetworkAuthenticationType(
                         /* [retval, out] */__RPC__out ABI::Windows::Networking::Connectivity::NetworkAuthenticationType * value
                         ) = 0;
@@ -4735,8 +5023,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("1F0CF333-D7A6-44DD-A4E9-687C476B903D"), exclusiveto, contract] */
                 MIDL_INTERFACE("1F0CF333-D7A6-44DD-A4E9-687C476B903D")
-                INetworkStateChangeEventDetails : IInspectable
+                INetworkStateChangeEventDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HasNewInternetConnectionProfile(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4790,8 +5079,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("D643C0E8-30D3-4F6A-AD47-6A1873CEB3C1"), exclusiveto, contract] */
                 MIDL_INTERFACE("D643C0E8-30D3-4F6A-AD47-6A1873CEB3C1")
-                INetworkStateChangeEventDetails2 : IInspectable
+                INetworkStateChangeEventDetails2 : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HasNewTetheringOperationalState(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -4833,8 +5123,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("49DA8FCE-9985-4927-BF5B-072B5C65F8D9"), exclusiveto, contract] */
                 MIDL_INTERFACE("49DA8FCE-9985-4927-BF5B-072B5C65F8D9")
-                INetworkUsage : IInspectable
+                INetworkUsage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BytesSent(
                         /* [retval, out] */__RPC__out UINT64 * value
                         ) = 0;
@@ -4879,8 +5170,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("5EC69E04-7931-48C8-B8F3-46300FA42728"), exclusiveto, contract] */
                 MIDL_INTERFACE("5EC69E04-7931-48C8-B8F3-46300FA42728")
-                IProviderNetworkUsage : IInspectable
+                IProviderNetworkUsage : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BytesSent(
                         /* [retval, out] */__RPC__out UINT64 * value
                         ) = 0;
@@ -4925,8 +5217,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("EF3A60B4-9004-4DD6-B7D8-B3E502F4AAD0"), exclusiveto, contract] */
                 MIDL_INTERFACE("EF3A60B4-9004-4DD6-B7D8-B3E502F4AAD0")
-                IProxyConfiguration : IInspectable
+                IProxyConfiguration : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProxyUris(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CFoundation__CUri * * value
                         ) = 0;
@@ -4968,8 +5261,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("11ABC4AC-0FC7-42E4-8742-569923B1CA11"), exclusiveto, contract] */
                 MIDL_INTERFACE("11ABC4AC-0FC7-42E4-8742-569923B1CA11")
-                IRoutePolicy : IInspectable
+                IRoutePolicy : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConnectionProfile(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Networking::Connectivity::IConnectionProfile * * value
                         ) = 0;
@@ -5014,8 +5308,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("36027933-A18E-4DB5-A697-F58FA7364E44"), exclusiveto, contract] */
                 MIDL_INTERFACE("36027933-A18E-4DB5-A697-F58FA7364E44")
-                IRoutePolicyFactory : IInspectable
+                IRoutePolicyFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE CreateRoutePolicy(
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::Connectivity::IConnectionProfile * connectionProfile,
                         /* [in] */__RPC__in_opt ABI::Windows::Networking::IHostName * hostName,
@@ -5057,8 +5352,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("562098CB-B35A-4BF1-A884-B7557E88FF86"), exclusiveto, contract] */
                 MIDL_INTERFACE("562098CB-B35A-4BF1-A884-B7557E88FF86")
-                IWlanConnectionProfileDetails : IInspectable
+                IWlanConnectionProfileDetails : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE GetConnectedSsid(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5097,8 +5393,9 @@ namespace ABI {
             namespace Connectivity {
                 /* [object, uuid("0E4DA8FE-835F-4DF3-82FD-DF556EBC09EF"), exclusiveto, contract] */
                 MIDL_INTERFACE("0E4DA8FE-835F-4DF3-82FD-DF556EBC09EF")
-                IWwanConnectionProfileDetails : IInspectable
+                IWwanConnectionProfileDetails : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HomeProviderId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -5123,6 +5420,50 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails_INTERFACE_DEFINED__) */
 #endif // WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Networking.Connectivity.IWwanConnectionProfileDetails2
+ *
+ * Introduced to Windows.Networking.Connectivity.WwanContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Connectivity.WwanConnectionProfileDetails
+ *
+ *
+ */
+#if WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_IWwanConnectionProfileDetails2[] = L"Windows.Networking.Connectivity.IWwanConnectionProfileDetails2";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                /* [object, uuid("7A754EDE-A1ED-48B2-8E92-B460033D52E2"), exclusiveto, contract] */
+                MIDL_INTERFACE("7A754EDE-A1ED-48B2-8E92-B460033D52E2")
+                IWwanConnectionProfileDetails2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IPKind(
+                        /* [retval, out] */__RPC__out ABI::Windows::Networking::Connectivity::WwanNetworkIPKind * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PurposeGuids(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_GUID * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWwanConnectionProfileDetails2=_uuidof(IWwanConnectionProfileDetails2);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x20000
 
 
 /*
@@ -5159,6 +5500,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Networking.Connectivity.ICellularApnContext ** Default Interface **
+ *    Windows.Networking.Connectivity.ICellularApnContext2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -5233,6 +5575,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Networking.Connectivity.IConnectionProfileFilter ** Default Interface **
  *    Windows.Networking.Connectivity.IConnectionProfileFilter2
+ *    Windows.Networking.Connectivity.IConnectionProfileFilter3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -5685,6 +6028,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Networking.Connectivity.IWwanConnectionProfileDetails ** Default Interface **
+ *    Windows.Networking.Connectivity.IWwanConnectionProfileDetails2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -5719,6 +6063,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetwork
 typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext;
 
 #endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2;
+
+#endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost_FWD_DEFINED__
@@ -5767,6 +6117,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile
 typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2 __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2;
 
 #endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3;
+
+#endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSession_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSession_FWD_DEFINED__
@@ -5905,6 +6261,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIWlanConnectionPro
 typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails;
 
 #endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2;
+
+#endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -10170,6 +10532,270 @@ interface __FIVectorView_1_Windows__CFoundation__CUri
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+#if !defined(____FIIterator_1_GUID_INTERFACE_DEFINED__)
+#define ____FIIterator_1_GUID_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_GUID __FIIterator_1_GUID;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_GUID;
+
+typedef struct __FIIterator_1_GUIDVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_GUID * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_GUID * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_GUID * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_GUID * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_GUID * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_GUID * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_GUID * This, /* [retval][out] */ __RPC__out GUID *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_GUID * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_GUID * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_GUID * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) GUID *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_GUIDVtbl;
+
+interface __FIIterator_1_GUID
+{
+    CONST_VTBL struct __FIIterator_1_GUIDVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_GUID_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_GUID_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_GUID_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_GUID_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_GUID_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_GUID_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_GUID_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_GUID_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_GUID_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_GUID_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_GUID_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterable_1_GUID_INTERFACE_DEFINED__)
+#define ____FIIterable_1_GUID_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_GUID __FIIterable_1_GUID;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_GUID;
+
+typedef  struct __FIIterable_1_GUIDVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_GUID * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_GUID * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_GUID * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_GUID * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_GUID * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_GUID * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_GUID * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_GUID **first);
+
+    END_INTERFACE
+} __FIIterable_1_GUIDVtbl;
+
+interface __FIIterable_1_GUID
+{
+    CONST_VTBL struct __FIIterable_1_GUIDVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_GUID_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_GUID_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_GUID_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_GUID_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_GUID_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_GUID_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_GUID_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_GUID_INTERFACE_DEFINED__
+
+
+#if !defined(____FIVectorView_1_GUID_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_GUID_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_GUID __FIVectorView_1_GUID;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_GUID;
+
+typedef struct __FIVectorView_1_GUIDVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_GUID * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_GUID * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_GUID * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_GUID * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_GUID * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_GUID * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_GUID * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out GUID *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_GUID * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_GUID * This,
+            /* [in] */ GUID item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_GUID * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) GUID *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_GUIDVtbl;
+
+interface __FIVectorView_1_GUID
+{
+    CONST_VTBL struct __FIVectorView_1_GUIDVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_GUID_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_GUID_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_GUID_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_GUID_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_GUID_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_GUID_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_GUID_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_GUID_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_GUID_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_GUID_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_GUID_INTERFACE_DEFINED__
+
+
 
 
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
@@ -10250,10 +10876,16 @@ typedef enum __x_ABI_CWindows_CNetworking_CConnectivity_CTriStates __x_ABI_CWind
 typedef enum __x_ABI_CWindows_CNetworking_CConnectivity_CWwanDataClass __x_ABI_CWindows_CNetworking_CConnectivity_CWwanDataClass;
 
 
+typedef enum __x_ABI_CWindows_CNetworking_CConnectivity_CWwanNetworkIPKind __x_ABI_CWindows_CNetworking_CConnectivity_CWwanNetworkIPKind;
+
+
 typedef enum __x_ABI_CWindows_CNetworking_CConnectivity_CWwanNetworkRegistrationState __x_ABI_CWindows_CNetworking_CConnectivity_CWwanNetworkRegistrationState;
 
 
 typedef struct __x_ABI_CWindows_CNetworking_CConnectivity_CNetworkUsageStates __x_ABI_CWindows_CNetworking_CConnectivity_CNetworkUsageStates;
+
+
+
 
 
 
@@ -10571,6 +11203,28 @@ enum __x_ABI_CWindows_CNetworking_CConnectivity_CWwanDataClass
     WwanDataClass_Custom = 0x80000000,
 };
 #endif // WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Networking.Connectivity.WwanNetworkIPKind
+ *
+ * Introduced to Windows.Networking.Connectivity.WwanContract in version 2.0
+ *
+ *
+ */
+
+#if WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x20000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CConnectivity_CWwanNetworkIPKind
+{
+    WwanNetworkIPKind_None = 0,
+    WwanNetworkIPKind_Ipv4 = 1,
+    WwanNetworkIPKind_Ipv6 = 2,
+    WwanNetworkIPKind_Ipv4v6 = 3,
+    WwanNetworkIPKind_Ipv4v6v4Xlat = 4,
+};
+#endif // WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x20000
 
 
 /*
@@ -10966,6 +11620,106 @@ interface __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Networking.Connectivity.ICellularApnContext2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Connectivity.CellularApnContext
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_ICellularApnContext2[] = L"Windows.Networking.Connectivity.ICellularApnContext2";
+/* [object, uuid("76B0EB1A-AC49-4350-B1E5-DC4763BC69C7"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProfileName )(
+        __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ProfileName )(
+        __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2 * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2Vtbl;
+
+interface __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_get_ProfileName(This,value) \
+    ( (This)->lpVtbl->get_ProfileName(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_put_ProfileName(This,value) \
+    ( (This)->lpVtbl->put_ProfileName(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -11982,6 +12736,106 @@ interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Networking.Connectivity.IConnectionProfileFilter3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Connectivity.ConnectionProfileFilter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_IConnectionProfileFilter3[] = L"Windows.Networking.Connectivity.IConnectionProfileFilter3";
+/* [object, uuid("0AAA09C0-5014-447C-8809-AEE4CB0AF94A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propput] */HRESULT ( STDMETHODCALLTYPE *put_PurposeGuid )(
+        __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 * This,
+        /* [in] */__RPC__in_opt __FIReference_1_GUID * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PurposeGuid )(
+        __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_GUID * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3Vtbl;
+
+interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_put_PurposeGuid(This,value) \
+    ( (This)->lpVtbl->put_PurposeGuid(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_get_PurposeGuid(This,value) \
+    ( (This)->lpVtbl->get_PurposeGuid(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -14466,6 +15320,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnecti
 
 /*
  *
+ * Interface Windows.Networking.Connectivity.IWwanConnectionProfileDetails2
+ *
+ * Introduced to Windows.Networking.Connectivity.WwanContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Connectivity.WwanConnectionProfileDetails
+ *
+ *
+ */
+#if WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_IWwanConnectionProfileDetails2[] = L"Windows.Networking.Connectivity.IWwanConnectionProfileDetails2";
+/* [object, uuid("7A754EDE-A1ED-48B2-8E92-B460033D52E2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IPKind )(
+        __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CNetworking_CConnectivity_CWwanNetworkIPKind * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PurposeGuids )(
+        __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_GUID * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2Vtbl;
+
+interface __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_get_IPKind(This,value) \
+    ( (This)->lpVtbl->get_IPKind(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_get_PurposeGuids(This,value) \
+    ( (This)->lpVtbl->get_PurposeGuids(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
  * Class Windows.Networking.Connectivity.AttributedNetworkUsage
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -14498,6 +15452,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Networking.Connectivity.ICellularApnContext ** Default Interface **
+ *    Windows.Networking.Connectivity.ICellularApnContext2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -14572,6 +15527,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Networking.Connectivity.IConnectionProfileFilter ** Default Interface **
  *    Windows.Networking.Connectivity.IConnectionProfileFilter2
+ *    Windows.Networking.Connectivity.IConnectionProfileFilter3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -15024,6 +15980,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Networking.Connectivity.IWwanConnectionProfileDetails ** Default Interface **
+ *    Windows.Networking.Connectivity.IWwanConnectionProfileDetails2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

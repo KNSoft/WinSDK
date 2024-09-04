@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.effects.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -250,11 +252,13 @@
 #include "EventToken.h"
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
+#include "Windows.Foundation.Numerics.h"
 #include "Windows.Graphics.DirectX.Direct3D11.h"
 #include "Windows.Media.h"
 #include "Windows.Media.Capture.h"
 #include "Windows.Media.Editing.h"
 #include "Windows.Media.MediaProperties.h"
+#include "Windows.Media.Playback.h"
 #include "Windows.Media.Render.h"
 #include "Windows.Media.Transcoding.h"
 #include "Windows.Storage.Streams.h"
@@ -515,6 +519,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition ABI::Windows::Media::Effects::IVideoTransformEffectDefinition
 
 #endif // ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Effects {
+                interface IVideoTransformEffectDefinition2;
+            } /* Windows */
+        } /* Media */
+    } /* Effects */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2 ABI::Windows::Media::Effects::IVideoTransformEffectDefinition2
+
+#endif // ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Effects {
+                interface IVideoTransformSphericalProjection;
+            } /* Windows */
+        } /* Media */
+    } /* Effects */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection ABI::Windows::Media::Effects::IVideoTransformSphericalProjection
+
+#endif // ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -1337,6 +1369,20 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
+            namespace Numerics {
+                
+                typedef struct Quaternion Quaternion;
+                
+            } /* Windows */
+        } /* Foundation */
+    } /* Numerics */} /* ABI */
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
             
             typedef struct Rect Rect;
             
@@ -1487,6 +1533,31 @@ namespace ABI {
         } /* Media */
     } /* MediaProperties */} /* ABI */
 
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                
+                typedef enum SphericalVideoFrameFormat : int SphericalVideoFrameFormat;
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                
+                typedef enum SphericalVideoProjectionMode : int SphericalVideoProjectionMode;
+                
+            } /* Windows */
+        } /* Media */
+    } /* Playback */} /* ABI */
 
 
 
@@ -1623,6 +1694,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace Media {
@@ -1690,6 +1763,16 @@ namespace ABI {
         namespace Media {
             namespace Effects {
                 class VideoTransformEffectDefinition;
+            } /* Windows */
+        } /* Media */
+    } /* Effects */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Effects {
+                class VideoTransformSphericalProjection;
             } /* Windows */
         } /* Media */
     } /* Effects */} /* ABI */
@@ -1824,8 +1907,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("8F85C271-038D-4393-8298-540110608EEF"), exclusiveto, contract] */
                 MIDL_INTERFACE("8F85C271-038D-4393-8298-540110608EEF")
-                IAudioCaptureEffectsManager : IInspectable
+                IAudioCaptureEffectsManager : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AudioCaptureEffectsChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CEffects__CAudioCaptureEffectsManager_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -1871,8 +1955,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("34AAFA51-9207-4055-BE93-6E5734A86AE4"), exclusiveto, contract] */
                 MIDL_INTERFACE("34AAFA51-9207-4055-BE93-6E5734A86AE4")
-                IAudioEffect : IInspectable
+                IAudioEffect : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AudioEffectType(
                         /* [retval, out] */__RPC__out ABI::Windows::Media::Effects::AudioEffectType * value
                         ) = 0;
@@ -1908,8 +1993,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("E4D7F974-7D80-4F73-9089-E31C9DB9C294"), contract] */
                 MIDL_INTERFACE("E4D7F974-7D80-4F73-9089-E31C9DB9C294")
-                IAudioEffectDefinition : IInspectable
+                IAudioEffectDefinition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivatableClassId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -1951,8 +2037,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("8E1DA646-E705-45ED-8A2B-FC4E4F405A97"), exclusiveto, contract] */
                 MIDL_INTERFACE("8E1DA646-E705-45ED-8A2B-FC4E4F405A97")
-                IAudioEffectDefinitionFactory : IInspectable
+                IAudioEffectDefinitionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING activatableClassId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Effects::IAudioEffectDefinition * * value
@@ -1997,8 +2084,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("66406C04-86FA-47CC-A315-F489D8C3FE10"), exclusiveto, contract] */
                 MIDL_INTERFACE("66406C04-86FA-47CC-A315-F489D8C3FE10")
-                IAudioEffectsManagerStatics : IInspectable
+                IAudioEffectsManagerStatics : public IInspectable
                 {
+                public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateAudioRenderEffectsManager(
                         /* [in] */__RPC__in HSTRING deviceId,
                         /* [in] */ABI::Windows::Media::Render::AudioRenderCategory category,
@@ -2056,8 +2144,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("4DC98966-8751-42B2-BFCB-39CA7864BD47"), exclusiveto, contract] */
                 MIDL_INTERFACE("4DC98966-8751-42B2-BFCB-39CA7864BD47")
-                IAudioRenderEffectsManager : IInspectable
+                IAudioRenderEffectsManager : public IInspectable
                 {
+                public:
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AudioRenderEffectsChanged(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CEffects__CAudioRenderEffectsManager_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -2107,8 +2196,9 @@ namespace ABI {
                 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                 DEPRECATED("Not supported starting in windows 10")
                 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                IAudioRenderEffectsManager2 : IInspectable
+                IAudioRenderEffectsManager2 : public IInspectable
                 {
+                public:
                     
                     #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     DEPRECATED("Not supported starting in windows 10")
@@ -2164,8 +2254,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("8C062C53-6BC0-48B8-A99A-4B41550F1359"), contract] */
                 MIDL_INTERFACE("8C062C53-6BC0-48B8-A99A-4B41550F1359")
-                IBasicAudioEffect : IInspectable
+                IBasicAudioEffect : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UseInputFrameForOutput(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2218,8 +2309,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("8262C7EF-B360-40BE-949B-2FF42FF35693"), contract] */
                 MIDL_INTERFACE("8262C7EF-B360-40BE-949B-2FF42FF35693")
-                IBasicVideoEffect : IInspectable
+                IBasicVideoEffect : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsReadOnly(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2278,8 +2370,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("6C30024B-F514-4278-A5F7-B9188049D110"), exclusiveto, contract] */
                 MIDL_INTERFACE("6C30024B-F514-4278-A5F7-B9188049D110")
-                ICompositeVideoFrameContext : IInspectable
+                ICompositeVideoFrameContext : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SurfacesToOverlay(
                         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * * value
                         ) = 0;
@@ -2328,8 +2421,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("4CD92946-1222-4A27-A586-FB3E20273255"), exclusiveto, contract] */
                 MIDL_INTERFACE("4CD92946-1222-4A27-A586-FB3E20273255")
-                IProcessAudioFrameContext : IInspectable
+                IProcessAudioFrameContext : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputFrame(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::IAudioFrame * * value
                         ) = 0;
@@ -2371,8 +2465,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("276F0E2B-6461-401E-BA78-0FDAD6114EEC"), exclusiveto, contract] */
                 MIDL_INTERFACE("276F0E2B-6461-401E-BA78-0FDAD6114EEC")
-                IProcessVideoFrameContext : IInspectable
+                IProcessVideoFrameContext : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputFrame(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::IVideoFrame * * value
                         ) = 0;
@@ -2415,8 +2510,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("8510B43E-420C-420F-96C7-7C98BBA1FC55"), contract] */
                 MIDL_INTERFACE("8510B43E-420C-420F-96C7-7C98BBA1FC55")
-                IVideoCompositor : IInspectable
+                IVideoCompositor : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TimeIndependent(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
@@ -2463,8 +2559,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("7946B8D0-2010-4AE3-9AB2-2CEF42EDD4D2"), contract] */
                 MIDL_INTERFACE("7946B8D0-2010-4AE3-9AB2-2CEF42EDD4D2")
-                IVideoCompositorDefinition : IInspectable
+                IVideoCompositorDefinition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivatableClassId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2506,8 +2603,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("4366FD10-68B8-4D52-89B6-02A968CCA899"), exclusiveto, contract] */
                 MIDL_INTERFACE("4366FD10-68B8-4D52-89B6-02A968CCA899")
-                IVideoCompositorDefinitionFactory : IInspectable
+                IVideoCompositorDefinitionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING activatableClassId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Effects::IVideoCompositorDefinition * * value
@@ -2549,8 +2647,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("39F38CF0-8D0F-4F3E-84FC-2D46A5297943"), contract] */
                 MIDL_INTERFACE("39F38CF0-8D0F-4F3E-84FC-2D46A5297943")
-                IVideoEffectDefinition : IInspectable
+                IVideoEffectDefinition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivatableClassId(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -2592,8 +2691,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("81439B4E-6E33-428F-9D21-B5AAFEF7617C"), exclusiveto, contract] */
                 MIDL_INTERFACE("81439B4E-6E33-428F-9D21-B5AAFEF7617C")
-                IVideoEffectDefinitionFactory : IInspectable
+                IVideoEffectDefinitionFactory : public IInspectable
                 {
+                public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING activatableClassId,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Effects::IVideoEffectDefinition * * value
@@ -2642,8 +2742,9 @@ namespace ABI {
             namespace Effects {
                 /* [object, uuid("9664BB6A-1EA6-4AA6-8074-ABE8851ECAE2"), exclusiveto, contract] */
                 MIDL_INTERFACE("9664BB6A-1EA6-4AA6-8074-ABE8851ECAE2")
-                IVideoTransformEffectDefinition : IInspectable
+                IVideoTransformEffectDefinition : public IInspectable
                 {
+                public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PaddingColor(
                         /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                         ) = 0;
@@ -2692,6 +2793,115 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.Effects.IVideoTransformEffectDefinition2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Effects.VideoTransformEffectDefinition
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Effects_IVideoTransformEffectDefinition2[] = L"Windows.Media.Effects.IVideoTransformEffectDefinition2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Effects {
+                /* [object, uuid("F0A8089F-66C8-4694-9FD9-1136ABF7444A"), exclusiveto, contract] */
+                MIDL_INTERFACE("F0A8089F-66C8-4694-9FD9-1136ABF7444A")
+                IVideoTransformEffectDefinition2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SphericalProjection(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Effects::IVideoTransformSphericalProjection * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IVideoTransformEffectDefinition2=_uuidof(IVideoTransformEffectDefinition2);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Effects */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Media.Effects.IVideoTransformSphericalProjection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Effects.VideoTransformSphericalProjection
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Effects_IVideoTransformSphericalProjection[] = L"Windows.Media.Effects.IVideoTransformSphericalProjection";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Effects {
+                /* [object, uuid("CF4401F0-9BF2-4C39-9F41-E022514A8468"), exclusiveto, contract] */
+                MIDL_INTERFACE("CF4401F0-9BF2-4C39-9F41-E022514A8468")
+                IVideoTransformSphericalProjection : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsEnabled(
+                        /* [in] */boolean value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameFormat(
+                        /* [retval, out] */__RPC__out ABI::Windows::Media::MediaProperties::SphericalVideoFrameFormat * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_FrameFormat(
+                        /* [in] */ABI::Windows::Media::MediaProperties::SphericalVideoFrameFormat value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProjectionMode(
+                        /* [retval, out] */__RPC__out ABI::Windows::Media::Playback::SphericalVideoProjectionMode * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ProjectionMode(
+                        /* [in] */ABI::Windows::Media::Playback::SphericalVideoProjectionMode value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalFieldOfViewInDegrees(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_HorizontalFieldOfViewInDegrees(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ViewOrientation(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Quaternion * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ViewOrientation(
+                        /* [in] */ABI::Windows::Foundation::Numerics::Quaternion value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IVideoTransformSphericalProjection=_uuidof(IVideoTransformSphericalProjection);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Effects */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2956,6 +3166,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Effects.IVideoEffectDefinition ** Default Interface **
  *    Windows.Media.Effects.IVideoTransformEffectDefinition
+ *    Windows.Media.Effects.IVideoTransformEffectDefinition2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -2969,6 +3180,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Effects_VideoTransformEffectDefinition[] = L"Windows.Media.Effects.VideoTransformEffectDefinition";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Media.Effects.VideoTransformSphericalProjection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Effects.IVideoTransformSphericalProjection ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Effects_VideoTransformSphericalProjection_DEFINED
+#define RUNTIMECLASS_Windows_Media_Effects_VideoTransformSphericalProjection_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Effects_VideoTransformSphericalProjection[] = L"Windows.Media.Effects.VideoTransformSphericalProjection";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 
@@ -3082,6 +3317,18 @@ typedef interface __x_ABI_CWindows_CMedia_CEffects_CIVideoEffectDefinitionFactor
 typedef interface __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition;
 
 #endif // ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2 __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2;
+
+#endif // ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection;
+
+#endif // ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -5142,6 +5389,12 @@ typedef interface __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet __x_AB
 
 
 
+typedef struct __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion;
+
+
+
+
+
 typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_CRect;
 
 
@@ -5207,6 +5460,15 @@ typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CMediaMirroringOptions __x
 typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CMediaRotation __x_ABI_CWindows_CMedia_CMediaProperties_CMediaRotation;
 
 
+typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat;
+
+
+
+
+
+
+typedef enum __x_ABI_CWindows_CMedia_CPlayback_CSphericalVideoProjectionMode __x_ABI_CWindows_CMedia_CPlayback_CSphericalVideoProjectionMode;
+
 
 
 
@@ -5254,6 +5516,9 @@ typedef enum __x_ABI_CWindows_CMedia_CEffects_CMediaEffectClosedReason __x_ABI_C
 
 
 typedef enum __x_ABI_CWindows_CMedia_CEffects_CMediaMemoryTypes __x_ABI_CWindows_CMedia_CEffects_CMediaMemoryTypes;
+
+
+
 
 
 
@@ -7419,6 +7684,255 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDe
 
 /*
  *
+ * Interface Windows.Media.Effects.IVideoTransformEffectDefinition2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Effects.VideoTransformEffectDefinition
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Effects_IVideoTransformEffectDefinition2[] = L"Windows.Media.Effects.IVideoTransformEffectDefinition2";
+/* [object, uuid("F0A8089F-66C8-4694-9FD9-1136ABF7444A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SphericalProjection )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_get_SphericalProjection(This,value) \
+    ( (This)->lpVtbl->get_SphericalProjection(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformEffectDefinition2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Media.Effects.IVideoTransformSphericalProjection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Effects.VideoTransformSphericalProjection
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Effects_IVideoTransformSphericalProjection[] = L"Windows.Media.Effects.IVideoTransformSphericalProjection";
+/* [object, uuid("CF4401F0-9BF2-4C39-9F41-E022514A8468"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjectionVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsEnabled )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsEnabled )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FrameFormat )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_FrameFormat )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProjectionMode )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CMedia_CPlayback_CSphericalVideoProjectionMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ProjectionMode )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [in] */__x_ABI_CWindows_CMedia_CPlayback_CSphericalVideoProjectionMode value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HorizontalFieldOfViewInDegrees )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_HorizontalFieldOfViewInDegrees )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [in] */DOUBLE value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ViewOrientation )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ViewOrientation )(
+        __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CNumerics_CQuaternion value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjectionVtbl;
+
+interface __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjectionVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_get_IsEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsEnabled(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_put_IsEnabled(This,value) \
+    ( (This)->lpVtbl->put_IsEnabled(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_get_FrameFormat(This,value) \
+    ( (This)->lpVtbl->get_FrameFormat(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_put_FrameFormat(This,value) \
+    ( (This)->lpVtbl->put_FrameFormat(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_get_ProjectionMode(This,value) \
+    ( (This)->lpVtbl->get_ProjectionMode(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_put_ProjectionMode(This,value) \
+    ( (This)->lpVtbl->put_ProjectionMode(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_get_HorizontalFieldOfViewInDegrees(This,value) \
+    ( (This)->lpVtbl->get_HorizontalFieldOfViewInDegrees(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_put_HorizontalFieldOfViewInDegrees(This,value) \
+    ( (This)->lpVtbl->put_HorizontalFieldOfViewInDegrees(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_get_ViewOrientation(This,value) \
+    ( (This)->lpVtbl->get_ViewOrientation(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_put_ViewOrientation(This,value) \
+    ( (This)->lpVtbl->put_ViewOrientation(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CEffects_CIVideoTransformSphericalProjection_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Media.Effects.AudioCaptureEffectsManager
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7679,6 +8193,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Media.Effects.IVideoEffectDefinition ** Default Interface **
  *    Windows.Media.Effects.IVideoTransformEffectDefinition
+ *    Windows.Media.Effects.IVideoTransformEffectDefinition2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -7692,6 +8207,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Effects_VideoTransformEffectDefinition[] = L"Windows.Media.Effects.VideoTransformEffectDefinition";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Media.Effects.VideoTransformSphericalProjection
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Media.Effects.IVideoTransformSphericalProjection ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_Media_Effects_VideoTransformSphericalProjection_DEFINED
+#define RUNTIMECLASS_Windows_Media_Effects_VideoTransformSphericalProjection_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Effects_VideoTransformSphericalProjection[] = L"Windows.Media.Effects.VideoTransformSphericalProjection";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 

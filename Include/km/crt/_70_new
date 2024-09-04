@@ -73,9 +73,7 @@ typedef void (__cdecl *new_handler)();	// handler for operator new failures
  #endif /* !defined(_INC_NEW) || !defined(_MSC_EXTENSIONS) */
 
  #ifndef __NOTHROW_T_DEFINED
-struct nothrow_t
-	{	// placement new tag type to suppress exceptions
-	};
+struct nothrow_t { }; // placement new tag type to suppress exceptions
 
 extern const nothrow_t nothrow;	// constant for placement new tag
  #endif /* __NOTHROW_T_DEFINED */
@@ -131,7 +129,7 @@ _Ret_notnull_ _Post_writable_byte_size_(_Size)
 void *__CRTDECL operator new[](size_t _Size)
 	_THROW1(std::bad_alloc);	// allocate array or throw exception
 
- #ifndef __NOTHROW_T_DEFINED
+#ifndef __NOTHROW_T_DEFINED
   #define __NOTHROW_T_DEFINED
 _Ret_notnull_ _Post_writable_byte_size_(_Size)
 void *__CRTDECL operator new(size_t _Size, const std::nothrow_t&)

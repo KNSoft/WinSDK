@@ -1269,6 +1269,19 @@ enum tagOperationResultCode
     } 	OperationResultCode;
 
 typedef /* [v1_enum][helpstring][public] */ 
+enum tagUpdateHistoryStatusCode
+    {
+        uhsInstallSuccess	= 0,
+        uhsInstallFailure	= 1,
+        uhsInstallCancellation	= 2,
+        uhsUninstallSuccess	= 3,
+        uhsUninstallFailure	= 4,
+        uhsUninstallCancellation	= 6,
+        uhsDownloadFailure	= 7,
+        uhsDownloadCancellation	= 8
+    } 	UpdateHistoryStatusCode;
+
+typedef /* [v1_enum][helpstring][public] */ 
 enum tagUpdateType
     {
         utSoftware	= 1,

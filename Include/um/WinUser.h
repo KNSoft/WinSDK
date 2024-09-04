@@ -4517,15 +4517,15 @@ SetLayeredWindowAttributes(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#define LWA_COLORKEY            0x00000001
-#define LWA_ALPHA               0x00000002
+#define LWA_COLORKEY          0x00000001
+#define LWA_ALPHA             0x00000002
 
 
-#define ULW_COLORKEY            0x00000001
-#define ULW_ALPHA               0x00000002
-#define ULW_OPAQUE              0x00000004
+#define ULW_COLORKEY           0x00000001
+#define ULW_ALPHA              0x00000002
+#define ULW_OPAQUE             0x00000004
 
-#define ULW_EX_NORESIZE         0x00000008
+#define ULW_EX_NORESIZE        0x00000008
 
 #endif /* _WIN32_WINNT >= 0x0500 */
 
@@ -9923,6 +9923,7 @@ GetWindowThreadProcessId(
     _In_ HWND hWnd,
     _Out_opt_ LPDWORD lpdwProcessId);
 
+
 #if(_WIN32_WINNT >= 0x0501)
 WINUSERAPI
 BOOL
@@ -12386,10 +12387,10 @@ typedef struct tagTouchPredictionParameters
 #define SPI_GETMOUSEWHEELROUTING            0x201C
 #define SPI_SETMOUSEWHEELROUTING            0x201D
 
-    #define MOUSEWHEEL_ROUTING_FOCUS                  0
-    #define MOUSEWHEEL_ROUTING_HYBRID                 1
+#define MOUSEWHEEL_ROUTING_FOCUS                  0
+#define MOUSEWHEEL_ROUTING_HYBRID                 1
 #if(WINVER >= 0x0603)
-    #define MOUSEWHEEL_ROUTING_MOUSE_POS              2
+#define MOUSEWHEEL_ROUTING_MOUSE_POS              2
 #endif /* WINVER >= 0x0603 */
 #endif /* WINVER >= 0x0602 */
 
@@ -12417,6 +12418,15 @@ typedef struct tagTouchPredictionParameters
 #define SPI_GETCARETTIMEOUT                      0x2022
 #define SPI_SETCARETTIMEOUT                      0x2023
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+#define SPI_GETHANDEDNESS                        0x2024
+#define SPI_SETHANDEDNESS                        0x2025
+typedef enum tagHANDEDNESS {
+    HANDEDNESS_LEFT = 0,
+    HANDEDNESS_RIGHT
+} HANDEDNESS, *PHANDEDNESS;
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS4
 
 #endif /* WINVER >= 0x0500 */
 
@@ -14066,6 +14076,12 @@ GetAwarenessFromDpiAwarenessContext(
     _In_ DPI_AWARENESS_CONTEXT value);
 
 WINUSERAPI
+UINT
+WINAPI
+GetDpiFromDpiAwarenessContext(
+    _In_ DPI_AWARENESS_CONTEXT value);
+
+WINUSERAPI
 BOOL
 WINAPI
 AreDpiAwarenessContextsEqual(
@@ -14091,6 +14107,12 @@ GetDpiForSystem(
     VOID);
 
 WINUSERAPI
+UINT
+WINAPI
+GetSystemDpiForProcess(
+    _In_ HANDLE hProcess);
+
+WINUSERAPI
 BOOL
 WINAPI
 EnableNonClientDpiScaling(
@@ -14113,6 +14135,27 @@ SetProcessDpiAwarenessContext(
     _In_ DPI_AWARENESS_CONTEXT value);
 
 #endif /* WINVER >= 0x0605 */
+
+#if(WINVER >= 0x0606)
+
+WINUSERAPI
+DPI_HOSTING_BEHAVIOR
+WINAPI
+SetThreadDpiHostingBehavior(
+    _In_ DPI_HOSTING_BEHAVIOR value);
+
+WINUSERAPI
+DPI_HOSTING_BEHAVIOR
+WINAPI
+GetThreadDpiHostingBehavior();
+
+WINUSERAPI
+DPI_HOSTING_BEHAVIOR
+WINAPI
+GetWindowDpiHostingBehavior(
+    _In_ HWND hwnd);
+
+#endif /* WINVER >= 0x0606 */
 
 
 WINUSERAPI

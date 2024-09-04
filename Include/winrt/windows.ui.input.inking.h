@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.input.inking.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -324,6 +326,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkDrawingAttributes5;
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5 ABI::Windows::UI::Input::Inking::IInkDrawingAttributes5
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_FWD_DEFINED__
 namespace ABI {
@@ -356,6 +374,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkInputConfiguration;
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration ABI::Windows::UI::Input::Inking::IInkInputConfiguration
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration_FWD_DEFINED__
 namespace ABI {
@@ -387,6 +421,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CInput_CInking_CIInkManager ABI::Windows::UI::Input::Inking::IInkManager
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkModelerAttributes;
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes ABI::Windows::UI::Input::Inking::IInkModelerAttributes
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_FWD_DEFINED__
@@ -483,6 +533,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 ABI::Windows::UI::Input::Inking::IInkPresenter2
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkPresenter3;
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3 ABI::Windows::UI::Input::Inking::IInkPresenter3
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_FWD_DEFINED__
@@ -1527,6 +1593,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs_USE
@@ -1556,6 +1623,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::Inking::InkPresenter*,ABI::W
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 namespace ABI {
@@ -1570,6 +1638,7 @@ namespace ABI {
     } /* Inking */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesErasedEventArgs_USE
@@ -1599,6 +1668,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::Inking::InkPresenter*,ABI::W
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesErasedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2040,6 +2110,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkStrokeInput_Windows__CUI__CCore__CPointerEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkStrokeInput_Windows__CUI__CCore__CPointerEventArgs_USE
@@ -2069,6 +2140,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::Inking::InkStrokeInput*,ABI:
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 namespace ABI {
     namespace Windows {
@@ -2083,6 +2155,7 @@ namespace ABI {
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkUnprocessedInput_Windows__CUI__CCore__CPointerEventArgs_USE
@@ -2112,6 +2185,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::Inking::InkUnprocessedInput*
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkUnprocessedInput_Windows__CUI__CCore__CPointerEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -2434,6 +2508,10 @@ namespace ABI {
 
 
 
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -2463,6 +2541,18 @@ namespace ABI {
         namespace UI {
             namespace Input {
                 namespace Inking {
+                    class InkInputConfiguration;
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
                     class InkInputProcessingConfiguration;
                 } /* Windows */
             } /* UI */
@@ -2476,6 +2566,18 @@ namespace ABI {
             namespace Input {
                 namespace Inking {
                     class InkManager;
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    class InkModelerAttributes;
                 } /* Windows */
             } /* UI */
         } /* Input */
@@ -2895,8 +2997,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("97A2176C-6774-48AD-84F0-48F5A9BE74F9"), exclusiveto, contract] */
                     MIDL_INTERFACE("97A2176C-6774-48AD-84F0-48F5A9BE74F9")
-                    IInkDrawingAttributes : IInspectable
+                    IInkDrawingAttributes : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                             ) = 0;
@@ -2964,8 +3067,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("7CAB6508-8EC4-42FD-A5A5-E4B7D1D5316D"), exclusiveto, contract] */
                     MIDL_INTERFACE("7CAB6508-8EC4-42FD-A5A5-E4B7D1D5316D")
-                    IInkDrawingAttributes2 : IInspectable
+                    IInkDrawingAttributes2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PenTipTransform(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Matrix3x2 * value
                             ) = 0;
@@ -3015,8 +3119,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("72020002-7D5B-4690-8AF4-E664CBE2B74F"), exclusiveto, contract] */
                     MIDL_INTERFACE("72020002-7D5B-4690-8AF4-E664CBE2B74F")
-                    IInkDrawingAttributes3 : IInspectable
+                    IInkDrawingAttributes3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Inking::InkDrawingAttributesKind * value
                             ) = 0;
@@ -3060,8 +3165,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("EF65DC25-9F19-456D-91A3-BC3A3D91C5FB"), exclusiveto, contract] */
                     MIDL_INTERFACE("EF65DC25-9F19-456D-91A3-BC3A3D91C5FB")
-                    IInkDrawingAttributes4 : IInspectable
+                    IInkDrawingAttributes4 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IgnoreTilt(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -3081,6 +3187,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Input.Inking.IInkDrawingAttributes5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Inking.InkDrawingAttributes
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkDrawingAttributes5[] = L"Windows.UI.Input.Inking.IInkDrawingAttributes5";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    /* [object, uuid("D11AA0BB-0775-4852-AE64-41143A7AE6C9"), exclusiveto, contract] */
+                    MIDL_INTERFACE("D11AA0BB-0775-4852-AE64-41143A7AE6C9")
+                    IInkDrawingAttributes5 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ModelerAttributes(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkModelerAttributes * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IInkDrawingAttributes5=_uuidof(IInkDrawingAttributes5);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3105,8 +3254,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("4F2534CB-2D86-41BB-B0E8-E4C2A0253C52"), exclusiveto, contract] */
                     MIDL_INTERFACE("4F2534CB-2D86-41BB-B0E8-E4C2A0253C52")
-                    IInkDrawingAttributesPencilProperties : IInspectable
+                    IInkDrawingAttributesPencilProperties : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Opacity(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -3150,8 +3300,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("F731E03F-1A65-4862-96CB-6E1665E17F6D"), exclusiveto, contract] */
                     MIDL_INTERFACE("F731E03F-1A65-4862-96CB-6E1665E17F6D")
-                    IInkDrawingAttributesStatics : IInspectable
+                    IInkDrawingAttributesStatics : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateForPencil(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkDrawingAttributes * * result
                             ) = 0;
@@ -3168,6 +3319,58 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Input.Inking.IInkInputConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Inking.InkInputConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkInputConfiguration[] = L"Windows.UI.Input.Inking.IInkInputConfiguration";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    /* [object, uuid("93A68DC4-0B7B-49D7-B34F-9901E524DCF2"), exclusiveto, contract] */
+                    MIDL_INTERFACE("93A68DC4-0B7B-49D7-B34F-9901E524DCF2")
+                    IInkInputConfiguration : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPrimaryBarrelButtonInputEnabled(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsPrimaryBarrelButtonInputEnabled(
+                            /* [in] */boolean value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEraserInputEnabled(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsEraserInputEnabled(
+                            /* [in] */boolean value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IInkInputConfiguration=_uuidof(IInkInputConfiguration);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3192,8 +3395,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("2778D85E-33CA-4B06-A6D3-AC3945116D37"), exclusiveto, contract] */
                     MIDL_INTERFACE("2778D85E-33CA-4B06-A6D3-AC3945116D37")
-                    IInkInputProcessingConfiguration : IInspectable
+                    IInkInputProcessingConfiguration : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Inking::InkInputProcessingMode * value
                             ) = 0;
@@ -3248,8 +3452,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("4744737D-671B-4163-9C95-4E8D7A035FE1"), exclusiveto, contract] */
                     MIDL_INTERFACE("4744737D-671B-4163-9C95-4E8D7A035FE1")
-                    IInkManager : IInspectable
+                    IInkManager : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Inking::InkManipulationMode * value
                             ) = 0;
@@ -3291,6 +3496,58 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkManager;
 
 /*
  *
+ * Interface Windows.UI.Input.Inking.IInkModelerAttributes
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Inking.InkModelerAttributes
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkModelerAttributes[] = L"Windows.UI.Input.Inking.IInkModelerAttributes";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    /* [object, uuid("BAD31F27-0CD9-4BFD-B6F3-9E03BA8D7454"), exclusiveto, contract] */
+                    MIDL_INTERFACE("BAD31F27-0CD9-4BFD-B6F3-9E03BA8D7454")
+                    IInkModelerAttributes : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PredictionTime(
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PredictionTime(
+                            /* [in] */ABI::Windows::Foundation::TimeSpan value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ScalingFactor(
+                            /* [retval, out] */__RPC__out FLOAT * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ScalingFactor(
+                            /* [in] */FLOAT value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IInkModelerAttributes=_uuidof(IInkModelerAttributes);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Input.Inking.IInkPoint
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3311,8 +3568,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("9F87272B-858C-46A5-9B41-D195970459FD"), exclusiveto, contract] */
                     MIDL_INTERFACE("9F87272B-858C-46A5-9B41-D195970459FD")
-                    IInkPoint : IInspectable
+                    IInkPoint : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                             ) = 0;
@@ -3356,8 +3614,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("FBA9C3F7-AE56-4D5C-BD2F-0AC45F5E4AF9"), exclusiveto, contract] */
                     MIDL_INTERFACE("FBA9C3F7-AE56-4D5C-BD2F-0AC45F5E4AF9")
-                    IInkPoint2 : IInspectable
+                    IInkPoint2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TiltX(
                             /* [retval, out] */__RPC__out FLOAT * value
                             ) = 0;
@@ -3401,8 +3660,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("29E5D51C-C98F-405D-9F3B-E53E31068D4D"), contract] */
                     MIDL_INTERFACE("29E5D51C-C98F-405D-9F3B-E53E31068D4D")
-                    IInkPointFactory : IInspectable
+                    IInkPointFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInkPoint(
                             /* [in] */ABI::Windows::Foundation::Point position,
                             /* [in] */FLOAT pressure,
@@ -3445,8 +3705,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("E0145E85-DAFF-45F2-AD69-050D8256A209"), exclusiveto, contract] */
                     MIDL_INTERFACE("E0145E85-DAFF-45F2-AD69-050D8256A209")
-                    IInkPointFactory2 : IInspectable
+                    IInkPointFactory2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInkPointWithTiltAndTimestamp(
                             /* [in] */ABI::Windows::Foundation::Point position,
                             /* [in] */FLOAT pressure,
@@ -3492,8 +3753,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("A69B70E2-887B-458F-B173-4FE4438930A3"), exclusiveto, contract] */
                     MIDL_INTERFACE("A69B70E2-887B-458F-B173-4FE4438930A3")
-                    IInkPresenter : IInspectable
+                    IInkPresenter : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsInputEnabled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -3588,8 +3850,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("CF53E612-9A34-11E6-9F33-A24FC0D9649C"), exclusiveto, contract] */
                     MIDL_INTERFACE("CF53E612-9A34-11E6-9F33-A24FC0D9649C")
-                    IInkPresenter2 : IInspectable
+                    IInkPresenter2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HighContrastAdjustment(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Inking::InkHighContrastAdjustment * value
                             ) = 0;
@@ -3609,6 +3872,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Input.Inking.IInkPresenter3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Inking.InkPresenter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkPresenter3[] = L"Windows.UI.Input.Inking.IInkPresenter3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    /* [object, uuid("51E1CE89-D37D-4A90-83FC-7F5E9DFBF217"), exclusiveto, contract] */
+                    MIDL_INTERFACE("51E1CE89-D37D-4A90-83FC-7F5E9DFBF217")
+                    IInkPresenter3 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputConfiguration(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkInputConfiguration * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IInkPresenter3=_uuidof(IInkPresenter3);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Input */
+    } /* Inking */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3637,8 +3943,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("7DE3F2AA-EF6C-4E91-A73B-5B70D56FBD17"), exclusiveto, contract] */
                     MIDL_INTERFACE("7DE3F2AA-EF6C-4E91-A73B-5B70D56FBD17")
-                    IInkPresenterProtractor : IInspectable
+                    IInkPresenterProtractor : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AreTickMarksVisible(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -3718,8 +4025,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("320103C9-68FA-47E9-8127-8370711FC46C"), exclusiveto, contract] */
                     MIDL_INTERFACE("320103C9-68FA-47E9-8127-8370711FC46C")
-                    IInkPresenterProtractorFactory : IInspectable
+                    IInkPresenterProtractorFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Input::Inking::IInkPresenter * inkPresenter,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkPresenterProtractor * * inkPresenterProtractor
@@ -3765,8 +4073,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("6CDA7D5A-DEC7-4DD7-877A-2133F183D48A"), exclusiveto, contract] */
                     MIDL_INTERFACE("6CDA7D5A-DEC7-4DD7-877A-2133F183D48A")
-                    IInkPresenterRuler : IInspectable
+                    IInkPresenterRuler : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Length(
                             /* [retval, out] */__RPC__out DOUBLE * value
                             ) = 0;
@@ -3816,8 +4125,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("45130DC1-BC61-44D4-A423-54712AE671C4"), exclusiveto, contract] */
                     MIDL_INTERFACE("45130DC1-BC61-44D4-A423-54712AE671C4")
-                    IInkPresenterRuler2 : IInspectable
+                    IInkPresenterRuler2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AreTickMarksVisible(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
@@ -3864,8 +4174,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("34361BEB-9001-4A4B-A690-69DBAF63E501"), contract] */
                     MIDL_INTERFACE("34361BEB-9001-4A4B-A690-69DBAF63E501")
-                    IInkPresenterRulerFactory : IInspectable
+                    IInkPresenterRulerFactory : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Input::Inking::IInkPresenter * inkPresenter,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkPresenterRuler * * inkPresenterRuler
@@ -3904,8 +4215,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("30D12D6D-3E06-4D02-B116-277FB5D8ADDC"), contract] */
                     MIDL_INTERFACE("30D12D6D-3E06-4D02-B116-277FB5D8ADDC")
-                    IInkPresenterStencil : IInspectable
+                    IInkPresenterStencil : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Input::Inking::InkPresenterStencilKind * value
                             ) = 0;
@@ -3970,8 +4282,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("36461A94-5068-40EF-8A05-2C2FB60908A2"), exclusiveto, contract] */
                     MIDL_INTERFACE("36461A94-5068-40EF-8A05-2C2FB60908A2")
-                    IInkRecognitionResult : IInspectable
+                    IInkRecognitionResult : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BoundingRect(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * boundingRect
                             ) = 0;
@@ -4018,8 +4331,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("077CCEA3-904D-442A-B151-AACA3631C43B"), exclusiveto, contract] */
                     MIDL_INTERFACE("077CCEA3-904D-442A-B151-AACA3631C43B")
-                    IInkRecognizer : IInspectable
+                    IInkRecognizer : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
@@ -4057,8 +4371,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("A74D9A31-8047-4698-A912-F82A5085012F"), contract] */
                     MIDL_INTERFACE("A74D9A31-8047-4698-A912-F82A5085012F")
-                    IInkRecognizerContainer : IInspectable
+                    IInkRecognizerContainer : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE SetDefaultRecognizer(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Input::Inking::IInkRecognizer * recognizer
                             ) = 0;
@@ -4107,8 +4422,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("15144D60-CCE3-4FCF-9D52-11518AB6AFD4"), exclusiveto, contract] */
                     MIDL_INTERFACE("15144D60-CCE3-4FCF-9D52-11518AB6AFD4")
-                    IInkStroke : IInspectable
+                    IInkStroke : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DrawingAttributes(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkDrawingAttributes * * value
                             ) = 0;
@@ -4170,8 +4486,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("5DB9E4F4-BAFA-4DE1-89D3-201B1ED7D89B"), exclusiveto, contract] */
                     MIDL_INTERFACE("5DB9E4F4-BAFA-4DE1-89D3-201B1ED7D89B")
-                    IInkStroke2 : IInspectable
+                    IInkStroke2 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PointTransform(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Matrix3x2 * value
                             ) = 0;
@@ -4218,8 +4535,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("4A807374-9499-411D-A1C4-68855D03D65F"), exclusiveto, contract] */
                     MIDL_INTERFACE("4A807374-9499-411D-A1C4-68855D03D65F")
-                    IInkStroke3 : IInspectable
+                    IInkStroke3 : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                             /* [retval, out] */__RPC__out UINT32 * value
                             ) = 0;
@@ -4272,8 +4590,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("82BBD1DC-1C63-41DC-9E07-4B4A70CED801"), exclusiveto, contract] */
                     MIDL_INTERFACE("82BBD1DC-1C63-41DC-9E07-4B4A70CED801")
-                    IInkStrokeBuilder : IInspectable
+                    IInkStrokeBuilder : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE BeginStroke(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Input::IPointerPoint * pointerPoint
                             ) = 0;
@@ -4329,8 +4648,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("BD82BC27-731F-4CBC-BBBF-6D468044F1E5"), exclusiveto, contract] */
                     MIDL_INTERFACE("BD82BC27-731F-4CBC-BBBF-6D468044F1E5")
-                    IInkStrokeBuilder2 : IInspectable
+                    IInkStrokeBuilder2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateStrokeFromInkPoints(
                             /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint * inkPoints,
                             /* [in] */ABI::Windows::Foundation::Numerics::Matrix3x2 transform,
@@ -4373,8 +4693,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("B2C71FCD-5472-46B1-A81D-C37A3D169441"), exclusiveto, contract] */
                     MIDL_INTERFACE("B2C71FCD-5472-46B1-A81D-C37A3D169441")
-                    IInkStrokeBuilder3 : IInspectable
+                    IInkStrokeBuilder3 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE CreateStrokeFromInkPoints(
                             /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint * inkPoints,
                             /* [in] */ABI::Windows::Foundation::Numerics::Matrix3x2 transform,
@@ -4416,8 +4737,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("22ACCBC6-FAA9-4F14-B68C-F6CEE670AE16"), contract] */
                     MIDL_INTERFACE("22ACCBC6-FAA9-4F14-B68C-F6CEE670AE16")
-                    IInkStrokeContainer : IInspectable
+                    IInkStrokeContainer : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BoundingRect(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                             ) = 0;
@@ -4502,8 +4824,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("8901D364-DA36-4BCF-9E5C-D195825995B4"), exclusiveto, contract] */
                     MIDL_INTERFACE("8901D364-DA36-4BCF-9E5C-D195825995B4")
-                    IInkStrokeContainer2 : IInspectable
+                    IInkStrokeContainer2 : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE AddStrokes(
                             /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CInput__CInking__CInkStroke * strokes
                             ) = 0;
@@ -4545,8 +4868,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("3D07BEA5-BAEA-4C82-A719-7B83DA1067D2"), exclusiveto, contract] */
                     MIDL_INTERFACE("3D07BEA5-BAEA-4C82-A719-7B83DA1067D2")
-                    IInkStrokeContainer3 : IInspectable
+                    IInkStrokeContainer3 : public IInspectable
                     {
+                    public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE SaveWithFormatAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IOutputStream * outputStream,
                             /* [in] */ABI::Windows::UI::Input::Inking::InkPersistenceFormat inkPersistenceFormat,
@@ -4593,8 +4917,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("CF2FFE7B-5E10-43C6-A080-88F26E1DC67D"), exclusiveto, contract] */
                     MIDL_INTERFACE("CF2FFE7B-5E10-43C6-A080-88F26E1DC67D")
-                    IInkStrokeInput : IInspectable
+                    IInkStrokeInput : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_StrokeStarted(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkStrokeInput_Windows__CUI__CCore__CPointerEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -4663,8 +4988,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("68510F1F-88E3-477A-A2FA-569F5F1F9BD5"), exclusiveto, contract] */
                     MIDL_INTERFACE("68510F1F-88E3-477A-A2FA-569F5F1F9BD5")
-                    IInkStrokeRenderingSegment : IInspectable
+                    IInkStrokeRenderingSegment : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
                             ) = 0;
@@ -4723,8 +5049,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("C4F3F229-1938-495C-B4D9-6DE4B08D4811"), exclusiveto, contract] */
                     MIDL_INTERFACE("C4F3F229-1938-495C-B4D9-6DE4B08D4811")
-                    IInkStrokesCollectedEventArgs : IInspectable
+                    IInkStrokesCollectedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Strokes(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CInput__CInking__CInkStroke * * value
                             ) = 0;
@@ -4765,8 +5092,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("A4216A22-1503-4EBF-8FF5-2DE84584A8AA"), exclusiveto, contract] */
                     MIDL_INTERFACE("A4216A22-1503-4EBF-8FF5-2DE84584A8AA")
-                    IInkStrokesErasedEventArgs : IInspectable
+                    IInkStrokesErasedEventArgs : public IInspectable
                     {
+                    public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Strokes(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CInput__CInking__CInkStroke * * value
                             ) = 0;
@@ -4807,8 +5135,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("9B9EA160-AE9B-45F9-8407-4B493B163661"), exclusiveto, contract] */
                     MIDL_INTERFACE("9B9EA160-AE9B-45F9-8407-4B493B163661")
-                    IInkSynchronizer : IInspectable
+                    IInkSynchronizer : public IInspectable
                     {
+                    public:
                         virtual HRESULT STDMETHODCALLTYPE BeginDry(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CInput__CInking__CInkStroke * * inkStrokes
                             ) = 0;
@@ -4850,8 +5179,9 @@ namespace ABI {
                 namespace Inking {
                     /* [object, uuid("DB4445E0-8398-4921-AC3B-AB978C5BA256"), exclusiveto, contract] */
                     MIDL_INTERFACE("DB4445E0-8398-4921-AC3B-AB978C5BA256")
-                    IInkUnprocessedInput : IInspectable
+                    IInkUnprocessedInput : public IInspectable
                     {
+                    public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PointerEntered(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkUnprocessedInput_Windows__CUI__CCore__CPointerEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * cookie
@@ -4937,6 +5267,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkUnprocessedInput
  *    Windows.UI.Input.Inking.IInkDrawingAttributes2
  *    Windows.UI.Input.Inking.IInkDrawingAttributes3
  *    Windows.UI.Input.Inking.IInkDrawingAttributes4
+ *    Windows.UI.Input.Inking.IInkDrawingAttributes5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -4974,6 +5305,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Inking_InkDrawingAttributesPencilProperties[] = L"Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Input.Inking.InkInputConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Input.Inking.IInkInputConfiguration ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Input_Inking_InkInputConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_Inking_InkInputConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Inking_InkInputConfiguration[] = L"Windows.UI.Input.Inking.InkInputConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5029,6 +5382,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Input.Inking.InkModelerAttributes
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Input.Inking.IInkModelerAttributes ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Input_Inking_InkModelerAttributes_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_Inking_InkModelerAttributes_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Inking_InkModelerAttributes[] = L"Windows.UI.Input.Inking.InkModelerAttributes";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Input.Inking.InkPoint
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5064,6 +5439,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Input.Inking.IInkPresenter ** Default Interface **
  *    Windows.UI.Input.Inking.IInkPresenter2
+ *    Windows.UI.Input.Inking.IInkPresenter3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -5444,6 +5820,12 @@ typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 __
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5 __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5;
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties;
@@ -5456,6 +5838,12 @@ typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStat
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration;
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration;
@@ -5467,6 +5855,12 @@ typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfig
 typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkManager __x_ABI_CWindows_CUI_CInput_CInking_CIInkManager;
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes;
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_FWD_DEFINED__
@@ -5503,6 +5897,12 @@ typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter __x_ABI_CWi
 typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2;
 
 #endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3 __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3;
+
+#endif // ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_FWD_DEFINED__
@@ -7277,6 +7677,7 @@ interface __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CInput__CInking__C
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs_INTERFACE_DEFINED__
 
@@ -7324,9 +7725,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_W
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesErasedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesErasedEventArgs_INTERFACE_DEFINED__
@@ -7374,6 +7777,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_W
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesErasedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
@@ -8246,6 +8650,7 @@ typedef interface __x_ABI_CWindows_CUI_CCore_CIPointerEventArgs __x_ABI_CWindows
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkStrokeInput_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkStrokeInput_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__
 
@@ -8293,9 +8698,11 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkStrokeInput
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkStrokeInput_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkUnprocessedInput_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkUnprocessedInput_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__
@@ -8343,6 +8750,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkUnprocessed
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkUnprocessedInput_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
@@ -8440,6 +8848,12 @@ typedef enum __x_ABI_CWindows_CUI_CInput_CInking_CInkRecognitionTarget __x_ABI_C
 
 
 typedef enum __x_ABI_CWindows_CUI_CInput_CInking_CPenTipShape __x_ABI_CWindows_CUI_CInput_CInking_CPenTipShape;
+
+
+
+
+
+
 
 
 
@@ -9180,6 +9594,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttribute
 
 /*
  *
+ * Interface Windows.UI.Input.Inking.IInkDrawingAttributes5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Inking.InkDrawingAttributes
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkDrawingAttributes5[] = L"Windows.UI.Input.Inking.IInkDrawingAttributes5";
+/* [object, uuid("D11AA0BB-0775-4852-AE64-41143A7AE6C9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ModelerAttributes )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5Vtbl;
+
+interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_get_ModelerAttributes(This,value) \
+    ( (This)->lpVtbl->get_ModelerAttributes(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -9369,6 +9876,120 @@ interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Input.Inking.IInkInputConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Inking.InkInputConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkInputConfiguration[] = L"Windows.UI.Input.Inking.IInkInputConfiguration";
+/* [object, uuid("93A68DC4-0B7B-49D7-B34F-9901E524DCF2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfigurationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsPrimaryBarrelButtonInputEnabled )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsPrimaryBarrelButtonInputEnabled )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsEraserInputEnabled )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsEraserInputEnabled )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfigurationVtbl;
+
+interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfigurationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_get_IsPrimaryBarrelButtonInputEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsPrimaryBarrelButtonInputEnabled(This,value) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_put_IsPrimaryBarrelButtonInputEnabled(This,value) \
+    ( (This)->lpVtbl->put_IsPrimaryBarrelButtonInputEnabled(This,value) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_get_IsEraserInputEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsEraserInputEnabled(This,value) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_put_IsEraserInputEnabled(This,value) \
+    ( (This)->lpVtbl->put_IsEraserInputEnabled(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9626,6 +10247,120 @@ interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkManager
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkManager;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkManager_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Input.Inking.IInkModelerAttributes
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Inking.InkModelerAttributes
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkModelerAttributes[] = L"Windows.UI.Input.Inking.IInkModelerAttributes";
+/* [object, uuid("BAD31F27-0CD9-4BFD-B6F3-9E03BA8D7454"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributesVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PredictionTime )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_PredictionTime )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ScalingFactor )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This,
+        /* [retval, out] */__RPC__out FLOAT * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ScalingFactor )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes * This,
+        /* [in] */FLOAT value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributesVtbl;
+
+interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributesVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_get_PredictionTime(This,value) \
+    ( (This)->lpVtbl->get_PredictionTime(This,value) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_put_PredictionTime(This,value) \
+    ( (This)->lpVtbl->put_PredictionTime(This,value) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_get_ScalingFactor(This,value) \
+    ( (This)->lpVtbl->get_ScalingFactor(This,value) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_put_ScalingFactor(This,value) \
+    ( (This)->lpVtbl->put_ScalingFactor(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkModelerAttributes_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10334,6 +11069,99 @@ interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Input.Inking.IInkPresenter3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Input.Inking.InkPresenter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkPresenter3[] = L"Windows.UI.Input.Inking.IInkPresenter3";
+/* [object, uuid("51E1CE89-D37D-4A90-83FC-7F5E9DFBF217"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_InputConfiguration )(
+        __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CInking_CIInkInputConfiguration * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_get_InputConfiguration(This,value) \
+    ( (This)->lpVtbl->get_InputConfiguration(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -13257,6 +14085,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkUnprocessedInput
  *    Windows.UI.Input.Inking.IInkDrawingAttributes2
  *    Windows.UI.Input.Inking.IInkDrawingAttributes3
  *    Windows.UI.Input.Inking.IInkDrawingAttributes4
+ *    Windows.UI.Input.Inking.IInkDrawingAttributes5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -13294,6 +14123,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Inking_InkDrawingAttributesPencilProperties[] = L"Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Input.Inking.InkInputConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Input.Inking.IInkInputConfiguration ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Input_Inking_InkInputConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_Inking_InkInputConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Inking_InkInputConfiguration[] = L"Windows.UI.Input.Inking.InkInputConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -13349,6 +14200,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Input.Inking.InkModelerAttributes
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Input.Inking.IInkModelerAttributes ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Input_Inking_InkModelerAttributes_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_Inking_InkModelerAttributes_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Inking_InkModelerAttributes[] = L"Windows.UI.Input.Inking.InkModelerAttributes";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Input.Inking.InkPoint
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -13384,6 +14257,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Input.Inking.IInkPresenter ** Default Interface **
  *    Windows.UI.Input.Inking.IInkPresenter2
+ *    Windows.UI.Input.Inking.IInkPresenter3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

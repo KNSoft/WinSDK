@@ -25,6 +25,7 @@ Notes:
 
         Version     First available in
         ------------------------------------------------------------------
+        681         Windows 10  RS4 release
         680         Windows 10  RS3 Release
         670         Windows 10, version 1703
         660         Windows 10, version 1607 / Windows Server 2016
@@ -61,8 +62,6 @@ Notes:
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
-
-
 //disable warnings
 #if _MSC_VER >= 1200
 
@@ -84,12 +83,25 @@ extern "C" {
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
 
 //
+// Something to identify new (RS4 and up) applications.
+// User-mode only. For drivers, NDIS_SUPPORT_NDIS681 is already
+// defined in ndismain.w.
+//
+#if !defined(NDIS_SUPPORT_NDIS681)
+#if  (defined (UM_NDIS681))
+#define NDIS_SUPPORT_NDIS681      1
+#else
+#define NDIS_SUPPORT_NDIS681      0
+#endif
+#endif // !defined(NDIS_SUPPORT_NDIS681)
+
+//
 // Something to identify new (RS3 and up) applications.
 // User-mode only. For drivers, NDIS_SUPPORT_NDIS680 is already
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS680)
-#if  (defined (UM_NDIS680))
+#if  (defined (UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS680      1
 #else
 #define NDIS_SUPPORT_NDIS680      0
@@ -102,7 +114,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS670)
-#if  (defined (UM_NDIS670) || defined(UM_NDIS680))
+#if  (defined (UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS670      1
 #else
 #define NDIS_SUPPORT_NDIS670      0
@@ -115,7 +127,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS660)
-#if  (defined (UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
+#if  (defined (UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS660      1
 #else
 #define NDIS_SUPPORT_NDIS660      0
@@ -128,7 +140,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS651)
-#if  (defined (UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
+#if  (defined (UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS651      1
 #else
 #define NDIS_SUPPORT_NDIS651      0
@@ -141,7 +153,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS650)
-#if  (defined (UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
+#if  (defined (UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS650      1
 #else
 #define NDIS_SUPPORT_NDIS650      0
@@ -154,7 +166,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS640)
-#if  (defined (UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
+#if  (defined (UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS640      1
 #else
 #define NDIS_SUPPORT_NDIS640      0
@@ -167,7 +179,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS630)
-#if  (defined (UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
+#if  (defined (UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS630      1
 #else
 #define NDIS_SUPPORT_NDIS630      0
@@ -180,7 +192,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS620)
-#if  (defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
+#if  (defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS620      1
 #else
 #define NDIS_SUPPORT_NDIS620      0
@@ -193,7 +205,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS61)
-#if  (defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
+#if  (defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS61      1
 #else
 #define NDIS_SUPPORT_NDIS61      0
@@ -202,7 +214,7 @@ extern "C" {
 
 
 #if !defined(NDIS_SUPPORT_NDIS6)
-#if  (defined(UM_NDIS60) || defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
+#if  (defined(UM_NDIS60) || defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
 #define NDIS_SUPPORT_NDIS6       1
 #else
 #define NDIS_SUPPORT_NDIS6       0
@@ -405,6 +417,7 @@ typedef struct _NDIS_VAR_DATA_DESC
 #if (NDIS_SUPPORT_NDIS670)
 #define NDIS_OBJECT_TYPE_MINIPORT_DEVICE_POWER_NOTIFICATION             0xC6
 #endif // (NDIS_SUPPORT_NDIS670)
+
 
 typedef struct _NDIS_OBJECT_HEADER
 {
@@ -848,6 +861,13 @@ typedef struct _NDIS_PCI_DEVICE_CUSTOM_PROPERTIES
 #define OID_WWAN_DEVICE_RESET                       0x0e010147
 #define OID_WWAN_BASE_STATIONS_INFO                 0x0e010148
 #endif // ((NTDDI_VERSION >= NTDDI_WIN10_RS3) || NDIS_SUPPORT_NDIS680)
+
+#if ((NTDDI_VERSION >= NTDDI_WIN10_RS4) || NDIS_SUPPORT_NDIS680)
+//
+// more WWAN specific oids (may need to restrict to higher NDIS version such as 7.0)
+//
+#define OID_WWAN_MPDP                               0x0e010149
+#endif // ((NTDDI_VERSION >= NTDDI_WIN10_RS4) || NDIS_SUPPORT_NDIS680)
 
 //
 //  Required statistics
@@ -1923,7 +1943,6 @@ NDIS_802_11_RADIO_STATUS, *PNDIS_802_11_RADIO_STATUS;
 #if (NDIS_SUPPORT_NDIS630)
 #define OID_RECEIVE_FILTER_MOVE_FILTER                  0x00010230  // set only
 #endif // (NDIS_SUPPORT_NDIS630)
-
 
 #define OID_VLAN_RESERVED1                              0x00010231
 #define OID_VLAN_RESERVED2                              0x00010232
@@ -4756,7 +4775,6 @@ typedef struct _NDIS_WMI_PM_ACTIVE_CAPABILITIES
 #define NDIS_RECEIVE_FILTER_ARP_HEADER_SUPPORTED            0x00000008
 #define NDIS_RECEIVE_FILTER_UDP_HEADER_SUPPORTED            0x00000010
 
-
 //
 // used in SupportedMacHeaderFields field of NDIS_RECEIVE_FILTER_CAPABILITIES
 // structure
@@ -4782,20 +4800,17 @@ typedef struct _NDIS_WMI_PM_ACTIVE_CAPABILITIES
 //
 #define NDIS_RECEIVE_FILTER_IPV4_HEADER_PROTOCOL_SUPPORTED      0x00000001
 
-
 //
 // used in SupportedIPv6HeaderFields field of NDIS_RECEIVE_FILTER_CAPABILITIES
 // structure
 //
 #define NDIS_RECEIVE_FILTER_IPV6_HEADER_PROTOCOL_SUPPORTED      0x00000001
 
-
 //
 // used in SupportedUdpHeaderFields field of NDIS_RECEIVE_FILTER_CAPABILITIES
 // structure
 //
 #define NDIS_RECEIVE_FILTER_UDP_HEADER_DEST_PORT_SUPPORTED      0x00000001
-
 
 //
 // used in SupportedFilterTests field of NDIS_RECEIVE_FILTER_CAPABILITIES
@@ -4804,7 +4819,6 @@ typedef struct _NDIS_WMI_PM_ACTIVE_CAPABILITIES
 #define NDIS_RECEIVE_FILTER_TEST_HEADER_FIELD_EQUAL_SUPPORTED               0x00000001
 #define NDIS_RECEIVE_FILTER_TEST_HEADER_FIELD_MASK_EQUAL_SUPPORTED          0x00000002
 #define NDIS_RECEIVE_FILTER_TEST_HEADER_FIELD_NOT_EQUAL_SUPPORTED           0x00000004
-
 
 //
 // used in SupportedQueueProperties field of NDIS_RECEIVE_FILTER_CAPABILITIES
@@ -4830,7 +4844,6 @@ typedef struct _NDIS_WMI_PM_ACTIVE_CAPABILITIES
 #define NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_FOR_DEFAULT_QUEUE_SUPPORTED 0x00000040
 #endif // (NDIS_SUPPORT_NDIS680)
 
-
 //
 // The following bits are used in EnabledFilterTypes field of
 // NDIS_RECEIVE_FILTER_GLOBAL_PARAMETERS structure and
@@ -4839,15 +4852,12 @@ typedef struct _NDIS_WMI_PM_ACTIVE_CAPABILITIES
 #define NDIS_RECEIVE_FILTER_VMQ_FILTERS_ENABLED                     0x00000001
 #define NDIS_RECEIVE_FILTER_PACKET_COALESCING_FILTERS_ENABLED       0x00000002
 
-
 //
 // The following bits are used in EnabledQueueTypes field of
 // NDIS_RECEIVE_FILTER_GLOBAL_PARAMETERS structure and
 // EnabledQueueTypes field of NDIS_RECEIVE_FILTER_CAPABILITIES structure
 //
 #define NDIS_RECEIVE_FILTER_VM_QUEUES_ENABLED                       0x00000001
-
-
 
 //
 // Data structures for advertising generic filtering capabilities
@@ -4927,7 +4937,6 @@ typedef struct _NDIS_RECEIVE_FILTER_CAPABILITIES
 #endif // (NDIS_SUPPORT_NDIS660)
 
 #endif // (NDIS_SUPPORT_NDIS630)
-
 
 //
 // Data structure for advertising the NIC Switch capabilities
@@ -5099,7 +5108,6 @@ typedef enum _NDIS_UDP_HEADER_FIELD
     NdisUdpHeaderFieldMaximum
 }NDIS_UDP_HEADER_FIELD, *PNDIS_UDP_HEADER_FIELD;
 
-
 typedef enum _NDIS_RECEIVE_FILTER_TEST
 {
     NdisReceiveFilterTestUndefined,
@@ -5108,8 +5116,6 @@ typedef enum _NDIS_RECEIVE_FILTER_TEST
     NdisReceiveFilterTestNotEqual,
     NdisReceiveFilterTestMaximum
 }NDIS_RECEIVE_FILTER_TEST, *PNDIS_RECEIVE_FILTER_TEST;
-
-
 
 //
 // Flags used in NDIS_RECEIVE_FILTER_FIELD_PARAMETERS.Flags field
@@ -5242,8 +5248,6 @@ typedef struct _NDIS_RECEIVE_FILTER_CLEAR_PARAMETERS
 #define NDIS_SIZEOF_RECEIVE_FILTER_CLEAR_PARAMETERS_REVISION_1     \
     RTL_SIZEOF_THROUGH_FIELD(NDIS_RECEIVE_FILTER_CLEAR_PARAMETERS, FilterId)
 
-
-
 //
 // enum value used in QueueType field of NDIS_RECEIVE_QUEUE_PARAMETERS structure
 //
@@ -5253,8 +5257,6 @@ typedef enum _NDIS_RECEIVE_QUEUE_TYPE
     NdisReceiveQueueTypeVMQueue,
     NdisReceiveQueueTypeMaximum
 }NDIS_RECEIVE_QUEUE_TYPE, *PNDIS_RECEIVE_QUEUE_TYPE;
-
-
 
 //
 // bits used in Flags field of NDIS_RECEIVE_QUEUE_PARAMETERS in OID_RECEIVE_FILTER_ALLOCATE_QUEUE
@@ -5278,7 +5280,6 @@ typedef enum _NDIS_RECEIVE_QUEUE_TYPE
 #if (NDIS_SUPPORT_NDIS650)
 #define NDIS_RECEIVE_QUEUE_PARAMETERS_QOS_SQ_ID_CHANGED                         0x00200000
 #endif //(NDIS_SUPPORT_NDIS650)
-
 
 #define NDIS_RECEIVE_QUEUE_PARAMETERS_CHANGE_MASK                               0xFFFF0000
 
@@ -5334,7 +5335,6 @@ typedef struct _NDIS_RECEIVE_QUEUE_PARAMETERS
 #if (NDIS_SUPPORT_NDIS650)
     _In_    NDIS_QOS_SQ_ID                   QosSqId;
 #endif // (NDIS_SUPPORT_NDIS650)
-
 }NDIS_RECEIVE_QUEUE_PARAMETERS, *PNDIS_RECEIVE_QUEUE_PARAMETERS;
 
 #define NDIS_SIZEOF_RECEIVE_QUEUE_PARAMETERS_REVISION_1     \

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -250,6 +252,7 @@
 #include "EventToken.h"
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
+#include "Windows.ApplicationModel.Activation.h"
 #include "Windows.ApplicationModel.Core.h"
 #include "Windows.Storage.h"
 #include "Windows.Storage.Streams.h"
@@ -282,6 +285,30 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CIAppInfo ABI::Windows::ApplicationModel::IAppInfo
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CIAppInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIAppInstance_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIAppInstance_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            interface IAppInstance;
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance ABI::Windows::ApplicationModel::IAppInstance
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIAppInstance_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            interface IAppInstanceStatics;
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics ABI::Windows::ApplicationModel::IAppInstanceStatics
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CIDesignModeStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CIDesignModeStatics_FWD_DEFINED__
@@ -439,6 +466,18 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            interface IPackageCatalog4;
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 ABI::Windows::ApplicationModel::IPackageCatalog4
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult_FWD_DEFINED__
 namespace ABI {
@@ -451,6 +490,18 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            interface IPackageCatalogAddResourcePackageResult;
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult_FWD_DEFINED__
 namespace ABI {
@@ -462,6 +513,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult ABI::Windows::ApplicationModel::IPackageCatalogRemoveOptionalPackagesResult
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            interface IPackageCatalogRemoveResourcePackagesResult;
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult ABI::Windows::ApplicationModel::IPackageCatalogRemoveResourcePackagesResult
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogStatics_FWD_DEFINED__
@@ -780,6 +843,77 @@ typedef IIterable<ABI::Windows::ApplicationModel::AppInfo*> __FIIterable_1_Windo
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
+            class AppInstance;
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterator_1_Windows__CApplicationModel__CAppInstance_USE
+#define DEF___FIIterator_1_Windows__CApplicationModel__CAppInstance_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("14c94628-7938-56d5-895a-8fc52ed3bb7e"))
+IIterator<ABI::Windows::ApplicationModel::AppInstance*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::AppInstance*, ABI::Windows::ApplicationModel::IAppInstance*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.ApplicationModel.AppInstance>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::ApplicationModel::AppInstance*> __FIIterator_1_Windows__CApplicationModel__CAppInstance_t;
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CApplicationModel__CAppInstance_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CApplicationModel__CAppInstance ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::IAppInstance*>
+//#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::IAppInstance*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CApplicationModel__CAppInstance_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIIterable_1_Windows__CApplicationModel__CAppInstance_USE
+#define DEF___FIIterable_1_Windows__CApplicationModel__CAppInstance_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("2c28b4c9-6378-5382-a1a6-79bd6eed967a"))
+IIterable<ABI::Windows::ApplicationModel::AppInstance*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::AppInstance*, ABI::Windows::ApplicationModel::IAppInstance*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.ApplicationModel.AppInstance>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::ApplicationModel::AppInstance*> __FIIterable_1_Windows__CApplicationModel__CAppInstance_t;
+#define __FIIterable_1_Windows__CApplicationModel__CAppInstance ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CAppInstance_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CApplicationModel__CAppInstance ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::IAppInstance*>
+//#define __FIIterable_1_Windows__CApplicationModel__CAppInstance_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::IAppInstance*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CApplicationModel__CAppInstance_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
             class Package;
         } /* Windows */
     } /* ApplicationModel */} /* ABI */
@@ -1023,6 +1157,38 @@ typedef IVectorView<ABI::Windows::ApplicationModel::AppInfo*> __FIVectorView_1_W
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CAppInstance_USE
+#define DEF___FIVectorView_1_Windows__CApplicationModel__CAppInstance_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("d1864e26-b62b-5085-8e93-60cbb6eb20d1"))
+IVectorView<ABI::Windows::ApplicationModel::AppInstance*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::AppInstance*, ABI::Windows::ApplicationModel::IAppInstance*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.AppInstance>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::ApplicationModel::AppInstance*> __FIVectorView_1_Windows__CApplicationModel__CAppInstance_t;
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CAppInstance_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::IAppInstance*>
+//#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::IAppInstance*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CAppInstance_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CPackage_USE
@@ -1117,6 +1283,38 @@ typedef IVectorView<ABI::Windows::ApplicationModel::StartupTask*> __FIVectorView
 
 
 #endif // WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIVector_1_Windows__CApplicationModel__CAppInstance_USE
+#define DEF___FIVector_1_Windows__CApplicationModel__CAppInstance_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("7ff85c5e-7752-5ef0-bf29-020648c199e4"))
+IVector<ABI::Windows::ApplicationModel::AppInstance*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::AppInstance*, ABI::Windows::ApplicationModel::IAppInstance*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.ApplicationModel.AppInstance>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVector<ABI::Windows::ApplicationModel::AppInstance*> __FIVector_1_Windows__CApplicationModel__CAppInstance_t;
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppInstance_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CApplicationModel__CAppInstance ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::IAppInstance*>
+//#define __FIVector_1_Windows__CApplicationModel__CAppInstance_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::IAppInstance*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVector_1_Windows__CApplicationModel__CAppInstance_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -1302,6 +1500,119 @@ typedef IEventHandler<ABI::Windows::ApplicationModel::SuspendingEventArgs*> __FI
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
+            class PackageCatalogAddResourcePackageResult;
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            struct PackageInstallProgress;
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_USE
+#define DEF___FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("a58762e7-fcc2-5b31-945e-71c6c9bc516e"))
+IAsyncOperationProgressHandler<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult*,struct ABI::Windows::ApplicationModel::PackageInstallProgress> : IAsyncOperationProgressHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult*, ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult*>,struct ABI::Windows::ApplicationModel::PackageInstallProgress> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationProgressHandler`2<Windows.ApplicationModel.PackageCatalogAddResourcePackageResult, Windows.ApplicationModel.PackageInstallProgress>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationProgressHandler<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult*,struct ABI::Windows::ApplicationModel::PackageInstallProgress> __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t;
+#define __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult*,ABI::Windows::ApplicationModel::PackageInstallProgress>
+//#define __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult*,ABI::Windows::ApplicationModel::PackageInstallProgress>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_USE
+#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("76fd3482-764c-5806-8758-035aefb6a548"))
+IAsyncOperationWithProgressCompletedHandler<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult*,struct ABI::Windows::ApplicationModel::PackageInstallProgress> : IAsyncOperationWithProgressCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult*, ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult*>,struct ABI::Windows::ApplicationModel::PackageInstallProgress> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<Windows.ApplicationModel.PackageCatalogAddResourcePackageResult, Windows.ApplicationModel.PackageInstallProgress>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationWithProgressCompletedHandler<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult*,struct ABI::Windows::ApplicationModel::PackageInstallProgress> __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t;
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult*,ABI::Windows::ApplicationModel::PackageInstallProgress>
+//#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult*,ABI::Windows::ApplicationModel::PackageInstallProgress>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_USE
+#define DEF___FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b147e038-cc1f-567f-b1f1-64d5d4003309"))
+IAsyncOperationWithProgress<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult*,struct ABI::Windows::ApplicationModel::PackageInstallProgress> : IAsyncOperationWithProgress_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult*, ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult*>,struct ABI::Windows::ApplicationModel::PackageInstallProgress> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperationWithProgress`2<Windows.ApplicationModel.PackageCatalogAddResourcePackageResult, Windows.ApplicationModel.PackageInstallProgress>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationWithProgress<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult*,struct ABI::Windows::ApplicationModel::PackageInstallProgress> __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t;
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult*,ABI::Windows::ApplicationModel::PackageInstallProgress>
+//#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::ApplicationModel::IPackageCatalogAddResourcePackageResult*,ABI::Windows::ApplicationModel::PackageInstallProgress>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
             class PackageCatalogAddOptionalPackageResult;
         } /* Windows */
     } /* ApplicationModel */} /* ABI */
@@ -1440,6 +1751,77 @@ typedef IAsyncOperation<ABI::Windows::ApplicationModel::PackageCatalogRemoveOpti
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            class PackageCatalogRemoveResourcePackagesResult;
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("142b78d7-5cc3-5b40-a58d-43a582ca83ea"))
+IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::PackageCatalogRemoveResourcePackagesResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::PackageCatalogRemoveResourcePackagesResult*, ABI::Windows::ApplicationModel::IPackageCatalogRemoveResourcePackagesResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.ApplicationModel.PackageCatalogRemoveResourcePackagesResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::PackageCatalogRemoveResourcePackagesResult*> __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::IPackageCatalogRemoveResourcePackagesResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::IPackageCatalogRemoveResourcePackagesResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("342ee07c-8d6e-53a4-b746-c5b74bb61f6d"))
+IAsyncOperation<ABI::Windows::ApplicationModel::PackageCatalogRemoveResourcePackagesResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::PackageCatalogRemoveResourcePackagesResult*, ABI::Windows::ApplicationModel::IPackageCatalogRemoveResourcePackagesResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.ApplicationModel.PackageCatalogRemoveResourcePackagesResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::ApplicationModel::PackageCatalogRemoveResourcePackagesResult*> __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t;
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::IPackageCatalogRemoveResourcePackagesResult*>
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::IPackageCatalogRemoveResourcePackagesResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -1886,6 +2268,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_USE
@@ -1915,6 +2298,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog*,ABI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1925,6 +2309,7 @@ namespace ABI {
     } /* ApplicationModel */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs_USE
@@ -1955,6 +2340,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog*,ABI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -1965,6 +2351,7 @@ namespace ABI {
     } /* ApplicationModel */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStatusChangedEventArgs_USE
@@ -1995,6 +2382,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog*,ABI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -2005,6 +2393,7 @@ namespace ABI {
     } /* ApplicationModel */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUninstallingEventArgs_USE
@@ -2035,6 +2424,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog*,ABI::
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 namespace ABI {
@@ -2045,6 +2435,7 @@ namespace ABI {
     } /* ApplicationModel */} /* ABI */
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_USE
@@ -2074,6 +2465,7 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog*,ABI::
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 namespace ABI {
@@ -2377,6 +2769,24 @@ typedef IIterable<HSTRING> __FIIterable_1_HSTRING_t;
 
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Activation {
+                interface IActivatedEventArgs;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Activation */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
+
+
+
+
+
 
 
 
@@ -2521,6 +2931,15 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             
+            typedef enum AddResourcePackageOptions : unsigned int AddResourcePackageOptions;
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            
             typedef enum PackageContentGroupState : int PackageContentGroupState;
             
         } /* Windows */
@@ -2540,6 +2959,15 @@ namespace ABI {
         namespace ApplicationModel {
             
             typedef enum StartupTaskState : int StartupTaskState;
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            
+            typedef struct PackageInstallProgress PackageInstallProgress;
             
         } /* Windows */
     } /* ApplicationModel */} /* ABI */
@@ -2590,12 +3018,20 @@ namespace ABI {
 
 
 
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             class AppDisplayInfo;
         } /* Windows */
     } /* ApplicationModel */} /* ABI */
+
+
+
 
 
 
@@ -2654,6 +3090,34 @@ namespace ABI {
 
 
 
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.AddResourcePackageOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            /* [v1_enum, flags, contract] */
+            enum AddResourcePackageOptions : unsigned int
+            {
+                AddResourcePackageOptions_None = 0,
+                AddResourcePackageOptions_ForceTargetAppShutdown = 0x1,
+                AddResourcePackageOptions_ApplyUpdateIfAvailable = 0x2,
+            };
+            
+            DEFINE_ENUM_FLAG_OPERATORS(AddResourcePackageOptions)
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2735,11 +3199,40 @@ namespace ABI {
                 StartupTaskState_DisabledByPolicy = 3,
 #endif // WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x20000
                 
+#if WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x30000
+                
+                StartupTaskState_EnabledByPolicy = 4,
+#endif // WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x30000
+                
             };
             
         } /* Windows */
     } /* ApplicationModel */} /* ABI */
 #endif // WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.PackageInstallProgress
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            /* [contract] */
+            struct PackageInstallProgress
+            {
+                UINT32 PercentComplete;
+            };
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -2789,8 +3282,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("1AEB1103-E4D4-41AA-A4F6-C4A276E79EAC"), exclusiveto, contract] */
             MIDL_INTERFACE("1AEB1103-E4D4-41AA-A4F6-C4A276E79EAC")
-            IAppDisplayInfo : IInspectable
+            IAppDisplayInfo : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2834,8 +3328,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("CF7F59B3-6A09-4DE8-A6C0-5792D56880D1"), exclusiveto, contract] */
             MIDL_INTERFACE("CF7F59B3-6A09-4DE8-A6C0-5792D56880D1")
-            IAppInfo : IInspectable
+            IAppInfo : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -2863,6 +3358,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIAppInfo;
 
 /*
  *
+ * Interface Windows.ApplicationModel.IAppInstance
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.AppInstance
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIAppInstance_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIAppInstance_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IAppInstance[] = L"Windows.ApplicationModel.IAppInstance";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            /* [object, uuid("675F2B47-F25F-4532-9FD6-3633E0634D01"), exclusiveto, contract] */
+            MIDL_INTERFACE("675F2B47-F25F-4532-9FD6-3633E0634D01")
+            IAppInstance : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Key(
+                    /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                    ) = 0;
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsCurrentInstance(
+                    /* [retval, out] */__RPC__out boolean * value
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE RedirectActivationTo(void) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppInstance=_uuidof(IAppInstance);
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIAppInstance;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIAppInstance_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.IAppInstanceStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.AppInstance
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IAppInstanceStatics[] = L"Windows.ApplicationModel.IAppInstanceStatics";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            /* [object, uuid("9D11E77F-9EA6-47AF-A6EC-46784C5BA254"), exclusiveto, contract] */
+            MIDL_INTERFACE("9D11E77F-9EA6-47AF-A6EC-46784C5BA254")
+            IAppInstanceStatics : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecommendedInstance(
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IAppInstance * * value
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE GetActivatedEventArgs(
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs * * result
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE FindOrRegisterInstanceForKey(
+                    /* [in] */__RPC__in HSTRING key,
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IAppInstance * * result
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE Unregister(void) = 0;
+                virtual HRESULT STDMETHODCALLTYPE GetInstances(
+                    /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CApplicationModel__CAppInstance * * result
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppInstanceStatics=_uuidof(IAppInstanceStatics);
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.IDesignModeStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2881,8 +3469,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("2C3893CC-F81A-4E7A-B857-76A80887E185"), exclusiveto, contract] */
             MIDL_INTERFACE("2C3893CC-F81A-4E7A-B857-76A80887E185")
-            IDesignModeStatics : IInspectable
+            IDesignModeStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesignModeEnabled(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -2919,8 +3508,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("80CF8137-B064-4858-BEC8-3EBA22357535"), exclusiveto, contract] */
             MIDL_INTERFACE("80CF8137-B064-4858-BEC8-3EBA22357535")
-            IDesignModeStatics2 : IInspectable
+            IDesignModeStatics2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DesignMode2Enabled(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -2954,8 +3544,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("F722DCC2-9827-403D-AAED-ECCA9AC17398"), contract] */
             MIDL_INTERFACE("F722DCC2-9827-403D-AAED-ECCA9AC17398")
-            IEnteredBackgroundEventArgs : IInspectable
+            IEnteredBackgroundEventArgs : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * value
                     ) = 0;
@@ -2992,8 +3583,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("D784837F-1100-3C6B-A455-F6262CC331B6"), exclusiveto, contract] */
             MIDL_INTERFACE("D784837F-1100-3C6B-A455-F6262CC331B6")
-            IFullTrustProcessLauncherStatics : IInspectable
+            IFullTrustProcessLauncherStatics : public IInspectable
             {
+            public:
                 /* [overload] */virtual HRESULT STDMETHODCALLTYPE LaunchFullTrustProcessForCurrentAppAsync(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncAction
                     ) = 0;
@@ -3040,8 +3632,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("39C6EC9A-AE6E-46F9-A07A-CFC23F88733E"), contract] */
             MIDL_INTERFACE("39C6EC9A-AE6E-46F9-A07A-CFC23F88733E")
-            ILeavingBackgroundEventArgs : IInspectable
+            ILeavingBackgroundEventArgs : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * value
                     ) = 0;
@@ -3078,8 +3671,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("163C792F-BD75-413C-BF23-B1FE7B95D825"), exclusiveto, contract] */
             MIDL_INTERFACE("163C792F-BD75-413C-BF23-B1FE7B95D825")
-            IPackage : IInspectable
+            IPackage : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IPackageId * * value
                     ) = 0;
@@ -3125,8 +3719,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("A6612FB6-7688-4ACE-95FB-359538E7AA01"), exclusiveto, contract] */
             MIDL_INTERFACE("A6612FB6-7688-4ACE-95FB-359538E7AA01")
-            IPackage2 : IInspectable
+            IPackage2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -3181,8 +3776,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("5F738B61-F86A-4917-93D1-F1EE9D3B35D9"), exclusiveto, contract] */
             MIDL_INTERFACE("5F738B61-F86A-4917-93D1-F1EE9D3B35D9")
-            IPackage3 : IInspectable
+            IPackage3 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IPackageStatus * * value
                     ) = 0;
@@ -3225,8 +3821,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("65AED1AE-B95B-450C-882B-6255187F397E"), exclusiveto, contract] */
             MIDL_INTERFACE("65AED1AE-B95B-450C-882B-6255187F397E")
-            IPackage4 : IInspectable
+            IPackage4 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SignatureKind(
                     /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::PackageSignatureKind * value
                     ) = 0;
@@ -3269,8 +3866,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("0E842DD4-D9AC-45ED-9A1E-74CE056B2635"), exclusiveto, contract] */
             MIDL_INTERFACE("0E842DD4-D9AC-45ED-9A1E-74CE056B2635")
-            IPackage5 : IInspectable
+            IPackage5 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetContentGroupsAsync(
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup * * operation
                     ) = 0;
@@ -3324,8 +3922,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("230A3751-9DE3-4445-BE74-91FB325ABEFE"), exclusiveto, contract] */
             MIDL_INTERFACE("230A3751-9DE3-4445-BE74-91FB325ABEFE")
-            IPackageCatalog : IInspectable
+            IPackageCatalog : public IInspectable
             {
+            public:
                 /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PackageStaging(
                     /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs * handler,
                     /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3394,8 +3993,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("96A60C36-8FF7-4344-B6BF-EE64C2207ED2"), exclusiveto, contract] */
             MIDL_INTERFACE("96A60C36-8FF7-4344-B6BF-EE64C2207ED2")
-            IPackageCatalog2 : IInspectable
+            IPackageCatalog2 : public IInspectable
             {
+            public:
                 /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PackageContentGroupStaging(
                     /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageContentGroupStagingEventArgs * handler,
                     /* [retval, out] */__RPC__out EventRegistrationToken * token
@@ -3440,8 +4040,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("96DD5C88-8837-43F9-9015-033434BA14F3"), exclusiveto, contract] */
             MIDL_INTERFACE("96DD5C88-8837-43F9-9015-033434BA14F3")
-            IPackageCatalog3 : IInspectable
+            IPackageCatalog3 : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE RemoveOptionalPackagesAsync(
                     /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * optionalPackageFamilyNames,
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveOptionalPackagesResult * * operation
@@ -3457,6 +4058,52 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalog3;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalog3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.IPackageCatalog4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.PackageCatalog
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IPackageCatalog4[] = L"Windows.ApplicationModel.IPackageCatalog4";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            /* [object, uuid("C37C399B-44CC-4B7B-8BAF-796C04EAD3B9"), exclusiveto, contract] */
+            MIDL_INTERFACE("C37C399B-44CC-4B7B-8BAF-796C04EAD3B9")
+            IPackageCatalog4 : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE AddResourcePackageAsync(
+                    /* [in] */__RPC__in HSTRING resourcePackageFamilyName,
+                    /* [in] */__RPC__in HSTRING resourceID,
+                    /* [in] */ABI::Windows::ApplicationModel::AddResourcePackageOptions options,
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * * operation
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE RemoveResourcePackagesAsync(
+                    /* [in] */__RPC__in_opt __FIIterable_1_Windows__CApplicationModel__CPackage * resourcePackages,
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * * operation
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IPackageCatalog4=_uuidof(IPackageCatalog4);
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalog4;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3479,8 +4126,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("3BF10CD4-B4DF-47B3-A963-E2FA832F7DD3"), exclusiveto, contract] */
             MIDL_INTERFACE("3BF10CD4-B4DF-47B3-A963-E2FA832F7DD3")
-            IPackageCatalogAddOptionalPackageResult : IInspectable
+            IPackageCatalogAddOptionalPackageResult : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Package(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IPackage * * value
                     ) = 0;
@@ -3498,6 +4146,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.IPackageCatalogAddResourcePackageResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.PackageCatalogAddResourcePackageResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IPackageCatalogAddResourcePackageResult[] = L"Windows.ApplicationModel.IPackageCatalogAddResourcePackageResult";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            /* [object, uuid("9636CE0D-3E17-493F-AA08-CCEC6FDEF699"), exclusiveto, contract] */
+            MIDL_INTERFACE("9636CE0D-3E17-493F-AA08-CCEC6FDEF699")
+            IPackageCatalogAddResourcePackageResult : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Package(
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IPackage * * value
+                    ) = 0;
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsComplete(
+                    /* [retval, out] */__RPC__out boolean * value
+                    ) = 0;
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
+                    /* [retval, out] */__RPC__out HRESULT * value
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IPackageCatalogAddResourcePackageResult=_uuidof(IPackageCatalogAddResourcePackageResult);
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3520,8 +4213,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("29D2F97B-D974-4E64-9359-22CADFD79828"), exclusiveto, contract] */
             MIDL_INTERFACE("29D2F97B-D974-4E64-9359-22CADFD79828")
-            IPackageCatalogRemoveOptionalPackagesResult : IInspectable
+            IPackageCatalogRemoveOptionalPackagesResult : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PackagesRemoved(
                     /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CPackage * * value
                     ) = 0;
@@ -3539,6 +4233,48 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.IPackageCatalogRemoveResourcePackagesResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.PackageCatalogRemoveResourcePackagesResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IPackageCatalogRemoveResourcePackagesResult[] = L"Windows.ApplicationModel.IPackageCatalogRemoveResourcePackagesResult";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            /* [object, uuid("AE719709-1A52-4321-87B3-E5A1A17981A7"), exclusiveto, contract] */
+            MIDL_INTERFACE("AE719709-1A52-4321-87B3-E5A1A17981A7")
+            IPackageCatalogRemoveResourcePackagesResult : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PackagesRemoved(
+                    /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CPackage * * value
+                    ) = 0;
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
+                    /* [retval, out] */__RPC__out HRESULT * value
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IPackageCatalogRemoveResourcePackagesResult=_uuidof(IPackageCatalogRemoveResourcePackagesResult);
+            
+        } /* Windows */
+    } /* ApplicationModel */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -3561,8 +4297,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("A18C9696-E65B-4634-BA21-5E63EB7244A7"), exclusiveto, contract] */
             MIDL_INTERFACE("A18C9696-E65B-4634-BA21-5E63EB7244A7")
-            IPackageCatalogStatics : IInspectable
+            IPackageCatalogStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE OpenForCurrentPackage(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IPackageCatalog * * value
                     ) = 0;
@@ -3602,8 +4339,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("8F62695D-120A-4798-B5E1-5800DDA8F2E1"), exclusiveto, contract] */
             MIDL_INTERFACE("8F62695D-120A-4798-B5E1-5800DDA8F2E1")
-            IPackageContentGroup : IInspectable
+            IPackageContentGroup : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Package(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IPackage * * value
                     ) = 0;
@@ -3649,8 +4387,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("3D7BC27E-6F27-446C-986E-D4733D4D9113"), exclusiveto, contract] */
             MIDL_INTERFACE("3D7BC27E-6F27-446C-986E-D4733D4D9113")
-            IPackageContentGroupStagingEventArgs : IInspectable
+            IPackageContentGroupStagingEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivityId(
                     /* [retval, out] */__RPC__out GUID * value
                     ) = 0;
@@ -3705,8 +4444,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("70EE7619-5F12-4B92-B9EA-6CCADA13BC75"), exclusiveto, contract] */
             MIDL_INTERFACE("70EE7619-5F12-4B92-B9EA-6CCADA13BC75")
-            IPackageContentGroupStatics : IInspectable
+            IPackageContentGroupStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RequiredGroupName(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -3743,8 +4483,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("1ADB665E-37C7-4790-9980-DD7AE74E8BB2"), exclusiveto, contract] */
             MIDL_INTERFACE("1ADB665E-37C7-4790-9980-DD7AE74E8BB2")
-            IPackageId : IInspectable
+            IPackageId : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -3802,8 +4543,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("40577A7C-0C9E-443D-9074-855F5CE0A08D"), exclusiveto, contract] */
             MIDL_INTERFACE("40577A7C-0C9E-443D-9074-855F5CE0A08D")
-            IPackageIdWithMetadata : IInspectable
+            IPackageIdWithMetadata : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProductId(
                     /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                     ) = 0;
@@ -3843,8 +4585,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("97741EB7-AB7A-401A-8B61-EB0E7FAFF237"), exclusiveto, contract] */
             MIDL_INTERFACE("97741EB7-AB7A-401A-8B61-EB0E7FAFF237")
-            IPackageInstallingEventArgs : IInspectable
+            IPackageInstallingEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivityId(
                     /* [retval, out] */__RPC__out GUID * value
                     ) = 0;
@@ -3893,8 +4636,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("1041682D-54E2-4F51-B828-9EF7046C210F"), exclusiveto, contract] */
             MIDL_INTERFACE("1041682D-54E2-4F51-B828-9EF7046C210F")
-            IPackageStagingEventArgs : IInspectable
+            IPackageStagingEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivityId(
                     /* [retval, out] */__RPC__out GUID * value
                     ) = 0;
@@ -3943,8 +4687,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("4E534BDF-2960-4878-97A4-9624DEB72F2D"), exclusiveto, contract] */
             MIDL_INTERFACE("4E534BDF-2960-4878-97A4-9624DEB72F2D")
-            IPackageStatics : IInspectable
+            IPackageStatics : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IPackage * * value
                     ) = 0;
@@ -3981,8 +4726,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("5FE74F71-A365-4C09-A02D-046D525EA1DA"), exclusiveto, contract] */
             MIDL_INTERFACE("5FE74F71-A365-4C09-A02D-046D525EA1DA")
-            IPackageStatus : IInspectable
+            IPackageStatus : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE VerifyIsOK(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -4052,8 +4798,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("F428FA93-7C56-4862-ACFA-ABAEDCC0694D"), exclusiveto, contract] */
             MIDL_INTERFACE("F428FA93-7C56-4862-ACFA-ABAEDCC0694D")
-            IPackageStatus2 : IInspectable
+            IPackageStatus2 : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPartiallyStaged(
                     /* [retval, out] */__RPC__out boolean * value
                     ) = 0;
@@ -4090,8 +4837,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("437D714D-BD80-4A70-BC50-F6E796509575"), exclusiveto, contract] */
             MIDL_INTERFACE("437D714D-BD80-4A70-BC50-F6E796509575")
-            IPackageStatusChangedEventArgs : IInspectable
+            IPackageStatusChangedEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Package(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::IPackage * * value
                     ) = 0;
@@ -4128,8 +4876,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("4443AA52-AB22-44CD-82BB-4EC9B827367A"), exclusiveto, contract] */
             MIDL_INTERFACE("4443AA52-AB22-44CD-82BB-4EC9B827367A")
-            IPackageUninstallingEventArgs : IInspectable
+            IPackageUninstallingEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivityId(
                     /* [retval, out] */__RPC__out GUID * value
                     ) = 0;
@@ -4178,8 +4927,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("CD7B4228-FD74-443E-B114-23E677B0E86F"), exclusiveto, contract] */
             MIDL_INTERFACE("CD7B4228-FD74-443E-B114-23E677B0E86F")
-            IPackageUpdatingEventArgs : IInspectable
+            IPackageUpdatingEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivityId(
                     /* [retval, out] */__RPC__out GUID * value
                     ) = 0;
@@ -4231,8 +4981,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("95949780-1DE9-40F2-B452-0DE9F1910012"), exclusiveto, contract] */
             MIDL_INTERFACE("95949780-1DE9-40F2-B452-0DE9F1910012")
-            IPackageWithMetadata : IInspectable
+            IPackageWithMetadata : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InstallDate(
                     /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
                     ) = 0;
@@ -4279,8 +5030,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("F75C23C8-B5F2-4F6C-88DD-36CB1D599D17"), exclusiveto, contract] */
             MIDL_INTERFACE("F75C23C8-B5F2-4F6C-88DD-36CB1D599D17")
-            IStartupTask : IInspectable
+            IStartupTask : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE RequestEnableAsync(
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStartupTaskState * * operation
                     ) = 0;
@@ -4324,8 +5076,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("EE5B60BD-A148-41A7-B26E-E8B88A1E62F8"), exclusiveto, contract] */
             MIDL_INTERFACE("EE5B60BD-A148-41A7-B26E-E8B88A1E62F8")
-            IStartupTaskStatics : IInspectable
+            IStartupTaskStatics : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetForCurrentPackageAsync(
                     /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStartupTask * * operation
                     ) = 0;
@@ -4363,8 +5116,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("59140509-8BC9-4EB4-B636-DABDC4F46F66"), contract] */
             MIDL_INTERFACE("59140509-8BC9-4EB4-B636-DABDC4F46F66")
-            ISuspendingDeferral : IInspectable
+            ISuspendingDeferral : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
                 
             };
@@ -4396,8 +5150,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("96061C05-2DBA-4D08-B0BD-2B30A131C6AA"), contract] */
             MIDL_INTERFACE("96061C05-2DBA-4D08-B0BD-2B30A131C6AA")
-            ISuspendingEventArgs : IInspectable
+            ISuspendingEventArgs : public IInspectable
             {
+            public:
                 /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SuspendingOperation(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::ISuspendingOperation * * value
                     ) = 0;
@@ -4431,8 +5186,9 @@ namespace ABI {
         namespace ApplicationModel {
             /* [object, uuid("9DA4CA41-20E1-4E9B-9F65-A9F435340C3A"), contract] */
             MIDL_INTERFACE("9DA4CA41-20E1-4E9B-9F65-A9F435340C3A")
-            ISuspendingOperation : IInspectable
+            ISuspendingOperation : public IInspectable
             {
+            public:
                 virtual HRESULT STDMETHODCALLTYPE GetDeferral(
                     /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::ISuspendingDeferral * * deferral
                     ) = 0;
@@ -4498,6 +5254,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_AppInfo[] = L"Windows.ApplicationModel.AppInfo";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.AppInstance
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.IAppInstanceStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.IAppInstance ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_AppInstance_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_AppInstance_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_AppInstance[] = L"Windows.ApplicationModel.AppInstance";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -4637,6 +5420,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.IPackageCatalog ** Default Interface **
  *    Windows.ApplicationModel.IPackageCatalog2
  *    Windows.ApplicationModel.IPackageCatalog3
+ *    Windows.ApplicationModel.IPackageCatalog4
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
@@ -4670,6 +5454,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.PackageCatalogAddResourcePackageResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.IPackageCatalogAddResourcePackageResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_PackageCatalogAddResourcePackageResult_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_PackageCatalogAddResourcePackageResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_PackageCatalogAddResourcePackageResult[] = L"Windows.ApplicationModel.PackageCatalogAddResourcePackageResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.PackageCatalogRemoveOptionalPackagesResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -4686,6 +5494,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_PackageCatalogRemoveOptionalPackagesResult[] = L"Windows.ApplicationModel.PackageCatalogRemoveOptionalPackagesResult";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.PackageCatalogRemoveResourcePackagesResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.IPackageCatalogRemoveResourcePackagesResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_PackageCatalogRemoveResourcePackagesResult_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_PackageCatalogRemoveResourcePackagesResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_PackageCatalogRemoveResourcePackagesResult[] = L"Windows.ApplicationModel.PackageCatalogRemoveResourcePackagesResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5013,6 +5845,18 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CIAppInfo __x_ABI_CWindows_
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CIAppInfo_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIAppInstance_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIAppInstance_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CIAppInstance __x_ABI_CWindows_CApplicationModel_CIAppInstance;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIAppInstance_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CIDesignModeStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CIDesignModeStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CIDesignModeStatics __x_ABI_CWindows_CApplicationModel_CIDesignModeStatics;
@@ -5091,17 +5935,35 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalog3 __x_ABI_C
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOptionalPackageResult_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogStatics_FWD_DEFINED__
@@ -5387,6 +6249,168 @@ interface __FIIterable_1_Windows__CApplicationModel__CAppInfo
 #endif // ____FIIterable_1_Windows__CApplicationModel__CAppInfo_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterator_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CApplicationModel__CAppInstance __FIIterator_1_Windows__CApplicationModel__CAppInstance;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CAppInstance;
+
+typedef struct __FIIterator_1_Windows__CApplicationModel__CAppInstanceVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CIAppInstance * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CApplicationModel_CIAppInstance * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CApplicationModel__CAppInstanceVtbl;
+
+interface __FIIterator_1_Windows__CApplicationModel__CAppInstance
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CApplicationModel__CAppInstanceVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CAppInstance_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIIterable_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CApplicationModel__CAppInstance __FIIterable_1_Windows__CApplicationModel__CAppInstance;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CAppInstance;
+
+typedef  struct __FIIterable_1_Windows__CApplicationModel__CAppInstanceVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CAppInstance * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CAppInstance * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CAppInstance * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CAppInstance * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CAppInstance * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CAppInstance * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CApplicationModel__CAppInstance **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CApplicationModel__CAppInstanceVtbl;
+
+interface __FIIterable_1_Windows__CApplicationModel__CAppInstance
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CApplicationModel__CAppInstanceVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CApplicationModel__CAppInstance_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CAppInstance_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CAppInstance_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CApplicationModel__CAppInstance_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CAppInstance_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CAppInstance_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CApplicationModel__CAppInstance_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -5986,6 +7010,117 @@ interface __FIVectorView_1_Windows__CApplicationModel__CAppInfo
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVectorView_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CApplicationModel__CAppInstance __FIVectorView_1_Windows__CApplicationModel__CAppInstance;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CAppInstance;
+
+typedef struct __FIVectorView_1_Windows__CApplicationModel__CAppInstanceVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CIAppInstance * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CIAppInstance * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CApplicationModel__CAppInstance * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CApplicationModel_CIAppInstance * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CApplicationModel__CAppInstanceVtbl;
+
+interface __FIVectorView_1_Windows__CApplicationModel__CAppInstance
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CApplicationModel__CAppInstanceVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CAppInstance_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIVectorView_1_Windows__CApplicationModel__CPackage_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CApplicationModel__CPackage_INTERFACE_DEFINED__
@@ -6317,6 +7452,149 @@ interface __FIVectorView_1_Windows__CApplicationModel__CStartupTask
 #endif // ____FIVectorView_1_Windows__CApplicationModel__CStartupTask_INTERFACE_DEFINED__
 
 #endif // WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIVector_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__)
+#define ____FIVector_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__
+
+typedef interface __FIVector_1_Windows__CApplicationModel__CAppInstance __FIVector_1_Windows__CApplicationModel__CAppInstance;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CAppInstance;
+
+typedef struct __FIVector_1_Windows__CApplicationModel__CAppInstanceVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CIAppInstance * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CIAppInstance * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CAppInstance **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This, /* [in] */ __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CApplicationModel_CIAppInstance * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CApplicationModel__CAppInstance * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CApplicationModel_CIAppInstance * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CApplicationModel__CAppInstanceVtbl;
+
+interface __FIVector_1_Windows__CApplicationModel__CAppInstance
+{
+    CONST_VTBL struct __FIVector_1_Windows__CApplicationModel__CAppInstanceVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_Windows__CApplicationModel__CAppInstance_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVector_1_Windows__CApplicationModel__CAppInstance_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -6743,6 +8021,183 @@ interface __FIEventHandler_1_Windows__CApplicationModel__CSuspendingEventArgs
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+struct __x_ABI_CWindows_CApplicationModel_CPackageInstallProgress;
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress;
+
+typedef interface __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress;
+
+typedef struct __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgressVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This, /* [in] */ __RPC__in_opt __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress *asyncInfo, /* [in] */ UINT64 progressInfo);
+    END_INTERFACE
+} __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgressVtbl;
+
+interface __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress
+{
+    CONST_VTBL struct __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgressVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_Invoke(This,asyncInfo,progressInfo)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,progressInfo) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress;
+
+//  Forward declare the async operation.
+typedef interface __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress;
+
+typedef struct __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgressVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This, /* [in] */ __RPC__in_opt __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgressVtbl;
+
+interface __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress
+{
+    CONST_VTBL struct __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgressVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress;
+
+typedef struct __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgressVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Progress )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This, /* [in] */ __RPC__in_opt __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Progress )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationProgressHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress **handler);
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This, /* [in] */ __RPC__in_opt __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationWithProgressCompletedHandler_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * This, /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * *results);
+    END_INTERFACE
+} __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgressVtbl;
+
+interface __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress
+{
+    CONST_VTBL struct __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgressVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_put_Progress(This,handler)	\
+    ( (This)->lpVtbl -> put_Progress(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_get_Progress(This,handler)	\
+    ( (This)->lpVtbl -> get_Progress(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogAddOptionalPackageResult_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogAddOptionalPackageResult_INTERFACE_DEFINED__
@@ -6971,6 +8426,121 @@ interface __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemove
 #endif // ____FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveOptionalPackagesResult_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResultVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult;
+
+typedef struct __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResultVtbl;
+
+interface __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -7714,6 +9284,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Wi
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_INTERFACE_DEFINED__
 
@@ -7761,9 +9332,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Wi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs_INTERFACE_DEFINED__
@@ -7812,9 +9385,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Wi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStatusChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStatusChangedEventArgs_INTERFACE_DEFINED__
@@ -7863,9 +9438,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Wi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStatusChangedEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUninstallingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUninstallingEventArgs_INTERFACE_DEFINED__
@@ -7914,9 +9491,11 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Wi
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUninstallingEventArgs_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_INTERFACE_DEFINED__
@@ -7964,6 +9543,7 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Wi
 
 #endif // ____FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry_FWD_DEFINED__
@@ -8626,6 +10206,16 @@ interface __FIIterable_1_HSTRING
 
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
+
+
+
+
+
 
 
 
@@ -8687,6 +10277,9 @@ typedef enum __x_ABI_CWindows_CSystem_CProcessorArchitecture __x_ABI_CWindows_CS
 
 
 
+typedef enum __x_ABI_CWindows_CApplicationModel_CAddResourcePackageOptions __x_ABI_CWindows_CApplicationModel_CAddResourcePackageOptions;
+
+
 typedef enum __x_ABI_CWindows_CApplicationModel_CPackageContentGroupState __x_ABI_CWindows_CApplicationModel_CPackageContentGroupState;
 
 
@@ -8694,6 +10287,9 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CPackageSignatureKind __x_ABI_CW
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CStartupTaskState __x_ABI_CWindows_CApplicationModel_CStartupTaskState;
+
+
+typedef struct __x_ABI_CWindows_CApplicationModel_CPackageInstallProgress __x_ABI_CWindows_CApplicationModel_CPackageInstallProgress;
 
 
 typedef struct __x_ABI_CWindows_CApplicationModel_CPackageVersion __x_ABI_CWindows_CApplicationModel_CPackageVersion;
@@ -8766,6 +10362,34 @@ typedef struct __x_ABI_CWindows_CApplicationModel_CPackageVersion __x_ABI_CWindo
 
 
 
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.AddResourcePackageOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+/* [v1_enum, flags, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CAddResourcePackageOptions
+{
+    AddResourcePackageOptions_None = 0,
+    AddResourcePackageOptions_ForceTargetAppShutdown = 0x1,
+    AddResourcePackageOptions_ApplyUpdateIfAvailable = 0x2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
 /*
  *
  * Struct Windows.ApplicationModel.PackageContentGroupState
@@ -8830,8 +10454,31 @@ enum __x_ABI_CWindows_CApplicationModel_CStartupTaskState
     StartupTaskState_DisabledByPolicy = 3,
 #endif // WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x20000
     
+#if WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x30000
+    
+    StartupTaskState_EnabledByPolicy = 4,
+#endif // WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x30000
+    
 };
 #endif // WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.PackageInstallProgress
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+/* [contract] */
+struct __x_ABI_CWindows_CApplicationModel_CPackageInstallProgress
+{
+    UINT32 PercentComplete;
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -9075,6 +10722,233 @@ interface __x_ABI_CWindows_CApplicationModel_CIAppInfo
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIAppInfo;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIAppInfo_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.IAppInstance
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.AppInstance
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIAppInstance_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIAppInstance_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IAppInstance[] = L"Windows.ApplicationModel.IAppInstance";
+/* [object, uuid("675F2B47-F25F-4532-9FD6-3633E0634D01"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CIAppInstanceVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstance * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Key )(
+        __x_ABI_CWindows_CApplicationModel_CIAppInstance * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsCurrentInstance )(
+        __x_ABI_CWindows_CApplicationModel_CIAppInstance * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *RedirectActivationTo )(
+        __x_ABI_CWindows_CApplicationModel_CIAppInstance * This
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CIAppInstanceVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CIAppInstance
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CIAppInstanceVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance_get_Key(This,value) \
+    ( (This)->lpVtbl->get_Key(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance_get_IsCurrentInstance(This,value) \
+    ( (This)->lpVtbl->get_IsCurrentInstance(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstance_RedirectActivationTo(This) \
+    ( (This)->lpVtbl->RedirectActivationTo(This) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIAppInstance;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIAppInstance_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.IAppInstanceStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.AppInstance
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IAppInstanceStatics[] = L"Windows.ApplicationModel.IAppInstanceStatics";
+/* [object, uuid("9D11E77F-9EA6-47AF-A6EC-46784C5BA254"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CIAppInstanceStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_RecommendedInstance )(
+        __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CIAppInstance * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetActivatedEventArgs )(
+        __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *FindOrRegisterInstanceForKey )(
+        __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This,
+        /* [in] */__RPC__in HSTRING key,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CIAppInstance * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *Unregister )(
+        __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetInstances )(
+        __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CApplicationModel__CAppInstance * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CIAppInstanceStaticsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CIAppInstanceStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_get_RecommendedInstance(This,value) \
+    ( (This)->lpVtbl->get_RecommendedInstance(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_GetActivatedEventArgs(This,result) \
+    ( (This)->lpVtbl->GetActivatedEventArgs(This,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_FindOrRegisterInstanceForKey(This,key,result) \
+    ( (This)->lpVtbl->FindOrRegisterInstanceForKey(This,key,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_Unregister(This) \
+    ( (This)->lpVtbl->Unregister(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_GetInstances(This,result) \
+    ( (This)->lpVtbl->GetInstances(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIAppInstanceStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -10516,6 +12390,110 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalog3;
 
 /*
  *
+ * Interface Windows.ApplicationModel.IPackageCatalog4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.PackageCatalog
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IPackageCatalog4[] = L"Windows.ApplicationModel.IPackageCatalog4";
+/* [object, uuid("C37C399B-44CC-4B7B-8BAF-796C04EAD3B9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *AddResourcePackageAsync )(
+        __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 * This,
+        /* [in] */__RPC__in HSTRING resourcePackageFamilyName,
+        /* [in] */__RPC__in HSTRING resourceID,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CAddResourcePackageOptions options,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *RemoveResourcePackagesAsync )(
+        __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4 * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CApplicationModel__CPackage * resourcePackages,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_AddResourcePackageAsync(This,resourcePackageFamilyName,resourceID,options,operation) \
+    ( (This)->lpVtbl->AddResourcePackageAsync(This,resourcePackageFamilyName,resourceID,options,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_RemoveResourcePackagesAsync(This,resourcePackages,operation) \
+    ( (This)->lpVtbl->RemoveResourcePackagesAsync(This,resourcePackages,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalog4;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalog4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -10616,6 +12594,113 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddOpt
 
 /*
  *
+ * Interface Windows.ApplicationModel.IPackageCatalogAddResourcePackageResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.PackageCatalogAddResourcePackageResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IPackageCatalogAddResourcePackageResult[] = L"Windows.ApplicationModel.IPackageCatalogAddResourcePackageResult";
+/* [object, uuid("9636CE0D-3E17-493F-AA08-CCEC6FDEF699"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Package )(
+        __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CIPackage * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsComplete )(
+        __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )(
+        __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult * This,
+        /* [retval, out] */__RPC__out HRESULT * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResultVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_get_Package(This,value) \
+    ( (This)->lpVtbl->get_Package(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_get_IsComplete(This,value) \
+    ( (This)->lpVtbl->get_IsComplete(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_get_ExtendedError(This,value) \
+    ( (This)->lpVtbl->get_ExtendedError(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogAddResourcePackageResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.IPackageCatalogRemoveOptionalPackagesResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -10712,6 +12797,106 @@ interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPacka
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveOptionalPackagesResult_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.IPackageCatalogRemoveResourcePackagesResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.PackageCatalogRemoveResourcePackagesResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_IPackageCatalogRemoveResourcePackagesResult[] = L"Windows.ApplicationModel.IPackageCatalogRemoveResourcePackagesResult";
+/* [object, uuid("AE719709-1A52-4321-87B3-E5A1A17981A7"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PackagesRemoved )(
+        __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CPackage * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )(
+        __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult * This,
+        /* [retval, out] */__RPC__out HRESULT * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResultVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_get_PackagesRemoved(This,value) \
+    ( (This)->lpVtbl->get_PackagesRemoved(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_get_ExtendedError(This,value) \
+    ( (This)->lpVtbl->get_ExtendedError(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CIPackageCatalogRemoveResourcePackagesResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -12993,6 +15178,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.AppInstance
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.IAppInstanceStatics interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.IAppInstance ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_AppInstance_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_AppInstance_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_AppInstance[] = L"Windows.ApplicationModel.AppInstance";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.DesignMode
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -13128,6 +15340,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.IPackageCatalog ** Default Interface **
  *    Windows.ApplicationModel.IPackageCatalog2
  *    Windows.ApplicationModel.IPackageCatalog3
+ *    Windows.ApplicationModel.IPackageCatalog4
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
@@ -13161,6 +15374,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.ApplicationModel.PackageCatalogAddResourcePackageResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.IPackageCatalogAddResourcePackageResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_PackageCatalogAddResourcePackageResult_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_PackageCatalogAddResourcePackageResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_PackageCatalogAddResourcePackageResult[] = L"Windows.ApplicationModel.PackageCatalogAddResourcePackageResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.PackageCatalogRemoveOptionalPackagesResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -13177,6 +15414,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_PackageCatalogRemoveOptionalPackagesResult[] = L"Windows.ApplicationModel.PackageCatalogRemoveOptionalPackagesResult";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.PackageCatalogRemoveResourcePackagesResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.IPackageCatalogRemoveResourcePackagesResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_PackageCatalogRemoveResourcePackagesResult_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_PackageCatalogRemoveResourcePackagesResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_PackageCatalogRemoveResourcePackagesResult[] = L"Windows.ApplicationModel.PackageCatalogRemoveResourcePackagesResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*

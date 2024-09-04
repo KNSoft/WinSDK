@@ -401,6 +401,9 @@ const UINT D3D12_UAV_COUNTER_PLACEMENT_ALIGNMENT = 4096;
 const UINT D3D12_UAV_SLOT_COUNT = 64;
 const UINT D3D12_UNBOUND_MEMORY_ACCESS_RESULT = 0;
 const UINT D3D12_VIDEO_DECODE_MAX_ARGUMENTS = 10;
+const UINT D3D12_VIDEO_DECODE_MAX_HISTOGRAM_COMPONENTS = 4;
+const UINT D3D12_VIDEO_DECODE_MIN_BITSTREAM_OFFSET_ALIGNMENT = 256;
+const UINT D3D12_VIDEO_DECODE_MIN_HISTOGRAM_OFFSET_ALIGNMENT = 256;
 const UINT D3D12_VIDEO_DECODE_STATUS_MACROBLOCKS_AFFECTED_UNKNOWN = 0xffffffff;
 const UINT D3D12_VIDEO_PROCESS_MAX_FILTERS = 32;
 const UINT D3D12_VIDEO_PROCESS_STEREO_VIEWS = 2;
@@ -889,6 +892,7 @@ typedef enum D3D12_FEATURE
     D3D12_FEATURE_GPU_VIRTUAL_ADDRESS_SUPPORT           =  6,
     D3D12_FEATURE_SHADER_MODEL                          =  7,
     D3D12_FEATURE_D3D12_OPTIONS1                        =  8,
+    D3D12_FEATURE_PROTECTED_RESOURCE_SESSION_SUPPORT    = 10,
     D3D12_FEATURE_ROOT_SIGNATURE                        = 12,
     D3D12_FEATURE_ARCHITECTURE1                         = 16,
     D3D12_FEATURE_D3D12_OPTIONS2                        = 18,
@@ -896,6 +900,9 @@ typedef enum D3D12_FEATURE
     D3D12_FEATURE_COMMAND_QUEUE_PRIORITY                = 20,
     D3D12_FEATURE_D3D12_OPTIONS3                        = 21,
     D3D12_FEATURE_EXISTING_HEAPS                        = 22,
+    D3D12_FEATURE_D3D12_OPTIONS4                        = 23,
+    D3D12_FEATURE_SERIALIZATION                         = 24,
+    D3D12_FEATURE_CROSS_NODE                            = 25,
 } D3D12_FEATURE;
 
 typedef enum D3D12_SHADER_MIN_PRECISION_SUPPORT
@@ -912,6 +919,7 @@ typedef enum D3D12_TILED_RESOURCES_TIER
     D3D12_TILED_RESOURCES_TIER_1        = 1,
     D3D12_TILED_RESOURCES_TIER_2        = 2,
     D3D12_TILED_RESOURCES_TIER_3        = 3,
+    D3D12_TILED_RESOURCES_TIER_4        = 4,
 } D3D12_TILED_RESOURCES_TIER;
 
 typedef enum D3D12_RESOURCE_BINDING_TIER
@@ -994,6 +1002,7 @@ typedef enum D3D12_CROSS_NODE_SHARING_TIER
     D3D12_CROSS_NODE_SHARING_TIER_1_EMULATED  = 1,
     D3D12_CROSS_NODE_SHARING_TIER_1           = 2,
     D3D12_CROSS_NODE_SHARING_TIER_2           = 3,
+    D3D12_CROSS_NODE_SHARING_TIER_3           = 4,
 } D3D12_CROSS_NODE_SHARING_TIER;
 
 typedef enum D3D12_RESOURCE_HEAP_TIER
@@ -1101,6 +1110,7 @@ typedef enum D3D_SHADER_MODEL
     D3D_SHADER_MODEL_5_1 = 0x51,
     D3D_SHADER_MODEL_6_0 = 0x60,
     D3D_SHADER_MODEL_6_1 = 0x61,
+    D3D_SHADER_MODEL_6_2 = 0x62,
 } D3D_SHADER_MODEL;
 
 typedef struct D3D12_FEATURE_DATA_SHADER_MODEL
@@ -1193,11 +1203,52 @@ typedef struct D3D12_FEATURE_DATA_EXISTING_HEAPS
     [annotation("_Out_")] BOOL Supported;
 } D3D12_FEATURE_DATA_EXISTING_HEAPS;
 
+typedef enum D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER
+{
+    D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_0, 
+    D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_1,
+} D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER;
+
+// D3D12_FEATURE_D3D12_OPTIONS4
+typedef struct D3D12_FEATURE_DATA_D3D12_OPTIONS4
+{
+    [annotation("_Out_")] BOOL MSAA64KBAlignedTextureSupported;
+    [annotation("_Out_")] D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER SharedResourceCompatibilityTier;
+    [annotation("_Out_")] BOOL Native16BitShaderOpsSupported;
+} D3D12_FEATURE_DATA_D3D12_OPTIONS4;
+
+typedef enum D3D12_HEAP_SERIALIZATION_TIER
+{
+    D3D12_HEAP_SERIALIZATION_TIER_0 = 0, 
+    D3D12_HEAP_SERIALIZATION_TIER_10 = 10,
+} D3D12_HEAP_SERIALIZATION_TIER;
+
+// D3D12_FEATURE_SERIALIZATION
+typedef struct D3D12_FEATURE_DATA_SERIALIZATION
+{
+    [annotation("_In_")]  UINT NodeIndex;
+    [annotation("_Out_")] D3D12_HEAP_SERIALIZATION_TIER HeapSerializationTier;
+} D3D12_FEATURE_DATA_SERIALIZATION;
+
+// D3D12_FEATURE_CROSS_NODE
+typedef struct D3D12_FEATURE_DATA_CROSS_NODE
+{
+    D3D12_CROSS_NODE_SHARING_TIER SharingTier;
+    BOOL AtomicShaderInstructions;
+} D3D12_FEATURE_DATA_CROSS_NODE;
+
 typedef struct D3D12_RESOURCE_ALLOCATION_INFO
 {
     UINT64 SizeInBytes;
     UINT64 Alignment;
 } D3D12_RESOURCE_ALLOCATION_INFO;
+
+typedef struct D3D12_RESOURCE_ALLOCATION_INFO1
+{
+    UINT64 Offset;
+    UINT64 Alignment;
+    UINT64 SizeInBytes;
+} D3D12_RESOURCE_ALLOCATION_INFO1;
 
 typedef enum D3D12_HEAP_TYPE
 {
@@ -1242,6 +1293,7 @@ typedef enum D3D12_HEAP_FLAGS
     D3D12_HEAP_FLAG_DENY_NON_RT_DS_TEXTURES = 0x80,
     D3D12_HEAP_FLAG_HARDWARE_PROTECTED = 0x100,
     D3D12_HEAP_FLAG_ALLOW_WRITE_WATCH = 0x200,
+    D3D12_HEAP_FLAG_ALLOW_SHADER_ATOMICS = 0x400,
 
     // These are convenience aliases to manage resource heap tier restrictions. They cannot be bitwise OR'ed together cleanly.
     D3D12_HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES = 0x0,
@@ -1410,27 +1462,27 @@ typedef enum D3D12_TILE_COPY_FLAGS
     D3D12_TILE_COPY_FLAG_LINEAR_BUFFER_TO_SWIZZLED_TILED_RESOURCE = 0x2,
     D3D12_TILE_COPY_FLAG_SWIZZLED_TILED_RESOURCE_TO_LINEAR_BUFFER = 0x4,
 } D3D12_TILE_COPY_FLAGS;
-cpp_quote( "DEFINE_ENUM_FLAG_OPERATORS( D3D12_TILE_COPY_FLAGS );" )
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS( D3D12_TILE_COPY_FLAGS );")
 
 // Resource Barrier
 typedef enum D3D12_RESOURCE_STATES
 {
-    D3D12_RESOURCE_STATE_COMMON                    = 0,
+    D3D12_RESOURCE_STATE_COMMON = 0,
 
-    D3D12_RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER  = 0x00001,
-    D3D12_RESOURCE_STATE_INDEX_BUFFER                = 0x00002,
-    D3D12_RESOURCE_STATE_RENDER_TARGET               = 0x00004,
-    D3D12_RESOURCE_STATE_UNORDERED_ACCESS            = 0x00008,
-    D3D12_RESOURCE_STATE_DEPTH_WRITE                 = 0x00010,
-    D3D12_RESOURCE_STATE_DEPTH_READ                  = 0x00020,
-    D3D12_RESOURCE_STATE_NON_PIXEL_SHADER_RESOURCE   = 0x00040,
-    D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE       = 0x00080,
-    D3D12_RESOURCE_STATE_STREAM_OUT                  = 0x00100,
-    D3D12_RESOURCE_STATE_INDIRECT_ARGUMENT           = 0x00200,
-    D3D12_RESOURCE_STATE_COPY_DEST                   = 0x00400,
-    D3D12_RESOURCE_STATE_COPY_SOURCE                 = 0x00800,
-    D3D12_RESOURCE_STATE_RESOLVE_DEST                = 0x01000,
-    D3D12_RESOURCE_STATE_RESOLVE_SOURCE              = 0x02000,
+    D3D12_RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER = 0x00001,
+    D3D12_RESOURCE_STATE_INDEX_BUFFER = 0x00002,
+    D3D12_RESOURCE_STATE_RENDER_TARGET = 0x00004,
+    D3D12_RESOURCE_STATE_UNORDERED_ACCESS = 0x00008,
+    D3D12_RESOURCE_STATE_DEPTH_WRITE = 0x00010,
+    D3D12_RESOURCE_STATE_DEPTH_READ = 0x00020,
+    D3D12_RESOURCE_STATE_NON_PIXEL_SHADER_RESOURCE = 0x00040,
+    D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE = 0x00080,
+    D3D12_RESOURCE_STATE_STREAM_OUT = 0x00100,
+    D3D12_RESOURCE_STATE_INDIRECT_ARGUMENT = 0x00200,
+    D3D12_RESOURCE_STATE_COPY_DEST = 0x00400,
+    D3D12_RESOURCE_STATE_COPY_SOURCE = 0x00800,
+    D3D12_RESOURCE_STATE_RESOLVE_DEST = 0x01000,
+    D3D12_RESOURCE_STATE_RESOLVE_SOURCE = 0x02000,
 
     D3D12_RESOURCE_STATE_GENERIC_READ =
         /*D3D12_RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER*/ 0x0001 |
@@ -1587,7 +1639,6 @@ cpp_quote( "                                                                (((S
 cpp_quote( "                                                                D3D12_SHADER_COMPONENT_MAPPING_ALWAYS_SET_BIT_AVOIDING_ZEROMEM_MISTAKES))")
 cpp_quote( "#define D3D12_DECODE_SHADER_4_COMPONENT_MAPPING(ComponentToExtract,Mapping) ((D3D12_SHADER_COMPONENT_MAPPING)(Mapping >> (D3D12_SHADER_COMPONENT_MAPPING_SHIFT*ComponentToExtract) & D3D12_SHADER_COMPONENT_MAPPING_MASK))")
 cpp_quote( "#define D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING D3D12_ENCODE_SHADER_4_COMPONENT_MAPPING(0,1,2,3) ")
- 
 typedef enum D3D12_BUFFER_SRV_FLAGS
 {
     D3D12_BUFFER_SRV_FLAG_NONE = 0,
@@ -1671,6 +1722,7 @@ typedef struct D3D12_TEX2DMS_ARRAY_SRV
     UINT FirstArraySlice;
     UINT ArraySize;
 } D3D12_TEX2DMS_ARRAY_SRV;
+
 
 typedef enum D3D12_SRV_DIMENSION {
     D3D12_SRV_DIMENSION_UNKNOWN = 0,
@@ -2174,7 +2226,7 @@ typedef enum D3D12_SHADER_VISIBILITY
     D3D12_SHADER_VISIBILITY_HULL = 2,
     D3D12_SHADER_VISIBILITY_DOMAIN = 3,
     D3D12_SHADER_VISIBILITY_GEOMETRY = 4,
-    D3D12_SHADER_VISIBILITY_PIXEL = 5
+    D3D12_SHADER_VISIBILITY_PIXEL = 5,
 } D3D12_SHADER_VISIBILITY;
 
 typedef enum D3D12_ROOT_PARAMETER_TYPE
@@ -3468,19 +3520,174 @@ interface ID3D12Device3
         [annotation("_In_")] const void* pAddress,
         [in] REFIID riid, // Expected: ID3D12Heap
         [out, iid_is(riid), annotation("_COM_Outptr_")] void** ppvHeap
-        );
+    );
     HRESULT OpenExistingHeapFromFileMapping(
         [annotation("_In_")] HANDLE hFileMapping,
         [in] REFIID riid, // Expected: ID3D12Heap
         [out, iid_is(riid), annotation("_COM_Outptr_")] void** ppvHeap
-        );
+    );
     HRESULT EnqueueMakeResident(
         D3D12_RESIDENCY_FLAGS Flags,
         UINT NumObjects,
         [annotation("_In_reads_(NumObjects)")] ID3D12Pageable*const* ppObjects,
         [annotation("_In_")] ID3D12Fence* pFenceToSignal,
         UINT64 FenceValueToSignal
-        );
+    );
+}
+
+typedef enum D3D12_COMMAND_LIST_FLAGS
+{
+    D3D12_COMMAND_LIST_FLAG_NONE = 0x0,
+} D3D12_COMMAND_LIST_FLAGS;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS( D3D12_COMMAND_LIST_FLAGS );")
+
+
+typedef enum D3D12_COMMAND_POOL_FLAGS
+{
+    D3D12_COMMAND_POOL_FLAG_NONE = 0x0,
+
+} D3D12_COMMAND_POOL_FLAGS;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS( D3D12_COMMAND_POOL_FLAGS );")
+
+typedef enum D3D12_COMMAND_RECORDER_FLAGS
+{
+    D3D12_COMMAND_RECORDER_FLAG_NONE = 0x0,
+
+} D3D12_COMMAND_RECORDER_FLAGS;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS( D3D12_COMMAND_RECORDER_FLAGS );")
+
+typedef enum D3D12_PROTECTED_SESSION_STATUS
+{
+    D3D12_PROTECTED_SESSION_STATUS_OK = 0,
+    D3D12_PROTECTED_SESSION_STATUS_INVALID = 1,
+} D3D12_PROTECTED_SESSION_STATUS;
+
+[uuid(A1533D18-0AC1-4084-85B9-89A96116806B), object, local, pointer_default(unique)]
+interface ID3D12ProtectedSession
+    : ID3D12DeviceChild
+{
+    HRESULT GetStatusFence(
+        [in] REFIID riid,
+        [out, iid_is(riid), annotation("_COM_Outptr_opt_")] void** ppFence);
+
+    D3D12_PROTECTED_SESSION_STATUS GetSessionStatus();
+}
+
+typedef enum D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS
+{
+    D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAG_NONE = 0x0,
+    D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAG_SUPPORTED = 0x1,
+
+} D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS( D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS );")
+
+typedef struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_SUPPORT
+{
+    UINT                                            NodeIndex;  // input
+    D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS  Support;    // output
+} D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_SUPPORT;
+
+typedef enum D3D12_PROTECTED_RESOURCE_SESSION_FLAGS
+{
+    D3D12_PROTECTED_RESOURCE_SESSION_FLAG_NONE = 0x0,
+
+} D3D12_PROTECTED_RESOURCE_SESSION_FLAGS;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS( D3D12_PROTECTED_RESOURCE_SESSION_FLAGS );")
+
+typedef struct D3D12_PROTECTED_RESOURCE_SESSION_DESC
+{
+    UINT NodeMask;
+    D3D12_PROTECTED_RESOURCE_SESSION_FLAGS Flags;
+} D3D12_PROTECTED_RESOURCE_SESSION_DESC;
+
+[uuid(6CD696F4-F289-40CC-8091-5A6C0A099C3D), object, local, pointer_default(unique)]
+interface ID3D12ProtectedResourceSession
+    : ID3D12ProtectedSession
+{
+    D3D12_PROTECTED_RESOURCE_SESSION_DESC GetDesc();
+}
+
+[uuid(e865df17-a9ee-46f9-a463-3098315aa2e5), object, local, pointer_default(unique)]
+interface ID3D12Device4
+    : ID3D12Device3
+{
+    HRESULT CreateCommandList1(
+        [annotation("_In_")] UINT nodeMask,
+        [annotation("_In_")] D3D12_COMMAND_LIST_TYPE type,
+        [annotation("_In_")] D3D12_COMMAND_LIST_FLAGS flags,
+        [in] REFIID riid, // Expected: ID3D12CommandList
+        [out, iid_is(riid), annotation("_COM_Outptr_")] void** ppCommandList
+    );
+
+    HRESULT CreateProtectedResourceSession(
+        [annotation("_In_")] const D3D12_PROTECTED_RESOURCE_SESSION_DESC* pDesc,
+        [annotation("_In_")] REFIID riid, // Expected: ID3D12ProtectedResourceSession, 
+        [out, iid_is(riid), annotation("_COM_Outptr_")] void** ppSession
+    );
+
+    HRESULT CreateCommittedResource1(
+        [annotation("_In_")] const D3D12_HEAP_PROPERTIES* pHeapProperties,
+        D3D12_HEAP_FLAGS HeapFlags,
+        [annotation("_In_")] const D3D12_RESOURCE_DESC* pDesc,
+        D3D12_RESOURCE_STATES InitialResourceState,
+        [annotation("_In_opt_")] const D3D12_CLEAR_VALUE* pOptimizedClearValue,
+        [annotation("_In_opt_")] ID3D12ProtectedResourceSession *pProtectedSession,
+        [in] REFIID riidResource, // Expected: ID3D12Resource1*
+        [out, iid_is(riidResource), annotation("_COM_Outptr_opt_")] void** ppvResource
+    );
+
+    HRESULT CreateHeap1(
+        [annotation("_In_")] const D3D12_HEAP_DESC* pDesc,
+        [annotation("_In_opt_")] ID3D12ProtectedResourceSession *pProtectedSession,
+        [in] REFIID riid, // Expected: ID3D12Heap1*
+        [out, iid_is(riid), annotation("_COM_Outptr_opt_")] void** ppvHeap
+    );
+
+    HRESULT CreateReservedResource1(
+        [annotation("_In_")] const D3D12_RESOURCE_DESC* pDesc,
+        D3D12_RESOURCE_STATES InitialState,
+        [annotation("_In_opt_")] const D3D12_CLEAR_VALUE* pOptimizedClearValue,
+        [annotation("_In_opt_")] ID3D12ProtectedResourceSession *pProtectedSession,
+        [in] REFIID riid, // Expected: ID3D12Resource1*
+        [out, iid_is(riid), annotation("_COM_Outptr_opt_")] void** ppvResource
+    );
+
+    D3D12_RESOURCE_ALLOCATION_INFO GetResourceAllocationInfo1(
+        UINT visibleMask,
+        UINT numResourceDescs,
+        [annotation("_In_reads_(numResourceDescs)")] const D3D12_RESOURCE_DESC* pResourceDescs,
+        [annotation("_Out_writes_opt_(numResourceDescs)")] D3D12_RESOURCE_ALLOCATION_INFO1* pResourceAllocationInfo1
+    );
+}
+
+
+
+[uuid(9D5E227A-4430-4161-88B3-3ECA6BB16E19), object, local, pointer_default(unique)]
+interface ID3D12Resource1
+    : ID3D12Resource
+{
+    HRESULT GetProtectedResourceSession(
+        [in] REFIID riid, // Expected: ID3D12ProtectedResourceSession
+        [out, iid_is(riid), annotation("_COM_Outptr_opt_")] void** ppProtectedSession);
+}
+
+
+[uuid(572F7389-2168-49E3-9693-D6DF5871BF6D), object, local, pointer_default(unique)]
+interface ID3D12Heap1
+    : ID3D12Heap
+{
+    HRESULT GetProtectedResourceSession(
+        [in] REFIID riid, // Expected: ID3D12ProtectedResourceSession
+        [out, iid_is(riid), annotation("_COM_Outptr_opt_")] void** ppProtectedSession);
+}
+
+
+[uuid(6FDA83A7-B84C-4E38-9AC8-C7BD22016B3D), object, local, pointer_default(unique)]
+interface ID3D12GraphicsCommandList3 : ID3D12GraphicsCommandList2
+{
+    void SetProtectedResourceSession(
+        [annotation("_In_opt_")]ID3D12ProtectedResourceSession *pProtectedResourceSession
+    );
 }
 
 
@@ -3513,90 +3720,126 @@ cpp_quote( "#include \"d3d12sdklayers.h\" ")
 cpp_quote( "#endif ")
 
 
-cpp_quote( "" )
-cpp_quote( "///////////////////////////////////////////////////////////////////////////" )
-cpp_quote( "// D3D12CreateDevice" )
-cpp_quote( "// ------------------" )
-cpp_quote( "//" )
-cpp_quote( "// pAdapter" )
-cpp_quote( "//      If NULL, D3D12CreateDevice will choose the primary adapter." )
-cpp_quote( "//      If non-NULL, D3D12CreateDevice will use the provided adapter." )
-cpp_quote( "// MinimumFeatureLevel" )
-cpp_quote( "//      The minimum feature level required for successful device creation." )
-cpp_quote( "// riid" )
-cpp_quote( "//      The interface IID of the device to be returned. Expected: ID3D12Device." )
-cpp_quote( "// ppDevice" )
-cpp_quote( "//      Pointer to returned interface. May be NULL." )
-cpp_quote( "//" )
-cpp_quote( "// Return Values" )
-cpp_quote( "//  Any of those documented for " )
-cpp_quote( "//          CreateDXGIFactory1" )
-cpp_quote( "//          IDXGIFactory::EnumAdapters" )
-cpp_quote( "//          D3D12CreateDevice" )
-cpp_quote( "//" )
-cpp_quote( "///////////////////////////////////////////////////////////////////////////" )
-cpp_quote( "typedef HRESULT (WINAPI* PFN_D3D12_CREATE_DEVICE)( _In_opt_ IUnknown*, " )
-cpp_quote( "    D3D_FEATURE_LEVEL, " )
-cpp_quote( "    _In_ REFIID, _COM_Outptr_opt_ void** );" )
-cpp_quote( "" )
-cpp_quote( "HRESULT WINAPI D3D12CreateDevice(" )
-cpp_quote( "    _In_opt_ IUnknown* pAdapter," )
-cpp_quote( "    D3D_FEATURE_LEVEL MinimumFeatureLevel," )
-cpp_quote( "    _In_ REFIID riid, // Expected: ID3D12Device" )
-cpp_quote( "    _COM_Outptr_opt_ void** ppDevice );" )
-cpp_quote( "" )
+cpp_quote("")
+cpp_quote("///////////////////////////////////////////////////////////////////////////")
+cpp_quote("// D3D12CreateDevice")
+cpp_quote("// ------------------")
+cpp_quote("//")
+cpp_quote("// pAdapter")
+cpp_quote("//      If NULL, D3D12CreateDevice will choose the primary adapter.")
+cpp_quote("//      If non-NULL, D3D12CreateDevice will use the provided adapter.")
+cpp_quote("// MinimumFeatureLevel")
+cpp_quote("//      The minimum feature level required for successful device creation.")
+cpp_quote("// riid")
+cpp_quote("//      The interface IID of the device to be returned. Expected: ID3D12Device.")
+cpp_quote("// ppDevice")
+cpp_quote("//      Pointer to returned interface. May be NULL.")
+cpp_quote("//")
+cpp_quote("// Return Values")
+cpp_quote("//  Any of those documented for ")
+cpp_quote("//          CreateDXGIFactory1")
+cpp_quote("//          IDXGIFactory::EnumAdapters")
+cpp_quote("//          D3D12CreateDevice")
+cpp_quote("//")
+cpp_quote("///////////////////////////////////////////////////////////////////////////")
+cpp_quote("typedef HRESULT (WINAPI* PFN_D3D12_CREATE_DEVICE)( _In_opt_ IUnknown*, ")
+cpp_quote("    D3D_FEATURE_LEVEL, ")
+cpp_quote("    _In_ REFIID, _COM_Outptr_opt_ void** );")
+cpp_quote("")
+cpp_quote("HRESULT WINAPI D3D12CreateDevice(")
+cpp_quote("    _In_opt_ IUnknown* pAdapter,")
+cpp_quote("    D3D_FEATURE_LEVEL MinimumFeatureLevel,")
+cpp_quote("    _In_ REFIID riid, // Expected: ID3D12Device")
+cpp_quote("    _COM_Outptr_opt_ void** ppDevice );")
+cpp_quote("")
 
-cpp_quote( "" )
-cpp_quote( "typedef HRESULT (WINAPI* PFN_D3D12_GET_DEBUG_INTERFACE)( _In_ REFIID, _COM_Outptr_opt_ void** );" )
-cpp_quote( "" )
-cpp_quote( "HRESULT WINAPI D3D12GetDebugInterface( _In_ REFIID riid, _COM_Outptr_opt_ void** ppvDebug );" )
-cpp_quote( "" )
+cpp_quote("")
+cpp_quote("typedef HRESULT (WINAPI* PFN_D3D12_GET_DEBUG_INTERFACE)( _In_ REFIID, _COM_Outptr_opt_ void** );")
+cpp_quote("")
+cpp_quote("HRESULT WINAPI D3D12GetDebugInterface( _In_ REFIID riid, _COM_Outptr_opt_ void** ppvDebug );")
+cpp_quote("")
 
-cpp_quote( "// --------------------------------------------------------------------------------------------------------------------------------" )
-cpp_quote( "// D3D12EnableExperimentalFeatures" )
-cpp_quote( "//" )
-cpp_quote( "// Pass in a list of feature GUIDs to be enabled together." )
-cpp_quote( "// " )
-cpp_quote( "// If a particular feature requires some configuration information on enablement, it will have" )
-cpp_quote( "// a configuration struct that can be passed alongside the GUID." )
-cpp_quote( "// " )
-cpp_quote( "// Some features might use an interface IID as the GUID.  For these, once the feature is enabled via" )
-cpp_quote( "// D3D12EnableExperimentalFeatures, D3D12GetDebugInterface can then be called with the IID to retrieve the interface" )
-cpp_quote( "// for manipulating the feature.  This allows for control that might not cleanly be expressed by just " )
-cpp_quote( "// the configuration struct that D3D12EnableExperimentalFeatures provides." )
-cpp_quote( "//" )
-cpp_quote( "// If this method is called and a change to existing feature enablement is made, " )
-cpp_quote( "// all current D3D12 devices are set to DEVICE_REMOVED state, since under the covers there is really only one" )
-cpp_quote( "// singleton device for a process.  Removing the devices when configuration changes prevents" )
-cpp_quote( "// mismatched expectations of how a device is supposed to work after it has been created from the app's point of view." )
-cpp_quote( "//" )
-cpp_quote( "// The call returns E_NOINTERFACE if an unrecognized feature is passed in or Windows Developer mode is not on." )
-cpp_quote( "// The call returns E_INVALIDARG if the configuration of a feature is incorrect, the set of features passed" )
-cpp_quote( "// in are known to be incompatible with each other, or other errors." )
-cpp_quote( "// Returns S_OK otherwise." )
-cpp_quote( "//" )
-cpp_quote( "// --------------------------------------------------------------------------------------------------------------------------------" )
-cpp_quote( "HRESULT WINAPI D3D12EnableExperimentalFeatures(" )
-cpp_quote( "    UINT                                    NumFeatures," )
-cpp_quote( "    __in_ecount(NumFeatures) const IID*     pIIDs," )
-cpp_quote( "    __in_ecount_opt(NumFeatures) void*      pConfigurationStructs," )
-cpp_quote( "    __in_ecount_opt(NumFeatures) UINT*      pConfigurationStructSizes);" )
-cpp_quote( "" )
-cpp_quote( "// --------------------------------------------------------------------------------------------------------------------------------" )
-cpp_quote( "// Experimental Feature: D3D12ExperimentalShaderModels" )
-cpp_quote( "//" )
-cpp_quote( "// Use with D3D12EnableExperimentalFeatures to enable experimental shader model support," )
-cpp_quote( "// meaning shader models that haven't been finalized for use in retail." )
-cpp_quote( "//" )
-cpp_quote( "// Enabling D3D12ExperimentalShaderModels needs no configuration struct, pass NULL in the pConfigurationStructs array." )
-cpp_quote( "//" )
-cpp_quote( "// --------------------------------------------------------------------------------------------------------------------------------" )
-cpp_quote( "static const UUID D3D12ExperimentalShaderModels = { /* 76f5573e-f13a-40f5-b297-81ce9e18933f */" )
-cpp_quote( "    0x76f5573e," )
-cpp_quote( "    0xf13a," )
-cpp_quote( "    0x40f5," )
-cpp_quote( "    { 0xb2, 0x97, 0x81, 0xce, 0x9e, 0x18, 0x93, 0x3f }" )
-cpp_quote( "};" )
+cpp_quote("// --------------------------------------------------------------------------------------------------------------------------------")
+cpp_quote("// D3D12EnableExperimentalFeatures")
+cpp_quote("//")
+cpp_quote("// Pass in a list of feature GUIDs to be enabled together.")
+cpp_quote("// ")
+cpp_quote("// If a particular feature requires some configuration information on enablement, it will have")
+cpp_quote("// a configuration struct that can be passed alongside the GUID.")
+cpp_quote("// ")
+cpp_quote("// Some features might use an interface IID as the GUID.  For these, once the feature is enabled via")
+cpp_quote("// D3D12EnableExperimentalFeatures, D3D12GetDebugInterface can then be called with the IID to retrieve the interface")
+cpp_quote("// for manipulating the feature.  This allows for control that might not cleanly be expressed by just ")
+cpp_quote("// the configuration struct that D3D12EnableExperimentalFeatures provides.")
+cpp_quote("//")
+cpp_quote("// If this method is called and a change to existing feature enablement is made, ")
+cpp_quote("// all current D3D12 devices are set to DEVICE_REMOVED state, since under the covers there is really only one")
+cpp_quote("// singleton device for a process.  Removing the devices when configuration changes prevents")
+cpp_quote("// mismatched expectations of how a device is supposed to work after it has been created from the app's point of view.")
+cpp_quote("//")
+cpp_quote("// The call returns E_NOINTERFACE if an unrecognized feature is passed in or Windows Developer mode is not on.")
+cpp_quote("// The call returns E_INVALIDARG if the configuration of a feature is incorrect, the set of features passed")
+cpp_quote("// in are known to be incompatible with each other, or other errors.")
+cpp_quote("// Returns S_OK otherwise.")
+cpp_quote("//")
+cpp_quote("// --------------------------------------------------------------------------------------------------------------------------------")
+cpp_quote("HRESULT WINAPI D3D12EnableExperimentalFeatures(")
+cpp_quote("    UINT                                    NumFeatures,")
+cpp_quote("    __in_ecount(NumFeatures) const IID*     pIIDs,")
+cpp_quote("    __in_ecount_opt(NumFeatures) void*      pConfigurationStructs,")
+cpp_quote("    __in_ecount_opt(NumFeatures) UINT*      pConfigurationStructSizes);")
+cpp_quote("")
+cpp_quote("// --------------------------------------------------------------------------------------------------------------------------------")
+cpp_quote("// Experimental Feature: D3D12ExperimentalShaderModels")
+cpp_quote("//")
+cpp_quote("// Use with D3D12EnableExperimentalFeatures to enable experimental shader model support,")
+cpp_quote("// meaning shader models that haven't been finalized for use in retail.")
+cpp_quote("//")
+cpp_quote("// Enabling D3D12ExperimentalShaderModels needs no configuration struct, pass NULL in the pConfigurationStructs array.")
+cpp_quote("//")
+cpp_quote("// --------------------------------------------------------------------------------------------------------------------------------")
+cpp_quote("static const UUID D3D12ExperimentalShaderModels = { /* 76f5573e-f13a-40f5-b297-81ce9e18933f */")
+cpp_quote("    0x76f5573e,")
+cpp_quote("    0xf13a,")
+cpp_quote("    0x40f5,")
+cpp_quote("    { 0xb2, 0x97, 0x81, 0xce, 0x9e, 0x18, 0x93, 0x3f }")
+cpp_quote("};")
+cpp_quote("// --------------------------------------------------------------------------------------------------------------------------------")
+cpp_quote("// Experimental Feature: D3D12TiledResourceTier4")
+cpp_quote("//")
+cpp_quote("// Use with D3D12EnableExperimentalFeatures to enable tiled resource tier 4 support,")
+cpp_quote("// meaning texture tile data-inheritance is allowed.")
+cpp_quote("//")
+cpp_quote("// Enabling D3D12TiledResourceTier4 needs no configuration struct, pass NULL in the pConfigurationStructs array.")
+cpp_quote("//")
+cpp_quote("// --------------------------------------------------------------------------------------------------------------------------------")
+cpp_quote("static const UUID D3D12TiledResourceTier4 = { /* c9c4725f-a81a-4f56-8c5b-c51039d694fb */")
+cpp_quote("    0xc9c4725f,")
+cpp_quote("    0xa81a,")
+cpp_quote("    0x4f56,")
+cpp_quote("    { 0x8c, 0x5b, 0xc5, 0x10, 0x39, 0xd6, 0x94, 0xfb }")
+cpp_quote("};")
+cpp_quote("// --------------------------------------------------------------------------------------------------------------------------------")
+cpp_quote("// Experimental Feature: D3D12MetaCommand")
+cpp_quote("//")
+cpp_quote("// Use with D3D12EnableExperimentalFeatures to enable the D3D12 Meta Command.")
+cpp_quote("//")
+cpp_quote("// Enabling D3D12MetaCommand needs no configuration struct, pass NULL in the pConfigurationStructs array.")
+cpp_quote("//")
+cpp_quote("// --------------------------------------------------------------------------------------------------------------------------------")
+cpp_quote("static const UUID D3D12MetaCommand = { /* C734C97E-8077-48C8-9FDC-D9D1DD31DD77 */")
+cpp_quote("    0xc734c97e,")
+cpp_quote("    0x8077,")
+cpp_quote("    0x48c8,")
+cpp_quote("    { 0x9f, 0xdc, 0xd9, 0xd1, 0xdd, 0x31, 0xdd, 0x77 }")
+cpp_quote("};")
+
+
+//----------------------------------------------------------------------------------------------------------
+// Device Removed Extended Data (DRED)
+
+
+// Internal for now.  Will remove from internal when feature is ready.
 
 //----------------------------------------------------------------------------------------------------------
 // Old types which are still supported by the runtime for app-compat
@@ -3630,4 +3873,10 @@ cpp_quote( "DEFINE_GUID(IID_ID3D12PipelineLibrary1,0x80eabf42,0x2568,0x4e5e,0xbd
 cpp_quote( "DEFINE_GUID(IID_ID3D12Device1,0x77acce80,0x638e,0x4e65,0x88,0x95,0xc1,0xf2,0x33,0x86,0x86,0x3e);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12Device2,0x30baa41e,0xb15b,0x475c,0xa0,0xbb,0x1a,0xf5,0xc5,0xb6,0x43,0x28);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12Device3,0x81dadc15,0x2bad,0x4392,0x93,0xc5,0x10,0x13,0x45,0xc4,0xaa,0x98);" )
+cpp_quote( "DEFINE_GUID(IID_ID3D12ProtectedSession,0xA1533D18,0x0AC1,0x4084,0x85,0xB9,0x89,0xA9,0x61,0x16,0x80,0x6B);" )
+cpp_quote( "DEFINE_GUID(IID_ID3D12ProtectedResourceSession,0x6CD696F4,0xF289,0x40CC,0x80,0x91,0x5A,0x6C,0x0A,0x09,0x9C,0x3D);" )
+cpp_quote( "DEFINE_GUID(IID_ID3D12Device4,0xe865df17,0xa9ee,0x46f9,0xa4,0x63,0x30,0x98,0x31,0x5a,0xa2,0xe5);" )
+cpp_quote( "DEFINE_GUID(IID_ID3D12Resource1,0x9D5E227A,0x4430,0x4161,0x88,0xB3,0x3E,0xCA,0x6B,0xB1,0x6E,0x19);" )
+cpp_quote( "DEFINE_GUID(IID_ID3D12Heap1,0x572F7389,0x2168,0x49E3,0x96,0x93,0xD6,0xDF,0x58,0x71,0xBF,0x6D);" )
+cpp_quote( "DEFINE_GUID(IID_ID3D12GraphicsCommandList3,0x6FDA83A7,0xB84C,0x4E38,0x9A,0xC8,0xC7,0xBD,0x22,0x01,0x6B,0x3D);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12Tools,0x7071e1f0,0xe84b,0x4b33,0x97,0x4f,0x12,0xfa,0x49,0xde,0x65,0xc5);" )

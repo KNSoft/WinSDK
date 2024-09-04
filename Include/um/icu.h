@@ -15,7 +15,6 @@
 #define U_HAVE_STD_STRING 0
 #define U_NO_DEFAULT_INCLUDE_UTF_HEADERS 1
 
-
 // appendable.h
 // No supported content
 

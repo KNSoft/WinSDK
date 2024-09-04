@@ -353,6 +353,12 @@
 #define WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB                 0x141
 #define WDI_TLV_DEVICE_SERVICE_GUID_LIST                        0x142
 #define WDI_TLV_OFFLOAD_SCOPE                                   0x143
+#define WDI_TLV_OS_POWER_MANAGEMENT_FEATURES                    0x144
+#define WDI_TLV_CIPHER_KEY_TYPE                                 0x145
+#define WDI_TLV_CIPHER_ALGORITHM                                0x146
+#define WDI_TLV_CONFIGURED_CIPHER_KEY                           0x147
+#define WDI_TLV_RSN_KEY_INFO                                    0x148
+#define WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS                    0x149
 
 #define WDI_TEST_TASK                                           0xFFE0
 #define WDI_TLV_TEST1                                           0xFFE1
@@ -901,3 +907,13 @@ typedef UINT32 WDI_BAND_COMMON_FREQUENCY;
 // WDI_TLV_SET_POWER_DX_REASON enum
 //
 #define WDI_SET_POWER_DX_REASON_SELETIVE_SUSPEND 1
+
+//
+// OS Power Management Flags
+//
+typedef enum _WDI_OS_POWER_MANAGEMENT_FLAGS
+{
+    WDI_OS_POWER_MANAGEMENT_NONE                = 0x00,
+    WDI_OS_POWER_MANAGEMENT_ENABLE_STANDBY_NAPS = 0x01,
+    WDI_OS_POWER_MANAGEMENT_ENABLE_S0_NAPS      = 0x02,
+} WDI_OS_POWER_MANAGEMENT_FLAGS;

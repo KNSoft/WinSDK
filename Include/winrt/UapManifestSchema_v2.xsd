@@ -40,20 +40,12 @@
   <xs:complexType name="CT_Verb">
     <xs:simpleContent>
       <xs:extension base="t:ST_NonEmptyString">
-        <xs:attribute name="Id" use="required" type="ST_FileTypeAssociationSupportedVerbId"/>
+        <xs:attribute name="Id" use="required" type="t:ST_FileTypeAssociationSupportedVerbId"/>
         <xs:attribute name="Extended" use="optional" type="xs:boolean"/>
         <xs:attributeGroup ref="rescap3:DdeExecAttributes"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  
-  <xs:simpleType name="ST_FileTypeAssociationSupportedVerbId">
-    <xs:restriction base="t:ST_NonEmptyString">
-      <xs:minLength value="3"/>
-      <xs:maxLength value="64"/>
-      <xs:pattern value="([A-Za-z0-9]*)"/>
-    </xs:restriction>
-  </xs:simpleType>
 
   <xs:element name="Extension" substitutionGroup="f:ApplicationExtensionChoice">
     <xs:complexType>

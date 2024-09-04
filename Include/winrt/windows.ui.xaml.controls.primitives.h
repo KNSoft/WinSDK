@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.controls.primitives.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -45,6 +45,7 @@
 #if defined(__cplusplus)
 #if __cplusplus >= 201402
 #define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
 #elif defined(_MSC_VER)
 #if _MSC_VER >= 1900
 #define DEPRECATED(x) [[deprecated(x)]]
@@ -76,11 +77,8 @@
 #endif
 
 #pragma push_macro("MIDL_CONST_ID")
-#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
-#define MIDL_CONST_ID constexpr const
-#else
+#undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
-#endif
 
 
 //  API Contract Inclusion Definitions
@@ -110,16 +108,20 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_COMMUNICATIONBLOCKING_COMMUNICATIONBLOCKINGCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
 #define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
@@ -130,7 +132,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
@@ -158,7 +160,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -202,11 +204,11 @@
 #endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
-#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
@@ -222,11 +224,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -371,6 +373,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface IAppBarButtonTemplateSettings;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings ABI::Windows::UI::Xaml::Controls::Primitives::IAppBarButtonTemplateSettings
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings_FWD_DEFINED__
 namespace ABI {
@@ -388,6 +408,24 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings ABI::Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettings
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface IAppBarToggleButtonTemplateSettings;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings ABI::Windows::UI::Xaml::Controls::Primitives::IAppBarToggleButtonTemplateSettings
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase_FWD_DEFINED__
@@ -1487,6 +1525,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface IMenuFlyoutItemTemplateSettings;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings ABI::Windows::UI::Xaml::Controls::Primitives::IMenuFlyoutItemTemplateSettings
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_FWD_DEFINED__
 namespace ABI {
@@ -2531,6 +2587,7 @@ namespace ABI {
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs_USE
@@ -2559,6 +2616,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Primitives::ColorSp
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs_USE */
 
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
@@ -3859,6 +3917,23 @@ namespace ABI {
 
 
 
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        class AppBarButtonTemplateSettings;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -3866,6 +3941,20 @@ namespace ABI {
                 namespace Controls {
                     namespace Primitives {
                         class AppBarTemplateSettings;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        class AppBarToggleButtonTemplateSettings;
                     } /* Windows */
                 } /* UI */
             } /* Xaml */
@@ -4177,6 +4266,20 @@ namespace ABI {
                 namespace Controls {
                     namespace Primitives {
                         class LoopingSelectorPanel;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        class MenuFlyoutItemTemplateSettings;
                     } /* Windows */
                 } /* UI */
             } /* Xaml */
@@ -4980,8 +5083,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("36B28888-19AC-4B4E-9137-A6CF2B023883"), contract] */
                         MIDL_INTERFACE("36B28888-19AC-4B4E-9137-A6CF2B023883")
-                        IDragCompletedEventHandler : IUnknown
+                        IDragCompletedEventHandler : public IUnknown
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Invoke(
                                 /* [in] */__RPC__in_opt IInspectable * sender,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs * e
@@ -5021,8 +5125,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("4AC24F9F-AC28-49E9-9189-DCCFFEB66472"), contract] */
                         MIDL_INTERFACE("4AC24F9F-AC28-49E9-9189-DCCFFEB66472")
-                        IDragDeltaEventHandler : IUnknown
+                        IDragDeltaEventHandler : public IUnknown
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Invoke(
                                 /* [in] */__RPC__in_opt IInspectable * sender,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs * e
@@ -5062,8 +5167,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("D2EEA48A-C65A-495D-A2F1-72C66989142D"), contract] */
                         MIDL_INTERFACE("D2EEA48A-C65A-495D-A2F1-72C66989142D")
-                        IDragStartedEventHandler : IUnknown
+                        IDragStartedEventHandler : public IUnknown
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Invoke(
                                 /* [in] */__RPC__in_opt IInspectable * sender,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs * e
@@ -5103,8 +5209,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("178257BE-A304-482F-8BF0-B9D2E39612A3"), contract] */
                         MIDL_INTERFACE("178257BE-A304-482F-8BF0-B9D2E39612A3")
-                        IItemsChangedEventHandler : IUnknown
+                        IItemsChangedEventHandler : public IUnknown
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Invoke(
                                 /* [in] */__RPC__in_opt IInspectable * sender,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs * e
@@ -5144,8 +5251,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("E3906FD9-4D1B-4AC8-A43C-C3B908742799"), contract] */
                         MIDL_INTERFACE("E3906FD9-4D1B-4AC8-A43C-C3B908742799")
-                        IRangeBaseValueChangedEventHandler : IUnknown
+                        IRangeBaseValueChangedEventHandler : public IUnknown
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Invoke(
                                 /* [in] */__RPC__in_opt IInspectable * sender,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs * e
@@ -5185,8 +5293,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("8860B0A4-A383-4C83-B306-A1C39D7DB87F"), contract] */
                         MIDL_INTERFACE("8860B0A4-A383-4C83-B306-A1C39D7DB87F")
-                        IScrollEventHandler : IUnknown
+                        IScrollEventHandler : public IUnknown
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE Invoke(
                                 /* [in] */__RPC__in_opt IInspectable * sender,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IScrollEventArgs * e
@@ -5205,6 +5314,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventHandler;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventHandler_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IAppBarButtonTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.AppBarButtonTemplateSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IAppBarButtonTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.IAppBarButtonTemplateSettings";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("CBC9B39D-0C95-4951-BFF2-13963691C366"), exclusiveto, contract] */
+                        MIDL_INTERFACE("CBC9B39D-0C95-4951-BFF2-13963691C366")
+                        IAppBarButtonTemplateSettings : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAcceleratorTextMinWidth(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAppBarButtonTemplateSettings=_uuidof(IAppBarButtonTemplateSettings);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -5230,8 +5384,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("BCC2A863-EB35-423C-8389-D7827BE3BF67"), exclusiveto, contract] */
                         MIDL_INTERFACE("BCC2A863-EB35-423C-8389-D7827BE3BF67")
-                        IAppBarTemplateSettings : IInspectable
+                        IAppBarTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClipRect(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
                                 ) = 0;
@@ -5271,6 +5426,51 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBar
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IAppBarToggleButtonTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IAppBarToggleButtonTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.IAppBarToggleButtonTemplateSettings";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("AAF99C48-D8F4-40D9-9FA3-3A64F0FEC5D8"), exclusiveto, contract] */
+                        MIDL_INTERFACE("AAF99C48-D8F4-40D9-9FA3-3A64F0FEC5D8")
+                        IAppBarToggleButtonTemplateSettings : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAcceleratorTextMinWidth(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAppBarToggleButtonTemplateSettings=_uuidof(IAppBarToggleButtonTemplateSettings);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IButtonBase
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5292,8 +5492,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("FA002C1A-494E-46CF-91D4-E14A8D798674"), exclusiveto, contract] */
                         MIDL_INTERFACE("FA002C1A-494E-46CF-91D4-E14A8D798674")
-                        IButtonBase : IInspectable
+                        IButtonBase : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClickMode(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::ClickMode * value
                                 ) = 0;
@@ -5364,8 +5565,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("389B7C71-5220-42B2-9992-2690C1A6702F"), exclusiveto, contract] */
                         MIDL_INTERFACE("389B7C71-5220-42B2-9992-2690C1A6702F")
-                        IButtonBaseFactory : IInspectable
+                        IButtonBaseFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -5410,8 +5612,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("67EF17E1-FE37-474F-9E97-3B5E0B30F2DF"), exclusiveto, contract] */
                         MIDL_INTERFACE("67EF17E1-FE37-474F-9E97-3B5E0B30F2DF")
-                        IButtonBaseStatics : IInspectable
+                        IButtonBaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClickModeProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -5466,8 +5669,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("FCD55A2D-02D3-4EE6-9A90-9DF3EAD00994"), exclusiveto, contract] */
                         MIDL_INTERFACE("FCD55A2D-02D3-4EE6-9A90-9DF3EAD00994")
-                        ICalendarPanel : IInspectable
+                        ICalendarPanel : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -5507,8 +5711,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("56C71483-64E1-477C-8A0B-CB2F3334B9B0"), exclusiveto, contract] */
                         MIDL_INTERFACE("56C71483-64E1-477C-8A0B-CB2F3334B9B0")
-                        ICalendarViewTemplateSettings : IInspectable
+                        ICalendarViewTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinViewWidth(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -5593,8 +5798,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("DEAB78B2-373B-4151-8785-E544D0D9362B"), exclusiveto, contract] */
                         MIDL_INTERFACE("DEAB78B2-373B-4151-8785-E544D0D9362B")
-                        ICarouselPanel : IInspectable
+                        ICarouselPanel : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanVerticallyScroll(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -5693,8 +5899,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("C1109404-9AE1-440E-A0DD-BBB6E2293CBE"), exclusiveto, contract] */
                         MIDL_INTERFACE("C1109404-9AE1-440E-A0DD-BBB6E2293CBE")
-                        ICarouselPanelFactory : IInspectable
+                        ICarouselPanelFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -5739,8 +5946,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("94394D83-E0DF-4C5F-BBCD-8155F4020440"), exclusiveto, contract] */
                         MIDL_INTERFACE("94394D83-E0DF-4C5F-BBCD-8155F4020440")
-                        IColorPickerSlider : IInspectable
+                        IColorPickerSlider : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColorChannel(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::ColorPickerHsvChannel * result
                                 ) = 0;
@@ -5786,8 +5994,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("06D879A2-8C07-4B1E-A940-9FBCE8F49639"), exclusiveto, contract] */
                         MIDL_INTERFACE("06D879A2-8C07-4B1E-A940-9FBCE8F49639")
-                        IColorPickerSliderFactory : IInspectable
+                        IColorPickerSliderFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -5832,8 +6041,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("22EAFC6A-9FE3-4EEE-8734-A1398EC4413A"), exclusiveto, contract] */
                         MIDL_INTERFACE("22EAFC6A-9FE3-4EEE-8734-A1398EC4413A")
-                        IColorPickerSliderStatics : IInspectable
+                        IColorPickerSliderStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColorChannelProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -5876,8 +6086,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("CE46F271-F509-4F98-8288-E4942FB385DF"), exclusiveto, contract] */
                         MIDL_INTERFACE("CE46F271-F509-4F98-8288-E4942FB385DF")
-                        IColorSpectrum : IInspectable
+                        IColorSpectrum : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Color * result
                                 ) = 0;
@@ -5984,8 +6195,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("90C7E61E-904D-42AB-B44F-E68DBF0CDEE9"), exclusiveto, contract] */
                         MIDL_INTERFACE("90C7E61E-904D-42AB-B44F-E68DBF0CDEE9")
-                        IColorSpectrumFactory : IInspectable
+                        IColorSpectrumFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -6030,8 +6242,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("906BEE7C-2CEE-4E90-968B-F0A5BD691B4A"), exclusiveto, contract] */
                         MIDL_INTERFACE("906BEE7C-2CEE-4E90-968B-F0A5BD691B4A")
-                        IColorSpectrumStatics : IInspectable
+                        IColorSpectrumStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColorProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -6101,8 +6314,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("83285C4E-17F6-4AA3-B61B-E87C718604EA"), exclusiveto, contract] */
                         MIDL_INTERFACE("83285C4E-17F6-4AA3-B61B-E87C718604EA")
-                        IComboBoxTemplateSettings : IInspectable
+                        IComboBoxTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DropDownOpenedHeight(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -6154,8 +6368,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("00E90CD7-68BE-449D-B5A7-76E26F703E9B"), exclusiveto, contract] */
                         MIDL_INTERFACE("00E90CD7-68BE-449D-B5A7-76E26F703E9B")
-                        IComboBoxTemplateSettings2 : IInspectable
+                        IComboBoxTemplateSettings2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DropDownContentMinWidth(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -6198,8 +6413,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("61C8F92C-05AA-414A-A2AE-482C5A46C08E"), exclusiveto, contract] */
                         MIDL_INTERFACE("61C8F92C-05AA-414A-A2AE-482C5A46C08E")
-                        ICommandBarTemplateSettings : IInspectable
+                        ICommandBarTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentHeight(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -6260,8 +6476,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("FBB24F93-C2E2-4177-A2B6-3CD705073CF6"), exclusiveto, contract] */
                         MIDL_INTERFACE("FBB24F93-C2E2-4177-A2B6-3CD705073CF6")
-                        ICommandBarTemplateSettings2 : IInspectable
+                        ICommandBarTemplateSettings2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OverflowContentMaxWidth(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -6304,8 +6521,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("3BD71EBA-3403-4BFE-842D-2CE8C511D245"), exclusiveto, contract] */
                         MIDL_INTERFACE("3BD71EBA-3403-4BFE-842D-2CE8C511D245")
-                        ICommandBarTemplateSettings3 : IInspectable
+                        ICommandBarTemplateSettings3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EffectiveOverflowButtonVisibility(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Visibility * value
                                 ) = 0;
@@ -6348,8 +6566,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("B04F29A1-BD16-48F6-A511-9C2763641331"), exclusiveto, contract] */
                         MIDL_INTERFACE("B04F29A1-BD16-48F6-A511-9C2763641331")
-                        IDragCompletedEventArgs : IInspectable
+                        IDragCompletedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalChange(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -6398,8 +6617,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("36A7D99D-148C-495F-A0FC-AFC871D62F33"), exclusiveto, contract] */
                         MIDL_INTERFACE("36A7D99D-148C-495F-A0FC-AFC871D62F33")
-                        IDragCompletedEventArgsFactory : IInspectable
+                        IDragCompletedEventArgsFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(
                                 /* [in] */DOUBLE horizontalChange,
                                 /* [in] */DOUBLE verticalChange,
@@ -6447,8 +6667,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("2C2DD73C-2806-49FC-AAE9-6D792B572B6A"), exclusiveto, contract] */
                         MIDL_INTERFACE("2C2DD73C-2806-49FC-AAE9-6D792B572B6A")
-                        IDragDeltaEventArgs : IInspectable
+                        IDragDeltaEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalChange(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -6494,8 +6715,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("46E7A1EF-AE15-44A6-8A04-95B0BF9AB876"), exclusiveto, contract] */
                         MIDL_INTERFACE("46E7A1EF-AE15-44A6-8A04-95B0BF9AB876")
-                        IDragDeltaEventArgsFactory : IInspectable
+                        IDragDeltaEventArgsFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithHorizontalChangeAndVerticalChange(
                                 /* [in] */DOUBLE horizontalChange,
                                 /* [in] */DOUBLE verticalChange,
@@ -6542,8 +6764,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("9F915DD0-A124-4366-BD85-2408214AEED4"), exclusiveto, contract] */
                         MIDL_INTERFACE("9F915DD0-A124-4366-BD85-2408214AEED4")
-                        IDragStartedEventArgs : IInspectable
+                        IDragStartedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HorizontalOffset(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -6589,8 +6812,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("5EEFE579-C706-4781-A308-C9E7F4C6A1D7"), exclusiveto, contract] */
                         MIDL_INTERFACE("5EEFE579-C706-4781-A308-C9E7F4C6A1D7")
-                        IDragStartedEventArgsFactory : IInspectable
+                        IDragStartedEventArgsFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithHorizontalOffsetAndVerticalOffset(
                                 /* [in] */DOUBLE horizontalOffset,
                                 /* [in] */DOUBLE verticalOffset,
@@ -6637,8 +6861,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("723EEA0B-D12E-430D-A9F0-9BB32BBF9913"), exclusiveto, contract] */
                         MIDL_INTERFACE("723EEA0B-D12E-430D-A9F0-9BB32BBF9913")
-                        IFlyoutBase : IInspectable
+                        IFlyoutBase : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Placement(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutPlacementMode * value
                                 ) = 0;
@@ -6709,8 +6934,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("F82B435E-65B3-41C6-A9E2-77B67BC4C00C"), exclusiveto, contract] */
                         MIDL_INTERFACE("F82B435E-65B3-41C6-A9E2-77B67BC4C00C")
-                        IFlyoutBase2 : IInspectable
+                        IFlyoutBase2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Target(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IFrameworkElement * * value
                                 ) = 0;
@@ -6784,8 +7010,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("A89C9712-48E0-4240-95B9-0DFD0826A8D3"), exclusiveto, contract] */
                         MIDL_INTERFACE("A89C9712-48E0-4240-95B9-0DFD0826A8D3")
-                        IFlyoutBase3 : IInspectable
+                        IFlyoutBase3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OverlayInputPassThroughElement(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
                                 ) = 0;
@@ -6831,8 +7058,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("E3897D69-A37F-4828-9B70-0EF67C03B5F8"), exclusiveto, contract] */
                         MIDL_INTERFACE("E3897D69-A37F-4828-9B70-0EF67C03B5F8")
-                        IFlyoutBase4 : IInspectable
+                        IFlyoutBase4 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE TryInvokeKeyboardAccelerator(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Input::IProcessKeyboardAcceleratorEventArgs * args
                                 ) = 0;
@@ -6875,8 +7103,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("D075852D-B09A-4FD1-B005-DB2BA01206FB"), exclusiveto, contract] */
                         MIDL_INTERFACE("D075852D-B09A-4FD1-B005-DB2BA01206FB")
-                        IFlyoutBaseClosingEventArgs : IInspectable
+                        IFlyoutBaseClosingEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Cancel(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -6922,8 +7151,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("1C3363D7-FCA7-407E-920E-70E15E9F0BF1"), exclusiveto, contract] */
                         MIDL_INTERFACE("1C3363D7-FCA7-407E-920E-70E15E9F0BF1")
-                        IFlyoutBaseFactory : IInspectable
+                        IFlyoutBaseFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -6968,8 +7198,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("101DEC86-6F4D-45A4-9D0E-3ECE6F16977E"), exclusiveto, contract] */
                         MIDL_INTERFACE("101DEC86-6F4D-45A4-9D0E-3ECE6F16977E")
-                        IFlyoutBaseOverrides : IInspectable
+                        IFlyoutBaseOverrides : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreatePresenter(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::IControl * * returnValue
                                 ) = 0;
@@ -7012,8 +7243,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("A6BFD04D-5FF3-4418-ADD8-4042A88D2DA5"), exclusiveto, contract] */
                         MIDL_INTERFACE("A6BFD04D-5FF3-4418-ADD8-4042A88D2DA5")
-                        IFlyoutBaseOverrides4 : IInspectable
+                        IFlyoutBaseOverrides4 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE OnProcessKeyboardAccelerators(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Input::IProcessKeyboardAcceleratorEventArgs * args
                                 ) = 0;
@@ -7056,8 +7288,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("E2D795E3-85C0-4DE2-BAC1-5294CA011A78"), exclusiveto, contract] */
                         MIDL_INTERFACE("E2D795E3-85C0-4DE2-BAC1-5294CA011A78")
-                        IFlyoutBaseStatics : IInspectable
+                        IFlyoutBaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PlacementProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7114,8 +7347,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("A8E913FE-2D60-4307-AAD9-56B450121B58"), exclusiveto, contract] */
                         MIDL_INTERFACE("A8E913FE-2D60-4307-AAD9-56B450121B58")
-                        IFlyoutBaseStatics2 : IInspectable
+                        IFlyoutBaseStatics2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllowFocusOnInteractionProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7167,8 +7401,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("7BA92E4F-DD16-4BE4-99DB-BD9D4406C0F8"), exclusiveto, contract] */
                         MIDL_INTERFACE("7BA92E4F-DD16-4BE4-99DB-BD9D4406C0F8")
-                        IFlyoutBaseStatics3 : IInspectable
+                        IFlyoutBaseStatics3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OverlayInputPassThroughElementProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7211,8 +7446,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("CD40318D-7745-40D9-AB9D-ABBDA4A7FFEA"), exclusiveto, contract] */
                         MIDL_INTERFACE("CD40318D-7745-40D9-AB9D-ABBDA4A7FFEA")
-                        IGeneratorPositionHelper : IInspectable
+                        IGeneratorPositionHelper : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -7252,8 +7488,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("AD4095CD-60EC-4588-8D60-39D29097A4DF"), exclusiveto, contract] */
                         MIDL_INTERFACE("AD4095CD-60EC-4588-8D60-39D29097A4DF")
-                        IGeneratorPositionHelperStatics : IInspectable
+                        IGeneratorPositionHelperStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE FromIndexAndOffset(
                                 /* [in] */INT32 index,
                                 /* [in] */INT32 offset,
@@ -7298,8 +7535,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("214F9010-56E2-4821-8A1C-2305709AF94B"), exclusiveto, contract] */
                         MIDL_INTERFACE("214F9010-56E2-4821-8A1C-2305709AF94B")
-                        IGridViewItemPresenter : IInspectable
+                        IGridViewItemPresenter : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectionCheckMarkVisualEnabled(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -7495,8 +7733,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("53C12178-63BB-4A65-A3F1-AB114CFC6FFE"), exclusiveto, contract] */
                         MIDL_INTERFACE("53C12178-63BB-4A65-A3F1-AB114CFC6FFE")
-                        IGridViewItemPresenterFactory : IInspectable
+                        IGridViewItemPresenterFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -7541,8 +7780,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("E958F8C4-277E-4A72-A01E-9E1688980178"), exclusiveto, contract] */
                         MIDL_INTERFACE("E958F8C4-277E-4A72-A01E-9E1688980178")
-                        IGridViewItemPresenterStatics : IInspectable
+                        IGridViewItemPresenterStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectionCheckMarkVisualEnabledProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7660,8 +7900,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("9E30BAAF-165D-4267-A45E-1A43A75706AC"), exclusiveto, contract] */
                         MIDL_INTERFACE("9E30BAAF-165D-4267-A45E-1A43A75706AC")
-                        IGridViewItemTemplateSettings : IInspectable
+                        IGridViewItemTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DragItemsCount(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -7704,8 +7945,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("E8B45568-7D10-421E-BE29-81839A91DE20"), exclusiveto, contract] */
                         MIDL_INTERFACE("E8B45568-7D10-421E-BE29-81839A91DE20")
-                        IItemsChangedEventArgs : IInspectable
+                        IItemsChangedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Action(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -7760,8 +8002,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("81177858-D224-410C-B16C-C5B6BB6188B2"), exclusiveto, contract] */
                         MIDL_INTERFACE("81177858-D224-410C-B16C-C5B6BB6188B2")
-                        IJumpListItemBackgroundConverter : IInspectable
+                        IJumpListItemBackgroundConverter : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Enabled(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * value
                                 ) = 0;
@@ -7813,8 +8056,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("20E7C3DD-6F27-4808-B0BE-83E0E9B5CC45"), exclusiveto, contract] */
                         MIDL_INTERFACE("20E7C3DD-6F27-4808-B0BE-83E0E9B5CC45")
-                        IJumpListItemBackgroundConverterStatics : IInspectable
+                        IJumpListItemBackgroundConverterStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnabledProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7860,8 +8104,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("1590ED38-C504-4796-A63A-5BFC9EEFAAE8"), exclusiveto, contract] */
                         MIDL_INTERFACE("1590ED38-C504-4796-A63A-5BFC9EEFAAE8")
-                        IJumpListItemForegroundConverter : IInspectable
+                        IJumpListItemForegroundConverter : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Enabled(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * value
                                 ) = 0;
@@ -7913,8 +8158,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("474E7352-210C-4673-AC6A-413F0E2C7750"), exclusiveto, contract] */
                         MIDL_INTERFACE("474E7352-210C-4673-AC6A-413F0E2C7750")
-                        IJumpListItemForegroundConverterStatics : IInspectable
+                        IJumpListItemForegroundConverterStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EnabledProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -7960,8 +8206,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("B5384C9B-C8CF-41B3-BF16-18C8420E72C9"), exclusiveto, contract] */
                         MIDL_INTERFACE("B5384C9B-C8CF-41B3-BF16-18C8420E72C9")
-                        ILayoutInformation : IInspectable
+                        ILayoutInformation : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8001,8 +8248,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("CF06CF99-58E9-4682-8326-50CAAB65ED7C"), exclusiveto, contract] */
                         MIDL_INTERFACE("CF06CF99-58E9-4682-8326-50CAAB65ED7C")
-                        ILayoutInformationStatics : IInspectable
+                        ILayoutInformationStatics : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetLayoutExceptionElement(
                                 /* [in] */__RPC__in_opt IInspectable * dispatcher,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * element
@@ -8050,8 +8298,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("760315B5-6D4E-4939-AC61-639863CEA36B"), exclusiveto, contract] */
                         MIDL_INTERFACE("760315B5-6D4E-4939-AC61-639863CEA36B")
-                        ILayoutInformationStatics2 : IInspectable
+                        ILayoutInformationStatics2 : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE GetAvailableSize(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * availableSize
@@ -8095,8 +8344,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("FC8946BD-A3A2-4969-8174-25B5D3C28033"), exclusiveto, contract] */
                         MIDL_INTERFACE("FC8946BD-A3A2-4969-8174-25B5D3C28033")
-                        IListViewItemPresenter : IInspectable
+                        IListViewItemPresenter : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectionCheckMarkVisualEnabled(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -8292,8 +8542,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("F5DC5496-E122-4C57-A625-AC4B08FB2D4C"), exclusiveto, contract] */
                         MIDL_INTERFACE("F5DC5496-E122-4C57-A625-AC4B08FB2D4C")
-                        IListViewItemPresenter2 : IInspectable
+                        IListViewItemPresenter2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectedPressedBackground(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * value
                                 ) = 0;
@@ -8369,8 +8620,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("36620013-0390-4E30-AD97-8744404F7010"), exclusiveto, contract] */
                         MIDL_INTERFACE("36620013-0390-4E30-AD97-8744404F7010")
-                        IListViewItemPresenter3 : IInspectable
+                        IListViewItemPresenter3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RevealBackground(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * value
                                 ) = 0;
@@ -8434,8 +8686,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("E0777CFD-F7E4-4A67-9AC0-A994FCACD020"), exclusiveto, contract] */
                         MIDL_INTERFACE("E0777CFD-F7E4-4A67-9AC0-A994FCACD020")
-                        IListViewItemPresenterFactory : IInspectable
+                        IListViewItemPresenterFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -8480,8 +8733,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("6504A55A-15DD-42FB-AA5D-2D8CE2E9C294"), exclusiveto, contract] */
                         MIDL_INTERFACE("6504A55A-15DD-42FB-AA5D-2D8CE2E9C294")
-                        IListViewItemPresenterStatics : IInspectable
+                        IListViewItemPresenterStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectionCheckMarkVisualEnabledProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8599,8 +8853,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("4CB3B945-D24D-42A3-9E83-A86D0618BF1B"), exclusiveto, contract] */
                         MIDL_INTERFACE("4CB3B945-D24D-42A3-9E83-A86D0618BF1B")
-                        IListViewItemPresenterStatics2 : IInspectable
+                        IListViewItemPresenterStatics2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectedPressedBackgroundProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8658,8 +8913,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("C3D3D11E-FA26-4CE7-A4ED-FF948F01B7C0"), exclusiveto, contract] */
                         MIDL_INTERFACE("C3D3D11E-FA26-4CE7-A4ED-FF948F01B7C0")
-                        IListViewItemPresenterStatics3 : IInspectable
+                        IListViewItemPresenterStatics3 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RevealBackgroundProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8711,8 +8967,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("67AF84BF-8279-4686-9326-CD189F27575D"), exclusiveto, contract] */
                         MIDL_INTERFACE("67AF84BF-8279-4686-9326-CD189F27575D")
-                        IListViewItemTemplateSettings : IInspectable
+                        IListViewItemTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DragItemsCount(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -8755,8 +9012,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("4C9A3E04-4827-49D9-8806-093957B0FD21"), exclusiveto, contract] */
                         MIDL_INTERFACE("4C9A3E04-4827-49D9-8806-093957B0FD21")
-                        ILoopingSelector : IInspectable
+                        ILoopingSelector : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShouldLoop(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -8845,8 +9103,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("C69714B9-27C6-4433-9D7C-0DBFB2F4344F"), exclusiveto, contract] */
                         MIDL_INTERFACE("C69714B9-27C6-4433-9D7C-0DBFB2F4344F")
-                        ILoopingSelectorItem : IInspectable
+                        ILoopingSelectorItem : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8886,8 +9145,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("40A9BA70-1011-4778-87F7-6BFD20D6377D"), exclusiveto, contract] */
                         MIDL_INTERFACE("40A9BA70-1011-4778-87F7-6BFD20D6377D")
-                        ILoopingSelectorPanel : IInspectable
+                        ILoopingSelectorPanel : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -8927,8 +9187,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("03E8BAFA-8C7D-4FC5-B92A-F049FB933CC5"), exclusiveto, contract] */
                         MIDL_INTERFACE("03E8BAFA-8C7D-4FC5-B92A-F049FB933CC5")
-                        ILoopingSelectorStatics : IInspectable
+                        ILoopingSelectorStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShouldLoopProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -8968,6 +9229,51 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopin
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutItemTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.MenuFlyoutItemTemplateSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IMenuFlyoutItemTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutItemTemplateSettings";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("56AD1809-3A16-4147-81CB-D0B35C834E0F"), exclusiveto, contract] */
+                        MIDL_INTERFACE("56AD1809-3A16-4147-81CB-D0B35C834E0F")
+                        IMenuFlyoutItemTemplateSettings : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAcceleratorTextMinWidth(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMenuFlyoutItemTemplateSettings=_uuidof(IMenuFlyoutItemTemplateSettings);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutPresenterTemplateSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -8989,8 +9295,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("D68FD00D-629D-4349-AC51-B877C80983B8"), exclusiveto, contract] */
                         MIDL_INTERFACE("D68FD00D-629D-4349-AC51-B877C80983B8")
-                        IMenuFlyoutPresenterTemplateSettings : IInspectable
+                        IMenuFlyoutPresenterTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FlyoutContentMinWidth(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -9033,8 +9340,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("F077B577-39BD-46EE-BDD7-0826BEED71B8"), exclusiveto, contract] */
                         MIDL_INTERFACE("F077B577-39BD-46EE-BDD7-0826BEED71B8")
-                        IOrientedVirtualizingPanel : IInspectable
+                        IOrientedVirtualizingPanel : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanVerticallyScroll(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -9133,8 +9441,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("7B8EAEAF-F92F-439D-9EBF-E9919F56C94D"), exclusiveto, contract] */
                         MIDL_INTERFACE("7B8EAEAF-F92F-439D-9EBF-E9919F56C94D")
-                        IOrientedVirtualizingPanelFactory : IInspectable
+                        IOrientedVirtualizingPanelFactory : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9174,8 +9483,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("E33574EA-1076-44D1-9383-DC24AC5CFF2A"), exclusiveto, contract] */
                         MIDL_INTERFACE("E33574EA-1076-44D1-9383-DC24AC5CFF2A")
-                        IPickerFlyoutBase : IInspectable
+                        IPickerFlyoutBase : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9215,8 +9525,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("7EC27A53-9502-4BEB-B342-00566C8F16B0"), exclusiveto, contract] */
                         MIDL_INTERFACE("7EC27A53-9502-4BEB-B342-00566C8F16B0")
-                        IPickerFlyoutBaseFactory : IInspectable
+                        IPickerFlyoutBaseFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -9261,8 +9572,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("5BFC4F4A-4822-47B4-A958-77C20BA120D3"), exclusiveto, contract] */
                         MIDL_INTERFACE("5BFC4F4A-4822-47B4-A958-77C20BA120D3")
-                        IPickerFlyoutBaseOverrides : IInspectable
+                        IPickerFlyoutBaseOverrides : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE OnConfirmed(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE ShouldShowConfirmationButtons(
                                 /* [retval, out] */__RPC__out boolean * returnValue
@@ -9306,8 +9618,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("5A4D0AC5-89AE-40E5-A7F1-BB702355ADF3"), exclusiveto, contract] */
                         MIDL_INTERFACE("5A4D0AC5-89AE-40E5-A7F1-BB702355ADF3")
-                        IPickerFlyoutBaseStatics : IInspectable
+                        IPickerFlyoutBaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TitleProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9358,8 +9671,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("594572C2-82AA-410B-9E55-FD8E2C98862D"), exclusiveto, contract] */
                         MIDL_INTERFACE("594572C2-82AA-410B-9E55-FD8E2C98862D")
-                        IPivotHeaderItem : IInspectable
+                        IPivotHeaderItem : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9399,8 +9713,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("14308B37-185B-4117-BC77-DDA2EB261B99"), exclusiveto, contract] */
                         MIDL_INTERFACE("14308B37-185B-4117-BC77-DDA2EB261B99")
-                        IPivotHeaderItemFactory : IInspectable
+                        IPivotHeaderItemFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -9445,8 +9760,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("21484EBC-9241-4203-BD37-6C08FB096612"), exclusiveto, contract] */
                         MIDL_INTERFACE("21484EBC-9241-4203-BD37-6C08FB096612")
-                        IPivotHeaderPanel : IInspectable
+                        IPivotHeaderPanel : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9486,8 +9802,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("AD4EBE80-22A9-4CA3-9212-2773B6359FF3"), exclusiveto, contract] */
                         MIDL_INTERFACE("AD4EBE80-22A9-4CA3-9212-2773B6359FF3")
-                        IPivotPanel : IInspectable
+                        IPivotPanel : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -9527,8 +9844,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("62418240-E6D3-4705-A1DC-39156456EE29"), exclusiveto, contract] */
                         MIDL_INTERFACE("62418240-E6D3-4705-A1DC-39156456EE29")
-                        IPopup : IInspectable
+                        IPopup : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Child(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * value
                                 ) = 0;
@@ -9618,8 +9936,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("376A8C4C-AAC0-4B20-966A-0B9364FEB4B5"), exclusiveto, contract] */
                         MIDL_INTERFACE("376A8C4C-AAC0-4B20-966A-0B9364FEB4B5")
-                        IPopup2 : IInspectable
+                        IPopup2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LightDismissOverlayMode(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::LightDismissOverlayMode * value
                                 ) = 0;
@@ -9665,8 +9984,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("5AE3BF1A-6E34-40D6-8A7F-CA822AAF59E3"), exclusiveto, contract] */
                         MIDL_INTERFACE("5AE3BF1A-6E34-40D6-8A7F-CA822AAF59E3")
-                        IPopupStatics : IInspectable
+                        IPopupStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChildProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9724,8 +10044,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("2B9AE9EC-55EF-43B6-B459-12E40FFA4302"), exclusiveto, contract] */
                         MIDL_INTERFACE("2B9AE9EC-55EF-43B6-B459-12E40FFA4302")
-                        IPopupStatics2 : IInspectable
+                        IPopupStatics2 : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LightDismissOverlayModeProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -9768,8 +10089,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("3FE2EA2A-E3F2-4C2B-9488-918D77D2BBE4"), exclusiveto, contract] */
                         MIDL_INTERFACE("3FE2EA2A-E3F2-4C2B-9488-918D77D2BBE4")
-                        IProgressBarTemplateSettings : IInspectable
+                        IProgressBarTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EllipseDiameter(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -9830,8 +10152,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("B9B675EC-C723-42E6-83E9-9826272BDC0E"), exclusiveto, contract] */
                         MIDL_INTERFACE("B9B675EC-C723-42E6-83E9-9826272BDC0E")
-                        IProgressRingTemplateSettings : IInspectable
+                        IProgressRingTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EllipseDiameter(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -9880,8 +10203,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("FA002C1A-494E-46CF-91D4-E14A8D798675"), exclusiveto, contract] */
                         MIDL_INTERFACE("FA002C1A-494E-46CF-91D4-E14A8D798675")
-                        IRangeBase : IInspectable
+                        IRangeBase : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Minimum(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -9958,8 +10282,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("389B7C71-5220-42B2-9992-2690C1A67030"), exclusiveto, contract] */
                         MIDL_INTERFACE("389B7C71-5220-42B2-9992-2690C1A67030")
-                        IRangeBaseFactory : IInspectable
+                        IRangeBaseFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10004,8 +10329,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("4291AF39-7F0B-4BC2-99C4-06E7062682D8"), exclusiveto, contract] */
                         MIDL_INTERFACE("4291AF39-7F0B-4BC2-99C4-06E7062682D8")
-                        IRangeBaseOverrides : IInspectable
+                        IRangeBaseOverrides : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE OnMinimumChanged(
                                 /* [in] */DOUBLE oldMinimum,
                                 /* [in] */DOUBLE newMinimum
@@ -10057,8 +10383,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("67EF17E1-FE37-474F-9E97-3B5E0B30F2E0"), exclusiveto, contract] */
                         MIDL_INTERFACE("67EF17E1-FE37-474F-9E97-3B5E0B30F2E0")
-                        IRangeBaseStatics : IInspectable
+                        IRangeBaseStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinimumProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10113,8 +10440,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("A1921777-D5C1-4F9C-A7B0-0401B7E6DC5C"), exclusiveto, contract] */
                         MIDL_INTERFACE("A1921777-D5C1-4F9C-A7B0-0401B7E6DC5C")
-                        IRangeBaseValueChangedEventArgs : IInspectable
+                        IRangeBaseValueChangedEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OldValue(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -10160,8 +10488,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("02200DF9-021A-484A-A93B-0F31020314E5"), exclusiveto, contract] */
                         MIDL_INTERFACE("02200DF9-021A-484A-A93B-0F31020314E5")
-                        IRepeatButton : IInspectable
+                        IRepeatButton : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Delay(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -10213,8 +10542,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("3914AC4E-F462-4F73-8197-E8846639C682"), exclusiveto, contract] */
                         MIDL_INTERFACE("3914AC4E-F462-4F73-8197-E8846639C682")
-                        IRepeatButtonStatics : IInspectable
+                        IRepeatButtonStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DelayProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10260,8 +10590,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("F57AE6CA-D1A6-4B90-A4E9-54DF1BA8D2EC"), exclusiveto, contract] */
                         MIDL_INTERFACE("F57AE6CA-D1A6-4B90-A4E9-54DF1BA8D2EC")
-                        IScrollBar : IInspectable
+                        IScrollBar : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Orientation(
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Orientation * value
                                 ) = 0;
@@ -10326,8 +10657,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("45EAF38D-B814-48CF-97F2-539EB16DFD4D"), exclusiveto, contract] */
                         MIDL_INTERFACE("45EAF38D-B814-48CF-97F2-539EB16DFD4D")
-                        IScrollBarStatics : IInspectable
+                        IScrollBarStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OrientationProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10376,8 +10708,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("C57E5168-3AFE-448D-B752-2F364C75D743"), exclusiveto, contract] */
                         MIDL_INTERFACE("C57E5168-3AFE-448D-B752-2F364C75D743")
-                        IScrollEventArgs : IInspectable
+                        IScrollEventArgs : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NewValue(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -10420,8 +10753,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("1B5D1336-E61B-4D51-BE41-FD8DDC55C58C"), contract] */
                         MIDL_INTERFACE("1B5D1336-E61B-4D51-BE41-FD8DDC55C58C")
-                        IScrollSnapPointsInfo : IInspectable
+                        IScrollSnapPointsInfo : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AreHorizontalSnapPointsRegular(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -10492,8 +10826,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("E30EB3A5-B36B-42DC-8527-CD25136C083C"), exclusiveto, contract] */
                         MIDL_INTERFACE("E30EB3A5-B36B-42DC-8527-CD25136C083C")
-                        ISelector : IInspectable
+                        ISelector : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectedIndex(
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
@@ -10570,8 +10905,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("C9BE2995-D136-4600-B187-8AD56079B48A"), exclusiveto, contract] */
                         MIDL_INTERFACE("C9BE2995-D136-4600-B187-8AD56079B48A")
-                        ISelectorFactory : IInspectable
+                        ISelectorFactory : public IInspectable
                         {
+                        public:
                             
                         };
 
@@ -10611,8 +10947,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("541C8D6C-0283-4581-B945-2A64C28A0646"), exclusiveto, contract] */
                         MIDL_INTERFACE("541C8D6C-0283-4581-B945-2A64C28A0646")
-                        ISelectorItem : IInspectable
+                        ISelectorItem : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSelected(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -10658,8 +10995,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("B9363945-C86A-4B1E-9440-1879378D5313"), exclusiveto, contract] */
                         MIDL_INTERFACE("B9363945-C86A-4B1E-9440-1879378D5313")
-                        ISelectorItemFactory : IInspectable
+                        ISelectorItemFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -10704,8 +11042,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("2A353AB8-CBE9-4303-92E7-C8906E218392"), exclusiveto, contract] */
                         MIDL_INTERFACE("2A353AB8-CBE9-4303-92E7-C8906E218392")
-                        ISelectorItemStatics : IInspectable
+                        ISelectorItemStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSelectedProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10748,8 +11087,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("13300B06-BD10-4E09-BFF7-71EFB8BBB42B"), exclusiveto, contract] */
                         MIDL_INTERFACE("13300B06-BD10-4E09-BFF7-71EFB8BBB42B")
-                        ISelectorStatics : IInspectable
+                        ISelectorStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SelectedIndexProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -10808,8 +11148,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("BCF14C10-CEA7-43F1-9D68-57605DED69D4"), exclusiveto, contract] */
                         MIDL_INTERFACE("BCF14C10-CEA7-43F1-9D68-57605DED69D4")
-                        ISettingsFlyoutTemplateSettings : IInspectable
+                        ISettingsFlyoutTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HeaderBackground(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * value
                                 ) = 0;
@@ -10867,8 +11208,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("C16AB5A7-4996-4443-B199-6B6B89124EAB"), exclusiveto, contract] */
                         MIDL_INTERFACE("C16AB5A7-4996-4443-B199-6B6B89124EAB")
-                        ISplitViewTemplateSettings : IInspectable
+                        ISplitViewTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OpenPaneLength(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -10926,8 +11268,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("E8B2B281-0D6A-45CF-B333-2402B037F099"), exclusiveto, contract] */
                         MIDL_INTERFACE("E8B2B281-0D6A-45CF-B333-2402B037F099")
-                        IThumb : IInspectable
+                        IThumb : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsDragging(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
@@ -10992,8 +11335,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("955024EB-36F3-4672-A186-BAAF626AC4AD"), exclusiveto, contract] */
                         MIDL_INTERFACE("955024EB-36F3-4672-A186-BAAF626AC4AD")
-                        IThumbStatics : IInspectable
+                        IThumbStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsDraggingProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -11036,8 +11380,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("994683FA-F1F6-487D-A5AC-C15921BFA995"), exclusiveto, contract] */
                         MIDL_INTERFACE("994683FA-F1F6-487D-A5AC-C15921BFA995")
-                        ITickBar : IInspectable
+                        ITickBar : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Fill(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * value
                                 ) = 0;
@@ -11083,8 +11428,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("2C6D7E40-799D-4A54-BE09-1FEFC61D018E"), exclusiveto, contract] */
                         MIDL_INTERFACE("2C6D7E40-799D-4A54-BE09-1FEFC61D018E")
-                        ITickBarStatics : IInspectable
+                        ITickBarStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FillProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -11127,8 +11473,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("589877FB-0FC7-4036-9D8B-127DFA75C16D"), exclusiveto, contract] */
                         MIDL_INTERFACE("589877FB-0FC7-4036-9D8B-127DFA75C16D")
-                        IToggleButton : IInspectable
+                        IToggleButton : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsChecked(
                                 /* [retval, out] */__RPC__deref_out_opt __FIReference_1_boolean * * value
                                 ) = 0;
@@ -11201,8 +11548,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("D56AA2FC-FC7F-449C-9855-7A1055D668A8"), exclusiveto, contract] */
                         MIDL_INTERFACE("D56AA2FC-FC7F-449C-9855-7A1055D668A8")
-                        IToggleButtonFactory : IInspectable
+                        IToggleButtonFactory : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */__RPC__in_opt IInspectable * outer,
                                 /* [out] */__RPC__deref_out_opt IInspectable * * inner,
@@ -11247,8 +11595,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("D20E4C28-F18B-491A-9A45-F1A04A9369A4"), exclusiveto, contract] */
                         MIDL_INTERFACE("D20E4C28-F18B-491A-9A45-F1A04A9369A4")
-                        IToggleButtonOverrides : IInspectable
+                        IToggleButtonOverrides : public IInspectable
                         {
+                        public:
                             virtual HRESULT STDMETHODCALLTYPE OnToggle(void) = 0;
                             
                         };
@@ -11289,8 +11638,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("AF1EAB12-0128-4F67-9C5A-82320C445D19"), exclusiveto, contract] */
                         MIDL_INTERFACE("AF1EAB12-0128-4F67-9C5A-82320C445D19")
-                        IToggleButtonStatics : IInspectable
+                        IToggleButtonStatics : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsCheckedProperty(
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                                 ) = 0;
@@ -11336,8 +11686,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("02B7BDCD-628A-4363-86E0-51D6E2E89E58"), exclusiveto, contract] */
                         MIDL_INTERFACE("02B7BDCD-628A-4363-86E0-51D6E2E89E58")
-                        IToggleSwitchTemplateSettings : IInspectable
+                        IToggleSwitchTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KnobCurrentToOnOffset(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -11401,8 +11752,9 @@ namespace ABI {
                     namespace Primitives {
                         /* [object, uuid("D4388247-0EC4-4506-AFFD-AFAC2225B48C"), exclusiveto, contract] */
                         MIDL_INTERFACE("D4388247-0EC4-4506-AFFD-AFAC2225B48C")
-                        IToolTipTemplateSettings : IInspectable
+                        IToolTipTemplateSettings : public IInspectable
                         {
+                        public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FromHorizontalOffset(
                                 /* [retval, out] */__RPC__out DOUBLE * value
                                 ) = 0;
@@ -11427,6 +11779,30 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTi
 
 /*
  *
+ * Class Windows.UI.Xaml.Controls.Primitives.AppBarButtonTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.IAppBarButtonTemplateSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_AppBarButtonTemplateSettings_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_AppBarButtonTemplateSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_AppBarButtonTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.AppBarButtonTemplateSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -11447,6 +11823,30 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTi
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_AppBarTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.IAppBarToggleButtonTemplateSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_AppBarToggleButtonTemplateSettings_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_AppBarToggleButtonTemplateSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_AppBarToggleButtonTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -12112,6 +12512,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Controls.Primitives.MenuFlyoutItemTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutItemTemplateSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_MenuFlyoutItemTemplateSettings_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_MenuFlyoutItemTemplateSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_MenuFlyoutItemTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.MenuFlyoutItemTemplateSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -12766,11 +13190,23 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEvent
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase_FWD_DEFINED__
@@ -13137,6 +13573,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSele
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorStatics __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorStatics;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_FWD_DEFINED__
@@ -13752,6 +14194,7 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIColorChangedEventArgs _
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs_INTERFACE_DEFINED__
 
@@ -13798,6 +14241,7 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__C
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs_INTERFACE_DEFINED__
 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
@@ -15395,6 +15839,12 @@ typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CGeneratorPositi
 
 
 
+
+
+
+
+
+
 /*
  *
  * Struct Windows.UI.Xaml.Controls.Primitives.AnimationDirection
@@ -16057,6 +16507,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScroll
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IAppBarButtonTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.AppBarButtonTemplateSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IAppBarButtonTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.IAppBarButtonTemplateSettings";
+/* [object, uuid("CBC9B39D-0C95-4951-BFF2-13963691C366"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettingsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyboardAcceleratorTextMinWidth )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettingsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettingsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_get_KeyboardAcceleratorTextMinWidth(This,value) \
+    ( (This)->lpVtbl->get_KeyboardAcceleratorTextMinWidth(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -16188,6 +16731,99 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSetti
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IAppBarToggleButtonTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IAppBarToggleButtonTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.IAppBarToggleButtonTemplateSettings";
+/* [object, uuid("AAF99C48-D8F4-40D9-9FA3-3A64F0FEC5D8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettingsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyboardAcceleratorTextMinWidth )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettingsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettingsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_get_KeyboardAcceleratorTextMinWidth(This,value) \
+    ( (This)->lpVtbl->get_KeyboardAcceleratorTextMinWidth(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIAppBarToggleButtonTemplateSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -24195,6 +24831,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopin
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutItemTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.MenuFlyoutItemTemplateSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IMenuFlyoutItemTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutItemTemplateSettings";
+/* [object, uuid("56AD1809-3A16-4147-81CB-D0B35C834E0F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettingsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyboardAcceleratorTextMinWidth )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettingsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettingsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_get_KeyboardAcceleratorTextMinWidth(This,value) \
+    ( (This)->lpVtbl->get_KeyboardAcceleratorTextMinWidth(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutPresenterTemplateSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -29499,6 +30228,30 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTi
 
 /*
  *
+ * Class Windows.UI.Xaml.Controls.Primitives.AppBarButtonTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.IAppBarButtonTemplateSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_AppBarButtonTemplateSettings_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_AppBarButtonTemplateSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_AppBarButtonTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.AppBarButtonTemplateSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -29519,6 +30272,30 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTi
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_AppBarTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.IAppBarToggleButtonTemplateSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_AppBarToggleButtonTemplateSettings_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_AppBarToggleButtonTemplateSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_AppBarToggleButtonTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -30180,6 +30957,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_LoopingSelectorPanel[] = L"Windows.UI.Xaml.Controls.Primitives.LoopingSelectorPanel";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Controls.Primitives.MenuFlyoutItemTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutItemTemplateSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_MenuFlyoutItemTemplateSettings_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_MenuFlyoutItemTemplateSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_MenuFlyoutItemTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.MenuFlyoutItemTemplateSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
 
 /*
