@@ -75,6 +75,8 @@ typedef enum _UCSI_USB_OPERATION_ROLE {
     UcsiUsbOperationRoleDfp = 0x1,
     UcsiUsbOperationRoleUfp = 0x2,
     UcsiUsbOperationRoleAcceptSwap = 0x4,
+    UcsiUsbOperationRoleDfpAcceptSwap = UcsiUsbOperationRoleDfp | UcsiUsbOperationRoleAcceptSwap,
+    UcsiUsbOperationRoleUfpAcceptSwap = UcsiUsbOperationRoleUfp | UcsiUsbOperationRoleAcceptSwap,
 } UCSI_USB_OPERATION_ROLE;
 
 typedef enum _UCSI_POWER_DIRECTION_MODE {
@@ -87,6 +89,8 @@ typedef enum _UCSI_POWER_DIRECTION_ROLE {
     UcsiPowerDirectionRoleProvider = 0x1,
     UcsiPowerDirectionRoleConsumer = 0x2,
     UcsiPowerDirectionRoleAcceptSwap = 0x4,
+    UcsiPowerDirectionRoleProviderAcceptSwap = UcsiPowerDirectionRoleProvider | UcsiPowerDirectionRoleAcceptSwap,
+    UcsiPowerDirectionRoleConsumerAcceptSwap = UcsiPowerDirectionRoleConsumer | UcsiPowerDirectionRoleAcceptSwap,
 } UCSI_POWER_DIRECTION_ROLE;
 
 typedef enum _UCSI_GET_ALTERNATE_MODES_RECIPIENT {
@@ -146,7 +150,7 @@ typedef enum _UCSI_USB_TYPEC_CURRENT {
     UcsiTypeCCurrentPpmDefinedDefault = 0,
     UcsiTypeCCurrent3000mA = 1,
     UcsiTypeCCurrent1500mA = 2,
-    UcsiTypeCCurrentUsbTypeCDefault = 3
+    UcsiTypeCCurrentUsbTypeCDefault = 3,
 } UCSI_USB_TYPEC_CURRENT;
 
 

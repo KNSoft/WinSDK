@@ -87,6 +87,17 @@ NET_BUFFER_LIST_UDP_COALESCED_SEG_SIZE(
 
 #endif // defined(NDIS_INCLUDE_LEGACY_NAMES) || !defined(__cplusplus)
 
+inline
+BOOLEAN
+NET_BUFFER_LIST_IS_URO_SET(
+    _In_ NET_BUFFER_LIST const *Nbl
+    )
+{
+    NDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO const *Info = (NDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO const *)
+        &Nbl->NetBufferListInfo[UdpRecvSegCoalesceOffloadInfo];
+    return ((UINT_PTR)Info->Value & 0xFFFFFFFF) != 0;
+}
+
 #endif // NDIS_SUPPORT_NDIS684
 
 EXTERN_C_END

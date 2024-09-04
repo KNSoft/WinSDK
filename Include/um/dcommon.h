@@ -109,11 +109,19 @@ enum DWRITE_GLYPH_IMAGE_FORMATS
     /// The glyph has raw 32-bit premultiplied BGRA data.
     /// </summary>
     DWRITE_GLYPH_IMAGE_FORMATS_PREMULTIPLIED_B8G8R8A8 = 0x00000080,
+
+    /// <summary>
+    /// The glyph is represented by a tree of paint elements in the
+    /// font's COLR table.
+    /// </summary>
+    DWRITE_GLYPH_IMAGE_FORMATS_COLR_PAINT_TREE = 0x00000100,
 };
 
 #ifdef DEFINE_ENUM_FLAG_OPERATORS
 DEFINE_ENUM_FLAG_OPERATORS(DWRITE_GLYPH_IMAGE_FORMATS);
 #endif
+
+#define DWRITE_GLYPH_IMAGE_FORMATS_COLR_PAINT_TREE_DEFINED
 
 #endif
 
@@ -123,23 +131,23 @@ DEFINE_ENUM_FLAG_OPERATORS(DWRITE_GLYPH_IMAGE_FORMATS);
 /// </summary>
 typedef enum D2D1_ALPHA_MODE
 {
-        
+
         /// <summary>
         /// Alpha mode should be determined implicitly. Some target surfaces do not supply
         /// or imply this information in which case alpha must be specified.
         /// </summary>
         D2D1_ALPHA_MODE_UNKNOWN = 0,
-        
+
         /// <summary>
         /// Treat the alpha as premultipled.
         /// </summary>
         D2D1_ALPHA_MODE_PREMULTIPLIED = 1,
-        
+
         /// <summary>
         /// Opacity is in the 'A' component only.
         /// </summary>
         D2D1_ALPHA_MODE_STRAIGHT = 2,
-        
+
         /// <summary>
         /// Ignore any alpha channel information.
         /// </summary>
@@ -307,17 +315,17 @@ typedef struct D2D_MATRIX_3X2_F
             /// Vertical shift (always orthogonal regardless of rotation)
             /// </summary>
             FLOAT dy;
-        };
+        } DUMMYSTRUCTNAME;
 
         struct
         {
             FLOAT _11, _12;
             FLOAT _21, _22;
             FLOAT _31, _32;
-        };
+        } DUMMYSTRUCTNAME2;
 
         FLOAT m[3][2];
-    };
+    } DUMMYUNIONNAME;
 
 } D2D_MATRIX_3X2_F;
 
@@ -336,10 +344,10 @@ typedef struct D2D_MATRIX_4X3_F
             FLOAT _21, _22, _23;
             FLOAT _31, _32, _33;
             FLOAT _41, _42, _43;
-        };
+        } DUMMYSTRUCTNAME;
 
         FLOAT m[4][3];
-    };
+    } DUMMYUNIONNAME;
 
 } D2D_MATRIX_4X3_F;
 
@@ -351,16 +359,16 @@ typedef struct D2D_MATRIX_4X4_F
 {
     union
     {
-        struct 
+        struct
         {
             FLOAT _11, _12, _13, _14;
             FLOAT _21, _22, _23, _24;
             FLOAT _31, _32, _33, _34;
             FLOAT _41, _42, _43, _44;
-        };
+        } DUMMYSTRUCTNAME;
 
         FLOAT m[4][4];
-    };
+    } DUMMYUNIONNAME;
 
 } D2D_MATRIX_4X4_F;
 
@@ -372,17 +380,17 @@ typedef struct D2D_MATRIX_5X4_F
 {
     union
     {
-        struct 
+        struct
         {
             FLOAT _11, _12, _13, _14;
             FLOAT _21, _22, _23, _24;
             FLOAT _31, _32, _33, _34;
             FLOAT _41, _42, _43, _44;
             FLOAT _51, _52, _53, _54;
-        };
+        } DUMMYSTRUCTNAME;
 
         FLOAT m[5][4];
-    };
+    } DUMMYUNIONNAME;
 
 } D2D_MATRIX_5X4_F;
 

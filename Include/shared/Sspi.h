@@ -373,6 +373,8 @@ typedef struct _SecBufferDesc {
 #define SECBUFFER_SUBSCRIBE_GENERIC_TLS_EXTENSION 26 // Buffer for subscribing to generic TLS extensions.
 #define SECBUFFER_FLAGS                         27  // ISC/ASC REQ Flags
 #define SECBUFFER_TRAFFIC_SECRETS               28  // Message sequence lengths and corresponding traffic secrets.
+#define SECBUFFER_CERTIFICATE_REQUEST_CONTEXT   29  // TLS 1.3 certificate request context.
+#define SECBUFFER_CHANNEL_BINDINGS_RESULT       30  // Output buffer for Channel Bindings Audit
 
 #define SECBUFFER_ATTRMASK                      0xF0000000
 #define SECBUFFER_READONLY                      0x80000000  // Buffer is read-only, no checksum
@@ -398,6 +400,43 @@ typedef struct _SEC_CHANNEL_BINDINGS {
     unsigned long  dwApplicationDataOffset;
 } SEC_CHANNEL_BINDINGS, * PSEC_CHANNEL_BINDINGS ;
 
+#define SEC_CHANNEL_BINDINGS_EX_MAGIC 'XEBC'
+
+typedef struct _SEC_CHANNEL_BINDINGS_EX {
+    unsigned long magicNumber; // contains SEC_CHANNEL_BINDINGS_VERSION_2.  distinguish ex buffer from normal channel bindings buffer. Shouldn't collide with any of assigned dwInitiatorAddrType values
+    unsigned long flags; // audit flag is set to indicate if audit is needed 
+    unsigned long cbHeaderLength;
+    unsigned long cbStructureLength;
+    unsigned long dwInitiatorAddrType;
+    unsigned long cbInitiatorLength;
+    unsigned long dwInitiatorOffset;
+    unsigned long dwAcceptorAddrType;
+    unsigned long cbAcceptorLength;
+    unsigned long dwAcceptorOffset;
+    unsigned long cbApplicationDataLength;
+    unsigned long dwApplicationDataOffset;
+} SEC_CHANNEL_BINDINGS_EX, * PSEC_CHANNEL_BINDINGS_EX ;
+
+#define SEC_CHANNEL_BINDINGS_AUDIT_BINDINGS 0x1
+
+#define SEC_CHANNEL_BINDINGS_VALID_FLAGS SEC_CHANNEL_BINDINGS_AUDIT_BINDINGS
+
+typedef struct _SEC_CHANNEL_BINDINGS_RESULT {
+    unsigned long flags;
+}SEC_CHANNEL_BINDINGS_RESULT, *PSEC_CHANNEL_BINDINGS_RESULT;
+
+#define SEC_CHANNEL_BINDINGS_RESULT_CLIENT_SUPPORT 0x1 // Auth package indicates client versions should support bindings
+#define SEC_CHANNEL_BINDINGS_RESULT_ABSENT 0x2 // The bindings are omitted or all zeroes
+#define SEC_CHANNEL_BINDINGS_RESULT_NOTVALID_MISMATCH 0x4 // The channel binding hash was incorrect
+#define SEC_CHANNEL_BINDINGS_RESULT_NOTVALID_MISSING 0x8 // Missing channel bindings are not allowed for this client
+#define SEC_CHANNEL_BINDINGS_RESULT_VALID_MATCHED 0x10 // The client and server bindings match
+#define SEC_CHANNEL_BINDINGS_RESULT_VALID_PROXY 0x20 // ASC_REQ_PROXY_BINDINGS required the client to provide a binding
+#define SEC_CHANNEL_BINDINGS_RESULT_VALID_MISSING 0x40 // Client permitted by ASC_REQ_ALLOW_MISSING_BINDINGS
+
+#define SEC_CHANNEL_BINDINGS_RESULT_VALID (SEC_CHANNEL_BINDINGS_RESULT_VALID_MATCHED | SEC_CHANNEL_BINDINGS_RESULT_VALID_PROXY | \
+    SEC_CHANNEL_BINDINGS_RESULT_VALID_MISSING)
+    
+#define SEC_CHANNEL_BINDINGS_RESULT_NOTVALID (SEC_CHANNEL_BINDINGS_RESULT_NOTVALID_MISMATCH | SEC_CHANNEL_BINDINGS_RESULT_NOTVALID_MISSING)
 
 typedef enum _SEC_APPLICATION_PROTOCOL_NEGOTIATION_EXT
 {
@@ -453,6 +492,12 @@ typedef struct _SEC_DTLS_MTU {
 typedef struct _SEC_FLAGS {
     unsigned long long Flags; // The caller sets ISC/ASC REQ flags; the lower 32 bits are reserved, must be set to 0.
 } SEC_FLAGS, *PSEC_FLAGS;
+
+typedef struct _SEC_CERTIFICATE_REQUEST_CONTEXT {
+    unsigned char cbCertificateRequestContext; // Size in bytes of the rgCertificateRequestContext array.
+    unsigned char rgCertificateRequestContext[ANYSIZE_ARRAY]; // The TLS 1.3 certificate request context.
+} SEC_CERTIFICATE_REQUEST_CONTEXT, *PSEC_CERTIFICATE_REQUEST_CONTEXT;
+
 
 //
 //  Traffic secret types:
@@ -3427,7 +3472,7 @@ SECURITY_STATUS
 SEC_ENTRY
 SspiCopyAuthIdentity(
     _In_ PSEC_WINNT_AUTH_IDENTITY_OPAQUE AuthData,
-    _Outptr_ PSEC_WINNT_AUTH_IDENTITY_OPAQUE* AuthDataCopy
+    _Outptr_ _When_(return != 0, __drv_allocatesMem(Mem)) PSEC_WINNT_AUTH_IDENTITY_OPAQUE* AuthDataCopy
     );
 
 //
@@ -3438,7 +3483,7 @@ SspiCopyAuthIdentity(
 VOID
 SEC_ENTRY
 SspiFreeAuthIdentity(
-    _In_opt_ PSEC_WINNT_AUTH_IDENTITY_OPAQUE AuthData
+    _In_opt_ __drv_freesMem(Mem) PSEC_WINNT_AUTH_IDENTITY_OPAQUE AuthData
     );
 
 VOID
@@ -3464,7 +3509,7 @@ SspiEncodeStringsAsAuthIdentity(
     _In_opt_ PCWSTR pszUserName,
     _In_opt_ PCWSTR pszDomainName,
     _In_opt_ PCWSTR pszPackedCredentialsString,
-    _Outptr_ PSEC_WINNT_AUTH_IDENTITY_OPAQUE* ppAuthIdentity
+    _Outptr_ _When_(return != 0, __drv_allocatesMem(Mem)) PSEC_WINNT_AUTH_IDENTITY_OPAQUE* ppAuthIdentity
     );
 
 SECURITY_STATUS
@@ -3498,7 +3543,7 @@ SEC_ENTRY
 SspiUnmarshalAuthIdentity(
     _In_ unsigned long AuthIdentityLength,
     _In_reads_bytes_(AuthIdentityLength) char* AuthIdentityByteArray,
-    _Outptr_ PSEC_WINNT_AUTH_IDENTITY_OPAQUE* ppAuthIdentity
+    _Outptr_ _When_(return != 0, __drv_allocatesMem(Mem)) PSEC_WINNT_AUTH_IDENTITY_OPAQUE* ppAuthIdentity
     );
 
 #endif // NTDDI_VERSION
@@ -3554,6 +3599,15 @@ SspiExcludePackage(
 #define SEC_WINNT_AUTH_IDENTITY_ONLY            0x8     // these credentials are for identity only - no PAC needed
 
 // end_ntifs
+
+// Set the requested flags in the channel bindings.  pBindings->Bindings may change if the structure gets
+// larger, but the caller's obligation to call FreeContextBuffer is unchanged.
+SECURITY_STATUS
+SEC_ENTRY
+SspiSetChannelBindingFlags(
+    _Inout_ SecPkgContext_Bindings* pBindings,
+    unsigned long flags
+    );
 
 //
 // Routines for manipulating packages

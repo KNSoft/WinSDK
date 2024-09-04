@@ -3,14 +3,14 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0626 */
+ /* File created by MIDL compiler version 8.01.0628 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
-#define __REQUIRED_RPCNDR_H_VERSION__ 500
+#define __REQUIRED_RPCNDR_H_VERSION__ 501
 #endif
 
 /* verify that the <rpcsal.h> version is high enough to compile this file*/
@@ -34,7 +34,7 @@
 #endif
 
 #ifndef DECLSPEC_XFGVIRT
-#if _CONTROL_FLOW_GUARD_XFG
+#if defined(_CONTROL_FLOW_GUARD_XFG)
 #define DECLSPEC_XFGVIRT(base, func) __declspec(xfg_virtual(base, func))
 #else
 #define DECLSPEC_XFGVIRT(base, func)
@@ -331,7 +331,8 @@ enum _ATTACH_VIRTUAL_DISK_FLAG
         ATTACH_VIRTUAL_DISK_FLAG_NON_PNP	= 0x40,
         ATTACH_VIRTUAL_DISK_FLAG_RESTRICTED_RANGE	= 0x80,
         ATTACH_VIRTUAL_DISK_FLAG_SINGLE_PARTITION	= 0x100,
-        ATTACH_VIRTUAL_DISK_FLAG_REGISTER_VOLUME	= 0x200
+        ATTACH_VIRTUAL_DISK_FLAG_REGISTER_VOLUME	= 0x200,
+        ATTACH_VIRTUAL_DISK_FLAG_AT_BOOT	= 0x400
     } 	ATTACH_VIRTUAL_DISK_FLAG;
 
 DWORD __stdcall AttachVirtualDisk( 

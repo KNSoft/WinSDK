@@ -92,12 +92,16 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xe0000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xf0000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 #define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_PROFILE_PROFILEHARDWARETOKENCONTRACT_VERSION)
 #define WINDOWS_SYSTEM_PROFILE_PROFILEHARDWARETOKENCONTRACT_VERSION 0x10000
@@ -262,6 +266,21 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoPropertiesStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                interface IPlatformAutomaticAppSignInManagerStatics;
+            } /* Profile */
+        } /* System */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics ABI::Windows::System::Profile::IPlatformAutomaticAppSignInManagerStatics
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics_FWD_DEFINED__
 namespace ABI {
@@ -321,6 +340,21 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 ABI::Windows::System::Profile::ISharedModeSettingsStatics2
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                interface ISmartAppControlPolicyStatics;
+            } /* Profile */
+        } /* System */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics ABI::Windows::System::Profile::ISmartAppControlPolicyStatics
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_FWD_DEFINED__
@@ -856,6 +890,16 @@ namespace ABI {
     namespace Windows {
         namespace System {
             namespace Profile {
+                typedef enum PlatformAutomaticAppSignInPolicy : int PlatformAutomaticAppSignInPolicy;
+            } /* Profile */
+        } /* System */
+    } /* Windows */
+} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
                 typedef enum PlatformDataCollectionLevel : int PlatformDataCollectionLevel;
             } /* Profile */
         } /* System */
@@ -921,6 +965,30 @@ namespace ABI {
         } /* System */
     } /* Windows */
 } /* ABI */
+
+/*
+ *
+ * Struct Windows.System.Profile.PlatformAutomaticAppSignInPolicy
+ *
+ * Introduced to Windows.System.Profile.PlatformAutomaticAppSignInContract in version 1.0
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                enum PlatformAutomaticAppSignInPolicy : int
+                {
+                    PlatformAutomaticAppSignInPolicy_Unknown = 0,
+                    PlatformAutomaticAppSignInPolicy_PermissionRequired = 1,
+                    PlatformAutomaticAppSignInPolicy_AlwaysAllowed = 2,
+                };
+            } /* Profile */
+        } /* System */
+    } /* Windows */
+} /* ABI */
+#endif // WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
 
 /*
  *
@@ -1427,6 +1495,42 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoProper
 
 /*
  *
+ * Interface Windows.System.Profile.IPlatformAutomaticAppSignInManagerStatics
+ *
+ * Introduced to Windows.System.Profile.PlatformAutomaticAppSignInContract in version 1.0
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.PlatformAutomaticAppSignInManager
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_IPlatformAutomaticAppSignInManagerStatics[] = L"Windows.System.Profile.IPlatformAutomaticAppSignInManagerStatics";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                MIDL_INTERFACE("1ac9afce-8dd5-5c2d-b420-767d1f3b7d03")
+                IPlatformAutomaticAppSignInManagerStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE get_Policy(
+                        ABI::Windows::System::Profile::PlatformAutomaticAppSignInPolicy* value
+                        ) = 0;
+                };
+
+                extern MIDL_CONST_ID IID& IID_IPlatformAutomaticAppSignInManagerStatics = _uuidof(IPlatformAutomaticAppSignInManagerStatics);
+            } /* Profile */
+        } /* System */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+
+/*
+ *
  * Interface Windows.System.Profile.IPlatformDiagnosticsAndUsageDataSettingsStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -1585,6 +1689,49 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsSta
 
 /*
  *
+ * Interface Windows.System.Profile.ISmartAppControlPolicyStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.SmartAppControlPolicy
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_ISmartAppControlPolicyStatics[] = L"Windows.System.Profile.ISmartAppControlPolicyStatics";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                MIDL_INTERFACE("5ff8c75b-073e-5015-8d98-5ff224180a0b")
+                ISmartAppControlPolicyStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
+                        boolean* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE add_Changed(
+                        __FIEventHandler_1_IInspectable* handler,
+                        EventRegistrationToken* token
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE remove_Changed(
+                        EventRegistrationToken token
+                        ) = 0;
+                };
+
+                extern MIDL_CONST_ID IID& IID_ISmartAppControlPolicyStatics = _uuidof(ISmartAppControlPolicyStatics);
+            } /* Profile */
+        } /* System */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
+
+/*
+ *
  * Interface Windows.System.Profile.ISystemIdentificationInfo
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -1679,7 +1826,7 @@ namespace ABI {
     namespace Windows {
         namespace System {
             namespace Profile {
-                MIDL_INTERFACE("2c9620a8-1d88-5e2d-a324-a543af4247ee")
+                MIDL_INTERFACE("b8366a4b-fb6a-4571-be0a-9a0f67954123")
                 ISystemSetupInfoStatics : public IInspectable
                 {
                 public:
@@ -1941,6 +2088,27 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.System.Profile.PlatformAutomaticAppSignInManager
+ *
+ * Introduced to Windows.System.Profile.PlatformAutomaticAppSignInContract in version 1.0
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.IPlatformAutomaticAppSignInManagerStatics interface starting with version 1.0 of the Windows.System.Profile.PlatformAutomaticAppSignInContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_System_Profile_PlatformAutomaticAppSignInManager_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_PlatformAutomaticAppSignInManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_PlatformAutomaticAppSignInManager[] = L"Windows.System.Profile.PlatformAutomaticAppSignInManager";
+#endif
+#endif // WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+
+/*
+ *
  * Class Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -2000,6 +2168,27 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_SharedModeSettings[] = L"Windows.System.Profile.SharedModeSettings";
 #endif
 #endif // WINDOWS_SYSTEM_PROFILE_PROFILESHAREDMODECONTRACT_VERSION >= 0x10000
+
+/*
+ *
+ * Class Windows.System.Profile.SmartAppControlPolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.ISmartAppControlPolicyStatics interface starting with version 15.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
+#ifndef RUNTIMECLASS_Windows_System_Profile_SmartAppControlPolicy_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_SmartAppControlPolicy_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_SmartAppControlPolicy[] = L"Windows.System.Profile.SmartAppControlPolicy";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
 
 /*
  *
@@ -2160,6 +2349,12 @@ typedef interface __x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoPropertiesS
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoPropertiesStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics;
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics __x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics;
@@ -2183,6 +2378,12 @@ typedef interface __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics 
 typedef interface __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2;
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics;
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_FWD_DEFINED__
@@ -3349,6 +3550,8 @@ typedef interface __x_ABI_CWindows_CSystem_CIUser __x_ABI_CWindows_CSystem_CIUse
 
 #endif // ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
 
+typedef enum __x_ABI_CWindows_CSystem_CProfile_CPlatformAutomaticAppSignInPolicy __x_ABI_CWindows_CSystem_CProfile_CPlatformAutomaticAppSignInPolicy;
+
 typedef enum __x_ABI_CWindows_CSystem_CProfile_CPlatformDataCollectionLevel __x_ABI_CWindows_CSystem_CProfile_CPlatformDataCollectionLevel;
 
 typedef enum __x_ABI_CWindows_CSystem_CProfile_CSystemIdentificationSource __x_ABI_CWindows_CSystem_CProfile_CSystemIdentificationSource;
@@ -3356,6 +3559,22 @@ typedef enum __x_ABI_CWindows_CSystem_CProfile_CSystemIdentificationSource __x_A
 typedef enum __x_ABI_CWindows_CSystem_CProfile_CSystemOutOfBoxExperienceState __x_ABI_CWindows_CSystem_CProfile_CSystemOutOfBoxExperienceState;
 
 typedef enum __x_ABI_CWindows_CSystem_CProfile_CUnsupportedAppRequirementReasons __x_ABI_CWindows_CSystem_CProfile_CUnsupportedAppRequirementReasons;
+
+/*
+ *
+ * Struct Windows.System.Profile.PlatformAutomaticAppSignInPolicy
+ *
+ * Introduced to Windows.System.Profile.PlatformAutomaticAppSignInContract in version 1.0
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+enum __x_ABI_CWindows_CSystem_CProfile_CPlatformAutomaticAppSignInPolicy
+{
+    PlatformAutomaticAppSignInPolicy_Unknown = 0,
+    PlatformAutomaticAppSignInPolicy_PermissionRequired = 1,
+    PlatformAutomaticAppSignInPolicy_AlwaysAllowed = 2,
+};
+#endif // WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
 
 /*
  *
@@ -4175,6 +4394,75 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoProper
 
 /*
  *
+ * Interface Windows.System.Profile.IPlatformAutomaticAppSignInManagerStatics
+ *
+ * Introduced to Windows.System.Profile.PlatformAutomaticAppSignInContract in version 1.0
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.PlatformAutomaticAppSignInManager
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_IPlatformAutomaticAppSignInManagerStatics[] = L"Windows.System.Profile.IPlatformAutomaticAppSignInManagerStatics";
+typedef struct __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStaticsVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_Policy)(__x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics* This,
+        enum __x_ABI_CWindows_CSystem_CProfile_CPlatformAutomaticAppSignInPolicy* value);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStaticsVtbl;
+
+interface __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStaticsVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_get_Policy(This, value) \
+    ((This)->lpVtbl->get_Policy(This, value))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIPlatformAutomaticAppSignInManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+
+/*
+ *
  * Interface Windows.System.Profile.IPlatformDiagnosticsAndUsageDataSettingsStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -4470,6 +4758,86 @@ interface __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SYSTEM_PROFILE_PROFILESHAREDMODECONTRACT_VERSION >= 0x20000
+
+/*
+ *
+ * Interface Windows.System.Profile.ISmartAppControlPolicyStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.SmartAppControlPolicy
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_ISmartAppControlPolicyStatics[] = L"Windows.System.Profile.ISmartAppControlPolicyStatics";
+typedef struct __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStaticsVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_IsEnabled)(__x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics* This,
+        boolean* value);
+    HRESULT (STDMETHODCALLTYPE* add_Changed)(__x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics* This,
+        __FIEventHandler_1_IInspectable* handler,
+        EventRegistrationToken* token);
+    HRESULT (STDMETHODCALLTYPE* remove_Changed)(__x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics* This,
+        EventRegistrationToken token);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStaticsVtbl;
+
+interface __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStaticsVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_get_IsEnabled(This, value) \
+    ((This)->lpVtbl->get_IsEnabled(This, value))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_add_Changed(This, handler, token) \
+    ((This)->lpVtbl->add_Changed(This, handler, token))
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_remove_Changed(This, token) \
+    ((This)->lpVtbl->remove_Changed(This, token))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CISmartAppControlPolicyStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
 
 /*
  *
@@ -5014,6 +5382,27 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.System.Profile.PlatformAutomaticAppSignInManager
+ *
+ * Introduced to Windows.System.Profile.PlatformAutomaticAppSignInContract in version 1.0
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.IPlatformAutomaticAppSignInManagerStatics interface starting with version 1.0 of the Windows.System.Profile.PlatformAutomaticAppSignInContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+#ifndef RUNTIMECLASS_Windows_System_Profile_PlatformAutomaticAppSignInManager_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_PlatformAutomaticAppSignInManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_PlatformAutomaticAppSignInManager[] = L"Windows.System.Profile.PlatformAutomaticAppSignInManager";
+#endif
+#endif // WINDOWS_SYSTEM_PROFILE_PLATFORMAUTOMATICAPPSIGNINCONTRACT_VERSION >= 0x10000
+
+/*
+ *
  * Class Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -5073,6 +5462,27 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_SharedModeSettings[] = L"Windows.System.Profile.SharedModeSettings";
 #endif
 #endif // WINDOWS_SYSTEM_PROFILE_PROFILESHAREDMODECONTRACT_VERSION >= 0x10000
+
+/*
+ *
+ * Class Windows.System.Profile.SmartAppControlPolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.ISmartAppControlPolicyStatics interface starting with version 15.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
+#ifndef RUNTIMECLASS_Windows_System_Profile_SmartAppControlPolicy_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_SmartAppControlPolicy_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_SmartAppControlPolicy[] = L"Windows.System.Profile.SmartAppControlPolicy";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
 
 /*
  *

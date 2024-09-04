@@ -92,7 +92,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xe0000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xf0000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION)
@@ -2391,8 +2391,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics2 interface starting with version 1.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics interface starting with version 1.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
+ *   Static Methods exist on the Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics2 interface starting with version 1.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Hosting.IXamlUIPresenter ** Default Interface **
@@ -5047,8 +5047,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics2 interface starting with version 1.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics interface starting with version 1.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
+ *   Static Methods exist on the Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics2 interface starting with version 1.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Hosting.IXamlUIPresenter ** Default Interface **

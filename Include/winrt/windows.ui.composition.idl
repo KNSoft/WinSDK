@@ -69,6 +69,8 @@ namespace Windows
         {
             typedef enum DirectXAlphaMode DirectXAlphaMode;
 
+            typedef enum DirectXColorSpace DirectXColorSpace;
+
             typedef enum DirectXPixelFormat DirectXPixelFormat;
         }
     }
@@ -312,6 +314,8 @@ namespace Windows
 
             interface ICompositionObject4;
 
+            interface ICompositionObject5;
+
             interface ICompositionObjectFactory;
 
             interface ICompositionObjectStatics;
@@ -372,6 +376,10 @@ namespace Windows
 
             interface ICompositionTargetFactory;
 
+            interface ICompositionTexture;
+
+            interface ICompositionTextureFactory;
+
             interface ICompositionTransform;
 
             interface ICompositionTransformFactory;
@@ -397,6 +405,8 @@ namespace Windows
             interface ICompositor6;
 
             interface ICompositor7;
+
+            interface ICompositor8;
 
             interface ICompositorStatics;
 
@@ -649,6 +659,8 @@ namespace Windows
             runtimeclass CompositionSurfaceBrush;
 
             runtimeclass CompositionTarget;
+
+            runtimeclass CompositionTexture;
 
             runtimeclass CompositionTransform;
 
@@ -1731,6 +1743,14 @@ namespace Windows
                 HRESULT TryGetAnimationController([in] HSTRING propertyName, [out] [retval] Windows.UI.Composition.AnimationController** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 15.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionObject)]
+            [uuid(1D7F391B-A130-5265-A62B-60B8E668965A)]
+            interface ICompositionObject5 : IInspectable
+            {
+                [overload("StartAnimation")] HRESULT StartAnimationWithController([in] HSTRING propertyName, [in] Windows.UI.Composition.CompositionAnimation* animation, [in] Windows.UI.Composition.AnimationController* animationController);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.UI.Composition.CompositionObject)]
             [uuid(51205C5E-558A-4F2A-8D39-37BFE1E20DDD)]
@@ -2078,6 +2098,26 @@ namespace Windows
             {
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 15.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionTexture)]
+            [uuid(347D03A0-1C0A-4C0B-B232-8570B2B1A4EA)]
+            interface ICompositionTexture : IInspectable
+            {
+                [propget] HRESULT SourceRect([out] [retval] Windows.Graphics.RectInt32* value);
+                [propput] HRESULT SourceRect([in] Windows.Graphics.RectInt32 value);
+                [propget] HRESULT AlphaMode([out] [retval] Windows.Graphics.DirectX.DirectXAlphaMode* value);
+                [propput] HRESULT AlphaMode([in] Windows.Graphics.DirectX.DirectXAlphaMode value);
+                [propget] HRESULT ColorSpace([out] [retval] Windows.Graphics.DirectX.DirectXColorSpace* value);
+                [propput] HRESULT ColorSpace([in] Windows.Graphics.DirectX.DirectXColorSpace value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 15.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionTexture)]
+            [uuid(09D9523D-471C-5AB5-B053-B568EE46EBFB)]
+            interface ICompositionTextureFactory : IInspectable
+            {
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 8.0)]
             [exclusiveto(Windows.UI.Composition.CompositionTransform)]
             [uuid(7CD54529-FBED-4112-ABC5-185906DD927C)]
@@ -2258,6 +2298,14 @@ namespace Windows
                 [overload("CreateRectangleClip")] HRESULT CreateRectangleClip([out] [retval] Windows.UI.Composition.RectangleClip** result);
                 [overload("CreateRectangleClip")] HRESULT CreateRectangleClipWithSides([in] FLOAT left, [in] FLOAT top, [in] FLOAT right, [in] FLOAT bottom, [out] [retval] Windows.UI.Composition.RectangleClip** result);
                 [overload("CreateRectangleClip")] HRESULT CreateRectangleClipWithSidesAndRadius([in] FLOAT left, [in] FLOAT top, [in] FLOAT right, [in] FLOAT bottom, [in] Windows.Foundation.Numerics.Vector2 topLeftRadius, [in] Windows.Foundation.Numerics.Vector2 topRightRadius, [in] Windows.Foundation.Numerics.Vector2 bottomRightRadius, [in] Windows.Foundation.Numerics.Vector2 bottomLeftRadius, [out] [retval] Windows.UI.Composition.RectangleClip** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 15.0)]
+            [exclusiveto(Windows.UI.Composition.Compositor)]
+            [uuid(9A0BDEE2-FE7B-5F62-A366-9CF8EFFE2112)]
+            interface ICompositor8 : IInspectable
+            {
+                HRESULT CreateAnimationController([out] [retval] Windows.UI.Composition.AnimationController** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -3347,6 +3395,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Composition.ICompositionObject2;
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.ICompositionObject3;
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.UI.Composition.ICompositionObject4;
+                [contract(Windows.Foundation.UniversalApiContract, 15.0)] interface Windows.UI.Composition.ICompositionObject5;
                 interface Windows.Foundation.IClosable;
                 [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Composition.IAnimationObject;
             }
@@ -3516,6 +3565,16 @@ namespace Windows
                 [default] interface Windows.UI.Composition.ICompositionTarget;
             }
 
+            [composable(Windows.UI.Composition.ICompositionTextureFactory, public, Windows.Foundation.UniversalApiContract, 15.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 15.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass CompositionTexture : Windows.UI.Composition.CompositionObject
+            {
+                [default] interface Windows.UI.Composition.ICompositionTexture;
+                interface Windows.UI.Composition.ICompositionSurface;
+            }
+
             [composable(Windows.UI.Composition.ICompositionTransformFactory, public, Windows.Foundation.UniversalApiContract, 8.0)]
             [contract(Windows.Foundation.UniversalApiContract, 8.0)]
             [marshaling_behavior(agile)]
@@ -3569,6 +3628,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 8.0)] interface Windows.UI.Composition.ICompositorWithVisualSurface;
                 [contract(Windows.Foundation.UniversalApiContract, 12.0)] interface Windows.UI.Composition.ICompositor7;
                 [contract(Windows.Foundation.UniversalApiContract, 13.0)] interface Windows.UI.Composition.ICompositorWithBlurredWallpaperBackdropBrush;
+                [contract(Windows.Foundation.UniversalApiContract, 15.0)] interface Windows.UI.Composition.ICompositor8;
                 interface Windows.Foundation.IClosable;
             }
 

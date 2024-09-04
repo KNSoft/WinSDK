@@ -92,7 +92,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xe0000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xf0000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION)
@@ -7416,6 +7416,29 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Media.Capture.MediaCaptureDeviceExclusiveControlReleaseMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                enum MediaCaptureDeviceExclusiveControlReleaseMode : int
+                {
+                    MediaCaptureDeviceExclusiveControlReleaseMode_OnDispose = 0,
+                    MediaCaptureDeviceExclusiveControlReleaseMode_OnAllStreamsStopped = 1,
+                };
+            } /* Capture */
+        } /* Media */
+    } /* Windows */
+} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
+
+/*
+ *
  * Struct Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatus
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -13909,8 +13932,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Media.Capture.IAppCaptureStatics interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Capture.IAppCaptureStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Media.Capture.IAppCaptureStatics interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Media.Capture.IAppCapture ** Default Interface **
@@ -22668,6 +22691,21 @@ enum __x_ABI_CWindows_CMedia_CCapture_CKnownVideoProfile
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+/*
+ *
+ * Struct Windows.Media.Capture.MediaCaptureDeviceExclusiveControlReleaseMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
+enum __x_ABI_CWindows_CMedia_CCapture_CMediaCaptureDeviceExclusiveControlReleaseMode
+{
+    MediaCaptureDeviceExclusiveControlReleaseMode_OnDispose = 0,
+    MediaCaptureDeviceExclusiveControlReleaseMode_OnAllStreamsStopped = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xf0000
 
 /*
  *
@@ -33698,8 +33736,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Media.Capture.IAppCaptureStatics interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Capture.IAppCaptureStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Media.Capture.IAppCaptureStatics interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Media.Capture.IAppCapture ** Default Interface **

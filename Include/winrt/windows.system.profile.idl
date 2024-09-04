@@ -44,11 +44,15 @@ namespace Windows
     {
         namespace Profile
         {
+            apicontract PlatformAutomaticAppSignInContract;
+
             apicontract ProfileHardwareTokenContract;
 
             apicontract ProfileRetailInfoContract;
 
             apicontract ProfileSharedModeContract;
+
+            typedef enum PlatformAutomaticAppSignInPolicy PlatformAutomaticAppSignInPolicy;
 
             typedef enum PlatformDataCollectionLevel PlatformDataCollectionLevel;
 
@@ -76,6 +80,8 @@ namespace Windows
 
             interface IKnownRetailInfoPropertiesStatics;
 
+            interface IPlatformAutomaticAppSignInManagerStatics;
+
             interface IPlatformDiagnosticsAndUsageDataSettingsStatics;
 
             interface IRetailInfoStatics;
@@ -83,6 +89,8 @@ namespace Windows
             interface ISharedModeSettingsStatics;
 
             interface ISharedModeSettingsStatics2;
+
+            interface ISmartAppControlPolicyStatics;
 
             interface ISystemIdentificationInfo;
 
@@ -108,11 +116,15 @@ namespace Windows
 
             runtimeclass KnownRetailInfoProperties;
 
+            runtimeclass PlatformAutomaticAppSignInManager;
+
             runtimeclass PlatformDiagnosticsAndUsageDataSettings;
 
             runtimeclass RetailInfo;
 
             runtimeclass SharedModeSettings;
+
+            runtimeclass SmartAppControlPolicy;
 
             runtimeclass SystemIdentification;
 
@@ -154,6 +166,11 @@ namespace Windows
         namespace Profile
         {
             [contractversion(1.0)]
+            apicontract PlatformAutomaticAppSignInContract
+            {
+            }
+
+            [contractversion(1.0)]
             apicontract ProfileHardwareTokenContract
             {
             }
@@ -167,6 +184,14 @@ namespace Windows
             apicontract ProfileSharedModeContract
             {
             }
+
+            [contract(Windows.System.Profile.PlatformAutomaticAppSignInContract, 1.0)]
+            enum PlatformAutomaticAppSignInPolicy
+            {
+                Unknown            = 0,
+                PermissionRequired = 1,
+                AlwaysAllowed      = 2
+            };
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             enum PlatformDataCollectionLevel
@@ -300,6 +325,14 @@ namespace Windows
                 [propget] HRESULT WindowsEdition([out] [retval] HSTRING* value);
             }
 
+            [contract(Windows.System.Profile.PlatformAutomaticAppSignInContract, 1.0)]
+            [exclusiveto(Windows.System.Profile.PlatformAutomaticAppSignInManager)]
+            [uuid(1AC9AFCE-8DD5-5C2D-B420-767D1F3B7D03)]
+            interface IPlatformAutomaticAppSignInManagerStatics : IInspectable
+            {
+                [propget] HRESULT Policy([out] [retval] Windows.System.Profile.PlatformAutomaticAppSignInPolicy* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings)]
             [uuid(B6E24C1B-7B1C-4B32-8C62-A66597CE723A)]
@@ -336,6 +369,16 @@ namespace Windows
                 [propget] HRESULT ShouldAvoidLocalStorage([out] [retval] boolean* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 15.0)]
+            [exclusiveto(Windows.System.Profile.SmartAppControlPolicy)]
+            [uuid(5FF8C75B-073E-5015-8D98-5FF224180A0B)]
+            interface ISmartAppControlPolicyStatics : IInspectable
+            {
+                [propget] HRESULT IsEnabled([out] [retval] boolean* value);
+                [eventadd] HRESULT Changed([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT Changed([in] EventRegistrationToken token);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [exclusiveto(Windows.System.Profile.SystemIdentificationInfo)]
             [uuid(0C659E7D-C3C2-4D33-A2DF-21BC41916EB3)]
@@ -356,7 +399,7 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 7.0)]
             [exclusiveto(Windows.System.Profile.SystemSetupInfo)]
-            [uuid(2C9620A8-1D88-5E2D-A324-A543AF4247EE)]
+            [uuid(B8366A4B-FB6A-4571-BE0A-9A0F67954123)]
             interface ISystemSetupInfoStatics : IInspectable
             {
                 [propget] HRESULT OutOfBoxExperienceState([out] [retval] Windows.System.Profile.SystemOutOfBoxExperienceState* value);
@@ -441,6 +484,14 @@ namespace Windows
             {
             }
 
+            [contract(Windows.System.Profile.PlatformAutomaticAppSignInContract, 1.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.System.Profile.IPlatformAutomaticAppSignInManagerStatics, Windows.System.Profile.PlatformAutomaticAppSignInContract, 1.0)]
+            [threading(both)]
+            runtimeclass PlatformAutomaticAppSignInManager
+            {
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [marshaling_behavior(agile)]
             [static(Windows.System.Profile.IPlatformDiagnosticsAndUsageDataSettingsStatics, Windows.Foundation.UniversalApiContract, 2.0)]
@@ -462,6 +513,14 @@ namespace Windows
             [static(Windows.System.Profile.ISharedModeSettingsStatics, Windows.System.Profile.ProfileSharedModeContract, 1.0)]
             [static(Windows.System.Profile.ISharedModeSettingsStatics2, Windows.System.Profile.ProfileSharedModeContract, 2.0)]
             runtimeclass SharedModeSettings
+            {
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 15.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.System.Profile.ISmartAppControlPolicyStatics, Windows.Foundation.UniversalApiContract, 15.0)]
+            [threading(both)]
+            runtimeclass SmartAppControlPolicy
             {
             }
 

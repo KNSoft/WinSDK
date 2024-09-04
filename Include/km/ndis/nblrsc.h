@@ -81,6 +81,17 @@ NET_BUFFER_LIST_DUP_ACK_COUNT(
 
 #endif // NDIS_INCLUDE_LEGACY_NAMES || !__cplusplus
 
+inline
+BOOLEAN
+NET_BUFFER_LIST_IS_TCP_RSC_SET(
+    _In_ NET_BUFFER_LIST const *Nbl
+    )
+{
+    NDIS_RSC_NBL_INFO const *Info = (NDIS_RSC_NBL_INFO const *)
+        &Nbl->NetBufferListInfo[TcpRecvSegCoalesceInfo];
+    return ((UINT_PTR)Info->Value & 0xFFFFFFFF) != 0;
+}
+
 #endif // NDIS_SUPPORT_NDIS630
 
 EXTERN_C_END

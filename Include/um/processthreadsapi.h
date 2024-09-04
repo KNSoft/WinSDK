@@ -102,9 +102,22 @@ QueueUserAPC(
 #if (NTDDI_VERSION >= NTDDI_WIN10_MN)
 
 typedef enum _QUEUE_USER_APC_FLAGS {
-    QUEUE_USER_APC_FLAGS_NONE             = 0x0,
-    QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC = 0x1,
+    QUEUE_USER_APC_FLAGS_NONE               = 0x00000000,
+    QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC   = 0x00000001,
+
+    //
+    // Used for requesting additional callback data.
+    //
+
+    QUEUE_USER_APC_CALLBACK_DATA_CONTEXT    = 0x00010000,
 } QUEUE_USER_APC_FLAGS;
+
+typedef struct _APC_CALLBACK_DATA {
+    ULONG_PTR Parameter;
+    PCONTEXT ContextRecord;
+    ULONG_PTR Reserved0;
+    ULONG_PTR Reserved1;
+} APC_CALLBACK_DATA, *PAPC_CALLBACK_DATA;
 
 WINBASEAPI
 BOOL
@@ -1134,16 +1147,18 @@ SetThreadIdealProcessor(
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 typedef enum _PROCESS_INFORMATION_CLASS {
-    ProcessMemoryPriority,          // MEMORY_PRIORITY_INFORMATION
-    ProcessMemoryExhaustionInfo,    // PROCESS_MEMORY_EXHAUSTION_INFO
-    ProcessAppMemoryInfo,           // APP_MEMORY_INFORMATION
-    ProcessInPrivateInfo,           // BOOLEAN
-    ProcessPowerThrottling,         // PROCESS_POWER_THROTTLING_STATE
-    ProcessReservedValue1,          // Used to be for ProcessActivityThrottlePolicyInfo
-    ProcessTelemetryCoverageInfo,   // TELEMETRY_COVERAGE_POINT
-    ProcessProtectionLevelInfo,     // PROCESS_PROTECTION_LEVEL_INFORMATION
-    ProcessLeapSecondInfo,          // PROCESS_LEAP_SECOND_INFO
-    ProcessMachineTypeInfo,         // PROCESS_MACHINE_INFORMATION
+    ProcessMemoryPriority,                       // MEMORY_PRIORITY_INFORMATION
+    ProcessMemoryExhaustionInfo,                 // PROCESS_MEMORY_EXHAUSTION_INFO
+    ProcessAppMemoryInfo,                        // APP_MEMORY_INFORMATION
+    ProcessInPrivateInfo,                        // BOOLEAN
+    ProcessPowerThrottling,                      // PROCESS_POWER_THROTTLING_STATE
+    ProcessReservedValue1,                       // Used to be for ProcessActivityThrottlePolicyInfo
+    ProcessTelemetryCoverageInfo,                // TELEMETRY_COVERAGE_POINT
+    ProcessProtectionLevelInfo,                  // PROCESS_PROTECTION_LEVEL_INFORMATION
+    ProcessLeapSecondInfo,                       // PROCESS_LEAP_SECOND_INFO
+    ProcessMachineTypeInfo,                      // PROCESS_MACHINE_INFORMATION
+    ProcessOverrideSubsequentPrefetchParameter,  // OVERRIDE_PREFETCH_PARAMETER
+    ProcessMaxOverridePrefetchParameter,         // OVERRIDE_PREFETCH_PARAMETER
     ProcessInformationClassMax
 } PROCESS_INFORMATION_CLASS;
 
@@ -1169,6 +1184,10 @@ typedef struct _PROCESS_MACHINE_INFORMATION {
     USHORT Res0;
     MACHINE_ATTRIBUTES MachineAttributes;
 } PROCESS_MACHINE_INFORMATION;
+
+typedef struct OVERRIDE_PREFETCH_PARAMETER {
+    UINT32 Value;
+} OVERRIDE_PREFETCH_PARAMETER;
 
 //
 // Constants and structures needed to enable the fail fast on commit failure

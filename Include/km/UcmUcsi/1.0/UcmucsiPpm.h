@@ -87,7 +87,7 @@ _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 NTSTATUS
-(*PFN_UCMUCSICONNECTORCOLLECTIONCREATE)(
+(NTAPI *PFN_UCMUCSICONNECTORCOLLECTIONCREATE)(
     _In_
     PUCMUCSI_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -100,8 +100,8 @@ NTSTATUS
 
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 UcmUcsiConnectorCollectionCreate(
     _In_
     WDFDEVICE WdfDevice,
@@ -122,7 +122,7 @@ _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 NTSTATUS
-(*PFN_UCMUCSICONNECTORCOLLECTIONADDCONNECTOR)(
+(NTAPI *PFN_UCMUCSICONNECTORCOLLECTIONADDCONNECTOR)(
     _In_
     PUCMUCSI_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -133,8 +133,8 @@ NTSTATUS
 
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 UcmUcsiConnectorCollectionAddConnector(
     _In_
     UCMUCSI_CONNECTOR_COLLECTION ConnectorCollectionObject,
@@ -153,7 +153,7 @@ _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 NTSTATUS
-(*PFN_UCMUCSIPPMCREATE)(
+(NTAPI *PFN_UCMUCSIPPMCREATE)(
     _In_
     PUCMUCSI_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -168,8 +168,8 @@ NTSTATUS
 
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 UcmUcsiPpmCreate(
     _In_
     WDFDEVICE WdfDevice,
@@ -191,7 +191,7 @@ typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 VOID
-(*PFN_UCMUCSIPPMSETUCSICOMMANDREQUESTQUEUE)(
+(NTAPI *PFN_UCMUCSIPPMSETUCSICOMMANDREQUESTQUEUE)(
     _In_
     PUCMUCSI_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -201,8 +201,8 @@ VOID
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
 FORCEINLINE
+VOID
 UcmUcsiPpmSetUcsiCommandRequestQueue(
     _In_
     UCMUCSIPPM PpmObject,
@@ -221,7 +221,7 @@ _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 NTSTATUS
-(*PFN_UCMUCSIPPMSTART)(
+(NTAPI *PFN_UCMUCSIPPMSTART)(
     _In_
     PUCMUCSI_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -230,8 +230,8 @@ NTSTATUS
 
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 UcmUcsiPpmStart(
     _In_
     UCMUCSIPPM PpmObject
@@ -247,7 +247,7 @@ typedef
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 VOID
-(*PFN_UCMUCSIPPMSTOP)(
+(NTAPI *PFN_UCMUCSIPPMSTOP)(
     _In_
     PUCMUCSI_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -255,8 +255,8 @@ VOID
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-VOID
 FORCEINLINE
+VOID
 UcmUcsiPpmStop(
     _In_
     UCMUCSIPPM PpmObject
@@ -272,7 +272,7 @@ typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 VOID
-(*PFN_UCMUCSIPPMNOTIFICATION)(
+(NTAPI *PFN_UCMUCSIPPMNOTIFICATION)(
     _In_
     PUCMUCSI_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -282,8 +282,8 @@ VOID
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
 FORCEINLINE
+VOID
 UcmUcsiPpmNotification(
     _In_
     UCMUCSIPPM PpmObject,

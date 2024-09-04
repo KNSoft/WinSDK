@@ -20,6 +20,7 @@ EXTERN_C __declspec(selectany) const GUID UMDEtwProviderGuid = {0xa688ee40, 0xd8
 // Channel
 //
 #define UMDEtwChannel 0x10
+#define UMDEtwChannel_KEYWORD 0x8000000000000000
 
 //
 // Tasks

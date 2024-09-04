@@ -101,13 +101,20 @@ extern "C" {
 #define MREGISTER_E_DISCOVERY_FAILED                      MAKE_HRESULT(SEVERITY_ERROR, MDM_REGISTRATION_FACILITY_CODE, 14)
 
 // User already enrolled too many devices. Delete or unenroll old ones to fix this error (user can fix it without admin)
+#ifndef MENROLL_E_DEVICECAPREACHED
 #define MENROLL_E_DEVICECAPREACHED                        MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 19)
+#endif
 
 // Mobile device management generally not supported (would save an admin call)
 #define MENROLL_E_NOTSUPPORTED                            MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 21)
 
 // License of user is in bad state blocking enrollment (user still needs to call admin)
 #define MENROLL_E_USERLICENSE                             MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 24)
+
+// The server responded with a custom error string, see DeviceManagement-Enterprise-Diagnostics for details
+#ifndef MENROLL_E_CUSTOMSERVERERROR
+#define MENROLL_E_CUSTOMSERVERERROR                     MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 50)
+#endif
 
 // The user canceled the operation
 #define MENROLL_E_USER_CANCELED                         MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 42)
@@ -329,7 +336,6 @@ HRESULT indicating success or failure.
 --*/
 HRESULT WINAPI
 RegisterDeviceWithManagementUsingAADDeviceCredentials2(_In_opt_ PCWSTR MDMApplicationID);
-
 
 /*++
 

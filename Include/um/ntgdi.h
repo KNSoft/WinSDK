@@ -48,9 +48,6 @@ typedef struct _HLSURF_INFORMATION_PROBE {
 #define __out_post_bcount_opt(size) _Pre_maybenull_ _Post_valid_  _Post_writable_byte_size_(size)
 #define __out_post_ecount_opt(size) _Pre_maybenull_ _Post_valid_  _Post_writable_size_(size)
 
-// Trace creation of all GDI SURFACE objects
-#define TRACE_SURFACE_ALLOCS    (DBG || 0)
-
 // enable directX API to change surface pointer
 #ifdef  COMBOX_SANDBOX
 #define DX_LONGHORN_PRESERVEDC
@@ -2597,6 +2594,10 @@ NtGdiEnsureDpiDepDefaultGuiFontForPlateau(
 
 VOID GreEnsureDpiDepDefaultGuiFontForPlateau(
     _In_ int iDpi);
+
+__kernel_entry W32KAPI BOOL
+NtGdiWaitForTextReady(
+    );
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

@@ -66,7 +66,7 @@ _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 NTSTATUS
-(*PFN_UCMUCSIDEVICEINITINITIALIZE)(
+(NTAPI *PFN_UCMUCSIDEVICEINITINITIALIZE)(
     _In_
     PUCMUCSI_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -75,8 +75,8 @@ NTSTATUS
 
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 UcmUcsiDeviceInitInitialize(
     _In_
     PWDFDEVICE_INIT DeviceInit
@@ -93,7 +93,7 @@ _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 NTSTATUS
-(*PFN_UCMUCSIDEVICEINITIALIZE)(
+(NTAPI *PFN_UCMUCSIDEVICEINITIALIZE)(
     _In_
     PUCMUCSI_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -104,8 +104,8 @@ NTSTATUS
 
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 UcmUcsiDeviceInitialize(
     _In_
     WDFDEVICE WdfDevice,
