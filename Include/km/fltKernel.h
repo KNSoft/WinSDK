@@ -93,15 +93,21 @@ extern "C" {
 
 //
 //  This defines items that only exist in Windows RedStone 3 or later
-// 
+//
 
 #define FLT_MGR_WIN10_RS3 (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 
 //
 //  This defines items that only exist in Windows RedStone 5 or later
-// 
+//
 
 #define FLT_MGR_WIN10_RS5 (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+//
+//  This defines items that only exist in Windows 19H1 or later.
+//
+
+#define FLT_MGR_WIN10_19H1 (NTDDI_VERSION >= NTDDI_WIN10_19H1) // ABRACADABRA_WIN10_19H1
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -3550,6 +3556,20 @@ FltFlushBuffers (
     _In_ PFILE_OBJECT FileObject
     );
 
+#if FLT_MGR_WIN10_19H1
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+FLTAPI
+FltFlushBuffers2 (
+    _In_ PFLT_INSTANCE Instance,
+    _In_ PFILE_OBJECT FileObject,
+    _In_ ULONG FlushType
+    );
+
+#endif
+
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
@@ -5580,7 +5600,7 @@ _IRQL_requires_max_(APC_LEVEL)
 VOID
 FLTAPI
 FltDeleteExtraCreateParameterLookasideList (
-    _In_ PFLT_FILTER Filter,
+    _In_opt_ PFLT_FILTER Filter,
     _Inout_ PVOID Lookaside,
     _In_ FSRTL_ECP_LOOKASIDE_FLAGS Flags
     );
@@ -5799,6 +5819,17 @@ FltRetrieveFileInfoOnCreateCompletion (
     _In_ PFLT_CALLBACK_DATA Data,
     _In_ ULONG InfoClass,
     _Out_ PULONG Size
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+NTSTATUS
+FLTAPI
+FltRetrieveFileInfoOnCreateCompletionEx (
+    _In_ PFLT_FILTER Filter,
+    _In_ PFLT_CALLBACK_DATA Data,
+    _In_ ULONG InfoClass,
+    _Out_ PULONG RetInfoSize,
+    _Out_ PVOID *RetInfoBuffer
     );
 
 #endif

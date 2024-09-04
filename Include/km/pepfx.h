@@ -317,7 +317,7 @@ typedef enum _PEP_WORK_TYPE {
 #if PRAGMA_DEPRECATED_DDK
 
 //
-// The following notifications are deprecated in the Mini PEP model as Po 
+// The following notifications are deprecated in the Mini PEP model as Po
 // tells the PEP which idle and device power states it should transition instead
 // of the PEP requesting them.
 //
@@ -873,6 +873,7 @@ typedef struct _PEP_PPM_QUERY_CAPABILITIES {
     BOOLEAN PerformanceStatesSupported;
     BOOLEAN ParkingSupported;
     UCHAR DiscretePerformanceStateCount;
+    BOOLEAN Reserved;
 } PEP_PPM_QUERY_CAPABILITIES, *PPEP_PPM_QUERY_CAPABILITIES;
 
 typedef struct _PEP_PPM_QUERY_IDLE_STATES_V2 {
@@ -1132,7 +1133,7 @@ typedef struct _PEP_PPM_LPI_REGISTER {
     UCHAR               BitOffset;
     UCHAR               AccessSize;
     PHYSICAL_ADDRESS    Address;
-} PEP_PPM_LPI_REGISTER, *PPEP_PPM_LPI_REGISTER;    
+} PEP_PPM_LPI_REGISTER, *PPEP_PPM_LPI_REGISTER;
 
 typedef struct _PEP_PPM_PROCESSOR_LPI_STATE {
     ULONG MinResidency;

@@ -25,7 +25,14 @@ WDF_EXTERN_C_START
 typedef enum _MBB_MBIM_VERSION {
     MBB_MBIM_VERSION1_0 = 0,
     MBB_MBIM_VERSION1_0_ERRATA,
+    MBB_MBIM_HIGHEST_SUPPORTED_VERSION = MBB_MBIM_VERSION1_0_ERRATA,
 } MBB_MBIM_VERSION;
+
+typedef enum _MBB_MBIM_EXTENDED_VERSION {
+    MBB_MBIM_EXTENDED_VERSION1_0 = 0,
+    MBB_MBIM_EXTENDED_VERSION2_0,
+    MBB_MBIM_HIGHEST_SUPPORTED_EXTENDED_VERSION = MBB_MBIM_EXTENDED_VERSION2_0,
+} MBB_MBIM_EXTENDED_VERSION;
 
 
 
@@ -86,7 +93,7 @@ EVT_MBB_DEVICE_CREATE_ADAPTER(
     _In_
     WDFDEVICE  Device,
     _In_
-    PNETADAPTER_INIT AdapterInit
+    NETADAPTER_INIT * AdapterInit
     );
 
 typedef EVT_MBB_DEVICE_CREATE_ADAPTER *PFN_MBB_DEVICE_CREATE_ADAPTER;
@@ -126,6 +133,7 @@ typedef struct _MBB_DEVICE_MBIM_PARAMETERS
     ULONG Size;
 
     MBB_MBIM_VERSION Version;
+    MBB_MBIM_EXTENDED_VERSION ExtendedVersion;
     ULONG MaximumFragmentSize;
 } MBB_DEVICE_MBIM_PARAMETERS, *PMBB_DEVICE_MBIM_PARAMETERS;
 
@@ -134,12 +142,14 @@ VOID
 MBB_DEVICE_MBIM_PARAMETERS_INIT(
     _Out_ PMBB_DEVICE_MBIM_PARAMETERS MbimParameters,
     _In_ MBB_MBIM_VERSION Version,
-    _In_ ULONG MaximumFragmentSize
+    _In_ ULONG MaximumFragmentSize,
+    _In_ MBB_MBIM_EXTENDED_VERSION ExtendedVersion
     )
 {
     RtlZeroMemory(MbimParameters, sizeof(*MbimParameters));
     MbimParameters->Size = sizeof(*MbimParameters);
     MbimParameters->Version = Version;
+    MbimParameters->ExtendedVersion = ExtendedVersion;
     MbimParameters->MaximumFragmentSize = MaximumFragmentSize;
 }
 
@@ -158,8 +168,8 @@ NTSTATUS
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 MbbDeviceInitConfig(
     _Inout_
     PWDFDEVICE_INIT DeviceInit
@@ -185,8 +195,8 @@ NTSTATUS
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 MbbDeviceInitialize(
     _In_
     WDFDEVICE Device,
@@ -214,8 +224,8 @@ VOID
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-VOID
 FORCEINLINE
+VOID
 MbbDeviceSetMbimParameters(
     _In_
     WDFDEVICE Device,
@@ -241,8 +251,8 @@ VOID
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
 FORCEINLINE
+VOID
 MbbDeviceResponseAvailable(
     _In_
     WDFDEVICE Device
@@ -268,8 +278,8 @@ VOID
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-VOID
 FORCEINLINE
+VOID
 MbbDeviceSendDeviceServiceSessionDataComplete(
     _In_
     WDFMEMORY Data,
@@ -299,8 +309,8 @@ VOID
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-VOID
 FORCEINLINE
+VOID
 MbbDeviceReceiveDeviceServiceSessionData(
     _In_
     WDFDEVICE Device,
@@ -328,8 +338,8 @@ NTSTATUS
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 MbbAdapterInitialize(
     _In_
     NETADAPTER Adapter
@@ -353,8 +363,8 @@ ULONG
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-ULONG
 FORCEINLINE
+ULONG
 MbbAdapterGetSessionId(
     _In_
     NETADAPTER Adapter
@@ -380,8 +390,8 @@ PVOID
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-PVOID
 FORCEINLINE
+PVOID
 MbbRequestGetBuffer(
     _In_
     MBBREQUEST Request,
@@ -407,8 +417,8 @@ LPCGUID
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-LPCGUID
 FORCEINLINE
+LPCGUID
 MbbRequestGetCorrelationId(
     _In_
     MBBREQUEST Request
@@ -434,8 +444,8 @@ VOID
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
 FORCEINLINE
+VOID
 MbbRequestComplete(
     _In_
     MBBREQUEST Request,
@@ -465,8 +475,8 @@ VOID
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
 FORCEINLINE
+VOID
 MbbRequestCompleteWithInformation(
     _In_
     MBBREQUEST Request,

@@ -142,6 +142,13 @@ typedef enum _UCSI_BATTERY_CHARGING_STATUS {
     UcsiBatteryChargingTrickleCharging = 3,
 } UCSI_BATTERY_CHARGING_STATUS;
 
+typedef enum _UCSI_USB_TYPEC_CURRENT {
+    UcsiTypeCCurrentPpmDefinedDefault = 0,
+    UcsiTypeCCurrent3000mA = 1,
+    UcsiTypeCCurrent1500mA = 2,
+    UcsiTypeCCurrentUsbTypeCDefault = 3
+} UCSI_USB_TYPEC_CURRENT;
+
 
 
 #pragma once
@@ -379,7 +386,11 @@ typedef struct _UCSI_GET_CONNECTOR_CAPABILITY_IN
 
     UINT8 Provider : 1;
     UINT8 Consumer : 1;
-    UINT8 : 6;
+    UINT8 SwapToDfp : 1;
+    UINT8 SwapToUfp : 1;
+    UINT8 SwapToSrc : 1;
+    UINT8 SwapToSnk : 1;
+    UINT8 : 2;
 } UCSI_GET_CONNECTOR_CAPABILITY_IN, *PUCSI_GET_CONNECTOR_CAPABILITY_IN;
 
 static_assert(sizeof(UCSI_GET_CONNECTOR_CAPABILITY_IN) == 2, "Incorrect size");

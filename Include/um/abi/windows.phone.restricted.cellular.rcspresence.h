@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.phone.restricted.cellular.rcspresence.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0226 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -50,7 +50,7 @@
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -58,7 +58,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x80000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -104,11 +104,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsAddress;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsAddress
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress_FWD_DEFINED__
@@ -122,11 +122,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsCapabilitiesReceivedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsCapabilitiesReceivedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs_FWD_DEFINED__
@@ -140,11 +140,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsPresenceService;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPresenceService
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService_FWD_DEFINED__
@@ -158,11 +158,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsPresenceSettings;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPresenceSettings
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings_FWD_DEFINED__
@@ -176,11 +176,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsPresenceSettings2;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings2 ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPresenceSettings2
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings2_FWD_DEFINED__
@@ -194,11 +194,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsPublishCapabilitiesRequestedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPublishCapabilitiesRequestedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs_FWD_DEFINED__
@@ -212,11 +212,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsResource;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResource ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResource
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResource_FWD_DEFINED__
@@ -230,11 +230,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsResourceInstance;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceInstance ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResourceInstance
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceInstance_FWD_DEFINED__
@@ -248,11 +248,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsResourceList;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceList ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResourceList
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceList_FWD_DEFINED__
@@ -266,11 +266,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsResponse;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResponse ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResponse
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResponse_FWD_DEFINED__
@@ -284,11 +284,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsService;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsService
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService_FWD_DEFINED__
@@ -302,11 +302,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsServiceAvailabilityChangedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceAvailabilityChangedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs_FWD_DEFINED__
@@ -320,11 +320,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsServiceDescription;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceDescription
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription_FWD_DEFINED__
@@ -338,11 +338,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsServiceStatusChangedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceStatusChangedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs_FWD_DEFINED__
@@ -356,11 +356,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsServiceTuple;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceTuple ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceTuple
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceTuple_FWD_DEFINED__
@@ -374,11 +374,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         interface IRcsSubscriptionReceivedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsSubscriptionReceivedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs_FWD_DEFINED__
@@ -393,11 +393,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsServiceTuple;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -420,7 +420,7 @@ IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceTupl
 // correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceTuple*> __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple_t;
 #define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceTuple*>
@@ -452,7 +452,7 @@ IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceTupl
 // correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceTuple*> __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple_t;
 #define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceTuple*>
@@ -484,7 +484,7 @@ IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceTu
 // correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceTuple*> __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple_t;
 #define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceTuple ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceTuple*>
@@ -502,11 +502,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsServiceDescription;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -529,7 +529,7 @@ IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceDesc
 // correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceDescription*> __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_t;
 #define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceDescription*>
@@ -561,7 +561,7 @@ IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceDesc
 // correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceDescription*> __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_t;
 #define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceDescription*>
@@ -579,11 +579,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsResponse;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -606,7 +606,7 @@ IAsyncOperationCompletedHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPr
 // correct parameterized interface specialization.
 typedef IAsyncOperationCompletedHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResponse*> __FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse_t;
 #define __FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResponse*>
@@ -638,7 +638,7 @@ IAsyncOperation<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsRespo
 // correct parameterized interface specialization.
 typedef IAsyncOperation<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResponse*> __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse_t;
 #define __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResponse*>
@@ -656,11 +656,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsPresenceService;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 namespace ABI {
@@ -670,11 +670,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsPublishCapabilitiesRequestedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -698,7 +698,7 @@ ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsPr
 // correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsPresenceService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsPublishCapabilitiesRequestedArgs*> __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs_t;
 #define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPresenceService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPublishCapabilitiesRequestedArgs*>
@@ -718,11 +718,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsCapabilitiesReceivedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -746,7 +746,7 @@ ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsPr
 // correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsPresenceService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsCapabilitiesReceivedArgs*> __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs_t;
 #define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPresenceService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsCapabilitiesReceivedArgs*>
@@ -765,11 +765,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsAddress;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -792,7 +792,7 @@ IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsAddress*> :
 // correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsAddress*> __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_t;
 #define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsAddress*>
@@ -824,7 +824,7 @@ IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsAddress*> :
 // correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsAddress*> __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_t;
 #define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsAddress*>
@@ -843,11 +843,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsSubscriptionReceivedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -871,7 +871,7 @@ ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsPr
 // correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsPresenceService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsSubscriptionReceivedArgs*> __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs_t;
 #define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPresenceService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsSubscriptionReceivedArgs*>
@@ -890,11 +890,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsResourceInstance;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -917,7 +917,7 @@ IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResourceIns
 // correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResourceInstance*> __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance_t;
 #define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResourceInstance*>
@@ -949,7 +949,7 @@ IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResourceIns
 // correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResourceInstance*> __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance_t;
 #define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResourceInstance*>
@@ -981,7 +981,7 @@ IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResourceI
 // correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResourceInstance*> __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance_t;
 #define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResourceInstance ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResourceInstance*>
@@ -999,11 +999,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsResource;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -1026,7 +1026,7 @@ IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResource*> 
 // correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResource*> __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource_t;
 #define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterator_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResource*>
@@ -1058,7 +1058,7 @@ IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResource*> 
 // correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResource*> __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource_t;
 #define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResource*>
@@ -1090,7 +1090,7 @@ IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResource*
 // correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsResource*> __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource_t;
 #define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+/* Collections */ } /* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResource*>
@@ -1108,11 +1108,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         enum RcsServiceStatus : int;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus_USE
@@ -1133,7 +1133,7 @@ IAsyncOperationCompletedHandler<enum ABI::Windows::Phone::Restricted::Cellular::
 // correct parameterized interface specialization.
 typedef IAsyncOperationCompletedHandler<enum ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceStatus> __FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus_t;
 #define __FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceStatus>
@@ -1163,7 +1163,7 @@ IAsyncOperation<enum ABI::Windows::Phone::Restricted::Cellular::RcsPresence::Rcs
 // correct parameterized interface specialization.
 typedef IAsyncOperation<enum ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceStatus> __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus_t;
 #define __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceStatus>
@@ -1181,11 +1181,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsServiceStatusChangedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -1209,7 +1209,7 @@ ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsS
 // correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceStatusChangedArgs*> __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs_t;
 #define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceStatusChangedArgs*>
@@ -1229,11 +1229,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsServiceAvailabilityChangedArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -1257,7 +1257,7 @@ ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsS
 // correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceAvailabilityChangedArgs*> __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs_t;
 #define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsService*,ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceAvailabilityChangedArgs*>
@@ -1277,8 +1277,8 @@ namespace ABI {
             
             typedef struct DateTime DateTime;
             
-        } /* Windows */
-    } /* Foundation */} /* ABI */
+        } /* Foundation */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1286,15 +1286,15 @@ namespace ABI {
             
             typedef struct TimeSpan TimeSpan;
             
-        } /* Windows */
-    } /* Foundation */} /* ABI */
+        } /* Foundation */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
         namespace Foundation {
             class Uri;
-        } /* Windows */
-    } /* Foundation */} /* ABI */
+        } /* Foundation */
+    } /* Windows */} /* ABI */
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
@@ -1302,8 +1302,8 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             interface IUriRuntimeClass;
-        } /* Windows */
-    } /* Foundation */} /* ABI */
+        } /* Foundation */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CFoundation_CIUriRuntimeClass ABI::Windows::Foundation::IUriRuntimeClass
 
 #endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
@@ -1321,11 +1321,11 @@ namespace ABI {
                         
                         typedef enum RcsMediaType : int RcsMediaType;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1336,11 +1336,11 @@ namespace ABI {
                         
                         typedef enum RcsNetworkType : int RcsNetworkType;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1351,11 +1351,11 @@ namespace ABI {
                         
                         typedef enum RcsPublishRequestReason : int RcsPublishRequestReason;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1366,11 +1366,11 @@ namespace ABI {
                         
                         typedef enum RcsResourceState : int RcsResourceState;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1381,11 +1381,11 @@ namespace ABI {
                         
                         typedef enum RcsServiceAvailability : int RcsServiceAvailability;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1396,11 +1396,11 @@ namespace ABI {
                         
                         typedef enum RcsServiceStatus : int RcsServiceStatus;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1411,11 +1411,11 @@ namespace ABI {
                         
                         typedef enum RcsSubscribeReason : int RcsSubscribeReason;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 
@@ -1443,11 +1443,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsPresenceSettings;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 
@@ -1460,11 +1460,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace RcsPresence {
                         class RcsResourceList;
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 
@@ -1504,11 +1504,11 @@ namespace ABI {
                             RcsMediaType_AudioVideo = 2,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1542,11 +1542,11 @@ namespace ABI {
                             RcsNetworkType__IWLAN = 8,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1573,11 +1573,11 @@ namespace ABI {
                             RcsPublishRequestReason_NetworkChange = 1,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1606,11 +1606,11 @@ namespace ABI {
                             RcsResourceState_Terminated = 3,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1637,11 +1637,11 @@ namespace ABI {
                             RcsServiceAvailability_Available = 1,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1670,11 +1670,11 @@ namespace ABI {
                             RcsServiceStatus_Starting = 3,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1702,11 +1702,11 @@ namespace ABI {
                             RcsSubscribeReason_ContactModified = 2,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1744,11 +1744,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsAddress=_uuidof(IRcsAddress);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress_INTERFACE_DEFINED__) */
@@ -1792,11 +1792,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsCapabilitiesReceivedArgs=_uuidof(IRcsCapabilitiesReceivedArgs);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs_INTERFACE_DEFINED__) */
@@ -1874,11 +1874,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsPresenceService=_uuidof(IRcsPresenceService);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService_INTERFACE_DEFINED__) */
@@ -1912,10 +1912,10 @@ namespace ABI {
                         {
                         public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PublishEnabled(
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out ::boolean * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PublishEnabled(
-                                /* [in] */boolean value
+                                /* [in] */::boolean value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PublishTimerInterval(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
@@ -1928,11 +1928,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsPresenceSettings=_uuidof(IRcsPresenceSettings);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings_INTERFACE_DEFINED__) */
@@ -1966,10 +1966,10 @@ namespace ABI {
                         {
                         public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsCapabilityDiscoveryEnabled(
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out ::boolean * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsCapabilityDiscoveryEnabled(
-                                /* [in] */boolean value
+                                /* [in] */::boolean value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CapabilityCacheExpiration(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
@@ -1996,10 +1996,10 @@ namespace ABI {
                                 /* [in] */UINT32 value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsPresenceGzipEnabled(
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out ::boolean * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsPresenceGzipEnabled(
-                                /* [in] */boolean value
+                                /* [in] */::boolean value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PresenceNotifyDuration(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
@@ -2008,10 +2008,10 @@ namespace ABI {
                                 /* [in] */ABI::Windows::Foundation::TimeSpan value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_VoLTEProvisioningStatus(
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out ::boolean * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_VoLTEProvisioningStatus(
-                                /* [in] */boolean value
+                                /* [in] */::boolean value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PublishErrorRecoveryTimer(
                                 /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
@@ -2024,11 +2024,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsPresenceSettings2=_uuidof(IRcsPresenceSettings2);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings2;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings2_INTERFACE_DEFINED__) */
@@ -2072,11 +2072,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsPublishCapabilitiesRequestedArgs=_uuidof(IRcsPublishCapabilitiesRequestedArgs);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs_INTERFACE_DEFINED__) */
@@ -2123,11 +2123,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsResource=_uuidof(IRcsResource);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResource;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResource_INTERFACE_DEFINED__) */
@@ -2180,11 +2180,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsResourceInstance=_uuidof(IRcsResourceInstance);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceInstance;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceInstance_INTERFACE_DEFINED__) */
@@ -2224,7 +2224,7 @@ namespace ABI {
                                 /* [retval, out] */__RPC__out UINT32 * value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FullState(
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out ::boolean * value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Resources(
                                 /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResource * * value
@@ -2234,11 +2234,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsResourceList=_uuidof(IRcsResourceList);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceList;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceList_INTERFACE_DEFINED__) */
@@ -2282,11 +2282,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsResponse=_uuidof(IRcsResponse);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResponse;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResponse_INTERFACE_DEFINED__) */
@@ -2350,11 +2350,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsService=_uuidof(IRcsService);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService_INTERFACE_DEFINED__) */
@@ -2395,11 +2395,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsServiceAvailabilityChangedArgs=_uuidof(IRcsServiceAvailabilityChangedArgs);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs_INTERFACE_DEFINED__) */
@@ -2458,11 +2458,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsServiceDescription=_uuidof(IRcsServiceDescription);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription_INTERFACE_DEFINED__) */
@@ -2503,11 +2503,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsServiceStatusChangedArgs=_uuidof(IRcsServiceStatusChangedArgs);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs_INTERFACE_DEFINED__) */
@@ -2554,11 +2554,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsServiceTuple=_uuidof(IRcsServiceTuple);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceTuple;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceTuple_INTERFACE_DEFINED__) */
@@ -2599,11 +2599,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRcsSubscriptionReceivedArgs=_uuidof(IRcsSubscriptionReceivedArgs);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* RcsPresence */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* RcsPresence */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs_INTERFACE_DEFINED__) */
@@ -3597,7 +3597,7 @@ typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__
     ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs * This);
     ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs * This);
 
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs * *e);
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs * e);
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPublishCapabilitiesRequestedArgsVtbl;
 
@@ -3650,7 +3650,7 @@ typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__
     ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs * This);
     ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs * This);
 
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs * *e);
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs * e);
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsCapabilitiesReceivedArgsVtbl;
 
@@ -3865,7 +3865,7 @@ typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__
     ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs * This);
     ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs * This);
 
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs * *e);
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs * e);
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsPresenceService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsSubscriptionReceivedArgsVtbl;
 
@@ -4575,7 +4575,7 @@ typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__
     ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs * This);
     ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs * This);
 
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs * *e);
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs * e);
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatusChangedArgsVtbl;
 
@@ -4628,7 +4628,7 @@ typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__
     ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs * This);
     ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs * This);
 
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs * *e);
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs * e);
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CIRcsService_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceAvailabilityChangedArgsVtbl;
 

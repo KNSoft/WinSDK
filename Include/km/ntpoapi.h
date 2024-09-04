@@ -3318,7 +3318,8 @@ typedef enum {
 
 typedef enum {
     InternalWakeSourceDozeToHibernate,
-    InternalWakeSourcePredictedUserPresence
+    InternalWakeSourcePredictedUserPresence,
+    InternalWakeSourceTimerOverride
 } PO_INTERNAL_WAKE_SOURCE_TYPE, *PPO_INTERNAL_WAKE_SOURCE_TYPE;
 
 typedef struct _PO_WAKE_SOURCE_HEADER {

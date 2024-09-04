@@ -380,7 +380,7 @@ typedef enum _PEP_WORK_TYPE {
 #if PRAGMA_DEPRECATED_DDK
 
 //
-// The following notifications are deprecated in the Mini PEP model as Po 
+// The following notifications are deprecated in the Mini PEP model as Po
 // tells the PEP which idle and device power states it should transition instead
 // of the PEP requesting them.
 //
@@ -406,7 +406,7 @@ typedef enum _PEP_DEVICE_ACCEPTANCE_TYPE {
 #endif
 
 // END_PEPFX
-#if (NTDDI_VERSION <= NTDDI_WIN10_RS5) //ABRACADABRA_NTDDI_WIN10_RS5
+#if (NTDDI_VERSION <= NTDDI_WIN10_19H1) //ABRACADABRA_NTDDI_WIN10_19H1
 
 #define PepDeviceAcceptedMini PepDeviceAccepted
 
@@ -486,7 +486,7 @@ typedef struct _PEP_WORK_INFORMATION {
         //
         // N.B. PoHandle should be first element for any PEP_WORK_* structures.
         //
-        
+
         PEP_WORK_ACTIVE_COMPLETE ActiveComplete;                              // Deprecated: see below
         PEP_WORK_IDLE_STATE IdleState;                                        // Deprecated: see below
         PEP_WORK_DEVICE_POWER DevicePower;                                    // Deprecated: see below
@@ -706,8 +706,8 @@ typedef PEPCALLBACKPOWERONCRASHDUMPDEVICE *PPEPCALLBACKPOWERONCRASHDUMPDEVICE;
 #define PEP_NOTIFY_PPM_LPI_COORDINATED_STATES           0x24 // PEPFX
 #define PEP_NOTIFY_PPM_LPI_PRE_EXECUTE                  0x25 // PEPFX
 #define PEP_NOTIFY_PPM_LPI_COMPLETE                     0x26 // PEPFX
-#define PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE               0x27 // PEPFX 
-#define PEP_NOTIFY_PPM_RESUME_FROM_SYSTEM_STATE         0x28 // PEPFX 
+#define PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE               0x27 // PEPFX
+#define PEP_NOTIFY_PPM_RESUME_FROM_SYSTEM_STATE         0x28 // PEPFX
 #define PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES       0x29 // PEPFX
 #define PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO                0x2a // PEPFX
 #define PEP_NOTIFY_PPM_PERF_SET_STATE                   0x2b // PEPFX
@@ -743,7 +743,7 @@ typedef struct _PEP_DEVICE_POWER_STATE {
 } PEP_DEVICE_POWER_STATE, *PPEP_DEVICE_POWER_STATE;
 
 // END_PEPFX
-// Deprecated: see definition of PEP_WORK_TYPE for further details. 
+// Deprecated: see definition of PEP_WORK_TYPE for further details.
 typedef struct _PEP_COMPONENT_ACTIVE {
     PEPHANDLE DeviceHandle;
     ULONG Component;
@@ -1096,6 +1096,7 @@ typedef struct _PEP_PPM_QUERY_CAPABILITIES {
     BOOLEAN PerformanceStatesSupported;
     BOOLEAN ParkingSupported;
     UCHAR DiscretePerformanceStateCount;
+    BOOLEAN Reserved;
 } PEP_PPM_QUERY_CAPABILITIES, *PPEP_PPM_QUERY_CAPABILITIES;
 
 // END_PEPFX
@@ -1411,7 +1412,7 @@ typedef struct _PEP_PPM_LPI_REGISTER {
     UCHAR               BitOffset;
     UCHAR               AccessSize;
     PHYSICAL_ADDRESS    Address;
-} PEP_PPM_LPI_REGISTER, *PPEP_PPM_LPI_REGISTER;    
+} PEP_PPM_LPI_REGISTER, *PPEP_PPM_LPI_REGISTER;
 
 typedef struct _PEP_PPM_PROCESSOR_LPI_STATE {
     ULONG MinResidency;

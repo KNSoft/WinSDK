@@ -35,7 +35,7 @@ extern "C" {
 // The version number for the GPIO interface supported by client driver.
 //
 
-#define GPIO_CLIENT_VERSION (0x3)
+#define GPIO_CLIENT_VERSION (0x4)
 
 //
 // Type for the GPIO controller's pin number.
@@ -1534,6 +1534,7 @@ typedef GPIO_CLIENT_CONTROLLER_SPECIFIC_FUNCTION
 // ***************************************************************************
 
 #define GPIO_CLIENT_REGISTRATION_FLAGS_NONE (0x0)
+#define GPIO_CLIENT_REGISTRATION_FLAGS_PAGING_PATH_SUPPORT (0x1)
 
 
 typedef struct _GPIO_CLIENT_REGISTRATION_PACKET {

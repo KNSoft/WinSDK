@@ -27,7 +27,7 @@ Revision:
 #define UFS_BOOT_LUN_ID                     0xB0
 
 //
-// Macros to Define MAX values for LUNs and Request Lists
+// Macros to Define MAX values
 //
 
 #define UFS_MAX_TRANSFER_LIST_SIZE          0x20
@@ -103,10 +103,13 @@ typedef struct {
 #define UFS_FEATURE_SUPPORT_FFU               0x01
 #define UFS_FEATURE_SUPPORT_PSA               0x02
 #define UFS_FEATURE_SUPPORT_DEVICE_LIFE_SPAN  0x04
+#define UFS_FEATURE_SUPPORT_HPB               0x80
 
 //
-// The Configuration Descriptor
+// The Unit Configuration Parameters Descriptor
 //
+
+#pragma pack (push, 1)
 
 typedef struct {
     UCHAR bLUEnable;                        // Offset 0x00
@@ -116,10 +119,14 @@ typedef struct {
     UCHAR dNumAllocUnits[4];                // Offset 0x04
     UCHAR bDataReliability;                 // Offset 0x08
     UCHAR bLogicalBlockSize;                // Offset 0x09
-    ULONG bProvisioningType;                // Offset 0x0A
+    UCHAR bProvisioningType;                // Offset 0x0A
     UCHAR wContextCapabilities[2];          // Offset 0x0B
     UCHAR Reserved[3];                      // Offset 0x0D
 } UFS_UNIT_CONFIG_DESCRIPTOR, *PUFS_UNIT_CONFIG_DESCRIPTOR;
+
+//
+// The Configuration Descriptor
+//
 
 typedef struct {
     UCHAR bLength;                          // Offset 0x00
@@ -135,6 +142,8 @@ typedef struct {
     UCHAR Reserved2[5];                     // Offset 0x0B
     UFS_UNIT_CONFIG_DESCRIPTOR UnitConfig[UFS_MAX_NUM_LU];
 } UFS_CONFIG_DESCRIPTOR, *PUFS_CONFIG_DESCRIPTOR;
+
+#pragma pack (pop)
 
 //
 // The Geometry Descriptor
@@ -339,3 +348,171 @@ typedef enum {
     UFS_PurgeStatusQueueNotEmpty = 4,
     UFS_PurgeStatusFailure       = 5
 } UFS_PURGE_STATUS;
+
+//
+// Host-Aware Performance Booster (HPB) descriptors
+//
+
+#pragma pack (push, 1)
+
+//
+// HPB Device Descriptor
+//
+
+typedef struct {
+    UCHAR bLength;                          // Offset 0x00
+    UCHAR bDescriptorIDN;                   // Offset 0x01, Value = 0x00
+    UCHAR bDevice;                          // Offset 0x02, Value = 0x00 (Device)
+    UCHAR bDeviceClass;                     // Offset 0x03, Value = 0x00 (Mass Storage)
+    UCHAR bDeviceSubClass;                  // Offset 0x04
+    UCHAR bProtocol;                        // Offset 0x05
+    UCHAR bNumberLU;                        // Offset 0x06
+    UCHAR bNumberWLU;                       // Offset 0x07
+    UCHAR bBootEnable;                      // Offset 0x08
+    UCHAR bDescrAccessEn;                   // Offset 0x09
+    UCHAR bInitPowerMode;                   // Offset 0x0A
+    UCHAR bHighPriorityLUN;                 // Offset 0x0B
+    UCHAR bSecureRemovalType;               // Offset 0x0C
+    UCHAR bSecurityLU;                      // Offset 0x0D
+    UCHAR bBackgroundOpsTermLat;            // Offset 0x0E
+    UCHAR bInitActiveICCLevel;              // Offset 0x0F
+    USHORT wSpecVersion;                    // Offset 0x10
+    USHORT wManufactureDate;                // Offset 0x12
+    UCHAR iManufacturerName;                // Offset 0x14
+    UCHAR iProductName;                     // Offset 0x15
+    UCHAR iSerialNumberID;                  // Offset 0x16
+    UCHAR iOemID;                           // Offset 0x17
+    USHORT wManufacturerID;                 // Offset 0x18
+    UCHAR bUD0BaseOffset;                   // Offset 0x1A
+    UCHAR bUDConfigPLength;                 // Offset 0x1B
+    UCHAR bDeviceRTTCap;                    // Offset 0x1C
+    USHORT wPeriodicRTCUpdate;              // Offset 0x1D
+    UCHAR bUFSFeaturesSupport;              // Offset 0x1F
+    UCHAR bFFUTimeout;                      // Offset 0x20
+    UCHAR bQueueDepth;                      // Offset 0x21
+    USHORT wDeviceVersion;                  // Offset 0x22
+    UCHAR bNumSecureWPArea;                 // Offset 0x24
+    ULONG dPSAMaxDataSize;                  // Offset 0x25
+    UCHAR dPSAStateTimeout;                 // Offset 0x29
+    UCHAR iProductRevisionLevel;            // Offset 0x2A
+    UCHAR Reserved[5];                      // Offset 0x2B
+    UCHAR Reserved2[16];                    // Offset 0x30, Reserved for UME
+    USHORT wHPBVersion;                     // Offset 0x40
+    UCHAR Reserved3[6];                     // Offset 0x42, Reserved for HPB Extension standard
+} UFS_HPB_DEVICE_DESCRIPTOR, *PUFS_HPB_DEVICE_DESCRIPTOR;
+
+//
+// HPB Geometry Descriptor
+//
+
+typedef struct {
+    UCHAR bLength;                          // Offset 0x00
+    UCHAR bDescriptorIDN;                   // Offset 0x01, Value = 0x07
+    UCHAR bMediaTechnology;                 // Offset 0x02
+    UCHAR Reserved1;                        // Offset 0x03
+    ULONGLONG qTotalRawDeviceCapacity;      // Offset 0x04
+    UCHAR bMaxNumberLU;                     // Offset 0x0C
+    ULONG dSegmentSize;                     // Offset 0x0D
+    UCHAR bAllocationUnitSize;              // Offset 0x11
+    UCHAR bMinAddrBlockSize;                // Offset 0x12
+    UCHAR bOptimalReadBlockSize;            // Offset 0x13
+    UCHAR bOptimalWriteBlockSize;           // Offset 0x14
+    UCHAR bMaxInBufferSize;                 // Offset 0x15
+    UCHAR bMaxOutBufferSize;                // Offset 0x16
+    UCHAR bRPMB_ReadWriteSize;              // Offset 0x17
+    UCHAR bDynamicCapacityResourcePolicy;   // Offset 0x18
+    UCHAR bDataOrdering;                    // Offset 0x19
+    UCHAR bMaxContexIDNumber;               // Offset 0x1A
+    UCHAR bSysDataTagUnitSize;              // Offset 0x1B
+    UCHAR bSysDataTagResSize;               // Offset 0x1C
+    UCHAR bSupportedSecRTypes;              // Offset 0x1D
+    USHORT wSupportedMemoryTypes;           // Offset 0x1E
+    ULONG dSystemCodeMaxNAllocU;            // Offset 0x20
+    USHORT wSystemCodeCapAdjFac;            // Offset 0x24
+    ULONG dNonPersistMaxNAllocU;            // Offset 0x26
+    USHORT wNonPersistCapAdjFac;            // Offset 0x2A
+    ULONG dEnhanced1MaxNAllocU;             // Offset 0x2C
+    USHORT wEnhanced1CapAdjFac;             // Offset 0x30
+    ULONG dEnhanced2MaxNAllocU;             // Offset 0x32
+    USHORT wEnhanced2CapAdjFac;             // Offset 0x36
+    ULONG dEnhanced3MaxNAllocU;             // Offset 0x38
+    USHORT wEnhanced3CapAdjFac;             // Offset 0x3C
+    ULONG dEnhanced4MaxNAllocU;             // Offset 0x3E
+    USHORT wEnhanced4CapAdjFac;             // Offset 0x42
+    ULONG dOptimalLogicalBlockSize;         // Offset 0x44
+    UCHAR bHPBRegionSize;                   // Offset 0x48
+    UCHAR bHPBNumberLU;                     // Offset 0x49
+    UCHAR bHPBSubRegionSize;                // Offset 0x4A
+    USHORT wDeviceMaxActiveHPBRegions;      // Offset 0x4B
+    UCHAR Reserved2[3];                     // Offset 0x4D
+} UFS_HPB_GEOMETRY_DESCRIPTOR, *PUFS_HPB_GEOMETRY_DESCRIPTOR;
+
+//
+// The HPB Unit Descriptor
+//
+
+typedef struct {
+    UCHAR bLength;                          // Offset 0x00
+    UCHAR bDescriptorIDN;                   // Offset 0x01, Value = 0x02
+    UCHAR bUnitIndex;                       // Offset 0x02
+    UCHAR bLUEnable;                        // Offset 0x03
+    UCHAR bBootLunID;                       // Offset 0x04
+    UCHAR bLUWriteProtect;                  // Offset 0x05
+    UCHAR bLUQueueDepth;                    // Offset 0x06
+    UCHAR bPSASensitive;                    // Offset 0x07
+    UCHAR bMemoryType;                      // Offset 0x08
+    UCHAR bDataReliability;                 // Offset 0x09
+    UCHAR bLogicalBlockSize;                // Offset 0x0A
+    ULONGLONG qLogicalBlockCount;           // Offset 0x0B
+    ULONG dEraseBlockSize;                  // Offset 0x13
+    UCHAR bProvisioningType;                // Offset 0x17
+    ULONGLONG qPhyMemResourceCount;         // Offset 0x18
+    USHORT wContextCapabilities;            // Offset 0x20
+    UCHAR bLargeUnitGranularity_M1;         // Offset 0x22
+    USHORT wLUMaxActiveHPBRegions;          // Offset 0x23
+    USHORT wHPBPinnedRegionStartIdx;        // Offset 0x25
+    USHORT wNumHPBPinnedRegions;            // Offset 0x27
+    UCHAR Reserved[3];                      // Offset 0x29, Reserved for HPB Extension standard
+} UFS_HPB_UNIT_DESCRIPTOR, *PUFS_HPB_UNIT_DESCRIPTOR;
+
+//
+// The HPB Unit Configuration Parameters Descriptor
+//
+
+typedef struct {
+    UCHAR bLUEnable;                        // Offset 0x00
+    UCHAR bBootLunID;                       // Offset 0x01
+    UCHAR bLUWriteProtect;                  // Offset 0x02
+    UCHAR bMemoryType;                      // Offset 0x03
+    ULONG dNumAllocUnits;                   // Offset 0x04
+    UCHAR bDataReliability;                 // Offset 0x08
+    UCHAR bLogicalBlockSize;                // Offset 0x09
+    UCHAR bProvisioningType;                // Offset 0x0A
+    USHORT wContextCapabilities;            // Offset 0x0B
+    UCHAR Reserved[3];                      // Offset 0x0D
+    USHORT wLUMaxActiveHPBRegions;          // Offset 0x10
+    USHORT wHPBPinnedRegionStartIdx;        // Offset 0x12
+    USHORT wNumHPBPinnedRegions;            // Offset 0x14
+    UCHAR Reserved2[2];                     // Offset 0x16
+} UFS_HPB_UNIT_CONFIG_DESCRIPTOR, *PUFS_HPB_UNIT_CONFIG_DESCRIPTOR;
+
+//
+// The HPB Configuration Descriptor
+//
+
+typedef struct {
+    UCHAR bLength;                          // Offset 0x00
+    UCHAR bDescriptorIDN;                   // Offset 0x01, Value = 0x01
+    UCHAR Reserved1;                        // Offset 0x02
+    UCHAR bBootEnable;                      // Offset 0x03
+    UCHAR bDescrAccessEn;                   // Offset 0x04
+    UCHAR bInitPowerMode;                   // Offset 0x05
+    UCHAR bHighPriorityLUN;                 // Offset 0x06
+    UCHAR bSecureRemovalType;               // Offset 0x07
+    UCHAR bInitActiveICCLevel;              // Offset 0x08
+    USHORT wPeriodicRTCUpdate;              // Offset 0x09
+    UCHAR Reserved2[5];                     // Offset 0x0B
+    UFS_HPB_UNIT_CONFIG_DESCRIPTOR UnitConfig[UFS_MAX_NUM_LU];
+} UFS_HPB_CONFIG_DESCRIPTOR, *PUFS_HPB_CONFIG_DESCRIPTOR;
+
+#pragma pack (pop)

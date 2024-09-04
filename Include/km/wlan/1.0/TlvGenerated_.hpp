@@ -780,6 +780,9 @@ typedef struct _WDI_INTERFACE_CAPABILITIES
     BOOLEAN CannotSupportMiracastSink; // True if the device cannot support Miracast Sink
     BOOLEAN BSSTransitionSupported; // True if the device supports BSS Transition frames
     BOOLEAN IPDockingSupported; // True if the device supports IP Docking Capability
+    BOOLEAN SAEAuthenticationSupported; // True if the device supports SAE Authentication Capability
+    BOOLEAN MBOSupported; // True if the device supports MBO
+    BOOLEAN BeaconReportsImplemented; // True if the device handles beacon report measurement on its own
 #ifdef __cplusplus
     _WDI_INTERFACE_CAPABILITIES()
     {
@@ -787,6 +790,45 @@ typedef struct _WDI_INTERFACE_CAPABILITIES
     };
 #endif // __cplusplus
 } WDI_INTERFACE_CAPABILITIES, *PWDI_INTERFACE_CAPABILITIES;
+
+
+//
+// Structure definition for interface Capabilities
+//
+typedef struct _WDI_INTERFACE_CAPABILITIESV1_0_20
+{
+    UINT32 MTUSize; // MTU size
+    UINT32 MaxMultiCastListSize; // Multicast list size for the adapter
+    UINT16 BackFillSize; // Backfill Size in Bytes
+    WDI_MAC_ADDRESS Address; // Permanent Wi-Fi MAC Address.
+    UINT32 MaxTxRate; // Maximum supported send rate for this adapter, in kbps
+    UINT32 MaxRxRate; // Maximum supported receive rate for this adapter, in kbps
+    BOOLEAN HardwareRadioState; // Whether or not the radio is enabled by hardware
+    BOOLEAN SoftwareRadioState; // Whether or not the radio is enabled by software
+    BOOLEAN SupportPLR; // whether the adapter support PLR - Platform Level Reset
+    BOOLEAN SupportFLR; // whether the adapter support FLR - Function Level Reset
+    BOOLEAN ActionFramesSupported; // {0,1} If sending and receiving actions frames is supported. Yes = 1.
+    UINT8 NumRxStreams; // Number of RX spatial streams supported
+    UINT8 NumTxStreams; // Number of TX spatial streams supported
+    UINT8 NumChannels; // Number of channels the adapter can work concurrently in
+    BOOLEAN AntennaDiversity; // Whether the adapter supports antenna diversity
+    BOOLEAN Support_eCSA; // Whether the adapter supports eCSA
+    BOOLEAN MACAddressRandomization; // Whether the adapter supports MAC Address Randomization. Yes = 1.
+    WDI_MAC_ADDRESS MACAddressRandomizationMask; // MAC Address Randomization contraints for some hardware.
+    WDI_BLUETOOTH_COEXISTENCE_SUPPORT BluetoothCoexistenceSupport; // Bluetooth Coexistence support.
+    BOOLEAN SupportsNonWdiOidRequests; // Whether the adapter can handle non-WDI OIDs
+    BOOLEAN FastTransitionSupported; // Whether the adapter can do Fast-Transition association
+    BOOLEAN MU_MIMOSupported; // Whether the adapter supports MU_MIMO
+    BOOLEAN CannotSupportMiracastSink; // True if the device cannot support Miracast Sink
+    BOOLEAN BSSTransitionSupported; // True if the device supports BSS Transition frames
+    BOOLEAN IPDockingSupported; // True if the device supports IP Docking Capability
+#ifdef __cplusplus
+    _WDI_INTERFACE_CAPABILITIESV1_0_20()
+    {
+        memset( this, 0, sizeof( _WDI_INTERFACE_CAPABILITIESV1_0_20 ) );
+    };
+#endif // __cplusplus
+} WDI_INTERFACE_CAPABILITIESV1_0_20, *PWDI_INTERFACE_CAPABILITIESV1_0_20;
 
 
 //
@@ -902,12 +944,44 @@ typedef struct _WDI_STATION_CAPABILITIES
     UINT32 uMaxNetworkOffloadListSize; // Support number of Network Offload entries
     BOOLEAN HESSIDConnectionSupported; // {0,1} If ability to connect to HESSIDs is supported. Yes = 1.
     BOOLEAN DisconnectedStandbySupported; // If disconnected standby is supported. Yes = 1
+    BOOLEAN FTMAsInitiatorSupport; // {0,1} If FTM procedures as Initiator are supported. Yes = 1.
+    UINT32 FTMNumberOfSupportedTargets; // Number of target STAs supported per FTM request task.
 #ifdef __cplusplus
-    _WDI_STATION_CAPABILITIES() : ScanSSIDListSize( 0 ), DesiredBSSIDListSize( 0 ), DesiredSSIDListSize( 0 ), PrivacyExemptionListSize( 0 ), KeyMappingTableSize( 0 ), DefaultKeyTableSize( 0 ), WEPKeyValueMaxLength( 0 ), MaxNumPerSTA( 0 ), SupportedQOSFlags( 0 ), HostFIPSModeImplemented( 0 ), MFPCapable( 0 ), AutoPowerSaveMode( FALSE ), BSSListCachemanagement( FALSE ), ConnectBSSSelectionOverride( FALSE ), uMaxNetworkOffloadListSize( 0 ), HESSIDConnectionSupported( FALSE ), DisconnectedStandbySupported( FALSE )
+    _WDI_STATION_CAPABILITIES() : ScanSSIDListSize( 0 ), DesiredBSSIDListSize( 0 ), DesiredSSIDListSize( 0 ), PrivacyExemptionListSize( 0 ), KeyMappingTableSize( 0 ), DefaultKeyTableSize( 0 ), WEPKeyValueMaxLength( 0 ), MaxNumPerSTA( 0 ), SupportedQOSFlags( 0 ), HostFIPSModeImplemented( 0 ), MFPCapable( 0 ), AutoPowerSaveMode( FALSE ), BSSListCachemanagement( FALSE ), ConnectBSSSelectionOverride( FALSE ), uMaxNetworkOffloadListSize( 0 ), HESSIDConnectionSupported( FALSE ), DisconnectedStandbySupported( FALSE ), FTMAsInitiatorSupport( FALSE ), FTMNumberOfSupportedTargets( 0 )
     {
     };
 #endif // __cplusplus
 } WDI_STATION_CAPABILITIES, *PWDI_STATION_CAPABILITIES;
+
+
+//
+// Structure definition for Station capabilities
+//
+typedef struct _WDI_STATION_CAPABILITIESV1_0
+{
+    UINT32 ScanSSIDListSize; // Scan SSID List size
+    UINT32 DesiredBSSIDListSize; // Desired BSSID List size
+    UINT32 DesiredSSIDListSize; // Desired SSID List size
+    UINT32 PrivacyExemptionListSize; // Privacy Exemption List size
+    UINT32 KeyMappingTableSize; // Key Mapping List size
+    UINT32 DefaultKeyTableSize; // Default Key table size
+    UINT32 WEPKeyValueMaxLength; // WEP Key value Max length
+    UINT32 MaxNumPerSTA; // Max num per STA Default key tables
+    UINT8 SupportedQOSFlags; // Whether or not WMM QOS is supported
+    UINT8 HostFIPSModeImplemented; // Whether or not host FIPS mode is supported
+    UINT8 MFPCapable; // Whether or not MFP is supported
+    BOOLEAN AutoPowerSaveMode; // {0,1} if Auto Power Save is supported. Yes = 1.
+    BOOLEAN BSSListCachemanagement; // {0,1} If the adapter would maintain the Station BSS List cache. Yes = 1
+    BOOLEAN ConnectBSSSelectionOverride; // {0,1} If on a Station connect the adapter may attempt association to a BSSID that is not specified in the Preferred BSSID list. Yes = 1
+    UINT32 uMaxNetworkOffloadListSize; // Support number of Network Offload entries
+    BOOLEAN HESSIDConnectionSupported; // {0,1} If ability to connect to HESSIDs is supported. Yes = 1.
+    BOOLEAN DisconnectedStandbySupported; // If disconnected standby is supported. Yes = 1
+#ifdef __cplusplus
+    _WDI_STATION_CAPABILITIESV1_0() : ScanSSIDListSize( 0 ), DesiredBSSIDListSize( 0 ), DesiredSSIDListSize( 0 ), PrivacyExemptionListSize( 0 ), KeyMappingTableSize( 0 ), DefaultKeyTableSize( 0 ), WEPKeyValueMaxLength( 0 ), MaxNumPerSTA( 0 ), SupportedQOSFlags( 0 ), HostFIPSModeImplemented( 0 ), MFPCapable( 0 ), AutoPowerSaveMode( FALSE ), BSSListCachemanagement( FALSE ), ConnectBSSSelectionOverride( FALSE ), uMaxNetworkOffloadListSize( 0 ), HESSIDConnectionSupported( FALSE ), DisconnectedStandbySupported( FALSE )
+    {
+    };
+#endif // __cplusplus
+} WDI_STATION_CAPABILITIESV1_0, *PWDI_STATION_CAPABILITIESV1_0;
 
 
 //
@@ -1964,6 +2038,12 @@ typedef BOOLEAN BOOL_CONTAINER;
 typedef WDI_ASSOC_STATUS WDI_ROAMING_NEEDED_CONTAINER;
 
 typedef WDI_CONNECTION_QUALITY_HINT WDI_CONNECTION_QUALITY_CONTAINER;
+
+typedef WDI_SAE_INDICATION_TYPE WDI_SAE_INDICATION_TYPE_CONTAINER;
+
+typedef WDI_SAE_REQUEST_TYPE WDI_SAE_REQUEST_TYPE_CONTAINER;
+
+typedef WDI_SAE_STATUS WDI_SAE_STATUS_CONTAINER;
 
 typedef WDI_TCP_RSC_STATISTICS_STRUCT WDI_TCP_RSC_STATISTICS_CONTAINER;
 
@@ -3058,6 +3138,8 @@ typedef WDI_COMMUNICATION_CAPABILITIES WDI_COMMUNICATION_CAPABILITIES_CONTAINER;
 
 typedef WDI_INTERFACE_CAPABILITIES WDI_INTERFACE_CAPABILITIES_CONTAINER;
 
+typedef WDI_INTERFACE_CAPABILITIESV1_0_20 WDI_INTERFACE_CAPABILITIES_CONTAINER_V1_0_20;
+
 typedef WDI_INTERFACE_CAPABILITIESV1_0_1 WDI_INTERFACE_CAPABILITIES_CONTAINER_V1_0_1;
 
 typedef WDI_INTERFACE_CAPABILITIESV1_0 WDI_INTERFACE_CAPABILITIES_CONTAINER_V1_0;
@@ -3078,6 +3160,8 @@ typedef struct ArrayOfElementsOfWDI_ALGO_PAIRS WDI_ALGO_PAIRS_LIST_CONTAINER;
 #endif // __cplusplus
 
 typedef WDI_STATION_CAPABILITIES WDI_STATION_CAPABILITIES_CONTAINER;
+
+typedef WDI_STATION_CAPABILITIESV1_0 WDI_STATION_CAPABILITIES_CONTAINERV1_0;
 
 typedef WDI_AP_CAPABILITIES WDI_AP_CAPABILITIES_CONTAINER;
 
@@ -3387,6 +3471,64 @@ namespace WDI_TLV
     namespace PARSER
     {
         void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_FT_INITIAL_ASSOC_PARAMETERS_CONTAINER * pField );
+    }
+}
+#endif // __cplusplus
+
+//
+// Container for SAE commit request
+//
+typedef struct _WDI_SAE_COMMIT_REQUEST
+{
+    struct _WDI_SAE_COMMIT_REQUEST_Optional
+    {
+        UINT32 AntiCloggingToken_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_SAE_COMMIT_REQUEST_Optional() : AntiCloggingToken_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    UINT16_CONTAINER FiniteCyclicGroup;
+    WDI_BYTE_BLOB Scalar;
+    WDI_BYTE_BLOB Element;
+    WDI_BYTE_BLOB AntiCloggingToken;
+#ifdef __cplusplus
+    _WDI_SAE_COMMIT_REQUEST() : FiniteCyclicGroup( (UINT16_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_SAE_COMMIT_REQUEST, *PWDI_SAE_COMMIT_REQUEST;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SAE_COMMIT_REQUEST * pField );
+    }
+}
+#endif // __cplusplus
+
+//
+// Container for SAE confirm request
+//
+typedef struct _WDI_SAE_CONFIRM_REQUEST
+{
+    UINT16_CONTAINER SendConfirm;
+    WDI_BYTE_BLOB Confirm;
+#ifdef __cplusplus
+    _WDI_SAE_CONFIRM_REQUEST() : SendConfirm( (UINT16_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_SAE_CONFIRM_REQUEST, *PWDI_SAE_CONFIRM_REQUEST;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SAE_CONFIRM_REQUEST * pField );
     }
 }
 #endif // __cplusplus
@@ -4015,6 +4157,100 @@ namespace WDI_TLV
     namespace PARSER
     {
         void MarkArrayOfElementFieldsAsCopied( _Inout_ TEST_AGGREGATE_CONTAINER * pField );
+    }
+}
+#endif // __cplusplus
+
+//
+// Container for FTM target BSS entries
+//
+typedef struct _WDI_FTM_TARGET_BSS_ENTRY_CONTAINER
+{
+    struct _WDI_FTM_TARGET_BSS_ENTRY_CONTAINER_Optional
+    {
+        UINT32 ProbeResponseFrame_IsPresent : 1;
+        UINT32 BeaconFrame_IsPresent : 1;
+        UINT32 DeviceSpecificContext_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_FTM_TARGET_BSS_ENTRY_CONTAINER_Optional() : ProbeResponseFrame_IsPresent( FALSE ), BeaconFrame_IsPresent( FALSE ), DeviceSpecificContext_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_MAC_ADDRESS_CONTAINER BSSID;
+    WDI_BYTE_BLOB ProbeResponseFrame;
+    WDI_BYTE_BLOB BeaconFrame;
+    WDI_SIGNAL_INFO_CONTAINER SignalInfo;
+    WDI_CHANNEL_INFO_CONTAINER ChannelInfo;
+    WDI_BYTE_BLOB DeviceSpecificContext;
+    BOOL_CONTAINER RequestLCIReport;
+#ifdef __cplusplus
+    _WDI_FTM_TARGET_BSS_ENTRY_CONTAINER() : RequestLCIReport( (BOOL_CONTAINER)0 )
+    {
+        memset( &BSSID, 0, sizeof( BSSID ) );
+    };
+#endif // __cplusplus
+} WDI_FTM_TARGET_BSS_ENTRY_CONTAINER, *PWDI_FTM_TARGET_BSS_ENTRY_CONTAINER;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_FTM_TARGET_BSS_ENTRY_CONTAINER * pField );
+    }
+}
+#endif // __cplusplus
+typedef WDI_FTM_RESPONSE_STATUS WDI_FTM_RESPONSE_STATUS_CONTAINER;
+
+typedef WDI_LCI_REPORT_STATUS WDI_LCI_REPORT_STATUS_CONTAINER;
+
+
+//
+// Container for FTM response
+//
+typedef struct _WDI_FTM_RESPONSE_CONTAINER
+{
+    struct _WDI_FTM_RESPONSE_CONTAINER_Optional
+    {
+        UINT32 RetryAfter_IsPresent : 1;
+        UINT32 NumberOfMeasurements_IsPresent : 1;
+        UINT32 SignalInfo_IsPresent : 1;
+        UINT32 RTT_IsPresent : 1;
+        UINT32 RTTAccuracy_IsPresent : 1;
+        UINT32 RTTVariance_IsPresent : 1;
+        UINT32 LCIStatus_IsPresent : 1;
+        UINT32 LCIReport_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_FTM_RESPONSE_CONTAINER_Optional() : RetryAfter_IsPresent( FALSE ), NumberOfMeasurements_IsPresent( FALSE ), SignalInfo_IsPresent( FALSE ), RTT_IsPresent( FALSE ), RTTAccuracy_IsPresent( FALSE ), RTTVariance_IsPresent( FALSE ), LCIStatus_IsPresent( FALSE ), LCIReport_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_MAC_ADDRESS_CONTAINER BSSID;
+    WDI_FTM_RESPONSE_STATUS_CONTAINER Status;
+    UINT16_CONTAINER RetryAfter;
+    UINT16_CONTAINER NumberOfMeasurements;
+    WDI_SIGNAL_INFO_CONTAINER SignalInfo;
+    UINT32_CONTAINER RTT;
+    UINT32_CONTAINER RTTAccuracy;
+    UINT64_CONTAINER RTTVariance;
+    WDI_LCI_REPORT_STATUS_CONTAINER LCIStatus;
+    WDI_BYTE_BLOB LCIReport;
+#ifdef __cplusplus
+    _WDI_FTM_RESPONSE_CONTAINER() : Status( (WDI_FTM_RESPONSE_STATUS_CONTAINER)0 ), RetryAfter( (UINT16_CONTAINER)0 ), NumberOfMeasurements( (UINT16_CONTAINER)0 ), RTT( (UINT32_CONTAINER)0 ), RTTAccuracy( (UINT32_CONTAINER)0 ), RTTVariance( (UINT64_CONTAINER)0 ), LCIStatus( (WDI_LCI_REPORT_STATUS_CONTAINER)0 )
+    {
+        memset( &BSSID, 0, sizeof( BSSID ) );
+    };
+#endif // __cplusplus
+} WDI_FTM_RESPONSE_CONTAINER, *PWDI_FTM_RESPONSE_CONTAINER;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_FTM_RESPONSE_CONTAINER * pField );
     }
 }
 #endif // __cplusplus
@@ -5943,6 +6179,62 @@ typedef struct _WDI_TASK_IHV_PARAMETERS
 //
 typedef EmptyMessageStructureType WDI_TASK_IHV_RESULTS, *PWDI_TASK_IHV_RESULTS;
 
+struct ArrayOfElementsOfWDI_FTM_TARGET_BSS_ENTRY_CONTAINER
+{
+    UINT32 ElementCount;
+    WDI_FTM_TARGET_BSS_ENTRY_CONTAINER* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_FTM_TARGET_BSS_ENTRY_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_FTM_TARGET_BSS_ENTRY_CONTAINER ) );
+#endif // __cplusplus
+
+//
+// Request FTM parameters
+//
+typedef struct _WDI_TASK_REQUEST_FTM_PARAMETERS
+{
+    UINT32_CONTAINER FTMRequestTimeout;
+#ifdef __cplusplus
+    ArrayOfElements<WDI_FTM_TARGET_BSS_ENTRY_CONTAINER> FTMTargetList;
+#else // __cplusplus
+    struct ArrayOfElementsOfWDI_FTM_TARGET_BSS_ENTRY_CONTAINER FTMTargetList;
+#endif // __cplusplus
+#ifdef __cplusplus
+    _WDI_TASK_REQUEST_FTM_PARAMETERS() : FTMRequestTimeout( (UINT32_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_TASK_REQUEST_FTM_PARAMETERS, *PWDI_TASK_REQUEST_FTM_PARAMETERS;
+
+
+//
+// No TLV data needed, header is sufficient
+//
+typedef EmptyMessageStructureType WDI_TASK_REQUEST_FTM_RESULTS, *PWDI_TASK_REQUEST_FTM_RESULTS;
+
+struct ArrayOfElementsOfWDI_FTM_RESPONSE_CONTAINER
+{
+    UINT32 ElementCount;
+    WDI_FTM_RESPONSE_CONTAINER* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_FTM_RESPONSE_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_FTM_RESPONSE_CONTAINER ) );
+#endif // __cplusplus
+
+//
+// Responses for the FTM request
+//
+typedef struct _WDI_INDICATION_REQUEST_FTM_COMPLETE_PARAMETERS
+{
+#ifdef __cplusplus
+    ArrayOfElements<WDI_FTM_RESPONSE_CONTAINER> FTMResponseList;
+#else // __cplusplus
+    struct ArrayOfElementsOfWDI_FTM_RESPONSE_CONTAINER FTMResponseList;
+#endif // __cplusplus
+} WDI_INDICATION_REQUEST_FTM_COMPLETE_PARAMETERS, *PWDI_INDICATION_REQUEST_FTM_COMPLETE_PARAMETERS;
+
 
 //
 // not implemented yet (ID:762509) - Parameters for WDI_INDICATION_IHV_TASK_REQUEST
@@ -6091,6 +6383,74 @@ typedef struct _WDI_SET_FAST_BSS_TRANSITION_PARAMETERS_COMMAND
 // No TLV data needed, header is sufficient
 //
 typedef EmptyMessageStructureType WDI_SET_FAST_BSS_TRANSITION_PARAMETERS_RESULTS, *PWDI_SET_FAST_BSS_TRANSITION_PARAMETERS_RESULTS;
+
+
+//
+// Requesting the SAE Authentication parameters
+//
+typedef struct _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS
+{
+    struct _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS_Optional
+    {
+        UINT32 SAECommitResponse_IsPresent : 1;
+        UINT32 SAEConfirmResponse_IsPresent : 1;
+        UINT32 SAEStatus_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS_Optional() : SAECommitResponse_IsPresent( FALSE ), SAEConfirmResponse_IsPresent( FALSE ), SAEStatus_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_MAC_ADDRESS_CONTAINER BssId;
+    WDI_SAE_INDICATION_TYPE_CONTAINER SAEIndicationType;
+    WDI_BYTE_BLOB SAECommitResponse;
+    WDI_BYTE_BLOB SAEConfirmResponse;
+    WDI_SAE_STATUS_CONTAINER SAEStatus;
+#ifdef __cplusplus
+    _WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS() : SAEIndicationType( (WDI_SAE_INDICATION_TYPE_CONTAINER)0 ), SAEStatus( (WDI_SAE_STATUS_CONTAINER)0 )
+    {
+        memset( &BssId, 0, sizeof( BssId ) );
+    };
+#endif // __cplusplus
+} WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS, *PWDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS;
+
+
+//
+// Parameters for continuing SAE authentication with AP
+//
+typedef struct _WDI_SET_SAE_AUTH_PARAMS_COMMAND
+{
+    struct _WDI_SET_SAE_AUTH_PARAMS_COMMAND_Optional
+    {
+        UINT32 SAECommitRequest_IsPresent : 1;
+        UINT32 SAEConfirmRequest_IsPresent : 1;
+        UINT32 SAEStatus_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_SET_SAE_AUTH_PARAMS_COMMAND_Optional() : SAECommitRequest_IsPresent( FALSE ), SAEConfirmRequest_IsPresent( FALSE ), SAEStatus_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_MAC_ADDRESS_CONTAINER BssId;
+    WDI_SAE_REQUEST_TYPE_CONTAINER SAERequestType;
+    WDI_SAE_COMMIT_REQUEST SAECommitRequest;
+    WDI_SAE_CONFIRM_REQUEST SAEConfirmRequest;
+    WDI_SAE_STATUS_CONTAINER SAEStatus;
+#ifdef __cplusplus
+    _WDI_SET_SAE_AUTH_PARAMS_COMMAND() : SAERequestType( (WDI_SAE_REQUEST_TYPE_CONTAINER)0 ), SAEStatus( (WDI_SAE_STATUS_CONTAINER)0 )
+    {
+        memset( &BssId, 0, sizeof( BssId ) );
+    };
+#endif // __cplusplus
+} WDI_SET_SAE_AUTH_PARAMS_COMMAND, *PWDI_SET_SAE_AUTH_PARAMS_COMMAND;
+
+
+//
+// No TLV data needed, header is sufficient
+//
+typedef EmptyMessageStructureType WDI_SET_SAE_AUTH_PARAMS_RESULTS, *PWDI_SET_SAE_AUTH_PARAMS_RESULTS;
 
 
 //
@@ -8704,6 +9064,60 @@ extern "C" {
         _Out_opt_ WDI_TASK_IHV_RESULTS* pParsedMessage );
     void __stdcall CleanupParsedWdiTaskIhvFromIhv( _In_ WDI_TASK_IHV_RESULTS* pParsedMessage );
 
+    NDIS_STATUS __stdcall GenerateWdiTaskRequestFtmToIhv(
+        _In_ WDI_TASK_REQUEST_FTM_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_TASK_REQUEST_FTM_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiTaskRequestFtmToIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiTaskRequestFtmToIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_TASK_REQUEST_FTM_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiTaskRequestFtmToIhv( _In_ WDI_TASK_REQUEST_FTM_PARAMETERS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiTaskRequestFtmFromIhv(
+        _In_opt_ WDI_TASK_REQUEST_FTM_RESULTS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+
+    NDIS_STATUS __stdcall ParseWdiTaskRequestFtmFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_opt_ WDI_TASK_REQUEST_FTM_RESULTS* pParsedMessage );
+    void __stdcall CleanupParsedWdiTaskRequestFtmFromIhv( _In_ WDI_TASK_REQUEST_FTM_RESULTS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiIndicationRequestFtmCompleteFromIhv(
+        _In_ WDI_INDICATION_REQUEST_FTM_COMPLETE_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_INDICATION_REQUEST_FTM_COMPLETE_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiIndicationRequestFtmCompleteFromIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiIndicationRequestFtmCompleteFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_INDICATION_REQUEST_FTM_COMPLETE_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiIndicationRequestFtmCompleteFromIhv( _In_ WDI_INDICATION_REQUEST_FTM_COMPLETE_PARAMETERS* pParsedMessage );
+
     NDIS_STATUS __stdcall GenerateWdiIndicationIhvTaskRequestFromIhv(
         _In_ WDI_INDICATION_IHV_TASK_REQUEST_PARAMETERS const * pInput,
         _In_ ULONG ReservedHeaderLength,
@@ -8927,6 +9341,60 @@ extern "C" {
         _In_ PCTLV_CONTEXT Context,
         _Out_opt_ WDI_SET_FAST_BSS_TRANSITION_PARAMETERS_RESULTS* pParsedMessage );
     void __stdcall CleanupParsedWdiSetFastBssTransitionParametersFromIhv( _In_ WDI_SET_FAST_BSS_TRANSITION_PARAMETERS_RESULTS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiIndicationSaeAuthParamsNeededFromIhv(
+        _In_ WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiIndicationSaeAuthParamsNeededFromIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiIndicationSaeAuthParamsNeededFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiIndicationSaeAuthParamsNeededFromIhv( _In_ WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiSetSaeAuthParamsToIhv(
+        _In_ WDI_SET_SAE_AUTH_PARAMS_COMMAND const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_SET_SAE_AUTH_PARAMS_COMMAND const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiSetSaeAuthParamsToIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiSetSaeAuthParamsToIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_SET_SAE_AUTH_PARAMS_COMMAND* pParsedMessage );
+    void __stdcall CleanupParsedWdiSetSaeAuthParamsToIhv( _In_ WDI_SET_SAE_AUTH_PARAMS_COMMAND* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiSetSaeAuthParamsFromIhv(
+        _In_opt_ WDI_SET_SAE_AUTH_PARAMS_RESULTS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+
+    NDIS_STATUS __stdcall ParseWdiSetSaeAuthParamsFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_opt_ WDI_SET_SAE_AUTH_PARAMS_RESULTS* pParsedMessage );
+    void __stdcall CleanupParsedWdiSetSaeAuthParamsFromIhv( _In_ WDI_SET_SAE_AUTH_PARAMS_RESULTS* pParsedMessage );
 
     NDIS_STATUS __stdcall GenerateWdiIndicationFirmwareStalledFromIhv(
         _In_opt_ WDI_INDICATION_FIRMWARE_STALLED_PARAMETERS const * pInput,
@@ -9352,6 +9820,11 @@ extern "C" {
 #define GenerateWdiTaskIhv GenerateWdiTaskIhvToIhv
 #define ParseWdiTaskIhv ParseWdiTaskIhvFromIhv
 #define CleanupParsedWdiTaskIhv CleanupParsedWdiTaskIhvFromIhv
+#define GenerateWdiTaskRequestFtm GenerateWdiTaskRequestFtmToIhv
+#define ParseWdiTaskRequestFtm ParseWdiTaskRequestFtmFromIhv
+#define CleanupParsedWdiTaskRequestFtm CleanupParsedWdiTaskRequestFtmFromIhv
+#define ParseWdiIndicationRequestFtmComplete ParseWdiIndicationRequestFtmCompleteFromIhv
+#define CleanupParsedWdiIndicationRequestFtmComplete CleanupParsedWdiIndicationRequestFtmCompleteFromIhv
 #define ParseWdiIndicationIhvTaskRequest ParseWdiIndicationIhvTaskRequestFromIhv
 #define CleanupParsedWdiIndicationIhvTaskRequest CleanupParsedWdiIndicationIhvTaskRequestFromIhv
 #define ParseWdiIndicationIhvTaskComplete ParseWdiIndicationIhvTaskCompleteFromIhv
@@ -9373,6 +9846,11 @@ extern "C" {
 #define GenerateWdiSetFastBssTransitionParameters GenerateWdiSetFastBssTransitionParametersToIhv
 #define ParseWdiSetFastBssTransitionParameters ParseWdiSetFastBssTransitionParametersFromIhv
 #define CleanupParsedWdiSetFastBssTransitionParameters CleanupParsedWdiSetFastBssTransitionParametersFromIhv
+#define ParseWdiIndicationSaeAuthParamsNeeded ParseWdiIndicationSaeAuthParamsNeededFromIhv
+#define CleanupParsedWdiIndicationSaeAuthParamsNeeded CleanupParsedWdiIndicationSaeAuthParamsNeededFromIhv
+#define GenerateWdiSetSaeAuthParams GenerateWdiSetSaeAuthParamsToIhv
+#define ParseWdiSetSaeAuthParams ParseWdiSetSaeAuthParamsFromIhv
+#define CleanupParsedWdiSetSaeAuthParams CleanupParsedWdiSetSaeAuthParamsFromIhv
 #define ParseWdiIndicationFirmwareStalled ParseWdiIndicationFirmwareStalledFromIhv
 #define CleanupParsedWdiIndicationFirmwareStalled CleanupParsedWdiIndicationFirmwareStalledFromIhv
 #define GenerateWdiSetNeighborReportEntries GenerateWdiSetNeighborReportEntriesToIhv
@@ -9567,6 +10045,10 @@ extern "C" {
 #define ParseWdiTaskIhv ParseWdiTaskIhvToIhv
 #define CleanupParsedWdiTaskIhv CleanupParsedWdiTaskIhvToIhv
 #define GenerateWdiTaskIhv GenerateWdiTaskIhvFromIhv
+#define ParseWdiTaskRequestFtm ParseWdiTaskRequestFtmToIhv
+#define CleanupParsedWdiTaskRequestFtm CleanupParsedWdiTaskRequestFtmToIhv
+#define GenerateWdiTaskRequestFtm GenerateWdiTaskRequestFtmFromIhv
+#define GenerateWdiIndicationRequestFtmComplete GenerateWdiIndicationRequestFtmCompleteFromIhv
 #define GenerateWdiIndicationIhvTaskRequest GenerateWdiIndicationIhvTaskRequestFromIhv
 #define GenerateWdiIndicationIhvTaskComplete GenerateWdiIndicationIhvTaskCompleteFromIhv
 #define ParseWdiAbortTask ParseWdiAbortTaskToIhv
@@ -9585,6 +10067,10 @@ extern "C" {
 #define ParseWdiSetFastBssTransitionParameters ParseWdiSetFastBssTransitionParametersToIhv
 #define CleanupParsedWdiSetFastBssTransitionParameters CleanupParsedWdiSetFastBssTransitionParametersToIhv
 #define GenerateWdiSetFastBssTransitionParameters GenerateWdiSetFastBssTransitionParametersFromIhv
+#define GenerateWdiIndicationSaeAuthParamsNeeded GenerateWdiIndicationSaeAuthParamsNeededFromIhv
+#define ParseWdiSetSaeAuthParams ParseWdiSetSaeAuthParamsToIhv
+#define CleanupParsedWdiSetSaeAuthParams CleanupParsedWdiSetSaeAuthParamsToIhv
+#define GenerateWdiSetSaeAuthParams GenerateWdiSetSaeAuthParamsFromIhv
 #define GenerateWdiIndicationFirmwareStalled GenerateWdiIndicationFirmwareStalledFromIhv
 #define ParseWdiSetNeighborReportEntries ParseWdiSetNeighborReportEntriesToIhv
 #define CleanupParsedWdiSetNeighborReportEntries CleanupParsedWdiSetNeighborReportEntriesToIhv

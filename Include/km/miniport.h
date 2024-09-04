@@ -1404,6 +1404,22 @@ inline ENUMTYPE &operator ^= (ENUMTYPE &a, ENUMTYPE b) throw() { return (ENUMTYP
 
 #endif  // NOMINMAX
 
+// end_ntndis end_ntminitape
+// begin_winnt
+
+// Much of the Windows SDK assumes the default packing of structs.
+#if !defined(WINDOWS_IGNORE_PACKING_MISMATCH) && !defined(__midl) && !defined(MIDL_PASS) && !defined(SORTPP_PASS) && !defined(RC_INVOKED)
+#if defined(__cplusplus) && (_MSC_VER >= 1600)
+static_assert(__alignof(LARGE_INTEGER) == 8, "Windows headers require the default packing option. Changing this can lead to memory corruption."
+    " This diagnostic can be disabled by building with WINDOWS_IGNORE_PACKING_MISMATCH defined.");
+#elif _MSC_VER >= 1300
+#pragma warning(push)
+#pragma warning(disable: 4116)
+C_ASSERT(TYPE_ALIGNMENT(LARGE_INTEGER) == 8);
+#pragma warning(pop)
+#endif
+#endif
+
 // begin_ntoshvp
 
 #ifdef _AMD64_
@@ -6768,6 +6784,27 @@ WRITE_PORT_BUFFER_ULONG (
 extern "C" {
 #endif
 
+//
+// The line of code used in the following macro may seem just like a strange
+// no-op. In fact, it does prevent the compiler from generating register
+// writeback load/store instructions into the hardware register. Without it, the
+// compiler will generate these instructions very aggressively, for
+// post-incrementing the pointer, when there is a loop. While there isn't,
+// presently, anything in AARCH explicitly advising against using register
+// writeback l/s instructions into hardware registers, these do present a
+// problem: They are too complex to be fully described by the HSR.ISS syndrome
+// field, in case of a Data Abort Exception. This means a hypervisor performing
+// hardware emulation would have to fetch and decode the faulting instruction in
+// order to emulate it. Since this comes with some security implications, some
+// hypervisors, like Linux KVM, have opted to simply restrict guests from using
+// said instructions. While this puts a significant limitation on the
+// virtualization platform, it is also a somewhat understandable decision.
+// N.B. Linux (as a guest) never uses these instructions for hardware access.
+//
+
+#define ARM64_PREVENT_REGISTER_WRITEBACK(_type, _variable) \
+    _variable = (volatile _type *)ReadPointerNoFence((PVOID const volatile *)&##_variable);
+
 __forceinline
 UCHAR
 READ_REGISTER_NOFENCE_UCHAR (
@@ -6775,6 +6812,7 @@ READ_REGISTER_NOFENCE_UCHAR (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(UCHAR, Register);
     return ReadUCharNoFence(Register);
 }
 
@@ -6785,6 +6823,7 @@ READ_REGISTER_NOFENCE_USHORT (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(USHORT, Register);
     return ReadUShortNoFence(Register);
 }
 
@@ -6795,6 +6834,7 @@ READ_REGISTER_NOFENCE_ULONG (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(ULONG, Register);
     return ReadULongNoFence(Register);
 }
 
@@ -6805,6 +6845,7 @@ READ_REGISTER_NOFENCE_ULONG64 (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(ULONG64, Register);
     return ReadULong64NoFence(Register);
 }
 
@@ -6822,6 +6863,7 @@ READ_REGISTER_NOFENCE_BUFFER_UCHAR (
     ULONG readCount;
 
     for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(UCHAR, registerBuffer);
         *readBuffer = ReadUCharNoFence(registerBuffer);
     }
 
@@ -6842,6 +6884,7 @@ READ_REGISTER_NOFENCE_BUFFER_USHORT (
     ULONG readCount;
 
     for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(USHORT, registerBuffer);
         *readBuffer = ReadUShortNoFence(registerBuffer);
     }
 
@@ -6861,6 +6904,7 @@ READ_REGISTER_NOFENCE_BUFFER_ULONG (
     ULONG readCount;
 
     for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(ULONG, registerBuffer);
         *readBuffer = ReadULongNoFence(registerBuffer);
     }
     return;
@@ -6879,6 +6923,7 @@ READ_REGISTER_NOFENCE_BUFFER_ULONG64 (
     ULONG readCount;
 
     for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(ULONG64, registerBuffer);
         *readBuffer = ReadULong64NoFence(registerBuffer);
     }
     return;
@@ -6892,6 +6937,7 @@ WRITE_REGISTER_NOFENCE_UCHAR (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(UCHAR, Register);
     WriteUCharNoFence(Register, Value);
 
     return;
@@ -6905,6 +6951,7 @@ WRITE_REGISTER_NOFENCE_USHORT (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(USHORT, Register);
     WriteUShortNoFence(Register, Value);
 
     return;
@@ -6918,6 +6965,7 @@ WRITE_REGISTER_NOFENCE_ULONG (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(ULONG, Register);
     WriteULongNoFence(Register, Value);
 
     return;
@@ -6931,6 +6979,7 @@ WRITE_REGISTER_NOFENCE_ULONG64 (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(ULONG64, Register);
     WriteULong64NoFence(Register, Value);
 
     return;
@@ -6950,6 +6999,7 @@ WRITE_REGISTER_NOFENCE_BUFFER_UCHAR (
     ULONG writeCount;
 
     for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(UCHAR, registerBuffer);
         WriteUCharNoFence(registerBuffer, *writeBuffer);
     }
 
@@ -6970,6 +7020,7 @@ WRITE_REGISTER_NOFENCE_BUFFER_USHORT (
     ULONG writeCount;
 
     for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(USHORT, registerBuffer);
         WriteUShortNoFence(registerBuffer, *writeBuffer);
     }
 
@@ -6990,6 +7041,7 @@ WRITE_REGISTER_NOFENCE_BUFFER_ULONG (
     ULONG writeCount;
 
     for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(ULONG, registerBuffer);
         WriteULongNoFence(registerBuffer, *writeBuffer);
     }
 
@@ -7010,6 +7062,7 @@ WRITE_REGISTER_NOFENCE_BUFFER_ULONG64 (
     ULONG writeCount;
 
     for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(ULONG64, registerBuffer);
         WriteULong64NoFence(registerBuffer, *writeBuffer);
     }
 

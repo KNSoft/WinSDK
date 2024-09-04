@@ -191,6 +191,41 @@ typedef struct _HDAUDIO_DEVICE_INFORMATION
   BOOLEAN IsStripingSupported;  // TRUE if striping (2 SDO lines) is supported
 } HDAUDIO_DEVICE_INFORMATION, *PHDAUDIO_DEVICE_INFORMATION;
 
+VOID
+FORCEINLINE
+HDAUDIO_DEVICE_INFORMATION_INIT(
+    _Out_ PHDAUDIO_DEVICE_INFORMATION DeviceInfo
+    )
+{
+    RtlZeroMemory(DeviceInfo, sizeof(*DeviceInfo));
+    DeviceInfo->Size = sizeof(*DeviceInfo);
+}
+
+//
+// HDAudio device information structure
+//
+typedef struct _HDAUDIO_DEVICE_INFORMATION_V2
+{
+  USHORT  Size;                 // size of this structure
+  USHORT  DeviceVersion;        // maj.min (maj is high byte, min is low byte)
+  USHORT  DriverVersion;        // maj.min (maj is high byte, min is low byte)
+  USHORT  CodecsDetected;       // mask of codecs present. Bit number == SDI line number
+  BOOLEAN IsStripingSupported;  // TRUE if striping (2 SDO lines) is supported
+  UCHAR   CtrlRevision;         // HDA controller revision.
+  USHORT  CtrlVendorId;         // HDA controller vendor ID.
+  USHORT  CtrlDeviceId;         // HDA controller device ID.
+} HDAUDIO_DEVICE_INFORMATION_V2, *PHDAUDIO_DEVICE_INFORMATION_V2;
+
+VOID
+FORCEINLINE
+HDAUDIO_DEVICE_INFORMATION_V2_INIT(
+    _Out_ PHDAUDIO_DEVICE_INFORMATION_V2 DeviceInfo
+    )
+{
+    RtlZeroMemory(DeviceInfo, sizeof(*DeviceInfo));
+    DeviceInfo->Size = sizeof(*DeviceInfo);
+}
+
 //
 // HDAudio Buffer Descriptor list entry
 //

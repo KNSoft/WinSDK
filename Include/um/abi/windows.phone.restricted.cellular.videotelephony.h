@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.phone.restricted.cellular.videotelephony.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0226 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -66,11 +66,11 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION 0x10000
+#define WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x40000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x50000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
@@ -122,7 +122,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x80000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -189,10 +189,6 @@
 #define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
-#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
-#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
-
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 #define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
@@ -233,11 +229,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface ILocalVideoStream;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::ILocalVideoStream
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_FWD_DEFINED__
@@ -251,11 +247,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IRemoteVideoStream;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRemoteVideoStream
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_FWD_DEFINED__
@@ -269,11 +265,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IResolutionChangeEventArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IResolutionChangeEventArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs_FWD_DEFINED__
@@ -287,11 +283,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IRotationChangeEventArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRotationChangeEventArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs_FWD_DEFINED__
@@ -305,11 +301,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IVideoCall;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoCall
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall_FWD_DEFINED__
@@ -323,11 +319,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IVideoCallFactory;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoCallFactory
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory_FWD_DEFINED__
@@ -341,11 +337,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IVideoCallInitializationParameters;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoCallInitializationParameters
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters_FWD_DEFINED__
@@ -359,11 +355,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IVideoQualityChangeEventArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoQualityChangeEventArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs_FWD_DEFINED__
@@ -377,11 +373,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IVideoStateChangeEventArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStateChangeEventArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_FWD_DEFINED__
@@ -395,11 +391,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IVideoStream;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStream
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_FWD_DEFINED__
@@ -413,11 +409,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         interface IVideoStreamExt;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStreamExt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStreamExt
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStreamExt_FWD_DEFINED__
@@ -432,11 +428,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         class RemoteVideoStream;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 namespace ABI {
@@ -446,11 +442,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         class RotationChangeEventArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
@@ -474,7 +470,7 @@ ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::Re
 // correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::RemoteVideoStream*,ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::RotationChangeEventArgs*> __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_t;
 #define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRemoteVideoStream*,ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRotationChangeEventArgs*>
@@ -494,11 +490,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         class VideoQualityChangeEventArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
@@ -522,7 +518,7 @@ ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::Re
 // correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::RemoteVideoStream*,ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::VideoQualityChangeEventArgs*> __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_t;
 #define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRemoteVideoStream*,ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoQualityChangeEventArgs*>
@@ -541,11 +537,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         class VideoStream;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 namespace ABI {
@@ -555,11 +551,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         class ResolutionChangeEventArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
@@ -583,7 +579,7 @@ ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::Vi
 // correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::VideoStream*,ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::ResolutionChangeEventArgs*> __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_t;
 #define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStream*,ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IResolutionChangeEventArgs*>
@@ -603,11 +599,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         class VideoStateChangeEventArgs;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
@@ -631,7 +627,7 @@ ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::Vi
 // correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::VideoStream*,ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::VideoStateChangeEventArgs*> __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_t;
 #define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* Foundation */ } /* Windows */ } /* ABI */ } 
 
 ////  Define an alias for the C version of the interface for compatibility purposes.
 //#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStream*,ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStateChangeEventArgs*>
@@ -651,8 +647,8 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             interface IAsyncAction;
-        } /* Windows */
-    } /* Foundation */} /* ABI */
+        } /* Foundation */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CFoundation_CIAsyncAction ABI::Windows::Foundation::IAsyncAction
 
 #endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
@@ -664,8 +660,8 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             interface IClosable;
-        } /* Windows */
-    } /* Foundation */} /* ABI */
+        } /* Foundation */
+    } /* Windows */} /* ABI */
 #define __x_ABI_CWindows_CFoundation_CIClosable ABI::Windows::Foundation::IClosable
 
 #endif // ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
@@ -677,8 +673,8 @@ namespace ABI {
             
             typedef struct Size Size;
             
-        } /* Windows */
-    } /* Foundation */} /* ABI */
+        } /* Foundation */
+    } /* Windows */} /* ABI */
 
 
 
@@ -689,9 +685,9 @@ namespace ABI {
                 
                 typedef enum DisplayOrientations : unsigned int DisplayOrientations;
                 
-            } /* Windows */
+            } /* Display */
         } /* Graphics */
-    } /* Display */} /* ABI */
+    } /* Windows */} /* ABI */
 
 
 
@@ -706,11 +702,11 @@ namespace ABI {
                         
                         typedef enum CameraLocation : int CameraLocation;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -721,11 +717,11 @@ namespace ABI {
                         
                         typedef enum StreamIdentifier : int StreamIdentifier;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -736,11 +732,11 @@ namespace ABI {
                         
                         typedef enum VideoQuality : int VideoQuality;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -751,11 +747,11 @@ namespace ABI {
                         
                         typedef enum VideoStreamState : int VideoStreamState;
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 
@@ -775,11 +771,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         class LocalVideoStream;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 
@@ -792,11 +788,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         class VideoCall;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 namespace ABI {
@@ -806,11 +802,11 @@ namespace ABI {
                 namespace Cellular {
                     namespace VideoTelephony {
                         class VideoCallInitializationParameters;
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 
 
@@ -846,11 +842,11 @@ namespace ABI {
                             CameraLocation_Back = 1,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
@@ -877,11 +873,11 @@ namespace ABI {
                             StreamIdentifier_RemoteView = 1,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
@@ -909,11 +905,11 @@ namespace ABI {
                             VideoQuality_High = 2,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
@@ -943,11 +939,11 @@ namespace ABI {
                             VideoStreamState_Destroyed = 4,
                         };
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
@@ -989,11 +985,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_ILocalVideoStream=_uuidof(ILocalVideoStream);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_INTERFACE_DEFINED__) */
@@ -1055,11 +1051,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRemoteVideoStream=_uuidof(IRemoteVideoStream);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_INTERFACE_DEFINED__) */
@@ -1100,11 +1096,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IResolutionChangeEventArgs=_uuidof(IResolutionChangeEventArgs);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs_INTERFACE_DEFINED__) */
@@ -1145,11 +1141,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IRotationChangeEventArgs=_uuidof(IRotationChangeEventArgs);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs_INTERFACE_DEFINED__) */
@@ -1199,10 +1195,10 @@ namespace ABI {
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::ILocalVideoStream * * localStream
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Visibility(
-                                /* [retval, out] */__RPC__out boolean * visible
+                                /* [retval, out] */__RPC__out ::boolean * visible
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetVisibilityChangeAsync(
-                                /* [in] */boolean visible,
+                                /* [in] */::boolean visible,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncAction
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetCameraLocationAsync(
@@ -1214,11 +1210,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IVideoCall=_uuidof(IVideoCall);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall_INTERFACE_DEFINED__) */
@@ -1260,11 +1256,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IVideoCallFactory=_uuidof(IVideoCallFactory);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory_INTERFACE_DEFINED__) */
@@ -1332,11 +1328,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IVideoCallInitializationParameters=_uuidof(IVideoCallInitializationParameters);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters_INTERFACE_DEFINED__) */
@@ -1377,11 +1373,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IVideoQualityChangeEventArgs=_uuidof(IVideoQualityChangeEventArgs);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs_INTERFACE_DEFINED__) */
@@ -1422,11 +1418,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IVideoStateChangeEventArgs=_uuidof(IVideoStateChangeEventArgs);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_INTERFACE_DEFINED__) */
@@ -1490,11 +1486,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IVideoStream=_uuidof(IVideoStream);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_INTERFACE_DEFINED__) */
@@ -1536,11 +1532,11 @@ namespace ABI {
 
                         extern MIDL_CONST_ID IID & IID_IVideoStreamExt=_uuidof(IVideoStreamExt);
                         
-                    } /* Windows */
-                } /* Phone */
+                    } /* VideoTelephony */
+                } /* Cellular */
             } /* Restricted */
-        } /* Cellular */
-    } /* VideoTelephony */} /* ABI */
+        } /* Phone */
+    } /* Windows */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStreamExt;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStreamExt_INTERFACE_DEFINED__) */
@@ -1830,7 +1826,7 @@ typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__
     ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This);
     ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This);
 
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs * *e);
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs * e);
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgsVtbl;
 
@@ -1883,7 +1879,7 @@ typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__
     ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This);
     ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This);
 
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs * *e);
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs * e);
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgsVtbl;
 
@@ -1936,7 +1932,7 @@ typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__
     ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This);
     ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This);
 
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs * *e);
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs * e);
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgsVtbl;
 
@@ -1989,7 +1985,7 @@ typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__
     ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This);
     ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This);
 
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs * *e);
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs * e);
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgsVtbl;
 

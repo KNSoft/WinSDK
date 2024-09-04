@@ -96,6 +96,13 @@ typedef ULONG WWAN_STATUS;
 #define WWAN_STATUS_UICC_INVALID_LOGICAL_CHANNEL                0xC0040302
 #endif
 
+//Low-Level UICC App and File System Access specific error codes
+#if ( _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS6 || NTDDI_VERSION >= NTDDI_WIN10_19H1 || NDIS_SUPPORT_NDIS683 )
+#define WWAN_STATUS_SHAREABILITY_CONDITION_ERROR                0xC0040400
+#define WWAN_STATUS_PIN_FAILURE                                 0xC0040401
+#define WWAN_STATUS_NO_LTE_ATTACH_CONFIG                        0xC0040402
+#endif
+
 typedef enum _WWAN_STRUCT_TYPE {
     WwanStructTN = 0,
     WwanStructContext,
@@ -160,7 +167,9 @@ typedef struct _WWAN_LIST_HEADER {
 #define WWAN_SUBSCRIBERID_LEN_EX        19
 #define DEFAULT_MIN_PIN_LENGTH          4
 
+//MSDN defines SIM ICCID length between 15 to 20 digits
 #define WWAN_SIMICCID_LEN           21
+#define WWAN_SIMICCID_MIN_LEN       16
 
 // 
 // Starting with Blue, and MBIM Errata, the MSISDN (telephone number) length grows to 22 (23 with null termination)
@@ -200,8 +209,10 @@ typedef struct _WWAN_LIST_HEADER {
 #define WWAN_AUTH_AUTS_LEN           14
 #define WWAN_AUTH_NETWORK_NAME_MAX_LEN   256
 
-#if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WINTHRESHOLD || NDIS_SUPPORT_NDIS650 )
+#if ( _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5 || NTDDI_VERSION >= NTDDI_WIN10_RS5 || NDIS_SUPPORT_NDIS682 )
 #define WWAN_UICC_APP_ID_MAX_LEN        32
+#define WWAN_UICC_APP_NAME_MAX_LEN      256
+#define WWAN_UICC_PINREF_MAX            8
 #define WWAN_UICC_FILE_PATH_MAX_LEN     8
 #define WWAN_EF_ACCESS_TYPES_LEN        4
 #define WWAN_UICC_RECORD_DATA_MAX_LEN   256
@@ -292,6 +303,17 @@ typedef enum _WWAN_ASYNC_GETSET_TYPE {
     WwanAsyncGetCellInfo,
     WwanAsyncGetMPDP,
     WwanAsyncSetMPDP,
+    WwanAsyncGetNitzInfo,
+    WwanAsyncGetModemLoggingConfig,
+    WwanAsyncSetModemLoggingConfig,
+    WwanAsyncGetUiccAppList,
+    WwanAsyncGetUiccFileStatus,
+    WwanAsyncGetUiccBinary,
+    WwanAsyncSetUiccBinary,
+    WwanAsyncGetUiccRecord,
+    WwanAsyncSetUiccRecord,
+    WwanAsyncGetPinEx2,
+    WwanAsyncSetPinEx2,
     WWAN_ASYNC_GETSET_TYPE_MAX
 } WWAN_ASYNC_GETSET_TYPE, *PWWAN_ASYNC_GETSET_TYPE;
 
@@ -428,6 +450,8 @@ typedef enum _WWAN_SIM_CLASS {
 #define WWAN_DATA_CLASS_HSDPA           0x00000008
 #define WWAN_DATA_CLASS_HSUPA           0x00000010
 #define WWAN_DATA_CLASS_LTE             0x00000020
+#define WWAN_DATA_CLASS_5G_NSA          0x00000040
+#define WWAN_DATA_CLASS_5G_SA           0x00000080
 #define WWAN_DATA_CLASS_TDSCDMA         0x00001000
 #define WWAN_DATA_CLASS_1XRTT           0x00010000
 #define WWAN_DATA_CLASS_1XEVDO          0x00020000
@@ -505,31 +529,6 @@ typedef struct _WWAN_DEVICE_CAPS {
 #endif
 } WWAN_DEVICE_CAPS, *PWWAN_DEVICE_CAPS;
 
-#if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WINTHRESHOLD || NDIS_SUPPORT_NDIS650 )
-// Leftover from TH1 for MBIM2.0/VoiceExtension. Should not be used.
-typedef struct _WWAN_DEVICE_CAPS_EX2 {
-    WWAN_DEVICE_TYPE    WwanDeviceType;
-    WWAN_CELLULAR_CLASS WwanCellularClass;
-    WWAN_VOICE_CLASS    WwanVoiceClass;
-    WWAN_SIM_CLASS      WwanSimClass;
-    ULONG               WwanDataClass;
-    WCHAR               CustomDataClass[WWAN_CUSTOM_DATA_CLASS_LEN];
-    ULONG               WwanGsmBandClass;
-    ULONG               WwanCdmaBandClass;
-    WCHAR               CustomBandClass[WWAN_CUSTOM_BAND_CLASS_LEN];
-    ULONG               WwanSmsCaps;
-    ULONG               WwanControlCaps;
-    WCHAR               DeviceId[WWAN_DEVICEID_LEN];
-    WCHAR               Manufacturer[WWAN_MANUFACTURER_LEN];
-    WCHAR               Model[WWAN_MODEL_LEN];
-    WCHAR               FirmwareInfo[WWAN_FIRMWARE_LEN];
-    ULONG               MaxActivatedContexts;
-    ULONG               DeviceIndex;
-    ULONG               WwanAuthAlgoCaps;
-    WWAN_LIST_HEADER    CellularClassListHeader;
-} WWAN_DEVICE_CAPS_EX2, *PWWAN_DEVICE_CAPS_EX2;
-#endif
-
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670)
 // Bits for WWAN_DEVICE_CAPS_EX::WwanOptionalServiceCaps
 // Each bit corresponds to an optional service that a miniport may or may not support.
@@ -550,6 +549,9 @@ typedef struct _WWAN_DEVICE_CAPS_EX2 {
 #define WWAN_OPTIONAL_SERVICE_CAPS_UICC_RESET                       0x00000100
 #define WWAN_OPTIONAL_SERVICE_CAPS_DEVICE_RESET                     0x00000200
 #endif
+#if ( _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS6 || NTDDI_VERSION >= NTDDI_WIN10_19H1 || NDIS_SUPPORT_NDIS683 )
+#define WWAN_OPTIONAL_SERVICE_CAPS_MODEM_LOGGING_CONFIG             0x00000400
+#endif  // ( _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS6 || NTDDI_VERSION >= NTDDI_WIN10_19H1 || NDIS_SUPPORT_NDIS683 )
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670)
 typedef struct _WWAN_DEVICE_CAPS_EX {
@@ -680,17 +682,6 @@ typedef struct _WWAN_PIN_ACTION {
     WCHAR               NewPin [WWAN_PIN_LEN];
     BOOLEAN             RequestPinOperationPrompt;
 } WWAN_PIN_ACTION, *PWWAN_PIN_ACTION;
-
-#if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WINTHRESHOLD || NDIS_SUPPORT_NDIS650 )
-typedef struct _WWAN_PIN_ACTION_EX2 {
-    WWAN_PIN_TYPE       PinType;
-    WWAN_PIN_OPERATION  PinOperation;
-    WCHAR               Pin[WWAN_PIN_LEN];
-    WCHAR               NewPin[WWAN_PIN_LEN];
-    BYTE                AppIdLength;
-    BYTE                AppId[WWAN_UICC_APP_ID_MAX_LEN];
-} WWAN_PIN_ACTION_EX2, *PWWAN_PIN_ACTION_EX2;
-#endif
 
 typedef enum _WWAN_PIN_FORMAT {
     WwanPinFormatUnknown = 0,
@@ -834,6 +825,9 @@ typedef struct _WWAN_REGISTRATION_STATE {
     DWORD                   WwanRegFlags;
     WWAN_CELLULAR_CLASS     CurrentCellularClass;
 #endif
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1 || NDIS_SUPPORT_NDIS700)
+    ULONG                   PreferredDataClasses;
+#endif
 } WWAN_REGISTRATION_STATE, *PWWAN_REGISTRATION_STATE;
 
 #if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WINTHRESHOLD || NDIS_SUPPORT_NDIS650 )
@@ -869,11 +863,21 @@ typedef enum _WWAN_PACKET_SERVICE_STATE {
     WwanPacketServiceStateDetached
 } WWAN_PACKET_SERVICE_STATE, *PWWAN_PACKET_SERVICE_STATE;
 
+typedef enum  _WWAN_5G_FREQUENCY_RANGE {
+    Wwan5GFrequencyRangeUnknown = 0,
+    Wwan5GFrequencyRange1,
+    Wwan5GFrequencyRange2,
+    Wwan5GFrequencyRange1AndRange2
+} WWAN_5G_FREQUENCY_RANGE, *PWWAN_5G_FREQUENCY_RANGE;
+
 typedef struct _WWAN_PACKET_SERVICE {
-    ULONG           uNwError;
+    ULONG                       uNwError;
     WWAN_PACKET_SERVICE_STATE   PacketServiceState;
-    ULONG           AvailableDataClass;
-    ULONG           CurrentDataClass;
+    ULONG                       AvailableDataClass;
+    ULONG                       CurrentDataClass;
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1 || NDIS_SUPPORT_NDIS700)
+    WWAN_5G_FREQUENCY_RANGE     FrequencyRange;
+#endif
 } WWAN_PACKET_SERVICE, *PWWAN_PACKET_SERVICE;
 
 // for the following constants, refer to https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_signal_state
@@ -881,12 +885,30 @@ typedef struct _WWAN_PACKET_SERVICE {
 #define WWAN_RSSI_VALID_MAX                 31
 #define WWAN_RSSI_UNKNOWN                   99
 #define WWAN_ERROR_RATE_UNKNOWN             99
+#define WWAN_RSRP_UNKNOWN                   127
+#define WWAN_RSRP_VALID_MAX                 126
+#define WWAN_SNR_UNKNOWN                    128
+#define WWAN_SNR_VALID_MAX                  127
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1 || NDIS_SUPPORT_NDIS700)
+typedef struct _WWAN_SIGNAL_STATE_EXT {
+    ULONG               RSRP;
+    ULONG               RSRPThreshold;
+    ULONG               SNR;
+    ULONG               SNRThreshold;
+    ULONG               DataClass;
+} WWAN_SIGNAL_STATE_EXT, *PWWAN_SIGNAL_STATE_EXT;
+#endif
 
 typedef struct _WWAN_SIGNAL_STATE {
-    ULONG   Rssi;
-    ULONG   ErrorRate;
-    ULONG   RssiInterval;
-    ULONG   RssiThreshold;
+    ULONG               Rssi;
+    ULONG               ErrorRate;
+    ULONG               RssiInterval;
+    ULONG               RssiThreshold;
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1 || NDIS_SUPPORT_NDIS700)
+    WWAN_LIST_HEADER    SignalStateListHeader;
+#endif
 } WWAN_SIGNAL_STATE, *PWWAN_SIGNAL_STATE;
 
 #if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WINTHRESHOLD || NDIS_SUPPORT_NDIS650 )
@@ -1567,73 +1589,6 @@ typedef struct _WWAN_IP_ADDRESS_STATE
 
 #if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WINTHRESHOLD || NDIS_SUPPORT_NDIS650 )
 
-typedef enum _WWAN_UICC_FILE_ACCESSIBILITY {
-    WwanUiccFileAccessibilityNotShareable   = 0,
-    WwanUiccFileAccessibilityShareable      = 1,
-    WwanUiccFileAccessibilityMaximum
-} WWAN_UICC_FILE_ACCESSIBILITY, *PWWAN_UICC_FILE_ACCESSIBILITY;
-
-typedef enum _WWAN_UICC_FILE_TYPE {
-    WwanUiccFileTypeWorkingEf   = 0,
-    WwanUiccFileTypeInternalEf  = 1,
-    WwanUiccFileTypeDfOrEf      = 2,
-    WwanUiccFileTypeMax
-} WWAN_UICC_FILE_TYPE, *PWWAN_UICC_FILE_TYPE;
-
-typedef enum _WWAN_UICC_FILE_STRUCTURE {
-    WwanUiccFileStructureUnknown        = 0,
-    WwanUiccFileStructureTransparent    = 1,
-    WwanUiccFileStructureCyclic         = 2,
-    WwanUiccFileStructureLinear         = 3,
-    WwanUiccFileStructureBertlv         = 4,
-    WwanUiccFileStructureMax
-} WWAN_UICC_FILE_STRUCTURE, *PWWAN_UICC_FILE_STRUCTURE;
-
-typedef struct _WWAN_UICC_FILE_PATH {
-    BYTE        AppIdLength;
-    BYTE        AppId[WWAN_UICC_APP_ID_MAX_LEN];
-    BYTE        FilePathLength;
-    USHORT      FilePath[WWAN_UICC_FILE_PATH_MAX_LEN];
-} WWAN_UICC_FILE_PATH, *PWWAN_UICC_FILE_PATH;
-
-typedef struct _WWAN_UICC_FILE_STATUS {
-    ULONG                           StatusWord1;
-    ULONG                           StatusWord2;
-    WWAN_UICC_FILE_ACCESSIBILITY    FileAccessibility;
-    WWAN_UICC_FILE_TYPE             FileType;
-    WWAN_UICC_FILE_STRUCTURE        FileStructure;
-    ULONG                           ItemCount;
-    ULONG                           Size;
-    WWAN_PIN_TYPE                   FileLockStatus[WWAN_EF_ACCESS_TYPES_LEN];
-} WWAN_UICC_FILE_STATUS, *PWWAN_UICC_FILE_STATUS;
-
-typedef struct _WWAN_UICC_ACCESS_BINARY {
-    WWAN_UICC_FILE_PATH     UiccFilePath;
-    ULONG                   Offset;
-    ULONG                   NumberOfBytes;
-    BYTE                    LocalPinLength;
-    BYTE                    LocalPin[WWAN_PIN_LEN];
-    USHORT                  CommandDataLength;
-    BYTE                    CommandData[ANYSIZE_ARRAY];
-} WWAN_UICC_ACCESS_BINARY, *PWWAN_UICC_ACCESS_BINARY;
-
-typedef struct _WWAN_UICC_ACCESS_RECORD {
-    WWAN_UICC_FILE_PATH     UiccFilePath;
-    ULONG                   RecordNumber;
-    ULONG                   NumberOfBytes;
-    BYTE                    LocalPinLength;
-    BYTE                    LocalPin[WWAN_PIN_LEN];
-    BYTE                    CommandDataLength;
-    BYTE                    CommandData[WWAN_UICC_RECORD_DATA_MAX_LEN];
-} WWAN_UICC_ACCESS_RECORD, *PWWAN_UICC_ACCESS_RECORD;
-
-typedef struct _WWAN_UICC_RESPONSE {
-    ULONG       StatusWord1;
-    ULONG       StatusWord2;
-    USHORT      ResponseDataLength;
-    BYTE        ResponseData[ANYSIZE_ARRAY];
-} WWAN_UICC_RESPONSE, *PWWAN_UICC_RESPONSE;
-
 typedef struct _WWAN_SYS_CAPS_INFO {
     ULONG       NumberOfExecutors;
     ULONG       NumberOfSlots;
@@ -1641,9 +1596,16 @@ typedef struct _WWAN_SYS_CAPS_INFO {
     ULONG64     ModemID;
 } WWAN_SYS_CAPS_INFO, *PWWAN_SYS_CAPS_INFO;
 
+#define WWAN_MBIM_VERSION_1_0                0x0100
+#define WWAN_MBIM_EXTENDED_1_0               0x0100
+#define WWAN_MBIM_EXTENDED_2_0               0x0200
+
 typedef struct _WWAN_MBIM_VERSION
 {
     USHORT      MbimVersion;
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1 || NDIS_SUPPORT_NDIS700)
+    USHORT      MbimExtendedVersion;
+#endif
 } WWAN_MBIM_VERSION, *PWWAN_MBIM_VERSION;
 
 typedef struct _WWAN_DEVICE_SLOT_MAPPING_INFO {
@@ -2206,6 +2168,144 @@ typedef struct _WWAN_NETWORK_ISOLATION
 } WWAN_NETWORK_ISOLATION, *PWWAN_NETWORK_ISOLATION;
 
 #endif // ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680 )
+
+#if ( _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS6 || NTDDI_VERSION >= NTDDI_WIN10_19H1 || NDIS_SUPPORT_NDIS683 )
+typedef enum _WWAN_UICC_APP_TYPE {
+    WwanUiccAppTypeUnknown = 0,
+    WwanUiccAppTypeMf = 1,
+    WwanUiccAppTypeMfSIM = 2,
+    WwanUiccAppTypeMfRUIM = 3,
+    WwanUiccAppTypeUSIM = 4,
+    WwanUiccAppTypeCSIM = 5,
+    WwanUiccAppTypeISIM = 6,
+    WwanUiccAppTypeMax
+} WWAN_UICC_APP_TYPE, *PWWAN_UICC_APP_TYPE;
+
+typedef struct _WWAN_UICC_APP_INFO {
+    WWAN_UICC_APP_TYPE AppType;
+    ULONG              AppIdSize;
+    BYTE               AppId[WWAN_UICC_APP_ID_MAX_LEN];
+    ULONG              AppNameLength;
+    BYTE               AppName[WWAN_UICC_APP_NAME_MAX_LEN];
+    ULONG              NumPins;
+    BYTE               PinRef[WWAN_UICC_PINREF_MAX];
+} WWAN_UICC_APP_INFO, *PWWAN_UICC_APP_INFO;
+
+typedef struct _WWAN_UICC_APP_LIST {
+    ULONG              Version;
+    ULONG              AppCount;
+    ULONG              ActiveAppIndex;
+    ULONG              AppListSize;
+    BYTE               Response[ANYSIZE_ARRAY];
+} WWAN_UICC_APP_LIST, *PWWAN_UICC_APP_LIST;
+
+typedef enum _WWAN_UICC_FILE_ACCESSIBILITY {
+    WwanUiccFileAccessibilityUnknown = 0,
+    WwanUiccFileAccessibilityNotShareable = 1,
+    WwanUiccFileAccessibilityShareable = 2,
+    WwanUiccFileAccessibilityMax
+} WWAN_UICC_FILE_ACCESSIBILITY, *PWWAN_UICC_FILE_ACCESSIBILITY;
+
+typedef enum _WWAN_UICC_FILE_TYPE {
+    WwanUiccFileTypeUnknown = 0,
+    WwanUiccFileTypeWorkingEf = 1,
+    WwanUiccFileTypeInternalEf = 2,
+    WwanUiccFileTypeDfOrAdf = 3,
+    WwanUiccFileTypeMax
+} WWAN_UICC_FILE_TYPE, *PWWAN_UICC_FILE_TYPE;
+
+typedef enum _WWAN_UICC_FILE_STRUCTURE {
+    WwanUiccFileStructureUnknown = 0,
+    WwanUiccFileStructureTransparent = 1,
+    WwanUiccFileStructureCyclic = 2,
+    WwanUiccFileStructureLinear = 3,
+    WwanUiccFileStructureBerTLV = 4,
+    WwanUiccFileStructureMax
+} WWAN_UICC_FILE_STRUCTURE, *PWWAN_UICC_FILE_STRUCTURE;
+
+typedef struct _WWAN_UICC_FILE_PATH {
+    ULONG       Version;
+    BYTE        AppIdLength;
+    BYTE        AppId[WWAN_UICC_APP_ID_MAX_LEN];
+    BYTE        FilePathLength;
+    BYTE        FilePath[WWAN_UICC_FILE_PATH_MAX_LEN];
+} WWAN_UICC_FILE_PATH, *PWWAN_UICC_FILE_PATH;
+
+typedef struct _WWAN_UICC_FILE_STATUS {
+    ULONG                           Version;
+    ULONG                           StatusWord1;
+    ULONG                           StatusWord2;
+    WWAN_UICC_FILE_ACCESSIBILITY    FileAccessibility;
+    WWAN_UICC_FILE_TYPE             FileType;
+    WWAN_UICC_FILE_STRUCTURE        FileStructure;
+    ULONG                           ItemCount;
+    ULONG                           ItemSize;
+    WWAN_PIN_TYPE                   FileLockStatus[WWAN_EF_ACCESS_TYPES_LEN];
+} WWAN_UICC_FILE_STATUS, *PWWAN_UICC_FILE_STATUS;
+
+typedef struct _WWAN_UICC_ACCESS_BINARY {
+    ULONG                   Version;
+    BYTE                    AppId[WWAN_UICC_APP_ID_MAX_LEN];
+    WWAN_UICC_FILE_PATH     UiccFilePath;
+    ULONG                   FileOffset;
+    ULONG                   NumberOfBytes;
+    BYTE                    LocalPinSize;
+    BYTE                    LocalPin[WWAN_PIN_LEN];
+    USHORT                  BinaryDataSize;
+    BYTE                    BinaryData[ANYSIZE_ARRAY];
+} WWAN_UICC_ACCESS_BINARY, *PWWAN_UICC_ACCESS_BINARY;
+
+typedef struct _WWAN_UICC_ACCESS_RECORD {
+    ULONG                   Version;
+    BYTE                    AppId[WWAN_UICC_APP_ID_MAX_LEN];
+    WWAN_UICC_FILE_PATH     UiccFilePath;
+    ULONG                   RecordNumber;
+    BYTE                    LocalPinSize;
+    BYTE                    LocalPin[WWAN_PIN_LEN];
+    BYTE                    RecordDataSize;
+    BYTE                    RecordData[WWAN_UICC_RECORD_DATA_MAX_LEN];
+} WWAN_UICC_ACCESS_RECORD, *PWWAN_UICC_ACCESS_RECORD;
+
+typedef struct _WWAN_UICC_RESPONSE {
+    ULONG       Version;
+    ULONG       StatusWord1;
+    ULONG       StatusWord2;
+    USHORT      ResponseDataSize;
+    BYTE        ResponseData[ANYSIZE_ARRAY];
+} WWAN_UICC_RESPONSE, *PWWAN_UICC_RESPONSE;
+
+typedef struct _WWAN_PIN_ACTION_EX2 {
+    WWAN_PIN_TYPE       PinType;
+    WWAN_PIN_OPERATION  PinOperation;
+    WCHAR               Pin[WWAN_PIN_LEN];
+    WCHAR               NewPin[WWAN_PIN_LEN];
+    BYTE                AppIdLength;
+    BYTE                AppId[WWAN_UICC_APP_ID_MAX_LEN];
+} WWAN_PIN_ACTION_EX2, *PWWAN_PIN_ACTION_EX2;
+
+typedef struct _WWAN_PIN_APP {
+    ULONG       Version;
+    BYTE        AppIdLength;
+    BYTE        AppId[WWAN_UICC_APP_ID_MAX_LEN];
+} WWAN_PIN_APP, *PWWAN_PIN_APP;
+
+typedef enum _WWAN_MODEM_LOGGING_LEVEL_CONFIG {
+    WwanModemLoggingLevelProd = 0,
+    WwanModemLoggingLevelLabVerbose = 1,
+    WwanModemLoggingLevelLabMedium = 2,
+    WwanModemLoggingLevelLabLow = 3,
+    WwanModemLoggingLevelOem = 4,
+    WwanModemLoggingLevelMax
+} WWAN_MODEM_LOGGING_LEVEL_CONFIG, *PWWAN_MODEM_LOGGING_LEVEL_CONFIG;
+
+typedef struct _WWAN_MODEM_LOGGING_CONFIG {
+    ULONG                           Version;
+    ULONG                           MaxSegmentSize;
+    ULONG                           MaxFlushTime;
+    WWAN_MODEM_LOGGING_LEVEL_CONFIG LevelConfig;
+} WWAN_MODEM_LOGGING_CONFIG, *PWWAN_MODEM_LOGGING_CONFIG;
+
+#endif // ( _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS6 || NDIS_SUPPORT_NDIS683 )
 
 #if _MSC_VER >= 1200  
 #pragma warning(pop)  

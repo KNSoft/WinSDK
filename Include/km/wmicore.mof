@@ -10506,6 +10506,7 @@ class Header_ProviderBinaryPath_TypeGroup:EventTraceEvent
 [Dynamic,
  Description("Partition Info Extension") : amended,
  EventType{80},
+ EventVersion(0),
  EventTypeName{"PartitionInfoExtension"} :amended
 ]
 class Header_PartitionInfoExtension_TypeGroup:EventTraceEvent
@@ -10536,6 +10537,66 @@ class Header_PartitionInfoExtension_TypeGroup:EventTraceEvent
      extension("GUID"),
      read]
      object ParentId;
+};
+
+[Dynamic,
+ Description("Partition Info Extension V2") : amended,
+ EventType{80},
+ EventVersion(2),
+ EventTypeName{"PartitionInfoExtensionV2"} :amended
+]
+class Header_PartitionInfoExtensionV2_TypeGroup:EventTraceEvent
+{
+    [WmiDataId(1),
+     Description("Event Version") : amended,
+     read]
+     uint16 EventVersion;
+    [WmiDataId(2),
+     Description("Reserved") : amended,
+     read]
+     uint16 Reserved;
+    [WmiDataId(3),
+     Description("Partition Type") : amended,
+     read]
+     uint32 PartitionType;
+   [WmiDataId(4),
+     Description("Qpc Offset From Root") : amended,
+     read]
+     sint64 QpcOffsetFromRoot;
+   [WmiDataId(5),
+     Description("Partition ID") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  PartitionId;
+   [WmiDataId(6),
+     Description("Parent ID") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  ParentId;
+};
+
+[Dynamic,
+ Description("Last Dropped Event Times") : amended,
+ EventType{82},
+ EventTypeName{"LastDroppedTimes"} :amended
+]
+class Header_LastDroppedTimes_TypeGroup:EventTraceEvent
+{
+   [WmiDataId(1),
+     Description("Number of TimeStamps") : amended,
+     read]
+     uint32  TimeStampCount;
+   [WmiDataId(2),
+     Description("Padding") : amended,
+     read]
+     uint32  Padding;
+   [WmiDataId(3),
+     WmiSizeIs("TimeStampCount"),
+     Description("TimeStamp") : amended,
+     read]
+     uint64 TimeStamp[];
 };
 
 [Dynamic,
@@ -19644,6 +19705,64 @@ class SystemConfig_V2_Processors:SystemConfig_V2
      format("s"),
      read]
      char16  ProcessorIdentifier[128];
+};
+
+[Dynamic,
+ Description("System Configuration") : amended,
+ EventType(36),
+ EventTypeName("Virtualization Config Info") : amended
+]
+class SystemConfig_Virtualization:SystemConfig_V2
+{
+    [WmiDataId(1),
+     Description("VBS enabled") : amended,
+     read]
+     uint8 VbsEnabled;
+    [WmiDataId(2),
+     Description("HVCI enabled") : amended,
+     read]
+     uint8 HvciEnabled;
+    [WmiDataId(3),
+     Description("Hyper V Enabled") : amended,
+     read]
+     uint8 HyperVisorEnabled;
+    [WmiDataId(4),
+     Description("Reserved") : amended,
+     read]
+     uint8 Reserved;
+};
+
+[Dynamic,
+ Description("Boot Configuration") : amended,
+ EventType(37),
+ EventTypeName("Boot Config Info") : amended
+]
+class SystemConfig_Boot:SystemConfig_V2
+{
+    [WmiDataId(1),
+     Description("Boot Flags") : amended,
+     read]
+     uint64 BootFlags;
+    [WmiDataId(2),
+     Description("Firmware Type") : amended,
+     read]
+     uint32 FirmwareType;
+    [WmiDataId(3),
+     Description("Secure Boot enabled") : amended,
+     read]
+     uint8 SecureBootEnabled;
+    [WmiDataId(4),
+     Description("Secure Boot Capable") : amended,
+     read]
+     uint8 SecureBootCapable;
+    [WmiDataId(5),
+     Description("Reserved") : amended,
+     read]
+     uint8 Reserved1;
+    [WmiDataId(6),
+     Description("Reserved") : amended,
+     read]
+     uint8 Reserved2;
 };
 
 [Dynamic,

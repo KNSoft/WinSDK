@@ -716,7 +716,9 @@ typedef _Struct_size_bytes_(SrbLength) struct SRB_ALIGN _STORAGE_REQUEST_BLOCK {
     _Field_range_(SRB_FUNCTION_STORAGE_REQUEST_BLOCK, SRB_FUNCTION_STORAGE_REQUEST_BLOCK)
     UCHAR Function;
     UCHAR SrbStatus;
-    UCHAR ReservedUchar[4];
+
+    // Reserved for internal use
+    ULONG ReservedUlong1;
 
     //
     // General SRB fields. The first 6 fields should not changed between
@@ -738,7 +740,7 @@ typedef _Struct_size_bytes_(SrbLength) struct SRB_ALIGN _STORAGE_REQUEST_BLOCK {
     ULONG SrbFlags;
 
     // Reserved for future use to expand SrbStatus to 32-bit
-    ULONG ReservedUlong;
+    ULONG ReservedUlong2;
 
     // Equivalent to QueueTag or Task Tag in SCSI
     ULONG RequestTag;
@@ -3837,7 +3839,7 @@ typedef struct _VPD_BLOCK_LIMITS_PAGE {
     UCHAR DeviceType : 5;
     UCHAR DeviceTypeQualifier : 3;
     UCHAR PageCode;                 // 0xB0
-    UCHAR PageLength[2];            // 0x3C if device supports logical block provisioning, otherwise the value may be 0x10.
+    UCHAR PageLength[2];            // 0x3C
 
     union {
         struct {
@@ -8173,7 +8175,7 @@ typedef struct _PORT_CONFIGURATION_INFORMATION {
 } PORT_CONFIGURATION_INFORMATION, *PPORT_CONFIGURATION_INFORMATION;
 
 // Flags to indicate Adapter support
-#define STOR_ADAPTER_FEATURE_RESERVED                       0x00000001  // reserved
+#define STOR_ADAPTER_FEATURE_DEVICE_TELEMETRY               0x00000001  // Indicating that miniport driver supports storage device telemetry.
 #define STOR_ADAPTER_FEATURE_STOP_UNIT_DURING_POWER_DOWN    0x00000002  // Indicating the adapter wants STOP_UNIT command during system shutdown
 #define STOR_ADAPTER_UNCACHED_EXTENSION_NUMA_NODE_PREFERRED 0x00000004  // Indicating that miniport driver wants UncachedExtension to be allocated from adapter NUMA node.
 #define STOR_ADAPTER_DMA_V3_PREFERRED                       0x00000008  // Indicating that miniport driver prefers to use DMA V3 kernel API for the adapter.
@@ -8659,10 +8661,10 @@ typedef struct _STOR_RICH_DEVICE_DESCRIPTION_V2 {
 //
 
 typedef enum _STOR_CRYPTO_OPERATION_TYPE {
-    
+
     StorCryptoOperationInsertKey = 1,
     StorCryptoOperationMax,
-    
+
 } STOR_CRYPTO_OPERATION_TYPE, *PSTOR_CRYPTO_OPERATION_TYPE;
 
 typedef struct _STOR_CRYPTO_OPERATION {
@@ -8691,7 +8693,7 @@ typedef struct _STOR_CRYPTO_OPERATION_INSERT_KEY {
     // Key Table Index
     //
     ULONG KeyIndex;
-    
+
     //
     // Data for Inserting a Key into an Adapter Crypto Engine
     //
@@ -8704,7 +8706,7 @@ typedef struct _STOR_CRYPTO_OPERATION_INSERT_KEY {
 
     PVOID KeyVirtualAddress;
     PHYSICAL_ADDRESS KeyPhysicalAddress;
-    
+
 } STOR_CRYPTO_OPERATION_INSERT_KEY, *PSTOR_CRYPTO_OPERATION_INSERT_KEY;
 
 //
@@ -9498,7 +9500,11 @@ typedef enum _STORPORT_FUNCTION_CODE {
     ExtFunctionFreeHighResolutionTimer,
     ExtFunctionGetCurrentProcessorIndex,
     ExtFunctionAcquireSpinLock,
-    ExtFunctionGetProcessorCount
+    ExtFunctionGetProcessorCount,
+    ExtFunctionCancelDpc,
+    ExtFunctionMiniportTelemetryEx,
+    ExtFunctionQueryConfiguration,
+    ExtFunctionLogHardwareError
 
 } STORPORT_FUNCTION_CODE, *PSTORPORT_FUNCTION_CODE;
 
@@ -9585,11 +9591,20 @@ typedef enum _SCSI_NOTIFICATION_TYPE {
     RequestDirectComplete,
     InitializeDpcWithContext,
     InitializeThreadedDpc,
-    SetTargetProcessorDpc
+    SetTargetProcessorDpc,
+    MarkDeviceFailed
 
 } SCSI_NOTIFICATION_TYPE, *PSCSI_NOTIFICATION_TYPE;
 
+//
+// Telemetry Categories
+//
 
+typedef enum _STOR_TELEMETRY_CATEGORY {
+    StorTelemetryCategory,
+    StorMeasuresCategory
+
+} STOR_TELEMETRY_CATEGORY, *PSTOR_TELEMETRY_CATEGORY;
 
 #if (NTDDI_VERSION < NTDDI_WIN8)
 
@@ -12009,6 +12024,31 @@ StorPortAcquireSpinLockEx(
 
 ULONG
 FORCEINLINE
+StorPortCancelDpc(
+    _In_ PVOID HwDeviceExtension,
+    _In_ PSTOR_DPC Dpc,
+    _Out_ BOOLEAN *ReturnValue
+    )
+{
+    ULONG Status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+    Status = StorPortExtendedFunction(ExtFunctionCancelDpc,
+                                      HwDeviceExtension,
+                                      Dpc,
+                                      ReturnValue);
+#else
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Dpc);
+    UNREFERENCED_PARAMETER(ReturnValue);
+#endif
+
+    return Status;
+}
+
+
+ULONG
+FORCEINLINE
 StorPortStateChangeDetected(
     _In_ PVOID HwDeviceExtension,
     _In_ ULONG ChangedEntity,
@@ -13230,11 +13270,11 @@ StorPortInitializeListHead(
     if ( ListHead ) {
         ListHead->Flink = ListHead->Blink = ListHead;
     }
-    
+
 #else
 
     UNREFERENCED_PARAMETER(ListHead);
-    
+
 #endif
 
     return;
@@ -13265,7 +13305,7 @@ StorPortInterlockedInsertHeadList(
     } else {
         status = STOR_STATUS_INVALID_PARAMETER;
     }
-    
+
 #else
 
     UNREFERENCED_PARAMETER(HwDeviceExtension);
@@ -13273,7 +13313,7 @@ StorPortInterlockedInsertHeadList(
     UNREFERENCED_PARAMETER(ListEntry);
     UNREFERENCED_PARAMETER(Result);
     UNREFERENCED_PARAMETER(Lock);
-    
+
 #endif
 
     return status;
@@ -13304,7 +13344,7 @@ StorPortInterlockedInsertTailList(
     } else {
         status = STOR_STATUS_INVALID_PARAMETER;
     }
-    
+
 #else
 
     UNREFERENCED_PARAMETER(HwDeviceExtension);
@@ -13312,7 +13352,7 @@ StorPortInterlockedInsertTailList(
     UNREFERENCED_PARAMETER(ListEntry);
     UNREFERENCED_PARAMETER(Result);
     UNREFERENCED_PARAMETER(Lock);
-    
+
 #endif
 
     return status;
@@ -13341,14 +13381,14 @@ StorPortInterlockedRemoveHeadList(
     } else {
         status = STOR_STATUS_INVALID_PARAMETER;
     }
-    
+
 #else
 
     UNREFERENCED_PARAMETER(HwDeviceExtension);
     UNREFERENCED_PARAMETER(ListHead);
     UNREFERENCED_PARAMETER(Result);
     UNREFERENCED_PARAMETER(Lock);
-    
+
 #endif
 
     return status;
@@ -13373,12 +13413,12 @@ StorPortInitializeSpinlock(
     } else {
         status = STOR_STATUS_INVALID_PARAMETER;
     }
-    
+
 #else
 
     UNREFERENCED_PARAMETER(HwDeviceExtension);
     UNREFERENCED_PARAMETER(Lock);
-    
+
 #endif
 
     return status;
@@ -13506,15 +13546,22 @@ typedef enum _STORPORT_ETW_EVENT_OPCODE {
 //
 typedef enum _STORPORT_ETW_EVENT_CHANNEL{
     StorportEtwEventDiagnostic = 0,
-    StorportEtwEventOperational = 1
+    StorportEtwEventOperational = 1,
+    StorportEtwEventHealth = 2
 } STORPORT_ETW_EVENT_CHANNEL, *PSTORPORT_ETW_EVENT_CHANNEL;
 
 //
 // The event description must not exceed 32 characters and the parameter
-// names must not exceed 16 characters (not including the NULL terminator).
+// names must not exceed 16 characters (not including the NULL terminator),
+// if release < NTDDI_WIN10_19H1. Otherwise name should not exceed 32 characters
 //
 #define STORPORT_ETW_MAX_DESCRIPTION_LENGTH 32
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+#define STORPORT_ETW_MAX_PARAM_NAME_LENGTH 32
+#else
 #define STORPORT_ETW_MAX_PARAM_NAME_LENGTH 16
+#endif
 
 ULONG
 FORCEINLINE
@@ -13543,7 +13590,8 @@ Parameters:
         the unit object.
     EventId - A miniport-specific event ID to uniquely identify the type of event.
     EventDescription - Required.  A short string describing the event.  Must
-        not be longer than 16 characters, not including the NULL terminator.
+        not be longer than STORPORT_ETW_MAX_DESCRIPTION_LENGTH characters, 
+        not including the NULL terminator.
     EventKeywords - Bitmask of STORPORT_ETW_EVENT_KEYWORD_* values to further
         characterize the event.  Can be 0 if no keywords are desired.
     EventLevel - The level of the event (e.g. Informational, Error, etc.).
@@ -13552,7 +13600,8 @@ Parameters:
         pointer of the associated IRP will be logged.
     Parameter<N>Name - A short string that gives meaning to parameter N's value.
         If NULL or an empty string, parameter N will be ignored.  Must not be
-        longer than 16 characters, not including the NULL terminator.
+        longer than STORPORT_ETW_MAX_PARAM_NAME_LENGTH characters, not including 
+        the NULL terminator.
     Parameter<N>Value - Value of parameter N.  If the associated parameter N
         name is NULL or empty, the value will be logged as 0.
 
@@ -13646,7 +13695,8 @@ Parameters:
         the unit object.
     EventId - A miniport-specific event ID to uniquely identify the type of event.
     EventDescription - Required.  A short string describing the event.  Must
-        not be longer than 16 characters, not including the NULL terminator.
+        not be longer than STORPORT_ETW_MAX_DESCRIPTION_LENGTH characters, 
+        not including the NULL terminator.
     EventKeywords - Bitmask of STORPORT_ETW_EVENT_KEYWORD_* values to further
         characterize the event.  Can be 0 if no keywords are desired.
     EventLevel - The level of the event (e.g. Informational, Error, etc.).
@@ -13655,7 +13705,8 @@ Parameters:
         pointer of the associated IRP will be logged.
     Parameter<N>Name - A short string that gives meaning to parameter N's value.
         If NULL or an empty string, parameter N will be ignored.  Must not be
-        longer than 16 characters, not including the NULL terminator.
+        longer than STORPORT_ETW_MAX_PARAM_NAME_LENGTH characters, not including 
+        the NULL terminator.
     Parameter<N>Value - Value of parameter N.  If the associated parameter N
         name is NULL or empty, the value will be logged as 0.
 
@@ -13769,7 +13820,8 @@ Parameters:
         the unit object.
     EventId - A miniport-specific event ID to uniquely identify the type of event.
     EventDescription - Required.  A short string describing the event.  Must
-        not be longer than 16 characters, not including the NULL terminator.
+        not be longer than STORPORT_ETW_MAX_DESCRIPTION_LENGTH characters, 
+        not including the NULL terminator.
     EventKeywords - Bitmask of STORPORT_ETW_EVENT_KEYWORD_* values to further
         characterize the event.  Can be 0 if no keywords are desired.
     EventLevel - The level of the event (e.g. Informational, Error, etc.).
@@ -13778,7 +13830,8 @@ Parameters:
         pointer of the associated IRP will be logged.
     Parameter<N>Name - A short string that gives meaning to parameter N's value.
         If NULL or an empty string, parameter N will be ignored.  Must not be
-        longer than 16 characters, not including the NULL terminator.
+        longer than STORPORT_ETW_MAX_PARAM_NAME_LENGTH characters, not including 
+        the NULL terminator.
     Parameter<N>Value - Value of parameter N.  If the associated parameter N
         name is NULL or empty, the value will be logged as 0.
 
@@ -13896,7 +13949,7 @@ StorPortEtwChannelEvent2(
 )
 /*
 Description:
-    A miniport can call this function to log an ETW event to a specific channel with 
+    A miniport can call this function to log an ETW event to a specific channel with
     two extra general purpose parameters (expressed as name-value pairs).
 
 Parameters:
@@ -13906,7 +13959,8 @@ Parameters:
     EventChannel - ETW channel where event is logged
     EventId - A miniport-specific event ID to uniquely identify the type of event.
     EventDescription - Required.  A short string describing the event.  Must
-        not be longer than 16 characters, not including the NULL terminator.
+        not be longer than STORPORT_ETW_MAX_DESCRIPTION_LENGTH characters, 
+        not including the NULL terminator.
     EventKeywords - Bitmask of STORPORT_ETW_EVENT_KEYWORD_* values to further
         characterize the event.  Can be 0 if no keywords are desired.
     EventLevel - The level of the event (e.g. Informational, Error, etc.).
@@ -13915,7 +13969,8 @@ Parameters:
         pointer of the associated IRP will be logged.
     Parameter<N>Name - A short string that gives meaning to parameter N's value.
         If NULL or an empty string, parameter N will be ignored.  Must not be
-        longer than 16 characters, not including the NULL terminator.
+        longer than STORPORT_ETW_MAX_PARAM_NAME_LENGTH characters, not including 
+        the NULL terminator.
     Parameter<N>Value - Value of parameter N.  If the associated parameter N
         name is NULL or empty, the value will be logged as 0.
 
@@ -13997,7 +14052,8 @@ Parameters:
     EventChannel - ETW channel where event is logged
     EventId - A miniport-specific event ID to uniquely identify the type of event.
     EventDescription - Required.  A short string describing the event.  Must
-        not be longer than 16 characters, not including the NULL terminator.
+        not be longer than STORPORT_ETW_MAX_DESCRIPTION_LENGTH characters, 
+        not including the NULL terminator.
     EventKeywords - Bitmask of STORPORT_ETW_EVENT_KEYWORD_* values to further
         characterize the event.  Can be 0 if no keywords are desired.
     EventLevel - The level of the event (e.g. Informational, Error, etc.).
@@ -14006,7 +14062,8 @@ Parameters:
         pointer of the associated IRP will be logged.
     Parameter<N>Name - A short string that gives meaning to parameter N's value.
         If NULL or an empty string, parameter N will be ignored.  Must not be
-        longer than 16 characters, not including the NULL terminator.
+        longer than STORPORT_ETW_MAX_PARAM_NAME_LENGTH characters, not including 
+        the NULL terminator.
     Parameter<N>Value - Value of parameter N.  If the associated parameter N
         name is NULL or empty, the value will be logged as 0.
 
@@ -14104,7 +14161,8 @@ Parameters:
     EventChannel - ETW channel where event is logged
     EventId - A miniport-specific event ID to uniquely identify the type of event.
     EventDescription - Required.  A short string describing the event.  Must
-        not be longer than 16 characters, not including the NULL terminator.
+        not be longer than STORPORT_ETW_MAX_DESCRIPTION_LENGTH characters, 
+        not including the NULL terminator.
     EventKeywords - Bitmask of STORPORT_ETW_EVENT_KEYWORD_* values to further
         characterize the event.  Can be 0 if no keywords are desired.
     EventLevel - The level of the event (e.g. Informational, Error, etc.).
@@ -14113,7 +14171,8 @@ Parameters:
         pointer of the associated IRP will be logged.
     Parameter<N>Name - A short string that gives meaning to parameter N's value.
         If NULL or an empty string, parameter N will be ignored.  Must not be
-        longer than 16 characters, not including the NULL terminator.
+        longer than STORPORT_ETW_MAX_PARAM_NAME_LENGTH characters, not including 
+        the NULL terminator.
     Parameter<N>Value - Value of parameter N.  If the associated parameter N
         name is NULL or empty, the value will be logged as 0.
 
@@ -14228,28 +14287,28 @@ StorPortLogTelemetry(
 )
 /*
 Description:
-    
-    A miniport can call this function to log a tracelogging telemetry event with 
+
+    A miniport can call this function to log a tracelogging telemetry event with
     miniport customized data, which encapsulated in the EventBuffer structure.
-    
+
 Parameters:
-    
+
     HwDeviceExtension - The miniport's device extension.
-    
+
     Address - NULL if the device is an adapter, otherwise the address specifies
             the unit object.
-                
+
     Event - Telemetry data that includes standard event fields and miniport
             payload, which both general buffer and name/value pairs.
-    
+
 Returns:
-        
+
     STOR_STATUS_SUCCESS if the telemetry event was successfully logged.
-            
+
     STOR_STATUS_NOT_IMPLEMENTED if the API is called on the OS that not support it.
-    
+
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
-    
+
 */
 {
     ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
@@ -14274,33 +14333,92 @@ Returns:
 
 ULONG
 FORCEINLINE
+StorPortLogTelemetryEx(
+    _In_ PVOID HwDeviceExtension,
+    _In_opt_ PSTOR_ADDRESS StorAddress,
+    _In_ PSTORPORT_TELEMETRY_EVENT Event,
+    _In_ STOR_TELEMETRY_CATEGORY Category
+)
+/*
+Description:
+
+    A miniport can call this function to log a tracelogging measures event with
+    miniport customized data, which encapsulated in the EventBuffer structure.
+    This API additionally provide user to specify telemtry catergory type.
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Address - NULL if the device is an adapter, otherwise the address specifies
+            the unit object.
+
+    Event - Telemetry data that includes standard event fields and miniport
+            payload, which both general buffer and name/value pairs.
+
+    Category - Category of telemetry to be logged (STOR_TELEMETRY_CATEGORY)
+
+Returns:
+
+    STOR_STATUS_SUCCESS if the telemetry event was successfully logged.
+
+    STOR_STATUS_NOT_IMPLEMENTED if the API is called on the OS that not support it.
+
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+
+    status = StorPortExtendedFunction(ExtFunctionMiniportTelemetryEx,
+                                      HwDeviceExtension,
+                                      StorAddress,
+                                      Event,
+                                      Category);
+
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(StorAddress);
+    UNREFERENCED_PARAMETER(Event);
+    UNREFERENCED_PARAMETER(Category);
+
+#endif
+
+    return status;
+}
+
+ULONG
+FORCEINLINE
 StorPortUpdateAdapterMaxIO(
     _In_ PVOID HwDeviceExtension,
     _In_ ULONG MaxIoCount
 )
 /*
 Description:
-    
+
     A miniport can call this function to update the maximum IOs supported by
     an adapter. This function is valid during HwInitialize/HwPassiveInitRoutine
     callback and has effect only during adapter initialization.
-    
+
 Parameters:
-    
+
     HwDeviceExtension - The miniport's device extension.
-    
+
     MaxIoCount - Maximum IOs supported by the adapter.
-    
+
 Returns:
-        
+
     STOR_STATUS_SUCCESS if the telemetry event was successfully logged.
-            
+
     STOR_STATUS_NOT_IMPLEMENTED if the API is called on the OS that not support it.
-    
+
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
 
     STOR_STATUS_INVALID_DEVICE_REQUEST if called outside of HwInitialize/HwPassiveInitRoutine.
-    
+
 */
 {
     ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
@@ -14330,29 +14448,29 @@ StorPortUpdatePortConfigMaxIOInfo(
 )
 /*
 Description:
-    
-    A miniport can call this function to update both maximum IOs and maximum IOs per LUN 
+
+    A miniport can call this function to update both maximum IOs and maximum IOs per LUN
     supported by an adapter. This function is valid during HwInitialize/HwPassiveInitRoutine
     callback and has effect only during adapter initialization.
-    
+
 Parameters:
-    
+
     HwDeviceExtension - The miniport's device extension.
-    
+
     MaxIoCount - Maximum IOs supported by the adapter.
 
     MaxIosPerLun - Maximum IOs per LUN supported by the adapter.
-    
+
 Returns:
-        
+
     STOR_STATUS_SUCCESS if the telemetry event was successfully logged.
-            
+
     STOR_STATUS_NOT_IMPLEMENTED if the API is called on the OS that not support it.
-    
+
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
 
     STOR_STATUS_INVALID_DEVICE_REQUEST if called outside of HwInitialize/HwPassiveInitRoutine.
-    
+
 */
 {
     ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
@@ -14383,23 +14501,23 @@ StorPortDelayExecution(
 )
 /*
 Description:
-    
+
     StorPortDelayExecution delays the current thread by the given amount of
     time, in microseconds.
     If the current IRQL is lower than DISPATCH_LEVEL then the current thread is
     simply put in the wait state and other threads are allowed to run.
     Otherwise, this routine performs a busy-wait.
-    
+
 Parameters:
-    
+
     HwDeviceExtension - The miniport's device extension.
 
     DelayInMicroseconds - The delay, in microseconds.
-    
+
 Returns:
-        
+
     STOR_STATUS_SUCCESS
-    
+
 */
 {
     ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
@@ -14439,47 +14557,47 @@ StorPortAllocateDmaMemory(
     _Out_ PPHYSICAL_ADDRESS PhysicalAddress
     )
 /*++
-    
+
 Routine Description:
-    
+
     This function is the extended version of StorPortAllocateContiguousMemorySpecifyCacheNode.
-    It allocates a range of physically contiguous noncached, nonpaged memory, and return the 
+    It allocates a range of physically contiguous noncached, nonpaged memory, and return the
     physical address of the allocated buffer.
-    
+
 Arguments:
-    
+
     HwDeviceExtension - A pointer to the hardware device extension for the host
         bus adapter (HBA).
-    
+
     NumberOfBytes - The number of bytes to allocate.
 
-    LowestAcceptableAddress - The lowest physical address that is valid for the allocation. 
-        For example, if the device can only reference physical memory in the 8 MB to 16 MB 
+    LowestAcceptableAddress - The lowest physical address that is valid for the allocation.
+        For example, if the device can only reference physical memory in the 8 MB to 16 MB
         range, this value would be set to 0x800000 (8 MB).
-    
-    HighestAcceptableAddress - The highest physical address that is valid for the allocation. 
+
+    HighestAcceptableAddress - The highest physical address that is valid for the allocation.
         For example, if the device can only reference physical memory below 16 MB, this value
         would be set to 0xFFFFFF (16 MB - 1).
-    
+
     BoundaryAddressMultiple - The physical address multiple that this allocation must not cross.
 
     CacheType - The desired cache type for the mapping.
 
-    PreferredNode - The preferred node from which the allocation should be made if pages are 
+    PreferredNode - The preferred node from which the allocation should be made if pages are
         available on that node.
 
-    BufferPointer - The variable that receives the starting address of the allocated memory 
-        block. Upon return from this routine, if this variable is zero, a contiguous range 
+    BufferPointer - The variable that receives the starting address of the allocated memory
+        block. Upon return from this routine, if this variable is zero, a contiguous range
         could not be found to satisfy the request. If this variable is not NULL, it contains
-        a pointer (for example, a virtual address in the nonpaged portion of the system) to 
+        a pointer (for example, a virtual address in the nonpaged portion of the system) to
         the allocated physically contiguous memory.
 
     PhysicalAddress - Physical address of the allocated memory block.
-    
+
 Return Value:
-    
+
     A STOR_STATUS code.
-    
+
 --*/
 {
     ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
@@ -14524,33 +14642,33 @@ StorPortFreeDmaMemory(
     _In_opt_ PHYSICAL_ADDRESS PhysicalAddress
     )
 /*++
-    
+
 Routine Description:
-    
+
     This function is the extended version of StorPortFreeContiguousMemorySpecifyCache.
     It deallocates a range of noncached memory in the nonpaged portion of the system address space.
-    
+
 Arguments:
-    
+
     HwDeviceExtension - A pointer to the hardware device extension for the host bus adapter (HBA).
-    
+
     BaseAddress - The base virtual address to free.
 
-    NumberOfBytes - The number of bytes that are allocated to the request. This must be the same 
-        number that was supplied as a parameter when the StorPortAllocateDmaMemory routine was 
+    NumberOfBytes - The number of bytes that are allocated to the request. This must be the same
+        number that was supplied as a parameter when the StorPortAllocateDmaMemory routine was
         previously called.
 
     CacheType - The cache type that is used in the call to the StorPortAllocateDmaMemory routine.
 
-    PreferredNode - The preferred node from which the allocation should be made if pages are 
+    PreferredNode - The preferred node from which the allocation should be made if pages are
         available on that node.
 
     PhysicalAddress - Physical address of the starting address of memory block to be deallocated.
-    
+
 Return Value:
-    
+
     A STOR_STATUS code.
-    
+
 --*/
 {
     ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
@@ -14575,6 +14693,190 @@ Return Value:
 
     return status;
 }
+
+//
+// Storport interface to allow miniports to query specific configurations.
+//
+typedef enum _STORPORT_QUERY_CONFIGURATION_TYPE {
+    StorportQueryConfigurationD3 = 0,
+    StorportQueryConfigurationMax
+} STORPORT_QUERY_CONFIGURATION_TYPE, *PSTORPORT_QUERY_CONFIGURATION_TYPE;
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortQueryConfiguration(
+    _In_ PVOID HwDeviceExtension,
+    _In_ STORPORT_QUERY_CONFIGURATION_TYPE Type,
+    _Out_ PBOOLEAN Enabled
+    )
+/*
+
+Description:
+
+    A miniport can call this function to inquire specific configuration of the platform.
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Type - Indicate what configuration to query.
+
+    Enabled - TRUE if the specific configuration is enabled.
+
+Returns:
+
+    A STOR_STATUS code.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+
+    status = StorPortExtendedFunction(ExtFunctionQueryConfiguration,
+                                      HwDeviceExtension,
+                                      Type,
+                                      Enabled);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Type);
+    UNREFERENCED_PARAMETER(Enabled);
+
+#endif
+
+    return status;
+}
+
+
+//
+// Storport mark device failed flag definitions.
+//
+
+//
+// Miniport can set this bit to remove the device, otherwise, storport
+// will only log the event.
+//
+#define STORPORT_MARK_DEVICE_FAILED_FLAG_REMOVE_DEVICE      0x1
+
+VOID
+FORCEINLINE
+StorPortMarkDeviceFailed(
+    _In_ PVOID HwDeviceExtension,
+    _In_opt_ PSTOR_ADDRESS StorAddress,
+    _In_ ULONG Flags,
+    _In_ PWSTR FailReason
+    )
+/*
+
+Description:
+
+    A miniport can call this function to mark a failed device.
+
+    Afer this call, PnP manager will send IRP to query device PnP state, then try
+    to remove the failed device.
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Address - NULL if the device is an adapter, otherwise the address specifies
+        the unit object.
+
+    Flags - Indicates whether miniport wants to to remove failed device.
+
+    FailReason - Indicates device failure reason and details.
+
+Returns:
+
+    None.
+
+*/
+{
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+
+    StorPortNotification(MarkDeviceFailed,
+                         HwDeviceExtension,
+                         StorAddress,
+                         Flags,
+                         FailReason);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(StorAddress);
+    UNREFERENCED_PARAMETER(Flags);
+    UNREFERENCED_PARAMETER(FailReason);
+
+#endif
+}
+
+
+ULONG
+FORCEINLINE
+StorPortEtwLogError(
+    _In_ PVOID HwDeviceExtension,
+    _In_opt_ PSTOR_ADDRESS Address,
+    _In_ ULONG Id,
+    _In_ PWSTR Description,
+    _In_ ULONG DataBufferLength,
+    _In_reads_bytes_(DataBufferLength) PVOID DataBuffer
+)
+/*
+Description:
+
+    A miniport can call this function to log an ETW event for a hardware protocol
+    error.
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Address - NULL if the device is an adapter, otherwise the address specifies
+        the unit object.
+
+    Id - Event identification.
+
+    Description - Required. A string describing the error.
+
+    DataBufferLength - Length of the input event data buffer.
+
+    DataBuffer - Event binary data.
+
+Returns:
+
+    STOR_STATUS_SUCCESS if the ETW event was successuflly logged.
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+    STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+
+    status = StorPortExtendedFunction(ExtFunctionLogHardwareError,
+                                      HwDeviceExtension,
+                                      Address,
+                                      Id,
+                                      Description,
+                                      DataBufferLength,
+                                      DataBuffer);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Address);
+    UNREFERENCED_PARAMETER(Id);
+    UNREFERENCED_PARAMETER(Description);
+    UNREFERENCED_PARAMETER(DataBufferLength);
+    UNREFERENCED_PARAMETER(DataBuffer);
+
+#endif
+
+    return status;
+}
+
 
 //
 // Include SCSIPORT definitions for backwards compatability.

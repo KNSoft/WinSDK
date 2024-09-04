@@ -324,6 +324,9 @@ typedef struct tagPOINTEREVENTINT
     POINTERINFOUNION    Info;
     BOOL                bMobileTestSyncFlag;   // Set if HID_USAGE_TESTSYNCFLAG/POINTER_DEVICE_USAGE_MOBILE_TESTSYNCFLAG is on (0xFE)
     BOOL                bMobileTestInjectFlag; // Set if HID_USAGE_TESTINJECTFLAG/POINTER_DEVICE_USAGE_MOBILE_TESTINJECTFLAG is on (0xFF)
+    GUID                ProprietaryId;         // A unique id for the external source of the pointer input (e.g. physical pen serial number)
+    BOOL                bSkipActivation;       // Determines if we should skip the logic responsible for activating destination window due to
+                                               // pointer message (xxxPointerActivateInternal)
 } POINTEREVENTINT, *PPOINTEREVENTINT;
 #endif // _POINTEREVENTINT_DEFINED_
 
@@ -341,13 +344,27 @@ typedef struct tagRIMPOINTERRAWDATA {
     struct tagRIMPOINTERRAWDATA* pNextRawData; // Address of next POINTERRAWDATA structure, if any, in this linked list
 } RIMPOINTERRAWDATA;
 
+#ifndef POINTER_STRUCTURES_INTERNAL
+#define POINTER_STRUCTURES_INTERNAL
+
+typedef struct tagTELEMETRY_POINTER_FRAME_TIMES {
+    UINT64 qpcKernelInputRead; // When the digitizer driver read the input report from the digitizer driver
+    UINT64 qpcHostInputSend; // (Container scenarios only) When the host sent the input to the container
+    UINT64 qpcContainerInputReceive; // (Container scenarios only) When the container received the input from the host
+    UINT64 hostPerformanceFrequency; // (Container scenarios only) Performance frequency of the host. Used to convert
+                                     // host timestamps to the container timeline so latencies can be computed in the
+                                     // container.
+}TELEMETRY_POINTER_FRAME_TIMES, *PTELEMETRY_POINTER_FRAME_TIMES;
+
+#endif
+
 struct RIMCOMPLETEFRAME {
     DWORD           cbSize;         // Size of the RIMCOMPLETEFRAME
     LIST_ENTRY      nextFrame;      // link to next RIMCOMPLETEFRAME
     DWORD           cPointers;      // Count of pointers in this frame
     DWORD           cRawDataBlocks; // Count of raw data blocks associated with this frame
     HANDLE          hRimDev;        // Handle to RimDev
-    UINT64          qpcArrivalTime; // System QPC time when input frame was reported
+    TELEMETRY_POINTER_FRAME_TIMES frameTimes; // QPCs used by interaction latency telemetry to compute performance metrics
     BOOL            bDevInjection;  // If RimDev is a an injection device
     BOOL            bButtonOnly;    // Used by TouchPad. (fButtonOnly)
     BOOL            bAutoRepeatFrame;// This is an auto repeat frame.
@@ -376,7 +393,7 @@ typedef struct _RIMIDE_GENERIC_HID_DEVICE_PROPERTIES {
     USHORT          ReportDescriptorLength;
 
     // TODO: Update API to take in a callback to a user
-    // defined get feature routine instead of having a 
+    // defined get feature routine instead of having a
     // static field. This is temporary to enable max count
     // and other required features to be reported.
     _Field_size_bytes_full_(FeatureReportLength)
@@ -848,6 +865,16 @@ InjectGenericHidInput(
     );
 
 
+WINUSERAPI
+NTSTATUS
+WINAPI
+RIMSetExtendedDeviceProperty(
+    _In_ HANDLE hRimDev,
+    _In_reads_bytes_(dwPropSize) PVOID pProperty,
+    _In_ DWORD dwPropSize
+    );
+
+
 #ifdef __cplusplus
 }
 #endif
@@ -855,8 +882,8 @@ InjectGenericHidInput(
 #endif // _RIM_EXT_H_
 
 
-#ifndef ext_ms_win_ntuser_rim_l1_1_1_query_routines
-#define ext_ms_win_ntuser_rim_l1_1_1_query_routines
+#ifndef ext_ms_win_ntuser_rim_l1_1_2_query_routines
+#define ext_ms_win_ntuser_rim_l1_1_2_query_routines
 
 
 
@@ -1051,6 +1078,12 @@ IsInitializeGenericHidInjectionPresent(
 BOOLEAN
 __stdcall
 IsInjectGenericHidInputPresent(
+    VOID
+    );
+
+BOOLEAN
+__stdcall
+IsRIMSetExtendedDevicePropertyPresent(
     VOID
     );
 

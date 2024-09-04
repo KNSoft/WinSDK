@@ -3416,7 +3416,7 @@ typedef struct _D3DDDICB_QUERYADAPTERINFO2
     UINT   PrivateDriverDataSize;
 } D3DDDICB_QUERYADAPTERINFO2;
 
-#endif (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4)
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4)
 
 typedef struct _D3DDDICB_GETMULTISAMPLEMETHODLIST
 {
@@ -4186,9 +4186,54 @@ typedef struct _D3DDDICB_SUBMITPRESENTTOHWQUEUE
     UINT                        PrivateDriverDataSize;                          // in: private driver data size in bytes
     _Field_size_bytes_(PrivateDriverDataSize)
     PVOID                       pPrivateDriverData;                             // in: private driver data to pass to DdiPresent
+
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_6_2)
+
+    BOOLEAN                     bOptimizeForComposition;                        // out: DWM is involved in composition
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_6_2)
+
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_6_3)
+
+    BOOL                        SyncIntervalOverrideValid;                      // in: Override app sync interval
+    D3DDDI_FLIPINTERVAL_TYPE    SyncIntervalOverride;                           // in: Override app sync interval
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_6_3)
+
 } D3DDDICB_SUBMITPRESENTTOHWQUEUE;
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_6_4)
+
+typedef struct _D3DDDICB_SUBMITHISTORYSEQUENCE
+{
+    HANDLE                                  hHwQueue;
+    UINT64                                  HwQueueProgressFenceId;
+
+    UINT                                    NumHistoryBuffers;
+
+    _Field_size_                           (NumHistoryBuffers)
+    const VOID**                            HistoryBufferAddresses;
+
+    _Field_size_                           (NumHistoryBuffers)
+    const UINT*                             HistoryBufferSizes;
+
+    UINT                                    PrecisionBits;
+    D3DDDI_MARKERLOGTYPE                    MarkerLogType;
+    UINT                                    RenderCBSequence;
+    UINT                                    FirstAPISequenceNumberHigh;
+    UINT                                    CompletedAPISequenceNumberLow0Size;
+    UINT                                    CompletedAPISequenceNumberLow1Size; 
+    UINT                                    BegunAPISequenceNumberLow0Size; 
+    UINT                                    BegunAPISequenceNumberLow1Size; 
+    CONST UINT*                             pCompletedAPISequenceNumberLow0;
+    CONST UINT*                             pCompletedAPISequenceNumberLow1;
+    CONST UINT*                             pBegunAPISequenceNumberLow0;
+    CONST UINT*                             pBegunAPISequenceNumberLow1;
+} D3DDDICB_SUBMITHISTORYSEQUENCE;
+
+#endif // D3D_UMD_INTERFACE_VERSION
 
 typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_ALLOCATECB)(
         _In_ HANDLE hDevice, _Inout_ D3DDDICB_ALLOCATE*);
@@ -4379,6 +4424,13 @@ typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_SUBMITPRESENTTOHWQU
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_6_4)
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_SUBMITHISTORYSEQUENCECB)(
+        _In_ HANDLE hDevice, _In_ CONST D3DDDICB_SUBMITHISTORYSEQUENCE*);
+
+#endif // D3D_UMD_INTERFACE_VERSION
+
 typedef struct _D3DDDI_DEVICECALLBACKS
 {
     PFND3DDDI_ALLOCATECB                            pfnAllocateCb;
@@ -4462,6 +4514,9 @@ typedef struct _D3DDDI_DEVICECALLBACKS
 #endif // D3D_UMD_INTERFACE_VERSION
 #if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
     PFND3DDDI_SUBMITPRESENTTOHWQUEUECB              pfnSubmitPresentToHwQueueCb;
+#endif // D3D_UMD_INTERFACE_VERSION
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_6_4)
+    PFND3DDDI_SUBMITHISTORYSEQUENCECB               pfnSubmitHistorySequenceCb;
 #endif // D3D_UMD_INTERFACE_VERSION
 } D3DDDI_DEVICECALLBACKS;
 

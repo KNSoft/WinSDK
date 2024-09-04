@@ -2321,7 +2321,9 @@ typedef _Struct_size_bytes_(SrbLength) struct SRB_ALIGN _STORAGE_REQUEST_BLOCK {
     _Field_range_(SRB_FUNCTION_STORAGE_REQUEST_BLOCK, SRB_FUNCTION_STORAGE_REQUEST_BLOCK)
     UCHAR Function;
     UCHAR SrbStatus;
-    UCHAR ReservedUchar[4];
+
+    // Reserved for internal use
+    ULONG ReservedUlong1;
 
     //
     // General SRB fields. The first 6 fields should not changed between
@@ -2343,7 +2345,7 @@ typedef _Struct_size_bytes_(SrbLength) struct SRB_ALIGN _STORAGE_REQUEST_BLOCK {
     ULONG SrbFlags;
 
     // Reserved for future use to expand SrbStatus to 32-bit
-    ULONG ReservedUlong;
+    ULONG ReservedUlong2;
 
     // Equivalent to QueueTag or Task Tag in SCSI
     ULONG RequestTag;
@@ -5335,7 +5337,7 @@ typedef struct _VPD_BLOCK_LIMITS_PAGE {
     UCHAR DeviceType : 5;
     UCHAR DeviceTypeQualifier : 3;
     UCHAR PageCode;                 // 0xB0
-    UCHAR PageLength[2];            // 0x3C if device supports logical block provisioning, otherwise the value may be 0x10.
+    UCHAR PageLength[2];            // 0x3C
 
     union {
         struct {

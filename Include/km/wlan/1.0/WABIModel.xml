@@ -503,6 +503,16 @@
     </message>
     <message commandId="WDI_TASK_IHV" type="WDI_TASK_IHV_RESULTS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
 
+    <message commandId="WDI_TASK_REQUEST_FTM" type="WDI_TASK_REQUEST_FTM_PARAMETERS" description="Request FTM parameters" direction="ToIhv">
+      <containerRef id="WDI_TLV_FTM_REQUEST_TIMEOUT" name="FTMRequestTimeout" optional="false" type="UINT32Container" />
+      <containerRef id="WDI_TLV_FTM_TARGET_BSS_ENTRY" name="FTMTargetList" optional="false" type="FTMTargetBSSEntryContainer" multiContainer="true" />
+    </message>
+    <message commandId="WDI_TASK_REQUEST_FTM" type="WDI_TASK_REQUEST_FTM_RESULTS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
+
+    <message commandId="WDI_INDICATION_REQUEST_FTM_COMPLETE" type="WDI_INDICATION_REQUEST_FTM_COMPLETE_PARAMETERS" description="Responses for the FTM request" direction="FromIhv" >
+      <containerRef id="WDI_TLV_FTM_RESPONSE" name="FTMResponseList" optional="false" type="FTMResponseContainer" multiContainer="true"/>
+    </message>
+
     <message commandId="WDI_INDICATION_IHV_TASK_REQUEST" type="WDI_INDICATION_IHV_TASK_REQUEST_PARAMETERS" description="not implemented yet (ID:762509) - Parameters for WDI_INDICATION_IHV_TASK_REQUEST" direction="FromIhv" >
       <containerRef id="WDI_TLV_IHV_TASK_REQUEST_PARAMETERS" name="RequestedPriority" type="RequestedIHVTaskPriorityContainer" />
       <containerRef id="WDI_TLV_IHV_TASK_DEVICE_CONTEXT" name="IHVSpecificContext" type="ByteBlob" optional="true"/>
@@ -545,6 +555,24 @@
     </message>
 
     <message commandId ="WDI_SET_FAST_BSS_TRANSITION_PARAMETERS" type ="WDI_SET_FAST_BSS_TRANSITION_PARAMETERS_RESULTS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
+
+    <message commandId ="WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED" type ="WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED_PARAMETERS" description="Requesting the SAE Authentication parameters" direction="FromIhv">
+      <containerRef id="WDI_TLV_BSSID" name="BssId" type="MacAddressContainer" />
+      <containerRef id="WDI_TLV_SAE_INDICATION_TYPE" name="SAEIndicationType" type="SAEIndicationTypeContainer" />
+      <containerRef id="WDI_TLV_SAE_COMMIT_RESPONSE" name="SAECommitResponse" type="ByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_SAE_CONFIRM_RESPONSE" name="SAEConfirmResponse" type="ByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_SAE_STATUS" name="SAEStatus" type="SAEStatusContainer" optional="true" />
+    </message>
+
+    <message commandId ="WDI_SET_SAE_AUTH_PARAMS" type ="WDI_SET_SAE_AUTH_PARAMS_COMMAND" description="Parameters for continuing SAE authentication with AP" direction="ToIhv">
+      <containerRef id="WDI_TLV_BSSID" name="BssId" type="MacAddressContainer" />
+      <containerRef id="WDI_TLV_SAE_REQUEST_TYPE" name="SAERequestType" type="SAERequestTypeContainer" />
+      <containerRef id="WDI_TLV_SAE_COMMIT_REQUEST" name="SAECommitRequest" type="SAECommitRequestContainer" optional="true" />
+      <containerRef id="WDI_TLV_SAE_CONFIRM_REQUEST" name="SAEConfirmRequest" type="SAEConfirmRequestContainer" optional="true" />
+      <containerRef id="WDI_TLV_SAE_STATUS" name="SAEStatus" type="SAEStatusContainer" optional="true" />
+    </message>
+
+    <message commandId ="WDI_SET_SAE_AUTH_PARAMS" type ="WDI_SET_SAE_AUTH_PARAMS_RESULTS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
 
     <message commandId ="WDI_INDICATION_FIRMWARE_STALLED" type="WDI_INDICATION_FIRMWARE_STALLED_PARAMETERS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
 
@@ -731,6 +759,18 @@
 
     <container name="ConnectionQualityContainer" description="Container for Desired Wi-Fi Connection Quality Hint" type="WDI_CONNECTION_QUALITY_CONTAINER">
       <namedType name="ConnectionQualityHint" type="WDI_CONNECTION_QUALITY_HINT" description="Desired Wi-Fi Connection Quality Hint."/>
+    </container>
+
+    <container name="SAEIndicationTypeContainer" description="Container for SAE indication type" type="WDI_SAE_INDICATION_TYPE_CONTAINER">
+      <namedType name="IndicationType" type="WDI_SAE_INDICATION_TYPE" description="SAE Indication type."/>
+    </container>
+
+    <container name="SAERequestTypeContainer" description="Container for SAE request type" type="WDI_SAE_REQUEST_TYPE_CONTAINER">
+      <namedType name="RequestType" type="WDI_SAE_REQUEST_TYPE" description="SAE Request type."/>
+    </container>
+
+    <container name="SAEStatusContainer" description="Container for SAE status" type="WDI_SAE_STATUS_CONTAINER">
+      <namedType name="RequestType" type="WDI_SAE_STATUS" description="SAE Status."/>
     </container>
 
     <container
@@ -1274,6 +1314,13 @@
     </container>
 
     <container
+      name="InterfaceCapabilitiesContainerV1_0_20"
+      description="Container for interface Capabilities"
+      type="WDI_INTERFACE_CAPABILITIES_CONTAINER_V1_0_20">
+      <groupRef name="InterfaceCaps" ref="WifiInterfaceAttributesStructV1_0_20" description="Interface Capabilities parameters." />
+    </container>
+
+    <container
       name="InterfaceCapabilitiesContainerV1_0_1"
       description="Container for interface Capabilities"
       type="WDI_INTERFACE_CAPABILITIES_CONTAINER_V1_0_1">
@@ -1300,6 +1347,13 @@
       description="Container for Station capabilities"
       type="WDI_STATION_CAPABILITIES_CONTAINER">
       <groupRef name="WifiStationCapabilities" ref="WifiStationCapabilitiesStruct" description="Parameters for Station capabilities" />
+    </container>
+
+    <container
+      name="StationCapabilitiesContainerV1_0"
+      description="Container for Station capabilities"
+      type="WDI_STATION_CAPABILITIES_CONTAINERV1_0">
+      <groupRef name="WifiStationCapabilities" ref="WifiStationCapabilitiesStructV1_0" description="Parameters for Station capabilities" />
     </container>
 
     <container
@@ -1410,7 +1464,8 @@
     </container> 
 
     <aggregateContainer name="StationAttributesContainer" type="WDI_STATION_ATTRIBUTES_CONTAINER" description="Container for Station attributes.">
-      <containerRef id="WDI_TLV_STATION_CAPABILITIES" name="StationCapabilities" type="StationCapabilitiesContainer" />
+      <containerRef id="WDI_TLV_STATION_CAPABILITIES" name="StationCapabilities" type="StationCapabilitiesContainer" versionAdded="WDI_VERSION_1_1_8"/>
+      <containerRef id="WDI_TLV_STATION_CAPABILITIES" name="StationCapabilities" type="StationCapabilitiesContainerV1_0" versionRemoved="WDI_VERSION_1_1_8"/>
       <containerRef id="WDI_TLV_UNICAST_ALGORITHM_LIST" name="UnicastAlgorithms" type="AlgorithmPairsContainer" optional="true" />
       <containerRef id="WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST" name="MulticastDataAlgorithms" type="AlgorithmPairsContainer" optional="true" />
       <containerRef id="WDI_TLV_MULTICAST_MGMT_ALGORITHM_LIST" name="MulticastManagementAlgorithms" type="AlgorithmPairsContainer" optional="true" />
@@ -1451,7 +1506,8 @@
      </aggregateContainer>
 
      <aggregateContainer name="InterfaceAttributesContainer" description="Container for interface attributes." type="WDI_INTERFACE_ATTRIBUTES_CONTAINER">
-       <containerRef id="WDI_TLV_INTERFACE_CAPABILITIES" name="InterfaceCapabilities" type="InterfaceCapabilitiesContainer" versionAdded="WDI_VERSION_1_0_20" />
+       <containerRef id="WDI_TLV_INTERFACE_CAPABILITIES" name="InterfaceCapabilities" type="InterfaceCapabilitiesContainer" versionAdded="WDI_VERSION_1_1_8" />
+       <containerRef id="WDI_TLV_INTERFACE_CAPABILITIES" name="InterfaceCapabilities" type="InterfaceCapabilitiesContainerV1_0_20" versionAdded="WDI_VERSION_1_0_20" versionRemoved="WDI_VERSION_1_1_8" />
        <containerRef id="WDI_TLV_INTERFACE_CAPABILITIES" name="InterfaceCapabilities" type="InterfaceCapabilitiesContainerV1_0_1" versionAdded="WDI_VERSION_1_0_1" versionRemoved="WDI_VERSION_1_0_20" />
        <containerRef id="WDI_TLV_INTERFACE_CAPABILITIES" name="InterfaceCapabilities" type="InterfaceCapabilitiesContainerV1_0" versionRemoved="WDI_VERSION_1_0_1" />
        <containerRef id="WDI_TLV_FIRMWARE_VERSION" name="FirmwareVersion" type="ASCIIString"/>
@@ -1515,6 +1571,18 @@
       description="Container for FT Initial association parameters"
       type="WDI_FT_INITIAL_ASSOC_PARAMETERS_CONTAINER">
       <containerRef id="WDI_TLV_FT_MDE" name="MDE" type="ByteBlob"/>
+    </aggregateContainer>
+
+    <aggregateContainer name="SAECommitRequestContainer" description="Container for SAE commit request" type="WDI_SAE_COMMIT_REQUEST">
+      <containerRef id="WDI_TLV_SAE_FINITE_CYCLIC_GROUP" name="FiniteCyclicGroup" type="UINT16Container" />
+      <containerRef id="WDI_TLV_SAE_SCALAR" name="Scalar" type="ByteBlob" />
+      <containerRef id="WDI_TLV_SAE_ELEMENT" name="Element" type="ByteBlob" />
+      <containerRef id="WDI_TLV_SAE_ANTI_CLOGGING_TOKEN" name="AntiCloggingToken" type="ByteBlob" optional="true" />
+    </aggregateContainer>
+
+    <aggregateContainer name="SAEConfirmRequestContainer" description="Container for SAE confirm request" type="WDI_SAE_CONFIRM_REQUEST">
+      <containerRef id="WDI_TLV_SAE_SEND_CONFIRM" name="SendConfirm" type="UINT16Container" />
+      <containerRef id="WDI_TLV_SAE_CONFIRM" name="Confirm" type="ByteBlob" />
     </aggregateContainer>
 
      <aggregateContainer name="HESSIDInfoContainer" description="Container for HESSID connection information." type="WDI_HESSID_INFO_CONTAINER">
@@ -1746,6 +1814,39 @@
 
     <aggregateContainer name="TestAggregate" description="Test Aggregate Container" type="TEST_AGGREGATE_CONTAINER">
       <containerRef id="WDI_TLV_TEST2" name="TestField" type="Test" multiContainer="true" />
+    </aggregateContainer>
+
+
+    <!-- Fine Timing Measurement -->
+    <aggregateContainer name="FTMTargetBSSEntryContainer" type="WDI_FTM_TARGET_BSS_ENTRY_CONTAINER" description="Container for FTM target BSS entries">
+      <containerRef id="WDI_TLV_BSSID" name="BSSID" type="MacAddressContainer"/>
+      <containerRef id="WDI_TLV_PROBE_RESPONSE_FRAME" name="ProbeResponseFrame" type="ByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_BEACON_FRAME" name="BeaconFrame" type="ByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_BSS_ENTRY_SIGNAL_INFO" name="SignalInfo" type="SignalInfoContainer" />
+      <containerRef id="WDI_TLV_BSS_ENTRY_CHANNEL_INFO" name="ChannelInfo" type="ChannelInfoContainer" />
+      <containerRef id="WDI_TLV_BSS_ENTRY_DEVICE_CONTEXT" name="DeviceSpecificContext" type="ByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_REQUEST_LCI_REPORT" name="RequestLCIReport" type="BOOLContainer" />
+    </aggregateContainer>
+
+    <container name="FTMResponseStatusContainer" type="WDI_FTM_RESPONSE_STATUS_CONTAINER" description="Container for FTM response status">
+      <namedType type="WDI_FTM_RESPONSE_STATUS" name="FTMResponseStatus" description="The status of the FTM requested."/>
+    </container>
+
+    <container name="LCIReportStatusContainer" type="WDI_LCI_REPORT_STATUS_CONTAINER" description="Container for LCI report status">
+      <namedType type="WDI_LCI_REPORT_STATUS" name="LCIReportStatus" description="The status of the LCI report requested."/>
+    </container>
+
+    <aggregateContainer name="FTMResponseContainer" type="WDI_FTM_RESPONSE_CONTAINER" description="Container for FTM response">
+      <containerRef id="WDI_TLV_BSSID" name="BSSID" type="MacAddressContainer"/>
+      <containerRef id="WDI_TLV_FTM_RESPONSE_STATUS" name="Status" type="FTMResponseStatusContainer" />
+      <containerRef id="WDI_TLV_RETRY_AFTER" name="RetryAfter" optional="true" type="UINT16Container" />
+      <containerRef id="WDI_TLV_FTM_NUMBER_OF_MEASUREMENTS" name="NumberOfMeasurements" optional="true" type="UINT16Container" />
+      <containerRef id="WDI_TLV_BSS_ENTRY_SIGNAL_INFO" name="SignalInfo" optional="true" type="SignalInfoContainer" />
+      <containerRef id="WDI_TLV_RTT" name="RTT" optional="true" type="UINT32Container" />
+      <containerRef id="WDI_TLV_RTT_ACCURACY" name="RTTAccuracy" optional="true" type="UINT32Container" />
+      <containerRef id="WDI_TLV_RTT_VARIANCE" name="RTTVariance" optional="true" type="UINT64Container" />
+      <containerRef id="WDI_TLV_LCI_REPORT_STATUS" name="LCIStatus" optional="true" type="LCIReportStatusContainer" />
+      <containerRef id="WDI_TLV_LCI_REPORT_BODY" name="LCIReport" optional="true" type="ByteBlob" />
     </aggregateContainer>
 
   </containers>
@@ -2082,6 +2183,37 @@
       <bool name="CannotSupportMiracastSink" description="True if the device cannot support Miracast Sink" />
       <bool name="BSSTransitionSupported" description="True if the device supports BSS Transition frames" />
       <bool name="IPDockingSupported" description="True if the device supports IP Docking Capability" />
+      <bool name="SAEAuthenticationSupported" description="True if the device supports SAE Authentication Capability" />
+      <bool name="MBOSupported" description="True if the device supports MBO" />
+      <bool name="BeaconReportsImplemented" description="True if the device handles beacon report measurement on its own" />
+    </propertyGroup>
+
+    <propertyGroup name="WifiInterfaceAttributesStructV1_0_20" type="WDI_INTERFACE_CAPABILITIESV1_0_20" description="Structure definition for interface Capabilities">
+      <uint32 name="MTUSize" description="MTU size" />
+      <uint32 name="MaxMultiCastListSize" description="Multicast list size for the adapter" />
+      <uint16 name="BackFillSize" description="Backfill Size in Bytes" />
+      <namedType name="Address" type="WDI_MAC_ADDRESS" description="Permanent Wi-Fi MAC Address."/>
+      <uint32 name="MaxTxRate" description="Maximum supported send rate for this adapter, in kbps" />
+      <uint32 name="MaxRxRate" description="Maximum supported receive rate for this adapter, in kbps" />
+      <bool name="HardwareRadioState" description="Whether or not the radio is enabled by hardware" />
+      <bool name="SoftwareRadioState" description="Whether or not the radio is enabled by software" />
+      <bool name="SupportPLR" description="whether the adapter support PLR - Platform Level Reset" />
+      <bool name="SupportFLR" description="whether the adapter support FLR - Function Level Reset" />
+      <bool name="ActionFramesSupported" description="{0,1} If sending and receiving actions frames is supported. Yes = 1." />
+      <uint8 name="NumRxStreams" description="Number of RX spatial streams supported"/>
+      <uint8 name="NumTxStreams" description="Number of TX spatial streams supported"/>
+      <uint8 name="NumChannels" description="Number of channels the adapter can work concurrently in"/>
+      <bool name="AntennaDiversity" description="Whether the adapter supports antenna diversity" />
+      <bool name="Support_eCSA" description="Whether the adapter supports eCSA" />
+      <bool name="MACAddressRandomization" description="Whether the adapter supports MAC Address Randomization. Yes = 1." />
+      <namedType name="MACAddressRandomizationMask" type="WDI_MAC_ADDRESS" description="MAC Address Randomization contraints for some hardware." />
+      <namedType name="BluetoothCoexistenceSupport" type="WDI_BLUETOOTH_COEXISTENCE_SUPPORT" description="Bluetooth Coexistence support." />
+      <bool name="SupportsNonWdiOidRequests" description="Whether the adapter can handle non-WDI OIDs" />
+      <bool name="FastTransitionSupported" description="Whether the adapter can do Fast-Transition association" />
+      <bool name="MU_MIMOSupported" description="Whether the adapter supports MU_MIMO" />
+      <bool name="CannotSupportMiracastSink" description="True if the device cannot support Miracast Sink" />
+      <bool name="BSSTransitionSupported" description="True if the device supports BSS Transition frames" />
+      <bool name="IPDockingSupported" description="True if the device supports IP Docking Capability" />
     </propertyGroup>
 
     <propertyGroup name="WifiInterfaceAttributesStructV1_0_1" type="WDI_INTERFACE_CAPABILITIESV1_0_1" description="Structure definition for interface Capabilities">
@@ -2143,6 +2275,28 @@
     </propertyGroup>
 
     <propertyGroup name="WifiStationCapabilitiesStruct" type="WDI_STATION_CAPABILITIES" description="Structure definition for Station capabilities">
+      <uint32 name="ScanSSIDListSize" description="Scan SSID List size" />
+      <uint32 name="DesiredBSSIDListSize" description="Desired BSSID List size" />
+      <uint32 name="DesiredSSIDListSize" description="Desired SSID List size" />
+      <uint32 name="PrivacyExemptionListSize" description="Privacy Exemption List size" />
+      <uint32 name="KeyMappingTableSize" description="Key Mapping List size" />
+      <uint32 name="DefaultKeyTableSize" description="Default Key table size" />
+      <uint32 name="WEPKeyValueMaxLength" description="WEP Key value Max length" />
+      <uint32 name="MaxNumPerSTA" description="Max num per STA Default key tables" />
+      <uint8 name="SupportedQOSFlags" description="Whether or not WMM QOS is supported" />
+      <uint8 name="HostFIPSModeImplemented" description="Whether or not host FIPS mode is supported" />
+      <uint8 name="MFPCapable" description="Whether or not MFP is supported" />
+      <bool name="AutoPowerSaveMode" description="{0,1} if Auto Power Save is supported. Yes = 1." />
+      <bool name="BSSListCachemanagement" description="{0,1} If the adapter would maintain the Station BSS List cache. Yes = 1" />
+      <bool name="ConnectBSSSelectionOverride" description="{0,1} If on a Station connect the adapter may attempt association to a BSSID that is not specified in the Preferred BSSID list. Yes = 1" />
+      <uint32 name="uMaxNetworkOffloadListSize" description="Support number of Network Offload entries" />
+      <bool name="HESSIDConnectionSupported" description="{0,1} If ability to connect to HESSIDs is supported. Yes = 1." />
+      <bool name="DisconnectedStandbySupported" description="If disconnected standby is supported. Yes = 1" />
+      <bool name="FTMAsInitiatorSupport" description="{0,1} If FTM procedures as Initiator are supported. Yes = 1." />
+      <uint32 name="FTMNumberOfSupportedTargets" description="Number of target STAs supported per FTM request task." />
+    </propertyGroup>
+
+    <propertyGroup name="WifiStationCapabilitiesStructV1_0" type="WDI_STATION_CAPABILITIESV1_0" description="Structure definition for Station capabilities">
       <uint32 name="ScanSSIDListSize" description="Scan SSID List size" />
       <uint32 name="DesiredBSSIDListSize" description="Desired BSSID List size" />
       <uint32 name="DesiredSSIDListSize" description="Desired SSID List size" />

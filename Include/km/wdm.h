@@ -6400,12 +6400,6 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_ATTRIBUTE_VALID_FLAGS              0x005affb7
 #define FILE_ATTRIBUTE_VALID_SET_FLAGS          0x001a31a7
 
-//
-// This mask describes the set of attributes that kernel-mode callers may set.
-//
-
-#define FILE_ATTRIBUTE_VALID_KERNEL_SET_FLAGS   0x005a31a7
-
 #else
 
 #define FILE_ATTRIBUTE_VALID_FLAGS              0x005affb7
@@ -6761,6 +6755,7 @@ typedef enum _FILE_INFORMATION_CLASS {
     FileLinkInformationExBypassAccessCheck,         // 73
     FileStorageReserveIdInformation,                // 74
     FileCaseSensitiveInformationForceAccessCheck,   // 75
+
     FileMaximumInformation
 } FILE_INFORMATION_CLASS, *PFILE_INFORMATION_CLASS;
 
@@ -6773,6 +6768,9 @@ typedef enum _DIRECTORY_NOTIFY_INFORMATION_CLASS {
 // Define the various structures which are returned on query operations
 //
 
+
+//================ FileBasicInformation =======================================
+
 typedef struct _FILE_BASIC_INFORMATION {
     LARGE_INTEGER CreationTime;
     LARGE_INTEGER LastAccessTime;
@@ -6780,6 +6778,8 @@ typedef struct _FILE_BASIC_INFORMATION {
     LARGE_INTEGER ChangeTime;
     ULONG FileAttributes;
 } FILE_BASIC_INFORMATION, *PFILE_BASIC_INFORMATION;
+
+//================ FileStandardInformation ====================================
 
 typedef struct _FILE_STANDARD_INFORMATION {
     LARGE_INTEGER AllocationSize;
@@ -6802,10 +6802,14 @@ typedef struct _FILE_STANDARD_INFORMATION_EX {
 #endif
 
 
+//================ FileDispositionInformation =================================
+
 typedef struct _FILE_POSITION_INFORMATION {
     LARGE_INTEGER CurrentByteOffset;
 } FILE_POSITION_INFORMATION, *PFILE_POSITION_INFORMATION;
 
+
+//================ FileNetworkOpenInformation =================================
 
 typedef struct _FILE_NETWORK_OPEN_INFORMATION {
     LARGE_INTEGER CreationTime;
@@ -6962,7 +6966,7 @@ typedef struct _FILE_FS_DEVICE_INFORMATION {
 
 
 //
-// Define segement buffer structure for scatter/gather read/write.
+// Define segment buffer structure for scatter/gather read/write.
 //
 
 typedef union _FILE_SEGMENT_ELEMENT {
@@ -7590,6 +7594,14 @@ typedef enum _SECTION_INHERIT {
 #define PAGE_NOCACHE           0x200    
 #define PAGE_WRITECOMBINE      0x400    
 
+#define PAGE_GRAPHICS_NOACCESS           0x0800    
+#define PAGE_GRAPHICS_READONLY           0x1000    
+#define PAGE_GRAPHICS_READWRITE          0x2000    
+#define PAGE_GRAPHICS_EXECUTE            0x4000    
+#define PAGE_GRAPHICS_EXECUTE_READ       0x8000    
+#define PAGE_GRAPHICS_EXECUTE_READWRITE 0x10000    
+#define PAGE_GRAPHICS_COHERENT          0x20000    
+
 //
 // PAGE_REVERT_TO_FILE_MAP can be combined with other protection
 // values to specify to VirtualProtect that the argument range
@@ -7625,7 +7637,23 @@ typedef struct _MEM_ADDRESS_REQUIREMENTS {
     SIZE_T Alignment;
 } MEM_ADDRESS_REQUIREMENTS, *PMEM_ADDRESS_REQUIREMENTS;
 
-#define MEM_EXTENDED_PARAMETER_GRAPHICS     0x00000001
+#define MEM_EXTENDED_PARAMETER_GRAPHICS                 0x00000001
+#define MEM_EXTENDED_PARAMETER_NONPAGED                 0x00000002
+#define MEM_EXTENDED_PARAMETER_ZERO_PAGES_OPTIONAL      0x00000004
+#define MEM_EXTENDED_PARAMETER_NONPAGED_LARGE           0x00000008
+#define MEM_EXTENDED_PARAMETER_NONPAGED_HUGE            0x00000010
+
+//
+// Use the high ULONG64 bit of the MEM_EXTENDED_PARAMETER to indicate
+// that the supplied NUMA node in the low bits is mandatory.  Note this
+// is different from the MEM_EXTENDED_PARAMETER_XXX fields above because
+// those are encoded in the Type field; this is encoded in the ULong64 field.
+//
+// This can only be used nonpaged allocations since we don't want page
+// faults to fail due to transient memory shortages on arbitrary nodes.
+//
+
+#define MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY      MINLONG64
 
 typedef enum MEM_EXTENDED_PARAMETER_TYPE {
     MemExtendedParameterInvalidType = 0,
@@ -11394,6 +11422,8 @@ RtlAssert(
 #define FAST_FAIL_ADMINLESS_ACCESS_DENIED           55         // Telemetry, nonfatal
 #define FAST_FAIL_UNEXPECTED_CALL                   56
 #define FAST_FAIL_CONTROL_INVALID_RETURN_ADDRESS    57
+#define FAST_FAIL_UNEXPECTED_HOST_BEHAVIOR          58
+#define FAST_FAIL_FLAGS_CORRUPTION                  59
 #define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
@@ -12041,8 +12071,6 @@ RtlInitUnicodeString(
 
 #if !defined(MIDL_PASS)
 
-
-
 FORCEINLINE
 VOID
 RtlSanitizeUnicodeStringPadding(
@@ -12071,6 +12099,8 @@ RtlSanitizeUnicodeStringPadding(
 #endif
 
 }
+
+
 
 _At_(UnicodeString->Buffer, _Post_equal_to_(Buffer))
 _At_(UnicodeString->Length, _Post_equal_to_(0))
@@ -12825,9 +12855,19 @@ RtlCopyMemoryNonTemporal (
    _In_ SIZE_T Length
    );
 
+NTSYSAPI
+VOID
+NTAPI
+RtlFillMemoryNonTemporal (
+   _Out_writes_bytes_all_(Length) VOID UNALIGNED *Destination,
+   _In_ SIZE_T Length,
+   _In_ CONST UCHAR Value
+   );
+
 #else
 
 #define RtlCopyMemoryNonTemporal RtlCopyMemory
+#define RtlFillMemoryNonTemporal RtlFillMemory
 
 #endif
 
@@ -19268,6 +19308,27 @@ extern "C" {
 extern "C" {
 #endif
 
+//
+// The line of code used in the following macro may seem just like a strange
+// no-op. In fact, it does prevent the compiler from generating register
+// writeback load/store instructions into the hardware register. Without it, the
+// compiler will generate these instructions very aggressively, for
+// post-incrementing the pointer, when there is a loop. While there isn't,
+// presently, anything in AARCH explicitly advising against using register
+// writeback l/s instructions into hardware registers, these do present a
+// problem: They are too complex to be fully described by the HSR.ISS syndrome
+// field, in case of a Data Abort Exception. This means a hypervisor performing
+// hardware emulation would have to fetch and decode the faulting instruction in
+// order to emulate it. Since this comes with some security implications, some
+// hypervisors, like Linux KVM, have opted to simply restrict guests from using
+// said instructions. While this puts a significant limitation on the
+// virtualization platform, it is also a somewhat understandable decision.
+// N.B. Linux (as a guest) never uses these instructions for hardware access.
+//
+
+#define ARM64_PREVENT_REGISTER_WRITEBACK(_type, _variable) \
+    _variable = (volatile _type *)ReadPointerNoFence((PVOID const volatile *)&##_variable);
+
 __forceinline
 UCHAR
 READ_REGISTER_NOFENCE_UCHAR (
@@ -19275,6 +19336,7 @@ READ_REGISTER_NOFENCE_UCHAR (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(UCHAR, Register);
     return ReadUCharNoFence(Register);
 }
 
@@ -19285,6 +19347,7 @@ READ_REGISTER_NOFENCE_USHORT (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(USHORT, Register);
     return ReadUShortNoFence(Register);
 }
 
@@ -19295,6 +19358,7 @@ READ_REGISTER_NOFENCE_ULONG (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(ULONG, Register);
     return ReadULongNoFence(Register);
 }
 
@@ -19305,6 +19369,7 @@ READ_REGISTER_NOFENCE_ULONG64 (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(ULONG64, Register);
     return ReadULong64NoFence(Register);
 }
 
@@ -19322,6 +19387,7 @@ READ_REGISTER_NOFENCE_BUFFER_UCHAR (
     ULONG readCount;
 
     for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(UCHAR, registerBuffer);
         *readBuffer = ReadUCharNoFence(registerBuffer);
     }
 
@@ -19342,6 +19408,7 @@ READ_REGISTER_NOFENCE_BUFFER_USHORT (
     ULONG readCount;
 
     for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(USHORT, registerBuffer);
         *readBuffer = ReadUShortNoFence(registerBuffer);
     }
 
@@ -19361,6 +19428,7 @@ READ_REGISTER_NOFENCE_BUFFER_ULONG (
     ULONG readCount;
 
     for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(ULONG, registerBuffer);
         *readBuffer = ReadULongNoFence(registerBuffer);
     }
     return;
@@ -19379,6 +19447,7 @@ READ_REGISTER_NOFENCE_BUFFER_ULONG64 (
     ULONG readCount;
 
     for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(ULONG64, registerBuffer);
         *readBuffer = ReadULong64NoFence(registerBuffer);
     }
     return;
@@ -19392,6 +19461,7 @@ WRITE_REGISTER_NOFENCE_UCHAR (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(UCHAR, Register);
     WriteUCharNoFence(Register, Value);
 
     return;
@@ -19405,6 +19475,7 @@ WRITE_REGISTER_NOFENCE_USHORT (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(USHORT, Register);
     WriteUShortNoFence(Register, Value);
 
     return;
@@ -19418,6 +19489,7 @@ WRITE_REGISTER_NOFENCE_ULONG (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(ULONG, Register);
     WriteULongNoFence(Register, Value);
 
     return;
@@ -19431,6 +19503,7 @@ WRITE_REGISTER_NOFENCE_ULONG64 (
     )
 {
 
+    ARM64_PREVENT_REGISTER_WRITEBACK(ULONG64, Register);
     WriteULong64NoFence(Register, Value);
 
     return;
@@ -19450,6 +19523,7 @@ WRITE_REGISTER_NOFENCE_BUFFER_UCHAR (
     ULONG writeCount;
 
     for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(UCHAR, registerBuffer);
         WriteUCharNoFence(registerBuffer, *writeBuffer);
     }
 
@@ -19470,6 +19544,7 @@ WRITE_REGISTER_NOFENCE_BUFFER_USHORT (
     ULONG writeCount;
 
     for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(USHORT, registerBuffer);
         WriteUShortNoFence(registerBuffer, *writeBuffer);
     }
 
@@ -19490,6 +19565,7 @@ WRITE_REGISTER_NOFENCE_BUFFER_ULONG (
     ULONG writeCount;
 
     for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(ULONG, registerBuffer);
         WriteULongNoFence(registerBuffer, *writeBuffer);
     }
 
@@ -19510,6 +19586,7 @@ WRITE_REGISTER_NOFENCE_BUFFER_ULONG64 (
     ULONG writeCount;
 
     for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        ARM64_PREVENT_REGISTER_WRITEBACK(ULONG64, registerBuffer);
         WriteULong64NoFence(registerBuffer, *writeBuffer);
     }
 
@@ -20270,41 +20347,42 @@ typedef struct _SYSTEM_CPU_SET_INFORMATION SYSTEM_CPU_SET_INFORMATION, *PSYSTEM_
 // Defined processor features
 //
 
-#define PF_FLOATING_POINT_PRECISION_ERRATA       0   
-#define PF_FLOATING_POINT_EMULATED               1   
-#define PF_COMPARE_EXCHANGE_DOUBLE               2   
-#define PF_MMX_INSTRUCTIONS_AVAILABLE            3   
-#define PF_PPC_MOVEMEM_64BIT_OK                  4   
-#define PF_ALPHA_BYTE_INSTRUCTIONS               5   
-#define PF_XMMI_INSTRUCTIONS_AVAILABLE           6   
-#define PF_3DNOW_INSTRUCTIONS_AVAILABLE          7   
-#define PF_RDTSC_INSTRUCTION_AVAILABLE           8   
-#define PF_PAE_ENABLED                           9   
-#define PF_XMMI64_INSTRUCTIONS_AVAILABLE        10   
-#define PF_SSE_DAZ_MODE_AVAILABLE               11   
-#define PF_NX_ENABLED                           12   
-#define PF_SSE3_INSTRUCTIONS_AVAILABLE          13   
-#define PF_COMPARE_EXCHANGE128                  14   
-#define PF_COMPARE64_EXCHANGE128                15   
-#define PF_CHANNELS_ENABLED                     16   
-#define PF_XSAVE_ENABLED                        17   
-#define PF_ARM_VFP_32_REGISTERS_AVAILABLE       18   
-#define PF_ARM_NEON_INSTRUCTIONS_AVAILABLE      19   
-#define PF_SECOND_LEVEL_ADDRESS_TRANSLATION     20   
-#define PF_VIRT_FIRMWARE_ENABLED                21   
-#define PF_RDWRFSGSBASE_AVAILABLE               22   
-#define PF_FASTFAIL_AVAILABLE                   23   
-#define PF_ARM_DIVIDE_INSTRUCTION_AVAILABLE     24   
-#define PF_ARM_64BIT_LOADSTORE_ATOMIC           25   
-#define PF_ARM_EXTERNAL_CACHE_AVAILABLE         26   
-#define PF_ARM_FMAC_INSTRUCTIONS_AVAILABLE      27   
-#define PF_RDRAND_INSTRUCTION_AVAILABLE         28   
-#define PF_ARM_V8_INSTRUCTIONS_AVAILABLE        29   
-#define PF_ARM_V8_CRYPTO_INSTRUCTIONS_AVAILABLE 30   
-#define PF_ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE  31   
-#define PF_RDTSCP_INSTRUCTION_AVAILABLE         32   
-#define PF_RDPID_INSTRUCTION_AVAILABLE          33   
-
+#define PF_FLOATING_POINT_PRECISION_ERRATA           0   
+#define PF_FLOATING_POINT_EMULATED                   1   
+#define PF_COMPARE_EXCHANGE_DOUBLE                   2   
+#define PF_MMX_INSTRUCTIONS_AVAILABLE                3   
+#define PF_PPC_MOVEMEM_64BIT_OK                      4   
+#define PF_ALPHA_BYTE_INSTRUCTIONS                   5   
+#define PF_XMMI_INSTRUCTIONS_AVAILABLE               6   
+#define PF_3DNOW_INSTRUCTIONS_AVAILABLE              7   
+#define PF_RDTSC_INSTRUCTION_AVAILABLE               8   
+#define PF_PAE_ENABLED                               9   
+#define PF_XMMI64_INSTRUCTIONS_AVAILABLE            10   
+#define PF_SSE_DAZ_MODE_AVAILABLE                   11   
+#define PF_NX_ENABLED                               12   
+#define PF_SSE3_INSTRUCTIONS_AVAILABLE              13   
+#define PF_COMPARE_EXCHANGE128                      14   
+#define PF_COMPARE64_EXCHANGE128                    15   
+#define PF_CHANNELS_ENABLED                         16   
+#define PF_XSAVE_ENABLED                            17   
+#define PF_ARM_VFP_32_REGISTERS_AVAILABLE           18   
+#define PF_ARM_NEON_INSTRUCTIONS_AVAILABLE          19   
+#define PF_SECOND_LEVEL_ADDRESS_TRANSLATION         20   
+#define PF_VIRT_FIRMWARE_ENABLED                    21   
+#define PF_RDWRFSGSBASE_AVAILABLE                   22   
+#define PF_FASTFAIL_AVAILABLE                       23   
+#define PF_ARM_DIVIDE_INSTRUCTION_AVAILABLE         24   
+#define PF_ARM_64BIT_LOADSTORE_ATOMIC               25   
+#define PF_ARM_EXTERNAL_CACHE_AVAILABLE             26   
+#define PF_ARM_FMAC_INSTRUCTIONS_AVAILABLE          27   
+#define PF_RDRAND_INSTRUCTION_AVAILABLE             28   
+#define PF_ARM_V8_INSTRUCTIONS_AVAILABLE            29   
+#define PF_ARM_V8_CRYPTO_INSTRUCTIONS_AVAILABLE     30   
+#define PF_ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE      31   
+#define PF_RDTSCP_INSTRUCTION_AVAILABLE             32   
+#define PF_RDPID_INSTRUCTION_AVAILABLE              33   
+#define PF_ARM_V81_ATOMIC_INSTRUCTIONS_AVAILABLE    34   
+#define PF_MONITORX_INSTRUCTION_AVAILABLE           35   
 
 typedef enum _ALTERNATIVE_ARCHITECTURE_TYPE {
     StandardDesign,                 // None == 0 == standard design
@@ -20633,7 +20711,15 @@ typedef struct _KMUTANT {
     DISPATCHER_HEADER Header;
     LIST_ENTRY MutantListEntry;
     struct _KTHREAD *OwnerThread;
-    BOOLEAN Abandoned;
+
+    union {
+        UCHAR MutantFlags;
+        struct {
+            UCHAR Abandoned : 1;
+            UCHAR Spare1 : 7;
+        } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+
     UCHAR ApcDisable;
 } KMUTANT, *PKMUTANT, *PRKMUTANT, KMUTEX, *PKMUTEX, *PRKMUTEX;
 
@@ -21858,7 +21944,8 @@ struct _KTRIAGE_DUMP_DATA_ARRAY {
     LIST_ENTRY List;
     ULONG NumBlocksUsed;
     ULONG NumBlocksTotal;
-    ULONG VirtMemSize;
+    ULONG DataSize;
+    ULONG MaxDataSize;
     ULONG ComponentNameBufferLength;
     PUCHAR ComponentName;
     _Field_size_(NumBlocksUsed)
@@ -21891,7 +21978,6 @@ _IRQL_requires_same_
 NTSTATUS
 KeAddTriageDumpDataBlock (
     _Inout_ PKTRIAGE_DUMP_DATA_ARRAY KtriageDumpDataArray,
-    _In_ ULONG MaxDataSize,
     _In_ PVOID Address,
     _In_ SIZE_T Size
     );
@@ -21917,6 +22003,7 @@ KeAddTriageDumpDataBlock (
 #define EXCEPTION_NPX_ERROR             0x10
 #define EXCEPTION_ALIGNMENT_CHECK       0x11
 #define EXCEPTION_CP_FAULT              0x15
+#define EXCEPTION_SE_FAULT              0x17
 #define EXCEPTION_VIRTUALIZATION_FAULT  0x20
 
 #if (NTDDI_VERSION >= NTDDI_WINXPSP1)
@@ -26266,7 +26353,7 @@ extern PVOID MmBadPointer;
 //++
 //
 // PVOID
-// MmGetMdlStartVa (
+// MmGetMdlBaseVa (
 //     _In_ PMDL Mdl
 //     )
 //
@@ -26462,7 +26549,7 @@ MM_MDL_ROUTINE (
 
 typedef MM_MDL_ROUTINE *PMM_MDL_ROUTINE;
 
-_Must_inspect_result_ 
+_Must_inspect_result_
 _Success_(return != NULL)
 _IRQL_requires_max_ (DISPATCH_LEVEL)
 NTKERNELAPI
@@ -26709,6 +26796,24 @@ MmAllocateNodePagesForMdlEx (
     );
 #endif
 
+//
+// 0..N - Indicates a specific NUMA node used as an index into
+//        structures dimensioned by {MM_MAXIMUM_NODE, MI_MAXIMUM_NODES, etc}.
+//
+
+typedef ULONG MM_NODE_NUMBER_ZERO_BASED;
+
+//
+// 0 - Indicates the system should determine the NUMA node to use (ie,
+//     use the current thread's ideal processor etc).
+//
+// 1..N - Indicates a specific NUMA node so need to subtract 1 for
+//        example to index into structures dimensioned by {MM_MAXIMUM_NODE,
+//        MI_MAXIMUM_NODES, etc}.
+//
+
+typedef ULONG MM_NODE_NUMBER_ONE_BASED;
+
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 _Must_inspect_result_
 _IRQL_requires_max_ (DISPATCH_LEVEL)
@@ -26720,7 +26825,7 @@ MmAllocatePartitionNodePagesForMdlEx (
     _In_ PHYSICAL_ADDRESS SkipBytes,
     _In_ SIZE_T TotalBytes,
     _In_ MEMORY_CACHING_TYPE CacheType,
-    _In_ ULONG IdealNode,
+    _In_ MM_NODE_NUMBER_ZERO_BASED IdealNode,
     _In_ ULONG Flags,
     _In_opt_ PVOID PartitionObject
     );
@@ -29409,13 +29514,21 @@ typedef struct _DEVICE_RELATIONS {
 //     set to TRUE.  After that, the adapter cannot be sent an
 //     IRP_MN_DEVICE_USAGE_NOTIFICATION with InPath set to FALSE.
 //
+// DeviceUsageTypeGuestAssigned - A device stack that indicates it is assigned
+//     to a guest setting PNP_DEVICE_ASSIGNED_TO_GUEST in its device state will
+//     receive this notification with InPath set to TRUE. When
+//     PNP_DEVICE_ASSIGNED_TO_GUEST is cleared, the notification will be sent
+//     again, this time with InPath set to FALSE.
+//
+
 typedef enum _DEVICE_USAGE_NOTIFICATION_TYPE {
     DeviceUsageTypeUndefined,
     DeviceUsageTypePaging,
     DeviceUsageTypeHibernation,
     DeviceUsageTypeDumpFile,
     DeviceUsageTypeBoot,
-    DeviceUsageTypePostDisplay
+    DeviceUsageTypePostDisplay,
+    DeviceUsageTypeGuestAssigned
 } DEVICE_USAGE_NOTIFICATION_TYPE;
 
 
@@ -29456,12 +29569,16 @@ typedef _Struct_size_bytes_(Size) struct _DEVICE_CAPABILITIES {
     ULONG NonDynamic:1;
     ULONG WarmEjectSupported:1;
     ULONG NoDisplayInUI:1;
-    ULONG Reserved1:1;
+
+
+    ULONG Reserved1:1; // See note
     ULONG WakeFromInterrupt:1;
     ULONG SecureDevice:1;
     ULONG ChildOfVgaEnabledBridge:1;
     ULONG DecodeIoOnBoot:1;
-    ULONG Reserved:9;
+
+
+    ULONG Reserved:9; // See note
 
     ULONG Address;
     ULONG UINumber;
@@ -29499,6 +29616,7 @@ typedef ULONG PNP_DEVICE_STATE, *PPNP_DEVICE_STATE;
 #define PNP_DEVICE_NOT_DISABLEABLE               0x00000020
 #define PNP_DEVICE_DISCONNECTED                  0x00000040
 #define PNP_DEVICE_RESOURCE_UPDATED              0x00000080
+#define PNP_DEVICE_ASSIGNED_TO_GUEST             0x00000100
 
 typedef enum {
     DeviceTextDescription = 0,            // DeviceDesc property
@@ -30383,7 +30501,7 @@ IoCheckLinkShareAccess(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ ULONG DesiredShareAccess,
     _Inout_opt_ PFILE_OBJECT FileObject,
-    _Inout_ PSHARE_ACCESS ShareAccess,
+    _Inout_opt_ PSHARE_ACCESS ShareAccess,
     _Inout_opt_ PLINK_SHARE_ACCESS LinkShareAccess,
     _In_ ULONG IoShareAccessFlags
     );
@@ -30406,7 +30524,15 @@ IoCheckLinkShareAccess(
 // calling IoSetShareAccess and IoCheckShareAccess routines.
 //
 
-#define IO_SHARE_ACCESS_NO_WRITE_PERMISSION             0x80000000  // has no write access to the file
+#define IO_SHARE_ACCESS_NO_WRITE_PERMISSION             0x80000000  // Has no write access to the file
+
+//
+//  Inidcate whether the stream is an alternate data stream.
+//  Used when calling IoSetLinkShareAccess, IoChecksShareAccess,
+//  IoUpdateShareAccess and IoRemoveShareAccess.
+//
+
+#define IO_SHARE_ACCESS_NON_PRIMARY_STREAM             0x00000080  // Stream is neither primary data stream nor directory stream
 
 //
 // Function specific flag
@@ -30417,7 +30543,7 @@ IoCheckLinkShareAccess(
 // or not when calling IoCheckLinkShareAccess.
 //
 
-#define IO_CHECK_SHARE_ACCESS_UPDATE_SHARE_ACCESS       0x00000001  // update SHARE_ACCESS structure
+#define IO_CHECK_SHARE_ACCESS_UPDATE_SHARE_ACCESS       0x00000001  // Update SHARE_ACCESS structure
 #define IO_CHECK_SHARE_ACCESS_DONT_UPDATE_FILE_OBJECT   0x00000002  // Don't update FILE_OBJECT structure
 
 //
@@ -30428,6 +30554,8 @@ IoCheckLinkShareAccess(
 #define IO_CHECK_SHARE_ACCESS_DONT_CHECK_WRITE          0x00000008  // Don't check write share access
 #define IO_CHECK_SHARE_ACCESS_DONT_CHECK_DELETE         0x00000010  // Don't check delete share access
 #define IO_CHECK_SHARE_ACCESS_FORCE_CHECK               0x00000020  // Force check share access
+#define IO_CHECK_SHARE_ACCESS_FORCE_USING_SCB           0x00000040  // Force check using SHARE_ACCESS structure in Scb
+
 
 //
 // This value should be returned from completion routines to continue
@@ -31729,6 +31857,17 @@ IoRemoveLinkShareAccess(
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+NTKERNELAPI
+VOID
+IoRemoveLinkShareAccessEx(
+    _In_ PFILE_OBJECT FileObject,
+    _Inout_ PSHARE_ACCESS ShareAccess,
+    _Inout_opt_ PLINK_SHARE_ACCESS LinkShareAccess,
+    _In_ ULONG IoShareAccessFlags
+    );
+#endif
+
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
@@ -32338,6 +32477,17 @@ IoUpdateLinkShareAccess(
     _In_ PFILE_OBJECT FileObject,
     _Inout_ PSHARE_ACCESS ShareAccess,
     _Inout_opt_ PLINK_SHARE_ACCESS LinkShareAccess
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+NTKERNELAPI
+VOID
+IoUpdateLinkShareAccessEx(
+    _In_ PFILE_OBJECT FileObject,
+    _Inout_ PSHARE_ACCESS ShareAccess,
+    _Inout_opt_ PLINK_SHARE_ACCESS LinkShareAccess,
+    _In_ ULONG IoShareAccessFlags
     );
 #endif
 
@@ -34430,7 +34580,8 @@ typedef enum _IO_NOTIFICATION_EVENT_CATEGORY {
     EventCategoryReserved,
     EventCategoryHardwareProfileChange,
     EventCategoryDeviceInterfaceChange,
-    EventCategoryTargetDeviceChange
+    EventCategoryTargetDeviceChange,
+    EventCategoryKernelSoftRestart,
 } IO_NOTIFICATION_EVENT_CATEGORY;
 
 //
@@ -34653,6 +34804,19 @@ typedef struct _TARGET_DEVICE_REMOVAL_NOTIFICATION {
     //
     PFILE_OBJECT FileObject;
 } TARGET_DEVICE_REMOVAL_NOTIFICATION, *PTARGET_DEVICE_REMOVAL_NOTIFICATION;
+
+//
+// Notification structure for all EventCategoryKernelSoftRestart events...
+//
+
+typedef struct _KERNEL_SOFT_RESTART_NOTIFICATION {
+    USHORT Version;
+    USHORT Size;
+    GUID Event;
+    //
+    // (No event-specific data)
+    //
+} KERNEL_SOFT_RESTART_NOTIFICATION, *PKERNEL_SOFT_RESTART_NOTIFICATION;
 
 //
 // The following structure header is used for all other (i.e., 3rd-party)
@@ -35282,12 +35446,20 @@ KeFlushWriteBuffer (
 //
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+
+#if !defined(_NTSYSTEM_) || !defined(XBOX_SYSTEMOS)
+
 NTHALAPI
+
+#endif // !defined(_NTSYSTEM_) || !defined(XBOX_SYSTEMOS)
+
 LARGE_INTEGER
 KeQueryPerformanceCounter (
    _Out_opt_ PLARGE_INTEGER PerformanceFrequency
    );
-#endif
+
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN2K)
 
 
 //
@@ -35666,6 +35838,44 @@ typedef PVOID
     _Out_ PPHYSICAL_ADDRESS LogicalAddress
     );
 
+typedef struct _DMA_COMMON_BUFFER_VECTOR DMA_COMMON_BUFFER_VECTOR,
+                                         *PDMA_COMMON_BUFFER_VECTOR;
+
+typedef NTSTATUS
+(*PALLOCATE_COMMON_BUFFER_VECTOR)(
+    _In_ PDMA_ADAPTER DmaAdapter,
+    _In_ PHYSICAL_ADDRESS LowAddress,
+    _In_ PHYSICAL_ADDRESS HighAddress,
+    _In_ MEMORY_CACHING_TYPE CacheType,
+    _In_ ULONG IdealNode,
+    _In_ ULONG Flags,
+    _In_ ULONG NumberOfElements,
+    _In_ ULONGLONG SizeOfElements,
+    _Out_ PDMA_COMMON_BUFFER_VECTOR *VectorOut
+    );
+
+typedef VOID
+(*PGET_COMMON_BUFFER_FROM_VECTOR_BY_INDEX)(
+    _In_ PDMA_ADAPTER DmaAdapter,
+    _In_ PDMA_COMMON_BUFFER_VECTOR Vector,
+    _In_ ULONG Index,
+    _Out_ PVOID *VirtualAddressOut,
+    _Out_ PPHYSICAL_ADDRESS LogicalAddressOut
+    );
+
+typedef VOID
+(*PFREE_COMMON_BUFFER_FROM_VECTOR)(
+    _In_ PDMA_ADAPTER DmaAdapter,
+    _In_ PDMA_COMMON_BUFFER_VECTOR Vector,
+    _In_ ULONG Index
+    );
+
+typedef VOID
+(*PFREE_COMMON_BUFFER_VECTOR)(
+    _In_ PDMA_ADAPTER DmaAdapter,
+    _In_ PDMA_COMMON_BUFFER_VECTOR Vector
+    );
+
 //
 // Define the bits in the allocate domain common buffer flags.
 //
@@ -35733,6 +35943,10 @@ typedef struct _DMA_OPERATIONS {
     PLEAVE_DMA_DOMAIN LeaveDmaDomain;
     PGET_DMA_DOMAIN GetDmaDomain;
     PALLOCATE_COMMON_BUFFER_WITH_BOUNDS AllocateCommonBufferWithBounds;
+    PALLOCATE_COMMON_BUFFER_VECTOR AllocateCommonBufferVector;
+    PGET_COMMON_BUFFER_FROM_VECTOR_BY_INDEX GetCommonBufferFromVectorByIndex;
+    PFREE_COMMON_BUFFER_FROM_VECTOR FreeCommonBufferFromVector;
+    PFREE_COMMON_BUFFER_VECTOR FreeCommonBufferVector;
 } DMA_OPERATIONS;
 
 
@@ -36815,6 +37029,7 @@ PoUnregisterPowerSettingCallback (
 
 #define PO_FX_VERSION_V1 0x00000001
 #define PO_FX_VERSION_V2 0x00000002
+#define PO_FX_VERSION_V3 0x00000003
 #define PO_FX_VERSION PO_FX_VERSION_V1
 
 DECLARE_HANDLE(POHANDLE);
@@ -36960,12 +37175,83 @@ typedef struct _PO_FX_DEVICE_V2 {
     _Field_size_full_(ComponentCount) PO_FX_COMPONENT_V2 Components[ANYSIZE_ARRAY];
 } PO_FX_DEVICE_V2, *PPO_FX_DEVICE_V2;
 
+//
+// PoFx Version 3 type definitions.
+//
+
+//
+// PO_FX_DEVICE_FLAG_DIRECT_CHILDREN_OPTIONAL - When set allows all direct
+//     child devices of this device to optionally support Directed Fx.
+//     If not provided, then all direct children must support Directed Fx
+//     for this device to fully support Directed Fx.
+//
+// PO_FX_DEVICE_FLAG_POWER_CHILDREN_OPTIONAL - When set allows all power
+//     child devices of this device to optionally support Directed Fx.
+//     If not provided, then all power children must support Directed Fx
+//     for this device to fully support Directed Fx.
+//
+
+#define PO_FX_DEVICE_FLAG_RESERVED_1                   (0x0000000000000001ull)
+#define PO_FX_DEVICE_FLAG_DFX_DIRECT_CHILDREN_OPTIONAL (0x0000000000000002ull)
+#define PO_FX_DEVICE_FLAG_DFX_POWER_CHILDREN_OPTIONAL  (0x0000000000000004ull)
+#define PO_FX_DEVICE_FLAG_DFX_CHILDREN_OPTIONAL \
+            (PO_FX_DEVICE_FLAG_DFX_DIRECT_CHILDREN_OPTIONAL | \
+             PO_FX_DEVICE_FLAG_DFX_POWER_CHILDREN_OPTIONAL)
+
+#define PO_FX_DIRECTED_FX_DEFAULT_IDLE_TIMEOUT    (0ul)
+#define PO_FX_DIRECTED_FX_IMMEDIATE_IDLE_TIMEOUT  ((ULONG)-1)
+#define PO_FX_DIRECTED_FX_MAX_IDLE_TIMEOUT        (10ul * 60)
+
+typedef
+_Function_class_(PO_FX_DIRECTED_POWER_UP_CALLBACK)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_IRQL_requires_same_
+VOID
+PO_FX_DIRECTED_POWER_UP_CALLBACK (
+    _In_ PVOID Context,
+    _In_ ULONG Flags
+    );
+
+typedef PO_FX_DIRECTED_POWER_UP_CALLBACK *PPO_FX_DIRECTED_POWER_UP_CALLBACK;
+
+typedef
+_Function_class_(PO_FX_DIRECTED_POWER_DOWN_CALLBACK)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_IRQL_requires_same_
+VOID
+PO_FX_DIRECTED_POWER_DOWN_CALLBACK (
+    _In_ PVOID Context,
+    _In_ ULONG Flags
+    );
+
+typedef PO_FX_DIRECTED_POWER_DOWN_CALLBACK *PPO_FX_DIRECTED_POWER_DOWN_CALLBACK;
+
+typedef struct _PO_FX_DEVICE_V3 {
+    ULONG Version;
+    ULONGLONG Flags;
+    PPO_FX_COMPONENT_ACTIVE_CONDITION_CALLBACK ComponentActiveConditionCallback;
+    PPO_FX_COMPONENT_IDLE_CONDITION_CALLBACK ComponentIdleConditionCallback;
+    PPO_FX_COMPONENT_IDLE_STATE_CALLBACK ComponentIdleStateCallback;
+    PPO_FX_DEVICE_POWER_REQUIRED_CALLBACK DevicePowerRequiredCallback;
+    PPO_FX_DEVICE_POWER_NOT_REQUIRED_CALLBACK DevicePowerNotRequiredCallback;
+    PPO_FX_POWER_CONTROL_CALLBACK PowerControlCallback;
+    PPO_FX_DIRECTED_POWER_UP_CALLBACK DirectedPowerUpCallback;
+    PPO_FX_DIRECTED_POWER_DOWN_CALLBACK DirectedPowerDownCallback;
+    ULONG DirectedFxTimeoutInSeconds;
+    PVOID DeviceContext;
+    ULONG ComponentCount;
+    _Field_size_full_(ComponentCount) PO_FX_COMPONENT_V2 Components[ANYSIZE_ARRAY];
+} PO_FX_DEVICE_V3, *PPO_FX_DEVICE_V3;
+
 #if (PO_FX_VERSION == PO_FX_VERSION_V1)
 typedef PO_FX_COMPONENT_V1 PO_FX_COMPONENT, *PPO_FX_COMPONENT;
 typedef PO_FX_DEVICE_V1 PO_FX_DEVICE, *PPO_FX_DEVICE;
 #elif (PO_FX_VERSION == PO_FX_VERSION_V2)
 typedef PO_FX_COMPONENT_V2 PO_FX_COMPONENT, *PPO_FX_COMPONENT;
 typedef PO_FX_DEVICE_V2 PO_FX_DEVICE, *PPO_FX_DEVICE;
+#elif (PO_FX_VERSION == PO_FX_VERSION_V3)
+typedef PO_FX_COMPONENT_V2 PO_FX_COMPONENT, *PPO_FX_COMPONENT;
+typedef PO_FX_DEVICE_V3 PO_FX_DEVICE, *PPO_FX_DEVICE;
 #else
 #error PO_FX_VERSION undefined!
 #endif
@@ -37275,6 +37561,15 @@ PoFxSetTargetDripsDevicePowerState(
     _In_ DEVICE_POWER_STATE TargetState
     );
 
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+VOID
+PoFxCompleteDirectedPowerDown (
+    _In_ POHANDLE Handle
+    );
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)

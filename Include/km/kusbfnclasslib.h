@@ -140,6 +140,13 @@ UsbFnKmClassLibGetInterfaceInfo(
 );
 
 NTSTATUS
+UsbFnKmClassLibPipeIdWdfMemoryFind(
+    __in KUSBFNCLASSLIBHANDLE ClassHandle,
+    __in USBFNPIPEID PipeId,
+    __inout WDFMEMORY* PipeMemory
+);
+
+NTSTATUS
 UsbFnKmClassLibCreateNotificationRequest(
     __in KUSBFNCLASSLIBHANDLE ClassHandle,
     __in PFN_WDF_REQUEST_COMPLETION_ROUTINE CompletionRoutine,

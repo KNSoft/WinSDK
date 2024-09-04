@@ -50,7 +50,7 @@
 #include <winapifamily.h>
 
 #pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_GAMES)
 
 // ----------------------------------------------------------------------------
 // Version Token (VerTok)
@@ -2168,6 +2168,7 @@ typedef enum D3D10_SB_NAME
     D3D11_SB_NAME_FINAL_LINE_DENSITY_TESSFACTOR = 22,
     // The following are added for D3D12
     D3D12_SB_NAME_BARYCENTRICS = 23,
+    D3D12_SB_NAME_SHADINGRATE = 24,
 } D3D10_SB_NAME;
 
 typedef enum D3D10_SB_RESOURCE_DIMENSION
@@ -2616,5 +2617,5 @@ typedef enum D3D10_SB_INSTRUCTION_RETURN_TYPE
 //
 // ----------------------------------------------------------------------------
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_GAMES) */
 #pragma endregion

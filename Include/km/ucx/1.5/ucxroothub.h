@@ -132,6 +132,7 @@ typedef union _PARENT_HUB_FLAGS {
         ULONG   DisableLpmForAllDownstreamDevices:1;
         ULONG   HubIsHighSpeedCapable:1;
         ULONG   DisableUpdateMaxExitLatency:1;
+        ULONG   DisableU1:1;
 #ifdef __cplusplus
     } Flags;
 #else

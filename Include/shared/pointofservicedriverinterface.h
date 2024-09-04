@@ -36,6 +36,7 @@ User and Kernel Mode.
 //----------------------------------------------------------------------------------------------
 
 // Current:
+//    1.9 = PosPrinter text output attributes and vertical feeds added
 //    1.8 = LineDisplay basic capabilities and text-only support added
 //    1.7 = BarcodeScannerVideoDeviceId added for camera barcode scanner support
 //    1.6 = IOCTL_POINT_OF_SERVICE_PRINTER_WAIT_FOR_JOB_COMPLETE added for pos printer job
@@ -49,7 +50,7 @@ User and Kernel Mode.
 
 #define MAKE_POS_VERSION(major, minor)  (((major) << 16) | (minor))
 #define POS_DRIVER_MAJOR_VERSION        1
-#define POS_DRIVER_MINOR_VERSION        8
+#define POS_DRIVER_MINOR_VERSION        9
 #define POS_DRIVER_VERSION              MAKE_POS_VERSION(POS_DRIVER_MAJOR_VERSION, POS_DRIVER_MINOR_VERSION)
 
 // v1.2 -- First version with software trigger support
@@ -60,6 +61,7 @@ User and Kernel Mode.
 #define POS_VERSION_1_6                 MAKE_POS_VERSION(1, 6)
 #define POS_VERSION_1_7                 MAKE_POS_VERSION(1, 7)
 #define POS_VERSION_1_8                 MAKE_POS_VERSION(1, 8)
+#define POS_VERSION_1_9                 MAKE_POS_VERSION(1, 9)
 
 //----------------------------------------------------------------------------------------------
 //                                  Event Data
@@ -113,25 +115,6 @@ typedef enum _PosEventType
     MagneticStripeReaderErrorOccurred = 9,
 
 
-    //------------------------------------
-    // PointOfServicePrinter event types
-    //------------------------------------
-
-    PointOfServicePrinterErrorOccurred = 10,
-
-    //------------------------------------
-    // CashDrawer event types
-    //------------------------------------
-
-    // AlarmTimeoutExpired : PosEventDataHeader
-    AlarmTimeoutExpired = 11,
-
-    // DrawerClosed : PosEventDataHeader
-    DrawerClosed = 12,
-
-    // DrawerOpened : PosEventDataHeader
-    DrawerOpened = 13,
-
     _Max = 14,
 } PosEventType;
 
@@ -171,97 +154,11 @@ typedef struct _PosStatusUpdatedEventData
 //   Actual unicode data follows header.
 typedef struct _PosStringType
 {
+    // DataLengthInBytes refers to the size of the string following this header. Do NOT include the size of this header
+    // when calculating and initializing DataLengthInBytes
     UINT32 DataLengthInBytes;
 } PosStringType;
 
-// All bitmap commands should start with this structure
-
-typedef struct _PosPrinterCommonBitmapArgs
-{
-    // The print station associated with the bitmap
-
-    UINT32 Station;
-
-    // PointOfServicePrinterBitmapWidthType (captured in 32-bit unsigned)
-
-    UINT32 Width;
-
-    // If Width == Custom, the custom width.
-
-    UINT32 CustomWidth;
-
-    // PosPrinterAlignment
-
-    UINT32 Alignment;
-
-    // If alignment == Custom, then the custom alignment distance from left
-    // edge.
-
-    UINT32 AlignmentCustomDistance;
-
-    // Total size of raw bitmap data
-
-    UINT32 BitmapDataLength;
-
-    // Bitmap properties captured from the IBitmapFrame
-    UINT32 PixelFormat;
-    UINT32 AlphaMode;
-    UINT32 PixelWidth;
-    UINT32 PixelHeight;
-    UINT32 OrientedWidth;
-    UINT32 OrientedHeight;
-} PosPrinterCommonBitmapArgs;
-
-// The print bitmap command is just an alias for the common bitmap
-// parameters type
-
-typedef struct _PosPrinterPrintMemoryBitmapArgs
-{
-    PosPrinterCommonBitmapArgs CommonParameters;
-} PosPrinterPrintMemoryBitmapArgs;
-
-// The set bitmap command adds an id number to associate with the bitmap
-
-typedef struct _PosPrinterSetBitmapArgs
-{
-    PosPrinterCommonBitmapArgs CommonParameters;
-    UINT32 BitmapNumber;
-} PosPrinterSetBitmapArgs;
-
-// The bitmap fill parameter
-
-typedef struct _PosBitmapFillType
-{
-    UINT64 BitmapHandle;
-    UINT32 DataSize;
-    BOOLEAN IsLast;
-} PosBitmapFillType;
-
-
-//A string of length positionListDatalength should trail this struct containing
-//the data to be sent to the specified station
-typedef struct _PosPrinterDrawRuledLineArgs
-{
-    UINT32 Station;
-    UINT32 LineDirection;
-    UINT32 LineWidth;
-    UINT32 LineStyle;
-    UINT32 LineColor;
-}PosPrinterDrawRuledLineArgs;
-
-
-//A string of length datalength should trail this struct containing
-//the data to be sent to the specified station
-typedef struct _PosPrinterPrintBarcodeArgs
-{
-    UINT32 Station;
-    UINT32 Symbology;
-    UINT32 Height;
-    UINT32 Width;
-    UINT32 Alignment;
-    UINT32 AlignmentCustomDistance;
-    UINT32 TextPosition;
-}PosPrinterPrintBarcodeArgs;
 
 typedef struct _PosProfileType
 {
@@ -344,137 +241,6 @@ typedef struct _PosBarcodeScanDataTypeData
 // Since there's no additional data, just typedef the header.
 typedef struct _PosEventDataHeader PosBarcodeScannerImagePreviewEventData;
 
-//------------------------------------
-// Printer data formats
-//------------------------------------
-
-typedef struct _PosPrinterErrorEventData
-{
-    PosEventDataHeader Header;
-
-    DriverUnifiedPosErrorSeverity Severity;
-    DriverUnifiedPosErrorReason Reason;
-    UINT32 ExtendedReason;
-    UINT32 MessageLength;
-    _Field_size_(MessageLength) WCHAR Message[ANYSIZE_ARRAY];
-
-} PosPrinterErrorEventData;
-
-typedef struct _PrinterTransactionPrintData
-{
-    UINT32 Station;
-    UINT32 TransactionMode;
-} PrinterTransactionPrintData;
-
-typedef struct _PrinterPrintNormalData
-{
-    UINT32 Station;
-    PosStringType PrintString;
-} PrinterPrintNormalData;
-
-typedef struct _PrinterPrintSavedBitmapData
-{
-    UINT32 BitmapNumber;
-    UINT32 Station;
-} PrinterPrintSavedBitmapData;
-
-typedef struct _PrinterRotatePrintData
-{
-    UINT32 Station;
-    UINT32 Rotation;
-    LONG IncludeBitmaps;
-} PrinterRotatePrintData;
-
-typedef struct PrinterValidateDataArgs
-{
-    UINT32 Station;
-    PosStringType String;
-} PrinterValidateDataArgs;
-
-//------------------------------------
-// CashDrawer Event Data formats
-//------------------------------------
-
-#pragma pack(push, 1)
-typedef struct _CashDrawerAlarmTimeoutExpiredEventData
-{
-    PosEventDataHeader Header;
-    BOOLEAN UseSoftwareAlarm;
-} CashDrawerAlarmTimeoutExpiredEventData;
-#pragma pack(pop)
-
-typedef struct _ConnectRemotePosDeviceParameters
-{
-    BOOLEAN DisassociateOnFinalClose;
-} ConnectRemotePosDeviceParameters;
-
-//------------------------------------
-// LineDisplay data types (formats)
-//------------------------------------
-
-typedef struct _LineDisplayCreateWindowData
-{
-    UINT32 viewportRow;
-    UINT32 viewportColumn;
-    UINT32 viewportHeight;
-    UINT32 viewportWidth;
-    UINT32 windowHeight;
-    UINT32 windowWidth;
-} LineDisplayCreateWindowData;
-
-typedef struct _LineDisplayWindowDisplayTextData
-{
-    LineDisplayTextDisplayAttribute textAttribute;
-    PosStringType textToDisplay;
-} LineDisplayWindowDisplayTextData;
-
-typedef struct _LineDisplayWindowDisplayTextAtData
-{
-    LineDisplayTextDisplayAttribute textAttribute;
-    UINT32 row;
-    UINT32 column;
-    PosStringType textToDisplay;
-} LineDisplayWindowDisplayTextAtData;
-
-typedef struct _LineDisplayWindowScrollTextData
-{
-    LineDisplayTextScrollDirection direction;
-    UINT32 units;
-} LineDisplayWindowScrollTextData;
-
-typedef struct _LineDisplayWindowDisplayBitmapData
-{
-    PosStringType fileName;
-    UINT32 width;
-    UINT32 alignmentX;
-    UINT32 alignmentY;
-} LineDisplayWindowDisplayBitmapData;
-
-typedef struct _LineDisplaySetBitmapData
-{
-    UINT32 bitmapNumber;
-    PosStringType fileName;
-    UINT32 width;
-    UINT32 alignmentX;
-    UINT32 alignmentY;
-} LineDisplaySetBitmapData;
-
-typedef struct _LineDisplaySetDescriptorData
-{
-    UINT32 descriptor;
-    UINT32 attribute;
-} LineDisplaySetDescriptorData;
-
-typedef struct _LineDisplayGlyphDefinitionData
-{
-    UINT32 glyphCode;
-    UINT32 dataLength;
-} LineDisplayGlyphDefinitionData;
-
-typedef struct _LineDisplayCharacterData
-{
-    UINT32 character;
-} LineDisplayCharacterData;
 
 //----------------------------------------------------------------------------------------------
 //                                  Device Controls
@@ -582,220 +348,6 @@ typedef enum _PosDeviceControlType
 
 
     //------------------------------------
-    // PointOfSalePrinter controls
-    //------------------------------------
-
-    //PrinterClearOutput
-    //  Input: None
-    //  Output: None
-    PrinterClearOutput = 18,
-
-    //PrinterSlipWaitForPaperInserted
-    //  Input: UINT32 timeout
-    //  Output: None
-    PrinterSlipWaitForPaperInserted = 19,
-
-    //PrinterSlipWaitForPaperRemoved
-    //  Input: UINT32 timeout
-    //  Output: None
-    PrinterSlipWaitForPaperRemoved = 20,
-
-    //PrinterChangePrintSide
-    //  Input: UINT32 (PointOfServicePrinterPrintSide)
-    //  Output: None
-    PrinterChangePrintSide = 21,
-
-    //PrinterCutPaper
-    //  Input: UINT32
-    //  Output: None
-    PrinterCutPaper = 22,
-
-    //PosPrinterDrawRuledLine
-    //  Input: PosPrinterDrawRuledLineArgs
-    //  Output: None
-    PrinterDrawRuledLine = 23,
-
-    //PrinterSlipOpenJaws
-    //  Input: None
-    //  Output: None
-    PrinterSlipOpenJaws = 24,
-
-    //PrinterSlipCloseJaws
-    //  Input: None
-    //  Output: None
-    PrinterSlipCloseJaws = 25,
-
-    //PrinterMarkFeed
-    //  Input: UINT32 (PointOfServicePrinterMarkFeedType)
-    //  Output: None
-    PrinterMarkFeed = 26,
-
-    //PrinterPageModePrint
-    //  Input: UINT32 (PointOfServicePrinterPageModePrintType)
-    //  Output: None
-    PrinterPageModePrint = 27,
-
-    //PrinterPrintBarcode
-    //  Input: PosPrinterPrintBarcodeArgs
-    //  Output: None
-    PrinterPrintBarcode = 28,
-
-    //PrinterPrintImmediate
-    //  Input: UINT32 (PointOfServicePrinterStation) + PosStringType
-    //  Output: None
-    //PrinterPrintImmediate = 29,
-
-    //PrinterPrintMemoryBitmapStart
-    //  Input: PosPrinterPrintMemoryBitmapArgs
-    //  Output:    UINT64(Handle)
-    PrinterPrintMemoryBitmapStart = 30,
-
-    //PrinterPrintMemoryBitmapFill
-    //  Input: PosBitmapFillType, Byte[]
-    //  Output:    None
-    PrinterPrintMemoryBitmapFill = 31,
-
-    //PrinterPrintNormal
-    //  Input: UINT32 (PointOfServicePrinterStation) + PosStringType
-    //  Output: None
-    PrinterPrintNormal = 32,
-
-    //PrinterRotatePrint
-    //  Input: UINT32 (PointOfServicePrinterStation) + UINT32 (PointOfServicePrinterRotation) + BOOL
-    //  Output: None
-    PrinterRotatePrint = 33,
-
-    //PrinterSetBitmapStart
-    //  Input: PosPrinterSetBitmapArgs
-    //  Output: HANDLE
-    PrinterSetBitmapStart = 34,
-
-    //PrinterSetBitmapFill
-    //  Input: PosBitmapFillType, Byte[]
-    //  Output: None
-    PrinterSetBitmapFill = 35,
-
-    //PrinterSetLogo
-    //  Input: UINT32(PointOfServicePrinterLogoLocation) + PosStringType
-    //  Output: None
-    //PrinterSetLogo = 36,
-
-    //PrinterTransactionPrint
-    //  Input: UINT32(PointOfServicePrinterStation) + UINT32 (PointOfServicePrinterTransactionMode) aka PrinterTransactionPrintData
-    //  Output: None
-    PrinterTransactionPrint = 37,
-
-    //PrinterValidateData
-    //  Input: UINT32(PointOfServicePrinterStation) + PosStringType aka PrinterValidateDataArgs
-    //  Output: None
-    PrinterValidateData = 38,
-
-    //PrinterPrintSavedBitmap
-    //  Original Input: UINT32 (assumes the station is the receipt station)
-    //  Input (as of v1.8): PrinterPrintSavedBitmapData 
-    //  Output: None
-    PrinterPrintSavedBitmap = 39,
-
-    //------------------------------------
-    // CashDrawer controls
-    //------------------------------------
-
-    //CashDrawerOpenDrawer
-    //  Input: None
-    //  Output: None
-    CashDrawerOpenDrawer = 40,
-
-    //CashDrawerCreateDrawerCloseAlarm
-    //  Input: CashDrawerCreateDrawerCloseAlarmArgs
-    //  Output: BOOL
-    CashDrawerCreateDrawerCloseAlarm = 41,
-
-    //CashDrawerCancelWait
-    //  Input: None
-    //  Output: None
-    CashDrawerCancelWait = 42,
-
-    //------------------------------------
-    // Additional Common controls introduced in v1.5
-    //------------------------------------
-
-    // ConnectRemotePosDevice
-    // Input: ConnectRemotePosDeviceParameters
-    // Output: None
-    ConnectRemotePosDevice = 43,
-
-    PrinterWaitForJobComplete = 44,
-
-    //------------------------------------
-    // LineDisplay controls
-    //------------------------------------
-
-    //LineDisplayCreateWindow
-    //  Input:  LineDisplayCreateWindowData
-    //  Output: None
-    LineDisplayCreateWindow = 50,
-
-    //LineDisplayDestroyWindow
-    //  Input:  UINT32 (windowId)
-    //  Output: None
-    LineDisplayDestroyWindow = 51,
-
-    //LineDisplayRefreshWindow
-    //  Input:  UINT32 (window id)
-    //  Output: None
-    LineDisplayRefreshWindow = 52,
-
-    //LineDisplayWindowDisplayText
-    //  Input:  LineDisplayWindowDisplayTextData
-    //  Output: None
-    LineDisplayWindowDisplayText = 53,
-
-    //LineDisplayWindowDisplayTextAt
-    //  Input:  LineDisplayWindowDisplayTextAtData
-    //  Output: None
-    LineDisplayWindowDisplayTextAt = 54,
-
-    //LineDisplayWindowScrollText
-    //  Input:  LineDisplayWindowScrollTextData
-    //  Output: None
-    LineDisplayWindowScrollText = 55,
-
-    //LineDisplayWindowClearText
-    //  Input:  None
-    //  Output: None
-    LineDisplayWindowClearText = 56,
-
-    //LineDisplayWindowDisplayBitmap
-    //  Input:  LineDisplayWindowDisplayBitmapData
-    //  Output: None
-    LineDisplayWindowDisplayBitmap = 57,
-
-    //LineDisplayWindowSetBitmap
-    //  Input:  LineDisplaySetBitmapData
-    //  Output: None
-    LineDisplaySetBitmap = 58,
-
-    //LineDisplaySetDescriptor
-    //  Input:  LineDisplaySetDescriptorData
-    //  Output: None
-    LineDisplaySetDescriptor = 59,
-
-    //LineDisplayWindowClearDescriptors
-    //  Input:  None
-    //  Output: None
-    LineDisplayClearDescriptors = 60,
-
-    //LineDisplayDefineGlyph
-    //  Input:  LineDisplayGlyphDefinitionData
-    //  Output: None
-    LineDisplayDefineGlyph = 61,
-
-    //LineDisplayReadCharacterAtCursor
-    //  Input:  None
-    //  Output: UINT32 (cursorData)
-    LineDisplayReadCharacterAtCursor = 62,
-
-    //------------------------------------
     // Scanner controls
     //------------------------------------
 
@@ -807,8 +359,9 @@ typedef enum _PosDeviceControlType
     //   Output: None
     BarcodeScannerSetSymbologyAttributes = 81,
 
+
     // Update the following value when new device controls show up.
-    _MaxDeviceControlType = 82
+    _MaxDeviceControlType = 97,
 
 } PosDeviceControlType;
 
@@ -819,17 +372,6 @@ typedef struct _PosDeviceBasicsType
     UINT32 RecommendedBufferSize;    // Recommended by the driver
 } PosDeviceBasicsType;
 
-//------------------------------------
-// CashDrawer Control Data formats
-//------------------------------------
-
-typedef struct _CashDrawerCreateDrawerCloseAlarmArgs
-{
-    UINT32 BeepTimeout;
-    UINT32 BeepFrequency;
-    UINT32 BeepDuration;
-    UINT32 BeepDelay;
-}CashDrawerCreateDrawerCloseAlarmArgs;
 
 //----------------------------------------------------------------------------------------------
 //                                  Device Properties
@@ -1040,304 +582,6 @@ typedef enum _PosPropertyId
     //
     BarcodeScannerVideoDeviceId = 20,
 
-    //------------------------------------
-    // PointOfServicePrinter properties
-    //------------------------------------
-
-    //PrinterCapabilities: PointOfServicePrinterCapabilitiesType (readonly)
-    PrinterCapabilities = 100,
-
-    //PrinterCartridgeNotifyEnabled: BOOL (read/write)
-    PrinterCartridgeNotifyEnabled = 101,
-
-    //PrinterSupportedCharacterSets: UINT32 + UINT32[] (readonly)
-    //UINT32: The number of bytes required for the array, including this UINT32
-    PrinterSupportedCharacterSets = 102,
-
-    //PrinterErrorLevel: UINT32 (readonly)
-    //PrinterErrorLevel = 103,
-
-    //PrinterErrorStations:  UINT32 + UINT32[] (readonly)
-    //UINT32: The number of bytes required for the array, including this UINT32
-    //PrinterErrorStations = 104,
-
-    //PrinterErrorString: PosStringType (readonly)
-    //PrinterErrorString = 105,
-
-    //PrinterFlagWhenIdle: BOOL (read/write)
-    PrinterFlagWhenIdle = 106,
-
-    //PrinterFontTypefaceList: PosStringType (readonly)
-    PrinterFontTypefaceList = 107,
-
-    //PrinterMapCharacterSet: BOOL (read/write)
-    PrinterMapCharacterSet = 108,
-
-    //PrinterRotateSpecial: UINT32 (PointOfServicePrinterRotation)  (read/write)
-    PrinterRotateSpecial = 109,
-
-    //PrinterSupportedJournalLineChars: UINT32 +  UINT32[] (readonly)
-    //UINT32: The number of bytes required for the array, including this UINT32
-    PrinterSupportedJournalLineChars = 110,
-
-    //PrinterSupportedReceiptLineChars:  UINT32 + UINT32[] (readonly)
-    //UINT32: The number of bytes required for the array, including this UINT32
-    PrinterSupportedReceiptLineChars = 111,
-
-    //PrinterSupportedReceiptBarcodeRotations:  UINT32 + UINT32[] (readonly)
-    //UINT32: The number of bytes required for the array, including this UINT32
-    PrinterSupportedReceiptBarcodeRotations = 112,
-
-    //PrinterSupportedReceiptBitmapRotations:  UINT32 + UINT32[] (readonly)
-    //UINT32: The number of bytes required for the array, including this UINT32
-    PrinterSupportedReceiptBitmapRotations = 113,
-
-    //PrinterSupportedSlipLineChars:  UINT32 + UINT32[] (readonly)
-    //UINT32: The number of bytes required for the array, including this UINT32
-    PrinterSupportedSlipLineChars = 114,
-
-    //PrinterSupportedSlipBarcodeRotations: UINT32 +  UINT32[] (readonly)
-    //UINT32: The number of bytes required for the array, including this UINT32
-    PrinterSupportedSlipBarcodeRotations = 115,
-
-    //PrinterSupportedSlipBitmapRotations:  UINT32 + UINT32[] (readonly)
-    //UINT32: The number of bytes required for the array, including this UINT32
-    PrinterSupportedSlipBitmapRotations = 116,
-
-    //PrinterCharacterSet: UINT32 (read/write)
-    PrinterCharacterSet = 117,
-
-    //PrinterCoverOpen: BOOL (readonly)
-    PrinterCoverOpen = 118,
-
-    //PrinterMapMode: UINT32 (DriverPosPrinterMapMode) (read/write)
-    PrinterMapMode = 119,
-
-    //PrinterPageModeArea: PrinterWindowsFoundationSize (readonly)
-    PrinterPageModeArea = 120,
-
-    //PrinterPageModeDescriptor: UINT32 (PrinterPageModeDescriptor) (readonly)
-    PrinterPageModeDescriptor = 121,
-
-    //PrinterPageModeHorizontalPosition: UINT32 (read/write)
-    PrinterPageModeHorizontalPosition = 122,
-
-    //PrinterPageModePrintArea: PosPrinterWindowsFoundationRect (read/write)
-    PrinterPageModePrintArea = 123,
-
-    //PrinterPageModePrintDirection: UINT32 (PointOfServicePrinterPageModeDirectionTypes) (read/write)
-    PrinterPageModePrintDirection = 124,
-
-    //PrinterPageModeStation: UINT32 (PointOfServicePrinterStation) (read/write)
-    PrinterPageModeStation = 125,
-
-    //PrinterPageModeVerticalPosition: UINT32 (read/write)
-    PrinterPageModeVerticalPosition = 126,
-
-    //PrinterJournalLineChars: UINT32 (read/write)
-    PrinterJournalLineChars = 127,
-
-    //PrinterJournalLineHeight: UINT32 (read/write)
-    PrinterJournalLineHeight = 128,
-
-    //PrinterJournalLineSpacing: UINT32 (read/write)
-    PrinterJournalLineSpacing = 129,
-
-    //PrinterJournalLineWidth: UINT32 (readonly)
-    PrinterJournalLineWidth = 130,
-
-    //PrinterJournalLetterQuality: BOOL (read/write)
-    PrinterJournalLetterQuality = 131,
-
-    //PrinterJournalPaperEmpty: BOOL (readonly)
-    PrinterJournalPaperEmpty = 132,
-
-    //PrinterJournalPaperNearEnd: BOOL (readonly)
-    PrinterJournalPaperNearEnd = 133,
-
-    //PrinterJournalCartridgeState: UINT32 (PosPrinterCartridgeState) (readonly)
-    PrinterJournalCartridgeState = 134,
-
-    //PrinterJournalCurrentCartridge: UINT32 (PointOfServicePrinterColorCapabilities) (read/write)
-    PrinterJournalCurrentCartridge = 135,
-
-    //PrinterReceiptLineChars: UINT32 (read/write)
-    PrinterReceiptLineChars = 136,
-
-    //PrinterReceiptLineHeight: UINT32 (read/write)
-    PrinterReceiptLineHeight = 137,
-
-    //PrinterReceiptLineSpacing: UINT32 (read/write)
-    PrinterReceiptLineSpacing = 138,
-
-    //PrinterReceiptLineWidth: UINT32 (readonly)
-    PrinterReceiptLineWidth = 139,
-
-    //PrinterReceiptLetterQuality: BOOL (read/write)
-    PrinterReceiptLetterQuality = 140,
-
-    //PrinterReceiptPaperEmpty: BOOL (readonly)
-    PrinterReceiptPaperEmpty = 141,
-
-    //PrinterReceiptPaperNearEmpty: BOOL (readonly)
-    PrinterReceiptPaperNearEmpty = 142,
-
-    //PrinterReceiptSidewaysMaxLines: UINT32 (readonly)
-    PrinterReceiptSidewaysMaxLines = 143,
-
-    //PrinterReceiptSidewaysMaxChars: UINT32 (readonly)
-    PrinterReceiptSidewaysMaxChars = 144,
-
-    //PrinterReceiptLinesToPaperCut: UINT32 (readonly)
-    PrinterReceiptLinesToPaperCut = 145,
-
-    //PrinterReceiptCartridgeState: UINT32 (PointOfServicePrinterCartridgeStateType) (readonly)
-    PrinterReceiptCartridgeState = 146,
-
-    //PrinterReceiptCurrentCartridge: UINT32 (PointOfServicePrinterColorCapabilities) (read/write)
-    PrinterReceiptCurrentCartridge = 147,
-
-    //PrinterSlipLineChars: UINT32 (read/write)
-    PrinterSlipLineChars = 148,
-
-    //PrinterSlipLineHeight: UINT32 (read/write)
-    PrinterSlipLineHeight = 149,
-
-    //PrinterSlipLineSpacing: UINT32 (read/write)
-    PrinterSlipLineSpacing = 150,
-
-    //PrinterSlipLineWidth: UINT32 (readonly)
-    PrinterSlipLineWidth = 151,
-
-    //PrinterSlipLetterQuality: BOOL (read/write)
-    PrinterSlipLetterQuality = 152,
-
-    //PrinterSlipPaperEmpty: BOOL (readonly)
-    PrinterSlipPaperEmpty = 153,
-
-    //PrinterSlipPaperNearEmpty: BOOL (readonly)
-    PrinterSlipPaperNearEmpty = 154,
-
-    //PrinterSlipSidewaysMaxLines: UINT32 (readonly)
-    PrinterSlipSidewaysMaxLines = 155,
-
-    //PrinterSlipSideWaysMaxChars: UINT32 (readonly)
-    PrinterSlipSideWaysMaxChars = 156,
-
-    //PrinterSlipMaxLines: UINT32 (readonly)
-    PrinterSlipMaxLines = 157,
-
-    //PrinterSlipLinesNearEndToEnd: UINT32 (readonly)
-    PrinterSlipLinesNearEndToEnd = 158,
-
-    //PrinterSlipPrintSide: UINT32 (PointOfServicePrinterPrintSide) (readonly)
-    PrinterSlipPrintside = 159,
-
-    //PrinterSlipCartridgeState: UINT32 (PointOfServicePrinterCartridgeStateType) (readonly)
-    PrinterSlipCartridgeState = 160,
-
-    //PrinterSlipCurrentCartridge: UINT32 (PointOfServicePrinterColorCapabilities) (read/write)
-    PrinterSlipCurrentCartridge = 161,
-
-    //PosPrinterStatus: PosPrinterStatus
-    PrinterStatusProp = 162,
-
-    //------------------------------------
-    // CashDrawer properties
-    //------------------------------------
-
-    //CashDrawerIsDrawerOpened: BOOL (readonly)
-    CashDrawerIsDrawerOpened = 200,
-
-    //CashDrawerCapabilities: CashDrawerCapabilitiesType (readonly)
-    CashDrawerCapabilities = 201,
-
-    //CashDrawerStatus: CashDrawerStatusType
-    CashDrawerStatusProp = 202,
-
-    //------------------------------------
-    // LineDisplay properties
-    //------------------------------------
-
-    //LineDisplayCapabilities: LineDisplayCapabilitiesType (readonly)
-    LineDisplayCapabilities = 303,
-
-    //LineDisplayCurrentWindow: UINT32 (CurrentWindow) (read/write)
-    LineDisplayCurrentWindow = 314,
-
-    //LineDisplayWindowSizeInCharacters: LineDisplayCharactersSize (readonly)
-    LineDisplayWindowSizeInCharacters = 315,
-
-    //LineDisplayWindowInterCharacterWaitIntervalL: UINT32 (InterCharacterWait) (read/write)
-    LineDisplayWindowInterCharacterWaitInterval = 316,
-
-    //LineDisplayPhysicalDeviceName: PosStringType (PhysicalDeviceName) (readonly)
-    LineDisplayPhysicalDeviceName = 330,
-
-    //LineDisplayPhysicalDeviceDescription: PosStringType (PhysicalDescription) (readonly)
-    LineDisplayPhysicalDeviceDescription = 331,
-
-    //LineDisplayDeviceControlDescription: PosStringType (ControlDescription) (readonly)
-    LineDisplayDeviceControlDescription = 332,
-
-    //LineDisplayDeviceControlVersion: PosStringType (ControlVersion) (readonly)
-    LineDisplayDeviceControlVersion = 333,
-
-    //LineDisplayDeviceServiceVersion: PosStringType (ServiceVersion) (readonly)
-    LineDisplayDeviceServiceVersion = 334,
-
-    //LineDisplayCursorType: UINT32 (CursorType) (read/write)
-    LineDisplayCursorTypeProperty = 335,
-
-    //LineDisplayAutoUpdateEnabled: BOOL (CursorUpdate) (read/write)
-    LineDisplayCursorAutoUpdateEnabled = 336,	
-
-    //LineDisplayCursorPosition: LineDisplayCursorCoordinates (read/write)
-    LineDisplayCursorPosition = 337,
-
-    //LineDisplayScreenModeList: PosStringType (readonly)
-    LineDisplayScreenModeList = 338,
-
-    //LineDisplayScreenMode: UINT32 (read/write)
-    LineDisplayScreenMode = 339,
-
-    //LineDisplayMaxBitmapSize: UINT32 (readonly)
-    LineDisplayMaxBitmapSizeInPixels = 340,
-
-    //LineDisplayCharacterSetList: PosStringType (readonly)
-    LineDisplayCharacterSetList = 341,
-
-    //LineDisplayDeviceBrightness: UINT32 (read/write)
-    LineDisplayDeviceBrightness = 342,
-
-    //LineDisplayBlinkRate: UINT32 (read/write)
-    LineDisplayBlinkRate = 343,
-
-    //LineDisplayCharacterSet: UINT32 (read/write)
-    LineDisplayCharacterSet = 344,
-
-    //LineDisplayMapCharacterSet: BOOL (read/write)
-    LineDisplayMapCharacterSet = 345,
-
-    //LineDisplayGlyphSize: LineDisplayGlyphSizeType
-    LineDisplayGlyphSizeInPixels = 346,
-
-    //LineDisplayCustomGlyphList: PosStringType (readonly)
-    LineDisplayCustomGlyphList = 347,
-
-    //LineDisplayMarqueeFormat: UINT32 (read/write)
-    LineDisplayMarqueeFormat = 348,
-
-    //LineDisplayMarqueeRepeatWait: UINT32 (read/write)
-    LineDisplayMarqueeRepeatWait = 349,
-
-    //LineDisplayMarqueeUnitWait: UINT32 (read/write)
-    LineDisplayMarqueeUnitWait = 350,
-
-    //LineDisplayMarqueeType: UINT32 (read/write)
-    LineDisplayMarqueeType = 351
-
-    // 352 is reserved for PowerState
 
 } PosPropertyId;
 
@@ -1393,6 +637,9 @@ typedef struct _PosMagneticStripeReaderCapabilitiesType
 #define IS_POINT_OF_SERVICE_IOCTL(x)  \
     (((x) >= MIN_POINT_OF_SERVICE_IOCTL_READ && (x) <= MAX_POINT_OF_SERVICE_IOCTL_READ) || ((x) >= MIN_POINT_OF_SERVICE_IOCTL_WRITE && (x) <= MAX_POINT_OF_SERVICE_IOCTL_WRITE))
 
+// A more generic, future proof version of IS_POINT_OF_SERVICE_IOCTL
+#define IS_POINT_OF_SERVICE_DEVICE_TYPE(x) (DEVICE_TYPE_FROM_CTL_CODE(x) == FILE_DEVICE_POINT_OF_SERVICE)
+
 // Device IOCTLs
 
 #define IOCTL_POINT_OF_SERVICE_GET_PROPERTY \
@@ -1410,8 +657,6 @@ typedef struct _PosMagneticStripeReaderCapabilitiesType
 #define IOCTL_POINT_OF_SERVICE_RETAIN_DEVICE \
     POS_IOCTL(RetainDevice)
 
-#define IOCTL_POINT_OF_SERVICE_CONNECT_REMOTE_DEVICE \
-    POS_IOCTL(ConnectRemotePosDevice)
 
 #define IOCTL_POINT_OF_SERVICE_RETRIEVE_STATISTICS \
     READABLE_POS_IOCTL(RetrieveStatistics)
@@ -1449,116 +694,6 @@ typedef struct _PosMagneticStripeReaderCapabilitiesType
 #define IOCTL_POINT_OF_SERVICE_STOP_BARCODE_SCANNER_TRIGGER \
     POS_IOCTL(StopBarcodeScannerSoftwareTrigger)
 
-#define IOCTL_POINT_OF_SERVICE_PRINTER_CLEAR_OUTPUT \
-    POS_IOCTL(PrinterClearOutput)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_SLIP_WAIT_FOR_PAPER_INSERTED \
-    POS_IOCTL(PrinterSlipWaitForPaperInserted)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_SLIP_WAIT_FOR_PAPER_REMOVED \
-    POS_IOCTL(PrinterSlipWaitForPaperRemoved)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_CHANGE_PRINT_SIDE \
-    POS_IOCTL(PrinterChangePrintSide)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_CUT_PAPER \
-    POS_IOCTL(PrinterCutPaper)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_DRAW_RULED_LINE \
-    POS_IOCTL(PrinterDrawRuledLine)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_SLIP_OPEN_JAWS \
-    POS_IOCTL(PrinterSlipOpenJaws)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_SLIP_CLOSE_JAWS \
-    POS_IOCTL(PrinterSlipCloseJaws)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_MARK_FEED \
-    POS_IOCTL(PrinterMarkFeed)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_PAGE_MODE_PRINT \
-    POS_IOCTL(PrinterPageModePrint)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_PRINT_BARCODE \
-    POS_IOCTL(PrinterPrintBarcode)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_PRINT_MEMORY_BITMAP_START \
-    POS_IOCTL(PrinterPrintMemoryBitmapStart)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_PRINT_MEMORY_BITMAP_FILL \
-    POS_IOCTL(PrinterPrintMemoryBitmapFill)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_PRINT_NORMAL \
-    POS_IOCTL(PrinterPrintNormal)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_ROTATE_PRINT \
-    POS_IOCTL(PrinterRotatePrint)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_SET_BITMAP_START \
-    POS_IOCTL(PrinterSetBitmapStart)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_SET_BITMAP_FILL \
-    POS_IOCTL(PrinterSetBitmapFill)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_TRANSACTION_PRINT \
-    POS_IOCTL(PrinterTransactionPrint)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_VALIDATE_DATA \
-    POS_IOCTL(PrinterValidateData)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_PRINT_SAVED_BITMAP\
-    POS_IOCTL(PrinterPrintSavedBitmap)
-
-#define IOCTL_POINT_OF_SERVICE_PRINTER_WAIT_FOR_JOB_COMPLETE\
-    POS_IOCTL(PrinterWaitForJobComplete)
-
-#define IOCTL_CASH_DRAWER_OPEN_DRAWER \
-    POS_IOCTL(CashDrawerOpenDrawer)
-
-#define IOCTL_CASH_DRAWER_CREATE_DRAWER_CLOSE_ALARM \
-    POS_IOCTL(CashDrawerCreateDrawerCloseAlarm)
-
-#define IOCTL_CASH_DRAWER_CANCEL_WAIT\
-    POS_IOCTL(CashDrawerCancelWait)
-
-#define IOCTL_LINE_DISPLAY_CREATE_WINDOW\
-    POS_IOCTL(LineDisplayCreateWindow)
-
-#define IOCTL_LINE_DISPLAY_DESTROY_WINDOW\
-    POS_IOCTL(LineDisplayDestroyWindow)
-
-#define IOCTL_LINE_DISPLAY_REFRESH_WINDOW\
-    POS_IOCTL(LineDisplayRefreshWindow)
-
-#define IOCTL_LINE_DISPLAY_WINDOW_DISPLAY_TEXT\
-    POS_IOCTL(LineDisplayWindowDisplayText)
-
-#define IOCTL_LINE_DISPLAY_WINDOW_DISPLAY_TEXT_AT\
-    POS_IOCTL(LineDisplayWindowDisplayTextAt)
-
-#define IOCTL_LINE_DISPLAY_WINDOW_SCROLL_TEXT\
-    POS_IOCTL(LineDisplayWindowScrollText)
-
-#define IOCTL_LINE_DISPLAY_WINDOW_CLEAR_TEXT\
-    POS_IOCTL(LineDisplayWindowClearText)
-
-#define IOCTL_LINE_DISPLAY_WINDOW_DISPLAY_BITMAP\
-    POS_IOCTL(LineDisplayWindowDisplayBitmap)
-
-#define IOCTL_LINE_DISPLAY_SET_BITMAP\
-    POS_IOCTL(LineDisplaySetBitmap)
-
-#define IOCTL_LINE_DISPLAY_SET_DESCRIPTOR\
-    POS_IOCTL(LineDisplaySetDescriptor)
-
-#define IOCTL_LINE_DISPLAY_CLEAR_DESCRIPTORS\
-    POS_IOCTL(LineDisplayClearDescriptors)
-
-#define IOCTL_LINE_DISPLAY_DEFINE_GLYPH\
-    POS_IOCTL(LineDisplayDefineGlyph)
-
-#define IOCTL_LINE_DISPLAY_READ_CHARACTER_AT_CURSOR\
-    READABLE_POS_IOCTL(LineDisplayReadCharacterAtCursor)
 
 #define IOCTL_POINT_OF_SERVICE_BARCODE_SCANNER_GET_SYMBOLOGY_ATTRIBUTES \
     READABLE_POS_IOCTL(BarcodeScannerGetSymbologyAttributes)

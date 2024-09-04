@@ -2049,6 +2049,7 @@ typedef struct _IORT_ROOT_COMPLEX_NODE {
 #define DMAR_RHSA               3
 #define DMAR_ANDD               4
 #define DMAR_FLAG_INT_REMAPPING 1
+#define DMAR_FLAG_X2APIC_OPT_OUT 2
 #define DMAR_FLAG_DMA_CTRL_PLATFORM_OPT_IN 4
 #define ARIR_SIOAPIC            0x1
 #define ARIR_PCI_ENUMERABLE     0x2

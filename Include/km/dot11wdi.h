@@ -158,6 +158,10 @@ extern "C" {
 #define WDI_DEVICE_SERVICE_COMMAND                                  131
 #define WDI_INDICATION_CIPHER_KEY_UPDATED                           132
 #define WDI_INDICATION_DEVICE_SERVICE_EVENT                         133
+#define WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED                       134
+#define WDI_SET_SAE_AUTH_PARAMS                                     135
+#define WDI_TASK_REQUEST_FTM                                        136
+#define WDI_INDICATION_REQUEST_FTM_COMPLETE                         137
 
 // Special codes
 /*++
@@ -1269,7 +1273,10 @@ RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_DRIVER_WDI_CHARACTERISTICS, LeCancelIdleN
 // For 1.1.7 compliant drivers
 #define WDI_VERSION_1_1_7                   ((1 << 16) | (1 << 8) | 0x7)
 
-#define WDI_VERSION_LATEST                  WDI_VERSION_1_1_7
+// For 1.1.8 compliant drivers
+#define WDI_VERSION_1_1_8                   ((1 << 16) | (1 << 8) | 0x8)
+
+#define WDI_VERSION_LATEST                  WDI_VERSION_1_1_8
 
 #ifndef NDIS_EXPORT
 #  define NDIS_EXPORT
@@ -1501,6 +1508,12 @@ NdisMDeregisterWdiMiniportDriver(
 #define OID_WDI_DEVICE_SERVICE_COMMAND \
     WDI_DEFINE_OID(WDI_DEVICE_SERVICE_COMMAND)
 
+#define OID_WDI_SET_SAE_AUTH_PARAMS \
+    WDI_DEFINE_OID(WDI_SET_SAE_AUTH_PARAMS)
+
+#define OID_WDI_TASK_REQUEST_FTM \
+    WDI_DEFINE_OID(WDI_TASK_REQUEST_FTM)
+
 #define NDIS_STATUS_WDI_INDICATION_DISCONNECT_COMPLETE    \
     WDI_DEFINE_INDICATION(WDI_INDICATION_DISCONNECT_COMPLETE)
 
@@ -1641,6 +1654,12 @@ NdisMDeregisterWdiMiniportDriver(
 
 #define NDIS_STATUS_WDI_INDICATION_DEVICE_SERVICE_EVENT   \
     WDI_DEFINE_INDICATION(WDI_INDICATION_DEVICE_SERVICE_EVENT)
+
+#define NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED   \
+    WDI_DEFINE_INDICATION(WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED)
+
+#define NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE \
+    WDI_DEFINE_INDICATION(WDI_INDICATION_REQUEST_FTM_COMPLETE)
 
 // Special codes
 /*++

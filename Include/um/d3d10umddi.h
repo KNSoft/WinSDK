@@ -37,7 +37,24 @@
 
 #if !defined ( D3D11DDI_MINOR_HEADER_VERSION )  || ( D3D11DDI_MINOR_HEADER_VERSION < 5 && D3D12DDI_MINOR_HEADER_VERSION >= 1 )
 #undef D3D11DDI_MINOR_HEADER_VERSION
-#define D3D11DDI_MINOR_HEADER_VERSION 14
+#define D3D11DDI_MINOR_HEADER_VERSION 15
+#endif
+
+// Ensure that UMD versions used for include guards below are defined
+#ifndef D3D_UMD_INTERFACE_VERSION_WDDM1_3
+#define D3D_UMD_INTERFACE_VERSION_WDDM1_3    0x4002
+#endif
+
+#ifndef D3D_UMD_INTERFACE_VERSION_WDDM2_0
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_0       0x5002
+// Also define these types that are assumed to be present.
+typedef enum   D3DDDI_HDR_METADATA_TYPE { D3DDDI_HDR_METADATA_TYPE_NONE = 0 };
+typedef enum   D3DDDI_COLOR_SPACE_TYPE { D3DDDI_COLOR_SPACE_CUSTOM = 0xFFFFFFFF };
+typedef enum   DXGI_COLOR_SPACE_TYPE { DXGI_COLOR_SPACE_CUSTOM = 0xFFFFFFFF };
+#endif
+
+#ifndef D3D_UMD_INTERFACE_VERSION_WDDM2_5
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_5       0xA002
 #endif
 
 //----------------------------------
@@ -2054,6 +2071,9 @@ typedef struct D3D11DDIARG_CREATEDEFERREDCONTEXT
 #if D3D11DDI_MINOR_HEADER_VERSION >= 11
         struct D3DWDDM2_2DDI_DEVICEFUNCS* pWDDM2_2ContextFuncs; // in/out:
 #endif
+#if D3D11DDI_MINOR_HEADER_VERSION >= 15
+        struct D3DWDDM2_6DDI_DEVICEFUNCS* pWDDM2_6ContextFuncs; // in/out:
+#endif
     };
     D3D10DDI_HDEVICE hDrvContext; // in:  Driver private handle/ storage.
 
@@ -2066,6 +2086,10 @@ typedef struct D3D11DDIARG_CREATEDEFERREDCONTEXT
 #endif
 #if D3D11DDI_MINOR_HEADER_VERSION >= 11
         CONST struct D3DWDDM2_2DDI_CORELAYER_DEVICECALLBACKS* pWDDM2_2UMCallbacks; // in:  callbacks that stay in usermode
+#endif
+#if D3D11DDI_MINOR_HEADER_VERSION >= 15
+        // Available if InterfaceVersion == D3DWDDM2_6_DDI_INTERFACE_VERSION && BuildVersion >= 3
+        CONST struct D3DWDDM2_6DDI_CORELAYER_DEVICECALLBACKS* pWDDM2_6UMCallbacks; // in:  callbacks that stay in usermode
 #endif
     };
 
@@ -6475,6 +6499,243 @@ typedef struct D3DWDDM2_2DDI_DEVICEFUNCS
 } D3DWDDM2_2DDI_DEVICEFUNCS;
 #endif /*D3D11DDI_MINOR_HEADER_VERSION >= 11*/
 
+#if D3D11DDI_MINOR_HEADER_VERSION >= 15
+typedef enum D3DWDDM2_6DDI_SCANOUT_FLAGS
+{
+    D3DWDDM2_6DDI_SCANOUT_FLAG_NONE = 0,
+    D3DWDDM2_6DDI_SCANOUT_FLAG_TRANSFORMATION_REQUIRED = 1,
+    D3DWDDM2_6DDI_SCANOUT_FLAG_TRANSFORMATION_DESIRED = 2,
+    D3DWDDM2_6DDI_SCANOUT_FLAG_UNPREDICTABLE_TIMING = 4,
+} D3DWDDM2_6DDI_SCANOUT_FLAGS;
+
+typedef void (APIENTRY* PFND3DWDDM2_6DDI_QUERY_SCANOUT_CAPS)(D3D10DDI_HDEVICE,
+    D3D10DDI_HRESOURCE, UINT Subresource, D3DDDI_VIDEO_PRESENT_SOURCE_ID VidPnSourceId, UINT PlaneIdx, _Out_ D3DWDDM2_6DDI_SCANOUT_FLAGS* pFlags);
+typedef void (APIENTRY* PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION)(D3D10DDI_HDEVICE,
+    D3D10DDI_HRESOURCE, UINT Subresource, D3DDDI_VIDEO_PRESENT_SOURCE_ID VidPnSourceId, UINT PlaneIdx, _In_opt_ D3D10_DDI_RECT* pSubRect);
+
+typedef VOID ( APIENTRY* PFND3DWDDM2_6DDI_RELOCATEDEVICEFUNCS )(
+    D3D10DDI_HDEVICE, _In_ struct D3DWDDM2_6DDI_DEVICEFUNCS* );
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// User mode device function table WDDM 2.6.
+//
+typedef struct D3DWDDM2_6DDI_DEVICEFUNCS
+{
+// Order of functions is in decreasing order of priority ( as far as performance is concerned ).
+// !!! BEGIN HIGH-FREQUENCY !!!
+    PFND3D11_1DDI_RESOURCEUPDATESUBRESOURCEUP               pfnDefaultConstantBufferUpdateSubresourceUP;
+    PFND3D11_1DDI_SETCONSTANTBUFFERS                        pfnVsSetConstantBuffers;
+    PFND3D10DDI_SETSHADERRESOURCES                          pfnPsSetShaderResources;
+    PFND3D10DDI_SETSHADER                                   pfnPsSetShader;
+    PFND3D10DDI_SETSAMPLERS                                 pfnPsSetSamplers;
+    PFND3D10DDI_SETSHADER                                   pfnVsSetShader;
+    PFND3D10DDI_DRAWINDEXED                                 pfnDrawIndexed;
+    PFND3D10DDI_DRAW                                        pfnDraw;
+    PFND3D10DDI_RESOURCEMAP                                 pfnDynamicIABufferMapNoOverwrite;
+    PFND3D10DDI_RESOURCEUNMAP                               pfnDynamicIABufferUnmap;
+    PFND3D10DDI_RESOURCEMAP                                 pfnDynamicConstantBufferMapDiscard;
+    PFND3D10DDI_RESOURCEMAP                                 pfnDynamicIABufferMapDiscard;
+    PFND3D10DDI_RESOURCEUNMAP                               pfnDynamicConstantBufferUnmap;
+    PFND3D11_1DDI_SETCONSTANTBUFFERS                        pfnPsSetConstantBuffers;
+    PFND3D10DDI_SETINPUTLAYOUT                              pfnIaSetInputLayout;
+    PFND3D10DDI_IA_SETVERTEXBUFFERS                         pfnIaSetVertexBuffers;
+    PFND3D10DDI_IA_SETINDEXBUFFER                           pfnIaSetIndexBuffer;
+// !!! END HIGH-FREQUENCY !!!
+
+// Order of functions is in decreasing order of priority ( as far as performance is concerned ).
+// !!! BEGIN MIDDLE-FREQUENCY !!!
+    PFND3D10DDI_DRAWINDEXEDINSTANCED                        pfnDrawIndexedInstanced;
+    PFND3D10DDI_DRAWINSTANCED                               pfnDrawInstanced;
+    PFND3D10DDI_RESOURCEMAP                                 pfnDynamicResourceMapDiscard;
+    PFND3D10DDI_RESOURCEUNMAP                               pfnDynamicResourceUnmap;
+    PFND3D11_1DDI_SETCONSTANTBUFFERS                        pfnGsSetConstantBuffers;
+    PFND3D10DDI_SETSHADER                                   pfnGsSetShader;
+    PFND3D10DDI_IA_SETTOPOLOGY                              pfnIaSetTopology;
+    PFND3D10DDI_RESOURCEMAP                                 pfnStagingResourceMap;
+    PFND3D10DDI_RESOURCEUNMAP                               pfnStagingResourceUnmap;
+    PFND3D10DDI_SETSHADERRESOURCES                          pfnVsSetShaderResources;
+    PFND3D10DDI_SETSAMPLERS                                 pfnVsSetSamplers;
+    PFND3D10DDI_SETSHADERRESOURCES                          pfnGsSetShaderResources;
+    PFND3D10DDI_SETSAMPLERS                                 pfnGsSetSamplers;
+    PFND3D11DDI_SETRENDERTARGETS                            pfnSetRenderTargets;
+    PFND3D10DDI_SHADERRESOURCEVIEWREADAFTERWRITEHAZARD      pfnShaderResourceViewReadAfterWriteHazard;
+    PFND3D10DDI_RESOURCEREADAFTERWRITEHAZARD                pfnResourceReadAfterWriteHazard;
+    PFND3D10DDI_SETBLENDSTATE                               pfnSetBlendState;
+    PFND3D10DDI_SETDEPTHSTENCILSTATE                        pfnSetDepthStencilState;
+    PFND3D10DDI_SETRASTERIZERSTATE                          pfnSetRasterizerState;
+    PFND3D10DDI_QUERYEND                                    pfnQueryEnd;
+    PFND3D10DDI_QUERYBEGIN                                  pfnQueryBegin;
+    PFND3D11_1DDI_RESOURCECOPYREGION                        pfnResourceCopyRegion;
+    PFND3D11_1DDI_RESOURCEUPDATESUBRESOURCEUP               pfnResourceUpdateSubresourceUP;
+    PFND3D10DDI_SO_SETTARGETS                               pfnSoSetTargets;
+    PFND3D10DDI_DRAWAUTO                                    pfnDrawAuto;
+    PFND3D10DDI_SETVIEWPORTS                                pfnSetViewports;
+    PFND3D10DDI_SETSCISSORRECTS                             pfnSetScissorRects;
+    PFND3D10DDI_CLEARRENDERTARGETVIEW                       pfnClearRenderTargetView;
+    PFND3D10DDI_CLEARDEPTHSTENCILVIEW                       pfnClearDepthStencilView;
+    PFND3D10DDI_SETPREDICATION                              pfnSetPredication;
+    PFND3D10DDI_QUERYGETDATA                                pfnQueryGetData;
+    PFND3DWDDM2_0DDI_FLUSH                                  pfnFlush;
+    PFND3D10DDI_GENMIPS                                     pfnGenMips;
+    PFND3D10DDI_RESOURCECOPY                                pfnResourceCopy;
+    PFND3D10DDI_RESOURCERESOLVESUBRESOURCE                  pfnResourceResolveSubresource;
+// !!! END MIDDLE-FREQUENCY !!!
+
+// Infrequent paths:
+    PFND3D10DDI_RESOURCEMAP                                 pfnResourceMap;
+    PFND3D10DDI_RESOURCEUNMAP                               pfnResourceUnmap;
+    PFND3D10DDI_RESOURCEISSTAGINGBUSY                       pfnResourceIsStagingBusy;
+    PFND3DWDDM2_6DDI_RELOCATEDEVICEFUNCS                    pfnRelocateDeviceFuncs;
+    PFND3D11DDI_CALCPRIVATERESOURCESIZE                     pfnCalcPrivateResourceSize;
+    PFND3D10DDI_CALCPRIVATEOPENEDRESOURCESIZE               pfnCalcPrivateOpenedResourceSize;
+    PFND3D11DDI_CREATERESOURCE                              pfnCreateResource;
+    PFND3D10DDI_OPENRESOURCE                                pfnOpenResource;
+    PFND3D10DDI_DESTROYRESOURCE                             pfnDestroyResource;
+    PFND3DWDDM2_0DDI_CALCPRIVATESHADERRESOURCEVIEWSIZE      pfnCalcPrivateShaderResourceViewSize;
+    PFND3DWDDM2_0DDI_CREATESHADERRESOURCEVIEW               pfnCreateShaderResourceView;
+    PFND3D10DDI_DESTROYSHADERRESOURCEVIEW                   pfnDestroyShaderResourceView;
+    PFND3DWDDM2_0DDI_CALCPRIVATERENDERTARGETVIEWSIZE        pfnCalcPrivateRenderTargetViewSize;
+    PFND3DWDDM2_0DDI_CREATERENDERTARGETVIEW                 pfnCreateRenderTargetView;
+    PFND3D10DDI_DESTROYRENDERTARGETVIEW                     pfnDestroyRenderTargetView;
+    PFND3D11DDI_CALCPRIVATEDEPTHSTENCILVIEWSIZE             pfnCalcPrivateDepthStencilViewSize;
+    PFND3D11DDI_CREATEDEPTHSTENCILVIEW                      pfnCreateDepthStencilView;
+    PFND3D10DDI_DESTROYDEPTHSTENCILVIEW                     pfnDestroyDepthStencilView;
+    PFND3D10DDI_CALCPRIVATEELEMENTLAYOUTSIZE                pfnCalcPrivateElementLayoutSize;
+    PFND3D10DDI_CREATEELEMENTLAYOUT                         pfnCreateElementLayout;
+    PFND3D10DDI_DESTROYELEMENTLAYOUT                        pfnDestroyElementLayout;
+    PFND3D11_1DDI_CALCPRIVATEBLENDSTATESIZE                 pfnCalcPrivateBlendStateSize;
+    PFND3D11_1DDI_CREATEBLENDSTATE                          pfnCreateBlendState;
+    PFND3D10DDI_DESTROYBLENDSTATE                           pfnDestroyBlendState;
+    PFND3D10DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE            pfnCalcPrivateDepthStencilStateSize;
+    PFND3D10DDI_CREATEDEPTHSTENCILSTATE                     pfnCreateDepthStencilState;
+    PFND3D10DDI_DESTROYDEPTHSTENCILSTATE                    pfnDestroyDepthStencilState;
+    PFND3DWDDM2_0DDI_CALCPRIVATERASTERIZERSTATESIZE         pfnCalcPrivateRasterizerStateSize;
+    PFND3DWDDM2_0DDI_CREATERASTERIZERSTATE                  pfnCreateRasterizerState;
+    PFND3D10DDI_DESTROYRASTERIZERSTATE                      pfnDestroyRasterizerState;
+    PFND3D11_1DDI_CALCPRIVATESHADERSIZE                     pfnCalcPrivateShaderSize;
+    PFND3D11_1DDI_CREATEVERTEXSHADER                        pfnCreateVertexShader;
+    PFND3D11_1DDI_CREATEGEOMETRYSHADER                      pfnCreateGeometryShader;
+    PFND3D11_1DDI_CREATEPIXELSHADER                         pfnCreatePixelShader;
+    PFND3D11_1DDI_CALCPRIVATEGEOMETRYSHADERWITHSTREAMOUTPUT pfnCalcPrivateGeometryShaderWithStreamOutput;
+    PFND3D11_1DDI_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT      pfnCreateGeometryShaderWithStreamOutput;
+    PFND3D10DDI_DESTROYSHADER                               pfnDestroyShader;
+    PFND3D10DDI_CALCPRIVATESAMPLERSIZE                      pfnCalcPrivateSamplerSize;
+    PFND3D10DDI_CREATESAMPLER                               pfnCreateSampler;
+    PFND3D10DDI_DESTROYSAMPLER                              pfnDestroySampler;
+    PFND3DWDDM2_0DDI_CALCPRIVATEQUERYSIZE                   pfnCalcPrivateQuerySize;
+    PFND3DWDDM2_0DDI_CREATEQUERY                            pfnCreateQuery;
+    PFND3D10DDI_DESTROYQUERY                                pfnDestroyQuery;
+
+    PFND3D10DDI_CHECKFORMATSUPPORT                          pfnCheckFormatSupport;
+    PFND3DWDDM1_3DDI_CHECKMULTISAMPLEQUALITYLEVELS          pfnCheckMultisampleQualityLevels;
+    PFND3D10DDI_CHECKCOUNTERINFO                            pfnCheckCounterInfo;
+    PFND3D10DDI_CHECKCOUNTER                                pfnCheckCounter;
+
+    PFND3D10DDI_DESTROYDEVICE                               pfnDestroyDevice;
+    PFND3D10DDI_SETTEXTFILTERSIZE                           pfnSetTextFilterSize;
+
+    // Start additional 10.1 entries:
+    PFND3D10DDI_RESOURCECOPY                                pfnResourceConvert;
+    PFND3D11_1DDI_RESOURCECOPYREGION                        pfnResourceConvertRegion;
+
+#ifdef D3D10PSGP
+    // Rasterization-only specific:
+    PFND3D10DDI_RESETPRIMITIVEID                            pfnResetPrimitiveID;
+    PFND3D10DDI_SETVERTEXPIPELINEOUTPUT                     pfnSetVertexPipelineOutput;
+#endif // D3D10PSGP
+
+    // Start additional 11.0 entries:
+    PFND3D11DDI_DRAWINDEXEDINSTANCEDINDIRECT                pfnDrawIndexedInstancedIndirect;
+    PFND3D11DDI_DRAWINSTANCEDINDIRECT                       pfnDrawInstancedIndirect;
+    PFND3D11DDI_COMMANDLISTEXECUTE                          pfnCommandListExecute; // Only required when supporting D3D11DDICAPS_COMMANDLISTS
+    PFND3D10DDI_SETSHADERRESOURCES                          pfnHsSetShaderResources;
+    PFND3D10DDI_SETSHADER                                   pfnHsSetShader;
+    PFND3D10DDI_SETSAMPLERS                                 pfnHsSetSamplers;
+    PFND3D11_1DDI_SETCONSTANTBUFFERS                        pfnHsSetConstantBuffers;
+    PFND3D10DDI_SETSHADERRESOURCES                          pfnDsSetShaderResources;
+    PFND3D10DDI_SETSHADER                                   pfnDsSetShader;
+    PFND3D10DDI_SETSAMPLERS                                 pfnDsSetSamplers;
+    PFND3D11_1DDI_SETCONSTANTBUFFERS                        pfnDsSetConstantBuffers;
+    PFND3D11_1DDI_CREATEHULLSHADER                          pfnCreateHullShader;
+    PFND3D11_1DDI_CREATEDOMAINSHADER                        pfnCreateDomainShader;
+    PFND3D11DDI_CHECKDEFERREDCONTEXTHANDLESIZES             pfnCheckDeferredContextHandleSizes; // Only required when supporting D3D11DDICAPS_COMMANDLISTS*
+    PFND3D11DDI_CALCDEFERREDCONTEXTHANDLESIZE               pfnCalcDeferredContextHandleSize; // Only required when supporting D3D11DDICAPS_COMMANDLISTS*
+    PFND3D11DDI_CALCPRIVATEDEFERREDCONTEXTSIZE              pfnCalcPrivateDeferredContextSize; // Only required when supporting D3D11DDICAPS_COMMANDLISTS*
+    PFND3D11DDI_CREATEDEFERREDCONTEXT                       pfnCreateDeferredContext; // Only required when supporting D3D11DDICAPS_COMMANDLISTS*
+    PFND3D11DDI_ABANDONCOMMANDLIST                          pfnAbandonCommandList; // Only required when supporting D3D11DDICAPS_COMMANDLISTS*
+    PFND3D11DDI_CALCPRIVATECOMMANDLISTSIZE                  pfnCalcPrivateCommandListSize; // Only required when supporting D3D11DDICAPS_COMMANDLISTS*
+    PFND3D11DDI_CREATECOMMANDLIST                           pfnCreateCommandList; // Only required when supporting D3D11DDICAPS_COMMANDLISTS*
+    PFND3D11DDI_DESTROYCOMMANDLIST                          pfnDestroyCommandList; // Only required when supporting D3D11DDICAPS_COMMANDLISTS*
+    PFND3D11_1DDI_CALCPRIVATETESSELLATIONSHADERSIZE         pfnCalcPrivateTessellationShaderSize;
+    PFND3D11DDI_SETSHADER_WITH_IFACES                       pfnPsSetShaderWithIfaces;
+    PFND3D11DDI_SETSHADER_WITH_IFACES                       pfnVsSetShaderWithIfaces;
+    PFND3D11DDI_SETSHADER_WITH_IFACES                       pfnGsSetShaderWithIfaces;
+    PFND3D11DDI_SETSHADER_WITH_IFACES                       pfnHsSetShaderWithIfaces;
+    PFND3D11DDI_SETSHADER_WITH_IFACES                       pfnDsSetShaderWithIfaces;
+    PFND3D11DDI_SETSHADER_WITH_IFACES                       pfnCsSetShaderWithIfaces;
+    PFND3D11DDI_CREATECOMPUTESHADER                         pfnCreateComputeShader;
+    PFND3D10DDI_SETSHADER                                   pfnCsSetShader;
+    PFND3D10DDI_SETSHADERRESOURCES                          pfnCsSetShaderResources;
+    PFND3D10DDI_SETSAMPLERS                                 pfnCsSetSamplers;
+    PFND3D11_1DDI_SETCONSTANTBUFFERS                        pfnCsSetConstantBuffers;
+    PFND3DWDDM2_0DDI_CALCPRIVATEUNORDEREDACCESSVIEWSIZE     pfnCalcPrivateUnorderedAccessViewSize;
+    PFND3DWDDM2_0DDI_CREATEUNORDEREDACCESSVIEW              pfnCreateUnorderedAccessView;
+    PFND3D11DDI_DESTROYUNORDEREDACCESSVIEW                  pfnDestroyUnorderedAccessView;
+    PFND3D11DDI_CLEARUNORDEREDACCESSVIEWUINT                pfnClearUnorderedAccessViewUint;
+    PFND3D11DDI_CLEARUNORDEREDACCESSVIEWFLOAT               pfnClearUnorderedAccessViewFloat;
+    PFND3D11DDI_SETUNORDEREDACCESSVIEWS                     pfnCsSetUnorderedAccessViews;
+    PFND3D11DDI_DISPATCH                                    pfnDispatch;
+    PFND3D11DDI_DISPATCHINDIRECT                            pfnDispatchIndirect;
+    PFND3D11DDI_SETRESOURCEMINLOD                           pfnSetResourceMinLOD;
+    PFND3D11DDI_COPYSTRUCTURECOUNT                          pfnCopyStructureCount;
+    PFND3D11DDI_RECYCLECOMMANDLIST                          pfnRecycleCommandList;
+    PFND3D11DDI_RECYCLECREATECOMMANDLIST                    pfnRecycleCreateCommandList;
+    PFND3D11DDI_RECYCLECREATEDEFERREDCONTEXT                pfnRecycleCreateDeferredContext;
+    PFND3D11DDI_DESTROYCOMMANDLIST                          pfnRecycleDestroyCommandList;
+
+    // Start additional 11.1 entries
+    // (note some functions above also have different signatures 11.1 vs. 11.0)
+
+    PFND3D11_1DDI_DISCARD                                   pfnDiscard;
+    PFND3D11_1DDI_ASSIGNDEBUGBINARY                         pfnAssignDebugBinary;
+    PFND3D10DDI_RESOURCEMAP                                 pfnDynamicConstantBufferMapNoOverwrite;
+    PFND3D11_1DDI_CHECKDIRECTFLIPSUPPORT                    pfnCheckDirectFlipSupport;
+    PFND3D11_1DDI_CLEARVIEW                                 pfnClearView;
+
+    // Start additional WDDM 1.3 entries
+    // (note some functions above also have different signatures vs 11.1)
+    PFND3DWDDM1_3DDI_UPDATETILEMAPPINGS                     pfnUpdateTileMappings;
+    PFND3DWDDM1_3DDI_COPYTILEMAPPINGS                       pfnCopyTileMappings;
+    PFND3DWDDM1_3DDI_COPYTILES                              pfnCopyTiles;
+    PFND3DWDDM1_3DDI_UPDATETILES                            pfnUpdateTiles;
+    PFND3DWDDM1_3DDI_TILEDRESOURCEBARRIER                   pfnTiledResourceBarrier;
+    PFND3DWDDM1_3DDI_GETMIPPACKING                          pfnGetMipPacking;
+    PFND3DWDDM1_3DDI_RESIZETILEPOOL                         pfnResizeTilePool;
+    PFND3DWDDM1_3DDI_SETMARKER                              pfnSetMarker;
+    PFND3DWDDM1_3DDI_SETMARKERMODE                          pfnSetMarkerMode;
+
+    // Start additional WDDM 2.0 entries
+    PFND3DWDDM2_0DDI_SETHARDWAREPROTECTION                  pfnSetHardwareProtection;
+    PFND3DWDDM2_0DDI_GETRESOURCELAYOUT                      pfnGetResourceLayout;
+    PFND3DWDDM2_0DDI_RETRIEVE_SHADER_COMMENT                pfnRetrieveShaderComment;
+    PFND3DWDDM2_0DDI_SETHARDWAREPROTECTIONSTATE             pfnSetHardwareProtectionState; 
+
+    // Start additional WDDM 2.1 entries
+    PFND3DWDDM2_1DDI_SYNC_TOKEN                             pfnAcquireResource;
+    PFND3DWDDM2_1DDI_SYNC_TOKEN                             pfnReleaseResource;
+
+    // Start additional WDDM 2.2 entries
+    PFND3DWDDM2_2DDI_CALCPRIVATE_SHADERCACHE_SESSION_SIZE   pfnCalcPrivateShaderCacheSessionSize;
+    PFND3DWDDM2_2DDI_CREATE_SHADERCACHE_SESSION             pfnCreateShaderCacheSession;
+    PFND3DWDDM2_2DDI_DESTROY_SHADERCACHE_SESSION            pfnDestroyShaderCacheSession;
+    PFND3DWDDM2_2DDI_SET_SHADERCACHE_SESSION                pfnSetShaderCacheSession;
+
+    // Start additional WDDM 2.6 entries
+    PFND3DWDDM2_6DDI_QUERY_SCANOUT_CAPS                     pfnQueryScanoutCaps;
+    PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION         pfnPrepareScanoutTransformation;
+} D3DWDDM2_6DDI_DEVICEFUNCS;
+#endif /*D3D11DDI_MINOR_HEADER_VERSION >= 15*/
+
 typedef VOID (APIENTRY CALLBACK *PFND3D10DDI_SETERROR_CB)( D3D10DDI_HRTCORELAYER, HRESULT );
 typedef void (APIENTRY CALLBACK *PFND3D10DDI_STATE_VS_CONSTBUF_CB)( D3D10DDI_HRTCORELAYER, UINT, UINT );
 typedef void (APIENTRY CALLBACK *PFND3D10DDI_STATE_PS_SRV_CB)( D3D10DDI_HRTCORELAYER, UINT, UINT );
@@ -6755,6 +7016,65 @@ typedef struct D3DWDDM2_2DDI_CORELAYER_DEVICECALLBACKS
 } D3DWDDM2_2DDI_CORELAYER_DEVICECALLBACKS;
 #endif /*D3D11DDI_MINOR_HEADER_VERSION >= 11*/
 
+#if D3D11DDI_MINOR_HEADER_VERSION >= 15
+
+typedef HRESULT (APIENTRY *PFND3DWDDM2_6DDI_QUERY_SCANOUT_CAPS_CB)(
+    D3D10DDI_HRTCORELAYER hDevice,
+    D3DDDI_VIDEO_PRESENT_SOURCE_ID VidPnSourceId,
+    UINT* pCaps);
+
+typedef struct D3DWDDM2_6DDI_CORELAYER_DEVICECALLBACKS
+{
+    PFND3D10DDI_SETERROR_CB pfnSetErrorCb;
+    PFND3D10DDI_STATE_VS_CONSTBUF_CB pfnStateVsConstBufCb;
+    PFND3D10DDI_STATE_PS_SRV_CB pfnStatePsSrvCb;
+    PFND3D10DDI_STATE_PS_SHADER_CB pfnStatePsShaderCb;
+    PFND3D10DDI_STATE_PS_SAMPLER_CB pfnStatePsSamplerCb;
+    PFND3D10DDI_STATE_VS_SHADER_CB pfnStateVsShaderCb;
+    PFND3D10DDI_STATE_PS_CONSTBUF_CB pfnStatePsConstBufCb;
+    PFND3D10DDI_STATE_IA_INPUTLAYOUT_CB pfnStateIaInputLayoutCb;
+    PFND3D10DDI_STATE_IA_VERTEXBUF_CB pfnStateIaVertexBufCb;
+    PFND3D10DDI_STATE_IA_INDEXBUF_CB pfnStateIaIndexBufCb;
+    PFND3D10DDI_STATE_GS_CONSTBUF_CB pfnStateGsConstBufCb;
+    PFND3D10DDI_STATE_GS_SHADER_CB pfnStateGsShaderCb;
+    PFND3D10DDI_STATE_IA_PRIMITIVE_TOPOLOGY_CB pfnStateIaPrimitiveTopologyCb;
+    PFND3D10DDI_STATE_VS_SRV_CB pfnStateVsSrvCb;
+    PFND3D10DDI_STATE_VS_SAMPLER_CB pfnStateVsSamplerCb;
+    PFND3D10DDI_STATE_GS_SRV_CB pfnStateGsSrvCb;
+    PFND3D10DDI_STATE_GS_SAMPLER_CB pfnStateGsSamplerCb;
+    PFND3D10DDI_STATE_OM_RENDERTARGETS_CB pfnStateOmRenderTargetsCb;
+    PFND3D10DDI_STATE_OM_BLENDSTATE_CB pfnStateOmBlendStateCb;
+    PFND3D10DDI_STATE_OM_DEPTHSTATE_CB pfnStateOmDepthStateCb;
+    PFND3D10DDI_STATE_RS_RASTSTATE_CB pfnStateRsRastStateCb;
+    PFND3D10DDI_STATE_SO_TARGETS_CB pfnStateSoTargetsCb;
+    PFND3D10DDI_STATE_RS_VIEWPORTS_CB pfnStateRsViewportsCb;
+    PFND3D10DDI_STATE_RS_SCISSOR_CB pfnStateRsScissorCb;
+    PFND3D10DDI_DISABLE_DEFERRED_STAGING_RESOURCE_DESTRUCTION_CB pfnDisableDeferredStagingResourceDestruction;
+    PFND3D10DDI_STATE_TEXTFILTERSIZE_CB pfnStateTextFilterSizeCb;
+    PFND3D11DDI_STATE_HS_SRV_CB pfnStateHsSrvCb;
+    PFND3D11DDI_STATE_HS_SHADER_CB pfnStateHsShaderCb;
+    PFND3D11DDI_STATE_HS_SAMPLER_CB pfnStateHsSamplerCb;
+    PFND3D11DDI_STATE_HS_CONSTBUF_CB pfnStateHsConstBufCb;
+    PFND3D11DDI_STATE_DS_SRV_CB pfnStateDsSrvCb;
+    PFND3D11DDI_STATE_DS_SHADER_CB pfnStateDsShaderCb;
+    PFND3D11DDI_STATE_DS_SAMPLER_CB pfnStateDsSamplerCb;
+    PFND3D11DDI_STATE_DS_CONSTBUF_CB pfnStateDsConstBufCb;
+    PFND3D11DDI_PERFORM_AMORTIZED_PROCESSING_CB pfnPerformAmortizedProcessingCb;
+    PFND3D11DDI_STATE_CS_SRV_CB              pfnStateCsSrvCb;
+    PFND3D11DDI_STATE_CS_UAV_CB              pfnStateCsUavCb;
+    PFND3D11DDI_STATE_CS_SHADER_CB           pfnStateCsShaderCb;
+    PFND3D11DDI_STATE_CS_SAMPLER_CB          pfnStateCsSamplerCb;
+    PFND3D11DDI_STATE_CS_CONSTBUF_CB         pfnStateCsConstBufCb;
+    PFND3DWDDM2_0DDI_CREATECONTEXT_CB        pfnCreateContextCb;
+    PFND3DWDDM2_0DDI_CREATECONTEXTVIRTUAL_CB pfnCreateContextVirtualCb;
+    PFND3DWDDM2_2DDI_SHADERCACHE_GET_VALUE_CB   pfnShaderCacheGetValueCb;
+    PFND3DWDDM2_2DDI_SHADERCACHE_STORE_VALUE_CB pfnShaderCacheStoreValueCb;
+    PFND3DWDDM2_2DDI_SHADERCACHE_ADDREF_RELEASE_CB pfnShaderCacheAddRefCb;
+    PFND3DWDDM2_2DDI_SHADERCACHE_ADDREF_RELEASE_CB pfnShaderCacheReleaseCb;
+    PFND3DWDDM2_6DDI_QUERY_SCANOUT_CAPS_CB         pfnQueryScanoutCapsCb;
+} D3DWDDM2_6DDI_CORELAYER_DEVICECALLBACKS;
+#endif /*D3D11DDI_MINOR_HEADER_VERSION >= 15*/
+
 #if D3D11DDI_MINOR_HEADER_VERSION >= 3
 typedef HRESULT ( APIENTRY* PFND3D10DDI_RETRIEVESUBOBJECT )(
     D3D10DDI_HDEVICE,
@@ -6807,6 +7127,9 @@ typedef struct D3D10DDIARG_CREATEDEVICE
 #if D3D11DDI_MINOR_HEADER_VERSION >= 11
         D3DWDDM2_2DDI_DEVICEFUNCS*      pWDDM2_2DeviceFuncs;     // in/out: (Use when Interface == D3DWDDM2_2_DDI_INTERFACE_VERSION)
 #endif
+#if D3D11DDI_MINOR_HEADER_VERSION >= 15
+        D3DWDDM2_6DDI_DEVICEFUNCS*      pWDDM2_6DeviceFuncs;     // in/out: (Use when Interface == D3DWDDM2_6_DDI_INTERFACE_VERSION)
+#endif
     };
 
     D3D10DDI_HDEVICE                hDrvDevice;             // in:  Driver private handle/ storage.
@@ -6823,6 +7146,10 @@ typedef struct D3D10DDIARG_CREATEDEVICE
 #endif
 #if D3D11DDI_MINOR_HEADER_VERSION >= 11
         CONST D3DWDDM2_2DDI_CORELAYER_DEVICECALLBACKS* pWDDM2_2UMCallbacks; // in:  callbacks that stay in usermode and 11-specific KM callbacks
+#endif
+#if D3D11DDI_MINOR_HEADER_VERSION >= 15
+        // Available if InterfaceVersion == D3DWDDM2_6_DDI_INTERFACE_VERSION && BuildVersion >= 3
+        CONST D3DWDDM2_6DDI_CORELAYER_DEVICECALLBACKS* pWDDM2_6UMCallbacks; // in:  callbacks that stay in usermode and 11-specific KM callbacks
 #endif
     };
     UINT                            Flags;                  // in:  D3D10DDI_CREATEDEVICE_FLAG_*
@@ -6844,6 +7171,7 @@ typedef struct D3D10DDIARG_CALCPRIVATEDEVICESIZE
 #define D3D11DDI_CREATEDEVICE_FLAG_DEBUGGABLE 0x20
 // Reserve 2 more bits for D3D11DDI_CREATEDEVICE_FLAG_3DPIPELINESUPPORT_MASK
 #define D3D11DDI_CREATEDEVICE_FLAG_ENABLE_INCREASED_PRIORITY 0x1000
+
 
 typedef SIZE_T (APIENTRY *PFND3D10DDI_CALCPRIVATEDEVICESIZE)(D3D10DDI_HADAPTER, _In_ CONST D3D10DDIARG_CALCPRIVATEDEVICESIZE*);
 typedef HRESULT (APIENTRY *PFND3D10DDI_CREATEDEVICE)(D3D10DDI_HADAPTER, _In_ D3D10DDIARG_CREATEDEVICE*);
@@ -6895,6 +7223,8 @@ typedef enum D3D10_2DDICAPS_TYPE
     D3DWDDM2_2DDICAPS_SHADERCACHE = 155,
     D3DWDDM2_2DDICAPS_TEXTURE_LAYOUT = 156,
     D3DWDDM2_2DDICAPS_SWIZZLE_PATTERN = 157,
+
+    D3D12_DOWNLEVEL_DDICAPS_UMDFILENAME = 200,
 #endif
 
 // Avoid overlap with D3DDDICAPS_TYPE values in d3dumddi.w, to allow drivers to unify caps concepts.
@@ -7266,6 +7596,11 @@ typedef struct D3DWDDM2_2DDI_SHADERCACHE_DATA
 } D3DWDDM2_2DDICAPS_SHADERCACHE_DATA;
 #endif
 
+typedef struct D3D12_DOWNLEVEL_DDI_UMDFILENAME
+{
+    WCHAR Filename[MAX_PATH];
+} D3D12_DOWNLEVEL_DDI_UMDFILENAME;
+
 typedef struct D3D10DDIARG_OPENADAPTER
 {
     D3D10DDI_HRTADAPTER            hRTAdapter;         // in:  Runtime handle
@@ -7530,6 +7865,15 @@ typedef HRESULT (APIENTRY *PFND3D10DDI_OPENADAPTER)(_Inout_ D3D10DDIARG_OPENADAP
 
 #define D3DWDDM2_5_DDI_INTERFACE_VERSION ((D3D11_DDI_MAJOR_VERSION << 16) | D3DWDDM2_5_DDI_MINOR_VERSION)
 #define D3DWDDM2_5_DDI_SUPPORTED ((((UINT64)D3DWDDM2_5_DDI_INTERFACE_VERSION) << 32) | (((UINT64)D3DWDDM2_5_DDI_BUILD_VERSION) << 16))
+#endif
+
+#if D3D11DDI_MINOR_HEADER_VERSION >= 15
+#define D3DWDDM2_6_DDI_MINOR_VERSION 39
+#define D3DWDDM2_6_DDI_BUILD_VERSION 4
+
+
+#define D3DWDDM2_6_DDI_INTERFACE_VERSION ((D3D11_DDI_MAJOR_VERSION << 16) | D3DWDDM2_6_DDI_MINOR_VERSION)
+#define D3DWDDM2_6_DDI_SUPPORTED ((((UINT64)D3DWDDM2_6_DDI_INTERFACE_VERSION) << 32) | (((UINT64)D3DWDDM2_6_DDI_BUILD_VERSION) << 16))
 #endif
 
 

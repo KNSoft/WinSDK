@@ -400,10 +400,24 @@ DECLARE_HANDLE(VMBPACKETCOMPLETION);
 /// to DISPATCH_LEVEL or higher.
 #define VMBUS_CHANNEL_FORMAT_FLAG_PAGED_BUFFER 0x4
 
+///\def VMBUS_CHANNEL_FORMAT_FLAG_DATA_IN_ONLY
+/// Use this flag to indicate that the associated MDL expects data to be 
+/// copied into it from the remote side. The initial contents of the buffer 
+/// will not be preserved.
+#define VMBUS_CHANNEL_FORMAT_FLAG_DATA_IN_ONLY 0x8
+
+///\def VMBUS_CHANNEL_FORMAT_FLAG_DATA_OUT_ONLY
+/// Use this flag to indicate that the associated MDL expects data to be 
+/// copied from it to the remote side. The remote side will not alter the 
+// contents of the buffer.
+#define VMBUS_CHANNEL_FORMAT_FLAG_DATA_OUT_ONLY 0x10
+
 #define VMBUS_CHANNEL_FORMAT_FLAGS (\
     VMBUS_CHANNEL_FORMAT_FLAG_WAIT_FOR_COMPLETION | \
     VMBUS_CHANNEL_FORMAT_FLAG_FORCE_MDL_LENGTH | \
-    VMBUS_CHANNEL_FORMAT_FLAG_PAGED_BUFFER)
+    VMBUS_CHANNEL_FORMAT_FLAG_PAGED_BUFFER | \
+    VMBUS_CHANNEL_FORMAT_FLAG_DATA_IN_ONLY | \
+    VMBUS_CHANNEL_FORMAT_FLAG_DATA_OUT_ONLY)
 
 #define VMBUS_CHANNEL_GPADL_FLAG_READ_ONLY 0x1
 
@@ -772,6 +786,30 @@ FN_VMB_CHANNEL_ALLOCATE(
 typedef FN_VMB_CHANNEL_ALLOCATE *PFN_VMB_CHANNEL_ALLOCATE;
 FN_VMB_CHANNEL_ALLOCATE VmbChannelAllocate;
 
+
+/// \page VmbChannelInitSetMaximumPacketCount VmbChannelInitSetMaximumPacketCount
+/// This function, which can only be called during channel initialization, sets
+/// the maximum number of packets that can be sent and inflight on this channel 
+/// at a given time. The size of the tracking structure for inflight packets 
+/// will be derived, in part, from this value. 
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param PacketCount Maximum number of packets.
+///
+/// \return STATUS_SUCCESS - function completed successfully
+/// \return STATUS_INVALID_PARAMETER_1 - channel parameter was invalid or in an invalid state(Disabled)
+/// \return STATUS_INVALID_PARAMETER_2 - packet count invalid; must be greater than zero.
+typedef
+NTSTATUS
+FN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_COUNT(
+    _In_ VMBCHANNEL Channel,
+    _In_range_(>,0) UINT32 PacketCount
+    );
+
+typedef FN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_COUNT *PFN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_COUNT;
+FN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_COUNT VmbChannelInitSetMaximumPacketCount;
+
+
 /// \page VmbChannelInitSetMaximumPacketSize VmbChannelInitSetMaximumPacketSize
 /// This function, which can only be called during channel initialization, sets
 /// the maximum packet size that can be delivered through this channel, i.e. the
@@ -820,6 +858,38 @@ FN_VMB_CHANNEL_INIT_SET_MAXIMUM_EXTERNAL_DATA(
 
 typedef FN_VMB_CHANNEL_INIT_SET_MAXIMUM_EXTERNAL_DATA *PFN_VMB_CHANNEL_INIT_SET_MAXIMUM_EXTERNAL_DATA;
 FN_VMB_CHANNEL_INIT_SET_MAXIMUM_EXTERNAL_DATA VmbChannelInitSetMaximumExternalData;
+
+/// \page VmbChannelInitSetBounceBufferSizes VmbChannelInitSetBounceBufferSizes
+/// Sets the desired initial, maximum and incremental adjustment sizes for 
+/// bounce buffers used by this channel.
+///
+/// \param Channel A pointer to a KMCL channel.
+/// \param InitialBufferSize The initial (and ever present) bounce buffer 
+/// size. Must be a multiple of PAGE_SIZE.
+/// \param BufferSizeIncrement The amount of increase each time the buffer 
+/// needs resizing. Specify zero to leave at the default value. Must be a 
+/// multiple of PAGE_SIZE.
+/// \param MaximumBufferSize The maximum amount of buffer size for this 
+/// channel. Specify zero to leave at the default value. Must be a multiple 
+/// of PAGE_SIZE.
+///
+/// \return STATUS_SUCCESS - function completed successfully
+/// \return STATUS_INVALID_PARAMETER_1 - Channel parameter was invalid or in 
+/// an invalid state(Disabled)
+/// \return STATUS_INVALID_PARAMETER_2 - InitialBufferSize invalid
+/// \return STATUS_INVALID_PARAMETER_3 - BufferSizeIncrement invalid
+/// \return STATUS_INVALID_PARAMETER_4 - MaximumBufferSize invalid
+typedef
+NTSTATUS
+FN_VMB_CHANNEL_INIT_SET_BOUNCE_BUFFER_SIZES(
+    _In_ VMBCHANNEL Channel,
+    _In_ UINT32 InitialBufferSize,
+    _In_ UINT32 BufferSizeIncrement,
+    _In_ UINT32 MaximumBufferSize
+    );
+
+typedef FN_VMB_CHANNEL_INIT_SET_BOUNCE_BUFFER_SIZES *PFN_VMB_CHANNEL_INIT_SET_BOUNCE_BUFFER_SIZES;
+FN_VMB_CHANNEL_INIT_SET_BOUNCE_BUFFER_SIZES VmbChannelInitSetBounceBufferSizes;
 
 /// \page VmbChannelInitSetClientContextSize VmbChannelInitSetClientContextSize
 /// Sets the size of the optional context area allocated for the client driver
@@ -1616,6 +1686,40 @@ FN_VMB_CHANNEL_CREATE_GPADL_FROM_BUFFER(
 typedef FN_VMB_CHANNEL_CREATE_GPADL_FROM_BUFFER *PFN_VMB_CHANNEL_CREATE_GPADL_FROM_BUFFER;
 FN_VMB_CHANNEL_CREATE_GPADL_FROM_BUFFER VmbChannelCreateGpadlFromBuffer;
 
+/// \page VmbChannelCreateGpadlFromPfnList VmbChannelCreateGpadlFromPfnList
+/// Establishes a GPADL describing a client-side buffer. The GPADL may be used
+/// in the server to access the buffer.  When this function returns, the server
+/// endpoint may call \ref VmbChannelMapGpadl, as VMBus will already have sent
+/// the GPADL description to the opposite endpoint and received confirmation.
+///
+/// The GPADL must be deleted with \ref VmbChannelDeleteGpadl when finished.
+///
+/// See \ref gpadl_theory for more information.
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param Flags \parblock The possible flags are: \ref VMBUS_CHANNEL_GPADL_READ_ONLY If set,
+///     this buffer should be considered read-only. Otherwise, it may be written
+///     to by the server. Note that this is not a security measure; it only has
+///     the potential to improve snapshot and live migration performance.
+/// \param PfnList A pointer to a contiguous array of PFN_NUMBERs describing 
+///     pages that have been probed and locked.
+/// \param PfnListCount Number of elements in PfnList
+/// \param GpadlHandle Returns a GPADL handle of the created MDL. This should be
+///     sent to the server to use with VmbChannelMapGpadl.
+typedef
+NTSTATUS
+FN_VMB_CHANNEL_CREATE_GPADL_FROM_PFN_LIST(
+    _In_ VMBCHANNEL Channel,
+    _In_ UINT32 Flags,
+    _In_ PPFN_NUMBER PfnList,
+    _In_ UINT32 PfnListCount,
+    _Out_ PUINT32 GpadlHandle
+    );
+
+typedef FN_VMB_CHANNEL_CREATE_GPADL_FROM_PFN_LIST *PFN_VMB_CHANNEL_CREATE_GPADL_FROM_PFN_LIST;
+FN_VMB_CHANNEL_CREATE_GPADL_FROM_PFN_LIST VmbChannelCreateGpadlFromPfnList;
+
+
 /// \page VmbChannelDeleteGpadl VmbChannelDeleteGpadl
 /// Deletes a GPADL mapped by \ref VmbChannelCreateGpadlFromMdl or
 /// \ref VmbChannelCreateGpadlFromBuffer. If the GPADL is currently mapped to the
@@ -2038,6 +2142,30 @@ FN_VMB_CHANNEL_GET_MMIO_SPACE(
 typedef FN_VMB_CHANNEL_GET_MMIO_SPACE *PFN_VMB_CHANNEL_GET_MMIO_SPACE;
 FN_VMB_CHANNEL_GET_MMIO_SPACE VmbChannelGetMmioSpace;
 
+/// \page VmbChannelAllocateBounceBuffer VmbChannelAllocateBounceBuffer
+/// Allocate a buffer for the isolated and blind virtual machine scenarios. 
+/// The bounce buffer is used in place of individual packet MDLs.
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param BufferSize Byte count of the new bounce buffer. Must be a multiple 
+/// of PAGE_SIZE.
+///
+/// \returns STATUS_SUCCESS
+/// \returns STATUS_NOT_SUPPORTED - if called on a server channel.
+/// \returns STATUS_INSUFFICIENT_RESOURCES - unable to allocate or map the 
+/// requested memory.
+/// \return STATUS_INVALID_PARAMETER - BufferSize is invalid.
+
+typedef
+NTSTATUS
+FN_VMB_CHANNEL_ALLOCATE_BOUNCE_BUFFER(
+    _In_ VMBCHANNEL Channel,
+    _In_ UINT32 BufferSize
+    );
+
+typedef FN_VMB_CHANNEL_ALLOCATE_BOUNCE_BUFFER *PFN_VMB_CHANNEL_ALLOCATE_BOUNCE_BUFFER;
+FN_VMB_CHANNEL_ALLOCATE_BOUNCE_BUFFER VmbChannelAllocateBounceBuffer;
+
 /// \page VmbChannelSizeofPacket VmbChannelSizeofPacket
 /// Calculates the necessary size for buffers to be used with
 /// \ref VmbPacketInitialize.
@@ -2201,7 +2329,9 @@ typedef struct _KMCL_SERVER_ONLY_METHODS {
 
 #define KMCL_CLIENT_INTERFACE_VERSION_V1     1
 #define KMCL_CLIENT_INTERFACE_VERSION_V2     2
-#define KMCL_CLIENT_INTERFACE_VERSION_LATEST KMCL_CLIENT_INTERFACE_VERSION_V2
+#define KMCL_CLIENT_INTERFACE_VERSION_V3     3
+#define KMCL_CLIENT_INTERFACE_VERSION_V4     4
+#define KMCL_CLIENT_INTERFACE_VERSION_LATEST KMCL_CLIENT_INTERFACE_VERSION_V4
 /* 4aecb860-e161-42bb-a5ca-77f3a9645905 */
 DEFINE_GUID(KMCL_CLIENT_INTERFACE_TYPE, 0x4aecb860, 0xe161, 0x42bb, 0xa5, 0xca, 0x77, 0xf3, 0xa9, 0x64, 0x59, 0x05);
 
@@ -2281,6 +2411,41 @@ typedef struct _KMCL_CLIENT_INTERFACE_V2 {
 } KMCL_CLIENT_INTERFACE_V2, *PKMCL_CLIENT_INTERFACE_V2;
 
 C_ASSERT(sizeof(KMCL_CLIENT_INTERFACE_V2) <= MAXUSHORT);
+
+#ifdef __cplusplus
+
+typedef struct _KMCL_CLIENT_INTERFACE_V3 : KMCL_CLIENT_INTERFACE_V2 {
+
+#else
+
+typedef struct _KMCL_CLIENT_INTERFACE_V3 {
+    KMCL_CLIENT_INTERFACE_V2;
+
+#endif
+
+    PFN_VMB_CHANNEL_INIT_SET_BOUNCE_BUFFER_SIZES            VmbChannelInitSetBounceBufferSizes;
+    PFN_VMB_CHANNEL_ALLOCATE_BOUNCE_BUFFER                  VmbChannelAllocateBounceBuffer;
+} KMCL_CLIENT_INTERFACE_V3, *PKMCL_CLIENT_INTERFACE_V3;
+
+C_ASSERT(sizeof(KMCL_CLIENT_INTERFACE_V3) <= MAXUSHORT);
+
+
+#ifdef __cplusplus
+
+typedef struct _KMCL_CLIENT_INTERFACE_V4 : KMCL_CLIENT_INTERFACE_V3 {
+
+#else
+
+typedef struct _KMCL_CLIENT_INTERFACE_V4 {
+    KMCL_CLIENT_INTERFACE_V3;
+
+#endif
+    PFN_VMB_CHANNEL_INIT_SET_MAXIMUM_PACKET_COUNT       VmbChannelInitSetMaximumPacketCount;
+    PFN_VMB_CHANNEL_CREATE_GPADL_FROM_PFN_LIST          VmbChannelCreateGpadlFromPfnList;
+} KMCL_CLIENT_INTERFACE_V4, *PKMCL_CLIENT_INTERFACE_V4;
+
+
+C_ASSERT(sizeof(KMCL_CLIENT_INTERFACE_V4) <= MAXUSHORT);
 
 
 #define KMCL_SERVER_INTERFACE_VERSION_V1     1

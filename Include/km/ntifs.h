@@ -1137,6 +1137,9 @@ functions.
 #define SE_SECURITY_DESCRIPTOR_FLAG_NO_ACCESS_FILTER_ACE    0x00000004
 #define SE_SECURITY_DESCRIPTOR_VALID_FLAGS                  0x00000007
 
+#define SE_ACCESS_CHECK_FLAG_NO_LEARNING_MODE_LOGGING       0x00000008
+#define SE_ACCESS_CHECK_VALID_FLAGS                         0x00000008
+
 
 typedef struct _SE_SECURITY_DESCRIPTOR
 {
@@ -1346,6 +1349,8 @@ typedef enum _TOKEN_INFORMATION_CLASS {
     TokenBnoIsolation,
     TokenChildProcessFlags,
     TokenIsLessPrivilegedAppContainer,
+    TokenIsSandboxed,
+    TokenOriginatingProcessTrustLevel,
     MaxTokenInfoClass  // MaxTokenInfoClass should always be the last enum
 } TOKEN_INFORMATION_CLASS, *PTOKEN_INFORMATION_CLASS;
 
@@ -6428,26 +6433,55 @@ typedef struct _FILE_OBJECTID_INFORMATION {
 
 
 
+//================ FileInternalInformation ====================================
+
 typedef struct _FILE_INTERNAL_INFORMATION {
     LARGE_INTEGER IndexNumber;
 } FILE_INTERNAL_INFORMATION, *PFILE_INTERNAL_INFORMATION;
+
+//================ FileIdInformation ==========================================
 
 typedef struct _FILE_ID_INFORMATION {
     ULONGLONG VolumeSerialNumber;
     FILE_ID_128 FileId;
 } FILE_ID_INFORMATION, *PFILE_ID_INFORMATION;
 
+//================ FileEaInformation ==========================================
+
 typedef struct _FILE_EA_INFORMATION {
     ULONG EaSize;
 } FILE_EA_INFORMATION, *PFILE_EA_INFORMATION;
+
+//================ FileAccessInformation ======================================
 
 typedef struct _FILE_ACCESS_INFORMATION {
     ACCESS_MASK AccessFlags;
 } FILE_ACCESS_INFORMATION, *PFILE_ACCESS_INFORMATION;
 
+
+//================ FileModeInformation ========================================
+
 typedef struct _FILE_MODE_INFORMATION {
     ULONG Mode;
 } FILE_MODE_INFORMATION, *PFILE_MODE_INFORMATION;
+
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN7)
+
+//
+//  These values are returned by the FileShortNameInformation file information class
+//  in the IoStatus.Information field.  They  identify exactly what occurred
+//  when attempting to remove a shortname from a file.  These only have meaning
+//  when STATUS_SUCCESS is returned.
+//
+
+#define NO_8DOT3_NAME_PRESENT               (0x00000001)    //The file did not have a shortname
+#define REMOVED_8DOT3_NAME                  (0x00000002)    //The file did have a shortname and it was removed
+
+#endif /* NTDDI_VERSION >= NTDDI_WIN7 */
+
+//================ FileAllInformation =========================================
 
 typedef struct _FILE_ALL_INFORMATION {
     FILE_BASIC_INFORMATION BasicInformation;
@@ -6461,6 +6495,8 @@ typedef struct _FILE_ALL_INFORMATION {
     FILE_NAME_INFORMATION NameInformation;
 } FILE_ALL_INFORMATION, *PFILE_ALL_INFORMATION;
 
+
+//================ FileStatInformation ========================================
 
 typedef struct _FILE_STAT_INFORMATION {
     LARGE_INTEGER FileId;
@@ -6507,25 +6543,35 @@ typedef struct _FILE_STAT_LX_INFORMATION {
     ULONG LxDeviceIdMinor;
 } FILE_STAT_LX_INFORMATION, *PFILE_STAT_LX_INFORMATION;
 
-//
-// Types and contants used for FileCaseSensitiveInformation.
-//
+//================ FileCaseSensitiveInformation ===============================
 
 //
-// Flag definitions for Flags in FILE_CASE_SENSITIVE_INFORMATION.
+// Flag definitions for Flags in FILE_CASE_SENSITIVE_INFORMATION. Let's include
+// the flag definitions in WinNT to use these with FILE_CASE_SENSITIVE_INFO too
+// in Win32.
+//
+
+// begin_winnt
+
+//
+// Flag definitions for Flags in FILE_CASE_SENSITIVE_INFO.
 //
 
 #define FILE_CS_FLAG_CASE_SENSITIVE_DIR     0x00000001
+
+// end_winnt
 
 typedef struct _FILE_CASE_SENSITIVE_INFORMATION {
     ULONG Flags;
 } FILE_CASE_SENSITIVE_INFORMATION, *PFILE_CASE_SENSITIVE_INFORMATION;
 
+//================ FileAllocationInformation ==================================
 
 typedef struct _FILE_ALLOCATION_INFORMATION {
     LARGE_INTEGER AllocationSize;
 } FILE_ALLOCATION_INFORMATION, *PFILE_ALLOCATION_INFORMATION;
 
+//================ FileCompressionInformation =================================
 
 typedef struct _FILE_COMPRESSION_INFORMATION {
     LARGE_INTEGER CompressedFileSize;
@@ -6537,8 +6583,8 @@ typedef struct _FILE_COMPRESSION_INFORMATION {
 } FILE_COMPRESSION_INFORMATION, *PFILE_COMPRESSION_INFORMATION;
 
 
-#define CHECKSUM_ENFORCEMENT_OFF       0x00000001
-
+//================ FileLinkInformation ========================================
+//================ FileLinkInformationEx ======================================
 
 #ifdef _MAC
 #pragma warning( disable : 4121)
@@ -6559,6 +6605,12 @@ typedef struct _FILE_COMPRESSION_INFORMATION {
 #define FILE_LINK_IGNORE_READONLY_ATTRIBUTE             0x00000040
 #endif
 
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)  // ABRACADABRA_19H1
+#define FILE_LINK_FORCE_RESIZE_TARGET_SR                0x00000080
+#define FILE_LINK_FORCE_RESIZE_SOURCE_SR                0x00000100
+#define FILE_LINK_FORCE_RESIZE_SR                       0x00000180  // combination
+#endif
+
 typedef struct _FILE_LINK_INFORMATION {
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
     union {
@@ -6574,6 +6626,8 @@ typedef struct _FILE_LINK_INFORMATION {
 } FILE_LINK_INFORMATION, *PFILE_LINK_INFORMATION;
 
 
+//================ FileMoveClusterInformation =================================
+
 #ifdef _MAC
 #pragma warning( default : 4121 )
 #endif
@@ -6584,6 +6638,9 @@ typedef struct _FILE_MOVE_CLUSTER_INFORMATION {
     ULONG FileNameLength;
     WCHAR FileName[1];
 } FILE_MOVE_CLUSTER_INFORMATION, *PFILE_MOVE_CLUSTER_INFORMATION;
+
+//================ FileRenameInformation ======================================
+//================ FileRenameInformationEx ====================================
 
 #ifdef _MAC
 #pragma warning( disable : 4121)
@@ -6606,6 +6663,12 @@ typedef struct _FILE_MOVE_CLUSTER_INFORMATION {
 #define FILE_RENAME_IGNORE_READONLY_ATTRIBUTE             0x00000040
 #endif
 
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)  // ABRACADABRA_19H1
+#define FILE_RENAME_FORCE_RESIZE_TARGET_SR                0x00000080
+#define FILE_RENAME_FORCE_RESIZE_SOURCE_SR                0x00000100
+#define FILE_RENAME_FORCE_RESIZE_SR                       0x00000180  // combination
+#endif
+
 typedef struct _FILE_RENAME_INFORMATION {
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
     union {
@@ -6624,6 +6687,8 @@ typedef struct _FILE_RENAME_INFORMATION {
 #pragma warning( default : 4121 )
 #endif
 
+//================ FileStreamInformation ======================================
+
 typedef struct _FILE_STREAM_INFORMATION {
     ULONG NextEntryOffset;
     ULONG StreamNameLength;
@@ -6632,21 +6697,29 @@ typedef struct _FILE_STREAM_INFORMATION {
     WCHAR StreamName[1];
 } FILE_STREAM_INFORMATION, *PFILE_STREAM_INFORMATION;
 
+//================ FileTrackingInformation ====================================
+
 typedef struct _FILE_TRACKING_INFORMATION {
     HANDLE DestinationFile;
     ULONG ObjectInformationLength;
     CHAR ObjectInformation[1];
 } FILE_TRACKING_INFORMATION, *PFILE_TRACKING_INFORMATION;
 
+//================ FileCompletionInformation ==================================
+
 typedef struct _FILE_COMPLETION_INFORMATION {
     HANDLE Port;
     PVOID Key;
 } FILE_COMPLETION_INFORMATION, *PFILE_COMPLETION_INFORMATION;
 
+//================ FilePipeInformation ========================================
+
 typedef struct _FILE_PIPE_INFORMATION {
      ULONG ReadMode;
      ULONG CompletionMode;
 } FILE_PIPE_INFORMATION, *PFILE_PIPE_INFORMATION;
+
+//================ FilePipeLocalInformation ===================================
 
 typedef struct _FILE_PIPE_LOCAL_INFORMATION {
      ULONG NamedPipeType;
@@ -6661,11 +6734,14 @@ typedef struct _FILE_PIPE_LOCAL_INFORMATION {
      ULONG NamedPipeEnd;
 } FILE_PIPE_LOCAL_INFORMATION, *PFILE_PIPE_LOCAL_INFORMATION;
 
+//================ FilePipeRemoteInformation ==================================
+
 typedef struct _FILE_PIPE_REMOTE_INFORMATION {
      LARGE_INTEGER CollectDataTime;
      ULONG MaximumCollectionCount;
 } FILE_PIPE_REMOTE_INFORMATION, *PFILE_PIPE_REMOTE_INFORMATION;
 
+//================ FileMailslotQueryInformation ===============================
 
 typedef struct _FILE_MAILSLOT_QUERY_INFORMATION {
     ULONG MaximumMessageSize;
@@ -6675,14 +6751,20 @@ typedef struct _FILE_MAILSLOT_QUERY_INFORMATION {
     LARGE_INTEGER ReadTimeout;
 } FILE_MAILSLOT_QUERY_INFORMATION, *PFILE_MAILSLOT_QUERY_INFORMATION;
 
+//================ FileMailslotSetInformation =================================
+
 typedef struct _FILE_MAILSLOT_SET_INFORMATION {
     PLARGE_INTEGER ReadTimeout;
 } FILE_MAILSLOT_SET_INFORMATION, *PFILE_MAILSLOT_SET_INFORMATION;
+
+//================ FileReparsePointInformation ================================
 
 typedef struct _FILE_REPARSE_POINT_INFORMATION {
     LONGLONG FileReference;
     ULONG Tag;
 } FILE_REPARSE_POINT_INFORMATION, *PFILE_REPARSE_POINT_INFORMATION;
+
+//================ FileHardLinkInformation ====================================
 
 typedef struct _FILE_LINK_ENTRY_INFORMATION {
     ULONG NextEntryOffset;
@@ -6697,6 +6779,8 @@ typedef struct _FILE_LINKS_INFORMATION {
     FILE_LINK_ENTRY_INFORMATION Entry;
 } FILE_LINKS_INFORMATION, *PFILE_LINKS_INFORMATION;
 
+//================ FileHardLinkFullIdInformation ==============================
+
 typedef struct _FILE_LINK_ENTRY_FULL_ID_INFORMATION {
     ULONG NextEntryOffset;
     FILE_ID_128 ParentFileId;
@@ -6710,10 +6794,14 @@ typedef struct _FILE_LINKS_FULL_ID_INFORMATION {
     FILE_LINK_ENTRY_FULL_ID_INFORMATION Entry;
 } FILE_LINKS_FULL_ID_INFORMATION, *PFILE_LINKS_FULL_ID_INFORMATION;
 
+//================ FileNetworkPhysicalNameInformation =========================
+
 typedef struct _FILE_NETWORK_PHYSICAL_NAME_INFORMATION {
     ULONG FileNameLength;
     WCHAR FileName[1];
 } FILE_NETWORK_PHYSICAL_NAME_INFORMATION, *PFILE_NETWORK_PHYSICAL_NAME_INFORMATION;
+
+//================ FileStandardLinkInformation ================================
 
 typedef struct _FILE_STANDARD_LINK_INFORMATION {
     ULONG NumberOfAccessibleLinks;
@@ -6954,6 +7042,23 @@ typedef struct _FILE_FS_DATA_COPY_INFORMATION {
     ULONG NumberOfCopies;
 } FILE_FS_DATA_COPY_INFORMATION, *PFILE_FS_DATA_COPY_INFORMATION;
 
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+
+#define FLAGS_END_OF_FILE_INFO_EX_EXTEND_PAGING             0x00000001
+#define FLAGS_END_OF_FILE_INFO_EX_NO_EXTRA_PAGING_EXTEND    0x00000002
+#define FLAGS_END_OF_FILE_INFO_EX_TIME_CONSTRAINED          0x00000004
+
+#define FLAGS_DELAY_REASONS_LOG_FILE_FULL   0x00000001
+#define FLAGS_DELAY_REASONS_BITMAP_SCANNED  0x00000002
+
+typedef struct _FILE_END_OF_FILE_INFORMATION_EX {
+    LARGE_INTEGER EndOfFile;
+    LARGE_INTEGER PagingFileSizeInMM;
+    LARGE_INTEGER PagingFileMaxSize;
+    ULONG Flags;
+} FILE_END_OF_FILE_INFORMATION_EX, *PFILE_END_OF_FILE_INFORMATION_EX;
+#endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 //@[comment("MVI_tracked")]
@@ -7418,7 +7523,7 @@ NtFlushBuffersFileEx (
 #define FSCTL_MARK_HANDLE               CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 63, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_SIS_COPYFILE              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 64, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_SIS_LINK_FILES            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 65, METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
-// decommissional fsctl value                                             66
+// decommissioned fsctl value                                             66
 // decommissioned fsctl value                                             67
 // decommissioned fsctl value                                             68
 #define FSCTL_RECALL_FILE               CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 69, METHOD_NEITHER, FILE_ANY_ACCESS)
@@ -7693,7 +7798,7 @@ NtFlushBuffersFileEx (
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
 
 //
-// The following long list of structs are associated with the preceeding
+// The following long list of structs are associated with the preceding
 // file system fsctls.
 //
 
@@ -8236,9 +8341,9 @@ typedef union {
 #define USN_REASON_CLOSE                 (0x80000000)
 
 //
-//==================== FSCTL_QUERY_USN_JOUNAL ======================
+//==================== FSCTL_QUERY_USN_JOURNAL ======================
 //
-//  Structure for FSCTL_QUERY_USN_JOUNAL
+//  Structure for FSCTL_QUERY_USN_JOURNAL
 //
 
 typedef struct {
@@ -8309,11 +8414,15 @@ typedef struct {
 
 #define USN_DELETE_VALID_FLAGS              (0x00000003)
 
+#endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
+
 //
 //==================== FSCTL_MARK_HANDLE ======================
 //
 //  Structure for FSCTL_MARK_HANDLE
 //
+
+#if (NTDDI_VERSION >= NTDDI_WIN2K)
 
 #if _MSC_VER >= 1200
 #pragma warning(push)
@@ -8322,14 +8431,14 @@ typedef struct {
 
 typedef struct {
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN8)
     union {
         ULONG UsnSourceInfo;
         ULONG CopyNumber;
     } DUMMYUNIONNAME;
 #else
     ULONG UsnSourceInfo;
-#endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN8 */
+#endif /*NTDDI_VERSION >= NTDDI_WIN8 */
 
     HANDLE VolumeHandle;
     ULONG HandleInfo;
@@ -8343,14 +8452,14 @@ typedef struct {
 
 typedef struct {
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN8)
     union {
         ULONG UsnSourceInfo;
         ULONG CopyNumber;
     } DUMMYUNIONNAME;
 #else
     ULONG UsnSourceInfo;
-#endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN8 */
+#endif /*NTDDI_VERSION >= NTDDI_WIN8 */
     UINT32 VolumeHandle;
     ULONG HandleInfo;
 
@@ -8379,7 +8488,7 @@ typedef struct {
 //          replica set.
 //
 //      USN_SOURCE_CLIENT_REPLICATION_MANAGEMENT - Replication is being performed
-//          on clint systems either from the cloud or servers
+//          on client systems either from the cloud or servers
 //
 
 #define USN_SOURCE_DATA_MANAGEMENT                  (0x00000001)
@@ -8396,9 +8505,11 @@ typedef struct {
 //
 //  Flags for the HandleInfo field above
 //
+//  Introduced in W2K
 //  MARK_HANDLE_PROTECT_CLUSTERS - disallow any defragmenting (FSCTL_MOVE_FILE) until the
 //      the handle is closed
 //
+//  Introduced in Vista
 //  MARK_HANDLE_TXF_SYSTEM_LOG - indicates that this stream is being used as the Txf
 //      log for an RM on the volume.  Must be called in the kernel using
 //      IRP_MN_KERNEL_CALL.
@@ -8406,73 +8517,95 @@ typedef struct {
 //  MARK_HANDLE_NOT_TXF_SYSTEM_LOG - indicates that this user is no longer using this
 //      object as a log file.
 //
-//  MARK_HANDLE_REALTIME
+//  Introduced in Win7
+//  MARK_HANDLE_REALTIME - only supported by the UDFS file system.  Marks the device
+//      to do realtime streaming of video
 //
-//  MARK_HANDLE_NOT_REALTIME
+//  MARK_HANDLE_NOT_REALTIME - only supported by the UDFS file system.  Marks the device
+//      to do realtime streaming of video
 //
+//  MARK_HANDLE_CLOUD_SYNC - this flag is deprecated and is no longer used
+//
+//  Introduced in Win8
 //  MARK_HANDLE_READ_COPY - indicates the data must be read from the specified copy.
 //
 //  MARK_HANDLE_NOT_READ_COPY - indicates the data is no longer to be read from a specific copy.
 //
-//  MARK_HANDLE_CLOUD_SYNC - indicates that the handle belongs to the cloud sync engine
+//  Introduced in WinBlue (win 8.1)
+//  MARK_HANDLE_FILTER_METADATA - Flag reserved for internal Microsoft use
+//
+//  MARK_HANDLE_RETURN_PURGE_FAILURE - When intermixing memory mapped/cached IO with
+//      non-cached IO the system attempts, when a non-cached io is issued, to purge
+//      memory mappings for the range of the non-cached IO.  If these purges fail
+//      the system normally does not return the failure to the caller which can
+//      lead to corrupted state (which is why the documentation says to not do this).
+//      This flag tells the system to return purge failures for the given handle
+//      so the application can better handle this situation
+//
+//  Introduced in WinThreshold (win10)
+//  MARK_HANDLE_DISABLE_FILE_METADATA_OPTIMIZATION - This disabled the FRS compaction
+//      feature on the given file.
+//
+//  MARK_HANDLE_ENABLE_USN_SOURCE_ON_PAGING_IO - Tells NTFS to set the given UsnSourceInfo
+//      value on Paging writes in the USN Journal.  Traditionally this was not
+//      done on paging writes since you did not know what thread made the given
+//      changes.  This is an override.  This only works of the FileObject MM is
+//      holding on to has this state associated with it.
+//
+//  MARK_HANDLE_SKIP_COHERENCY_SYNC_DISALLOW_WRITES - Setting this flag tells
+//      the system that writes are not allowed on this file.  If someone tries
+//      to open the file for write access, the operation is failed with STATUS_ACCESS_DENIED.
+//      If a write is seen the operation is failed with STATUS_MARKED_TO_DISALLOW_WRITES
+//
+//  Introduced in RS4 (win10)
+//  MARK_HANDLE_ENABLE_CPU_CACHE - Flag reserved for internal Microsoft use, it is
+//      only used on the
 //
 
 #define MARK_HANDLE_PROTECT_CLUSTERS                    (0x00000001)
 #define MARK_HANDLE_TXF_SYSTEM_LOG                      (0x00000004)
 #define MARK_HANDLE_NOT_TXF_SYSTEM_LOG                  (0x00000008)
 
-#endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
+#endif /* NTDDI_VERSION >= NTDDI_WIN2K */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
+#if (NTDDI_VERSION >= NTDDI_WIN7)
 
 #define MARK_HANDLE_REALTIME                            (0x00000020)
 #define MARK_HANDLE_NOT_REALTIME                        (0x00000040)
-#define MARK_HANDLE_FILTER_METADATA                     (0x00000200)        // 8.1 update and newer
+#define MARK_HANDLE_FILTER_METADATA                     (0x00000200)        // 8.1 and newer
+#define MARK_HANDLE_CLOUD_SYNC                          (0x00000800)
 
-#endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN7 */
+#endif /* NTDDI_VERSION >= NTDDI_WIN7 */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN8)
 
 #define MARK_HANDLE_READ_COPY                           (0x00000080)
 #define MARK_HANDLE_NOT_READ_COPY                       (0x00000100)
 #define MARK_HANDLE_RETURN_PURGE_FAILURE                (0x00000400)        // 8.1 and newer
 
-#endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN8 */
+#endif /*NTDDI_VERSION >= NTDDI_WIN8 */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
-#define MARK_HANDLE_CLOUD_SYNC                          (0x00000800)
+#define MARK_HANDLE_DISABLE_FILE_METADATA_OPTIMIZATION  (0x00001000)
+#define MARK_HANDLE_ENABLE_USN_SOURCE_ON_PAGING_IO      (0x00002000)
+#define MARK_HANDLE_SKIP_COHERENCY_SYNC_DISALLOW_WRITES (0x00004000)
 
-#endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN7 */
+#endif /*NTDDI_VERSION >= NTDDI_WINTHRESHOLD */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD)
-
-#define MARK_HANDLE_DISABLE_FILE_METADATA_OPTIMIZATION  (0x00001000)        // 9.0 and newer
-#define MARK_HANDLE_ENABLE_USN_SOURCE_ON_PAGING_IO      (0x00002000)        // 9.0 and newer
-#define MARK_HANDLE_SKIP_COHERENCY_SYNC_DISALLOW_WRITES (0x00004000)        // 9.0 and newer
-
-#endif /*_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD */
-
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 
 #define MARK_HANDLE_ENABLE_CPU_CACHE                    (0x10000000)
 
-#endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4 */
+#endif /*NTDDI_VERSION >= NTDDI_WIN10_RS4 */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
-
-#define NO_8DOT3_NAME_PRESENT               (0x00000001)
-#define REMOVED_8DOT3_NAME                  (0x00000002)
-
-#endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN7 */
-
-
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 //
 //==================== FSCTL_SECURITY_ID_CHECK ======================
 //
 // Structure for FSCTL_SECURITY_ID_CHECK
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 
 typedef struct {
 
@@ -8482,22 +8615,25 @@ typedef struct {
 } BULK_SECURITY_TEST_DATA, *PBULK_SECURITY_TEST_DATA;
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 //
 //==================== FSCTL_IS_VOLUME_DIRTY ======================
 //
-//  Output flags for the FSCTL_IS_VOLUME_DIRTY
+//  Output flags for the FSCTL_IS_VOLUME_DIRTY is a ULONG
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 
 #define VOLUME_IS_DIRTY                  (0x00000001)
 #define VOLUME_UPGRADE_SCHEDULED         (0x00000002)
 #define VOLUME_SESSION_OPEN              (0x00000004)
+
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
 
+//
+//==================== FSCTL_FILE_PREFETCH ======================
+//
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
-//
-// Structures for FSCTL_FILE_PREFETCH
-//
 
 typedef struct _FILE_PREFETCH {
     ULONG Type;
@@ -8534,7 +8670,7 @@ typedef struct _FILESYSTEM_STATISTICS {
     USHORT FileSystemType;
     USHORT Version;                     // currently version 1
 
-    ULONG SizeOfCompleteStructure;      // must by a mutiple of 64 bytes
+    ULONG SizeOfCompleteStructure;      // must by a multiple of 64 bytes
 
     ULONG UserFileReads;
     ULONG UserFileReadBytes;
@@ -8687,7 +8823,7 @@ typedef struct _NTFS_STATISTICS {
         ULONG Clusters;             // number of clusters allocated
         ULONG Hints;                // number of times a hint was specified
 
-        ULONG RunsReturned;         // number of runs used to satisify all the requests
+        ULONG RunsReturned;         // number of runs used to satisfy all the requests
 
         ULONG HintsHonored;         // number of times the hint was useful
         ULONG HintsClusters;        // number of clusters allocated via the hint
@@ -8714,7 +8850,7 @@ typedef struct _FILESYSTEM_STATISTICS_EX {
     USHORT FileSystemType;
     USHORT Version;                     // currently version 1
 
-    ULONG SizeOfCompleteStructure;      // must by a mutiple of 64 bytes
+    ULONG SizeOfCompleteStructure;      // must by a multiple of 64 bytes
 
     ULONGLONG UserFileReads;
     ULONGLONG UserFileReadBytes;
@@ -8826,7 +8962,7 @@ typedef struct _NTFS_STATISTICS_EX {
 
     struct {
         ULONG Calls;                    // number of individual calls to allocate clusters
-        ULONG RunsReturned;             // number of runs used to satisify all the requests
+        ULONG RunsReturned;             // number of runs used to satisfy all the requests
         ULONG Hints;                    // number of times a hint was specified
         ULONG HintsHonored;             // number of times the hint was useful
         ULONG Cache;                    // number of times the cache was useful other than the hint
@@ -8869,7 +9005,6 @@ typedef struct _NTFS_STATISTICS_EX {
 
 } NTFS_STATISTICS_EX, *PNTFS_STATISTICS_EX;
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 //
 //==================== FSCTL_SET_OBJECT_ID ================================
 //==================== FSCTL_GET_OBJECT_ID ================================
@@ -8878,6 +9013,8 @@ typedef struct _NTFS_STATISTICS_EX {
 //  Structures for FSCTL_SET_OBJECT_ID, FSCTL_GET_OBJECT_ID, and
 //  FSCTL_CREATE_OR_GET_OBJECT_ID
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 
 #if _MSC_VER >= 1200
 #pragma warning(push)
@@ -8916,13 +9053,13 @@ typedef struct _FILE_OBJECTID_BUFFER {
 
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
 
-
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 //
 //==================== FSCTL_SET_SPARSE ======================
 //
 // Structure for FSCTL_SET_SPARSE
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 
 typedef struct _FILE_SET_SPARSE_BUFFER {
     BOOLEAN SetSparse;
@@ -8932,12 +9069,13 @@ typedef struct _FILE_SET_SPARSE_BUFFER {
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
 
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 //
 //==================== FSCTL_SET_ZERO_DATA ======================
 //
 // Structure for FSCTL_SET_ZERO_DATA
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 
 typedef struct _FILE_ZERO_DATA_INFORMATION {
 
@@ -8950,7 +9088,6 @@ typedef struct _FILE_ZERO_DATA_INFORMATION {
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD)
 
-#define FILE_ZERO_DATA_INFORMATION_FLAG_PRESERVE_CACHED_DATA       (0x00000001)
 typedef struct _FILE_ZERO_DATA_INFORMATION_EX {
 
     LARGE_INTEGER FileOffset;
@@ -8959,14 +9096,22 @@ typedef struct _FILE_ZERO_DATA_INFORMATION_EX {
 
 } FILE_ZERO_DATA_INFORMATION_EX, *PFILE_ZERO_DATA_INFORMATION_EX;
 
+//
+//  When set tells the file system to not purge the cache for the given range
+//  being zeroed
+//
+
+#define FILE_ZERO_DATA_INFORMATION_FLAG_PRESERVE_CACHED_DATA       (0x00000001)
+
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 //
 //==================== FSCTL_QUERY_ALLOCATED_RANGES ======================
 //
 // Structure for FSCTL_QUERY_ALLOCATED_RANGES
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 
 //
 // Querying the allocated ranges requires an output buffer to store the
@@ -8981,10 +9126,9 @@ typedef struct _FILE_ALLOCATED_RANGE_BUFFER {
     LARGE_INTEGER Length;
 
 } FILE_ALLOCATED_RANGE_BUFFER, *PFILE_ALLOCATED_RANGE_BUFFER;
+
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
 
-
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 //
 //====================== FSCTL_SET_ENCRYPTION ===============================
 //====================== FSCTL_WRITE_RAW_ENCRYPTED ==========================
@@ -8992,6 +9136,8 @@ typedef struct _FILE_ALLOCATED_RANGE_BUFFER {
 //
 // Structures for FSCTL_SET_ENCRYPTION, FSCTL_WRITE_RAW_ENCRYPTED, and FSCTL_READ_RAW_ENCRYPTED
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 
 //
 //  The input buffer to set encryption indicates whether we are to encrypt/decrypt a file
@@ -9186,9 +9332,11 @@ typedef struct _ENCRYPTED_DATA_INFO {
     ULONG DataBlockSize[ANYSIZE_ARRAY];
 
 } ENCRYPTED_DATA_INFO, *PENCRYPTED_DATA_INFO;
+
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
+
 //
 //  Extended encryption structure for read/write raw encrypted operations.
 //  This was needed so we can explicitly indicate if a file is sparse or not
@@ -9223,10 +9371,9 @@ typedef struct _EXTENDED_ENCRYPTED_DATA_INFO {
     ULONG Reserved;
 
 } EXTENDED_ENCRYPTED_DATA_INFO, *PEXTENDED_ENCRYPTED_DATA_INFO;
+
 #endif /*(_WIN32_WINNT >= _WIN32_WINNT_WIN7)*/
 
-
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 //
 //======================== FSCTL_READ_FROM_PLEX ===========================
 //
@@ -9234,6 +9381,8 @@ typedef struct _EXTENDED_ENCRYPTED_DATA_INFO {
 //  the range of the file to read.  It also describes
 //  which plex to perform the read from.
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 
 typedef struct _PLEX_READ_DATA_REQUEST {
 
@@ -9252,9 +9401,9 @@ typedef struct _PLEX_READ_DATA_REQUEST {
     ULONG PlexNumber;
 
 } PLEX_READ_DATA_REQUEST, *PPLEX_READ_DATA_REQUEST;
+
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 //
 //======================== FSCTL_SIS_COPYFILE ===========================
 //
@@ -9263,6 +9412,8 @@ typedef struct _PLEX_READ_DATA_REQUEST {
 // the beginning of FileNameBuffer, and the destination name immediately
 // following.  Length fields include terminating nulls.
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN2K)
 
 typedef struct _SI_COPYFILE {
     ULONG SourceFileNameLength;
@@ -9274,14 +9425,16 @@ typedef struct _SI_COPYFILE {
 #define COPYFILE_SIS_LINK       0x0001              // Copy only if source is SIS
 #define COPYFILE_SIS_REPLACE    0x0002              // Replace destination if it exists, otherwise don't.
 #define COPYFILE_SIS_FLAGS      0x0003
+
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN2K */
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_VISTA)
 //
 //======================== FSCTL_MAKE_MEDIA_COMPATIBLE ===========================
 //
 //  Input parameter structure for FSCTL_MAKE_MEDIA_COMPATIBLE
 //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_VISTA)
 
 typedef struct _FILE_MAKE_COMPATIBLE_BUFFER {
     BOOLEAN CloseDisc;
@@ -10184,7 +10337,7 @@ typedef struct _TXFS_GET_TRANSACTED_VERSION {
 
     //
     //  If this is a handle to a miniversion, the ID of the miniversion.
-    //  If it is not a handle to a minivers, this field will be 0.
+    //  If it is not a handle to a miniversion, this field will be 0.
     //
 
     USHORT ThisMiniVersion;
@@ -10388,7 +10541,7 @@ typedef struct _FILE_FS_PERSISTENT_VOLUME_INFORMATION {
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE)
 //
-//  Persistent volume flags to control the file systems' storage tiering
+//  Persistent volume flags to control the file system's storage tiering
 //  awareness.
 //
 
@@ -10412,7 +10565,7 @@ typedef struct _FILE_FS_PERSISTENT_VOLUME_INFORMATION {
 
 //
 //  The volume is backed by other volume that actually has the system files.
-//  And hence this relies on the other volume being present in order for the sytem to boot up.
+//  And hence this relies on the other volume being present in order for the system to boot up.
 //
 
 #define PERSISTENT_VOLUME_STATE_BACKED_BY_WIM                       (0x00000040)
@@ -10641,7 +10794,7 @@ typedef struct _SD_CHANGE_MACHINE_SID_INPUT {
     USHORT CurrentMachineSIDLength;
 
     //
-    //  The new machine SID value to set inplace of the current machine SID
+    //  The new machine SID value to set in-place of the current machine SID
     //  This defines the offset from the beginning of the SD_GLOBAL_CHANGE_INPUT
     //  structure of where the NewMachineSID to set begins.  This will
     //  be a SID structure.  The length defines the length of the imbedded SID
@@ -10692,7 +10845,7 @@ typedef struct _SD_CHANGE_MACHINE_SID_OUTPUT {
     ULONGLONG NumMftSDChangedFail;
 
     //
-    //  Total number of entriess process in the $MFT file
+    //  Total number of entries processed in the $MFT file
     //
 
     ULONGLONG NumMftSDTotal;
@@ -11025,7 +11178,7 @@ typedef struct _FILE_TYPE_NOTIFICATION_INPUT {
     ULONG NumFileTypeIDs;
 
     //
-    //  This is a unique identifer for the type of file notification occuring
+    //  This is a unique identifier for the type of file notification occurring
     //
 
     GUID FileTypeID[1];
@@ -11294,6 +11447,7 @@ typedef enum _STORAGE_RESERVE_ID {
     StorageReserveIdNone = 0,
     StorageReserveIdHard,
     StorageReserveIdSoft,
+    StorageReserveIdUpdateScratch,
 
     StorageReserveIdMax
 
@@ -11384,35 +11538,36 @@ typedef struct _FILE_LEVEL_TRIM_OUTPUT {
 #define QUERY_FILE_LAYOUT_RESTART                                       (0x00000001)
 
 //
-// Request that the API call retrieve name information for the
-// objects on the volume.
+//  Request that the API call retrieve name information for the
+//  objects on the volume.
 //
 #define QUERY_FILE_LAYOUT_INCLUDE_NAMES                                 (0x00000002)
 
 //
-// Request that the API call include streams of the file.
+//  Request that the API call include streams of the file.
 //
 #define QUERY_FILE_LAYOUT_INCLUDE_STREAMS                               (0x00000004)
 
 //
-// Include extent information with the attribute entries, where applicable.
-// Use of this flag requires the _INCLUDE_STREAMS flag.
+//  Include extent information with the attribute entries, where applicable.
+//  Use of this flag requires the _INCLUDE_STREAMS flag.
 //
 #define QUERY_FILE_LAYOUT_INCLUDE_EXTENTS                               (0x00000008)
 
 //
-// Include extra information, such as modification times and security
-// IDs, with each returned file layout entry.
+//  Include extra information, such as modification times and security
+//  IDs, with each returned file layout entry.
 //
 #define QUERY_FILE_LAYOUT_INCLUDE_EXTRA_INFO                            (0x00000010)
 
 //
-// Include unallocated attributes in the enumeration, which in NTFS means one
-// of two cases:
+//  Include unallocated attributes in the enumeration, which in NTFS means one
+//  of three cases:
 //      1. Resident attributes.
-//      2. Compressed or sparse nonresident attributes with no physical
+//      2. Nonresident attributes of length 0.
+//      3. Compressed or sparse nonresident attributes with no physical
 //         allocation (consisting only of a sparse hole).
-//  This flag may only be used when no cluster ranges are specified (i. e.
+//  This flag may only be used when no cluster ranges are specified (i.e.
 //  on a whole-volume query).
 //
 #define QUERY_FILE_LAYOUT_INCLUDE_STREAMS_WITH_NO_CLUSTERS_ALLOCATED    (0x00000020)
@@ -12764,7 +12919,7 @@ typedef struct _SET_DAX_ALLOC_ALIGNMENT_HINT_INPUT {
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4)
 
 //
-//  MANDATORY - If allocation satisyfing AlignmentShift (or at least
+//  MANDATORY - If allocation satisfying AlignmentShift (or at least
 //     FallbackAlignmentShift if specified) cannot be found, then fail
 //     the file system operation (e.g. extending the file).
 //
@@ -13282,14 +13437,14 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 #define IO_REPARSE_TAG_IFSTEST_CONGRUENT        (0x00000009L)
 
 //
-//  Tag allocated to Moonwalk Univeral for HSM
+//  Tag allocated to Moonwalk Universal for HSM
 //  GUID: 257ABE42-5A28-4C8C-AC46-8FEA5619F18F
 //
 
 #define IO_REPARSE_TAG_MOONWALK_HSM             (0x0000000AL)
 
 //
-//  Tag allocated to Tsinghua Univeristy for Research purposes
+//  Tag allocated to Tsinghua University for Research purposes
 //  No released products should use this tag
 //  GUID: b86dff51-a31e-4bac-b3cf-e8cfe75c9fc2
 //
@@ -13799,6 +13954,27 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 #define IO_REPARSE_TAG_NEUSHIELD                (0x00000051L)
 
 //
+//  Tag allocated to DOR for HSM
+//  GUID: 51A0CF2A-5221-4093-9025-06D80C2AA122
+//
+
+#define IO_REPARSE_TAG_DOR_HSM                  (0x00000052L)
+
+//
+//  Tag allocated to StorageCraft Technology for backup
+//  GUID: 5E2913DA-EAEE-47CB-B866-EDDCAEB3EBC3
+//
+
+#define IO_REPARSE_TAG_SHX_BACKUP               (0x00000053L)
+
+//
+//  Tag allocated to NVIDIA Corporation for union file system
+//  GUID: E2700D02-2ABA-4629-805D-956A381244A5
+//
+
+#define IO_REPARSE_TAG_NVIDIA_UNIONFS           (0x20000054L)
+
+//
 //  Reparse point index keys.
 //
 //  The index with all the reparse points that exist in a volume at a
@@ -13917,7 +14093,7 @@ typedef struct _REPARSE_DATA_BUFFER_EX {
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1) */
 
 //
-//  To better guarentee backwards compatibility for selective new file system
+//  To better guarantee backwards compatibility for selective new file system
 //  functionality, this new functionality will be disabled until all mini
 //  file system filters as well as legacy file system filters explicitly opt-in
 //  to this new functionality.  This is controlled by a new registry key in
@@ -14371,7 +14547,7 @@ typedef struct _SHUFFLE_FILE_DATA {
 // between the redirector and the IO subsystem
 //
 // This FSCTL is used to garner the link tracking information for a file.
-// The data structures used for retreving the information are
+// The data structures used for retrieving the information are
 // LINK_TRACKING_INFORMATION defined further down in this file.
 //
 
@@ -14423,6 +14599,7 @@ typedef struct _SHUFFLE_FILE_DATA {
 #define FSCTL_PIPE_SILO_ARRIVAL             CTL_CODE(FILE_DEVICE_NAMED_PIPE, 18, METHOD_BUFFERED, FILE_WRITE_DATA)
 #define FSCTL_PIPE_CREATE_SYMLINK           CTL_CODE(FILE_DEVICE_NAMED_PIPE, 19, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
 #define FSCTL_PIPE_DELETE_SYMLINK           CTL_CODE(FILE_DEVICE_NAMED_PIPE, 20, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_PIPE_QUERY_CLIENT_PROCESS_V2  CTL_CODE(FILE_DEVICE_NAMED_PIPE, 21, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 //
 // Internal named pipe file control operations
@@ -14492,6 +14669,17 @@ typedef struct _FILE_PIPE_CLIENT_PROCESS_BUFFER {
      ULONGLONG ClientProcess;
 #endif
 } FILE_PIPE_CLIENT_PROCESS_BUFFER, *PFILE_PIPE_CLIENT_PROCESS_BUFFER;
+
+// Control structure for FSCTL_PIPE_QUERY_CLIENT_PROCESS_V2
+
+typedef struct _FILE_PIPE_CLIENT_PROCESS_BUFFER_V2 {
+     ULONGLONG ClientSession;
+#if !defined(BUILD_WOW6432)
+     PVOID ClientProcess;
+#else
+     ULONGLONG ClientProcess;
+#endif
+} FILE_PIPE_CLIENT_PROCESS_BUFFER_V2, *PFILE_PIPE_CLIENT_PROCESS_BUFFER_V2;
 
 // This is an extension to the client process info buffer containing the client
 // computer name
@@ -16825,6 +17013,14 @@ SeMaximumAuditMaskFromGlobalSacl(
 NTSYSAPI
 BOOLEAN
 NTAPI
+RtlIsSandboxedTokenHandle (
+    _In_opt_ HANDLE TokenHandle,
+    _In_ KPROCESSOR_MODE PreviousMode
+    );
+
+NTSYSAPI
+BOOLEAN
+NTAPI
 RtlIsSandboxedToken (
     _In_opt_ PSECURITY_SUBJECT_CONTEXT Context,
     _In_ KPROCESSOR_MODE PreviousMode
@@ -17147,6 +17343,7 @@ typedef enum _FS_FILTER_SECTION_SYNC_TYPE {
 #define FS_FILTER_SECTION_SYNC_SUPPORTS_ASYNC_PARALLEL_IO         (0x00000001)
 #define FS_FILTER_SECTION_SYNC_SUPPORTS_DIRECT_MAP_DATA           (0x00000002)
 #define FS_FILTER_SECTION_SYNC_SUPPORTS_DIRECT_MAP_IMAGE          (0x00000004)
+#define FS_FILTER_SECTION_SYNC_IMAGE_EXTENTS_ARE_NOT_RVA          (0x00000008)
 
 typedef struct _FS_FILTER_SECTION_SYNC_OUTPUT {
     ULONG StructureSize;
@@ -17205,15 +17402,6 @@ typedef union _FS_FILTER_PARAMETERS {
         ULONG PageProtection;
         PFS_FILTER_SECTION_SYNC_OUTPUT OutputInformation;
     } AcquireForSectionSynchronization;
-
-    //
-    //  NotifyStreamFileObjectCreation
-    //
-
-    struct {
-        FS_FILTER_STREAM_FO_NOTIFICATION_TYPE NotificationType;
-        BOOLEAN POINTER_ALIGNMENT SafeToRecurse;
-    } NotifyStreamFileObject;
 
     //
     // QueryOpen
@@ -18448,26 +18636,6 @@ MmForceSectionClosedEx (
     );
 #endif
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
-
-#define MM_SET_GRAPHICS_CONTIGUOUS_PAGES            0x1
-#define MM_PURE_GRAPHICS_PTES                       0x2
-
-_Must_inspect_result_
-_IRQL_requires_max_ (APC_LEVEL)
-NTKERNELAPI
-NTSTATUS
-MmSetGraphicsPtes (
-    _In_reads_bytes_ (NumberOfBytes) PVOID BaseAddress,
-    _In_ SIZE_T NumberOfBytes,
-    _In_opt_ PPHYSICAL_ADDRESS PageArray,
-    _In_ SIZE_T NumberOfBytesPerPage,
-    _In_ ULONG PageProtection,
-    _In_ ULONG Flags
-    );
-
-#endif
-
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
@@ -18610,12 +18778,20 @@ typedef struct _PHYSICAL_EXTENTS_DESCRIPTOR {
 //
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+
+#if !defined(_NTSYSTEM_) || !defined(XBOX_SYSTEMOS)
+
 NTHALAPI
+
+#endif // !defined(_NTSYSTEM_) || !defined(XBOX_SYSTEMOS)
+
 LARGE_INTEGER
 KeQueryPerformanceCounter (
    _Out_opt_ PLARGE_INTEGER PerformanceFrequency
    );
-#endif
+
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN2K)
 
 // begin_ntndis
 //
@@ -22891,9 +23067,9 @@ typedef enum _SRV_INSTANCE_TYPE {
 
 //
 // Version of SRV_OPEN_ECP_CONTEXT. User first need to check
-// size of the ECP, and only if size is at least 
+// size of the ECP, and only if size is at least
 // RTL_SIZEOF_THROUGH_FIELD(SRV_OPEN_ECP_CONTEXT, Version) then
-// she can touch the Version filed. 
+// she can touch the Version filed.
 //
 
 #define SRV_OPEN_ECP_CONTEXT_VERSION_2 2
@@ -22923,13 +23099,13 @@ typedef struct _SRV_OPEN_ECP_CONTEXT {
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
     //
-    // User first need to check size of the ECP, and only if 
-    // size is at least RTL_SIZEOF_THROUGH_FIELD(SRV_OPEN_ECP_CONTEXT, Version) 
-    // then she can touch the Version filed. 
+    // User first need to check size of the ECP, and only if
+    // size is at least RTL_SIZEOF_THROUGH_FIELD(SRV_OPEN_ECP_CONTEXT, Version)
+    // then she can touch the Version filed.
     // If this field is present then you can rely of it to
     // detect what other fields are present.
     //
-    
+
     USHORT Version;
 
     //
@@ -22941,7 +23117,7 @@ typedef struct _SRV_OPEN_ECP_CONTEXT {
     // If open is bypassing CSVFS and goes directly to the hiden volume then
     // instance is SrvInstanceTypeDefault.
     //
-    // This field is present if Version is equal or above 
+    // This field is present if Version is equal or above
     // SRV_OPEN_ECP_CONTEXT_VERSION_2
     //
 
@@ -23206,7 +23382,7 @@ DEFINE_GUID ( GUID_ECP_CSV_SET_HANDLE_PROPERTIES,
 //
 // Is used only when file is opened directly on CSVFS. This flag is ignored when file
 // is opened over SMB.
-// Tells CSVFS that this file open should be valid only on coordinating node. 
+// Tells CSVFS that this file open should be valid only on coordinating node.
 // If open comes to CSVFS, and this node is not a coordinating then open would fail.
 // If file is opened, and coordinating node is moved then file open will be invalidated
 //
@@ -23234,8 +23410,8 @@ typedef struct _CSV_SET_HANDLE_PROPERTIES_ECP_CONTEXT {
     //
     // A combination of the CSV_SET_HANDLE_PROPERTIES_ECP_CONTEXT_FLAGS_* flags
     //
-    // Lower 16 bits are for the flags that would cause create to fail with STATUS_INVALID_PARAMETER 
-    // if CSV does not recognise them, and upper 16 bits are for the flags that would be silently 
+    // Lower 16 bits are for the flags that would cause create to fail with STATUS_INVALID_PARAMETER
+    // if CSV does not recognise them, and upper 16 bits are for the flags that would be silently
     // ignored if CSVFS does not know how to handle them.
     //
     ULONG Flags;
@@ -23387,7 +23563,7 @@ DEFINE_GUID( /* 323eb6a8-affd-4d95-8230-863bce09d37a */
 // arbitrary reparse tags.
 //
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)  
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 
 typedef struct _IO_STOP_ON_SYMLINK_FILTER_ECP_v0 {
 
@@ -23428,7 +23604,7 @@ DEFINE_GUID( /* 940e5d56-1646-4d3c-87b6-577ec36a1466 */
 #if (NTDDI_VERSION >= NTDDI_THRESHOLD)
 
 //
-// This GUID is used to identify ECP that can be sent to 
+// This GUID is used to identify ECP that can be sent to
 // NTFS to insert new CLFS container during volume mount
 //
 // {8650C9FE-0CEC-8BF6-BD1E-835956541090}
@@ -23498,7 +23674,7 @@ typedef struct _CREATE_REDIRECTION_ECP_CONTEXT {
 #define CREATE_REDIRECTION_FLAGS_SERVICED_FROM_USER_MODE               0x0010
 
 //
-// To maintain compatibility with the code that has already used WCIFS_REDIRECTION ECP 
+// To maintain compatibility with the code that has already used WCIFS_REDIRECTION ECP
 //
 
 #define GUID_ECP_WCIFS_REDIRECTION GUID_ECP_CREATE_REDIRECTION
@@ -23850,8 +24026,19 @@ DEFINE_GUID(GUID_ECP_OPEN_PARAMETERS,
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
+//
+//  QueryOnCreate related structures
+//
+//  Information classes which can be requested via QOC
+//
+
 #define QoCFileStatInformation      0x00000001
 #define QoCFileLxInformation        0x00000002
+#define QoCFileEaInformation        0x00000004
+
+//
+//  Returns basic file metadata
+//
 
 typedef struct _QUERY_ON_CREATE_FILE_STAT_INFORMATION {
 
@@ -23868,6 +24055,10 @@ typedef struct _QUERY_ON_CREATE_FILE_STAT_INFORMATION {
 
 } QUERY_ON_CREATE_FILE_STAT_INFORMATION, *PQUERY_ON_CREATE_FILE_STAT_INFORMATION;
 
+//
+//  Returns extened Linux like information
+//
+
 typedef struct _QUERY_ON_CREATE_FILE_LX_INFORMATION {
 
     ACCESS_MASK EffectiveAccess;
@@ -23880,12 +24071,45 @@ typedef struct _QUERY_ON_CREATE_FILE_LX_INFORMATION {
 
 } QUERY_ON_CREATE_FILE_LX_INFORMATION, *PQUERY_ON_CREATE_FILE_LX_INFORMATION;
 
+//
+//  Returns EA (extended attributes) information
+//
+
+typedef struct _QUERY_ON_CREATE_EA_INFORMATION {
+
+    //
+    //  - The EaBuffer is allocated by the file system
+    //    - It will contain a list of FILE_FULL_EA_INFORMATION entries
+    //    - The allocataed EaBuffer is freed by FLTMGR when the ECP is freed
+    //  - The EaBufferSize field is set by the file system
+    //
+
+    ULONG EaBufferSize;
+    PFILE_FULL_EA_INFORMATION EaBuffer;
+
+} QUERY_ON_CREATE_EA_INFORMATION, *PQUERY_ON_CREATE_EA_INFORMATION;
+
+//
+//  The QOC ecp structure that is allocated by FLTMGR and passed to
+//  the file system to fill out
+//
+//  BEWARE: This is an internal structure only and should not be used by filters as
+//          it may change from release to release.  The proper way to use this
+//          is by using the FltRequestFileInfoOnCreateCompletion
+//          and FltRetrieveFileInfoOnCreateCompletion routines.
+//          This structure changed between RS5 and 19H1
+//
+
 typedef struct _QUERY_ON_CREATE_ECP_CONTEXT {
 
-    ULONG Flags;
+    ULONG RequestedClasses;         //Classes we want info on
+    ULONG ClassesProcessed;         //Classes where data is returned
+    ULONG ClassesWithErrors;        //Classes which received an error querying data
+    ULONG ClassesWithNoData;        //Classes where the file does not have the requested data (for example no EA's)
 
     QUERY_ON_CREATE_FILE_STAT_INFORMATION StatInformation;
     QUERY_ON_CREATE_FILE_LX_INFORMATION LxInformation;
+    QUERY_ON_CREATE_EA_INFORMATION EaInformation;
 
 } QUERY_ON_CREATE_ECP_CONTEXT, *PQUERY_ON_CREATE_ECP_CONTEXT;
 
@@ -25381,35 +25605,39 @@ typedef struct _SecPkgInfoW
 //
 //  Security Package Capabilities
 //
-#define SECPKG_FLAG_INTEGRITY                   0x00000001  // Supports integrity on messages
-#define SECPKG_FLAG_PRIVACY                     0x00000002  // Supports privacy (confidentiality)
-#define SECPKG_FLAG_TOKEN_ONLY                  0x00000004  // Only security token needed
-#define SECPKG_FLAG_DATAGRAM                    0x00000008  // Datagram RPC support
-#define SECPKG_FLAG_CONNECTION                  0x00000010  // Connection oriented RPC support
-#define SECPKG_FLAG_MULTI_REQUIRED              0x00000020  // Full 3-leg required for re-auth.
-#define SECPKG_FLAG_CLIENT_ONLY                 0x00000040  // Server side functionality not available
-#define SECPKG_FLAG_EXTENDED_ERROR              0x00000080  // Supports extended error msgs
-#define SECPKG_FLAG_IMPERSONATION               0x00000100  // Supports impersonation
-#define SECPKG_FLAG_ACCEPT_WIN32_NAME           0x00000200  // Accepts Win32 names
-#define SECPKG_FLAG_STREAM                      0x00000400  // Supports stream semantics
-#define SECPKG_FLAG_NEGOTIABLE                  0x00000800  // Can be used by the negotiate package
-#define SECPKG_FLAG_GSS_COMPATIBLE              0x00001000  // GSS Compatibility Available
-#define SECPKG_FLAG_LOGON                       0x00002000  // Supports common LsaLogonUser
-#define SECPKG_FLAG_ASCII_BUFFERS               0x00004000  // Token Buffers are in ASCII
-#define SECPKG_FLAG_FRAGMENT                    0x00008000  // Package can fragment to fit
-#define SECPKG_FLAG_MUTUAL_AUTH                 0x00010000  // Package can perform mutual authentication
-#define SECPKG_FLAG_DELEGATION                  0x00020000  // Package can delegate
-#define SECPKG_FLAG_READONLY_WITH_CHECKSUM      0x00040000  // Package can delegate
-#define SECPKG_FLAG_RESTRICTED_TOKENS           0x00080000  // Package supports restricted callers
-#define SECPKG_FLAG_NEGO_EXTENDER               0x00100000  // this package extends SPNEGO, there is at most one
-#define SECPKG_FLAG_NEGOTIABLE2                 0x00200000  // this package is negotiated under the NegoExtender
-#define SECPKG_FLAG_APPCONTAINER_PASSTHROUGH    0x00400000  // this package receives all calls from appcontainer apps
-#define SECPKG_FLAG_APPCONTAINER_CHECKS         0x00800000  // this package receives calls from appcontainer apps
-                                                            // if the following checks succeed
-                                                            // 1. Caller has domain auth capability or
-                                                            // 2. Target is a proxy server or
-                                                            // 3. The caller has supplied creds
-#define SECPKG_FLAG_CREDENTIAL_ISOLATION_ENABLED 0x01000000 // this package is running with Credential Guard enabled
+#define SECPKG_FLAG_INTEGRITY                    0x00000001  // Supports integrity on messages
+#define SECPKG_FLAG_PRIVACY                      0x00000002  // Supports privacy (confidentiality)
+#define SECPKG_FLAG_TOKEN_ONLY                   0x00000004  // Only security token needed
+#define SECPKG_FLAG_DATAGRAM                     0x00000008  // Datagram RPC support
+#define SECPKG_FLAG_CONNECTION                   0x00000010  // Connection oriented RPC support
+#define SECPKG_FLAG_MULTI_REQUIRED               0x00000020  // Full 3-leg required for re-auth.
+#define SECPKG_FLAG_CLIENT_ONLY                  0x00000040  // Server side functionality not available
+#define SECPKG_FLAG_EXTENDED_ERROR               0x00000080  // Supports extended error msgs
+#define SECPKG_FLAG_IMPERSONATION                0x00000100  // Supports impersonation
+#define SECPKG_FLAG_ACCEPT_WIN32_NAME            0x00000200  // Accepts Win32 names
+#define SECPKG_FLAG_STREAM                       0x00000400  // Supports stream semantics
+#define SECPKG_FLAG_NEGOTIABLE                   0x00000800  // Can be used by the negotiate package
+#define SECPKG_FLAG_GSS_COMPATIBLE               0x00001000  // GSS Compatibility Available
+#define SECPKG_FLAG_LOGON                        0x00002000  // Supports common LsaLogonUser
+#define SECPKG_FLAG_ASCII_BUFFERS                0x00004000  // Token Buffers are in ASCII
+#define SECPKG_FLAG_FRAGMENT                     0x00008000  // Package can fragment to fit
+#define SECPKG_FLAG_MUTUAL_AUTH                  0x00010000  // Package can perform mutual authentication
+#define SECPKG_FLAG_DELEGATION                   0x00020000  // Package can delegate
+#define SECPKG_FLAG_READONLY_WITH_CHECKSUM       0x00040000  // Package can delegate
+#define SECPKG_FLAG_RESTRICTED_TOKENS            0x00080000  // Package supports restricted callers
+#define SECPKG_FLAG_NEGO_EXTENDER                0x00100000  // this package extends SPNEGO, there is at most one
+#define SECPKG_FLAG_NEGOTIABLE2                  0x00200000  // this package is negotiated under the NegoExtender
+#define SECPKG_FLAG_APPCONTAINER_PASSTHROUGH     0x00400000  // this package receives all calls from appcontainer apps
+#define SECPKG_FLAG_APPCONTAINER_CHECKS          0x00800000  // this package receives calls from appcontainer apps
+                                                             // if the following checks succeed
+                                                             // 1. Caller has domain auth capability or
+                                                             // 2. Target is a proxy server or
+                                                             // 3. The caller has supplied creds
+#define SECPKG_FLAG_CREDENTIAL_ISOLATION_ENABLED 0x01000000  // this package is running with Credential Guard enabled
+#define SECPKG_FLAG_APPLY_LOOPBACK               0x02000000  // this package supports reliable detection of loopback
+                                                             // 1.) The client and server see the same sequence of tokens
+                                                             // 2.) The server enforces a unique exchange for each
+                                                             //     non-anonymous authentication. (Replay detection)
 
 #define SECPKG_ID_NONE      0xFFFF
 
@@ -25478,7 +25706,10 @@ typedef struct _SecBufferDesc {
 #define SECBUFFER_PRESHARED_KEY                 22  // Preshared key
 #define SECBUFFER_PRESHARED_KEY_IDENTITY        23  // Preshared key identity
 #define SECBUFFER_DTLS_MTU                      24  // DTLS path MTU setting
-
+#define SECBUFFER_SEND_GENERIC_TLS_EXTENSION    25  // Buffer for sending generic TLS extensions.
+#define SECBUFFER_SUBSCRIBE_GENERIC_TLS_EXTENSION 26 // Buffer for subscribing to generic TLS extensions.
+#define SECBUFFER_FLAGS                         27  // ISC/ASC REQ Flags
+#define SECBUFFER_TRAFFIC_SECRETS               28  // Message sequence lengths and corresponding traffic secrets.
 
 #define SECBUFFER_ATTRMASK                      0xF0000000
 #define SECBUFFER_READONLY                      0x80000000  // Buffer is read-only, no checksum
@@ -25556,6 +25787,35 @@ typedef struct _SEC_DTLS_MTU {
     unsigned short PathMTU;                     // Path MTU for the connection
 } SEC_DTLS_MTU, *PSEC_DTLS_MTU;
 
+typedef struct _SEC_FLAGS {
+    unsigned long long Flags; // The caller sets ISC/ASC REQ flags; the lower 32 bits are reserved, must be set to 0.
+} SEC_FLAGS, *PSEC_FLAGS;
+
+//
+//  Traffic secret types:
+//
+typedef enum _SEC_TRAFFIC_SECRET_TYPE
+{
+    SecTrafficSecret_None,
+    SecTrafficSecret_Client,
+    SecTrafficSecret_Server
+} SEC_TRAFFIC_SECRET_TYPE, *PSEC_TRAFFIC_SECRET_TYPE;
+
+#define SZ_ALG_MAX_SIZE 64
+
+typedef struct _SEC_TRAFFIC_SECRETS {
+    wchar_t SymmetricAlgId[SZ_ALG_MAX_SIZE];     // Negotiated symmetric key algorithm. e.g. BCRYPT_AES_ALGORITHM.
+    wchar_t ChainingMode[SZ_ALG_MAX_SIZE];       // Negotiated symmetric key algorithm chaining mode. e.g. BCRYPT_CHAIN_MODE_GCM or BCRYPT_CHAIN_MODE_CCM.
+    wchar_t HashAlgId[SZ_ALG_MAX_SIZE];          // Negotiated hash algorithm. e.g. BCRYPT_SHA256_ALGORITHM or BCRYPT_SHA384_ALGORITHM.
+    unsigned short KeySize;                      // Size in bytes of the symmetric key to derive from this traffic secret.
+    unsigned short IvSize;                       // Size in bytes of the IV to derive from this traffic secret.
+    unsigned short MsgSequenceStart;             // Offset of the first byte of the TLS message sequence to be protected with a key derived from TrafficSecret. Zero to indicate the first byte of the buffer.
+    unsigned short MsgSequenceEnd;               // Offset of the last byte of the TLS message sequence to be protected with a key derived from TrafficSecret. Zero if the secret is for the encryption of application data or decryption of incoming records.
+    SEC_TRAFFIC_SECRET_TYPE TrafficSecretType;   // Type of traffic secret from the TRAFFIC_SECRET_TYPE enumeration.
+    unsigned short TrafficSecretSize;            // Size in bytes of the traffic secret.
+    unsigned char  TrafficSecret[ANYSIZE_ARRAY]; // Traffic secret of type TrafficSecretType, TrafficSecretSize bytes long, used to derive write key and IV for message protection.
+} SEC_TRAFFIC_SECRETS, *PSEC_TRAFFIC_SECRETS;
+
 
 //
 //  Data Representation Constant:
@@ -25622,6 +25882,7 @@ typedef struct _SEC_DTLS_MTU {
 #define ISC_REQ_USE_HTTP_STYLE          0x01000000
 #define ISC_REQ_UNVERIFIED_TARGET_NAME  0x20000000
 #define ISC_REQ_CONFIDENTIALITY_ONLY    0x40000000 // honored by SPNEGO/Kerberos
+#define ISC_REQ_MESSAGES                0x0000000100000000 // Disables the TLS 1.3+ record layer and causes the security context to consume and produce cleartext TLS messages, rather than records.
 
 #define ISC_RET_DELEGATE                0x00000001
 #define ISC_RET_MUTUAL_AUTH             0x00000002
@@ -25652,6 +25913,7 @@ typedef struct _SEC_DTLS_MTU {
 #define ISC_RET_NO_ADDITIONAL_TOKEN     0x02000000 // *INTERNAL*
 #define ISC_RET_REAUTHENTICATION        0x08000000 // *INTERNAL*
 #define ISC_RET_CONFIDENTIALITY_ONLY    0x40000000 // honored by SPNEGO/Kerberos
+#define ISC_RET_MESSAGES                0x0000000100000000 // Indicates that the TLS 1.3+ record layer is disabled, and the security context consumes and produces cleartext TLS messages, rather than records.
 
 #define ASC_REQ_DELEGATE                0x00000001
 #define ASC_REQ_MUTUAL_AUTH             0x00000002
@@ -25680,6 +25942,7 @@ typedef struct _SEC_DTLS_MTU {
 #define ASC_REQ_PROXY_BINDINGS          0x04000000
 //      SSP_RET_REAUTHENTICATION        0x08000000  // *INTERNAL*
 #define ASC_REQ_ALLOW_MISSING_BINDINGS  0x10000000
+#define ASC_REQ_MESSAGES                0x0000000100000000 // Disables the TLS 1.3+ record layer and causes the security context to consume and produce cleartext TLS messages, rather than records.
 
 #define ASC_RET_DELEGATE                0x00000001
 #define ASC_RET_MUTUAL_AUTH             0x00000002
@@ -25706,6 +25969,7 @@ typedef struct _SEC_DTLS_MTU {
 #define ASC_RET_NO_TOKEN                0x01000000
 #define ASC_RET_NO_ADDITIONAL_TOKEN     0x02000000  // *INTERNAL*
 //      SSP_RET_REAUTHENTICATION        0x08000000  // *INTERNAL*
+#define ASC_RET_MESSAGES                0x0000000100000000 // Indicates that the TLS 1.3+ record layer is disabled, and the security context consumes and produces cleartext TLS messages, rather than records.
 
 //
 //  Security Credentials Attributes:
@@ -26064,6 +26328,12 @@ typedef SECURITY_STATUS
 (SEC_ENTRY * FREE_CREDENTIALS_HANDLE_FN)(
     PCredHandle );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 KSECDDDECLSPEC
 SECURITY_STATUS SEC_ENTRY
 AddCredentialsW(
@@ -26234,7 +26504,7 @@ SECURITY_STATUS SspiAcquireCredentialsHandleAsyncA(
 SECURITY_STATUS SspiInitializeSecurityContextAsyncW(
     _Inout_     SspiAsyncContext* AsyncContext,
     _In_opt_    PCredHandle phCredential,               // Cred to base context
-    _In_opt_    PCtxtHandle phContext,                  // Existing context (OPT)    
+    _In_opt_    PCtxtHandle phContext,                  // Existing context (OPT)
 #if ISSP_MODE == 0
     _In_opt_    PSECURITY_STRING pszTargetName,         // Name of target
 #else
@@ -26254,7 +26524,7 @@ SECURITY_STATUS SspiInitializeSecurityContextAsyncW(
 SECURITY_STATUS SspiInitializeSecurityContextAsyncA(
     _Inout_     SspiAsyncContext* AsyncContext,
     _In_opt_    PCredHandle phCredential,               // Cred to base context
-    _In_opt_    PCtxtHandle phContext,                  // Existing context (OPT)    
+    _In_opt_    PCtxtHandle phContext,                  // Existing context (OPT)
     _In_opt_    LPSTR pszTargetName,                    // Name of target
     _In_        unsigned long fContextReq,              // Context Requirements
     _In_        unsigned long Reserved1,                // Reserved, MBZ
@@ -26268,7 +26538,7 @@ SECURITY_STATUS SspiInitializeSecurityContextAsyncA(
 );
 
 SECURITY_STATUS SspiAcceptSecurityContextAsync(
-    _Inout_   SspiAsyncContext* AsyncContext,       
+    _Inout_   SspiAsyncContext* AsyncContext,
     _In_opt_  PCredHandle phCredential,               // Cred to base context
     _In_opt_  PCtxtHandle phContext,                  // Existing context (OPT)
     _In_opt_  PSecBufferDesc pInput,                  // Input buffer
@@ -26374,6 +26644,11 @@ typedef SECURITY_STATUS
 
 #endif // ISSP_MODE
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family or Games Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
 
 ////////////////////////////////////////////////////////////////////////
 ///
@@ -26450,7 +26725,11 @@ typedef SECURITY_STATUS
     unsigned long *,
     PTimeStamp);
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
+#pragma endregion
 
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 SECURITY_STATUS SEC_ENTRY
 CompleteAuthToken(
@@ -26497,6 +26776,11 @@ typedef SECURITY_STATUS
 (SEC_ENTRY * QUERY_SECURITY_CONTEXT_TOKEN_FN)(
     PCtxtHandle, void * *);
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family or Games Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
 
 KSECDDDECLSPEC
 SECURITY_STATUS SEC_ENTRY
@@ -26508,6 +26792,11 @@ typedef SECURITY_STATUS
 (SEC_ENTRY * DELETE_SECURITY_CONTEXT_FN)(
     PCtxtHandle);
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 KSECDDDECLSPEC
 SECURITY_STATUS SEC_ENTRY
@@ -26519,6 +26808,12 @@ ApplyControlToken(
 typedef SECURITY_STATUS
 (SEC_ENTRY * APPLY_CONTROL_TOKEN_FN)(
     PCtxtHandle, PSecBufferDesc);
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family or Games Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
 
 
 KSECDDDECLSPEC
@@ -26683,6 +26978,12 @@ typedef SECURITY_STATUS
     unsigned long,
     unsigned long *);
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family or Games Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
+
 // This only exists win Win2k3 and Greater
 #define SECQOP_WRAP_NO_ENCRYPT      0x80000001
 #define SECQOP_WRAP_OOB_DATA        0x40000000
@@ -26716,6 +27017,12 @@ typedef SECURITY_STATUS
 ////    Misc.
 ////
 ///////////////////////////////////////////////////////////////////////////
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 KSECDDDECLSPEC
 SECURITY_STATUS SEC_ENTRY
@@ -27170,11 +27477,15 @@ SspiUnmarshalAuthIdentity(
     _Outptr_ PSEC_WINNT_AUTH_IDENTITY_OPAQUE* ppAuthIdentity
     );
 
+#endif // NTDDI_VERSION
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
+#if (NTDDI_VERSION >= NTDDI_WIN7)
 
 BOOLEAN
 SEC_ENTRY
@@ -27182,11 +27493,15 @@ SspiIsPromptingNeeded(
     _In_ unsigned long ErrorOrNtStatus
     );
 
+#endif // NTDDI_VERSION
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+#if (NTDDI_VERSION >= NTDDI_WIN7)
 
 SECURITY_STATUS
 SEC_ENTRY
@@ -27439,6 +27754,7 @@ typedef struct _QUERY_PATH_RESPONSE {
 #define     WNNC_NET_DOCUSHARE   0x00450000
 #define     WNNC_NET_AURISTOR_FS 0x00460000
 #define     WNNC_NET_SECUREAGENT 0x00470000
+#define     WNNC_NET_9P          0x00480000
 
 #define     WNNC_CRED_MANAGER   0xFFFF0000
 
